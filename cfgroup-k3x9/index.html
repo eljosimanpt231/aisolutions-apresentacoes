@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>CF Group Portugal | Orçamentos em 30 segundos</title>
+  <meta name="description" content="Apresentação personalizada AI Solutions para a CF Group Portugal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <script src="config.js"></script>
+  <style>
+    /* Extras desta apresentação (só tokens) */
+    .hero { padding-top: clamp(72px, 10vw, 130px); }
+    .hero h1 .num { color: var(--accent); }
+    .mini-wa {
+      background: var(--wa-bg); border-radius: 12px; padding: 12px;
+      margin-top: 18px; display: flex; flex-direction: column; gap: 6px;
+    }
+    .mini-wa .wa-msg { font-size: 0.8rem; max-width: 95%; }
+    .mini-wa .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .mini-wa .chips span {
+      font-size: 0.72rem; font-weight: 600; color: var(--wa-green);
+      background: hsl(0 0% 100%); border: 1px solid var(--wa-green-strong);
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .mini-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+    .mini-stats .ms {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px;
+    }
+    .mini-stats .ms b { display: block; font-family: var(--font-display); font-size: 1.25rem; color: var(--brand); }
+    .mini-stats .ms.up b { color: var(--success); }
+    .mini-stats .ms small { color: var(--muted); font-size: 0.72rem; }
+    .roadmap-note { margin-top: 26px; font-size: 0.85rem; color: var(--muted); font-style: italic; }
+    .card h3 { display: flex; align-items: center; gap: 10px; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="topo">
+    <div class="container">
+      <span class="kicker">CF Group Portugal × AI Solutions · Catálogo Piscinas &amp; Bem-Estar 2026</span>
+      <h1>Orçamentos em <span class="num">30 segundos</span>.<br>Sem espera. Sem erros.</h1>
+      <p class="lead" style="margin-top:18px">
+        Hoje, cada orçamento consome entre 15 a 30 minutos da vossa equipa.
+        90% dos casos seguem sempre a mesma lógica. Isso vai mudar.
+      </p>
+      <div class="grid-3" style="margin-top:38px">
+        <div class="card stat-card reveal"><div class="num">3.000€ a 30.000€</div><div class="desc">Valor de cada orçamento: cada minuto de atraso é receita em risco</div></div>
+        <div class="card stat-card reveal"><div class="num">15 a 30 min</div><div class="desc">Por pedido, em trabalho repetitivo que pode ser automatizado hoje</div></div>
+        <div class="card stat-card reveal"><div class="num">até 25.000€</div><div class="desc">De faturação adicional com +1 orçamento convertido por dia</div></div>
+      </div>
+      <div style="margin-top:34px">
+        <a href="#demo" class="btn btn-primary">Ver a solução ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE MUDA ============ -->
+  <section class="section-alt" id="mudanca">
+    <div class="container center">
+      <span class="kicker">A mudança</span>
+      <h2>O que muda com esta solução</h2>
+      <div class="grid-2" style="margin-top:36px; text-align:left">
+        <div class="card card-do reveal">
+          <h3>O que automatizamos</h3>
+          <ul class="list-check">
+            <li>Orçamentação instantânea via WhatsApp</li>
+            <li>PDF gerado com o logótipo CF Group em segundos</li>
+            <li>Follow-up automático a orçamentos sem resposta</li>
+            <li>Captura de chamadas fora de horas via WhatsApp</li>
+            <li>Equipa de campo com pré-orçamento em 30 segundos</li>
+          </ul>
+        </div>
+        <div class="card card-dont reveal">
+          <h3>O que a equipa deixa de fazer</h3>
+          <ul class="list-x">
+            <li>Trocar emails para recolher dimensões</li>
+            <li>Calcular manualmente largura x comprimento x modelo</li>
+            <li>Perder leads que ligaram fora do horário</li>
+            <li>Acompanhar manualmente orçamentos sem resposta</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIMULAÇÃO WHATSAPP ============ -->
+  <section id="demo">
+    <div class="container center">
+      <span class="kicker">Experimenta</span>
+      <h2>Como o teu cliente vai viver isto</h2>
+      <p class="lead">Uma simulação real do fluxo WhatsApp que vamos implementar. Interage com os botões.</p>
+      <div style="margin-top:36px">
+        <div class="phone reveal" id="waDemo">
+          <div class="wa-header">
+            <div class="wa-avatar">CF</div>
+            <div class="wa-contact"><strong>CF Group Portugal</strong><small class="wa-status">online</small></div>
+          </div>
+          <div class="wa-body"><div class="wa-day">HOJE</div></div>
+          <div class="wa-chips"></div>
+          <div class="wa-input"><span>＋</span><div class="field">Mensagem</div><span>🎤</span></div>
+        </div>
+        <p style="margin-top:14px; font-size:0.8rem; color:var(--muted)">
+          * Simulação do fluxo real. Em produção, esta conversa acontece no WhatsApp do cliente.
+        </p>
+        <button class="btn btn-ghost" data-wa-restart="waDemo" style="margin-top:8px">↻ Reiniciar demo</button>
+      </div>
+    </div>
+  </section>
+  <script type="application/json" id="waDemo-script">
+  [
+    { "type": "msg", "from": "in", "text": "Olá! 👋 Sou o assistente da CF Group. Diz-me o que pretendes orçamentar e avançamos por aqui." },
+    { "type": "msg", "from": "in", "text": "Que tipo de cobertura pretendes?", "delay": 800 },
+    { "type": "chips", "options": [
+      { "label": "Cobertura Laminar Automática", "goto": "laminar" },
+      { "label": "Cobertura de Bolhas", "goto": "bolhas" },
+      { "label": "Cobertura de Barras", "goto": "barras" }
+    ]},
+    { "type": "label", "name": "laminar" },
+    { "type": "msg", "from": "in", "text": "Excelente escolha. Qual é a dimensão da piscina? (largura x comprimento)" },
+    { "type": "chips", "options": [
+      { "label": "4 x 8 m", "goto": "laminar48" },
+      { "label": "5 x 10 m", "goto": "laminar510" }
+    ]},
+    { "type": "label", "name": "laminar48" },
+    { "type": "msg", "from": "in", "text": "✅ Cobertura Laminar Automática · 4x8m\n\nOrçamento estimado: 14.980€ +IVA\nInclui motorização, lâminas em PVC e instalação.\n\nQueres receber o PDF oficial com o logótipo CF Group?" },
+    { "type": "chips", "options": [ { "label": "Sim, envia o PDF", "goto": "pdf" } ] },
+    { "type": "label", "name": "laminar510" },
+    { "type": "msg", "from": "in", "text": "✅ Cobertura Laminar Automática · 5x10m\n\nOrçamento estimado: 19.450€ +IVA\nInclui motorização, lâminas em PVC e instalação.\n\nQueres receber o PDF oficial com o logótipo CF Group?" },
+    { "type": "chips", "options": [ { "label": "Sim, envia o PDF", "goto": "pdf" } ] },
+    { "type": "label", "name": "bolhas" },
+    { "type": "msg", "from": "in", "text": "Perfeito. Para a Cobertura de Bolhas basta a dimensão da piscina. 4x8m, por exemplo, fica em 1.240€ +IVA com corte à medida.\n\nQueres receber o PDF oficial?" },
+    { "type": "chips", "options": [ { "label": "Sim, envia o PDF", "goto": "pdf" } ] },
+    { "type": "label", "name": "barras" },
+    { "type": "msg", "from": "in", "text": "Boa opção de segurança. Uma Cobertura de Barras para 4x8m fica em 3.980€ +IVA, certificada NF P90-308.\n\nQueres receber o PDF oficial?" },
+    { "type": "chips", "options": [ { "label": "Sim, envia o PDF", "goto": "pdf" } ] },
+    { "type": "label", "name": "pdf" },
+    { "type": "msg", "from": "in", "text": "📄 Orcamento_CFGroup.pdf enviado!\n\nUm comercial confirma os detalhes de instalação em menos de 24h. Precisas de mais alguma coisa?" },
+    { "type": "msg", "from": "out", "text": "Impecável, obrigado! 👏", "delay": 1200 },
+    { "type": "msg", "from": "in", "text": "Sempre às ordens! A CF Group agradece o contacto. 💧" },
+    { "type": "end" }
+  ]
+  </script>
+
+  <!-- ============ ROADMAP ============ -->
+  <section class="section-alt" id="roadmap">
+    <div class="container center">
+      <span class="kicker">Depois do arranque</span>
+      <h2>O que construímos a seguir</h2>
+      <p class="lead">Após a fase inicial estar operacional, estas são as três evoluções naturais do sistema.</p>
+      <div class="grid-3" style="margin-top:36px; text-align:left">
+        <div class="card reveal">
+          <span class="badge">Fase 2</span>
+          <h3 style="margin-top:12px">🔁 Follow-up Automático</h3>
+          <p style="color:var(--muted); font-size:0.92rem; margin-top:8px">
+            Cada orçamento sem resposta desencadeia uma sequência automática de acompanhamento
+            via WhatsApp: no dia seguinte, aos 3 dias e aos 7 dias. Nenhum orçamento fica esquecido.
+          </p>
+          <div class="mini-wa">
+            <div class="wa-msg in">Bom dia! Enviámos-lhe um orçamento há 2 dias para uma cobertura Contura H42. Teve oportunidade de ver?</div>
+            <div class="chips"><span>Sim, quero avançar ✅</span><span>Tenho dúvidas 💬</span><span>Mais tempo 🕐</span></div>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="badge">Fase 3</span>
+          <h3 style="margin-top:12px">📊 Dashboard Comercial</h3>
+          <p style="color:var(--muted); font-size:0.92rem; margin-top:8px">
+            Painel em tempo real com os dados que hoje não existem: orçamentos gerados, ticket médio,
+            conversão por modelo, tempo de resposta. Gerir por números, não por intuição.
+          </p>
+          <div class="mini-stats">
+            <div class="ms"><b>47</b><small>Orçamentos este mês</small></div>
+            <div class="ms"><b>8.240€</b><small>Ticket médio</small></div>
+            <div class="ms up"><b>23%</b><small>Taxa de conversão</small></div>
+            <div class="ms up"><b>&lt;1 min</b><small>Tempo de resposta</small></div>
+          </div>
+          <p style="margin-top:10px; font-size:0.72rem; color:var(--muted)">Exemplo ilustrativo</p>
+        </div>
+        <div class="card reveal">
+          <span class="badge">Fase 3</span>
+          <h3 style="margin-top:12px">🛒 Cross-selling Automático</h3>
+          <p style="color:var(--muted); font-size:0.92rem; margin-top:8px">
+            Quando um cliente orçamenta uma cobertura, o sistema sugere automaticamente
+            complementares: caillebotis, estrados, acessórios. Ticket médio mais alto sem esforço da equipa.
+          </p>
+          <div class="mini-wa">
+            <div class="wa-msg in">✅ Orçamento enviado para a cobertura Contura H42 · 7,65m x 4,28m.
+Como complemento, temos estrado em alumínio branco (3,99m x 0,75m) e kit de acessórios de instalação. Quero incluir no orçamento?</div>
+            <div class="chips"><span>Sim, adicionar ➕</span><span>Não, obrigado</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="roadmap-note">Estas funcionalidades são desenvolvidas de forma modular, ativadas quando fizer sentido para o negócio.</p>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section id="prazo">
+    <div class="container center">
+      <span class="kicker">Prazo</span>
+      <h2>Como chegamos aqui em 6 semanas</h2>
+      <div class="timeline" style="margin-top:44px">
+        <div class="tl-step reveal"><div class="tl-dot">⚙</div><strong>Semanas 1-2</strong><span>Mapeamento do catálogo completo + tabelas de preços</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🤖</div><strong>Semanas 2-4</strong><span>Desenvolvimento do agente + integração Excel</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🧪</div><strong>Semana 5</strong><span>Testes internos com a equipa comercial</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🚀</div><strong>Semana 6</strong><span>Go-live + formação da equipa</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INVESTIMENTO ============ -->
+  <section class="section-alt" id="investimento">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card price-card reveal">
+          <div class="label">Implementação</div>
+          <div class="price">2.500€ +IVA</div>
+          <div class="note">Desenvolvimento, análise e testes.</div>
+        </div>
+        <div class="card price-card reveal">
+          <div class="label">Avença mensal</div>
+          <div class="price">200€ +IVA</div>
+          <div class="note">Inclui toda a infraestrutura de servidores, IA sem limitações de utilização, suporte e melhoria contínua.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta-final">
+    <div class="container center">
+      <h2>Pronto para avançar, Eduardo?</h2>
+      <p class="lead" style="margin:14px auto 30px">Na reunião de hoje apresentámos este protótipo. A solução final estará operacional em 6 semanas.</p>
+      <a href="https://aisolutions.pt/comecar" class="btn btn-primary">Falar com a AI Solutions →</a>
+    </div>
+  </section>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a CF Group Portugal
+      <span class="disclaimer">Demonstração com valores ilustrativos, para fins de apresentação.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>waSim('waDemo');</script>
+</body>
+</html>
