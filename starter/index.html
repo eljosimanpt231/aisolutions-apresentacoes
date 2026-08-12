@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- SUBSTITUIR: título = [Lead] + promessa curta -->
+  <title>Nome da Lead | Proposta AI Solutions</title>
+  <meta name="description" content="Apresentação personalizada AI Solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- FONTES: ajustar ao estilo escolhido (ver estilos/[nome]/style.md) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <!-- ============ 1. HERO: dor + promessa + prova ============
+       Regras: nome da lead visível, promessa concreta (números),
+       2-3 stat cards com a dor quantificada, 1 CTA para a demo. -->
+  <section class="hero" id="topo">
+    <div class="container">
+      <span class="kicker">Nome da Lead × AI Solutions</span>
+      <h1>Promessa principal <span class="grad">com destaque</span>.<br>Segunda linha da promessa.</h1>
+      <p class="lead" style="margin-top:18px">
+        Parágrafo que resume a dor de hoje e o que muda. Uma ou duas frases, concretas,
+        com a linguagem do setor da lead.
+      </p>
+      <div class="grid-3" style="margin-top:38px">
+        <div class="card stat-card reveal"><div class="num">15 a 30 min</div><div class="desc">Tempo gasto hoje por pedido em trabalho repetitivo</div></div>
+        <div class="card stat-card reveal"><div class="num"><span class="count" data-to="90" data-suffix="%">0</span></div><div class="desc">Dos casos seguem sempre a mesma lógica</div></div>
+        <div class="card stat-card reveal"><div class="num">+1/dia</div><div class="desc">Uma conversão extra por dia = X € de faturação adicional</div></div>
+      </div>
+      <div style="margin-top:34px">
+        <a href="#demo" class="btn btn-primary">Ver a demonstração ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. O QUE MUDA: antes/depois ============ -->
+  <section class="section-alt" id="mudanca">
+    <div class="container center">
+      <span class="kicker">O que muda</span>
+      <h2>O que muda com esta solução</h2>
+      <div class="grid-2" style="margin-top:36px; text-align:left">
+        <div class="card card-do reveal">
+          <h3>O que passa a ser automático</h3>
+          <ul class="list-check">
+            <li>Item concreto 1 (com o vocabulário da lead)</li>
+            <li>Item concreto 2</li>
+            <li>Item concreto 3</li>
+            <li>Item concreto 4</li>
+          </ul>
+        </div>
+        <div class="card card-dont reveal">
+          <h3>O que a equipa deixa de fazer</h3>
+          <ul class="list-x">
+            <li>Tarefa manual 1</li>
+            <li>Tarefa manual 2</li>
+            <li>Tarefa manual 3</li>
+            <li>Tarefa manual 4</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. SIMULAÇÃO WHATSAPP (o momento uau) ============
+       Guião: 4-6 trocas, produtos/serviços REAIS da lead,
+       termina com algo que ela achava impossível. -->
+  <section id="demo">
+    <div class="container center">
+      <span class="kicker">Experimenta</span>
+      <h2>Como o teu cliente vai viver isto</h2>
+      <p class="lead">Uma simulação real do fluxo WhatsApp que vamos implementar.</p>
+      <div style="margin-top:36px">
+        <div class="phone reveal" id="waDemo">
+          <div class="wa-header">
+            <div class="wa-avatar">A</div>
+            <div class="wa-contact"><strong>Assistente da Lead</strong><small class="wa-status">online</small></div>
+          </div>
+          <div class="wa-body"><div class="wa-day">HOJE</div></div>
+          <div class="wa-chips"></div>
+          <div class="wa-input"><span>＋</span><div class="field">Mensagem</div><span>🎤</span></div>
+        </div>
+        <p style="margin-top:14px; font-size:0.8rem; color:var(--muted)">
+          * Simulação do fluxo real. Em produção, esta conversa acontece no WhatsApp do cliente.
+        </p>
+        <button class="btn btn-ghost" data-wa-restart="waDemo" style="margin-top:8px">↻ Reiniciar demo</button>
+      </div>
+    </div>
+  </section>
+  <script type="application/json" id="waDemo-script">
+  [
+    { "type": "msg", "from": "in", "text": "Olá! 👋 Diz-me o que precisas e avançamos por aqui." },
+    { "type": "chips", "options": [
+      { "label": "Quero um orçamento", "goto": "orcamento" },
+      { "label": "Que produtos têm?", "goto": "produtos" }
+    ]},
+    { "type": "label", "name": "orcamento" },
+    { "type": "msg", "from": "in", "text": "Perfeito! Envia-me [dados que a lead pede hoje] e trato já disso." },
+    { "type": "end" },
+    { "type": "label", "name": "produtos" },
+    { "type": "msg", "from": "in", "text": "Temos [produtos reais da lead]. Queres ver preços?" },
+    { "type": "end" }
+  ]
+  </script>
+
+  <!-- ============ 4. ROADMAP: o que construímos a seguir (opcional) ============ -->
+  <section class="section-alt" id="roadmap">
+    <div class="container center">
+      <span class="kicker">Depois do arranque</span>
+      <h2>O que construímos a seguir</h2>
+      <p class="lead">Após a fase inicial estar operacional, estas são as evoluções naturais.</p>
+      <div class="grid-3" style="margin-top:36px; text-align:left">
+        <div class="card reveal"><span class="badge">Fase 2</span><h3 style="margin-top:12px">Evolução 1</h3><p style="color:var(--muted); font-size:0.94rem; margin-top:8px">Descrição curta com benefício concreto.</p></div>
+        <div class="card reveal"><span class="badge">Fase 2</span><h3 style="margin-top:12px">Evolução 2</h3><p style="color:var(--muted); font-size:0.94rem; margin-top:8px">Descrição curta com benefício concreto.</p></div>
+        <div class="card reveal"><span class="badge">Fase 3</span><h3 style="margin-top:12px">Evolução 3</h3><p style="color:var(--muted); font-size:0.94rem; margin-top:8px">Descrição curta com benefício concreto.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. TIMELINE de implementação ============ -->
+  <section id="prazo">
+    <div class="container center">
+      <span class="kicker">Prazo</span>
+      <h2>Como chegamos lá em X semanas</h2>
+      <div class="timeline" style="margin-top:44px">
+        <div class="tl-step reveal"><div class="tl-dot">⚙</div><strong>Semanas 1-2</strong><span>Mapeamento e preparação</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🤖</div><strong>Semanas 2-4</strong><span>Desenvolvimento do agente</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🧪</div><strong>Semana 5</strong><span>Testes internos com a equipa</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🚀</div><strong>Semana 6</strong><span>Go-live e formação</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. INVESTIMENTO ============ -->
+  <section class="section-alt" id="investimento">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card price-card reveal">
+          <div class="label">Implementação</div>
+          <div class="price">X.XXX€ +IVA</div>
+          <div class="note">Desenvolvimento, análise e testes.</div>
+        </div>
+        <div class="card price-card reveal">
+          <div class="label">Avença mensal</div>
+          <div class="price">XXX€ +IVA</div>
+          <div class="note">Infraestrutura, IA, suporte e melhoria contínua.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. CTA FINAL: nome do decisor ============ -->
+  <section class="cta-final">
+    <div class="container center">
+      <h2>Pronto para avançar, [Nome]?</h2>
+      <p class="lead" style="margin:14px auto 30px">A solução final estará operacional em X semanas.</p>
+      <a href="https://aisolutions.pt/comecar" class="btn btn-primary">Falar com a AI Solutions →</a>
+    </div>
+  </section>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para [Nome da Lead]
+      <span class="disclaimer">Demonstração com dados ilustrativos, para fins de apresentação.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>waSim('waDemo');</script>
+</body>
+</html>

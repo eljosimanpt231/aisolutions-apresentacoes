@@ -1,0 +1,40 @@
+/* Estilo dark-premium (base: demo Thai Funchal) */
+:root {
+  --brand-hsl: 249 65% 62%;      /* roxo elétrico */
+  --accent-hsl: 249 65% 62%;
+  --gold-hsl: 43 88% 64%;        /* dourado: segunda voz, palavras de valor */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --gold: hsl(var(--gold-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(243 40% 6%);
+  --bg-soft: hsl(243 35% 8%);
+  --surface: hsl(243 28% 11%);
+  --surface-2: hsl(243 26% 14%);
+  --border: hsl(240 25% 24%);
+
+  --text: hsl(240 30% 94%);
+  --muted: hsl(240 12% 62%);
+
+  --success-hsl: 150 65% 48%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 80% 62%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 43 88% 58%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.18), transparent 60%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(265 70% 74%));
+  --grad-cta: linear-gradient(160deg, hsl(243 40% 8%), hsl(var(--accent-hsl) / 0.28));
+
+  --shadow-sm: 0 1px 3px hsl(243 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(243 60% 2% / 0.55);
+  --shadow-lg: 0 24px 64px hsl(243 60% 2% / 0.65);
+
+  --radius: 16px;
+  --radius-lg: 24px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 128px);
+}
+/* Nota: cards glass ficam melhor com:
+   background: hsl(243 28% 12% / 0.72); backdrop-filter: blur(12px); */

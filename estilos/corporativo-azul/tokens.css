@@ -1,0 +1,37 @@
+/* Estilo corporativo-azul (igual ao default do starter).
+   Ao aplicar: trocar --brand-hsl/--accent-hsl pela cor da lead se fizer sentido. */
+:root {
+  --brand-hsl: 217 71% 30%;
+  --accent-hsl: 217 91% 55%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(214 50% 96%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(214 45% 98%);
+  --border: hsl(215 28% 89%);
+
+  --text: hsl(218 35% 13%);
+  --muted: hsl(218 14% 44%);
+
+  --success-hsl: 152 60% 38%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 50%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 40 90% 50%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 60%, hsl(var(--accent-hsl) / 0.85));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
