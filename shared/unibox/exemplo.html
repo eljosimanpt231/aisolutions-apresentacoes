@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Unibox, exemplo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="unibox.css">
+  <style>
+    body { margin: 0; background: #06060a; padding: 40px 20px; font-family: Inter, sans-serif; }
+    .wrap { max-width: 1040px; margin: 0 auto; }
+    h1 { color: #ededed; font-size: 22px; margin: 0 0 6px; }
+    p.sub { color: rgba(237,237,237,0.55); font-size: 14px; margin: 0 0 24px; }
+    .frame { border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Tudo numa caixa de entrada so</h1>
+    <p class="sub">Email, Instagram, Facebook e WhatsApp num so sitio. A equipa abre um separador e ve tudo, com o historico de cada cliente.</p>
+    <div class="frame">
+      <div class="unibox" id="demoInbox"></div>
+    </div>
+  </div>
+
+  <script type="application/json" id="demoInbox-config">
+  {
+    "brand": "Empresa Exemplo",
+    "teamName": "Equipa Exemplo",
+    "teamEmail": "geral@exemplo.pt",
+    "teamInitials": "EE",
+    "agentName": "Agente AI Solutions",
+    "accounts": ["Loja Centro", "Loja Norte"],
+    "channels": ["email", "instagram", "facebook", "whatsapp"],
+    "labels": {
+      "orcamento": { "name": "orcamento", "color": "#00d4aa", "priority": 0 },
+      "marcacao":  { "name": "marcacao", "color": "#3a86ff", "priority": 1 },
+      "duvida":    { "name": "duvida geral", "color": "#E8B84B", "priority": 2 },
+      "pos_venda": { "name": "pos-venda", "color": "#f472b6", "priority": 3 }
+    },
+    "conversations": [
+      {
+        "id": 1, "name": "Nortec Sistemas", "initials": "NS", "phone": "+351 229 440 118",
+        "email": "geral@nortec.pt", "account": "Loja Centro", "channel": "email",
+        "label": "orcamento", "tab": "unassigned", "timeAgo": "9m", "unread": 1,
+        "preview": "Parece-nos bem. Podem confirmar a disponibilidade?",
+        "messages": [
+          { "sender": "client", "text": "Precisamos de um orcamento para 180 pessoas, dia 12 de dezembro.", "time": "09:32" },
+          { "sender": "agent", "isAI": true, "text": "Com deslocacao incluida, fica em **1.480,00 EUR** mais IVA. A equipa confirma a disponibilidade.", "time": "09:33" },
+          { "sender": "client", "text": "Parece-nos bem. Podem confirmar a disponibilidade?", "time": "09:41" }
+        ],
+        "attributes": [
+          { "key": "Tipo de cliente", "value": "Empresa" },
+          { "key": "Data", "value": "12 dez" },
+          { "key": "Nº de pessoas", "value": "180" },
+          { "key": "Proposta nº", "value": "214" }
+        ],
+        "notes": ["Pedido padronizado, respondido pelo agente com valor de tabela."]
+      },
+      {
+        "id": 2, "name": "Claudia Nunes", "initials": "CN", "phone": "+351 916 220 447",
+        "account": "Loja Norte", "channel": "whatsapp", "label": "marcacao",
+        "tab": "unassigned", "timeAgo": "32m",
+        "preview": "Sim, para sabado de manha se possivel.",
+        "messages": [
+          { "sender": "client", "text": "Queria marcar para a semana que vem.", "time": "09:10" },
+          { "sender": "agent", "isAI": true, "text": "Claro. Tenho vaga na quinta as 15h ou sabado as 10h. Qual prefere?", "time": "09:11" },
+          { "sender": "client", "text": "Sim, para sabado de manha se possivel.", "time": "09:18" }
+        ],
+        "attributes": [
+          { "key": "Tipo de cliente", "value": "Particular" },
+          { "key": "Preferencia", "value": "Sabado 10h" }
+        ],
+        "notes": ["Entrou pelo widget de WhatsApp do site."]
+      },
+      {
+        "id": 3, "name": "Camara Municipal", "initials": "CM", "phone": "+351 256 330 900",
+        "email": "cultura@cm-exemplo.pt", "account": "Loja Centro", "channel": "email",
+        "label": "orcamento", "tab": "mine", "timeAgo": "1 d", "unread": 2,
+        "preview": "Projeto a medida, 15 dias.",
+        "messages": [
+          { "sender": "client", "text": "Precisamos de um projeto a medida para 15 dias.", "time": "17:02" },
+          { "sender": "agent", "isAI": true, "text": "E um projeto a medida. Encaminhei ja para o responsavel.", "time": "17:02" },
+          { "sender": "system", "text": "Conversa encaminhada para a equipa, projeto a medida.", "time": "17:03" }
+        ],
+        "attributes": [
+          { "key": "Tipo de cliente", "value": "Institucional" },
+          { "key": "Duracao", "value": "1 a 15 dez" }
+        ],
+        "notes": ["Projeto a medida, encaminhado para o responsavel."]
+      },
+      {
+        "id": 4, "name": "Marta Pinheiro", "initials": "MP", "account": "Loja Centro",
+        "channel": "instagram", "label": "duvida", "tab": "unassigned", "timeAgo": "1 d",
+        "preview": "Vi o vosso video, fazem tambem para 80 pessoas?",
+        "messages": [
+          { "sender": "client", "text": "Vi o vosso video, fazem tambem para 80 pessoas?", "time": "21:14" },
+          { "sender": "agent", "isAI": true, "text": "Fazemos, sim. Diga-me a data e o local que ja lhe dou uma estimativa.", "time": "21:14" }
+        ],
+        "attributes": [
+          { "key": "Tipo de cliente", "value": "Particular" },
+          { "key": "Nº de pessoas", "value": "80" }
+        ],
+        "notes": ["Falta a data e o local para fechar a estimativa."]
+      },
+      {
+        "id": 5, "name": "Sr. Almeida", "initials": "SA", "phone": "+351 934 771 205",
+        "account": "Loja Norte", "channel": "facebook", "label": "pos_venda", "tab": "mine",
+        "timeAgo": "2 d", "preview": "Correu tudo muito bem, obrigado!",
+        "messages": [
+          { "sender": "agent", "isAI": true, "text": "Ola! Como correu o servico da semana passada?", "time": "10:00" },
+          { "sender": "client", "text": "Correu tudo muito bem, obrigado!", "time": "11:26" }
+        ],
+        "attributes": [
+          { "key": "Tipo de cliente", "value": "Empresa" }
+        ],
+        "notes": ["Pedido de avaliacao pos-servico."]
+      }
+    ]
+  }
+  </script>
+
+  <script src="unibox.js"></script>
+  <script>unibox('demoInbox');</script>
+</body>
+</html>

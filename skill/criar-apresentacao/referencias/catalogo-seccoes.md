@@ -81,13 +81,15 @@ O mais forte de todos. Transforma "confia em nós" em "vê o agente a pensar e a
 
 **Variantes conforme o tom:** digitação carácter a carácter (mais realista); sincronização mensagem-a-mensagem via `setInterval` ~850ms (efeito mais forte); terminal de logs para back-office/dados; "gap" temporal ("Sem resposta há 3 horas") para mostrar follow-up automático; waveform + transcrição para mensagens de voz.
 
-## Unibox (componente canónico)
+## Unibox (componente pronto a usar)
 
-Caixa de entrada unificada estilo Front/Intercom. O código de referência está em `unibox-canonico.tsx` (versão React do Lovable). A base é FIXA: sidebar (contas + canais + etiquetas) + lista de conversas (abas Minhas/Não atribuídas/Todas) + vista de conversa (bolhas, botão Resolver, nota privada) + painel de contacto colapsável (atributos, notas, macros, agendadas).
+Caixa de entrada unificada estilo Front/Intercom. Já está portada para HTML/CSS/JS puro em `shared/unibox/` (css + js + `exemplo.html`). NÃO reconstruir do zero: incluir o componente e preencher o config. Instruções completas e esquema do config em `unibox-config.md`. O `unibox-canonico.tsx` é só a referência histórica em React.
 
-**Só se adapta 3 coisas por lead:**
+A base é FIXA: sidebar (contas + canais + etiquetas) + lista de conversas (abas Minhas/Não atribuídas/Todas) + vista de conversa (bolhas, botão Resolver, nota privada) + painel de contacto colapsável (atributos, notas).
+
+**Só se adapta 3 coisas por lead, via config:**
 - **Canais**: subconjunto de email, Instagram, Facebook, WhatsApp.
 - **Etiquetas**: por serviço/segmento do negócio da lead.
 - **Contas ou equipa**: por loja, por linha de negócio, ou por pessoa da equipa.
 
-Truque: manter a Unibox em dark mode dentro de um deck claro, emoldurada como "janela de produto real".
+A Unibox tem paleta própria escura (parece um produto real, mesmo dentro de um deck claro), emoldurada como "janela de produto". A cor de acento alinha-se com a marca via `--ub-accent`.

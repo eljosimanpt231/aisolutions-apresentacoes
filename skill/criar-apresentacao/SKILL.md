@@ -47,7 +47,8 @@ Seguir `referencias/branding-lead.md`: extrair logo e cores do site dela, gerar 
 - Copiar `starter/` para `[slug]/` na raiz do repo
 - Substituir `assets/css/tokens.css` pelo do estilo escolhido, com `--brand-hsl`/`--accent-hsl` da lead
 - Escrever o conteúdo real secção a secção. O momento uau (chat + raciocínio) usa produtos/serviços REAIS da lead (4 a 6 trocas, terminar com algo que ela ache impossível, incluir 1 cenário de recusa consciente). Guardar os cenários em dados separados do template
-- Para os componentes (chat+raciocínio, calculadora de ROI, diagrama de fluxo, terminal de logs, cartões de investimento, Unibox, etc.) seguir `referencias/catalogo-seccoes.md`. O código de referência da Unibox está em `referencias/unibox-canonico.tsx` (React do Lovable): é base fixa, só se adaptam canais, etiquetas e contas ao negócio da lead
+- Para os componentes (chat+raciocínio, calculadora de ROI, diagrama de fluxo, terminal de logs, cartões de investimento, etc.) seguir `referencias/catalogo-seccoes.md`
+- A **Unibox** já está pronta em `shared/unibox/` (não reconstruir): incluir o css/js e preencher o config com os canais, etiquetas e contas da lead. Instruções em `referencias/unibox-config.md`
 - Cumprir `referencias/regras-design.md` à letra
 
 ### 5. Loop de screenshots (obrigatório antes de publicar)
