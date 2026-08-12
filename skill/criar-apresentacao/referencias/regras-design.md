@@ -83,3 +83,15 @@ Checklist de crítica (ler os PNG e responder honestamente):
 - [ ] Os espaçamentos respiram (secções não coladas)?
 - [ ] Parece feito à medida da lead ou parece template? (se template: refazer tokens/hero)
 - [ ] A simulação WhatsApp corre e o guião faz sentido?
+
+## Standard de qualidade (o nível Lovable)
+
+Isto é um NÍVEL de qualidade, não um template. O design, as cores, a estrutura e o conteúdo variam sempre por lead (ver "cor deriva do nicho" e a biblioteca de `estilos`). Uma apresentação nunca deve ser um clone de outra. O que tem de estar sempre ao nível é:
+
+- [ ] **Momento uau interativo**: usa o componente `chatRaciocinio` (shared/deck), 3 a 4 cenários REAIS da lead, conversa e raciocínio sincronizados. Não uma imagem estática nem uma lista fixa.
+- [ ] **Componentes prontos, não caseiros**: chat+raciocínio, fluxo, Unibox, calculadora e terminal vêm de `shared/` preenchidos por config. Não reconstruir versões pobres à mão.
+- [ ] **Unibox completa** (quando usada): sidebar, cabeçalho da lista, ações do compositor e painel de contacto todos presentes (é o `shared/unibox`, não um recorte).
+- [ ] **Polish**: eyebrow em pill, cards com borda subtil e reveal/float-in, fundo com textura/glow quando o estilo é escuro, par tipográfico (display + corpo). Nunca "Inter em tudo sobre branco".
+- [ ] **Feito à medida**: vocabulário e serviços reais da lead, nome do decisor no CTA, pelo menos 1 detalhe hiper-específico (um hábito, uma frase, um sistema que ela usa). Se parece que serviria a qualquer empresa, falta trabalho.
+- [ ] **Confiança**: limites do agente claros, transparência de custos, e (em setores sensíveis) as 3 regras do agente.
+- [ ] **Interativo, não passivo**: algo mexe e responde ao toque (tabs, sliders, filtros da Unibox), não só scroll.

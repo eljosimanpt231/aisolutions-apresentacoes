@@ -148,4 +148,49 @@
       itv = setInterval(function () { active = (active + 1) % nodes.length; render(); }, STEP);
     });
   };
+
+  /* ---------------- calculadora de ROI ---------------- */
+  window.calculadora = function (id) {
+    var root = document.getElementById(id), cfg = readCfg(id);
+    if (!root || !cfg) return;
+    var inputs = cfg.inputs || [], outputs = cfg.outputs || [];
+    var val = {}; inputs.forEach(function (i) { val[i.id] = i.default != null ? i.default : (i.min || 0); });
+    var fns = outputs.map(function (o) { try { return new Function(inputs.map(function (i) { return i.id; }).join(","), "return (" + o.expr + ")"); } catch (e) { return function () { return 0; }; } });
+    function fmt(n, o) { var d = o.decimals != null ? o.decimals : 0, v = isFinite(n) ? n : 0; return (o.prefix || "") + v.toLocaleString("pt-PT", { minimumFractionDigits: d, maximumFractionDigits: d }) + (o.suffix || ""); }
+    function calc() { var a = inputs.map(function (i) { return val[i.id]; }); return outputs.map(function (o, k) { var r; try { r = fns[k].apply(null, a); } catch (e) { r = 0; } return fmt(r, o); }); }
+    function render() {
+      var h = '<div class="calc-inputs">';
+      inputs.forEach(function (i) { h += '<div class="calc-in"><div class="calc-in-top"><label>' + esc(i.label) + '</label><b id="' + id + "-v-" + i.id + '">' + (i.prefix || "") + val[i.id] + (i.suffix || "") + '</b></div><input class="calc-range" type="range" data-k="' + i.id + '" min="' + i.min + '" max="' + i.max + '" step="' + (i.step || 1) + '" value="' + val[i.id] + '"></div>'; });
+      h += '</div><div class="calc-outs">';
+      var res = calc();
+      outputs.forEach(function (o, k) { h += '<div class="calc-out ' + (o.highlight ? "hl" : "") + '"><div class="lbl">' + esc(o.label) + '</div><div class="val" id="' + id + "-o-" + k + '">' + res[k] + "</div></div>"; });
+      h += "</div>";
+      if (cfg.note) h += '<p class="calc-note">' + esc(cfg.note) + "</p>";
+      root.innerHTML = h;
+    }
+    root.addEventListener("input", function (e) {
+      var el = e.target.closest(".calc-range"); if (!el) return;
+      var k = el.getAttribute("data-k"); val[k] = parseFloat(el.value);
+      var inp = inputs.filter(function (i) { return i.id === k; })[0], lab = document.getElementById(id + "-v-" + k);
+      if (lab) lab.textContent = (inp.prefix || "") + val[k] + (inp.suffix || "");
+      var res = calc(); outputs.forEach(function (o, kk) { var d = document.getElementById(id + "-o-" + kk); if (d) d.textContent = res[kk]; });
+    });
+    render();
+  };
+
+  /* ---------------- terminal de logs ---------------- */
+  window.terminal = function (id) {
+    var root = document.getElementById(id), cfg = readCfg(id);
+    if (!root || !cfg) return;
+    var lines = cfg.lines || [], IV = cfg.intervalMs || 650, started = false, shown = 0, timer = null;
+    function render() {
+      var h = '<div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>' + esc(cfg.title || "agente.log") + '</span></div><div class="term-body">';
+      for (var i = 0; i < shown; i++) { var l = lines[i]; h += '<div class="term-line ' + (l.tone || "info") + '"><span class="pre">&gt;</span><span>' + esc(l.text) + "</span></div>"; }
+      if (shown < lines.length) h += '<div class="term-line info"><span class="pre">&gt;</span><span class="term-cursor"></span></div>';
+      h += "</div></div>"; root.innerHTML = h;
+    }
+    function tick() { if (shown < lines.length) { shown++; render(); timer = setTimeout(tick, IV); } else render(); }
+    render();
+    inView(root, function () { if (started) return; started = true; tick(); });
+  };
 })();

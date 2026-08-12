@@ -84,3 +84,56 @@ Config:
 Regras:
 - `tone`: `brand` (primeiro e último nó, cor da marca) e `teal` (nós intermédios, cor do agente). Padrão Lovable: brand nas pontas, teal no meio.
 - 5 nós é o número típico. `channels` opcional (linha de canais por cima).
+
+## 3. Calculadora de ROI
+
+Sliders com resultado ao vivo. Justifica o valor com os números do próprio negócio da lead.
+
+```html
+<div class="calc" id="xRoi"></div>
+<script type="application/json" id="xRoi-config"> { ...config... } </script>
+<script>calculadora('xRoi');</script>
+```
+
+Config (as fórmulas usam os `id` dos inputs; `highlight:true` mostra o output em grande):
+```json
+{
+  "inputs": [
+    { "id": "orcamentos", "label": "Orçamentos por dia", "min": 1, "max": 40, "default": 15 },
+    { "id": "minutos", "label": "Minutos por orçamento", "min": 5, "max": 40, "default": 15, "suffix": " min" }
+  ],
+  "outputs": [
+    { "label": "Horas poupadas por mês", "expr": "(orcamentos*minutos*22*0.9)/60", "suffix": "h", "decimals": 0, "highlight": true },
+    { "label": "Capacidade extra por mês", "expr": "orcamentos*22*0.5", "suffix": " orçamentos", "decimals": 0 }
+  ],
+  "note": "Estimativa ilustrativa, valores reais a confirmar convosco."
+}
+```
+
+Regras: 2 a 4 inputs, 1 a 4 outputs, fórmula sempre visível ao cliente pela descrição do output. Nunca esconder um resultado desfavorável, reenquadrar ("a partir do mês X"). Aplicar um clamp mental aos limites dos sliders para o output nunca sair de um intervalo plausível.
+
+## 4. Terminal de logs
+
+Para automações de back-office/dados (faturação, reconciliação, extração). Mais credível que um chat quando o processo não é uma conversa.
+
+```html
+<div class="term" id="xTerm"></div>
+<script type="application/json" id="xTerm-config"> { ...config... } </script>
+<script>terminal('xTerm');</script>
+```
+
+Config:
+```json
+{
+  "title": "agente.log",
+  "intervalMs": 650,
+  "lines": [
+    { "text": "A ler fatura recebida por email...", "tone": "info" },
+    { "text": "Fornecedor reconhecido: ACME Lda", "tone": "ok" },
+    { "text": "Artigo nao classificado, sinalizado para revisao", "tone": "warn" },
+    { "text": "Lancado no sistema. 1 excecao para a equipa.", "tone": "success" }
+  ]
+}
+```
+
+Regras: `tone` por linha (info cinza, ok verde-claro, warn âmbar, success verde forte). Incluir sempre pelo menos 1 linha `warn` (uma exceção sinalizada), reforça "nunca erra em silêncio".

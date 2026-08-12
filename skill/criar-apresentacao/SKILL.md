@@ -57,6 +57,7 @@ Seguir `referencias/branding-lead.md`: extrair logo e cores do site dela, gerar 
 ### 5. Loop de screenshots (obrigatório antes de publicar)
 - Screenshot desktop (1440px) e mobile (390px) da página completa (script pronto em `referencias/regras-design.md`)
 - Ler os screenshots e criticar contra o design.md e os screenshots do estilo: contraste, overflow, alinhamento, hierarquia, "parece genérico?"
+- Correr o checklist "Standard de qualidade (o nível Lovable)" de `referencias/regras-design.md`: momento uau interativo, componentes prontos (não caseiros), Unibox completa, polish, feito à medida da lead
 - Corrigir e repetir. Mínimo 2 passagens, parar quando não houver defeitos óbvios
 
 ### 6. Publicar
