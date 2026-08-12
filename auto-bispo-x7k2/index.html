@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
   <link rel="stylesheet" href="../shared/unibox/unibox.css">
   <script src="config.js"></script>
   <style>
@@ -159,7 +160,7 @@
   <section class="section-alt" id="problema">
     <div class="container">
       <div class="center">
-        <span class="kicker">O ponto de partida</span>
+        <span class="eyebrow">O ponto de partida</span>
         <h2>Muitos canais, poucas mãos, negócio que escapa.</h2>
         <p class="lead">Os pedidos entram por todo o lado ao mesmo tempo. Enquanto se atende um carro na oficina, ficam mensagens por responder, e cada resposta que tarda é um cliente que pode ir a outro lado.</p>
       </div>
@@ -182,7 +183,7 @@
   <section id="solucao">
     <div class="container">
       <div class="center">
-        <span class="kicker">A solução</span>
+        <span class="eyebrow">A solução</span>
         <h2>O que vamos construir.</h2>
         <p class="lead">Um agente de IA que atende primeiro, resolve o que é rotina e entrega à equipa só o que precisa mesmo de mãos humanas.</p>
       </div>
@@ -205,35 +206,12 @@
   <section class="section-alt" id="demo">
     <div class="container">
       <div class="center">
-        <span class="kicker">Demonstração</span>
+        <span class="eyebrow">Como funciona na prática</span>
         <h2>O agente a trabalhar, ao vivo.</h2>
-        <p class="lead">Um pedido de orçamento como os que entram todos os dias. À esquerda a conversa, à direita o que o agente faz por dentro.</p>
+        <p class="lead">Quatro cenários reais de uma oficina: a conversa com o cliente à esquerda, o raciocínio do agente à direita. Escolha um cenário ou deixe correr.</p>
       </div>
-      <div class="demo-grid" style="margin-top:44px">
-        <div>
-          <div class="phone reveal" id="waDemo">
-            <div class="wa-header">
-              <div class="wa-avatar">AB</div>
-              <div class="wa-contact"><strong>Assistente Auto Bispo</strong><small class="wa-status">online</small></div>
-            </div>
-            <div class="wa-body"><div class="wa-day">HOJE</div></div>
-            <div class="wa-chips"></div>
-            <div class="wa-input"><span>＋</span><div class="field">Mensagem</div><span>🎤</span></div>
-          </div>
-          <p class="demo-note">Valores ilustrativos. O agente usa sempre a tabela real da Auto Bispo.</p>
-          <div class="center"><button class="btn btn-ghost" data-wa-restart="waDemo" style="margin-top:8px">↻ Repetir</button></div>
-        </div>
-        <div class="reason reveal">
-          <h3 style="margin-bottom:16px">Raciocínio do agente</h3>
-          <ol>
-            <li><b>Identifica o cliente e o carro</b><span>Reconhece o Golf 1.6 TDI e vai buscar a ficha ao OfficeGest.</span></li>
-            <li><b>Consulta o histórico e a base de conhecimento</b><span>Vê serviços anteriores e os preços de tabela para travões.</span></li>
-            <li><b>Calcula um pré-orçamento</b><span>Dá uma baliza realista, sem fechar valores que precisam de olho humano.</span></li>
-            <li><b>Verifica a agenda e propõe horário</b><span>Encontra uma vaga e sugere um dia ao cliente.</span></li>
-            <li><b>Regista no OfficeGest e avisa a equipa</b><span>Deixa a marcação e a nota prontas para a oficina confirmar.</span></li>
-          </ol>
-        </div>
-      </div>
+      <div class="cr reveal" id="abDemo" style="margin-top:40px"></div>
+      <p class="demo-note">Valores ilustrativos. O agente usa sempre a tabela real da Auto Bispo.</p>
     </div>
   </section>
 
@@ -241,27 +219,11 @@
   <section id="fluxo">
     <div class="container">
       <div class="center">
-        <span class="kicker">Como se liga</span>
+        <span class="eyebrow">Ligado ao OfficeGest</span>
         <h2>Cada mensagem passa por este fluxo.</h2>
-        <p class="lead">Entre por onde entrar, a mensagem segue sempre o mesmo caminho e acaba organizada no vosso sistema.</p>
+        <p class="lead">Tudo o que o agente faz fica sincronizado com o sistema que a oficina já usa. Nenhum passo extra para a equipa.</p>
       </div>
-      <div class="chans reveal" style="margin-top:36px">
-        <span class="chan-pill"><i style="background:#25D366"></i>WhatsApp</span>
-        <span class="chan-pill"><i style="background:#e1306c"></i>Instagram</span>
-        <span class="chan-pill"><i style="background:#1877F2"></i>Facebook</span>
-        <span class="chan-pill"><i style="background:var(--accent)"></i>Site</span>
-      </div>
-      <div class="flow reveal">
-        <div class="flow-node"><span class="n">01</span><strong>Mensagem recebida</strong></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node"><span class="n">02</span><strong>Identifica o cliente</strong></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node"><span class="n">03</span><strong>Consulta a base de conhecimento</strong></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node key"><span class="n">04</span><strong>Decide a ação</strong></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node"><span class="n">05</span><strong>Atualiza o OfficeGest</strong></div>
-      </div>
+      <div class="fluxo reveal" id="abFluxo" style="margin-top:36px"></div>
     </div>
   </section>
 
@@ -269,7 +231,7 @@
   <section class="section-alt" id="plataforma">
     <div class="container">
       <div class="center">
-        <span class="kicker">A plataforma</span>
+        <span class="eyebrow">A plataforma</span>
         <h2>Uma caixa. Tudo dentro.</h2>
         <p class="lead">WhatsApp, Instagram e Facebook num só sítio. A equipa abre um separador e vê tudo, com o histórico de cada cliente e o que o agente já tratou.</p>
       </div>
@@ -287,7 +249,7 @@
   <section id="investimento">
     <div class="container">
       <div class="center">
-        <span class="kicker">Investimento</span>
+        <span class="eyebrow">Investimento</span>
         <h2>Um funcionário. A trabalhar dia e noite.</h2>
         <p class="lead">O valor mensal é comparável a cerca de um quarto do custo de um funcionário dedicado, e o agente não tira férias nem falta.</p>
       </div>
@@ -331,7 +293,7 @@
   <!-- ============ CRONOGRAMA ============ -->
   <section class="section-alt" id="prazo">
     <div class="container center">
-      <span class="kicker">Prazo</span>
+      <span class="eyebrow">Prazo</span>
       <h2>5 a 6 semanas para arrancar.</h2>
       <div class="timeline" style="grid-template-columns:repeat(3,1fr); margin-top:48px; max-width:820px; margin-left:auto; margin-right:auto">
         <div class="tl-step reveal"><div class="tl-dot">🔍</div><strong>Semanas 1-2</strong><span>Auditoria dos canais, do OfficeGest e da tabela de serviços</span></div>
@@ -357,27 +319,108 @@
     </div>
   </footer>
 
-  <!-- Simulação WhatsApp (momento uau) -->
-  <script type="application/json" id="waDemo-script">
-  [
-    { "type": "msg", "from": "in", "text": "Olá! Sou o assistente da Auto Bispo. Em que posso ajudar?" },
-    { "type": "chips", "options": [
-      { "label": "Quero um orçamento", "goto": "orc" },
-      { "label": "Marcar uma revisão", "goto": "rev" }
-    ]},
-    { "type": "label", "name": "orc" },
-    { "type": "msg", "from": "in", "text": "Com certeza. Qual é o carro e o que precisa?" },
-    { "type": "msg", "from": "out", "text": "Golf 1.6 TDI, os travões da frente andam a chiar" },
-    { "type": "msg", "from": "in", "text": "Pelo histórico de um Golf desses, pastilhas e discos da frente ficam tipicamente entre 180 e 240 EUR, já com mão de obra. Quer que marque para esta semana?" },
-    { "type": "msg", "from": "out", "text": "Sim, quinta de manhã se der" },
-    { "type": "msg", "from": "in", "text": "Quinta às 9h30 fica reservado. Deixei a marcação no OfficeGest e o Sr. Bispo confirma. Quer carro de cortesia?" },
-    { "type": "end" },
-    { "type": "label", "name": "rev" },
-    { "type": "msg", "from": "in", "text": "Boa. Qual a matrícula ou o modelo, e a quilometragem atual?" },
-    { "type": "msg", "from": "out", "text": "Corsa 1.2, quase nos 100 mil" },
-    { "type": "msg", "from": "in", "text": "É altura da revisão dos 100 mil. Tenho vaga na terça às 10h ou na sexta às 14h. Qual prefere?" },
-    { "type": "end" }
-  ]
+  <!-- Chat + raciocínio (momento uau) -->
+  <script type="application/json" id="abDemo-config">
+  {
+    "agentName": "Agente Auto Bispo", "agentInitials": "AB", "chatStatus": "WhatsApp Business, online",
+    "scenarios": [
+      {
+        "title": "Chamada perdida", "subtitle": "Recupera automaticamente uma chamada não atendida.",
+        "chat": [
+          { "sender": "system", "text": "Chamada perdida às 15:41 de +351 962 118 044", "time": "15:41" },
+          { "sender": "agent", "text": "Olá Sr. João, aqui é a Auto Bispo. Vimos a sua chamada e não conseguimos atender. Em que podemos ajudar?", "time": "15:42" },
+          { "sender": "client", "text": "Boa tarde. Queria marcar uma revisão para o meu Golf.", "time": "15:44" },
+          { "sender": "agent", "text": "Com certeza. Vejo que o seu Golf 1.6 TDI está perto dos 90.000 km. Confirma a matrícula 76-AB-45?", "time": "15:44" },
+          { "sender": "client", "text": "Sim, é essa.", "time": "15:45" },
+          { "sender": "agent", "text": "Tenho vaga na quinta às 9h. Fica agendado?", "time": "15:45" }
+        ],
+        "steps": [
+          { "icon": "phone-missed", "label": "Deteta chamada não atendida" },
+          { "icon": "search", "label": "Procura o número no OfficeGest" },
+          { "icon": "id", "label": "Encontra o cliente: João Ramos, VW Golf 1.6 TDI" },
+          { "icon": "message", "label": "Gera mensagem personalizada com o nome" },
+          { "icon": "send", "label": "Envia por WhatsApp automaticamente" },
+          { "icon": "ear", "label": "Interpreta o pedido: revisão" },
+          { "icon": "calendar", "label": "Verifica a agenda e propõe vaga" }
+        ]
+      },
+      {
+        "title": "Pré-orçamento", "subtitle": "Valor tabelado ou faixa, sempre da base de conhecimento.",
+        "chat": [
+          { "sender": "client", "text": "Bom dia, quanto custa mudar as pastilhas e discos à frente num Peugeot 308 de 2018?", "time": "10:12" },
+          { "sender": "agent", "text": "Bom dia! Para o 308 (2018), com peças de qualidade equivalente à original, o valor fica entre 180 € e 240 €, mão de obra incluída. Confirma-se após diagnóstico presencial. Quer marcar?", "time": "10:12" },
+          { "sender": "client", "text": "E uma revisão simples?", "time": "10:13" },
+          { "sender": "agent", "text": "A revisão está tabelada: 160 €, com óleo, filtros e verificação de 30 pontos.", "time": "10:13" }
+        ],
+        "steps": [
+          { "icon": "wrench", "label": "Identifica o serviço: travões dianteiros" },
+          { "icon": "list", "label": "Verifica se é valor tabelado ou variável" },
+          { "icon": "arrows", "label": "Travões: variável por peça e modelo, faixa 180 a 240 €" },
+          { "icon": "check", "label": "Revisão: valor tabelado fixo, 160 €" },
+          { "icon": "book", "label": "Consulta a base de conhecimento na drive partilhada" },
+          { "icon": "shield", "label": "Nunca inventa preços de sites externos" },
+          { "icon": "calendar", "label": "Propõe marcação" }
+        ]
+      },
+      {
+        "title": "Fora de horas", "subtitle": "Qualifica e marca mesmo às 2 da manhã.",
+        "chat": [
+          { "sender": "system", "text": "Mensagem recebida às 02:14", "time": "02:14" },
+          { "sender": "client", "text": "Boa noite, o meu carro deixou-me na estrada, preciso de ver isto o quanto antes.", "time": "02:14" },
+          { "sender": "agent", "text": "Lamento o sucedido. Mesmo a esta hora consigo já deixar-lhe uma marcação. É cliente nosso ou primeira vez na Auto Bispo?", "time": "02:14" },
+          { "sender": "client", "text": "Primeira vez.", "time": "02:15" },
+          { "sender": "agent", "text": "Bem-vindo. Trabalhamos por marcação, mas encaixamos avarias entre marcações. Consigo recebê-lo amanhã às 8h30. Fica agendado?", "time": "02:15" }
+        ],
+        "steps": [
+          { "icon": "clock", "label": "Mensagem recebida fora do horário comercial (02:14)" },
+          { "icon": "bot", "label": "O agente continua ativo 24 horas por dia" },
+          { "icon": "alert", "label": "Avalia a urgência: avaria, cliente imobilizado" },
+          { "icon": "star", "label": "Qualifica: cliente novo, oportunidade de fidelização" },
+          { "icon": "book", "label": "Aplica a política: encaixamos avarias entre marcações" },
+          { "icon": "calendar", "label": "Verifica a primeira vaga disponível" },
+          { "icon": "check", "label": "Agenda e confirma" }
+        ]
+      },
+      {
+        "title": "Escalar e filtrar", "subtitle": "Sabe quando chamar uma pessoa e quando arquivar spam.",
+        "chat": [
+          { "sender": "client", "text": "O carro entrou aqui há uma semana e saiu pior. Estou muito insatisfeito.", "time": "11:02" },
+          { "sender": "agent", "text": "Lamento sinceramente. Este é um caso que quero que a nossa equipa trate pessoalmente e com atenção. Vou passar já para um responsável, com todo o histórico da conversa.", "time": "11:02" },
+          { "sender": "system", "text": "Conversa escalada para a equipa, com histórico completo", "time": "11:02" },
+          { "sender": "client", "text": "PROMOÇÃO! Ganhe seguidores para a sua página, clique aqui...", "time": "11:47" },
+          { "sender": "system", "text": "Mensagem classificada como spam e arquivada. A receção não é incomodada.", "time": "11:47" }
+        ],
+        "steps": [
+          { "icon": "ear", "label": "Analisa o tom e o tema: reclamação sensível" },
+          { "icon": "alert", "label": "Deteta risco de insatisfação" },
+          { "icon": "shield", "label": "Decide não responder sozinho" },
+          { "icon": "user-cog", "label": "Escala para um humano com o histórico completo" },
+          { "icon": "filter", "label": "Analisa a mensagem seguinte, reconhece padrão de spam" },
+          { "icon": "ban", "label": "Arquiva automaticamente, sem notificar a equipa" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fluxo: ligado ao OfficeGest -->
+  <script type="application/json" id="abFluxo-config">
+  {
+    "channels": [
+      { "icon": "globe", "label": "Site" },
+      { "icon": "whatsapp", "label": "WhatsApp" },
+      { "icon": "instagram", "label": "Instagram" },
+      { "icon": "facebook", "label": "Facebook" }
+    ],
+    "nodes": [
+      { "icon": "message", "title": "Mensagem recebida", "detail": "Site, WhatsApp, Instagram e Facebook, tudo no mesmo sítio.", "tone": "brand" },
+      { "icon": "id", "title": "Identifica o cliente", "detail": "Ficha no OfficeGest, matrícula e histórico de serviços.", "tone": "teal" },
+      { "icon": "book", "title": "Consulta a base de conhecimento", "detail": "Drive partilhada: preços, procedimentos e políticas.", "tone": "teal" },
+      { "icon": "brain", "title": "Decide a ação", "detail": "Responder, pré-orçamentar, marcar ou escalar para a equipa.", "tone": "teal" },
+      { "icon": "database", "title": "Atualiza o OfficeGest", "detail": "Marcação, notas do cliente e histórico da conversa.", "tone": "brand" }
+    ],
+    "note": "Toda a informação fica sincronizada com o OfficeGest. A equipa continua a trabalhar no sistema que já conhece."
+  }
   </script>
 
   <!-- Unibox: config da Auto Bispo -->
@@ -387,7 +430,10 @@
     "teamName": "Equipa Auto Bispo",
     "teamEmail": "geral@autobispo.pt",
     "teamInitials": "AB",
+    "teamShort": "Receção",
     "agentName": "Agente Auto Bispo",
+    "systemName": "OfficeGest",
+    "tabLabels": { "mine": "Para equipa", "unassigned": "Agente", "all": "Todas" },
     "accounts": [],
     "channels": ["whatsapp", "instagram", "facebook"],
     "labels": {
@@ -474,9 +520,11 @@
 
   <script src="../shared/js/protect.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="../shared/deck/deck.js"></script>
   <script src="../shared/unibox/unibox.js"></script>
   <script>
-    waSim('waDemo');
+    chatRaciocinio('abDemo');
+    fluxo('abFluxo');
     unibox('abInbox');
   </script>
 </body>
