@@ -69,6 +69,8 @@ Tudo portável para HTML/CSS/JS puro (sem frameworks).
 
 ## O componente-assinatura: chat + raciocínio do agente
 
+**Já está pronto em `shared/deck/` (função `chatRaciocinio`). NÃO reconstruir: incluir e preencher o config. Instruções em `deck-componentes.md`. É o momento uau por defeito (mais forte que a simulação WhatsApp simples do starter).** O diagrama de fluxo animado também está pronto (`fluxo`) no mesmo sítio.
+
 O mais forte de todos. Transforma "confia em nós" em "vê o agente a pensar e a agir".
 
 **Anatomia:** duas colunas. Esquerda = conversa (bolhas estilo WhatsApp/Instagram, "a escrever..." antes de cada resposta, scroll automático). Direita = lista numerada de passos do raciocínio que acendem em sincronia (número -> spinner -> check). Tabs no topo para 4 a 6 cenários. Botão "Repetir".
