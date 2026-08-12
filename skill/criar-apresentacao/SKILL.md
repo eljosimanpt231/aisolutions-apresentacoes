@@ -15,6 +15,7 @@ Cria uma página web de apresentação personalizada para uma lead, com o brandi
 
 ## Regras invioláveis
 
+- **OBRIGATÓRIO reutilizar a arquitetura e os componentes das apresentações anteriores como base de qualidade.** Antes de construir, estudar os componentes prontos em `shared/` e um protótipo recente (ex.: `auto-bispo-x7k2/`). O momento uau é o `chatRaciocinio`, a caixa unificada é o `shared/unibox`, o fluxo é o `fluxo`, os cálculos são a `calculadora`, o back-office é o `terminal`, e o polish vem do `shared/deck/deck.css`. NUNCA reconstruir versões pobres à mão. Isto fixa o NÍVEL de qualidade (ver "Standard de qualidade" em `referencias/regras-design.md`). O design (cor, estilo, tipografia, layout) e o conteúdo variam SEMPRE por lead: reutilizar a arquitetura é obrigatório, clonar o design ou o conteúdo é proibido
 - Português de Portugal em TODO o conteúdo. PROIBIDO usar travessões (o caráter — ou –); usar vírgula, dois pontos ou parênteses
 - NUNCA números financeiros de outros clientes AI Solutions (o repo é público). Os valores da proposta à própria lead podem entrar
 - Nunca afirmar capacidades não confirmadas; em dúvida escrever "configurável"
