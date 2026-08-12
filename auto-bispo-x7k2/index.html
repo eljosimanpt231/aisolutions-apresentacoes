@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Auto Bispo | Proposta AI Solutions</title>
+  <meta name="description" content="Um agente de IA que responde pela Auto Bispo 24 horas por dia, integrado com o OfficeGest.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/unibox/unibox.css">
+  <script src="config.js"></script>
+  <style>
+    /* Fundo: grid subtil + glows da marca (fixos) */
+    .bg-grid {
+      position: fixed; inset: 0; z-index: -2; pointer-events: none;
+      background-image:
+        linear-gradient(hsl(var(--accent-hsl) / 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, hsl(var(--accent-hsl) / 0.04) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(ellipse at 50% 0, #000, transparent 75%);
+    }
+    .bg-glow { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: -1; }
+    .glow-1 { width: 520px; height: 520px; background: hsl(var(--brand-hsl) / 0.14); top: -160px; left: -120px; }
+    .glow-2 { width: 460px; height: 460px; background: hsl(var(--accent-hsl) / 0.10); top: 42%; right: -160px; }
+
+    .brandbar { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+    .wordmark {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em;
+      padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text);
+    }
+    .wordmark b { color: var(--brand); }
+    .brandbar .x { color: var(--muted); font-size: 0.9rem; }
+    .brandbar .ais { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+
+    .hero { min-height: 92vh; display: flex; align-items: center; text-align: center; position: relative; }
+    .hero .container { width: 100%; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+    /* Feature icon tile */
+    .ftile {
+      width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin-bottom: 14px;
+      background: hsl(var(--accent-hsl) / 0.12); border: 1px solid hsl(var(--accent-hsl) / 0.25);
+    }
+    .card p.small { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+
+    /* Cards de diferenciação */
+    .diff { background: var(--grad-cta); border: 1px solid hsl(var(--brand-hsl) / 0.35); }
+    .diff h3 { color: var(--text); }
+
+    /* Bloco de alerta */
+    .alert {
+      margin-top: 26px; border-radius: var(--radius); padding: 22px 24px;
+      background: hsl(var(--brand-hsl) / 0.10); border: 1px solid hsl(var(--brand-hsl) / 0.35);
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .alert .dot { flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--brand); margin-top: 8px; box-shadow: 0 0 0 5px hsl(var(--brand-hsl) / 0.18); }
+
+    /* Demo: telefone + raciocínio */
+    .demo-grid { display: grid; grid-template-columns: 340px 1fr; gap: 32px; align-items: center; }
+    .reason { }
+    .reason ol { list-style: none; display: grid; gap: 14px; counter-reset: r; }
+    .reason li {
+      position: relative; padding: 14px 16px 14px 56px; border-radius: var(--radius);
+      background: var(--surface); border: 1px solid var(--border);
+    }
+    .reason li::before {
+      counter-increment: r; content: counter(r);
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
+      background: hsl(var(--accent-hsl) / 0.14); color: var(--accent); border: 1px solid hsl(var(--accent-hsl) / 0.3);
+    }
+    .reason li b { color: var(--text); }
+    .reason li span { color: var(--muted); font-size: 0.9rem; display: block; margin-top: 2px; }
+    .demo-note { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 16px; }
+
+    /* Fluxo OfficeGest */
+    .chans { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px; }
+    .chan-pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px;
+      background: var(--surface); border: 1px solid var(--border); font-size: 0.9rem; font-weight: 600; color: var(--text);
+    }
+    .chan-pill i { width: 9px; height: 9px; border-radius: 50%; }
+    .flow { display: flex; align-items: stretch; gap: 0; overflow-x: auto; padding-bottom: 8px; }
+    .flow-node {
+      flex: 1; min-width: 150px; text-align: center; padding: 22px 16px; border-radius: var(--radius);
+      background: var(--surface); border: 1px solid var(--border); position: relative;
+    }
+    .flow-node .n { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 0.8rem; }
+    .flow-node strong { display: block; margin-top: 8px; font-size: 0.98rem; }
+    .flow-node.key { border-color: hsl(var(--brand-hsl) / 0.5); background: hsl(var(--brand-hsl) / 0.08); }
+    .flow-arrow { flex: 0 0 34px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 1.3rem; }
+
+    /* Unibox frame */
+    .unibox-note {
+      display: flex; gap: 12px; align-items: flex-start; margin-bottom: 18px;
+      border-radius: var(--radius); padding: 14px 18px; font-size: 0.9rem; color: var(--muted);
+      background: hsl(var(--accent-hsl) / 0.07); border: 1px solid hsl(var(--accent-hsl) / 0.2);
+    }
+    .unibox-frame { border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
+
+    /* Preço destaque */
+    .price-card.highlight { border: 1px solid var(--brand); box-shadow: var(--shadow-lg); position: relative; }
+    .price-card.highlight .pin {
+      position: absolute; top: -12px; left: 26px; background: var(--brand); color: var(--on-brand);
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 999px;
+    }
+    .price-list { list-style: none; display: grid; gap: 10px; margin-top: 16px; }
+    .price-list li { padding-left: 26px; position: relative; font-size: 0.94rem; color: var(--muted); }
+    .price-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+
+    @media (max-width: 900px) {
+      .grid-4 { grid-template-columns: 1fr 1fr; }
+      .demo-grid { grid-template-columns: 1fr; gap: 26px; }
+    }
+    @media (max-width: 520px) { .grid-4 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="topo">
+    <div class="container">
+      <div class="brandbar reveal">
+        <span class="wordmark">AUTO <b>BISPO</b></span>
+        <span class="x">×</span>
+        <span class="ais">AI Solutions</span>
+      </div>
+      <h1 class="reveal">Um agente de IA que responde por si,<br><span class="grad">24 horas por dia.</span></h1>
+      <p class="lead reveal" style="margin:20px auto 0">
+        Integrado com o OfficeGest, ligado ao WhatsApp, Instagram, Facebook e site. Filtra, qualifica,
+        faz pré-orçamentos e marca serviços mesmo fora de horas.
+      </p>
+      <div class="grid-4 reveal" style="margin-top:44px; text-align:left">
+        <div class="card stat-card"><div class="num">24/7</div><div class="desc">Resposta a qualquer hora, sem aumentar a equipa</div></div>
+        <div class="card stat-card"><div class="num">4</div><div class="desc">Canais tratados num só sítio</div></div>
+        <div class="card stat-card"><div class="num">até <span class="count" data-to="90" data-suffix="%">0</span></div><div class="desc">Da rotina resolvida pelo agente</div></div>
+        <div class="card stat-card"><div class="num">5 a 6</div><div class="desc">Semanas para arrancar</div></div>
+      </div>
+      <div style="margin-top:40px" class="reveal">
+        <a href="#solucao" class="btn btn-primary">Ver a solução ↓</a>
+        <a href="#investimento" class="btn btn-ghost" style="margin-left:10px">Investimento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEMA ============ -->
+  <section class="section-alt" id="problema">
+    <div class="container">
+      <div class="center">
+        <span class="kicker">O ponto de partida</span>
+        <h2>Muitos canais, poucas mãos, negócio que escapa.</h2>
+        <p class="lead">Os pedidos entram por todo o lado ao mesmo tempo. Enquanto se atende um carro na oficina, ficam mensagens por responder, e cada resposta que tarda é um cliente que pode ir a outro lado.</p>
+      </div>
+      <div class="grid-3" style="margin-top:44px">
+        <div class="card reveal"><div class="ftile">📞</div><h3>Chamadas perdidas</h3><p class="small">Quando o telefone toca e ninguém pode atender, o cliente não deixa recado, liga à concorrência.</p></div>
+        <div class="card reveal"><div class="ftile">💬</div><h3>Mensagens espalhadas</h3><p class="small">WhatsApp, Instagram, Facebook e site, cada um no seu sítio, sem ninguém a olhar para todos ao mesmo tempo.</p></div>
+        <div class="card reveal"><div class="ftile">🌙</div><h3>Fora de horas</h3><p class="small">Muitos pedidos chegam à noite ou ao fim de semana, quando a oficina está fechada e ninguém responde.</p></div>
+        <div class="card reveal"><div class="ftile">📋</div><h3>Orçamentos repetidos</h3><p class="small">As mesmas perguntas de sempre (travões, revisão, óleo) a consumir tempo que devia ser da oficina.</p></div>
+        <div class="card reveal"><div class="ftile">⏱️</div><h3>Resposta lenta</h3><p class="small">Uma resposta que demora horas já não vale o mesmo que valia no minuto em que a mensagem entrou.</p></div>
+        <div class="card reveal"><div class="ftile">🔁</div><h3>Sem seguimento</h3><p class="small">Orçamentos enviados que ficam sem resposta e ninguém volta a pegar neles.</p></div>
+      </div>
+      <div class="alert reveal">
+        <span class="dot"></span>
+        <p style="color:var(--text)"><b>A resposta imediata é crítica.</b> Um cliente que espera horas por uma resposta já não é o mesmo que enviou a mensagem. Nessa altura, provavelmente já contactou outra oficina.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUÇÃO ============ -->
+  <section id="solucao">
+    <div class="container">
+      <div class="center">
+        <span class="kicker">A solução</span>
+        <h2>O que vamos construir.</h2>
+        <p class="lead">Um agente de IA que atende primeiro, resolve o que é rotina e entrega à equipa só o que precisa mesmo de mãos humanas.</p>
+      </div>
+      <div class="grid-3" style="margin-top:44px">
+        <div class="card reveal"><div class="ftile">🤖</div><h3>Atende primeiro</h3><p class="small">Responde na hora em todos os canais, mesmo fora de horas, com o tom da Auto Bispo.</p></div>
+        <div class="card reveal"><div class="ftile">🧾</div><h3>Pré-orçamentos</h3><p class="small">Dá uma baliza de preço para os pedidos comuns, seguindo a tabela real da oficina.</p></div>
+        <div class="card reveal"><div class="ftile">📅</div><h3>Marca serviços</h3><p class="small">Consulta a agenda, propõe horário e deixa a marcação registada no OfficeGest.</p></div>
+        <div class="card reveal"><div class="ftile">📞</div><h3>Recupera chamadas</h3><p class="small">Numa chamada não atendida, envia logo uma mensagem a retomar o contacto.</p></div>
+        <div class="card reveal"><div class="ftile">🎯</div><h3>Qualifica e filtra</h3><p class="small">Separa o pedido a sério do spam e das promoções, poupa tempo à equipa.</p></div>
+        <div class="card reveal"><div class="ftile">🙋</div><h3>Escala para humano</h3><p class="small">O que sai da rotina passa para a equipa, com o contexto todo já reunido.</p></div>
+      </div>
+      <div class="grid-2" style="margin-top:26px">
+        <div class="card diff reveal"><h3>Ligado ao OfficeGest</h3><p class="small" style="color:var(--text)">Não é um bot à parte. Trabalha dentro do sistema que a Auto Bispo já usa, com os clientes e o histórico reais.</p></div>
+        <div class="card diff reveal"><h3>Suporte contínuo, não plug and play</h3><p class="small" style="color:var(--text)">O agente vai sendo afinado ao longo do tempo com a vossa ajuda, não é entregue e esquecido.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA (momento uau) ============ -->
+  <section class="section-alt" id="demo">
+    <div class="container">
+      <div class="center">
+        <span class="kicker">Demonstração</span>
+        <h2>O agente a trabalhar, ao vivo.</h2>
+        <p class="lead">Um pedido de orçamento como os que entram todos os dias. À esquerda a conversa, à direita o que o agente faz por dentro.</p>
+      </div>
+      <div class="demo-grid" style="margin-top:44px">
+        <div>
+          <div class="phone reveal" id="waDemo">
+            <div class="wa-header">
+              <div class="wa-avatar">AB</div>
+              <div class="wa-contact"><strong>Assistente Auto Bispo</strong><small class="wa-status">online</small></div>
+            </div>
+            <div class="wa-body"><div class="wa-day">HOJE</div></div>
+            <div class="wa-chips"></div>
+            <div class="wa-input"><span>＋</span><div class="field">Mensagem</div><span>🎤</span></div>
+          </div>
+          <p class="demo-note">Valores ilustrativos. O agente usa sempre a tabela real da Auto Bispo.</p>
+          <div class="center"><button class="btn btn-ghost" data-wa-restart="waDemo" style="margin-top:8px">↻ Repetir</button></div>
+        </div>
+        <div class="reason reveal">
+          <h3 style="margin-bottom:16px">Raciocínio do agente</h3>
+          <ol>
+            <li><b>Identifica o cliente e o carro</b><span>Reconhece o Golf 1.6 TDI e vai buscar a ficha ao OfficeGest.</span></li>
+            <li><b>Consulta o histórico e a base de conhecimento</b><span>Vê serviços anteriores e os preços de tabela para travões.</span></li>
+            <li><b>Calcula um pré-orçamento</b><span>Dá uma baliza realista, sem fechar valores que precisam de olho humano.</span></li>
+            <li><b>Verifica a agenda e propõe horário</b><span>Encontra uma vaga e sugere um dia ao cliente.</span></li>
+            <li><b>Regista no OfficeGest e avisa a equipa</b><span>Deixa a marcação e a nota prontas para a oficina confirmar.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIGADO AO OFFICEGEST ============ -->
+  <section id="fluxo">
+    <div class="container">
+      <div class="center">
+        <span class="kicker">Como se liga</span>
+        <h2>Cada mensagem passa por este fluxo.</h2>
+        <p class="lead">Entre por onde entrar, a mensagem segue sempre o mesmo caminho e acaba organizada no vosso sistema.</p>
+      </div>
+      <div class="chans reveal" style="margin-top:36px">
+        <span class="chan-pill"><i style="background:#25D366"></i>WhatsApp</span>
+        <span class="chan-pill"><i style="background:#e1306c"></i>Instagram</span>
+        <span class="chan-pill"><i style="background:#1877F2"></i>Facebook</span>
+        <span class="chan-pill"><i style="background:var(--accent)"></i>Site</span>
+      </div>
+      <div class="flow reveal">
+        <div class="flow-node"><span class="n">01</span><strong>Mensagem recebida</strong></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node"><span class="n">02</span><strong>Identifica o cliente</strong></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node"><span class="n">03</span><strong>Consulta a base de conhecimento</strong></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node key"><span class="n">04</span><strong>Decide a ação</strong></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node"><span class="n">05</span><strong>Atualiza o OfficeGest</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLATAFORMA: UNIBOX ============ -->
+  <section class="section-alt" id="plataforma">
+    <div class="container">
+      <div class="center">
+        <span class="kicker">A plataforma</span>
+        <h2>Uma caixa. Tudo dentro.</h2>
+        <p class="lead">WhatsApp, Instagram e Facebook num só sítio. A equipa abre um separador e vê tudo, com o histórico de cada cliente e o que o agente já tratou.</p>
+      </div>
+      <div class="unibox-note reveal" style="margin-top:36px">
+        <span>ⓘ</span>
+        <span>Simulação da interface, com pedidos parecidos com os da Auto Bispo. Os valores são ilustrativos.</span>
+      </div>
+      <div class="unibox-frame reveal">
+        <div class="unibox" id="abInbox"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INVESTIMENTO ============ -->
+  <section id="investimento">
+    <div class="container">
+      <div class="center">
+        <span class="kicker">Investimento</span>
+        <h2>Um funcionário. A trabalhar dia e noite.</h2>
+        <p class="lead">O valor mensal é comparável a cerca de um quarto do custo de um funcionário dedicado, e o agente não tira férias nem falta.</p>
+      </div>
+      <div class="grid-3" style="margin-top:44px">
+        <div class="card price-card reveal">
+          <div class="label">Implementação</div>
+          <div class="price">3.400€</div>
+          <div class="note">Valor único, faseado 50% no arranque e 50% na entrada em testes.</div>
+          <ul class="price-list">
+            <li>Auditoria dos canais e do OfficeGest</li>
+            <li>Desenvolvimento e integração do agente</li>
+            <li>Base de conhecimento da oficina</li>
+            <li>Testes com a equipa antes do go-live</li>
+          </ul>
+        </div>
+        <div class="card price-card highlight reveal">
+          <span class="pin">Recomendado</span>
+          <div class="label">Mensalidade</div>
+          <div class="price">250€<span style="font-size:1rem;color:var(--muted)"> /mês</span></div>
+          <div class="note">Infraestrutura, IA, alojamento, suporte e melhoria contínua do agente.</div>
+          <ul class="price-list">
+            <li>Manutenção e afinação do agente</li>
+            <li>Alojamento e custos de IA</li>
+            <li>Suporte pela equipa AI Solutions</li>
+            <li>Sem fidelização</li>
+          </ul>
+        </div>
+        <div class="card price-card reveal">
+          <div class="label">Garantia</div>
+          <div class="price">Risco zero</div>
+          <div class="note">Se, ao fim do primeiro mês, o agente não fizer o que ficou contratado, devolvemos 100% do valor da implementação.</div>
+          <ul class="price-list">
+            <li>Sem letras pequenas</li>
+            <li>Compromisso por escrito</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CRONOGRAMA ============ -->
+  <section class="section-alt" id="prazo">
+    <div class="container center">
+      <span class="kicker">Prazo</span>
+      <h2>5 a 6 semanas para arrancar.</h2>
+      <div class="timeline" style="grid-template-columns:repeat(3,1fr); margin-top:48px; max-width:820px; margin-left:auto; margin-right:auto">
+        <div class="tl-step reveal"><div class="tl-dot">🔍</div><strong>Semanas 1-2</strong><span>Auditoria dos canais, do OfficeGest e da tabela de serviços</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🤖</div><strong>Semanas 3-5</strong><span>Desenvolvimento e integração do agente</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🚀</div><strong>Semanas 5-6</strong><span>Testes com a equipa e arranque</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta-final" id="avancar">
+    <div class="container center">
+      <h2>Pronto para deixar de perder clientes fora de horas?</h2>
+      <p class="lead" style="margin:14px auto 30px">Arrancamos com uma auditoria e, em 5 a 6 semanas, a Auto Bispo passa a responder primeiro, sempre.</p>
+      <a href="https://aisolutions.pt/comecar" class="btn btn-primary">Falar com a AI Solutions →</a>
+    </div>
+  </section>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Auto Bispo
+      <span class="disclaimer">Demonstração com dados ilustrativos, para fins de apresentação.</span>
+    </div>
+  </footer>
+
+  <!-- Simulação WhatsApp (momento uau) -->
+  <script type="application/json" id="waDemo-script">
+  [
+    { "type": "msg", "from": "in", "text": "Olá! Sou o assistente da Auto Bispo. Em que posso ajudar?" },
+    { "type": "chips", "options": [
+      { "label": "Quero um orçamento", "goto": "orc" },
+      { "label": "Marcar uma revisão", "goto": "rev" }
+    ]},
+    { "type": "label", "name": "orc" },
+    { "type": "msg", "from": "in", "text": "Com certeza. Qual é o carro e o que precisa?" },
+    { "type": "msg", "from": "out", "text": "Golf 1.6 TDI, os travões da frente andam a chiar" },
+    { "type": "msg", "from": "in", "text": "Pelo histórico de um Golf desses, pastilhas e discos da frente ficam tipicamente entre 180 e 240 EUR, já com mão de obra. Quer que marque para esta semana?" },
+    { "type": "msg", "from": "out", "text": "Sim, quinta de manhã se der" },
+    { "type": "msg", "from": "in", "text": "Quinta às 9h30 fica reservado. Deixei a marcação no OfficeGest e o Sr. Bispo confirma. Quer carro de cortesia?" },
+    { "type": "end" },
+    { "type": "label", "name": "rev" },
+    { "type": "msg", "from": "in", "text": "Boa. Qual a matrícula ou o modelo, e a quilometragem atual?" },
+    { "type": "msg", "from": "out", "text": "Corsa 1.2, quase nos 100 mil" },
+    { "type": "msg", "from": "in", "text": "É altura da revisão dos 100 mil. Tenho vaga na terça às 10h ou na sexta às 14h. Qual prefere?" },
+    { "type": "end" }
+  ]
+  </script>
+
+  <!-- Unibox: config da Auto Bispo -->
+  <script type="application/json" id="abInbox-config">
+  {
+    "brand": "Auto Bispo",
+    "teamName": "Equipa Auto Bispo",
+    "teamEmail": "geral@autobispo.pt",
+    "teamInitials": "AB",
+    "agentName": "Agente Auto Bispo",
+    "accounts": [],
+    "channels": ["whatsapp", "instagram", "facebook"],
+    "labels": {
+      "chamada_perdida": { "name": "chamada perdida", "color": "#f5a524", "priority": 0 },
+      "orcamento":       { "name": "orçamento", "color": "#E8B84B", "priority": 1 },
+      "marcacao":        { "name": "marcação", "color": "#a78bfa", "priority": 2 },
+      "diagnostico":     { "name": "diagnóstico", "color": "#3a86ff", "priority": 3 },
+      "revisao":         { "name": "revisão", "color": "#00d4aa", "priority": 4 },
+      "spam":            { "name": "spam", "color": "#ef4444", "priority": 5 }
+    },
+    "conversations": [
+      {
+        "id": 1, "name": "Miguel Santos", "initials": "MS", "phone": "+351 912 445 108",
+        "channel": "whatsapp", "label": "chamada_perdida", "tab": "unassigned", "timeAgo": "4m", "unread": 1,
+        "preview": "Boa, era para saber de uma revisão.",
+        "messages": [
+          { "sender": "system", "text": "Chamada não atendida às 18:47. O agente enviou mensagem automática.", "time": "18:47" },
+          { "sender": "agent", "isAI": true, "text": "Olá, aqui é a Auto Bispo. Vimos a sua chamada. Em que podemos ajudar?", "time": "18:47" },
+          { "sender": "client", "text": "Boa, era para saber de uma revisão.", "time": "18:52" }
+        ],
+        "attributes": [ { "key": "Origem", "value": "Chamada perdida" }, { "key": "Assunto", "value": "Revisão" } ],
+        "notes": ["Recuperado por mensagem automática após chamada não atendida."]
+      },
+      {
+        "id": 2, "name": "Ana Ferreira", "initials": "AF", "phone": "+351 934 220 771",
+        "channel": "whatsapp", "label": "orcamento", "tab": "unassigned", "timeAgo": "22m",
+        "preview": "Golf 1.6 TDI, travões da frente a chiar.",
+        "messages": [
+          { "sender": "client", "text": "Golf 1.6 TDI, travões da frente a chiar. Quanto fica?", "time": "17:30" },
+          { "sender": "agent", "isAI": true, "text": "Pastilhas e discos da frente ficam tipicamente entre **180 e 240 EUR**, com mão de obra. Quer que marque?", "time": "17:31" }
+        ],
+        "attributes": [ { "key": "Viatura", "value": "VW Golf 1.6 TDI" }, { "key": "Serviço", "value": "Travões frente" } ],
+        "notes": ["Pré-orçamento dado pelo agente com a tabela da oficina."]
+      },
+      {
+        "id": 3, "name": "Ricardo Lopes", "initials": "RL", "channel": "instagram",
+        "label": "marcacao", "tab": "unassigned", "timeAgo": "1 h",
+        "preview": "Consigo marcar mudança de óleo para sábado?",
+        "messages": [
+          { "sender": "client", "text": "Consigo marcar mudança de óleo para sábado?", "time": "16:10" },
+          { "sender": "agent", "isAI": true, "text": "Sábado temos vaga às 9h ou às 11h. Qual prefere?", "time": "16:10" }
+        ],
+        "attributes": [ { "key": "Serviço", "value": "Mudança de óleo" } ],
+        "notes": ["A aguardar escolha de horário."]
+      },
+      {
+        "id": 4, "name": "Sónia Marques", "initials": "SM", "phone": "+351 926 118 903",
+        "channel": "whatsapp", "label": "diagnostico", "tab": "mine", "timeAgo": "3 h", "unread": 2,
+        "preview": "Acendeu a luz do motor, é grave?",
+        "messages": [
+          { "sender": "client", "text": "Acendeu a luz do motor esta manhã, é grave?", "time": "09:12" },
+          { "sender": "agent", "isAI": true, "text": "Pode ser vários motivos. O ideal é uma leitura de diagnóstico. Passo já ao Sr. Bispo para agendar.", "time": "09:12" },
+          { "sender": "system", "text": "Conversa encaminhada para a equipa, precisa de diagnóstico.", "time": "09:13" }
+        ],
+        "attributes": [ { "key": "Sintoma", "value": "Luz do motor" } ],
+        "notes": ["Escalado para humano, requer diagnóstico presencial."]
+      },
+      {
+        "id": 5, "name": "Oficina Central", "initials": "OC", "channel": "facebook",
+        "label": "spam", "tab": "unassigned", "timeAgo": "5 h",
+        "preview": "Promoção de pneus para revenda...",
+        "messages": [
+          { "sender": "client", "text": "Promoção de pneus para revenda, quer receber o catálogo?", "time": "13:40" },
+          { "sender": "agent", "isAI": true, "text": "Obrigado, de momento não temos interesse.", "time": "13:40" }
+        ],
+        "attributes": [ { "key": "Tipo", "value": "Promoção externa" } ],
+        "notes": ["Filtrado como spam pelo agente, não incomodou a equipa."]
+      },
+      {
+        "id": 6, "name": "João Pinto", "initials": "JP", "phone": "+351 913 774 200",
+        "channel": "whatsapp", "label": "revisao", "tab": "mine", "timeAgo": "1 d",
+        "preview": "Corsa nos 100 mil, marquei terça 10h.",
+        "messages": [
+          { "sender": "client", "text": "O Corsa está quase nos 100 mil km.", "time": "11:02" },
+          { "sender": "agent", "isAI": true, "text": "É altura da revisão dos 100 mil. Tenho terça às 10h ou sexta às 14h.", "time": "11:02" },
+          { "sender": "client", "text": "Terça às 10h.", "time": "11:20" }
+        ],
+        "attributes": [ { "key": "Viatura", "value": "Opel Corsa 1.2" }, { "key": "Serviço", "value": "Revisão 100.000 km" }, { "key": "Marcação", "value": "Terça 10h" } ],
+        "notes": ["Marcação confirmada e registada no OfficeGest."]
+      }
+    ]
+  }
+  </script>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="../shared/unibox/unibox.js"></script>
+  <script>
+    waSim('waDemo');
+    unibox('abInbox');
+  </script>
+</body>
+</html>
