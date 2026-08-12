@@ -28,6 +28,7 @@ Cria uma página web de apresentação personalizada para uma lead, com o brandi
 ### 1. Briefing (perguntar só o que faltar)
 - Nome da lead, site/Instagram, setor, nome do decisor
 - Tipo de demo (A a F do guia "05-criar-demos"): na dúvida, tipo C (à medida) em formato página
+- Formato: **deck narrativo** (default, vender uma visão), **demo de plataforma** (a lead vai usar uma ferramenta: orçamentação, CRM, faturação) ou **slide** (apresentação presencial guiada). Ver `referencias/catalogo-seccoes.md`
 - O que a solução vai fazer (1 frase) e valores da proposta, se existirem
 - Estilo: perguntar "queres o design de alguma apresentação anterior?" e mostrar as opções do `estilos/registry.md`
 - Propor o slug: `[lead-em-kebab]-[4 chars aleatórios]` (ex: `cfgroup-k3x9`). Nunca usar os nomes reservados starter, estilos, shared, skill, scripts
@@ -37,14 +38,16 @@ Seguir `referencias/branding-lead.md`: extrair logo e cores do site dela, gerar 
 
 ### 3. Direção de design (ANTES de qualquer HTML)
 - Ler `estilos/registry.md` e o `style.md` do estilo escolhido (mais os dos estilos a misturar, blocos por nome)
+- Ler `referencias/catalogo-seccoes.md` (secções, componentes e o momento uau) e `referencias/copy-padroes.md` (blocos de copy: 3 regras do agente, transparência de custos, garantia, CTA)
 - Ver os screenshots do estilo (Read aos PNG) para calibrar o olho
-- Preencher o `design.md` da apresentação (copiar template do starter): direção, paleta, tipografia, lista de secções, o momento uau
+- Preencher o `design.md` da apresentação (copiar template do starter): direção, paleta, tipografia, lista de secções, o momento uau. A cor de acento deriva do nicho da lead (dourado=cuidado, madeira=carpintaria, lima=fitness, azul-água=água/piscinas, navy=setor regulado)
 - Se nenhum estilo servir, criar direção nova seguindo `referencias/regras-design.md` (secção "Estilo novo")
 
 ### 4. Build
 - Copiar `starter/` para `[slug]/` na raiz do repo
 - Substituir `assets/css/tokens.css` pelo do estilo escolhido, com `--brand-hsl`/`--accent-hsl` da lead
-- Escrever o conteúdo real secção a secção. O guião da simulação WhatsApp usa produtos/serviços REAIS da lead (4 a 6 trocas, terminar com algo que ela ache impossível)
+- Escrever o conteúdo real secção a secção. O momento uau (chat + raciocínio) usa produtos/serviços REAIS da lead (4 a 6 trocas, terminar com algo que ela ache impossível, incluir 1 cenário de recusa consciente). Guardar os cenários em dados separados do template
+- Para os componentes (chat+raciocínio, calculadora de ROI, diagrama de fluxo, terminal de logs, cartões de investimento, Unibox, etc.) seguir `referencias/catalogo-seccoes.md`. O código de referência da Unibox está em `referencias/unibox-canonico.tsx` (React do Lovable): é base fixa, só se adaptam canais, etiquetas e contas ao negócio da lead
 - Cumprir `referencias/regras-design.md` à letra
 
 ### 5. Loop de screenshots (obrigatório antes de publicar)

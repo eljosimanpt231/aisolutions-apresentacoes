@@ -15,14 +15,20 @@ Estas regras são o que separa uma página profissional de uma página genérica
 
 ## 3. Fórmula narrativa AIS (a ordem que converte)
 1. Hero: dor + promessa com números + prova (stat cards)
-2. O que muda: antes/depois (verde vs vermelho)
-3. **Simulação WhatsApp interativa: o momento uau, nunca falta**
-4. Roadmap de evoluções (opcional, dá visão de futuro)
-5. Timeline de implementação (semanas concretas)
-6. Investimento (implementação + avença, sem rodeios)
-7. CTA final com o NOME do decisor ("Pronto para avançar, Eduardo?")
+2. Diagnóstico "O que ouvimos": as dores da reunião (fecha com frase em itálico)
+3. O que muda: antes/depois (verde vs vermelho)
+4. **Demo "chat + raciocínio do agente": o momento uau, nunca falta** (ver `catalogo-seccoes.md`)
+5. Diagrama de integração aos sistemas da lead (CRM/ERP/agenda)
+6. Unibox (opcional): caixa de entrada unificada, se houver atendimento omnicanal disperso
+7. Limites / regras do agente (o que faz vs o que fica com o humano)
+8. Referências / casos com métricas reais
+9. Investimento (implementação + avença, sem rodeios)
+10. Cronograma (semanas concretas)
+11. CTA final com o NOME do decisor ("Pronto para avançar, Eduardo?")
 
-Cortar secções é permitido; mudar a ordem só com razão forte.
+Cortar secções é permitido; mudar a ordem só com razão forte. O catálogo completo de secções, componentes e formatos (deck vs demo de plataforma vs slide) vive em `catalogo-seccoes.md`. A biblioteca de copy vive em `copy-padroes.md`.
+
+**Momento uau: chat + raciocínio.** A simulação WhatsApp simples (guião no starter) é o mínimo. O padrão forte, destilado de 31 apresentações reais, é a demo a duas colunas: conversa à esquerda, passos do raciocínio do agente a acender em sincronia à direita, com tabs de 4 a 6 cenários e pelo menos um cenário de recusa consciente (o agente recusa avançar sozinho e pergunta). Guardar os cenários em dados (JSON) separados do template. Detalhe em `catalogo-seccoes.md`.
 
 ## 4. Tipografia com intenção
 - 2 famílias no máximo (display + corpo), pesos deliberados, tracking apertado nos títulos grandes
