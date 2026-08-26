@@ -331,3 +331,15 @@ h3 { font-size: 1.32rem; letter-spacing: 0; }
 @media (max-width: 520px) {
   .anatomia { grid-template-columns: 1fr; }
 }
+
+/* ---------- Lockup de logótipos reais (hero e rodapé) ---------- */
+.brandbar { gap: 18px; }
+.logo-lead { height: 62px; width: auto; }
+.logo-ais { height: 68px; width: auto; border-radius: 12px; }
+.brandbar .x { font-size: 1.2rem; opacity: 0.65; }
+.logo-ais-footer { height: 46px; margin: 0 auto 14px; opacity: 0.9; }
+@media (max-width: 520px) {
+  .brandbar { gap: 12px; }
+  .logo-lead { height: 44px; }
+  .logo-ais { height: 48px; }
+}

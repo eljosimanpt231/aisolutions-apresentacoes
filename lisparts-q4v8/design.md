@@ -47,7 +47,7 @@ Aparece no wordmark do hero (`clip-path` do emblema) e como divisor de secção 
 8. **Unibox**: `shared/unibox`, WhatsApp + email, 7 conversas, etiquetas do negócio real (exceção técnica, recolha de casco, nota de crédito, orçamento, estado de encomenda, sem stock).
 9. **Limites do agente**: 6 cards, com a citação do próprio Pedro sobre exceções e operador humano.
 10. **Referências**: 4 casos anonimizados por setor (sem nomes: não há case study público destes clientes), com ponteiro para aisolutions.pt/case-studies.
-11. **Investimento**: fase 1 entre 6.000€ e 8.000€ + IVA a fechar no fim da auditoria, primeira tranche de 4.000€ + IVA para arrancar, manutenção 200€ a 300€ + IVA. Nota sobre escalabilidade.
+11. **Investimento**: fase 1 entre 6.000€ e 8.000€ + IVA a fechar no fim da auditoria, primeira tranche de 4.000€ + IVA para arrancar, manutenção 250€ + IVA por mês. Nota sobre escalabilidade.
 12. **Cronograma**: 6 a 8 semanas em 3 blocos.
 13. **A fase seguinte**: discreta, caixa tracejada, com "Não faz parte desta proposta".
 14. **CTA final** com o nome do Pedro.
@@ -72,3 +72,8 @@ não souber se o sensor é redondo ou quadrado.
 - Matrículas ocultadas parcialmente (`12-VU-**`, `68-XQ-**`): são dados de terceiros.
 - Nenhum valor financeiro de outros clientes AI Solutions. As referências são anonimizadas por setor.
 - Os preços que aparecem são os da própria Lisparts, retirados dos exemplos que o Pedro enviou para este efeito.
+
+## Atualização de 26/08 (noite)
+
+- **Logótipos reais** em vez do wordmark em texto: `assets/img/lisparts-logo.png` (emblema do lisparts.com, com a tagline "parte do seu carro") e `assets/img/ais-logo.png` (logótipo oficial de aisolutions.pt). Lockup no hero e o da AI Solutions também no rodapé.
+- **Mensalidade fixada em 250€ + IVA**, deixou de ser intervalo.
