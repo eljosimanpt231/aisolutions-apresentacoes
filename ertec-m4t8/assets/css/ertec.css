@@ -229,3 +229,11 @@ table.bo tr:last-child td { border-bottom: 0; }
   .cr-row, .cr-sys { animation: none; }
   .cr-step-live { animation: none; }
 }
+
+
+/* ---------- Chat: so a bolha nova e que anima ----------
+   Ver assets/js/chat-suave.js. Sem isto, o rebuild do innerHTML faz a
+   conversa inteira piscar a cada frase. */
+.cr-row, .cr-sys { animation: none; }
+.cr-msgs > .cr-nova { animation: cr-soft 0.3s ease both; }
+.cr-typing { animation: cr-soft 0.25s ease both; }
