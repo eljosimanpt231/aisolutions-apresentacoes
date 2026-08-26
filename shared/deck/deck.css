@@ -70,7 +70,7 @@
 .cr-step-ic { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: hsl(var(--accent-hsl) / 0.15); color: var(--accent); }
 .cr-step-ic svg { width: 15px; height: 15px; }
 .cr-step-k { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
-.cr-step-l { font-size: 0.86rem; color: hsl(var(--text) / 0.9); margin-top: 2px; }
+.cr-step-l { font-size: 0.86rem; color: var(--text); color: color-mix(in srgb, var(--text) 90%, transparent); margin-top: 2px; }
 .cr-step-live { flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 6px; animation: cr-pulse 1.1s infinite; }
 @keyframes cr-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
@@ -81,7 +81,7 @@
 @media (min-width: 640px) { .fluxo-shell { padding: 40px; } }
 .fluxo-chans { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-bottom: 32px; }
 .fluxo-chans .lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); }
-.fluxo-chan { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; border: 1px solid var(--border); background: hsl(0 0% 100% / 0.03); padding: 5px 12px; font-size: 0.78rem; color: hsl(var(--text) / 0.9); }
+.fluxo-chan { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; border: 1px solid var(--border); background: hsl(0 0% 100% / 0.03); padding: 5px 12px; font-size: 0.78rem; color: var(--text); color: color-mix(in srgb, var(--text) 90%, transparent); }
 .fluxo-chan svg { width: 14px; height: 14px; color: var(--accent); }
 .fluxo-grid { display: grid; gap: 16px; }
 @media (min-width: 1000px) { .fluxo-grid { grid-template-columns: repeat(var(--fluxo-n, 5), 1fr); } }
