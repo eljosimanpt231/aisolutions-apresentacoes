@@ -1,0 +1,64 @@
+/* ============================================================
+   TOKENS: Lisparts (Rotações Anónimas) x AI Solutions
+   Direção nova "oficina de precisão": âmbar do emblema Lisparts
+   sobre carvão quente, teal do agente, tipografia condensada
+   de catálogo de peças.
+   ============================================================ */
+
+:root {
+  /* ---- Marca da lead (âmbar do emblema Lisparts) ---- */
+  --brand-hsl: 43 82% 55%;       /* âmbar Lisparts: marca, preços, CTA */
+  --accent-hsl: 174 76% 45%;     /* teal: tudo o que é do agente de IA */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(35 30% 8%);    /* preto do wordmark sobre o âmbar */
+
+  /* ---- Superficies (carvao quente, nao azulado) ---- */
+  --bg: hsl(30 8% 6%);
+  --bg-soft: hsl(30 8% 9%);
+  --surface: hsl(30 7% 12%);
+  --surface-2: hsl(30 6% 15%);
+  --border: hsl(36 9% 22%);
+
+  /* ---- Texto ---- */
+  --text: hsl(40 14% 95%);
+  --muted: hsl(38 9% 65%);
+
+  /* ---- Semanticos ---- */
+  --success-hsl: 152 62% 45%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 6 78% 60%;    --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 58%;  --warning: hsl(var(--warning-hsl));
+
+  /* ---- Gradientes ---- */
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.15), transparent 62%);
+  --grad-text: linear-gradient(115deg, hsl(var(--brand-hsl)), hsl(38 94% 70%));
+  --grad-cta: linear-gradient(160deg, hsl(30 10% 9%), hsl(var(--brand-hsl) / 0.28));
+
+  /* ---- Sombras ---- */
+  --shadow-sm: 0 1px 3px hsl(30 40% 2% / 0.55);
+  --shadow-md: 0 10px 32px hsl(30 40% 2% / 0.6);
+  --shadow-lg: 0 24px 64px hsl(30 40% 2% / 0.7);
+
+  /* ---- Forma ---- */
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  /* ---- Tipografia ---- */
+  --font-display: 'Barlow Condensed', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ---- Ritmo ---- */
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 128px);
+}
+
+/* WhatsApp (mockup): cores canonicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
