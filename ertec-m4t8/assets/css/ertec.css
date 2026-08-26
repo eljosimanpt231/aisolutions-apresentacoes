@@ -237,3 +237,24 @@ table.bo tr:last-child td { border-bottom: 0; }
 .cr-row, .cr-sys { animation: none; }
 .cr-msgs > .cr-nova { animation: cr-soft 0.3s ease both; }
 .cr-typing { animation: cr-soft 0.25s ease both; }
+
+/* ---------- Tabela de precos discriminada ---------- */
+.pricetable { max-width: 720px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); overflow: hidden; text-align: left; }
+.pt-head, .pt-row { display: grid; grid-template-columns: 1fr 140px 140px; gap: 12px; align-items: center; padding: 15px 22px; }
+.pt-head { background: var(--surface-2); border-bottom: 1px solid var(--border); font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.11em; color: var(--muted); }
+.pt-row { border-bottom: 1px solid var(--border); font-size: 0.94rem; }
+.pt-row b { display: block; color: var(--text); }
+.pt-row small { display: block; font-size: 0.8rem; color: var(--muted); margin-top: 3px; line-height: 1.45; }
+.pt-head .num, .pt-row .num { text-align: right; font-variant-numeric: tabular-nums; }
+.pt-row .num { font-weight: 600; color: var(--text); }
+.pt-row.sum { background: var(--surface-2); font-weight: 700; }
+.pt-row.sum .num { color: var(--muted); }
+.pt-row.win { background: hsl(var(--brand-hsl) / 0.08); border-bottom: 0; font-weight: 700; color: var(--brand); }
+.pt-row.win .num { color: var(--brand); font-family: var(--font-display); font-size: 1.1rem; }
+@media (max-width: 700px) {
+  .pt-head { display: none; }
+  .pt-row { grid-template-columns: 1fr auto; gap: 6px 12px; }
+  .pt-row .num { grid-column: 2; }
+  .pt-row .num:first-of-type::before { content: "Implementação "; font-size: 0.68rem; color: var(--muted); font-weight: 500; }
+  .pt-row .num:last-of-type::before { content: "Avença "; font-size: 0.68rem; color: var(--muted); font-weight: 500; }
+}
