@@ -209,3 +209,23 @@ table.bo tr:last-child td { border-bottom: 0; }
   .anat-arrow.pulse svg { animation: none; opacity: 0.7; transform: none; }
   .flash { animation: none; }
 }
+
+
+/* ---------- Logo AI Solutions ----------
+   O ficheiro do site vem com fundo escuro proprio, por isso monta-se como
+   chip arredondado em vez de tentar recorta-lo. */
+.ais-logo { height: 46px; width: auto; display: block; border-radius: 9px; }
+
+/* ---------- Chat mais subtil ----------
+   O deck.css entra com 24px de deslocamento e sombra nas bolhas, o que em
+   ecra partilhado fica agitado. Suaviza-se sem mexer no componente. */
+@keyframes cr-soft { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.cr-row, .cr-sys { animation: cr-soft 0.3s ease both; }
+.cr-bubble { box-shadow: none; }
+.cr-step { transform: none; transition: opacity 0.55s ease, border-color 0.55s ease, background 0.55s ease; }
+.cr-step-live { animation: cr-pulse 2.4s ease-in-out infinite; }
+.cr-tab { transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .cr-row, .cr-sys { animation: none; }
+  .cr-step-live { animation: none; }
+}
