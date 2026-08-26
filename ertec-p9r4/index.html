@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ERTEC | Qualificação, orçamentação e pós-venda no mesmo sítio</title>
+  <meta name="description" content="Proposta técnica AI Solutions para a ERTEC, construída sobre o processo ENE 340-26.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/ertec.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero" id="topo">
+    <div class="container center">
+      <div class="brandrow">
+        <img src="assets/img/ertec-logo.png" alt="ERTEC" class="ertec-logo">
+        <span class="sep"></span>
+        <span class="ais">AI Solutions</span>
+      </div>
+      <h1>Escalar o industrial fotovoltaico<br>sem aumentar a equipa.</h1>
+      <p class="lead" style="margin-top:20px">
+        Três peças ligadas: a lead chega qualificada, o orçamento sai em minutos,
+        e o cliente fica acompanhado depois da venda.
+        Construído sobre o vosso processo, não sobre um modelo genérico.
+      </p>
+
+      <div class="grid-3" style="margin-top:40px">
+        <div class="card stat-card reveal">
+          <div class="num">25 páginas</div>
+          <div class="desc">A proposta que montam à mão em cada pedido. Cerca de 80% do conteúdo é sempre igual.</div>
+        </div>
+        <div class="card stat-card reveal">
+          <div class="num"><span class="count" data-to="3">0</span> gamas</div>
+          <div class="desc">Jinko, Sharp e SunPower, calculadas uma a uma, com a mesma lista de equipamento repetida.</div>
+        </div>
+        <div class="card stat-card reveal">
+          <div class="num"><span class="count" data-to="2">0</span> ficheiros</div>
+          <div class="desc">Excel de preços e Excel de cálculo, compilados manualmente para um Word e um PDF.</div>
+        </div>
+      </div>
+
+      <div class="metarow">
+        <span>Para: Olivier Mendes</span>
+        <span>Seguimento da reunião de 5 de agosto</span>
+        <span>Referência: processo ENE 340-26</span>
+        <span>26 de agosto de 2026</span>
+      </div>
+
+      <div style="margin-top:34px">
+        <a href="#motor" class="btn btn-primary">Ver a plataforma a funcionar ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. O QUE OUVIMOS ============ -->
+  <section class="section-alt" id="diagnostico">
+    <div class="container center">
+      <span class="eyebrow">O que ouvimos</span>
+      <h2>Três pontos de fricção, um objetivo</h2>
+      <p class="lead">O objetivo que nos deu foi claro: libertar os três comerciais técnicos da prospeção e da qualificação, para se dedicarem só à negociação técnica.</p>
+
+      <div class="grid-3" style="margin-top:38px; text-align:left">
+        <div class="card reveal">
+          <div class="ftile">1</div>
+          <h3>Qualificação de leads</h3>
+          <p class="small">As leads das campanhas chegam sem a profundidade que os comerciais precisam. O bot atual, dentro do Go High Level, faz perguntas e pouco mais.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ftile">2</div>
+          <h3>Orçamentação industrial</h3>
+          <p class="small">Cada orçamento obriga a compilar à mão dois Excel diferentes, um de preços e outro de dimensionamento, para dentro de um Word. Não escala.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ftile">3</div>
+          <h3>Pós-venda</h3>
+          <p class="small">Seguidores parados, AVAC sem rendimento. Chega quase tudo por telefone, muitas vezes fora de horas, sem registo estruturado até alguém atender.</p>
+        </div>
+      </div>
+
+      <blockquote class="quote reveal">
+        Eu analiso as coisas como se não tivesse apoio rigorosamente nenhum. Se eu não tiver a certeza
+        que estou a investir bem, não invisto. E provavelmente não vou escolher o caminho mais barato,
+        vou escolher aquele que faz mais sentido para a empresa.
+        <cite>Olivier Mendes, reunião de 5 de agosto de 2026</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ 3. PROVA SOCIAL ============ -->
+  <section id="referencias">
+    <div class="container center">
+      <span class="eyebrow">Quem já faz isto</span>
+      <h2>Mais de 60 clientes. Estes parecem-se convosco.</h2>
+      <p class="lead">Cada um destes comprou <strong>uma</strong> destas peças. A ERTEC junta as três.</p>
+
+      <div class="refs">
+        <div class="card ref reveal">
+          <span class="sect">Tratamento de água</span>
+          <b>CleanPur</b>
+          <span>O sistema recebe a análise laboratorial em PDF, identifica os parâmetros fora da norma, escolhe o equipamento e o tamanho, e gera a apresentação e a cotação. Cerca de 210 propostas por mês, que demoravam uma hora cada uma. Documento técnico entra, documento comercial sai.</span>
+        </div>
+        <div class="card ref reveal">
+          <span class="sect">Engenharia e construção, energia</span>
+          <b>Canas</b>
+          <span>Lê o email da E-Redes, extrai os dados do PDF e abre o processo já pré-preenchido na plataforma, em vez do Excel de 50 colunas.</span>
+        </div>
+        <div class="card ref reveal">
+          <span class="sect">Fotovoltaico</span>
+          <b>Fundo Solar</b>
+          <span>Agente em produção: qualifica a lead por WhatsApp, dá orçamento estimativo, filtra por zona geográfica e encaminha para o comercial certo já com o resumo da conversa.</span>
+        </div>
+        <div class="card ref reveal">
+          <span class="sect">Segurança eletrónica</span>
+          <b>FalconTech</b>
+          <span>Instalador técnico B2B, como a ERTEC: qualificação multicanal com orçamento estimativo logo na primeira mensagem, e entrada automática no CRM.</span>
+        </div>
+        <div class="card ref reveal">
+          <span class="sect">Produção vitivinícola</span>
+          <b>Quinta da Lagoa Velha</b>
+          <span>Saiu da calculadora em Excel para uma aplicação web com backend a sério: propostas com margens sempre atualizadas, histórico completo e pipeline visível.</span>
+        </div>
+        <div class="card ref reveal">
+          <span class="sect">Equipamentos de proteção individual</span>
+          <b>MM Protek</b>
+          <span>Guimarães. Orçamentação automática a partir das caixas de email, com os preços e as regras a virem do ERP, e validação do comercial antes de sair.</span>
+        </div>
+      </div>
+
+      <div class="note-box reveal" style="margin-top:26px">
+        <span class="dot"></span>
+        <div>
+          <strong>Transparência sobre a terceira peça.</strong>
+          O agente de pós-venda é a mais recente das três. Temos duas em construção neste momento,
+          uma gestora de condomínios em Espinho e o fluxo de avarias da FalconTech.
+          Está desenhado e validado, não está ainda a correr em produção há meses como as outras duas peças.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. OS 6 PASSOS ============ -->
+  <section class="section-alt" id="processo">
+    <div class="container center">
+      <span class="eyebrow">O vosso processo, hoje</span>
+      <h2>Seis passos, do consumo do cliente à proposta entregue</h2>
+      <p class="lead">Reconstruído a partir dos dois ficheiros que nos enviou do processo ENE 340-26, para o cliente OMA.</p>
+
+      <div class="steps">
+        <div class="step6 human reveal">
+          <span class="n">1</span>
+          <div>
+            <h4>Recolher os consumos do cliente</h4>
+            <p>No caso da OMA: 30 499 kWh por ano, repartidos por ponta, cheias, vazio e super vazio, com 20,70 kW de potência contratada.</p>
+          </div>
+          <span class="tag">Engenharia</span>
+        </div>
+        <div class="step6 human reveal">
+          <span class="n">2</span>
+          <div>
+            <h4>Dimensionar o sistema</h4>
+            <p>37 painéis de 405 Wp, o que dá 14,99 kWp, com inversor SAJ de 12 kW e estrutura coplanar micro rail para telhado tipo sandwich.</p>
+          </div>
+          <span class="tag">Engenharia</span>
+        </div>
+        <div class="step6 manual reveal">
+          <span class="n">3</span>
+          <div>
+            <h4>Correr o PVSOL para a produção mês a mês</h4>
+            <p>Doze linhas, de 756 kWh em janeiro a 2 457 kWh em julho. Total de 18 854 kWh por ano.</p>
+          </div>
+          <span class="tag">Trabalho manual</span>
+        </div>
+        <div class="step6 manual reveal">
+          <span class="n">4</span>
+          <div>
+            <h4>Ir ao Excel dos preços buscar o custo</h4>
+            <p>Três vezes, uma por gama de painel. A lista de equipamento é a mesma nas três, só muda a marca e o valor final.</p>
+          </div>
+          <span class="tag">Trabalho manual</span>
+        </div>
+        <div class="step6 manual reveal">
+          <span class="n">5</span>
+          <div>
+            <h4>Correr o Excel de cálculo para o estudo económico</h4>
+            <p>Amortização, TIR, poupança a 25 anos e os gráficos de perfil de consumo e de produção.</p>
+          </div>
+          <span class="tag">Trabalho manual</span>
+        </div>
+        <div class="step6 manual reveal">
+          <span class="n">6</span>
+          <div>
+            <h4>Montar o Word e imprimir o Excel</h4>
+            <p>Vinte e cinco páginas, das quais a apresentação da empresa, o enquadramento, a legislação, as fichas de marca, os pressupostos, as exclusões e as garantias são sempre iguais.</p>
+          </div>
+          <span class="tag">Trabalho manual</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. ATO 1: A LEAD ENTRA ============ -->
+  <section id="ato1">
+    <div class="container center">
+      <span class="eyebrow">Ato 1</span>
+      <h2>A lead entra qualificada</h2>
+      <p class="lead">WhatsApp, Instagram, Facebook e site. O comercial só recebe o que interessa, já com a conversa toda resumida.</p>
+
+      <div class="cr" id="qualif" style="margin-top:36px"></div>
+      <p class="demo-note">Conversas ilustrativas, com dados fictícios. Um comercial pode entrar na conversa a qualquer momento e o agente cala-se.</p>
+    </div>
+  </section>
+
+  <!-- ============ 6. ATO 2: O MOTOR (momento uau) ============ -->
+  <section class="section-alt" id="motor">
+    <div class="container center">
+      <span class="eyebrow">Ato 2</span>
+      <h2>O orçamento sai em minutos</h2>
+      <p class="lead">
+        Isto não é uma imagem. Mexa no número de painéis e veja a potência, a produção,
+        as três gamas e a amortização a recalcular. Os dados são os do processo ENE 340-26.
+      </p>
+
+      <div class="plat reveal" style="margin-top:36px">
+        <div class="plat-bar">
+          <i></i><i></i><i></i>
+          <span class="url">plataforma.ertec.pt / orçamentos / ENE 340-26</span>
+        </div>
+        <div class="plat-body">
+
+          <div class="plat-in">
+            <div class="plat-sec first">Cliente</div>
+            <div class="fld"><span class="k">Designação</span><span class="v">OMA</span></div>
+            <div class="fld"><span class="k">Localização</span><span class="v">S. João da Madeira</span></div>
+            <div class="fld"><span class="k">Potência contratada</span><span class="v">20,70 kW</span></div>
+            <div class="fld"><span class="k">Tarifário</span><span class="v">BTN diário</span></div>
+
+            <div class="plat-sec">Consumo anual</div>
+            <div class="fld"><span class="k">Ponta</span><span class="v">2 469 kWh</span></div>
+            <div class="fld"><span class="k">Ponta verão</span><span class="v">1 770 kWh</span></div>
+            <div class="fld"><span class="k">Cheias</span><span class="v">13 483 kWh</span></div>
+            <div class="fld"><span class="k">Vazio</span><span class="v">8 870 kWh</span></div>
+            <div class="fld"><span class="k">Super vazio</span><span class="v">3 907 kWh</span></div>
+            <div class="fld tot"><span class="k">Total</span><span class="v">30 499 kWh</span></div>
+            <p class="src">Lido da fatura enviada pelo cliente. Com diagrama de carga da E-Redes, o perfil deixa de ser indicativo.</p>
+
+            <div class="plat-sec">Dimensionamento</div>
+            <div class="plat-slider">
+              <div class="top">
+                <label for="np">Número de painéis</label>
+                <b id="np-val">37</b>
+              </div>
+              <input class="plat-range" type="range" id="np" min="20" max="60" step="1" value="37">
+              <p class="plat-hint">Painel de 405 Wp. Estrutura coplanar micro rail, telhado tipo sandwich.</p>
+            </div>
+            <div class="plat-derived">
+              <div><div class="dv" id="d-kwp">14,99</div><div class="dk">kWp</div></div>
+              <div><div class="dv" id="d-area">74</div><div class="dk">m² de campo</div></div>
+              <div><div class="dv" id="d-inv">12</div><div class="dk">kW inversor</div></div>
+            </div>
+          </div>
+
+          <div class="plat-out">
+            <div class="plat-sec first">Produção estimada</div>
+            <div class="chartwrap">
+              <div class="chart" id="chart"></div>
+              <div class="chart-x">
+                <span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span>
+                <span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span>
+              </div>
+            </div>
+            <div class="fld" style="margin-top:12px"><span class="k">Total ano</span><span class="v" id="d-prod">18 854 kWh</span></div>
+            <p class="src">Importado do PVSOL, a ferramenta que já usam. A plataforma não a substitui.</p>
+
+            <button class="btn btn-primary btn-gerar" id="gerar">Gerar proposta</button>
+
+            <div id="resultado" hidden>
+              <div class="plat-sec">Gamas de equipamento</div>
+              <div class="gamas" id="gamas"></div>
+
+              <div class="plat-sec">Estudo de autoconsumo</div>
+              <div class="econ">
+                <div><div class="ev" id="e-amort">4,6</div><div class="ek">Anos de amortização</div></div>
+                <div><div class="ev" id="e-poup">2 560 €</div><div class="ek">Poupança ano 1</div></div>
+                <div><div class="ev" id="e-tir">18,1%</div><div class="ek">TIR a 10 anos</div></div>
+                <div><div class="ev" id="e-25">74 846 €</div><div class="ek">Poupança a 25 anos</div></div>
+              </div>
+
+              <div class="docs">
+                <div class="doc"><span class="ic"></span><div><b>Proposta comercial</b><small>25 páginas, template ERTEC, PDF</small></div></div>
+                <div class="doc"><span class="ic"></span><div><b>Estudo de autoconsumo</b><small>Relatório com gráficos, PDF</small></div></div>
+              </div>
+
+              <div style="margin-top:18px"><span class="genbadge"><i></i> Gerado em 40 segundos</span></div>
+            </div>
+
+            <div id="vazio" class="plat-empty">
+              <strong>Nada para mostrar ainda</strong>
+              <p>Ajuste o dimensionamento à esquerda e carregue em Gerar proposta.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="note-box reveal" style="margin-top:26px">
+        <span class="dot"></span>
+        <div>
+          <strong>As contas não são feitas por inteligência artificial.</strong>
+          São feitas por código, com as vossas regras e as vossas margens, e dão sempre o mesmo resultado.
+          A IA faz duas coisas: lê os ficheiros de consumo do cliente e escreve a carta de abertura.
+          Com 37 painéis e a gama Sharp, os números acima são exatamente os do estudo que nos enviou.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. ATO 3: PÓS-VENDA ============ -->
+  <section id="ato3">
+    <div class="container center">
+      <span class="eyebrow">Ato 3</span>
+      <h2>O cliente liga fora de horas</h2>
+      <p class="lead">Hoje, às nove da noite de sábado, isto é uma chamada perdida. Segunda de manhã, a equipa tem a ocorrência com o histórico todo.</p>
+
+      <div class="cr" id="posvenda" style="margin-top:36px"></div>
+      <p class="demo-note">Conversas ilustrativas, com dados fictícios.</p>
+    </div>
+  </section>
+
+  <!-- ============ 8. FLUXO ============ -->
+  <section class="section-alt" id="ligacao">
+    <div class="container center">
+      <span class="eyebrow">Integração</span>
+      <h2>Como se liga ao que já têm</h2>
+      <div class="fluxo" id="fluxoErtec" style="margin-top:36px"></div>
+    </div>
+  </section>
+
+  <!-- ============ 9. LIMITES ============ -->
+  <section id="limites">
+    <div class="container center">
+      <span class="eyebrow">Regras</span>
+      <h2>O que o agente faz e o que fica convosco</h2>
+      <div class="limits">
+        <div class="card card-do reveal">
+          <h3>O agente faz sozinho</h3>
+          <ul class="list-check">
+            <li>Conversa, qualifica e distingue industrial de residencial</li>
+            <li>Lê faturas e ficheiros de consumo e extrai os valores</li>
+            <li>Cria a ficha no Go High Level com o resumo da conversa</li>
+            <li>Faz o despiste de primeira linha no pós-venda</li>
+            <li>Abre a ocorrência com o histórico e notifica quem está de serviço</li>
+          </ul>
+        </div>
+        <div class="card card-dont reveal">
+          <h3>Fica sempre com a vossa equipa</h3>
+          <ul class="list-x">
+            <li>O dimensionamento técnico da instalação</li>
+            <li>A validação da proposta antes de sair</li>
+            <li>A negociação e a entrega presencial ao cliente</li>
+            <li>Qualquer alteração a preços ou margens</li>
+            <li>A intervenção técnica no terreno</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-box reveal" style="margin-top:22px">
+        <span class="dot"></span>
+        <div>O agente nunca dá um preço sem dimensionamento. Prefere pedir os dados que faltam a arriscar um número que depois não se confirma.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. CALCULADORA ============ -->
+  <section class="section-alt" id="roi">
+    <div class="container center">
+      <span class="eyebrow">Quanto vale para vocês</span>
+      <h2>Ponha os vossos números</h2>
+      <p class="lead">Não sabemos ainda o vosso volume real de orçamentos industriais. Mexa nos valores e veja o que isto liberta.</p>
+      <div class="calc" id="roiCalc" style="margin-top:36px"></div>
+    </div>
+  </section>
+
+  <!-- ============ 11. ENTREGAS ============ -->
+  <section id="entregas">
+    <div class="container center">
+      <span class="eyebrow">Como chegamos lá</span>
+      <h2>Três entregas, cerca de cinco meses</h2>
+      <p class="lead">Cada entrega é validada antes de a seguinte arrancar.</p>
+      <div class="deliver">
+        <div class="dcard reveal">
+          <span class="ph">Entrega 1</span>
+          <h3>Agente de qualificação</h3>
+          <p>WhatsApp, Instagram, Facebook e site, ligados ao Go High Level. Começa aqui porque é a peça mais rápida a dar valor e porque a pessoa que vão contratar para marketing digital fica logo a trabalhar em cima dela.</p>
+          <span class="when">Meses 1 a 2</span>
+        </div>
+        <div class="dcard reveal">
+          <span class="ph">Entrega 2</span>
+          <h3>Motor de orçamentação</h3>
+          <p>A vossa tabela de preços e as vossas regras dentro da plataforma, o modelo económico a 25 anos em código, e a geração dos dois PDF com o vosso template.</p>
+          <span class="when">Meses 2 a 4</span>
+        </div>
+        <div class="dcard reveal">
+          <span class="ph">Entrega 3</span>
+          <h3>Agente de pós-venda</h3>
+          <p>Receção do pedido, identificação do cliente, despiste de primeira linha e criação da ocorrência. Numa fase seguinte, leitura dos manuais das marcas para os códigos de erro.</p>
+          <span class="when">Meses 4 a 5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12. INVESTIMENTO ============ -->
+  <section class="section-alt" id="investimento">
+    <div class="container center">
+      <span class="eyebrow">Investimento</span>
+      <h2>Uma fatura, com o primeiro ano incluído</h2>
+
+      <div class="pricebreak reveal" style="margin-top:34px">
+        <div class="r"><span>Agente de qualificação, em separado</span><span>200 €/mês</span></div>
+        <div class="r"><span>Plataforma de orçamentação, em separado</span><span>300 €/mês</span></div>
+        <div class="r"><span>Agente de pós-venda, em separado</span><span>200 €/mês</span></div>
+        <div class="r sum"><span>Total em separado</span><span>700 €/mês</span></div>
+        <div class="r win"><span>Em conjunto, com infraestrutura partilhada</span><span>400 €/mês</span></div>
+      </div>
+
+      <div style="margin-top:42px">
+        <div class="bignum">18 000 € + IVA</div>
+        <p class="lead" style="margin-top:12px">
+          Cerca de 13 000 € de implementação e cerca de 5 000 € correspondentes aos doze meses
+          de manutenção pagos à cabeça. Uma fatura só.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-top:38px; text-align:left">
+        <div class="card reveal">
+          <h3>A partir do 13.º mês</h3>
+          <p class="small">400 € por mês mais IVA. Revisível ao fim de doze meses conforme o volume.</p>
+        </div>
+        <div class="card reveal">
+          <h3>O que a avença cobre</h3>
+          <p class="small">Infraestrutura, custos de inteligência artificial, manutenção, correção de erros e melhoria contínua. Sem bolsas de horas ao fim do mês.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Pagamento</h3>
+          <p class="small">Faseado pelas três entregas, com a primeira tranche na adjudicação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13. CTA ============ -->
+  <section class="cta-final">
+    <div class="container center">
+      <h2>Avançamos, Olivier?</h2>
+      <p class="lead" style="margin:14px auto 30px">
+        O passo seguinte é a proposta formal, com o âmbito fechado depois de confirmarmos
+        de onde vem a produção e como recebem os diagramas de carga.
+      </p>
+      <a href="mailto:diogo.goncalves@aisolutions.pt?subject=ERTEC%20%7C%20Proposta" class="btn btn-primary">Marcar a apresentação da proposta →</a>
+    </div>
+  </section>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a ERTEC
+      <span class="disclaimer">Diogo Gonçalves, Co-Founder. Simulações com dados ilustrativos, para fins de apresentação.</span>
+    </div>
+  </footer>
+
+  <!-- ============ CONFIGS ============ -->
+  <script type="application/json" id="qualif-config">
+  {
+    "agentName": "Agente ERTEC",
+    "agentInitials": "ER",
+    "chatStatus": "WhatsApp Business, online",
+    "stepMs": 1300,
+    "endPauseMs": 2600,
+    "scenarios": [
+      {
+        "title": "Indústria",
+        "subtitle": "O caso que interessa: qualifica, lê a fatura e entrega ao comercial do industrial.",
+        "chat": [
+          { "sender": "system", "text": "Anúncio Meta, autoconsumo industrial, 09:12" },
+          { "sender": "client", "text": "Bom dia. Vi o vosso anúncio sobre autoconsumo. Temos um pavilhão em Vila Nova de Famalicão e queríamos perceber se compensa.", "time": "09:12" },
+          { "sender": "agent", "text": "Bom dia. Em instalações industriais compensa quase sempre, mas depende do vosso perfil de consumo. Posso fazer três perguntas rápidas para o encaminhar para o comercial certo?", "time": "09:12" },
+          { "sender": "client", "text": "Claro.", "time": "09:13" },
+          { "sender": "agent", "text": "Qual é a **potência contratada** e o consumo anual aproximado?", "time": "09:13" },
+          { "sender": "client", "text": "380 kVA. O consumo não sei de cor, mas tenho aqui a fatura.", "time": "09:15" },
+          { "sender": "agent", "text": "Envie a fatura que eu leio.", "time": "09:15" },
+          { "sender": "client", "text": "[fatura-eletricidade.pdf]", "time": "09:16" },
+          { "sender": "agent", "text": "Recebido. **412 000 kWh por ano**, em BTE, com o grosso do consumo em horas de cheia. É o perfil ideal para autoconsumo. Última pergunta: a cobertura é chapa sandwich, fibrocimento, ou tem laje?", "time": "09:16" },
+          { "sender": "client", "text": "Chapa sandwich, cerca de 2 800 m2.", "time": "09:18" },
+          { "sender": "agent", "text": "Perfeito. Passo já ao comercial responsável pelo industrial, com tudo o que me disse. Deve ter contacto ainda hoje.", "time": "09:18" }
+        ],
+        "steps": [
+          { "icon": "ear", "label": "Recebe a mensagem vinda do anúncio" },
+          { "icon": "filter", "label": "Classifica o pedido como industrial, não residencial" },
+          { "icon": "search", "label": "Regista a potência contratada" },
+          { "icon": "book", "label": "Lê a fatura e extrai os consumos por período" },
+          { "icon": "check", "label": "Confirma o tipo e a área de cobertura" },
+          { "icon": "database", "label": "Cria a ficha no Go High Level com o resumo" },
+          { "icon": "send", "label": "Notifica o comercial do industrial" }
+        ]
+      },
+      {
+        "title": "Residencial",
+        "subtitle": "Filtra sem perder a lead: recolhe os dados e não ocupa a equipa do industrial.",
+        "chat": [
+          { "sender": "client", "text": "Olá, queria orçamento para painéis para a minha casa em Braga. É uma moradia.", "time": "14:02" },
+          { "sender": "agent", "text": "Olá, obrigado pelo contacto. A ERTEC faz residencial, mas a equipa técnica está dedicada a instalações empresariais e industriais, por isso o retorno aqui é mais demorado.", "time": "14:02" },
+          { "sender": "agent", "text": "Deixo o seu pedido registado na mesma. Para adiantar: sabe qual é a potência contratada e o consumo mensal médio?", "time": "14:03" },
+          { "sender": "client", "text": "6,9 kVA, uns 300 kWh por mês.", "time": "14:05" },
+          { "sender": "agent", "text": "Registado. Fica na lista de residencial e alguém lhe dá retorno. Obrigado pela compreensão.", "time": "14:05" }
+        ],
+        "steps": [
+          { "icon": "filter", "label": "Deteta que o pedido é residencial" },
+          { "icon": "ban", "label": "Não encaminha para a equipa do industrial" },
+          { "icon": "list", "label": "Recolhe na mesma os dados base" },
+          { "icon": "database", "label": "Regista na lista de residencial" },
+          { "icon": "check", "label": "Fecha sem consumir tempo comercial" }
+        ]
+      },
+      {
+        "title": "Recusa consciente",
+        "subtitle": "Pedem um preço à cabeça. O agente recusa dar um número que não se confirma.",
+        "chat": [
+          { "sender": "client", "text": "Quanto custa um sistema de 100 kWp?", "time": "11:20" },
+          { "sender": "agent", "text": "Prefiro não lhe dar um número que depois não se confirme.", "time": "11:20" },
+          { "sender": "agent", "text": "Num sistema de 100 kWp o preço muda com o tipo de cobertura, a distância ao quadro, a necessidade de reforço da instalação e a gama de painel. Só a gama pode fazer uma diferença muito relevante no valor final.", "time": "11:21" },
+          { "sender": "client", "text": "Percebo. Então como fazemos?", "time": "11:22" },
+          { "sender": "agent", "text": "Peço-lhe o **diagrama de carga** ou a última fatura, e uma foto da cobertura. Com isso um engenheiro faz o dimensionamento a sério e recebe as gamas com preço fechado.", "time": "11:22" },
+          { "sender": "client", "text": "Envio ainda hoje.", "time": "11:24" },
+          { "sender": "agent", "text": "Fico à espera. Assim que chegar, entra na fila de orçamentação.", "time": "11:24" }
+        ],
+        "steps": [
+          { "icon": "alert", "label": "Deteta pedido de preço sem dados suficientes" },
+          { "icon": "ban", "label": "Recusa avançar com um valor sem dimensionamento" },
+          { "icon": "brain", "label": "Explica o que faz o preço variar" },
+          { "icon": "list", "label": "Pede diagrama de carga, fatura e foto da cobertura" },
+          { "icon": "user-cog", "label": "Marca para orçamentação quando os dados chegarem" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/json" id="posvenda-config">
+  {
+    "agentName": "Assistência ERTEC",
+    "agentInitials": "ER",
+    "chatStatus": "WhatsApp Business, 24 horas",
+    "stepMs": 1300,
+    "endPauseMs": 2600,
+    "scenarios": [
+      {
+        "title": "Seguidor parado",
+        "subtitle": "Sábado à noite. Despiste de primeira linha e ocorrência aberta com histórico.",
+        "chat": [
+          { "sender": "system", "text": "Sábado, 21h04. Fora do horário de assistência." },
+          { "sender": "client", "text": "Boa noite. O seguidor do lado poente está parado desde a tarde.", "time": "21:04" },
+          { "sender": "agent", "text": "Boa noite. Já identifiquei a vossa instalação: **UPAC de 240 kWp em Barcelos, com seguidores instalados em 2024**.", "time": "21:04" },
+          { "sender": "agent", "text": "Antes de abrir a ocorrência, uma tentativa rápida: consegue ir ao quadro do seguidor, desligar o disjuntor, esperar um minuto e voltar a armar?", "time": "21:05" },
+          { "sender": "client", "text": "Vou tentar.", "time": "21:06" },
+          { "sender": "client", "text": "Rearmei. Continua parado.", "time": "21:14" },
+          { "sender": "agent", "text": "Obrigado por tentar. Abri a ocorrência **OC-2026-0841** com o histórico e com a tentativa de rearme já registada. A equipa de pós-venda entra em contacto na segunda de manhã, sem precisar de repetir perguntas.", "time": "21:14" },
+          { "sender": "client", "text": "Obrigado.", "time": "21:15" }
+        ],
+        "steps": [
+          { "icon": "clock", "label": "Recebe o pedido fora do horário de assistência" },
+          { "icon": "id", "label": "Identifica o cliente pelo número de telefone" },
+          { "icon": "database", "label": "Puxa a instalação e o histórico de intervenções" },
+          { "icon": "wrench", "label": "Executa o despiste de primeira linha" },
+          { "icon": "alert", "label": "Não resolve, por isso escala" },
+          { "icon": "list", "label": "Cria a ocorrência com tudo registado" },
+          { "icon": "send", "label": "Notifica o pós-venda para segunda de manhã" }
+        ]
+      },
+      {
+        "title": "AVAC sem rendimento",
+        "subtitle": "Classifica como manutenção e não como avaria, para a equipa levar o material certo.",
+        "chat": [
+          { "sender": "client", "text": "O ar condicionado do escritório está a trabalhar mas não arrefece.", "time": "10:31" },
+          { "sender": "agent", "text": "Vou tentar despistar consigo. **Há quanto tempo não é feita manutenção aos filtros?**", "time": "10:31" },
+          { "sender": "client", "text": "Sinceramente não sei. Para aí um ano.", "time": "10:33" },
+          { "sender": "agent", "text": "É a causa mais comum. Filtros colmatados fazem a unidade trabalhar sem rendimento. Consegue verificar se estão visivelmente sujos?", "time": "10:33" },
+          { "sender": "client", "text": "Estão pretos.", "time": "10:41" },
+          { "sender": "agent", "text": "Então é quase de certeza isso. Registei como **manutenção de filtros** e não como avaria, que é o que faz a equipa levar o material certo já na primeira deslocação.", "time": "10:41" }
+        ],
+        "steps": [
+          { "icon": "ear", "label": "Recebe o pedido de assistência" },
+          { "icon": "wrench", "label": "Percorre a árvore de despiste do AVAC" },
+          { "icon": "clock", "label": "Pergunta pela última manutenção" },
+          { "icon": "check", "label": "Confirma o sintoma com o cliente" },
+          { "icon": "user-cog", "label": "Classifica como manutenção, não avaria" },
+          { "icon": "list", "label": "Cria a ocorrência com o material provável" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/json" id="fluxoErtec-config">
+  {
+    "stepMs": 1800,
+    "channels": [
+      { "icon": "whatsapp", "label": "WhatsApp" },
+      { "icon": "instagram", "label": "Instagram" },
+      { "icon": "facebook", "label": "Facebook" },
+      { "icon": "globe", "label": "Site" }
+    ],
+    "nodes": [
+      { "icon": "message", "title": "Mensagem recebida", "detail": "Todos os canais numa entrada só.", "tone": "brand" },
+      { "icon": "brain", "title": "Qualifica", "detail": "Industrial ou residencial, consumo, cobertura, decisor.", "tone": "teal" },
+      { "icon": "database", "title": "Escreve no Go High Level", "detail": "Ficha criada com o resumo integral da conversa.", "tone": "teal" },
+      { "icon": "wrench", "title": "Plataforma de orçamentação", "detail": "O engenheiro dimensiona e gera os dois PDF.", "tone": "teal" },
+      { "icon": "check", "title": "Proposta entregue", "detail": "Com o vosso template, as vossas gamas e as vossas margens.", "tone": "brand" }
+    ],
+    "note": "O Go High Level continua a ser o vosso CRM. Não trocamos o que já funciona."
+  }
+  </script>
+
+  <script type="application/json" id="roiCalc-config">
+  {
+    "inputs": [
+      { "id": "orcamentos", "label": "Orçamentos industriais por mês", "min": 2, "max": 40, "default": 12 },
+      { "id": "minutos", "label": "Minutos de compilação por orçamento", "min": 30, "max": 300, "step": 10, "default": 180, "suffix": " min" }
+    ],
+    "outputs": [
+      { "label": "Horas por mês só em compilação", "expr": "(orcamentos*minutos)/60", "suffix": " h", "decimals": 0, "highlight": true },
+      { "label": "Horas devolvidas à equipa por ano", "expr": "(orcamentos*minutos*12*0.9)/60", "suffix": " h", "decimals": 0 },
+      { "label": "Propostas extra por ano, com a mesma equipa", "expr": "orcamentos*12*0.5", "suffix": "", "decimals": 0 }
+    ],
+    "note": "Assume que 90% do tempo de compilação desaparece e que metade dele volta em capacidade. Ponha os vossos números reais."
+  }
+  </script>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/motor.js"></script>
+  <script>
+    chatRaciocinio('qualif');
+    chatRaciocinio('posvenda');
+    fluxo('fluxoErtec');
+    calculadora('roiCalc');
+    motorOrcamentacao();
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* ERTEC x AI Solutions
+   Estilo: corporativo-azul (base clara, B2B industrial) com a paleta da ERTEC.
+   Cores tiradas do site ertec.pt: verde #6FB631 e teal #60C0C2; grafite #32373c do logótipo.
+   Verde e teal foram escurecidos para passarem contraste AA sobre branco. */
+:root {
+  --brand-hsl: 92 58% 28%;    /* verde ERTEC, escurecido (5,7:1 sobre branco) */
+  --accent-hsl: 181 52% 32%;  /* teal ERTEC, escurecido (4,9:1 sobre branco) */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --brand-live-hsl: 92 55% 45%;   /* verde do logótipo, só para superfícies escuras */
+  --accent-live-hsl: 181 55% 55%; /* teal do logótipo, só para superfícies escuras */
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(100 22% 96.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(100 20% 98%);
+  --border: hsl(120 12% 88%);
+
+  --text: hsl(210 20% 14%);
+  --muted: hsl(210 12% 40%);
+
+  --success-hsl: 152 60% 32%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 68% 45%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 88% 42%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
+  --grad-text: linear-gradient(120deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 55%, hsl(var(--accent-hsl) / 0.9));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
