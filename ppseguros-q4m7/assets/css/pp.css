@@ -1,0 +1,252 @@
+/* PPseguros: componentes especificos desta apresentacao.
+   So tokens (var(--...)). Nenhuma cor literal. */
+
+/* --- Correcao de contraste: o teal da marca nao passa AA como texto --- */
+.kicker, a, .badge { color: var(--accent-text); }
+.badge { background: hsl(var(--accent-hsl) / 0.12); }
+.btn-ghost:hover { border-color: var(--accent-text); color: var(--accent-text); }
+.stat-card { border-left-color: var(--accent); }
+
+/* --- A coluna do chat do shared/deck e uma superficie escura dentro de um deck
+   claro. O componente foi escrito para o estilo deck-dark e usa var(--text) e
+   var(--muted) nas bolhas, que aqui sao quase pretos. Re-escopamos os tokens
+   apenas dentro dessa subarvore. --- */
+.cr-chat {
+  --text: hsl(0 0% 100%);
+  --muted: hsl(230 12% 70%);
+  --border: hsl(240 12% 22%);
+  color: var(--text);
+}
+
+/* --- A barra de navegacao e fixa: os alvos das ancoras precisam de folga --- */
+section[id] { scroll-margin-top: 72px; }
+
+/* --- Barra de navegacao --- */
+.topbar {
+  position: sticky; top: 0; z-index: 40;
+  background: hsl(0 0% 100% / 0.88); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .inner {
+  max-width: var(--container); margin: 0 auto; padding: 10px 24px;
+  display: flex; align-items: center; gap: 20px;
+}
+.topbar img { height: 30px; width: auto; }
+.topbar nav { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
+.topbar nav a {
+  font-size: 0.82rem; font-weight: 600; color: var(--muted);
+  padding: 7px 12px; border-radius: 999px; transition: all .18s ease;
+}
+.topbar nav a:hover { background: var(--bg-soft); color: var(--brand); }
+.topbar nav a.on { background: hsl(var(--brand-hsl) / 0.08); color: var(--brand); }
+@media (max-width: 900px) { .topbar nav { display: none; } }
+
+/* --- Hero --- */
+.hero-wrap { position: relative; overflow: hidden; }
+.hero-wrap::before {
+  content: ""; position: absolute; inset: -30% 40% 40% -20%;
+  background: radial-gradient(closest-side, hsl(var(--accent-hsl) / 0.16), transparent 72%);
+  pointer-events: none;
+}
+.hero-wrap::after {
+  content: ""; position: absolute; inset: -20% -25% 45% 45%;
+  background: radial-gradient(closest-side, hsl(var(--brand-hsl) / 0.13), transparent 72%);
+  pointer-events: none;
+}
+.hero-wrap .container { position: relative; z-index: 1; }
+.eyebrow-pill {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 7px 15px 7px 11px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface);
+  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.05em;
+  color: var(--brand); box-shadow: var(--shadow-sm); margin-bottom: 22px;
+}
+.eyebrow-pill .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 0 4px hsl(var(--accent-hsl) / 0.18);
+}
+.meta-row {
+  display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 34px;
+  padding-top: 22px; border-top: 1px solid var(--border);
+}
+.meta-row div { font-size: 0.86rem; color: var(--muted); }
+.meta-row b { display: block; color: var(--text); font-weight: 600; font-size: 0.95rem; }
+
+/* --- Grelhas auxiliares --- */
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.tight { max-width: 760px; }
+
+/* --- Cards de dor --- */
+.pain { border-top: 3px solid hsl(var(--danger-hsl) / 0.55); }
+.pain .q {
+  font-family: var(--font-display); font-size: 1.02rem; font-weight: 700;
+  color: var(--brand); line-height: 1.3;
+}
+.pain p { color: var(--muted); font-size: 0.92rem; margin-top: 10px; }
+.closer {
+  margin-top: 34px; font-family: var(--font-display); font-style: italic;
+  font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--brand);
+  max-width: 720px; margin-left: auto; margin-right: auto; line-height: 1.45;
+}
+
+/* --- Ambito: os 2 assistentes --- */
+.agent-card { display: flex; gap: 18px; align-items: flex-start; }
+.agent-ava {
+  flex: 0 0 auto; width: 52px; height: 52px; border-radius: 16px;
+  display: grid; place-items: center; font-family: var(--font-display);
+  font-weight: 800; font-size: 1.05rem;
+  background: var(--grad-hero); color: var(--on-brand);
+}
+.agent-card h3 { color: var(--brand); }
+.agent-card .who { font-size: 0.86rem; color: var(--accent-text); font-weight: 600; margin-top: 2px; }
+.agent-card ul { list-style: none; margin-top: 14px; display: grid; gap: 9px; }
+.agent-card li { font-size: 0.93rem; color: var(--muted); padding-left: 20px; position: relative; }
+.agent-card li::before {
+  content: ""; position: absolute; left: 2px; top: 9px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+
+/* --- Cartao de tarefa Asana --- */
+.asana {
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--surface); box-shadow: var(--shadow-lg); overflow: hidden;
+  max-width: 620px; margin: 0 auto;
+}
+.asana-bar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px; border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.asana-bar .dots { display: flex; gap: 6px; }
+.asana-bar .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+.asana-bar .path { font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+.asana-body { padding: 22px 24px 26px; }
+.asana-complete {
+  display: inline-flex; align-items: center; gap: 7px;
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 5px 13px; font-size: 0.78rem; font-weight: 700; color: var(--muted);
+}
+.asana-title {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.22rem;
+  color: var(--text); line-height: 1.25; margin: 14px 0 20px; min-height: 1.5em;
+}
+.asana-field {
+  display: grid; grid-template-columns: 132px 1fr; gap: 14px; align-items: start;
+  padding: 11px 0; border-top: 1px solid var(--border);
+  opacity: 0; transform: translateY(6px); transition: opacity .45s ease, transform .45s ease;
+}
+.asana-field.on { opacity: 1; transform: none; }
+.asana-field.flash { animation: ppFlash 1.1s ease; }
+@keyframes ppFlash {
+  0% { background: hsl(var(--accent-hsl) / 0.16); }
+  100% { background: transparent; }
+}
+.asana-field .k { font-size: 0.83rem; color: var(--muted); font-weight: 600; }
+.asana-field .v { font-size: 0.93rem; color: var(--text); font-weight: 600; }
+.asana-field .v small { display: block; font-weight: 400; color: var(--muted); margin-top: 3px; font-size: 0.85rem; }
+.asana-who { display: inline-flex; align-items: center; gap: 8px; }
+.asana-who i {
+  width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--brand); color: var(--on-brand);
+  font-size: 0.68rem; font-weight: 800; font-style: normal;
+}
+.asana-pill {
+  display: inline-block; padding: 3px 11px; border-radius: 999px;
+  font-size: 0.78rem; font-weight: 700;
+  background: hsl(var(--accent-hsl) / 0.14); color: var(--accent-text);
+}
+.asana-pill.due { background: hsl(var(--warning-hsl) / 0.16); color: var(--warning); }
+
+/* --- Metricas --- */
+.metric { text-align: left; }
+.metric .ic {
+  width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+  background: hsl(var(--accent-hsl) / 0.12); color: var(--accent-text); margin-bottom: 14px;
+}
+.metric .ic svg { width: 20px; height: 20px; }
+.metric b { display: block; font-family: var(--font-display); color: var(--brand); font-size: 1rem; }
+.metric span { display: block; color: var(--muted); font-size: 0.89rem; margin-top: 5px; }
+
+/* --- As 3 regras --- */
+.rule { text-align: center; }
+.rule .ic {
+  width: 46px; height: 46px; border-radius: 14px; margin: 0 auto 14px;
+  display: grid; place-items: center;
+  background: hsl(var(--brand-hsl) / 0.08); color: var(--brand);
+}
+.rule .ic svg { width: 22px; height: 22px; }
+.rule h3 { color: var(--brand); }
+.rule p { color: var(--muted); font-size: 0.92rem; margin-top: 9px; }
+
+/* --- Referencias --- */
+.ref { display: flex; flex-direction: column; height: 100%; }
+.ref .who { font-family: var(--font-display); font-weight: 800; color: var(--brand); font-size: 1.05rem; }
+.ref .sector { font-size: 0.8rem; color: var(--accent-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 3px; }
+.ref .nums { list-style: none; display: grid; gap: 8px; margin: 16px 0 0; }
+.ref .nums li { font-size: 0.91rem; color: var(--muted); display: flex; gap: 9px; align-items: baseline; }
+.ref .nums li b { color: var(--text); font-family: var(--font-display); font-weight: 700; white-space: nowrap; }
+.ref .link { margin-top: auto; padding-top: 16px; font-size: 0.86rem; font-weight: 600; }
+.ref .tie { margin-top: 14px; font-size: 0.88rem; color: var(--text); background: var(--bg-soft); border-radius: 10px; padding: 11px 13px; }
+blockquote.quote {
+  border-left: 3px solid var(--accent); padding: 4px 0 4px 20px;
+  font-size: 1.02rem; color: var(--text); font-style: italic; line-height: 1.55;
+}
+blockquote.quote cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.86rem; color: var(--muted); }
+
+/* --- Investimento --- */
+.price-card .label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); }
+.price-card .price { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.7rem); font-weight: 800; color: var(--brand); margin: 8px 0 2px; }
+.price-card .vat { font-size: 0.84rem; color: var(--muted); }
+.price-card .note { color: var(--muted); font-size: 0.92rem; margin-top: 14px; }
+.price-card ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+.price-card li { font-size: 0.9rem; color: var(--muted); padding-left: 20px; position: relative; }
+.price-card li::before { content: "\2713"; position: absolute; left: 0; color: var(--success); font-weight: 800; font-size: 0.8rem; }
+
+/* --- Cronograma --- */
+.crono { display: grid; gap: 0; margin-top: 34px; text-align: left; }
+.crono-row {
+  display: grid; grid-template-columns: 44px 1fr 220px; gap: 20px; align-items: center;
+  padding: 20px 4px; border-top: 1px solid var(--border);
+}
+.crono-row:last-child { border-bottom: 1px solid var(--border); }
+.crono-n {
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--brand); color: var(--on-brand);
+  font-family: var(--font-display); font-weight: 800; font-size: 0.9rem;
+}
+.crono-row.go .crono-n { background: var(--accent); }
+.crono-row b { font-family: var(--font-display); font-size: 1.02rem; color: var(--text); }
+.crono-row p { color: var(--muted); font-size: 0.9rem; margin-top: 3px; }
+.crono-when { font-weight: 700; color: var(--brand); font-size: 0.95rem; text-align: right; }
+@media (max-width: 760px) {
+  .crono-row { grid-template-columns: 34px 1fr; }
+  .crono-when { grid-column: 2; text-align: left; }
+}
+
+/* --- Fase seguinte --- */
+.later { border: 1px dashed var(--border); background: var(--surface-2); box-shadow: none; }
+.later h3 { color: var(--muted); }
+
+/* --- Nota / avisos --- */
+.note-line { font-size: 0.84rem; color: var(--muted); margin-top: 14px; }
+.note-line.mid { text-align: center; }
+
+/* --- CTA final --- */
+.cta-final { background: var(--grad-cta); color: var(--on-brand); }
+.cta-final h2, .cta-final .lead { color: var(--on-brand); }
+.cta-final .lead { opacity: 0.88; }
+.cta-final .btn-primary { background: var(--on-brand); color: var(--brand); }
+
+/* --- Footer --- */
+.ais-footer { border-top: 1px solid var(--border); padding: 34px 0; font-size: 0.88rem; color: var(--muted); }
+.ais-footer .disclaimer { display: block; margin-top: 8px; font-size: 0.8rem; }
+
+/* --- Responsivo --- */
+@media (max-width: 960px) {
+  .grid-3, .grid-4, .grid-5 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+  .asana-field { grid-template-columns: 1fr; gap: 4px; }
+}

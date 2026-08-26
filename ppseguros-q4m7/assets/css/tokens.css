@@ -1,0 +1,41 @@
+/* PPseguros x AI Solutions
+   Base: estilo corporativo-azul, com a paleta real da marca PPseguros.
+   Cores extraidas do logo oficial (www.ppseguros.pt/wp-content/uploads/2020/10/logo.png):
+   indigo do wordmark #1E126C e teal da marca circular #009F98. */
+:root {
+  --brand-hsl: 248 71% 25%;
+  --accent-hsl: 177 100% 31%;
+  --accent-text-hsl: 177 100% 24%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --accent-text: hsl(var(--accent-text-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(176 32% 96%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(176 30% 98%);
+  --border: hsl(220 20% 89%);
+
+  --text: hsl(248 30% 13%);
+  --muted: hsl(248 10% 42%);
+
+  --success-hsl: 152 60% 32%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 68% 45%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 92% 42%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 55%, hsl(var(--accent-hsl) / 0.75));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
