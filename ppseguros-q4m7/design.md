@@ -63,3 +63,22 @@ a resolver-se sozinho, a frente deles.
      sem tocar no componente partilhado. Validado: passos 1 a 7 sempre visiveis, em desktop e mobile.
   5. Acento da Unibox alinhado com o teal real da marca (`--ub-accent: #009f98`).
 - Sem erros de consola e sem overflow horizontal em desktop (1440) nem mobile (390).
+
+- v2, revisao do comercial:
+  1. **Ambito corrigido.** Os assistentes sao 2, mas a centralizacao abrange os **4 numeros**. A seccao
+     de ambito passou de "um assistente por pessoa" para "dois assistentes, quatro numeros visiveis",
+     e a Unibox mostra as quatro contas.
+  2. **Sem atribuicao de responsabilidades por pessoa.** A transcricao da discovery **nao diz** o que o
+     Paulo trata nem o que a Carla trata: ela so entra a meio da reuniao (00:16:29) e a unica coisa
+     registada dela e a questao do particular vs profissional. Todos os cenarios, o cartao do Asana e a
+     Unibox passaram a falar em "consultor" e "equipa comercial". Tambem nao se diz **quais** dos quatro
+     numeros levam assistente, porque isso fica decidido com eles.
+     Mantidos os nomes onde ha fonte: o destinatario no cabecalho, a atribuicao da questao do pessoal
+     vs profissional a Carla (esta na transcricao) e o CTA final dirigido ao Paulo (decisor).
+     As quatro contas da Unibox aparecem numeradas, com nota a dizer que na implementacao ficam com o
+     nome de cada pessoa.
+  3. Retirado o titulo "Sem rodeios" (agora "Implementacao e mensalidade") e retirados os valores com
+     IVA, ficando so "+ IVA".
+  4. **Cronograma em semanas relativas** em vez de datas civis, contadas a partir dos acessos
+     (semana 1 acessos, semanas 1 a 3 escuta, semanas 4 e 5 construcao, producao a partir da semana 6).
+     Evita que a proposta caduque se a decisao escorregar.
