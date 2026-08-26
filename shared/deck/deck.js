@@ -80,9 +80,9 @@
       h += '<div class="cr-chat"><div class="cr-chat-head"><div class="cr-chat-ava">' + esc(cfg.agentInitials || "AI") + '</div><div class="cr-chat-who"><b>' + esc(cfg.agentName || "Agente") + "</b><small>" + esc(cfg.chatStatus || "WhatsApp Business, online") + '</small></div></div><div class="cr-msgs" id="' + id + '-msgs">';
       s.chat.forEach(function (m, i) {
         if (i > rc) return;
-        if (m.sender === "system") { h += '<div class="cr-sys">' + esc(m.text) + "</div>"; return; }
+        if (m.sender === "system") { h += '<div class="cr-sys' + (i === rc ? " cr-nova" : "") + '">' + esc(m.text) + "</div>"; return; }
         var agent = m.sender === "agent";
-        h += '<div class="cr-row ' + (agent ? "agent" : "client") + '"><div class="cr-bubble">' + rich(m.text) + (m.time ? "<time>" + esc(m.time) + "</time>" : "") + "</div></div>";
+        h += '<div class="cr-row ' + (agent ? "agent" : "client") + (i === rc ? " cr-nova" : "") + '"><div class="cr-bubble">' + rich(m.text) + (m.time ? "<time>" + esc(m.time) + "</time>" : "") + "</div></div>";
       });
       if (rc < s.chat.length - 1) h += '<div class="cr-typing"><i></i><i></i><i></i></div>';
       h += "</div></div>";
