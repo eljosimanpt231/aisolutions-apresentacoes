@@ -77,15 +77,6 @@
 .hero-meta div { font-size: 0.86rem; color: var(--muted); }
 .hero-meta b { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 3px; }
 
-/* ---------- Cartao de pergunta ao decisor ---------- */
-.ask {
-  background: var(--nav); color: var(--nav-text);
-  border-radius: var(--radius-lg); padding: 30px 32px;
-  border-left: 5px solid var(--lime); box-shadow: var(--shadow-md);
-}
-.ask .k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--lime); font-weight: 700; }
-.ask h3 { font-family: var(--font-display); font-size: clamp(1.2rem, 2.4vw, 1.7rem); margin-top: 10px; color: var(--nav-text); }
-.ask p { color: var(--nav-muted); font-size: 0.95rem; margin-top: 10px; }
 
 /* ---------- Frase de fecho em italico ---------- */
 .closer {
@@ -150,11 +141,12 @@
      telemovel), mas herda a cor de texto do tema. Como este deck e claro,
      var(--text) e quase preto e as bolhas do agente ficavam ilegiveis.
      Forcar texto claro dentro do painel. ---------- */
-.cr-chat { color: var(--nav-text); }
-.cr-chat-who b { color: var(--nav-text); }
-.cr-chat-who small { color: var(--nav-muted); }
-.cr-row.agent .cr-bubble { color: var(--nav-text); }
-.cr-sys { color: var(--nav-muted); }
+.cr .cr-chat { color: var(--on-brand); }
+.cr .cr-chat-who b { color: var(--on-brand) !important; }
+.cr .cr-chat-who small { color: var(--nav-muted) !important; }
+.cr .cr-row.agent .cr-bubble { color: var(--on-brand) !important; }
+.cr .cr-row.agent .cr-bubble strong { color: var(--on-brand) !important; }
+.cr .cr-sys { color: var(--nav-muted) !important; }
 
 /* Folga para a barra de paginacao fixa nao tapar o fim do ecra */
 .deck-slide > section:last-child { padding-bottom: calc(var(--section-pad) + 40px); }
