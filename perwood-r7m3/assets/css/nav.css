@@ -145,6 +145,17 @@
 .calc-out.hl .lbl { color: var(--nav-muted); }
 .calc-out.hl .val { color: var(--lime); }
 
+/* ---------- Conversa do chat+raciocinio ----------
+     O painel de conversa do deck.css e escuro por desenho (mockup de
+     telemovel), mas herda a cor de texto do tema. Como este deck e claro,
+     var(--text) e quase preto e as bolhas do agente ficavam ilegiveis.
+     Forcar texto claro dentro do painel. ---------- */
+.cr-chat { color: var(--nav-text); }
+.cr-chat-who b { color: var(--nav-text); }
+.cr-chat-who small { color: var(--nav-muted); }
+.cr-row.agent .cr-bubble { color: var(--nav-text); }
+.cr-sys { color: var(--nav-muted); }
+
 /* Folga para a barra de paginacao fixa nao tapar o fim do ecra */
 .deck-slide > section:last-child { padding-bottom: calc(var(--section-pad) + 40px); }
 .deck-slide > section.cta-final:last-child { padding-bottom: var(--section-pad); }

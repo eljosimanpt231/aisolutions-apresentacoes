@@ -88,3 +88,14 @@ de 5/7/8/10/12/15, cor, metros):
   do que isso.
 - Prova social sem valores financeiros de outros clientes: só métricas públicas de case studies
   (Lojinha Bebé e Luxflor), com link verificado (HTTP 200 a 08/09/2026).
+
+## Alterações após revisão do comercial (08/09/2026)
+
+- Removido o kicker "A pergunta que interessa agora" do cartão de pergunta ao Paulo: a pergunta
+  ganha mais força sozinha.
+- **Correção de contraste no chat**: o painel de conversa do `shared/deck/deck.css` é escuro por
+  desenho (é um mockup de telemóvel) mas herda `var(--text)` do tema. Como este deck é claro, as
+  bolhas do agente ficavam texto preto sobre fundo preto. Forçado texto claro dentro de `.cr-chat`
+  em `nav.css`. **Nota para outras apresentações claras que usem o `deck.css`: o mesmo bug aplica-se.**
+- Mensalidade fechada em **200 € + IVA** (era o intervalo 200 a 300 € indicado na discovery). O texto
+  de apoio passou a dizer que fica no valor mais baixo do intervalo, em vez de "os mesmos valores".
