@@ -1,0 +1,162 @@
+/* ============================================================
+   FORMATO deck-separadores + componentes desta apresentacao.
+   So usa tokens (var(--...)). Proibido cores diretas.
+   ============================================================ */
+
+/* ---------- Barra superior fixa ---------- */
+.deck-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--nav); color: var(--nav-text);
+  border-bottom: 1px solid hsl(var(--lime-hsl) / 0.25);
+}
+.deck-nav-in {
+  max-width: var(--container); margin: 0 auto; padding: 10px 24px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.deck-brand { display: flex; align-items: center; gap: 12px; margin-right: auto; }
+.deck-word {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.06rem;
+  letter-spacing: 0.06em; line-height: 1; color: var(--nav-text);
+  padding-bottom: 5px; border-bottom: 3px solid var(--lime);
+}
+.deck-x { font-size: 0.76rem; color: var(--nav-muted); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+
+.deck-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.deck-tab {
+  border: 1px solid transparent; background: transparent; color: var(--nav-muted);
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
+  padding: 8px 14px; border-radius: 999px; cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.deck-tab:hover { color: var(--nav-text); border-color: hsl(var(--lime-hsl) / 0.35); }
+.deck-tab.active { background: var(--lime); color: hsl(var(--nav-hsl)); border-color: var(--lime); }
+.deck-tab .n { opacity: 0.55; margin-right: 6px; font-variant-numeric: tabular-nums; }
+.deck-tab.active .n { opacity: 0.6; }
+
+/* ---------- Paineis e slides ---------- */
+.deck-panel { display: none; }
+.deck-panel.active { display: block; }
+.deck-slide { display: none; }
+.deck-slide.active { display: block; }
+.deck-slide.active > section { animation: deck-float-in 0.5s ease both; }
+
+.deck-pager {
+  position: sticky; bottom: 0; z-index: 40;
+  background: hsl(var(--nav-hsl) / 0.94); color: var(--nav-text);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid hsl(var(--lime-hsl) / 0.2);
+}
+.deck-pager-in {
+  max-width: var(--container); margin: 0 auto; padding: 9px 24px;
+  display: flex; align-items: center; gap: 14px;
+}
+.deck-pager .title { font-size: 0.84rem; font-weight: 600; margin-right: auto; color: var(--nav-text); }
+.deck-pager .count { font-size: 0.76rem; color: var(--nav-muted); font-variant-numeric: tabular-nums; }
+.deck-arrow {
+  width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+  border: 1px solid hsl(var(--lime-hsl) / 0.3); background: transparent;
+  color: var(--nav-text); font-size: 1rem; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: all 0.18s ease;
+}
+.deck-arrow:hover:not(:disabled) { background: var(--lime); color: hsl(var(--nav-hsl)); border-color: var(--lime); }
+.deck-arrow:disabled { opacity: 0.28; cursor: default; }
+.deck-dots { display: flex; gap: 6px; }
+.deck-dot { width: 7px; height: 7px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; background: hsl(var(--nav-muted) / 0.4); }
+.deck-dot.on { background: var(--lime); }
+
+/* ---------- Hero desta apresentacao ---------- */
+.hero { background: var(--grad-hero); padding-top: clamp(44px, 6vw, 72px); }
+.hero-logo { margin-bottom: 22px; }
+.hero-logo img {
+  height: 62px; width: auto; margin: 0 auto;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 18px; box-shadow: var(--shadow-sm);
+}
+.hero-meta { display: flex; gap: 26px; flex-wrap: wrap; justify-content: center; margin-top: 26px; }
+.hero-meta div { font-size: 0.86rem; color: var(--muted); }
+.hero-meta b { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 3px; }
+
+/* ---------- Cartao de pergunta ao decisor ---------- */
+.ask {
+  background: var(--nav); color: var(--nav-text);
+  border-radius: var(--radius-lg); padding: 30px 32px;
+  border-left: 5px solid var(--lime); box-shadow: var(--shadow-md);
+}
+.ask .k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--lime); font-weight: 700; }
+.ask h3 { font-family: var(--font-display); font-size: clamp(1.2rem, 2.4vw, 1.7rem); margin-top: 10px; color: var(--nav-text); }
+.ask p { color: var(--nav-muted); font-size: 0.95rem; margin-top: 10px; }
+
+/* ---------- Frase de fecho em italico ---------- */
+.closer {
+  font-family: var(--font-display); font-style: italic; font-weight: 600;
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem); color: var(--text);
+  border-left: 4px solid var(--lime); padding-left: 18px; max-width: 720px;
+}
+
+/* ---------- Tabela do documento de produtos ---------- */
+.doc-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.doc-table th, .doc-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); }
+.doc-table thead th {
+  background: var(--brand); color: var(--on-brand);
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+  border-bottom: 0;
+}
+.doc-table thead th:first-child { border-top-left-radius: 10px; }
+.doc-table thead th:last-child { border-top-right-radius: 10px; }
+.doc-table tbody tr:nth-child(even) { background: var(--surface-2); }
+.doc-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.doc-scroll table { min-width: 720px; }
+
+/* ---------- Lista numerada de campos ---------- */
+.fields { list-style: none; display: grid; gap: 14px; counter-reset: f; }
+.fields li { position: relative; padding-left: 44px; counter-increment: f; }
+.fields li::before {
+  content: counter(f); position: absolute; left: 0; top: 0;
+  width: 30px; height: 30px; border-radius: 9px;
+  background: hsl(var(--lime-hsl) / 0.2); color: var(--accent);
+  font-family: var(--font-display); font-weight: 800; font-size: 0.86rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.fields b { display: block; font-size: 0.98rem; }
+.fields span { color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- Caso de prova social ---------- */
+.case { display: grid; gap: 8px; }
+.case .metric { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--brand); }
+.case .who { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 700; }
+.case p { color: var(--muted); font-size: 0.92rem; }
+
+/* ---------- Aviso honesto ---------- */
+.note-honest {
+  border: 1px dashed hsl(var(--warning-hsl) / 0.45);
+  background: hsl(var(--warning-hsl) / 0.07);
+  border-radius: 12px; padding: 16px 18px; font-size: 0.89rem; color: var(--text);
+}
+.note-honest b { color: var(--warning); }
+
+/* ---------- Preco ---------- */
+.price-card .sub { font-size: 0.82rem; color: var(--muted); margin-top: -2px; margin-bottom: 8px; }
+
+/* ---------- Calculadora: o destaque do deck.css assume tema escuro.
+     Aqui o fundo e claro, por isso o cartao em destaque passa a ser
+     o bloco escuro da marca, com o numero em lima. ---------- */
+.calc-out.hl { background: var(--nav); border-color: hsl(var(--lime-hsl) / 0.5); }
+.calc-out.hl .lbl { color: var(--nav-muted); }
+.calc-out.hl .val { color: var(--lime); }
+
+/* Folga para a barra de paginacao fixa nao tapar o fim do ecra */
+.deck-slide > section:last-child { padding-bottom: calc(var(--section-pad) + 40px); }
+.deck-slide > section.cta-final:last-child { padding-bottom: var(--section-pad); }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 780px) {
+  .deck-nav-in { padding: 10px 16px; gap: 10px; }
+  .deck-brand { width: 100%; }
+  .deck-tabs { width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+  .deck-tab { white-space: nowrap; font-size: 0.78rem; padding: 7px 12px; }
+  .deck-pager-in { padding: 9px 16px; gap: 10px; }
+  .deck-pager .title { font-size: 0.78rem; }
+  .deck-dots { display: none; }
+  .hero-logo img { height: 48px; }
+}

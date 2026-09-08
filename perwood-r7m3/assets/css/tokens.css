@@ -1,0 +1,79 @@
+/* ============================================================
+   TOKENS: Perwood x AI Solutions
+   Base visual: papel claro e quente (o site da Perwood e branco
+   e minimalista), tinta quase preta, e o lima da marca (#b5be01)
+   como acento grafico. Formato de navegacao: deck-separadores.
+   Regra: os componentes nunca usam cores diretas, so var(--...).
+   ============================================================ */
+
+:root {
+  /* ---- Marca Perwood ----
+     O lima do logotipo (#b5be01 = hsl(63 99% 37%)) nao passa
+     contraste como texto sobre claro. Guarda-se em --lime para
+     uso grafico (barras, fundos escuros, destaques) e a marca
+     tipografica usa a versao escurecida (azeitona). */
+  --brand-hsl: 68 88% 20%;       /* azeitona profunda: fundos, botoes, numeros */
+  --accent-hsl: 68 85% 24%;      /* texto de acento sobre claro (AA) */
+  --lime-hsl: 66 97% 47%;        /* lima do logotipo: so grafico / sobre escuro */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --lime: hsl(var(--lime-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* ---- Barra de separadores (escura, como manda o formato) ---- */
+  --nav-hsl: 72 16% 9%;
+  --nav: hsl(var(--nav-hsl));
+  --nav-text: hsl(66 12% 92%);
+  --nav-muted: hsl(66 8% 62%);
+
+  /* ---- Superficies ---- */
+  --bg: hsl(48 30% 98%);
+  --bg-soft: hsl(52 26% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(50 24% 96%);
+  --border: hsl(56 14% 86%);
+
+  /* ---- Texto ---- */
+  --text: hsl(72 14% 12%);
+  --muted: hsl(72 7% 40%);
+
+  /* ---- Semanticos ---- */
+  --success-hsl: 152 62% 30%;
+  --success: hsl(var(--success-hsl));
+  --danger-hsl: 8 72% 44%;
+  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 88% 40%;
+  --warning: hsl(var(--warning-hsl));
+
+  /* ---- Gradientes (derivados da marca) ---- */
+  --grad-hero: radial-gradient(ellipse at 20% -10%, hsl(var(--lime-hsl) / 0.20), transparent 58%);
+  --grad-text: linear-gradient(115deg, hsl(var(--accent-hsl)), hsl(84 62% 30%));
+  --grad-cta: linear-gradient(155deg, hsl(var(--nav-hsl)), hsl(var(--brand-hsl)) 130%);
+
+  /* ---- Sombras (tingidas pela marca) ---- */
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.10);
+  --shadow-md: 0 10px 30px hsl(var(--brand-hsl) / 0.12);
+  --shadow-lg: 0 24px 60px hsl(var(--brand-hsl) / 0.18);
+
+  /* ---- Forma ---- */
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  /* ---- Tipografia: grotesca pesada (ecoa o logotipo) + Inter ---- */
+  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* ---- Ritmo ---- */
+  --container: 1140px;
+  --section-pad: clamp(48px, 6vw, 76px);
+}
+
+/* WhatsApp (mockup): cores canonicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
