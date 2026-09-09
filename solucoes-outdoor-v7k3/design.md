@@ -36,7 +36,7 @@ Elemento assinatura: glow vermelho de marca no hero + grid subtil (estrutura, ca
 5. Hoje vs com o sistema
 6. Os 6 módulos (âmbito funcional)
 7. **Momento uau**: `chatRaciocinio`, 4 cenários reais (1 de recusa consciente)
-8. **Demo de plataforma**: CRM Soluções Outdoor navegável (5 vistas)
+8. **Demo de plataforma**: CRM Soluções Outdoor navegável (7 vistas, com ficha de cliente master-detail, registo fotográfico com âmbito por foto, e gestão de stock com reservas)
 9. Assistente de campo e conformidade ISO
 10. `fluxo` — ligação ao SAGE, Shopify, Factorial
 11. Unibox — atendimento omnicanal
@@ -68,3 +68,17 @@ linhas de vida).
 - AutoCAD apresentado como piloto a validar, nunca como capacidade garantida
   (na reunião o Manuel disse que tinha de confirmar com a equipa técnica).
 - Norma de certificação da formação sem número (o Mário hesitou entre 18800 e 18880).
+
+## Fonte adicional: o site solucoesoutdoor.com
+Consultado a 09/09/2026, depois da primeira versão. Corrigiu suposições minhas:
+- **Marcas reais que vendem**: Petzl, Singing Rock e Mode. (Na 1.ª versão eu tinha inventado Tractel e Sinalux.)
+- **Serviços que não saíram em nenhuma das duas reuniões**: trabalhos em fachadas de edifícios e serviços em aerogeradores.
+- **Formação IPAF** (plataformas elevatórias), além dos trabalhos em altura.
+- **Catálogo**: arneses, ancoragens, antiqueda móveis, bloqueadores, mosquetões, cordas, capacetes, roldanas, descensores, frontais, ascensores de corda e sacos de transporte.
+Tudo isto entrou na maqueta do CRM: obras de fachada e de aerogerador, artigos com as marcas certas, e sessões IPAF.
+
+## Nota sobre a maqueta do CRM
+Os nomes de clientes, obras, técnicos e valores da maqueta são ilustrativos e inventados para a demonstração.
+Os artigos, marcas, tipos de trabalho e vocabulário são reais, tirados do site e das reuniões.
+As fotografias são representadas por blocos de cor: o que importa mostrar é o âmbito de cada registo
+(que passo do procedimento, que obra, que técnico, que cláusula da norma), não a imagem em si.

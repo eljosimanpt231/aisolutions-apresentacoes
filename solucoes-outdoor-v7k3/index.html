@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../shared/deck/deck.css">
   <link rel="stylesheet" href="../shared/unibox/unibox.css">
   <link rel="stylesheet" href="assets/css/extra.css">
+  <link rel="stylesheet" href="assets/css/crm.css">
   <script src="config.js"></script>
 </head>
 <body>
@@ -283,33 +284,40 @@
       <div class="center">
         <span class="eyebrow">A plataforma</span>
         <h2>O CRM da Soluções Outdoor, por dentro.</h2>
-        <p class="lead">Não é um software genérico com o vosso logótipo. É desenhado à volta das quatro linhas e do que cada responsável de área precisa de ver quando abre o computador de manhã.</p>
+        <p class="lead">Não é um software genérico com o vosso logótipo. É desenhado à volta das quatro linhas, dos vossos clientes e do que cada responsável de área precisa de ver quando abre o computador de manhã.</p>
       </div>
 
-      <div class="app-note reveal"><span>ⓘ</span><span>Maqueta navegável, com dados ilustrativos. Clique nas secções da barra lateral.</span></div>
+      <div class="app-note reveal"><span>ⓘ</span><span>Maqueta navegável, com dados ilustrativos. Clique nas secções da barra lateral, nos clientes e nos filtros.</span></div>
 
       <div class="app-frame reveal">
         <div class="app-chrome"><i></i><i></i><i></i><span>crm.solucoesoutdoor.com</span></div>
         <div class="app">
           <aside class="app-side">
             <div class="app-brand"><img src="assets/img/logo-outdoor-dark.png" alt="Soluções Outdoor"></div>
+            <span class="app-sec">Gestão</span>
             <button class="app-nav is-on" data-view="painel"><em>▦</em>Painel</button>
-            <button class="app-nav" data-view="linhas"><em>📐</em>Linhas de vida</button>
-            <button class="app-nav" data-view="stocks"><em>📦</em>Stocks e SAGE</button>
-            <button class="app-nav" data-view="epi"><em>🦺</em>Inspeções e EPI</button>
+            <button class="app-nav" data-view="clientes"><em>👤</em>Clientes<span class="app-badge">148</span></button>
+            <button class="app-nav" data-view="linhas"><em>📐</em>Obras e linhas de vida</button>
+            <span class="app-sec">Terreno</span>
+            <button class="app-nav" data-view="fotos"><em>📷</em>Registo fotográfico<span class="app-badge red">3</span></button>
+            <button class="app-nav" data-view="epi"><em>🦺</em>Inspeções e EPI<span class="app-badge amber">21</span></button>
             <button class="app-nav" data-view="formacao"><em>🎓</em>Formação</button>
+            <span class="app-sec">Operação</span>
+            <button class="app-nav" data-view="stocks"><em>📦</em>Stocks e SAGE<span class="app-badge red">6</span></button>
             <div class="app-user"><span class="app-av">MB</span><div><b>Mário Barroso</b><i>Gerência</i></div></div>
           </aside>
           <main class="app-main">
 
-            <!-- VISTA: PAINEL -->
+            <!-- ============ VISTA: PAINEL ============ -->
             <section class="app-view is-on" data-view="painel">
-              <header class="app-head"><h4>Painel de gestão</h4><span class="app-date">Terça, 10 de setembro</span></header>
+              <header class="app-head"><h4>Painel de gestão</h4><span class="app-date">Terça, 10 de setembro, 09:14</span></header>
               <div class="kpis">
                 <div class="kpi"><span>Orçamentos em aberto</span><b>14</b><i class="up">6 aguardam validação técnica</i></div>
                 <div class="kpi"><span>Tempo médio de resposta</span><b>38 min</b><i class="up">era de 2 dias em outubro</i></div>
-                <div class="kpi"><span>Obras a decorrer</span><b>7</b><i>3 com registo fotográfico em falta</i></div>
+                <div class="kpi"><span>Obras a decorrer</span><b>7</b><i class="warn">3 com registo fotográfico em falta</i></div>
                 <div class="kpi"><span>EPI a expirar em 30 dias</span><b>21</b><i class="warn">avisos já enviados aos clientes</i></div>
+                <div class="kpi"><span>Valor em stock</span><b>84.210 €</b><i>6 artigos abaixo do mínimo</i></div>
+                <div class="kpi"><span>Adjudicado este mês</span><b>62.400 €</b><i class="up">meta mensal em 78%</i></div>
               </div>
               <div class="app-2col">
                 <div class="panel">
@@ -326,86 +334,527 @@
                   <h5>A precisar de si</h5>
                   <ul class="feed">
                     <li><span class="pill red">Validar</span>Linha de vida, Cobertura Norte Lda: pré-orçamento de 128 m pronto a rever</li>
-                    <li><span class="pill amber">Registo</span>Obra 2026-114: faltam as fotografias do ponto de ancoragem</li>
-                    <li><span class="pill teal">Stock</span>Arnês Petzl Avao: 4 unidades, abaixo do mínimo definido</li>
+                    <li><span class="pill amber">Registo</span>Obra 2026-114: faltam as fotografias do ponto de ancoragem 7, 8 e 9</li>
+                    <li><span class="pill teal">Stock</span>Arnês Petzl Avao: 4 unidades, abaixo do mínimo de 10</li>
                     <li><span class="pill">Lead</span>Messenger: pedido de formação de trabalhos em altura para 12 pessoas</li>
+                    <li><span class="pill amber">Inspeção</span>Cobertura Norte: 8 arneses expiram a 22/09, sem resposta ao aviso</li>
                   </ul>
                 </div>
               </div>
+              <div class="panel" style="margin-top:14px">
+                <h5>Atividade de hoje</h5>
+                <ul class="tl">
+                  <li><span class="tl-t">09:12</span><span class="tl-ic teal">🤖</span><div><b>Agente</b> criou a obra 2026-116 a partir de mensagem no Messenger de Solar Douro Energia</div></li>
+                  <li><span class="tl-t">08:47</span><span class="tl-ic">📷</span><div><b>Nuno Alves</b> registou 2 fotografias na obra 2026-109, fixação de ancoradores</div></li>
+                  <li><span class="tl-t">08:30</span><span class="tl-ic teal">🤖</span><div><b>Agente</b> enviou aviso de validade a Metalúrgica Douro, 24 equipamentos</div></li>
+                  <li><span class="tl-t">08:05</span><span class="tl-ic">📦</span><div><b>SAGE</b> sincronizou 12 artigos da fatura 2026/4471 de Petzl Ibérica</div></li>
+                  <li><span class="tl-t">07:52</span><span class="tl-ic amber">⚠</span><div><b>Agente</b> sinalizou a fatura 2026/4472, referência desconhecida, nada lançado</div></li>
+                </ul>
+              </div>
             </section>
 
-            <!-- VISTA: LINHAS DE VIDA -->
-            <section class="app-view" data-view="linhas">
-              <header class="app-head"><h4>Linhas de vida</h4><span class="app-date">7 obras ativas, 6 orçamentos em curso</span></header>
-              <table class="app-tb">
-                <thead><tr><th>Obra</th><th>Cliente</th><th>Cobertura</th><th class="n">Metros</th><th>Estado</th></tr></thead>
-                <tbody>
-                  <tr><td>2026-114</td><td>Cobertura Norte, Lda</td><td>Chapa sandwich</td><td class="n">128 m</td><td><span class="pill red">Aguarda validação</span></td></tr>
-                  <tr><td>2026-112</td><td>Adega de Vila Real</td><td>Telha cerâmica</td><td class="n">64 m</td><td><span class="pill teal">Orçamento enviado</span></td></tr>
-                  <tr><td>2026-109</td><td>Metalúrgica Douro</td><td>Chapa perfilada</td><td class="n">210 m</td><td><span class="pill green">Em instalação</span></td></tr>
-                  <tr><td>2026-107</td><td>Câmara de Lordelo</td><td>Laje betão</td><td class="n">45 m</td><td><span class="pill amber">Registo em falta</span></td></tr>
-                  <tr><td>2026-103</td><td>Agrupamento Escolar</td><td>Telha marselha</td><td class="n">96 m</td><td><span class="pill green">Concluída</span></td></tr>
-                </tbody>
-              </table>
-              <div class="panel" style="margin-top:18px">
-                <h5>Obra 2026-114, o que o agente já preparou</h5>
-                <div class="prep">
-                  <div><span>Metros lineares</span><b>128 m</b><i>lidos da medição enviada</i></div>
-                  <div><span>Tipo de ancoragem</span><b>Chapa sandwich</b><i>fixação a confirmar em obra</i></div>
-                  <div><span>Pontos intermédios</span><b>9</b><i>estimativa pelo traçado</i></div>
-                  <div><span>Absorvedores</span><b>2</b><i>um por extremidade</i></div>
+            <!-- ============ VISTA: CLIENTES ============ -->
+            <section class="app-view" data-view="clientes">
+              <header class="app-head"><h4>Clientes</h4><span class="app-date">148 fichas, 31 com obra ativa</span></header>
+              <div class="toolbar">
+                <div class="search"><span>🔍</span><i>Procurar cliente, NIF ou obra</i></div>
+                <div class="chips">
+                  <button class="chip is-on">Todos</button>
+                  <button class="chip">Linhas de vida</button>
+                  <button class="chip">EPI</button>
+                  <button class="chip">Formação</button>
+                  <button class="chip">Inspeções</button>
                 </div>
-                <p class="panel-note">O agente prepara. A validação técnica é sempre de uma pessoa da equipa antes de sair para o cliente.</p>
+              </div>
+              <div class="split">
+                <div class="split-list">
+                  <button class="crow is-on" data-cli="c1">
+                    <span class="cav">CN</span>
+                    <div><b>Cobertura Norte, Lda</b><i>Vila Real · Obra 2026-114 ativa</i></div>
+                    <span class="pill red">Validar</span>
+                  </button>
+                  <button class="crow" data-cli="c2">
+                    <span class="cav">MD</span>
+                    <div><b>Metalúrgica Douro</b><i>Peso da Régua · 24 equipamentos</i></div>
+                    <span class="pill amber">Validade</span>
+                  </button>
+                  <button class="crow" data-cli="c3">
+                    <span class="cav">AV</span>
+                    <div><b>Adega de Vila Real</b><i>Vila Real · Obra 2026-112</i></div>
+                    <span class="pill teal">Proposta</span>
+                  </button>
+                  <button class="crow" data-cli="c4">
+                    <span class="cav">CL</span>
+                    <div><b>Câmara Mun. de Lordelo</b><i>Lordelo · Obra 2026-107</i></div>
+                    <span class="pill amber">Registo</span>
+                  </button>
+                  <button class="crow" data-cli="c6">
+                    <span class="cav">EA</span>
+                    <div><b>Eólica Alto Douro</b><i>Alijó · Obra 2026-113, 6 turbinas</i></div>
+                    <span class="pill green">Em execução</span>
+                  </button>
+                  <button class="crow" data-cli="c5">
+                    <span class="cav">SD</span>
+                    <div><b>Solar Douro Energia</b><i>Régua · Lead do agente, hoje</i></div>
+                    <span class="pill green">Novo</span>
+                  </button>
+                </div>
+
+                <div class="split-detail">
+                  <!-- CLIENTE 1 -->
+                  <div class="cdet is-on" data-cli="c1">
+                    <div class="cdet-h">
+                      <span class="cav big">CN</span>
+                      <div>
+                        <b>Cobertura Norte, Lda</b>
+                        <i>NIF 507 442 118 · Zona Industrial de Vila Real, Lote 24</i>
+                        <div class="tags"><span class="tag red">Linhas de vida</span><span class="tag">EPI</span><span class="tag">Cliente desde 2019</span></div>
+                      </div>
+                    </div>
+                    <div class="cstats">
+                      <div><span>Obras</span><b>6</b><i>1 ativa</i></div>
+                      <div><span>Equipamentos</span><b>8</b><i>a expirar 22/09</i></div>
+                      <div><span>Faturado 2026</span><b>41.800 €</b><i>+18% face a 2025</i></div>
+                      <div><span>Última interação</span><b>Ontem</b><i>Messenger, 18:15</i></div>
+                    </div>
+                    <div class="app-2col">
+                      <div class="panel">
+                        <h5>Contactos</h5>
+                        <ul class="kv">
+                          <li><span>Responsável</span><b>Ricardo Sousa, Direção de obra</b></li>
+                          <li><span>Telemóvel</span><b>+351 913 000 000</b></li>
+                          <li><span>Email</span><b>geral@coberturanorte.pt</b></li>
+                          <li><span>Canal preferido</span><b>Messenger</b></li>
+                        </ul>
+                      </div>
+                      <div class="panel">
+                        <h5>Obras</h5>
+                        <ul class="kv">
+                          <li><span>2026-114</span><b>128 m, chapa sandwich <span class="pill red">Validar</span></b></li>
+                          <li><span>2025-088</span><b>64 m, telha <span class="pill green">Concluída</span></b></li>
+                          <li><span>2024-051</span><b>Sistema vertical <span class="pill green">Concluída</span></b></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="panel" style="margin-top:14px">
+                      <h5>Histórico recente</h5>
+                      <ul class="tl">
+                        <li><span class="tl-t">Ontem</span><span class="tl-ic teal">🤖</span><div>Agente recolheu o pedido no Messenger e criou a obra 2026-114 com o projeto em PDF</div></li>
+                        <li><span class="tl-t">03 set</span><span class="tl-ic amber">⚠</span><div>Aviso automático: 8 arneses expiram a 22/09, sem resposta até agora</div></li>
+                        <li><span class="tl-t">14 ago</span><span class="tl-ic">🧾</span><div>Fatura 2026/318 emitida e liquidada, 6.240 €</div></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- CLIENTE 2 -->
+                  <div class="cdet" data-cli="c2">
+                    <div class="cdet-h">
+                      <span class="cav big">MD</span>
+                      <div>
+                        <b>Metalúrgica Douro, S.A.</b>
+                        <i>NIF 501 883 072 · Parque Industrial do Douro, Peso da Régua</i>
+                        <div class="tags"><span class="tag red">Linhas de vida</span><span class="tag">Inspeções</span><span class="tag">Formação</span><span class="tag">Certificação exigida</span></div>
+                      </div>
+                    </div>
+                    <div class="cstats">
+                      <div><span>Obras</span><b>11</b><i>1 em instalação</i></div>
+                      <div><span>Equipamentos</span><b>24</b><i>expiram 14/10</i></div>
+                      <div><span>Faturado 2026</span><b>78.350 €</b><i>maior cliente do ano</i></div>
+                      <div><span>Última interação</span><b>Hoje</b><i>Email, 09:12</i></div>
+                    </div>
+                    <div class="app-2col">
+                      <div class="panel">
+                        <h5>Contactos</h5>
+                        <ul class="kv">
+                          <li><span>Responsável</span><b>Helena Matos, HSE</b></li>
+                          <li><span>Telefone</span><b>+351 254 320 900</b></li>
+                          <li><span>Email</span><b>compras@metalurgicadouro.pt</b></li>
+                          <li><span>Canal preferido</span><b>Email</b></li>
+                        </ul>
+                      </div>
+                      <div class="panel">
+                        <h5>Equipamentos em carteira</h5>
+                        <ul class="kv">
+                          <li><span>12 un.</span><b>Arnês antiqueda <span class="pill amber">14/10</span></b></li>
+                          <li><span>12 un.</span><b>Talabarte duplo <span class="pill amber">14/10</span></b></li>
+                          <li><span>210 m</span><b>Linha horizontal <span class="pill green">Em dia</span></b></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="panel" style="margin-top:14px">
+                      <h5>Histórico recente</h5>
+                      <ul class="tl">
+                        <li><span class="tl-t">Hoje</span><span class="tl-ic">✉</span><div>Helena Matos respondeu ao aviso: pede agendamento para a semana de 14</div></li>
+                        <li><span class="tl-t">Hoje</span><span class="tl-ic teal">🤖</span><div>Agente enviou proposta de reinspeção com os 24 equipamentos discriminados</div></li>
+                        <li><span class="tl-t">02 set</span><span class="tl-ic">🎓</span><div>Sessão de trabalhos em altura agendada para 18/09, 12 formandos</div></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- CLIENTE 3 -->
+                  <div class="cdet" data-cli="c3">
+                    <div class="cdet-h">
+                      <span class="cav big">AV</span>
+                      <div>
+                        <b>Adega Cooperativa de Vila Real</b>
+                        <i>NIF 500 271 449 · Rua da Adega, Vila Real</i>
+                        <div class="tags"><span class="tag red">Linhas de vida</span><span class="tag">Formação</span></div>
+                      </div>
+                    </div>
+                    <div class="cstats">
+                      <div><span>Obras</span><b>3</b><i>1 orçamento enviado</i></div>
+                      <div><span>Equipamentos</span><b>1 sistema</b><i>inspeção agendada</i></div>
+                      <div><span>Faturado 2026</span><b>12.900 €</b><i>primeiro ano</i></div>
+                      <div><span>Última interação</span><b>05 set</b><i>Telefone</i></div>
+                    </div>
+                    <div class="app-2col">
+                      <div class="panel">
+                        <h5>Contactos</h5>
+                        <ul class="kv">
+                          <li><span>Responsável</span><b>Jorge Teixeira, Manutenção</b></li>
+                          <li><span>Telefone</span><b>+351 259 322 100</b></li>
+                          <li><span>Email</span><b>manutencao@adegavr.pt</b></li>
+                          <li><span>Canal preferido</span><b>Telefone</b></li>
+                        </ul>
+                      </div>
+                      <div class="panel">
+                        <h5>Obras</h5>
+                        <ul class="kv">
+                          <li><span>2026-112</span><b>64 m, telha cerâmica <span class="pill teal">Enviado</span></b></li>
+                          <li><span>2026-090</span><b>Resgate em altura <span class="pill green">Concluída</span></b></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="panel" style="margin-top:14px">
+                      <h5>Histórico recente</h5>
+                      <ul class="tl">
+                        <li><span class="tl-t">05 set</span><span class="tl-ic">📞</span><div>Jorge Teixeira pediu para incluir formação de resgate no mesmo orçamento</div></li>
+                        <li><span class="tl-t">01 set</span><span class="tl-ic">🧾</span><div>Orçamento 2026-112 enviado, 64 m em telha cerâmica</div></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- CLIENTE 4 -->
+                  <div class="cdet" data-cli="c4">
+                    <div class="cdet-h">
+                      <span class="cav big">CL</span>
+                      <div>
+                        <b>Câmara Municipal de Lordelo</b>
+                        <i>NIF 506 112 330 · Praça do Município, Lordelo</i>
+                        <div class="tags"><span class="tag red">Linhas de vida</span><span class="tag">Inspeções</span><span class="tag">Setor público</span></div>
+                      </div>
+                    </div>
+                    <div class="cstats">
+                      <div><span>Obras</span><b>4</b><i>1 com registo em falta</i></div>
+                      <div><span>Equipamentos</span><b>3 lanços</b><i>válidos até 01/2027</i></div>
+                      <div><span>Faturado 2026</span><b>19.600 €</b><i>concurso público</i></div>
+                      <div><span>Última interação</span><b>28 ago</b><i>Email</i></div>
+                    </div>
+                    <div class="app-2col">
+                      <div class="panel">
+                        <h5>Contactos</h5>
+                        <ul class="kv">
+                          <li><span>Responsável</span><b>Eng. Paula Ribeiro, Obras</b></li>
+                          <li><span>Telefone</span><b>+351 259 340 200</b></li>
+                          <li><span>Email</span><b>obras@cm-lordelo.pt</b></li>
+                          <li><span>Nota</span><b>Exige dossiê ISO em cada auto</b></li>
+                        </ul>
+                      </div>
+                      <div class="panel">
+                        <h5>Pendentes</h5>
+                        <ul class="kv">
+                          <li><span>2026-107</span><b>Fotografias do lanço 2 <span class="pill amber">Em falta</span></b></li>
+                          <li><span>Dossiê</span><b>Aguarda registo para fechar</b></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="panel" style="margin-top:14px">
+                      <h5>Histórico recente</h5>
+                      <ul class="tl">
+                        <li><span class="tl-t">28 ago</span><span class="tl-ic amber">⚠</span><div>Agente sinalizou: obra 2026-107 sem fotografias do lanço 2, dossiê não pode fechar</div></li>
+                        <li><span class="tl-t">21 ago</span><span class="tl-ic">📐</span><div>Instalação do sistema vertical concluída, 3 lanços, 45 m</div></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- CLIENTE 6 -->
+                  <div class="cdet" data-cli="c6">
+                    <div class="cdet-h">
+                      <span class="cav big">EA</span>
+                      <div>
+                        <b>Eólica Alto Douro, S.A.</b>
+                        <i>NIF 508 660 741 · Parque Eólico do Alto Douro, Alijó</i>
+                        <div class="tags"><span class="tag red">Aerogeradores</span><span class="tag">Acesso por corda</span><span class="tag">Formação</span><span class="tag">Contrato anual</span></div>
+                      </div>
+                    </div>
+                    <div class="cstats">
+                      <div><span>Turbinas</span><b>6</b><i>3 intervencionadas</i></div>
+                      <div><span>Técnicos alocados</span><b>2</b><i>acesso por corda</i></div>
+                      <div><span>Faturado 2026</span><b>54.200 €</b><i>contrato de manutenção</i></div>
+                      <div><span>Última interação</span><b>Ontem</b><i>WhatsApp, 14:02</i></div>
+                    </div>
+                    <div class="app-2col">
+                      <div class="panel">
+                        <h5>Contactos</h5>
+                        <ul class="kv">
+                          <li><span>Responsável</span><b>Eng. Pedro Maia, O&amp;M</b></li>
+                          <li><span>Telemóvel</span><b>+351 917 220 415</b></li>
+                          <li><span>Email</span><b>manutencao@eolicaaltodouro.pt</b></li>
+                          <li><span>Nota</span><b>Exige plano de resgate por turbina</b></li>
+                        </ul>
+                      </div>
+                      <div class="panel">
+                        <h5>Intervenções</h5>
+                        <ul class="kv">
+                          <li><span>Turbina 1</span><b>Concluída <span class="pill green">Dossiê fechado</span></b></li>
+                          <li><span>Turbina 2</span><b>Concluída <span class="pill green">Dossiê fechado</span></b></li>
+                          <li><span>Turbina 3</span><b>Em curso <span class="pill teal">3 de 6 registos</span></b></li>
+                          <li><span>Turbinas 4 a 6</span><b>Agendadas para outubro</b></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="panel" style="margin-top:14px">
+                      <h5>Histórico recente</h5>
+                      <ul class="tl">
+                        <li><span class="tl-t">Ontem</span><span class="tl-ic">📷</span><div>Sérgio Lima registou a ancoragem na torre da turbina 3, antes da descida</div></li>
+                        <li><span class="tl-t">01 set</span><span class="tl-ic">🎓</span><div>Formação de acesso por corda agendada para 07/10, 5 formandos</div></li>
+                        <li><span class="tl-t">22 ago</span><span class="tl-ic teal">🤖</span><div>Agente reservou 100 m de corda semiestática para a campanha de outubro</div></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- CLIENTE 5 -->
+                  <div class="cdet" data-cli="c5">
+                    <div class="cdet-h">
+                      <span class="cav big">SD</span>
+                      <div>
+                        <b>Solar Douro Energia, Lda</b>
+                        <i>NIF 515 908 224 · Peso da Régua</i>
+                        <div class="tags"><span class="tag green">Lead novo</span><span class="tag">EPI</span><span class="tag">Criado pelo agente</span></div>
+                      </div>
+                    </div>
+                    <div class="cstats">
+                      <div><span>Obras</span><b>0</b><i>primeiro contacto</i></div>
+                      <div><span>Pedido</span><b>10 + 10</b><i>arneses e talabartes</i></div>
+                      <div><span>Origem</span><b>Messenger</b><i>anúncio de EPI</i></div>
+                      <div><span>Criado</span><b>Hoje, 09:12</b><i>pelo agente</i></div>
+                    </div>
+                    <div class="app-2col">
+                      <div class="panel">
+                        <h5>Recolhido pelo agente</h5>
+                        <ul class="kv">
+                          <li><span>Contacto</span><b>João Pinto, +351 926 555 888</b></li>
+                          <li><span>Uso previsto</span><b>Cobertura, painéis solares</b></li>
+                          <li><span>Modelo indicado</span><b>Ponto dorsal e esternal</b></li>
+                          <li><span>Stock</span><b>6 disponíveis, 4 em 5 dias</b></li>
+                        </ul>
+                      </div>
+                      <div class="panel">
+                        <h5>Próximo passo</h5>
+                        <p class="small" style="color:var(--muted);margin:0">Proposta preparada pelo agente e em revisão pelo comercial de EPI. Nada sai para o cliente antes dessa validação.</p>
+                        <p class="panel-note">Ficha criada automaticamente a partir da conversa, sem ninguém escrever nada à mão.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
-            <!-- VISTA: STOCKS -->
-            <section class="app-view" data-view="stocks">
-              <header class="app-head"><h4>Stocks e SAGE</h4><span class="app-date">Sincronizado há 4 minutos</span></header>
-              <table class="app-tb">
-                <thead><tr><th>Artigo</th><th>Referência</th><th class="n">Em stock</th><th class="n">Mínimo</th><th>Estado</th></tr></thead>
+            <!-- ============ VISTA: OBRAS ============ -->
+            <section class="app-view" data-view="linhas">
+              <header class="app-head"><h4>Obras e linhas de vida</h4><span class="app-date">7 obras ativas, 6 orçamentos em curso</span></header>
+              <div class="tbwrap"><table class="app-tb wide">
+                <thead><tr><th>Obra</th><th>Cliente</th><th>Tipo de trabalho</th><th class="n">Metros</th><th class="n">Valor</th><th>Registo</th><th>Estado</th></tr></thead>
                 <tbody>
-                  <tr><td>Arnês antiqueda completo</td><td>EPI-ARN-042</td><td class="n">4</td><td class="n">10</td><td><span class="pill red">Repor</span></td></tr>
-                  <tr><td>Cabo de aço inox 8 mm</td><td>LV-CAB-008</td><td class="n">340 m</td><td class="n">200 m</td><td><span class="pill green">Normal</span></td></tr>
-                  <tr><td>Absorvedor de energia</td><td>LV-ABS-011</td><td class="n">12</td><td class="n">8</td><td><span class="pill green">Normal</span></td></tr>
-                  <tr><td>Capacete com jugular</td><td>EPI-CAP-019</td><td class="n">7</td><td class="n">15</td><td><span class="pill amber">Abaixo do mínimo</span></td></tr>
-                  <tr><td>Ponto de ancoragem chapa</td><td>LV-ANC-023</td><td class="n">58</td><td class="n">40</td><td><span class="pill green">Normal</span></td></tr>
+                  <tr><td>2026-114</td><td>Cobertura Norte, Lda</td><td>Linha de vida<em>Chapa sandwich</em></td><td class="n">128 m</td><td class="n">9.840 €</td><td><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td><span class="pill red">Validar</span></td></tr>
+                  <tr><td>2026-113</td><td>Eólica Alto Douro</td><td>Aerogeradores<em>Torre, 6 turbinas</em></td><td class="n">n.a.</td><td class="n">22.700 €</td><td><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td><span class="pill green">Em execução</span></td></tr>
+                  <tr><td>2026-112</td><td>Adega de Vila Real</td><td>Linha de vida<em>Telha cerâmica</em></td><td class="n">64 m</td><td class="n">5.120 €</td><td><span class="muted-s">Por iniciar</span></td><td><span class="pill teal">Enviado</span></td></tr>
+                  <tr><td>2026-110</td><td>Edifício da Sé, Vila Real</td><td>Fachada<em>Alvenaria, 5 pisos</em></td><td class="n">n.a.</td><td class="n">8.900 €</td><td><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="pill green">Concluída</span></td></tr>
+                  <tr><td>2026-109</td><td>Metalúrgica Douro</td><td>Linha de vida<em>Chapa perfilada</em></td><td class="n">210 m</td><td class="n">16.400 €</td><td><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td><span class="pill green">Em instalação</span></td></tr>
+                  <tr><td>2026-107</td><td>Câmara Mun. de Lordelo</td><td>Linha de vida<em>Laje betão, 3 lanços</em></td><td class="n">45 m</td><td class="n">4.350 €</td><td><span class="dots"><i class="on"></i><i class="on"></i><i class="warn"></i><i class="warn"></i></span></td><td><span class="pill amber">Reg. em falta</span></td></tr>
+                  <tr><td>2026-103</td><td>Agrupamento Escolar</td><td>Linha de vida<em>Telha marselha</em></td><td class="n">96 m</td><td class="n">7.680 €</td><td><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="pill green">Concluída</span></td></tr>
                 </tbody>
-              </table>
-              <div class="panel" style="margin-top:18px">
-                <h5>Previsão para os próximos 60 dias</h5>
-                <p class="small" style="color:var(--muted)">Com base no histórico de consumo e nas obras já adjudicadas, o sistema estima a rutura do arnês antiqueda para a segunda semana de outubro e sugere encomenda de 20 unidades. A decisão de comprar é sempre vossa.</p>
+              </table></div>
+              <div class="app-2col" style="margin-top:16px">
+                <div class="panel">
+                  <h5>Obra 2026-114, o que o agente já preparou</h5>
+                  <div class="prep">
+                    <div><span>Metros lineares</span><b>128 m</b><i>lidos da medição enviada</i></div>
+                    <div><span>Tipo de ancoragem</span><b>Chapa sandwich</b><i>fixação a confirmar em obra</i></div>
+                    <div><span>Pontos intermédios</span><b>9</b><i>estimativa pelo traçado</i></div>
+                    <div><span>Absorvedores</span><b>2</b><i>um por extremidade</i></div>
+                  </div>
+                  <p class="panel-note">O agente prepara. A validação técnica é sempre de uma pessoa da equipa antes de sair para o cliente.</p>
+                </div>
+                <div class="panel">
+                  <h5>Material reservado para esta obra</h5>
+                  <ul class="kv">
+                    <li><span>LV-CAB-008</span><b>128 m de cabo inox 8 mm <span class="pill green">Em stock</span></b></li>
+                    <li><span>LV-ANC-023</span><b>9 pontos de ancoragem <span class="pill green">Em stock</span></b></li>
+                    <li><span>LV-ABS-011</span><b>2 absorvedores <span class="pill green">Em stock</span></b></li>
+                    <li><span>LV-TEN-004</span><b>2 tensores <span class="pill amber">Reposição a 18/09</span></b></li>
+                  </ul>
+                  <p class="panel-note">Reserva feita no SAGE assim que a obra é adjudicada, para não haver duas obras a contar com o mesmo material.</p>
+                </div>
               </div>
             </section>
 
-            <!-- VISTA: EPI -->
+            <!-- ============ VISTA: REGISTO FOTOGRÁFICO ============ -->
+            <section class="app-view" data-view="fotos">
+              <header class="app-head"><h4>Registo fotográfico do terreno</h4><span class="app-date">Últimas 48 horas, 14 registos</span></header>
+              <div class="toolbar">
+                <div class="chips">
+                  <button class="chip is-on">Todas as obras</button>
+                  <button class="chip">2026-114</button>
+                  <button class="chip">2026-109</button>
+                  <button class="chip">2026-107</button>
+                  <button class="chip">Formação</button>
+                </div>
+                <span class="tool-note">3 registos em falta</span>
+              </div>
+              <div class="phgrid">
+                <figure class="ph">
+                  <div class="ph-img roof"><span>📷</span></div>
+                  <figcaption>
+                    <b>Marcação dos pontos intermédios</b>
+                    <span class="ph-scope">Passo 1 de 6 · Antes da fixação · Exigido pelo procedimento de chapa sandwich</span>
+                    <div class="ph-meta"><i>Obra 2026-114</i><i>Nuno Alves</i><i>Ontem, 09:41</i></div>
+                    <span class="pill green">Conforme</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph">
+                  <div class="ph-img anchor"><span>📷</span></div>
+                  <figcaption>
+                    <b>Primeiro ancorador fixado ao perfil</b>
+                    <span class="ph-scope">Passo 2 de 6 · Prova de fixação estrutural · ISO 9001, controlo de execução</span>
+                    <div class="ph-meta"><i>Obra 2026-114</i><i>Nuno Alves</i><i>Ontem, 11:18</i></div>
+                    <span class="pill green">Conforme</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph">
+                  <div class="ph-img cable"><span>📷</span></div>
+                  <figcaption>
+                    <b>Tensionamento do cabo</b>
+                    <span class="ph-scope">Passo 4 de 6 · Valor de tensão visível no dinamómetro · ISO 45001</span>
+                    <div class="ph-meta"><i>Obra 2026-109</i><i>Sérgio Lima</i><i>Hoje, 08:47</i></div>
+                    <span class="pill green">Conforme</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph">
+                  <div class="ph-img wind"><span>📷</span></div>
+                  <figcaption>
+                    <b>Ancoragem na torre, turbina 3</b>
+                    <span class="ph-scope">Passo 2 de 6 · Acesso por corda · Prova de ponto de amarração antes da descida</span>
+                    <div class="ph-meta"><i>Obra 2026-113</i><i>Sérgio Lima</i><i>Ontem, 14:02</i></div>
+                    <span class="pill green">Conforme</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph">
+                  <div class="ph-img facade"><span>📷</span></div>
+                  <figcaption>
+                    <b>Fachada nascente, pontos de suspensão</b>
+                    <span class="ph-scope">Passo 5 de 5 · Estado final antes da entrega · Anexo ao auto de medição</span>
+                    <div class="ph-meta"><i>Obra 2026-110</i><i>Tiago Moreira</i><i>05 set, 16:30</i></div>
+                    <span class="pill green">Conforme</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph">
+                  <div class="ph-img epi"><span>📷</span></div>
+                  <figcaption>
+                    <b>Verificação do EPI antes de subir</b>
+                    <span class="ph-scope">Passo 0 · Obrigatório antes de qualquer trabalho em altura · ISO 45001</span>
+                    <div class="ph-meta"><i>Obra 2026-109</i><i>Sérgio Lima</i><i>Hoje, 07:55</i></div>
+                    <span class="pill green">Conforme</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph miss">
+                  <div class="ph-img none"><span>⚠</span></div>
+                  <figcaption>
+                    <b>Lanço 2, fixação superior</b>
+                    <span class="ph-scope">Passo 3 de 5 · Pedido ao técnico às 14:20, sem resposta · Bloqueia o fecho do dossiê</span>
+                    <div class="ph-meta"><i>Obra 2026-107</i><i>Tiago Moreira</i><i>28 ago</i></div>
+                    <span class="pill red">Em falta</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph miss">
+                  <div class="ph-img none"><span>⚠</span></div>
+                  <figcaption>
+                    <b>Lanço 2, chapa de topo</b>
+                    <span class="ph-scope">Passo 4 de 5 · Exigido pela Câmara em cada auto de medição</span>
+                    <div class="ph-meta"><i>Obra 2026-107</i><i>Tiago Moreira</i><i>28 ago</i></div>
+                    <span class="pill red">Em falta</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph">
+                  <div class="ph-img group"><span>📷</span></div>
+                  <figcaption>
+                    <b>Grupo de formandos</b>
+                    <span class="ph-scope">Sessão de trabalhos em altura · Registo de presença exigido pelo dossiê de formação</span>
+                    <div class="ph-meta"><i>Formação</i><i>Ana Rocha</i><i>02 set, 10:12</i></div>
+                    <span class="pill green">Conforme</span>
+                  </figcaption>
+                </figure>
+                <figure class="ph">
+                  <div class="ph-img exercise"><span>📷</span></div>
+                  <figcaption>
+                    <b>Exercício prático de resgate</b>
+                    <span class="ph-scope">Exercício 2 de 3 · Prova de execução por formando · Dossiê da sessão</span>
+                    <div class="ph-meta"><i>Formação</i><i>Ana Rocha</i><i>02 set, 15:40</i></div>
+                    <span class="pill amber">A validar</span>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="panel" style="margin-top:16px">
+                <h5>Porque cada fotografia tem um âmbito</h5>
+                <p class="small" style="color:var(--muted);margin:0">Não é uma galeria. Cada registo nasce de um passo concreto do procedimento: o assistente de campo pede a fotografia naquele momento, guarda-a agarrada à obra e ao passo, e diz que cláusula da norma é que aquilo serve. É por isso que o dossiê de uma obra fecha sozinho, ou não fecha e diz porquê.</p>
+              </div>
+            </section>
+
+            <!-- ============ VISTA: INSPEÇÕES E EPI ============ -->
             <section class="app-view" data-view="epi">
               <header class="app-head"><h4>Inspeções e EPI</h4><span class="app-date">21 equipamentos a expirar em 30 dias</span></header>
+              <div class="strip">
+                <div><span>Equipamentos em carteira</span><b>412</b></div>
+                <div><span>A expirar em 30 dias</span><b class="warn">21</b></div>
+                <div><span>Fora de validade</span><b class="bad">8</b></div>
+                <div><span>Inspeções agendadas</span><b class="ok">6</b></div>
+                <div><span>Receita prevista</span><b>11.400 €</b></div>
+              </div>
               <table class="app-tb">
-                <thead><tr><th>Cliente</th><th>Equipamento</th><th>Última inspeção</th><th>Validade</th><th>Estado</th></tr></thead>
+                <thead><tr><th>Cliente</th><th>Equipamento</th><th class="n">Un.</th><th>Última inspeção</th><th>Validade</th><th>Estado</th></tr></thead>
                 <tbody>
-                  <tr><td>Metalúrgica Douro</td><td>12 arneses e 12 talabartes</td><td>14/10/2025</td><td>14/10/2026</td><td><span class="pill amber">Aviso enviado</span></td></tr>
-                  <tr><td>Adega de Vila Real</td><td>Linha de vida horizontal, 64 m</td><td>03/11/2025</td><td>03/11/2026</td><td><span class="pill teal">Agendada</span></td></tr>
-                  <tr><td>Cobertura Norte, Lda</td><td>8 arneses</td><td>22/09/2025</td><td>22/09/2026</td><td><span class="pill red">Urgente</span></td></tr>
-                  <tr><td>Câmara de Lordelo</td><td>Sistema vertical, 3 lanços</td><td>30/01/2026</td><td>30/01/2027</td><td><span class="pill green">Em dia</span></td></tr>
+                  <tr><td>Cobertura Norte, Lda</td><td>Arnês antiqueda</td><td class="n">8</td><td>22/09/2025</td><td>22/09/2026</td><td><span class="pill red">Urgente, 12 dias</span></td></tr>
+                  <tr><td>Metalúrgica Douro</td><td>Arnês antiqueda</td><td class="n">12</td><td>14/10/2025</td><td>14/10/2026</td><td><span class="pill amber">Aviso enviado</span></td></tr>
+                  <tr><td>Metalúrgica Douro</td><td>Talabarte duplo</td><td class="n">12</td><td>14/10/2025</td><td>14/10/2026</td><td><span class="pill amber">Aviso enviado</span></td></tr>
+                  <tr><td>Adega de Vila Real</td><td>Linha horizontal, 64 m</td><td class="n">1</td><td>03/11/2025</td><td>03/11/2026</td><td><span class="pill teal">Agendada 05/11</span></td></tr>
+                  <tr><td>Câmara Mun. de Lordelo</td><td>Sistema vertical, 3 lanços</td><td class="n">3</td><td>30/01/2026</td><td>30/01/2027</td><td><span class="pill green">Em dia</span></td></tr>
+                  <tr><td>Agrupamento Escolar</td><td>Linha horizontal, 96 m</td><td class="n">1</td><td>18/03/2026</td><td>18/03/2027</td><td><span class="pill green">Em dia</span></td></tr>
                 </tbody>
               </table>
-              <div class="panel" style="margin-top:18px">
+              <div class="panel" style="margin-top:16px">
                 <h5>O que o sistema faz sozinho</h5>
-                <p class="small" style="color:var(--muted)">Sessenta dias antes da validade, avisa o responsável de área e prepara a proposta de reinspeção com a lista de equipamentos do cliente. Trinta dias antes, se não houver resposta, envia o lembrete. Nunca marca nada sem alguém aprovar.</p>
+                <p class="small" style="color:var(--muted);margin:0">Sessenta dias antes da validade, avisa o responsável de área e prepara a proposta de reinspeção com a lista de equipamentos do cliente. Trinta dias antes, se não houver resposta, envia o lembrete. Doze dias antes, marca como urgente e escala para o comercial. Nunca marca nada sem alguém aprovar.</p>
               </div>
             </section>
 
-            <!-- VISTA: FORMAÇÃO -->
+            <!-- ============ VISTA: FORMAÇÃO ============ -->
             <section class="app-view" data-view="formacao">
-              <header class="app-head"><h4>Formação</h4><span class="app-date">4 sessões este mês</span></header>
+              <header class="app-head"><h4>Formação</h4><span class="app-date">4 sessões este mês, 41 formandos</span></header>
+              <div class="strip">
+                <div><span>Sessões este mês</span><b>4</b></div>
+                <div><span>Formandos</span><b>41</b></div>
+                <div><span>Formadores ativos</span><b>3</b></div>
+                <div><span>Dossiês fechados</span><b class="ok">2 de 4</b></div>
+                <div><span>Certificados emitidos</span><b>26</b></div>
+              </div>
               <div class="app-2col">
                 <div class="panel">
                   <h5>Sessões agendadas</h5>
                   <ul class="feed">
-                    <li><span class="pill teal">18 set</span>Trabalhos em altura, 12 formandos, Metalúrgica Douro</li>
-                    <li><span class="pill teal">24 set</span>Utilização de EPI antiqueda, 8 formandos, nas nossas instalações</li>
+                    <li><span class="pill teal">18 set</span>Trabalhos em altura, 12 formandos, Metalúrgica Douro, formadora Ana Rocha</li>
+                    <li><span class="pill teal">24 set</span>IPAF, plataformas elevatórias, 8 formandos, nas nossas instalações</li>
                     <li><span class="pill">02 out</span>Resgate em altura, 6 formandos, Adega de Vila Real</li>
+                    <li><span class="pill">07 out</span>Acesso por corda em aerogeradores, 5 formandos, Eólica Alto Douro</li>
                     <li><span class="pill">09 out</span>Trabalhos em altura, 15 formandos, Cobertura Norte</li>
                   </ul>
                 </div>
@@ -419,6 +868,65 @@
                     <li><b>5</b>Aplica o teste e fecha o dossiê da sessão</li>
                   </ul>
                   <p class="panel-note">A mesma formação dada por qualquer formador, com o mesmo conteúdo e o mesmo dossiê no fim.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- ============ VISTA: STOCKS ============ -->
+            <section class="app-view" data-view="stocks">
+              <header class="app-head"><h4>Stocks e SAGE</h4><span class="app-date">Sincronizado há 4 minutos · 09:10</span></header>
+              <div class="strip">
+                <div><span>Valor em stock</span><b>84.210 €</b></div>
+                <div><span>Abaixo do mínimo</span><b class="bad">6 artigos</b></div>
+                <div><span>Reservado para obras</span><b class="warn">18.740 €</b></div>
+                <div><span>Encomendas a chegar</span><b class="ok">4</b></div>
+                <div><span>Rutura prevista</span><b class="bad">12/10</b></div>
+              </div>
+              <div class="toolbar">
+                <div class="chips">
+                  <button class="chip is-on">Todos</button>
+                  <button class="chip">Linhas de vida</button>
+                  <button class="chip">EPI</button>
+                  <button class="chip">Consumíveis</button>
+                </div>
+                <span class="tool-note">Origem dos dados: SAGE, leitura de faturas e reservas de obra</span>
+              </div>
+              <div class="tbwrap"><table class="app-tb wide">
+                <thead><tr><th>Artigo</th><th>Referência</th><th class="n">Stock</th><th class="n">Reserv.</th><th class="n">Disp.</th><th class="n">Mín.</th><th>Marca</th><th class="n">Prazo</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr><td>Arnês antiqueda AVAO BOD</td><td>EPI-ARN-042<em>A1-03</em></td><td class="n">4</td><td class="n">0</td><td class="n">4</td><td class="n">10</td><td>Petzl</td><td class="n">5 d</td><td><span class="pill red">Repor</span></td></tr>
+                  <tr><td>Capacete VERTEX com jugular</td><td>EPI-CAP-019<em>A1-04</em></td><td class="n">7</td><td class="n">0</td><td class="n">7</td><td class="n">15</td><td>Petzl</td><td class="n">5 d</td><td><span class="pill amber">Baixo</span></td></tr>
+                  <tr><td>Talabarte duplo com absorvedor</td><td>EPI-TAL-027<em>A1-03</em></td><td class="n">18</td><td class="n">4</td><td class="n">14</td><td class="n">12</td><td>Petzl</td><td class="n">5 d</td><td><span class="pill green">Normal</span></td></tr>
+                  <tr><td>Antiqueda móvel de corda</td><td>EPI-BLQ-008<em>A1-05</em></td><td class="n">9</td><td class="n">2</td><td class="n">7</td><td class="n">8</td><td>Petzl</td><td class="n">5 d</td><td><span class="pill amber">Baixo</span></td></tr>
+                  <tr><td>Descensor JACK</td><td>EPI-DES-031<em>A1-05</em></td><td class="n">6</td><td class="n">0</td><td class="n">6</td><td class="n">4</td><td>Singing Rock</td><td class="n">9 d</td><td><span class="pill green">Normal</span></td></tr>
+                  <tr><td>Ascensor automático de corda</td><td>EPI-ASC-015<em>A1-06</em></td><td class="n">2</td><td class="n">2</td><td class="n">0</td><td class="n">4</td><td>Mode</td><td class="n">15 d</td><td><span class="pill red">Repor</span></td></tr>
+                  <tr><td>Corda semiestática 11 mm</td><td>LV-COR-011<em>B2-04</em></td><td class="n">420 m</td><td class="n">100 m</td><td class="n">320 m</td><td class="n">250 m</td><td>Singing Rock</td><td class="n">9 d</td><td><span class="pill green">Normal</span></td></tr>
+                  <tr><td>Mosquetão com trava automática</td><td>EPI-MSQ-003<em>A1-02</em></td><td class="n">64</td><td class="n">12</td><td class="n">52</td><td class="n">40</td><td>Petzl</td><td class="n">5 d</td><td><span class="pill green">Normal</span></td></tr>
+                  <tr><td>Cabo de aço inox 8 mm</td><td>LV-CAB-008<em>B2-01</em></td><td class="n">340 m</td><td class="n">128 m</td><td class="n">212 m</td><td class="n">200 m</td><td>Sistema próprio</td><td class="n">12 d</td><td><span class="pill amber">No limite</span></td></tr>
+                  <tr><td>Ponto de ancoragem para chapa</td><td>LV-ANC-023<em>B2-02</em></td><td class="n">58</td><td class="n">9</td><td class="n">49</td><td class="n">40</td><td>Sistema próprio</td><td class="n">12 d</td><td><span class="pill green">Normal</span></td></tr>
+                  <tr><td>Tensor de extremidade</td><td>LV-TEN-004<em>B2-03</em></td><td class="n">3</td><td class="n">2</td><td class="n">1</td><td class="n">6</td><td>Sistema próprio</td><td class="n">12 d</td><td><span class="pill red">Repor</span></td></tr>
+                  <tr><td>Saco de transporte de equipamento</td><td>CON-SAC-006<em>C1-02</em></td><td class="n">31</td><td class="n">3</td><td class="n">28</td><td class="n">20</td><td>Petzl</td><td class="n">5 d</td><td><span class="pill green">Normal</span></td></tr>
+                </tbody>
+              </table></div>
+              <div class="app-2col" style="margin-top:16px">
+                <div class="panel">
+                  <h5>Movimentos das últimas 24 horas</h5>
+                  <ul class="tl">
+                    <li><span class="tl-t">09:10</span><span class="tl-ic teal">↓</span><div>Entrada de 12 artigos, fatura 2026/4471, Petzl Ibérica</div></li>
+                    <li><span class="tl-t">08:22</span><span class="tl-ic">↑</span><div>Saída de 128 m de cabo LV-CAB-008, reserva da obra 2026-114</div></li>
+                    <li><span class="tl-t">Ontem</span><span class="tl-ic">↑</span><div>Saída de 9 ancoragens LV-ANC-023, obra 2026-114</div></li>
+                    <li><span class="tl-t">Ontem</span><span class="tl-ic amber">⚠</span><div>Fatura 2026/4472 por lançar, referência LV-ANC-0231 desconhecida</div></li>
+                  </ul>
+                </div>
+                <div class="panel">
+                  <h5>Previsão e encomendas</h5>
+                  <ul class="kv">
+                    <li><span>EPI-ARN-042</span><b>Rutura a 12/10 <span class="pill red">Sugerido: 20 un.</span></b></li>
+                    <li><span>LV-TEN-004</span><b>Encomenda 2026/091 <span class="pill teal">Chega 18/09</span></b></li>
+                    <li><span>EPI-CAP-019</span><b>Encomenda 2026/092 <span class="pill teal">Chega 16/09</span></b></li>
+                    <li><span>LV-CAB-008</span><b>Obra 2026-109 vai consumir 210 m <span class="pill amber">Rever</span></b></li>
+                  </ul>
+                  <p class="panel-note">A previsão cruza o histórico de consumo com as obras já adjudicadas. A decisão de comprar é sempre vossa.</p>
                 </div>
               </div>
             </section>
