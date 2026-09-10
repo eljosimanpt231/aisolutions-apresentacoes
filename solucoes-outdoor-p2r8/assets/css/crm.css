@@ -1,0 +1,175 @@
+/* ============================================================
+   CRM alargado: clientes, registo fotográfico e gestão de stock.
+   Complementa extra.css. Tudo deriva dos tokens.
+   ============================================================ */
+
+/* ---- Barra lateral: secções e contadores ---- */
+.app-sec{display:block;font-size:.62rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);
+  opacity:.7;padding:14px 12px 6px;font-weight:700}
+.app-badge{margin-left:auto;font-size:.66rem;font-weight:700;padding:2px 7px;border-radius:99px;
+  background:var(--border);color:var(--muted)}
+.app-badge.red{background:hsl(var(--danger-hsl) / 0.2);color:var(--danger)}
+.app-badge.amber{background:hsl(var(--warning-hsl) / 0.2);color:var(--warning)}
+
+/* seis KPIs pedem tres colunas */
+.kpis{grid-template-columns:repeat(3,1fr)}
+
+/* ---- Barra de ferramentas, pesquisa e filtros ---- */
+.toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.search{display:flex;align-items:center;gap:9px;background:var(--surface-2);border:1px solid var(--border);
+  border-radius:9px;padding:9px 13px;min-width:250px;flex:1}
+.search span{font-size:.8rem;opacity:.6}
+.search i{font-style:normal;font-size:.83rem;color:var(--muted);opacity:.75}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font:inherit;font-size:.76rem;font-weight:600;padding:7px 13px;border-radius:99px;cursor:pointer;
+  background:var(--surface-2);border:1px solid var(--border);color:var(--muted);transition:background .18s,border-color .18s,color .18s}
+.chip:hover{color:var(--text);border-color:hsl(var(--brand-hsl) / 0.4)}
+.chip.is-on{background:hsl(var(--brand-hsl) / 0.16);border-color:hsl(var(--brand-hsl) / 0.5);color:var(--text)}
+.tool-note{font-size:.74rem;color:var(--muted);margin-left:auto}
+
+/* ---- Lista de clientes e ficha ---- */
+.split{display:grid;grid-template-columns:280px 1fr;gap:14px;align-items:start}
+.split-list{display:flex;flex-direction:column;gap:7px}
+.crow{display:flex;align-items:center;gap:11px;width:100%;text-align:left;cursor:pointer;font:inherit;
+  background:var(--surface-2);border:1px solid var(--border);border-radius:11px;padding:11px 12px;
+  transition:background .18s,border-color .18s}
+.crow:hover{border-color:hsl(var(--brand-hsl) / 0.42)}
+.crow.is-on{background:hsl(var(--brand-hsl) / 0.13);border-color:hsl(var(--brand-hsl) / 0.5)}
+.crow>div{min-width:0;flex:1}
+.crow b{display:block;font-size:.83rem;color:var(--text);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crow i{display:block;font-style:normal;font-size:.71rem;color:var(--muted);margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crow .pill{font-size:.58rem;padding:3px 7px}
+.cav{width:33px;height:33px;border-radius:9px;display:grid;place-items:center;flex-shrink:0;
+  background:hsl(var(--brand-hsl) / 0.17);color:var(--brand);font-size:.72rem;font-weight:800;font-family:var(--font-display)}
+.cav.big{width:52px;height:52px;border-radius:13px;font-size:1.05rem}
+.cdet{display:none}
+.cdet.is-on{display:block;animation:appin .3s ease both}
+.cdet-h{display:flex;align-items:flex-start;gap:15px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border)}
+.cdet-h b{display:block;font-family:var(--font-display);font-size:1.18rem;color:var(--text);letter-spacing:-.01em}
+.cdet-h i{display:block;font-style:normal;font-size:.78rem;color:var(--muted);margin-top:4px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.tag{font-size:.66rem;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--surface-2);
+  border:1px solid var(--border);color:var(--muted)}
+.tag.red{background:hsl(var(--brand-hsl) / 0.14);border-color:hsl(var(--brand-hsl) / 0.34);color:var(--brand)}
+.tag.green{background:hsl(var(--success-hsl) / 0.14);border-color:hsl(var(--success-hsl) / 0.32);color:var(--success)}
+.cstats{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:14px}
+.cstats>div{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px 13px}
+.cstats span{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.cstats b{display:block;font-family:var(--font-display);font-size:1.18rem;color:var(--text);letter-spacing:-.02em}
+.cstats i{display:block;margin-top:4px;font-style:normal;font-size:.68rem;color:var(--muted)}
+
+/* ---- Listas chave e valor ---- */
+.kv{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.kv li{display:flex;align-items:baseline;gap:12px;font-size:.81rem;line-height:1.45}
+.kv>li>span{flex-shrink:0;width:92px;color:var(--muted);font-size:.71rem;text-transform:uppercase;letter-spacing:.07em}
+.kv b{color:var(--text);font-weight:600;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.kv .pill{font-size:.58rem;padding:3px 7px;text-transform:none;letter-spacing:.04em}
+
+/* ---- Linha temporal de atividade ---- */
+.tl{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.tl li{display:flex;align-items:flex-start;gap:11px;font-size:.81rem;color:var(--muted);line-height:1.5}
+.tl-t{flex-shrink:0;width:52px;font-size:.7rem;color:var(--muted);opacity:.8;padding-top:3px;font-variant-numeric:tabular-nums}
+.tl-ic{flex-shrink:0;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:.72rem;
+  background:var(--border);color:var(--text)}
+.tl-ic.teal{background:hsl(var(--accent-hsl) / 0.16);color:var(--accent)}
+.tl-ic.amber{background:hsl(var(--warning-hsl) / 0.16);color:var(--warning)}
+.tl b{color:var(--text)}
+
+/* ---- Faixa de indicadores ---- */
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:11px;overflow:hidden;margin-bottom:18px}
+.strip>div{background:var(--surface-2);padding:13px 15px}
+.strip span{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.strip b{display:block;font-family:var(--font-display);font-size:1.15rem;color:var(--text);letter-spacing:-.02em}
+.strip b.ok{color:var(--success)}
+.strip b.warn{color:var(--warning)}
+.strip b.bad{color:var(--danger)}
+
+/* ---- Progresso do registo fotográfico nas obras ---- */
+.dots{display:inline-flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:2px;background:var(--border);display:block}
+.dots i.on{background:var(--success)}
+.dots i.warn{background:var(--warning)}
+.muted-s{font-size:.74rem;color:var(--muted);opacity:.7}
+table.app-tb.wide{min-width:820px}
+
+/* ---- Galeria do registo fotográfico ---- */
+.phgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.ph{margin:0;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;overflow:hidden;
+  display:flex;flex-direction:column}
+.ph.miss{border-color:hsl(var(--danger-hsl) / 0.4)}
+.ph-img{height:104px;display:grid;place-items:center;font-size:1.3rem;position:relative}
+.ph-img::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(115deg,hsl(0 0% 100% / 0.05) 0 3px,transparent 3px 8px)}
+.ph-img span{position:relative;z-index:1}
+.ph-img.roof{background:linear-gradient(150deg,hsl(210 22% 34%),hsl(212 26% 19%))}
+.ph-img.anchor{background:linear-gradient(150deg,hsl(202 20% 40%),hsl(206 24% 21%))}
+.ph-img.cable{background:linear-gradient(150deg,hsl(196 18% 36%),hsl(200 24% 20%))}
+.ph-img.epi{background:linear-gradient(150deg,hsl(24 34% 36%),hsl(20 30% 20%))}
+.ph-img.wind{background:linear-gradient(150deg,hsl(190 26% 42%),hsl(196 28% 22%))}
+.ph-img.facade{background:linear-gradient(150deg,hsl(34 24% 40%),hsl(30 24% 22%))}
+.ph-img.group{background:linear-gradient(150deg,hsl(160 20% 34%),hsl(166 24% 19%))}
+.ph-img.exercise{background:linear-gradient(150deg,hsl(146 22% 33%),hsl(152 26% 18%))}
+.ph-img.none{background:linear-gradient(150deg,hsl(var(--danger-hsl) / 0.24),hsl(220 16% 12%));color:var(--danger)}
+.ph figcaption{padding:12px 13px;display:flex;flex-direction:column;gap:7px;flex:1}
+.ph figcaption b{font-size:.82rem;color:var(--text);line-height:1.35}
+.ph-scope{font-size:.71rem;color:var(--muted);line-height:1.45}
+.ph-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
+.ph-meta i{font-style:normal;font-size:.67rem;color:var(--muted);opacity:.85;
+  background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:2px 6px}
+.ph .pill{align-self:flex-start;font-size:.6rem;padding:3px 8px}
+
+/* ---- Responsivo ---- */
+@media (max-width:1000px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .split-list{flex-direction:row;overflow-x:auto;padding-bottom:6px}
+  .crow{min-width:225px}
+  .cstats{grid-template-columns:repeat(2,1fr)}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .phgrid{grid-template-columns:repeat(2,1fr)}
+  .app-sec{padding:0 10px;align-self:center;white-space:nowrap}
+  .app-badge{margin-left:7px}
+  .tool-note{margin-left:0}
+}
+@media (max-width:560px){
+  .kpis{grid-template-columns:1fr}
+  .cstats{grid-template-columns:1fr}
+  .strip{grid-template-columns:1fr}
+  .phgrid{grid-template-columns:1fr}
+  .kv li{flex-direction:column;gap:3px}
+  .kv>li>span{width:auto}
+}
+
+/* ---- Ajustes de densidade das tabelas largas ---- */
+table.app-tb.wide{min-width:0;font-size:.77rem}
+table.app-tb.wide th{padding:9px 9px;white-space:nowrap}
+table.app-tb.wide td{padding:10px 9px;white-space:nowrap}
+table.app-tb.wide td:first-child{white-space:normal;min-width:132px}
+table.app-tb.wide .pill{font-size:.58rem;padding:3px 7px}
+
+/* ---- Alinhamento e densidade de texto dentro da app ---- */
+.cstats span{min-height:2.05em}
+.kv>li>span{width:76px}
+.app .panel .small{font-size:.82rem;line-height:1.6}
+.split-list{min-width:0}
+@media (min-width:1001px){.split{grid-template-columns:296px 1fr}}
+
+/* ---- Tabelas largas com scroll proprio dentro da app ---- */
+.tbwrap{overflow-x:auto;margin:0 -2px;padding-bottom:2px}
+.tbwrap table.app-tb.wide{min-width:760px}
+.kv>li>span{white-space:nowrap;width:auto;min-width:74px}
+
+/* sublinha dentro das celulas das tabelas da app */
+table.app-tb td em{display:block;font-style:normal;font-size:.68rem;color:var(--muted);opacity:.8;margin-top:3px;font-weight:400}
+.tbwrap table.app-tb.wide{min-width:700px}
+
+/* grid items nao podem crescer para la do contentor */
+.split>*{min-width:0}
+.split-detail{min-width:0;overflow:hidden}
+.app-2col>*{min-width:0}
+.cstats>div{min-width:0}
+.cdet-h>div{min-width:0}
+
+.kv b{overflow-wrap:anywhere}

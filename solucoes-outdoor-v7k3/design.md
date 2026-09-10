@@ -90,7 +90,9 @@ Pedidos do Diogo depois de analisar as duas transcrições e o dossier PRR. Tudo
   garante em cada um, e 3 citações literais do Mário (08/09). O "McDonald's" é dele.
 - **Módulo 05 passa a "App e loja online inteligente"**: a candidatura (SIGA, IA para negócio) fala em "aplicação móvel
   e loja online inteligente"; o Diogo quer os dois. A app é do cliente (pedidos, obras, validades, certificados) e da
-  equipa (SAGE no terreno). Os valores do módulo NÃO foram alterados (decisão de preço é do Diogo/Manuel).
+  equipa (SAGE no terreno). Valores reequilibrados pelo Diogo a 10/09: módulo 04 de 5.500 para 4.000 (mensal 130 para
+  100), módulo 05 de 4.400 para 7.000; módulo 06 de 3.000 para 2.980 só para o total fechar exatamente nos 81.000
+  (desenvolvimento 51.480 + 820/mês x 36).
 - **SAGE, duas vias** (debaixo do fluxo): via 1, API local oficial do Sage 50c (repo público sage-portugal/50c-API,
   consultado a 10/09); via 2, migrar faturação e stock para Moloni ou InvoiceXpress (API REST, certificados AT),
   migração feita por nós. Decisão no fim do diagnóstico. Factorial referido com API pública.

@@ -1,0 +1,55 @@
+/* ============================================================
+   Estilo "portal-claro" (base: deck-dark, invertido para fundo branco)
+   Linguagem visual do portal do fundo (SIGA / Recuperar Portugal):
+   fundo branco, verde institucional nas barras e botões, azul nos títulos,
+   caixas com borda fina, tipografia Open Sans.
+     --brand-hsl  = verde do portal (barras, botões, destaques)
+     --accent-hsl = azul dos títulos "Formulário de Candidatura"
+   Combina com shared/deck/deck.css e assets/css/portal.css.
+   ============================================================ */
+:root {
+  --brand-hsl: 148 50% 36%;      /* verde do cabeçalho do portal, amostrado das capturas */
+  --accent-hsl: 199 58% 40%;     /* azul dos títulos do formulário */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(150 12% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(150 10% 96%);
+  --border: hsl(150 8% 84%);
+
+  --text: hsl(160 12% 14%);
+  --muted: hsl(160 6% 40%);
+
+  --success-hsl: 150 55% 34%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 70% 46%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 90% 40%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: none;
+  --grad-text: linear-gradient(115deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: hsl(var(--brand-hsl));
+
+  --shadow-sm: 0 1px 2px hsl(160 20% 10% / 0.06);
+  --shadow-md: 0 6px 20px hsl(160 20% 10% / 0.10);
+  --shadow-lg: 0 16px 40px hsl(160 20% 10% / 0.14);
+
+  --radius: 8px;
+  --radius-lg: 12px;
+
+  --font-display: 'Open Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Open Sans', 'Segoe UI', system-ui, sans-serif;
+
+  --container: 1140px;
+  --section-pad: clamp(60px, 8vw, 100px);
+}
+/* WhatsApp (mockup): cores canonicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}

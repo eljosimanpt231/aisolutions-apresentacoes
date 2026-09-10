@@ -1,0 +1,92 @@
+/* ============================================================
+   Portal claro: sobreposições ao deck-dark para fundo branco com a
+   linguagem visual do portal do fundo. Carregar DEPOIS de crm.css.
+   Tudo deriva dos tokens; sem cores literais fora do branco puro.
+   ============================================================ */
+
+/* Sem grelha nem glows: página branca, limpa */
+.bg-grid, .bg-glow { display: none; }
+body { font-size: 16px; }
+h1, h2, h3 { letter-spacing: -0.01em; }
+h2 { font-weight: 600; }
+
+/* ---------- Cabeçalho em dois níveis (barra verde + menu cinzento) ---------- */
+.topnav { background: var(--bg-soft); backdrop-filter: none; border-bottom: 1px solid var(--border); }
+.topnav::before { display: none; }
+.portal-top { background: var(--brand); color: var(--on-brand); }
+.portal-top-in { max-width: var(--container); margin: 0 auto; padding: 9px clamp(16px, 4vw, 28px); display: flex; align-items: center; gap: 16px; }
+.portal-top .topnav-brand img { height: 30px; }
+.portal-app { font-size: 0.95rem; font-weight: 500; opacity: 0.95; padding-left: 14px; border-left: 1px solid hsl(0 0% 100% / 0.35); white-space: nowrap; }
+.portal-user { margin-left: auto; text-align: right; font-size: 0.72rem; line-height: 1.3; font-weight: 700; letter-spacing: 0.01em; }
+.portal-user i { display: block; font-style: normal; font-weight: 400; opacity: 0.85; }
+.topnav-in { padding: 7px clamp(16px, 4vw, 28px); }
+.topnav-links { margin-left: 0; gap: 20px; }
+.topnav-links a { color: var(--text); font-weight: 600; font-size: 0.84rem; }
+.topnav-links a:hover { color: var(--brand); }
+.topnav-links a.is-on { color: var(--brand); border-bottom-color: var(--brand); }
+.topnav-cta { margin-left: auto; }
+.topnav-bar span { background: linear-gradient(90deg, var(--brand), var(--accent)); }
+.hero { padding-top: clamp(122px, 13vw, 146px); }
+@media (max-width: 960px) {
+  .portal-app, .portal-user { display: none; }
+  .portal-top-in { justify-content: space-between; }
+}
+
+/* ---------- Botões do portal: pílula verde, maiúsculas pequenas ---------- */
+.btn { border-radius: 20px; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.05em; font-weight: 700; padding: 10px 18px; }
+.btn-primary { box-shadow: none; }
+.btn-primary:hover { transform: none; box-shadow: none; filter: brightness(0.93); }
+.btn-ghost { border-color: var(--brand); color: var(--brand); }
+.btn-ghost:hover { background: hsl(var(--brand-hsl) / 0.08); color: var(--brand); border-color: var(--brand); }
+
+/* ---------- Hero em formato de formulário ---------- */
+.portal-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(20px, 3vw, 36px); box-shadow: var(--shadow-sm); text-align: left; }
+.portal-title { text-align: center; color: var(--accent); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; margin-bottom: 22px; }
+.portal-info { border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; display: grid; gap: 6px; font-size: 0.9rem; color: var(--text); background: var(--surface); }
+.portal-info b { font-weight: 700; }
+.portal-actions { display: flex; gap: 8px; justify-content: flex-end; margin: 16px 0 24px; flex-wrap: wrap; }
+.portal-body { border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(18px, 3vw, 34px); text-align: center; }
+.hero-h { font-size: clamp(1.7rem, 3.6vw, 2.6rem); font-weight: 700; margin: 18px 0 0; line-height: 1.15; }
+.portal-body .lead { margin: 16px auto 0; }
+.portal-body .grid-4 { margin-top: 30px; text-align: left; }
+.brandbar { justify-content: center; }
+.brandbar .ais, .brandbar .x { color: var(--muted); font-weight: 600; }
+.hero-logo { height: 42px; }
+
+/* ---------- Secções numeradas, como no formulário ---------- */
+body { counter-reset: sec; }
+body > section:not(.hero):not(.cta-final) { counter-increment: sec; }
+body > section:not(.cta-final) .center > h2::before { content: counter(sec) ". "; color: var(--accent); }
+.eyebrow { background: transparent !important; border: 0 !important; color: var(--accent) !important; padding: 0 !important; font-size: 0.74rem; letter-spacing: 0.14em; }
+
+/* ---------- Cartões e tabelas: borda fina, cantos discretos ---------- */
+.card { box-shadow: none; border-radius: var(--radius); }
+.stat-card { border-left: 4px solid var(--brand); }
+.stat-card .num { color: var(--brand); }
+table.rub th, table.inv th { background: var(--bg-soft); }
+.section-alt { background: var(--bg-soft); }
+.alert { background: var(--surface); }
+.metabar b { color: var(--text); }
+.cand-head b { color: var(--text); }
+.cand-head b.ok { color: var(--success); }
+
+/* ---------- CTA e rodapé: bandas verdes como o portal ---------- */
+.cta-final { background: var(--brand); }
+.cta-final .lead { color: hsl(0 0% 100% / 0.88); }
+.dispo > div { background: hsl(0 0% 100% / 0.12); border-color: hsl(0 0% 100% / 0.4); }
+.dispo b { color: var(--on-brand); }
+.dispo span { color: hsl(0 0% 100% / 0.85); }
+.ais-footer { background: var(--brand); color: hsl(0 0% 100% / 0.92); padding: 34px 0; }
+.ais-footer a { color: var(--on-brand); }
+.ais-footer .disclaimer { opacity: 0.85; }
+
+/* ---------- Componentes partilhados sobre fundo claro ---------- */
+.fluxo-chan { background: var(--surface); }
+.fluxo-node { background: var(--surface); }
+.cr-shell, .fluxo-shell { background: var(--surface); }
+.wordmark { background: var(--surface); }
+
+/* Unibox sobre fundo claro: barra lateral e seleção (o unibox.css fixa-as em escuro) */
+.unibox .ub-aside { background: var(--ub-s1); }
+.unibox .ub-item:hover { background: var(--ub-fill); }
+.unibox .ub-item.is-sel { background: var(--ub-accent-weak); }

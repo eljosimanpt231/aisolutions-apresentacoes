@@ -8,13 +8,14 @@
   <meta name="description" content="Seis módulos de IA para a Soluções Outdoor, desenhados sobre a candidatura PRR nº 31339.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="../shared/deck/deck.css">
   <link rel="stylesheet" href="../shared/unibox/unibox.css">
   <link rel="stylesheet" href="assets/css/extra.css">
   <link rel="stylesheet" href="assets/css/crm.css">
+  <link rel="stylesheet" href="assets/css/portal.css">
   <script src="config.js"></script>
 </head>
 <body>
@@ -24,8 +25,14 @@
 
   <!-- ============ NAV ============ -->
   <nav class="topnav" id="topnav">
+    <div class="portal-top">
+      <div class="portal-top-in">
+        <a href="#topo" class="topnav-brand"><img src="assets/img/logo-outdoor-dark.png" alt="Soluções Outdoor"></a>
+        <span class="portal-app">Proposta de execução</span>
+        <span class="portal-user">Beneficiário: MÁRIO SEQUEIRA BARROSO, UNIPESSOAL LDA<i>NIF 509441297 · Projeto 31339</i></span>
+      </div>
+    </div>
     <div class="topnav-in">
-      <a href="#topo" class="topnav-brand"><img src="assets/img/logo-outdoor-dark.png" alt="Soluções Outdoor"></a>
       <div class="topnav-links">
         <a href="#candidatura">Candidatura</a>
         <a href="#ciclo">O ciclo</a>
@@ -37,7 +44,7 @@
         <a href="#investimento">Investimento</a>
         <a href="#prazo">Prazo</a>
       </div>
-      <a href="#avancar" class="btn btn-primary topnav-cta">Avançar</a>
+      <a href="#avancar" class="btn btn-primary topnav-cta">&rarr; Avançar</a>
     </div>
     <div class="topnav-bar"><span id="scrollbar"></span></div>
   </nav>
@@ -45,32 +52,43 @@
   <!-- ============ 1. HERO ============ -->
   <section class="hero" id="topo">
     <div class="container">
-      <div class="brandbar reveal">
-        <img class="hero-logo" src="assets/img/logo-outdoor-dark.png" alt="Soluções Outdoor">
-        <span class="x">&times;</span>
-        <span class="ais">AI Solutions</span>
-      </div>
-      <h1 class="reveal">Seis módulos de IA a trabalhar na Soluções Outdoor.<br><span class="grad">Dentro do orçamento que já têm aprovado.</span></h1>
-      <p class="lead reveal" style="margin:20px auto 0">
-        A candidatura nº 31339 está aprovada, com 125.500&nbsp;€ de investimento elegível e 94.125&nbsp;€ de apoio.
-        Esta proposta cobre 113.500&nbsp;€ desse plano, do CRM construído de raiz à app e à loja online, e ao assistente
-        que acompanha o técnico na cobertura. Rubrica a rubrica, sem sobras.
-      </p>
-      <div class="grid-4 reveal" style="margin-top:44px; text-align:left">
-        <div class="card stat-card"><div class="num">113.500&nbsp;€</div><div class="desc">Âmbito desta proposta, dentro das rubricas já aprovadas</div></div>
-        <div class="card stat-card"><div class="num">85.125&nbsp;€</div><div class="desc">Comparticipação do PRR a 75% sobre este âmbito</div></div>
-        <div class="card stat-card"><div class="num">28.375&nbsp;€</div><div class="desc">Esforço líquido da Soluções Outdoor</div></div>
-        <div class="card stat-card"><div class="num">4</div><div class="desc">Linhas cobertas: linhas de vida, EPI, formação e inspeções</div></div>
-      </div>
-      <div style="margin-top:40px" class="reveal">
-        <a href="#demo" class="btn btn-primary">Ver os agentes a trabalhar &darr;</a>
-        <a href="#investimento" class="btn btn-ghost" style="margin-left:10px">Investimento</a>
-      </div>
-      <div class="metabar reveal">
-        <div><span>Para</span><b>Mário Barroso, Gerente</b></div>
-        <div><span>Setor</span><b>Segurança em altura</b></div>
-        <div><span>Seguimento</span><b>Reunião de 8 de setembro de 2026</b></div>
-        <div><span>Projeto</span><b>PRR 31339, aviso 07/C05-i14.01/2026</b></div>
+      <div class="portal-card reveal">
+        <h1 class="portal-title">Proposta de Execução do Projeto 31339</h1>
+        <div class="portal-info">
+          <div><b>Investimento PRR:</b> C05-i14.01 - Inovação Empresarial</div>
+          <div><b>Aviso:</b> 07/C05-i14.01/2026 - Linha IA nas PME</div>
+          <div><b>Beneficiário Final:</b> 509441297 - Mário Sequeira Barroso, Unipessoal Lda (Soluções Outdoor)</div>
+          <div><b>Fornecedor proposto:</b> AI Solutions</div>
+        </div>
+        <div class="portal-actions">
+          <a href="#investimento" class="btn btn-ghost">Investimento</a>
+          <a href="#demo" class="btn btn-primary">&rarr; Ver os agentes a trabalhar</a>
+        </div>
+        <div class="portal-body">
+          <div class="brandbar">
+            <img class="hero-logo" src="assets/img/logo-outdoor.png" alt="Soluções Outdoor">
+            <span class="x">&times;</span>
+            <span class="ais">AI Solutions</span>
+          </div>
+          <h2 class="hero-h">Seis módulos de IA a trabalhar na Soluções Outdoor.<br><span class="grad">Dentro do orçamento que já têm aprovado.</span></h2>
+          <p class="lead">
+            A candidatura nº 31339 está aprovada, com 125.500&nbsp;€ de investimento elegível e 94.125&nbsp;€ de apoio.
+            Esta proposta cobre 113.500&nbsp;€ desse plano, do CRM construído de raiz à app e à loja online, e ao assistente
+            que acompanha o técnico na cobertura. Rubrica a rubrica, sem sobras.
+          </p>
+          <div class="grid-4">
+            <div class="card stat-card"><div class="num">113.500&nbsp;€</div><div class="desc">Âmbito desta proposta, dentro das rubricas já aprovadas</div></div>
+            <div class="card stat-card"><div class="num">85.125&nbsp;€</div><div class="desc">Comparticipação do PRR a 75% sobre este âmbito</div></div>
+            <div class="card stat-card"><div class="num">28.375&nbsp;€</div><div class="desc">Esforço líquido da Soluções Outdoor</div></div>
+            <div class="card stat-card"><div class="num">4</div><div class="desc">Linhas cobertas: linhas de vida, EPI, formação e inspeções</div></div>
+          </div>
+          <div class="metabar">
+            <div><span>Para</span><b>Mário Barroso, Gerente</b></div>
+            <div><span>Setor</span><b>Segurança em altura</b></div>
+            <div><span>Seguimento</span><b>Reunião de 8 de setembro de 2026</b></div>
+            <div><span>Projeto</span><b>PRR 31339, aviso 07/C05-i14.01/2026</b></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -321,7 +339,7 @@
         <div class="app-chrome"><i></i><i></i><i></i><span>crm.solucoesoutdoor.com</span></div>
         <div class="app">
           <aside class="app-side">
-            <div class="app-brand"><img src="assets/img/logo-outdoor-dark.png" alt="Soluções Outdoor"></div>
+            <div class="app-brand"><img src="assets/img/logo-outdoor.png" alt="Soluções Outdoor"></div>
             <span class="app-sec">Gestão</span>
             <button class="app-nav is-on" data-view="painel"><em>▦</em>Painel</button>
             <button class="app-nav" data-view="clientes"><em>👤</em>Clientes<span class="app-badge">148</span></button>
@@ -1047,7 +1065,7 @@
         <span>Simulação da interface com pedidos do tipo dos que recebem. Os valores são ilustrativos.</span>
       </div>
       <div class="unibox-frame reveal">
-        <div class="unibox" id="soInbox" style="--ub-accent:#e42424; --ub-accent-fg:#fff"></div>
+        <div class="unibox" id="soInbox" style="--ub-bg:#ffffff; --ub-s1:#f6f8f7; --ub-s2:#f0f3f1; --ub-s3:#e4eae6; --ub-border:rgba(20,40,30,.12); --ub-border-strong:rgba(20,40,30,.22); --ub-text:#1c2622; --ub-soft:rgba(28,38,34,.85); --ub-muted:rgba(28,38,34,.55); --ub-fill:rgba(20,40,30,.05); --ub-accent:#2e8a5a; --ub-accent-fg:#ffffff; --ub-accent-weak:rgba(46,138,90,.12); --ub-accent-weak2:rgba(46,138,90,.2)"></div>
       </div>
     </div>
   </section>
@@ -1339,7 +1357,7 @@
   <footer class="ais-footer">
     <div class="container">
       Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Soluções Outdoor, Mário Sequeira Barroso Unipessoal Lda
-      <span class="disclaimer">Documento de trabalho para a reunião de 10 de setembro de 2026. Demonstrações com dados ilustrativos.</span>
+      <span class="disclaimer">Documento de trabalho para a reunião de 10 de setembro de 2026. Demonstrações com dados ilustrativos. Não é um documento oficial do PRR nem do Banco Português de Fomento.</span>
     </div>
   </footer>
 
