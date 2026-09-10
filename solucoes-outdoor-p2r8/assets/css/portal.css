@@ -90,3 +90,12 @@ table.rub th, table.inv th { background: var(--bg-soft); }
 .unibox .ub-aside { background: var(--ub-s1); }
 .unibox .ub-item:hover { background: var(--ub-fill); }
 .unibox .ub-item.is-sel { background: var(--ub-accent-weak); }
+
+/* Chat com raciocínio em claro (o deck.css fixa o telemóvel em escuro) */
+.cr-chat { background: var(--surface); }
+.cr-chat-head { background: var(--surface-2); }
+.cr-sys { background: var(--surface-2); }
+.cr-row.agent .cr-bubble { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+.cr-row.client .cr-bubble { background: var(--brand); color: var(--on-brand); }
+.cr-bubble { box-shadow: 0 1px 2px hsl(160 20% 10% / 0.08); }
+.cr-typing { background: var(--surface-2); border: 1px solid var(--border); }

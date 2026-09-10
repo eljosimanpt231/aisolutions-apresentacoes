@@ -36,3 +36,10 @@ pelo nome e NIF que constam da análise de candidatura, nada mais. AI Solutions 
 ## Ficheiros próprios
 - `assets/css/tokens.css` (paleta clara) e `assets/css/portal.css` (sobreposições, carregado depois de `crm.css`).
 - Tudo o resto é igual à v7k3: `extra.css`, `crm.css`, `crm.js`, `app.js`, configs JSON no `index.html`.
+
+## Revisão 10/09, 12h (Diogo, depois de ver a versão publicada)
+- Chat com raciocínio passou a claro (telemóvel branco, bolhas do agente cinzento claro com borda, bolhas do cliente
+  verdes): as bolhas escuras não se liam sobre a página branca.
+- Removidos, SÓ nesta versão: capítulo 11 (back-office, terminal de logs), 13 (calculadora de ROI) e 18 (fora deste
+  âmbito). Configs `soTerm` e `soRoi` e as chamadas `terminal()`/`calculadora()` também saíram. A v7k3 mantém tudo.
+- Alternância section-alt refeita (email passou a alternada).

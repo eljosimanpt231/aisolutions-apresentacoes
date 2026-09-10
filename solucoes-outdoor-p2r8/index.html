@@ -1070,21 +1070,8 @@
     </div>
   </section>
 
-  <!-- ============ 11. BACK-OFFICE ============ -->
-  <section class="section-alt" id="backoffice">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">Módulo 06</span>
-        <h2>O escritório que trabalha enquanto ninguém olha.</h2>
-        <p class="lead">Nem tudo é conversa. A parte que consome horas de escritório passa a correr sozinha, e sinaliza o que precisa de uma pessoa.</p>
-      </div>
-      <div class="term reveal" id="soTerm" style="margin-top:36px"></div>
-      <p class="demo-note">Registo ilustrativo de uma execução. O agente nunca lança uma exceção em silêncio: o que não percebe fica assinalado para revisão.</p>
-    </div>
-  </section>
-
   <!-- ============ 11b. TRIAGEM DE EMAIL ============ -->
-  <section id="email">
+  <section class="section-alt" id="email">
     <div class="container">
       <div class="center">
         <span class="eyebrow">Módulo 06, em detalhe</span>
@@ -1124,18 +1111,6 @@
         </div>
       </div>
       <p class="demo-note">Emails ilustrativos. O agente nunca envia nada: prepara o rascunho, marca a prioridade e diz a quem cabe responder. A decisão e o envio ficam sempre com a pessoa.</p>
-    </div>
-  </section>
-
-  <!-- ============ 12. ROI ============ -->
-  <section class="section-alt" id="roi">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">O retorno</span>
-        <h2>Faça as contas com os vossos números.</h2>
-        <p class="lead">Cinco a seis orçamentos por dia, até 3 horas cada nos casos das linhas de vida. Mexa nos valores e veja o que muda.</p>
-      </div>
-      <div class="calc reveal" id="soRoi" style="margin-top:36px"></div>
     </div>
   </section>
 
@@ -1324,22 +1299,6 @@
     </div>
   </section>
 
-  <!-- ============ 16. FASE SEGUINTE ============ -->
-  <section id="depois">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">Fora deste âmbito</span>
-        <h2>Falámos disto, mas não entra agora.</h2>
-        <p class="lead">Fica registado para não haver surpresas nem expectativas por cumprir.</p>
-      </div>
-      <div class="grid-3" style="margin-top:40px">
-        <div class="card reveal"><h3>Aquisição de hardware</h3><p class="small">Os 10.000&nbsp;€ de equipamentos da candidatura ficam convosco. No diagnóstico indicamos que máquinas e dispositivos são precisos para os módulos funcionarem em pleno.</p></div>
-        <div class="card reveal"><h3>Número de WhatsApp da empresa</h3><p class="small">Hoje têm um número fixo. Para o WhatsApp Business é preciso definir um número, e essa decisão é vossa. A Marta levantou a hipótese de usar o do comercial: funciona, e a caixa única resolve o encaminhamento.</p></div>
-        <div class="card reveal"><h3>Pessoa dedicada ao projeto</h3><p class="small">Está a entrevistar alguém para fazer a ponte connosco. É a decisão certa e um projeto deste tamanho precisa dela. Não substitui a nossa equipa, mas acelera tudo do vosso lado.</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ 17. CTA ============ -->
   <section class="cta-final" id="avancar">
     <div class="container center">
@@ -1474,43 +1433,6 @@
       { "icon": "user-cog", "title": "Entrega à equipa", "detail": "Ao responsável da área, com o contexto todo reunido.", "tone": "brand" }
     ],
     "note": "Uma única camada de dados. O SAGE continua a ser a vossa fonte de verdade, deixa é de ser o único sítio onde a informação existe."
-  }
-  </script>
-
-  <script type="application/json" id="soTerm-config">
-  {
-    "title": "backoffice.log",
-    "intervalMs": 620,
-    "lines": [
-      { "text": "07:00  A verificar caixa de entrada de fornecedores...", "tone": "info" },
-      { "text": "07:00  4 faturas novas encontradas", "tone": "info" },
-      { "text": "07:01  Fatura 2026/4471 lida. Fornecedor reconhecido.", "tone": "ok" },
-      { "text": "07:01  12 artigos classificados. Stock atualizado no SAGE.", "tone": "ok" },
-      { "text": "07:02  Fatura 2026/4472: referencia LV-ANC-0231 nao existe no catalogo", "tone": "warn" },
-      { "text": "07:02  Sinalizada para revisao. Nada lancado.", "tone": "warn" },
-      { "text": "07:03  Previsao de consumo recalculada com as obras adjudicadas", "tone": "info" },
-      { "text": "07:03  Alerta: arnes antiqueda em rutura prevista para 12/10", "tone": "warn" },
-      { "text": "07:04  21 equipamentos de cliente a expirar nos proximos 30 dias", "tone": "info" },
-      { "text": "07:04  Avisos preparados. A aguardar aprovacao do responsavel.", "tone": "ok" },
-      { "text": "07:05  38 emails triados. 6 rascunhos de resposta criados.", "tone": "ok" },
-      { "text": "07:05  Concluido. 2 excecoes para a equipa rever.", "tone": "success" }
-    ]
-  }
-  </script>
-
-  <script type="application/json" id="soRoi-config">
-  {
-    "inputs": [
-      { "id": "orcamentos", "label": "Orçamentos por dia", "min": 2, "max": 15, "default": 6 },
-      { "id": "minutos", "label": "Minutos de trabalho por orçamento", "min": 20, "max": 180, "default": 90, "suffix": " min" },
-      { "id": "mensagens", "label": "Mensagens recebidas por dia", "min": 2, "max": 40, "default": 5 }
-    ],
-    "outputs": [
-      { "label": "Horas de escritório libertadas por mês", "expr": "(orcamentos*minutos*22*0.55)/60", "suffix": "h", "decimals": 0, "highlight": true },
-      { "label": "Orçamentos extra que a mesma equipa consegue tratar", "expr": "orcamentos*22*0.5", "suffix": " por mês", "decimals": 0 },
-      { "label": "Mensagens respondidas na hora, incluindo fora de horas", "expr": "mensagens*30", "suffix": " por mês", "decimals": 0 }
-    ],
-    "note": "Estimativa ilustrativa. A percentagem de 55% assume que as linhas de vida continuam a exigir validação humana e só as três linhas simples ficam automáticas."
   }
   </script>
 
@@ -1655,9 +1577,7 @@
   <script src="assets/js/crm.js"></script>
   <script>
     chatRaciocinio('soDemo');
-    fluxo('soFluxo');
-    terminal('soTerm');
-    calculadora('soRoi');
+    fluxo('soFluxo');
     unibox('soInbox');
   </script>
 </body>
