@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Eccentryc | Agente de Orçamentação, AI Solutions</title>
+  <meta name="description" content="Um agente que lê o caderno de encargos, cruza os artigos com a base de preços da Eccentryc e devolve o orçamento pronto para rever.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-traces"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="topo">
+    <div class="container">
+      <div class="reveal">
+        <span class="logo-plate"><img src="assets/img/eccentryc.png" alt="Eccentryc, Soluções Inteligentes"></span>
+      </div>
+      <div class="brandbar reveal">
+        <span class="wordmark">ECCEN<b>TRYC</b></span>
+        <span class="x">×</span>
+        <span class="ais">AI Solutions</span>
+      </div>
+      <h1 class="reveal">Deixar de perder obras<br><span class="grad">por falta de tempo para orçamentar.</span></h1>
+      <p class="lead reveal" style="margin:20px auto 0">
+        Um agente que lê o caderno de encargos, cruza os artigos com a vossa base de preços interna
+        e devolve o orçamento pronto para rever. O que não consegue orçamentar fica sinalizado.
+        Nada segue para o cliente sem a sua aprovação.
+      </p>
+      <div class="grid-4 reveal" style="margin-top:44px; text-align:left">
+        <div class="card stat-card"><div class="num">até <span class="count" data-to="80" data-suffix="%">0</span></div><div class="desc">Do trabalho de orçamentação preparado pelo agente</div></div>
+        <div class="card stat-card"><div class="num">270.000 €</div><div class="desc">A obra que esteve em risco de ser recusada por falta de tempo</div></div>
+        <div class="card stat-card"><div class="num">0</div><div class="desc">Preços tirados da internet. Só a vossa base de confiança</div></div>
+        <div class="card stat-card"><div class="num">4 a 5</div><div class="desc">Semanas para entrar em funcionamento</div></div>
+      </div>
+      <div class="creds reveal">
+        <span>Proposta para João Justo</span>
+        <span>Eccentryc, Póvoa de Varzim</span>
+        <span>10 de setembro de 2026</span>
+      </div>
+      <div style="margin-top:34px" class="reveal">
+        <a href="#demo" class="btn btn-primary">Ver o agente a trabalhar ↓</a>
+        <a href="#investimento" class="btn btn-ghost" style="margin-left:10px">Investimento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE OUVIMOS ============ -->
+  <section class="section-alt" id="diagnostico">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">O que ouvimos a 4 de setembro</span>
+        <h2>O travão não é comercial nem técnico. É o tempo.</h2>
+        <p class="lead">Trabalho não falta. O que falta é tempo para responder a quem o pede, e cada orçamento que demora é uma obra que pode ir a outro lado.</p>
+      </div>
+      <div class="grid-3" style="margin-top:44px">
+        <div class="card reveal"><div class="ftile">📄</div><h3>Cadernos de encargos por email</h3><p class="small">Chegam com desenhos de circuitos e mapas de quantidades. Alguém tem de os ler artigo a artigo antes de haver um número.</p></div>
+        <div class="card reveal"><div class="ftile">📞</div><h3>Cotações a fornecedores</h3><p class="small">Cada orçamento obriga a pedir preços atualizados e a esperar pela resposta. É aí que se perdem os dias.</p></div>
+        <div class="card reveal"><div class="ftile">👷</div><h3>Quatro pessoas, uma agenda cheia</h3><p class="small">Com a manutenção do parque escolar de Vila do Conde a correr, orçamentar acontece fora de horas ou não acontece.</p></div>
+        <div class="card reveal"><div class="ftile">⏳</div><h3>Obras recusadas por prazo</h3><p class="small">Uma obra de 270.000 €, com entrega marcada, quase recusada não por não se conseguir fazer, mas por não haver tempo para responder.</p></div>
+        <div class="card reveal"><div class="ftile">🧾</div><h3>Faturação à parte</h3><p class="small">O Colibri trata da faturação, mas o caminho até lá, do pedido ao orçamento aprovado, é todo manual.</p></div>
+        <div class="card reveal"><div class="ftile">🌐</div><h3>Preços que oscilam</h3><p class="small">Ir buscar valores à internet dá números diferentes de semana para semana. O preço tem de vir de uma base vossa, de confiança.</p></div>
+      </div>
+      <p class="sintese reveal">O problema não é falta de procura. É o tempo que a procura demora a receber resposta.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOJE VS COM O AGENTE ============ -->
+  <section id="contraste">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">O que muda</span>
+        <h2>O mesmo orçamento, por outro caminho.</h2>
+        <p class="lead">O trabalho não desaparece. Passa a chegar-lhe feito, à espera de ser revisto.</p>
+      </div>
+      <div class="grid-2" style="margin-top:44px">
+        <div class="card card-dont reveal">
+          <span class="badge" style="background:hsl(var(--danger-hsl) / 0.14); color:var(--danger)">Hoje</span>
+          <h3 style="margin-top:12px">Do pedido ao orçamento, dias</h3>
+          <ul class="list-x">
+            <li>Ler o caderno de encargos e listar os artigos à mão</li>
+            <li>Procurar cada preço em listas, emails e memória</li>
+            <li>Pedir cotações e esperar pela resposta dos fornecedores</li>
+            <li>Montar o documento de raiz, capítulo a capítulo</li>
+            <li>Fazer as contas e conferir os totais</li>
+            <li>Orçamentar ao fim do dia, depois da obra</li>
+          </ul>
+        </div>
+        <div class="card card-do reveal">
+          <span class="badge badge-success">Com o agente</span>
+          <h3 style="margin-top:12px">Do pedido ao orçamento, minutos</h3>
+          <ul class="list-check">
+            <li>O agente lê o ficheiro e extrai os artigos sozinho</li>
+            <li>Cruza cada artigo com a vossa base de preços interna</li>
+            <li>Marca o que não tem preço fiável e prepara o pedido de cotação</li>
+            <li>Gera o documento com o vosso cabeçalho e as vossas condições</li>
+            <li>Apresenta os totais e a margem já calculados</li>
+            <li>Você revê, ajusta e aprova. Só depois é que sai</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ÂMBITO ============ -->
+  <section class="section-alt" id="solucao">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">A solução</span>
+        <h2>O que o agente de orçamentação faz.</h2>
+        <p class="lead">Um agente só, focado na tarefa que hoje decide o crescimento da Eccentryc.</p>
+      </div>
+      <div class="grid-3" style="margin-top:44px">
+        <div class="card reveal"><div class="ftile">📥</div><h3>Lê o pedido, venha como vier</h3><p class="small">Caderno de encargos em PDF, mapa de quantidades em Excel, um email escrito à pressa ou o resumo de uma chamada.</p></div>
+        <div class="card reveal"><div class="ftile">🔎</div><h3>Extrai os artigos</h3><p class="small">Separa o pedido em artigos e quantidades, capítulo a capítulo, sem saltar linhas no meio de dezoito páginas.</p></div>
+        <div class="card reveal"><div class="ftile">🗄️</div><h3>Usa a vossa base de preços</h3><p class="small">Preços da Eccentryc e dos vossos fornecedores, mantidos numa base interna. Nunca valores apanhados na internet.</p></div>
+        <div class="card reveal"><div class="ftile">⚠️</div><h3>Sinaliza as lacunas</h3><p class="small">O que não consegue orçamentar com confiança fica marcado para si, com a razão. Nunca preenche um buraco a adivinhar.</p></div>
+        <div class="card reveal"><div class="ftile">📑</div><h3>Gera o documento</h3><p class="small">Orçamento com o vosso cabeçalho, alvará, condições de pagamento e prazos, pronto a rever e a enviar.</p></div>
+        <div class="card reveal"><div class="ftile">💬</div><h3>Corrige-se a conversar</h3><p class="small">"Sobe a margem da iluminação para 22%" e o agente refaz as contas. Sem abrir folhas nem repetir o trabalho.</p></div>
+      </div>
+      <div class="grid-2" style="margin-top:26px">
+        <div class="card diff reveal"><h3>Construído sobre os vossos dados</h3><p class="small" style="color:var(--text)">A base de preços é montada a partir das vossas listas e das cotações dos vossos fornecedores. É esse trabalho que faz o agente valer alguma coisa.</p></div>
+        <div class="card diff reveal"><h3>Não é plug and play</h3><p class="small" style="color:var(--text)">O agente vai sendo afinado com a vossa correção ao longo dos meses. A autonomia sobe à medida que a base cresce.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MOMENTO UAU ============ -->
+  <section id="demo">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Como funciona na prática</span>
+        <h2>O agente a orçamentar, ao vivo.</h2>
+        <p class="lead">Quatro situações do dia a dia da Eccentryc: a conversa à esquerda, o raciocínio do agente à direita. Escolha um cenário ou deixe correr.</p>
+      </div>
+      <div class="cr reveal" id="ecDemo" style="margin-top:40px"></div>
+      <p class="demo-note">Os artigos e os valores destes exemplos são inventados, só para ilustrar. O agente usa sempre a base de preços real da Eccentryc.</p>
+    </div>
+  </section>
+
+  <!-- ============ O DOCUMENTO QUE SAI ============ -->
+  <section class="section-alt" id="documento">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">O resultado</span>
+        <h2>É isto que lhe chega, 4 minutos depois.</h2>
+        <p class="lead">O orçamento montado, com os artigos que o agente conseguiu preçar e os que ficaram à espera de si, bem à vista.</p>
+      </div>
+      <div class="doc-wrap reveal">
+        <div class="doc">
+          <div class="doc-head">
+            <img src="assets/img/eccentryc.png" alt="Eccentryc">
+            <div class="doc-meta">
+              <b>Orçamento ORC-2026/184</b><br>
+              Rua Viriato Barbosa, 811 R/C, Póvoa de Varzim<br>
+              Alvará 105726 · DGEG-56321<br>
+              Validade: 30 dias
+            </div>
+          </div>
+          <div class="doc-title">Instalação elétrica, pavilhão desportivo</div>
+          <div class="doc-sub">Cliente: Agrupamento de Escolas · Preparado pelo agente a partir do caderno de encargos de 18 páginas</div>
+          <div class="doc-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Capítulo</th>
+                  <th class="num">Artigos</th>
+                  <th class="num">Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1. Quadros elétricos e proteções</td><td class="num">14</td><td class="num">12.940,00 €</td></tr>
+                <tr><td>2. Circuitos de tomadas e alimentações</td><td class="num">19</td><td class="num">9.615,00 €</td></tr>
+                <tr><td>3. Iluminação interior e de emergência</td><td class="num">17</td><td class="num">14.380,00 €</td></tr>
+                <tr><td>4. Automatismos e comando</td><td class="num">7</td><td class="num">4.845,00 €</td></tr>
+                <tr class="pending"><td>5. Caminhos de cabos e estanques <span class="flag">6 por confirmar</span></td><td class="num">6</td><td class="num">por cotar</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="doc-totals">
+            <dl>
+              <dt>Subtotal preçado</dt><dd>41.780,00 €</dd>
+              <dt>Margem aplicada (18%)</dt><dd>incluída</dd>
+              <dt>Artigos por cotar</dt><dd>6</dd>
+              <div class="grand" style="display:contents"><dt>Total provisório</dt><dd>41.780,00 €</dd></div>
+            </dl>
+          </div>
+          <div class="doc-foot">
+            <span class="doc-stamp">Rascunho, a aguardar revisão</span><br>
+            Documento preparado automaticamente a partir da base de preços interna da Eccentryc.
+            Os 6 artigos do capítulo 5 aguardam cotação de fornecedor e não entram no total.
+            Sujeito a verificação interna antes do envio ao cliente.
+          </div>
+        </div>
+      </div>
+      <p class="demo-note">Simulação do documento final. O layout e as condições são adaptados ao vosso modelo atual de orçamento.</p>
+    </div>
+  </section>
+
+  <!-- ============ FLUXO ============ -->
+  <section id="fluxo">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Como se liga ao que já usam</span>
+        <h2>Do pedido ao orçamento aprovado.</h2>
+        <p class="lead">Sem sistema novo para a equipa aprender. O pedido entra por onde já entra e o orçamento sai por onde já sai.</p>
+      </div>
+      <div class="fluxo reveal" id="ecFluxo" style="margin-top:36px"></div>
+    </div>
+  </section>
+
+  <!-- ============ BACK-OFFICE: BASE DE PREÇOS ============ -->
+  <section class="section-alt" id="base">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Por trás</span>
+        <h2>A base de preços mantém-se sozinha.</h2>
+        <p class="lead">Quando chega uma lista de preços nova de um fornecedor, o agente atualiza a base e avisa se algum orçamento em aberto ficou desatualizado.</p>
+      </div>
+      <div class="term reveal" id="ecTerm" style="margin-top:36px"></div>
+      <p class="demo-note">Nunca erra em silêncio. O que fica em dúvida é sempre sinalizado à equipa.</p>
+    </div>
+  </section>
+
+  <!-- ============ LIMITES ============ -->
+  <section id="limites">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Os limites</span>
+        <h2>Três regras que o agente não quebra.</h2>
+        <p class="lead">Num orçamento de dezenas de milhares de euros, saber o que o agente não faz importa tanto como saber o que faz.</p>
+      </div>
+      <div class="grid-3" style="margin-top:44px">
+        <div class="card reveal">
+          <span class="rule-n">Regra 1</span>
+          <h3>Não inventa preços</h3>
+          <p class="small">Responde apenas a partir da base de preços construída convosco. Se um artigo não está lá, ou a cotação está velha, diz que não sabe em vez de estimar.</p>
+        </div>
+        <div class="card reveal">
+          <span class="rule-n">Regra 2</span>
+          <h3>Não envia nada ao cliente</h3>
+          <p class="small">Prepara o orçamento e entrega-o em rascunho. O envio, o valor final e a margem continuam a ser decisão sua.</p>
+        </div>
+        <div class="card reveal">
+          <span class="rule-n">Regra 3</span>
+          <h3>Sinaliza sempre o que falta</h3>
+          <p class="small">Cada lacuna vem com a razão: artigo desconhecido, quantidade em falta no mapa, cotação fora de prazo. Nada passa despercebido.</p>
+        </div>
+      </div>
+      <div class="alert reveal">
+        <span class="dot"></span>
+        <p style="color:var(--text)"><b>Preferimos dizer isto agora do que prometer o que não se cumpre.</b> Nos primeiros meses vai corrigir o agente com alguma frequência, e é dessa correção que a base ganha qualidade. Ao fim de pouco tempo, a revisão passa a ser uma leitura rápida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROI ============ -->
+  <section class="section-alt" id="roi">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">As contas</span>
+        <h2>Quanto tempo é que isto lhe devolve.</h2>
+        <p class="lead">Mexa nos valores para os números da Eccentryc. A pergunta não é quanto custa o agente, é quanto está a custar não o ter.</p>
+      </div>
+      <div class="calc reveal" id="ecRoi" style="margin-top:36px"></div>
+    </div>
+  </section>
+
+  <!-- ============ INVESTIMENTO ============ -->
+  <section id="investimento">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Investimento</span>
+        <h2>Menos do que uma obra recusada.</h2>
+        <p class="lead">Valor fechado para o agente de orçamentação, com a base de preços construída a partir dos vossos dados.</p>
+      </div>
+      <div class="grid-3" style="margin-top:44px">
+        <div class="card price-card reveal">
+          <div class="label">Implementação</div>
+          <div class="price">4.600€</div>
+          <div class="note">Valor único, faseado 50% no arranque e 50% na entrada em testes.</div>
+          <ul class="price-list">
+            <li>Levantamento dos vossos cadernos de encargos e orçamentos tipo</li>
+            <li>Construção da base de preços interna com as listas dos fornecedores</li>
+            <li>Leitura de PDF, mapas de quantidades e pedidos por email</li>
+            <li>Geração do documento com o vosso modelo e condições</li>
+            <li>Testes com a equipa antes do arranque</li>
+          </ul>
+        </div>
+        <div class="card price-card highlight reveal">
+          <span class="pin">Acompanhamento</span>
+          <div class="label">Mensalidade</div>
+          <div class="price">200€<span style="font-size:1rem;color:var(--muted)"> /mês</span></div>
+          <div class="note">Infraestrutura, IA, alojamento, suporte e melhoria contínua do agente.</div>
+          <ul class="price-list">
+            <li>Manutenção e afinação do agente</li>
+            <li>Atualização da base de preços</li>
+            <li>Alojamento e custos de IA</li>
+            <li>Suporte pela equipa AI Solutions</li>
+            <li>Sem fidelização</li>
+          </ul>
+        </div>
+        <div class="card price-card reveal">
+          <div class="label">Garantia</div>
+          <div class="price">Risco zero</div>
+          <div class="note">Se, ao fim do primeiro mês, o agente não fizer o que ficou contratado, devolvemos 100% do valor da implementação.</div>
+          <ul class="price-list">
+            <li>Sem letras pequenas</li>
+            <li>Compromisso por escrito</li>
+          </ul>
+        </div>
+      </div>
+      <p class="iva reveal">Valores sem IVA. Com IVA à taxa de 23%: 5.658 € de implementação e 246 € por mês.</p>
+    </div>
+  </section>
+
+  <!-- ============ CRONOGRAMA ============ -->
+  <section class="section-alt" id="prazo">
+    <div class="container center">
+      <span class="eyebrow">Prazo</span>
+      <h2>4 a 5 semanas até estar a orçamentar.</h2>
+      <div class="timeline" style="grid-template-columns:repeat(3,1fr); margin-top:48px; max-width:820px; margin-left:auto; margin-right:auto">
+        <div class="tl-step reveal"><div class="tl-dot">📚</div><strong>Semana 1</strong><span>Levantamento dos cadernos de encargos, dos orçamentos anteriores e das listas de fornecedores</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">⚙️</div><strong>Semanas 2 a 4</strong><span>Construção da base de preços interna e do agente de orçamentação</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">✅</div><strong>Semanas 4 a 5</strong><span>Testes com orçamentos reais, afinação e arranque</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FASE SEGUINTE + PT 2030 ============ -->
+  <section id="depois">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Fica para depois</span>
+        <h2>O que falámos e não entra nesta proposta.</h2>
+        <p class="lead">Registamos aqui para não se perder. Faz sentido, mas só depois de a orçamentação estar a andar.</p>
+      </div>
+      <div class="grid-2" style="margin-top:40px">
+        <div class="card later reveal">
+          <span class="tag">Fase seguinte</span>
+          <h3>Plataforma central de gestão de clientes</h3>
+          <p class="small">Ter numa só vista o estado de cada obra e de cada orçamento, e conseguir analisar o desempenho do negócio. Tem valor próprio, a definir quando chegarmos aí.</p>
+        </div>
+        <div class="card later reveal">
+          <span class="tag">Fase seguinte</span>
+          <h3>Colibri ligado aos dados bancários</h3>
+          <p class="small">Para as faturas recebidas ficarem automaticamente associadas à obra certa, pela referência do projeto ou pelo nome do cliente. Não faz parte desta proposta.</p>
+        </div>
+      </div>
+      <div class="alert reveal">
+        <span class="dot"></span>
+        <p style="color:var(--text)"><b>PT 2030.</b> Este projeto é um bom candidato à vertente de digitalização dos negócios. Damos apoio na componente de inteligência artificial da candidatura e orientamos a melhor forma de a submeter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta-final" id="avancar">
+    <div class="container center">
+      <h2>Pronto para tirar a orçamentação do caminho, João?</h2>
+      <p class="lead" style="margin:14px auto 30px">Arrancamos com o levantamento da vossa base de preços e, em 4 a 5 semanas, o próximo caderno de encargos que entrar sai orçamentado no mesmo dia.</p>
+      <a href="https://aisolutions.pt/comecar" class="btn btn-primary">Avançar com a AI Solutions →</a>
+    </div>
+  </section>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Eccentryc · Manuel Condeço
+      <span class="disclaimer">Demonstração com dados ilustrativos, para fins de apresentação.</span>
+    </div>
+  </footer>
+
+  <!-- Chat + raciocínio (momento uau) -->
+  <script type="application/json" id="ecDemo-config">
+  {
+    "agentName": "Agente de Orçamentação", "agentInitials": "EC", "chatStatus": "Eccentryc, sempre disponível",
+    "stepMs": 1400,
+    "scenarios": [
+      {
+        "title": "Caderno de encargos",
+        "subtitle": "Dezoito páginas lidas e orçamentadas antes do café arrefecer.",
+        "chat": [
+          { "sender": "system", "text": "Email recebido às 09:12, com caderno de encargos em PDF (18 páginas)", "time": "09:12" },
+          { "sender": "agent", "text": "Recebido. Li o caderno de encargos e extraí **63 artigos** em 5 capítulos. 57 têm preço na vossa base, 6 ficam para confirmar.", "time": "09:16" },
+          { "sender": "agent", "text": "Rascunho pronto: quadros, circuitos de tomadas, iluminação e automatismos. **Subtotal 41.780 €**, sem os 6 artigos por cotar.", "time": "09:16" },
+          { "sender": "client", "text": "Quais são os 6?", "time": "09:21" },
+          { "sender": "agent", "text": "Calhas metálicas de 200 mm, 2 diferenciais de 300 mA tipo B e 3 luminárias estanques IP65. Nenhum tem cotação com menos de 90 dias. Preparo o pedido aos fornecedores?", "time": "09:21" },
+          { "sender": "client", "text": "Sim, prepara.", "time": "09:23" }
+        ],
+        "steps": [
+          { "icon": "message", "label": "Deteta o anexo no email recebido" },
+          { "icon": "book", "label": "Lê as 18 páginas do caderno de encargos" },
+          { "icon": "list", "label": "Extrai 63 artigos e quantidades, por capítulo" },
+          { "icon": "database", "label": "Cruza cada artigo com a base de preços interna" },
+          { "icon": "check", "label": "57 artigos preçados, subtotal calculado" },
+          { "icon": "alert", "label": "6 artigos sem cotação recente, marcados para revisão" },
+          { "icon": "send", "label": "Prepara o pedido de cotação aos fornecedores" }
+        ]
+      },
+      {
+        "title": "Pedido por telefone",
+        "subtitle": "Um valor de referência ainda com o cliente ao telefone.",
+        "chat": [
+          { "sender": "client", "text": "Bom dia. Preciso de um valor para o quadro elétrico de uma moradia T3 em Vila do Conde, com proteção diferencial e espaço para painéis mais tarde.", "time": "11:04" },
+          { "sender": "agent", "text": "Bom dia. Para um T3 com essa configuração, e deixando reserva para o fotovoltaico, o quadro fica entre **1.180 € e 1.460 €**, montagem incluída.", "time": "11:04" },
+          { "sender": "client", "text": "E se já incluir o carregador do carro elétrico?", "time": "11:05" },
+          { "sender": "agent", "text": "O carregador de 7,4 kW com a proteção dedicada acrescenta cerca de **860 €**. Fica com o quadro preparado para os painéis sem obra nova.", "time": "11:06" },
+          { "sender": "agent", "text": "Deixo o rascunho na sua lista de revisão. Confirmo o valor final depois de ver a potência contratada.", "time": "11:06" }
+        ],
+        "steps": [
+          { "icon": "ear", "label": "Interpreta o pedido: quadro elétrico de moradia T3" },
+          { "icon": "list", "label": "Identifica os artigos típicos desta configuração" },
+          { "icon": "database", "label": "Consulta a base de preços e a margem habitual" },
+          { "icon": "arrows", "label": "Devolve uma faixa, não um valor fechado" },
+          { "icon": "wrench", "label": "Acrescenta o carregador de veículo elétrico pedido" },
+          { "icon": "shield", "label": "Assinala a dependência: potência contratada por confirmar" }
+        ]
+      },
+      {
+        "title": "Recusa consciente",
+        "subtitle": "O agente prefere perguntar a apresentar um número que não se segura.",
+        "chat": [
+          { "sender": "client", "text": "Manda-me já o orçamento do pavilhão, é para hoje.", "time": "16:40" },
+          { "sender": "agent", "text": "Tenho o rascunho em 20 minutos, mas não o envio sozinho. Faltam-me duas coisas.", "time": "16:40" },
+          { "sender": "agent", "text": "O capítulo 4 veio sem mapa de quantidades, e a cotação do quadro geral tem 4 meses. Com uma obra deste tamanho, um erro aqui sai caro.", "time": "16:41" },
+          { "sender": "client", "text": "Faz por alto para eu ver.", "time": "16:42" },
+          { "sender": "agent", "text": "Faço o rascunho com os 4 capítulos que consigo preçar e deixo o capítulo 4 em branco, identificado. O valor sai daqui como provisório, não como orçamento.", "time": "16:42" },
+          { "sender": "system", "text": "Rascunho entregue ao João para revisão. Nada foi enviado ao cliente.", "time": "17:01" }
+        ],
+        "steps": [
+          { "icon": "clock", "label": "Recebe um pedido urgente ao fim do dia" },
+          { "icon": "search", "label": "Verifica a integridade do mapa de quantidades" },
+          { "icon": "alert", "label": "Capítulo 4 sem quantidades declaradas" },
+          { "icon": "ban", "label": "Cotação do quadro geral fora do prazo de validade" },
+          { "icon": "shield", "label": "Decide não estimar o que não consegue sustentar" },
+          { "icon": "user-cog", "label": "Entrega o rascunho ao João, com as lacunas identificadas" }
+        ]
+      },
+      {
+        "title": "Rever a conversar",
+        "subtitle": "Corrigir o orçamento sem abrir uma folha de cálculo.",
+        "chat": [
+          { "sender": "client", "text": "No orçamento da escola, sobe a margem da iluminação para 22% e troca as luminárias pelas equivalentes da nossa distribuição.", "time": "14:18" },
+          { "sender": "agent", "text": "Feito. As 17 luminárias passaram para as referências da vossa distribuição e a margem do capítulo 3 subiu para 22%.", "time": "14:18" },
+          { "sender": "agent", "text": "Capítulo 3: de 14.380 € para **13.910 €**. Fica mais barato para o cliente e com melhor margem para vocês.", "time": "14:19" },
+          { "sender": "client", "text": "Boa. Gera o PDF.", "time": "14:20" },
+          { "sender": "agent", "text": "PDF gerado com o vosso cabeçalho, alvará 105726 e as condições de pagamento habituais. Está em rascunho, à espera da sua aprovação.", "time": "14:20" }
+        ],
+        "steps": [
+          { "icon": "ear", "label": "Interpreta a instrução em linguagem corrente" },
+          { "icon": "search", "label": "Localiza as 17 luminárias do capítulo 3" },
+          { "icon": "database", "label": "Substitui pelas referências da distribuição Eccentryc" },
+          { "icon": "arrows", "label": "Recalcula o capítulo com margem de 22%" },
+          { "icon": "check", "label": "Mostra a diferença face à versão anterior" },
+          { "icon": "id", "label": "Gera o documento com cabeçalho e alvará da Eccentryc" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fluxo -->
+  <script type="application/json" id="ecFluxo-config">
+  {
+    "channels": [
+      { "icon": "globe", "label": "Email" },
+      { "icon": "phone", "label": "Telefone" },
+      { "icon": "whatsapp", "label": "WhatsApp" }
+    ],
+    "nodes": [
+      { "icon": "message", "title": "Pedido recebido", "detail": "Caderno de encargos, mapa de quantidades ou um pedido escrito à pressa.", "tone": "brand" },
+      { "icon": "list", "title": "Lê e extrai os artigos", "detail": "PDF, Excel ou texto corrido, separado em capítulos e quantidades.", "tone": "teal" },
+      { "icon": "database", "title": "Cruza com a base de preços", "detail": "Preços da Eccentryc e dos vossos fornecedores. Nunca da internet.", "tone": "teal" },
+      { "icon": "alert", "title": "Sinaliza as lacunas", "detail": "O que falta cotar fica marcado, com a razão, para a sua revisão.", "tone": "teal" },
+      { "icon": "check", "title": "Orçamento pronto a rever", "detail": "Documento com o vosso cabeçalho. Aprovado por si, faturado no Colibri.", "tone": "brand" }
+    ],
+    "note": "Nada sai para o cliente sem passar por si. O agente prepara, o João aprova."
+  }
+  </script>
+
+  <!-- Terminal: base de preços -->
+  <script type="application/json" id="ecTerm-config">
+  {
+    "title": "base-de-precos.log",
+    "intervalMs": 700,
+    "lines": [
+      { "text": "Lista de precos recebida por email: fornecedor de material eletrico", "tone": "info" },
+      { "text": "142 referencias lidas do ficheiro anexo", "tone": "info" },
+      { "text": "138 referencias associadas a artigos ja existentes na base", "tone": "ok" },
+      { "text": "4 referencias novas criadas, a aguardar classificacao", "tone": "warn" },
+      { "text": "Luminaria estanque IP65: preco subiu 11% face a agosto", "tone": "warn" },
+      { "text": "3 orcamentos em aberto usam este artigo, sinalizados ao Joao", "tone": "warn" },
+      { "text": "Base de precos atualizada. 2 excecoes para a equipa rever.", "tone": "success" }
+    ]
+  }
+  </script>
+
+  <!-- Calculadora de ROI -->
+  <script type="application/json" id="ecRoi-config">
+  {
+    "inputs": [
+      { "id": "orcamentos", "label": "Orçamentos por semana", "min": 2, "max": 20, "default": 8 },
+      { "id": "minutos", "label": "Minutos por orçamento, hoje", "min": 30, "max": 300, "default": 150, "suffix": " min" }
+    ],
+    "outputs": [
+      { "label": "Horas por mês a orçamentar, hoje", "expr": "(orcamentos*minutos*4.33)/60", "suffix": "h", "decimals": 0 },
+      { "label": "Horas devolvidas por mês", "expr": "(orcamentos*minutos*4.33*0.8)/60", "suffix": "h", "decimals": 0, "highlight": true },
+      { "label": "Equivalente em dias de trabalho", "expr": "(orcamentos*minutos*4.33*0.8)/60/8", "suffix": " dias", "decimals": 1 }
+    ],
+    "note": "Assume que o agente prepara cerca de 80% do trabalho de cada orçamento e que a revisão continua a ser sua. Estimativa ilustrativa, a confirmar com os vossos números reais."
+  }
+  </script>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script>
+    chatRaciocinio('ecDemo');
+    fluxo('ecFluxo');
+    terminal('ecTerm');
+    calculadora('ecRoi');
+  </script>
+</body>
+</html>

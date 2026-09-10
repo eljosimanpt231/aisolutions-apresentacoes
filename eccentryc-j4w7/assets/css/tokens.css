@@ -1,0 +1,61 @@
+/* ============================================================
+   Eccentryc x AI Solutions
+   Direção: "quadro elétrico" - fundo quase-preto, traçado de circuito
+   a lembrar o logótipo, verde da marca + ciano de corrente elétrica.
+   Base: estilo deck-dark, com paleta e tipografia próprias da lead.
+   ============================================================ */
+:root {
+  --brand-hsl: 142 46% 55%;      /* verde Eccentryc (logótipo) */
+  --accent-hsl: 190 92% 52%;     /* ciano de corrente: a cor do agente */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(160 40% 8%);
+
+  --bg: hsl(170 18% 5%);
+  --bg-soft: hsl(170 16% 7%);
+  --surface: hsl(170 14% 10%);
+  --surface-2: hsl(170 12% 13%);
+  --border: hsl(168 12% 20%);
+
+  --text: hsl(160 16% 95%);
+  --muted: hsl(165 8% 64%);
+
+  --success-hsl: 142 60% 50%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 6 78% 62%;    --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 58%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
+  --grad-text: linear-gradient(118deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(170 18% 7%), hsl(var(--brand-hsl) / 0.30));
+
+  --shadow-sm: 0 1px 3px hsl(170 60% 1% / 0.5);
+  --shadow-md: 0 10px 32px hsl(170 60% 1% / 0.55);
+  --shadow-lg: 0 24px 64px hsl(170 60% 1% / 0.65);
+
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  /* Par tipográfico: Sora (geométrica, "soluções inteligentes") + Inter */
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 128px);
+
+  /* Placa clara para o logótipo da lead e para o documento simulado */
+  --plate: hsl(0 0% 100%);
+  --doc-bg: hsl(40 20% 97%);
+  --doc-text: hsl(170 20% 14%);
+  --doc-muted: hsl(170 8% 44%);
+  --doc-line: hsl(170 10% 87%);
+}
+/* WhatsApp (mockup): cores canonicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
