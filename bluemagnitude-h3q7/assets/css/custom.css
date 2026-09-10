@@ -1,0 +1,167 @@
+/* ============================================================
+   Componentes próprios desta apresentação (Blue Magnitude).
+   Carregado DEPOIS de base.css e deck.css. Só tokens, zero cores diretas.
+   Inclui os overrides de TEMA CLARO para os componentes de shared/deck,
+   que foram desenhados para decks escuros.
+   ============================================================ */
+
+/* ---------- Fundo: grelha de painéis (assinatura do logótipo) ---------- */
+.bg-grid {
+  background-image:
+    linear-gradient(hsl(var(--brand-hsl) / 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--brand-hsl) / 0.055) 1px, transparent 1px);
+  background-size: 54px 54px;
+  transform: skewY(-4deg);
+  mask-image: radial-gradient(ellipse at 50% 0, hsl(0 0% 0%), transparent 70%);
+}
+.glow-1 { background: hsl(var(--brand-hsl) / 0.09); }
+.glow-2 { background: hsl(var(--sun-hsl) / 0.10); }
+
+/* ---------- Placa do logótipo da lead ---------- */
+.logo-plate {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--surface); border-radius: var(--radius-lg);
+  padding: 18px 28px; box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+.logo-plate img { height: 84px; width: auto; }
+.hero .logo-plate { margin-bottom: 26px; }
+@media (max-width: 520px) { .logo-plate img { height: 58px; } .logo-plate { padding: 14px 20px; } }
+
+/* ---------- Faixa de credenciais ---------- */
+.creds { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+.creds span {
+  font-size: 0.75rem; letter-spacing: 0.03em; font-weight: 500;
+  color: var(--muted); border: 1px solid var(--border); background: var(--surface);
+  padding: 6px 14px; border-radius: 999px;
+}
+
+/* ---------- Frase-síntese em itálico a fechar secções ---------- */
+.sintese {
+  margin: 34px auto 0; text-align: center; font-family: var(--font-display);
+  font-style: italic; font-weight: 600; font-size: clamp(1.05rem, 2vw, 1.4rem);
+  color: var(--brand); max-width: 780px; line-height: 1.4;
+}
+
+/* ---------- Citação real do cliente ---------- */
+.quote {
+  margin: 34px auto 0; max-width: 800px; text-align: left;
+  border-left: 4px solid var(--sun); background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 24px 28px; box-shadow: var(--shadow-sm);
+}
+.quote p { font-family: var(--font-display); font-size: clamp(1rem, 1.8vw, 1.22rem); font-weight: 600; line-height: 1.45; }
+.quote cite { display: block; margin-top: 12px; font-style: normal; font-size: 0.85rem; color: var(--muted); }
+
+/* ---------- Cartões de dor (diagnóstico) ---------- */
+.pain { display: flex; gap: 16px; align-items: flex-start; text-align: left; }
+.pain .ftile { flex-shrink: 0; margin-bottom: 0; background: hsl(var(--brand-hsl) / 0.10); border-color: hsl(var(--brand-hsl) / 0.22); }
+.pain h3 { font-size: 1.02rem; }
+.pain p { color: var(--muted); font-size: 0.93rem; margin-top: 6px; }
+
+/* ---------- As regras do agente ---------- */
+.rules { display: grid; gap: 20px; text-align: left; }
+@media (min-width: 900px) { .rules { grid-template-columns: repeat(3, 1fr); } }
+.rule-n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 10px; margin-bottom: 14px;
+  font-family: var(--font-display); font-weight: 800; font-size: 0.95rem;
+  background: hsl(var(--brand-hsl) / 0.10); color: var(--brand);
+  border: 1px solid hsl(var(--brand-hsl) / 0.24);
+}
+.rule h3 { font-size: 1.06rem; }
+.rule p { color: var(--muted); font-size: 0.93rem; margin-top: 8px; }
+
+/* ---------- Fora de âmbito ---------- */
+.fora { margin-top: 26px; text-align: left; }
+.fora .card { background: var(--surface-2); }
+.fora h3 { font-size: 1rem; margin-bottom: 12px; }
+.fora .list-x li { color: var(--muted); }
+.fora .list-x li b { color: var(--text); font-weight: 600; }
+
+/* ---------- Cartões de referência ---------- */
+.ref { text-align: left; display: flex; flex-direction: column; }
+.ref .setor { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.ref h3 { margin-top: 8px; font-size: 1.1rem; }
+.ref .metrics { display: grid; gap: 8px; margin: 18px 0; }
+.ref .metrics div { display: flex; align-items: baseline; gap: 10px; font-size: 0.9rem; color: var(--muted); }
+.ref .metrics b { font-family: var(--font-display); font-size: 1.05rem; color: var(--success); min-width: 84px; flex-shrink: 0; padding-right: 10px; }
+.ref p.liga { font-size: 0.9rem; color: var(--muted); margin-top: auto; padding-top: 8px; border-top: 1px solid var(--border); }
+.ref a.src { display: inline-block; margin-top: 12px; font-size: 0.84rem; font-weight: 600; word-break: break-word; }
+
+/* ---------- Roadmap da fase seguinte ---------- */
+.next h3 { font-size: 1.05rem; margin-top: 12px; }
+.next p { color: var(--muted); font-size: 0.93rem; margin-top: 8px; }
+
+/* ---------- Investimento ---------- */
+.price-card .iva { display: block; font-size: 0.86rem; color: var(--muted); font-weight: 500; margin-top: -2px; margin-bottom: 10px; }
+.price-card .price { line-height: 1.1; }
+
+/* ---------- Navegação lateral por pontos ---------- */
+.dotnav { position: fixed; right: 22px; top: 50%; transform: translateY(-50%); z-index: 40; display: none; flex-direction: column; gap: 12px; }
+@media (min-width: 1180px) { .dotnav { display: flex; } }
+.dotnav a { position: relative; width: 10px; height: 10px; border-radius: 50%; background: hsl(var(--brand-hsl) / 0.22); transition: all 0.22s ease; }
+.dotnav a:hover, .dotnav a.on { background: var(--brand); transform: scale(1.35); }
+.dotnav a span {
+  position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+  white-space: nowrap; font-size: 0.72rem; font-weight: 600; color: var(--on-brand);
+  background: var(--navy); padding: 4px 10px; border-radius: 6px;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+}
+.dotnav a:hover span { opacity: 1; }
+
+/* ============================================================
+   OVERRIDES DE TEMA CLARO para shared/deck (feito para decks escuros)
+   ============================================================ */
+
+/* Os componentes vivem dentro de containers centrados: o texto interno é alinhado à esquerda */
+.cr, .calc { text-align: left; }
+.cr-head { align-items: flex-start; }
+
+/* Chat: passa a mockup WhatsApp claro, com os tokens --wa-* */
+.cr-chat { background: var(--wa-bg); border-color: var(--border); }
+.cr-chat-head { background: var(--surface); border-bottom-color: var(--border); }
+.cr-row.agent .cr-bubble { background: var(--wa-in); color: var(--wa-text); box-shadow: 0 1px 2px hsl(var(--brand-hsl) / 0.14); }
+.cr-row.client .cr-bubble { background: var(--wa-out); color: var(--wa-text); box-shadow: 0 1px 2px hsl(var(--brand-hsl) / 0.14); }
+.cr-bubble time { opacity: 0.55; }
+.cr-typing { background: var(--wa-in); }
+.cr-typing i { background: hsl(200 10% 55%); }
+.cr-sys { background: hsl(var(--navy-hsl) / 0.08); color: var(--muted); font-weight: 500; }
+
+/* Tabs e raciocínio */
+.cr-tab { background: var(--surface); }
+.cr-tab:hover { border-color: hsl(var(--brand-hsl) / 0.4); color: var(--brand); }
+.cr-shell { background: var(--surface-2); }
+.cr-step.on { background: hsl(var(--accent-hsl) / 0.06); }
+.cr-reason { background: linear-gradient(to bottom right, hsl(var(--accent-hsl) / 0.07), hsl(var(--surface))); }
+
+/* Fluxo */
+.fluxo-shell { background: var(--surface); }
+.fluxo-node { background: var(--surface-2); }
+.fluxo-chan { background: var(--surface); }
+.fluxo-node.on.brand { box-shadow: 0 14px 34px -14px hsl(var(--brand-hsl) / 0.8); }
+.fluxo-node.on.teal { box-shadow: 0 14px 34px -14px hsl(var(--accent-hsl) / 0.7); }
+
+/* Calculadora: o destaque usava o gradiente escuro do CTA com texto azul */
+.calc-inputs, .calc-out { background: var(--surface-2); }
+.calc-out.hl { background: hsl(var(--brand-hsl) / 0.07); border-color: hsl(var(--brand-hsl) / 0.45); }
+.calc-out.hl .val { color: var(--brand); }
+.calc-in-top b { color: var(--brand); }
+
+/* Eyebrow em pill */
+.eyebrow { background: hsl(var(--brand-hsl) / 0.07); }
+
+/* Unibox emoldurada */
+.unibox-frame { background: var(--surface); }
+.unibox-note { align-items: center; }
+
+/* ---------- Ajustes de grelha ---------- */
+.grid-3.pains { text-align: left; }
+@media (max-width: 900px) { .rules { grid-template-columns: 1fr; } }
+
+/* Em telemóvel as duas colunas do chat ficam empilhadas: alturas menores
+   para não deixar um vazio grande antes de a simulação arrancar. */
+@media (max-width: 999px) {
+  .cr-chat { height: 420px; }
+  .cr-reason { height: 380px; }
+}
