@@ -32,7 +32,6 @@
     <a href="#limites" data-dot="limites"><span>Limites</span></a>
     <a href="#seguinte" data-dot="seguinte"><span>Fase seguinte</span></a>
     <a href="#retorno" data-dot="retorno"><span>Retorno</span></a>
-    <a href="#referencias" data-dot="referencias"><span>Referências</span></a>
     <a href="#investimento" data-dot="investimento"><span>Investimento</span></a>
     <a href="#prazo" data-dot="prazo"><span>Prazo</span></a>
   </nav>
@@ -190,9 +189,10 @@
             "title": "Comentário às 21h47",
             "subtitle": "Um comentário num anúncio vira lead qualificada antes de alguém chegar ao escritório.",
             "chat": [
-              { "sender": "system", "text": "Comentário novo no anúncio de autoconsumo, Instagram, 21h47" },
+              { "sender": "system", "text": "Comentários da publicação, Instagram, autoconsumo para empresas" },
               { "sender": "client", "text": "Isso fica por quanto?", "time": "21:47" },
-              { "sender": "agent", "text": "Boa noite! O valor depende do consumo e do tipo de instalação, por isso mandei-lhe mensagem privada para lhe dar um número certo. 👋", "time": "21:47" },
+              { "sender": "agent", "text": "Boa noite! 👋 O valor depende do consumo e do tipo de instalação. Mandei-lhe já mensagem privada para lhe dar um número certo.", "time": "21:47" },
+              { "sender": "system", "text": "Mensagem privada, Instagram" },
               { "sender": "client", "text": "Boa noite. É para uma moradia em Ourém.", "time": "21:49" },
               { "sender": "agent", "text": "Ourém está dentro da nossa área, fazemos instalações em todo o território nacional. Para perceber o que faz sentido, preciso de duas coisas: quanto costuma pagar de eletricidade por mês e se a instalação é **monofásica** ou **trifásica**.", "time": "21:49" },
               { "sender": "client", "text": "Uns 140 € por mês. Acho que é trifásica.", "time": "21:53" },
@@ -200,8 +200,9 @@
               { "sender": "system", "text": "Lead qualificada e atribuída. Contacto agendado para as 9h." }
             ],
             "steps": [
-              { "icon": "message", "label": "Deteta o comentário no anúncio de autoconsumo" },
-              { "icon": "send", "label": "Responde em público sem dar preço e abre conversa privada" },
+              { "icon": "message", "label": "Deteta o comentário novo na publicação" },
+              { "icon": "send", "label": "Responde em público sem dar preço" },
+              { "icon": "arrows", "label": "Abre conversa privada com quem comentou" },
               { "icon": "globe", "label": "Confirma a localidade e valida a cobertura" },
               { "icon": "list", "label": "Faz as perguntas base: consumo e tipo de instalação" },
               { "icon": "check", "label": "Consumo dentro da gama habitual, marca como qualificada" },
@@ -232,7 +233,7 @@
             ]
           },
           {
-            "title": "O agente não orça",
+            "title": "O agente não dá preços",
             "subtitle": "Foi a vossa decisão na reunião. É uma regra do agente, e ele cumpre-a mesmo sob insistência.",
             "chat": [
               { "sender": "client", "text": "Quero um orçamento para 20 painéis com bateria. Quanto é?", "time": "10:12" },
@@ -257,16 +258,17 @@
             "title": "Comentário negativo",
             "subtitle": "O que acontece quando o comentário no anúncio não é um elogio.",
             "chat": [
-              { "sender": "system", "text": "Comentário no anúncio, Facebook, 08:12" },
+              { "sender": "system", "text": "Comentários da publicação, Facebook, campanha de autoconsumo" },
               { "sender": "client", "text": "Andei três semanas à espera de resposta. Péssimo atendimento.", "time": "08:12" },
               { "sender": "agent", "text": "Lamento sinceramente que tenha ficado à espera. Mandei-lhe mensagem privada para percebermos o que falhou e resolvermos isto como deve ser.", "time": "08:12" },
+              { "sender": "system", "text": "Mensagem privada, Messenger. O comentário público fica como está." },
               { "sender": "agent", "text": "Bom dia. Sou o assistente da Blue Magnitude. Pode dizer-me o seu nome e a localidade, para eu encontrar o seu processo?", "time": "08:13" },
               { "sender": "client", "text": "João Ferreira, Marinha Grande. Pedi orçamento no site em agosto.", "time": "08:31" },
               { "sender": "agent", "text": "Obrigado, senhor João. Encontrei o pedido. Não vou tratar disto em automático: já passei o caso a um responsável da equipa, com prioridade, e vai ter notícias ainda hoje.", "time": "08:31" },
               { "sender": "system", "text": "Marcado como prioritário. Comentário público mantido, sem discussão." }
             ],
             "steps": [
-              { "icon": "alert", "label": "Classifica o comentário como reclamação" },
+              { "icon": "alert", "label": "Classifica o comentário da publicação como reclamação" },
               { "icon": "send", "label": "Responde em público sem justificar nem discutir" },
               { "icon": "message", "label": "Leva a conversa para o privado" },
               { "icon": "id", "label": "Recolhe nome e localidade para encontrar o processo" },
@@ -491,7 +493,7 @@
       <div class="rules">
         <div class="card rule reveal">
           <span class="rule-n">1</span>
-          <h3>Não orça</h3>
+          <h3>Não dá preços</h3>
           <p>
             Nunca apresenta um valor, mesmo quando o cliente insiste. O orçamento é feito pela vossa
             equipa, com o consumo real e a cobertura. Foi a vossa decisão na reunião e passa a ser
@@ -613,68 +615,10 @@
     </div>
   </section>
 
-  <!-- ============ 10. REFERÊNCIAS ============ -->
-  <section class="section-alt" id="referencias">
-    <div class="container center">
-      <span class="eyebrow">Referências</span>
-      <h2>Já fizemos isto, com o mesmo receio à partida</h2>
-      <p class="lead">Mais de 60 clientes. Estes três são os que se parecem com o vosso caso.</p>
-
-      <div class="grid-3" style="margin-top:38px">
-        <div class="card ref reveal">
-          <span class="setor">Fitness, caso público</span>
-          <h3>Now Fitness Studio</h3>
-          <div class="metrics">
-            <div><b>+50%</b> novos clientes, metade das adesões vindas do agente</div>
-            <div><b>&lt; 2 min</b> tempo de resposta, contra mais de 12 horas antes</div>
-            <div><b>+300</b> comentários por mês tratados automaticamente</div>
-          </div>
-          <p class="liga">
-            O mesmo receio que o Ivo levantou: soar a robô num serviço que se vende com pessoas.
-            Os comentários dos anúncios passaram a virar conversa privada e marcação, com a equipa a
-            entrar só no fim.
-          </p>
-          <a class="src" href="https://aisolutions.pt/case-studies/now-fitness-instagram-automation" target="_blank" rel="noopener">Ver o caso completo no nosso site</a>
-        </div>
-
-        <div class="card ref reveal">
-          <span class="setor">Editorial, caso público</span>
-          <h3>Ipê das Letras</h3>
-          <div class="metrics">
-            <div><b>100%</b> dos comentários respondidos, zero por responder</div>
-            <div><b>-6h</b> por semana de gestão manual eliminada</div>
-            <div><b>3x</b> mais leads qualificadas a chegar ao fim do processo</div>
-          </div>
-          <p class="liga">
-            Centenas de comentários por mês vindos de campanhas pagas no Instagram e no Facebook,
-            misturando pedidos de orçamento, dúvidas e reclamações. É o vosso padrão de picos.
-          </p>
-          <a class="src" href="https://aisolutions.pt/case-studies/ipe-das-letras-comment-management" target="_blank" rel="noopener">Ver o caso completo no nosso site</a>
-        </div>
-
-        <div class="card ref reveal">
-          <span class="setor">Energia solar</span>
-          <h3>Empresa do vosso setor</h3>
-          <div class="metrics">
-            <div><b>WhatsApp</b> agente de qualificação com nome e persona próprios</div>
-            <div><b>Por zona</b> encaminhamento automático para o comercial do distrito</div>
-            <div><b>Handoff</b> sempre anunciado ao cliente antes de passar a humano</div>
-          </div>
-          <p class="liga">
-            Empresa de energia solar com leads de campanhas Meta e cobertura por zonas. O agente faz as
-            perguntas base, resolve o concelho e entrega ao comercial certo com o resumo da conversa.
-            Por respeito ao contrato, não identificamos o cliente nesta página.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 11. INVESTIMENTO ============ -->
+  <!-- ============ 10. INVESTIMENTO ============ -->
   <section id="investimento">
     <div class="container center">
       <span class="eyebrow">Investimento</span>
-      <h2>Sem rodeios</h2>
       <p class="lead" style="margin-bottom:38px">Primeira fase, a que o Ivo definiu como prioridade: mensagens e comentários.</p>
 
       <div class="grid-2" style="text-align:left">
@@ -682,7 +626,7 @@
           <span class="pin">Primeira fase</span>
           <div class="label">Implementação</div>
           <div class="price">2.500 € <span style="font-size:1.1rem">+ IVA</span></div>
-          <span class="iva">3.075 € com IVA. Pagamento único.</span>
+          <span class="iva">Pagamento único.</span>
           <ul class="price-list">
             <li>Duas semanas de escuta às vossas redes sociais</li>
             <li>Construção e treino do agente com o vosso tom e vocabulário</li>
@@ -696,7 +640,6 @@
         <div class="card price-card reveal">
           <div class="label">Avença mensal</div>
           <div class="price">200 € <span style="font-size:1.1rem">+ IVA</span></div>
-          <span class="iva">246 € com IVA por mês.</span>
           <ul class="price-list">
             <li>Todos os tokens de inteligência artificial incluídos</li>
             <li>Centralização das conversas e alojamento da solução</li>
@@ -722,12 +665,12 @@
     </div>
   </section>
 
-  <!-- ============ 12. CRONOGRAMA ============ -->
+  <!-- ============ 11. CRONOGRAMA ============ -->
   <section class="section-alt" id="prazo">
     <div class="container center">
       <span class="eyebrow">Prazo</span>
       <h2>Do arranque ao agente a responder</h2>
-      <p class="lead">Cinco a seis semanas, com a vossa equipa envolvida a partir da quinta.</p>
+      <p class="lead">Seis semanas, com a vossa equipa envolvida a partir da quinta.</p>
       <div class="timeline" style="margin-top:44px">
         <div class="tl-step reveal">
           <div class="tl-dot">👂</div>
@@ -753,7 +696,7 @@
     </div>
   </section>
 
-  <!-- ============ 13. CTA FINAL ============ -->
+  <!-- ============ 12. CTA FINAL ============ -->
   <section class="cta-final">
     <div class="container center">
       <h2>Pronto para avançar, Ivo?</h2>

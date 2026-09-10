@@ -5,7 +5,7 @@
 **Decisores:** Ivo Santos (sócio, ex-diretor comercial Vodafone e EDP Comercial) e Filipe Malho (diretor de operações)
 **Reunião:** follow-up de sexta, 11 de setembro de 2026, às 10h, Google Meet
 **Comercial:** Diogo Gonçalves
-**Formato:** deck narrativo, scroll único, 13 secções
+**Formato:** deck narrativo, scroll único, 12 secções
 **Estilo base:** `corporativo-azul` (claro), pedido explícito do comercial
 
 ## Contexto que a página tem de servir
@@ -54,34 +54,32 @@ Processo deles: proposta gratuita, aceitação, planeamento, instalação e lega
 7. Limites do agente: 3 regras, mais o que fica de fora (orçamentação, TikTok, formulários)
 8. Fase seguinte: formulários e distribuição automática, fora do âmbito
 9. Retorno: `calculadora` com 4 cursores, pressupostos deles
-10. Referências: dois casos públicos com métricas, mais um caso de setor sem nome
-11. Investimento: 2.500 € + IVA e 200 € + IVA por mês
-12. Cronograma: 5 a 6 semanas, escuta de 2 semanas
-13. CTA final com o nome do Ivo, footer
+10. Investimento: 2.500 € + IVA e 200 € + IVA por mês, sem totais com IVA
+11. Cronograma: 6 semanas, escuta de 2 semanas
+12. CTA final com o nome do Ivo, footer
 
 ## Momento uau
 
 `chatRaciocinio`, 4 cenários com serviços reais:
 
-1. **Comentário num anúncio, 21h47.** Resposta pública, leva para privado, qualifica e entrega ao
-   comercial da zona.
+1. **Comentário numa publicação, 21h47.** Começa nos comentários do post, o agente responde em
+   público sem dar preço, abre conversa privada e só aí qualifica. As duas fases estão separadas por
+   um marcador de fase na coluna do chat.
 2. **WhatsApp às 22h41, fora do horário.** Pedido de manutenção de um sistema instalado por outra
    empresa. O agente distingue manutenção de autoconsumo e encaminha para a equipa certa.
-3. **Recusa consciente: o agente não orça.** O cliente insiste por um valor, o agente recusa duas vezes,
+3. **Recusa consciente: o agente não dá preços.** O cliente insiste por um valor, o agente recusa duas vezes,
    recolhe os dados e escala. É o cenário que devolve ao Ivo a decisão que ele tomou na reunião.
-4. **Comentário negativo no Facebook.** Resposta pública neutra, passa a privado, identifica o processo,
-   marca prioridade e cala-se depois do handoff.
+4. **Comentário negativo no Facebook.** Mesma estrutura de duas fases: resposta pública neutra nos
+   comentários, passa a Messenger, identifica o processo, marca prioridade e cala-se depois do handoff.
 
 ## Decisões e avisos
 
-- **Sem nomes de outros clientes.** O repo é público. A Fundo Solar foi nomeada ao Ivo na reunião e no
-  email, mas não tem case study público, por isso na página aparece descrita por setor e sem valores.
-  O Diogo nomeia-a de viva voz se quiser.
+- **Sem secção de referências.** Retirada a pedido do comercial (11/09). Os casos públicos e a
+  referência do setor solar passam a ser conversa de viva voz na reunião.
 - **Sem menção a outros clientes com Reonic.** Não há registo no cérebro que o suporte.
 - **Escuta de 2 semanas**, decisão do comercial. Fixa o email de recapitulação de 9 de setembro e
   corrige as 3 semanas ditas na reunião.
-- **Cronograma de 5 a 6 semanas** é a única estimativa nova da página. Não foi dita na reunião nem no
-  email. O comercial confirmou o resto dos valores; este ponto fica sinalizado na entrega.
+- **Cronograma de 6 semanas** confirmado pelo comercial a 11/09.
 - Valores em euros dentro das conversas simuladas têm aviso de ilustrativos.
 - Overrides de tema claro em `assets/css/custom.css`: os componentes `shared/deck` assumem deck escuro
   (coluna do chat com fundo `#0a0a0f` e bolha do agente `#1f1f2a` com `color: var(--text)`), o que em

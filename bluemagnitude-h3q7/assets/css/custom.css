@@ -126,7 +126,17 @@
 .cr-bubble time { opacity: 0.55; }
 .cr-typing { background: var(--wa-in); }
 .cr-typing i { background: hsl(200 10% 55%); }
-.cr-sys { background: hsl(var(--navy-hsl) / 0.08); color: var(--muted); font-weight: 500; }
+/* Marcador de fase: separa os comentários da publicação da mensagem privada */
+.cr-sys {
+  position: relative; align-self: stretch; max-width: none;
+  background: none; border-radius: 0; padding: 10px 0 4px;
+  font-style: normal; font-weight: 700; font-size: 0.66rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+  display: flex; align-items: center; gap: 10px;
+}
+.cr-sys::before, .cr-sys::after {
+  content: ""; flex: 1; height: 1px; background: hsl(var(--navy-hsl) / 0.18);
+}
 
 /* Tabs e raciocínio */
 .cr-tab { background: var(--surface); }
