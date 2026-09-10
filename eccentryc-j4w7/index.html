@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="../shared/deck/deck.css">
   <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
   <script src="config.js"></script>
 </head>
 <body>
@@ -35,8 +36,8 @@
       <h1 class="reveal">Deixar de perder obras<br><span class="grad">por falta de tempo para orçamentar.</span></h1>
       <p class="lead reveal" style="margin:20px auto 0">
         Um agente que lê o caderno de encargos, cruza os artigos com a vossa base de preços interna
-        e devolve o orçamento pronto para rever. O que não consegue orçamentar fica sinalizado.
-        Nada segue para o cliente sem a sua aprovação.
+        e devolve o orçamento pronto para rever, dentro de uma plataforma vossa. O que não consegue
+        orçamentar fica sinalizado. Nada segue para o cliente sem a sua aprovação.
       </p>
       <div class="grid-4 reveal" style="margin-top:44px; text-align:left">
         <div class="card stat-card"><div class="num">até <span class="count" data-to="80" data-suffix="%">0</span></div><div class="desc">Do trabalho de orçamentação preparado pelo agente</div></div>
@@ -51,7 +52,7 @@
       </div>
       <div style="margin-top:34px" class="reveal">
         <a href="#demo" class="btn btn-primary">Ver o agente a trabalhar ↓</a>
-        <a href="#investimento" class="btn btn-ghost" style="margin-left:10px">Investimento</a>
+        <a href="#plataforma" class="btn btn-ghost" style="margin-left:10px">Experimentar a plataforma</a>
       </div>
     </div>
   </section>
@@ -208,8 +209,26 @@
     </div>
   </section>
 
+  <!-- ============ PLATAFORMA ============ -->
+  <section id="plataforma">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">A plataforma</span>
+        <h2>Tudo num sítio só, e o sítio é vosso.</h2>
+        <p class="lead">Uma plataforma vossa, onde vê todos os orçamentos, abre qualquer um, e diz ao agente por palavras suas o que quer mudar. Experimente: a demonstração é navegável.</p>
+      </div>
+      <div class="app-frame reveal" id="ecApp"></div>
+      <p class="demo-note">Demonstração navegável, com dados simulados. Clique na barra lateral, filtre os orçamentos, abra o de hoje e dê instruções ao agente.</p>
+      <div class="grid-3" style="margin-top:34px">
+        <div class="card reveal"><div class="ftile">📊</div><h3>Ver o estado de tudo</h3><p class="small">Quantos orçamentos estão em aberto, quanto está em proposta, o que está sem resposta e o que precisa de decisão vossa.</p></div>
+        <div class="card reveal"><div class="ftile">✍️</div><h3>Mudar a conversar</h3><p class="small">Margens, artigos, descontos e capítulos alteram-se por instrução escrita. As contas refazem-se à frente dos vossos olhos.</p></div>
+        <div class="card reveal"><div class="ftile">🗄️</div><h3>A base de preços à vista</h3><p class="small">Cada artigo com a origem, o preço e a idade da cotação. O que passa dos 90 dias fica marcado a vermelho.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FLUXO ============ -->
-  <section id="fluxo">
+  <section class="section-alt" id="fluxo">
     <div class="container">
       <div class="center">
         <span class="eyebrow">Como se liga ao que já usam</span>
@@ -221,7 +240,7 @@
   </section>
 
   <!-- ============ BACK-OFFICE: BASE DE PREÇOS ============ -->
-  <section class="section-alt" id="base">
+  <section id="base">
     <div class="container">
       <div class="center">
         <span class="eyebrow">Por trás</span>
@@ -234,7 +253,7 @@
   </section>
 
   <!-- ============ LIMITES ============ -->
-  <section id="limites">
+  <section class="section-alt" id="limites">
     <div class="container">
       <div class="center">
         <span class="eyebrow">Os limites</span>
@@ -266,7 +285,7 @@
   </section>
 
   <!-- ============ ROI ============ -->
-  <section class="section-alt" id="roi">
+  <section id="roi">
     <div class="container">
       <div class="center">
         <span class="eyebrow">As contas</span>
@@ -278,7 +297,7 @@
   </section>
 
   <!-- ============ INVESTIMENTO ============ -->
-  <section id="investimento">
+  <section class="section-alt" id="investimento">
     <div class="container">
       <div class="center">
         <span class="eyebrow">Investimento</span>
@@ -294,6 +313,7 @@
             <li>Levantamento dos vossos cadernos de encargos e orçamentos tipo</li>
             <li>Construção da base de preços interna com as listas dos fornecedores</li>
             <li>Leitura de PDF, mapas de quantidades e pedidos por email</li>
+            <li>Plataforma de orçamentação: painel, orçamentos, base de preços e fornecedores</li>
             <li>Geração do documento com o vosso modelo e condições</li>
             <li>Testes com a equipa antes do arranque</li>
           </ul>
@@ -326,7 +346,7 @@
   </section>
 
   <!-- ============ CRONOGRAMA ============ -->
-  <section class="section-alt" id="prazo">
+  <section id="prazo">
     <div class="container center">
       <span class="eyebrow">Prazo</span>
       <h2>4 a 5 semanas até estar a orçamentar.</h2>
@@ -339,7 +359,7 @@
   </section>
 
   <!-- ============ FASE SEGUINTE + PT 2030 ============ -->
-  <section id="depois">
+  <section class="section-alt" id="depois">
     <div class="container">
       <div class="center">
         <span class="eyebrow">Fica para depois</span>
@@ -525,11 +545,13 @@
   <script src="../shared/js/protect.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/plataforma.js"></script>
   <script>
     chatRaciocinio('ecDemo');
     fluxo('ecFluxo');
     terminal('ecTerm');
     calculadora('ecRoi');
+    plataforma('ecApp');
   </script>
 </body>
 </html>

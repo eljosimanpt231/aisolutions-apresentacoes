@@ -1,0 +1,262 @@
+/* ============================================================
+   PLATAFORMA DE ORÇAMENTAÇÃO (mockup de app navegável)
+   Só tokens. Carregado depois de custom.css.
+   ============================================================ */
+.app-frame {
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--border); background: var(--bg-soft);
+  box-shadow: var(--shadow-lg); margin-top: 40px;
+}
+.app-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 16px; background: var(--surface-2); border-bottom: 1px solid var(--border);
+}
+.app-bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.app-bar i.r { background: hsl(var(--danger-hsl) / 0.75); }
+.app-bar i.y { background: hsl(var(--warning-hsl) / 0.75); }
+.app-bar i.g { background: hsl(var(--success-hsl) / 0.75); }
+.app-bar .url {
+  flex: 1; margin: 0 auto 0 12px; text-align: center;
+  font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted);
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 999px; padding: 5px 14px; max-width: 340px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.app { display: grid; grid-template-columns: 210px minmax(0, 1fr); min-height: 640px; }
+
+/* --- barra lateral --- */
+.app-side { background: var(--surface); border-right: 1px solid var(--border); padding: 18px 12px; }
+.app-side .brandmini {
+  display: flex; align-items: center; gap: 9px; padding: 0 8px 16px;
+  border-bottom: 1px solid var(--border); margin-bottom: 14px;
+}
+.app-side .brandmini span {
+  width: 26px; height: 26px; border-radius: 8px; flex-shrink: 0;
+  background: hsl(var(--brand-hsl) / 0.16); border: 1px solid hsl(var(--brand-hsl) / 0.4);
+  color: var(--brand); font-family: var(--font-display); font-weight: 800;
+  font-size: 0.8rem; display: flex; align-items: center; justify-content: center;
+}
+.app-side .brandmini b { font-family: var(--font-display); font-size: 0.88rem; letter-spacing: -0.01em; }
+.app-nav { display: grid; gap: 3px; min-width: 0; }
+.app-nav button {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+  border: 0; background: transparent; color: var(--muted); cursor: pointer;
+  font-family: var(--font-body); font-size: 0.87rem; font-weight: 500;
+  padding: 9px 10px; border-radius: 10px; transition: background 0.15s ease, color 0.15s ease;
+}
+.app-nav button:hover { background: var(--surface-2); color: var(--text); }
+.app-nav button.on { background: hsl(var(--brand-hsl) / 0.14); color: var(--brand); font-weight: 600; }
+.app-nav button em { font-style: normal; width: 18px; text-align: center; font-size: 0.95rem; }
+.app-nav .badge-n {
+  margin-left: auto; font-size: 0.68rem; font-weight: 700; padding: 1px 7px; border-radius: 999px;
+  background: hsl(var(--warning-hsl) / 0.18); color: var(--warning);
+}
+.app-side .who {
+  margin-top: 22px; padding: 10px; border-radius: 10px; background: var(--surface-2);
+  display: flex; align-items: center; gap: 9px; font-size: 0.76rem; color: var(--muted);
+}
+.app-side .who b { display: block; color: var(--text); font-size: 0.81rem; }
+.app-side .who i {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; font-style: normal;
+  background: hsl(var(--accent-hsl) / 0.16); color: var(--accent);
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.72rem;
+}
+
+/* --- área principal --- */
+.app-main { padding: 22px 24px 26px; background: var(--bg); min-width: 0; overflow: hidden; }
+.app-view { display: none; min-width: 0; }
+.app-view.on { display: block; animation: app-in 0.28s ease; }
+@keyframes app-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .app-view.on { animation: none; } }
+.app-h {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; margin-bottom: 18px;
+}
+.app-h h3 { font-size: 1.12rem; }
+.app-h p { font-size: 0.81rem; color: var(--muted); margin-top: 3px; }
+.app-h .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.app-btn {
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  font-family: var(--font-body); font-size: 0.79rem; font-weight: 600;
+  padding: 8px 14px; border-radius: 9px; cursor: pointer; transition: all 0.15s ease;
+}
+.app-btn:hover { border-color: var(--accent); color: var(--accent); }
+.app-btn.primary { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+.app-btn.primary:hover { color: var(--on-brand); filter: brightness(1.08); }
+
+/* --- cartões de indicador --- */
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.kpi .k { font-size: 0.73rem; color: var(--muted); }
+.kpi .v { font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; color: var(--text); margin-top: 4px; line-height: 1.15; }
+.kpi .d { font-size: 0.71rem; margin-top: 5px; color: var(--muted); }
+.kpi .d.up { color: var(--success); }
+.kpi .d.warn { color: var(--warning); }
+
+/* --- gráfico de barras (série única) --- */
+.chartbox { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-top: 12px; }
+.chartbox .ct { font-size: 0.85rem; font-weight: 600; }
+.chartbox .cs { font-size: 0.73rem; color: var(--muted); margin-top: 2px; }
+.chart { position: relative; margin-top: 14px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .gridline { stroke: var(--border); stroke-width: 1; }
+.chart .axlab { fill: var(--muted); font-size: 10px; font-family: var(--font-body); }
+/* As barras e os rótulos são decorativos: quem apanha o rato é o .hit por baixo. */
+.chart .bar { fill: var(--brand); transition: fill 0.15s ease; pointer-events: none; }
+.chart .bar.hot { fill: var(--accent); }
+.chart .gridline, .chart .axlab { pointer-events: none; }
+.chart .hit { fill: transparent; cursor: pointer; }
+.chart .dlab { fill: var(--text); font-size: 10px; font-weight: 700; font-family: var(--font-body); pointer-events: none; }
+.chart-tip {
+  position: absolute; pointer-events: none; opacity: 0; transform: translate(-50%, -115%);
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+  padding: 6px 10px; font-size: 0.75rem; white-space: nowrap; color: var(--text);
+  box-shadow: var(--shadow-md); transition: opacity 0.12s ease;
+}
+.chart-tip b { color: var(--brand); }
+
+/* --- lista "a precisar de si" --- */
+.todo { display: grid; gap: 8px; margin-top: 12px; }
+.todo li {
+  list-style: none; display: flex; align-items: center; gap: 12px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  padding: 11px 14px; font-size: 0.83rem;
+}
+.todo li em { font-style: normal; font-size: 1rem; }
+.todo li span { color: var(--muted); font-size: 0.76rem; margin-left: auto; white-space: nowrap; }
+.todo li.w { border-color: hsl(var(--warning-hsl) / 0.4); }
+
+/* --- chips de filtro --- */
+.chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+.chips button {
+  border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+  font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+  padding: 6px 13px; border-radius: 999px; cursor: pointer; transition: all 0.15s ease;
+}
+.chips button:hover { color: var(--text); }
+.chips button.on { background: hsl(var(--brand-hsl) / 0.16); border-color: hsl(var(--brand-hsl) / 0.45); color: var(--brand); }
+
+/* --- tabelas da app --- */
+.app-tw { overflow-x: auto; }
+.app-t { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 620px; }
+.app-t th {
+  text-align: left; font-size: 0.67rem; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--muted); font-weight: 700; padding: 0 12px 9px 0; border-bottom: 1px solid var(--border);
+}
+.app-t td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--border); color: var(--text); }
+.app-t td.mut { color: var(--muted); }
+.app-t th.num, .app-t td.num { text-align: right; padding-right: 0; padding-left: 20px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.app-t tbody tr.clickable { cursor: pointer; transition: background 0.15s ease; }
+.app-t tbody tr.clickable:hover { background: var(--surface); }
+.pill {
+  display: inline-block; font-size: 0.67rem; font-weight: 700; letter-spacing: 0.04em;
+  padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+}
+.pill.draft { background: hsl(var(--accent-hsl) / 0.15); color: var(--accent); }
+.pill.rev { background: hsl(var(--warning-hsl) / 0.16); color: var(--warning); }
+.pill.sent { background: hsl(var(--brand-hsl) / 0.16); color: var(--brand); }
+.pill.won { background: hsl(var(--success-hsl) / 0.18); color: var(--success); }
+.pill.old { background: hsl(var(--danger-hsl) / 0.15); color: var(--danger); }
+.pill.mut { background: var(--surface-2); color: var(--muted); }
+
+/* --- detalhe do orçamento --- */
+.det-grid { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 18px; align-items: start; }
+.det-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+.det-tot { display: grid; gap: 7px; margin-top: 16px; font-size: 0.83rem; }
+.det-tot div { display: flex; justify-content: space-between; gap: 16px; color: var(--muted); }
+.det-tot div b { color: var(--text); font-weight: 500; }
+.det-tot .g {
+  border-top: 1px solid var(--border); padding-top: 11px; margin-top: 4px;
+  font-family: var(--font-display); font-weight: 700; font-size: 1.08rem; color: var(--text);
+}
+.det-tot .g b { font-weight: 700; }
+.det-tot .g .amt { color: var(--brand); }
+.flash { animation: tot-flash 1s ease; }
+@keyframes tot-flash { 0%, 30% { color: var(--accent); } 100% { color: inherit; } }
+@media (prefers-reduced-motion: reduce) { .flash { animation: none; } }
+
+/* --- caixa do agente --- */
+.agent-box { background: var(--surface); border: 1px solid hsl(var(--accent-hsl) / 0.35); border-radius: 12px; padding: 16px; }
+.agent-box .ah { display: flex; align-items: center; gap: 9px; font-size: 0.83rem; font-weight: 600; }
+.agent-box .ah i {
+  width: 24px; height: 24px; border-radius: 7px; font-style: normal; font-size: 0.7rem;
+  background: hsl(var(--accent-hsl) / 0.16); color: var(--accent); font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.agent-box .ah .live {
+  margin-left: auto; width: 7px; height: 7px; border-radius: 50%; background: var(--success);
+  box-shadow: 0 0 0 4px hsl(var(--success-hsl) / 0.18);
+}
+.agent-log { display: grid; gap: 8px; margin: 14px 0; max-height: 230px; overflow-y: auto; }
+.agent-log p {
+  font-size: 0.79rem; line-height: 1.5; background: var(--surface-2);
+  border-radius: 10px; border-bottom-left-radius: 4px; padding: 9px 12px; color: var(--text);
+}
+.agent-log p.me {
+  background: hsl(var(--brand-hsl) / 0.16); border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 4px; margin-left: 30px;
+}
+.agent-log p b { color: var(--accent); }
+.agent-log p.me b { color: var(--brand); }
+.agent-form { display: flex; gap: 7px; }
+.agent-form input {
+  flex: 1; min-width: 0; background: var(--bg); border: 1px solid var(--border); color: var(--text);
+  font-family: var(--font-body); font-size: 0.81rem; padding: 9px 12px; border-radius: 9px;
+}
+.agent-form input:focus { outline: none; border-color: var(--accent); }
+.agent-form button {
+  border: 0; background: var(--accent); color: var(--on-brand); cursor: pointer;
+  font-family: var(--font-body); font-weight: 700; font-size: 0.81rem; padding: 9px 15px; border-radius: 9px;
+}
+.agent-sug { display: grid; gap: 6px; margin-top: 11px; }
+.agent-sug button {
+  text-align: left; border: 1px dashed var(--border); background: transparent; color: var(--muted);
+  font-family: var(--font-body); font-size: 0.75rem; padding: 7px 11px; border-radius: 8px; cursor: pointer;
+  transition: all 0.15s ease;
+}
+.agent-sug button:hover { border-color: var(--accent); color: var(--accent); border-style: solid; }
+.agent-warn { display: grid; gap: 8px; margin-top: 14px; }
+.agent-warn > div {
+  display: flex; gap: 9px; font-size: 0.77rem; line-height: 1.45; color: var(--muted);
+  background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 9px 11px;
+}
+.agent-warn > div > em { font-style: normal; flex-shrink: 0; }
+.agent-warn > div.w { border-color: hsl(var(--warning-hsl) / 0.38); }
+.agent-warn > div b { color: var(--text); font-weight: 600; }
+
+/* --- responsivo --- */
+@media (max-width: 1000px) {
+  .det-grid { grid-template-columns: minmax(0, 1fr); }
+  .kpis { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .app { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .app-side { border-right: 0; border-bottom: 1px solid var(--border); padding: 14px; min-width: 0; overflow: hidden; }
+  .app-nav { grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; gap: 6px; }
+  .app-nav button { white-space: nowrap; padding: 8px 12px; }
+  .app-nav .badge-n { margin-left: 6px; }
+  .app-side .who { display: none; }
+  .app-main { padding: 18px 14px 22px; }
+  .app-bar .url { max-width: none; }
+}
+@media (max-width: 520px) { .kpis { grid-template-columns: minmax(0, 1fr); } }
+
+/* No telemóvel as tabelas perdem as colunas acessórias, para o valor caber sem scroll lateral */
+@media (max-width: 620px) {
+  .app-t { min-width: 0; }
+  .det-card .app-t { min-width: 0 !important; }
+  .det-card .app-t th:nth-child(2), .det-card .app-t td:nth-child(2),
+  .det-card .app-t th:nth-child(3), .det-card .app-t td:nth-child(3) { display: none; }
+  #orcRows tr td:nth-child(1), .app-view[data-view="orcamentos"] .app-t th:nth-child(1),
+  #orcRows tr td:nth-child(5), .app-view[data-view="orcamentos"] .app-t th:nth-child(5) { display: none; }
+  .app-view[data-view="precos"] .app-t th:nth-child(2),
+  .app-view[data-view="precos"] .app-t td:nth-child(2) { display: none; }
+}
+/* valor repetido dentro da célula da obra, só no telemóvel */
+.mob-val { display: none; }
+@media (max-width: 620px) {
+  .app-t th, .app-t td { padding-right: 12px; }
+  .app-t th.num, .app-t td.num { padding-left: 12px; }
+  .mob-val { display: block; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--text); margin-top: 6px; }
+  #orcRows tr td:nth-child(3), .app-view[data-view="orcamentos"] .app-t th:nth-child(3) { display: none; }
+}
