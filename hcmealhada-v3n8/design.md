@@ -45,7 +45,7 @@ cálculo sem a imitar. É a única textura da página.
 2. O que ouvimos: 6 cards com as dores literais da reunião + frase de fecho
 3. Hoje vs com o agente: automático (verde) vs manual (vermelho)
 4. Âmbito da fase 1: 4 blocos + nota honesta sobre a dependência da ligação ao banco
-5. Terminal de logs: a conciliação das 6h da manhã, com uma linha `warn` (nunca erra em silêncio)
+5. Painel da manhã: o que corre de madrugada, em quatro momentos com hora, três números e medidores por secção
 6. **Momento uau**: `chatRaciocinio` com 3 cenários (atraso, inscrição em torneio, recusa consciente)
 7. `fluxo`: conta do clube > conciliação > mapa no Drive > avisos > secretaria
 8. Limites: faz sozinho / fica com a secretaria / nunca faz
@@ -57,8 +57,19 @@ cálculo sem a imitar. É a única textura da página.
 
 ## Decisões tomadas
 - **Sem Unibox**: o clube não tem atendimento omnicanal disperso. O problema é back-office.
-- **Terminal antes do chat**: o valor central desta fase é a conciliação, que não é uma
-  conversa. O terminal mostra isso melhor; o chat mostra a ponta que fala com as famílias.
+- **Painel da manhã em vez do terminal de logs**: a primeira versão usava o componente
+  `terminal` de `shared/deck`. Foi rejeitado pelo comercial por parecer código, e com razão:
+  o leitor é a direção de um clube, não uma equipa técnica. A secção passou a ser um painel
+  gráfico com quatro momentos da madrugada (com hora e ícone), três números com contador, e
+  medidores por secção. Mostra o mesmo raciocínio sem pedir ao leitor que leia um log.
+- **Forma dos medidores, não barras empilhadas**: a intenção inicial era uma barra empilhada
+  recebido/em atraso por secção. A paleta verde + âmbar falhou o validador de daltonismo
+  (ΔE 5,1 em protanopia, mínimo 8). Como o dado é um rácio contra um total, a forma certa é
+  um medidor de um só tom: barra da cor da marca sobre pista clara do mesmo tom. Zero
+  problemas de CVD e mais legível. O âmbar sobrou só para a exceção, isolado, sempre com
+  ícone e rótulo, nunca como série a comparar.
+- **Momento uau depois do painel**: o painel mostra o back-office, que é o valor central desta
+  fase; o chat mostra a ponta que fala com as famílias.
 - **Sem calculadora de ROI**: não temos números fiáveis de horas nem de valor de cotas, e
   inventar sliders aqui seria fingir precisão que não existe.
 - **Sem links para os case studies**: o site da AI Solutions é uma SPA e não foi possível

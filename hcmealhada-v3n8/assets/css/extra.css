@@ -128,6 +128,143 @@
 .tl-v-what strong { display: block; font-size: 1rem; }
 .tl-v-what span { color: var(--muted); font-size: 0.93rem; }
 
+/* ============================================================
+   PAINEL DA MANHA (substitui o terminal de logs)
+   Mostra o que corre de madrugada de forma grafica, nao como codigo.
+   Um so hue no medidor (magnitude contra um total), portanto sem
+   paleta categorica para validar. O ambar da excecao aparece isolado,
+   sempre com icone e rotulo, nunca como serie a comparar.
+   ============================================================ */
+.painel {
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--surface); box-shadow: var(--shadow-md);
+  overflow: hidden; text-align: left;
+}
+.painel-topo {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  flex-wrap: wrap; padding: 18px 26px;
+  background: var(--surface-2); border-bottom: 1px solid var(--border);
+}
+.painel-topo .quando { display: flex; align-items: baseline; gap: 10px; }
+.painel-topo .hora {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.5rem;
+  color: var(--text); letter-spacing: -0.02em;
+}
+.painel-topo .dia { font-size: 0.88rem; color: var(--muted); }
+.painel-estado {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; font-weight: 700; color: var(--brand);
+  background: hsl(var(--brand-hsl) / 0.09); border: 1px solid hsl(var(--brand-hsl) / 0.2);
+  padding: 6px 14px; border-radius: 999px;
+}
+.painel-estado .ponto {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--brand);
+  animation: painel-pulsa 2s ease-in-out infinite;
+}
+@keyframes painel-pulsa { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { .painel-estado .ponto { animation: none; } }
+
+.painel-corpo { padding: 30px 26px; }
+.painel-bloco + .painel-bloco { margin-top: 34px; padding-top: 30px; border-top: 1px solid var(--border); }
+.painel-titulo {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 20px;
+}
+
+/* --- os quatro momentos da madrugada --- */
+.passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.passo { position: relative; padding-right: 18px; }
+.passo::before {
+  content: ""; position: absolute; left: 22px; right: 0; top: 21px; height: 2px;
+  background: hsl(var(--brand-hsl) / 0.16);
+}
+.passo:last-child::before { display: none; }
+.passo::after {
+  content: ""; position: absolute; left: 22px; top: 21px; height: 2px; width: 0;
+  background: var(--brand); transition: width 0.7s ease 0.25s;
+}
+.passo:last-child::after { display: none; }
+.passo.visible::after { width: calc(100% - 22px); }
+.passo .ic {
+  width: 44px; height: 44px; border-radius: 50%; position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  background: hsl(var(--brand-hsl) / 0.10); color: var(--brand);
+  border: 2px solid var(--surface); outline: 2px solid hsl(var(--brand-hsl) / 0.16);
+}
+.passo .ic svg { width: 20px; height: 20px; }
+.passo .hh {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.82rem;
+  color: var(--brand); letter-spacing: 0.02em;
+}
+.passo strong { display: block; font-size: 0.97rem; margin-top: 3px; }
+.passo span { display: block; color: var(--muted); font-size: 0.87rem; margin-top: 5px; padding-right: 12px; }
+
+/* --- os tres numeros da manha --- */
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.kpi { border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
+.kpi .v {
+  font-family: var(--font-body); font-weight: 700; font-size: 2.1rem;
+  color: var(--text); line-height: 1.1; letter-spacing: -0.02em;
+}
+.kpi .l { color: var(--muted); font-size: 0.9rem; margin-top: 6px; }
+.kpi.destaque { border-color: hsl(var(--warning-hsl) / 0.45); background: hsl(var(--warning-hsl) / 0.06); }
+.kpi.destaque .v { color: var(--warning); }
+
+/* --- medidores: mensalidades recebidas por seccao --- */
+.medidor + .medidor { margin-top: 28px; }
+.medidor-topo {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 9px;
+}
+.medidor-nome { font-size: 0.95rem; font-weight: 600; }
+.medidor-nome em { font-style: normal; color: var(--muted); font-weight: 400; font-size: 0.86rem; }
+.medidor-val { font-size: 0.95rem; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.medidor-val small { display: block; font-size: 0.78rem; font-weight: 500; color: var(--muted); text-align: right; }
+.medidor-pista {
+  height: 12px; border-radius: 4px; background: hsl(var(--brand-hsl) / 0.13); overflow: hidden;
+}
+.medidor-barra {
+  height: 100%; width: 0; background: var(--brand);
+  border-radius: 0 4px 4px 0;
+  transition: width 1.1s cubic-bezier(0.2, 0.7, 0.3, 1) 0.15s;
+}
+.medidor.visible .medidor-barra { width: var(--val); }
+@media (prefers-reduced-motion: reduce) {
+  .medidor-barra { transition: none; }
+  .passo::after { transition: none; }
+}
+
+/* --- a excecao que fica a espera de uma pessoa --- */
+.excecao {
+  display: flex; gap: 16px; align-items: flex-start;
+  border: 1px solid hsl(var(--warning-hsl) / 0.4); border-left-width: 4px;
+  background: hsl(var(--warning-hsl) / 0.06);
+  border-radius: var(--radius); padding: 20px 22px;
+}
+.excecao .ic {
+  flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: hsl(var(--warning-hsl) / 0.15); color: var(--warning);
+}
+.excecao .ic svg { width: 18px; height: 18px; }
+.excecao strong { display: block; font-size: 0.97rem; color: var(--warning); }
+.excecao p { color: var(--muted); font-size: 0.92rem; margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .passos { grid-template-columns: 1fr 1fr; gap: 26px 0; }
+  .passo:nth-child(2)::before, .passo:nth-child(2)::after { display: none; }
+  .kpis { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .painel-corpo { padding: 24px 18px; }
+  .painel-topo { padding: 16px 18px; }
+  .passos { grid-template-columns: 1fr; gap: 22px; }
+  .passo::before, .passo::after { display: none; }
+  .passo { padding-right: 0; }
+  .medidor-topo { flex-direction: column; gap: 2px; }
+  .medidor-val { text-align: left; }
+  .medidor-val small { text-align: left; }
+}
+
 /* ---------- Casos ---------- */
 .caso-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin-top: 10px; }
 .caso-card .quem {
