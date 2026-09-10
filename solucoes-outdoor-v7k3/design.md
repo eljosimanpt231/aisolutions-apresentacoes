@@ -82,3 +82,22 @@ Os nomes de clientes, obras, técnicos e valores da maqueta são ilustrativos e 
 Os artigos, marcas, tipos de trabalho e vocabulário são reais, tirados do site e das reuniões.
 As fotografias são representadas por blocos de cor: o que importa mostrar é o âmbito de cada registo
 (que passo do procedimento, que obra, que técnico, que cláusula da norma), não a imagem em si.
+
+## Revisão de 10/09/2026 (Diogo, antes da reunião das 14h00)
+Pedidos do Diogo depois de analisar as duas transcrições e o dossier PRR. Tudo dentro do mesmo design.
+- **Secção nova "O ciclo"** (depois de "Hoje vs com o sistema"): a frase-objetivo "standardizar os processos para que
+  qualquer pessoa entre no ciclo e o ciclo não quebre", os 7 passos do ciclo (pedido a recorrência) com o que o sistema
+  garante em cada um, e 3 citações literais do Mário (08/09). O "McDonald's" é dele.
+- **Módulo 05 passa a "App e loja online inteligente"**: a candidatura (SIGA, IA para negócio) fala em "aplicação móvel
+  e loja online inteligente"; o Diogo quer os dois. A app é do cliente (pedidos, obras, validades, certificados) e da
+  equipa (SAGE no terreno). Os valores do módulo NÃO foram alterados (decisão de preço é do Diogo/Manuel).
+- **SAGE, duas vias** (debaixo do fluxo): via 1, API local oficial do Sage 50c (repo público sage-portugal/50c-API,
+  consultado a 10/09); via 2, migrar faturação e stock para Moloni ou InvoiceXpress (API REST, certificados AT),
+  migração feita por nós. Decisão no fim do diagnóstico. Factorial referido com API pública.
+- **Secção nova "Triagem de email"** (depois do back-office): caixa antes/depois com emails genéricos ilustrativos,
+  título com a frase do Mário "abrir os emails, ver o que é importante e dizer a quem responder" (sem o "gajo").
+- **Disponibilidade imediata**: Fase 1 passa a "da adjudicação a dezembro" com arranque na semana seguinte; CTA com
+  3 cartões (disponibilidade imediata, adjudicação presencial em Vila Real, acompanhamento nos próximos anos).
+- **Experiência**: "6 projetos PRR ativos, incluindo nesta mesma linha de apoio" (afirmação do Diogo, diretor comercial).
+- Nav ganhou "O ciclo", "SAGE" e "Email". Alternância section-alt refeita entre "O ciclo" e "Email".
+- Correção: a data do painel do CRM dizia "Terça, 10 de setembro"; 10/09/2026 é quinta.
