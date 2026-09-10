@@ -1,0 +1,180 @@
+/* ============================================================
+   Camada especifica desta apresentacao.
+   So tokens (var(--...)). Duas responsabilidades:
+   1) seccoes que o starter nao traz (hero com emblema, ambito, limites, fase seguinte)
+   2) adaptar os componentes de shared/deck (desenhados para tema escuro) a um deck claro
+   ============================================================ */
+
+/* ---------- Barra de marca ---------- */
+.brandbar {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  flex-wrap: wrap; margin-bottom: 30px;
+}
+.brandbar img { width: 54px; height: 54px; }
+.brandbar .nome {
+  font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+  letter-spacing: 0.01em; color: var(--text);
+}
+.brandbar .x { color: var(--muted); font-size: 1rem; }
+.brandbar .ais { color: var(--accent); font-weight: 700; font-size: 0.98rem; letter-spacing: 0.01em; }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--grad-hero);
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+  padding-bottom: clamp(46px, 5.5vw, 74px);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(hsl(var(--brand-hsl) / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--brand-hsl) / 0.045) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, hsl(0 0% 0%) 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, hsl(0 0% 0%) 30%, transparent 100%);
+}
+.hero .container { position: relative; z-index: 1; }
+.hero .meta {
+  margin-top: 26px; font-size: 0.84rem; color: var(--muted);
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.hero .meta b { color: var(--text); font-weight: 600; }
+.hero .meta .sep { opacity: 0.4; }
+
+/* pill do kicker (polish) */
+.kicker.pill {
+  border: 1px solid hsl(var(--brand-hsl) / 0.22);
+  background: hsl(var(--brand-hsl) / 0.07);
+  color: var(--brand);
+  padding: 7px 15px; border-radius: 999px; margin-bottom: 20px;
+}
+
+/* ---------- Cards de diagnostico ---------- */
+.dor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; text-align: left; }
+.dor-card { position: relative; padding-top: 30px; }
+.dor-card .n {
+  position: absolute; top: 20px; right: 22px;
+  font-family: var(--font-display); font-size: 2rem; font-weight: 800;
+  color: hsl(var(--brand-hsl) / 0.13); line-height: 1;
+}
+.dor-card h3 { font-size: 1.04rem; padding-right: 40px; }
+.dor-card p { color: var(--muted); font-size: 0.94rem; margin-top: 9px; }
+.frase-fecho {
+  margin-top: 34px; font-style: italic; font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: var(--text); max-width: 720px; margin-left: auto; margin-right: auto;
+  border-left: 3px solid var(--brand); padding-left: 20px; text-align: left;
+}
+
+/* ---------- Ambito (fase 1) ---------- */
+.ambito-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; text-align: left; }
+.ambito-card { display: flex; gap: 18px; align-items: flex-start; }
+.ambito-card .ic {
+  flex-shrink: 0; width: 46px; height: 46px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  background: hsl(var(--brand-hsl) / 0.10); color: var(--brand); font-size: 1.25rem;
+}
+.ambito-card h3 { font-size: 1.06rem; }
+.ambito-card p { color: var(--muted); font-size: 0.94rem; margin-top: 7px; }
+
+/* ---------- Limites ---------- */
+.limite-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; text-align: left; }
+.limite-card .tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 4px 11px; border-radius: 999px; margin-bottom: 12px;
+}
+.limite-card .tag.auto { background: hsl(var(--success-hsl) / 0.13); color: var(--success); }
+.limite-card .tag.humano { background: hsl(var(--warning-hsl) / 0.15); color: var(--warning); }
+.limite-card p { color: var(--muted); font-size: 0.94rem; margin-top: 8px; }
+
+/* ---------- Fase seguinte ---------- */
+.fora-card { border-left: 4px solid var(--border); background: var(--surface-2); }
+.fora-card h3 { font-size: 1.02rem; }
+.fora-card p { color: var(--muted); font-size: 0.93rem; margin-top: 8px; }
+.fora-card .badge-fora {
+  display: inline-block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
+  border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px; margin-bottom: 12px;
+}
+
+/* ---------- Investimento ---------- */
+.preco-nota {
+  margin-top: 26px; font-size: 0.9rem; color: var(--muted);
+  max-width: 760px; margin-left: auto; margin-right: auto; text-align: center;
+}
+.price-card .iva { display: block; font-size: 0.82rem; color: var(--muted); font-weight: 500; margin-top: -2px; }
+.price-card .inclui { list-style: none; margin-top: 16px; display: grid; gap: 9px; }
+.price-card .inclui li { position: relative; padding-left: 24px; font-size: 0.92rem; color: var(--muted); }
+.price-card .inclui li::before {
+  content: "\2713"; position: absolute; left: 0; color: var(--brand); font-weight: 800; font-size: 0.8rem;
+}
+
+/* ---------- Timeline vertical ---------- */
+.tl-v { display: grid; gap: 0; max-width: 760px; margin: 40px auto 0; text-align: left; }
+.tl-v-item { display: grid; grid-template-columns: 108px 1fr; gap: 38px; position: relative; padding-bottom: 32px; }
+.tl-v-item:last-child { padding-bottom: 0; }
+.tl-v-item::before {
+  content: ""; position: absolute; left: 126px; top: 28px; bottom: -4px; width: 2px; background: var(--border);
+}
+.tl-v-item:last-child::before { display: none; }
+.tl-v-when {
+  text-align: right; font-family: var(--font-display); font-weight: 700;
+  font-size: 0.88rem; color: var(--brand); padding-top: 3px; position: relative;
+}
+.tl-v-when::after {
+  content: ""; position: absolute; right: -25px; top: 6px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 4px hsl(var(--brand-hsl) / 0.12);
+}
+.tl-v-what strong { display: block; font-size: 1rem; }
+.tl-v-what span { color: var(--muted); font-size: 0.93rem; }
+
+/* ---------- Casos ---------- */
+.caso-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin-top: 10px; }
+.caso-card .quem {
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: 0.88rem; font-style: italic; color: var(--brand);
+}
+
+/* ============================================================
+   Adaptacao dos componentes shared/deck ao tema claro.
+   O chat e o terminal sao janelas escuras de proposito (parecem
+   produto real dentro de um deck claro), por isso o que muda e so
+   o texto que ficaria escuro sobre escuro.
+   ============================================================ */
+.cr-chat { border-color: hsl(155 25% 20%); }
+.cr-chat-head { border-bottom-color: hsl(155 20% 22%); }
+.cr-chat-who b { color: hsl(0 0% 97%); }
+.cr-chat-who small { color: hsl(155 8% 65%); }
+.cr-chat-ava { background: hsl(var(--accent-hsl) / 0.28); color: var(--accent-light); }
+.cr-sys { background: hsl(0 0% 100% / 0.07); color: hsl(155 8% 68%); }
+.cr-row.agent .cr-bubble { background: hsl(155 14% 20%); color: hsl(0 0% 95%); }
+.cr-typing { background: hsl(155 14% 20%); }
+.cr-typing i { background: hsl(155 8% 62%); }
+.term-cursor { background: var(--accent-light); }
+
+.cr-tab { background: var(--surface-2); }
+.cr-tab:hover { border-color: hsl(var(--brand-hsl) / 0.35); }
+.cr-tab.active { background: hsl(var(--brand-hsl) / 0.10); color: var(--brand); border-color: hsl(var(--brand-hsl) / 0.45); }
+.cr-shell, .fluxo-shell { background: var(--surface); box-shadow: var(--shadow-sm); }
+.cr-reason { background: linear-gradient(to bottom right, hsl(var(--accent-hsl) / 0.06), transparent); }
+.cr-step.on { background: hsl(var(--accent-hsl) / 0.05); border-color: hsl(var(--accent-hsl) / 0.28); }
+.fluxo-node { background: var(--surface-2); }
+.fluxo-chan { background: var(--surface-2); }
+.fluxo-node.on.brand { box-shadow: 0 10px 34px -12px hsl(var(--brand-hsl) / 0.7); }
+.fluxo-node.on.teal { box-shadow: 0 10px 34px -12px hsl(var(--accent-hsl) / 0.7); }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .dor-grid, .ambito-grid, .limite-grid { grid-template-columns: 1fr; }
+  .tl-v-item { grid-template-columns: 84px 1fr; gap: 32px; }
+  .tl-v-item::before { left: 102px; }
+}
+@media (max-width: 520px) {
+  .brandbar img { width: 46px; height: 46px; }
+  .brandbar { gap: 10px; }
+  .brandbar .x { display: none; }
+  .brandbar .ais { flex-basis: 100%; }
+  .frase-fecho { padding-left: 15px; }
+  .hero .meta { gap: 4px; }
+  .hero .meta .sep { display: none; }
+}

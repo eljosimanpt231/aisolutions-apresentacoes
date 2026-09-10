@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hóquei Clube da Mealhada | Automação dos recebimentos</title>
+  <meta name="description" content="Proposta AI Solutions para o Hóquei Clube da Mealhada: fase 1, automação de pagamentos e recebimentos.">
+  <link rel="icon" href="assets/img/hcm-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/extra.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero" id="topo">
+    <div class="container center">
+      <div class="brandbar">
+        <img src="assets/img/hcm-logo.png" alt="Emblema do Hóquei Clube da Mealhada">
+        <span class="nome">Hóquei Clube da Mealhada</span>
+        <span class="x">×</span>
+        <span class="ais">AI Solutions</span>
+      </div>
+
+      <span class="kicker pill">Proposta de automação · Fase 1</span>
+      <h1>A secretaria deixa de <span class="grad">conferir transferências</span> à mão.</h1>
+      <p class="lead" style="margin-top:20px">
+        Quatrocentos atletas, quatro secções e uma pessoa a fechar contas depois das 18h.
+        A fase 1 trata da parte que consome mais horas: saber quem pagou, quem falta e avisar quem está em atraso.
+      </p>
+
+      <div class="grid-3" style="margin-top:40px; text-align:left">
+        <div class="card stat-card reveal">
+          <div class="num"><span class="count" data-to="400">0</span></div>
+          <div class="desc">Atletas e famílias com mensalidades, cotas e inscrições para controlar</div>
+        </div>
+        <div class="card stat-card reveal" data-delay="120">
+          <div class="num"><span class="count" data-to="4">0</span> secções</div>
+          <div class="desc">Hóquei em patins, Karaté Shotokan, Academia de Dança e patinagem artística, todas na mesma secretaria</div>
+        </div>
+        <div class="card stat-card reveal" data-delay="240">
+          <div class="num"><span class="count" data-to="40" data-suffix="%">0</span></div>
+          <div class="desc">De crescimento no último ano, com a mesma equipa administrativa</div>
+        </div>
+      </div>
+
+      <div style="margin-top:36px">
+        <a href="#demo" class="btn btn-primary">Ver o agente a trabalhar ↓</a>
+      </div>
+
+      <div class="meta">
+        <span>Para <b>Silvino Costa</b> e a direção do HCM</span>
+        <span class="sep">|</span>
+        <span>Preparado por <b>Manuel Condeço</b></span>
+        <span class="sep">|</span>
+        <span>11 de setembro de 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. O QUE OUVIMOS ============ -->
+  <section class="section-alt" id="diagnostico">
+    <div class="container center">
+      <span class="kicker">O que ouvimos</span>
+      <h2>O que nos contou na primeira reunião</h2>
+      <p class="lead">Sem interpretações nossas. É o que ficou dito.</p>
+
+      <div class="dor-grid" style="margin-top:38px">
+        <div class="card dor-card reveal">
+          <span class="n">01</span>
+          <h3>Conferência transferência a transferência</h3>
+          <p>As referências saem do software de sócios, mas depois alguém tem de abrir o extrato e ir confirmando cada movimento na folha de cálculo.</p>
+        </div>
+        <div class="card dor-card reveal" data-delay="80">
+          <span class="n">02</span>
+          <h3>Atrasos que se descobrem tarde</h3>
+          <p>O pagamento em falta aparece quando alguém repara, não quando acontece. E depois é preciso ir atrás dele.</p>
+        </div>
+        <div class="card dor-card reveal" data-delay="160">
+          <span class="n">03</span>
+          <h3>Quatro secções, uma secretaria</h3>
+          <p>As secções são independentes, mas a parte administrativa desagua toda no mesmo sítio, hoje assegurada por uma pessoa.</p>
+        </div>
+        <div class="card dor-card reveal" data-delay="240">
+          <span class="n">04</span>
+          <h3>Eventos e torneios sem estrutura</h3>
+          <p>Cada inscrição é um caso à parte, e a cobrança acaba por se fazer a perguntar de pai em pai.</p>
+        </div>
+        <div class="card dor-card reveal" data-delay="320">
+          <span class="n">05</span>
+          <h3>O trabalho começa às 18h</h3>
+          <p>Depois do dia de trabalho, e por vezes até à meia-noite. Já vai em ano e meio assim.</p>
+        </div>
+        <div class="card dor-card reveal" data-delay="400">
+          <span class="n">06</span>
+          <h3>Crescer sem aumentar o peso</h3>
+          <p>Mais 30 a 40% de atletas no último ano, e a expectativa de continuar a crescer. O processo manual não acompanha.</p>
+        </div>
+      </div>
+
+      <p class="frase-fecho">O problema não é falta de rigor. É o rigor estar todo dependente de horas que já não existem.</p>
+    </div>
+  </section>
+
+  <!-- ============ 3. HOJE VS COM O AGENTE ============ -->
+  <section id="mudanca">
+    <div class="container center">
+      <span class="kicker">O que muda</span>
+      <h2>Hoje e com o agente a trabalhar</h2>
+
+      <div class="grid-2" style="margin-top:36px; text-align:left">
+        <div class="card card-do reveal">
+          <h3>O que passa a ser automático</h3>
+          <ul class="list-check">
+            <li>Verificar todos os dias os pagamentos que entraram na conta do clube</li>
+            <li>Atualizar o estado de cada cota e mensalidade, por atleta e por escalão</li>
+            <li>Avisar a família em atraso, com o valor e a referência certos</li>
+            <li>Cobrar as inscrições em torneios e eventos, com a mesma lógica das cotas</li>
+            <li>Manter um mapa de quem pagou e quem falta, aberto a qualquer hora</li>
+          </ul>
+        </div>
+        <div class="card card-dont reveal" data-delay="120">
+          <h3>O que a secretaria deixa de fazer</h3>
+          <ul class="list-x">
+            <li>Abrir o extrato e conferir movimento a movimento</li>
+            <li>Passar valores para a folha de cálculo à mão</li>
+            <li>Andar atrás de pagamentos por telefone e mensagem</li>
+            <li>Refazer as contas de um evento sempre que muda uma inscrição</li>
+            <li>Dar por um pagamento em falta semanas depois</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. ÂMBITO DA FASE 1 ============ -->
+  <section class="section-alt" id="ambito">
+    <div class="container center">
+      <span class="kicker">Âmbito</span>
+      <h2>O que entra na fase 1</h2>
+      <p class="lead">Pagamentos e recebimentos. Foi esta a prioridade que definiu na reunião, e é só disto que trata esta proposta.</p>
+
+      <div class="ambito-grid" style="margin-top:40px">
+        <div class="card ambito-card reveal">
+          <div class="ic">€</div>
+          <div>
+            <h3>Leitura automática dos recebimentos</h3>
+            <p>Ligação à conta do clube na Caixa de Crédito Agrícola para ler os pagamentos assim que entram, sem exportações manuais.</p>
+          </div>
+        </div>
+        <div class="card ambito-card reveal" data-delay="100">
+          <div class="ic">▦</div>
+          <div>
+            <h3>Mapa de cotas e mensalidades</h3>
+            <p>Folhas partilhadas no Google Drive, organizadas por secção e por escalão, atualizadas em tempo real e abertas a quem de direito.</p>
+          </div>
+        </div>
+        <div class="card ambito-card reveal" data-delay="200">
+          <div class="ic">✉</div>
+          <div>
+            <h3>Avisos e cobranças automáticas</h3>
+            <p>A família recebe o aviso no dia certo, com o valor e a referência. O que não bate certo fica sinalizado para a secretaria.</p>
+          </div>
+        </div>
+        <div class="card ambito-card reveal" data-delay="300">
+          <div class="ic">◈</div>
+          <div>
+            <h3>Inscrições em eventos e torneios</h3>
+            <p>Cada evento com a sua lista, o seu valor e o seu estado de pagamento, ligado ao mesmo motor das mensalidades.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="preco-nota" style="margin-top:34px">
+        <b>Uma nota honesta sobre a ligação ao banco.</b> É o ponto que temos de confirmar com a nossa equipa técnica antes de arrancar.
+        Se a Caixa de Crédito Agrícola não permitir acesso direto, o mesmo resultado obtém-se a partir do extrato exportado:
+        muda a forma como os movimentos chegam, não muda nada do que o agente faz a seguir.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 5. TERMINAL: o dia a dia do back-office ============ -->
+  <section id="rotina">
+    <div class="container center">
+      <span class="kicker">Todos os dias, às 6 da manhã</span>
+      <h2>O trabalho já está feito quando a secretaria abre</h2>
+      <p class="lead">Isto é o que corre sozinho antes de alguém chegar. Repare na linha a amarelo.</p>
+      <div class="term reveal" id="hcmTerm" style="margin-top:36px; text-align:left"></div>
+      <p style="margin-top:14px; font-size:0.8rem; color:var(--muted)">
+        Exemplo ilustrativo do processo diário. Os escalões são reais, os valores e as contagens são fictícios.
+      </p>
+    </div>
+  </section>
+
+  <script type="application/json" id="hcmTerm-config">
+  {
+    "title": "recebimentos-hcm.log",
+    "intervalMs": 700,
+    "lines": [
+      { "text": "06:00 A ligar a conta do clube (Caixa de Credito Agricola)...", "tone": "info" },
+      { "text": "17 movimentos novos desde ontem.", "tone": "info" },
+      { "text": "Mensalidade de setembro conciliada: hoquei em patins, sub-13 (4 atletas)", "tone": "ok" },
+      { "text": "Mensalidade de setembro conciliada: Academia de Danca (6 atletas)", "tone": "ok" },
+      { "text": "Torneio de Espinho: 5 inscricoes com pagamento associado", "tone": "ok" },
+      { "text": "Transferencia sem referencia identificavel. Sinalizada para a secretaria.", "tone": "warn" },
+      { "text": "3 familias em atraso ha mais de 8 dias. Avisos preparados.", "tone": "ok" },
+      { "text": "Mapa atualizado no Drive. 1 excecao para revisao humana.", "tone": "success" }
+    ]
+  }
+  </script>
+
+  <!-- ============ 6. CHAT + RACIOCÍNIO (momento uau) ============ -->
+  <section class="section-alt" id="demo">
+    <div class="container center">
+      <span class="kicker">Demonstração</span>
+      <h2>O agente a falar com as famílias</h2>
+      <p class="lead">Três situações reais do clube. A conversa com a família e, a par dela, o que o agente está a fazer em cada momento.</p>
+      <div class="cr reveal" id="hcmDemo" style="margin-top:38px; text-align:left"></div>
+      <p style="margin-top:14px; font-size:0.8rem; color:var(--muted)">
+        Os valores e os nomes nestes exemplos são inventados, só para ilustrar. Em produção, o agente usa sempre os vossos dados reais.
+      </p>
+    </div>
+  </section>
+
+  <script type="application/json" id="hcmDemo-config">
+  {
+    "agentName": "Agente HCM",
+    "agentInitials": "HC",
+    "chatStatus": "WhatsApp do clube, online",
+    "stepMs": 1500,
+    "endPauseMs": 3000,
+    "scenarios": [
+      {
+        "title": "Mensalidade em atraso",
+        "subtitle": "O aviso sai sozinho, com a referência certa, sem ninguém o escrever.",
+        "chat": [
+          { "sender": "system", "text": "Mensalidade de setembro em atraso há 8 dias", "time": "09:12" },
+          { "sender": "agent", "text": "Bom dia, D. Marta. Aqui do Hóquei Clube da Mealhada. A mensalidade de setembro do Tomás (sub-13, hóquei em patins) está por regularizar. **Entidade 21123 · Ref. 402 118 335 · 32,50 €**", "time": "09:12" },
+          { "sender": "client", "text": "Obrigada, pensava que já tinha pago. Trato disso hoje.", "time": "09:31" },
+          { "sender": "agent", "text": "Com certeza. Assim que o pagamento entrar fica registado automaticamente e não recebe mais avisos.", "time": "09:31" }
+        ],
+        "steps": [
+          { "icon": "clock", "label": "Deteta 8 dias de atraso no mapa de cotas" },
+          { "icon": "id", "label": "Identifica o atleta, o escalão e o encarregado de educação" },
+          { "icon": "send", "label": "Envia o aviso com a referência correta" },
+          { "icon": "database", "label": "Fica a aguardar o movimento na conta do clube" }
+        ]
+      },
+      {
+        "title": "Inscrição num torneio",
+        "subtitle": "Uma pergunta às 21h que hoje ficaria para o dia seguinte.",
+        "chat": [
+          { "sender": "system", "text": "Mensagem no WhatsApp do clube, 21:14", "time": "21:14" },
+          { "sender": "client", "text": "Boa noite. O meu filho queria ir ao torneio de Espinho. Ainda vai a tempo?", "time": "21:14" },
+          { "sender": "agent", "text": "Boa noite. Vai sim, as inscrições fecham sexta-feira. Para o escalão dele, sub-13, a inscrição é de **25 €** e inclui a deslocação. Quer que envie já a referência?", "time": "21:15" },
+          { "sender": "client", "text": "Sim, por favor.", "time": "21:16" },
+          { "sender": "agent", "text": "**Entidade 21123 · Ref. 402 119 007 · 25,00 €** Fica inscrito assim que o pagamento entrar, e a lista do torneio atualiza-se sozinha para a secretaria.", "time": "21:16" }
+        ],
+        "steps": [
+          { "icon": "message", "label": "Recebe a mensagem fora de horas" },
+          { "icon": "calendar", "label": "Confirma o prazo de inscrição do torneio" },
+          { "icon": "list", "label": "Vai buscar o escalão do atleta e o valor do evento" },
+          { "icon": "send", "label": "Gera e envia a referência de pagamento" },
+          { "icon": "database", "label": "Acrescenta à lista do evento como pendente" }
+        ]
+      },
+      {
+        "title": "Quando não tem a certeza",
+        "subtitle": "O agente recusa fechar o caso sozinho e passa a uma pessoa.",
+        "chat": [
+          { "sender": "system", "text": "Resposta a um aviso de atraso", "time": "14:02" },
+          { "sender": "client", "text": "Isto está mal, eu paguei a semana passada por MB Way.", "time": "14:02" },
+          { "sender": "agent", "text": "Obrigado por avisar. Procurei nos movimentos dos últimos 15 dias e não encontro nenhum pagamento associado a esta referência. **Não vou dar o valor como recebido sem confirmação.** Vou passar isto à secretaria com o que já sei, e alguém confirma consigo ainda hoje.", "time": "14:03" },
+          { "sender": "system", "text": "Encaminhado para a secretaria com o histórico completo da conversa", "time": "14:03" }
+        ],
+        "steps": [
+          { "icon": "search", "label": "Procura o pagamento nos movimentos recentes" },
+          { "icon": "ban", "label": "Não encontra correspondência e não fecha o caso" },
+          { "icon": "shield", "label": "Recusa marcar como pago sem prova do movimento" },
+          { "icon": "user-cog", "label": "Escala para a secretaria com o contexto todo" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ 7. FLUXO ============ -->
+  <section id="fluxo">
+    <div class="container center">
+      <span class="kicker">Como se liga ao que já existe</span>
+      <h2>Nada do que já funciona é deitado fora</h2>
+      <p class="lead">A plataforma de sócios continua a emitir as referências. O agente entra a seguir, na parte que hoje é feita à mão.</p>
+      <div class="fluxo reveal" id="hcmFluxo" style="margin-top:40px"></div>
+    </div>
+  </section>
+
+  <script type="application/json" id="hcmFluxo-config">
+  {
+    "stepMs": 1900,
+    "channels": [
+      { "icon": "globe", "label": "Plataforma de sócios" },
+      { "icon": "whatsapp", "label": "WhatsApp" },
+      { "icon": "message", "label": "Email" }
+    ],
+    "nodes": [
+      { "icon": "database", "title": "Conta do clube", "detail": "Movimentos lidos todos os dias na Caixa de Crédito Agrícola.", "tone": "brand" },
+      { "icon": "search", "title": "Conciliação", "detail": "Cada movimento ligado ao atleta, ao escalão e ao que estava por pagar.", "tone": "teal" },
+      { "icon": "list", "title": "Mapa no Drive", "detail": "Folhas partilhadas por secção e por escalão, sempre atualizadas.", "tone": "teal" },
+      { "icon": "send", "title": "Avisos e cobranças", "detail": "A família recebe o aviso certo. As exceções vão para a secretaria.", "tone": "teal" },
+      { "icon": "check", "title": "Secretaria", "detail": "Vê o estado a qualquer hora e só trata do que é mesmo exceção.", "tone": "brand" }
+    ],
+    "note": "O objetivo não é substituir ninguém. É devolver as noites a quem hoje as passa a conferir extratos."
+  }
+  </script>
+
+  <!-- ============ 8. LIMITES ============ -->
+  <section class="section-alt" id="limites">
+    <div class="container center">
+      <span class="kicker">Limites</span>
+      <h2>O que o agente faz e o que fica sempre convosco</h2>
+
+      <div class="limite-grid" style="margin-top:38px">
+        <div class="card limite-card reveal">
+          <span class="tag auto">Faz sozinho</span>
+          <h3>Ler, conciliar e avisar</h3>
+          <p>Lê os movimentos, liga-os a quem devia pagar, atualiza o mapa, envia os avisos de cotas e de inscrições e sinaliza tudo o que não bate certo.</p>
+        </div>
+        <div class="card limite-card reveal" data-delay="100">
+          <span class="tag humano">Fica com a secretaria</span>
+          <h3>As decisões sobre pessoas</h3>
+          <p>Aceitar um pagamento que não bate certo, adiar ou perdoar uma cota, tratar de um caso particular de uma família. Isso é sempre humano.</p>
+        </div>
+        <div class="card limite-card reveal" data-delay="200">
+          <span class="tag humano">Nunca faz</span>
+          <h3>Mexer em dinheiro ou em faturação</h3>
+          <p>Não movimenta valores, não emite faturas nem recibos, e não dá nada como pago sem o movimento correspondente na conta do clube.</p>
+        </div>
+      </div>
+
+      <p class="frase-fecho" style="text-align:center; border-left:0; padding-left:0">
+        Nunca erra em silêncio. Quando não tem a certeza, pergunta e passa a alguém.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 9. FASE SEGUINTE (fora de âmbito) ============ -->
+  <section id="fora">
+    <div class="container center">
+      <span class="kicker">Falámos, mas fica para depois</span>
+      <h2>O que não entra nesta proposta</h2>
+      <p class="lead">Registado aqui de propósito, para não haver dúvidas sobre o que está contratado.</p>
+
+      <div class="grid-3" style="margin-top:38px; text-align:left">
+        <div class="card fora-card reveal">
+          <span class="badge-fora">Fora de âmbito</span>
+          <h3>Exames médicos</h3>
+          <p>É um processo pontual, feito no início da época e já concluído este ano. Automatizar agora não traria retorno.</p>
+        </div>
+        <div class="card fora-card reveal" data-delay="100">
+          <span class="badge-fora">Fora de âmbito</span>
+          <h3>Loja online</h3>
+          <p>Com cerca de 2.000 referências de produtos, é um projeto de comércio eletrónico com orçamento próprio, acima dos 8.000 €.</p>
+        </div>
+        <div class="card fora-card reveal" data-delay="200">
+          <span class="badge-fora">Fase seguinte</span>
+          <h3>Inventário da loja física</h3>
+          <p>Códigos de barras e controlo de stock. Faz sentido e fica identificado, mas depois de os recebimentos estarem a funcionar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. REFERÊNCIAS ============ -->
+  <section class="section-alt" id="casos">
+    <div class="container center">
+      <span class="kicker">Já fizemos isto</span>
+      <h2>Dois casos com o mesmo padrão do vosso</h2>
+
+      <div class="grid-2" style="margin-top:36px; text-align:left">
+        <div class="card caso-card reveal">
+          <span class="badge">Educação e formação</span>
+          <h3 style="margin-top:12px">Escola de Condução Abadias</h3>
+          <p>Mais de 20.000 mensagens tratadas pelo agente, que distingue quem já é aluno de quem ainda está a pedir informações, e responde a cada um como deve ser.</p>
+          <div class="quem">O mesmo padrão do vosso: muita gente a fazer a mesma pergunta administrativa.</div>
+        </div>
+        <div class="card caso-card reveal" data-delay="120">
+          <span class="badge">Rede com várias unidades</span>
+          <h3 style="margin-top:12px">EcoDrive</h3>
+          <p>Uma rede com mais de 20 escolas de condução, onde o tempo de resposta passou de cerca de 20 horas para segundos, sem aumentar a equipa administrativa.</p>
+          <div class="quem">O mesmo padrão do vosso: crescer em número sem crescer em pessoal.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. INVESTIMENTO ============ -->
+  <section id="investimento">
+    <div class="container center">
+      <span class="kicker">Investimento</span>
+      <h2>Os valores desta fase, sem rodeios</h2>
+
+      <div class="grid-2" style="margin-top:38px; text-align:left">
+        <div class="card price-card reveal">
+          <div class="label">Implementação</div>
+          <div class="price">2.600 €</div>
+          <span class="iva">valor sem IVA (3.198 € com IVA) · pagamento único no arranque</span>
+          <ul class="inclui">
+            <li>Levantamento dos processos atuais de cotas, escalões e eventos</li>
+            <li>Ligação à conta do clube e motor de conciliação</li>
+            <li>Construção do mapa partilhado no Google Drive</li>
+            <li>Testes com dados reais antes de substituir o processo atual</li>
+            <li>Formação da secretaria</li>
+          </ul>
+        </div>
+        <div class="card price-card reveal" data-delay="120">
+          <div class="label">Mensalidade</div>
+          <div class="price">150 €</div>
+          <span class="iva">valor sem IVA (184,50 € com IVA) · por mês</span>
+          <ul class="inclui">
+            <li>Manutenção e correções do nosso lado, sem custo adicional</li>
+            <li>Alojamento e tokens de inteligência artificial</li>
+            <li>Uma pessoa da nossa equipa alocada ao clube, disponível por WhatsApp</li>
+            <li>Ajustes às regras à medida que a época avança</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="preco-nota">
+        Se mais tarde acrescentarmos outra secção ao trabalho do agente, a mensalidade não duplica:
+        cada solução nova acrescenta tipicamente 25 € a 40 € por mês, porque a maior parte deste valor
+        é a nossa equipa, e essa já está alocada ao clube.
+      </p>
+      <p class="frase-fecho" style="text-align:center; border-left:0; padding-left:0; margin-top:26px">
+        A pergunta não é quanto custa. É quanto está a custar continuar a fazer isto à mão, depois das 18h.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 12. CRONOGRAMA ============ -->
+  <section class="section-alt" id="prazo">
+    <div class="container center">
+      <span class="kicker">Prazo</span>
+      <h2>Cinco semanas do arranque ao primeiro ciclo</h2>
+
+      <div class="tl-v">
+        <div class="tl-v-item reveal">
+          <div class="tl-v-when">Semana 1</div>
+          <div class="tl-v-what">
+            <strong>Levantamento</strong>
+            <span>Mapear como estão hoje as cotas, os escalões e os eventos, e confirmar o acesso à conta do clube.</span>
+          </div>
+        </div>
+        <div class="tl-v-item reveal" data-delay="80">
+          <div class="tl-v-when">Semanas 2 e 3</div>
+          <div class="tl-v-what">
+            <strong>Construção</strong>
+            <span>Motor de conciliação, mapa partilhado no Drive e regras de aviso, com as vossas exceções.</span>
+          </div>
+        </div>
+        <div class="tl-v-item reveal" data-delay="160">
+          <div class="tl-v-when">Semana 4</div>
+          <div class="tl-v-what">
+            <strong>Testes com dados reais</strong>
+            <span>O agente corre em paralelo com o processo atual. Nada é substituído enquanto não estiver certo.</span>
+          </div>
+        </div>
+        <div class="tl-v-item reveal" data-delay="240">
+          <div class="tl-v-when">Semana 5</div>
+          <div class="tl-v-what">
+            <strong>Arranque e formação</strong>
+            <span>Passagem a produção e formação da secretaria. A partir daqui, o primeiro ciclo de mensalidades já é automático.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13. CTA FINAL ============ -->
+  <section class="cta-final">
+    <div class="container center">
+      <h2>Pronto para avançar, Silvino?</h2>
+      <p class="lead" style="margin:16px auto 30px">
+        Confirmamos tudo por escrito antes de arrancar, e o primeiro passo é apenas o levantamento.
+        Sem compromisso imediato.
+      </p>
+      <a href="mailto:manuel.condeco@aisolutions.pt?subject=H%C3%B3quei%20Clube%20da%20Mealhada%20-%20avan%C3%A7ar%20com%20a%20fase%201" class="btn btn-primary">Avançar com a fase 1 →</a>
+    </div>
+  </section>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para o Hóquei Clube da Mealhada
+      <span class="disclaimer">Documento de apresentação. As simulações usam dados ilustrativos.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script>
+    terminal('hcmTerm');
+    chatRaciocinio('hcmDemo');
+    fluxo('hcmFluxo');
+  </script>
+</body>
+</html>

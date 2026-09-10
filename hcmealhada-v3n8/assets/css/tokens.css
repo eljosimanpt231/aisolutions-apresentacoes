@@ -1,0 +1,52 @@
+/* ============================================================
+   Hóquei Clube da Mealhada × AI Solutions
+   Base: estilo corporativo-azul (claro), com a marca do clube.
+   Verde HCM extraído do emblema oficial: #109048 = hsl(146 80% 31%)
+   ============================================================ */
+:root {
+  --brand-hsl: 146 79% 27%;
+  --accent-hsl: 176 72% 29%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* versões claras, para usar dentro das janelas escuras (chat, terminal) */
+  --brand-light: hsl(146 55% 58%);
+  --accent-light: hsl(176 62% 55%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(150 30% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(150 28% 98%);
+  --border: hsl(150 16% 88%);
+
+  --text: hsl(155 25% 12%);
+  --muted: hsl(155 10% 42%);
+
+  --success-hsl: 146 62% 34%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 70% 47%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 92% 42%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(168deg, hsl(var(--brand-hsl) / 0.07) 0%, hsl(var(--accent-hsl) / 0.05) 60%, hsl(0 0% 100%) 100%);
+  --grad-text: linear-gradient(118deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(158deg, hsl(var(--brand-hsl)) 0%, hsl(var(--brand-hsl) / 0.94) 55%, hsl(var(--accent-hsl) / 0.92) 130%);
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.09);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.11);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.17);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 118px);
+
+  /* simulação WhatsApp do starter (não usada aqui, mantida para compatibilidade) */
+  --wa-bg: hsl(150 20% 92%);
+  --wa-green: hsl(163 45% 28%);
+  --wa-green-strong: hsl(163 55% 34%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-out: hsl(146 55% 86%);
+  --wa-text: hsl(155 25% 14%);
+}
