@@ -110,6 +110,83 @@
   background: hsl(var(--success-hsl) / 0.14); color: var(--success);
 }
 
+/* ---------- Ficha de serviço: papel -> leitura -> fatura ---------- */
+.ficha-grid { display: grid; gap: 26px; align-items: start; }
+@media (min-width: 1000px) { .ficha-grid { grid-template-columns: 1.02fr 1fr; } }
+.ficha-out { display: grid; gap: 22px; }
+
+.paper {
+  background: var(--paper); border: 1px solid var(--paper-line);
+  border-radius: 8px; box-shadow: var(--shadow-lg); overflow: hidden;
+  font-size: 0.8rem; transform: rotate(-0.35deg);
+}
+.paper-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 16px 18px 12px; }
+.paper-title { font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); }
+.paper-co { font-size: 0.74rem; color: var(--muted); margin-top: 3px; }
+.paper-n { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--text); white-space: nowrap; }
+.paper-bar {
+  background: hsl(var(--paper-bar-hsl)); color: var(--on-brand);
+  padding: 9px 18px; font-size: 0.68rem; line-height: 1.5;
+}
+.paper-body { padding: 16px 18px 20px; }
+.paper-sec {
+  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); margin: 18px 0 10px; padding-bottom: 5px;
+  border-bottom: 1px solid var(--paper-line);
+}
+.paper-body > .paper-sec:first-child { margin-top: 0; }
+.pf { display: flex; align-items: baseline; gap: 10px; padding: 5px 0; border-bottom: 1px dotted var(--paper-line); }
+.pf > span { font-size: 0.68rem; color: var(--muted); min-width: 68px; }
+.pf em, .ph, .paper-foot em {
+  font-family: var(--font-hand); font-style: normal; font-weight: 600;
+  font-size: 1.16rem; line-height: 1.2; color: var(--paper-ink);
+}
+.ph { display: block; padding: 4px 0; border-bottom: 1px dotted var(--paper-line); }
+
+.ptab { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 0.72rem; }
+.ptab th { text-align: left; font-weight: 600; color: var(--muted); font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 6px; border-bottom: 1px solid var(--paper-line); }
+.ptab th:not(:first-child), .ptab td:not(:first-child) { text-align: right; }
+.ptab td { padding: 5px 6px; border-bottom: 1px dotted var(--paper-line); font-family: var(--font-hand); font-size: 1.04rem; font-weight: 600; color: var(--paper-ink); }
+.ptab .psoma td, .ptab .ptotal td { border-bottom: none; padding-top: 8px; }
+.ptab .psoma td:first-child, .ptab .ptotal td:first-child { font-family: var(--font-body); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); text-align: right; }
+.ptab .ptotal td { font-size: 1.2rem; }
+
+.pchecks { display: flex; flex-wrap: wrap; gap: 7px; }
+.pchk { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; color: var(--muted); }
+.pchk::before { content: ""; width: 12px; height: 12px; border: 1px solid var(--paper-line); border-radius: 2px; background: hsl(0 0% 100%); }
+.pchk.on { color: var(--text); font-weight: 600; }
+.pchk.on::before { content: "✕"; font-family: var(--font-hand); font-size: 0.9rem; font-weight: 700; color: var(--paper-ink); display: flex; align-items: center; justify-content: center; line-height: 1; }
+.paper-foot { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--paper-line); font-size: 0.68rem; color: var(--muted); }
+.paper-foot span { display: inline-flex; align-items: baseline; gap: 8px; }
+
+/* leitura automática */
+.outcard h3 { margin-top: 12px; font-size: 1.1rem; }
+.oc-list { margin-top: 16px; display: grid; gap: 0; }
+.oc-list > div { display: flex; gap: 14px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+.oc-list > div:last-child { border-bottom: none; }
+.oc-list dt { font-size: 0.78rem; color: var(--muted); min-width: 92px; flex-shrink: 0; }
+.oc-list dd { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+.oc-flag { margin-top: 16px; border-radius: var(--radius); padding: 16px 18px; background: hsl(39 94% 52% / 0.11); border: 1px solid hsl(39 94% 52% / 0.32); }
+.oc-flag strong { display: block; font-size: 0.86rem; color: var(--warning); }
+.oc-flag p { margin-top: 6px; font-size: 0.88rem; color: var(--muted); }
+
+/* fatura Moloni */
+.inv { padding: 0; overflow: hidden; }
+.inv-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 22px; background: var(--brand); color: var(--on-brand); }
+.inv-sys { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.04em; font-size: 0.92rem; }
+.inv-doc { font-size: 0.78rem; opacity: 0.85; }
+.inv-to { padding: 14px 22px 0; font-size: 0.84rem; color: var(--muted); }
+.inv-tab { width: 100%; border-collapse: collapse; margin: 12px 0 0; }
+.inv-tab td { padding: 8px 22px; font-size: 0.88rem; border-bottom: 1px solid var(--border); }
+.inv-tab td:nth-child(2) { text-align: center; color: var(--muted); font-size: 0.8rem; }
+.inv-tab td:last-child { text-align: right; font-weight: 600; white-space: nowrap; }
+.inv-sums { padding: 12px 22px 0; display: grid; gap: 6px; }
+.inv-sums > div { display: flex; justify-content: space-between; font-size: 0.86rem; color: var(--muted); }
+.inv-sums > div b { color: var(--text); }
+.inv-sums .t { margin-top: 6px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 1rem; }
+.inv-sums .t b { font-family: var(--font-display); font-size: 1.32rem; font-weight: 800; color: var(--brand); }
+.inv-state { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 22px 22px; }
+
 /* ---------- Regras e limites ---------- */
 .rules { display: grid; gap: 20px; }
 @media (min-width: 820px) { .rules { grid-template-columns: repeat(3, 1fr); } }

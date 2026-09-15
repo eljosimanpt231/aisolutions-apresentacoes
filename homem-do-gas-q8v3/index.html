@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="../shared/deck/deck.css">
@@ -146,7 +146,6 @@
         <div class="head">
           <div class="n">1</div>
           <h3>Agente de IA no WhatsApp e no email</h3>
-          <div class="price">4.000 € <i>+ IVA</i></div>
         </div>
         <ul>
           <li>Triagem dos serviços que fazem hoje, com pedido de fotografia e de zona</li>
@@ -162,7 +161,6 @@
         <div class="head">
           <div class="n">2</div>
           <h3>Automação dos relatórios e da faturação</h3>
-          <div class="price">2.000 € <i>+ IVA</i></div>
         </div>
         <ul>
           <li>Leitura das fichas de serviço fotografadas nos grupos das equipas</li>
@@ -286,11 +284,132 @@
 }
 </script>
 
-<!-- ============ 6. BACK-OFFICE: TERMINAL ============ -->
-<section class="section-alt" id="faturacao" data-nav="Faturação">
+<!-- ============ 6. A FICHA REAL: DOCUMENTO -> FATURA ============ -->
+<section class="section-alt" id="ficha" data-nav="A vossa ficha">
+  <div class="container">
+    <span class="eyebrow">Da ficha à fatura</span>
+    <h2>A ficha 5449, lida pelo agente</h2>
+    <p class="lead">
+      Esta é a vossa ficha de visita técnica. À direita está o que o agente tira dela e a fatura
+      que sai no Moloni, sem ninguém escrever nada.
+    </p>
+
+    <div class="ficha-grid" style="margin-top:38px">
+
+      <div class="paper reveal">
+        <div class="paper-head">
+          <div>
+            <div class="paper-title">Relatório de Visita Técnica</div>
+            <div class="paper-co">Homem do Gás, Serviços Técnicos</div>
+          </div>
+          <div class="paper-n">N.º 5449</div>
+        </div>
+        <div class="paper-bar">
+          Instalações de gás · Reparações de fugas · Ensaios de estanquidade · Testes de CO · Inspeções
+        </div>
+        <div class="paper-body">
+          <div class="paper-sec">Identificação de cliente</div>
+          <div class="pf"><span>Nome</span><em>A. Ferreira</em></div>
+          <div class="pf"><span>Morada</span><em>Rua das Palmeiras, 24</em></div>
+          <div class="pf"><span>Localidade</span><em>Cascais</em></div>
+
+          <div class="paper-sec">Descrição dos serviços</div>
+          <div class="ph">Substituição de Pietro</div>
+          <div class="ph">A aguardar comprovativo de transferência</div>
+
+          <table class="ptab">
+            <thead>
+              <tr><th>Artigo</th><th>Qtd.</th><th>Preço</th><th>Importância</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Deslocação</td><td>1</td><td>37,50 €</td><td>37,50 €</td></tr>
+              <tr><td>Mão de Obra</td><td>1</td><td>60 €</td><td>60 €</td></tr>
+              <tr><td>Pietro</td><td>1</td><td>240 €</td><td>240 €</td></tr>
+              <tr><td>Inspeção</td><td>1</td><td>90 €</td><td>90 €</td></tr>
+              <tr class="psoma"><td colspan="3">Soma</td><td>427,50 €</td></tr>
+              <tr class="ptotal"><td colspan="3">Total</td><td>525,83 €</td></tr>
+            </tbody>
+          </table>
+
+          <div class="paper-sec">Modo de pagamento</div>
+          <div class="pchecks">
+            <span class="pchk">Numerário</span>
+            <span class="pchk on">Transferência bancária</span>
+            <span class="pchk">MB Way</span>
+            <span class="pchk on">Factura em nome de outrem</span>
+          </div>
+          <div class="pf"><span>NIF</span><em>514 302 887</em></div>
+          <div class="pf"><span>Nome</span><em>Condomínio Vista Mar</em></div>
+
+          <div class="paper-foot">
+            <span>Data <em>26/08/2026</em></span>
+            <span>Homem do Gás <em>Luís / Guilherme</em></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ficha-out">
+        <div class="card outcard reveal">
+          <span class="badge">Leitura automática</span>
+          <h3>O que o agente tira da ficha</h3>
+          <dl class="oc-list">
+            <div><dt>Ficha</dt><dd>n.º 5449, de 26/08/2026</dd></div>
+            <div><dt>Técnicos</dt><dd>Luís e Guilherme</dd></div>
+            <div><dt>Serviço</dt><dd>Substituição de redutor Pietro</dd></div>
+            <div><dt>Local</dt><dd>Cascais</dd></div>
+            <div><dt>Faturar a</dt><dd>Condomínio, em nome de outrem</dd></div>
+            <div><dt>NIF</dt><dd>514 302 887</dd></div>
+            <div><dt>Artigos</dt><dd>4 linhas, soma de 427,50 €</dd></div>
+            <div><dt>IVA</dt><dd>23%, como está assinalado na ficha</dd></div>
+            <div><dt>Pagamento</dt><dd>Transferência bancária</dd></div>
+          </dl>
+          <div class="oc-flag">
+            <strong>Apanha a nota escrita à mão</strong>
+            <p>
+              "A aguardar comprovativo de transferência". A fatura é emitida na mesma, mas o
+              serviço entra na lista de pendentes do Keep. Não é dado como pago.
+            </p>
+          </div>
+        </div>
+
+        <div class="card inv reveal">
+          <div class="inv-head">
+            <span class="inv-sys">Moloni</span>
+            <span class="inv-doc">FT 2026/1184</span>
+          </div>
+          <div class="inv-to">Condomínio Vista Mar · NIF 514 302 887</div>
+          <table class="inv-tab">
+            <tr><td>Deslocação</td><td>1</td><td>37,50 €</td></tr>
+            <tr><td>Mão de obra</td><td>1</td><td>60,00 €</td></tr>
+            <tr><td>Pietro, redutor</td><td>1</td><td>240,00 €</td></tr>
+            <tr><td>Inspeção</td><td>1</td><td>90,00 €</td></tr>
+          </table>
+          <div class="inv-sums">
+            <div><span>Subtotal</span><b>427,50 €</b></div>
+            <div><span>IVA 23%</span><b>98,33 €</b></div>
+            <div class="t"><span>Total</span><b>525,83 €</b></div>
+          </div>
+          <div class="inv-state">
+            <span class="badge badge-success">Emitida</span>
+            <span class="badge">Email e WhatsApp</span>
+            <span class="badge badge-later">Por liquidar</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="demo-note">
+      A ficha é a vossa, com o serviço e os valores reais. O nome, a morada e o número de
+      contribuinte do cliente foram trocados por dados inventados.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 7. BACK-OFFICE: TERMINAL ============ -->
+<section id="faturacao" data-nav="Todos os dias">
   <div class="container">
     <span class="eyebrow">Back-office</span>
-    <h2>Do grupo de WhatsApp à fatura emitida</h2>
+    <h2>O mesmo, para as fichas todas do dia</h2>
     <p class="lead">A hora por dia que o teu colega passa a lançar faturas passa a ser uma lista para rever.</p>
     <div style="margin-top:34px">
       <div class="term" id="hgTerm"></div>
@@ -300,8 +419,9 @@
       <div>
         <strong>Nunca erra em silêncio.</strong>
         <p style="color:var(--muted); font-size:0.95rem; margin-top:4px">
-          Quando a letra da ficha não é legível ou falta um dado, a fatura não sai: fica sinalizada
-          para revisão. O que corre bem segue sozinho, o que é duvidoso espera por uma pessoa.
+          Quando a letra não é legível, quando falta um dado ou quando a taxa de IVA não está
+          assinalada, a fatura não sai: fica sinalizada para revisão. O que corre bem segue
+          sozinho, o que é duvidoso espera por uma pessoa.
         </p>
       </div>
     </div>
@@ -313,22 +433,22 @@
   "intervalMs": 700,
   "lines": [
     { "text": "Nova fotografia no grupo \"Equipa 2 | Relatórios\"", "tone": "info" },
-    { "text": "A ler a ficha de serviço...", "tone": "info" },
-    { "text": "Cliente: Maria Sousa | Carcavelos | Substituição de redutor", "tone": "ok" },
-    { "text": "Serviço: deslocação + 1h de mão de obra | IVA 6%", "tone": "ok" },
+    { "text": "A ler a ficha de serviço n.º 5451...", "tone": "info" },
+    { "text": "Cliente: M. Sousa | Carcavelos | Reparação de esquentador", "tone": "ok" },
+    { "text": "Artigos: deslocação + mão de obra | IVA 6% assinalado na ficha", "tone": "ok" },
     { "text": "A procurar o cliente no Moloni...", "tone": "info" },
     { "text": "Cliente encontrado. Ficha atualizada.", "tone": "ok" },
     { "text": "Fatura emitida e enviada por email e WhatsApp", "tone": "ok" },
     { "text": "PDF arquivado na Drive > Faturação > Setembro", "tone": "ok" },
-    { "text": "Ficha 7: valor manuscrito ilegível. Sinalizada para revisão.", "tone": "warn" },
-    { "text": "Google Keep: lista de pendentes atualizada", "tone": "ok" },
+    { "text": "Ficha 5452: taxa de IVA por assinalar. Sinalizada para revisão.", "tone": "warn" },
+    { "text": "Google Keep: 2 fichas a aguardar comprovativo de transferência", "tone": "ok" },
     { "text": "9 fichas tratadas. 1 exceção para a equipa rever.", "tone": "success" }
   ]
 }
 </script>
 
 <!-- ============ 7. INTEGRAÇÃO ============ -->
-<section id="integracao" data-nav="Integração">
+<section class="section-alt" id="integracao" data-nav="Integração">
   <div class="container center">
     <span class="eyebrow">Como se liga</span>
     <h2>Encaixa no que já usam</h2>
@@ -359,7 +479,7 @@
 </script>
 
 <!-- ============ 8. REGRAS E LIMITES ============ -->
-<section class="section-alt" id="limites" data-nav="Limites">
+<section id="limites" data-nav="Limites">
   <div class="container">
     <span class="eyebrow">Limites</span>
     <h2>O que o agente faz e o que nunca faz</h2>
@@ -415,7 +535,7 @@
 </section>
 
 <!-- ============ 9. FASE SEGUINTE ============ -->
-<section id="depois" data-nav="Fase seguinte">
+<section class="section-alt" id="depois" data-nav="Fase seguinte">
   <div class="container">
     <span class="eyebrow">Fase seguinte</span>
     <h2>O que fica para depois</h2>
@@ -450,7 +570,39 @@
   </div>
 </section>
 
-<!-- ============ 10. INVESTIMENTO ============ -->
+<!-- ============ 11. CRONOGRAMA ============ -->
+<section id="prazo" data-nav="Prazo">
+  <div class="container center">
+    <span class="eyebrow">Prazo</span>
+    <h2>Como chegamos lá</h2>
+    <p class="lead">A automação da faturação entra primeiro, porque é a mais simples e tira trabalho já na primeira semana.</p>
+    <div class="timeline" style="margin-top:46px">
+      <div class="tl-step reveal">
+        <div class="tl-dot">🔑</div>
+        <strong>Semana 1</strong>
+        <span>Acessos ao WhatsApp, email, Outlook e Moloni. Arranque da auditoria.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🔎</div>
+        <strong>Semanas 1 a 4</strong>
+        <span>Auditoria às conversas e aos emails. Automação dos relatórios a funcionar.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🤖</div>
+        <strong>Semanas 4 a 7</strong>
+        <span>Construção do agente com as regras reais que a auditoria mostrar.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🚀</div>
+        <strong>Semana 8</strong>
+        <span>Testes convosco, ajustes e arranque com clientes reais.</span>
+      </div>
+    </div>
+    <p class="demo-note">As semanas contam a partir da adjudicação.</p>
+  </div>
+</section>
+
+<!-- ============ 12. INVESTIMENTO (ultima seccao, o preco fecha) ============ -->
 <section class="section-alt" id="investimento" data-nav="Investimento">
   <div class="container">
     <span class="eyebrow">Investimento</span>
@@ -491,38 +643,6 @@
         manutenção e melhoria contínua do serviço.
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ 11. CRONOGRAMA ============ -->
-<section id="prazo" data-nav="Prazo">
-  <div class="container center">
-    <span class="eyebrow">Prazo</span>
-    <h2>Como chegamos lá</h2>
-    <p class="lead">A automação da faturação entra primeiro, porque é a mais simples e tira trabalho já na primeira semana.</p>
-    <div class="timeline" style="margin-top:46px">
-      <div class="tl-step reveal">
-        <div class="tl-dot">🔑</div>
-        <strong>Semana 1</strong>
-        <span>Acessos ao WhatsApp, email, Outlook e Moloni. Arranque da auditoria.</span>
-      </div>
-      <div class="tl-step reveal">
-        <div class="tl-dot">🔎</div>
-        <strong>Semanas 1 a 4</strong>
-        <span>Auditoria às conversas e aos emails. Automação dos relatórios a funcionar.</span>
-      </div>
-      <div class="tl-step reveal">
-        <div class="tl-dot">🤖</div>
-        <strong>Semanas 4 a 7</strong>
-        <span>Construção do agente com as regras reais que a auditoria mostrar.</span>
-      </div>
-      <div class="tl-step reveal">
-        <div class="tl-dot">🚀</div>
-        <strong>Semana 8</strong>
-        <span>Testes convosco, ajustes e arranque com clientes reais.</span>
-      </div>
-    </div>
-    <p class="demo-note">As semanas contam a partir da adjudicação.</p>
   </div>
 </section>
 

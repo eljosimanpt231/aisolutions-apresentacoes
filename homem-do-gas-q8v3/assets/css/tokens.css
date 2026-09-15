@@ -35,6 +35,12 @@
   --warning-hsl: 39 94% 44%;   --warning: hsl(var(--warning-hsl));
   --warning-vivid: hsl(39 94% 52%); /* âmbar exato do site, para fundos e pontos */
 
+  /* ---- Papel da ficha de serviço (mock do impresso deles) ---- */
+  --paper: hsl(44 38% 97%);
+  --paper-line: hsl(207 20% 78%);
+  --paper-ink: hsl(232 58% 44%);   /* esferográfica azul */
+  --paper-bar-hsl: 201 88% 48%;    /* a barra azul do impresso */
+
   /* ---- Chat em modo claro (usado por light-deck.css) ---- */
   --chat-bg: hsl(36 26% 92%);
   --chat-head: hsl(207 20% 95%);
@@ -63,6 +69,7 @@
   --radius-lg: 22px;
   --font-display: 'Sora', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
+  --font-hand: 'Caveat', 'Segoe Script', cursive;
   --container: 1120px;
   --section-pad: clamp(64px, 9vw, 120px);
 }

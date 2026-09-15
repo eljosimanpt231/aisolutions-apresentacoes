@@ -36,15 +36,40 @@ Apresentação de follow-up para a reunião de 16/09/2026, 15h00, com André Fé
    (12h de ecrã, 40 a 50 números/dia, 60 a 100 serviços/semana) e metadados da reunião.
 2. O que ouvimos: 6 cards do diagnóstico da discovery, fecho em itálico.
 3. O que muda: automático vs manual, verde e vermelho.
-4. Âmbito: 2 scope cards com o preço de cada módulo.
-5. **Momento uau:** `chatRaciocinio` com 4 cenários reais.
-6. Back-office: `terminal` da faturação, com 1 linha de exceção.
-7. Integração: `fluxo` de 5 nós, canais por cima.
-8. Limites: faz / deixa por confirmar / nunca faz, mais o aviso das plataformas externas.
-9. Fase seguinte: agentes de voz, orçamentação, relatórios digitais.
-10. Investimento: 4.000 € + 2.000 €, pacote a 5.000 €, mensalidade 400 €.
+4. Âmbito: 2 scope cards, **sem preço**.
+5. **Momento uau 1:** `chatRaciocinio` com 4 cenários reais.
+6. **Momento uau 2:** a ficha de visita técnica 5449 recriada em HTML, ao lado da leitura
+   automática e da fatura Moloni que sai dela.
+7. Back-office: `terminal` do lote diário de fichas, com 1 linha de exceção.
+8. Integração: `fluxo` de 5 nós, canais por cima.
+9. Limites: faz / deixa por confirmar / nunca faz, mais o aviso das plataformas externas.
+10. Fase seguinte: agentes de voz, orçamentação, relatórios digitais.
 11. Cronograma: 4 passos a contar da adjudicação.
-12. Footer. **Sem CTA**, por decisão do comercial: a página é mostrada ao vivo numa reunião.
+12. **Investimento, a fechar:** 4.000 € + 2.000 €, pacote a 5.000 €, mensalidade 400 €.
+13. Footer. **Sem CTA**, por decisão do comercial: a página é mostrada ao vivo numa reunião.
+
+**O preço é a última coisa a aparecer.** Regra do comercial: nenhum valor antes da última
+secção, por isso os cards de âmbito não levam preço.
+
+## A ficha 5449
+
+O André enviou por WhatsApp a fotografia de uma ficha de visita técnica preenchida à mão.
+A secção 6 recria o impresso em HTML (cabeçalho, barra azul de serviços, blocos de campos,
+tabela de artigos, modo de pagamento, data e técnicos), com a letra a `Caveat` sobre papel
+creme e uma rotação de 0,35 graus.
+
+**Do documento real ficam:** o número da ficha, o serviço ("Substituição de Pietro", que é um
+redutor), as quatro linhas de artigos com os valores (37,50 + 60 + 240 + 90 = 427,50 €), o
+IVA a 23% e o total de 525,83 €, a nota manuscrita "A aguardar comprovativo de transferência",
+a marcação de transferência bancária e de factura em nome de outrem, a data e os técnicos.
+
+**Anonimizado, porque o repositório é público:** o nome, a morada, a localidade de faturação,
+o NIF e o email do cliente final da ficha original eram de um condomínio real e de pessoas
+identificáveis. Foram substituídos por dados inventados, e a página di-lo por escrito.
+
+Os dois pormenores que fazem esta secção valer a reunião: a nota manuscrita passa a entrar na
+lista de pendentes em vez de a fatura ser dada como paga, e a taxa de IVA é lida da ficha
+(o impresso tem 23% e 6%), com sinalização para revisão quando não está assinalada.
 
 ## Momento uau: os 4 cenários
 
@@ -74,7 +99,9 @@ confirmado. Confirmar com ele na reunião antes de as nomear em qualquer documen
 ## Regras do comercial aplicadas
 
 - Sem CTA em toda a página.
-- Nunca o preço final com IVA. Todos os valores aparecem como "+ IVA".
+- O preço aparece só na última secção, nunca antes.
+- Nunca o preço final com IVA na nossa proposta. Todos os nossos valores aparecem como "+ IVA".
+  O IVA que aparece na fatura mock da secção 6 é o da faturação deles ao cliente final, não o nosso.
 - Sem casos de estudo nem prova social de outros clientes.
 - Agentes de voz apresentados como algo que vamos ter, remetido para segunda fase.
 - Zero valores financeiros de outros clientes (o repositório é público).
