@@ -229,7 +229,7 @@ function waSim(id, opts) {
     const rows = Array.from(tbl.querySelectorAll('tbody tr'));
     const slide = tbl.closest('.slide') || document;
     let done = false;
-    const play = () => { if (done) return; done = true; rows.forEach((r, i) => setTimeout(() => r.classList.add('visible'), 2600 + i * 180)); };
+    const play = () => { if (done) return; done = true; rows.forEach((r, i) => setTimeout(() => r.classList.add('visible'), 500 + i * 120)); };
     slide.addEventListener('slide:show', play);
     if (slide.classList && slide.classList.contains('active')) play();
   });

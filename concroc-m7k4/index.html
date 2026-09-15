@@ -92,40 +92,39 @@
   </section>
 
   <!-- ====================================================== -->
-  <!-- SEPARADOR 2: OS VOSSOS FICHEIROS (o momento uau)       -->
+  <!-- SEPARADOR 2: OS VOSSOS FICHEIROS (entrada, processo, saída) -->
   <!-- ====================================================== -->
   <section class="tab-panel" id="ficheiros">
 
-    <!-- 4. Estabilidade provada -->
+    <!-- 4. Estabilidade: o que entra -->
     <div class="slide">
       <div class="container">
-        <span class="eyebrow">Estabilidade · já feito</span>
-        <h2>O vosso projeto de estabilidade, lido pela plataforma</h2>
-        <p class="lead">Abrimos o ficheiro EST.5, extraímos os pórticos da folha de vigas e comparámos com o que o Ricardo escreveu à mão na folha Vigas do Excel.</p>
-        <div class="grid-2" style="margin-top:26px; align-items:start">
-          <div>
-            <div class="term" id="estTerm"></div>
-            <p class="demo-note">O que a plataforma faz quando recebe o projeto.</p>
+        <span class="eyebrow">Estabilidade · 1 de 2 · o que entra</span>
+        <h2>Fazem upload do projeto. Isto é o que está lá dentro.</h2>
+        <p class="lead">O ficheiro EST.5 que nos enviaram, tal como o projetista o exportou do CYPECAD. Parece um desenho, mas os quadros são texto. É por isso que se lê sem ninguém olhar para a planta.</p>
+        <div class="stepbar reveal">
+          <div class="step on"><b>1</b><span>Upload do DWFX ou PDF</span></div>
+          <div class="step on"><b>2</b><span>A plataforma lê as 9 folhas, cerca de 90 segundos</span></div>
+          <div class="step"><b>3</b><span>A folha de vigas aparece preenchida para validar</span></div>
+        </div>
+        <div class="grid-2" style="margin-top:22px; align-items:start">
+          <div class="fileview reveal">
+            <div class="fv-head"><span>EST.5_Peças desenhadas.dwfx</span><span>folha 8 de 9 · Pormenor de vigas, cobertura</span></div>
+            <pre class="fv-body">Pórtico 1 | 25 | 40 | 25 | 40 | 3.85 | 2.77 | 4.02 | 2.6
+| 4.256 | 3.062 | 4.444 | 2.874 | 25x40 | 25x40 | 25x40 | 25x40
+| P1 | P2 | B0 | P3 | P4 | 16x1eØ8 a/25 | 398 | 25
+| 12x1eØ8 a/25 | 295 | 10 | 17x1eØ8 a/25 | 433 | 10
+| C=815 | 3Ø12 | 25 | C=855 | 3Ø12 | 25 | C=815 | 3Ø12
+Pórtico 2 | 20 | 40 | 20 | 20 | 20 | 3.1 | 3.52 | 4.67 | 1.95
+| 3.427 | 3.891 | 5.162 | 2.155 | 20x40 | 20x40 | 20x40 | 20x40
+| B1 | P6 | P7 | P8 | B2 | 13x1eØ8 a/25 | 315 | 25
+Pórtico 3 | 20 | 40 | 5.107 | 4.907 | 5.107 | 20x40 | 20x40
+| P40 | P41 | P42 | P43 | ...</pre>
+            <div class="fv-foot">Excerto real do texto contido na folha 8. Cada pórtico traz o nome, a secção, os vãos em metros, os apoios e as armaduras.</div>
           </div>
           <div>
-            <table class="cmp">
-              <thead><tr><th>Pórtico (cobertura)</th><th style="text-align:right">Projeto, soma dos vãos</th><th style="text-align:right">Excel do Ricardo</th><th>Resultado</th></tr></thead>
-              <tbody>
-                <tr class="ok"><td>Pórtico 1</td><td class="num">14,636</td><td class="num">14,636</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 2</td><td class="num">14,635</td><td class="num">14,635</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 3</td><td class="num">15,121</td><td class="num">15,121</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 4</td><td class="num">11,350</td><td class="num">11,350</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 5</td><td class="num">11,570</td><td class="num">11,570</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 6</td><td class="num">7,952</td><td class="num">7,952</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 7</td><td class="num">7,804</td><td class="num">7,804</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 8</td><td class="num">2,385</td><td class="num">2,385</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 9</td><td class="num">14,120</td><td class="num">14,120</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 10</td><td class="num">2,534</td><td class="num">2,534</td><td>igual</td></tr>
-                <tr class="ok"><td>Pórtico 11</td><td class="num">6,620</td><td class="num">6,620</td><td>igual</td></tr>
-                <tr class="chk"><td>Piso 0, pórticos 8, 9 e 14</td><td class="num">soma dos vãos</td><td class="num">valor mais baixo</td><td>confirmar</td></tr>
-              </tbody>
-            </table>
-            <p class="demo-note" style="text-align:left">Comprimentos em metros. Os outros 11 pórticos do piso 0 também batem. Nos 3 marcados, a plataforma aponta a diferença e o Ricardo decide.</p>
+            <div class="term" id="estTerm"></div>
+            <p class="demo-note">O que acontece entre o upload e a folha preenchida.</p>
           </div>
         </div>
       </div>
@@ -141,40 +140,103 @@
         { "text": "Portico 1: 4,256 + 3,062 + 4,444 + 2,874 = 14,636 m", "tone": "ok" },
         { "text": "Portico 2: 3,427 + 3,891 + 5,162 + 2,155 = 14,635 m", "tone": "ok" },
         { "text": "... 9 porticos restantes calculados", "tone": "info" },
-        { "text": "A comparar com o Excel, folha Vigas", "tone": "info" },
+        { "text": "A aplicar as formulas da folha Vigas: betao = Q x C x L x A", "tone": "info" },
+        { "text": "Cofragem = Q x C x (L + A - 0,20 + A), como no vosso Excel", "tone": "info" },
+        { "text": "A comparar com a folha Vigas ja preenchida a mao", "tone": "info" },
         { "text": "Cobertura: 11 de 11 iguais ao milimetro", "tone": "success" },
-        { "text": "Folha 7: teto do piso 0, 14 porticos", "tone": "info" },
-        { "text": "11 iguais. Porticos 8, 9 e 14: soma dos vaos superior ao registado, sinalizados", "tone": "warn" },
-        { "text": "Folha Vigas gerada com as formulas da Concroc. Pronta para validar.", "tone": "success" }
+        { "text": "Folha 7, teto do piso 0: 11 iguais, 3 sinalizados (porticos 8, 9 e 14)", "tone": "warn" },
+        { "text": "Folha Vigas pronta para validar.", "tone": "success" }
       ]
     }
     </script>
 
-    <!-- 5. Arquitetura: o que já se lê -->
+    <!-- 5. Estabilidade: o que sai -->
     <div class="slide section-alt">
       <div class="container">
-        <span class="eyebrow">Arquitetura · o que já se lê</span>
-        <h2>A vossa planta, gerada a partir do DWG</h2>
-        <p class="lead">Sem abrir nenhum programa de CAD. As divisões, as áreas, os vãos e as cotas são texto dentro do ficheiro. A geometria também está lá.</p>
-        <div class="grid-2" style="margin-top:26px; align-items:start">
+        <span class="eyebrow">Estabilidade · 2 de 2 · o que sai</span>
+        <h2>A vossa folha Vigas, preenchida pela plataforma</h2>
+        <p class="lead">As mesmas colunas do vosso Excel, os mesmos cinco campos que hoje escrevem à mão, e o betão e a cofragem calculados com as vossas fórmulas. Cobertura, folha 8.</p>
+        <div style="overflow-x:auto; margin-top:22px">
+          <table class="cmp sheet">
+            <thead><tr><th>Identificação</th><th style="text-align:right">Qtd</th><th style="text-align:right">Comp. (m)</th><th style="text-align:right">Larg. (m)</th><th style="text-align:right">Alt. (m)</th><th style="text-align:right">Betão (m³)</th><th style="text-align:right">Cofragem (m²)</th><th>Validação</th></tr></thead>
+            <tbody>
+              <tr><td>Pórtico 1<small>P1-P2-B0-P3-P4</small></td><td class="num">1</td><td class="num">14,636</td><td class="num">0,25</td><td class="num">0,40</td><td class="num">1,464</td><td class="num">12,44</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 2<small>B1-P6-P7-P8-B2</small></td><td class="num">1</td><td class="num">14,635</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">1,171</td><td class="num">11,71</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 3<small>P40-P41-P42-P43</small></td><td class="num">1</td><td class="num">15,121</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">1,210</td><td class="num">12,10</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 4<small>P33-P47-P35</small></td><td class="num">1</td><td class="num">11,350</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">0,908</td><td class="num">9,08</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 5<small>P14-P40-P29</small></td><td class="num">1</td><td class="num">11,570</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">0,926</td><td class="num">9,26</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 6<small>P16-P38-P43</small></td><td class="num">1</td><td class="num">7,952</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">0,636</td><td class="num">6,36</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 7<small>P32-P45-P44</small></td><td class="num">1</td><td class="num">7,804</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">0,624</td><td class="num">6,24</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 8<small>P43-P39</small></td><td class="num">1</td><td class="num">2,385</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">0,191</td><td class="num">1,91</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 9<small>B0-P7-P36-P37-P39</small></td><td class="num">1</td><td class="num">14,120</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">1,130</td><td class="num">11,30</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 10<small>P39-P44</small></td><td class="num">1</td><td class="num">2,534</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">0,203</td><td class="num">2,03</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr><td>Pórtico 11<small>P44-P46-P47</small></td><td class="num">1</td><td class="num">6,620</td><td class="num">0,20</td><td class="num">0,40</td><td class="num">0,530</td><td class="num">5,30</td><td class="ok">igual ao seu Excel</td></tr>
+              <tr class="total"><td>Total da cobertura</td><td></td><td></td><td></td><td></td><td class="num">8,991</td><td class="num">87,71</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-3" style="margin-top:18px">
+          <div class="card reveal"><h3>Pilares</h3><p class="small">O quadro de pilares da folha 3 traz os 47 pilares agrupados por secção, exatamente como o Ricardo os agrupa no Excel. Transcrição direta. As alturas vêm das cotas de piso.</p></div>
+          <div class="card reveal"><h3>Sapatas e lajes</h3><p class="small">Secção S1: 75x40 do quadro de fundação, igual ao Excel. Comprimentos e dimensões das lajes vêm das cotas da planta.</p></div>
+          <div class="card reveal"><h3>Armaduras</h3><p class="small">O projeto traz a armadura real de cada elemento (3Ø12, estribos Ø8 a/25). Podemos usar a do projeto ou manter as vossas regras de estimativa. Decisão vossa.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Arquitetura: o que entra -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Arquitetura · 1 de 2 · o que entra</span>
+        <h2>O DWG de arquitetura, aberto pela plataforma</h2>
+        <p class="lead">Sem AutoCAD. Da esquerda para a direita: a planta tal como está no ficheiro, e a lista do que a plataforma tirou dela sem ninguém clicar em nada.</p>
+        <div class="grid-2" style="margin-top:22px; align-items:start">
           <figure class="figure reveal">
-            <img src="assets/img/planta-areas.png" alt="Planta da moradia gerada a partir do ficheiro DWG da Concroc, com as divisões e as áreas">
-            <figcaption>Planta do rés-do-chão, gerada do vosso ficheiro. As 15 divisões com área, os vãos V1 a V16 e 231 cotas leem-se diretamente.</figcaption>
+            <img src="assets/img/planta-areas.png" alt="Planta do rés-do-chão gerada a partir do ficheiro DWG da Concroc">
+            <figcaption>001_25-ARQ, rés-do-chão. 62 camadas, unidades em metros. A planta aparece três vezes no ficheiro, como é normal; a plataforma escolhe a útil.</figcaption>
           </figure>
-          <div>
-            <figure class="figure reveal">
-              <img src="assets/img/implantacao.png" alt="Polígono da implantação da moradia com os vértices numerados e a área calculada">
-              <figcaption>Implantação calculada a partir das coordenadas do desenho: <b>397,16 m²</b>. O arquiteto escreveu na planta: <b>397,16 m²</b>.</figcaption>
-            </figure>
-            <div class="pill-row">
-              <span class="pill">Sala + jantar 59,12 m²</span><span class="pill">Cozinha 14,00 m²</span><span class="pill">Garagem 41,40 m²</span><span class="pill">Varandas 108,90 m²</span><span class="pill">Vãos V1 a V16 com largura</span><span class="pill">Paredes de 0,20 e 0,15</span><span class="pill">Legenda: ETICS, alumínio, pedra, telha lusa</span>
+          <div class="fileview reveal">
+            <div class="fv-head"><span>extraído do DWG</span><span>texto e cotas</span></div>
+            <div class="fv-list">
+              <div class="fv-row"><b>15 divisões com área</b><span>Sala + jantar 59,12 · Cozinha 14,00 · Arrumos 14,35 · Lavandaria 6,75 · Quarto 13,80 · Escritório 13,80 · Quarto 15,05 · Circulação 17,45 · Circulação 7,17 · Quarto 14,55 · IS 6,75 · IS 8,90 · Hall 8,50 · Garagem 41,40 · Varandas 108,90</span></div>
+              <div class="fv-row"><b>16 vãos com largura</b><span>V1 2,00 · V2 2,00 · V3 2,00 · V4 2,00 · V5 3,00 · V6 3,00 · V7 1,50 · V8 1,50 · V9 2,00 · V10 2,00 · V11 0,80 · V12 0,80 · V13 0,80 · V14 0,80 · V15 5,26 · V16 2,00</span></div>
+              <div class="fv-row"><b>12 portas interiores</b><span>Contadas na camada PORTA, com o tipo marcado na planta (1, 2 e 3).</span></div>
+              <div class="fv-row"><b>231 cotas</b><span>Paredes de 0,20 e 0,15, vãos, comprimentos de divisão. O valor medido está guardado dentro de cada cota.</span></div>
+              <div class="fv-row"><b>Áreas brutas</b><span>R/C 241,60 · Varandas 108,90 · Garagem 46,70 · Implantação 397,16 (calculada pelas coordenadas: 397,16)</span></div>
+              <div class="fv-row"><b>Legenda de acabamentos</b><span>ETICS pintado, alumínio termolacado branco, vidro liso, revestimento em pedra, telha lusa. Pormenor construtivo: bloco térmico, isolamento, reboco, painel sandwich.</span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 6. O que falta provar -->
+    <!-- 7. Arquitetura: o que sai -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Arquitetura · 2 de 2 · o que sai</span>
+        <h2>A vossa folha de acabamentos: o que já sai preenchido e o que ainda não</h2>
+        <p class="lead">No formato da folha "Medições casa Acabamentos". A verde, o que sai do ficheiro. A cinzento, o que depende da prova de conceito.</p>
+        <div style="overflow-x:auto; margin-top:22px">
+          <table class="cmp sheet">
+            <thead><tr><th>Art.</th><th>Descrição</th><th>Un</th><th style="text-align:right">Quant.</th><th style="text-align:right">Comp.</th><th style="text-align:right">Larg.</th><th style="text-align:right">Alt.</th><th>Origem</th></tr></thead>
+            <tbody>
+              <tr><td>13.1</td><td>Teto falso · Hall</td><td>m²</td><td class="num">1,00</td><td class="num">8,50</td><td></td><td></td><td class="ok">área escrita na planta</td></tr>
+              <tr><td>13.1</td><td>Teto falso · Cozinha</td><td>m²</td><td class="num">1,00</td><td class="num">14,00</td><td></td><td></td><td class="ok">área escrita na planta</td></tr>
+              <tr><td>13.1</td><td>Teto falso · Sala + jantar</td><td>m²</td><td class="num">1,00</td><td class="num">59,12</td><td></td><td></td><td class="ok">área escrita na planta</td></tr>
+              <tr><td>14.2</td><td>Mosaico · Cozinha, com desperdício 1,1</td><td>m²</td><td class="num">1,00</td><td class="num">15,40</td><td></td><td class="num">1,00</td><td class="ok">área × 1,1, o vosso fator</td></tr>
+              <tr><td>16.1</td><td>Caixilharia · V15 (garagem)</td><td>m²</td><td class="num">1,00</td><td class="num">5,26</td><td></td><td class="num">a confirmar</td><td class="ok">largura da cota; altura do alçado</td></tr>
+              <tr><td>16.1</td><td>Caixilharia · V5 e V6</td><td>m²</td><td class="num">2,00</td><td class="num">3,00</td><td></td><td class="num">a confirmar</td><td class="ok">largura da cota; altura do alçado</td></tr>
+              <tr><td>15.1</td><td>Portas interiores</td><td>un</td><td class="num">12,00</td><td class="num">0,80</td><td></td><td class="num">a confirmar</td><td class="ok">contadas na planta; largura dos vãos V11 a V14</td></tr>
+              <tr><td>10.1</td><td>ETICS · paredes exteriores</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">3,00</td><td class="chk">prova de conceito</td></tr>
+              <tr><td>12.1</td><td>Pintura · paredes interiores por divisão</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">prova de conceito</td></tr>
+              <tr><td>12.2</td><td>Azulejo · IS e cozinha, até 2,60, fator 1,2</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">prova de conceito + classificação vossa</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="demo-note" style="text-align:left">Contas rápidas sobre o que já sai: tetos e pavimentos das 15 divisões, os 16 vãos com largura, as portas, a legenda de acabamentos exteriores. O que falta são os perímetros, que é o que hoje o Ricardo mede ao clicar linha a linha.</p>
+      </div>
+    </div>
+
+    <!-- 8. O que falta provar -->
     <div class="slide">
       <div class="container">
         <span class="eyebrow">Arquitetura · o que falta provar</span>
@@ -182,7 +244,7 @@
         <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre. É o único ponto da proposta que entra com um teste antes do compromisso.</p>
         <div class="verdict" style="margin-top:28px">
           <div class="card ok reveal"><div class="tag">Provado</div><h3>Áreas, vãos, cotas, legendas</h3><p>Texto no ficheiro. Extração exata, sem inteligência artificial e sem margem de erro de leitura.</p></div>
-          <div class="card mid reveal"><div class="tag">Prova de conceito, 4 semanas</div><h3>Perímetros de cada divisão</h3><p>É o que o Ricardo hoje faz ao clicar linha a linha. Neste ficheiro as paredes são 242 segmentos soltos: a plataforma tem de os encadear e fechar cada divisão. Verifica-se sozinha: a área calculada tem de bater com a área escrita pelo arquiteto.</p></div>
+          <div class="card mid reveal"><div class="tag">Prova de conceito, 4 semanas</div><h3>Perímetros de cada divisão</h3><p>É o que o Ricardo hoje faz ao clicar linha a linha. Neste ficheiro as paredes são 242 segmentos soltos: a plataforma tem de os encadear e fechar cada divisão. Verifica-se sozinha: a área calculada tem de bater com a área escrita pelo arquiteto, como aconteceu com a implantação.</p></div>
           <div class="card no reveal"><div class="tag">Fica com as pessoas</div><h3>O que é cada parede</h3><p>Nenhum ficheiro diz se uma parede de 0,15 é tijolo ou pladur. A plataforma agrupa por espessura e por legenda, o Ricardo classifica cada grupo de uma vez. Minutos, não horas.</p></div>
         </div>
         <div class="poc-band reveal">

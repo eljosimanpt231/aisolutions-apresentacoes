@@ -46,4 +46,5 @@ Separador Proposta
 As onze linhas da cobertura geradas do projeto dele, iguais ao milímetro ao Excel dele, com os três pórticos do piso 0 marcados "confirmar".
 
 ## Iterações
+- v2 (16/09): o separador "Os vossos ficheiros" passou a entrada, processo e saída, a pedido do Diogo ("assim está muito vago"). Estabilidade: excerto real do texto da folha 8 do DWFX, terminal, e a folha Vigas preenchida com as colunas e as fórmulas dele (betão = Q×C×L×A, cofragem = Q×C×(L+A-0,20+A)). Arquitetura: planta gerada do DWG, lista do que foi extraído (15 divisões com área, 16 vãos com largura, 12 portas, 231 cotas, legenda), e a folha de acabamentos com o que já sai a verde e o que depende da POC a cinzento. Nada inventado: alturas de vãos e portas marcadas "a confirmar".
 - v1: primeira versão completa. A crítica dos screenshots apanhou três defeitos, corrigidos: o card `.diff` do deck.css vinha com texto escuro sobre navy (o componente foi desenhado para decks escuros); as bolhas e o cabeçalho do chat + raciocínio tinham texto escuro sobre fundo escuro pelo mesmo motivo; o paginador centrado tapava tabelas e cards. Correções em `deck-slides.css`, secção "Correções v1".
