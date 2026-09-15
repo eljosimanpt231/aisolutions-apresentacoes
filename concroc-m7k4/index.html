@@ -107,20 +107,30 @@
           <div class="step on"><b>2</b><span>A plataforma lê as 9 folhas, cerca de 90 segundos</span></div>
           <div class="step"><b>3</b><span>A folha de vigas aparece preenchida para validar</span></div>
         </div>
+        <div class="thumbs reveal">
+          <a href="assets/img/est-thumb-1.png" target="_blank"><img src="assets/img/est-thumb-1.png" alt="Folha 1"><span>1 · Índice</span></a>
+          <a href="assets/img/est-fundacoes.png" target="_blank"><img src="assets/img/est-thumb-2.png" alt="Folha 2"><span>2 · Fundações</span></a>
+          <a href="assets/img/est-quadro-pilares.png" target="_blank"><img src="assets/img/est-thumb-3.png" alt="Folha 3"><span>3 · Quadro de pilares</span></a>
+          <a href="assets/img/est-thumb-4.png" target="_blank"><img src="assets/img/est-thumb-4.png" alt="Folha 4"><span>4 · Piso 0</span></a>
+          <a href="assets/img/est-thumb-5.png" target="_blank"><img src="assets/img/est-thumb-5.png" alt="Folha 5"><span>5 · Teto do piso 0</span></a>
+          <a href="assets/img/est-thumb-6.png" target="_blank"><img src="assets/img/est-thumb-6.png" alt="Folha 6"><span>6 · Cobertura</span></a>
+          <a href="assets/img/est-thumb-7.png" target="_blank"><img src="assets/img/est-thumb-7.png" alt="Folha 7"><span>7 · Vigas, piso 0</span></a>
+          <a href="assets/img/est-folha8.png" target="_blank" class="hl"><img src="assets/img/est-thumb-8.png" alt="Folha 8"><span>8 · Vigas, cobertura</span></a>
+          <a href="assets/img/est-thumb-9.png" target="_blank"><img src="assets/img/est-thumb-9.png" alt="Folha 9"><span>9 · Camadas</span></a>
+        </div>
+        <p class="demo-note" style="margin-top:8px">As nove folhas do ficheiro, desenhadas pela plataforma a partir do DWFX. Clique numa para abrir em tamanho real.</p>
         <div class="grid-2" style="margin-top:22px; align-items:start">
-          <div class="fileview reveal">
-            <div class="fv-head"><span>EST.5_Peças desenhadas.dwfx</span><span>folha 8 de 9 · Pormenor de vigas, cobertura</span></div>
-            <pre class="fv-body">Pórtico 1 | 25 | 40 | 25 | 40 | 3.85 | 2.77 | 4.02 | 2.6
+          <div>
+            <figure class="figure reveal">
+              <a href="assets/img/est-portico1.png" target="_blank"><img src="assets/img/est-portico1.png" alt="Folha 8, Pórtico 1, vãos e secção"></a>
+              <figcaption>Folha 8, Pórtico 1. Os vãos <b>4,256 + 3,062 + 4,444 + 2,874 = 14,636 m</b>, a secção <b>25x40</b>, os apoios P1 a P4 e as armaduras 3Ø12. Tudo isto é texto dentro do ficheiro, não é desenho.</figcaption>
+            </figure>
+            <div class="fileview reveal" style="margin-top:14px">
+              <div class="fv-head"><span>o mesmo pórtico, como está guardado no ficheiro</span><span>folha 8</span></div>
+              <pre class="fv-body">Pórtico 1 | 25 | 40 | 3.85 | 2.77 | 4.02 | 2.6
 | 4.256 | 3.062 | 4.444 | 2.874 | 25x40 | 25x40 | 25x40 | 25x40
-| P1 | P2 | B0 | P3 | P4 | 16x1eØ8 a/25 | 398 | 25
-| 12x1eØ8 a/25 | 295 | 10 | 17x1eØ8 a/25 | 433 | 10
-| C=815 | 3Ø12 | 25 | C=855 | 3Ø12 | 25 | C=815 | 3Ø12
-Pórtico 2 | 20 | 40 | 20 | 20 | 20 | 3.1 | 3.52 | 4.67 | 1.95
-| 3.427 | 3.891 | 5.162 | 2.155 | 20x40 | 20x40 | 20x40 | 20x40
-| B1 | P6 | P7 | P8 | B2 | 13x1eØ8 a/25 | 315 | 25
-Pórtico 3 | 20 | 40 | 5.107 | 4.907 | 5.107 | 20x40 | 20x40
-| P40 | P41 | P42 | P43 | ...</pre>
-            <div class="fv-foot">Excerto real do texto contido na folha 8. Cada pórtico traz o nome, a secção, os vãos em metros, os apoios e as armaduras.</div>
+| P1 | P2 | B0 | P3 | P4 | 16x1eØ8 a/25 | C=815 | 3Ø12 | ...</pre>
+            </div>
           </div>
           <div>
             <div class="term" id="estTerm"></div>
@@ -179,6 +189,16 @@ Pórtico 3 | 20 | 40 | 5.107 | 4.907 | 5.107 | 20x40 | 20x40
           <div class="card reveal"><h3>Pilares</h3><p class="small">O quadro de pilares da folha 3 traz os 47 pilares agrupados por secção, exatamente como o Ricardo os agrupa no Excel. Transcrição direta. As alturas vêm das cotas de piso.</p></div>
           <div class="card reveal"><h3>Sapatas e lajes</h3><p class="small">Secção S1: 75x40 do quadro de fundação, igual ao Excel. Comprimentos e dimensões das lajes vêm das cotas da planta.</p></div>
           <div class="card reveal"><h3>Armaduras</h3><p class="small">O projeto traz a armadura real de cada elemento (3Ø12, estribos Ø8 a/25). Podemos usar a do projeto ou manter as vossas regras de estimativa. Decisão vossa.</p></div>
+        </div>
+        <div class="grid-2" style="margin-top:18px; align-items:start">
+          <figure class="figure reveal">
+            <a href="assets/img/est-quadro-pilares.png" target="_blank"><img src="assets/img/est-quadro-pilares.png" alt="Quadro de pilares, folha 3"></a>
+            <figcaption>Folha 3, quadro de pilares. P1 com 25x60 e 10Ø12, P2 e P3 com 25x25 e 4Ø12, o grupo P4=P5=P9=P14=P16=P23=P32=P33. É este quadro que o Ricardo transcreve para a folha Pilares.</figcaption>
+          </figure>
+          <figure class="figure reveal">
+            <a href="assets/img/est-fundacoes.png" target="_blank"><img src="assets/img/est-fundacoes.png" alt="Planta de fundações, folha 2"></a>
+            <figcaption>Folha 2, planta de fundações. As sapatas contínuas S1: 75x40 e as paredes PB1: 25 e PB2: 20 estão etiquetadas em cada troço. Daí saem a largura 0,75 e a altura 0,40 da folha Sapatas.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
