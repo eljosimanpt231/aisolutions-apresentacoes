@@ -1,0 +1,68 @@
+/* ============================================================
+   TOKENS: Homem do Gás × AI Solutions
+   Base: estilo corporativo-azul (claro, fundo branco).
+   Paleta tirada do site homemdogas.com:
+     #0d87c9 azul do logo   -> acento (escurecido para passar AA)
+     #1e344a navy do site   -> marca (títulos, botões, números)
+     #f8a913 âmbar do site  -> semântico de aviso / "por confirmar"
+   Regra de ouro: os componentes NUNCA usam cores diretas.
+   ============================================================ */
+
+:root {
+  /* ---- Marca da lead ---- */
+  --brand-hsl: 209 45% 21%;      /* navy #1e344a do site */
+  --accent-hsl: 201 88% 36%;     /* azul do logo, -6% L para contraste AA sobre branco */
+  --accent-vivid-hsl: 201 88% 42%; /* azul exato do logo, só para preenchimentos e glows */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --accent-vivid: hsl(var(--accent-vivid-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* ---- Superfícies (fundo branco) ---- */
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(205 46% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(205 44% 98%);
+  --border: hsl(207 26% 88%);
+
+  /* ---- Texto ---- */
+  --text: hsl(209 45% 14%);
+  --muted: hsl(209 16% 40%);
+
+  /* ---- Semânticos ---- */
+  --success-hsl: 152 60% 34%;  --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 68% 46%;   --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 39 94% 44%;   --warning: hsl(var(--warning-hsl));
+  --warning-vivid: hsl(39 94% 52%); /* âmbar exato do site, para fundos e pontos */
+
+  /* ---- Chat em modo claro (usado por light-deck.css) ---- */
+  --chat-bg: hsl(36 26% 92%);
+  --chat-head: hsl(207 20% 95%);
+  --chat-in: hsl(0 0% 100%);
+  --chat-out: hsl(111 55% 89%);
+  --chat-line: hsl(207 22% 86%);
+
+  /* ---- WhatsApp mock do base.css (não usado, mantido coerente) ---- */
+  --wa-bg: hsl(36 26% 92%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-out: hsl(111 55% 89%);
+  --wa-text: hsl(209 45% 14%);
+  --wa-green: hsl(172 60% 26%);
+  --wa-green-strong: hsl(160 65% 34%);
+
+  /* ---- Gradientes e sombras (derivados da marca, nunca preto puro) ---- */
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 60%, hsl(var(--accent-hsl) / 0.85));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Homem do Gás | Proposta AI Solutions</title>
+  <meta name="description" content="Agente de IA e automação de faturação para a Homem do Gás. Apresentação personalizada AI Solutions.">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/light-deck.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow glow-1"></div>
+<div class="bg-glow glow-2"></div>
+
+<nav class="dotnav" aria-label="Secções"></nav>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo" data-nav="Início">
+  <div class="container">
+    <div class="brandbar">
+      <img class="logo-img" src="assets/img/logo.png" alt="Homem do Gás">
+      <span class="x">×</span>
+      <span class="ais">AI Solutions</span>
+    </div>
+    <h1>60 serviços por semana.<br>Um telemóvel. <span class="hl">Uma pessoa.</span></h1>
+    <p class="lead" style="margin-top:20px">
+      Hoje a triagem, as marcações e a faturação passam todas por ti. A partir daqui passam a acontecer
+      sozinhas, no WhatsApp e no email, com as tuas regras, o teu Outlook e o teu Moloni.
+    </p>
+    <div class="grid-3" style="margin-top:40px">
+      <div class="card stat-card reveal">
+        <div class="num"><span class="count" data-to="12" data-suffix="h">0</span></div>
+        <div class="desc">De ecrã por dia no WhatsApp Business, medido por ti</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num">40 a <span class="count" data-to="50">0</span></div>
+        <div class="desc">Números diferentes contactados num único dia</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num"><span class="count" data-to="60">0</span> a 100</div>
+        <div class="desc">Serviços por semana, com quatro equipas na rua</div>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span>Para <b>André Félix Quintino</b></span>
+      <span>Reunião de <b>16 de setembro de 2026</b></span>
+      <span>Preparado por <b>Diogo Gonçalves</b>, AI Solutions</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="diagnostico" data-nav="O que ouvimos">
+  <div class="container">
+    <span class="eyebrow">Diagnóstico</span>
+    <h2>O que ouvimos na primeira reunião</h2>
+    <p class="lead">Isto não é um diagnóstico genérico do setor. É o que descreveste a 27 de agosto.</p>
+    <div class="grid-3" style="margin-top:38px">
+      <div class="card dcard reveal">
+        <div class="t">O gargalo</div>
+        <h3>Está tudo dependente de ti</h3>
+        <p>Triagem, marcações, confirmações e cobranças. Doze horas de ecrã por dia e férias que se pagam a trabalhar uma hora todos os dias.</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Email</div>
+        <h3>A resposta sai à noite</h3>
+        <p>Os pedidos de orçamento entram durante o dia e ficam à espera. Muitos recebem apenas um texto a pedir que continuem pelo WhatsApp.</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Confirmações</div>
+        <h3>O cliente liga na mesma</h3>
+        <p>Sem lembrete na véspera, quem tem serviço marcado telefona a confirmar. É mais uma chamada a atender no meio da rua.</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Faturação</div>
+        <h3>Do papel à fatura, à mão</h3>
+        <p>O técnico deixa a ficha no cliente e fotografa para o grupo. O colega passa cerca de uma hora por dia a lançar faturas no Moloni.</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Pendentes</div>
+        <h3>O controlo vive no Google Keep</h3>
+        <p>Quem pagou e quem falta pagar está em notas partilhadas, revistas na reunião de quarta-feira, a par das listagens do Moloni.</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Capacidade</div>
+        <h3>Já recusaste trabalho</h3>
+        <p>Não avançaste com a Vortal por falta de técnicos e, sobretudo, por falta de uma base no escritório que respondesse ao volume.</p>
+      </div>
+    </div>
+    <p class="quote-close">"Não é falta de procura. É o trabalho não caber num dia."</p>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE MUDA ============ -->
+<section id="mudanca" data-nav="O que muda">
+  <div class="container">
+    <span class="eyebrow">O que muda</span>
+    <h2>O mesmo dia, sem o trabalho repetido</h2>
+    <div class="grid-2" style="margin-top:36px">
+      <div class="card card-do reveal">
+        <h3>O que passa a ser automático</h3>
+        <ul class="list-check">
+          <li>Triagem no WhatsApp e no email: equipamento, avaria, zona e fotografia</li>
+          <li>Envio do PDF com honorários e taxa de deslocação</li>
+          <li>Marcação no Outlook, na janela horária e na equipa certa</li>
+          <li>Lembrete ao cliente na véspera, com confirmação</li>
+          <li>Chamada não atendida transformada em conversa de WhatsApp</li>
+          <li>Do relatório no grupo à fatura no Moloni, com arquivo na Drive</li>
+          <li>Lista de faturas pendentes atualizada à segunda-feira</li>
+        </ul>
+      </div>
+      <div class="card card-dont reveal">
+        <h3>O que deixas de fazer à mão</h3>
+        <ul class="list-x">
+          <li>Copiar e colar os textos do Google Keep a cada pedido novo</li>
+          <li>Repetir as mesmas perguntas base 40 a 50 vezes por dia</li>
+          <li>Atender chamadas só para confirmar uma marcação já feita</li>
+          <li>Abrir o email à noite para responder aos pedidos do dia</li>
+          <li>Fazer print screen da marcação para enviar ao cliente</li>
+          <li>Lançar faturas a partir de fotografias, uma hora por dia</li>
+          <li>Ir ao Moloni buscar a lista de quem ainda não pagou</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. ÂMBITO ============ -->
+<section class="section-alt" id="ambito" data-nav="Âmbito">
+  <div class="container">
+    <span class="eyebrow">Âmbito</span>
+    <h2>As duas soluções que avançam já</h2>
+    <p class="lead">Ficou decidido na primeira reunião: começamos pelo mais simples e com mais impacto no teu dia.</p>
+    <div class="scope" style="margin-top:38px">
+      <div class="card scope-card reveal">
+        <div class="head">
+          <div class="n">1</div>
+          <h3>Agente de IA no WhatsApp e no email</h3>
+          <div class="price">4.000 € <i>+ IVA</i></div>
+        </div>
+        <ul>
+          <li>Triagem dos serviços que fazem hoje, com pedido de fotografia e de zona</li>
+          <li>Envio automático do PDF de honorários e da taxa de deslocação</li>
+          <li>Marcação no Outlook por janela horária e por equipa, com as regras de rota</li>
+          <li>Marcações deixadas "por confirmar" quando precisam da tua validação</li>
+          <li>Lembrete na véspera, para o cliente confirmar sem telefonar</li>
+          <li>Chamada não atendida gera mensagem de WhatsApp na hora</li>
+          <li>Auditoria inicial às conversas e aos emails, para o agente aprender como falas</li>
+        </ul>
+      </div>
+      <div class="card scope-card reveal">
+        <div class="head">
+          <div class="n">2</div>
+          <h3>Automação dos relatórios e da faturação</h3>
+          <div class="price">2.000 € <i>+ IVA</i></div>
+        </div>
+        <ul>
+          <li>Leitura das fichas de serviço fotografadas nos grupos das equipas</li>
+          <li>Emissão da fatura no Moloni, com criação da ficha quando o cliente é novo</li>
+          <li>Envio ao cliente por email e por WhatsApp, como já fazem hoje</li>
+          <li>Arquivo do PDF na Drive, organizado por mês</li>
+          <li>Faturas pendentes atualizadas no Google Keep à segunda-feira</li>
+          <li>Exceções sinalizadas para revisão, nunca lançadas às cegas</li>
+          <li>A reunião de quarta-feira passa a rever uma lista já feita</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. DEMO: CHAT + RACIOCÍNIO ============ -->
+<section id="demo" data-nav="O agente">
+  <div class="container center">
+    <span class="eyebrow">O momento importante</span>
+    <h2>O agente a trabalhar, passo a passo</h2>
+    <p class="lead">Quatro situações reais do vosso dia. À esquerda o que o cliente vê, à direita o que o agente está a fazer.</p>
+    <div style="margin-top:36px; text-align:left">
+      <div class="cr" id="hgDemo"></div>
+    </div>
+    <p class="demo-note">Simulação do fluxo que vamos construir. Os nomes e as moradas são inventados.</p>
+  </div>
+</section>
+<script type="application/json" id="hgDemo-config">
+{
+  "agentName": "Homem do Gás",
+  "agentInitials": "HG",
+  "chatStatus": "WhatsApp Business, responde em segundos",
+  "stepMs": 1500,
+  "endPauseMs": 3000,
+  "scenarios": [
+    {
+      "title": "Esquentador avariado",
+      "subtitle": "Do primeiro contacto à marcação no Outlook, sem passar por ti.",
+      "chat": [
+        { "sender": "client", "text": "Boa tarde. O meu esquentador deixou de aquecer a água. Vocês fazem reparações?", "time": "14:12" },
+        { "sender": "agent", "text": "Boa tarde! Fazemos, sim. Para lhe dar a informação certa, pode enviar uma **fotografia do esquentador** com a marca visível? E diga-me também a **zona**, por favor.", "time": "14:12" },
+        { "sender": "client", "text": "[Fotografia] É um Vulcano, em Carcavelos.", "time": "14:15" },
+        { "sender": "agent", "text": "Obrigado. Envio já os nossos **honorários e a taxa de deslocação** em PDF, para saber com o que conta antes de marcarmos.", "time": "14:16" },
+        { "sender": "client", "text": "Recebi, pode marcar. De manhã dá-me mais jeito.", "time": "14:18" },
+        { "sender": "agent", "text": "Marcado: **terça-feira, entre as 9h e as 11h**, em Carcavelos. Vai a equipa que faz esquentadores. Envio um lembrete na véspera para confirmar.", "time": "14:18" }
+      ],
+      "steps": [
+        { "icon": "message", "label": "Recebe o pedido no WhatsApp e identifica o tipo de serviço" },
+        { "icon": "wrench", "label": "Reparação de esquentador: pede fotografia do equipamento e a zona" },
+        { "icon": "id", "label": "Grava o contacto e abre a ficha do cliente" },
+        { "icon": "send", "label": "Envia o PDF de honorários e taxa de deslocação" },
+        { "icon": "calendar", "label": "Consulta o Outlook: equipa de esquentadores livre das 9h às 11h" },
+        { "icon": "check", "label": "Marca em Carcavelos e agenda o lembrete da véspera" }
+      ]
+    },
+    {
+      "title": "Chamada não atendida",
+      "subtitle": "Estavas na rua. O contacto não se perde na mesma.",
+      "chat": [
+        { "sender": "system", "text": "Chamada não atendida às 15:41" },
+        { "sender": "agent", "text": "Boa tarde, é do Homem do Gás. Recebemos a sua chamada e não conseguimos atender. Diga-me por aqui em que podemos ajudar.", "time": "15:42" },
+        { "sender": "client", "text": "Boa tarde. Fizeram-me a inspeção ao gás e deu anomalias. Tenho 60 dias para resolver.", "time": "16:05" },
+        { "sender": "agent", "text": "Podemos tratar disso. Somos entidade instaladora credenciada pela **DGEG** e resolvemos anomalias de inspeção. Pode enviar a **folha da inspeção** com as anomalias assinaladas?", "time": "16:06" },
+        { "sender": "client", "text": "[Documento] Aqui está. É num segundo andar, em Benfica.", "time": "16:14" },
+        { "sender": "agent", "text": "Recebido. Antes da reparação fazemos uma **pré-inspeção** para avaliar o que é preciso. Tenho **quinta-feira, entre as 13h e as 15h**. Fica-lhe bem?", "time": "16:15" },
+        { "sender": "client", "text": "Fica, obrigado.", "time": "16:16" },
+        { "sender": "agent", "text": "Marcado. A folha de inspeção fica na sua ficha, para o técnico levar o material certo.", "time": "16:16" }
+      ],
+      "steps": [
+        { "icon": "phone-missed", "label": "Deteta a chamada não atendida no número da empresa" },
+        { "icon": "send", "label": "Envia a mensagem de recuperação pelo WhatsApp" },
+        { "icon": "ear", "label": "Lê a resposta: anomalias de inspeção, prazo de 60 dias" },
+        { "icon": "shield", "label": "Confirma que é serviço vosso: entidade instaladora DGEG" },
+        { "icon": "list", "label": "Pede a folha de inspeção e guarda-a na ficha do cliente" },
+        { "icon": "calendar", "label": "Procura janela de pré-inspeção no Outlook" },
+        { "icon": "check", "label": "Marca quinta-feira, das 13h às 15h, com lembrete na véspera" }
+      ]
+    },
+    {
+      "title": "Cheiro a gás",
+      "subtitle": "O agente não marca. Põe o cliente em segurança e passa para ti.",
+      "chat": [
+        { "sender": "client", "text": "Está um cheiro forte a gás na cozinha. Podem vir hoje?", "time": "19:47" },
+        { "sender": "agent", "text": "Vamos tratar disto já. Primeiro, por segurança: **feche a torneira de segurança do gás, não ligue nem desligue interruptores e abra as janelas.**", "time": "19:47" },
+        { "sender": "agent", "text": "Não vou marcar esta situação pelo sistema. Vou passar o seu contacto ao André agora mesmo.", "time": "19:48" },
+        { "sender": "client", "text": "Obrigado, já fechei a torneira.", "time": "19:49" },
+        { "sender": "system", "text": "Enviado ao André: urgência, morada e contacto do cliente" },
+        { "sender": "agent", "text": "O André já tem os seus dados. Se o cheiro aumentar, saia de casa e ligue 112.", "time": "19:49" }
+      ],
+      "steps": [
+        { "icon": "alert", "label": "Deteta uma situação de risco: cheiro a gás" },
+        { "icon": "ban", "label": "Regra vossa: fugas e urgências não são marcadas pelo agente" },
+        { "icon": "shield", "label": "Envia as instruções de segurança que aprovarem" },
+        { "icon": "user-cog", "label": "Encaminha a urgência ao André com morada e contacto" },
+        { "icon": "clock", "label": "Fica em espera, sem prometer hora nem preço" }
+      ]
+    },
+    {
+      "title": "Pedido pelo site",
+      "subtitle": "O email deixa de esperar pela noite. E o que já não fazem é filtrado.",
+      "chat": [
+        { "sender": "system", "text": "Pedido recebido às 21:12, pelo formulário do site" },
+        { "sender": "agent", "text": "Boa noite, Sr. Ricardo. Recebemos o seu pedido sobre a **instalação de gás no apartamento** e sobre **ar condicionado**.", "time": "21:13" },
+        { "sender": "agent", "text": "A instalação de gás é connosco. **Ar condicionado já não fazemos**, e prefiro dizer-lho agora a deixá-lo à espera.", "time": "21:13" },
+        { "sender": "client", "text": "Percebido. Então só a instalação de gás.", "time": "21:20" },
+        { "sender": "agent", "text": "Nesse caso o orçamento é feito com levantamento no local. Diga-me a **morada** e se já tem **projeto de gás**.", "time": "21:21" },
+        { "sender": "client", "text": "Tenho projeto. É na Amadora.", "time": "21:24" },
+        { "sender": "agent", "text": "Obrigado. Isto passa para a equipa: o levantamento e o orçamento são feitos por uma pessoa, não por mim. Amanhã de manhã tem resposta.", "time": "21:25" },
+        { "sender": "system", "text": "Entregue para orçamento: instalação com projeto, Amadora" }
+      ],
+      "steps": [
+        { "icon": "globe", "label": "Lê o pedido que entrou pelo formulário do site" },
+        { "icon": "filter", "label": "Separa o que fazem do que já não fazem" },
+        { "icon": "ban", "label": "Ar condicionado: fora do âmbito, dito de imediato" },
+        { "icon": "book", "label": "Instalação de gás: recolhe morada e confirma se há projeto" },
+        { "icon": "brain", "label": "Obras e orçamentos não se fecham no automático" },
+        { "icon": "arrows", "label": "Entrega o pedido qualificado a quem faz o levantamento" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 6. BACK-OFFICE: TERMINAL ============ -->
+<section class="section-alt" id="faturacao" data-nav="Faturação">
+  <div class="container">
+    <span class="eyebrow">Back-office</span>
+    <h2>Do grupo de WhatsApp à fatura emitida</h2>
+    <p class="lead">A hora por dia que o teu colega passa a lançar faturas passa a ser uma lista para rever.</p>
+    <div style="margin-top:34px">
+      <div class="term" id="hgTerm"></div>
+    </div>
+    <div class="alert">
+      <span class="dot"></span>
+      <div>
+        <strong>Nunca erra em silêncio.</strong>
+        <p style="color:var(--muted); font-size:0.95rem; margin-top:4px">
+          Quando a letra da ficha não é legível ou falta um dado, a fatura não sai: fica sinalizada
+          para revisão. O que corre bem segue sozinho, o que é duvidoso espera por uma pessoa.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="hgTerm-config">
+{
+  "title": "faturacao.log",
+  "intervalMs": 700,
+  "lines": [
+    { "text": "Nova fotografia no grupo \"Equipa 2 | Relatórios\"", "tone": "info" },
+    { "text": "A ler a ficha de serviço...", "tone": "info" },
+    { "text": "Cliente: Maria Sousa | Carcavelos | Substituição de redutor", "tone": "ok" },
+    { "text": "Serviço: deslocação + 1h de mão de obra | IVA 6%", "tone": "ok" },
+    { "text": "A procurar o cliente no Moloni...", "tone": "info" },
+    { "text": "Cliente encontrado. Ficha atualizada.", "tone": "ok" },
+    { "text": "Fatura emitida e enviada por email e WhatsApp", "tone": "ok" },
+    { "text": "PDF arquivado na Drive > Faturação > Setembro", "tone": "ok" },
+    { "text": "Ficha 7: valor manuscrito ilegível. Sinalizada para revisão.", "tone": "warn" },
+    { "text": "Google Keep: lista de pendentes atualizada", "tone": "ok" },
+    { "text": "9 fichas tratadas. 1 exceção para a equipa rever.", "tone": "success" }
+  ]
+}
+</script>
+
+<!-- ============ 7. INTEGRAÇÃO ============ -->
+<section id="integracao" data-nav="Integração">
+  <div class="container center">
+    <span class="eyebrow">Como se liga</span>
+    <h2>Encaixa no que já usam</h2>
+    <p class="lead">Nada de mudar de ferramentas. O agente trabalha no Outlook, no Moloni, na Drive e no Keep que já têm.</p>
+    <div style="margin-top:38px">
+      <div class="fluxo" id="hgFluxo"></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="hgFluxo-config">
+{
+  "stepMs": 1900,
+  "channels": [
+    { "icon": "whatsapp", "label": "WhatsApp Business" },
+    { "icon": "send", "label": "Email" },
+    { "icon": "globe", "label": "Site" },
+    { "icon": "phone-missed", "label": "Chamadas não atendidas" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Chega o pedido", "detail": "WhatsApp, email, site ou chamada não atendida.", "tone": "brand" },
+    { "icon": "filter", "title": "Qualifica", "detail": "Serviço, avaria, zona e fotografia do equipamento.", "tone": "teal" },
+    { "icon": "calendar", "title": "Vê o Outlook", "detail": "Janelas horárias, equipa certa e bloqueios já feitos.", "tone": "teal" },
+    { "icon": "check", "title": "Marca e lembra", "detail": "Confirma ao cliente e avisa na véspera.", "tone": "teal" },
+    { "icon": "database", "title": "Fatura no Moloni", "detail": "Do relatório à fatura, à Drive e aos pendentes.", "tone": "brand" }
+  ],
+  "note": "As regras continuam a ser tuas. O agente só executa o que estiver combinado."
+}
+</script>
+
+<!-- ============ 8. REGRAS E LIMITES ============ -->
+<section class="section-alt" id="limites" data-nav="Limites">
+  <div class="container">
+    <span class="eyebrow">Limites</span>
+    <h2>O que o agente faz e o que nunca faz</h2>
+    <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
+    <div class="rules" style="margin-top:38px">
+      <div class="card rule does reveal">
+        <div class="ic">✓</div>
+        <h3>Faz sozinho</h3>
+        <ul>
+          <li>Responde às dúvidas mais comuns dos serviços que fazem</li>
+          <li>Pede fotografia, avaria e zona antes de qualquer marcação</li>
+          <li>Envia o PDF de honorários e a taxa de deslocação</li>
+          <li>Marca reparações e manutenções dentro das regras definidas</li>
+          <li>Confirma, lembra na véspera e reagenda quando o cliente pede</li>
+        </ul>
+      </div>
+      <div class="card rule asks reveal">
+        <div class="ic">?</div>
+        <h3>Deixa por confirmar</h3>
+        <ul>
+          <li>Marcações que partem a rota de uma equipa ao meio</li>
+          <li>Pedidos de obra, instalações e levantamentos no local</li>
+          <li>Condomínios, prédios inteiros e colunas montantes</li>
+          <li>Clientes que pedem condições diferentes das habituais</li>
+          <li>Tudo o que fique fora das janelas horárias normais</li>
+        </ul>
+      </div>
+      <div class="card rule stops reveal">
+        <div class="ic">✕</div>
+        <h3>Nunca faz</h3>
+        <ul>
+          <li>Não marca fugas de gás nem urgências: passa para ti na hora</li>
+          <li>Não fecha obras nem adjudicações</li>
+          <li>Não dá preços fora do PDF que aprovarem</li>
+          <li>Não aceita serviços que já não fazem</li>
+          <li>Não inventa: quando não sabe, encaminha para uma pessoa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert">
+      <span class="dot"></span>
+      <div>
+        <strong>As plataformas externas ficam de fora.</strong>
+        <p style="color:var(--muted); font-size:0.95rem; margin-top:4px">
+          Continuam a ser geridas por ti, tanto as de créditos, como a Zaask e a habitissimo,
+          como as dos parceiros que enviam serviço com prazo para aceitar. São sistemas de
+          terceiros a que não temos acesso. O que entra por aí continua a ser marcado no Outlook
+          como hoje, e o agente trata do cliente a partir do momento em que ele fala convosco.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. FASE SEGUINTE ============ -->
+<section id="depois" data-nav="Fase seguinte">
+  <div class="container">
+    <span class="eyebrow">Fase seguinte</span>
+    <h2>O que fica para depois</h2>
+    <p class="lead">Falámos destes três pontos e fazem sentido. Não fazem parte desta proposta.</p>
+    <div class="grid-3" style="margin-top:38px">
+      <div class="card later reveal">
+        <span class="badge badge-later">Segunda fase</span>
+        <h3>Agentes de voz</h3>
+        <p>
+          Vamos ter atendimento telefónico por IA e já está em testes connosco. Ainda não o
+          comercializamos porque a voz em português não está ao nível que exigimos. Quando estiver,
+          é a peça que fecha o círculo das chamadas.
+        </p>
+      </div>
+      <div class="card later reveal">
+        <span class="badge badge-later">Segunda fase</span>
+        <h3>Orçamentação automática</h3>
+        <p>
+          Mapas de quantidades, preço de material e mão de obra. É um tema complexo e precisa dos
+          vossos orçamentos reais e do que sair da auditoria antes de ser desenhado.
+        </p>
+      </div>
+      <div class="card later reveal">
+        <span class="badge badge-later">Segunda fase</span>
+        <h3>Relatórios digitais</h3>
+        <p>
+          A ficha de serviço preenchida e assinada no telemóvel, em vez do papel. Faz sentido
+          depois de a faturação estar a correr sozinha a partir da ficha atual.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. INVESTIMENTO ============ -->
+<section class="section-alt" id="investimento" data-nav="Investimento">
+  <div class="container">
+    <span class="eyebrow">Investimento</span>
+    <h2>O que custa e o que inclui</h2>
+    <div class="grid-2" style="margin-top:36px">
+      <div class="card price-card reveal">
+        <div class="label">1. Agente de IA</div>
+        <div class="price">4.000 € <small style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--muted)">+ IVA</small></div>
+        <div class="note">WhatsApp, email e marcação no Outlook. Inclui a auditoria inicial às conversas.</div>
+      </div>
+      <div class="card price-card reveal">
+        <div class="label">2. Relatórios e faturação</div>
+        <div class="price">2.000 € <small style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--muted)">+ IVA</small></div>
+        <div class="note">Do relatório fotografado à fatura no Moloni, com arquivo e pendentes.</div>
+      </div>
+    </div>
+
+    <div class="pack reveal">
+      <div>
+        <div class="lbl">As duas soluções em conjunto</div>
+        <h3>Proposta Homem do Gás</h3>
+        <p>
+          Adjudicadas juntas, as duas soluções ficam abaixo da soma das partes. É o âmbito completo
+          desta proposta: agente de IA e automação dos relatórios e da faturação.
+        </p>
+      </div>
+      <div class="pack-num">
+        <div class="pack-was">6.000 €</div>
+        <div class="pack-now">5.000 €<small>+ IVA, implementação completa</small></div>
+        <span class="pack-save">Menos 1.000 €</span>
+      </div>
+    </div>
+
+    <div class="monthly reveal">
+      <div class="v">400 €<small> / mês + IVA</small></div>
+      <div class="d">
+        Manutenção das duas soluções. Inclui tudo: alojamento da solução, os tokens de IA,
+        manutenção e melhoria contínua do serviço.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. CRONOGRAMA ============ -->
+<section id="prazo" data-nav="Prazo">
+  <div class="container center">
+    <span class="eyebrow">Prazo</span>
+    <h2>Como chegamos lá</h2>
+    <p class="lead">A automação da faturação entra primeiro, porque é a mais simples e tira trabalho já na primeira semana.</p>
+    <div class="timeline" style="margin-top:46px">
+      <div class="tl-step reveal">
+        <div class="tl-dot">🔑</div>
+        <strong>Semana 1</strong>
+        <span>Acessos ao WhatsApp, email, Outlook e Moloni. Arranque da auditoria.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🔎</div>
+        <strong>Semanas 1 a 4</strong>
+        <span>Auditoria às conversas e aos emails. Automação dos relatórios a funcionar.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🤖</div>
+        <strong>Semanas 4 a 7</strong>
+        <span>Construção do agente com as regras reais que a auditoria mostrar.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🚀</div>
+        <strong>Semana 8</strong>
+        <span>Testes convosco, ajustes e arranque com clientes reais.</span>
+      </div>
+    </div>
+    <p class="demo-note">As semanas contam a partir da adjudicação.</p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    <img class="logo-img" src="assets/img/logo.png" alt="Homem do Gás">
+    Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a Homem do Gás, Serviços Técnicos
+    <span class="disclaimer">
+      As conversas e os registos desta página são simulações, feitas para demonstrar o funcionamento.
+    </span>
+  </div>
+</footer>
+
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script>
+  chatRaciocinio('hgDemo');
+  fluxo('hgFluxo');
+  terminal('hgTerm');
+
+  /* Dot-nav lateral com scroll-spy */
+  (function () {
+    var secs = [].slice.call(document.querySelectorAll('[data-nav]'));
+    var nav = document.querySelector('.dotnav');
+    if (!nav || !secs.length) return;
+    secs.forEach(function (s) {
+      var a = document.createElement('a');
+      a.href = '#' + s.id;
+      a.className = 'dot';
+      a.innerHTML = '<span>' + s.getAttribute('data-nav') + '</span>';
+      nav.appendChild(a);
+    });
+    var dots = [].slice.call(nav.children);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var i = secs.indexOf(e.target);
+        dots.forEach(function (d, j) { d.classList.toggle('on', i === j); });
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    secs.forEach(function (s) { io.observe(s); });
+  })();
+</script>
+</body>
+</html>
