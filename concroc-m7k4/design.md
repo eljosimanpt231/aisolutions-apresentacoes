@@ -46,4 +46,4 @@ Separador Proposta
 As onze linhas da cobertura geradas do projeto dele, iguais ao milímetro ao Excel dele, com os três pórticos do piso 0 marcados "confirmar".
 
 ## Iterações
-- v1: primeira versão completa.
+- v1: primeira versão completa. A crítica dos screenshots apanhou três defeitos, corrigidos: o card `.diff` do deck.css vinha com texto escuro sobre navy (o componente foi desenhado para decks escuros); as bolhas e o cabeçalho do chat + raciocínio tinham texto escuro sobre fundo escuro pelo mesmo motivo; o paginador centrado tapava tabelas e cards. Correções em `deck-slides.css`, secção "Correções v1".
