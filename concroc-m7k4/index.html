@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Concroc | Plataforma de gestão e orçamentação com IA</title>
+  <meta name="description" content="Proposta AI Solutions para a Concroc: plataforma de obras, orçamentação e medições com inteligência artificial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/deck-slides.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <!-- ============ BARRA SUPERIOR + SEPARADORES ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/img/concroc-logo.png" alt="Concroc">
+      <div><b>CONCROC</b><small>Construção civil, arquitetura e imobiliária</small></div>
+    </div>
+    <nav class="tabs" data-scope="deck">
+      <button class="tab active" data-tab="contexto">Contexto</button>
+      <button class="tab" data-tab="ficheiros">Os vossos ficheiros</button>
+      <button class="tab" data-tab="plataforma">Plataforma</button>
+      <button class="tab" data-tab="assistente">Assistente</button>
+      <button class="tab" data-tab="proposta">Proposta</button>
+    </nav>
+  </header>
+  <div class="progress"></div>
+
+  <main class="deck" id="deck">
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 1: CONTEXTO                                  -->
+  <!-- ====================================================== -->
+  <section class="tab-panel active" id="contexto">
+
+    <!-- 1. Capa -->
+    <div class="slide active">
+      <div class="container center">
+        <span class="kicker">Concroc × AI Solutions · Reunião de 17 de setembro de 2026</span>
+        <h1>A semana de medição<br>passa a <span class="grad">uma manhã de validação.</span></h1>
+        <p class="lead" style="margin:22px auto 0">
+          Uma plataforma feita à medida da Concroc que junta obras, orçamentação, medições, faturas de fornecedores e cotações num só sítio,
+          ligada ao PHC. Construída em cima dos ficheiros reais que o Ricardo nos enviou.
+        </p>
+        <div class="grid-3" style="margin-top:40px; text-align:left">
+          <div class="card stat-card reveal"><div class="num">1 semana</div><div class="desc">O que uma medição de obra custa hoje à equipa</div></div>
+          <div class="card stat-card reveal"><div class="num"><span class="count" data-to="90" data-suffix="%">0</span></div><div class="desc">Das faturas de fornecedores chegam por email e são lançadas à mão no PHC</div></div>
+          <div class="card stat-card reveal"><div class="num">22 em 25</div><div class="desc">Pórticos do projeto de estabilidade reproduzidos ao milímetro a partir do vosso ficheiro</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. O que ouvimos -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que ouvimos</span>
+        <h2>Cinco coisas que o Ricardo nos disse</h2>
+        <div class="grid-3" style="margin-top:30px">
+          <div class="card reveal"><div class="ftile">📐</div><h3>Uma semana por orçamento</h3><p class="small">A medição de quantidades de materiais e mão de obra leva perto de uma semana por obra. Cerca de 60% desse tempo está na estabilidade.</p></div>
+          <div class="card reveal"><div class="ftile">🖥️</div><h3>Dois monitores, um Excel</h3><p class="small">O projeto num ecrã, as tabelas no outro, e a informação transcrita à mão, elemento a elemento.</p></div>
+          <div class="card reveal"><div class="ftile">📧</div><h3>Faturas por email</h3><p class="small">90% das faturas de fornecedores chegam por email e entram no PHC à mão. Os mapas de controlo de obra ficam para trás.</p></div>
+          <div class="card reveal"><div class="ftile">🧱</div><h3>Preços que envelhecem</h3><p class="small">A base de preços de materiais e fornecedores não acompanha as faturas reais. As cotações a subempreiteiros fazem-se à mão.</p></div>
+          <div class="card reveal"><div class="ftile">🧩</div><h3>Ferramentas que não poupam</h3><p class="small">O Togal obrigava a selecionar todos os cantos e a dizer o que é cada parede. No fundo, era o vosso Excel com outra cara.</p></div>
+          <div class="card reveal diff"><div class="ftile">🎯</div><h3>O objetivo</h3><p class="small">Nas palavras do Ricardo: "não queremos ver mais coisas, queremos perder menos tempo à volta dele".</p></div>
+        </div>
+        <p class="quote">O problema não é falta de trabalho. É o tempo que a informação demora a chegar ao sítio certo.</p>
+      </div>
+    </div>
+
+    <!-- 3. Os vossos ficheiros -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Antes de prometer, lemos</span>
+        <h2>Os ficheiros que nos enviaram, já abertos e lidos</h2>
+        <p class="lead">Tudo o que vem a seguir foi construído em cima destes ficheiros. Nada é genérico.</p>
+        <div class="files" style="margin-top:30px">
+          <div class="file reveal"><div class="k">Excel de medições e orçamento</div><div class="n">25 folhas</div><div class="d">Sapatas, lintéis, pilares, muros, vigas, lajes, cimalhas, acabamentos, arranjos exteriores, redes técnicas, base de custos.</div></div>
+          <div class="file reveal"><div class="k">Orçamento em PDF</div><div class="n">33 capítulos</div><div class="d">Toscos, acabamentos, arranjos exteriores e redes técnicas, com as vossas rubricas e descrições.</div></div>
+          <div class="file reveal"><div class="k">Projeto de estabilidade (DWFX)</div><div class="n">9 folhas</div><div class="d">Fundações, quadro de pilares, plantas estruturais, pormenores de vigas. Saído do CYPECAD, com os quadros em texto.</div></div>
+          <div class="file reveal"><div class="k">Projeto de arquitetura (DWG)</div><div class="n">62 camadas</div><div class="d">Paredes, portas, janelas, cotas, tramas, divisões com áreas, vãos numerados, legenda de acabamentos.</div></div>
+        </div>
+        <div class="alert reveal"><span class="dot"></span><div>Todos foram abertos com ferramentas nossas, sem AutoCAD, e o que se segue são resultados reais, não mockups. Onde ainda não sabemos, dizemos.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 2: OS VOSSOS FICHEIROS (o momento uau)       -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="ficheiros">
+
+    <!-- 4. Estabilidade provada -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Estabilidade · já feito</span>
+        <h2>O vosso projeto de estabilidade, lido pela plataforma</h2>
+        <p class="lead">Abrimos o ficheiro EST.5, extraímos os pórticos da folha de vigas e comparámos com o que o Ricardo escreveu à mão na folha Vigas do Excel.</p>
+        <div class="grid-2" style="margin-top:26px; align-items:start">
+          <div>
+            <div class="term" id="estTerm"></div>
+            <p class="demo-note">O que a plataforma faz quando recebe o projeto.</p>
+          </div>
+          <div>
+            <table class="cmp">
+              <thead><tr><th>Pórtico (cobertura)</th><th style="text-align:right">Projeto, soma dos vãos</th><th style="text-align:right">Excel do Ricardo</th><th>Resultado</th></tr></thead>
+              <tbody>
+                <tr class="ok"><td>Pórtico 1</td><td class="num">14,636</td><td class="num">14,636</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 2</td><td class="num">14,635</td><td class="num">14,635</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 3</td><td class="num">15,121</td><td class="num">15,121</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 4</td><td class="num">11,350</td><td class="num">11,350</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 5</td><td class="num">11,570</td><td class="num">11,570</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 6</td><td class="num">7,952</td><td class="num">7,952</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 7</td><td class="num">7,804</td><td class="num">7,804</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 8</td><td class="num">2,385</td><td class="num">2,385</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 9</td><td class="num">14,120</td><td class="num">14,120</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 10</td><td class="num">2,534</td><td class="num">2,534</td><td>igual</td></tr>
+                <tr class="ok"><td>Pórtico 11</td><td class="num">6,620</td><td class="num">6,620</td><td>igual</td></tr>
+                <tr class="chk"><td>Piso 0, pórticos 8, 9 e 14</td><td class="num">soma dos vãos</td><td class="num">valor mais baixo</td><td>confirmar</td></tr>
+              </tbody>
+            </table>
+            <p class="demo-note" style="text-align:left">Comprimentos em metros. Os outros 11 pórticos do piso 0 também batem. Nos 3 marcados, a plataforma aponta a diferença e o Ricardo decide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="application/json" id="estTerm-config">
+    {
+      "title": "medicoes-estabilidade.log",
+      "intervalMs": 520,
+      "lines": [
+        { "text": "A abrir EST.5_Pecas desenhadas.dwfx (9 folhas, CYPECAD)", "tone": "info" },
+        { "text": "Folha 8: Pormenor de vigas, planta da cobertura", "tone": "info" },
+        { "text": "11 porticos encontrados, seccoes 25x40 e 20x40", "tone": "ok" },
+        { "text": "Portico 1: 4,256 + 3,062 + 4,444 + 2,874 = 14,636 m", "tone": "ok" },
+        { "text": "Portico 2: 3,427 + 3,891 + 5,162 + 2,155 = 14,635 m", "tone": "ok" },
+        { "text": "... 9 porticos restantes calculados", "tone": "info" },
+        { "text": "A comparar com o Excel, folha Vigas", "tone": "info" },
+        { "text": "Cobertura: 11 de 11 iguais ao milimetro", "tone": "success" },
+        { "text": "Folha 7: teto do piso 0, 14 porticos", "tone": "info" },
+        { "text": "11 iguais. Porticos 8, 9 e 14: soma dos vaos superior ao registado, sinalizados", "tone": "warn" },
+        { "text": "Folha Vigas gerada com as formulas da Concroc. Pronta para validar.", "tone": "success" }
+      ]
+    }
+    </script>
+
+    <!-- 5. Arquitetura: o que já se lê -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Arquitetura · o que já se lê</span>
+        <h2>A vossa planta, gerada a partir do DWG</h2>
+        <p class="lead">Sem abrir nenhum programa de CAD. As divisões, as áreas, os vãos e as cotas são texto dentro do ficheiro. A geometria também está lá.</p>
+        <div class="grid-2" style="margin-top:26px; align-items:start">
+          <figure class="figure reveal">
+            <img src="assets/img/planta-areas.png" alt="Planta da moradia gerada a partir do ficheiro DWG da Concroc, com as divisões e as áreas">
+            <figcaption>Planta do rés-do-chão, gerada do vosso ficheiro. As 15 divisões com área, os vãos V1 a V16 e 231 cotas leem-se diretamente.</figcaption>
+          </figure>
+          <div>
+            <figure class="figure reveal">
+              <img src="assets/img/implantacao.png" alt="Polígono da implantação da moradia com os vértices numerados e a área calculada">
+              <figcaption>Implantação calculada a partir das coordenadas do desenho: <b>397,16 m²</b>. O arquiteto escreveu na planta: <b>397,16 m²</b>.</figcaption>
+            </figure>
+            <div class="pill-row">
+              <span class="pill">Sala + jantar 59,12 m²</span><span class="pill">Cozinha 14,00 m²</span><span class="pill">Garagem 41,40 m²</span><span class="pill">Varandas 108,90 m²</span><span class="pill">Vãos V1 a V16 com largura</span><span class="pill">Paredes de 0,20 e 0,15</span><span class="pill">Legenda: ETICS, alumínio, pedra, telha lusa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. O que falta provar -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Arquitetura · o que falta provar</span>
+        <h2>Onde somos frontais: duas coisas ainda não estão provadas</h2>
+        <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre. É o único ponto da proposta que entra com um teste antes do compromisso.</p>
+        <div class="verdict" style="margin-top:28px">
+          <div class="card ok reveal"><div class="tag">Provado</div><h3>Áreas, vãos, cotas, legendas</h3><p>Texto no ficheiro. Extração exata, sem inteligência artificial e sem margem de erro de leitura.</p></div>
+          <div class="card mid reveal"><div class="tag">Prova de conceito, 4 semanas</div><h3>Perímetros de cada divisão</h3><p>É o que o Ricardo hoje faz ao clicar linha a linha. Neste ficheiro as paredes são 242 segmentos soltos: a plataforma tem de os encadear e fechar cada divisão. Verifica-se sozinha: a área calculada tem de bater com a área escrita pelo arquiteto.</p></div>
+          <div class="card no reveal"><div class="tag">Fica com as pessoas</div><h3>O que é cada parede</h3><p>Nenhum ficheiro diz se uma parede de 0,15 é tijolo ou pladur. A plataforma agrupa por espessura e por legenda, o Ricardo classifica cada grupo de uma vez. Minutos, não horas.</p></div>
+        </div>
+        <div class="poc-band reveal">
+          <b>Critérios escritos antes de começar:</b>
+          <span>áreas iguais às do arquiteto</span><span>·</span><span>90% dos perímetros a menos de 3% dos vossos</span><span>·</span><span>todos os vãos com largura</span><span>·</span><span>validação de um projeto em menos de duas horas</span><span>·</span><span>em pelo menos dois de três projetos, um deles de outro arquiteto</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 3: PLATAFORMA                                -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="plataforma">
+
+    <!-- 7. Mockup -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">A plataforma</span>
+        <h2>Um só sítio para as obras, o orçamento e as faturas</h2>
+        <p class="lead">Esboço navegável. Clique em Obra, Faturas ou Orçamento. O aspeto final é desenhado convosco.</p>
+        <div class="app reveal" style="margin-top:24px">
+          <div class="app-top"><i></i><i></i><i></i><span class="url">plataforma.concroc.pt</span></div>
+          <div class="app-body">
+            <aside class="app-side">
+              <div class="logo">CONCROC</div>
+              <div class="nav">
+                <button class="active" data-view="vObra">Obras</button>
+                <button data-view="vFat">Faturas</button>
+                <button data-view="vOrc">Orçamentos</button>
+                <button data-view="vMed">Medições</button>
+                <button data-view="vCot">Cotações</button>
+                <button data-view="vAut">Autos</button>
+              </div>
+            </aside>
+            <div class="app-main">
+              <div class="view active" id="vObra">
+                <h4>Obra 2026-464 · Moradias Curvac</h4>
+                <div class="sub">Tarefas encadeadas conforme a vossa sequência de obra. Cada uma abre a seguinte.</div>
+                <div class="task"><span class="st done">✓</span>Licença de construção pedida à Câmara<span class="who">Catarina</span></div>
+                <div class="task"><span class="st done">✓</span>Comunicação de abertura de estaleiro à ACT<span class="who">Catarina</span></div>
+                <div class="task"><span class="st done">✓</span>Pedido de ramal de água<span class="who">João</span></div>
+                <div class="task"><span class="st todo">!</span>Marcação da obra e implantação<span class="who">Ricardo · até sexta</span></div>
+                <div class="task"><span class="st lock">○</span>Pedido de cotação a subempreiteiros de cofragem<span class="who">abre depois da marcação</span></div>
+                <div class="task"><span class="st lock">○</span>Betão de limpeza e sapatas<span class="who">aguarda</span></div>
+              </div>
+              <div class="view" id="vFat">
+                <h4>Faturas recebidas por email · hoje</h4>
+                <div class="sub">A plataforma leu o email, extraiu os dados e sugeriu a obra. Um clique valida e lança no PHC.</div>
+                <div class="inv"><span class="sup">Lenobetão</span><span>FT 2026/1187</span><span class="amt">3.412,50 €</span><span class="obra">Obra 2026-464</span><button class="btn btn-primary">Validar</button></div>
+                <div class="inv"><span class="sup">Major, varão A500</span><span>FT 2026/0932</span><span class="amt">2.118,00 €</span><span class="obra">Obra 2026-433</span><button class="btn btn-primary">Validar</button></div>
+                <div class="inv"><span class="sup">Isoplak</span><span>FT 2026/4471</span><span class="amt">986,20 €</span><span class="obra warn">Obra por confirmar</span><button class="btn btn-ghost">Rever</button></div>
+                <div class="mini-alert">1 fatura sem obra reconhecida: a plataforma não adivinha, pede. Valores ilustrativos.</div>
+              </div>
+              <div class="view" id="vOrc">
+                <h4>Orçamento · Capítulo 3, Betão</h4>
+                <div class="sub">As vossas rubricas, com as quantidades vindas das medições e o preço histórico por fornecedor.</div>
+                <table class="rub">
+                  <thead><tr><th>Art.</th><th>Rubrica</th><th style="text-align:right">Quant.</th><th style="text-align:right">Preço</th><th>Origem</th></tr></thead>
+                  <tbody>
+                    <tr><td>3.1</td><td>Betão de limpeza C16/20, 10 cm</td><td class="num">26,72 m³</td><td class="num">66,25 €</td><td><span class="new">fatura de julho</span></td></tr>
+                    <tr><td>3.2.1</td><td>Betão C30/37 hidrofugado, sapatas</td><td class="num">89,40 m³</td><td class="num">77,75 €</td><td><span class="new">cotação aceite</span></td></tr>
+                    <tr><td>5.1</td><td>Varão A500, Ø12</td><td class="num">4.210 kg</td><td class="num">1,16 €</td><td><span class="old">preço de 2022, rever</span></td></tr>
+                    <tr><td>6.1</td><td>Bloco térmico de 25</td><td class="num">1.980 un</td><td class="num">1,07 €</td><td><span class="old">preço de 2022, rever</span></td></tr>
+                  </tbody>
+                </table>
+                <div class="mini-alert">2 rubricas com preço antigo. A plataforma propõe o último preço faturado; a decisão é vossa. Valores ilustrativos.</div>
+              </div>
+              <div class="view" id="vMed">
+                <h4>Medições · Estabilidade</h4>
+                <div class="sub">Os cinco campos por elemento vêm do projeto. As fórmulas de betão, cofragem e aço são as vossas.</div>
+                <div class="task"><span class="st done">✓</span>Sapatas: 6 linhas, S1 75x40, comprimentos das cotas<span class="who">validar</span></div>
+                <div class="task"><span class="st done">✓</span>Pilares: 47 pilares em 17 grupos, do quadro de pilares<span class="who">validar</span></div>
+                <div class="task"><span class="st done">✓</span>Vigas: 25 pórticos, 22 iguais ao Excel<span class="who">3 a confirmar</span></div>
+                <div class="task"><span class="st todo">!</span>Lajes: La1 a La9, dimensões das plantas<span class="who">validar</span></div>
+              </div>
+              <div class="view" id="vCot">
+                <h4>Cotações · Cofragem, obra 2026-464</h4>
+                <div class="sub">Pedidos enviados por email a três fornecedores. As respostas foram lidas e postas lado a lado.</div>
+                <div class="inv"><span class="sup">Fornecedor A</span><span>painéis + prumos + vigas</span><span class="amt">100 %</span><span class="obra">completa</span><span></span></div>
+                <div class="inv"><span class="sup">Fornecedor B</span><span>painéis + vigas, sem prumos</span><span class="amt">94 %</span><span class="obra warn">incompleta</span><span></span></div>
+                <div class="inv"><span class="sup">Fornecedor C</span><span>painéis + prumos + vigas</span><span class="amt">106 %</span><span class="obra">completa</span><span></span></div>
+                <div class="mini-alert">A plataforma compara âmbito e preço. Quem adjudica é o Ricardo. Valores ilustrativos, em percentagem da proposta mais baixa.</div>
+              </div>
+              <div class="view" id="vAut">
+                <h4>Autos de medição · obra 2026-433</h4>
+                <div class="sub">O orçamento adjudicado segue para o PHC pela API. As percentagens executadas marcam-se aqui, e o PHC gera o auto e a fatura como hoje.</div>
+                <div class="task"><span class="st done">✓</span>Movimento de terras: 100% executado<span class="who">auto 1</span></div>
+                <div class="task"><span class="st done">✓</span>Betão e cofragem: 60% executado<span class="who">auto 2</span></div>
+                <div class="task"><span class="st todo">!</span>Alvenarias: 30% neste período<span class="who">auto 3, a marcar</span></div>
+                <div class="task"><span class="st lock">○</span>Cobertura: por iniciar<span class="who"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Fluxo das faturas -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Faturas de fornecedores</span>
+        <h2>Do email ao PHC, com um clique vosso no meio</h2>
+        <p class="lead">O fluxo que o Ricardo pediu: receção, leitura, fornecedor, obra, validação por uma pessoa, integração no PHC.</p>
+        <div class="fluxo" id="fatFluxo" style="margin-top:26px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="fatFluxo-config">
+    {
+      "stepMs": 1700,
+      "channels": [
+        { "icon": "message", "label": "Email geral@concroc.pt" },
+        { "icon": "whatsapp", "label": "Fotografia por WhatsApp" }
+      ],
+      "nodes": [
+        { "icon": "message", "title": "Fatura recebida", "detail": "Chega por email ou fotografia. Nada se perde na caixa de entrada.", "tone": "brand" },
+        { "icon": "search", "title": "Leitura e extração", "detail": "Fornecedor, número, data, linhas, IVA e vencimento.", "tone": "teal" },
+        { "icon": "database", "title": "Obra sugerida", "detail": "Cruza com as encomendas e o histórico daquele fornecedor.", "tone": "teal" },
+        { "icon": "check", "title": "Validação num clique", "detail": "Uma pessoa confirma. Dúvidas ficam sinalizadas, nunca em silêncio.", "tone": "teal" },
+        { "icon": "arrows", "title": "PHC e mapas de obra", "detail": "Lançada no PHC pela API. Mapas de controlo e saldo do fornecedor atualizados.", "tone": "brand" }
+      ],
+      "note": "O mesmo motor lê as propostas dos subempreiteiros e monta o mapa comparativo."
+    }
+    </script>
+
+    <!-- 9. Integrações e segurança -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Integrações e segurança</span>
+        <h2>Ligado ao que já têm. Os dados são vossos.</h2>
+        <p class="lead">Respostas ao ponto 16 da vossa lista, por escrito, para não ficarem para depois.</p>
+        <div class="sec" style="margin-top:26px">
+          <div class="card reveal"><h3>PHC</h3><p>Pela API que já têm desenvolvida: clientes, fornecedores, artigos, faturação, pagamentos e conta corrente. Se faltar um ponto de ligação, identifica-se antes de arrancar.</p></div>
+          <div class="card reveal"><h3>Projetos e ficheiros</h3><p>DWG, DWFX e PDF dos projetistas, os vossos Excel e os documentos de cada obra, arquivados por obra.</p></div>
+          <div class="card reveal"><h3>Fornecedores e email</h3><p>Pedidos de cotação e faturas pelo email da empresa. Sem portal de fornecedores enquanto não se justificar.</p></div>
+          <div class="card reveal"><h3>Alojamento e cópias</h3><p>Servidores na União Europeia, cópias de segurança diárias, recuperação em caso de falha. Os dados pertencem à Concroc.</p></div>
+          <div class="card reveal"><h3>Acessos</h3><p>Perfis por pessoa, níveis de acesso, registo de operações. Entrada com as contas Microsoft 365 da empresa (Entra ID).</p></div>
+          <div class="card reveal"><h3>Saída limpa</h3><p>RGPD cumprido. Se a relação terminar, toda a informação é exportada em formatos abertos.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. O que fica com as pessoas -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Regras</span>
+        <h2>A plataforma aponta. As pessoas decidem.</h2>
+        <div class="people" style="margin-top:26px">
+          <div class="card card-do reveal">
+            <h3>O que passa a ser automático</h3>
+            <ul class="list-check">
+              <li>Ler os projetos e preencher as folhas de medição com as vossas fórmulas</li>
+              <li>Ler as faturas de fornecedores e sugerir a obra</li>
+              <li>Atualizar preços de materiais a partir das faturas reais</li>
+              <li>Enviar pedidos de cotação e montar o mapa comparativo</li>
+              <li>Atualizar os mapas de controlo de obra e os saldos por fornecedor</li>
+              <li>Abrir a tarefa seguinte quando a anterior fecha</li>
+            </ul>
+          </div>
+          <div class="card card-dont reveal">
+            <h3>O que fica sempre com a equipa</h3>
+            <ul class="list-x">
+              <li>Validar cada medição antes de entrar no orçamento</li>
+              <li>Classificar o que é cada parede e cada acabamento</li>
+              <li>Aprovar cada fatura antes de entrar no PHC</li>
+              <li>Adjudicar a subempreiteiros e fornecedores</li>
+              <li>Definir margens e fechar o orçamento final</li>
+              <li>Decidir as percentagens dos autos de medição</li>
+            </ul>
+          </div>
+        </div>
+        <p class="quote">Nunca erra em silêncio: tudo o que a plataforma não tem a certeza fica sinalizado para uma pessoa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 4: ASSISTENTE                                -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="assistente">
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Assistente sobre a informação da empresa · fase 4</span>
+        <h2>Falar com a plataforma, por voz ou por texto</h2>
+        <p class="lead">Três situações reais: à saída de uma obra, a preparar um orçamento, e uma em que o assistente recusa decidir sozinho.</p>
+        <div class="cr" id="ccDemo" style="margin-top:26px"></div>
+        <p class="demo-note">Os valores nestes exemplos são ilustrativos. O assistente usa sempre os vossos dados reais.</p>
+      </div>
+    </div>
+    <script type="application/json" id="ccDemo-config">
+    {
+      "agentName": "Assistente Concroc",
+      "agentInitials": "CC",
+      "chatStatus": "Na plataforma, por voz ou texto",
+      "stepMs": 1500,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "À saída da obra",
+          "subtitle": "Uma mensagem de voz no carro, e as faturas ficam tratadas.",
+          "chat": [
+            { "sender": "client", "text": "🎤 Acabei de sair da obra 464. Chegaram faturas da Lenobetão por email, valida e lança na obra.", "time": "17:42" },
+            { "sender": "agent", "text": "Encontrei **3 faturas da Lenobetão** recebidas hoje, total de 3.412,50 €. Todas com referência à encomenda da obra **2026-464, Moradias Curvac**. Confirma a alocação?", "time": "17:42" },
+            { "sender": "client", "text": "Sim, para a 464.", "time": "17:43" },
+            { "sender": "agent", "text": "Feito. 3 faturas lançadas na obra 464, mapa de controlo atualizado, saldo com a Lenobetão abatido. **1 linha ficou para rever**: um artigo sem correspondência na vossa lista de materiais.", "time": "17:43" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Transcreve a mensagem de voz e identifica a obra 464" },
+            { "icon": "search", "label": "Procura faturas da Lenobetão recebidas hoje por email" },
+            { "icon": "database", "label": "Cruza com a encomenda e o histórico do fornecedor" },
+            { "icon": "check", "label": "Lança no PHC e atualiza os mapas de obra" },
+            { "icon": "alert", "label": "Sinaliza 1 artigo desconhecido para revisão humana" }
+          ]
+        },
+        {
+          "title": "Preço histórico",
+          "subtitle": "A pergunta que hoje obriga a abrir três Excel.",
+          "chat": [
+            { "sender": "client", "text": "Que preço usámos no bloco térmico de 25 nas últimas três obras?", "time": "10:15" },
+            { "sender": "agent", "text": "Nas últimas três obras: **1,07 €, 1,07 € e 1,12 €** por unidade, fornecedor Isoplak. Atenção: a base de orçamentação ainda tem o preço de **dezembro de 2022**. A última fatura, de julho, veio a **1,19 €**.", "time": "10:15" },
+            { "sender": "client", "text": "Atualiza a rubrica com o preço da última fatura.", "time": "10:16" },
+            { "sender": "agent", "text": "Atualizado para 1,19 € com o histórico guardado. As **4 rubricas** que usam bloco de 25 foram recalculadas no orçamento em curso. Nada foi enviado ao cliente.", "time": "10:16" }
+          ],
+          "steps": [
+            { "icon": "search", "label": "Procura a rubrica nas obras orçamentadas" },
+            { "icon": "database", "label": "Lê os preços usados e as faturas reais do fornecedor" },
+            { "icon": "alert", "label": "Deteta preço com quase 4 anos na base" },
+            { "icon": "check", "label": "Atualiza a rubrica e recalcula, sem enviar nada" }
+          ]
+        },
+        {
+          "title": "Não adjudica sozinho",
+          "subtitle": "O assistente recusa decidir e prepara a decisão.",
+          "chat": [
+            { "sender": "client", "text": "Adjudica a cofragem da 464 ao mais barato.", "time": "15:02" },
+            { "sender": "agent", "text": "Não adjudico sozinho. Preparei o **mapa comparativo** com as 3 propostas: a mais barata **não inclui prumos**, a segunda inclui tudo e fica 6% acima, a terceira fica 12% acima. A decisão é do Ricardo. Qual escolhe?", "time": "15:02" },
+            { "sender": "client", "text": "A segunda.", "time": "15:05" },
+            { "sender": "agent", "text": "Registado: adjudicação à proposta 2. Preparei o **email de confirmação** ao fornecedor para o Ricardo rever antes de sair, e a obra 464 ficou atualizada.", "time": "15:05" }
+          ],
+          "steps": [
+            { "icon": "list", "label": "Reúne as 3 propostas recebidas por email" },
+            { "icon": "brain", "label": "Compara âmbito, não só preço: prumos em falta" },
+            { "icon": "ban", "label": "Recusa adjudicar sem decisão humana" },
+            { "icon": "user-cog", "label": "Pede a escolha ao Ricardo" },
+            { "icon": "send", "label": "Prepara o email para revisão, nunca envia sozinho" }
+          ]
+        }
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 5: PROPOSTA                                  -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="proposta">
+
+    <!-- 12. Fases -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Como se constrói</span>
+        <h2>Quatro fases, do chão ao retorno</h2>
+        <p class="lead">Cada fase entra em produção e é aceite antes da seguinte. Os módulos vão ficando disponíveis à medida que ficam prontos, como o Ricardo preferia.</p>
+        <div class="phase" style="margin-top:26px">
+          <div class="card reveal"><div class="n">Fase 1 · o chão</div><h3>Obras, faturas e acessos</h3><ul><li>Obras e tarefas encadeadas</li><li>Arquivo por obra</li><li>Faturas de fornecedores</li><li>Integração PHC</li><li>Acessos, perfis e segurança</li></ul></div>
+          <div class="card reveal"><div class="n">Fase 2 · o retorno</div><h3>Medições e orçamento</h3><ul><li>Medições de estabilidade</li><li>Orçamentação com histórico e preços</li><li>Cotações e mapa comparativo</li><li>Autos de medição via PHC</li></ul></div>
+          <div class="card reveal"><div class="n">Fase 3 · financeiro</div><h3>Cobranças e visão</h3><ul><li>Cobranças e dívida por cliente e obra</li><li>Dashboards de gestão</li><li>Perguntas em linguagem natural aos dados</li></ul></div>
+          <div class="card reveal"><div class="n">Fase 4 · camada de IA</div><h3>Assistente e documentos</h3><ul><li>Assistente sobre a empresa, por voz e texto</li><li>Automatização documental</li><li>Diário de obra</li><li>Módulo de arquitetura, se a prova passar</li><li>Formação da equipa</li></ul></div>
+        </div>
+        <div class="poc-band reveal"><b>Em paralelo, desde a semana 1:</b><span>prova de conceito de medições de arquitetura com dois ou três projetos vossos, critérios escritos, decisão ao fim de quatro semanas. Se não passar, o esforço vai para outros módulos e o valor não muda.</span></div>
+      </div>
+    </div>
+
+    <!-- 13. Investimento -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Investimento</span>
+        <h2>O valor que ouviram na reunião. Sem surpresas.</h2>
+        <div class="grid-3" style="margin-top:26px; align-items:stretch">
+          <div class="card price-card highlight reveal">
+            <span class="pin">Plataforma completa</span>
+            <div class="label">Implementação, fases 1 a 4</div>
+            <div class="price">45.000 €<small>+ IVA</small></div>
+            <div class="note">Desenvolvimento à medida, integração PHC, prova de conceito de arquitetura e formação da equipa incluídas.</div>
+            <ul class="tranches">
+              <li><span>Na adjudicação</span><b>30%</b></li>
+              <li><span>Fase 1 em produção</span><b>30%</b></li>
+              <li><span>Fase 2 em produção</span><b>25%</b></li>
+              <li><span>Aceitação final, um mês depois</span><b>15%</b></li>
+            </ul>
+          </div>
+          <div class="card price-card reveal">
+            <div class="label">Manutenção e evolução, 24 meses</div>
+            <div class="price two">700 €<small>+ IVA / mês, 1.º ano</small><br>500 €<small>+ IVA / mês, 2.º ano</small></div>
+            <div class="note">Alojamento na União Europeia, cópias de segurança, suporte, correções e evolução. Consumo dos modelos de inteligência artificial incluído até um teto mensal, definido antes do arranque.</div>
+            <ul class="price-list">
+              <li>Faturado como subscrição</li>
+              <li>Primeiro ano com mais evolução, segundo ano de manutenção</li>
+              <li>Sem custos por utilizador</li>
+            </ul>
+          </div>
+          <div class="card price-card reveal">
+            <div class="label">Enquadramento</div>
+            <div class="price two">Duas linhas<small>separadas</small></div>
+            <div class="note">A implementação e a subscrição faturam-se em linhas distintas, para que o vosso consultor as enquadre nas rubricas certas. Confirmamos convosco antes de emitir a primeira fatura.</div>
+            <ul class="price-list">
+              <li>Prazo do núcleo: 2,5 a 3 meses</li>
+              <li>Âmbito e aceitação escritos por fase</li>
+              <li>Desenvolvimentos do parceiro PHC, se necessários, ficam do lado da Concroc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14. Fase seguinte -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Fase seguinte</span>
+        <h2>Falámos, fica registado, não faz parte desta proposta</h2>
+        <div class="sec" style="margin-top:26px">
+          <div class="card reveal"><h3>Agentes de voz</h3><p>Atendimento telefónico por inteligência artificial. A AI Solutions vai tê-los em breve; entram numa segunda fase, quando a plataforma estiver em produção.</p></div>
+          <div class="card reveal"><h3>Ligação bancária</h3><p>Importação automática de movimentos e conciliação com o PHC. Fica para depois, por decisão conjunta.</p></div>
+          <div class="card reveal"><h3>Portal de fornecedores</h3><p>Só se o email deixar de chegar. Enquanto chegar, não se justifica.</p></div>
+          <div class="card reveal"><h3>Simulador no website</h3><p>Estimativa indicativa para potenciais clientes. Pequeno, mas depende da tabela de preços que definirem para o público.</p></div>
+          <div class="card reveal"><h3>Listagem do CYPECAD</h3><p>Quando os projetistas cederem a listagem de medições do CYPECAD, a estabilidade passa a importação direta. A plataforma aceita as duas vias.</p></div>
+          <div class="card reveal"><h3>Outros projetistas</h3><p>Cada gabinete desenha à sua maneira. Os ficheiros que não forem tão limpos como este entram pela prova de conceito antes de se prometer.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <div class="pager">
+    <button data-prev aria-label="Anterior">‹</button>
+    <span class="pos">1 / 3</span>
+    <button data-next aria-label="Seguinte">›</button>
+    <span class="hint">← → no teclado</span>
+  </div>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Concroc · Diogo Gonçalves
+      <span class="disclaimer">Esboço de solução. Ecrãs e valores de exemplo, exceto os resultados obtidos com os ficheiros da Concroc.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    terminal('estTerm');
+    fluxo('fatFluxo');
+    chatRaciocinio('ccDemo');
+  </script>
+</body>
+</html>
