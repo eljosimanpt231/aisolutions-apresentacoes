@@ -38,18 +38,41 @@ Apresentação de follow-up para a reunião de 16/09/2026, 15h00, com André Fé
 3. O que muda: automático vs manual, verde e vermelho.
 4. Âmbito: 2 scope cards, **sem preço**.
 5. **Momento uau 1:** `chatRaciocinio` com 4 cenários reais.
-6. **Momento uau 2:** a ficha de visita técnica 5449 recriada em HTML, ao lado da leitura
+6. **A agenda:** a marcação do cenário 1 a cair numa terça-feira do Outlook, com as 4 equipas
+   em colunas e as janelas horárias em linhas.
+7. **Momento uau 2:** a ficha de visita técnica 5449 recriada em HTML, ao lado da leitura
    automática e da fatura Moloni que sai dela.
-7. Back-office: `terminal` do lote diário de fichas, com 1 linha de exceção.
-8. Integração: `fluxo` de 5 nós, canais por cima.
-9. Limites: faz / deixa por confirmar / nunca faz, mais o aviso das plataformas externas.
-10. Fase seguinte: agentes de voz, orçamentação, relatórios digitais.
-11. Cronograma: 4 passos a contar da adjudicação.
-12. **Investimento, a fechar:** 4.000 € + 2.000 €, pacote a 5.000 €, mensalidade 400 €.
-13. Footer. **Sem CTA**, por decisão do comercial: a página é mostrada ao vivo numa reunião.
+8. Back-office: `terminal` do lote diário de fichas, com 1 linha de exceção.
+9. Integração: `fluxo` de 5 nós, canais por cima.
+10. Limites: faz / deixa por confirmar / nunca faz, mais o aviso das plataformas externas.
+11. Fase seguinte: agentes de voz, orçamentação, relatórios digitais.
+12. Cronograma: 4 passos a contar da adjudicação.
+13. **Investimento, a fechar:** 4.000 € + 2.000 €, pacote a 5.000 €, mensalidade 400 €.
+14. Footer. **Sem CTA**, por decisão do comercial: a página é mostrada ao vivo numa reunião.
 
 **O preço é a última coisa a aparecer.** Regra do comercial: nenhum valor antes da última
 secção, por isso os cards de âmbito não levam preço.
+
+## A agenda (secção 6)
+
+Responde à questão das rotas sem a explicar por palavras. Terça-feira 22/09/2026 (confirmada
+com `dias_uteis.js`, é o dia da marcação feita no cenário 1 da demo), quatro equipas em colunas
+e quatro janelas horárias em linhas.
+
+A cor não identifica a zona, identifica se o serviço encaixa na volta. Isso mantém a paleta em
+1 marca + 1 acento + semânticos:
+
+- **Azul**: o dia coerente de uma equipa, tudo na mesma zona. A marcação nova leva ainda um anel
+  de acento e a etiqueta "Marcado agora pelo agente".
+- **Âmbar**: o serviço de Loures na equipa que tem o dia em Cascais, deixado "por confirmar".
+- **Tracejado**: a obra de coluna montante que ocupa uma equipa duas semanas e o bloqueio que o
+  André faz enquanto negoceia. O agente lê como ocupado e passa à frente.
+
+Três cards por baixo explicam as três decisões. A tabela tem `overflow-x` próprio e um aviso de
+arrastar abaixo dos 920px.
+
+**Por confirmar com o cliente:** se é um calendário do Outlook com as equipas identificadas ou
+um calendário por equipa. Muda os acessos a pedir na semana 1.
 
 ## A ficha 5449
 

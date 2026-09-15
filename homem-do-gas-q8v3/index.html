@@ -284,8 +284,114 @@
 }
 </script>
 
-<!-- ============ 6. A FICHA REAL: DOCUMENTO -> FATURA ============ -->
-<section class="section-alt" id="ficha" data-nav="A vossa ficha">
+<!-- ============ 6. A AGENDA: A MARCAÇÃO A CAIR NO OUTLOOK ============ -->
+<section class="section-alt" id="agenda" data-nav="A agenda">
+  <div class="container">
+    <span class="eyebrow">A agenda</span>
+    <h2>Uma terça-feira no Outlook</h2>
+    <p class="lead">
+      A marcação do primeiro cenário a cair no calendário. Cada serviço passa a levar a zona
+      escrita, e é a zona que decide a que equipa vai.
+    </p>
+
+    <div class="agenda-wrap" style="margin-top:38px">
+      <div class="agenda reveal">
+        <div class="ag-h ag-corner">Terça, 22 de setembro</div>
+        <div class="ag-h">Equipa 1</div>
+        <div class="ag-h">Equipa 2 <i>esquentadores</i></div>
+        <div class="ag-h">Equipa extra</div>
+        <div class="ag-h">Irmão</div>
+
+        <div class="ag-time">Manhã cedo</div>
+        <div class="ag-cell">
+          <div class="ag-ev fit"><div class="h">8h00 às 10h00</div><div class="s">Esquentador, Parede</div><span class="ag-zone">Cascais</span></div>
+        </div>
+        <div class="ag-cell">
+          <div class="ag-ev fit novo">
+            <div class="h">9h00 às 11h00</div>
+            <div class="s">Esquentador, Carcavelos</div>
+            <span class="ag-zone">Cascais</span>
+            <span class="ag-tag">Marcado agora pelo agente</span>
+          </div>
+        </div>
+        <div class="ag-cell ag-obra">
+          <div class="ag-ev obra">
+            <div class="h">Dia inteiro, 2 semanas</div>
+            <div class="s">Coluna montante, prédio</div>
+            <span class="ag-zone">Lisboa</span>
+            <span class="ag-tag muted">O agente vê ocupado e passa à frente</span>
+          </div>
+        </div>
+        <div class="ag-cell">
+          <div class="ag-ev bloq"><div class="h">8h00 às 10h00</div><div class="s">Bloqueado por ti</div><span class="ag-tag muted">Em conversa com um cliente</span></div>
+        </div>
+
+        <div class="ag-time">Meio da manhã</div>
+        <div class="ag-cell">
+          <div class="ag-ev fit"><div class="h">10h00 às 12h00</div><div class="s">Caldeira, S. Domingos de Rana</div><span class="ag-zone">Cascais</span></div>
+        </div>
+        <div class="ag-cell">
+          <div class="ag-ev fit"><div class="h">11h00 às 13h00</div><div class="s">Esquentador, Estoril</div><span class="ag-zone">Cascais</span></div>
+        </div>
+        <div class="ag-cell">
+          <div class="ag-ev"><div class="h">10h00 às 12h00</div><div class="s">Levantamento para orçamento</div><span class="ag-zone">Sintra</span></div>
+        </div>
+
+        <div class="ag-time">Tarde</div>
+        <div class="ag-cell">
+          <div class="ag-ev"><div class="h">13h00 às 15h00</div><div class="s">Placa, Carnaxide</div><span class="ag-zone">Oeiras</span></div>
+        </div>
+        <div class="ag-cell">
+          <div class="ag-ev duvida">
+            <div class="h">14h00 às 16h00</div>
+            <div class="s">Fuga, Loures</div>
+            <span class="ag-zone">Loures</span>
+            <span class="ag-tag">Por confirmar contigo</span>
+          </div>
+        </div>
+        <div class="ag-cell">
+          <div class="ag-ev"><div class="h">14h00 às 16h00</div><div class="s">Pré-inspeção</div><span class="ag-zone">Sintra</span></div>
+        </div>
+
+        <div class="ag-time">Fim de tarde</div>
+        <div class="ag-cell">
+          <div class="ag-ev"><div class="h">15h00 às 17h00</div><div class="s">Esquentador, Algés</div><span class="ag-zone">Oeiras</span></div>
+        </div>
+        <div class="ag-cell"><div class="ag-free">Livre</div></div>
+        <div class="ag-cell"><div class="ag-free">Livre</div></div>
+      </div>
+    </div>
+
+    <p class="ag-hint">Arrasta a tabela para o lado para ver as outras equipas.</p>
+
+    <div class="grid-3" style="margin-top:28px">
+      <div class="card ag-note reveal">
+        <div class="t">Porque foi para a equipa 2</div>
+        <p>
+          É a equipa que faz esquentadores e já tinha a manhã toda em Cascais. A marcação nova
+          encosta-se às que lá estavam, e o técnico não atravessa o concelho duas vezes.
+        </p>
+      </div>
+      <div class="card ag-note reveal">
+        <div class="t">Porque o de Loures ficou a amarelo</div>
+        <p>
+          Parte a volta de uma equipa que tem o dia em Cascais. O agente não marca à força,
+          deixa por confirmar e avisa-te. A decisão continua a ser tua.
+        </p>
+      </div>
+      <div class="card ag-note reveal">
+        <div class="t">O que o agente não toca</div>
+        <p>
+          A obra da coluna montante e os bloqueios que fazes enquanto negoceias com um cliente.
+          Vê-os como ocupados e passa à frente, sem perguntar.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. A FICHA REAL: DOCUMENTO -> FATURA ============ -->
+<section id="ficha" data-nav="A vossa ficha">
   <div class="container">
     <span class="eyebrow">Da ficha à fatura</span>
     <h2>A ficha 5449, lida pelo agente</h2>
@@ -406,7 +512,7 @@
 </section>
 
 <!-- ============ 7. BACK-OFFICE: TERMINAL ============ -->
-<section id="faturacao" data-nav="Todos os dias">
+<section class="section-alt" id="faturacao" data-nav="Todos os dias">
   <div class="container">
     <span class="eyebrow">Back-office</span>
     <h2>O mesmo, para as fichas todas do dia</h2>
@@ -448,7 +554,7 @@
 </script>
 
 <!-- ============ 7. INTEGRAÇÃO ============ -->
-<section class="section-alt" id="integracao" data-nav="Integração">
+<section id="integracao" data-nav="Integração">
   <div class="container center">
     <span class="eyebrow">Como se liga</span>
     <h2>Encaixa no que já usam</h2>
@@ -479,7 +585,7 @@
 </script>
 
 <!-- ============ 8. REGRAS E LIMITES ============ -->
-<section id="limites" data-nav="Limites">
+<section class="section-alt" id="limites" data-nav="Limites">
   <div class="container">
     <span class="eyebrow">Limites</span>
     <h2>O que o agente faz e o que nunca faz</h2>
@@ -535,7 +641,7 @@
 </section>
 
 <!-- ============ 9. FASE SEGUINTE ============ -->
-<section class="section-alt" id="depois" data-nav="Fase seguinte">
+<section id="depois" data-nav="Fase seguinte">
   <div class="container">
     <span class="eyebrow">Fase seguinte</span>
     <h2>O que fica para depois</h2>
@@ -571,7 +677,7 @@
 </section>
 
 <!-- ============ 11. CRONOGRAMA ============ -->
-<section id="prazo" data-nav="Prazo">
+<section class="section-alt" id="prazo" data-nav="Prazo">
   <div class="container center">
     <span class="eyebrow">Prazo</span>
     <h2>Como chegamos lá</h2>
@@ -603,7 +709,7 @@
 </section>
 
 <!-- ============ 12. INVESTIMENTO (ultima seccao, o preco fecha) ============ -->
-<section class="section-alt" id="investimento" data-nav="Investimento">
+<section id="investimento" data-nav="Investimento">
   <div class="container">
     <span class="eyebrow">Investimento</span>
     <h2>O que custa e o que inclui</h2>
