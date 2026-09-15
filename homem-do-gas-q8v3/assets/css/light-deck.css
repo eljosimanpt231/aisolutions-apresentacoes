@@ -172,10 +172,40 @@
 @media (min-width: 1000px) { .ficha-grid { grid-template-columns: 1.02fr 1fr; } }
 .ficha-out { display: grid; gap: 22px; }
 
+/* grupo de WhatsApp da equipa, por onde a ficha entra */
+.wagroup {
+  border-radius: 18px; overflow: hidden;
+  border: 1px solid var(--chat-line); background: var(--chat-bg);
+  box-shadow: var(--shadow-lg);
+}
+.wg-head { display: flex; align-items: center; gap: 12px; padding: 13px 16px; background: var(--chat-head); border-bottom: 1px solid var(--chat-line); }
+.wg-ava { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 800; background: hsl(var(--accent-vivid-hsl) / 0.14); color: var(--accent); }
+.wg-who b { display: block; font-size: 0.92rem; }
+.wg-who small { font-size: 0.72rem; color: var(--muted); }
+.wg-body { padding: 16px 14px 18px; display: flex; flex-direction: column; gap: 10px; }
+.wg-day { align-self: center; font-size: 0.66rem; font-weight: 600; color: var(--muted); background: hsl(0 0% 100% / 0.85); border: 1px solid var(--chat-line); padding: 3px 12px; border-radius: 8px; }
+.wg-msg {
+  align-self: flex-start; max-width: 94%;
+  background: var(--chat-in); border-radius: 12px; border-top-left-radius: 4px;
+  padding: 8px 10px 6px; box-shadow: 0 1px 2px hsl(var(--brand-hsl) / 0.12);
+}
+.wg-msg.out { align-self: flex-end; background: var(--chat-out); border-top-left-radius: 12px; border-top-right-radius: 4px; max-width: 70%; }
+.wg-msg.bot { background: hsl(var(--accent-vivid-hsl) / 0.08); border: 1px solid hsl(var(--accent-hsl) / 0.2); }
+.wg-from { font-size: 0.74rem; font-weight: 700; color: var(--warning); margin-bottom: 5px; }
+.wg-from.bot { color: var(--accent); }
+.wg-msg p { font-size: 0.86rem; line-height: 1.45; }
+.wg-msg time { display: block; text-align: right; font-size: 0.62rem; color: var(--muted); margin-top: 3px; }
+.wg-photo { border-radius: 8px; overflow: hidden; background: hsl(var(--brand-hsl) / 0.05); padding: 6px; }
+.wg-cap { font-size: 0.84rem; margin-top: 7px; }
+.wg-file { display: flex; align-items: center; gap: 11px; margin-top: 9px; padding: 10px 12px; border-radius: 9px; background: hsl(0 0% 100% / 0.75); border: 1px solid var(--chat-line); }
+.wg-file .ic { flex-shrink: 0; width: 34px; height: 34px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; background: hsl(var(--danger-hsl) / 0.12); color: var(--danger); }
+.wg-file b { display: block; font-size: 0.82rem; }
+.wg-file small { font-size: 0.72rem; color: var(--muted); }
+
 .paper {
   background: var(--paper); border: 1px solid var(--paper-line);
-  border-radius: 8px; box-shadow: var(--shadow-lg); overflow: hidden;
-  font-size: 0.8rem; transform: rotate(-0.35deg);
+  border-radius: 6px; box-shadow: var(--shadow-md); overflow: hidden;
+  font-size: 0.78rem; transform: rotate(-0.4deg);
 }
 .paper-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 16px 18px 12px; }
 .paper-title { font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); }
@@ -200,7 +230,11 @@
 }
 .ph { display: block; padding: 4px 0; border-bottom: 1px dotted var(--paper-line); }
 
-.ptab { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 0.72rem; }
+.ptab { width: 100%; table-layout: fixed; border-collapse: collapse; margin-top: 14px; font-size: 0.72rem; }
+.ptab th:nth-child(1) { width: 40%; }
+.ptab th:nth-child(2) { width: 13%; }
+.ptab th:nth-child(3) { width: 22%; }
+.ptab th:nth-child(4) { width: 25%; }
 .ptab th { text-align: left; font-weight: 600; color: var(--muted); font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 6px; border-bottom: 1px solid var(--paper-line); }
 .ptab th:not(:first-child), .ptab td:not(:first-child) { text-align: right; }
 .ptab td { padding: 5px 6px; border-bottom: 1px dotted var(--paper-line); font-family: var(--font-hand); font-size: 1.04rem; font-weight: 600; color: var(--paper-ink); }
@@ -319,4 +353,16 @@
   .logo-img { height: 38px; }
   .pack { padding: 26px 22px; }
   .monthly { padding: 20px; }
+  /* a ficha dentro do grupo tem pouca largura: aperta o impresso para nada ser cortado */
+  .wg-body { padding: 12px 8px 14px; }
+  .wg-msg { max-width: 100%; padding: 7px 7px 5px; }
+  .wg-photo { padding: 4px; }
+  .paper { font-size: 0.72rem; }
+  .paper-head, .paper-bar, .paper-body { padding-left: 11px; padding-right: 11px; }
+  .pf > span { min-width: 56px; font-size: 0.64rem; }
+  .pf em, .ph { font-size: 1.02rem; }
+  .ptab th { font-size: 0.56rem; letter-spacing: 0.04em; padding: 5px 3px; }
+  .ptab td { font-size: 0.9rem; padding: 4px 3px; }
+  .ptab .ptotal td { font-size: 1.04rem; }
+  .ptab .psoma td:first-child, .ptab .ptotal td:first-child { font-size: 0.6rem; }
 }

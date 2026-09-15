@@ -77,9 +77,16 @@ um calendário por equipa. Muda os acessos a pedir na semana 1.
 ## A ficha 5449
 
 O André enviou por WhatsApp a fotografia de uma ficha de visita técnica preenchida à mão.
-A secção 6 recria o impresso em HTML (cabeçalho, barra azul de serviços, blocos de campos,
+A secção recria o impresso em HTML (cabeçalho, barra azul de serviços, blocos de campos,
 tabela de artigos, modo de pagamento, data e técnicos), com a letra a `Caveat` sobre papel
-creme e uma rotação de 0,35 graus.
+creme e uma ligeira rotação.
+
+**O impresso está dentro de um grupo de WhatsApp**, porque é assim que a ficha entra de facto:
+há um grupo por equipa, o técnico fecha o serviço, fotografa a ficha e mete-a lá. O mock mostra
+o Guilherme a publicar a fotografia com a legenda, o agente a responder com a fatura em PDF no
+mesmo grupo, um segundo aviso sobre o pagamento por confirmar, e o André a dar o ok. Foi o
+próprio Diogo que prometeu isto na discovery: "isto entra no grupo do WhatsApp, 30 segundos
+depois tens a fatura em PDF no grupo".
 
 **Do documento real ficam:** o número da ficha, o serviço ("Substituição de Pietro", que é um
 redutor), as quatro linhas de artigos com os valores (37,50 + 60 + 240 + 90 = 427,50 €), o
