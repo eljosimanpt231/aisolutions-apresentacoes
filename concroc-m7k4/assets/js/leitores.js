@@ -176,7 +176,7 @@
     const legenda = [...new Set(textos.map(t => t.s).filter(s => /^\d\s*-\s*[A-Za-zÀ-ú]/.test(s)))];
     const materiais = [...new Set(textos.map(t => t.s).filter(s => /bloco t[ée]rmico|isolamento|reboco|painel sandwich|telha|etics|capeamento/i.test(s) && s.length < 60))];
     // a planta costuma aparecer repetida (áreas, vãos, cotas): o nº de cópias é o nº de vezes que a etiqueta mais repetida aparece
-    const rep = {}; for (const t of textos) if (divMap.has(t.s)) rep[t.s] = (rep[t.s] || 0) + 1;
+    const rep = {}; for (const t of textos) if (divMap.has(t.s) || /^V\d{1,2}$/.test(t.s)) rep[t.s] = (rep[t.s] || 0) + 1;
     const copias = Math.max(1, ...Object.values(rep));
     return {
       contagem, camadas: [...camadas], textos: textos.length, cotas: dims.length, copias,
