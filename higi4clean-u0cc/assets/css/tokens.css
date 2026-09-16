@@ -1,0 +1,41 @@
+/* Higi4clean x AI Solutions
+   Base: estilo corporativo-azul, com paleta clara de limpeza (azul-agua).
+   A lead ainda nao tem site nem logo: cor escolhida pelo nicho (limpeza = agua, frescura).
+   Marca escura (titulos e botoes) em azul-petroleo; acento em aqua para preenchimentos. */
+:root {
+  --brand-hsl: 196 72% 24%;
+  --accent-hsl: 184 74% 44%;
+  --accent-text-hsl: 188 88% 27%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --accent-text: hsl(var(--accent-text-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(186 48% 96%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(186 42% 98%);
+  --border: hsl(192 26% 88%);
+
+  --text: hsl(198 38% 12%);
+  --muted: hsl(198 12% 40%);
+
+  --success-hsl: 152 60% 32%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 68% 45%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 92% 40%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 120%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 55%, hsl(var(--accent-hsl) / 0.8));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  --radius: 16px;
+  --radius-lg: 24px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
