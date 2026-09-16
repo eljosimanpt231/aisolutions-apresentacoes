@@ -47,7 +47,7 @@ Apresentação de follow-up para a reunião de 16/09/2026, 15h00, com André Fé
 10. Limites: faz / deixa por confirmar / nunca faz, mais o aviso das plataformas externas.
 11. Fase seguinte: agentes de voz, orçamentação, relatórios digitais.
 12. Cronograma: 4 passos a contar da adjudicação.
-13. **Investimento, a fechar:** 4.000 € + 2.000 €, pacote a 5.000 €, mensalidade 400 €.
+13. **Investimento, a fechar:** 4.000 € + 2.000 €, pacote a 5.000 €, mensalidade 390 €.
 14. Footer. **Sem CTA**, por decisão do comercial: a página é mostrada ao vivo numa reunião.
 
 **O preço é a última coisa a aparecer.** Regra do comercial: nenhum valor antes da última
@@ -81,12 +81,9 @@ A secção recria o impresso em HTML (cabeçalho, barra azul de serviços, bloco
 tabela de artigos, modo de pagamento, data e técnicos), com a letra a `Caveat` sobre papel
 creme e uma ligeira rotação.
 
-**O impresso está dentro de um grupo de WhatsApp**, porque é assim que a ficha entra de facto:
-há um grupo por equipa, o técnico fecha o serviço, fotografa a ficha e mete-a lá. O mock mostra
-o Guilherme a publicar a fotografia com a legenda, o agente a responder com a fatura em PDF no
-mesmo grupo, um segundo aviso sobre o pagamento por confirmar, e o André a dar o ok. Foi o
-próprio Diogo que prometeu isto na discovery: "isto entra no grupo do WhatsApp, 30 segundos
-depois tens a fatura em PDF no grupo".
+**O impresso está dentro de um grupo de WhatsApp que imita a app**, porque é assim que a ficha entra de facto: há um grupo por equipa, o técnico fecha o serviço, fotografa a ficha e mete-a lá. O mock copia o WhatsApp em modo claro com as cores reais da app (paleta própria, como a Unibox): cabeçalho branco com seta, avatar de grupo e ícones, parede bege com rabiscos, bolhas brancas e verdes com bico na primeira mensagem de cada pessoa, nomes coloridos no grupo, hora dentro da bolha, vistos azuis, mensagem de documento PDF e barra de escrever com o microfone verde.
+
+A fotografia é uma miniatura (cerca de 276 px de largura, 244 px em telemóvel) do impresso em HTML reduzido com zoom, pousado numa superfície e ligeiramente rodado. Ao clicar abre em grande, ajustado ao ecrã, e fecha com clique ou Esc. O Guilherme publica a fotografia, o agente responde com a fatura em PDF e com o aviso do pagamento por confirmar, e o André dá o ok. Foi o próprio Diogo que prometeu isto na discovery: "isto entra no grupo do WhatsApp, 30 segundos depois tens a fatura em PDF no grupo".
 
 **Do documento real ficam:** o número da ficha, o serviço ("Substituição de Pietro", que é um
 redutor), as quatro linhas de artigos com os valores (37,50 + 60 + 240 + 90 = 427,50 €), o

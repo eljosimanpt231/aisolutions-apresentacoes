@@ -167,40 +167,156 @@
 .ag-note .t { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
 .ag-note p { margin-top: 10px; color: var(--muted); font-size: 0.94rem; }
 
-/* ---------- Ficha de serviço: papel -> leitura -> fatura ---------- */
-.ficha-grid { display: grid; gap: 26px; align-items: start; }
-@media (min-width: 1000px) { .ficha-grid { grid-template-columns: 1.02fr 1fr; } }
+/* ---------- Ficha de serviço: grupo de WhatsApp -> leitura -> fatura ---------- */
+.ficha-grid { display: grid; gap: 30px; align-items: start; }
+@media (min-width: 1000px) { .ficha-grid { grid-template-columns: 410px 1fr; } }
 .ficha-out { display: grid; gap: 22px; }
+.wg-col { min-width: 0; }
 
-/* grupo de WhatsApp da equipa, por onde a ficha entra */
+/* ---- grupo de WhatsApp, a imitar a app (modo claro) ---- */
 .wagroup {
   border-radius: 18px; overflow: hidden;
-  border: 1px solid var(--chat-line); background: var(--chat-bg);
-  box-shadow: var(--shadow-lg);
+  background: var(--wa-bg); color: var(--wa-text);
+  box-shadow: var(--shadow-lg); border: 1px solid var(--border);
+  font-family: var(--font-body);
 }
-.wg-head { display: flex; align-items: center; gap: 12px; padding: 13px 16px; background: var(--chat-head); border-bottom: 1px solid var(--chat-line); }
-.wg-ava { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 800; background: hsl(var(--accent-vivid-hsl) / 0.14); color: var(--accent); }
-.wg-who b { display: block; font-size: 0.92rem; }
-.wg-who small { font-size: 0.72rem; color: var(--muted); }
-.wg-body { padding: 16px 14px 18px; display: flex; flex-direction: column; gap: 10px; }
-.wg-day { align-self: center; font-size: 0.66rem; font-weight: 600; color: var(--muted); background: hsl(0 0% 100% / 0.85); border: 1px solid var(--chat-line); padding: 3px 12px; border-radius: 8px; }
-.wg-msg {
-  align-self: flex-start; max-width: 94%;
-  background: var(--chat-in); border-radius: 12px; border-top-left-radius: 4px;
-  padding: 8px 10px 6px; box-shadow: 0 1px 2px hsl(var(--brand-hsl) / 0.12);
+.wg-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; background: var(--wa-head);
+  box-shadow: var(--wa-shadow); position: relative; z-index: 2;
 }
-.wg-msg.out { align-self: flex-end; background: var(--chat-out); border-top-left-radius: 12px; border-top-right-radius: 4px; max-width: 70%; }
-.wg-msg.bot { background: hsl(var(--accent-vivid-hsl) / 0.08); border: 1px solid hsl(var(--accent-hsl) / 0.2); }
-.wg-from { font-size: 0.74rem; font-weight: 700; color: var(--warning); margin-bottom: 5px; }
-.wg-from.bot { color: var(--accent); }
-.wg-msg p { font-size: 0.86rem; line-height: 1.45; }
-.wg-msg time { display: block; text-align: right; font-size: 0.62rem; color: var(--muted); margin-top: 3px; }
-.wg-photo { border-radius: 8px; overflow: hidden; background: hsl(var(--brand-hsl) / 0.05); padding: 6px; }
-.wg-cap { font-size: 0.84rem; margin-top: 7px; }
-.wg-file { display: flex; align-items: center; gap: 11px; margin-top: 9px; padding: 10px 12px; border-radius: 9px; background: hsl(0 0% 100% / 0.75); border: 1px solid var(--chat-line); }
-.wg-file .ic { flex-shrink: 0; width: 34px; height: 34px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; background: hsl(var(--danger-hsl) / 0.12); color: var(--danger); }
-.wg-file b { display: block; font-size: 0.82rem; }
-.wg-file small { font-size: 0.72rem; color: var(--muted); }
+.wg-ic { width: 22px; height: 22px; color: var(--wa-icon); flex-shrink: 0; }
+.wg-ava {
+  width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--wa-doc); color: var(--wa-meta);
+}
+.wg-ava svg { width: 22px; height: 22px; }
+.wg-who { min-width: 0; flex: 1; }
+.wg-who b { display: block; font-size: 0.94rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wg-who small { display: block; font-size: 0.74rem; color: var(--wa-meta); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wg-actions { display: flex; gap: 16px; color: var(--wa-icon); }
+.wg-actions svg { width: 21px; height: 21px; }
+
+.wg-body { position: relative; padding: 10px 14px 12px; display: flex; flex-direction: column; }
+/* papel de parede com rabiscos, como na app */
+.wg-body::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: var(--wa-doodle);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170' viewBox='0 0 170 170' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='24' cy='24' r='9'/%3E%3Cpath d='M112 14c7 0 11 4 11 9 0 6-11 15-11 15s-11-9-11-15c0-5 4-9 11-9z'/%3E%3Cpath d='M58 66l9 15H49z'/%3E%3Cpath d='M138 96c-7-9-2-18 4-22 0 7 7 9 7 16a7 7 0 0 1-11 6z'/%3E%3Crect x='18' y='104' width='20' height='15' rx='3'/%3E%3Cpath d='M78 140q9-11 18 0t18 0'/%3E%3Cpath d='M146 146l7-7m-7 0l7 7'/%3E%3Cpath d='M66 26l5 5 9-9'/%3E%3Ccircle cx='46' cy='156' r='3'/%3E%3Cpath d='M100 96h16M108 88v16'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170' viewBox='0 0 170 170' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='24' cy='24' r='9'/%3E%3Cpath d='M112 14c7 0 11 4 11 9 0 6-11 15-11 15s-11-9-11-15c0-5 4-9 11-9z'/%3E%3Cpath d='M58 66l9 15H49z'/%3E%3Cpath d='M138 96c-7-9-2-18 4-22 0 7 7 9 7 16a7 7 0 0 1-11 6z'/%3E%3Crect x='18' y='104' width='20' height='15' rx='3'/%3E%3Cpath d='M78 140q9-11 18 0t18 0'/%3E%3Cpath d='M146 146l7-7m-7 0l7 7'/%3E%3Cpath d='M66 26l5 5 9-9'/%3E%3Ccircle cx='46' cy='156' r='3'/%3E%3Cpath d='M100 96h16M108 88v16'/%3E%3C/svg%3E");
+  -webkit-mask-size: 170px 170px; mask-size: 170px 170px;
+}
+.wg-body > * { position: relative; z-index: 1; }
+
+.wg-day { align-self: center; margin: 4px 0 8px; }
+.wg-day span {
+  display: inline-block; font-size: 0.72rem; color: var(--wa-meta);
+  background: var(--wa-in); box-shadow: var(--wa-shadow);
+  padding: 4px 11px; border-radius: 7px;
+}
+
+.wg-row { display: flex; margin-top: 10px; }
+.wg-row.cont { margin-top: 2px; }
+.wg-row.in { justify-content: flex-start; padding-left: 8px; }
+.wg-row.out { justify-content: flex-end; padding-right: 8px; }
+
+.wg-bubble {
+  position: relative; max-width: 86%;
+  background: var(--wa-in); border-radius: 8px; box-shadow: var(--wa-shadow);
+  padding: 6px 8px 7px 9px;
+  font-size: 0.89rem; line-height: 1.36;
+}
+.wg-row.out .wg-bubble { background: var(--wa-out); }
+/* o "bico" da primeira mensagem de cada pessoa */
+.wg-bubble.tail::before {
+  content: ""; position: absolute; top: 0; width: 0; height: 0;
+}
+.wg-row.in .wg-bubble.tail { border-top-left-radius: 0; }
+.wg-row.in .wg-bubble.tail::before { left: -8px; border-top: 13px solid var(--wa-in); border-left: 8px solid transparent; }
+.wg-row.out .wg-bubble.tail { border-top-right-radius: 0; }
+.wg-row.out .wg-bubble.tail::before { right: -8px; border-top: 13px solid var(--wa-out); border-right: 8px solid transparent; }
+
+.wg-name { font-size: 0.8rem; font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
+.wg-name.a { color: var(--wa-name-a); }
+.wg-name.b { color: var(--wa-name-b); }
+.wg-text b { font-weight: 700; }
+.wg-meta {
+  float: right; position: relative; top: 5px;
+  margin: 0 0 0 12px; font-size: 0.68rem; line-height: 1.5;
+  color: var(--wa-meta); white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 3px;
+}
+.wg-ticks { width: 17px; height: 11px; color: var(--wa-tick); }
+.wg-text::after { content: ""; display: block; clear: both; }
+
+/* mensagem com fotografia: a imagem ocupa a bolha, com a legenda por baixo */
+.wg-bubble.media { padding: 3px; }
+.wg-bubble.media .wg-name { padding: 3px 5px 2px 6px; margin: 0; }
+.wg-bubble.media .wg-text { padding: 5px 6px 3px 6px; }
+.wg-img {
+  display: block; width: 100%; border: 0; padding: 12px 14px 14px; margin: 0;
+  border-radius: 6px; overflow: hidden; cursor: zoom-in;
+  background: radial-gradient(ellipse at 40% 30%, var(--wa-photo-surface-hi), var(--wa-photo-surface));
+  font: inherit; color: inherit; text-align: left;
+}
+.wg-img-scale { display: block; zoom: 0.46; width: max-content; margin: 0 auto; }
+.wg-img .paper { width: 540px; transform: rotate(-1.1deg); box-shadow: 0 18px 30px var(--wa-photo-shadow); }
+.wg-img:hover .paper { box-shadow: 0 22px 36px var(--wa-photo-shadow); }
+
+/* documento PDF */
+.wg-bubble.doc { padding: 4px 4px 3px; min-width: 250px; }
+.wg-doc {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--wa-doc); border-radius: 6px; padding: 11px 12px;
+}
+.wg-pdf {
+  flex-shrink: 0; width: 30px; height: 36px; border-radius: 4px;
+  display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px;
+  background: var(--wa-pdf); color: var(--wa-in);
+  font-size: 0.56rem; font-weight: 800; letter-spacing: 0.02em;
+}
+.wg-doc-name { font-size: 0.88rem; color: var(--wa-text); }
+.wg-doc-meta { padding: 5px 5px 2px; font-size: 0.72rem; color: var(--wa-meta); }
+.wg-doc-meta .wg-meta { top: 1px; }
+
+/* barra de escrever */
+.wg-input { display: flex; align-items: center; gap: 7px; padding: 6px 8px 10px; background: var(--wa-bg); }
+.wg-field {
+  flex: 1; display: flex; align-items: center; gap: 12px;
+  background: var(--wa-in); border-radius: 999px; padding: 10px 14px;
+  color: var(--wa-icon); box-shadow: var(--wa-shadow);
+}
+.wg-field span { flex: 1; font-size: 0.92rem; color: var(--wa-meta); }
+.wg-field svg { width: 21px; height: 21px; flex-shrink: 0; }
+.wg-mic {
+  width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--wa-green); color: var(--wa-in);
+}
+.wg-mic svg { width: 21px; height: 21px; }
+.wg-hint { margin-top: 12px; text-align: center; font-size: 0.8rem; font-style: italic; color: var(--muted); }
+
+/* ---- ficha em grande (ao clicar na fotografia) ---- */
+.wg-lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  display: none; align-items: center; justify-content: center;
+  background: var(--overlay); padding: 24px; cursor: zoom-out;
+}
+.wg-lightbox.open { display: flex; }
+.wg-lb-inner .paper { width: 540px; transform: none; box-shadow: var(--shadow-lg); }
+.wg-close {
+  position: absolute; top: 16px; right: 18px;
+  width: 42px; height: 42px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--overlay-btn); color: var(--on-brand); font-size: 1.1rem;
+}
+.wg-close:hover { background: var(--overlay-btn-hover); }
+
+@media (max-width: 520px) {
+  .wg-body { padding-left: 8px; padding-right: 8px; }
+  .wg-img-scale { zoom: 0.4; }
+  .wg-actions { gap: 12px; }
+}
 
 .paper {
   background: var(--paper); border: 1px solid var(--paper-line);
@@ -353,16 +469,4 @@
   .logo-img { height: 38px; }
   .pack { padding: 26px 22px; }
   .monthly { padding: 20px; }
-  /* a ficha dentro do grupo tem pouca largura: aperta o impresso para nada ser cortado */
-  .wg-body { padding: 12px 8px 14px; }
-  .wg-msg { max-width: 100%; padding: 7px 7px 5px; }
-  .wg-photo { padding: 4px; }
-  .paper { font-size: 0.72rem; }
-  .paper-head, .paper-bar, .paper-body { padding-left: 11px; padding-right: 11px; }
-  .pf > span { min-width: 56px; font-size: 0.64rem; }
-  .pf em, .ph { font-size: 1.02rem; }
-  .ptab th { font-size: 0.56rem; letter-spacing: 0.04em; padding: 5px 3px; }
-  .ptab td { font-size: 0.9rem; padding: 4px 3px; }
-  .ptab .ptotal td { font-size: 1.04rem; }
-  .ptab .psoma td:first-child, .ptab .ptotal td:first-child { font-size: 0.6rem; }
 }

@@ -48,13 +48,34 @@
   --chat-out: hsl(111 55% 89%);
   --chat-line: hsl(207 22% 86%);
 
-  /* ---- WhatsApp mock do base.css (não usado, mantido coerente) ---- */
-  --wa-bg: hsl(36 26% 92%);
+  /* ---- WhatsApp (paleta própria do produto, modo claro) ----
+     Tal como a Unibox, o mock de WhatsApp usa as cores reais da app para parecer a app.
+     Valores convertidos dos originais: parede #efeae2, recebida #ffffff, enviada #d9fdd3,
+     texto #111b21, hora #667781, vistos #53bdeb, verde #00a884, ícones #54656f. */
+  --wa-bg: hsl(37 29% 91%);
   --wa-in: hsl(0 0% 100%);
-  --wa-out: hsl(111 55% 89%);
-  --wa-text: hsl(209 45% 14%);
-  --wa-green: hsl(172 60% 26%);
-  --wa-green-strong: hsl(160 65% 34%);
+  --wa-out: hsl(111 91% 91%);
+  --wa-text: hsl(203 32% 10%);
+  --wa-meta: hsl(202 12% 45%);
+  --wa-icon: hsl(202 14% 38%);
+  --wa-tick: hsl(198 79% 62%);
+  --wa-green: hsl(167 100% 33%);
+  --wa-green-strong: hsl(167 100% 29%);
+  --wa-head: hsl(0 0% 100%);
+  --wa-doc: hsl(200 9% 95%);
+  --wa-pdf: hsl(354 72% 56%);
+  --wa-name-a: hsl(25 100% 41%);
+  --wa-name-b: hsl(200 100% 33%);
+  --wa-doodle: hsl(33 24% 52% / 0.17);
+  --wa-shadow: 0 1px 0.5px hsl(203 32% 10% / 0.13);
+  --wa-photo-surface: hsl(30 11% 67%);
+  --wa-photo-surface-hi: hsl(30 14% 74%);
+  --wa-photo-shadow: hsl(30 20% 20% / 0.36);
+
+  /* ---- Sobreposição (ficha em grande) ---- */
+  --overlay: hsl(203 32% 8% / 0.9);
+  --overlay-btn: hsl(0 0% 100% / 0.14);
+  --overlay-btn-hover: hsl(0 0% 100% / 0.24);
 
   /* ---- Gradientes e sombras (derivados da marca, nunca preto puro) ---- */
   --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
