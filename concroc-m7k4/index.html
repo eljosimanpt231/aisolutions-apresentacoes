@@ -105,7 +105,7 @@
               <tr><td>4</td><td>Clientes, pagamentos e cobranças</td><td>Faturado, recebido, dívida, vencidas, por cliente e por obra, antiguidade, alertas e área de acompanhamento. Lê a faturação do PHC.</td><td>3</td><td class="ok">fazemos</td></tr>
               <tr><td>5</td><td>Integração bancária e reconciliação</td><td>Importação dos movimentos das contas, identificação de recebimentos e pagamentos, associação a clientes, fornecedores e obras, cruzamento com o PHC, movimentos duvidosos sinalizados. Várias contas. Começa por importação de extratos; ligação direta aos bancos depois.</td><td>3</td><td class="ok">fazemos</td></tr>
               <tr><td>6</td><td>Orçamentação com IA</td><td>Capítulos e rubricas vossas, pesquisa de rubricas semelhantes, preços históricos e de fornecedores, atualização a partir das faturas, margens, resumos, comparação com obras anteriores, sinalização de valores anormais.</td><td>2</td><td class="ok">fazemos</td></tr>
-              <tr><td>7</td><td>Medições automáticas dos projetos</td><td>Estabilidade: provado com o vosso ficheiro. Arquitetura: áreas, vãos, cotas e legendas já saem; perímetros por divisão em prova de conceito; materiais por parede classificados por vós em lote.</td><td>2 · POC</td><td class="ok">estabilidade feita · arquitetura POC</td></tr>
+              <tr><td>7</td><td>Medições automáticas dos projetos</td><td>Estabilidade: provado com o vosso ficheiro. Arquitetura: áreas, vãos, cotas e legendas já saem; perímetros por divisão com primeiro resultado no vosso DWG (10 divisões fechadas), a validar com mais dois projetos; materiais por parede classificados por vós em lote.</td><td>2 · POC</td><td class="ok">estabilidade feita · arquitetura em curso</td></tr>
               <tr><td>8</td><td>Pedidos de preços e mapas comparativos</td><td>Pedidos por email quando a tarefa abre, leitura das propostas, extração de preços e âmbito, mapa comparativo, apoio à adjudicação. Por email, como pediram avaliar; portal próprio de fornecedores se vier a justificar-se.</td><td>2</td><td class="ok">fazemos</td></tr>
               <tr><td>9</td><td>Diário e acompanhamento das obras</td><td>Registo diário no telemóvel: trabalhos, pessoas, subempreiteiros, equipamentos, fotos, ocorrências, decisões. Relatórios periódicos gerados pela plataforma.</td><td>4</td><td class="ok">fazemos</td></tr>
               <tr><td>10</td><td>Autos de medição</td><td>O orçamento adjudicado vai para o PHC pela API; as percentagens executadas marcam-se na plataforma; o PHC gera o auto e a fatura como hoje. Histórico por obra.</td><td>2</td><td class="ok">fazemos</td></tr>
@@ -295,13 +295,25 @@
               <tr><td>16.1</td><td>Caixilharia · V15 (garagem)</td><td>m²</td><td class="num">1,00</td><td class="num">5,26</td><td></td><td class="num">a confirmar</td><td class="ok">largura da cota; altura do alçado</td></tr>
               <tr><td>16.1</td><td>Caixilharia · V5 e V6</td><td>m²</td><td class="num">2,00</td><td class="num">3,00</td><td></td><td class="num">a confirmar</td><td class="ok">largura da cota; altura do alçado</td></tr>
               <tr><td>15.1</td><td>Portas interiores</td><td>un</td><td class="num">12,00</td><td class="num">0,80</td><td></td><td class="num">a confirmar</td><td class="ok">contadas na planta; largura dos vãos V11 a V14</td></tr>
-              <tr><td>10.1</td><td>ETICS · paredes exteriores</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">3,00</td><td class="chk">prova de conceito</td></tr>
-              <tr><td>12.1</td><td>Pintura · paredes interiores por divisão</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">prova de conceito</td></tr>
-              <tr><td>12.2</td><td>Azulejo · IS e cozinha, até 2,60, fator 1,2</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">prova de conceito + classificação vossa</td></tr>
+              <tr><td>12.1</td><td>Pintura · Quarto 13,80 (perímetro × 2,60)</td><td>m²</td><td class="num">1,00</td><td class="num">16,44</td><td></td><td class="num">2,60</td><td class="ok">divisão fechada pelas paredes; área calculada 13,70 = escrita 13,80</td></tr>
+              <tr><td>12.1</td><td>Pintura · Hall (perímetro × 2,60)</td><td>m²</td><td class="num">1,00</td><td class="num">14,36</td><td></td><td class="num">2,60</td><td class="ok">área calculada 8,52 = escrita 8,50</td></tr>
+              <tr><td>12.1</td><td>Pintura · Garagem (perímetro × 2,60)</td><td>m²</td><td class="num">1,00</td><td class="num">27,32</td><td></td><td class="num">2,60</td><td class="ok">no seu Excel: 27,20</td></tr>
+              <tr><td>12.2</td><td>Azulejo · IS 8,90, até 2,60, fator 1,2</td><td>m²</td><td class="num">1,00</td><td class="num">13,52</td><td></td><td class="num">2,60</td><td class="ok">perímetro fechado; no seu Excel: 13,10 a 13,93. Que parede leva azulejo é decisão vossa</td></tr>
+              <tr><td>12.1</td><td>Pintura · Sala + cozinha + circulação</td><td>m²</td><td class="num">1,00</td><td class="num">77,36</td><td></td><td class="num">2,60</td><td class="chk">abertas entre si: medidas em conjunto, 94,9 m² contra 97,7 escritos; separar é decisão vossa</td></tr>
+              <tr><td>10.1</td><td>ETICS · paredes exteriores</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro exterior</td><td></td><td class="num">3,00</td><td class="chk">prova de conceito</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="demo-note" style="text-align:left">Contas rápidas sobre o que já sai: tetos e pavimentos das 15 divisões, os 16 vãos com largura, as portas, a legenda de acabamentos exteriores. O que falta são os perímetros, que é o que hoje o Ricardo mede ao clicar linha a linha.</p>
+        <div class="grid-2" style="margin-top:18px; align-items:start">
+          <figure class="figure reveal">
+            <a href="assets/img/arq-divisoes.png" target="_blank"><img src="assets/img/arq-divisoes.png" alt="Divisões fechadas pela plataforma a partir das paredes do DWG"></a>
+            <figcaption>Feito a 16/09 com o vosso DWG: cada cor é uma divisão fechada a partir das linhas de parede, com as portas na posição fechada. 10 divisões fechadas com a área a bater com a do arquiteto a menos de 0,2 m². Sala, cozinha e circulação são abertas entre si e ficam numa só cor.</figcaption>
+          </figure>
+          <div>
+            <p class="demo-note" style="text-align:left; margin-top:0">O que já sai do ficheiro: tetos e pavimentos das 15 divisões, os 16 vãos com largura, as portas, a legenda de acabamentos exteriores, e agora também o perímetro das divisões fechadas, que é o que o Ricardo mede hoje ao clicar linha a linha.</p>
+            <p class="demo-note" style="text-align:left">O que continua por provar: divisões abertas entre si têm de ser separadas por vós, o perímetro exterior para o ETICS, e se o mesmo método aguenta os ficheiros de outros arquitetos. É isso que a prova de conceito valida com mais dois projetos.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -341,7 +353,7 @@
         <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre. É o único ponto da proposta que entra com um teste antes do compromisso.</p>
         <div class="verdict" style="margin-top:28px">
           <div class="card ok reveal"><div class="tag">Provado</div><h3>Áreas, vãos, cotas, legendas</h3><p>Texto no ficheiro. Extração exata, sem inteligência artificial e sem margem de erro de leitura.</p></div>
-          <div class="card mid reveal"><div class="tag">Prova de conceito, 4 semanas</div><h3>Perímetros de cada divisão</h3><p>É o que o Ricardo hoje faz ao clicar linha a linha. Neste ficheiro as paredes são 242 segmentos soltos: a plataforma tem de os encadear e fechar cada divisão. Verifica-se sozinha: a área calculada tem de bater com a área escrita pelo arquiteto, como aconteceu com a implantação.</p></div>
+          <div class="card mid reveal"><div class="tag">Primeiro resultado obtido · prova de conceito com mais 2 projetos</div><h3>Perímetros de cada divisão</h3><p>É o que o Ricardo hoje faz ao clicar linha a linha. A 16/09 fechámos as divisões do vosso DWG a partir das paredes: 10 fechadas, com a área calculada a bater com a escrita pelo arquiteto a menos de 0,2 m². Falta separar as divisões abertas entre si, o perímetro exterior, e provar com ficheiros de outros arquitetos.</p></div>
           <div class="card no reveal"><div class="tag">Fica com as pessoas</div><h3>O que é cada parede</h3><p>Nenhum ficheiro diz se uma parede de 0,15 é tijolo ou pladur. A plataforma agrupa por espessura e por legenda, o Ricardo classifica cada grupo de uma vez. Minutos, não horas.</p></div>
         </div>
         <div class="poc-band reveal">
@@ -479,7 +491,7 @@
               </div>
               <div class="view" id="vMed">
                 <h4>Medições · Estabilidade</h4>
-                <div class="sub">Os cinco campos por elemento vêm do projeto. As fórmulas de betão, cofragem e aço são as vossas. Arquitetura entra depois da prova de conceito.</div>
+                <div class="sub">Os cinco campos por elemento vêm do projeto. As fórmulas de betão, cofragem e aço são as vossas. Arquitetura: áreas, vãos e perímetros das divisões fechadas já saem do DWG.</div>
                 <div class="task"><span class="st done">✓</span>Sapatas: 6 linhas, S1 75x40, comprimentos das cotas<span class="who">validar</span></div>
                 <div class="task"><span class="st done">✓</span>Pilares: 47 pilares em 20 grupos, do quadro de pilares<span class="who">validar</span></div>
                 <div class="task"><span class="st done">✓</span>Vigas: 25 pórticos, 21 iguais ao Excel<span class="who">4 a confirmar</span></div>
@@ -783,6 +795,7 @@
   <script src="../shared/deck/deck.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="assets/js/leitores.js"></script>
+  <script src="assets/js/perimetros.js"></script>
   <script src="assets/js/experimente.js"></script>
   <script src="assets/js/app.js"></script>
   <script>

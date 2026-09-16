@@ -116,9 +116,36 @@
     a.vaos.forEach(v => rows.push(`<tr><td>16.1</td><td>Caixilharia · ${esc(v.tag)}</td><td>m²</td><td class="num">1,00</td><td class="num">${v.largura != null ? fmt(v.largura, 2) : 'sem cota'}</td><td></td><td class="num">a confirmar</td><td class="${v.largura != null ? 'ok' : 'chk'}">${v.largura != null ? 'largura da cota; altura do alçado' : 'cota não encontrada'}</td></tr>`));
     if (a.portas && a.copiasDetetadas) rows.push(`<tr><td>15.1</td><td>Portas interiores</td><td>un</td><td class="num">${fmt(a.portas, 2)}</td><td class="num"></td><td></td><td class="num">a confirmar</td><td class="ok">contadas na camada de portas</td></tr>`);
     else if (a.portas) rows.push(`<tr><td>15.1</td><td>Portas interiores</td><td>un</td><td class="num">${fmt(a.portas, 2)}</td><td class="num"></td><td></td><td class="num">a confirmar</td><td class="chk">arcos de porta em todas as vistas; sem etiquetas não sei quantas cópias da planta há</td></tr>`);
-    rows.push(`<tr><td>12.1</td><td>Pintura · paredes por divisão (perímetro × pé-direito)</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">prova de conceito</td></tr>`);
+    // perímetros: fechar cada divisão a partir das paredes e medir (a área calculada tem de bater com a escrita)
+    let perHtml = '';
+    try {
+      const t2 = performance.now();
+      const pr = window.Perimetros ? Perimetros.medir(texto) : null;
+      if (pr && !pr.erro) {
+        const ms2 = performance.now() - t2;
+        log(ui.term, `A fechar as divisões pelas paredes: ${pr.stats.linhas} linhas, ${pr.stats.portas} portas fechadas, ${pr.stats.vaosFechados} vãos fechados, ${pr.stats.cortesIgnoradas} linhas de corte ignoradas`, 'info');
+        let okN = 0, abertas = 0, falhas = 0;
+        for (const r of pr.results) {
+          if (r.erro) { falhas++; continue; }
+          if (r.aberta) { abertas++; continue; }
+          const dif = r.areaCalc - r.areaEscrita; const bate = Math.abs(dif) <= Math.max(0.5, r.areaEscrita * 0.04) && !(r.juntas && r.juntas.length);
+          if (bate) okN++;
+          const nome = r.nome + (r.juntas && r.juntas.length ? ' + ' + r.juntas.map(j => j.nome).join(' + ') : '');
+          const escrita = r.areaEscrita + (r.juntas || []).reduce((s, j) => s + j.area, 0);
+          rows.push(`<tr><td>12.1</td><td>Pintura · ${esc(nome)} (perímetro × 2,60)</td><td>m²</td><td class="num">1,00</td><td class="num">${fmt(r.perimetro, 2)}</td><td></td><td class="num">2,60</td><td class="${bate ? 'ok' : 'chk'}">${bate ? 'área calculada ' + fmt(r.areaCalc, 2) + ' = escrita ' + fmt(r.areaEscrita, 2) : (r.juntas && r.juntas.length ? 'divisões abertas entre si, medidas em conjunto: ' + fmt(r.areaCalc, 2) + ' vs ' + fmt(escrita, 2) + ' escritas' : 'área calculada ' + fmt(r.areaCalc, 2) + ' vs escrita ' + fmt(r.areaEscrita, 2) + ': confirmar')}</td></tr>`);
+        }
+        log(ui.term, `${okN} divisões fechadas com área a bater com a do arquiteto · ${abertas} abertas para outra divisão · ${falhas} por fechar. ${(ms2 / 1000).toFixed(1)} s.`, okN ? 'success' : 'warn');
+        perHtml = `<div class="figure" style="margin-top:14px"><canvas id="perCanvas" style="width:100%;height:auto;display:block"></canvas><figcaption>Cada cor é uma divisão fechada pela plataforma a partir das linhas de parede do vosso DWG. O que ficou branco não fechou ou está fora das etiquetas.</figcaption></div>`;
+        setTimeout(() => { const cv = document.getElementById('perCanvas'); if (cv) Perimetros.desenhar(pr, cv, 1100); }, 50);
+      } else {
+        rows.push(`<tr><td>12.1</td><td>Pintura · paredes por divisão (perímetro × pé-direito)</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">${pr && pr.erro ? esc(pr.erro) : 'sem leitor de perímetros'}</td></tr>`);
+      }
+    } catch (e) {
+      log(ui.term, 'Perímetros: ' + e.message, 'warn');
+      rows.push(`<tr><td>12.1</td><td>Pintura · paredes por divisão</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">não fechou: ${esc(e.message)}</td></tr>`);
+    }
     const extra = `<div class="fv-list" style="margin-top:14px"><div class="fv-row"><b>Legenda</b><span>${esc(a.legenda.slice(0, 8).join(' · ')) || 'não encontrada'}</span></div><div class="fv-row"><b>Materiais no pormenor</b><span>${esc(a.materiais.filter(m => !/^\d/.test(m)).join(' · ')) || 'não encontrados'}</span></div><div class="fv-row"><b>Áreas brutas</b><span>${esc(a.brutas.join(' · '))}</span></div></div>`;
-    ui.out.innerHTML = `<div style="overflow-x:auto"><table class="cmp sheet live"><thead><tr><th>Art.</th><th>Descrição</th><th>Un</th><th style="text-align:right">Quant.</th><th style="text-align:right">Comp.</th><th style="text-align:right">Larg.</th><th style="text-align:right">Alt.</th><th>Origem</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>${extra}`;
+    ui.out.innerHTML = `${perHtml}<div style="overflow-x:auto; margin-top:12px"><table class="cmp sheet live"><thead><tr><th>Art.</th><th>Descrição</th><th>Un</th><th style="text-align:right">Quant.</th><th style="text-align:right">Comp.</th><th style="text-align:right">Larg.</th><th style="text-align:right">Alt.</th><th>Origem</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>${extra}`;
     ui.out.querySelectorAll('tbody tr').forEach((tr, i) => setTimeout(() => tr.classList.add('visible'), 80 + i * 45));
   }
 
