@@ -52,7 +52,7 @@
         <div class="grid-3" style="margin-top:40px; text-align:left">
           <div class="card stat-card reveal"><div class="num">1 semana</div><div class="desc">O que uma medição de obra custa hoje à equipa</div></div>
           <div class="card stat-card reveal"><div class="num"><span class="count" data-to="90" data-suffix="%">0</span></div><div class="desc">Das faturas de fornecedores chegam por email e são lançadas à mão no PHC</div></div>
-          <div class="card stat-card reveal"><div class="num">22 em 25</div><div class="desc">Pórticos do projeto de estabilidade reproduzidos ao milímetro a partir do vosso ficheiro</div></div>
+          <div class="card stat-card reveal"><div class="num">21 em 25</div><div class="desc">Pórticos do projeto de estabilidade reproduzidos ao milímetro a partir do vosso ficheiro; os outros 4 ficam sinalizados para confirmar</div></div>
         </div>
       </div>
     </div>
@@ -154,7 +154,7 @@
         { "text": "Cofragem = Q x C x (L + A - 0,20 + A), como no vosso Excel", "tone": "info" },
         { "text": "A comparar com a folha Vigas ja preenchida a mao", "tone": "info" },
         { "text": "Cobertura: 11 de 11 iguais ao milimetro", "tone": "success" },
-        { "text": "Folha 7, teto do piso 0: 11 iguais, 3 sinalizados (porticos 8, 9 e 14)", "tone": "warn" },
+        { "text": "Folha 7, teto do piso 0: 10 iguais, 4 sinalizados (porticos 8, 9, 10 e 14)", "tone": "warn" },
         { "text": "Folha Vigas pronta para validar.", "tone": "success" }
       ]
     }
@@ -256,6 +256,34 @@
       </div>
     </div>
 
+    <!-- 7b. Experimente agora -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Experimente agora · ao vivo</span>
+        <h2>Largue aqui os vossos ficheiros. Nada é pré-calculado.</h2>
+        <p class="lead">A leitura corre neste browser, à frente de si, com o mesmo leitor que produziu os ecrãs anteriores. O ficheiro nunca sai do seu computador.</p>
+        <div class="grid-2" style="margin-top:22px; align-items:start">
+          <div class="exp" id="expEst">
+            <h3>Estabilidade</h3>
+            <div class="sub">DWFX exportado do CYPECAD ou do AutoCAD. Sai a folha Vigas com betão e cofragem pelas vossas fórmulas.</div>
+            <div class="drop"><input type="file" accept=".dwfx,.dwf,.zip"><b>Largar o EST.5_Peças desenhadas.dwfx</b><span>ou clique para escolher · aceita DWFX</span></div>
+            <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>estabilidade.log</span></div><div class="term-body"></div></div>
+            <div class="exp-status"></div>
+            <div class="exp-out"></div>
+          </div>
+          <div class="exp" id="expArq">
+            <h3>Arquitetura</h3>
+            <div class="sub">DXF gravado do GstarCAD ou do AutoCAD. Saem as divisões com área, os vãos com largura, as portas e a verificação da implantação.</div>
+            <div class="drop"><input type="file" accept=".dxf,.dwg"><b>Largar o 001_25-ARQ em DXF</b><span>ou clique para escolher · aceita DXF; o DWG explica o que falta</span></div>
+            <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>arquitetura.log</span></div><div class="term-body"></div></div>
+            <div class="exp-status"></div>
+            <div class="exp-out"></div>
+          </div>
+        </div>
+        <p class="exp-privacy">Demonstração sem servidor: os ficheiros são lidos localmente e não são enviados nem guardados. Na plataforma, o DWG é convertido automaticamente e os perímetros das divisões entram depois da prova de conceito.</p>
+      </div>
+    </div>
+
     <!-- 8. O que falta provar -->
     <div class="slide">
       <div class="container">
@@ -338,7 +366,7 @@
                 <div class="sub">Os cinco campos por elemento vêm do projeto. As fórmulas de betão, cofragem e aço são as vossas.</div>
                 <div class="task"><span class="st done">✓</span>Sapatas: 6 linhas, S1 75x40, comprimentos das cotas<span class="who">validar</span></div>
                 <div class="task"><span class="st done">✓</span>Pilares: 47 pilares em 17 grupos, do quadro de pilares<span class="who">validar</span></div>
-                <div class="task"><span class="st done">✓</span>Vigas: 25 pórticos, 22 iguais ao Excel<span class="who">3 a confirmar</span></div>
+                <div class="task"><span class="st done">✓</span>Vigas: 25 pórticos, 21 iguais ao Excel<span class="who">4 a confirmar</span></div>
                 <div class="task"><span class="st todo">!</span>Lajes: La1 a La9, dimensões das plantas<span class="who">validar</span></div>
               </div>
               <div class="view" id="vCot">
@@ -615,6 +643,9 @@
 
   <script src="../shared/js/protect.js"></script>
   <script src="../shared/deck/deck.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="assets/js/leitores.js"></script>
+  <script src="assets/js/experimente.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
     terminal('estTerm');

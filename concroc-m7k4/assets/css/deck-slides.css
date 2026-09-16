@@ -195,3 +195,22 @@
 .thumbs span { display: block; font-size: 0.68rem; padding: 6px 8px; line-height: 1.3; }
 .figure a { display: block; }
 @media (max-width: 1000px) { .thumbs { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- v4: experimente agora ---------- */
+.exp { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-md); padding: 20px; }
+.exp h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.exp .sub { color: var(--muted); font-size: 0.86rem; margin-bottom: 14px; }
+.drop { border: 2px dashed hsl(var(--accent-hsl) / 0.45); border-radius: var(--radius); padding: 22px; text-align: center; cursor: pointer; background: hsl(var(--accent-hsl) / 0.04); transition: all 0.18s ease; }
+.drop:hover, .drop.over { border-color: var(--accent); background: hsl(var(--accent-hsl) / 0.10); }
+.drop b { display: block; color: var(--brand); font-family: var(--font-display); font-size: 1rem; }
+.drop span { display: block; color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+.drop input { display: none; }
+.exp .term-wrap { margin-top: 14px; }
+.exp .term-body { min-height: 150px; max-height: 260px; overflow-y: auto; }
+.exp-status { margin-top: 12px; font-size: 0.9rem; color: var(--muted); min-height: 1.4em; }
+.exp-status .okc { color: var(--success); font-weight: 700; }
+.exp-status .chkc { color: var(--warning); font-weight: 700; }
+.exp-out { margin-top: 12px; }
+.exp-out .cmp { font-size: 0.82rem; }
+.exp-out .cmp th, .exp-out .cmp td { padding: 6px 8px; }
+.exp-privacy { margin-top: 10px; font-size: 0.78rem; color: var(--muted); text-align: center; }
