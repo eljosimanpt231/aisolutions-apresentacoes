@@ -178,8 +178,9 @@
     // a planta costuma aparecer repetida (áreas, vãos, cotas): o nº de cópias é o nº de vezes que a etiqueta mais repetida aparece
     const rep = {}; for (const t of textos) if (divMap.has(t.s) || /^V\d{1,2}$/.test(t.s)) rep[t.s] = (rep[t.s] || 0) + 1;
     const copias = Math.max(1, ...Object.values(rep));
+    const copiasDetetadas = Object.keys(rep).length > 0;
     return {
-      contagem, camadas: [...camadas], textos: textos.length, cotas: dims.length, copias,
+      contagem, camadas: [...camadas], textos: textos.length, cotas: dims.length, copias, copiasDetetadas,
       divisoes, vaos, portas: Math.round(arcosPorta / copias), paredesSegmentos: Math.round(linhasParede / copias),
       brutas, implantacao: implVal ? { texto: implVal, calculada: implPoly ? Math.round(implPoly.area * 100) / 100 : null } : null,
       legenda, materiais
