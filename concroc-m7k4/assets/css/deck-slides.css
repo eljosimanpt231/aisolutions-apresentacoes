@@ -214,3 +214,10 @@
 .exp-out .cmp { font-size: 0.82rem; }
 .exp-out .cmp th, .exp-out .cmp td { padding: 6px 8px; }
 .exp-privacy { margin-top: 10px; font-size: 0.78rem; color: var(--muted); text-align: center; }
+
+/* ---------- v5: a lista ponto a ponto ---------- */
+.lista td { font-size: 0.84rem; line-height: 1.45; }
+.lista td:first-child { font-family: var(--font-display); font-weight: 800; color: var(--brand); text-align: center; }
+.lista td:nth-child(2) { font-weight: 600; }
+.lista td.ok { color: var(--success); font-weight: 700; }
+.lista td.chk { color: var(--warning); font-weight: 700; }
