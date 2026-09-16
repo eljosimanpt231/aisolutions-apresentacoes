@@ -1,0 +1,71 @@
+/* ============================================================
+   TOKENS: Recife Blue × AI Solutions
+   Base: estilo corporativo-azul (claro), componentes do deck adaptados
+   a fundo claro por light-deck.css.
+   Paleta tirada do site recifeblue.pt (CSS da app, --primary) e do logótipo:
+     205 83% 44%  azul-água do site e das ondas do logótipo -> acento vivo
+     escurecido para 36% L para passar AA em texto pequeno sobre branco
+     navy da ponta escura das ondas do logótipo -> marca
+   Regra de ouro: os componentes NUNCA usam cores diretas.
+   ============================================================ */
+
+:root {
+  /* ---- Marca da lead ---- */
+  --brand-hsl: 216 64% 22%;          /* navy profundo das ondas do logótipo */
+  --accent-hsl: 205 83% 36%;         /* azul-água do site, -8 L para AA (5,6:1 sobre branco) */
+  --accent-vivid-hsl: 205 83% 44%;   /* azul exato do site, só preenchimentos e glows */
+  --water-hsl: 195 80% 58%;          /* ciano claro das ondas, só em gradientes */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --accent-vivid: hsl(var(--accent-vivid-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* ---- Superfícies (fundo branco, com um toque de água) ---- */
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(204 60% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(204 50% 98%);
+  --border: hsl(206 32% 88%);
+
+  /* ---- Texto ---- */
+  --text: hsl(216 50% 13%);
+  --muted: hsl(212 16% 40%);
+
+  /* ---- Semânticos ---- */
+  --success-hsl: 152 60% 32%;  --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 68% 45%;   --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 92% 40%;   --warning: hsl(var(--warning-hsl));
+  --warning-vivid: hsl(38 94% 52%);
+
+  /* ---- Chat em modo claro (usado por light-deck.css) ---- */
+  --chat-bg: hsl(204 40% 95%);
+  --chat-head: hsl(206 30% 97%);
+  --chat-in: hsl(0 0% 100%);
+  --chat-out: hsl(204 80% 91%);
+  --chat-line: hsl(206 26% 86%);
+
+  /* ---- Imagem de água do hero ---- */
+  --water-shade: linear-gradient(180deg, hsl(var(--brand-hsl) / 0.58) 0%, hsl(var(--brand-hsl) / 0.78) 70%, hsl(var(--brand-hsl) / 0.92) 100%);
+  --on-water: hsl(0 0% 100%);
+  --on-water-muted: hsl(200 60% 92%);
+  --glass: hsl(0 0% 100% / 0.1);
+  --glass-line: hsl(0 0% 100% / 0.26);
+
+  /* ---- Gradientes e sombras (derivados da marca, nunca preto puro) ---- */
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
+  --grad-text: linear-gradient(120deg, hsl(var(--water-hsl)), hsl(var(--accent-vivid-hsl)));
+  --grad-wave: linear-gradient(90deg, hsl(var(--water-hsl)), hsl(var(--accent-vivid-hsl)) 55%, hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 60%, hsl(var(--accent-hsl) / 0.85));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  --radius: 12px;
+  --radius-lg: 20px;
+  --font-display: 'Barlow Condensed', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}

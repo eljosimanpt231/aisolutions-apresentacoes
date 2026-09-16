@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Recife Blue | Proposta AI Solutions</title>
+  <meta name="description" content="Plataforma de orçamentação com agente de IA para a Recife Blue. Apresentação personalizada AI Solutions.">
+  <link rel="icon" href="assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/light-deck.css">
+  <link rel="stylesheet" href="assets/css/recife.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<nav class="dotnav" aria-label="Secções"></nav>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero water" id="topo" data-nav="Início">
+  <div class="container">
+    <div class="brandbar">
+      <span class="logo-pill"><img class="logo-img" src="assets/img/logo.jpg" alt="Recife Blue, Piscinas e Spa"></span>
+      <span class="x">×</span>
+      <span class="ais">AI Solutions</span>
+    </div>
+    <h1>O pedido chega.<br>O orçamento fica montado.<br><span class="hl">O preço decides tu.</span></h1>
+    <p class="lead" style="margin-top:22px">
+      Hoje cada orçamento espera por uma noite livre. Com a plataforma, o agente lê o pedido, monta as linhas
+      com os teus preços e deixa tudo pronto a rever. Tu ajustas, aprovas, e o orçamento sai pelo TOConline.
+    </p>
+    <div class="grid-3" style="margin-top:40px">
+      <div class="card stat-card reveal">
+        <div class="num">1 a 2 semanas</div>
+        <div class="desc">Até o cliente receber o orçamento, hoje</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num"><span class="count" data-to="131">0</span> artigos</div>
+        <div class="desc">Lidos nos 8 orçamentos que nos enviaste</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num">8 a 12 mil €</div>
+        <div class="desc">Por cada serviço técnico completo que fica em cima da mesa</div>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span>Para <b>Gonçalo Ribeiro</b></span>
+      <span>Reunião de <b>18 de setembro de 2026</b></span>
+      <span>Preparado por <b>Manuel Condeço</b>, AI Solutions</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="diagnostico" data-nav="O que ouvimos">
+  <div class="container">
+    <span class="eyebrow">Diagnóstico</span>
+    <h2>O que ouvimos na segunda-feira</h2>
+    <p class="lead">Não é um diagnóstico genérico do setor. É o que nos contaste a 14 de setembro.</p>
+    <div class="grid-3" style="margin-top:38px">
+      <div class="card dcard reveal">
+        <div class="t">O dia</div>
+        <h3>De dia na obra, à noite nos orçamentos</h3>
+        <p>És o dono, o gerente e estás no terreno. No verão, quando caem mais pedidos, a orçamentação fica para o fim do dia.</p>
+        <p class="said">"Já à noite, já nem tenho cabeça para tanto orçamento."</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">A resposta</div>
+        <h3>Uma a duas semanas por orçamento</h3>
+        <p>Recebes um a dois pedidos por semana. Quando a resposta demora, o cliente fala com o concorrente que responde primeiro.</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Os preços</div>
+        <h3>A base de dados és tu</h3>
+        <p>Abres o template no TOConline, inseres as linhas uma a uma e pões os preços, muitos de cabeça. Não há uma tabela de produtos e custos.</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">A margem</div>
+        <h3>Cada caso é um caso</h3>
+        <p>O preço depende do cliente, dos descontos e de quanto queres ganhar aquele trabalho. Nenhuma tabela fixa resolve isto.</p>
+        <p class="said">"Posso vender a mesma bomba a 400 euros a um cliente e a 500 euros a outro."</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Os pedidos</div>
+        <h3>Muitos curiosos</h3>
+        <p>Os pedidos da internet trazem muita gente só a saber preços. Ninguém cobra orçamentos, mas cada um dá trabalho a fazer.</p>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">O contacto</div>
+        <h3>O telefone continua a ser teu</h3>
+        <p>Numa área técnica, a confiança ganha-se a falar. Por isso nada nesta proposta atende chamadas nem fala com os teus clientes por ti.</p>
+      </div>
+    </div>
+    <p class="quote-close">"Não é falta de trabalho. É o tempo que sobra para o orçamentar."</p>
+  </div>
+</section>
+
+<!-- ============ 3. OS TEUS ORÇAMENTOS ============ -->
+<section id="orcamentos" data-nav="Os teus orçamentos">
+  <div class="container">
+    <span class="eyebrow">Os teus orçamentos</span>
+    <h2>Lemos os 8 orçamentos que enviaste</h2>
+    <p class="lead">Antes de desenhar a plataforma, lemos linha a linha o que enviaste na segunda-feira à noite. Foi aqui que percebemos como orçamentas de facto.</p>
+
+    <div class="counts">
+      <div class="card count-card reveal"><b>8</b><span>Orçamentos, de janeiro a setembro de 2026</span><i>Do OR 2026/3 ao OR 2026/34</i></div>
+      <div class="card count-card reveal"><b>131</b><span>Artigos lidos, com quantidade, preço e IVA</span><i>Do ralo de fundo à cobertura DIVER</i></div>
+      <div class="card count-card reveal"><b>5</b><span>Unidades diferentes</span><i>Unidade, hora, metro, quilo e litro</i></div>
+      <div class="card count-card reveal"><b>4</b><span>Tipos de trabalho</span><i>Obra completa, tela armada, substituição, cobertura</i></div>
+    </div>
+
+    <div class="lidos">
+      <div class="card var-card reveal">
+        <h3>A mesma peça, preços diferentes</h3>
+        <p>Tinhas razão: nos teus orçamentos, o preço não é fixo. Muda com o cliente, com o material e com a obra.</p>
+        <ul class="var-list">
+          <li><span class="it">Eletrolisador de sal 10 gr/h</span><span class="vals"><span class="v p">1.120 €</span><span class="v e">980 €</span></span></li>
+          <li><span class="it">Avady PRIM PH</span><span class="vals"><span class="v p">390 €</span><span class="v e">420 €</span></span></li>
+          <li><span class="it">Ralo de fundo</span><span class="vals"><span class="v p">60 €<small>betão</small></span><span class="v e">40 €<small>branco</small></span><span class="v e">47 €<small>antracite</small></span><span class="v e">165 €<small>com grelha</small></span><span class="v e">395 €<small>inox</small></span></span></li>
+          <li><span class="it">Instalação hidráulica</span><span class="vals"><span class="v p">350 €<small>fechado</small></span><span class="v e">450 €<small>fechado</small></span><span class="v e">40 €<small>à hora</small></span></span></li>
+          <li><span class="it">Desconto de cabeçalho</span><span class="vals"><span class="v e">8%</span><span class="v e">10%</span><span class="v e">13%</span></span></li>
+          <li><span class="it">Condições de pagamento</span><span class="vals"><span class="v">50/50</span><span class="v">50/30/20</span><span class="v">30/40/30</span><span class="v">40/30/30</span></span></li>
+        </ul>
+        <div class="var-legend"><span><i class="lp"></i>Orçamento a particular</span><span><i class="le"></i>Orçamento a empresa ou empreiteiro</span></div>
+      </div>
+      <div class="reveal">
+        <p class="term-cap">Foi assim que a base de preços começou a ser construída. A tua parte é validar os pontos que ficam por confirmar.</p>
+        <div class="term" id="rbTerm"></div>
+      </div>
+    </div>
+    <div class="alert catch reveal">
+      <span class="dot"></span>
+      <div>
+        <strong>Um exemplo do que o agente apanha</strong>
+        <p style="color:var(--muted); font-size:0.95rem; margin-top:4px">
+          As válvulas de esfera PVC PN10 de 50 mm aparecem a 18 € a unidade no OR 2026/9 e no OR 2026/11, e a
+          118 € no OR 2026/10, com 10 unidades (1.180 €). Pode ser intencional ou pode ser uma gralha. Com a
+          base de preços, uma diferença destas é assinalada antes de o orçamento sair, em vez de passar
+          despercebida ou de se repetir no orçamento seguinte.
+        </p>
+      </div>
+    </div>
+    <p class="quote-close">"Por isso o agente não fixa preços. Aprende com os teus e mostra-te de onde vem cada número."</p>
+  </div>
+</section>
+<script type="application/json" id="rbTerm-config">
+{
+  "title": "base-de-precos.log",
+  "intervalMs": 620,
+  "lines": [
+    { "text": "A ler OR 2026/3: cobertura automática, 1 artigo, desconto de cabeçalho 8%", "tone": "info" },
+    { "text": "A ler OR 2026/9: obra completa, 31 artigos", "tone": "ok" },
+    { "text": "A ler OR 2026/10: obra completa, 29 artigos, mão de obra à hora (40 €)", "tone": "ok" },
+    { "text": "A ler OR 2026/11: obra completa, 23 artigos, desconto de cabeçalho 13%", "tone": "ok" },
+    { "text": "A ler OR 2026/21: obra completa, 20 artigos, mão de obra a preço fechado", "tone": "ok" },
+    { "text": "A ler OR 2026/27: revestimento em tela armada, IVA em autoliquidação", "tone": "ok" },
+    { "text": "A ler OR 2026/33: célula de eletrólise, desconto de linha 15%", "tone": "ok" },
+    { "text": "A ler OR 2026/34: obra completa a particular, 24 artigos", "tone": "ok" },
+    { "text": "Tubo rígido PVC 50 mm: por verba num orçamento, por barra noutros. Por confirmar.", "tone": "warn" },
+    { "text": "Sal para piscinas: oferecido em 2 obras. Registado como oferta, não como preço.", "tone": "warn" },
+    { "text": "Válvulas de esfera PN10 50 mm: 18 € no OR 2026/9 e 2026/11, 118 € no OR 2026/10. Por confirmar.", "tone": "warn" },
+    { "text": "Base criada: 131 linhas, preços de particular e de empresa. 3 pontos para o Gonçalo.", "tone": "success" }
+  ]
+}
+</script>
+
+<!-- ============ 4. O QUE MUDA ============ -->
+<section class="section-alt" id="mudanca" data-nav="O que muda">
+  <div class="container">
+    <span class="eyebrow">O que muda</span>
+    <h2>A mesma decisão, sem o trabalho à volta</h2>
+    <div class="grid-2" style="margin-top:36px">
+      <div class="card card-do reveal">
+        <h3>O que passa a ser automático</h3>
+        <ul class="list-check">
+          <li>Leitura dos pedidos que chegam por email, incluindo mapas de quantidades em PDF</li>
+          <li>Classificação: particular, empresa ou condomínio; obra completa, tela armada, substituição ou cobertura</li>
+          <li>Pré-orçamento com a tua estrutura: encastráveis, hidráulica, iluminação, filtração e tratamento</li>
+          <li>Preços do teu histórico, com a origem de cada um à vista</li>
+          <li>Aviso do que falta no pedido antes de o orçamento seguir</li>
+          <li>Alterações aplicadas a partir do que escreves, com o total recalculado</li>
+          <li>Emissão no TOConline quando aprovas, e registo do estado de cada orçamento</li>
+        </ul>
+      </div>
+      <div class="card card-dont reveal">
+        <h3>O que deixas de fazer à mão</h3>
+        <ul class="list-x">
+          <li>Abrir o template à noite e escrever as linhas uma a uma</li>
+          <li>Tentar lembrar quanto cobraste pelo último eletrolisador</li>
+          <li>Procurar um orçamento antigo parecido para copiar</li>
+          <li>Recalcular tudo porque mudou um holofote ou o desconto</li>
+          <li>Perder o rasto de quem ficou de responder</li>
+          <li>Fazer um orçamento completo a quem só queria saber preços</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. DEMO: CHAT + RACIOCÍNIO ============ -->
+<section id="demo" data-nav="O agente">
+  <div class="container center">
+    <span class="eyebrow">O agente a trabalhar</span>
+    <h2>Quatro pedidos, quatro decisões</h2>
+    <p class="lead">À esquerda, a conversa entre ti e o agente. À direita, o que ele está a fazer em cada passo.</p>
+    <div style="margin-top:36px; text-align:left">
+      <div class="cr" id="rbDemo"></div>
+    </div>
+    <p class="demo-note">Simulação do fluxo que vamos construir. Os clientes são inventados e os preços vêm dos teus orçamentos.</p>
+  </div>
+</section>
+<script type="application/json" id="rbDemo-config">
+{
+  "agentName": "Assistente de orçamentos",
+  "agentInitials": "RB",
+  "chatStatus": "Plataforma Recife Blue, sempre ligada",
+  "stepMs": 1500,
+  "endPauseMs": 3200,
+  "scenarios": [
+    {
+      "title": "Obra de particular",
+      "subtitle": "Um email às 21h e o pré-orçamento pronto antes de abrires o computador.",
+      "chat": [
+        { "sender": "system", "text": "Email recebido às 21:14: pedido de orçamento" },
+        { "sender": "agent", "text": "Gonçalo, pedido novo: **piscina em betão, 8 x 4 m**, moradia em Loures. O cliente quer **tratamento a sal** e luzes.", "time": "21:15" },
+        { "sender": "agent", "text": "Montei o pré-orçamento como nas tuas obras completas: encastráveis, hidráulica, iluminação, filtração e tratamento. **24 linhas, 6.205 € sem IVA**, com os teus preços de particular.", "time": "21:15" },
+        { "sender": "agent", "text": "Dois pontos antes de seguir: a **profundidade** não vem no email, e o cliente não diz **quantos holofotes** quer. Pus 2, como no último orçamento parecido.", "time": "21:16" },
+        { "sender": "client", "text": "Põe 3 holofotes e condições 50/30/20.", "time": "22:40" },
+        { "sender": "agent", "text": "Feito: **6.555 € sem IVA**, 50% na adjudicação, 30% com o equipamento em obra e 20% na conclusão. Quando aprovares, emito no TOConline.", "time": "22:40" }
+      ],
+      "steps": [
+        { "icon": "message", "label": "Lê o email e identifica: obra completa, cliente particular" },
+        { "icon": "search", "label": "Extrai medidas, localidade, tratamento a sal e iluminação" },
+        { "icon": "database", "label": "Procura o orçamento mais parecido no teu histórico" },
+        { "icon": "list", "label": "Preenche as 24 linhas com os teus preços de particular" },
+        { "icon": "alert", "label": "Sinaliza o que falta: profundidade e número de holofotes" },
+        { "icon": "check", "label": "Aplica as alterações, recalcula e deixa pronto a aprovar" }
+      ]
+    },
+    {
+      "title": "Obra de empreiteiro",
+      "subtitle": "Um mapa de quantidades em PDF. A margem continua a ser decidida por ti.",
+      "chat": [
+        { "sender": "system", "text": "Email com anexo: mapa de quantidades, 2 piscinas" },
+        { "sender": "agent", "text": "Chegou o mapa da **Construtora Horizonte** para duas piscinas num edifício em Lisboa. Li **27 artigos** e associei 26 aos teus.", "time": "09:02" },
+        { "sender": "agent", "text": "Usei os teus preços de empresa e a **mão de obra à hora, a 40 €**, como fazes nas obras grandes. Sem desconto, dá **18.310 € sem IVA**.", "time": "09:03" },
+        { "sender": "agent", "text": "Um artigo nunca apareceu nos teus orçamentos: **cobertura submersa de lâminas**. Deixei-o sem preço.", "time": "09:03" },
+        { "sender": "agent", "text": "E falta uma decisão tua: nas obras de empreiteiro aplicaste **8%, 10% e 13%** de desconto de cabeçalho. Qual aplico?", "time": "09:03" },
+        { "sender": "client", "text": "10%. Prazo de execução 15 dias úteis. A cobertura vejo eu.", "time": "12:31" },
+        { "sender": "agent", "text": "Aplicado: **16.479 € sem IVA**, prazo de 15 dias úteis. A cobertura fica marcada para completares antes de aprovar.", "time": "12:31" }
+      ],
+      "steps": [
+        { "icon": "book", "label": "Abre o PDF anexo e lê o mapa de quantidades" },
+        { "icon": "arrows", "label": "Associa cada artigo do mapa aos artigos da tua base" },
+        { "icon": "clock", "label": "Aplica o teu modelo de empresa: mão de obra à hora" },
+        { "icon": "ban", "label": "Artigo sem histórico: não inventa preço, deixa em branco" },
+        { "icon": "user-cog", "label": "Desconto e margem são decisão tua: pergunta antes de fechar" },
+        { "icon": "check", "label": "Aplica o desconto e o prazo, e marca o artigo por completar" }
+      ]
+    },
+    {
+      "title": "Substituição rápida",
+      "subtitle": "Um pedido que já orçamentaste antes fica pronto em duas linhas.",
+      "chat": [
+        { "sender": "system", "text": "Email recebido às 07:48: Condomínio Quinta das Palmeiras" },
+        { "sender": "agent", "text": "A administração do condomínio pede a **substituição da célula** do eletrolisador Eco Salt 20 gr/h.", "time": "07:49" },
+        { "sender": "agent", "text": "Já orçamentaste este trabalho a outro condomínio: **célula e assistência técnica**, com **15% de desconto** na célula. Repito as mesmas condições?", "time": "07:49" },
+        { "sender": "client", "text": "Sim, igual.", "time": "08:10" },
+        { "sender": "agent", "text": "Pronto em duas linhas, com IVA a 23%. Está na lista para aprovares e sair pelo TOConline.", "time": "08:10" }
+      ],
+      "steps": [
+        { "icon": "message", "label": "Lê o pedido: substituição de peça, cliente condomínio" },
+        { "icon": "database", "label": "Encontra o orçamento igual feito a outro condomínio" },
+        { "icon": "user-cog", "label": "Confirma contigo se mantém o desconto" },
+        { "icon": "check", "label": "Monta as duas linhas e deixa pronto a aprovar" }
+      ]
+    },
+    {
+      "title": "Pedido sem dados",
+      "subtitle": "O agente recusa inventar um orçamento e pede o que falta.",
+      "chat": [
+        { "sender": "system", "text": "Email recebido às 16:22: \"Quanto custa fazer uma piscina?\"" },
+        { "sender": "agent", "text": "Não fiz pré-orçamento para este pedido. **Não há medidas, localidade nem tipo de construção**, e um valor agora seria inventado.", "time": "16:23" },
+        { "sender": "agent", "text": "Deixei-te uma resposta pronta a pedir **medidas aproximadas, localidade, fotografias do terreno e prazo pretendido**. Envio?", "time": "16:23" },
+        { "sender": "client", "text": "Envia.", "time": "18:05" },
+        { "sender": "agent", "text": "Enviada. O pedido fica **a qualificar**: só volta a ti quando o cliente responder com os dados.", "time": "18:05" }
+      ],
+      "steps": [
+        { "icon": "search", "label": "Procura medidas, local e tipo de obra no pedido" },
+        { "icon": "ban", "label": "Dados insuficientes: recusa montar um orçamento" },
+        { "icon": "send", "label": "Prepara a resposta com as perguntas, para aprovares" },
+        { "icon": "filter", "label": "Marca o pedido como a qualificar e tira-o da tua lista" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 6. A PLATAFORMA ============ -->
+<section class="section-alt" id="plataforma" data-nav="A plataforma">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">A plataforma</span>
+      <h2>Os teus orçamentos, num só sítio</h2>
+      <p class="lead">Feita à volta da tua forma de orçamentar: os teus tipos de trabalho, os teus preços e o teu TOConline.</p>
+    </div>
+    <p class="app-note"><span>ⓘ</span><span>Maqueta navegável. Clica nas secções, nos filtros e experimenta escrever uma alteração no pré-orçamento.</span></p>
+
+    <div class="app-frame reveal">
+      <div class="app-chrome"><i></i><i></i><i></i><span>orcamentos.recifeblue.pt</span></div>
+      <div class="app">
+        <aside class="app-side">
+          <div class="app-brand"><img src="assets/img/logo.jpg" alt="Recife Blue"></div>
+          <span class="app-sec">Orçamentação</span>
+          <button class="app-nav is-on" data-view="lista"><em>☰</em>Orçamentos<span class="app-badge">4</span></button>
+          <button class="app-nav" data-view="pre"><em>✎</em>Pré-orçamento</button>
+          <button class="app-nav" data-view="precos"><em>€</em>Base de preços</button>
+          <span class="app-sec">Gestão</span>
+          <button class="app-nav" data-view="analise"><em>▦</em>Análise</button>
+          <div class="app-user"><span class="app-av">GR</span><div><b>Gonçalo Ribeiro</b><i>Gerência</i></div></div>
+        </aside>
+        <main class="app-main">
+
+          <!-- VISTA: LISTA -->
+          <section class="app-view is-on" data-view="lista">
+            <header class="app-head"><h4>Orçamentos</h4><span class="app-date">Terça-feira, 08:40</span></header>
+            <div class="chips">
+              <button class="chip is-on">Todos</button>
+              <button class="chip">Para rever</button>
+              <button class="chip">A qualificar</button>
+              <button class="chip">À espera</button>
+              <button class="chip">Adjudicado</button>
+              <button class="chip">Perdido</button>
+            </div>
+            <div class="tbl-wrap">
+              <table class="app-tb" id="rbLista">
+                <thead><tr><th>Ref.</th><th>Cliente</th><th>Trabalho</th><th class="num">Sem IVA</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr class="clk" data-go="pre" id="rowLoures"><td><span class="ref">PRÉ</span></td><td>Moradia em Loures<small>Particular, chegou ontem às 21:14</small></td><td>Obra completa, 8 x 4 m</td><td class="num" id="rowLouresVal">6.205 €</td><td><span class="pill rev">Para rever</span></td></tr>
+                  <tr><td><span class="ref">PRÉ</span></td><td>Construtora Horizonte<small>Empreiteiro, falta o desconto</small></td><td>2 piscinas em edifício</td><td class="num">18.310 €</td><td><span class="pill rev">Para rever</span></td></tr>
+                  <tr><td><span class="ref">PRÉ</span></td><td>Condomínio Quinta das Palmeiras<small>Condomínio, hoje às 07:48</small></td><td>Célula de eletrólise</td><td class="num">712 €</td><td><span class="pill rev">Para rever</span></td></tr>
+                  <tr><td><span class="ref">PEDIDO</span></td><td>Pedido por email<small>Sem medidas nem localidade</small></td><td>Por definir</td><td class="num">·</td><td><span class="pill qual">A qualificar</span></td></tr>
+                  <tr><td><span class="ref">OR 2026/44</span></td><td>Moradia em Sesimbra<small class="late">Sem resposta há 9 dias</small></td><td>Revestimento em tela armada</td><td class="num">1.850 €</td><td><span class="pill esp">À espera</span></td></tr>
+                  <tr><td><span class="ref">OR 2026/43</span></td><td>Hotel na Ericeira<small>Enviado há 5 dias</small></td><td>Filtração e tratamento</td><td class="num">4.320 €</td><td><span class="pill esp">À espera</span></td></tr>
+                  <tr><td><span class="ref">OR 2026/42</span></td><td>Construtora Horizonte<small>Adjudicado há 12 dias</small></td><td>Cobertura automática</td><td class="num">11.200 €</td><td><span class="pill adj">Adjudicado</span></td></tr>
+                  <tr><td><span class="ref">OR 2026/41</span></td><td>Moradia em Palmela<small>Escolheu outro fornecedor</small></td><td>Obra completa</td><td class="num">7.140 €</td><td><span class="pill perd">Perdido</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="panel-note">Clica na moradia em Loures para abrir o pré-orçamento. Dados ilustrativos.</p>
+          </section>
+
+          <!-- VISTA: PRÉ-ORÇAMENTO -->
+          <section class="app-view" data-view="pre">
+            <header class="app-head"><h4>Pré-orçamento: moradia em Loures</h4><span class="app-date">Montado pelo agente às 21:15</span></header>
+            <div class="pre-head">
+              <span>Cliente <b>Particular</b></span>
+              <span>Trabalho <b>Obra completa, piscina em betão 8 x 4 m</b></span>
+              <span>Tratamento <b>Sal</b></span>
+              <span>Base <b>Os teus preços de particular</b></span>
+            </div>
+            <div class="pre-grid">
+              <div>
+                <div class="tbl-wrap">
+                  <table class="app-tb">
+                    <thead><tr><th>Descrição</th><th class="num">Qtd.</th><th class="num">Preço</th><th class="num">Valor</th></tr></thead>
+                    <tbody id="preBody"></tbody>
+                  </table>
+                </div>
+                <div class="totals" id="preTotals"></div>
+                <p class="cond" id="preCond"></p>
+              </div>
+              <div>
+                <div class="side-card">
+                  <h5>Notas do agente</h5>
+                  <ul class="flags" id="preFlags">
+                    <li>Profundidade não indicada no email. Confirma com o cliente antes de enviar.</li>
+                    <li id="flagHolofotes">O cliente quer luzes mas não diz quantas. Pus 2 holofotes, como no último orçamento parecido.</li>
+                    <li>Tubo rígido PVC: nos teus orçamentos aparece por verba e por barra. Usei a verba de particular.</li>
+                    <li class="ok">Arranque dos sistemas, kit de limpeza e aconselhamento incluídos, como no teu último orçamento a particular.</li>
+                  </ul>
+                </div>
+                <div class="side-card">
+                  <h5>Escreve a alteração</h5>
+                  <form class="ask" id="preAsk">
+                    <input id="preInput" type="text" placeholder="Ex.: põe 3 holofotes" autocomplete="off">
+                    <button type="submit">Aplicar</button>
+                  </form>
+                  <div class="sugs">
+                    <button class="sug" type="button">Põe 3 holofotes</button>
+                    <button class="sug" type="button">Condições 50/30/20</button>
+                    <button class="sug" type="button">Desconto de 5%</button>
+                    <button class="sug" type="button">Bomba a 500 €</button>
+                    <button class="sug" type="button">Tira o sal</button>
+                  </div>
+                  <div class="reply" id="preReply">O agente aplica a alteração e recalcula o total.</div>
+                  <button class="btn-app" id="preEmit" type="button">Aprovar e emitir no TOConline</button>
+                  <p class="emitted" id="preEmitted" hidden></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- VISTA: BASE DE PREÇOS -->
+          <section class="app-view" data-view="precos">
+            <header class="app-head"><h4>Base de preços</h4><span class="app-date">Construída a partir dos teus 8 orçamentos</span></header>
+            <div class="tbl-wrap">
+              <table class="app-tb">
+                <thead><tr><th>Artigo</th><th class="num">Particular</th><th class="num">Empresa</th><th>Onde aparece</th></tr></thead>
+                <tbody>
+                  <tr class="grp"><td colspan="4">Filtração e tratamento</td></tr>
+                  <tr><td>Eletrolisador de sal 10 gr/h</td><td class="num">1.120 €</td><td class="num">980 €</td><td><span class="ref">OR 2026/34, 2026/11</span></td></tr>
+                  <tr><td>Eletrolisador de sal 16 gr/h</td><td class="num">·</td><td class="num">1.100 €</td><td><span class="ref">OR 2026/10</span></td></tr>
+                  <tr><td>Avady PRIM PH</td><td class="num">390 €</td><td class="num">420 €</td><td><span class="ref">OR 2026/34, 2026/10, 2026/11</span></td></tr>
+                  <tr><td>Bomba de velocidade variável Inver S</td><td class="num">·</td><td class="num">520 €</td><td><span class="ref">OR 2026/10, 2026/11</span></td></tr>
+                  <tr><td>Sal para piscinas<small>Oferecido em 2 obras</small></td><td class="num">100 €</td><td class="num">15 € por saco</td><td><span class="ref">4 orçamentos</span></td></tr>
+                  <tr class="grp"><td colspan="4">Encastráveis e iluminação</td></tr>
+                  <tr><td>Ralo de fundo</td><td class="num">60 €</td><td class="num">40 a 395 €</td><td><span class="ref">5 orçamentos</span><small>Betão, branco, antracite, grelha, inox</small></td></tr>
+                  <tr><td>Projetor com nicho 100 mm</td><td class="num">·</td><td class="num">316 €</td><td><span class="ref">OR 2026/10, 2026/11</span></td></tr>
+                  <tr><td>Regulador de nível Astralpool</td><td class="num">·</td><td class="num">112 a 114 €</td><td><span class="ref">OR 2026/11, 2026/21</span></td></tr>
+                  <tr class="grp"><td colspan="4">Hidráulica e mão de obra</td></tr>
+                  <tr><td>Instalação hidráulica em PVC</td><td class="num">350 € fechado</td><td class="num">450 € ou 40 €/h</td><td><span class="ref">5 orçamentos</span></td></tr>
+                  <tr><td>Válvulas de esfera PVC PN10 50 mm<small class="late">118 € no OR 2026/10: por confirmar</small></td><td class="num">70 € verba</td><td class="num">18 € ou 118 €</td><td><span class="ref">OR 2026/9, 10, 11, 34</span></td></tr>
+                  <tr><td>Tubo rígido PVC PN10 50 mm<small class="late">Unidades diferentes: por confirmar</small></td><td class="num">150 € verba</td><td class="num">50 a 285 €</td><td><span class="ref">5 orçamentos</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="panel-note">Extrato real dos teus orçamentos. Cada preço novo que aprovas passa a fazer parte da base.</p>
+          </section>
+
+          <!-- VISTA: ANÁLISE -->
+          <section class="app-view" data-view="analise">
+            <header class="app-head"><h4>Análise do mês</h4><span class="app-date">Dados ilustrativos</span></header>
+            <div class="kpis">
+              <div class="kpi"><span>Pedidos recebidos</span><b>9</b><i>1 ainda a qualificar</i></div>
+              <div class="kpi"><span>Orçamentos enviados</span><b>7</b><i>Todos revistos por ti</i></div>
+              <div class="kpi"><span>Adjudicados</span><b>3</b><i>26.300 € sem IVA</i></div>
+              <div class="kpi"><span>À espera de resposta</span><b>2</b><i>1 há mais de 7 dias</i></div>
+            </div>
+            <div class="two">
+              <div class="panel">
+                <h5>Orçamentos por tipo de trabalho</h5>
+                <div class="bars">
+                  <div class="bar"><span>Obra completa</span><div><i style="width:100%"></i></div><b>4</b></div>
+                  <div class="bar"><span>Tela armada</span><div><i style="width:50%"></i></div><b>2</b></div>
+                  <div class="bar"><span>Substituições</span><div><i style="width:50%"></i></div><b>2</b></div>
+                  <div class="bar"><span>Coberturas</span><div><i style="width:25%"></i></div><b>1</b></div>
+                </div>
+                <p class="panel-note">Por semana, por mês ou por trimestre.</p>
+              </div>
+              <div class="panel">
+                <h5>A precisar de ti</h5>
+                <ul class="feed">
+                  <li><span class="pill esp">Lembrar</span>OR 2026/44, Sesimbra: sem resposta há 9 dias</li>
+                  <li><span class="pill rev">Decidir</span>Construtora Horizonte: desconto de cabeçalho</li>
+                  <li><span class="pill qual">Confirmar</span>Válvulas de esfera: 118 € no OR 2026/10, 18 € nos outros</li>
+                  <li><span class="pill qual">Completar</span>Cobertura submersa de lâminas sem preço na base</li>
+                  <li><span class="pill rev">Rever</span>Moradia em Loures: pré-orçamento pronto</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. INTEGRAÇÃO ============ -->
+<section id="integracao" data-nav="Integração">
+  <div class="container center">
+    <span class="eyebrow">Integração</span>
+    <h2>Do email ao TOConline</h2>
+    <p class="lead">O caminho de um pedido, do momento em que chega até sair como orçamento com o teu número de série.</p>
+    <div style="margin-top:36px; text-align:left">
+      <div class="fluxo" id="rbFluxo"></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="rbFluxo-config">
+{
+  "stepMs": 1800,
+  "channels": [
+    { "icon": "message", "label": "Email" },
+    { "icon": "book", "label": "PDF anexo" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "O pedido chega", "detail": "Por email, com ou sem mapas em PDF.", "tone": "brand" },
+    { "icon": "brain", "title": "O agente lê e classifica", "detail": "Tipo de cliente, tipo de trabalho e o que falta.", "tone": "teal" },
+    { "icon": "database", "title": "Consulta a base de preços", "detail": "Construída a partir dos teus orçamentos.", "tone": "teal" },
+    { "icon": "user-cog", "title": "Tu revês e aprovas", "detail": "Na plataforma, com alterações escritas.", "tone": "teal" },
+    { "icon": "send", "title": "Sai pelo TOConline", "detail": "Orçamento na série OR, com o PDF.", "tone": "brand" }
+  ],
+  "note": "Nada sai para o cliente sem passar por ti."
+}
+</script>
+
+<!-- ============ 8. LIMITES ============ -->
+<section class="section-alt" id="limites" data-nav="Limites">
+  <div class="container">
+    <span class="eyebrow">Limites</span>
+    <h2>O que o agente faz e o que fica contigo</h2>
+    <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
+    <div class="rules" style="margin-top:38px">
+      <div class="card rule does reveal">
+        <div class="ic">✓</div>
+        <h3>Faz sozinho</h3>
+        <ul>
+          <li>Lê e classifica os pedidos que chegam</li>
+          <li>Monta o pré-orçamento com as tuas rubricas e os teus preços</li>
+          <li>Mostra a origem de cada preço e o que difere do habitual</li>
+          <li>Aplica as alterações que escreves e recalcula</li>
+          <li>Atualiza o estado de cada orçamento e avisa quem está sem resposta</li>
+        </ul>
+      </div>
+      <div class="card rule asks reveal">
+        <div class="ic">?</div>
+        <h3>Deixa para ti</h3>
+        <ul>
+          <li>Descontos, margens e quanto queres ganhar cada trabalho</li>
+          <li>Condições de pagamento fora do habitual</li>
+          <li>Artigos que nunca orçamentaste</li>
+          <li>Obras que precisam de visita antes de preço</li>
+          <li>A aprovação final de cada orçamento</li>
+        </ul>
+      </div>
+      <div class="card rule stops reveal">
+        <div class="ic">✕</div>
+        <h3>Nunca faz</h3>
+        <ul>
+          <li>Não envia orçamentos ao cliente sem a tua aprovação</li>
+          <li>Não inventa preços quando faltam dados</li>
+          <li>Não atende chamadas nem fala por ti ao telefone</li>
+          <li>Não responde a clientes sem aprovares a mensagem</li>
+          <li>Não altera documentos já emitidos no TOConline</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert">
+      <span class="dot"></span>
+      <div>
+        <strong>A ligação ao TOConline usa a API oficial do programa.</strong>
+        <p style="color:var(--muted); font-size:0.95rem; margin-top:4px">
+          A API cobre os orçamentos da série OR e o PDF de cada documento. Na primeira semana confirmamos
+          contigo que o teu plano do TOConline dá acesso à API e criamos o acesso.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. FASE SEGUINTE ============ -->
+<section id="depois" data-nav="Fase seguinte">
+  <div class="container">
+    <span class="eyebrow">Fase seguinte</span>
+    <h2>O que fica para depois</h2>
+    <p class="lead">Falámos destes pontos na segunda-feira e fazem sentido. Não fazem parte desta proposta.</p>
+    <div class="grid-3" style="margin-top:38px">
+      <div class="card later reveal">
+        <span class="badge badge-later">Segunda fase</span>
+        <h3>Agendamento da tela armada</h3>
+        <p>Os pedidos de revestimento em tela armada das empresas de construção chegam por chamada e WhatsApp e vivem em listas no telemóvel e em papel. O agendamento muda muito de semana para semana, por isso avaliamos depois de a orçamentação estar a correr.</p>
+      </div>
+      <div class="card later reveal">
+        <span class="badge badge-later">Segunda fase</span>
+        <h3>Planeamento e encomendas</h3>
+        <p>O planeamento dos trabalhos e as encomendas de material a partir de cada orçamento adjudicado. Aproveita a base de preços construída nesta fase.</p>
+      </div>
+      <div class="card later reveal">
+        <span class="badge badge-later">Segunda fase</span>
+        <h3>Primeira resposta no WhatsApp</h3>
+        <p>Disseste que por mensagem já faz sentido ser o agente a recolher os dados do cliente. As chamadas continuam contigo, como combinado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. CRONOGRAMA ============ -->
+<section class="section-alt" id="prazo" data-nav="Prazo">
+  <div class="container center">
+    <span class="eyebrow">Prazo</span>
+    <h2>Cerca de seis semanas, em conjunto</h2>
+    <p class="lead">Construímos, tu dás feedback, ajustamos. Só avança quando estiveres satisfeito.</p>
+    <div class="timeline" style="margin-top:46px">
+      <div class="tl-step reveal">
+        <div class="tl-dot">🔑</div>
+        <strong>Semana 1</strong>
+        <span>Acessos ao email e ao TOConline. Recolha dos orçamentos anteriores.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">📋</div>
+        <strong>Semanas 1 e 2</strong>
+        <span>Base de preços construída. Revês os pontos por confirmar.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🛠️</div>
+        <strong>Semanas 3 e 4</strong>
+        <span>Plataforma e agente com os teus tipos de trabalho, estados e etiquetas.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🚀</div>
+        <strong>Semanas 5 e 6</strong>
+        <span>Testes com pedidos reais, lado a lado com a forma atual. Arranque e ajustes finos.</span>
+      </div>
+    </div>
+    <p class="demo-note">As semanas contam a partir da adjudicação.</p>
+  </div>
+</section>
+
+<!-- ============ 11. INVESTIMENTO (o preço fecha a página) ============ -->
+<section id="investimento" data-nav="Investimento">
+  <div class="container">
+    <span class="eyebrow">Investimento</span>
+    <h2>O que custa e o que inclui</h2>
+    <div class="grid-2" style="margin-top:36px">
+      <div class="card price-card reveal">
+        <div class="label">Implementação</div>
+        <div class="price">4.100 € <small style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--muted)">+ IVA</small></div>
+        <div class="note">Base de preços construída a partir dos teus orçamentos, agente de orçamentação, plataforma com estados, etiquetas e análises, e ligação ao TOConline. Pagamento único.</div>
+      </div>
+      <div class="card price-card reveal">
+        <div class="label">Mensalidade</div>
+        <div class="price">200 € <small style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--muted)">/ mês + IVA</small></div>
+        <div class="note">Inclui alojamento, tokens de IA, suporte e melhoria contínua. Pensada para o teu volume atual: se os pedidos crescerem muito, revemos em conjunto.</div>
+      </div>
+    </div>
+    <p class="roi-line reveal">Um serviço técnico completo anda entre <b>8.000 € e 12.000 €</b>. Basta um trabalho que hoje se perde por atraso na resposta para cobrir a implementação.</p>
+  </div>
+</section>
+
+<!-- ============ 12. FECHO ============ -->
+<section class="closing" id="fecho" data-nav="Fecho">
+  <div class="container">
+    <div class="waves"><i></i><i></i><i></i></div>
+    <h2>Avançamos, Gonçalo?</h2>
+    <p class="lead">Confirmamos tudo por escrito antes de arrancar.</p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    <img class="logo-img" src="assets/img/logo.jpg" alt="Recife Blue">
+    Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a Recife Blue, Piscinas e Spa
+    <span class="disclaimer">
+      As conversas, os clientes e os dados da plataforma são simulações. Os preços da base de preços vêm dos orçamentos enviados pela Recife Blue.
+    </span>
+  </div>
+</footer>
+
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/plataforma.js"></script>
+<script>
+  chatRaciocinio('rbDemo');
+  fluxo('rbFluxo');
+  terminal('rbTerm');
+  /* Dot-nav lateral com scroll-spy */
+  (function () {
+    var secs = [].slice.call(document.querySelectorAll('section[data-nav]'));
+    var nav = document.querySelector('.dotnav');
+    if (!nav || !secs.length) return;
+    secs.forEach(function (s) {
+      var a = document.createElement('a');
+      a.href = '#' + s.id;
+      a.className = 'dot';
+      a.innerHTML = '<span>' + s.getAttribute('data-nav') + '</span>';
+      nav.appendChild(a);
+    });
+    var dots = [].slice.call(nav.children);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var i = secs.indexOf(e.target);
+        dots.forEach(function (d, j) { d.classList.toggle('on', i === j); });
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    secs.forEach(function (s) { io.observe(s); });
+  })();
+</script>
+</body>
+</html>
