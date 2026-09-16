@@ -103,10 +103,10 @@
               <tr><td>1</td><td>Plataforma central de obras e tarefas</td><td>Obras, tarefas encadeadas pela vossa sequência, responsáveis, prazos, alertas, subtarefas, aprovações, cronograma, arquivo por obra, tarefas por voz, telemóvel e tablet.</td><td>1</td><td class="ok">fazemos</td></tr>
               <tr><td>3</td><td>Integração com o PHC</td><td>Clientes, fornecedores, artigos, faturação, documentos, pagamentos e conta corrente pela API que já têm. O que a API não expuser identifica-se antes de arrancar.</td><td>1</td><td class="ok">fazemos · confirmar API</td></tr>
               <tr><td>4</td><td>Clientes, pagamentos e cobranças</td><td>Faturado, recebido, dívida, vencidas, por cliente e por obra, antiguidade, alertas e área de acompanhamento. Lê a faturação do PHC.</td><td>3</td><td class="ok">fazemos</td></tr>
-              <tr><td>5</td><td>Integração bancária e reconciliação</td><td>Importação de movimentos e cruzamento com o PHC. Fica para depois, por decisão conjunta.</td><td>seguinte</td><td class="chk">fase seguinte</td></tr>
+              <tr><td>5</td><td>Integração bancária e reconciliação</td><td>Importação dos movimentos das contas, identificação de recebimentos e pagamentos, associação a clientes, fornecedores e obras, cruzamento com o PHC, movimentos duvidosos sinalizados. Várias contas. Começa por importação de extratos; ligação direta aos bancos depois.</td><td>3</td><td class="ok">fazemos</td></tr>
               <tr><td>6</td><td>Orçamentação com IA</td><td>Capítulos e rubricas vossas, pesquisa de rubricas semelhantes, preços históricos e de fornecedores, atualização a partir das faturas, margens, resumos, comparação com obras anteriores, sinalização de valores anormais.</td><td>2</td><td class="ok">fazemos</td></tr>
               <tr><td>7</td><td>Medições automáticas dos projetos</td><td>Estabilidade: provado com o vosso ficheiro. Arquitetura: áreas, vãos, cotas e legendas já saem; perímetros por divisão em prova de conceito; materiais por parede classificados por vós em lote.</td><td>2 · POC</td><td class="ok">estabilidade feita · arquitetura POC</td></tr>
-              <tr><td>8</td><td>Pedidos de preços e mapas comparativos</td><td>Pedidos por email quando a tarefa abre, leitura das propostas, extração de preços e âmbito, mapa comparativo, apoio à adjudicação. Portal de fornecedores só se se justificar.</td><td>2</td><td class="ok">fazemos</td></tr>
+              <tr><td>8</td><td>Pedidos de preços e mapas comparativos</td><td>Pedidos por email quando a tarefa abre, leitura das propostas, extração de preços e âmbito, mapa comparativo, apoio à adjudicação. Por email, como pediram avaliar; portal próprio de fornecedores se vier a justificar-se.</td><td>2</td><td class="ok">fazemos</td></tr>
               <tr><td>9</td><td>Diário e acompanhamento das obras</td><td>Registo diário no telemóvel: trabalhos, pessoas, subempreiteiros, equipamentos, fotos, ocorrências, decisões. Relatórios periódicos gerados pela plataforma.</td><td>4</td><td class="ok">fazemos</td></tr>
               <tr><td>10</td><td>Autos de medição</td><td>O orçamento adjudicado vai para o PHC pela API; as percentagens executadas marcam-se na plataforma; o PHC gera o auto e a fatura como hoje. Histórico por obra.</td><td>2</td><td class="ok">fazemos</td></tr>
             </tbody>
@@ -126,7 +126,7 @@
             <thead><tr><th style="width:36px">#</th><th style="width:220px">O que pediram</th><th>O que a plataforma faz</th><th style="width:90px">Fase</th><th style="width:150px">Estado</th></tr></thead>
             <tbody>
               <tr><td>11</td><td>Faturas de fornecedores</td><td>Receção por email, leitura, fornecedor, número, data, valores, IVA, vencimento, obra sugerida, validação por uma pessoa, integração no PHC. Dúvidas ficam sinalizadas.</td><td>1</td><td class="ok">fazemos</td></tr>
-              <tr><td>12</td><td>Simulador de orçamento no website</td><td>Estimativa indicativa para potenciais clientes e recolha de contacto. Pequeno; depende da tabela de preços que definirem para o público.</td><td>seguinte</td><td class="chk">fase seguinte</td></tr>
+              <tr><td>12</td><td>Simulador de orçamento no website</td><td>Formulário com localização, área, pisos, tipologia, acabamentos, exteriores e piscina; devolve um intervalo indicativo e recolhe o contacto para seguimento comercial. A tabela de preços para o público é definida convosco.</td><td>4</td><td class="ok">fazemos</td></tr>
               <tr><td>13</td><td>Assistente de IA sobre a empresa</td><td>Perguntas em linguagem natural sobre obras, preços usados, fornecedores, trabalhos semelhantes, documentos e atrasos. Por voz e por texto. Respeita as permissões de cada utilizador.</td><td>4</td><td class="ok">fazemos</td></tr>
               <tr><td>14</td><td>Automatização documental e administrativa</td><td>Emails, minutas, relatórios, resumos, classificação e arquivo automático, extração de dados de PDF, preenchimento de documentos a partir do que está na plataforma. Sempre para revisão antes de sair.</td><td>4</td><td class="ok">fazemos</td></tr>
               <tr><td>15</td><td>Formação e adoção</td><td>Sessões práticas por fase com os vossos casos: ferramentas implementadas, pedidos ao assistente, análise de documentos, segurança e boas práticas, procedimentos internos, acompanhamento da adoção.</td><td>todas</td><td class="ok">incluído</td></tr>
@@ -135,7 +135,7 @@
             </tbody>
           </table>
         </div>
-        <div class="poc-band reveal"><b>Contas:</b><span>14 pontos entram nas quatro fases · 1 com condição a confirmar (a API do PHC) · 1 em prova de conceito (medição de arquitetura) · 2 ficam para a fase seguinte (banca e simulador). Nenhum ponto fica sem resposta.</span></div>
+        <div class="poc-band reveal"><b>Contas:</b><span>Os 17 pontos entram nas quatro fases. 1 com condição a confirmar (o que a API do PHC expõe) · 1 com prova de conceito antes do módulo final (medição de arquitetura). Nenhum ponto fica sem resposta.</span></div>
       </div>
     </div>
   </section>
@@ -712,8 +712,8 @@
         <div class="phase" style="margin-top:26px">
           <div class="card reveal"><div class="n">Fase 1 · o chão</div><h3>Obras, faturas e acessos</h3><ul><li>Obras e tarefas encadeadas</li><li>Arquivo por obra</li><li>Faturas de fornecedores</li><li>Integração PHC</li><li>Acessos, perfis e segurança</li></ul></div>
           <div class="card reveal"><div class="n">Fase 2 · o retorno</div><h3>Medições e orçamento</h3><ul><li>Medições de estabilidade</li><li>Orçamentação com histórico e preços</li><li>Cotações e mapa comparativo</li><li>Autos de medição via PHC</li></ul></div>
-          <div class="card reveal"><div class="n">Fase 3 · financeiro</div><h3>Cobranças e visão</h3><ul><li>Cobranças e dívida por cliente e obra</li><li>Dashboards de gestão</li><li>Perguntas em linguagem natural aos dados</li></ul></div>
-          <div class="card reveal"><div class="n">Fase 4 · camada de IA</div><h3>Assistente e documentos</h3><ul><li>Assistente sobre a empresa, por voz e texto</li><li>Automatização documental</li><li>Diário de obra</li><li>Módulo de arquitetura, se a prova passar</li><li>Formação da equipa</li></ul></div>
+          <div class="card reveal"><div class="n">Fase 3 · financeiro</div><h3>Cobranças, banca e visão</h3><ul><li>Cobranças e dívida por cliente e obra</li><li>Importação bancária e conciliação com o PHC</li><li>Dashboards de gestão</li><li>Perguntas em linguagem natural aos dados</li></ul></div>
+          <div class="card reveal"><div class="n">Fase 4 · camada de IA</div><h3>Assistente, documentos e site</h3><ul><li>Assistente sobre a empresa, por voz e texto</li><li>Automatização documental</li><li>Diário de obra</li><li>Simulador de orçamento no website</li><li>Módulo de arquitetura, se a prova passar</li><li>Formação da equipa</li></ul></div>
         </div>
         <div class="poc-band reveal"><b>Em paralelo, desde a semana 1:</b><span>prova de conceito de medições de arquitetura com dois ou três projetos vossos, critérios escritos, decisão ao fim de quatro semanas. Se não passar, o esforço vai para outros módulos e o valor não muda.</span></div>
       </div>
@@ -761,21 +761,6 @@
       </div>
     </div>
 
-    <!-- 14. Fase seguinte -->
-    <div class="slide">
-      <div class="container">
-        <span class="eyebrow">Fase seguinte</span>
-        <h2>Falámos, fica registado, não faz parte desta proposta</h2>
-        <div class="sec" style="margin-top:26px">
-          <div class="card reveal"><h3>Agentes de voz</h3><p>Atendimento telefónico por inteligência artificial. A AI Solutions vai tê-los em breve; entram numa segunda fase, quando a plataforma estiver em produção.</p></div>
-          <div class="card reveal"><h3>Ligação bancária · ponto 5</h3><p>Importação automática de movimentos e conciliação com o PHC. Fica para depois, por decisão conjunta.</p></div>
-          <div class="card reveal"><h3>Portal de fornecedores · ponto 8</h3><p>Só se o email deixar de chegar. Enquanto chegar, não se justifica.</p></div>
-          <div class="card reveal"><h3>Simulador no website · ponto 12</h3><p>Estimativa indicativa para potenciais clientes. Pequeno, mas depende da tabela de preços que definirem para o público.</p></div>
-          <div class="card reveal"><h3>Listagem do CYPECAD</h3><p>Quando os projetistas cederem a listagem de medições do CYPECAD, a estabilidade passa a importação direta. A plataforma aceita as duas vias.</p></div>
-          <div class="card reveal"><h3>Outros projetistas</h3><p>Cada gabinete desenha à sua maneira. Os ficheiros que não forem tão limpos como este entram pela prova de conceito antes de se prometer.</p></div>
-        </div>
-      </div>
-    </div>
   </section>
 
   </main>
