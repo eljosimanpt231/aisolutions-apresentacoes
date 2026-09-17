@@ -105,7 +105,7 @@
               <tr><td>4</td><td>Clientes, pagamentos e cobranças</td><td>Faturado, recebido, dívida, vencidas, por cliente e por obra, antiguidade, alertas e área de acompanhamento. Lê a faturação do PHC.</td><td>3</td><td class="ok">fazemos</td></tr>
               <tr><td>5</td><td>Integração bancária e reconciliação</td><td>Importação dos movimentos das contas, identificação de recebimentos e pagamentos, associação a clientes, fornecedores e obras, cruzamento com o PHC, movimentos duvidosos sinalizados. Várias contas. Começa por importação de extratos; ligação direta aos bancos depois.</td><td>3</td><td class="ok">fazemos</td></tr>
               <tr><td>6</td><td>Orçamentação com IA</td><td>Capítulos e rubricas vossas, pesquisa de rubricas semelhantes, preços históricos e de fornecedores, atualização a partir das faturas, margens, resumos, comparação com obras anteriores, sinalização de valores anormais.</td><td>2</td><td class="ok">fazemos</td></tr>
-              <tr><td>7</td><td>Medições automáticas dos projetos</td><td>Estabilidade: provado com o vosso ficheiro. Arquitetura: áreas, vãos, cotas e legendas já saem; perímetros por divisão com primeiro resultado no vosso DWG (10 divisões fechadas), a validar com mais dois projetos; materiais por parede classificados por vós em lote.</td><td>2 · POC</td><td class="ok">estabilidade feita · arquitetura em curso</td></tr>
+              <tr><td>7</td><td>Medições automáticas dos projetos</td><td>Estabilidade: provado com o vosso ficheiro. Arquitetura: áreas, vãos, cotas e legendas já saem; perímetros por divisão com primeiro resultado no vosso DWG (9 divisões fechadas com a área conferida, garagem a confirmar), a validar com mais dois projetos; materiais por parede classificados por vós em lote.</td><td>2 · POC</td><td class="ok">estabilidade feita · arquitetura em curso</td></tr>
               <tr><td>8</td><td>Pedidos de preços e mapas comparativos</td><td>Pedidos por email quando a tarefa abre, leitura das propostas, extração de preços e âmbito, mapa comparativo, apoio à adjudicação. Por email, como pediram avaliar; portal próprio de fornecedores se vier a justificar-se.</td><td>2</td><td class="ok">fazemos</td></tr>
               <tr><td>9</td><td>Diário e acompanhamento das obras</td><td>Registo diário no telemóvel: trabalhos, pessoas, subempreiteiros, equipamentos, fotos, ocorrências, decisões. Relatórios periódicos gerados pela plataforma.</td><td>4</td><td class="ok">fazemos</td></tr>
               <tr><td>10</td><td>Autos de medição</td><td>O orçamento adjudicado vai para o PHC pela API; as percentagens executadas marcam-se na plataforma; o PHC gera o auto e a fatura como hoje. Histórico por obra.</td><td>2</td><td class="ok">fazemos</td></tr>
@@ -307,7 +307,7 @@
         <div class="grid-2" style="margin-top:18px; align-items:start">
           <figure class="figure reveal">
             <a href="assets/img/arq-divisoes.png" target="_blank"><img src="assets/img/arq-divisoes.png" alt="Divisões fechadas pela plataforma a partir das paredes do DWG"></a>
-            <figcaption>Feito a 16/09 com o vosso DWG: cada cor é uma divisão fechada a partir das linhas de parede, com as portas na posição fechada. 10 divisões fechadas com a área a bater com a do arquiteto a menos de 0,2 m². Sala, cozinha e circulação são abertas entre si e ficam numa só cor.</figcaption>
+            <figcaption>Feito a 16/09 com o vosso DWG: cada cor é uma divisão fechada a partir das linhas de parede, com as portas na posição fechada. 9 divisões fechadas com a área a bater com a do arquiteto a menos de 0,2 m²; a garagem fecha, mas a área calculada (38,6) fica abaixo da escrita (41,4) e é marcada para confirmar. Sala, cozinha e circulação são abertas entre si e ficam numa só cor.</figcaption>
           </figure>
           <div>
             <p class="demo-note" style="text-align:left; margin-top:0">O que já sai do ficheiro: tetos e pavimentos das 15 divisões, os 16 vãos com largura, as portas, a legenda de acabamentos exteriores, e agora também o perímetro das divisões fechadas, que é o que o Ricardo mede hoje ao clicar linha a linha.</p>
@@ -322,11 +322,11 @@
       <div class="container">
         <span class="eyebrow">Experimente agora · ao vivo</span>
         <h2>Largue aqui os vossos ficheiros. Nada é pré-calculado.</h2>
-        <p class="lead">A leitura corre neste browser, à frente de si, com o mesmo leitor que produziu os ecrãs anteriores. O ficheiro nunca sai do seu computador.</p>
+        <p class="lead">A leitura corre neste browser, à frente de si, com o mesmo leitor que produziu os ecrãs anteriores. O ficheiro nunca sai do seu computador. No fim, descarrega um Excel com as medições.</p>
         <div class="grid-2" style="margin-top:22px; align-items:start">
           <div class="exp" id="expEst">
             <h3>Estabilidade</h3>
-            <div class="sub">DWFX exportado do CYPECAD ou do AutoCAD. Sai a folha Vigas com betão e cofragem pelas vossas fórmulas.</div>
+            <div class="sub">DWFX exportado do CYPECAD ou do AutoCAD. Sai um Excel com a folha Vigas (betão e cofragem pelas vossas fórmulas), pilares e fundações.</div>
             <div class="drop"><input type="file" accept=".dwfx,.dwf,.zip"><b>Largar o EST.5_Peças desenhadas.dwfx</b><span>ou clique para escolher · aceita DWFX</span></div>
             <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>estabilidade.log</span></div><div class="term-body"></div></div>
             <div class="exp-status"></div>
@@ -334,14 +334,14 @@
           </div>
           <div class="exp" id="expArq">
             <h3>Arquitetura</h3>
-            <div class="sub">DXF gravado do GstarCAD ou do AutoCAD. Saem as divisões com área, os vãos com largura, as portas e a verificação da implantação.</div>
+            <div class="sub">DXF gravado do GstarCAD ou do AutoCAD. Sai um Excel com as medições: divisões com área e perímetro, vãos com largura, portas e a verificação da implantação.</div>
             <div class="drop"><input type="file" accept=".dxf,.dwg"><b>Largar o 001_25-ARQ em DXF</b><span>ou clique para escolher · aceita DXF; o DWG explica o que falta</span></div>
             <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>arquitetura.log</span></div><div class="term-body"></div></div>
             <div class="exp-status"></div>
             <div class="exp-out"></div>
           </div>
         </div>
-        <p class="exp-privacy">Demonstração sem servidor: os ficheiros são lidos localmente e não são enviados nem guardados. Na plataforma, o DWG é convertido automaticamente e os perímetros das divisões entram depois da prova de conceito.</p>
+        <p class="exp-privacy">Demonstração sem servidor: os ficheiros são lidos localmente e não são enviados nem guardados. Na plataforma, o DWG é convertido automaticamente e as divisões abertas entre si, o perímetro exterior e a cobertura entram depois da prova de conceito.</p>
       </div>
     </div>
 
@@ -353,7 +353,7 @@
         <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre. É o único ponto da proposta que entra com um teste antes do compromisso.</p>
         <div class="verdict" style="margin-top:28px">
           <div class="card ok reveal"><div class="tag">Provado</div><h3>Áreas, vãos, cotas, legendas</h3><p>Texto no ficheiro. Extração exata, sem inteligência artificial e sem margem de erro de leitura.</p></div>
-          <div class="card mid reveal"><div class="tag">Primeiro resultado obtido · prova de conceito com mais 2 projetos</div><h3>Perímetros de cada divisão</h3><p>É o que o Ricardo hoje faz ao clicar linha a linha. A 16/09 fechámos as divisões do vosso DWG a partir das paredes: 10 fechadas, com a área calculada a bater com a escrita pelo arquiteto a menos de 0,2 m². Falta separar as divisões abertas entre si, o perímetro exterior, e provar com ficheiros de outros arquitetos.</p></div>
+          <div class="card mid reveal"><div class="tag">Primeiro resultado obtido · prova de conceito com mais 2 projetos</div><h3>Perímetros de cada divisão</h3><p>É o que o Ricardo hoje faz ao clicar linha a linha. A 16/09 fechámos as divisões do vosso DWG a partir das paredes: 9 fechadas com a área calculada a bater com a escrita pelo arquiteto a menos de 0,2 m², a garagem fechada mas marcada para confirmar. Falta separar as divisões abertas entre si, o perímetro exterior, e provar com ficheiros de outros arquitetos.</p></div>
           <div class="card no reveal"><div class="tag">Fica com as pessoas</div><h3>O que é cada parede</h3><p>Nenhum ficheiro diz se uma parede de 0,15 é tijolo ou pladur. A plataforma agrupa por espessura e por legenda, o Ricardo classifica cada grupo de uma vez. Minutos, não horas.</p></div>
         </div>
         <div class="poc-band reveal">
@@ -747,23 +747,23 @@
               <li><span>Fase 1 em produção</span><b>20% · 9.000 €</b></li>
               <li><span>Fase 2 em produção</span><b>20% · 9.000 €</b></li>
               <li><span>Fase 3 em produção</span><b>20% · 9.000 €</b></li>
-              <li><span>Fase 4 aceite (+1 mês)</span><b>10% · 4.500 €</b></li>
+              <li><span>Fase 4 aceite</span><b>10% · 4.500 €</b></li>
             </ul>
           </div>
           <div class="card price-card reveal">
-            <div class="label">Licença anual: manutenção e evolução, 2 anos</div>
-            <div class="price two">8.400 €<small>+ IVA, 1.º ano</small><br>6.000 €<small>+ IVA, 2.º ano</small></div>
-            <div class="note">Equivale a 700 €/mês no primeiro ano e 500 €/mês no segundo. Alojamento na União Europeia, cópias de segurança, suporte, correções e evolução. Consumo dos modelos de inteligência artificial incluído até um teto mensal, definido antes do arranque.</div>
+            <div class="label">Licença anual: manutenção e evolução</div>
+            <div class="price">6.000 €<small>+ IVA / ano</small></div>
+            <div class="note">Equivale a 500 €/mês. Alojamento na União Europeia, cópias de segurança, suporte, correções e evolução. Consumo dos modelos de inteligência artificial incluído até um teto mensal, definido antes do arranque.</div>
             <ul class="price-list">
-              <li>Pode ser incluída no projeto, na rubrica de licenças</li>
-              <li>Primeiro ano com mais evolução, segundo ano de manutenção</li>
+              <li>Possibilidade de incluir os 2 anos no projeto (12.000 €)</li>
+              <li>Renovável ano a ano</li>
               <li>Sem custos por utilizador</li>
             </ul>
           </div>
           <div class="card price-card reveal">
             <div class="label">Enquadramento</div>
             <div class="price two">Uma ou duas linhas</div>
-            <div class="note">A licença anual pode entrar no projeto, faturada com a implementação, ou à parte como subscrição. Fica como o vosso consultor preferir enquadrar. Confirmamos convosco antes de emitir a primeira fatura.</div>
+            <div class="note">Os 2 anos de licença podem entrar no projeto, faturados com a implementação na rubrica de licenças, ou à parte, ano a ano. Fica como o vosso consultor preferir enquadrar. Confirmamos convosco antes de emitir a primeira fatura.</div>
             <ul class="price-list">
               <li>Prazo do núcleo: 2,5 a 3 meses</li>
               <li>Âmbito e aceitação escritos por fase</li>
@@ -795,6 +795,7 @@
   <script src="../shared/js/protect.js"></script>
   <script src="../shared/deck/deck.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="assets/js/leitores.js"></script>
   <script src="assets/js/perimetros.js"></script>
   <script src="assets/js/experimente.js"></script>

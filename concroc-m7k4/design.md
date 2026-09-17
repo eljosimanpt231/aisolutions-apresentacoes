@@ -36,7 +36,7 @@ Separador Assistente
 11. Chat + raciocínio, 3 cenários: voz à saída da obra, preço histórico desatualizado, recusa de adjudicar sozinho
 Separador Proposta
 12. Fases 1 a 4 com POC em paralelo
-13. Investimento: 45.000 € + IVA em cinco tranches (30/20/20/20/10), licença anual 8.400 € e 6.000 € que pode entrar no projeto, enquadramento
+13. Investimento: 45.000 € + IVA em cinco tranches (30/20/20/20/10), licença anual 6.000 € com os 2 anos incluíveis no projeto, enquadramento
 14. Fase seguinte
 
 ## Regras do Diogo aplicadas
@@ -46,6 +46,7 @@ Separador Proposta
 As onze linhas da cobertura geradas do projeto dele, iguais ao milímetro ao Excel dele, com os três pórticos do piso 0 marcados "confirmar".
 
 ## Iterações
+- v9 (17/09): o "Experimente agora" deixa de listar as tabelas no ecrã e passa a gerar um Excel para download (SheetJS no browser): estabilidade com folhas Vigas, Pilares, Fundações e Resumo; arquitetura com Medições, Divisões, Vãos e Resumo. A planta a cores mantém-se. Tranche final "Fase 4 aceite", sem prazo. Licença anual de 6.000 €, com a possibilidade de incluir os 2 anos (12.000 €) no projeto. Contagem de divisões corrigida para 9 fechadas com área conferida (a garagem fecha mas a área calculada difere da escrita).
 - v8 (16/09): investimento com cinco tranches por entrega (30% adjudicação, 20% por cada uma das fases 1 a 3 em produção, 10% com a fase 4 aceite) e manutenção apresentada como licença anual (8.400 € e 6.000 €) que pode entrar no projeto na rubrica de licenças ou faturar-se à parte.
 - v7 (16/09): perímetros das divisões. `assets/js/perimetros.js` rasteriza paredes, janelas e portas (na posição fechada) numa grelha de 2 cm, ignora linhas de corte desenhadas na camada das paredes, fecha vãos entre ombreiras e pontas soltas, sela a espessura das paredes, e enche cada divisão a partir da etiqueta do arquiteto; a área calculada é conferida com a escrita. No DWG da Concroc: 10 divisões fechadas a menos de 0,2 m² da área escrita; sala, cozinha e circulação abertas entre si (medidas em conjunto); varandas não fecham. O "Experimente agora" desenha as divisões a cores num canvas. Ecrã "o que sai" com perímetros reais e a imagem `arq-divisoes.png`. Origem: script de teste `trabalho/clientes/concroc/ficheiros/poc_perimetros.js`.
 - v6 (16/09): a pedido do Diogo, sem "fase seguinte". Banca (ponto 5) entra na fase 3 por importação de extratos; simulador no website (ponto 12) entra na fase 4; portal de fornecedores passa a nota no ponto 8. Ecrã "Fase seguinte" removido; agentes de voz saem do deck. Os 17 pontos entram nas quatro fases. Total 20 ecrãs.

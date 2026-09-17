@@ -1,12 +1,14 @@
 /* ============================================================
    EXPERIMENTE AGORA: upload do DWFX (estabilidade) e do DXF (arquitetura)
    Tudo corre no browser. O ficheiro nunca sai do computador.
+   O resultado sai num Excel (SheetJS), com as mesmas folhas que a plataforma produz.
    ============================================================ */
 (function () {
   'use strict';
   const L = window.Leitores;
   const fmt = (n, d) => (n == null || isNaN(n)) ? '' : n.toLocaleString('pt-PT', { minimumFractionDigits: d, maximumFractionDigits: d });
   const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const num = n => (n == null || isNaN(n)) ? '' : Number(n);
 
   /* valores que o Ricardo tem no Excel (folha Vigas), para marcar "igual ao seu Excel" quando o ficheiro é o dele */
   const EXCEL = {
@@ -27,6 +29,37 @@
     ['dragenter', 'dragover'].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.add('over'); }));
     ['dragleave', 'drop'].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.remove('over'); }));
     zone.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) onFile(f); });
+  }
+
+  /* ---------- EXCEL ---------- */
+  /* folhas: [{ nome, linhas: [[...], ...], larguras: [n, ...] }] */
+  function montarExcel(folhas) {
+    const wb = XLSX.utils.book_new();
+    for (const f of folhas) {
+      const ws = XLSX.utils.aoa_to_sheet(f.linhas);
+      if (f.larguras) ws['!cols'] = f.larguras.map(w => ({ wch: w }));
+      XLSX.utils.book_append_sheet(wb, ws, f.nome.slice(0, 31));
+    }
+    return wb;
+  }
+  function csvDe(linhas) {
+    return '﻿' + linhas.map(l => l.map(c => { const s = typeof c === 'number' ? String(c).replace('.', ',') : String(c == null ? '' : c); return /[;"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }).join(';')).join('\r\n');
+  }
+  function cartaoDownload(ui, nomeBase, folhas, resumo, antes) {
+    const total = folhas.reduce((n, f) => n + Math.max(0, f.linhas.length - 1), 0);
+    const temXlsx = !!window.XLSX;
+    const nome = nomeBase + (temXlsx ? '.xlsx' : '.csv');
+    ui.out.innerHTML = `${antes || ''}<div class="dl-card"><div class="dl-ico">${temXlsx ? 'XLSX' : 'CSV'}</div><div class="dl-txt"><b>Ficheiro pronto</b><span>${esc(nome)} · ${folhas.length} folha${folhas.length === 1 ? '' : 's'} (${esc(folhas.map(f => f.nome).join(', '))}) · ${total} linhas</span><span class="dl-sub">${esc(resumo)}</span></div><button type="button" class="btn btn-primary dl-btn">Descarregar ${temXlsx ? 'Excel' : 'CSV'}</button></div>`;
+    ui.out.querySelector('.dl-btn').addEventListener('click', () => {
+      try {
+        if (temXlsx) { XLSX.writeFile(montarExcel(folhas), nome, { compression: true }); }
+        else {
+          const blob = new Blob([csvDe(folhas[0].linhas)], { type: 'text/csv;charset=utf-8' });
+          const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); a.remove();
+        }
+        log(ui.term, `Descarregado: ${nome}`, 'success');
+      } catch (e) { log(ui.term, 'Não consegui gerar o ficheiro: ' + e.message, 'warn'); }
+    });
   }
 
   /* ---------- ESTABILIDADE (DWFX) ---------- */
@@ -56,24 +89,25 @@
     const r = L.lerEstabilidade(folhas);
     const ms = performance.now() - t0;
     let ok = 0, chk = 0, ficheiroDele = false;
-    const linhasHtml = [];
+    const vigas = [['Identificação', 'Apoios', 'Qtd', 'Comp. (m)', 'Larg. (m)', 'Alt. (m)', 'Betão (m³)', 'Cofragem (m²)', 'Validação']];
     let totB = 0, totC = 0;
     for (const v of r.vigas) {
       const ex = EXCEL[v.titulo] || null;
-      linhasHtml.push(`<tr class="total"><td colspan="8">Folha ${v.folha} · ${esc(v.titulo)} · ${v.porticos.length} pórticos</td></tr>`);
+      vigas.push([`Folha ${v.folha} · ${v.titulo} · ${v.porticos.length} pórticos`]);
       for (const p of v.porticos) {
         const got = p.linhas.map(l => l.comp);
-        let st = 'extraído', cls = 'ok';
-        if (p.estado !== 'ok') { st = 'confirmar · ' + p.nota; cls = 'chk'; chk++; }
+        let st = 'extraído';
+        if (p.estado !== 'ok') { st = 'confirmar · ' + p.nota; chk++; }
         else if (ex && ex[p.nome] && ex[p.nome].length === got.length && ex[p.nome].every((e, i) => Math.abs(e - got[i]) < 0.0015)) { st = 'igual ao seu Excel'; ok++; ficheiroDele = true; }
-        else if (ex && ex[p.nome]) { st = 'diferente do Excel: ' + ex[p.nome].join(' + '); cls = 'chk'; chk++; }
+        else if (ex && ex[p.nome]) { st = 'diferente do Excel: ' + ex[p.nome].join(' + '); chk++; }
         else ok++;
         p.linhas.forEach((l, i) => {
           if (p.estado === 'ok') { totB += l.betao || 0; totC += l.cofragem || 0; }
-          linhasHtml.push(`<tr><td>${i === 0 ? esc(p.nome) + '<small>' + esc(p.apoios.join('-')) + '</small>' : ''}</td><td class="num">1</td><td class="num">${fmt(l.comp, 3)}</td><td class="num">${fmt(l.larg, 2)}</td><td class="num">${fmt(l.alt, 2)}</td><td class="num">${fmt(l.betao, 3)}</td><td class="num">${fmt(l.cofragem, 2)}</td><td class="${cls}">${i === 0 ? esc(st) : ''}</td></tr>`);
+          vigas.push([i === 0 ? p.nome : '', i === 0 ? p.apoios.join('-') : '', 1, num(l.comp), num(l.larg), num(l.alt), num(l.betao), num(l.cofragem), i === 0 ? st : '']);
         });
       }
     }
+    vigas.push(['Total dos pórticos preenchidos', '', '', '', '', '', Math.round(totB * 1000) / 1000, Math.round(totC * 100) / 100, '']);
     log(ui.term, `A aplicar as fórmulas da folha Vigas: betão = Q × C × L × A; cofragem = Q × C × (L + A - 0,20 + A)`, 'info');
     if (r.pilares) log(ui.term, `Folha ${r.pilares.folha}: quadro de pilares, ${r.pilares.pilares} pilares em ${r.pilares.grupos.length} grupos`, 'ok');
     if (r.fundacoes) log(ui.term, `Folha ${r.fundacoes.folha}: fundações, ${r.fundacoes.sapatas.join(', ')} · paredes ${r.fundacoes.paredes.join(', ')}`, 'ok');
@@ -81,8 +115,24 @@
     log(ui.term, `${ok} pórticos preenchidos${ficheiroDele ? ', iguais ao seu Excel' : ''}. Lido em ${(ms / 1000).toFixed(1)} s.`, 'success');
     ui.status.innerHTML = `<b>${(ms / 1000).toFixed(1)} s</b> · ${r.folhas.length} folhas · ${r.vigas.reduce((n, v) => n + v.porticos.length, 0)} pórticos · <span class="okc">${ok} preenchidos</span> · <span class="chkc">${chk} a confirmar</span>${ficheiroDele ? ' · comparado com a folha Vigas do seu Excel' : ''}`;
     if (!r.vigas.length) { ui.out.innerHTML = '<p class="demo-note" style="text-align:left">Não encontrei folhas de pormenor de vigas neste ficheiro. A plataforma sinaliza e pede uma pessoa, não inventa.</p>'; return; }
-    ui.out.innerHTML = `<div style="overflow-x:auto"><table class="cmp sheet live"><thead><tr><th>Identificação</th><th style="text-align:right">Qtd</th><th style="text-align:right">Comp. (m)</th><th style="text-align:right">Larg. (m)</th><th style="text-align:right">Alt. (m)</th><th style="text-align:right">Betão (m³)</th><th style="text-align:right">Cofragem (m²)</th><th>Validação</th></tr></thead><tbody>${linhasHtml.join('')}<tr class="total"><td>Total dos pórticos preenchidos</td><td></td><td></td><td></td><td></td><td class="num">${fmt(totB, 3)}</td><td class="num">${fmt(totC, 2)}</td><td></td></tr></tbody></table></div>`;
-    const rows = ui.out.querySelectorAll('tbody tr'); rows.forEach((tr, i) => setTimeout(() => tr.classList.add('visible'), 80 + i * 60));
+
+    const folhasXls = [{ nome: 'Vigas', linhas: vigas, larguras: [30, 22, 6, 11, 10, 10, 12, 14, 42] }];
+    if (r.pilares) {
+      const pil = [['Grupo', 'Pilares no grupo']];
+      r.pilares.grupos.forEach(g => pil.push([g, g.split('=').length]));
+      pil.push([]); pil.push(['Armaduras longitudinais']); r.pilares.armaduras.forEach(a => pil.push([a]));
+      pil.push([]); pil.push(['Armaduras transversais']); r.pilares.estribos.forEach(a => pil.push([a]));
+      folhasXls.push({ nome: 'Pilares', linhas: pil, larguras: [40, 16] });
+    }
+    if (r.fundacoes) {
+      const fun = [['Elemento', 'Dimensão (cm)']];
+      r.fundacoes.sapatas.forEach(s => { const m = s.match(/^(S\d+):\s*(.+)$/i); fun.push(m ? [m[1], m[2]] : [s, '']); });
+      r.fundacoes.paredes.forEach(s => { const m = s.match(/^(PB\d+):\s*(.+)$/i); fun.push(m ? [m[1] + ' (parede)', m[2]] : [s, '']); });
+      folhasXls.push({ nome: 'Fundações', linhas: fun, larguras: [20, 16] });
+    }
+    const res = [['Ficheiro', file.name], ['Folhas lidas', r.folhas.length], ['Pórticos', r.vigas.reduce((n, v) => n + v.porticos.length, 0)], ['Preenchidos', ok], ['A confirmar', chk], ['Betão total (m³)', Math.round(totB * 1000) / 1000], ['Cofragem total (m²)', Math.round(totC * 100) / 100], ['Fórmulas', 'betão = Q × C × L × A; cofragem = Q × C × (L + A - 0,20 + A)'], ['Tempo de leitura (s)', Math.round(ms / 100) / 10], ['Gerado em', new Date().toLocaleString('pt-PT')]];
+    folhasXls.push({ nome: 'Resumo', linhas: res, larguras: [24, 60] });
+    cartaoDownload(ui, 'Concroc_estabilidade_' + file.name.replace(/\.[^.]+$/, '').replace(/[^\w\-]+/g, '_'), folhasXls, `${ok} pórticos preenchidos, ${chk} a confirmar, betão ${fmt(totB, 3)} m³, cofragem ${fmt(totC, 2)} m²`);
   }
 
   /* ---------- ARQUITETURA (DXF; DWG explica) ---------- */
@@ -108,45 +158,60 @@
     log(ui.term, `${a.vaos.length} vãos com etiqueta; largura pela cota mais próxima`, 'ok');
     if (a.implantacao && a.implantacao.calculada != null) log(ui.term, `Implantação: escrita ${fmt(a.implantacao.texto, 2)} m², calculada pelas coordenadas ${fmt(a.implantacao.calculada, 2)} m²`, 'success');
     else if (a.implantacao) log(ui.term, `Implantação escrita ${fmt(a.implantacao.texto, 2)} m²; não encontrei polígono fechado para confirmar`, 'warn');
-    log(ui.term, `${a.paredesSegmentos} segmentos de parede: os perímetros por divisão ficam para a prova de conceito`, 'warn');
+    log(ui.term, `${a.paredesSegmentos} segmentos de parede. A fechar as divisões...`, 'info');
     log(ui.term, `Lido em ${(ms / 1000).toFixed(1)} s. O ficheiro não saiu do seu computador.`, 'success');
     ui.status.innerHTML = `<b>${(ms / 1000).toFixed(1)} s</b> · ${a.divisoes.length} divisões · ${a.vaos.length} vãos · ${a.portas} portas · ${a.cotas} cotas`;
-    const rows = [];
-    a.divisoes.forEach(d => rows.push(`<tr><td>13.1</td><td>Teto · ${esc(d.nome)}</td><td>m²</td><td class="num">1,00</td><td class="num">${fmt(d.area, 2)}</td><td></td><td></td><td class="ok">área escrita na planta</td></tr>`));
-    a.vaos.forEach(v => rows.push(`<tr><td>16.1</td><td>Caixilharia · ${esc(v.tag)}</td><td>m²</td><td class="num">1,00</td><td class="num">${v.largura != null ? fmt(v.largura, 2) : 'sem cota'}</td><td></td><td class="num">a confirmar</td><td class="${v.largura != null ? 'ok' : 'chk'}">${v.largura != null ? 'largura da cota; altura do alçado' : 'cota não encontrada'}</td></tr>`));
-    if (a.portas && a.copiasDetetadas) rows.push(`<tr><td>15.1</td><td>Portas interiores</td><td>un</td><td class="num">${fmt(a.portas, 2)}</td><td class="num"></td><td></td><td class="num">a confirmar</td><td class="ok">contadas na camada de portas</td></tr>`);
-    else if (a.portas) rows.push(`<tr><td>15.1</td><td>Portas interiores</td><td>un</td><td class="num">${fmt(a.portas, 2)}</td><td class="num"></td><td></td><td class="num">a confirmar</td><td class="chk">arcos de porta em todas as vistas; sem etiquetas não sei quantas cópias da planta há</td></tr>`);
+
+    const med = [['Art.', 'Descrição', 'Un', 'Quant.', 'Comp.', 'Larg.', 'Alt.', 'Origem']];
+    const div = [['Divisão', 'Área escrita (m²)', 'Perímetro (m)', 'Área calculada (m²)', 'Estado']];
+    const vaos = [['Vão', 'Largura (m)', 'Altura (m)', 'Origem']];
+    a.divisoes.forEach(d => med.push(['13.1', 'Teto · ' + d.nome, 'm²', 1, num(d.area), '', '', 'área escrita na planta']));
+    a.vaos.forEach(v => {
+      med.push(['16.1', 'Caixilharia · ' + v.tag, 'm²', 1, v.largura != null ? num(v.largura) : 'sem cota', '', 'a confirmar', v.largura != null ? 'largura da cota; altura do alçado' : 'cota não encontrada']);
+      vaos.push([v.tag, v.largura != null ? num(v.largura) : 'sem cota', 'a confirmar (alçado)', v.largura != null ? 'cota mais próxima da etiqueta' : 'cota não encontrada']);
+    });
+    if (a.portas && a.copiasDetetadas) med.push(['15.1', 'Portas interiores', 'un', a.portas, '', '', 'a confirmar', 'contadas na camada de portas']);
+    else if (a.portas) med.push(['15.1', 'Portas interiores', 'un', a.portas, '', '', 'a confirmar', 'arcos de porta em todas as vistas; sem etiquetas não sei quantas cópias da planta há']);
+
     // perímetros: fechar cada divisão a partir das paredes e medir (a área calculada tem de bater com a escrita)
-    let perHtml = '';
+    let perHtml = '', okN = 0, abertas = 0, falhas = 0;
     try {
       const t2 = performance.now();
       const pr = window.Perimetros ? Perimetros.medir(texto) : null;
       if (pr && !pr.erro) {
         const ms2 = performance.now() - t2;
         log(ui.term, `A fechar as divisões pelas paredes: ${pr.stats.linhas} linhas, ${pr.stats.portas} portas fechadas, ${pr.stats.vaosFechados} vãos fechados, ${pr.stats.cortesIgnoradas} linhas de corte ignoradas`, 'info');
-        let okN = 0, abertas = 0, falhas = 0;
         for (const r of pr.results) {
-          if (r.erro) { falhas++; continue; }
-          if (r.aberta) { abertas++; continue; }
+          if (r.erro) { falhas++; div.push([r.nome, num(r.areaEscrita), '', '', 'não fechou: ' + r.erro]); continue; }
+          if (r.aberta) { abertas++; div.push([r.nome, num(r.areaEscrita), '', '', 'aberta para ' + r.aberta]); continue; }
           const dif = r.areaCalc - r.areaEscrita; const bate = Math.abs(dif) <= Math.max(0.5, r.areaEscrita * 0.04) && !(r.juntas && r.juntas.length);
           if (bate) okN++;
           const nome = r.nome + (r.juntas && r.juntas.length ? ' + ' + r.juntas.map(j => j.nome).join(' + ') : '');
           const escrita = r.areaEscrita + (r.juntas || []).reduce((s, j) => s + j.area, 0);
-          rows.push(`<tr><td>12.1</td><td>Pintura · ${esc(nome)} (perímetro × 2,60)</td><td>m²</td><td class="num">1,00</td><td class="num">${fmt(r.perimetro, 2)}</td><td></td><td class="num">2,60</td><td class="${bate ? 'ok' : 'chk'}">${bate ? 'área calculada ' + fmt(r.areaCalc, 2) + ' = escrita ' + fmt(r.areaEscrita, 2) : (r.juntas && r.juntas.length ? 'divisões abertas entre si, medidas em conjunto: ' + fmt(r.areaCalc, 2) + ' vs ' + fmt(escrita, 2) + ' escritas' : 'área calculada ' + fmt(r.areaCalc, 2) + ' vs escrita ' + fmt(r.areaEscrita, 2) + ': confirmar')}</td></tr>`);
+          const estado = bate ? 'área calculada igual à escrita' : (r.juntas && r.juntas.length ? 'divisões abertas entre si, medidas em conjunto' : 'área calculada diferente da escrita: confirmar');
+          div.push([nome, num(escrita), num(r.perimetro), num(r.areaCalc), estado]);
+          med.push(['12.1', 'Pintura · ' + nome + ' (perímetro × 2,60)', 'm²', 1, num(r.perimetro), '', 2.6, estado]);
         }
         log(ui.term, `${okN} divisões fechadas com área a bater com a do arquiteto · ${abertas} abertas para outra divisão · ${falhas} por fechar. ${(ms2 / 1000).toFixed(1)} s.`, okN ? 'success' : 'warn');
         perHtml = `<div class="figure" style="margin-top:14px"><canvas id="perCanvas" style="width:100%;height:auto;display:block"></canvas><figcaption>Cada cor é uma divisão fechada pela plataforma a partir das linhas de parede do vosso DWG. O que ficou branco não fechou ou está fora das etiquetas.</figcaption></div>`;
         setTimeout(() => { const cv = document.getElementById('perCanvas'); if (cv) Perimetros.desenhar(pr, cv, 1100); }, 50);
       } else {
-        rows.push(`<tr><td>12.1</td><td>Pintura · paredes por divisão (perímetro × pé-direito)</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">${pr && pr.erro ? esc(pr.erro) : 'sem leitor de perímetros'}</td></tr>`);
+        med.push(['12.1', 'Pintura · paredes por divisão (perímetro × pé-direito)', 'm²', 1, 'perímetro', '', 2.6, pr && pr.erro ? pr.erro : 'sem leitor de perímetros']);
       }
     } catch (e) {
       log(ui.term, 'Perímetros: ' + e.message, 'warn');
-      rows.push(`<tr><td>12.1</td><td>Pintura · paredes por divisão</td><td>m²</td><td class="num">1,00</td><td class="num">perímetro</td><td></td><td class="num">2,60</td><td class="chk">não fechou: ${esc(e.message)}</td></tr>`);
+      med.push(['12.1', 'Pintura · paredes por divisão', 'm²', 1, 'perímetro', '', 2.6, 'não fechou: ' + e.message]);
     }
-    const extra = `<div class="fv-list" style="margin-top:14px"><div class="fv-row"><b>Legenda</b><span>${esc(a.legenda.slice(0, 8).join(' · ')) || 'não encontrada'}</span></div><div class="fv-row"><b>Materiais no pormenor</b><span>${esc(a.materiais.filter(m => !/^\d/.test(m)).join(' · ')) || 'não encontrados'}</span></div><div class="fv-row"><b>Áreas brutas</b><span>${esc(a.brutas.join(' · '))}</span></div></div>`;
-    ui.out.innerHTML = `${perHtml}<div style="overflow-x:auto; margin-top:12px"><table class="cmp sheet live"><thead><tr><th>Art.</th><th>Descrição</th><th>Un</th><th style="text-align:right">Quant.</th><th style="text-align:right">Comp.</th><th style="text-align:right">Larg.</th><th style="text-align:right">Alt.</th><th>Origem</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>${extra}`;
-    ui.out.querySelectorAll('tbody tr').forEach((tr, i) => setTimeout(() => tr.classList.add('visible'), 80 + i * 45));
+    const res = [['Ficheiro', file.name], ['Camadas', a.camadas.length], ['Divisões com área', a.divisoes.length], ['Vãos com etiqueta', a.vaos.length], ['Portas', a.portas], ['Cotas', a.cotas], ['Divisões fechadas (área a bater)', okN], ['Divisões abertas para outra', abertas], ['Divisões por fechar', falhas]];
+    if (a.implantacao) res.push(['Implantação escrita (m²)', num(a.implantacao.texto)], ['Implantação calculada (m²)', a.implantacao.calculada != null ? num(a.implantacao.calculada) : 'sem polígono fechado']);
+    res.push(['Legenda', a.legenda.join(' · ') || 'não encontrada'], ['Materiais no pormenor', a.materiais.filter(m => !/^\d/.test(m)).join(' · ') || 'não encontrados'], ['Áreas brutas', a.brutas.join(' · ')], ['Pé-direito usado na pintura (m)', 2.6], ['Tempo de leitura (s)', Math.round(ms / 100) / 10], ['Gerado em', new Date().toLocaleString('pt-PT')]);
+    const folhasXls = [
+      { nome: 'Medições', linhas: med, larguras: [6, 52, 5, 8, 10, 8, 10, 48] },
+      { nome: 'Divisões', linhas: div, larguras: [40, 16, 14, 18, 44] },
+      { nome: 'Vãos', linhas: vaos, larguras: [10, 12, 20, 32] },
+      { nome: 'Resumo', linhas: res, larguras: [32, 70] },
+    ];
+    cartaoDownload(ui, 'Concroc_arquitetura_' + file.name.replace(/\.[^.]+$/, '').replace(/[^\w\-]+/g, '_'), folhasXls, `${a.divisoes.length} divisões, ${okN} com perímetro conferido pela área, ${a.vaos.length} vãos, ${a.portas} portas`, perHtml);
   }
 
   function init() {

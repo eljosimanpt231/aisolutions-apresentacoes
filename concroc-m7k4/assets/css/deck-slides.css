@@ -221,3 +221,12 @@
 .lista td:nth-child(2) { font-weight: 600; }
 .lista td.ok { color: var(--success); font-weight: 700; }
 .lista td.chk { color: var(--warning); font-weight: 700; }
+
+/* Experimente agora: cartão de download (v9) */
+.dl-card { display: flex; align-items: center; gap: 16px; margin-top: 14px; padding: 16px 18px; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); background: var(--surface, #fff); box-shadow: var(--shadow-sm); flex-wrap: wrap; }
+.dl-ico { flex: 0 0 auto; width: 56px; height: 56px; border-radius: 10px; background: #1d6f42; color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.06em; display: flex; align-items: center; justify-content: center; }
+.dl-txt { flex: 1 1 220px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.dl-txt b { font-family: var(--font-display); font-size: 1.05rem; color: var(--text); }
+.dl-txt span { font-size: 0.82rem; color: var(--muted); overflow-wrap: anywhere; }
+.dl-txt .dl-sub { color: var(--text); }
+.dl-btn { flex: 0 0 auto; white-space: nowrap; }
