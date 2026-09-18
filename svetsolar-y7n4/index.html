@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Svetsolar | Como funciona o sistema de leads da AI Solutions</title>
-  <meta name="description" content="O fluxograma de um sistema de qualificação de leads de energia solar em produção, explicado para a Svetsolar.">
+  <title>Svetsolar | O fluxograma do sistema de leads</title>
+  <meta name="description" content="Como funciona, em fluxograma, o sistema de qualificação de leads que a AI Solutions tem em produção numa empresa de energia solar em Portugal.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,9 @@
     .cta-final h2 { color: var(--text); }
     .cta-final .lead { color: var(--muted); }
     .cta-final .btn-primary { background: var(--brand); color: var(--on-brand); }
-    .cta-final .btn-ghost { color: var(--text); border-color: var(--border); }
+
+    /* Página curta: o hero não precisa do ecrã inteiro. */
+    .hero { min-height: auto; padding-top: clamp(64px, 10vw, 110px); padding-bottom: clamp(48px, 7vw, 80px); }
 
     /* Elemento assinatura: os arcos concêntricos do logótipo Svetsolar, atrás do hero. */
     .sunarcs {
@@ -60,34 +62,30 @@
     .fc-m { font-size: 13px; }
     .fc-k { font-size: 12px; letter-spacing: 0.2em; }
 
-    /* Lista de princípios: número grande à esquerda */
-    .rule { display: flex; gap: 18px; align-items: flex-start; }
-    .rule .n {
-      flex-shrink: 0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 800;
-      width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      background: hsl(var(--brand-hsl) / 0.12); border: 1px solid hsl(var(--brand-hsl) / 0.3); color: var(--brand);
-    }
-    .rule h3 { margin-bottom: 6px; }
+    /* Legenda do fluxograma */
+    .leg { display: grid; gap: 16px; margin-top: 30px; }
+    @media (min-width: 860px) { .leg { grid-template-columns: repeat(3, 1fr); } }
+    .leg-item { display: flex; gap: 14px; align-items: flex-start; font-size: 0.93rem; color: var(--muted); }
+    .leg-key { flex-shrink: 0; width: 34px; height: 3px; border-radius: 2px; margin-top: 9px; }
+    .leg-key.k-a { background: var(--accent); }
+    .leg-key.k-d { background: var(--danger); }
+    .leg-key.k-m { background: repeating-linear-gradient(90deg, var(--muted) 0 5px, transparent 5px 10px); }
+    .leg-item b { color: var(--text); }
 
-    .quote { text-align: center; font-style: italic; color: var(--muted); font-size: 1.05rem; margin-top: 40px; }
+    /* Titulos longos nos cartoes de beneficio: a entrelinha do corpo e larga demais. */
+    .stat-card .num { line-height: 1.15; }
+
+    .num-tile {
+      font-family: var(--font-display); font-weight: 800; font-size: 1.7rem;
+      color: var(--brand); line-height: 1; margin-bottom: 12px;
+    }
+    .quote { text-align: center; font-style: italic; color: var(--muted); font-size: 1.02rem; margin-top: 40px; }
     .notabene {
-      max-width: 720px; margin: 28px auto 0; text-align: center;
-      font-size: 0.85rem; color: var(--muted);
+      max-width: 760px; margin: 30px auto 0; text-align: center;
+      font-size: 0.84rem; color: var(--muted);
       border-top: 1px solid var(--border); padding-top: 18px;
     }
-    /* Mobile: os botoes empilham, a margem lateral inline descentrava o segundo. */
-    @media (max-width: 560px) {
-      .btn + .btn { margin-left: 0 !important; margin-top: 12px; }
-    }
-    /* O deck.js nao converte \n, e a bolha nao preserva quebras: as 3 opcoes
-       de orcamento tem de ficar em linhas separadas. */
-    .cr-bubble { white-space: pre-line; }
-
-    .hero-note {
-      display: inline-block; margin-top: 26px; font-size: 0.86rem; color: var(--muted);
-      border: 1px solid var(--border); background: var(--surface);
-      border-radius: 999px; padding: 8px 18px;
-    }
+    @media (max-width: 560px) { .btn + .btn { margin-left: 0 !important; margin-top: 12px; } }
   </style>
   <script src="config.js"></script>
 </head>
@@ -96,7 +94,7 @@
   <div class="bg-glow glow-1"></div>
   <div class="bg-glow glow-2"></div>
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ HERO: a introducao ============ -->
   <section class="hero" id="topo">
     <svg class="sunarcs" viewBox="0 0 800 260" aria-hidden="true">
       <path d="M40 240a360 360 0 0 1 720 0"/>
@@ -111,396 +109,186 @@
         <span class="x">×</span>
         <span class="ais">AI Solutions</span>
       </div>
-      <h1 class="reveal">A lead do anúncio,<br>respondida <span class="grad">em segundos</span><br>e já qualificada.</h1>
-      <p class="lead reveal" style="margin:20px auto 0">
-        Isto não é uma proposta. É o mapa de um sistema que temos em produção numa empresa
-        de energia solar em Portugal, que trabalha como a Svetsolar: anúncios a gerar leads,
-        equipa comercial por zona, e um funil que não pode parar ao fim de semana.
+      <h1 class="reveal">As leads dos anúncios,<br><span class="grad">tratadas sozinhas</span><br>até ao comercial.</h1>
+      <p class="lead reveal" style="margin:22px auto 0">
+        Yuri, isto é só para ter o contexto, sem apresentação nem reunião pelo meio. Construímos este sistema
+        para uma empresa de energia solar em Portugal que trabalha como a Svetsolar: anúncios a gerar leads,
+        equipa comercial por zona, orçamento por consumo. Está em produção desde julho.
       </p>
-      <div class="grid-4 reveal" style="margin-top:44px; text-align:left">
-        <div class="card stat-card"><div class="num">&lt; 1 min</div><div class="desc">Entre a mensagem entrar e a primeira resposta, a qualquer hora</div></div>
-        <div class="card stat-card"><div class="num">3 dados</div><div class="desc">Consumo, tipo de instalação e zona. Bastam para orçamentar</div></div>
-        <div class="card stat-card"><div class="num"><span class="count" data-to="10">0</span> leads</div><div class="desc">Reais nas primeiras 16 horas depois do arranque</div></div>
-        <div class="card stat-card"><div class="num">24/7</div><div class="desc">Noites, sábados e feriados incluídos</div></div>
-      </div>
-      <div style="margin-top:38px" class="reveal">
-        <a href="#fluxograma" class="btn btn-primary">Ver o fluxograma ↓</a>
-        <a href="#demo" class="btn btn-ghost" style="margin-left:10px">Ver o agente a trabalhar</a>
-      </div>
-      <div class="reveal"><span class="hero-note">Leitura de 4 minutos. Sem preços, sem compromisso.</span></div>
     </div>
   </section>
 
-  <!-- ============ O PONTO DE PARTIDA ============ -->
-  <section class="section-alt" id="problema">
+  <!-- ============ O QUE CONSTRUIMOS ============ -->
+  <section class="section-alt" id="oque">
     <div class="container">
       <div class="center">
-        <span class="eyebrow">O ponto de partida</span>
-        <h2>Quem vive de anúncios tem sempre o mesmo problema.</h2>
-        <p class="lead">Não sabemos ainda como é o dia a dia da Svetsolar. Sabemos o que encontrámos noutra
-        empresa de fotovoltaico com o mesmo modelo: leads de Meta Ads, equipa por zona, orçamento por consumo.</p>
+        <span class="eyebrow">O que construímos</span>
+        <h2>Quatro peças, a trabalhar juntas.</h2>
       </div>
-      <div class="grid-3" style="margin-top:44px">
-        <div class="card reveal"><div class="ftile">⏱️</div><h3>Quem responde primeiro fica com a lead</h3><p class="small">Quem clica num anúncio de painéis está a pedir orçamento a três empresas na mesma tarde. Uma resposta ao fim de duas horas já chega a outra conversa.</p></div>
-        <div class="card reveal"><div class="ftile">🔍</div><h3>Curiosos a custar o mesmo que clientes</h3><p class="small">Boa parte de quem responde quer só saber o preço. Cada um consome o mesmo tempo de comercial que um cliente a sério.</p></div>
-        <div class="card reveal"><div class="ftile">🗺️</div><h3>Pedidos fora da zona</h3><p class="small">Ilhas e zonas sem equipa disponível entram na mesma fila dos pedidos que dão obra, e só se percebe depois de alguém ler.</p></div>
-        <div class="card reveal"><div class="ftile">🔁</div><h3>Sempre as mesmas três perguntas</h3><p class="small">Quanto paga de luz, que tipo de instalação tem, monofásico ou trifásico. Feitas à mão, uma a uma, dezenas de vezes por semana.</p></div>
-        <div class="card reveal"><div class="ftile">💬</div><h3>Canais espalhados</h3><p class="small">WhatsApp, Instagram, Facebook e formulário do site, cada um no seu sítio, sem ninguém a olhar para todos ao mesmo tempo.</p></div>
-        <div class="card reveal"><div class="ftile">📉</div><h3>Sem números do funil</h3><p class="small">Sem saber ao certo quantas leads entraram, quantas foram contactadas e quantas fecharam, o investimento em anúncios anda às escuras.</p></div>
+      <div class="grid-4" style="margin-top:44px; text-align:left">
+        <div class="card reveal"><div class="num-tile">01</div><h3>Uma caixa só</h3><p class="small">Meta Ads, WhatsApp, Instagram e Facebook a cair no mesmo sítio, num número único. Ninguém anda a saltar entre aplicações.</p></div>
+        <div class="card reveal"><div class="num-tile">02</div><h3>Um agente que orçamenta</h3><p class="small">Pergunta o consumo, o tipo de instalação e a zona, e dá o valor ali na conversa, com a tabela real da empresa.</p></div>
+        <div class="card reveal"><div class="num-tile">03</div><h3>Encaminhamento por zona</h3><p class="small">Os 278 concelhos do continente mapeados. Cada lead vai para o comercial certo, já com o resumo da conversa feito.</p></div>
+        <div class="card reveal"><div class="num-tile">04</div><h3>Registo automático</h3><p class="small">Cada lead fica no CRM com estado, comercial e histórico. O funil dos anúncios deixa de ser invisível.</p></div>
       </div>
-      <p class="quote reveal">O problema não é falta de leads. É o tempo que cada lead demora a receber a primeira resposta.</p>
-    </div>
-  </section>
-
-  <!-- ============ O RACIOCÍNIO ============ -->
-  <section id="raciocinio">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">O raciocínio</span>
-        <h2>Porque é que a plataforma é assim.</h2>
-        <p class="lead">Não é um chatbot que responde a perguntas. É um funil que decide. Estas são as seis
-        decisões de desenho que fazem a diferença entre poupar tempo e criar trabalho novo.</p>
-      </div>
-      <div class="grid-2" style="margin-top:44px; text-align:left">
-        <div class="card reveal"><div class="rule"><span class="n">1</span><div><h3>Responder primeiro, sempre</h3><p class="small">O agente entra em segundos, de dia ou de madrugada. Não é uma questão de simpatia: a primeira resposta é o que decide quem fica com a conversa.</p></div></div></div>
-        <div class="card reveal"><div class="rule"><span class="n">2</span><div><h3>Orçamentar cedo, não no fim</h3><p class="small">Em vez de marcar uma visita para dar um número, o agente dá logo uma estimativa com a tabela real da empresa. Quem acha caro sai já. Quem negocia está a comprar.</p></div></div></div>
-        <div class="card reveal"><div class="rule"><span class="n">3</span><div><h3>Nunca inventa um valor</h3><p class="small">Se o caso sai da tabela (só baterias, uma empresa, um consumo fora da gama) o agente não arrisca um número. Passa a um humano com o contexto todo.</p></div></div></div>
-        <div class="card reveal"><div class="rule"><span class="n">4</span><div><h3>Filtrar vale tanto como vender</h3><p class="small">Zona sem cobertura sai do funil de forma educada, na primeira mensagem. Não chega a ocupar um minuto de ninguém.</p></div></div></div>
-        <div class="card reveal"><div class="rule"><span class="n">5</span><div><h3>O humano fecha, sempre</h3><p class="small">Assim que a lead qualifica, o agente anuncia o comercial pelo nome e cala-se. Não há duas vozes na mesma conversa nem um robô a negociar preço.</p></div></div></div>
-        <div class="card reveal"><div class="rule"><span class="n">6</span><div><h3>Nada se perde em silêncio</h3><p class="small">Quando o agente não consegue decidir, a lead vai para gestão manual com aviso à equipa. A dúvida gera sempre um alerta, nunca um vazio.</p></div></div></div>
-      </div>
-      <p class="quote reveal">O agente não substitui o comercial. Tira-lhe da secretária tudo o que não precisa de um comercial.</p>
     </div>
   </section>
 
   <!-- ============ O FLUXOGRAMA ============ -->
-  <section class="section-alt" id="fluxograma">
+  <section id="fluxograma">
     <div class="container">
       <div class="center">
         <span class="eyebrow">O fluxograma</span>
-        <h2>O caminho de uma lead, do anúncio ao comercial.</h2>
-        <p class="lead">Tudo entra numa caixa só. O agente faz uma pergunta, e a partir daí
-        cada conversa segue um de dois caminhos. Nenhum deles é "ficou por responder".</p>
+        <h2>O caminho de uma lead, do primeiro clique ao comercial.</h2>
+        <p class="lead">Tudo entra numa caixa só. O agente faz uma pergunta, e a partir daí cada conversa
+        segue um de dois caminhos. Nenhum deles é "ficou por responder".</p>
       </div>
 
       <div class="fc-shell reveal" style="margin-top:40px">
         <div class="fc-scroll">
           <svg class="fc" viewBox="0 0 1240 560" role="img"
-               aria-label="Fluxograma: os canais entram numa caixa única, o agente verifica se a lead qualifica, e encaminha para o circuito de orçamentação ou para o circuito de exceção.">
-            <defs>
-              <marker id="fcM" markerWidth="9" markerHeight="9" refX="7.5" refY="4" orient="auto"><path class="mk-m" d="M0 0 L8 4 L0 8 Z"/></marker>
-              <marker id="fcA" markerWidth="9" markerHeight="9" refX="7.5" refY="4" orient="auto"><path class="mk-a" d="M0 0 L8 4 L0 8 Z"/></marker>
-              <marker id="fcD" markerWidth="9" markerHeight="9" refX="7.5" refY="4" orient="auto"><path class="mk-d" d="M0 0 L8 4 L0 8 Z"/></marker>
-            </defs>
+          aria-label="Fluxograma: os canais entram numa caixa única, o agente verifica se a lead qualifica, e encaminha para o circuito de orçamentação ou para o circuito de exceção.">
+          <defs>
+          <marker id="fcM" markerWidth="9" markerHeight="9" refX="7.5" refY="4" orient="auto"><path class="mk-m" d="M0 0 L8 4 L0 8 Z"/></marker>
+          <marker id="fcA" markerWidth="9" markerHeight="9" refX="7.5" refY="4" orient="auto"><path class="mk-a" d="M0 0 L8 4 L0 8 Z"/></marker>
+          <marker id="fcD" markerWidth="9" markerHeight="9" refX="7.5" refY="4" orient="auto"><path class="mk-d" d="M0 0 L8 4 L0 8 Z"/></marker>
+          </defs>
 
-            <!-- canais -->
-            <text class="fc-k" x="30" y="34">CANAIS · UM SÓ NÚMERO</text>
-            <rect class="fc-box" x="30" y="56" width="160" height="40" rx="6"/>
-            <text class="fc-t" x="46" y="82">Meta Ads</text>
-            <rect class="fc-box" x="30" y="102" width="160" height="40" rx="6"/>
-            <text class="fc-t" x="46" y="128">WhatsApp</text>
-            <rect class="fc-box" x="30" y="148" width="160" height="40" rx="6"/>
-            <text class="fc-t" x="46" y="174">Instagram</text>
-            <rect class="fc-box" x="30" y="194" width="160" height="40" rx="6"/>
-            <text class="fc-t" x="46" y="220">Facebook</text>
-            <path class="fc-line" d="M190 76 H206 M190 122 H206 M190 168 H206 M190 214 H206 M206 76 V214"/>
-            <path class="fc-line" d="M206 145 H232" marker-end="url(#fcM)"/>
+          <!-- canais -->
+          <text class="fc-k" x="30" y="34">CANAIS · UM SÓ NÚMERO</text>
+          <rect class="fc-box" x="30" y="56" width="160" height="40" rx="6"/>
+          <text class="fc-t" x="46" y="82">Meta Ads</text>
+          <rect class="fc-box" x="30" y="102" width="160" height="40" rx="6"/>
+          <text class="fc-t" x="46" y="128">WhatsApp</text>
+          <rect class="fc-box" x="30" y="148" width="160" height="40" rx="6"/>
+          <text class="fc-t" x="46" y="174">Instagram</text>
+          <rect class="fc-box" x="30" y="194" width="160" height="40" rx="6"/>
+          <text class="fc-t" x="46" y="220">Facebook</text>
+          <path class="fc-line" d="M190 76 H206 M190 122 H206 M190 168 H206 M190 214 H206 M206 76 V214"/>
+          <path class="fc-line" d="M206 145 H232" marker-end="url(#fcM)"/>
 
-            <!-- caixa unica -->
-            <rect class="fc-box" x="242" y="85" width="140" height="120" rx="8"/>
-            <text class="fc-t fc-lg" x="260" y="134">Caixa única</text>
-            <text class="fc-s" x="260" y="158">os quatro canais,</text>
-            <text class="fc-s" x="260" y="176">uma só vista</text>
-            <path class="fc-line" d="M382 145 H396" marker-end="url(#fcM)"/>
+          <!-- caixa unica -->
+          <rect class="fc-box" x="242" y="85" width="140" height="120" rx="8"/>
+          <text class="fc-t fc-lg" x="260" y="134">Caixa única</text>
+          <text class="fc-s" x="260" y="158">os quatro canais,</text>
+          <text class="fc-s" x="260" y="176">uma só vista</text>
+          <path class="fc-line" d="M382 145 H396" marker-end="url(#fcM)"/>
 
-            <!-- decisao -->
-            <path class="fc-diamond" d="M530 53 L660 145 L530 237 L400 145 Z"/>
-            <text class="fc-t fc-lg fc-c" x="530" y="138">A lead qualifica?</text>
-            <text class="fc-s fc-c" x="530" y="161">zona coberta e consumo</text>
-            <text class="fc-s fc-c" x="530" y="178">dentro da tabela</text>
+          <!-- decisao -->
+          <path class="fc-diamond" d="M530 53 L660 145 L530 237 L400 145 Z"/>
+          <text class="fc-t fc-lg fc-c" x="530" y="138">A lead qualifica?</text>
+          <text class="fc-s fc-c" x="530" y="161">zona coberta e consumo</text>
+          <text class="fc-s fc-c" x="530" y="178">dentro da tabela</text>
 
-            <!-- ramo sim -->
-            <text class="fc-m" x="640" y="117">sim</text>
-            <path class="fc-a" d="M637 129 H666" marker-end="url(#fcA)"/>
-            <rect class="fc-boxA" x="680" y="85" width="240" height="88" rx="8"/>
-            <text class="fc-t fc-lg" x="698" y="118">Circuito de orçamentação</text>
-            <text class="fc-s" x="698" y="141">dá o valor na própria conversa,</text>
-            <text class="fc-s" x="698" y="158">com a tabela real da empresa</text>
+          <!-- ramo sim -->
+          <text class="fc-m" x="640" y="117">sim</text>
+          <path class="fc-a" d="M637 129 H666" marker-end="url(#fcA)"/>
+          <rect class="fc-boxA" x="680" y="85" width="240" height="88" rx="8"/>
+          <text class="fc-t fc-lg" x="698" y="118">Circuito de orçamentação</text>
+          <text class="fc-s" x="698" y="141">dá o valor na própria conversa,</text>
+          <text class="fc-s" x="698" y="158">com a tabela real da empresa</text>
 
-            <path class="fc-a" d="M920 129 H930 M930 69 V201"/>
-            <path class="fc-a" d="M930 69 H948" marker-end="url(#fcA)"/>
-            <path class="fc-a" d="M930 135 H948" marker-end="url(#fcA)"/>
-            <path class="fc-a" d="M930 201 H948" marker-end="url(#fcA)"/>
-            <rect class="fc-box" x="960" y="40" width="265" height="58" rx="6"/>
-            <text class="fc-t" x="978" y="66">Três opções com preço</text>
-            <text class="fc-s" x="978" y="85">sem bateria, 5 kWh e 10 kWh</text>
-            <rect class="fc-box" x="960" y="106" width="265" height="58" rx="6"/>
-            <text class="fc-t" x="978" y="132">Vai para o comercial certo</text>
-            <text class="fc-s" x="978" y="151">com o resumo da conversa feito</text>
-            <rect class="fc-box" x="960" y="172" width="265" height="58" rx="6"/>
-            <text class="fc-t" x="978" y="198">Fica registada no CRM</text>
-            <text class="fc-s" x="978" y="217">estado, comercial e histórico</text>
+          <path class="fc-a" d="M920 129 H930 M930 69 V201"/>
+          <path class="fc-a" d="M930 69 H948" marker-end="url(#fcA)"/>
+          <path class="fc-a" d="M930 135 H948" marker-end="url(#fcA)"/>
+          <path class="fc-a" d="M930 201 H948" marker-end="url(#fcA)"/>
+          <rect class="fc-box" x="960" y="40" width="265" height="58" rx="6"/>
+          <text class="fc-t" x="978" y="66">Três opções com preço</text>
+          <text class="fc-s" x="978" y="85">sem bateria, 5 kWh e 10 kWh</text>
+          <rect class="fc-box" x="960" y="106" width="265" height="58" rx="6"/>
+          <text class="fc-t" x="978" y="132">Vai para o comercial certo</text>
+          <text class="fc-s" x="978" y="151">com o resumo da conversa feito</text>
+          <rect class="fc-box" x="960" y="172" width="265" height="58" rx="6"/>
+          <text class="fc-t" x="978" y="198">Fica registada no CRM</text>
+          <text class="fc-s" x="978" y="217">estado, comercial e histórico</text>
 
-            <!-- ramo nao -->
-            <text class="fc-m" x="638" y="199">não</text>
-            <path class="fc-d" d="M610 180 H630 V344 H666" marker-end="url(#fcD)"/>
-            <rect class="fc-boxD" x="680" y="300" width="240" height="88" rx="8"/>
-            <text class="fc-t fc-lg" x="698" y="333">Circuito de exceção</text>
-            <text class="fc-s" x="698" y="356">o agente não inventa um valor</text>
-            <text class="fc-s" x="698" y="373">que depois não se confirme</text>
+          <!-- ramo nao -->
+          <text class="fc-m" x="638" y="199">não</text>
+          <path class="fc-d" d="M610 180 H630 V344 H666" marker-end="url(#fcD)"/>
+          <rect class="fc-boxD" x="680" y="300" width="240" height="88" rx="8"/>
+          <text class="fc-t fc-lg" x="698" y="333">Circuito de exceção</text>
+          <text class="fc-s" x="698" y="356">o agente não inventa um valor</text>
+          <text class="fc-s" x="698" y="373">que depois não se confirme</text>
 
-            <path class="fc-d" d="M920 344 H930 M930 319 V385"/>
-            <path class="fc-d" d="M930 319 H948" marker-end="url(#fcD)"/>
-            <path class="fc-d" d="M930 385 H948" marker-end="url(#fcD)"/>
-            <rect class="fc-box" x="960" y="290" width="265" height="58" rx="6"/>
-            <text class="fc-t" x="978" y="316">Fora de zona: fecha</text>
-            <text class="fc-s" x="978" y="335">ilhas e zonas sem equipa</text>
-            <rect class="fc-box" x="960" y="356" width="265" height="58" rx="6"/>
-            <text class="fc-t" x="978" y="382">Fora de tabela: escala</text>
-            <text class="fc-s" x="978" y="401">empresas e consumos altos</text>
+          <path class="fc-d" d="M920 344 H930 M930 319 V385"/>
+          <path class="fc-d" d="M930 319 H948" marker-end="url(#fcD)"/>
+          <path class="fc-d" d="M930 385 H948" marker-end="url(#fcD)"/>
+          <rect class="fc-box" x="960" y="290" width="265" height="58" rx="6"/>
+          <text class="fc-t" x="978" y="316">Fora de zona: fecha</text>
+          <text class="fc-s" x="978" y="335">ilhas e zonas sem equipa</text>
+          <rect class="fc-box" x="960" y="356" width="265" height="58" rx="6"/>
+          <text class="fc-t" x="978" y="382">Fora de tabela: escala</text>
+          <text class="fc-s" x="978" y="401">empresas e consumos altos</text>
 
-            <!-- linha de baixo: follow-up -->
-            <path class="fc-rule" d="M30 450 H1225"/>
-            <rect class="fc-box" x="30" y="472" width="200" height="58" rx="6"/>
-            <text class="fc-t" x="48" y="498">Conversa sem resposta</text>
-            <text class="fc-s" x="48" y="517">há algumas horas</text>
-            <path class="fc-line" d="M230 501 H272" marker-end="url(#fcM)"/>
-            <rect class="fc-box" x="284" y="472" width="200" height="58" rx="6"/>
-            <text class="fc-t" x="302" y="498">Follow-up automático</text>
-            <text class="fc-s" x="302" y="517">sem custo de mensagem</text>
-            <path class="fc-dash" d="M484 501 H530 V247" marker-end="url(#fcM)"/>
-            <text class="fc-m" x="546" y="496">a resposta volta a entrar aqui</text>
+          <!-- linha de baixo: follow-up -->
+          <path class="fc-rule" d="M30 450 H1225"/>
+          <rect class="fc-box" x="30" y="472" width="200" height="58" rx="6"/>
+          <text class="fc-t" x="48" y="498">Conversa sem resposta</text>
+          <text class="fc-s" x="48" y="517">há algumas horas</text>
+          <path class="fc-line" d="M230 501 H272" marker-end="url(#fcM)"/>
+          <rect class="fc-box" x="284" y="472" width="200" height="58" rx="6"/>
+          <text class="fc-t" x="302" y="498">Follow-up automático</text>
+          <text class="fc-s" x="302" y="517">sem custo de mensagem</text>
+          <path class="fc-dash" d="M484 501 H530 V247" marker-end="url(#fcM)"/>
+          <text class="fc-m" x="546" y="496">a resposta volta a entrar aqui</text>
           </svg>
         </div>
         <p class="fc-hint">Deslize o diagrama para o lado para ver tudo.</p>
       </div>
 
+      <div class="leg reveal">
+        <div class="leg-item"><span class="leg-key k-a"></span><span><b>O caminho a azul é quando a lead qualifica.</b> O agente dá as opções de preço, entrega ao comercial da zona e regista tudo.</span></div>
+        <div class="leg-item"><span class="leg-key k-d"></span><span><b>O caminho a vermelho é quando não qualifica.</b> Fora de zona fecha ali. Fora de tabela vai para uma pessoa. O agente nunca inventa um valor.</span></div>
+        <div class="leg-item"><span class="leg-key k-m"></span><span><b>A linha a tracejado é o follow-up.</b> Se a conversa pára, o agente volta a pegar nela e a resposta entra outra vez no fluxo.</span></div>
+      </div>
+
       <div class="alert reveal">
         <span class="dot"></span>
-        <p style="color:var(--text)"><b>O encaminhamento por zona é determinístico, não é adivinhado.</b> Os 278 concelhos do continente
-        estão mapeados para a equipa certa. Se o cliente escrever o nome de uma localidade que não resolve, a conversa
-        vai para revisão humana em vez de ir parar ao comercial errado.</p>
+        <p style="color:var(--text)"><b>O comercial só entra no fim.</b> Até ali não é preciso ninguém de vigia à caixa de entrada,
+        nem de noite nem ao fim de semana. E o fecho é sempre humano: o agente anuncia o comercial pelo nome e sai da conversa.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ DEMO: CHAT + RACIOCÍNIO ============ -->
-  <section id="demo">
+  <!-- ============ OS BENEFICIOS ============ -->
+  <section class="section-alt" id="beneficios">
     <div class="container">
       <div class="center">
-        <span class="eyebrow">O agente ao vivo</span>
-        <h2>A conversa à esquerda. O raciocínio à direita.</h2>
-        <p class="lead">Quatro situações reais de um funil de fotovoltaico, incluindo as duas em que o agente
-        decide não avançar sozinho. Escolha um cenário ou deixe correr.</p>
-      </div>
-      <div class="cr reveal" id="svDemo" style="margin-top:40px"></div>
-      <p class="demo-note">Os valores nestes exemplos são ilustrativos, só para mostrar o mecanismo. Em produção o agente usa sempre a tabela de preços real da empresa.</p>
-    </div>
-  </section>
-
-  <!-- ============ ANTES / DEPOIS ============ -->
-  <section class="section-alt" id="mudanca">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">O que muda no dia a dia</span>
-        <h2>A mesma equipa, outra fila de trabalho.</h2>
+        <span class="eyebrow">Os benefícios</span>
+        <h2>O que mudou para eles.</h2>
       </div>
       <div class="grid-2" style="margin-top:44px; text-align:left">
-        <div class="card card-do reveal">
-          <h3>O que passa a ser automático</h3>
-          <ul class="list-check">
-            <li>Primeira resposta a qualquer hora, em todos os canais</li>
-            <li>Recolha do consumo, do tipo de instalação e da zona</li>
-            <li>Estimativa de orçamento com a tabela real, com opções</li>
-            <li>Filtro de zona e de casos fora de gama</li>
-            <li>Encaminhamento para o comercial certo, com resumo</li>
-            <li>Registo de cada lead com estado e responsável</li>
-            <li>Respostas às perguntas de sempre: garantias, prazos, legalização</li>
-          </ul>
-        </div>
-        <div class="card card-dont reveal">
-          <h3>O que a equipa deixa de fazer</h3>
-          <ul class="list-x">
-            <li>Abrir quatro aplicações para ver se entrou alguma coisa</li>
-            <li>Perguntar à mão quanto é a fatura da luz</li>
-            <li>Ligar a curiosos que nunca vão avançar</li>
-            <li>Descobrir ao quinto minuto que o cliente é da Madeira</li>
-            <li>Passar leads de um comercial para o outro por engano</li>
-            <li>Responder a mensagens da meia-noite na manhã seguinte</li>
-            <li>Tentar reconstruir de cabeça quantas leads o anúncio deu</li>
-          </ul>
-        </div>
+        <div class="card stat-card reveal"><div class="num">Resposta em segundos</div><div class="desc">A lead do anúncio deixou de esperar pela manhã seguinte enquanto pedia orçamento a mais duas empresas. Noites, sábados e feriados incluídos.</div></div>
+        <div class="card stat-card reveal"><div class="num"><span class="count" data-to="10">0</span> leads em 16 horas</div><div class="desc">Foi o que entrou e foi tratado nas primeiras 16 horas a seguir ao arranque, sem ninguém a olhar para a caixa de entrada.</div></div>
+        <div class="card stat-card reveal"><div class="num">Só chega quem qualifica</div><div class="desc">Curiosos, pedidos fora de zona e casos fora de tabela saem do funil antes de chegarem a uma pessoa.</div></div>
+        <div class="card stat-card reveal"><div class="num">O funil deixou de ser às escuras</div><div class="desc">Cada lead registada com estado e comercial atribuído. Passou a dar para ver o que o investimento em anúncios está mesmo a render.</div></div>
       </div>
+      <p class="notabene">Por respeito ao contrato, não identificamos o cliente nem partilhamos números comerciais dele.
+      O que está aqui diz respeito ao sistema.</p>
     </div>
   </section>
 
-  <!-- ============ LIMITES ============ -->
-  <section id="limites">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">Os limites, ditos à partida</span>
-        <h2>Três regras que o agente não quebra.</h2>
-        <p class="lead">A automação só funciona se a equipa confiar nela. E só se confia quando se sabe
-        exatamente onde é que ela para.</p>
-      </div>
-      <div class="grid-3" style="margin-top:44px; text-align:left">
-        <div class="card diff reveal"><div class="ftile">🚫</div><h3>Não inventa</h3><p class="small" style="color:var(--text)">Responde só a partir da base de conhecimento construída convosco: a vossa tabela, as vossas garantias, os vossos prazos. Nunca de uma pesquisa na internet.</p></div>
-        <div class="card diff reveal"><div class="ftile">🤝</div><h3>Não fecha negócio</h3><p class="small" style="color:var(--text)">Dá estimativas e prepara o terreno. Não confirma condições, não assina, não promete datas de obra. Isso é do comercial.</p></div>
-        <div class="card diff reveal"><div class="ftile">🙋</div><h3>Encaminha sempre</h3><p class="small" style="color:var(--text)">Fora do âmbito, perante uma reclamação ou perante um compromisso, passa a uma pessoa com o histórico completo e sai da conversa.</p></div>
-      </div>
-      <p class="quote reveal">Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
-    </div>
-  </section>
-
-  <!-- ============ O CASO REAL ============ -->
-  <section class="section-alt" id="prova">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">O caso real</span>
-        <h2>Isto não é um protótipo. Está em produção desde julho.</h2>
-        <p class="lead">Empresa de energia solar em Portugal, residencial e pequenos negócios,
-        com leads de Meta Ads e quatro comerciais distribuídos por zona.</p>
-      </div>
-      <div class="grid-3" style="margin-top:44px; text-align:left">
-        <div class="card stat-card reveal"><div class="num"><span class="count" data-to="10">0</span> leads</div><div class="desc">Reais tratadas nas primeiras 16 horas a seguir ao arranque</div></div>
-        <div class="card stat-card reveal"><div class="num">6 / 6</div><div class="desc">Testes de conversa passados contra o fluxo real antes de abrir ao público</div></div>
-        <div class="card stat-card reveal"><div class="num"><span class="count" data-to="278">0</span></div><div class="desc">Concelhos mapeados para o encaminhamento automático por zona</div></div>
-      </div>
-      <p class="notabene">Por respeito ao contrato, não identificamos o cliente nem partilhamos os números comerciais dele.
-      O que está acima é o que diz respeito ao sistema.</p>
-    </div>
-  </section>
-
-  <!-- ============ NA SVETSOLAR ============ -->
-  <section id="svetsolar">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">Na Svetsolar</span>
-        <h2>O mesmo motor. A vossa engenharia.</h2>
-        <p class="lead">Do que se lê no vosso site, há quatro sítios onde este sistema encaixaria
-        de forma diferente da do caso acima. São hipóteses nossas, não conclusões.</p>
-      </div>
-      <div class="grid-2" style="margin-top:44px; text-align:left">
-        <div class="card reveal"><div class="ftile">🗺️</div><h3>18 distritos, uma fila só</h3><p class="small">Com projetos do Algarve ao Minho, o encaminhamento por concelho deixa de ser um detalhe. A lead de Faro e a de Braga seguem caminhos diferentes sem ninguém decidir à mão.</p></div>
-        <div class="card reveal"><div class="ftile">🧮</div><h3>O simulador do site deixa de ser um beco</h3><p class="small">Quem faz as contas no vosso simulador e fecha o separador desaparece. Ligado ao agente, sai de lá para uma conversa e chega ao comercial já com os dados que introduziu.</p></div>
-        <div class="card reveal"><div class="ftile">📐</div><h3>"Não vendemos painéis. Entregamos engenharia."</h3><p class="small">O agente recolhe consumo, tipo de instalação e fase antes de qualquer número, e entrega isso ao engenheiro. O dimensionamento continua a ser técnico, não comercial. A estimativa serve só para separar quem avança de quem não avança.</p></div>
-        <div class="card reveal"><div class="ftile">📘</div><h3>Tier 1, garantias e DGEG na base de conhecimento</h3><p class="small">Perguntas sobre LONGi, Huawei, Deye, Fox ESS ou Sigenergy, sobre garantias, sobre legalização e sobre funcionamento à noite passam a ser respondidas sempre com a vossa versão, nunca com a da internet.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA FINAL ============ -->
+  <!-- ============ FECHO ============ -->
   <section class="cta-final" id="avancar">
     <div class="container center">
-      <span class="eyebrow">O passo seguinte</span>
-      <h2>Vale a pena falar 20 minutos, Yuri?</h2>
+      <h2>É isto, Yuri.</h2>
       <p class="lead" style="margin:16px auto 30px">
-        Não é uma apresentação de vendas. É pegar neste fluxograma, pôr ao lado da forma como a Svetsolar
-        recebe as leads hoje, e ver onde bate e onde não bate. Se não bater, fica tudo dito e ficamos por aqui.
+        Se achar que faz sentido olhar para isto ao lado da forma como a Svetsolar recebe as leads hoje,
+        diga por WhatsApp e marcamos 20 minutos. Se não fizer, também fica dito.
       </p>
       <a href="https://wa.me/351964251889" class="btn btn-primary">Responder ao Manuel no WhatsApp →</a>
-      <a href="https://aisolutions.pt/comecar" class="btn btn-ghost" style="margin-left:10px">Ver a AI Solutions</a>
-      <p class="demo-note" style="margin-top:22px">Manuel Condeço, AI Solutions. Sem compromisso e sem obrigação de avançar.</p>
+      <p class="demo-note" style="margin-top:22px">Manuel Condeço, AI Solutions.</p>
     </div>
   </section>
 
   <footer class="ais-footer">
     <div class="container">
       Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Svetsolar
-      <span class="disclaimer">Página privada e não indexada. Demonstração com dados ilustrativos, para fins de apresentação.</span>
+      <span class="disclaimer">Página privada e não indexada.</span>
     </div>
   </footer>
 
-  <!-- Chat + raciocínio: o momento uau -->
-  <script type="application/json" id="svDemo-config">
-  {
-    "agentName": "Agente de leads", "agentInitials": "AI", "chatStatus": "WhatsApp Business, online",
-    "stepMs": 1400,
-    "scenarios": [
-      {
-        "title": "Lead de anúncio",
-        "subtitle": "Do clique ao orçamento em três perguntas.",
-        "chat": [
-          { "sender": "system", "text": "Mensagem recebida a partir do anúncio no Facebook, 21:37", "time": "21:37" },
-          { "sender": "client", "text": "Boa noite, vi o anúncio dos painéis. Queria saber quanto fica.", "time": "21:37" },
-          { "sender": "agent", "text": "Boa noite! Com prazer. Para lhe dar um valor com jeito preciso de três coisas. A primeira: quanto paga, mais ou menos, de eletricidade por mês?", "time": "21:37" },
-          { "sender": "client", "text": "Uns 120 euros.", "time": "21:39" },
-          { "sender": "agent", "text": "Perfeito. É moradia ou apartamento, e tem instalação monofásica ou trifásica?", "time": "21:39" },
-          { "sender": "client", "text": "Moradia, monofásica. Sou de Leiria.", "time": "21:41" },
-          { "sender": "agent", "text": "Ótimo, temos equipa nessa zona. Com 120 euros de fatura, três hipóteses:\n\n**6 painéis, sem bateria**: 4.500 € com IVA, cerca de 55% de poupança\n**6 painéis + bateria 5 kWh**: 7.900 €, cerca de 75%\n**6 painéis + bateria 10 kWh**: 10.400 €, cerca de 90%\n\nQual faz mais sentido para si?", "time": "21:41" }
-        ],
-        "steps": [
-          { "icon": "message", "label": "Lead entra pelo anúncio, fora de horas" },
-          { "icon": "clock", "label": "Responde na mesma, sem esperar pela manhã" },
-          { "icon": "list", "label": "Pede o dado 1: consumo mensal da fatura" },
-          { "icon": "list", "label": "Pede os dados 2 e 3: tipo de instalação e zona" },
-          { "icon": "globe", "label": "Resolve o concelho: Leiria, zona com equipa" },
-          { "icon": "arrows", "label": "Corre a tabela real para 120 € de fatura" },
-          { "icon": "check", "label": "Devolve 3 opções com preço e poupança estimada" }
-        ]
-      },
-      {
-        "title": "Acha caro",
-        "subtitle": "A objeção de preço é tratada como sinal de compra.",
-        "chat": [
-          { "sender": "client", "text": "Isso é muito dinheiro. Não têm nada mais em conta?", "time": "21:43" },
-          { "sender": "agent", "text": "Compreendo. Há uma opção mais contida: **4 painéis, sem bateria**, 3.200 € com IVA, à volta de 40% de poupança. Fica com menos autonomia à noite, mas é o degrau de entrada.", "time": "21:43" },
-          { "sender": "client", "text": "E se eu pagar em prestações, muda alguma coisa no preço final?", "time": "21:45" },
-          { "sender": "agent", "text": "As condições de pagamento quem as fecha é o comercial, e é mesmo com ele que vale a pena falar disso. Vou passar-lhe já o contacto.", "time": "21:45" },
-          { "sender": "system", "text": "Lead qualificada. Encaminhada para o comercial da zona centro com o resumo da conversa.", "time": "21:45" }
-        ],
-        "steps": [
-          { "icon": "ear", "label": "Lê a objeção de preço" },
-          { "icon": "arrows", "label": "Propõe a opção económica da tabela" },
-          { "icon": "star", "label": "O cliente continua a negociar: sinal de compra" },
-          { "icon": "shield", "label": "Não negoceia condições de pagamento" },
-          { "icon": "user-cog", "label": "Qualifica e encaminha para o comercial da zona" },
-          { "icon": "database", "label": "Regista a lead no CRM com o resumo da conversa" }
-        ]
-      },
-      {
-        "title": "Fora de zona",
-        "subtitle": "Sai do funil na primeira mensagem, sem ocupar ninguém.",
-        "chat": [
-          { "sender": "client", "text": "Olá, queria orçamento para uma casa no Funchal.", "time": "10:04" },
-          { "sender": "agent", "text": "Olá, obrigado pelo contacto. Neste momento não fazemos instalações na Madeira nem nos Açores, por isso não lhe quero fazer perder tempo. Se a cobertura mudar, com todo o gosto voltamos a falar.", "time": "10:04" },
-          { "sender": "system", "text": "Conversa encerrada. Nenhum comercial foi notificado.", "time": "10:04" }
-        ],
-        "steps": [
-          { "icon": "globe", "label": "Resolve a localidade: Funchal, Madeira" },
-          { "icon": "filter", "label": "Confronta com o mapa de cobertura" },
-          { "icon": "ban", "label": "Fora de zona: não avança para a orçamentação" },
-          { "icon": "check", "label": "Responde com clareza e fecha, sem ocupar a equipa" }
-        ]
-      },
-      {
-        "title": "Fora de tabela",
-        "subtitle": "O cenário em que o agente recusa avançar sozinho.",
-        "chat": [
-          { "sender": "client", "text": "Bom dia. Somos uma empresa com um armazém e gastamos para aí 2.400 euros de luz por mês. Quanto custava?", "time": "09:12" },
-          { "sender": "agent", "text": "Bom dia. Um consumo desses já sai do que consigo estimar aqui com rigor: uma instalação industrial depende da potência contratada, da cobertura e da curva de consumo ao longo do dia. Não lhe quero dar um número que depois não se confirme.", "time": "09:12" },
-          { "sender": "agent", "text": "Passo o seu caso a um engenheiro da equipa, que lhe liga hoje para fazer o levantamento. Pode confirmar-me a localidade do armazém?", "time": "09:12" },
-          { "sender": "client", "text": "Fica em Aveiro.", "time": "09:14" },
-          { "sender": "system", "text": "Caso fora de tabela. Escalado para a equipa técnica com a conversa completa.", "time": "09:14" }
-        ],
-        "steps": [
-          { "icon": "search", "label": "Deteta consumo muito acima da gama residencial" },
-          { "icon": "alert", "label": "Reconhece que o caso sai da tabela de preços" },
-          { "icon": "shield", "label": "Decide não arriscar um valor" },
-          { "icon": "ear", "label": "Explica porquê, em vez de despachar o cliente" },
-          { "icon": "globe", "label": "Recolhe na mesma a localidade para o encaminhamento" },
-          { "icon": "user-cog", "label": "Escala para a equipa técnica com o histórico completo" }
-        ]
-      }
-    ]
-  }
-  </script>
-
   <script src="../shared/js/protect.js"></script>
   <script src="assets/js/app.js"></script>
-  <script src="../shared/deck/deck.js"></script>
-  <script>
-    chatRaciocinio('svDemo');
-  </script>
 </body>
 </html>

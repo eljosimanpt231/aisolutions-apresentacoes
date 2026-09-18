@@ -27,20 +27,23 @@
 - Display: Outfit (geométrica, tom de engenharia; ainda não usada noutra apresentação) | Corpo: Inter
 
 ## Secções (por ordem)
-1. Hero: "A lead do anúncio respondida em segundos, qualificada antes de chegar ao comercial"
-2. O ponto de partida: 6 dores do modelo anúncio -> lead, declaradas como padrão observado, não como diagnóstico
-3. O raciocínio: as 6 decisões de desenho da plataforma (o que o Manuel pediu explicitamente)
-4. O fluxograma: diagrama SVG desenhado à mão (canais -> caixa única -> losango de decisão -> dois circuitos -> desfechos), no estilo do fluxograma da Escola de Condução Abadias que o Manuel usou como referência. Substituiu o componente `fluxo` e os 4 cartões de desfecho, que passaram a ser redundantes
-5. Demo `chatRaciocinio`: 4 cenários (lead de anúncio, acha caro, fora de zona, fora de tabela)
-6. Antes/depois
-7. Limites: as 3 regras do agente
-8. O caso real: métricas do sistema, cliente anonimizado
-9. Na Svetsolar: 4 encaixes específicos deles (18 distritos, simulador do site, tagline, Tier 1 + DGEG)
-10. CTA: reunião de 20 minutos, com o nome do Yuri
+Na v4 a página foi reduzida ao essencial, a pedido do Manuel: não é um deck comercial para uma chamada,
+é uma página para mandar por WhatsApp e o Yuri ter contexto em dois minutos.
+
+1. Hero curto: quem somos, o que construímos e para quem, em 3 frases. Sem stat cards, sem CTA.
+2. O que construímos: 4 peças numeradas (caixa única, agente que orçamenta, encaminhamento por zona, registo no CRM)
+3. **O fluxograma** (o centro da página): diagrama SVG + legenda de 3 linhas a explicar os dois caminhos
+   e a linha de follow-up, mais uma nota sobre o comercial só entrar no fim
+4. Os benefícios: 4 cartões com o que mudou
+5. Fecho curto com o nome do Yuri e o botão de WhatsApp
+
+Cortadas na v4 (estavam na v3 e tornavam a página um deck de 10 secções): diagnóstico das 6 dores,
+os 6 princípios de desenho, a demo chat+raciocínio, o antes/depois, as 3 regras do agente,
+a secção de resultados com 3 stat cards, e a secção "Na Svetsolar".
 
 ## Momento uau
-O cenário "Fora de tabela": o agente reconhece que um consumo industrial sai da tabela,
-explica porquê e escala para um engenheiro em vez de inventar um número.
+O fluxograma em si. É a única peça da página, e tem de se perceber de relance:
+os dois caminhos a cores, o losango da decisão, e o retorno do follow-up a tracejado.
 
 ## Decisões de conteúdo
 - **Sem preços.** A página é o mecanismo; os valores vão na mensagem de WhatsApp do Manuel.
@@ -60,3 +63,8 @@ explica porquê e escala para um engenheiro em vez de inventar um número.
   com o retorno a tracejado. Primeira geometria transbordava (texto fora do losango e das caixas de desfecho):
   losango alargado para 130x92, circuitos para 240 de largura, desfechos para 265, e as legendas encurtadas.
   Em ecrã pequeno o diagrama tem scroll horizontal (`min-width: 900px`) com aviso visível.
+- v4: **página reduzida ao fluxograma.** Ficaram a introdução, as 4 peças, o diagrama com legenda,
+  os benefícios e um fecho curto (4.049px de altura em desktop, contra 9.690px na v3). O hero deixou de
+  ocupar o ecrã inteiro. Entrelinha corrigida nos títulos longos dos cartões de benefício.
+  Deixou de usar `shared/deck/deck.js` (já não há componentes animados), mas mantém o `deck.css`
+  pelo polish (eyebrow, bg-grid, glows, brandbar, alert).
