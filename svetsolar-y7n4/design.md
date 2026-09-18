@@ -30,7 +30,7 @@
 1. Hero: "A lead do anúncio respondida em segundos, qualificada antes de chegar ao comercial"
 2. O ponto de partida: 6 dores do modelo anúncio -> lead, declaradas como padrão observado, não como diagnóstico
 3. O raciocínio: as 6 decisões de desenho da plataforma (o que o Manuel pediu explicitamente)
-4. O fluxograma: componente `fluxo` com 6 nós + os 4 desfechos possíveis de uma lead
+4. O fluxograma: diagrama SVG desenhado à mão (canais -> caixa única -> losango de decisão -> dois circuitos -> desfechos), no estilo do fluxograma da Escola de Condução Abadias que o Manuel usou como referência. Substituiu o componente `fluxo` e os 4 cartões de desfecho, que passaram a ser redundantes
 5. Demo `chatRaciocinio`: 4 cenários (lead de anúncio, acha caro, fora de zona, fora de tabela)
 6. Antes/depois
 7. Limites: as 3 regras do agente
@@ -51,3 +51,12 @@ explica porquê e escala para um engenheiro em vez de inventar um número.
 
 ## Iterações
 - v1: primeira construção
+- v2: h1 partido em 3 linhas (a quebra automática deixava órfãos); numeração retirada dos nós do fluxo
+  (duplicava o "Passo N" do componente); `white-space: pre-line` na bolha do chat (o deck.js não converte \n);
+  SVG dos arcos limitado a 100% (empurrava a página no telemóvel)
+- v3: **fluxograma refeito em SVG próprio**, a pedido do Manuel, no formato do diagrama da Abadias:
+  coluna de canais, caixa única, losango de decisão com os ramos sim/não rotulados em mono, dois circuitos
+  a cores (ciano = orçamenta, salmão = exceção), caixas de desfecho à direita, e a linha de follow-up em baixo
+  com o retorno a tracejado. Primeira geometria transbordava (texto fora do losango e das caixas de desfecho):
+  losango alargado para 130x92, circuitos para 240 de largura, desfechos para 265, e as legendas encurtadas.
+  Em ecrã pequeno o diagrama tem scroll horizontal (`min-width: 900px`) com aviso visível.
