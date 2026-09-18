@@ -1,0 +1,56 @@
+/* ============================================================
+   SVETSOLAR x AI Solutions
+   Estilo: deck-dark, com a paleta da Svetsolar.
+   Cores amostradas em svetsolar.pt: navy do logotipo (#1b3161 / #0b2138)
+   e ambar solar (#f59412), a cor viva do site.
+   Fundo navy profundo (nao preto): e o territorio da marca deles.
+   --brand  = ambar solar  -> CTA, numeros, destaques
+   --accent = teal do agente (assinatura AI Solutions)
+   ============================================================ */
+:root {
+  --brand-hsl: 34 92% 52%;       /* ambar solar #f59412 */
+  --accent-hsl: 190 86% 48%;     /* teal do agente, puxado ao ciano para casar com o navy */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(216 60% 9%);   /* navy escuro por cima do ambar (contraste AA) */
+
+  --bg: hsl(216 48% 7%);
+  --bg-soft: hsl(216 44% 9%);
+  --surface: hsl(216 40% 12%);
+  --surface-2: hsl(216 34% 16%);
+  --border: hsl(216 26% 24%);
+
+  --text: hsl(210 28% 96%);
+  --muted: hsl(212 16% 67%);
+
+  --success-hsl: 152 62% 48%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 78% 63%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 40 92% 58%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.14), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(44 96% 66%));
+  --grad-cta: linear-gradient(160deg, hsl(216 48% 8%), hsl(var(--brand-hsl) / 0.26));
+
+  --shadow-sm: 0 1px 3px hsl(216 70% 2% / 0.55);
+  --shadow-md: 0 10px 32px hsl(216 70% 2% / 0.6);
+  --shadow-lg: 0 24px 64px hsl(216 70% 2% / 0.7);
+
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  /* Par tipografico: Outfit (geometrica, tom de engenharia) + Inter */
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 128px);
+}
+/* WhatsApp (mockup): cores canonicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
