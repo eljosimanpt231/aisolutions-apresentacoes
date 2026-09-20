@@ -1,0 +1,72 @@
+/* ============================================================
+   TOKENS, Grupo Técnica x AI Solutions
+   Deck claro. Cores amostradas do logótipo oficial:
+     vermelho da faixa   #e3000f  -> 356 100% 45%
+     preto da banda      #000000  -> tinta 220 20% 16%
+   O vermelho é a MARCA, por isso nunca é usado como "custo/erro".
+   O par de contraste é tinta (hoje) vs verde (com o agente).
+   Regra de ouro: os componentes nunca usam cores diretas.
+   ============================================================ */
+:root {
+  /* ---- Marca da lead ---- */
+  --brand-hsl: 356 100% 45%;
+  --accent-hsl: 220 20% 16%;
+  --ink-hsl: 220 22% 10%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --ink: hsl(var(--ink-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* ---- Superfícies ---- */
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(220 16% 96.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(220 18% 97.5%);
+  --border: hsl(220 14% 88%);
+
+  /* ---- Texto ---- */
+  --text: hsl(220 22% 12%);
+  --muted: hsl(220 9% 42%);
+
+  /* ---- Semânticos ----
+     verde = ganho/automático. laranja = aviso real.
+     O vermelho está reservado à marca e nunca marca um erro. */
+  --success-hsl: 152 58% 30%;
+  --success: hsl(var(--success-hsl));
+  --danger-hsl: 24 88% 42%;
+  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 44%;
+  --warning: hsl(var(--warning-hsl));
+
+  /* ---- Gradientes ---- */
+  --grad-hero: linear-gradient(118deg, hsl(var(--brand-hsl)) 0%, hsl(356 92% 36%) 100%);
+  --grad-text: linear-gradient(100deg, hsl(var(--brand-hsl)) 10%, hsl(356 88% 34%) 90%);
+  --grad-cta: linear-gradient(148deg, hsl(var(--ink-hsl)) 0%, hsl(220 20% 17%) 58%, hsl(356 90% 30%) 132%);
+
+  /* ---- Sombras (tingidas com a tinta, nunca com o vermelho) ---- */
+  --shadow-sm: 0 1px 3px hsl(var(--ink-hsl) / 0.08);
+  --shadow-md: 0 8px 26px hsl(var(--ink-hsl) / 0.10);
+  --shadow-lg: 0 20px 54px hsl(var(--ink-hsl) / 0.16);
+
+  /* ---- Forma: a marca é angular ---- */
+  --radius: 8px;
+  --radius-lg: 14px;
+
+  /* ---- Tipografia ---- */
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* ---- Ritmo ---- */
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
+
+/* WhatsApp (mockup): cores canónicas do canal, iguais em todos os estilos */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
