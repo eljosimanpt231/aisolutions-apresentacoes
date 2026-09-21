@@ -89,5 +89,7 @@ A faixa inclinada (`.slab`) do logótipo, aplicada com parcimónia:
   `custom.css`. Nada reconstruído à mão.
 - Sem valores financeiros de outros clientes: o repo é público. Os casos citados
   são os públicos do site e só com métricas operacionais.
-- A garantia de devolução da implementação NÃO foi incluída: não foi acordada na
-  reunião e não se inventa uma condição comercial.
+- Garantia de devolução da implementação ao fim do primeiro mês: incluída em
+  20/09/2026 por decisão expressa do comercial, depois de a ter sinalizado como
+  condição comercial que não se inventa. Vive num bloco próprio no fim da secção
+  de investimento e liga-se de propósito à objeção de 2021.
