@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Cicapamp | Proposta AI Solutions</title>
-  <meta name="description" content="Um agente de IA que atende, marca aulas e cobra, nas duas escolas Cicapamp, sem tirar o controlo à secretaria.">
+  <meta name="description" content="Um agente de IA que atende, marca aulas e trata dos pagamentos nas duas escolas Cicapamp, sem tirar o controlo à secretaria.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -13,12 +13,30 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="../shared/deck/deck.css">
   <link rel="stylesheet" href="../shared/unibox/unibox.css">
+  <link rel="stylesheet" href="assets/css/light.css">
   <script src="config.js"></script>
 </head>
 <body>
   <div class="bg-grid"></div>
   <div class="bg-glow glow-1"></div>
   <div class="bg-glow glow-2"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="topnav">
+    <div class="inner">
+      <span class="nav-brand">CICA<b>PAMP</b></span>
+      <nav id="nav">
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#demo">O agente ao vivo</a>
+        <a href="#plataforma">Caixa única</a>
+        <a href="#pagamentos">Pagamentos</a>
+        <a href="#casos">Casos</a>
+        <a href="#investimento">Investimento</a>
+      </nav>
+      <a href="#avancar" class="nav-cta btn btn-primary" style="padding:9px 18px; font-size:0.86rem">Avançar</a>
+    </div>
+  </header>
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="topo">
@@ -31,8 +49,8 @@
       <h1 class="reveal">Duas escolas a crescer.<br><span class="grad">Uma secretaria a fazer tudo à mão.</span></h1>
       <p class="lead reveal" style="margin:20px auto 0">
         Um agente de IA que atende no WhatsApp das duas escolas, inscreve nas aulas de código,
-        marca as de condução dentro das vossas regras e trata dos pagamentos. A secretaria deixa
-        de responder ao que é sempre igual e fica com o que precisa mesmo de pessoas.
+        marca as de condução dentro das vossas regras, cobra e trata da faturação. A secretaria
+        deixa de responder ao que é sempre igual e fica com o que precisa mesmo de pessoas.
       </p>
       <div class="road-wrap reveal" style="margin-top:34px"><div class="road"></div></div>
       <div class="grid-4 reveal" style="margin-top:34px; text-align:left">
@@ -87,7 +105,7 @@
             <li>As marcações de condução interrompem quem está ao balcão</li>
             <li>Mensagens em números pessoais e em três redes diferentes</li>
             <li>Alunos a ter aulas sem o pagamento verificado</li>
-            <li>Folhas de caixa e conciliação bancária ao fim do dia</li>
+            <li>Recibos, folhas de caixa e conciliação bancária à mão</li>
             <li>Quem escreve à noite espera pela manhã seguinte</li>
           </ul>
         </div>
@@ -106,21 +124,39 @@
     </div>
   </section>
 
-  <!-- ============ ÂMBITO ============ -->
-  <section class="section-alt" id="solucao">
+  <!-- ============ AS DUAS SOLUÇÕES ============ -->
+  <section class="section-alt" id="solucoes">
     <div class="container">
       <div class="center">
         <span class="eyebrow">A solução</span>
-        <h2>O que vamos construir.</h2>
-        <p class="lead">Duas soluções separadas, que funcionam melhor juntas: o agente que fala com alunos e interessados, e a automação do dinheiro.</p>
+        <h2>Duas soluções separadas, feitas para trabalhar juntas.</h2>
+        <p class="lead">Uma trata de quem fala convosco. A outra trata do dinheiro que entra e dos documentos que saem. Podem avançar com uma só, mas é na ligação entre as duas que está o salto.</p>
       </div>
-      <div class="grid-3" style="margin-top:44px">
-        <div class="card reveal"><div class="ftile">🤝</div><h3>Distingue aluno de interessado</h3><p class="small">Pelo número de telemóvel, com a base exportada do Gescola. Cada um segue o seu circuito, o do aluno ou o comercial.</p></div>
-        <div class="card reveal"><div class="ftile">📅</div><h3>Inscreve nas aulas de código</h3><p class="small">Vai ao horário do mês, verifica a lotação da aula pedida e inscreve o aluno se houver vaga. Sem avisar a secretaria de cada marcação.</p></div>
-        <div class="card reveal"><div class="ftile">🧭</div><h3>Marca as de condução com regras</h3><p class="small">A secretaria marca primeiro. O aluno só chega às vagas que sobram, com o limite de três por semana, o pagamento em dia e o mesmo instrutor de sempre.</p></div>
-        <div class="card reveal"><div class="ftile">🗓️</div><h3>Escreve no Google Calendar</h3><p class="small">A marcação aparece na agenda que os instrutores já partilham entre as duas escolas. Nenhuma ferramenta nova para eles.</p></div>
-        <div class="card reveal"><div class="ftile">🎯</div><h3>Qualifica quem quer tirar a carta</h3><p class="small">Responde no momento, recolhe carta pretendida, idade e escola, filtra a curiosidade e entrega à vossa equipa só quem está mesmo interessado.</p></div>
-        <div class="card reveal"><div class="ftile">💳</div><h3>Cobra e concilia</h3><p class="small">Emite referências de pagamento, organiza as faturas no KeyInvoice e faz a conciliação bancária dos movimentos.</p></div>
+      <div class="grid-2" style="margin-top:44px">
+        <div class="card reveal">
+          <span class="eyebrow">Solução 1</span>
+          <h3>Atendimento e marcações</h3>
+          <ul class="list-check" style="margin-top:14px">
+            <li>Distingue aluno de interessado pelo número, com a base exportada do Gescola</li>
+            <li>Inscreve nas aulas de código depois de verificar a lotação da turma</li>
+            <li>Marca as de condução só nas vagas abertas e dentro das regras</li>
+            <li>Escreve no Google Calendar que os instrutores já partilham</li>
+            <li>Responde a chamadas não atendidas com mensagem automática</li>
+            <li>Qualifica quem quer tirar a carta e entrega a lead à equipa</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="eyebrow">Solução 2</span>
+          <h3>Pagamentos e faturação</h3>
+          <ul class="list-check" style="margin-top:14px">
+            <li>Emite referências de pagamento quando o aluno precisa de crédito</li>
+            <li>Deteta o pagamento e liberta a aula sem ninguém ir ver ao banco</li>
+            <li>Prepara recibos e faturas no KeyInvoice que já usam</li>
+            <li>Organiza as faturas de fornecedores que entram por email</li>
+            <li>Faz a conciliação bancária e sinaliza o que não bate certo</li>
+            <li>Fecha a folha de caixa do dia, pronta para validação</li>
+          </ul>
+        </div>
       </div>
       <div class="grid-2" style="margin-top:26px">
         <div class="card diff reveal"><h3>A secretaria continua no comando</h3><p class="small" style="color:var(--text)">O agente trabalha dentro das regras que o Filipe definir. Quando a situação sai dessas regras, não decide: pergunta e passa à equipa.</p></div>
@@ -135,20 +171,20 @@
       <div class="center">
         <span class="eyebrow">Como funciona na prática</span>
         <h2>O agente a trabalhar, ao vivo.</h2>
-        <p class="lead">Quatro situações do dia a dia da Cicapamp: a conversa com o aluno à esquerda, o raciocínio do agente à direita. Escolha um cenário ou deixe correr.</p>
+        <p class="lead">Cinco situações do dia a dia da Cicapamp: a conversa com o aluno à esquerda, o raciocínio do agente à direita. Escolha um cenário ou deixe correr.</p>
       </div>
       <div class="cr reveal" id="ccDemo" style="margin-top:40px"></div>
       <p class="demo-note">Nomes, datas e valores ilustrativos. O agente usa sempre o horário, as regras e os preços reais da escola.</p>
     </div>
   </section>
 
-  <!-- ============ FLUXO ============ -->
+  <!-- ============ FLUXO 1 ============ -->
   <section class="section-alt" id="fluxo">
     <div class="container">
       <div class="center">
         <span class="eyebrow">Onde o agente entra</span>
-        <h2>Cada mensagem passa por este caminho.</h2>
-        <p class="lead">Do pedido no WhatsApp até à aula na agenda dos instrutores, sem ninguém copiar nada de um lado para o outro.</p>
+        <h2>Do pedido no WhatsApp à aula na agenda.</h2>
+        <p class="lead">O caminho de cada mensagem, sem ninguém copiar nada de um lado para o outro.</p>
       </div>
       <div class="fluxo reveal" id="ccFluxo" style="margin-top:36px"></div>
     </div>
@@ -167,29 +203,117 @@
         <span>Simulação da interface, com pedidos parecidos com os da Cicapamp. Nomes e valores ilustrativos.</span>
       </div>
       <div class="unibox-frame reveal">
-        <div class="unibox" id="ccInbox" style="--ub-accent:#3b82f6; --ub-accent-fg:#fff"></div>
+        <div class="unibox" id="ccInbox" style="--ub-accent:#1f6fe0; --ub-accent-fg:#fff"></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ BACK-OFFICE ============ -->
-  <section class="section-alt" id="backoffice">
+  <!-- ============ PAGAMENTOS: ABERTURA ============ -->
+  <section class="section-alt" id="pagamentos">
     <div class="container">
       <div class="center">
-        <span class="eyebrow">A segunda solução</span>
-        <h2>O dinheiro tratado em segundo plano.</h2>
-        <p class="lead">A parte que hoje ocupa a secretaria ao fim do dia e a gestão ao fim do mês. Corre sozinha e sinaliza o que precisa de olhos.</p>
+        <span class="eyebrow">Solução 2, em detalhe</span>
+        <h2>O dinheiro deixa de andar em folhas.</h2>
+        <p class="lead">Hoje o pagamento de uma aula passa por uma folha na secretaria, por uma folha de caixa ao fim do dia e por uma conciliação feita à mão na gestão. São três momentos manuais para o mesmo euro. Vamos ver os dois caminhos que substituem isso.</p>
       </div>
-      <div class="term reveal" id="ccTerm" style="margin-top:36px; max-width:820px; margin-left:auto; margin-right:auto"></div>
-      <div class="alert reveal">
-        <span class="dot"></span>
-        <p style="color:var(--text)"><b>Nada sai sem validação vossa.</b> O agente prepara, organiza e sinaliza as exceções. A emissão e o envio continuam a passar pela equipa.</p>
+      <div class="grid-3" style="margin-top:44px">
+        <div class="card reveal"><div class="ftile">🔗</div><h3>Ligado à marcação</h3><p class="small">O pagamento não vive à parte: é o que destranca a aula seguinte do aluno. É por isso que as duas soluções juntas valem mais do que cada uma sozinha.</p></div>
+        <div class="card reveal"><div class="ftile">🧾</div><h3>Dentro do KeyInvoice</h3><p class="small">Não trocam de software de faturação. O agente trabalha dentro do que já usam, e a licença continua a ser vossa.</p></div>
+        <div class="card reveal"><div class="ftile">🙋</div><h3>Com validação vossa</h3><p class="small">O agente prepara, organiza e sinaliza. A emissão e o envio continuam a passar por uma pessoa, sempre.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ LIMITES E FASE SEGUINTE ============ -->
-  <section id="limites">
+  <!-- ============ FLUXO 2: COBRANÇA ============ -->
+  <section id="fluxo-cobranca">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Fluxo 1 de 2</span>
+        <h2>Da aula pedida ao pagamento confirmado.</h2>
+        <p class="lead">O que acontece quando um aluno quer marcar e já não tem aulas pagas. Hoje isto é uma conversa ao balcão e um registo numa folha.</p>
+      </div>
+      <div class="fluxo reveal" id="ccFluxoPag" style="margin-top:36px"></div>
+      <div class="docs reveal" style="margin-top:40px">
+        <div>
+          <div class="doc">
+            <div class="doc-head"><span class="t">Referência de pagamento</span><span class="tag">Gerada pelo agente</span></div>
+            <div class="doc-body">
+              <div class="doc-row"><span class="k">Aluno</span><span class="v">Inês Carvalho</span></div>
+              <div class="doc-row"><span class="k">Motivo</span><span class="v">Aula de condução nº 15</span></div>
+              <div class="doc-row"><span class="k">Entidade</span><span class="v doc-mono">11 111</span></div>
+              <div class="doc-row"><span class="k">Referência</span><span class="v doc-mono">123 456 789</span></div>
+              <div class="doc-row"><span class="k">Validade</span><span class="v">48 horas</span></div>
+              <div class="doc-total"><span class="k">Valor</span><span class="v">35,00€</span></div>
+            </div>
+            <div class="doc-foot">Documento ilustrativo. A entidade e o valor reais são os da Cicapamp.</div>
+          </div>
+          <div class="wabubble">
+            Inês, deixo aqui a referência para a aula de sexta às 10h. Assim que o pagamento entrar, confirmo a marcação e a vaga fica sua.
+            <time>10:05</time>
+          </div>
+        </div>
+        <div class="doc">
+          <div class="doc-head"><span class="t">Recibo no KeyInvoice</span><span class="tag">Preparado, à espera de validação</span></div>
+          <div class="doc-body">
+            <div class="doc-row"><span class="k">Documento</span><span class="v doc-mono">RC 2026/418</span></div>
+            <div class="doc-row"><span class="k">Cliente</span><span class="v">Inês Carvalho</span></div>
+            <div class="doc-row"><span class="k">Descrição</span><span class="v">Aula de condução (1)</span></div>
+            <div class="doc-row"><span class="k">Método</span><span class="v">Referência multibanco</span></div>
+            <div class="doc-row"><span class="k">Data do pagamento</span><span class="v">23/09/2026, 18:12</span></div>
+            <div class="doc-total"><span class="k">Total</span><span class="v">35,00€</span></div>
+          </div>
+          <div class="doc-foot">Documento ilustrativo. Nada é emitido nem enviado sem alguém da equipa validar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLUXO 3: BACK-OFFICE ============ -->
+  <section class="section-alt" id="fluxo-backoffice">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Fluxo 2 de 2</span>
+        <h2>Do documento recebido ao fecho do dia.</h2>
+        <p class="lead">A parte que hoje ocupa a secretaria ao fim do dia e a gestão ao fim do mês: faturas de fornecedores, movimentos do banco e folha de caixa.</p>
+      </div>
+      <div class="fluxo reveal" id="ccFluxoBack" style="margin-top:36px"></div>
+      <div class="grid-2" style="margin-top:40px; align-items:start">
+        <div class="term reveal" id="ccTerm"></div>
+        <div class="card reveal">
+          <h3>O que a equipa vê ao fim do dia</h3>
+          <ul class="list-check" style="margin-top:14px">
+            <li>Os pagamentos do dia já associados aos alunos certos</li>
+            <li>As faturas de fornecedores organizadas e lançadas</li>
+            <li>Os movimentos do banco conciliados um a um</li>
+            <li>A folha de caixa fechada, à espera de uma validação</li>
+          </ul>
+          <ul class="list-x" style="margin-top:18px">
+            <li>E, em separado, a lista curta do que não bateu certo</li>
+          </ul>
+          <p class="small" style="margin-top:14px"><b>Nunca erra em silêncio.</b> Uma transferência sem correspondência não é adivinhada: é sinalizada, com o contexto, para alguém decidir.</p>
+        </div>
+      </div>
+      <div class="alert reveal">
+        <span class="dot"></span>
+        <p style="color:var(--text)"><b>Nada sai sem validação vossa.</b> O agente não emite nem envia documentos por sua conta. Prepara tudo e a equipa dá o último clique, como já faz hoje, mas sem o trabalho de juntar as peças.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROI ============ -->
+  <section id="roi">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">As contas</span>
+        <h2>Quanto tempo volta para a secretaria.</h2>
+        <p class="lead">Mexa nos valores com os números reais da Cicapamp. A conta é só das marcações, não conta com pagamentos nem faturação.</p>
+      </div>
+      <div class="calc reveal" id="ccRoi" style="margin-top:40px"></div>
+    </div>
+  </section>
+
+  <!-- ============ LIMITES ============ -->
+  <section class="section-alt" id="limites">
     <div class="container">
       <div class="center">
         <span class="eyebrow">Limites</span>
@@ -201,7 +325,7 @@
           <ul class="list-check">
             <li>Responde e inscreve nas aulas de código</li>
             <li>Marca condução dentro das regras definidas</li>
-            <li>Emite referências de pagamento</li>
+            <li>Emite referências e prepara recibos e faturas</li>
             <li>Qualifica quem quer tirar a carta</li>
             <li>Sinaliza tudo o que foge ao normal</li>
           </ul>
@@ -212,15 +336,41 @@
             <li>A marcação inicial das aulas práticas</li>
             <li>A avaliação formativa e a decisão de ir a exame</li>
             <li>Os registos obrigatórios no Gescola e no IMT</li>
-            <li>Reclamações e casos sensíveis</li>
-            <li>A última palavra em qualquer exceção</li>
+            <li>A validação final dos documentos de faturação</li>
+            <li>Reclamações, casos sensíveis e qualquer exceção</li>
           </ul>
         </div>
       </div>
       <div class="grid-2" style="margin-top:26px">
         <div class="card diff reveal"><h3>Fase seguinte, fora desta proposta</h3><p class="small" style="color:var(--text)">Integração direta no Gescola. Para já basta-nos a exportação dos alunos em Excel ou PDF, e os registos obrigatórios continuam a ser feitos pela vossa equipa, como hoje.</p></div>
-        <div class="card diff reveal"><h3>Nunca erra em silêncio</h3><p class="small" style="color:var(--text)">Quando o agente não tem a certeza, não inventa. Diz o que falta, pergunta, ou passa a conversa a uma pessoa com o histórico todo.</p></div>
+        <div class="card diff reveal"><h3>O que depende de terceiros</h3><p class="small" style="color:var(--text)">A emissão de referências depende do vosso banco ou prestador de pagamentos, e a faturação da API do KeyInvoice. Confirmámos que existe caminho técnico; os acessos são pedidos no arranque.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ CASOS ============ -->
+  <section id="casos">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Já feito noutras escolas</span>
+        <h2>Não é o primeiro agente numa escola de condução.</h2>
+        <p class="lead">Dois casos públicos, do mesmo setor e com o mesmo problema: muitas mensagens, poucas mãos.</p>
+      </div>
+      <div class="grid-2" style="margin-top:44px">
+        <div class="card caso reveal">
+          <h3>Escola de Condução Abadias</h3>
+          <div class="metric">20.000+ mensagens</div>
+          <p class="small">Dois polos, mais de 3.800 alunos. O agente distingue aluno de interessado pelo número de telemóvel e trata marcações de aulas e exames no WhatsApp. Em três meses, 871 conversas e 396 escalações tipificadas para a equipa.</p>
+          <p class="src">Caso público: <a href="https://aisolutions.pt/case-studies/abadias-gestao-alunos-whatsapp">aisolutions.pt/case-studies/abadias-gestao-alunos-whatsapp</a></p>
+        </div>
+        <div class="card caso reveal">
+          <h3>EcoDrive</h3>
+          <div class="metric">20h → segundos</div>
+          <p class="small">Rede com mais de 20 escolas. O tempo de primeira resposta passou de cerca de 20 horas para segundos, e a taxa de resposta depois da primeira mensagem subiu de 18% para mais de 70%.</p>
+          <p class="src">Caso público: <a href="https://aisolutions.pt/case-studies/ecodrive-multichannel-ai">aisolutions.pt/case-studies/ecodrive-multichannel-ai</a></p>
+        </div>
+      </div>
+      <p class="demo-note">O mesmo padrão do vosso: quem procura escola pergunta em três ou quatro ao mesmo tempo e fica com a que responder primeiro.</p>
     </div>
   </section>
 
@@ -262,7 +412,7 @@
           <div class="note">Implementação, valor único, mais 100€ por mês. Integra no KeyInvoice que já usam.</div>
           <ul class="price-list">
             <li>Referências de pagamento aos alunos</li>
-            <li>Organização e processamento de faturas</li>
+            <li>Recibos e faturas preparados no KeyInvoice</li>
             <li>Conciliação bancária dos movimentos</li>
             <li>Exceções sinalizadas à equipa</li>
           </ul>
@@ -270,7 +420,7 @@
       </div>
       <div class="alert reveal">
         <span class="dot"></span>
-        <p style="color:var(--text)"><b>Mensalidade do pack: 270€ por mês, em vez dos 350€ das duas em separado.</b> Inclui manutenção e afinação do agente, alojamento, custos de inteligência artificial, custos das mensagens e suporte da nossa equipa por WhatsApp, das 9h às 20h. Valores sem IVA.</p>
+        <p style="color:var(--text)"><b>Mensalidade do pack: 270€ por mês, em vez dos 350€ das duas em separado.</b> Inclui manutenção e afinação do agente, alojamento, custos de inteligência artificial, custos das mensagens e suporte da nossa equipa por WhatsApp, das 9h às 20h. A licença do software de faturação continua a ser vossa. Valores sem IVA.</p>
       </div>
     </div>
   </section>
@@ -280,12 +430,12 @@
     <div class="container center">
       <span class="eyebrow">Proposta de calendário</span>
       <h2>Seis semanas até estar a atender.</h2>
-      <div class="timeline" style="grid-template-columns:repeat(3,1fr); margin-top:48px; max-width:860px; margin-left:auto; margin-right:auto">
-        <div class="tl-step reveal"><div class="tl-dot">🔍</div><strong>Semanas 1-2</strong><span>Exportação dos alunos do Gescola, levantamento das regras de marcação e do horário de código</span></div>
-        <div class="tl-step reveal"><div class="tl-dot">🛠️</div><strong>Semanas 3-4</strong><span>Construção do agente, ligação ao Google Calendar e à caixa de entrada das duas escolas</span></div>
-        <div class="tl-step reveal"><div class="tl-dot">🚦</div><strong>Semanas 5-6</strong><span>Testes com a secretaria, afinação com conversas reais e arranque</span></div>
+      <div class="timeline" style="grid-template-columns:repeat(3,1fr); margin-top:48px; max-width:900px; margin-left:auto; margin-right:auto">
+        <div class="tl-step reveal"><div class="tl-dot">🔍</div><strong>Semanas 1-2</strong><span>Exportação dos alunos do Gescola, levantamento das regras de marcação, do horário de código e dos acessos ao KeyInvoice</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🛠️</div><strong>Semanas 3-4</strong><span>Construção do agente, ligação ao Google Calendar e à caixa única. Em paralelo, arranca a parte de pagamentos e faturação</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🚦</div><strong>Semanas 5-6</strong><span>Testes com a secretaria, afinação com conversas reais, primeiro fecho de caixa acompanhado e arranque</span></div>
       </div>
-      <p class="small" style="margin-top:26px; color:var(--muted)">A solução de pagamentos entra em paralelo, a partir da semana 3.</p>
+      <p class="small" style="margin-top:26px; color:var(--muted)">Calendário proposto por nós, a acertar convosco na reunião.</p>
     </div>
   </section>
 
@@ -293,7 +443,7 @@
   <section class="cta-final" id="avancar">
     <div class="container center">
       <h2>Avançamos, Filipe?</h2>
-      <p class="lead" style="margin:14px auto 30px">Arrancamos com o levantamento das vossas regras e, em seis semanas, as duas escolas passam a responder primeiro, a qualquer hora.</p>
+      <p class="lead" style="margin:14px auto 30px">Arrancamos com o levantamento das vossas regras e, em seis semanas, as duas escolas passam a responder primeiro, a qualquer hora, com os pagamentos a acompanhar.</p>
       <a href="https://aisolutions.pt/comecar" class="btn btn-primary">Falar com a AI Solutions →</a>
     </div>
   </section>
@@ -327,12 +477,13 @@
         ]
       },
       {
-        "title": "Aula de condução sem crédito", "subtitle": "Emite a referência de pagamento antes de marcar.",
+        "title": "Aula sem crédito", "subtitle": "Emite a referência de pagamento antes de marcar.",
         "chat": [
           { "sender": "client", "text": "Queria marcar aula de condução para sexta de manhã.", "time": "10:04" },
           { "sender": "agent", "text": "Olá Inês. Sexta às 10h está livre com o instrutor Paulo, que a tem acompanhado. Só falta acertar o pagamento: tem as aulas pagas até à número 14 e esta seria a 15.", "time": "10:04" },
           { "sender": "client", "text": "Ah, pois. Como faço?", "time": "10:05" },
-          { "sender": "agent", "text": "Deixo aqui uma referência multibanco de **35€**. Assim que o pagamento entrar, a aula de sexta fica confirmada.", "time": "10:05" }
+          { "sender": "agent", "text": "Deixo aqui uma referência multibanco de **35€**. Assim que o pagamento entrar, a aula de sexta fica confirmada.", "time": "10:05" },
+          { "sender": "system", "text": "Pagamento recebido às 18:12. Aula de sexta confirmada e recibo preparado.", "time": "18:12" }
         ],
         "steps": [
           { "icon": "id", "label": "Identifica a aluna e o instrutor habitual" },
@@ -340,7 +491,7 @@
           { "icon": "database", "label": "Cruza aulas dadas com pagamentos registados" },
           { "icon": "alert", "label": "Deteta aula sem crédito disponível" },
           { "icon": "send", "label": "Emite a referência de pagamento" },
-          { "icon": "clock", "label": "Deixa a vaga reservada à espera do pagamento" }
+          { "icon": "check", "label": "Deteta o pagamento e confirma a aula" }
         ]
       },
       {
@@ -357,6 +508,22 @@
           { "icon": "ban", "label": "Regra da escola: máximo de três por semana" },
           { "icon": "shield", "label": "Avaliação formativa e reforço são decisão humana" },
           { "icon": "user-cog", "label": "Escala para a secretaria com o contexto todo" }
+        ]
+      },
+      {
+        "title": "Chamada não atendida", "subtitle": "Recupera quem ligou enquanto ninguém podia atender.",
+        "chat": [
+          { "sender": "system", "text": "Chamada não atendida às 11:27, número desconhecido", "time": "11:27" },
+          { "sender": "agent", "text": "Olá, aqui é a Cicapamp. Vimos a sua chamada e não conseguimos atender. Em que podemos ajudar?", "time": "11:28" },
+          { "sender": "client", "text": "Era para saber quando começa a próxima turma de código.", "time": "11:41" },
+          { "sender": "agent", "text": "A próxima turma da noite começa na segunda-feira, dia 5. Quer que lhe reserve lugar e lhe diga o que é preciso para a inscrição?", "time": "11:41" }
+        ],
+        "steps": [
+          { "icon": "phone-missed", "label": "Deteta a chamada não atendida" },
+          { "icon": "search", "label": "Procura o número na base de alunos" },
+          { "icon": "star", "label": "Número desconhecido: trata como potencial aluno" },
+          { "icon": "send", "label": "Envia mensagem de recuperação por WhatsApp" },
+          { "icon": "calendar", "label": "Consulta as datas das próximas turmas de código" }
         ]
       },
       {
@@ -380,7 +547,7 @@
   }
   </script>
 
-  <!-- Fluxo -->
+  <!-- Fluxo 1: atendimento e marcações -->
   <script type="application/json" id="ccFluxo-config">
   {
     "channels": [
@@ -400,6 +567,40 @@
   }
   </script>
 
+  <!-- Fluxo 2: cobrança -->
+  <script type="application/json" id="ccFluxoPag-config">
+  {
+    "stepMs": 1900,
+    "nodes": [
+      { "icon": "message", "title": "Aluno pede aula", "detail": "Pedido de marcação pelo WhatsApp da escola.", "tone": "brand" },
+      { "icon": "database", "title": "Verifica o crédito", "detail": "Aulas dadas contra aulas pagas, sem ninguém ir à folha.", "tone": "teal" },
+      { "icon": "send", "title": "Emite a referência", "detail": "Referência multibanco com o valor da aula, enviada na conversa.", "tone": "teal" },
+      { "icon": "check", "title": "Deteta o pagamento", "detail": "O pagamento entra e fica associado ao aluno certo.", "tone": "teal" },
+      { "icon": "calendar", "title": "Liberta a aula", "detail": "Marcação confirmada na agenda e recibo preparado no KeyInvoice.", "tone": "brand" }
+    ],
+    "note": "É isto que liga as duas soluções: o pagamento deixa de ser um assunto à parte e passa a destrancar a aula seguinte."
+  }
+  </script>
+
+  <!-- Fluxo 3: back-office -->
+  <script type="application/json" id="ccFluxoBack-config">
+  {
+    "stepMs": 1900,
+    "channels": [
+      { "icon": "globe", "label": "Faturas por email" },
+      { "icon": "whatsapp", "label": "Comprovativos dos alunos" }
+    ],
+    "nodes": [
+      { "icon": "message", "title": "Documento entra", "detail": "Fatura de fornecedor no email ou comprovativo enviado pelo aluno.", "tone": "brand" },
+      { "icon": "brain", "title": "Lê e classifica", "detail": "Reconhece fornecedor, valor, data e rubrica.", "tone": "teal" },
+      { "icon": "database", "title": "Lança no KeyInvoice", "detail": "Documento organizado e lançado no software que já usam.", "tone": "teal" },
+      { "icon": "arrows", "title": "Concilia com o banco", "detail": "Cruza movimentos com documentos e fecha o que bate certo.", "tone": "teal" },
+      { "icon": "alert", "title": "Sinaliza exceções", "detail": "O que não bate certo vai para uma lista curta, para a equipa decidir.", "tone": "brand" }
+    ],
+    "note": "A folha de caixa do dia fica fechada e pronta para validação, em vez de ser construída à mão."
+  }
+  </script>
+
   <!-- Terminal: back-office -->
   <script type="application/json" id="ccTerm-config">
   {
@@ -407,13 +608,31 @@
     "intervalMs": 700,
     "lines": [
       { "text": "A verificar pagamentos recebidos por referencia...", "tone": "info" },
-      { "text": "Pagamento de 35 EUR associado ao aluno #1042. Aula de sexta confirmada.", "tone": "ok" },
+      { "text": "Pagamento de 35 EUR associado a Ines Carvalho. Aula de sexta confirmada.", "tone": "ok" },
+      { "text": "Recibo RC 2026/418 preparado no KeyInvoice, a aguardar validacao.", "tone": "ok" },
       { "text": "A ler faturas recebidas na caixa de correio...", "tone": "info" },
-      { "text": "4 faturas de fornecedores organizadas e lancadas no KeyInvoice.", "tone": "ok" },
+      { "text": "4 faturas de fornecedores classificadas e lancadas.", "tone": "ok" },
       { "text": "Conciliacao bancaria: 37 movimentos, 36 associados automaticamente.", "tone": "ok" },
       { "text": "1 transferencia sem correspondencia, sinalizada para a equipa.", "tone": "warn" },
       { "text": "Folha de caixa do dia fechada e pronta para validacao.", "tone": "success" }
     ]
+  }
+  </script>
+
+  <!-- Calculadora -->
+  <script type="application/json" id="ccRoi-config">
+  {
+    "inputs": [
+      { "id": "pedidos", "label": "Pedidos de marcação por dia (as duas escolas)", "min": 5, "max": 60, "default": 25 },
+      { "id": "minutos", "label": "Minutos que cada pedido rouba à secretaria", "min": 1, "max": 15, "default": 4, "suffix": " min" },
+      { "id": "auto", "label": "Percentagem que o agente trata sozinho", "min": 40, "max": 95, "default": 80, "suffix": "%" }
+    ],
+    "outputs": [
+      { "label": "Horas devolvidas à secretaria por mês", "expr": "(pedidos*minutos*26*(auto/100))/60", "suffix": "h", "decimals": 0, "highlight": true },
+      { "label": "Equivalente em dias de trabalho por ano", "expr": "((pedidos*minutos*26*(auto/100))/60)*12/8", "suffix": " dias", "decimals": 0 },
+      { "label": "Pedidos tratados sem interromper ninguém, por mês", "expr": "pedidos*26*(auto/100)", "suffix": "", "decimals": 0 }
+    ],
+    "note": "Estimativa ilustrativa, com 26 dias de atividade por mês. Os valores reais confirmam-se com o vosso histórico de mensagens."
   }
   </script>
 
@@ -431,11 +650,11 @@
     "accounts": ["Escola 1", "Escola 2"],
     "channels": ["whatsapp", "instagram", "facebook"],
     "labels": {
-      "codigo":     { "name": "aula de código", "color": "#3b82f6", "priority": 0 },
-      "conducao":   { "name": "aula de condução", "color": "#00d4aa", "priority": 1 },
-      "pagamentos": { "name": "pagamentos", "color": "#f5a524", "priority": 2 },
-      "inscricao":  { "name": "nova inscrição", "color": "#a78bfa", "priority": 3 },
-      "exame":      { "name": "exame", "color": "#ef4444", "priority": 4 }
+      "codigo":     { "name": "aula de código", "color": "#1f6fe0", "priority": 0 },
+      "conducao":   { "name": "aula de condução", "color": "#0f766e", "priority": 1 },
+      "pagamentos": { "name": "pagamentos", "color": "#b45309", "priority": 2 },
+      "inscricao":  { "name": "nova inscrição", "color": "#7c3aed", "priority": 3 },
+      "exame":      { "name": "exame", "color": "#dc2626", "priority": 4 }
     },
     "conversations": [
       {
@@ -498,7 +717,19 @@
         "notes": ["Alteração feita pelo agente, vaga devolvida à agenda."]
       },
       {
-        "id": 6, "name": "Cláudia Rocha", "initials": "CR", "account": "Escola 2", "channel": "facebook",
+        "id": 6, "name": "Paulo Simões", "initials": "PS", "phone": "+351 936 412 770",
+        "account": "Escola 2", "channel": "whatsapp", "label": "pagamentos", "tab": "mine", "timeAgo": "6 h",
+        "preview": "Transferência sem correspondência, para confirmar.",
+        "messages": [
+          { "sender": "client", "text": "Boa tarde, fiz a transferência ontem mas ainda não consigo marcar.", "time": "14:31" },
+          { "sender": "agent", "isAI": true, "text": "Vejo uma transferência de ontem que não consegui associar a nenhum aluno. Vou pedir à secretaria que confirme, para não correr o risco de associar ao aluno errado.", "time": "14:31" },
+          { "sender": "system", "text": "Exceção de conciliação encaminhada para a equipa.", "time": "14:32" }
+        ],
+        "attributes": [ { "key": "Movimento", "value": "22/09, 60,00€" }, { "key": "Estado", "value": "Por confirmar" } ],
+        "notes": ["O agente não adivinha pagamentos: sinaliza e espera por uma pessoa."]
+      },
+      {
+        "id": 7, "name": "Cláudia Rocha", "initials": "CR", "account": "Escola 2", "channel": "facebook",
         "label": "inscricao", "tab": "mine", "timeAgo": "1 d",
         "preview": "Quer inscrever o filho, pergunta por horários de código.",
         "messages": [
@@ -520,8 +751,27 @@
   <script>
     chatRaciocinio('ccDemo');
     fluxo('ccFluxo');
+    fluxo('ccFluxoPag');
+    fluxo('ccFluxoBack');
     terminal('ccTerm');
+    calculadora('ccRoi');
     unibox('ccInbox');
+
+    /* Scroll-spy da navegação */
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
+      var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var i = secs.indexOf(e.target);
+          if (i < 0) return;
+          links.forEach(function (l) { l.classList.remove('on'); });
+          links[i].classList.add('on');
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      secs.forEach(function (s) { if (s) obs.observe(s); });
+    })();
   </script>
 </body>
 </html>
