@@ -1,0 +1,76 @@
+/* ============================================================
+   TOKENS: Cicapamp x AI Solutions (base: estilo deck-dark)
+   Azul de sinalética (sinais de obrigação, o azul da estrada) para a marca,
+   teal do agente de IA. Assinatura visual: linha de estrada tracejada.
+   O "sistema de proposta AI Solutions" em tema escuro.
+   Só se trocam 2 cores por lead:
+     --brand-hsl  = cor do nicho/marca da lead (CTA, preço, destaques)
+     --accent-hsl = teal do agente de IA (manter, é a assinatura AI Solutions)
+   Combina com shared/deck/deck.css (polish + componentes).
+   ============================================================ */
+:root {
+  --brand-hsl: 219 92% 56%;      /* azul de sinalética: CTA, precos, destaques */
+  --accent-hsl: 168 90% 44%;     /* teal do agente, manter */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(240 24% 5%);
+  --bg-soft: hsl(240 22% 7%);
+  --surface: hsl(240 20% 10%);
+  --surface-2: hsl(240 18% 13%);
+  --border: hsl(240 16% 20%);
+
+  --text: hsl(240 20% 95%);
+  --muted: hsl(240 10% 63%);
+
+  --success-hsl: 150 65% 46%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 80% 62%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 40 90% 55%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(168 78% 62%));
+  --grad-cta: linear-gradient(160deg, hsl(240 24% 7%), hsl(var(--brand-hsl) / 0.32));
+
+  --shadow-sm: 0 1px 3px hsl(240 60% 1% / 0.5);
+  --shadow-md: 0 10px 32px hsl(240 60% 1% / 0.55);
+  --shadow-lg: 0 24px 64px hsl(240 60% 1% / 0.65);
+
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  /* Par tipográfico: display + corpo. Trocar a display consoante o tom da lead
+     (Space Grotesk tech, Sora geométrica, Fraunces boutique, Manrope neutra). */
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 128px);
+}
+/* WhatsApp (mockup): cores canonicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
+/* Assinatura desta apresentacao: linha de estrada tracejada */
+:root {
+  --road-line: repeating-linear-gradient(90deg,
+      hsl(0 0% 100% / 0.75) 0 48px,
+      transparent 48px 92px);
+}
+.road {
+  height: 3px;
+  width: min(860px, 88%);
+  margin: 0 auto;
+  border-radius: 2px;
+  background: var(--road-line);
+  opacity: .42;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+}
+.road-wrap { padding: 8px 0 4px; }
