@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Castelo Real Estate | Proposta AI Solutions</title>
+  <meta name="description" content="Apresentação personalizada AI Solutions para a Castelo Real Estate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/unibox/unibox.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="topo">
+    <div class="container">
+      <img class="brandmark" src="assets/img/castelo-logo.png" alt="Castelo Real Estate">
+      <span class="kicker">Castelo Real Estate × AI Solutions · 23 de setembro de 2026</span>
+      <h1>3.000 contactos.<br>Uma manhã por dia,<br><span class="grad">um a um.</span></h1>
+      <p class="lead" style="margin-top:18px">
+        Rico, hoje o seu plano para falar com a base é o seu próprio tempo. Esta proposta
+        é para que deixe de ser assim: um assistente com o seu nome e a sua forma de falar
+        faz o primeiro contacto, filtra quem não interessa e entrega-lhe só quem está pronto.
+      </p>
+      <div class="rule-red"></div>
+      <div class="grid-3" style="margin-top:38px">
+        <div class="card stat-card reveal"><div class="num"><span class="count" data-to="3000" data-suffix="+">0</span></div><div class="desc">Contactos no seu telemóvel, sem ninguém a falar com eles</div></div>
+        <div class="card stat-card reveal"><div class="num">3</div><div class="desc">Frentes em simultâneo: angariação, atração de talentos e compradores</div></div>
+        <div class="card stat-card reveal"><div class="num">PT · EN · FR</div><div class="desc">Os idiomas em que os seus clientes o procuram</div></div>
+      </div>
+      <div style="margin-top:34px">
+        <a href="#demo" class="btn btn-primary">Ver o assistente a trabalhar ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. DIAGNOSTICO -->
+  <section class="section-alt" id="hoje">
+    <div class="container center">
+      <span class="kicker">O ponto de partida</span>
+      <h2>O que está a acontecer hoje</h2>
+      <div style="margin-top:30px">
+        <blockquote class="quote-lead">
+          "Tenho que nutrir os contactos. Se eu ficar com os braços cruzados, amanhã não como.
+          O meu único plano é dedicar parte da manhã a ligar, um a um."
+          <cite>Eurico Gomes, reunião de 18 de setembro</cite>
+        </blockquote>
+      </div>
+      <div class="grid-2" style="margin-top:38px; text-align:left">
+        <div class="card card-dont reveal">
+          <h3>Onde o tempo se perde</h3>
+          <ul class="list-x">
+            <li>Manhãs inteiras a ligar sem saber quem está interessado</li>
+            <li>Pedidos dos portais que chegam por email e ficam à espera</li>
+            <li>Contactos internacionais que exigem resposta noutra língua</li>
+            <li>Documentos recebidos por WhatsApp tratados à mão</li>
+            <li>Uma base de mais de 3.000 pessoas que ninguém contacta</li>
+          </ul>
+        </div>
+        <div class="card card-do reveal">
+          <h3>O que já está do seu lado</h3>
+          <ul class="list-check">
+            <li>Uma base grande, construída ao longo de anos de trabalho</li>
+            <li>O WhatsApp como canal onde os seus clientes já falam consigo</li>
+            <li>O site da Castelo Real Estate em quatro idiomas</li>
+            <li>Fátima, Santarém e Lisboa como território já conhecido</li>
+            <li>A força da rede KW Ábaco por trás da sua marca</li>
+          </ul>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:34px"><em>A base existe. O que falta é ter alguém a falar com ela todos os dias.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. MOMENTO UAU: chat + raciocinio -->
+  <section id="demo">
+    <div class="container center">
+      <span class="kicker">O momento a sério</span>
+      <h2>O assistente da Castelo Real Estate, a trabalhar</h2>
+      <p class="lead">À esquerda a conversa como o cliente a vê. À direita o que o assistente está a pensar em cada passo.</p>
+      <div class="dark-wrap" style="margin-top:34px">
+        <div class="cr" id="castDemo"></div>
+      </div>
+      <p class="note-ilus">Os valores e os nomes nestes exemplos são ilustrativos. Em produção o assistente usa os seus imóveis e a sua base real.</p>
+    </div>
+  </section>
+  <script type="application/json" id="castDemo-config">
+  {
+    "agentName": "Assistente Castelo Real Estate",
+    "agentInitials": "CR",
+    "chatStatus": "WhatsApp Business, online",
+    "stepMs": 1500,
+    "endPauseMs": 2800,
+    "scenarios": [
+      {
+        "title": "Acordar a base",
+        "subtitle": "Um contacto antigo que nunca mais foi tocado.",
+        "chat": [
+          { "sender": "system", "text": "Contacto na base desde março de 2024, sem qualquer interação", "time": "10:02" },
+          { "sender": "agent", "text": "Bom dia Sr. Martins, fala da parte do **Eurico Gomes**, da Castelo Real Estate. Falámos há uns meses sobre um T3 em Fátima. Ainda está à procura?", "time": "10:03" },
+          { "sender": "client", "text": "Bom dia. Já acabei por comprar, obrigado. Mas tenho um apartamento em Ourém que quero vender.", "time": "10:21" },
+          { "sender": "agent", "text": "Isso interessa-nos muito. Só duas perguntas rápidas para o Eurico ir já preparado: que tipologia é, e para quando pensa a venda?", "time": "10:22" },
+          { "sender": "client", "text": "T2, e gostava de vender até ao final do ano.", "time": "10:26" }
+        ],
+        "steps": [
+          { "icon": "database", "label": "Lê a base e escolhe quem contactar primeiro" },
+          { "icon": "send", "label": "Escreve no seu tom, com o seu nome à frente" },
+          { "icon": "brain", "label": "Percebe que deixou de ser comprador e passou a vendedor" },
+          { "icon": "filter", "label": "Muda de guião: angariação em vez de venda" },
+          { "icon": "user-cog", "label": "Entrega-lhe uma angariação com prazo definido" }
+        ]
+      },
+      {
+        "title": "Pedido de portal às 22h",
+        "subtitle": "O que hoje lhe cai no email e espera pela manhã seguinte.",
+        "chat": [
+          { "sender": "system", "text": "Novo pedido recebido por email, via portal, às 22:14", "time": "22:14" },
+          { "sender": "agent", "text": "Boa noite, recebi o seu pedido sobre a moradia em Fátima. Sou o assistente do **Eurico Gomes**, da Castelo Real Estate. Para lhe enviar a ficha completa com fotografias, pode dar-me o seu WhatsApp?", "time": "22:15" },
+          { "sender": "client", "text": "Boa noite, claro. É este mesmo número.", "time": "22:31" },
+          { "sender": "agent", "text": "Obrigado, já lhe enviei tudo. Enquanto vê: procura para viver ou como investimento?", "time": "22:32" },
+          { "sender": "client", "text": "Para viver. Estamos a mudar de Lisboa para a zona.", "time": "22:40" }
+        ],
+        "steps": [
+          { "icon": "globe", "label": "Recebe o email do portal, a qualquer hora" },
+          { "icon": "search", "label": "Identifica de que imóvel se trata" },
+          { "icon": "id", "label": "Pede o contacto, que é o primeiro filtro de interesse" },
+          { "icon": "arrows", "label": "Leva a conversa para o WhatsApp" },
+          { "icon": "check", "label": "Qualifica a motivação antes de o acordar a si" }
+        ]
+      },
+      {
+        "title": "Cliente estrangeiro, na língua dele",
+        "subtitle": "Os contactos de fora que hoje ficam à espera.",
+        "chat": [
+          { "sender": "client", "text": "Hello, is the apartment in Fátima still available? We are moving from France next spring.", "time": "18:05" },
+          { "sender": "agent", "text": "Hello! Yes, it is still available. I am **Eurico Gomes**'s assistant at Castelo Real Estate. May I ask what budget you have in mind, and whether your financing is already arranged?", "time": "18:05" },
+          { "sender": "client", "text": "Around 250.000 €, and our bank has already pre-approved us.", "time": "18:12" },
+          { "sender": "agent", "text": "Perfect. Eurico has two slots for a video call this week: Thursday at 15:00 or Friday at 10:00. Which one suits you?", "time": "18:13" },
+          { "sender": "client", "text": "Friday at 10:00 works for us.", "time": "18:15" }
+        ],
+        "steps": [
+          { "icon": "globe", "label": "Deteta o idioma e responde em inglês" },
+          { "icon": "filter", "label": "Qualifica orçamento e financiamento" },
+          { "icon": "calendar", "label": "Consulta a sua agenda real" },
+          { "icon": "check", "label": "Fecha a videochamada e envia o convite" },
+          { "icon": "message", "label": "Avisa-o com o resumo antes da chamada" }
+        ]
+      },
+      {
+        "title": "Quando não avança sozinho",
+        "subtitle": "O limite que definimos consigo, por escrito.",
+        "chat": [
+          { "sender": "client", "text": "E quanto é que me leva de comissão para vender a minha casa?", "time": "16:18" },
+          { "sender": "agent", "text": "Essa conversa é mesmo com o **Eurico**, que avalia cada caso antes de falar em condições. Já lhe passei o seu contacto e tudo o que falámos aqui.", "time": "16:19" },
+          { "sender": "agent", "text": "Ele liga-lhe ainda hoje. Entretanto, quer que lhe envie uma estimativa de mercado para a zona?", "time": "16:19" },
+          { "sender": "system", "text": "Conversa encaminhada para o Eurico Gomes às 16:20, com resumo", "time": "16:20" }
+        ],
+        "steps": [
+          { "icon": "ban", "label": "Reconhece um tema de negociação" },
+          { "icon": "shield", "label": "Não avança com comissões nem condições" },
+          { "icon": "user-cog", "label": "Escala para si com o histórico todo" },
+          { "icon": "star", "label": "Mantém o cliente quente até você entrar" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- 4. FLUXO -->
+  <section class="section-alt" id="ligacao">
+    <div class="container center">
+      <span class="kicker">Como encaixa no seu dia</span>
+      <h2>De onde vêm os pedidos e para onde vão</h2>
+      <p class="lead">Tudo o que hoje chega espalhado passa a entrar pelo mesmo sítio.</p>
+      <div style="margin-top:34px">
+        <div class="fluxo" id="castFluxo"></div>
+      </div>
+    </div>
+  </section>
+  <script type="application/json" id="castFluxo-config">
+  {
+    "stepMs": 1900,
+    "channels": [
+      { "icon": "globe", "label": "Portais e site" },
+      { "icon": "whatsapp", "label": "WhatsApp" },
+      { "icon": "facebook", "label": "Facebook" },
+      { "icon": "instagram", "label": "Instagram" }
+    ],
+    "nodes": [
+      { "icon": "message", "title": "Pedido recebido", "detail": "Venha do portal, do site ou de uma mensagem direta.", "tone": "brand" },
+      { "icon": "id", "title": "Identifica quem é", "detail": "Já está na sua base ou é contacto novo.", "tone": "teal" },
+      { "icon": "filter", "title": "Qualifica", "detail": "Comprador, proprietário ou candidato a agente.", "tone": "teal" },
+      { "icon": "calendar", "title": "Marca a visita", "detail": "Direto na sua agenda, com lembrete no dia anterior.", "tone": "teal" },
+      { "icon": "database", "title": "Fica registado", "detail": "Na base de leads qualificadas que montamos consigo.", "tone": "brand" }
+    ],
+    "note": "Sobre o CRM: o sistema da rede é fechado e não permite ligação. O Casafari, que sustenta o site, tem à partida API aberta e fica por confirmar. Se não der, montamos consigo a base de leads à parte, que serve o mesmo objetivo."
+  }
+  </script>
+
+  <!-- 5. RITMO SEGURO -->
+  <section id="ritmo">
+    <div class="container center">
+      <span class="kicker">A pergunta que fez duas vezes</span>
+      <h2>Como falamos com 3.000 contactos sem lhe queimar o número</h2>
+      <div class="grid-3" style="margin-top:36px; text-align:left">
+        <div class="card reveal">
+          <span class="badge">1</span>
+          <h3 style="margin-top:12px">Medimos antes de enviar</h3>
+          <p style="color:var(--muted); font-size:0.94rem; margin-top:8px">
+            Primeiro percebemos quantas mensagens o seu número recebe por dia hoje. Sem esse número, não se arranca.
+          </p>
+        </div>
+        <div class="card reveal">
+          <span class="badge">2</span>
+          <h3 style="margin-top:12px">Arrancamos em baixo</h3>
+          <p style="color:var(--muted); font-size:0.94rem; margin-top:8px">
+            Começa por um punhado de contactos por semana, pelos mais recentes e mais quentes, e não pela lista toda.
+          </p>
+        </div>
+        <div class="card reveal">
+          <span class="badge">3</span>
+          <h3 style="margin-top:12px">Subimos com o movimento</h3>
+          <p style="color:var(--muted); font-size:0.94rem; margin-top:8px">
+            À medida que a conta recebe mais, pode enviar mais. Vamos reavaliando consigo ao longo do tempo.
+          </p>
+        </div>
+      </div>
+      <div class="card reveal" style="margin-top:26px; text-align:left">
+        <h3>Porque é que isto importa</h3>
+        <p style="color:var(--muted); margin-top:10px">
+          A Meta olha para a sua conta como um ecossistema e compara o que entra com o que sai. Se receber quinze
+          mensagens por dia e passar a enviar cento e cinquenta, a conta é lida como spam. É por isso que ninguém
+          sério lhe promete falar com os 3.000 na primeira semana. A mensagem vai sempre identificada consigo e
+          com uma razão para o contacto, e quem disser que não quer sai da lista.
+        </p>
+      </div>
+      <p class="lead" style="margin-top:28px"><em>Preferimos dizer isto agora do que prometer o que não se cumpre.</em></p>
+    </div>
+  </section>
+
+  <!-- 6. UNIBOX -->
+  <section class="section-alt" id="caixa">
+    <div class="container center">
+      <span class="kicker">O seu lado da coisa</span>
+      <h2>Tudo numa caixa só</h2>
+      <p class="lead">Perguntou como ia acompanhar as conversas sem andar a procurar no meio de dezenas. É assim.</p>
+      <div class="dark-wrap" style="margin-top:34px">
+        <div class="unibox" id="castInbox"></div>
+      </div>
+    </div>
+  </section>
+  <script type="application/json" id="castInbox-config">
+  {
+    "brand": "Castelo Real Estate",
+    "teamName": "Eurico Gomes",
+    "teamEmail": "eurico@castelorealestate.com",
+    "teamInitials": "EG",
+    "agentName": "Assistente Castelo Real Estate",
+    "accounts": ["Castelo Real Estate"],
+    "channels": ["email", "whatsapp", "facebook", "instagram"],
+    "labels": {
+      "comprador": { "name": "Comprador", "color": "#2f7ac7", "priority": 1 },
+      "angariacao": { "name": "Angariação", "color": "#134473", "priority": 0 },
+      "talento": { "name": "Atração de talentos", "color": "#E0352A", "priority": 2 },
+      "frio": { "name": "Sem interesse", "color": "#8a94a3", "priority": 3 }
+    },
+    "conversations": [
+      {
+        "id": 1, "name": "António Martins", "initials": "AM", "phone": "+351 9XX XXX XXX",
+        "account": "Castelo Real Estate", "channel": "whatsapp", "label": "angariacao",
+        "tab": "mine", "timeAgo": "8m", "unread": 2,
+        "preview": "T2, e gostava de vender até ao final do ano.",
+        "messages": [
+          { "sender": "agent", "isAI": true, "text": "Bom dia Sr. Martins, fala da parte do **Eurico Gomes**. Falámos há uns meses sobre um T3 em Fátima. Ainda está à procura?", "time": "10:03" },
+          { "sender": "client", "text": "Já comprei, obrigado. Mas tenho um apartamento em Ourém para vender.", "time": "10:21" },
+          { "sender": "agent", "isAI": true, "text": "Que tipologia é, e para quando pensa a venda?", "time": "10:22" },
+          { "sender": "client", "text": "T2, e gostava de vender até ao final do ano.", "time": "10:26" },
+          { "sender": "system", "text": "Marcado como angariação e entregue ao Eurico.", "time": "10:26" }
+        ],
+        "attributes": [ { "key": "Origem", "value": "Base antiga" }, { "key": "Zona", "value": "Ourém" }, { "key": "Prazo", "value": "Até dezembro" } ]
+      },
+      {
+        "id": 2, "name": "Claire Dubois", "initials": "CD", "email": "claire.d@example.fr",
+        "account": "Castelo Real Estate", "channel": "email", "label": "comprador",
+        "tab": "mine", "timeAgo": "1h", "unread": 1,
+        "preview": "Friday at 10:00 works for us.",
+        "messages": [
+          { "sender": "client", "text": "Hello, is the apartment in Fátima still available? We are moving from France next spring.", "time": "18:05" },
+          { "sender": "agent", "isAI": true, "text": "Yes, it is. May I ask your budget and whether financing is arranged?", "time": "18:05" },
+          { "sender": "client", "text": "Around 250.000 €, pre-approved.", "time": "18:12" },
+          { "sender": "agent", "isAI": true, "text": "Eurico has two slots: Thursday 15:00 or Friday 10:00.", "time": "18:13" },
+          { "sender": "client", "text": "Friday at 10:00 works for us.", "time": "18:15" }
+        ],
+        "attributes": [ { "key": "Idioma", "value": "Inglês" }, { "key": "Orçamento", "value": "250.000 €" }, { "key": "Financiamento", "value": "Pré-aprovado" } ]
+      },
+      {
+        "id": 3, "name": "Sandra Nogueira", "initials": "SN", "phone": "+351 9XX XXX XXX",
+        "account": "Castelo Real Estate", "channel": "instagram", "label": "talento",
+        "tab": "unassigned", "timeAgo": "3h", "unread": 1,
+        "preview": "Estou a pensar mudar de área, queria perceber como funciona.",
+        "messages": [
+          { "sender": "client", "text": "Vi a vossa publicação sobre a carreira no imobiliário. Estou a pensar mudar de área, queria perceber como funciona.", "time": "14:40" },
+          { "sender": "agent", "isAI": true, "text": "Boa tarde! Já trabalhou no setor ou seria de raiz? E tinha disponibilidade a tempo inteiro?", "time": "14:41" }
+        ],
+        "attributes": [ { "key": "Fase", "value": "Fase 2 da proposta" } ]
+      },
+      {
+        "id": 4, "name": "Pedro Faria", "initials": "PF", "phone": "+351 9XX XXX XXX",
+        "account": "Castelo Real Estate", "channel": "whatsapp", "label": "frio",
+        "tab": "mine", "timeAgo": "1d", "unread": 0,
+        "preview": "Obrigado, mas não tenho interesse de momento.",
+        "messages": [
+          { "sender": "agent", "isAI": true, "text": "Boa tarde, fala da parte do Eurico Gomes, da Castelo Real Estate. Continua interessado em imóveis na zona de Fátima?", "time": "11:10" },
+          { "sender": "client", "text": "Obrigado, mas não tenho interesse de momento.", "time": "11:52" },
+          { "sender": "system", "text": "Contacto retirado da lista de reativação.", "time": "11:52" }
+        ],
+        "attributes": [ { "key": "Estado", "value": "Fora da lista" } ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- 7. FASE 2 -->
+  <section id="fase2">
+    <div class="container center">
+      <span class="kicker">Depois do arranque</span>
+      <h2>A atração de talentos fica para a segunda fase</h2>
+      <p class="lead" style="max-width:780px; margin-left:auto; margin-right:auto">
+        Falámos das três frentes. Esta proposta cobre a dos clientes. O recrutamento de novos
+        agentes para a KW Ábaco merece um assistente próprio, e explico porquê.
+      </p>
+      <div class="grid-2 fase2" style="margin-top:36px; text-align:left">
+        <div class="card reveal">
+          <span class="badge">Nesta proposta</span>
+          <h3 style="margin-top:12px">Assistente de clientes</h3>
+          <p style="color:var(--muted); font-size:0.94rem; margin-top:8px">
+            Reativa a base, atende os pedidos dos portais e das redes, qualifica compradores
+            e proprietários e marca visitas. O objetivo é volume: o máximo de visitas possível.
+          </p>
+        </div>
+        <div class="card reveal">
+          <span class="badge">Fase seguinte</span>
+          <h3 style="margin-top:12px">Assistente de recrutamento</h3>
+          <p style="color:var(--muted); font-size:0.94rem; margin-top:8px">
+            Triagem de candidatos a agente: experiência, motivação e disponibilidade. O objetivo
+            é o contrário, filtrar muito, para só lhe chegar quem tem mesmo perfil.
+            Não faz parte desta proposta.
+          </p>
+        </div>
+      </div>
+      <p class="lead" style="margin-top:30px"><em>Juntar os dois no mesmo assistente é o que se faz para baixar o preço. O resultado é um assistente pior nas duas coisas.</em></p>
+    </div>
+  </section>
+
+  <!-- 8. TIMELINE -->
+  <section class="section-alt" id="prazo">
+    <div class="container center">
+      <span class="kicker">Prazo</span>
+      <h2>De hoje até ao assistente no ar</h2>
+      <div class="timeline" style="margin-top:44px">
+        <div class="tl-step reveal"><div class="tl-dot">🔍</div><strong>Semanas 1 e 2</strong><span>Auditoria à sua comunicação: email, WhatsApp, Facebook e Instagram</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">⚙</div><strong>Semanas 3 e 4</strong><span>Construção do assistente com as regras que definir connosco</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🧪</div><strong>Semana 5</strong><span>Testes consigo, a fazer de cliente, até estar confortável</span></div>
+        <div class="tl-step reveal"><div class="tl-dot">🚀</div><strong>Semana 6</strong><span>Entrada em funcionamento e arranque da reativação em volume baixo</span></div>
+      </div>
+      <p class="lead" style="margin-top:34px">Depois do arranque continuamos a ajustar. Vê uma resposta que devia ter sido outra, manda-nos e corrigimos.</p>
+    </div>
+  </section>
+
+  <!-- 9. INVESTIMENTO -->
+  <section id="investimento">
+    <div class="container center">
+      <span class="kicker">Investimento</span>
+      <h2>Os números, sem letra pequena</h2>
+      <div class="grid-2" style="margin-top:36px">
+        <div class="card price-card reveal">
+          <div class="label">Implementação</div>
+          <div class="price">2.600€ +IVA<small>3.198€ com IVA</small></div>
+          <div class="note">Auditoria, construção do assistente, testes e entrada em funcionamento. Pagamento único.</div>
+        </div>
+        <div class="card price-card reveal">
+          <div class="label">Avença mensal</div>
+          <div class="price">200€ +IVA<small>246€ com IVA</small></div>
+          <div class="note">Alojamento, custos de inteligência artificial de cada mensagem, monitorização e ajustes contínuos.</div>
+        </div>
+      </div>
+      <div class="card reveal" style="margin-top:26px; text-align:left">
+        <h3>Pagamento faseado</h3>
+        <p style="color:var(--muted); margin-top:10px">
+          Rico, disse que precisava de encontrar o ponto de partida. Podemos fazer 50% no arranque
+          e dividir o restante pelos meses seguintes, para não pesar tudo de uma vez. A ideia é que
+          quando fizer o segundo pagamento já tenha o assistente a trabalhar para si.
+        </p>
+      </div>
+      <p class="lead" style="margin-top:28px">A pergunta não é quanto custa. É quanto está a custar ter 3.000 contactos parados.</p>
+    </div>
+  </section>
+
+  <!-- 10. CTA -->
+  <section class="cta-final">
+    <div class="container center">
+      <h2>Pronto para avançar, Rico?</h2>
+      <p class="lead" style="margin:14px auto 30px">
+        Começamos pela auditoria à sua comunicação. Ao fim de seis semanas tem o assistente a falar
+        com a sua base, no seu tom, e a devolver-lhe as manhãs.
+      </p>
+      <a href="mailto:manuel.condeco@aisolutions.pt?subject=Castelo%20Real%20Estate%20-%20avan%C3%A7ar%20com%20a%20proposta" class="btn btn-primary">Avançar com a proposta →</a>
+      <p style="margin-top:18px; font-size:0.85rem; opacity:0.85">Sem compromisso imediato. Confirmamos tudo por escrito antes de arrancar.</p>
+    </div>
+  </section>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Castelo Real Estate
+      <span class="disclaimer">Demonstração com dados ilustrativos, para fins de apresentação.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="../shared/unibox/unibox.js"></script>
+  <script>
+    chatRaciocinio('castDemo');
+    fluxo('castFluxo');
+    unibox('castInbox');
+  </script>
+</body>
+</html>
