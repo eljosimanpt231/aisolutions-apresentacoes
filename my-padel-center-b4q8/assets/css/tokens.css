@@ -1,0 +1,78 @@
+/* ============================================================
+   TOKENS: My Padel Center × AI Solutions
+   Base: estilo corporativo-azul, em registo CLARO (pedido do comercial:
+   "tons de azul, não escuro, mais para o claro").
+   Paleta:
+     azul  -> escolha do comercial para a apresentação. Azul de céu aberto,
+              claro, com o texto sempre em azul-tinta sobre superfícies claras.
+     lima  -> 69 100% 38%, lido do logótipo MPC-Logo-Final_transp.png
+              (#a7c400, a cor exata das letras "M" e "my padel center").
+              É a assinatura da marca: só preenchimentos, riscas de campo e
+              pontos vivos. NUNCA texto (2,4:1 sobre branco, não passa AA).
+   Regra de ouro: os componentes NUNCA usam cores diretas.
+   ============================================================ */
+
+:root {
+  /* ---- Azul da apresentação ---- */
+  --brand-hsl: 206 84% 30%;          /* azul-tinta: títulos, números, fundos de CTA (8,1:1 sobre branco) */
+  --accent-hsl: 202 88% 38%;         /* azul vivo legível: kickers, links, texto de realce (4,9:1 sobre branco) */
+  --accent-vivid-hsl: 199 95% 52%;   /* azul de céu: preenchimentos, glows, riscas. Nunca texto pequeno */
+  --sky-hsl: 195 92% 72%;            /* azul claro: só gradientes e texturas */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --accent-vivid: hsl(var(--accent-vivid-hsl));
+  --sky: hsl(var(--sky-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* ---- Lima do logótipo (assinatura da marca, nunca texto) ---- */
+  --lime-hsl: 69 100% 38%;
+  --lime: hsl(var(--lime-hsl));
+  --lime-ink-hsl: 72 100% 24%;       /* lima escurecido, este sim legível sobre branco (5,2:1) */
+  --lime-ink: hsl(var(--lime-ink-hsl));
+
+  /* ---- Superfícies: claras, com um véu de azul ---- */
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(203 78% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(203 62% 98%);
+  --border: hsl(205 42% 88%);
+
+  /* ---- Texto ---- */
+  --text: hsl(210 45% 14%);
+  --muted: hsl(208 18% 42%);
+
+  /* ---- Semânticos ---- */
+  --success-hsl: 152 62% 31%;  --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 68% 46%;   --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 33 92% 38%;   --warning: hsl(var(--warning-hsl));
+  --warning-vivid: hsl(38 94% 52%);
+
+  /* ---- Chat em modo claro (usado por light-deck.css) ---- */
+  --chat-bg: hsl(203 52% 95%);
+  --chat-head: hsl(204 44% 97%);
+  --chat-in: hsl(0 0% 100%);
+  --chat-out: hsl(201 84% 91%);
+  --chat-line: hsl(205 34% 86%);
+
+  /* ---- Vidro (cartões sobre o lavado do hero) ---- */
+  --glass: hsl(0 0% 100% / 0.62);
+  --glass-line: hsl(0 0% 100% / 0.9);
+
+  /* ---- Gradientes e sombras (derivados do azul, nunca preto puro) ---- */
+  --grad-hero: linear-gradient(168deg, hsl(var(--sky-hsl) / 0.38) 0%, hsl(var(--accent-vivid-hsl) / 0.12) 48%, hsl(0 0% 100%) 100%);
+  --grad-text: linear-gradient(118deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(158deg, hsl(var(--accent-hsl)) 0%, hsl(var(--brand-hsl)) 62%, hsl(var(--brand-hsl) / 0.94) 100%);
+  --grad-court: linear-gradient(90deg, hsl(var(--lime-hsl)), hsl(var(--accent-vivid-hsl)) 58%, hsl(var(--brand-hsl)));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.07);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.09);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.14);
+
+  --radius: 12px;
+  --radius-lg: 20px;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}

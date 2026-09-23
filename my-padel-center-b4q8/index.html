@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>My Padel Center | Proposta AI Solutions</title>
+  <meta name="description" content="Agente de atendimento e automação de processos para o My Padel Center. Apresentação personalizada AI Solutions.">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/unibox/unibox.css">
+  <link rel="stylesheet" href="assets/css/light-deck.css">
+  <link rel="stylesheet" href="assets/css/mpc.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<nav class="dotnav" aria-label="Secções"></nav>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero court-hero" id="topo" data-nav="Início">
+  <div class="container">
+    <div class="brandbar">
+      <span class="logo-pill"><img class="logo-img" src="assets/img/logo.png" alt="My Padel Center"></span>
+      <span class="x">×</span>
+      <span class="ais">AI Solutions</span>
+    </div>
+    <h1>Crescer sem contratar.<br>A equipa onde o Pedro quer:<br><span class="lime">atendimento, experiência e vendas.</span></h1>
+    <p class="lead" style="margin-top:22px">
+      Tudo o que hoje ocupa pessoas e não é atendimento nem venda passa a correr sozinho: o pedido de informação
+      que espera por alguém para responder, a comunicação a clientes feita caso a caso, as faturas presas ao stock.
+      O agente trata disso. A equipa fica no balcão e no campo.
+    </p>
+    <div class="grid-3" style="margin-top:40px">
+      <div class="card stat-card reveal">
+        <div class="num">Sem CRM</div>
+        <div class="desc">A informação vive hoje em vários Excel no vosso servidor</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num"><span class="count" data-to="98" data-suffix="%">0</span></div>
+        <div class="desc">Taxa de abertura no WhatsApp, contra cerca de 30% no email</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num">2.º clube</div>
+        <div class="desc">Nasce autónomo. Faz sentido que o atendimento nasça igual</div>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span>Para <b>Pedro Ribeiro Matos</b></span>
+      <span>Reunião de <b>24 de setembro de 2026</b></span>
+      <span>Preparado por <b>Manuel Condeço</b>, AI Solutions</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="diagnostico" data-nav="O que ouvimos">
+  <div class="container">
+    <span class="eyebrow">O que ouvimos</span>
+    <h2>A conversa de 18 de setembro, em seis pontos</h2>
+    <p class="lead">Não inventámos nada. Isto é o que o Pedro descreveu.</p>
+    <div class="grid-3" style="margin-top:36px">
+      <div class="card dcard reveal">
+        <div class="t">Pessoas</div>
+        <h3>Crescer não é despedir</h3>
+        <p>A dificuldade em encontrar pessoal trava o crescimento, mas a intenção não é reduzir equipa. É tirar-lhe de cima os processos menores.</p>
+        <div class="said">"Não quero despedir ninguém. Quero é crescer automatizando todos os processos que possam ser automatizados."</div>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Pedidos de informação</div>
+        <h3>O PDF que alguém tem de enviar</h3>
+        <p>Chega um pedido sobre os serviços publicitários, a informação toda já existe num PDF, e mesmo assim tem de haver uma pessoa a escrever o email e a anexar o documento.</p>
+        <div class="said">"Temos um PDF onde temos essa informação toda. Tem que haver uma pessoa que vai mandar esse e-mail. Isto pode ser automatizado?"</div>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Dados</div>
+        <h3>Vários Excel, nenhum CRM</h3>
+        <p>A base existe: servidor próprio, folhas de Excel, SAGE na faturação e a central de reservas com API e canal de desenvolvimento. O que falta é um sítio onde tudo isso se encontre.</p>
+        <div class="said">"Utilizamos bases de dados em Excel, mas temos, basicamente, neste momento, temos vários Excels."</div>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Back-office</div>
+        <h3>Faturas presas ao stock</h3>
+        <p>O lançamento de faturas continua a consumir tempo por causa dos stocks, e a reconciliação bancária é trabalho manual de cruzar extratos com documentos.</p>
+        <div class="said">"Ainda perco muito tempo a lançar faturas por causa dos stocks."</div>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">Crescimento</div>
+        <h3>Um clube novo, já autónomo</h3>
+        <p>O próximo clube abre com portas, luzes e pagamentos a funcionar sozinhos. O atendimento é a peça que ainda depende de alguém estar disponível.</p>
+        <div class="said">"Vai funcionar já completamente autónomo. As portas abrem, as luzes acendem, os pagamentos são online."</div>
+      </div>
+      <div class="card dcard reveal">
+        <div class="t">O pedido</div>
+        <h3>O reverso da medalha</h3>
+        <p>Foram pedidas informações a dez empresas. O que o Pedro quer não é um catálogo: é que alguém olhe para o negócio dele e diga o que faz sentido.</p>
+        <div class="said">"Eu tenho esta empresa, eu tenho isto, o que é que vocês têm que me possa ajudar?"</div>
+      </div>
+    </div>
+    <p class="quote-close">O problema não é falta de procura. É o tempo da equipa preso no que não é nem atendimento nem venda.</p>
+  </div>
+</section>
+
+<!-- ============ 3. HOJE VS COM O AGENTE ============ -->
+<section id="mudanca" data-nav="O que muda">
+  <div class="container">
+    <span class="eyebrow">O que muda</span>
+    <h2>O mesmo dia, com e sem agente</h2>
+    <div class="grid-2" style="margin-top:34px">
+      <div class="card card-dont reveal">
+        <h3>Hoje</h3>
+        <ul class="list-x">
+          <li>O pedido de informação espera que alguém tenha tempo para responder e anexar o PDF.</li>
+          <li>As mensagens entram por WhatsApp, Instagram, Facebook, email e chamada, cada uma no seu sítio.</li>
+          <li>Quem responde tem de saber de padel, ginásio, futsal, salas de festas e aluguer de gabinetes.</li>
+          <li>Comunicar uma promoção a toda a base implica alguém a escrever e a enviar, um a um.</li>
+          <li>Se o contacto chega fora de horas, fica à espera da manhã seguinte.</li>
+          <li>A faturação e a reconciliação bancária fazem-se documento a documento.</li>
+        </ul>
+      </div>
+      <div class="card card-do reveal">
+        <h3>Com o agente</h3>
+        <ul class="list-check">
+          <li>O pedido é reconhecido, a resposta sai estruturada e o PDF vai anexado, no momento.</li>
+          <li>Todos os canais caem numa caixa única, com etiqueta por serviço e por clube.</li>
+          <li>O agente conhece a vossa oferta inteira e encaminha o que for específico para a pessoa certa.</li>
+          <li>Uma campanha parte da vossa lista em Excel e sai personalizada, ao ritmo que a Meta permite.</li>
+          <li>O primeiro atendimento acontece a qualquer hora, incluindo fins de semana.</li>
+          <li>Extratos e faturas são cruzados sozinhos, com as exceções sinalizadas para a equipa ver.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. ÂMBITO ============ -->
+<section class="section-alt" id="ambito" data-nav="Âmbito">
+  <div class="container">
+    <span class="eyebrow">Âmbito</span>
+    <h2>O que vamos construir</h2>
+    <p class="lead">Quatro frentes, no mesmo agente. Não são fases: é o que entra nesta implementação.</p>
+    <div class="scope" style="margin-top:34px">
+      <div class="card scope-card reveal">
+        <div class="head"><span class="n">01</span><h3>Atendimento e qualificação</h3></div>
+        <ul>
+          <li>Primeiro contacto em WhatsApp, Instagram, Facebook e email, a qualquer hora.</li>
+          <li>Separa quem tem intenção real de quem está só a perguntar, pelos vossos critérios.</li>
+          <li>Recolhe a informação que definirem e avisa a equipa quando vale a pena ligar.</li>
+          <li>Responde sobre padel, aulas, ginásio, futsal, patinagem, salas e gabinetes.</li>
+        </ul>
+      </div>
+      <div class="card scope-card reveal">
+        <div class="head"><span class="n">02</span><h3>Envio de informação e orçamentação</h3></div>
+        <ul>
+          <li>Acede aos vossos documentos e monta a resposta com o conteúdo certo no corpo do email.</li>
+          <li>Anexa o PDF de publicidade, de aluguer de espaço ou de aulas de grupo conforme o pedido.</li>
+          <li>Consulta a vossa tabela de preços para pré-orçamentos, incluindo condições de grupo.</li>
+          <li>Arranca com revisão pela equipa e passa a envio autónomo quando validarem o padrão.</li>
+        </ul>
+      </div>
+      <div class="card scope-card reveal">
+        <div class="head"><span class="n">03</span><h3>Campanhas a partir das vossas bases</h3></div>
+        <ul>
+          <li>Pega numa lista em Excel, de empresas ou de clientes, e envia personalizado por contacto.</li>
+          <li>Datas relevantes tratadas sozinhas: aniversários, fim de pacote de aulas, regresso à época.</li>
+          <li>Volume distribuído no tempo, para a conta de WhatsApp nunca ser sinalizada pela Meta.</li>
+          <li>Quem responde entra na mesma caixa de entrada, já com a conversa no contexto.</li>
+        </ul>
+      </div>
+      <div class="card scope-card reveal">
+        <div class="head"><span class="n">04</span><h3>Back-office: faturação e reconciliação</h3></div>
+        <ul>
+          <li>Lê os extratos das vossas contas e cruza-os com as faturas emitidas e recebidas.</li>
+          <li>Sinaliza o que não bate certo em vez de decidir sozinho.</li>
+          <li>Liga ao SAGE pela API, que o Pedro confirmou ter canal de desenvolvimento aberto.</li>
+          <li>Nada é lançado sem passar pela validação de uma pessoa.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert" style="margin-top:28px">
+      <span class="dot"></span>
+      <div>
+        <b>Antes de fecharmos a mensalidade, fazemos uma auditoria da vossa comunicação.</b>
+        Ligamo-nos ao email, ao WhatsApp e às redes sociais, olhamos para os temas que entram e para o tempo médio
+        de resposta, e devolvemos isso em números. Serve para afinar o agente e para o Pedro ver como está a
+        comunicação hoje. Está incluída no valor de implementação.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. MOMENTO UAU ============ -->
+<section id="demo" data-nav="O agente">
+  <div class="container">
+    <span class="eyebrow">Ao vivo</span>
+    <h2>O agente a trabalhar</h2>
+    <p class="lead">À esquerda a conversa. À direita o que o agente está a fazer em cada passo. Quatro situações reais do clube.</p>
+    <div class="cr" id="mpcDemo" style="margin-top:32px"></div>
+    <script type="application/json" id="mpcDemo-config">
+{
+  "agentName": "Agente My Padel Center",
+  "agentInitials": "MPC",
+  "chatStatus": "WhatsApp Business, online",
+  "stepMs": 1400,
+  "endPauseMs": 2600,
+  "scenarios": [
+    {
+      "title": "Pedido de publicidade",
+      "subtitle": "O caso que o Pedro deu: a informação existe em PDF e alguém tem de a enviar.",
+      "chat": [
+        { "sender": "client", "text": "Boa tarde. Vi que têm espaços publicitários no clube. Podem enviar-me os valores?", "time": "14:12" },
+        { "sender": "agent", "text": "Boa tarde! Claro. Temos publicidade em campos de padel, bancadas, esplanada e ecrãs interiores, com contratos mensais ou por época.\n\nPara lhe enviar a tabela certa: é para uma empresa ou para uma marca a título individual?", "time": "14:12" },
+        { "sender": "client", "text": "Empresa. Somos uma clínica aqui da zona.", "time": "14:15" },
+        { "sender": "agent", "text": "Perfeito. Enviei agora para o seu email a **tabela completa de espaços publicitários**, com as medidas de cada suporte e os valores por mês e por época.\n\nJá lá vai também o mapa do clube com a localização de cada espaço.", "time": "14:15" },
+        { "sender": "client", "text": "Recebido, obrigado. E dá para combinar com aluguer de sala para uma ação nossa?", "time": "14:19" },
+        { "sender": "agent", "text": "Dá, e nesse caso costuma compensar. Vou pedir à equipa comercial que lhe ligue ainda hoje para montar as duas coisas em conjunto.\n\nConfirma-me só o melhor número e a hora que lhe dá jeito?", "time": "14:19" }
+      ],
+      "steps": [
+        { "icon": "message", "label": "Reconhece o tema: espaços publicitários" },
+        { "icon": "book", "label": "Vai à base de conhecimento do clube" },
+        { "icon": "filter", "label": "Qualifica: empresa ou particular" },
+        { "icon": "send", "label": "Envia o email com a tabela e o mapa em anexo" },
+        { "icon": "alert", "label": "Deteta pedido combinado, fora da tabela" },
+        { "icon": "user-cog", "label": "Passa à equipa comercial com o contexto todo" }
+      ]
+    },
+    {
+      "title": "Aula de grupo",
+      "subtitle": "Oito pessoas, uma pergunta de preço e um agendamento que fica feito.",
+      "chat": [
+        { "sender": "system", "text": "Mensagem recebida no Instagram, 21:47", "time": "21:47" },
+        { "sender": "client", "text": "Olá! Somos um grupo de 8 colegas de trabalho e queríamos experimentar padel. Nunca jogámos. Como funciona?", "time": "21:47" },
+        { "sender": "agent", "text": "Olá! Bem-vindos. Para quem nunca jogou, o mais comum é a **aula de iniciação**: são dois campos, dois professores e material incluído.\n\nCom 8 pessoas entram na condição de grupo, que é mais vantajosa do que a aula avulso.", "time": "21:47" },
+        { "sender": "client", "text": "Boa. Conseguem numa quinta à noite?", "time": "21:52" },
+        { "sender": "agent", "text": "Consigo, sim. Tenho **quinta-feira às 19h00 e às 20h30** com dois campos livres e professor disponível.\n\nQual das duas prefere? Reservo já, e o pagamento é feito online no link que envio a seguir.", "time": "21:52" },
+        { "sender": "client", "text": "19h00.", "time": "21:55" },
+        { "sender": "agent", "text": "Marcado para **quinta-feira às 19h00**, aula de iniciação para 8 pessoas.\n\nEnviei o link de pagamento. Assim que estiver liquidado, a reserva fica confirmada e recebem a morada e o que trazer.", "time": "21:55" }
+      ],
+      "steps": [
+        { "icon": "message", "label": "Entra fora de horas, responde na mesma" },
+        { "icon": "book", "label": "Identifica o serviço: iniciação em grupo" },
+        { "icon": "list", "label": "Aplica a condição de grupo da vossa tabela" },
+        { "icon": "calendar", "label": "Consulta a central de reservas em tempo real" },
+        { "icon": "check", "label": "Bloqueia dois campos e o professor" },
+        { "icon": "send", "label": "Envia o link de pagamento e confirma" }
+      ]
+    },
+    {
+      "title": "Campanha de regresso",
+      "subtitle": "A base de clientes deixa de estar muda. Sai do Excel, personalizado, ao ritmo certo.",
+      "chat": [
+        { "sender": "system", "text": "Campanha de setembro, 200 mensagens por dia", "time": "10:00" },
+        { "sender": "agent", "text": "Bom dia! Há algum tempo que não passa pelo clube e reparámos que o seu pacote de aulas terminou em julho.\n\nA nova época arranca agora e temos horários de manhã que costumavam ser os seus.", "time": "10:03" },
+        { "sender": "client", "text": "Pois é, com o verão deixei andar. Ainda têm aquele horário das 7h30?", "time": "10:41" },
+        { "sender": "agent", "text": "Temos, às terças e quintas às 7h30, com o mesmo professor.\n\nQuer que reserve um lugar para experimentar esta semana, sem compromisso de renovar já o pacote?", "time": "10:41" },
+        { "sender": "client", "text": "Pode ser na quinta.", "time": "10:44" },
+        { "sender": "agent", "text": "Feito. **Quinta-feira, 7h30.** Fica com lugar reservado e sem pagamento agora.\n\nSe quiser retomar o pacote depois da aula, falo com a receção para lhe darem as condições de renovação.", "time": "10:44" }
+      ],
+      "steps": [
+        { "icon": "database", "label": "Lê a lista em Excel e o histórico do cliente" },
+        { "icon": "clock", "label": "Distribui o envio para respeitar os limites da Meta" },
+        { "icon": "id", "label": "Personaliza com o pacote e o horário antigos" },
+        { "icon": "ear", "label": "A resposta entra e continua a conversa" },
+        { "icon": "calendar", "label": "Verifica o horário e reserva o lugar" },
+        { "icon": "user-cog", "label": "Deixa a renovação do pacote para a receção" }
+      ]
+    },
+    {
+      "title": "O que o agente não faz",
+      "subtitle": "Um pedido de desconto fora da tabela. O agente recusa avançar sozinho.",
+      "chat": [
+        { "sender": "client", "text": "Boa tarde. Queria alugar a sala grande para uma festa de empresa, 60 pessoas, com catering e dois campos reservados a seguir. Qual é o melhor preço que me conseguem fazer?", "time": "16:08" },
+        { "sender": "agent", "text": "Boa tarde. Consigo dar-lhe já a base: a sala para 60 pessoas, os dois campos e o apoio de bar estão todos na nossa tabela, e envio-lhe isso por escrito.\n\nO que não vou fazer é inventar um preço de pacote. Um evento com catering e campos juntos sai da tabela e quem negoceia isso é a equipa.", "time": "16:08" },
+        { "sender": "client", "text": "Mas não consegue mesmo dar um valor fechado?", "time": "16:11" },
+        { "sender": "agent", "text": "Não, e prefiro dizer-lho agora do que passar-lhe um número que depois não se cumpre.\n\nPara a equipa lhe ligar já com uma proposta a sério, preciso só de três coisas: **data pretendida**, se o catering é nosso ou externo, e se querem os campos antes ou depois do jantar.", "time": "16:11" },
+        { "sender": "client", "text": "14 de novembro, catering vosso, campos antes.", "time": "16:14" },
+        { "sender": "system", "text": "Conversa encaminhada para a equipa comercial com os dados recolhidos", "time": "16:14" }
+      ],
+      "steps": [
+        { "icon": "ear", "label": "Percebe o pedido: evento combinado" },
+        { "icon": "book", "label": "Confirma que não há preço de pacote na tabela" },
+        { "icon": "ban", "label": "Recusa fechar condições que não estão definidas" },
+        { "icon": "list", "label": "Recolhe os dados que faltam à equipa" },
+        { "icon": "shield", "label": "Não promete nem desconta por iniciativa própria" },
+        { "icon": "user-cog", "label": "Escala para a equipa comercial com tudo reunido" }
+      ]
+    }
+  ]
+}
+    </script>
+    <p class="demo-note">Conversas simuladas, com serviços reais do clube. Os horários e as condições são ilustrativos: o agente usa sempre a vossa tabela e a vossa disponibilidade real.</p>
+  </div>
+</section>
+
+<!-- ============ 6. INTEGRAÇÃO ============ -->
+<section class="section-alt" id="integracao" data-nav="Integração">
+  <div class="container">
+    <span class="eyebrow">Integração</span>
+    <h2>Como se liga ao que já têm</h2>
+    <p class="lead">Não se troca nada. O agente entra por cima dos sistemas que já usam.</p>
+    <div class="fluxo" id="mpcFluxo" style="margin-top:32px"></div>
+    <script type="application/json" id="mpcFluxo-config">
+{
+  "stepMs": 1800,
+  "channels": [
+    { "icon": "whatsapp", "label": "WhatsApp" },
+    { "icon": "message", "label": "Instagram" },
+    { "icon": "message", "label": "Facebook" },
+    { "icon": "globe", "label": "Email e site" },
+    { "icon": "phone", "label": "Chamada" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Tudo numa caixa", "detail": "Os cinco canais caem no mesmo sítio, com etiqueta por serviço e por clube.", "tone": "brand" },
+    { "icon": "id", "title": "Identifica quem é", "detail": "Cruza o contacto com as vossas bases em Excel e com o histórico de reservas.", "tone": "teal" },
+    { "icon": "calendar", "title": "Central de reservas", "detail": "Consulta disponibilidade de campos, professores e salas, e marca pela API.", "tone": "teal" },
+    { "icon": "database", "title": "SAGE", "detail": "Faturação e extratos, pela API que já têm com canal de desenvolvimento.", "tone": "teal" },
+    { "icon": "user-cog", "title": "A equipa decide", "detail": "O que sai da tabela, o que envolve negociação e as exceções chegam a uma pessoa.", "tone": "brand" }
+  ],
+  "note": "O Copilot que já introduziram continua onde está. Isto resolve o lado de fora, o que chega dos clientes."
+}
+    </script>
+  </div>
+</section>
+
+<!-- ============ 7. UNIBOX ============ -->
+<section id="caixa" data-nav="Caixa única">
+  <div class="container">
+    <span class="eyebrow">Caixa de entrada</span>
+    <h2>Cinco canais, dois clubes, uma caixa</h2>
+    <p class="lead">
+      O que hoje está espalhado por aplicações passa a uma vista só. Cada conversa com a sua etiqueta,
+      o agente a responder, e a equipa a entrar quando é preciso.
+    </p>
+    <div class="unibox" id="mpcInbox" style="--ub-accent:#0ea5e9; --ub-accent-fg:#fff; margin-top:32px"></div>
+    <script type="application/json" id="mpcInbox-config">
+{
+  "brand": "My Padel Center",
+  "teamName": "Equipa MPC",
+  "teamEmail": "geral@mypadelcenter.pt",
+  "teamInitials": "MPC",
+  "agentName": "Agente My Padel Center",
+  "accounts": ["Clube atual", "Clube novo"],
+  "channels": ["whatsapp", "instagram", "facebook", "email"],
+  "labels": {
+    "padel": { "name": "Padel e aulas", "color": "#a7c400", "priority": 0 },
+    "reservas": { "name": "Reservas de campo", "color": "#0ea5e9", "priority": 1 },
+    "eventos": { "name": "Salas e eventos", "color": "#6366f1", "priority": 2 },
+    "ginasio": { "name": "Ginásio e fisioterapia", "color": "#14b8a6", "priority": 3 },
+    "futsal": { "name": "Futsal e patinagem", "color": "#f59e0b", "priority": 4 },
+    "publicidade": { "name": "Publicidade e parcerias", "color": "#ec4899", "priority": 5 }
+  },
+  "conversations": [
+    {
+      "id": 1,
+      "name": "Rita Nogueira",
+      "initials": "RN",
+      "phone": "+351 91X XXX XXX",
+      "account": "Clube atual",
+      "channel": "instagram",
+      "label": "padel",
+      "tab": "mine",
+      "timeAgo": "6m",
+      "unread": 2,
+      "preview": "Somos 8 e nunca jogámos, como funciona?",
+      "messages": [
+        { "sender": "client", "text": "Olá! Somos um grupo de 8 colegas de trabalho e queríamos experimentar padel. Nunca jogámos.", "time": "21:47" },
+        { "sender": "agent", "isAI": true, "text": "Olá! Para quem nunca jogou o habitual é a **aula de iniciação**: dois campos, dois professores e material incluído. Com 8 pessoas entram na condição de grupo.", "time": "21:47" },
+        { "sender": "client", "text": "Conseguem numa quinta à noite?", "time": "21:52" },
+        { "sender": "agent", "isAI": true, "text": "Tenho **quinta às 19h00 e às 20h30** com dois campos e professor. Qual prefere?", "time": "21:52" }
+      ],
+      "attributes": [
+        { "key": "Serviço", "value": "Iniciação em grupo" },
+        { "key": "Pessoas", "value": "8" },
+        { "key": "Origem", "value": "Instagram" }
+      ],
+      "notes": ["Grupo de empresa. Vale a pena falar do pacote trimestral se voltarem."]
+    },
+    {
+      "id": 2,
+      "name": "Clínica Vale Verde",
+      "initials": "CV",
+      "email": "geral@exemplo.pt",
+      "account": "Clube atual",
+      "channel": "email",
+      "label": "publicidade",
+      "tab": "mine",
+      "timeAgo": "22m",
+      "unread": 0,
+      "preview": "Recebido, obrigado. E dá para combinar com sala?",
+      "messages": [
+        { "sender": "client", "text": "Boa tarde. Vi que têm espaços publicitários no clube. Podem enviar-me os valores?", "time": "14:12" },
+        { "sender": "agent", "isAI": true, "text": "Enviei a **tabela completa de espaços publicitários** com medidas e valores por mês e por época, mais o mapa do clube.", "time": "14:15" },
+        { "sender": "client", "text": "Recebido, obrigado. E dá para combinar com aluguer de sala para uma ação nossa?", "time": "14:19" },
+        { "sender": "system", "text": "Pedido combinado, fora da tabela. Encaminhado para a equipa comercial.", "time": "14:19" }
+      ],
+      "attributes": [
+        { "key": "Tipo", "value": "Empresa" },
+        { "key": "Interesse", "value": "Publicidade e sala" },
+        { "key": "Estado", "value": "Com a equipa" }
+      ],
+      "notes": ["Tabela de publicidade já enviada. Falta proposta de pacote."]
+    },
+    {
+      "id": 3,
+      "name": "Nuno Carvalho",
+      "initials": "NC",
+      "phone": "+351 96X XXX XXX",
+      "account": "Clube atual",
+      "channel": "whatsapp",
+      "label": "reservas",
+      "tab": "mine",
+      "timeAgo": "41m",
+      "unread": 0,
+      "preview": "Marcado para quinta às 7h30. Obrigado!",
+      "messages": [
+        { "sender": "agent", "isAI": true, "text": "Bom dia! O seu pacote de aulas terminou em julho e a nova época arranca agora. Temos horários de manhã como os seus.", "time": "10:03" },
+        { "sender": "client", "text": "Pois é, com o verão deixei andar. Ainda têm aquele horário das 7h30?", "time": "10:41" },
+        { "sender": "agent", "isAI": true, "text": "Terças e quintas às 7h30, com o mesmo professor. Reservo um lugar para experimentar, sem compromisso?", "time": "10:41" },
+        { "sender": "client", "text": "Marcado para quinta às 7h30. Obrigado!", "time": "10:44" }
+      ],
+      "attributes": [
+        { "key": "Campanha", "value": "Regresso de setembro" },
+        { "key": "Pacote", "value": "Terminou em julho" }
+      ],
+      "notes": ["Reativado por campanha. Receção fica de falar em renovação depois da aula."]
+    },
+    {
+      "id": 4,
+      "name": "Grupo Aurora",
+      "initials": "GA",
+      "phone": "+351 93X XXX XXX",
+      "account": "Clube atual",
+      "channel": "whatsapp",
+      "label": "eventos",
+      "tab": "unassigned",
+      "timeAgo": "1h",
+      "unread": 1,
+      "preview": "Festa de empresa, 60 pessoas, catering e campos",
+      "messages": [
+        { "sender": "client", "text": "Queria alugar a sala grande para uma festa de empresa, 60 pessoas, com catering e dois campos a seguir. Qual é o melhor preço?", "time": "16:08" },
+        { "sender": "agent", "isAI": true, "text": "Dou-lhe já a base da tabela por escrito. O que não vou fazer é inventar um preço de pacote: isso sai da tabela e quem negoceia é a equipa.", "time": "16:08" },
+        { "sender": "client", "text": "14 de novembro, catering vosso, campos antes.", "time": "16:14" },
+        { "sender": "system", "text": "Conversa encaminhada para a equipa comercial com os dados recolhidos.", "time": "16:14" }
+      ],
+      "attributes": [
+        { "key": "Data", "value": "14 de novembro" },
+        { "key": "Pessoas", "value": "60" },
+        { "key": "Catering", "value": "Interno" }
+      ],
+      "notes": ["O agente recusou fechar preço. Dados todos recolhidos, falta a proposta."]
+    },
+    {
+      "id": 5,
+      "name": "Sofia Mendes",
+      "initials": "SM",
+      "phone": "+351 92X XXX XXX",
+      "account": "Clube novo",
+      "channel": "facebook",
+      "label": "ginasio",
+      "tab": "unassigned",
+      "timeAgo": "2h",
+      "unread": 1,
+      "preview": "O ginásio abre a que horas ao sábado?",
+      "messages": [
+        { "sender": "client", "text": "Boa tarde, o ginásio do clube novo abre a que horas ao sábado?", "time": "15:20" },
+        { "sender": "agent", "isAI": true, "text": "Ao sábado o ginásio está aberto das 9h00 às 19h00. Quer que lhe envie as modalidades e os valores de inscrição?", "time": "15:20" },
+        { "sender": "client", "text": "Sim por favor. E fisioterapia também têm?", "time": "15:26" }
+      ],
+      "attributes": [
+        { "key": "Unidade", "value": "Clube novo" },
+        { "key": "Interesse", "value": "Ginásio e fisioterapia" }
+      ],
+      "notes": ["Fisioterapia é do parceiro. O agente passa o contacto, não marca."]
+    },
+    {
+      "id": 6,
+      "name": "André Quaresma",
+      "initials": "AQ",
+      "phone": "+351 91X XXX XXX",
+      "account": "Clube atual",
+      "channel": "whatsapp",
+      "label": "futsal",
+      "tab": "mine",
+      "timeAgo": "3h",
+      "unread": 0,
+      "preview": "Campo de futsal para sexta às 21h",
+      "messages": [
+        { "sender": "client", "text": "Boa noite, queria o campo de futsal para sexta às 21h.", "time": "20:11" },
+        { "sender": "agent", "isAI": true, "text": "Sexta às 21h está livre. Reservo em seu nome? O pagamento é feito online e a reserva fica confirmada de seguida.", "time": "20:11" },
+        { "sender": "client", "text": "Reserva sim.", "time": "20:13" },
+        { "sender": "agent", "isAI": true, "text": "Reservado. Enviei o link de pagamento e as indicações de acesso.", "time": "20:13" }
+      ],
+      "attributes": [
+        { "key": "Serviço", "value": "Futsal" },
+        { "key": "Estado", "value": "Reserva confirmada" }
+      ],
+      "notes": []
+    },
+    {
+      "id": 7,
+      "name": "Teresa Bastos",
+      "initials": "TB",
+      "email": "teresa@exemplo.pt",
+      "account": "Clube novo",
+      "channel": "email",
+      "label": "eventos",
+      "tab": "unassigned",
+      "timeAgo": "5h",
+      "unread": 0,
+      "preview": "Gabinete para alugar a partir de janeiro",
+      "messages": [
+        { "sender": "client", "text": "Bom dia, tenho interesse num gabinete para alugar no clube novo a partir de janeiro. É possível visitar?", "time": "09:34" },
+        { "sender": "agent", "isAI": true, "text": "Bom dia. É possível, sim. Tenho disponibilidade para visita durante a semana de manhã ou ao fim da tarde. Qual lhe dá mais jeito?", "time": "09:34" },
+        { "sender": "system", "text": "Visita a espaço para arrendamento: encaminhada para a equipa.", "time": "09:36" }
+      ],
+      "attributes": [
+        { "key": "Unidade", "value": "Clube novo" },
+        { "key": "Interesse", "value": "Aluguer de gabinete" },
+        { "key": "Início", "value": "Janeiro" }
+      ],
+      "notes": ["Arrendamento de espaço é sempre visita com a equipa."]
+    }
+  ]
+}
+    </script>
+    <p class="demo-note">Contactos e conversas simulados. Os serviços, os canais e as etiquetas são os do clube.</p>
+  </div>
+</section>
+
+<!-- ============ 8. BACK-OFFICE ============ -->
+<section class="section-alt" id="backoffice" data-nav="Back-office">
+  <div class="container">
+    <span class="eyebrow">Back-office</span>
+    <h2>Faturação e reconciliação, sem ninguém a cruzar linhas</h2>
+    <p class="lead">
+      O que o Pedro descreveu como tempo perdido. O agente lê, cruza, e levanta a mão quando alguma coisa não bate certo.
+    </p>
+    <div class="term" id="mpcTerm" style="margin-top:30px"></div>
+    <script type="application/json" id="mpcTerm-config">
+{
+  "title": "reconciliacao.log",
+  "intervalMs": 650,
+  "lines": [
+    { "text": "A ler extrato bancario do mes...", "tone": "info" },
+    { "text": "312 movimentos importados", "tone": "ok" },
+    { "text": "A cruzar com faturas emitidas no SAGE...", "tone": "info" },
+    { "text": "287 movimentos conciliados automaticamente", "tone": "ok" },
+    { "text": "18 pagamentos online de reservas agrupados num so deposito", "tone": "ok" },
+    { "text": "A validar faturas de fornecedores recebidas por email...", "tone": "info" },
+    { "text": "Fatura de bar sem artigo correspondente em stock, sinalizada", "tone": "warn" },
+    { "text": "2 movimentos sem documento associado, sinalizados", "tone": "warn" },
+    { "text": "Fechado. 305 de 312 conciliados. 7 excecoes para a equipa rever.", "tone": "success" }
+  ]
+}
+    </script>
+    <p class="demo-note">Números ilustrativos. Nada é lançado sem validação de uma pessoa: o agente concilia e sinaliza, não decide.</p>
+  </div>
+</section>
+
+<!-- ============ 9. LIMITES ============ -->
+<section id="limites" data-nav="Limites">
+  <div class="container">
+    <span class="eyebrow">Limites</span>
+    <h2>O que faz sozinho e o que nunca faz</h2>
+    <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
+    <div class="rules" style="margin-top:32px">
+      <div class="card rule does reveal">
+        <div class="ic">✓</div>
+        <h3>Faz sozinho</h3>
+        <ul>
+          <li>Responde ao primeiro contacto em qualquer canal, a qualquer hora.</li>
+          <li>Envia informação, tabelas e documentos que já existem.</li>
+          <li>Consulta disponibilidade e marca reservas e aulas.</li>
+          <li>Aplica as condições de grupo que estiverem na vossa tabela.</li>
+          <li>Envia campanhas personalizadas a partir das vossas listas.</li>
+          <li>Cruza extratos com faturas e sinaliza as diferenças.</li>
+        </ul>
+      </div>
+      <div class="card rule asks reveal">
+        <div class="ic">?</div>
+        <h3>Pergunta antes</h3>
+        <ul>
+          <li>Na fase inicial, os emails passam por revisão da equipa antes de saírem.</li>
+          <li>Pedidos que juntam serviços de linhas diferentes.</li>
+          <li>Alterações a reservas já pagas.</li>
+          <li>Qualquer coisa que envolva os parceiros do ginásio, da fisioterapia ou da restauração.</li>
+        </ul>
+      </div>
+      <div class="card rule stops reveal">
+        <div class="ic">✕</div>
+        <h3>Nunca faz</h3>
+        <ul>
+          <li>Não inventa preços nem condições que não estejam definidas.</li>
+          <li>Não dá descontos por iniciativa própria.</li>
+          <li>Não fecha eventos, patrocínios nem arrendamento de espaços.</li>
+          <li>Não lança faturas sozinho.</li>
+          <li>Não responde sobre o que não está na base de conhecimento: encaminha.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert" style="margin-top:28px">
+      <span class="dot"></span>
+      <div><b>Nunca erra em silêncio.</b> Sempre que o agente não sabe, não pode ou não deve, a conversa aparece na caixa com a razão à vista e a equipa entra.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. CUSTO DO WHATSAPP ============ -->
+<section class="section-alt" id="whatsapp" data-nav="WhatsApp">
+  <div class="container">
+    <span class="eyebrow">Transparência</span>
+    <h2>O que a Meta cobra, e porque não somos nós</h2>
+    <p class="lead">
+      Trabalhamos sempre com a API oficial. Custa mais do que a via não oficial, e é por isso que a conta do clube
+      não fica em risco de ser bloqueada.
+    </p>
+    <div class="meta-cost">
+      <div class="card mc reveal">
+        <b>5 cêntimos</b>
+        <span>Por cada mensagem de marketing que parte de vocês. Valor tabelado pela Meta, não é nosso.</span>
+      </div>
+      <div class="card mc reveal">
+        <b>1 cêntimo</b>
+        <span>Por cada mensagem seguinte na mesma conversa, a partir de outubro. Antes destas regras não havia custo.</span>
+      </div>
+      <div class="card mc reveal">
+        <b>200 por dia</b>
+        <span>Ritmo recomendado para uma campanha grande, em vez de um envio único. A Meta olha para a proporção entre o que sai e o que entra.</span>
+      </div>
+    </div>
+    <div class="alert" style="margin-top:26px">
+      <span class="dot"></span>
+      <div>
+        Uma campanha de 4.000 mensagens espalhada por 20 dias fica em cerca de 200 € de custo Meta, mais o que vier
+        das respostas. É faturado pelo consumo real, não por nós, e vê-se ao cêntimo.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. REFERÊNCIAS ============ -->
+<section id="casos" data-nav="Casos">
+  <div class="container">
+    <span class="eyebrow">Referências</span>
+    <h2>Já fizemos isto noutros sítios</h2>
+    <p class="lead">Casos públicos, com o mesmo padrão do vosso: procura a entrar por canais dispersos e equipa sem mãos a medir.</p>
+    <div class="cases">
+      <div class="card case reveal">
+        <div class="sector">Fitness e bem-estar</div>
+        <h3>Now Fitness Studio</h3>
+        <div class="metric">+50% novos clientes</div>
+        <p>
+          Estúdio premium com o mesmo receio que o Pedro levantou: automatizar sem perder o trato humano.
+          Duas semanas só a ouvir o histórico antes de responder a alguém. Hoje metade das adesões novas chega pelo funil automático.
+        </p>
+        <a href="https://aisolutions.pt/case-studies/now-fitness-instagram-automation">Ver o caso completo</a>
+      </div>
+      <div class="card case reveal">
+        <div class="sector">Aulas e formação</div>
+        <h3>Escola de Condução Abadias</h3>
+        <div class="metric">20.000+ mensagens</div>
+        <p>
+          O paralelo mais direto com as aulas de padel: o agente distingue quem já é aluno de quem ainda é lead,
+          e trata de cada um de maneira diferente. Responde também em inglês e espanhol.
+        </p>
+        <a href="https://aisolutions.pt/case-studies/abadias-gestao-alunos-whatsapp">Ver o caso completo</a>
+      </div>
+      <div class="card case reveal">
+        <div class="sector">Distribuição</div>
+        <h3>Luxflor</h3>
+        <div class="metric">695 clientes visíveis</div>
+        <p>
+          O caso da caixa única: 44.200 mensagens geridas num só sítio e, pela primeira vez, a gestão a ver
+          todas as conversas em vez de as ter espalhadas por telemóveis.
+        </p>
+        <a href="https://aisolutions.pt/case-studies/luxflor-centralization">Ver o caso completo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. INVESTIMENTO ============ -->
+<section class="section-alt" id="investimento" data-nav="Investimento">
+  <div class="container">
+    <span class="eyebrow">Investimento</span>
+    <h2>O que custa e o que inclui</h2>
+    <div class="grid-2" style="margin-top:34px">
+      <div class="card price-card reveal">
+        <div class="label">Implementação</div>
+        <div class="price">2.700 € <small style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--muted)">+ IVA</small></div>
+        <div class="note">
+          Agente de atendimento e qualificação nos cinco canais, envio automático de informação e documentos,
+          campanhas a partir das vossas bases, ligação à central de reservas e ao SAGE, automação de faturação e
+          reconciliação, e a auditoria de comunicação. Pagamento único no arranque.
+        </div>
+      </div>
+      <div class="card price-card reveal">
+        <div class="label">Mensalidade</div>
+        <div class="price">300 € <small style="font-family:var(--font-body); font-size:0.9rem; font-weight:600; color:var(--muted)">/ mês + IVA</small></div>
+        <div class="note">
+          Inclui alojamento, tokens de inteligência artificial, suporte com alguém alocado ao clube por WhatsApp,
+          e a melhoria contínua do agente. Atendimento das 9h às 18h, e mais tarde quando o problema é urgente.
+        </div>
+      </div>
+    </div>
+
+    <div class="crm reveal">
+      <div>
+        <span class="badge">Fora desta proposta</span>
+        <h3>O CRM à medida</h3>
+        <p>
+          Hoje não existe nenhum e a informação está dividida por vários Excel. É a peça que dá visibilidade ao
+          resto, e construída à medida fica bastante mais em conta do que as licenças de mercado.
+          Fica aqui só para o Pedro ter uma ideia de ordem de grandeza: o valor real depende do que quiserem que
+          o CRM faça, e a estimativa fecha-se depois de especificarmos isso em conjunto.
+        </p>
+      </div>
+      <div class="crm-num">
+        <div class="from">A partir de</div>
+        <div class="v">7.000 €<small>Valor indicativo, a especificar</small></div>
+      </div>
+    </div>
+
+    <p class="roi-line reveal">
+      Um único evento de empresa que hoje se perde por demora na resposta paga uma boa parte da implementação.
+      A pergunta não é quanto custa: é quanto está a custar o tempo que a equipa gasta no que não é atendimento nem venda.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 13. CRONOGRAMA ============ -->
+<section id="cronograma" data-nav="Cronograma">
+  <div class="container">
+    <span class="eyebrow">Cronograma</span>
+    <h2>Da adjudicação ao agente a responder</h2>
+    <div class="timeline" style="margin-top:36px">
+      <div class="tl-step reveal">
+        <div class="tl-dot">🔎</div>
+        <strong>Semana 1</strong>
+        <span>Auditoria da comunicação: ligamos email, WhatsApp e redes, e devolvemos os números do que entra hoje.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">📚</div>
+        <strong>Semana 2</strong>
+        <span>Base de conhecimento com a vossa oferta, tabelas e documentos. Acessos à central de reservas e ao SAGE.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🛠️</div>
+        <strong>Semanas 3 e 4</strong>
+        <span>Agente construído, caixa única montada e automações de back-office ligadas aos vossos dados.</span>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-dot">🚀</div>
+        <strong>Semanas 5 e 6</strong>
+        <span>Testes com mensagens reais, com revisão pela equipa antes de cada envio. Arranque e ajustes finos.</span>
+      </div>
+    </div>
+    <p class="demo-note">As semanas contam a partir da adjudicação.</p>
+  </div>
+</section>
+
+<!-- ============ 14. FASE SEGUINTE ============ -->
+<section class="section-alt" id="depois" data-nav="Fase seguinte">
+  <div class="container">
+    <span class="eyebrow">Fase seguinte</span>
+    <h2>Falado na reunião, fora desta proposta</h2>
+    <div class="grid-3" style="margin-top:32px">
+      <div class="card later reveal">
+        <span class="badge badge-later">Não fazemos</span>
+        <h3>Gestão de redes sociais</h3>
+        <p>
+          Publicar conteúdo não é serviço nosso e, de momento, não temos um parceiro que possamos recomendar com
+          confiança. O Manuel ficou de falar com a equipa e dizer alguma coisa, mesmo que seja alguém de fora.
+        </p>
+      </div>
+      <div class="card later reveal">
+        <span class="badge badge-later">Depois</span>
+        <h3>CRM à medida</h3>
+        <p>
+          Entra quando estiver especificado o que querem que ele faça. O agente já começa a alimentar dados
+          estruturados desde o primeiro dia, por isso nada se perde até lá.
+        </p>
+      </div>
+      <div class="card later reveal">
+        <span class="badge badge-later">Quando abrir</span>
+        <h3>Clube novo</h3>
+        <p>
+          O agente já nasce preparado para as duas unidades, com etiqueta por clube. Quando o novo abrir, é
+          configuração, não um projeto novo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 15. FECHO ============ -->
+<section class="closing" id="fecho" data-nav="Fecho">
+  <div class="container">
+    <div class="court"><i></i><i></i><i></i></div>
+    <h2>Avançamos, Pedro?</h2>
+    <p class="lead">Confirmamos tudo por escrito antes de arrancar. Sem compromisso imediato.</p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    <img class="logo-img" src="assets/img/logo.png" alt="My Padel Center">
+    Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para o My Padel Center
+    <span class="disclaimer">
+      As conversas, os contactos e os números das demonstrações são simulações, feitas com os serviços reais do clube.
+      Os valores de investimento são os apresentados na reunião de 24 de setembro de 2026.
+    </span>
+  </div>
+</footer>
+
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="../shared/unibox/unibox.js"></script>
+<script>
+  chatRaciocinio('mpcDemo');
+  fluxo('mpcFluxo');
+  terminal('mpcTerm');
+  unibox('mpcInbox');
+  /* Dot-nav lateral com scroll-spy */
+  (function () {
+    var secs = [].slice.call(document.querySelectorAll('section[data-nav]'));
+    var nav = document.querySelector('.dotnav');
+    if (!nav || !secs.length) return;
+    secs.forEach(function (s) {
+      var a = document.createElement('a');
+      a.href = '#' + s.id;
+      a.className = 'dot';
+      a.innerHTML = '<span>' + s.getAttribute('data-nav') + '</span>';
+      nav.appendChild(a);
+    });
+    var dots = [].slice.call(nav.children);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var i = secs.indexOf(e.target);
+        dots.forEach(function (d, j) { d.classList.toggle('on', i === j); });
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    secs.forEach(function (s) { io.observe(s); });
+  })();
+</script>
+</body>
+</html>
