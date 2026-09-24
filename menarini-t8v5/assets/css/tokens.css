@@ -1,0 +1,68 @@
+/* Estilo "clinico-menarini": claro, azul institucional + verde diagnostics.
+   Cores do logo A. Menarini Diagnostics: azul #004289, verde #008e5b.
+   O verde é a cor do agente (acento). Modo escuro em [data-theme="dark"]. */
+:root {
+  --brand-hsl: 211 100% 27%;
+  --accent-hsl: 158 100% 28%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --ink-hsl: 203 63% 21%;
+  --ink: hsl(var(--ink-hsl));
+
+  --bg: hsl(210 33% 98%);
+  --bg-soft: hsl(208 45% 95%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(210 40% 97%);
+  --border: hsl(211 30% 88%);
+
+  --text: hsl(210 55% 13%);
+  --muted: hsl(210 16% 40%);
+
+  --success-hsl: 158 100% 28%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 72% 46%;   --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 34 92% 42%;   --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--ink-hsl)) 110%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--ink-hsl)), hsl(var(--brand-hsl)) 70%);
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  /* consola (janela de produto, escura nos dois temas) */
+  --cs-bg: hsl(206 45% 9%);
+  --cs-panel: hsl(206 38% 13%);
+  --cs-line: hsl(206 30% 22%);
+  --cs-text: hsl(205 30% 92%);
+  --cs-muted: hsl(205 16% 62%);
+  --wa-hsl: 142 70% 40%;
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Manrope', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1180px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
+
+:root[data-theme="dark"] {
+  --brand-hsl: 211 90% 62%;
+  --accent-hsl: 158 70% 45%;
+  --on-brand: hsl(210 50% 8%);
+  --bg: hsl(208 40% 7%);
+  --bg-soft: hsl(208 36% 10%);
+  --surface: hsl(208 32% 12%);
+  --surface-2: hsl(208 30% 15%);
+  --border: hsl(208 24% 22%);
+  --text: hsl(205 30% 93%);
+  --muted: hsl(205 14% 66%);
+  --success-hsl: 158 70% 45%;
+  --danger-hsl: 356 80% 62%;
+  --warning-hsl: 38 92% 56%;
+  --grad-cta: linear-gradient(160deg, hsl(208 45% 16%), hsl(211 70% 24%) 70%);
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.3);
+  --shadow-md: 0 8px 28px hsl(0 0% 0% / 0.35);
+  --shadow-lg: 0 20px 56px hsl(0 0% 0% / 0.45);
+}

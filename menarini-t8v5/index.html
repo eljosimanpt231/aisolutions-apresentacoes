@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>A. Menarini Diagnostics | Serviço técnico fora de horas</title>
+  <meta name="description" content="Proposta AI Solutions para a A. Menarini Diagnostics Portugal: agente de voz para o serviço técnico fora de horas e prioridades de visita para Diabetes Care.">
+  <script>
+    try { var t = localStorage.getItem('ais-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/deck-slides.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <img class="pos" src="assets/img/menarini-logo.svg" alt="A. Menarini Diagnostics">
+      <img class="neg" src="assets/img/menarini-logo-neg.svg" alt="A. Menarini Diagnostics">
+    </div>
+    <div class="right">
+      <nav class="tabs" data-scope="deck">
+        <button class="tab active" data-tab="contexto">Contexto</button>
+        <button class="tab" data-tab="chamada">A chamada</button>
+        <button class="tab" data-tab="funciona">Como funciona</button>
+        <button class="tab" data-tab="diabetes">Diabetes Care</button>
+        <button class="tab" data-tab="proposta">Proposta</button>
+      </nav>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">◐</button>
+    </div>
+  </header>
+  <div class="progress"></div>
+
+  <main class="deck" id="deck">
+
+  <!-- ====================================================== -->
+  <!-- CONTEXTO                                               -->
+  <!-- ====================================================== -->
+  <section class="tab-panel active" id="contexto">
+
+    <!-- 1. Capa -->
+    <div class="slide active">
+      <div class="container">
+        <div class="cover-grid">
+          <div>
+            <img class="cover-logo pos" src="assets/img/menarini-logo.svg" alt="A. Menarini Diagnostics">
+            <img class="cover-logo neg" src="assets/img/menarini-logo-neg.svg" alt="A. Menarini Diagnostics">
+            <span class="eyebrow">A. Menarini Diagnostics × AI Solutions · 25 de setembro de 2026</span>
+            <h1>Nenhuma avaria fica<br>à espera <span class="grad">das 9h00.</span></h1>
+            <p class="lead" style="margin-top:20px">
+              Um agente de voz, em português de Portugal, que atende o serviço técnico fora de horas e à hora de almoço,
+              qualifica a avaria e põe o técnico da zona e a assistente de serviço técnico a par em minutos.
+            </p>
+          </div>
+          <div class="night reveal">
+            <div class="clock">19:10 <small>hoje, sem agente</small></div>
+            <ol>
+              <li><time>19:10</time><span>Um laboratório liga: o equipamento parou a meio da série.</span></li>
+              <li class="bad"><time>19:10</time><span>Atende uma gravação. Deixa mensagem.</span></li>
+              <li class="bad"><time>19:11</time><span>Desliga sem saber se alguém ouviu.</span></li>
+              <li><time>09:00</time><span>Volta a ligar. A assistente só agora sabe da avaria.</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="card stat-card reveal"><div class="num">~<span class="count" data-to="3">0</span> por dia</div><div class="desc">Chamadas fora do horário, quase todas de avarias</div></div>
+          <div class="card stat-card reveal"><div class="num">~<span class="count" data-to="100">0</span> por mês</div><div class="desc">Clientes que hoje ficam sem resposta até ao dia seguinte</div></div>
+          <div class="card stat-card reveal"><div class="num"><span class="count" data-to="500">0</span>+</div><div class="desc">Equipamentos instalados em laboratórios e hospitais que dependem desta linha</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. O que ouvimos -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que ouvimos a 17 de setembro</span>
+        <h2>Três pontos, por ordem de arranque</h2>
+        <div class="grid-3" style="margin-top:26px">
+          <div class="card reveal">
+            <div class="pain-num">01 · Serviço técnico</div>
+            <h3 style="margin-top:8px">Fora de horas, só uma gravação</h3>
+            <p class="small">Depois do horário e à hora de almoço (quando quem atende não está no edifício), o cliente deixa mensagem e não tem resposta até ao dia seguinte. O objetivo não é resolver na chamada: é tranquilizar e fazer chegar a informação certa à assistente e ao técnico da zona.</p>
+            <span class="prio">Arranque: fase 1</span>
+          </div>
+          <div class="card reveal">
+            <div class="pain-num">02 · Diabetes Care</div>
+            <h3 style="margin-top:8px">Onde visitar este mês</h3>
+            <p class="small">Oito delegados, cerca de 80 bricks cada. Os dados mensais da HMR já dizem quantas caixas se dispensam e a quota da Menarini em cada centro de saúde. Falta transformar isso em prioridades, cruzando fidelidade, potencial e distância.</p>
+            <span class="prio">Arranque: fase 1</span>
+          </div>
+          <div class="card reveal">
+            <div class="pain-num">03 · Concursos públicos</div>
+            <h3 style="margin-top:8px">Conhecimento em Excel dispersos</h3>
+            <p class="small">Adjudicações, preços, quantidades e concorrentes guardados em ficheiros soltos e na memória de cada gestor de produto. Tem valor, mas não é o mais urgente.</p>
+            <span class="prio later">Fase seguinte</span>
+          </div>
+        </div>
+        <p class="quote">Passo a passo, sempre com o conhecimento da assistente de serviço técnico. Foi assim que o Nuno descreveu o arranque, e é assim que está desenhado.</p>
+      </div>
+    </div>
+
+    <!-- 3. Hoje vs com o agente -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">A mesma avaria, duas noites</span>
+        <h2>O que muda para quem liga às 19h10</h2>
+        <div class="vs">
+          <div class="card card-dont reveal">
+            <h3>Hoje</h3>
+            <ul class="tl">
+              <li><time>19:10</time><span>Gravação fora de horas. O cliente deixa mensagem.</span></li>
+              <li><time>19:11</time><span>Sem confirmação. Não sabe se alguém vai aparecer.</span></li>
+              <li><time>09:00</time><span>O cliente volta a ligar. A assistente ouve as mensagens da noite.</span></li>
+              <li><time>09:30</time><span>A avaria chega ao técnico da zona, catorze horas depois.</span></li>
+            </ul>
+          </div>
+          <div class="card card-do reveal">
+            <h3>Com o agente de voz</h3>
+            <ul class="tl">
+              <li><time>19:10</time><span>O agente atende em português de Portugal e identifica quem liga, a entidade e o equipamento.</span></li>
+              <li><time>19:12</time><span>Pergunta o que interessa: o erro, se está parado, se há amostras em espera, o contacto.</span></li>
+              <li><time>19:13</time><span>O técnico da zona e a assistente recebem o resumo por WhatsApp. O caso fica no Salesforce.</span></li>
+              <li><time>19:13</time><span>O cliente recebe o número do pedido. Desliga descansado.</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="quote">O cliente não precisa que a avaria se resolva às 19h. Precisa de saber que alguém já sabe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- A CHAMADA                                              -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="chamada">
+
+    <!-- 4. Roleplay -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Ao vivo · experimente</span>
+        <h2>Ligue ao agente como se fosse um cliente</h2>
+        <p class="lead">Um agente em versão de demonstração, já em português de Portugal. Faça de técnico de laboratório com uma avaria ao fim do dia.</p>
+        <div class="rp">
+          <div class="persona reveal">
+            <div class="k">O seu papel</div>
+            <h3>Técnica de laboratório, 19h10</h3>
+            <p>Trabalha num laboratório de análises clínicas em Santarém. O analisador de hemoglobina glicada deu um erro e parou a meio da série. Há amostras em espera para amanhã de manhã. Ligou para o serviço técnico da Menarini.</p>
+            <div class="call"><i></i>Ligação em curso com o agente de demonstração</div>
+          </div>
+          <div class="card reveal">
+            <h3>O que o agente tem de apanhar</h3>
+            <ol class="collect">
+              <li><div><b>Quem liga</b><span>Nome e função</span></div></li>
+              <li><div><b>Entidade e localidade</b><span>É o que define a zona e o técnico</span></div></li>
+              <li><div><b>Equipamento</b><span>Modelo ou número de série, se a pessoa souber</span></div></li>
+              <li><div><b>O que está a acontecer</b><span>Erro, sintoma, parado ou só degradado</span></div></li>
+              <li><div><b>Urgência</b><span>Amostras em espera, equipamento de urgência</span></div></li>
+              <li><div><b>Contacto de retorno</b><span>E fecha a tranquilizar, com o número do pedido</span></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Consola (replay automático) -->
+    <div class="slide tight wide">
+      <div class="container">
+        <span class="eyebrow">O que aconteceu por trás</span>
+        <h2>Enquanto a chamada decorre, a consola trabalha</h2>
+        <div class="cs" id="csDemo"></div>
+        <p class="cs-note">Replay de uma chamada como a que acabou de fazer. Nomes, laboratório, número de série e número de pedido fictícios.</p>
+      </div>
+    </div>
+    <script type="application/json" id="csDemo-config">
+    {
+      "title": "Serviço técnico · consola do agente",
+      "clockStart": "19:10",
+      "number": "+351 243 ··· 418",
+      "callerLabel": "Marta",
+      "timeScale": 4.6,
+      "fields": [
+        { "key": "nome", "label": "Quem liga" },
+        { "key": "entidade", "label": "Entidade" },
+        { "key": "local", "label": "Localidade" },
+        { "key": "equip", "label": "Equipamento" },
+        { "key": "sintoma", "label": "O que acontece" },
+        { "key": "estado", "label": "Estado" },
+        { "key": "amostras", "label": "Amostras" },
+        { "key": "contacto", "label": "Contacto" }
+      ],
+      "rules": [
+        { "label": "Equipamento parado" },
+        { "label": "Amostras em espera" },
+        { "label": "Contrato de assistência ativo" },
+        { "label": "Equipamento de urgência 24h" }
+      ],
+      "queue": [
+        { "time": "18:34", "who": "Centro Clínico Arrábida", "what": "Leitura intermitente, equipamento a trabalhar", "tag": "Normal · 9h00", "tone": "" },
+        { "time": "13:05", "who": "Laboratório Foz do Mondego", "what": "Pedido de reagentes à hora de almoço", "tag": "Equipa comercial", "tone": "com" }
+      ],
+      "events": [
+        [0,     "status", { "label": "a tocar", "cls": "ring" }],
+        [900,   "status", { "label": "em curso", "cls": "live" }],
+        [1300,  "say", { "who": "agent", "text": "Boa tarde, fala a assistente virtual do serviço técnico da A. Menarini Diagnostics. O horário de atendimento já terminou, mas posso registar o seu pedido e avisar a equipa agora. Com quem estou a falar?" }],
+        [4600,  "say", { "who": "caller", "text": "Boa tarde, é a Marta Lopes, técnica do Laboratório Tejo Norte, em Santarém." }],
+        [6300,  "field", { "key": "nome", "value": "Marta Lopes · técnica" }],
+        [6600,  "field", { "key": "entidade", "value": "Laboratório Tejo Norte" }],
+        [6900,  "field", { "key": "local", "value": "Santarém" }],
+        [7100,  "lookup", { "text": "A procurar «Tejo Norte» na base instalada (Salesforce)…" }],
+        [7600,  "say", { "who": "agent", "text": "Obrigada, Marta. Qual é o equipamento e o que está a acontecer?" }],
+        [8900,  "client", { "name": "Laboratório Tejo Norte", "sub": "Cliente com contrato de assistência", "rows": [["Zona", "Lisboa e Vale do Tejo"], ["Equipamentos", "2 instalados"], ["Técnico", "**Rui Matos**"], ["Assistente", "Serviço técnico (cópia)"]] }],
+        [9900,  "say", { "who": "caller", "text": "É o analisador de hemoglobina glicada. Deu um erro de pressão e parou a meio da série." }],
+        [12000, "field", { "key": "equip", "value": "Analisador de HbA1c · n.º série ···4471" }],
+        [12300, "field", { "key": "sintoma", "value": "Erro de pressão, parou a meio da série" }],
+        [12800, "say", { "who": "agent", "text": "Percebo. O equipamento está totalmente parado ou ainda consegue processar amostras?" }],
+        [14600, "clock", { "value": "19:12" }],
+        [15300, "say", { "who": "caller", "text": "Está parado. Tenho cerca de quarenta amostras em espera para amanhã de manhã." }],
+        [17300, "field", { "key": "estado", "value": "**Parado**" }],
+        [17600, "field", { "key": "amostras", "value": "Cerca de 40 em espera" }],
+        [17900, "rule", { "i": 0, "ok": true }],
+        [18300, "rule", { "i": 1, "ok": true }],
+        [18300, "say", { "who": "agent", "text": "Obrigada. Qual é o melhor contacto para o técnico lhe ligar?" }],
+        [18700, "rule", { "i": 2, "ok": true }],
+        [19100, "rule", { "i": 3, "ok": false }],
+        [19700, "severity", { "level": "Alta", "cls": "alta", "text": "Avisar o técnico da zona agora, assistente em cópia" }],
+        [20700, "say", { "who": "caller", "text": "Pode ser este número." }],
+        [21900, "field", { "key": "contacto", "value": "Este número (243 ··· 418)" }],
+        [22100, "clock", { "value": "19:13" }],
+        [22400, "route", { "channel": "WhatsApp", "to": "Rui Matos · técnico", "time": "19:13", "text": "**Avaria · prioridade alta** · pedido 00012847\nLaboratório Tejo Norte, Santarém\nHbA1c parado (erro de pressão), ~40 amostras em espera\nLigar a Marta Lopes · 243 ··· 418" }],
+        [22900, "say", { "who": "agent", "text": "Fica registado. O técnico da sua zona já foi avisado e a assistente de serviço técnico acompanha o pedido. Vai receber agora uma mensagem com o número do pedido." }],
+        [23500, "route", { "channel": "WhatsApp", "to": "Assistente de serviço técnico", "time": "19:13", "text": "Cópia do pedido 00012847, enviado ao Rui Matos. Resumo, transcrição e gravação no caso." }],
+        [24600, "route", { "channel": "Salesforce", "to": "Caso 00012847", "time": "19:13", "kind": "crm", "text": "Laboratório Tejo Norte · HbA1c ···4471\nPrioridade alta · origem: voz fora de horas" }],
+        [25700, "route", { "channel": "SMS", "to": "Marta Lopes", "time": "19:13", "kind": "sms", "text": "Recebemos o seu pedido 00012847. O técnico da sua zona já foi avisado e vai contactá-la." }],
+        [26400, "say", { "who": "caller", "text": "Perfeito, obrigada." }],
+        [27700, "say", { "who": "agent", "text": "Obrigada eu, Marta. Boa noite." }],
+        [29200, "status", { "label": "terminada · 2:14", "cls": "done" }],
+        [29400, "quiet", {}],
+        [30300, "queue", { "time": "19:10", "who": "Laboratório Tejo Norte", "what": "HbA1c parado · **técnico avisado às 19:13**", "tag": "Alta · em curso", "tone": "alta" }],
+        [31500, "clock", { "value": "19:13" }]
+      ]
+    }
+    </script>
+
+    <!-- 6. Cenários: chat + raciocínio -->
+    <div class="slide section-alt tight">
+      <div class="container">
+        <span class="eyebrow">Outras noites, outras chamadas</span>
+        <h2>Quatro chamadas, quatro caminhos diferentes</h2>
+        <p class="lead">A conversa à esquerda, o que o agente está a decidir à direita.</p>
+        <div class="cr" id="crDemo" style="margin-top:18px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="crDemo-config">
+    {
+      "agentName": "Serviço técnico Menarini",
+      "agentInitials": "MD",
+      "chatStatus": "Chamada de voz · transcrição em direto",
+      "stepMs": 1350,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "Urgência às 3h",
+          "subtitle": "Equipamento de urgência hospitalar parado, com contrato de piquete.",
+          "chat": [
+            { "sender": "system", "text": "Chamada recebida às 03:12, fora de horas", "time": "03:12" },
+            { "sender": "client", "text": "Fala do laboratório de urgência do Hospital do Litoral. O analisador parou e temos doentes à espera de resultados.", "time": "03:12" },
+            { "sender": "agent", "text": "Vou tratar disto já. Consegue dizer-me o erro que aparece no ecrã?", "time": "03:12" },
+            { "sender": "client", "text": "Erro de comunicação com o módulo de amostras. Não arranca.", "time": "03:13" },
+            { "sender": "agent", "text": "Obrigada. O técnico de piquete está a ser **avisado neste momento** e liga-lhe diretamente. O seu pedido é o **00012851**.", "time": "03:13" }
+          ],
+          "steps": [
+            { "icon": "phone", "label": "Atende em português de Portugal, fora de horas" },
+            { "icon": "id", "label": "Identifica o hospital na base instalada" },
+            { "icon": "shield", "label": "Confirma contrato de piquete 24h para este equipamento" },
+            { "icon": "alert", "label": "Gravidade crítica: urgência hospitalar parada" },
+            { "icon": "send", "label": "Liga ao técnico de piquete e envia o resumo por WhatsApp, assistente em cópia" }
+          ]
+        },
+        {
+          "title": "Hora de almoço",
+          "subtitle": "Não é uma avaria: é um pedido comercial.",
+          "chat": [
+            { "sender": "system", "text": "Chamada recebida às 13:05, sem ninguém na receção", "time": "13:05" },
+            { "sender": "client", "text": "Boa tarde, queria encomendar reagentes para a próxima semana.", "time": "13:05" },
+            { "sender": "agent", "text": "Com certeza. Qual é o laboratório e que reagentes precisa?", "time": "13:05" },
+            { "sender": "client", "text": "Laboratório Foz do Mondego. As tiras e os calibradores do costume.", "time": "13:06" },
+            { "sender": "agent", "text": "Fica registado e segue já para a equipa comercial, que lhe confirma a encomenda ainda hoje à tarde.", "time": "13:06" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Percebe que não é avaria: é pedido comercial" },
+            { "icon": "search", "label": "Identifica o cliente e o histórico de encomendas" },
+            { "icon": "list", "label": "Regista o pedido com o que foi dito" },
+            { "icon": "arrows", "label": "Encaminha para a equipa comercial, não para o técnico" }
+          ]
+        },
+        {
+          "title": "Avaria que pode esperar",
+          "subtitle": "O equipamento trabalha: vai para a fila da manhã.",
+          "chat": [
+            { "sender": "system", "text": "Chamada recebida às 18:34", "time": "18:34" },
+            { "sender": "client", "text": "O equipamento está a dar uma leitura intermitente, mas continua a trabalhar.", "time": "18:34" },
+            { "sender": "agent", "text": "Percebo. Está a conseguir processar as amostras de hoje?", "time": "18:35" },
+            { "sender": "client", "text": "Sim, está só estranho. Amanhã de manhã chega.", "time": "18:35" },
+            { "sender": "agent", "text": "Fica na primeira lista da assistente de serviço técnico amanhã às 9h00. Vai receber o número do pedido por SMS.", "time": "18:35" }
+          ],
+          "steps": [
+            { "icon": "wrench", "label": "Recolhe o sintoma e o estado do equipamento" },
+            { "icon": "check", "label": "Equipamento a trabalhar, sem amostras em risco" },
+            { "icon": "clock", "label": "Gravidade normal: não acorda ninguém" },
+            { "icon": "calendar", "label": "Entra na fila da manhã, ordenada por gravidade" }
+          ]
+        },
+        {
+          "title": "O agente não promete",
+          "subtitle": "Pedem um prazo e instruções técnicas: o agente não inventa.",
+          "chat": [
+            { "sender": "client", "text": "Garante-me que o técnico chega cá em duas horas? E diga-me já como desmonto o módulo.", "time": "20:02" },
+            { "sender": "agent", "text": "Não lhe consigo garantir um prazo, isso é o técnico que confirma. E para não arriscar o equipamento, **não vou dar instruções de desmontagem**.", "time": "20:02" },
+            { "sender": "agent", "text": "O que faço agora: aviso o técnico da zona com tudo o que me disse, marcado como urgente, e ele liga-lhe a confirmar quando chega.", "time": "20:03" },
+            { "sender": "client", "text": "Está bem, fico à espera.", "time": "20:03" }
+          ],
+          "steps": [
+            { "icon": "ban", "label": "Não promete prazos de intervenção" },
+            { "icon": "book", "label": "Não dá instruções técnicas fora da base aprovada" },
+            { "icon": "user-cog", "label": "Passa a decisão ao técnico, com o contexto todo" },
+            { "icon": "send", "label": "Resumo ao técnico e à assistente, marcado urgente" }
+          ]
+        }
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- COMO FUNCIONA                                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="funciona">
+
+    <!-- 7. Fluxo -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Ligação aos vossos sistemas</span>
+        <h2>Da chamada ao técnico da zona, sem ninguém ao telefone</h2>
+        <p class="lead">O agente trabalha em cima do que a Menarini já usa: o número do serviço técnico, o Salesforce e o WhatsApp da equipa.</p>
+        <div class="fluxo" id="fxDemo" style="margin-top:26px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="fxDemo-config">
+    {
+      "stepMs": 1800,
+      "channels": [
+        { "icon": "phone", "label": "Fora de horas" },
+        { "icon": "clock", "label": "Hora de almoço" }
+      ],
+      "nodes": [
+        { "icon": "phone", "title": "Chamada atendida", "detail": "No número de sempre do serviço técnico, quando ninguém pode atender.", "tone": "brand" },
+        { "icon": "id", "title": "Identifica", "detail": "Quem liga, a entidade e o equipamento, na base instalada do Salesforce.", "tone": "teal" },
+        { "icon": "filter", "title": "Classifica", "detail": "Gravidade pelas vossas regras: parado, amostras em espera, urgência, contrato.", "tone": "teal" },
+        { "icon": "send", "title": "Avisa", "detail": "Técnico da zona por WhatsApp, sempre com a assistente em cópia.", "tone": "teal" },
+        { "icon": "database", "title": "Regista", "detail": "Caso no Salesforce com transcrição e gravação. Fila da manhã pronta.", "tone": "brand" }
+      ],
+      "note": "O reencaminhamento na central telefónica e o acesso ao Salesforce confirmam-se com a vossa equipa de sistemas na auditoria inicial."
+    }
+    </script>
+
+    <!-- 8. Regras -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Controlo</span>
+        <h2>Três regras que o agente não quebra</h2>
+        <div class="rules3">
+          <div class="card reveal"><h3>Não diagnostica</h3><p>Recolhe o sintoma e o erro, não tenta resolver a avaria nem dá instruções técnicas. A base de conhecimento dos manuais fica para uma fase seguinte, e só com o que a Menarini aprovar.</p></div>
+          <div class="card reveal"><h3>Não promete</h3><p>Não compromete prazos de intervenção, peças ou condições de contrato. Diz o que já foi feito e quem vai contactar.</p></div>
+          <div class="card reveal"><h3>A assistente sabe sempre</h3><p>Todas as chamadas chegam à assistente de serviço técnico, mesmo as que seguem direto para o técnico. Nada fica só entre o agente e o cliente.</p></div>
+        </div>
+        <div class="people">
+          <div class="card card-do reveal">
+            <h3>O agente faz</h3>
+            <ul class="list-check">
+              <li>Atende fora de horas e à hora de almoço, sem fila</li>
+              <li>Qualifica: quem, onde, que equipamento, que avaria, que urgência</li>
+              <li>Separa avarias de pedidos comerciais</li>
+              <li>Avisa o técnico da zona conforme as regras de gravidade que definirem</li>
+              <li>Regista tudo no Salesforce e deixa a fila da manhã ordenada</li>
+            </ul>
+          </div>
+          <div class="card reveal" style="border-top:4px solid var(--brand)">
+            <h3>Fica com as pessoas</h3>
+            <ul class="list-check">
+              <li>A decisão de enviar o técnico e quando</li>
+              <li>O diagnóstico e a reparação</li>
+              <li>As condições de contrato e de piquete</li>
+              <li>As regras de gravidade: a Menarini define, o agente cumpre</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- DIABETES CARE                                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="diabetes">
+
+    <!-- 9. Dashboard de prioridades -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Diabetes Care · prioridades de visita</span>
+        <h2>O ficheiro da HMR entra, a lista de visitas sai</h2>
+        <p class="lead">Todos os meses a equipa carrega o ficheiro que já extrai da HMR. Cada centro de saúde recebe uma prioridade a partir da fidelidade, do potencial e da distância. Mexa nos ponderadores.</p>
+        <div class="pv" id="pv"></div>
+        <p class="cs-note" style="color:var(--muted)">Dados fictícios, ilustrativos. A versão real usa o ficheiro mensal da HMR e as bases de cada delegado. Mercado calculado a 15,87 € por caixa de 50 tiras.</p>
+      </div>
+    </div>
+    <script type="application/json" id="pv-config">
+    {
+      "mes": "outubro",
+      "fonte": "dados fictícios",
+      "precoCaixa": 15.87,
+      "visitasMes": 6,
+      "centros": [
+        { "nome": "USF Ribeira Alta", "brick": "Brick 214", "caixas": 420, "quota": 12, "km": 18 },
+        { "nome": "UCSP Vale do Sorraia", "brick": "Brick 214", "caixas": 260, "quota": 64, "km": 34 },
+        { "nome": "USF Terras do Tejo", "brick": "Brick 214", "caixas": 510, "quota": 38, "km": 52 },
+        { "nome": "USF Almonda", "brick": "Brick 215", "caixas": 180, "quota": 5, "km": 12 },
+        { "nome": "UCSP Charneca", "brick": "Brick 215", "caixas": 340, "quota": 22, "km": 27 },
+        { "nome": "Lar Quinta das Oliveiras", "brick": "Brick 215", "caixas": 90, "quota": 80, "km": 9 },
+        { "nome": "USF Lezíria Norte", "brick": "Brick 216", "caixas": 460, "quota": 8, "km": 61 },
+        { "nome": "USF Campo Largo", "brick": "Brick 216", "caixas": 300, "quota": 45, "km": 44 },
+        { "nome": "UCSP Ponte Velha", "brick": "Brick 216", "caixas": 150, "quota": 2, "km": 71 },
+        { "nome": "Hospital de Dia Norte", "brick": "Brick 217", "caixas": 380, "quota": 55, "km": 23 },
+        { "nome": "USF Serra Mansa", "brick": "Brick 217", "caixas": 210, "quota": 18, "km": 39 },
+        { "nome": "UCSP Rio Maior Sul", "brick": "Brick 217", "caixas": 120, "quota": 30, "km": 58 }
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- PROPOSTA                                               -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="proposta">
+
+    <!-- 10. Fases -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Passo a passo</span>
+        <h2>Como arrancamos</h2>
+        <div class="phase">
+          <div class="card now reveal">
+            <div class="n">Fase 1 · agente de voz</div>
+            <h3>Serviço técnico fora de horas</h3>
+            <ul>
+              <li>Auditoria prévia às chamadas: volumes, horários, tipos de pedido</li>
+              <li>Regras de gravidade e zonas definidas com a assistente de serviço técnico</li>
+              <li>Ligação ao número atual, ao Salesforce e ao WhatsApp da equipa</li>
+              <li>Piloto acompanhado antes de ficar sozinho à noite</li>
+            </ul>
+          </div>
+          <div class="card now reveal">
+            <div class="n">Fase 1 · Diabetes Care</div>
+            <h3>Prioridades de visita</h3>
+            <ul>
+              <li>Leitura do ficheiro mensal da HMR, com NDA assinado</li>
+              <li>Ponderadores de fidelidade, potencial e distância afinados convosco</li>
+              <li>Vista por delegado e por brick</li>
+              <li>A equipa carrega o ficheiro todos os meses e fica autónoma</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="n">Fase seguinte</div>
+            <h3>Quando a fase 1 estiver a render</h3>
+            <ul>
+              <li>Base de conhecimento com os manuais técnicos, para o agente ajudar a despistar e apoiar o técnico</li>
+              <li>Dashboard de concursos públicos: preços, quantidades e concorrentes por área e produto</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert reveal"><span class="dot"></span><div>Os dados da HMR não identificam pessoas. Da nossa parte, assinamos um acordo de confidencialidade que garante que são usados só no âmbito da solução contratada.</div></div>
+      </div>
+    </div>
+
+    <!-- 11. Investimento (sempre em último) -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Investimento</span>
+        <h2>Valores indicativos para o budget de 7 de outubro</h2>
+        <p class="lead">Como falámos: o valor final fecha-se depois da auditoria prévia às chamadas e aos dados.</p>
+        <div class="inv-grid">
+          <div class="card price-card voz reveal">
+            <div class="label">Agente de voz · serviço técnico</div>
+            <div class="price">6.000 a 7.000 €<small>+ IVA</small></div>
+            <div class="note">Desenvolvimento, integração com o Salesforce e o WhatsApp, regras de gravidade e piloto acompanhado.</div>
+          </div>
+          <div class="card price-card reveal">
+            <div class="label">Prioridades de visita · Diabetes Care</div>
+            <div class="price">6.000 a 7.000 €<small>+ IVA</small></div>
+            <div class="note">Dashboard mensal alimentado pelo ficheiro da HMR, ponderadores ajustáveis e vista por brick.</div>
+          </div>
+        </div>
+        <div class="terms">
+          <div><b>Pagamento faseado</b>Por entregas, para não pesar num só trimestre.</div>
+          <div><b>Utilização mensal</b>Os minutos de voz e o número dependem do volume real e ficam na proposta formal.</div>
+          <div><b>Fase seguinte</b>Base de conhecimento e concursos públicos orçamentados à parte.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <div class="pager">
+    <button data-prev aria-label="Anterior">‹</button>
+    <span class="pos">1 / 3</span>
+    <button data-next aria-label="Seguinte">›</button>
+    <span class="hint">← → no teclado</span>
+  </div>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a A. Menarini Diagnostics Portugal · Diogo Gonçalves
+      <span class="disclaimer">Esboço de solução. Ecrãs, nomes e valores dos exemplos são ilustrativos.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/consola.js"></script>
+  <script src="assets/js/prioridades.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    consola('csDemo');
+    chatRaciocinio('crDemo');
+    fluxo('fxDemo');
+    prioridades('pv');
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var r = document.documentElement;
+      var dark = r.getAttribute('data-theme') === 'dark' ||
+        (!r.getAttribute('data-theme') && false);
+      var next = dark ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('ais-theme', next); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
