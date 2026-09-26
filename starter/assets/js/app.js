@@ -1,164 +1,165 @@
 /* ============================================================
    MOTOR DA APRESENTAÇÃO
-   1. Reveal on scroll   2. Contadores   3. Tabs (formato deck)
-   4. Simulação WhatsApp com guião (o "momento uau")
+   1. Contadores   2. Tabs acessíveis   3. Scroll-spy da navegação
+   4. Fallback de entrada para browsers sem scroll-driven animations
+
+   A simulação WhatsApp simples saiu daqui: o momento uau canónico é
+   o chatRaciocinio de shared/deck/. Ver referencias/deck-componentes.md.
+
+   Princípio: este ficheiro só ACRESCENTA. Sem ele, a página continua
+   completa e legível.
    ============================================================ */
 
-/* ---------- 1. Reveal on scroll ---------- */
-(function () {
-  const els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('visible')); return; }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
-  }, { threshold: 0.12 });
-  els.forEach(e => io.observe(e));
-})();
+const movimentoReduzido = matchMedia('(prefers-reduced-motion: reduce)');
 
-/* ---------- 2. Contadores animados: <span class="count" data-to="90" data-suffix="%"> ---------- */
+/* ---------- 1. Contadores: <span class="conta" data-para="90" data-sufixo="%"> ----------
+   O valor final vai para o DOM ANTES de animar: se o JS parar a meio,
+   se o utilizador pedir menos movimento, ou se um leitor de ecrã ler
+   agora, o número certo já lá está. */
 (function () {
-  const els = document.querySelectorAll('.count');
+  const els = document.querySelectorAll('.conta');
   if (!els.length) return;
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => {
+
+  const formata = (n, casas) =>
+    n.toLocaleString('pt-PT', { minimumFractionDigits: casas, maximumFractionDigits: casas });
+
+  els.forEach(el => {
+    const para = parseFloat(el.dataset.para || '0');
+    const casas = parseInt(el.dataset.casas || '0', 10);
+    const sufixo = el.dataset.sufixo || '';
+    const prefixo = el.dataset.prefixo || '';
+    el.textContent = prefixo + formata(para, casas) + sufixo;
+    el.setAttribute('aria-label', prefixo + formata(para, casas) + sufixo);
+  });
+
+  if (movimentoReduzido.matches || !('IntersectionObserver' in window)) return;
+
+  const io = new IntersectionObserver((entradas) => {
+    entradas.forEach(en => {
       if (!en.isIntersecting) return;
       io.unobserve(en.target);
       const el = en.target;
-      const to = parseFloat(el.dataset.to || '0');
-      const suffix = el.dataset.suffix || '';
-      const dur = 1200; const t0 = performance.now();
-      const step = (t) => {
-        const p = Math.min(1, (t - t0) / dur);
+      const para = parseFloat(el.dataset.para || '0');
+      const casas = parseInt(el.dataset.casas || '0', 10);
+      const sufixo = el.dataset.sufixo || '';
+      const prefixo = el.dataset.prefixo || '';
+
+      /* o texto animado fica escondido da tecnologia de apoio: o
+         aria-label já tem o valor final */
+      const inner = document.createElement('span');
+      inner.setAttribute('aria-hidden', 'true');
+      el.textContent = '';
+      el.append(inner);
+
+      const dur = 1100, t0 = performance.now();
+      const passo = (t) => {
+        const p = Math.min(1, (t - t0) / dur);          /* base no tempo, não em frames */
         const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(to * eased).toLocaleString('pt-PT') + suffix;
-        if (p < 1) requestAnimationFrame(step);
+        inner.textContent = prefixo + formata(para * eased, casas) + sufixo;
+        if (p < 1) requestAnimationFrame(passo);
       };
-      requestAnimationFrame(step);
+      requestAnimationFrame(passo);
     });
   }, { threshold: 0.5 });
+
   els.forEach(e => io.observe(e));
 })();
 
-/* ---------- 3. Tabs: .tabs > .tab[data-tab=x] + .tab-panel#x ---------- */
+/* ---------- 2. Tabs acessíveis ----------
+   <div class="tabs" role="tablist">
+     <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">…</button>
+   <div class="painel" role="tabpanel" id="p1" aria-labelledby="t1">…</div>
+   Setas navegam, Home/End saltam para as pontas (padrão WAI-ARIA). */
 (function () {
-  document.querySelectorAll('.tabs').forEach(group => {
-    group.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        group.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const scope = group.dataset.scope ? document.getElementById(group.dataset.scope) : document;
-        scope.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        const target = document.getElementById(tab.dataset.tab);
-        if (target) target.classList.add('active');
+  document.querySelectorAll('[role="tablist"]').forEach(lista => {
+    const tabs = [...lista.querySelectorAll('[role="tab"]')];
+    if (!tabs.length) return;
+
+    const mostrar = (tab) => {
+      tabs.forEach(t => {
+        const ativo = t === tab;
+        t.setAttribute('aria-selected', String(ativo));
+        t.tabIndex = ativo ? 0 : -1;
+        const painel = document.getElementById(t.getAttribute('aria-controls'));
+        if (painel) painel.hidden = !ativo;
+      });
+    };
+
+    tabs.forEach((tab, i) => {
+      tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
+      tab.addEventListener('click', () => mostrar(tab));
+      tab.addEventListener('keydown', (e) => {
+        const mapa = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+        if (!(e.key in mapa)) return;
+        e.preventDefault();
+        const alvo = tabs[(mapa[e.key] + tabs.length) % tabs.length];
+        alvo.focus(); mostrar(alvo);
       });
     });
   });
 })();
 
-/* ---------- 4. Simulação WhatsApp ----------
-Uso no HTML:
-  <div class="phone" id="waDemo"> ... <div class="wa-body"></div> <div class="wa-chips"></div> ... </div>
-  <script type="application/json" id="waDemo-script">[ ...passos... ]</script>
-  <script>waSim('waDemo');</script>
+/* ---------- 3. Navegação: scroll-spy + construção a partir das secções ----------
+   Cada <section data-nav="Nome"> entra na barra. Serve os dois usos da
+   página: o financeiro salta direto ao preço, o comercial salta em reunião. */
+(function () {
+  const nav = document.querySelector('.nav ul');
+  if (!nav) return;
+  const secoes = [...document.querySelectorAll('section[data-nav][id]')];
+  if (!secoes.length) return;
 
-Passos suportados:
-  { "type": "msg",   "from": "in"|"out", "text": "…", "delay": 900 }
-  { "type": "chips", "options": [ { "label": "…", "goto": "nomeLabel" } ] }
-  { "type": "label", "name": "nomeLabel" }
-  { "type": "goto",  "to": "nomeLabel" }
-  { "type": "end" }
-"in" = mensagem do assistente (recebida), "out" = mensagem do cliente (enviada).
-Um clique num chip envia o label como mensagem "out" e salta para o goto.
------------------------------------------------------------------- */
-function waSim(id, opts) {
-  opts = opts || {};
-  const root = document.getElementById(id);
-  const scriptEl = document.getElementById(id + '-script');
-  if (!root || !scriptEl) return;
-  const steps = JSON.parse(scriptEl.textContent);
-  const body = root.querySelector('.wa-body');
-  const chipsBox = root.querySelector('.wa-chips');
-  const status = root.querySelector('.wa-status');
-  let idx = 0, timer = null, running = false;
+  secoes.forEach(s => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + s.id;
+    a.textContent = s.dataset.nav;
+    li.append(a); nav.append(li);
+  });
 
-  const now = () => new Date().toLocaleTimeString('pt-PT', { hour: '2-digit', minute: '2-digit' });
-  const scroll = () => { body.scrollTop = body.scrollHeight; };
+  const links = [...nav.querySelectorAll('a')];
+  if (!('IntersectionObserver' in window)) return;
 
-  function clearChat() {
-    body.querySelectorAll('.wa-msg, .wa-typing').forEach(e => e.remove());
-    if (chipsBox) chipsBox.innerHTML = '';
-  }
+  const io = new IntersectionObserver((entradas) => {
+    entradas.forEach(en => {
+      if (!en.isIntersecting) return;
+      links.forEach(l => l.removeAttribute('aria-current'));
+      const atual = links.find(l => l.getAttribute('href') === '#' + en.target.id);
+      if (atual) {
+        atual.setAttribute('aria-current', 'true');
+        atual.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
 
-  function addMsg(from, text) {
-    const div = document.createElement('div');
-    div.className = 'wa-msg ' + from;
-    div.textContent = text;
-    const t = document.createElement('time');
-    t.textContent = now();
-    div.appendChild(t);
-    body.appendChild(div); scroll();
-  }
+  secoes.forEach(s => io.observe(s));
+})();
 
-  function typing(on) {
-    let el = body.querySelector('.wa-typing');
-    if (on && !el) {
-      el = document.createElement('div');
-      el.className = 'wa-typing';
-      el.innerHTML = '<i></i><i></i><i></i>';
-      body.appendChild(el); scroll();
-      if (status) status.textContent = 'a escrever…';
-    } else if (!on && el) {
-      el.remove();
-      if (status) status.textContent = 'online';
-    }
-  }
+/* ---------- 4. Fallback de entrada ----------
+   Só corre onde as scroll-driven animations não existem (Firefox, hoje).
+   Se nem isto correr, a página está completa na mesma: o CSS tem o
+   estado final como default. */
+(function () {
+  const suportaCSS = CSS.supports('((animation-timeline: view()) and (animation-range: entry))');
+  if (suportaCSS || movimentoReduzido.matches || !('IntersectionObserver' in window)) return;
 
-  function findLabel(name) {
-    return steps.findIndex(s => s.type === 'label' && s.name === name);
-  }
+  const els = document.querySelectorAll('.entra');
+  if (!els.length) return;
 
-  function next() {
-    if (idx >= steps.length) { running = false; if (opts.onEnd) opts.onEnd(); return; }
-    const s = steps[idx++];
-    if (s.type === 'label') return next();
-    if (s.type === 'goto') { const j = findLabel(s.to); idx = j >= 0 ? j + 1 : idx; return next(); }
-    if (s.type === 'end') { running = false; if (opts.onEnd) opts.onEnd(); return; }
-    if (s.type === 'chips') {
-      if (!chipsBox) return next();
-      chipsBox.innerHTML = '';
-      s.options.forEach(op => {
-        const b = document.createElement('button');
-        b.className = 'wa-chip';
-        b.textContent = op.label;
-        b.addEventListener('click', () => {
-          chipsBox.innerHTML = '';
-          addMsg('out', op.label);
-          if (op.goto) { const j = findLabel(op.goto); idx = j >= 0 ? j + 1 : idx; }
-          timer = setTimeout(next, 500);
-        });
-        chipsBox.appendChild(b);
-      });
-      return; /* espera pelo clique */
-    }
-    /* msg */
-    const delay = s.delay != null ? s.delay : (s.from === 'in' ? 1100 : 650);
-    if (s.from === 'in') {
-      typing(true);
-      timer = setTimeout(() => { typing(false); addMsg('in', s.text); timer = setTimeout(next, 350); }, delay);
-    } else {
-      timer = setTimeout(() => { addMsg('out', s.text); timer = setTimeout(next, 300); }, delay);
-    }
-  }
+  els.forEach(e => e.classList.add('entra-js'));
+  const st = document.createElement('style');
+  st.textContent =
+    '.entra-js{opacity:0;transform:translateY(12px);' +
+    'transition:opacity .5s cubic-bezier(.23,1,.32,1),transform .5s cubic-bezier(.23,1,.32,1)}' +
+    '.entra-js.visivel{opacity:1;transform:none}';
+  document.head.append(st);
 
-  function start() {
-    if (timer) clearTimeout(timer);
-    clearChat(); idx = 0; running = true; next();
-  }
+  const io = new IntersectionObserver((entradas) => {
+    entradas.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('visivel');
+      io.unobserve(en.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
 
-  /* autoplay quando entra no ecrã (uma vez); botões com [data-wa-restart="id"] reiniciam */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if (en.isIntersecting && !running && idx === 0) { start(); io.unobserve(root); } });
-  }, { threshold: 0.35 });
-  io.observe(root);
-  document.querySelectorAll('[data-wa-restart="' + id + '"]').forEach(btn =>
-    btn.addEventListener('click', start));
-}
+  els.forEach(e => io.observe(e));
+})();

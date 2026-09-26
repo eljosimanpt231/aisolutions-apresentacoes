@@ -1,5 +1,15 @@
 # Registry de Estilos
 
+> **Nota de 26/09/2026.** Estes cinco estilos são **legado**. Foram construídos sobre o sistema de
+> tokens antigo (`--brand-hsl`, par Inter+Sora, hero centrado de ecrã inteiro) e as 21 apresentações
+> que saíram deles partilhavam todas a mesma composição. O `starter/` passou a trazer um sistema
+> novo em OKLCH, e a variação faz-se agora por **arquétipo de layout**
+> (`referencias/arquetipos-layout.md`) e pelo registo em `estilos/usados.md`, não por escolher um
+> destes cinco.
+>
+> Continuam úteis para duas coisas: quando o comercial pede explicitamente "o estilo da X", e como
+> referência visual. Um estilo novo, hoje, regista-se em `usados.md`, não aqui.
+
 Índice da biblioteca de design. Cada estilo tem uma pasta com `style.md` (direção completa por blocos), `tokens.css` (pronto a copiar) e `screenshots/` (referência visual).
 
 Para usar: "cria a apresentação da [lead] **com o estilo [nome]**". Misturas são válidas: "estilo editorial-claro **com o hero do dark-premium**".

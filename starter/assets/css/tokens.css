@@ -1,69 +1,242 @@
 /* ============================================================
    TOKENS DE DESIGN (fonte única de verdade visual)
-   Regra de ouro: os componentes NUNCA usam cores diretas.
-   Tudo deriva destas variáveis. Para mudar o look da
-   apresentação inteira, muda-se APENAS este ficheiro
-   (normalmente copiando o tokens.css de um estilo em /estilos).
-   Default: estilo corporativo-azul (claro).
+   Regra de ouro: os componentes NUNCA usam cores directas.
+   Para mudar o look da apresentação inteira, muda-se APENAS
+   este ficheiro.
+
+   MUDANÇA DE 26/09/2026: a cor passou a OKLCH.
+   O `--brand-hsl` deixou de existir. Onde antes se escrevia
+   `hsl(var(--brand-hsl) / 0.12)`, escreve-se agora `var(--brand-a12)`
+   (ou `color-mix(in oklab, var(--brand) 12%, transparent)`).
+   Porquê: em HSL, somar lightness dá resultados visualmente
+   diferentes consoante o matiz, e é por isso que uma rampa
+   derivada em HSL falha contraste a meio.
    ============================================================ */
 
 :root {
-  /* ---- Marca da lead (ajustar SEMPRE à cor do cliente) ---- */
-  --brand-hsl: 217 71% 30%;      /* cor principal, em componentes HSL */
-  --accent-hsl: 217 91% 55%;     /* cor de destaque/energia */
-  --brand: hsl(var(--brand-hsl));
-  --accent: hsl(var(--accent-hsl));
-  --on-brand: hsl(0 0% 100%);    /* texto sobre a cor da marca */
 
-  /* ---- Superfícies ---- */
-  --bg: hsl(0 0% 100%);
-  --bg-soft: hsl(214 50% 96%);   /* secções alternadas */
-  --surface: hsl(0 0% 100%);     /* cards */
-  --surface-2: hsl(214 45% 98%);
-  --border: hsl(215 28% 89%);
+  /* ============================================================
+     1. MARCA
+     Converter o hex da lead para OKLCH (uma vez, em oklch.com) e
+     preencher --brand-l/c/h com o passo 500 da rampa.
+     A rampa mantém a escada de L, põe o croma em curva de sino e
+     deixa o matiz derivar. Croma constante é o erro clássico.
+     ============================================================ */
+  --brand-l: 62.3%;   /* lightness do tom principal */
+  --brand-c: 0.214;   /* croma do tom principal (máx útil ~0.30) */
+  --brand-h: 260;     /* matiz da marca: O ÚNICO valor que muda em 90% dos casos */
 
-  /* ---- Texto ---- */
-  --text: hsl(218 35% 13%);
-  --muted: hsl(218 14% 44%);
+  --brand-50:  oklch(97.0% calc(var(--brand-c) * 0.07) calc(var(--brand-h) - 5));
+  --brand-100: oklch(93.2% calc(var(--brand-c) * 0.15) calc(var(--brand-h) - 4));
+  --brand-200: oklch(88.2% calc(var(--brand-c) * 0.28) calc(var(--brand-h) - 6));
+  --brand-300: oklch(80.9% calc(var(--brand-c) * 0.49) calc(var(--brand-h) - 8));
+  --brand-400: oklch(70.7% calc(var(--brand-c) * 0.77) calc(var(--brand-h) - 5));
+  --brand-500: oklch(var(--brand-l) var(--brand-c) var(--brand-h));
+  --brand-600: oklch(54.6% calc(var(--brand-c) * 1.14) calc(var(--brand-h) + 3));
+  --brand-700: oklch(48.8% calc(var(--brand-c) * 1.13) calc(var(--brand-h) + 5));
+  --brand-800: oklch(42.4% calc(var(--brand-c) * 0.93) calc(var(--brand-h) + 6));
+  --brand-900: oklch(37.9% calc(var(--brand-c) * 0.68) calc(var(--brand-h) + 6));
+  --brand-950: oklch(28.2% calc(var(--brand-c) * 0.43) calc(var(--brand-h) + 8));
 
-  /* ---- Semânticos ---- */
-  --success-hsl: 152 60% 38%;
-  --success: hsl(var(--success-hsl));
-  --danger-hsl: 355 72% 50%;
-  --danger: hsl(var(--danger-hsl));
-  --warning-hsl: 40 90% 50%;
-  --warning: hsl(var(--warning-hsl));
+  --brand:    var(--brand-600);   /* a cor de marca em uso */
+  --accent:   var(--brand-500);   /* energia: CTA, destaques, o agente */
+  --on-brand: oklch(99% 0.004 var(--brand-h));  /* texto sobre a marca */
 
-  /* ---- Gradientes semânticos (derivados da marca) ---- */
-  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
-  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
-  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 60%, hsl(var(--accent-hsl) / 0.85));
+  /* Alphas da marca. Usar estes em vez de improvisar transparências. */
+  --brand-a06: color-mix(in oklab, var(--brand) 6%,  transparent);
+  --brand-a10: color-mix(in oklab, var(--brand) 10%, transparent);
+  --brand-a16: color-mix(in oklab, var(--brand) 16%, transparent);
+  --brand-a30: color-mix(in oklab, var(--brand) 30%, transparent);
+  --brand-a45: color-mix(in oklab, var(--brand) 45%, transparent);
+  --accent-a10: color-mix(in oklab, var(--accent) 10%, transparent);
+  --accent-a20: color-mix(in oklab, var(--accent) 20%, transparent);
+  --accent-a45: color-mix(in oklab, var(--accent) 45%, transparent);
 
-  /* ---- Sombras (tingidas pela marca, nunca preto puro) ---- */
-  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
-  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
-  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+  /* ============================================================
+     2. SUPERFÍCIES E TINTA
+     Neutros ESCOLHIDOS, não herdados: todos levam um resto de croma
+     na direcção da marca. Um cinzento perfeitamente neutro lê-se
+     como não pensado. Nem preto puro nem branco puro.
+     ============================================================ */
+  --bg:        oklch(99.0% 0.004 var(--brand-h));
+  --bg-soft:   oklch(97.2% 0.008 var(--brand-h));   /* secções alternadas */
+  --surface:   oklch(100%  0.002 var(--brand-h));   /* cards */
+  --surface-2: oklch(98.0% 0.006 var(--brand-h));
+  --surface-3: oklch(96.0% 0.009 var(--brand-h));
 
-  /* ---- Forma ---- */
-  --radius: 14px;
-  --radius-lg: 22px;
+  --text:   oklch(22.0% 0.028 var(--brand-h));   /* tinta principal */
+  --muted:  oklch(48.0% 0.020 var(--brand-h));   /* secundária (passa AA) */
+  --faint:  oklch(62.0% 0.016 var(--brand-h));   /* terciária: SÓ texto grande */
+  /* Três tons de texto. Não criar um quarto. */
 
-  /* ---- Tipografia ----
-     O estilo define as famílias; carregar no <head> via Google Fonts. */
-  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --hairline: color-mix(in oklab, var(--text) 9%, transparent);
+  --border:   color-mix(in oklab, var(--text) 13%, transparent);
+  --border-strong: color-mix(in oklab, var(--text) 22%, transparent);
+  --focus: var(--accent);
 
-  /* ---- Ritmo ---- */
-  --container: 1120px;
-  --section-pad: clamp(64px, 9vw, 120px);
+  /* ============================================================
+     3. SEMÂNTICOS
+     Verde = ganho/automático. Vermelho = custo/manual. Âmbar = excepção.
+     ============================================================ */
+  --ok:        oklch(56% 0.14 152);
+  --ok-wash:   color-mix(in oklab, var(--ok) 12%, transparent);
+  --danger:    oklch(55% 0.20 27);
+  --danger-wash: color-mix(in oklab, var(--danger) 11%, transparent);
+  --warn:      oklch(70% 0.15 75);
+  --warn-wash: color-mix(in oklab, var(--warn) 14%, transparent);
+
+  /* ============================================================
+     4. TIPOGRAFIA
+     ESCOLHER o par no design.md. Não deixar o default por preguiça:
+     Inter, Roboto, Open Sans, Lato, Poppins, Montserrat e as fontes
+     de sistema estão PROIBIDAS como primeira escolha (ver proibicoes.md).
+     Pares sugeridos em regras-design.md.
+     ============================================================ */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'Instrument Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  /* Escala fluida 360px a 1440px. Todos os passos cumprem max <= 2,5 x min
+     (acima disso falha o critério 1.4.4 nalgum intervalo de viewport).
+     O valor preferido mistura rem com vw: só vw não reage ao zoom. */
+  --fs--2: clamp(0.75rem,   0.7292rem + 0.0926vw, 0.8125rem); /* 12 a 13  etiqueta */
+  --fs--1: clamp(0.875rem,  0.8542rem + 0.0926vw, 0.9375rem); /* 14 a 15  legenda  */
+  --fs-0:  clamp(1.0625rem, 1.0208rem + 0.1852vw, 1.1875rem); /* 17 a 19  corpo    */
+  --fs-1:  clamp(1.25rem,   1.1667rem + 0.3704vw, 1.5rem);    /* 20 a 24  lead     */
+  --fs-2:  clamp(1.5rem,    1.3542rem + 0.6481vw, 1.9375rem); /* 24 a 31  h3       */
+  --fs-3:  clamp(1.8125rem, 1.6042rem + 0.9259vw, 2.4375rem); /* 29 a 39  h2       */
+  --fs-4:  clamp(2.1875rem, 1.8958rem + 1.2963vw, 3.0625rem); /* 35 a 49  h1       */
+  --fs-5:  clamp(2.625rem,  2.2292rem + 1.7593vw, 3.8125rem); /* 42 a 61  display  */
+  --fs-6:  clamp(3.125rem,  2.5833rem + 2.4074vw, 4.75rem);   /* 50 a 76  hero     */
+
+  /* Entrelinha inversa ao tamanho. Sempre sem unidade. */
+  --lh-hero: 0.95; --lh-h1: 1.04; --lh-h2: 1.10; --lh-h3: 1.20;
+  --lh-lead: 1.40; --lh-body: 1.60;
+
+  /* Tracking sempre em em, nunca px, para acompanhar o clamp.
+     Se a família tiver eixo opsz, reduzir a metade: já corrige sozinha. */
+  --tr-hero: -0.022em; --tr-h1: -0.022em; --tr-h2: -0.021em; --tr-h3: -0.019em;
+  --tr-body: -0.005em; --tr-label: 0.09em;
+
+  --measure: 66ch;      /* medida do corpo: banda 50 a 75, tecto duro 80 */
+  --measure-lead: 52ch;
+
+  /* ============================================================
+     5. ESPAÇO
+     Escala de 8pt com meio-passo de 4. Valores ímpares partem o pixel
+     a 1.5x e renderizam esborratados.
+     ============================================================ */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 16px; --s-4: 24px;
+  --s-5: 32px; --s-6: 48px; --s-7: 64px; --s-8: 96px;
+
+  --container: 1140px;
+  --gutter: clamp(16px, 4vw, 32px);
+
+  /* Três ritmos de secção. NÃO usar o mesmo em todas: padding igual em
+     todas as secções mata o ritmo e lê-se como template. */
+  --pad-secao:       clamp(56px, 7vw, 96px);
+  --pad-secao-amplo: clamp(80px, 10vw, 136px);
+  --pad-secao-junto: clamp(32px, 4vw, 56px);
+
+  /* ============================================================
+     6. FORMA
+     Raio por PAPEL, não um raio para tudo. Filho nunca maior que o pai.
+     ============================================================ */
+  --r-1: 4px;    /* controlos dentro de um mock */
+  --r-2: 8px;    /* chips, badges, inputs */
+  --r-3: 12px;   /* cards */
+  --r-4: 18px;   /* painéis e molduras de mock */
+  --r-pill: 999px;
+
+  /* ============================================================
+     7. ELEVAÇÃO
+     Uma só fonte de luz: o offset vertical é sempre o dobro do
+     horizontal. Camadas a duplicar offset e blur, alfa a descer para
+     fora. Sombra tingida pelo matiz da superfície, nunca preto puro.
+     Em modo claro premium o alfa vive nos 4 a 8%.
+     ============================================================ */
+  --sh: 250deg 30% 22%;   /* triplo HSL: a receita de sombra exprime-se assim */
+
+  --e1: 0 0 0 1px var(--hairline),
+        0 1px 2px      hsl(var(--sh) / 0.05),
+        0 2px 4px -2px hsl(var(--sh) / 0.05);
+  --e2: 0 0 0 1px var(--hairline),
+        0 1px 2px       hsl(var(--sh) / 0.04),
+        0 2px 4px       hsl(var(--sh) / 0.04),
+        0 4px 8px  -2px hsl(var(--sh) / 0.04),
+        0 8px 16px -6px hsl(var(--sh) / 0.05);
+  --e3: 0 0 0 1px var(--hairline),
+        0 1px 2px         hsl(var(--sh) / 0.03),
+        0 2px 4px         hsl(var(--sh) / 0.03),
+        0 4px 8px         hsl(var(--sh) / 0.03),
+        0 8px 16px   -4px hsl(var(--sh) / 0.04),
+        0 16px 32px  -8px hsl(var(--sh) / 0.05),
+        0 32px 64px -16px hsl(var(--sh) / 0.06);
+
+  /* ============================================================
+     8. MOVIMENTO
+     UI abaixo de 300ms. A saída é ~20% mais rápida que a entrada.
+     Nunca ease-in em UI. As curvas nativas não têm garra.
+     ============================================================ */
+  --t-rapido: 120ms;
+  --t-normal: 200ms;
+  --t-lento:  300ms;
+  --ease-out:   cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-suave: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* ============================================================
+     9. MOCKS (chat, terminal, janelas de produto)
+     Tokens próprios para o mock poder ser CLARO num deck claro.
+     A moldura combina com o tema DO MOCK, não com o da marca.
+     Default: escuro. Para um mock claro, redefinir estes sete.
+     ============================================================ */
+  --mock-bg:        oklch(17% 0.015 var(--brand-h));
+  --mock-head:      oklch(21% 0.018 var(--brand-h));
+  --mock-linha:     oklch(100% 0 0 / 0.09);
+  --mock-txt:       oklch(95% 0.005 var(--brand-h));
+  --mock-txt-fraco: oklch(68% 0.012 var(--brand-h));
+  --mock-bolha-in:  oklch(26% 0.016 var(--brand-h));   /* agente */
+  --mock-bolha-out: oklch(38% 0.070 160);              /* cliente */
+  --mock-r:         var(--r-4);
+
+  /* ============================================================
+     10. CANAIS (cores canónicas, iguais em todos os estilos)
+     ============================================================ */
+  --wa-green: #128C7E;
+  --wa-green-dark: #075E54;
+  --wa-light: #25D366;
+  --wa-blue: #34B7F1;
 }
 
-/* WhatsApp (mockup): cores canónicas do canal, iguais em todos os estilos */
-:root {
-  --wa-green: hsl(165 49% 32%);
-  --wa-green-strong: hsl(145 63% 42%);
-  --wa-bg: hsl(38 22% 89%);
-  --wa-out: hsl(100 55% 88%);
-  --wa-in: hsl(0 0% 100%);
-  --wa-text: hsl(200 15% 15%);
+/* ============================================================
+   MODO ESCURO DO DECK INTEIRO
+   Trocar as superfícies e a tinta, não a rampa da marca.
+   No escuro a sombra deixa de funcionar: usa-se uma escada de
+   luminância da superfície mais uma linha interior clara no topo.
+   ============================================================ */
+.deck-escuro {
+  --bg:        oklch(14.0% 0.014 var(--brand-h));
+  --bg-soft:   oklch(16.5% 0.016 var(--brand-h));
+  --surface:   oklch(19.0% 0.018 var(--brand-h));
+  --surface-2: oklch(22.0% 0.020 var(--brand-h));
+  --surface-3: oklch(25.0% 0.022 var(--brand-h));
+
+  --text:   oklch(96.0% 0.006 var(--brand-h));
+  --muted:  oklch(72.0% 0.014 var(--brand-h));
+  --faint:  oklch(58.0% 0.014 var(--brand-h));
+
+  --hairline: oklch(100% 0 0 / 0.08);
+  --border:   oklch(100% 0 0 / 0.13);
+  --border-strong: oklch(100% 0 0 / 0.22);
+
+  --brand:  var(--brand-400);   /* no escuro a marca sobe de luminosidade */
+  --accent: var(--brand-400);
+  --on-brand: oklch(16% 0.02 var(--brand-h));
+
+  --e1: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.06),
+        0 1px 2px oklch(0% 0 0 / 0.40);
+  --e2: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.07),
+        0 1px 2px oklch(0% 0 0 / 0.40), 0 8px 24px -8px oklch(0% 0 0 / 0.45);
+  --e3: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.08),
+        0 2px 4px oklch(0% 0 0 / 0.40), 0 16px 40px -12px oklch(0% 0 0 / 0.55);
 }
