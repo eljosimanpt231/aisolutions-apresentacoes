@@ -345,8 +345,21 @@ for (const [nome, w, h] of [['desktop', 1440, 900], ['tablet', 768, 1024], ['tel
   await p.goto(`${BASE}/${slug}/index.html`, { waitUntil: 'load' });
   await p.waitForTimeout(1200);
 
-  /* 1) o primeiro ecrã tem de ler-se PARADO, antes de qualquer scroll */
+  /* 1) o primeiro ecrã tem de ler-se depois de o acto de abertura correr.
+        (o que garante que se lê SEM JS é a passagem sem JavaScript, acima) */
   if (nome === 'desktop') {
+    /* esperar só pelas animações FINITAS: as infinitas (glow, grão) nunca
+       resolvem o finished e deixariam isto pendurado para sempre */
+    await p.evaluate(() => {
+      const finitas = document.getAnimations().filter(a => {
+        const t = a.effect?.getTiming?.();
+        return t && t.iterations !== Infinity;
+      }).map(a => a.finished.catch(() => {}));
+      return Promise.race([Promise.all(finitas), new Promise(r => setTimeout(r, 6000))]);
+    });
+    /* GSAP não usa a Web Animations API (corre por rAF e estilos inline),
+       por isso getAnimations() não a vê. Dar tempo ao acto de abertura. */
+    await p.waitForTimeout(3500);
     const parado = await p.evaluate(() => {
       const dentro = [];
       document.querySelectorAll('body *').forEach(el => {
@@ -361,6 +374,36 @@ for (const [nome, w, h] of [['desktop', 1440, 900], ['tablet', 768, 1024], ['tel
       return dentro;
     });
     if (parado.length) add('erros', `Primeiro ecrã: ${parado.length} bloco(s) de texto a opacity 0 à espera de scroll. Se o JS falhar ou a thumbnail for capturada, ficam invisíveis. Ex.: "${parado[0]}"`);
+
+    /* Texto CORTADO por uma máscara não está a opacity 0 e escapava ao
+       teste acima. Foi assim que um título inteiro desapareceu em
+       telemóvel sem nenhuma verificação dar por isso. */
+    const cortado = await p.evaluate(() => {
+      const fora = [];
+      document.querySelectorAll('body *').forEach(el => {
+        if (!el.textContent.trim()) return;
+        const r = el.getBoundingClientRect();
+        if (r.top > window.innerHeight || r.bottom < 0 || r.height === 0) return;
+        let pai = el.parentElement;
+        while (pai && pai !== document.body) {
+          const s = getComputedStyle(pai);
+          if (s.overflow === 'hidden' || s.overflow === 'clip' ||
+              s.overflowY === 'hidden' || s.overflowY === 'clip') {
+            const pr = pai.getBoundingClientRect();
+            /* totalmente fora da caixa que o corta */
+            if (r.bottom <= pr.top + 1 || r.top >= pr.bottom - 1)
+              fora.push(el.textContent.trim().slice(0, 40));
+            break;
+          }
+          pai = pai.parentElement;
+        }
+      });
+      return [...new Set(fora)];
+    });
+    if (cortado.length) add('erros',
+      `Primeiro ecrã: ${cortado.length} bloco(s) de texto CORTADOS por uma máscara e invisíveis ` +
+      `(não estão a opacity 0, estão fora da caixa que os corta). Ex.: "${cortado[0]}". ` +
+      `Causa habitual: um reveal por linhas que nunca chegou a tocar.`);
   }
 
   /* 2) overflow horizontal */

@@ -32,23 +32,4 @@ Só para máquinas com um PAT válido (o dono do PAT é responsável por ele; nu
 ## Depois de publicar
 - Confirmar que `robots.txt` continua a cobrir tudo (não mexer nele)
 - Testar o URL num browser em janela anónima (apanha erros de path relativos e de password)
-- **Testar o cartão de partilha.** É a primeira coisa que a lead vê, antes de abrir o link. Verificar
-  que `og:image` aponta para o URL absoluto final (não um caminho relativo) e que a imagem responde:
-  `curl -sI https://apresentacoes.aisolutions.pt/[slug]/assets/img/og.png | head -1`.
-  Depois validar em [opengraph.xyz](https://www.opengraph.xyz) ou enviando o link a si próprio no
-  WhatsApp. O WhatsApp faz cache agressiva do cartão: se for preciso corrigir, mudar o nome do
-  ficheiro (`og-v2.png`), não só o conteúdo.
-- Correr `node qa.mjs [slug]` uma última vez contra a versão publicada
-- Entregar ao comercial: URL, password (se houver), o que é diferente nesta apresentação, e o guião
-  de 3 pontos
-
-## Quando enviar
-
-A janela importa mais do que se pensa: a probabilidade de abertura cai de forma acentuada com os
-dias, e enviar dentro das 24 horas seguintes à reunião está associado a conversões bastante
-superiores. Se a apresentação ficar pronta à noite, é melhor enviar logo do que esperar dois dias
-por um polimento.
-
-**Não pôr pixel de rastreio no email que leva o link.** Em 2026 a CNIL, o Garante italiano e as
-orientações do EDPB tratam o carregamento do pixel como acesso ao equipamento terminal, e isso exige
-consentimento próprio e distinto. A abertura mede-se na página, não no email.
+- Entregar ao comercial: URL + password (se houver) + guião de 3 pontos

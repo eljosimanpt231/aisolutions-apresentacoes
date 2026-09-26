@@ -1,0 +1,38 @@
+/* ============================================================
+   GRÁFICO DE LINHAS (par de shared/motion/grafico.js)
+   Só tokens. A cor vem de --brand / --accent / --ok / --warn.
+   ============================================================ */
+.grafico { margin-top: var(--s-4); }
+.gr-titulo { font-size: var(--fs--1); color: var(--muted); margin-bottom: var(--s-3); }
+.gr { width: 100%; height: auto; overflow: visible; }
+
+.gr-grelha { stroke: color-mix(in oklab, var(--text) 10%, transparent); stroke-width: 1; }
+.gr-eixo   { fill: var(--faint); font-size: 11px; font-family: var(--font-mono); }
+
+.gr-linha { stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }
+.gr-linha.gr-aviso { stroke-dasharray: 6 5; }   /* o que está por confirmar */
+
+.gr-brand  { stroke: var(--brand);  color: var(--brand); }
+.gr-accent { stroke: var(--accent); color: var(--accent); }
+.gr-ok     { stroke: var(--ok);     color: var(--ok); }
+.gr-warn   { stroke: var(--warn);   color: var(--warn); }
+
+.gr-ponto { stroke: var(--bg); stroke-width: 2; }
+.gr-ponto.gr-brand  { fill: var(--brand); }
+.gr-ponto.gr-accent { fill: var(--accent); }
+.gr-ponto.gr-ok     { fill: var(--ok); }
+.gr-ponto.gr-warn   { fill: var(--warn); }
+
+.gr-rot { font-size: 11px; font-family: var(--font-mono); font-weight: 500; stroke: none; }
+.gr-rot.gr-brand  { fill: var(--brand); }
+.gr-rot.gr-accent { fill: var(--accent); }
+.gr-rot.gr-ok     { fill: var(--ok); }
+.gr-rot.gr-warn   { fill: var(--warn); }
+
+.gr-legenda { list-style: none; display: grid; gap: 6px; margin-top: var(--s-3); }
+.gr-legenda li { display: flex; align-items: center; gap: 8px;
+                 font-size: var(--fs--2); color: var(--muted); }
+.gr-legenda i { width: 16px; height: 2px; border-radius: 2px; background: currentColor; flex-shrink: 0; }
+.gr-legenda .gr-aviso i { background: repeating-linear-gradient(90deg,
+                          currentColor 0 5px, transparent 5px 9px); }
+.gr-nota { margin-top: var(--s-2); font-size: var(--fs--2); color: var(--faint); font-style: italic; }

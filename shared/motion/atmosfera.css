@@ -1,0 +1,197 @@
+/* ============================================================
+   ATMOSFERA
+   O que faz uma página ter profundidade antes de se mexer o que quer
+   que seja. Custo de runtime perto de zero: nada aqui é calculado por
+   frame, e o blur dos glows vem pré-cozinhado dentro de um SVG.
+
+   Depende de: --brand-hsl / --accent-hsl (ou --brand / --accent) da
+   apresentação. Nada aqui tem cores fixas.
+
+   Medido a 26/09/2026 no CSS servido por linear.app, vercel.com,
+   stripe.com e apple.com. As curvas e as durações são as deles.
+   ============================================================ */
+
+:root {
+  /* Curvas de produção. As nativas do CSS não têm garra nenhuma. */
+  --e-linear:  cubic-bezier(.32, .72, 0, 1);      /* a assinatura do Linear */
+  --e-quart:   cubic-bezier(.25, 1, .5, 1);       /* a da Stripe, 41 usos */
+  --e-cubic:   cubic-bezier(.33, 1, .68, 1);      /* hovers */
+  --e-quint:   cubic-bezier(.22, 1, .36, 1);      /* para parar em seco */
+  --e-expo:    cubic-bezier(.16, 1, .3, 1);       /* reveals grandes */
+  --e-suave:   cubic-bezier(.455, .03, .515, .955);
+
+  /* Durações. Hover abaixo de 200ms, UI 150 a 300, reveals 600 a 900. */
+  --d-toque:  160ms;
+  --d-ui:     240ms;
+  --d-painel: 360ms;
+  --d-reveal: 800ms;
+  --d-heroi:  1200ms;
+}
+
+/* ============================================================
+   1. GLOW ATMOSFÉRICO
+   O blur vem rasterizado dentro do SVG, por isso o browser desenha-o
+   uma vez e nunca mais. Um `filter: blur()` a sério nesta área
+   repintava a camada toda a cada frame de scroll.
+   Regular a intensidade por --glow-op e a posição por --glow-x/y.
+   ============================================================ */
+.atmosfera {
+  position: fixed; inset: 0; z-index: -2;
+  pointer-events: none; contain: strict;
+  overflow: hidden;
+}
+.atmosfera__glow {
+  position: absolute;
+  width: var(--glow-w, 60vmax); aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,
+              hsl(var(--glow-cor, var(--brand-hsl)) / var(--glow-op, .30)) 0%,
+              transparent 62%);
+  filter: blur(var(--glow-blur, 70px));
+  will-change: transform;
+}
+/* Três posições por defeito. Sobrepor no tokens da apresentação. */
+.atmosfera__glow--1 { top: -22%; left: -12%; --glow-op: .32; }
+.atmosfera__glow--2 { top: 28%; right: -18%; --glow-cor: var(--accent-hsl); --glow-op: .22; --glow-w: 52vmax; }
+.atmosfera__glow--3 { bottom: -18%; left: 22%; --glow-op: .16; --glow-w: 46vmax; }
+
+/* Deriva lenta. Só transform, nunca a posição nem os stops do gradiente. */
+@media (prefers-reduced-motion: no-preference) {
+  .atmosfera__glow--1 { animation: deriva-1 32s ease-in-out infinite; }
+  .atmosfera__glow--2 { animation: deriva-2 41s ease-in-out infinite; }
+  .atmosfera__glow--3 { animation: deriva-3 48s ease-in-out infinite; }
+}
+@keyframes deriva-1 { 0%,100% { transform: translate3d(0,0,0) scale(1);    }
+                      50%     { transform: translate3d(9vw,7vh,0) scale(1.18); } }
+@keyframes deriva-2 { 0%,100% { transform: translate3d(0,0,0) scale(1.08); }
+                      50%     { transform: translate3d(-8vw,11vh,0) scale(.92); } }
+@keyframes deriva-3 { 0%,100% { transform: translate3d(0,0,0) scale(.96);  }
+                      50%     { transform: translate3d(7vw,-9vh,0) scale(1.22); } }
+
+/* Em telemóvel o glow custa mais do que vale: o Linear também o desliga */
+@media (max-width: 640px) {
+  .atmosfera__glow--2, .atmosfera__glow--3 { display: none; }
+  .atmosfera__glow--1 { --glow-blur: 50px; }
+}
+
+/* ============================================================
+   2. GRELHA TÉCNICA
+   Duas linhas de 1px em gradiente, com máscara a esbater nas bordas.
+   Dá o fundo de "produto técnico" sem pesar nada.
+   ============================================================ */
+.grelha {
+  position: fixed; inset: 0; z-index: -3; pointer-events: none;
+  background-image:
+    linear-gradient(hsl(var(--accent-hsl) / .045) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--accent-hsl) / .045) 1px, transparent 1px);
+  background-size: var(--grelha-passo, 48px) var(--grelha-passo, 48px);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 10%, transparent 75%);
+          mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 10%, transparent 75%);
+}
+
+/* ============================================================
+   3. GRÃO
+   Tira o plástico dos gradientes. É o detalhe que separa uma página
+   cara de uma feita à pressa. Acima de 0.12 de opacidade fica sujo.
+   ============================================================ */
+.grao::after {
+  content: ""; position: fixed; inset: -150%; z-index: 9998;
+  pointer-events: none; opacity: var(--grao-op, .055); mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@media (prefers-reduced-motion: no-preference) {
+  .grao::after { animation: grao 8s steps(8) infinite; }
+}
+@keyframes grao {
+  0%    { transform: translate(0,0); }      12.5% { transform: translate(-5%,-10%); }
+  25%   { transform: translate(-14%,5%); }  37.5% { transform: translate(7%,-24%); }
+  50%   { transform: translate(-5%,14%); }  62.5% { transform: translate(-14%,9%); }
+  75%   { transform: translate(9%,8%); }    87.5% { transform: translate(-2%,-10%); }
+}
+@media (prefers-reduced-transparency: reduce) { .grao::after { display: none; } }
+
+/* ============================================================
+   4. TEXTO EM GRADIENTE
+   Uma ou duas palavras do título, nunca a frase inteira, nunca com
+   gradiente animado. Precisa de cor de fallback: se a imagem de fundo
+   falhar, sem ela o texto fica invisível.
+   ============================================================ */
+.g-brilho {
+  color: hsl(var(--accent-hsl));                    /* fallback obrigatório */
+  background: linear-gradient(100deg in oklab,
+              hsl(var(--accent-hsl)) 0%,
+              hsl(var(--brand2-hsl, var(--brand-hsl))) 60%,
+              hsl(var(--accent-hsl) / .85) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: .06em;   /* senão as descendentes ficam cortadas */
+}
+
+/* ============================================================
+   5. MOLDURAS E SUPERFÍCIES
+   ============================================================ */
+/* Borda com luz: um anel cónico que orbita. @property é preciso para o
+   ângulo interpolar, senão salta. */
+@property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+
+.moldura-viva { position: relative; isolation: isolate; border-radius: inherit; }
+.moldura-viva::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; z-index: -1;
+  background: conic-gradient(from var(--ang),
+              transparent 0deg 80deg,
+              hsl(var(--accent-hsl) / .9) 140deg,
+              hsl(var(--brand-hsl) / .9) 200deg,
+              transparent 260deg 360deg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .moldura-viva::before { animation: gira-ang 7s linear infinite; }
+}
+@keyframes gira-ang { to { --ang: 360deg; } }
+@supports not (background: conic-gradient(from 0deg, red, blue)) {
+  .moldura-viva::before { background: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl))); }
+}
+
+/* Holofote que segue o cursor. O JS só escreve duas variáveis. */
+.holofote { position: relative; overflow: hidden; }
+.holofote::before {
+  content: ""; position: absolute; inset: 0; opacity: 0; pointer-events: none;
+  transition: opacity var(--d-painel) var(--e-quart);
+  background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%),
+              hsl(var(--accent-hsl) / .16), transparent 62%);
+}
+@media (hover: hover) and (pointer: fine) { .holofote:hover::before { opacity: 1; } }
+
+/* Esbater as bordas de um painel de produto, para não parecer colado */
+.palco {
+  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+}
+
+/* ============================================================
+   6. ESTADOS DE ENTRADA
+   O estado final é o DEFAULT. A animação vive dentro de
+   `no-preference`. Assim, sem JS, sem suporte, ou com movimento
+   reduzido, a página está completa e rica, nunca vazia.
+   ============================================================ */
+[data-entra] { opacity: 1; transform: none; }
+[data-linhas] .linha__i { transform: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-entra] { opacity: 0; }
+  html.js [data-entra="sobe"]    { transform: translateY(22px); }
+  html.js [data-entra="escala"]  { transform: scale(.965); }
+  html.js [data-entra="lado"]    { transform: translateX(26px); }
+  /* as máscaras de linha só existem depois de o SplitText correr */
+  html.js [data-linhas] .linha { overflow: clip; }
+  html.js [data-linhas] .linha__i { transform: translateY(105%); }
+}
+
+/* ============================================================
+   7. FOCO E TOQUE
+   ============================================================ */
+@media (hover: hover) and (pointer: fine) {
+  .elevavel { transition: transform var(--d-ui) var(--e-quart), box-shadow var(--d-ui) var(--e-quart); }
+  .elevavel:hover { transform: translateY(-2px); }
+}
+.premivel:active { transform: scale(.975); }
+@media (prefers-reduced-motion: reduce) { .premivel:active { transform: none; } }

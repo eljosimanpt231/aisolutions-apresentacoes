@@ -6,13 +6,43 @@
 @layer componentes {
 
   /* ---------- Cabeçalho do documento ---------- */
-  .cabecalho { padding-block: var(--s-7) var(--pad-secao); }
+  .cabecalho { padding-block: var(--s-7) var(--pad-secao); position: relative; isolation: isolate; }
+
+  /* A água do site da lead, por trás de tudo. Escurecida o suficiente
+     para o texto passar AA por cima, e com o fundo a fechar em baixo
+     para a secção seguinte nascer do escuro. */
+  .agua { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+  .agua img { width: 100%; height: 118%; object-fit: cover; opacity: .30;
+              filter: saturate(.85) contrast(1.05); }
+  .agua::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, hsl(var(--brand2-hsl) / .55) 0%, transparent 35%),
+      linear-gradient(0deg,  var(--bg) 4%, transparent 62%),
+      linear-gradient(90deg, var(--bg) 0%, transparent 55%);
+  }
+
+  /* Ritmo de superfícies: num deck escuro, secções todas com a mesma
+     luminosidade lêem-se como uma mancha só. Alterna-se. */
+  .faixa-clara {
+    background: linear-gradient(180deg in oklab,
+      color-mix(in oklab, var(--accent) 7%, var(--bg)),
+      color-mix(in oklab, var(--accent) 3%, var(--bg)));
+    border-block: 1px solid color-mix(in oklab, var(--accent) 14%, transparent);
+  }
   .doc-topo {
     display: flex; align-items: center; justify-content: space-between;
     gap: var(--s-4); flex-wrap: wrap;
-    padding-bottom: var(--s-4); border-bottom: 2px solid var(--text);
+    padding-bottom: var(--s-4);
+    border-bottom: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
   }
-  .doc-logo { height: 48px; width: auto; }
+  /* o logótipo é JPEG com fundo branco: num deck escuro tem de ir numa
+     pastilha clara, senão aparece um rectângulo branco a flutuar */
+  .doc-logo-pastilha {
+    display: inline-flex; padding: 10px 16px; border-radius: var(--r-2);
+    background: oklch(99% 0.004 var(--brand-h)); box-shadow: var(--e1);
+  }
+  .doc-logo { height: 40px; width: auto; }
   .doc-ref {
     font-family: var(--font-mono); font-size: var(--fs--1); color: var(--muted);
   }
@@ -35,7 +65,7 @@
     line-height: 1.06; letter-spacing: var(--tr-h1);
     font-weight: 400; max-width: 20ch;
   }
-  .promessa-fecho { color: var(--brand-700); }
+  
   .cabecalho .lead { margin-top: var(--s-4); }
 
   /* Três números em linha, separados por filete. Não são cards. */
@@ -63,7 +93,7 @@
   }
   .rubrica span {
     font-family: var(--font-mono); font-size: var(--fs--2);
-    color: var(--brand-700); font-weight: 500;
+    color: var(--brand-300); font-weight: 500;
     min-width: 1.6em; padding-bottom: 2px;
     border-bottom: 2px solid var(--brand-300);
   }
@@ -87,7 +117,7 @@
   .sumario div { border-top: 1px solid var(--border); padding-top: var(--s-3); }
   .sumario dt {
     font-family: var(--font-mono); font-size: var(--fs--2);
-    color: var(--brand-700); margin-bottom: var(--s-2);
+    color: var(--brand-300); margin-bottom: var(--s-2);
   }
   .sumario dd { font-size: var(--fs--1); color: var(--text); max-width: 42ch; }
 
@@ -115,10 +145,11 @@
     display: grid; gap: var(--s-4) var(--s-5); margin-top: var(--s-6);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
   }
-  .contagens div { border-top: 2px solid var(--brand-300); padding-top: var(--s-3); }
+  .contagens div { border-top: 2px solid color-mix(in oklab, var(--accent) 55%, transparent); padding-top: var(--s-3); }
   .contagens dt {
     font-family: var(--font-display); font-size: var(--fs-3);
-    line-height: 1; color: var(--brand-800);
+    line-height: 1; color: var(--brand-300);
+    font-variant-numeric: tabular-nums lining-nums;
   }
   .contagens dd { margin-top: var(--s-2); font-size: var(--fs--1); color: var(--text); }
   .contagens small { display: block; margin-top: 2px; color: var(--faint); font-size: var(--fs--2); }
@@ -147,7 +178,7 @@
     padding: 3px 8px; border-radius: var(--r-1);
     background: var(--surface-3); color: var(--text); white-space: nowrap;
   }
-  .variacoes .v.p { background: var(--brand-a16); color: var(--brand-800); }
+  .variacoes .v.p { background: var(--brand-a16); color: var(--brand-200); }
   .variacoes .v.e { background: var(--surface-3); color: var(--text); }
   .variacoes .v i { font-style: normal; color: var(--muted); margin-left: 5px; font-size: 0.92em; }
   .legenda { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--muted); display: flex; gap: var(--s-4); flex-wrap: wrap; }
@@ -250,11 +281,13 @@
     margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
   }
   .fases li { border-top: 2px solid var(--brand-200); padding-top: var(--s-3); }
-  .fases .quando { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand-700); }
+  .fases .quando { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand-300); }
   .fases .o-que { display: block; margin-top: var(--s-1); font-weight: 600; font-size: var(--fs-0); }
   .fases p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
 
   /* ---------- Fecho ---------- */
+  .fecho { position: relative; overflow: hidden;
+          background: linear-gradient(180deg in oklab, transparent, hsl(var(--brand-hsl) / .16)); }
   .fecho h2 { max-width: none; font-family: var(--font-display); font-size: var(--fs-4); font-weight: 400; }
   .rodape-logo { display: inline-block; height: 28px; width: auto; margin-bottom: var(--s-3); }
   .rodape .disclaimer { display: block; margin-top: var(--s-2); font-size: var(--fs--2); color: var(--faint); max-width: 70ch; }
@@ -293,7 +326,7 @@
   }
   @media (max-width: 860px) { .app-nav { width: auto; } }
   @media (hover: hover) and (pointer: fine) { .app-nav:hover { background: var(--surface-2); color: var(--text); } }
-  .app-nav.is-on { background: var(--brand-a16); color: var(--brand-800); font-weight: 600; }
+  .app-nav.is-on { background: var(--brand-a16); color: var(--brand-200); font-weight: 600; }
   .app-badge {
     margin-left: auto; background: var(--brand-600); color: var(--on-brand);
     font-size: var(--fs--2); min-width: 24px; min-height: 24px;
@@ -365,7 +398,7 @@
     display: inline-block; padding: 2px 9px; border-radius: var(--r-pill);
     font-size: var(--fs--2); white-space: nowrap;
   }
-  .pill.rev { background: var(--brand-a16); color: var(--brand-800); }
+  .pill.rev { background: var(--brand-a16); color: var(--brand-200); }
   .pill.qual { background: var(--warn-wash); color: oklch(42% 0.12 75); }
   .pill.esp { background: var(--surface-3); color: var(--muted); }
   .pill.adj { background: var(--ok-wash); color: oklch(42% 0.12 152); }
@@ -438,7 +471,7 @@
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
   }
   .kpis div { border-top: 2px solid var(--brand-200); padding-top: var(--s-2); }
-  .kpis dt { font-family: var(--font-display); font-size: var(--fs-2); color: var(--brand-800); line-height: 1; }
+  .kpis dt { font-family: var(--font-display); font-size: var(--fs-2); color: var(--brand-300); line-height: 1; }
   .kpis dd { margin-top: 4px; font-size: var(--fs--2); color: var(--muted); }
   .insights { list-style: none; margin-top: var(--s-4); display: grid; gap: var(--s-2); }
   .insights li { font-size: var(--fs--1); color: var(--muted); padding-left: var(--s-3); position: relative; }

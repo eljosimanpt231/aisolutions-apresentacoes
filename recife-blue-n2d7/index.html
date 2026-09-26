@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="dark">
 
   <title>Recife Blue | Plataforma de orçamentação</title>
   <meta name="description" content="O pedido chega, o orçamento fica montado, o preço decides tu. Proposta da AI Solutions para a Recife Blue, Piscinas e Spa.">
@@ -24,12 +24,21 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="../shared/motion/grafico.css">
   <link rel="stylesheet" href="assets/css/documento.css">
   <script src="config.js"></script>
 </head>
-<body>
+<body class="deck-escuro grao">
 
 <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
 
 <nav class="nav" aria-label="Secções da proposta">
   <div class="container"><ul></ul></div>
@@ -39,38 +48,39 @@
 
   <!-- ============ CABEÇALHO DO DOCUMENTO ============ -->
   <section class="cabecalho" id="topo" data-nav="Início">
+    <div class="agua" aria-hidden="true"><img src="assets/img/agua.jpg" alt="" data-paralaxe="6"></div>
     <div class="container">
-      <div class="doc-topo">
-        <img class="doc-logo" src="assets/img/logo.jpg" alt="Recife Blue, Piscinas e Spa" width="180" height="48">
+      <div class="doc-topo" data-acto="1" data-entra="sobe">
+        <span class="doc-logo-pastilha"><img class="doc-logo" src="assets/img/logo.jpg" alt="Recife Blue, Piscinas e Spa" width="180" height="48"></span>
         <span class="doc-ref">Proposta <b>AI/2026-RB</b></span>
       </div>
 
-      <dl class="doc-meta">
+      <dl class="doc-meta" data-acto="2" data-entra="sobe">
         <div><dt>Para</dt><dd>Gonçalo Ribeiro, Récif Bleu Unipessoal Lda</dd></div>
         <div><dt>Assunto</dt><dd>Plataforma de orçamentação com agente de IA</dd></div>
         <div><dt>Reunião</dt><dd>18 de setembro de 2026</dd></div>
         <div><dt>Preparado por</dt><dd>Manuel Condeço, AI Solutions</dd></div>
       </dl>
 
-      <h1 class="promessa">
+      <h1 class="promessa" data-linhas>
         O pedido chega.<br>
         O orçamento fica montado.<br>
-        <span class="promessa-fecho">O preço decides tu.</span>
+        <span class="promessa-fecho g-brilho">O preço decides tu.</span>
       </h1>
 
-      <p class="lead">
+      <p class="lead" data-acto="3" data-entra="sobe">
         Hoje cada orçamento espera por uma noite livre. Com a plataforma, o agente lê o pedido, monta as
         linhas com os teus preços e deixa tudo pronto a rever. Tu ajustas, aprovas, e o orçamento sai
         pelo TOConline.
       </p>
 
-      <ul class="numeros">
+      <ul class="numeros" data-acto="4" data-entra="sobe">
         <li>
           <span class="n">1 a 2 semanas</span>
           <span class="d">Até o cliente receber o orçamento, hoje</span>
         </li>
         <li>
-          <span class="n"><span class="conta num" data-para="131">131</span> artigos</span>
+          <span class="n"><span class="num" data-conta="131">131</span> artigos</span>
           <span class="d">Lidos nos 8 orçamentos que nos enviaste</span>
         </li>
         <li>
@@ -79,7 +89,7 @@
         </li>
       </ul>
 
-      <p class="doc-nota">5 minutos de leitura. Os valores estão no ponto 9.</p>
+      <p class="doc-nota" data-acto="5" data-entra="sobe">5 minutos de leitura. Os valores estão no ponto 9.</p>
     </div>
   </section>
 
@@ -87,7 +97,7 @@
   <section class="secao-junta faixa" id="resumo" data-nav="Em 30 segundos">
     <div class="container">
       <p class="rubrica"><span>1</span> A proposta em 30 segundos</p>
-      <dl class="sumario">
+      <dl class="sumario" data-entra="sobe">
         <div>
           <dt>O que construímos</dt>
           <dd>Uma plataforma de orçamentação com um agente que lê os pedidos que te chegam por email,
@@ -118,7 +128,7 @@
       <p class="rubrica"><span>2</span> O que ouvimos na segunda-feira</p>
       <h2>Não é um diagnóstico do sector. É o que nos contaste a 14 de setembro.</h2>
 
-      <div class="pontos">
+      <div class="pontos" data-entra="sobe">
         <article>
           <h3>De dia na obra, à noite nos orçamentos</h3>
           <p>És o dono, o gerente e estás no terreno. No verão, quando caem mais pedidos, a orçamentação
@@ -158,20 +168,20 @@
   </section>
 
   <!-- ============ 3. OS TEUS ORÇAMENTOS ============ -->
-  <section class="faixa" id="orcamentos" data-nav="Os teus orçamentos">
+  <section class="faixa-clara" id="orcamentos" data-nav="Os teus orçamentos">
     <div class="container">
       <p class="rubrica"><span>3</span> Os 8 orçamentos que enviaste</p>
       <h2>Antes de desenhar a plataforma, lemos linha a linha o que mandaste na segunda à noite.</h2>
       <p class="lead">Foi aqui que percebemos como orçamentas de facto.</p>
 
-      <dl class="contagens">
-        <div><dt class="num">8</dt><dd>Orçamentos, de janeiro a setembro de 2026<small class="ref">OR 2026/3 a OR 2026/34</small></dd></div>
-        <div><dt class="num">131</dt><dd>Artigos lidos, com quantidade, preço e IVA<small>Do ralo de fundo à cobertura DIVER</small></dd></div>
-        <div><dt class="num">5</dt><dd>Unidades diferentes<small>Unidade, hora, metro, quilo e litro</small></dd></div>
-        <div><dt class="num">4</dt><dd>Tipos de trabalho<small>Obra completa, tela armada, substituição, cobertura</small></dd></div>
+      <dl class="contagens" data-entra="sobe">
+        <div><dt class="num" data-conta="8">8</dt><dd>Orçamentos, de janeiro a setembro de 2026<small class="ref">OR 2026/3 a OR 2026/34</small></dd></div>
+        <div><dt class="num" data-conta="131">131</dt><dd>Artigos lidos, com quantidade, preço e IVA<small>Do ralo de fundo à cobertura DIVER</small></dd></div>
+        <div><dt class="num" data-conta="5">5</dt><dd>Unidades diferentes<small>Unidade, hora, metro, quilo e litro</small></dd></div>
+        <div><dt class="num" data-conta="4">4</dt><dd>Tipos de trabalho<small>Obra completa, tela armada, substituição, cobertura</small></dd></div>
       </dl>
 
-      <div class="duas">
+      <div class="duas" data-entra="sobe">
         <div>
           <h3>A mesma peça, preços diferentes</h3>
           <p>Tinhas razão: nos teus orçamentos, o preço não é fixo. Muda com o cliente, com o material e
@@ -190,8 +200,10 @@
           <p class="legenda"><span class="ch p"></span>Orçamento a particular <span class="ch e"></span>Orçamento a empresa ou empreiteiro</p>
         </div>
         <div>
-          <p class="pre-term">Foi assim que a base de preços começou a ser construída. A tua parte é
-            validar os pontos que ficam por confirmar.</p>
+          <p class="pre-term">O mesmo artigo, orçamento a orçamento. Cada ponto é um preço teu.</p>
+          <div class="grafico" id="rbGrafico" data-entra="escala"></div>
+          <p class="pre-term" style="margin-top:var(--s-5)">Foi assim que a base de preços começou a
+            ser construída. A tua parte é validar os pontos que ficam por confirmar.</p>
           <div class="term" id="rbTerm"></div>
         </div>
       </div>
@@ -236,7 +248,7 @@
     <div class="container">
       <p class="rubrica"><span>4</span> O que muda</p>
       <h2>A mesma decisão, sem o trabalho à volta.</h2>
-      <div class="antes-depois">
+      <div class="antes-depois" data-entra="sobe">
         <div>
           <h3>Passa a ser automático</h3>
           <ul class="lista lista-sim">
@@ -271,7 +283,7 @@
       <h2>Quatro pedidos, quatro decisões.</h2>
       <p class="lead">A conversa entre ti e o agente, e ao lado o que ele consultou e decidiu em cada
         passo. Em quatro situações reais da tua semana.</p>
-      <div class="cr entra" id="rbDemo" style="margin-top: var(--s-5)"></div>
+      <div class="cr holofote" data-entra="escala" id="rbDemo" style="margin-top: var(--s-5)"></div>
       <p class="so-leitor">
         Simulação de quatro cenários. No primeiro, o agente monta um pré-orçamento de obra completa para
         um particular e sinaliza que faltam a profundidade e o número de holofotes. No segundo, lê um
@@ -381,7 +393,7 @@
       <p class="doc-nota">Maqueta navegável. Clica nas secções, nos filtros, e experimenta escrever uma
         alteração no pré-orçamento.</p>
 
-      <div class="app-frame">
+      <div class="app-frame holofote" data-entra="escala">
         <div class="app">
           <aside class="app-side">
             <div class="app-brand"><img src="assets/img/logo.jpg" alt="Recife Blue" width="120" height="32"></div>
@@ -550,7 +562,7 @@
       <h2>O que o agente faz e o que fica contigo.</h2>
       <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
 
-      <div class="regras">
+      <div class="regras" data-entra="sobe">
         <article class="faz">
           <h3>Faz sozinho</h3>
           <ul>
@@ -603,12 +615,12 @@
   </section>
 
   <!-- ============ 9. INVESTIMENTO ============ -->
-  <section class="faixa" id="investimento" data-nav="Investimento">
+  <section class="faixa-clara" id="investimento" data-nav="Investimento">
     <div class="container">
       <p class="rubrica"><span>9</span> Investimento</p>
       <h2>O que custa e o que inclui.</h2>
 
-      <table class="fatura">
+      <table class="fatura" data-entra="escala">
         <caption class="so-leitor">Valores da proposta</caption>
         <thead>
           <tr><th scope="col">Descrição</th><th scope="col" class="num">Valor</th></tr>
@@ -649,7 +661,7 @@
     <div class="container">
       <p class="rubrica"><span>10</span> Cerca de seis semanas, em conjunto</p>
       <h2>Construímos, tu dás feedback, ajustamos. Só avança quando estiveres satisfeito.</h2>
-      <ol class="fases">
+      <ol class="fases" data-entra="sobe">
         <li>
           <span class="quando">Semana 1</span>
           <span class="o-que">Acessos</span>
@@ -676,7 +688,7 @@
   </section>
 
   <!-- ============ 11. FASE SEGUINTE ============ -->
-  <section class="faixa" id="depois" data-nav="Fase seguinte">
+  <section class="faixa-clara" id="depois" data-nav="Fase seguinte">
     <div class="container">
       <p class="rubrica"><span>11</span> O que fica para depois</p>
       <h2>Falámos destes pontos na segunda-feira e fazem sentido. Não fazem parte desta proposta.</h2>
@@ -704,7 +716,7 @@
   <!-- ============ 12. FECHO ============ -->
   <section class="fecho secao-ampla" id="fecho" data-nav="Fecho">
     <div class="container">
-      <h2>Avançamos, Gonçalo?</h2>
+      <h2 data-entra="sobe">Avançamos, Gonçalo?</h2>
       <p class="lead">Confirmamos tudo por escrito antes de arrancar.</p>
     </div>
   </section>
@@ -723,6 +735,14 @@
   </div>
 </footer>
 
+<!-- GSAP 3.15 auto-alojada: uma apresentação de cliente não pode depender
+     de um CDN de terceiros para ter movimento, nem pagar esse RTT. -->
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/grafico.js"></script>
+<script src="../shared/motion/motion.js"></script>
 <script src="../shared/js/protect.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="../shared/deck/deck.js"></script>
@@ -731,6 +751,21 @@
   chatRaciocinio('rbDemo');
   fluxo('rbFluxo');
   terminal('rbTerm');
+  grafico('rbGrafico', {
+    titulo: 'Preço por unidade, nos teus 8 orçamentos',
+    series: [
+      { nome: 'Eletrolisador de sal 10 gr/h', cor: 'brand', pontos: [
+        { r: 'OR 2026/9',  v: 980 }, { r: 'OR 2026/21', v: 1120 }, { r: 'OR 2026/34', v: 1120 } ] },
+      { nome: 'Instalação hidráulica', cor: 'accent', pontos: [
+        { r: 'OR 2026/10', v: 450 }, { r: 'OR 2026/21', v: 350 }, { r: 'OR 2026/34', v: 350 } ] },
+      { nome: 'Ralo de fundo', cor: 'ok', pontos: [
+        { r: 'OR 2026/9',  v: 40 }, { r: 'OR 2026/11', v: 47 }, { r: 'OR 2026/21', v: 165 },
+        { r: 'OR 2026/34', v: 60 } ] },
+      { nome: 'Válvulas de esfera PN10 50 mm', cor: 'warn', aviso: true, pontos: [
+        { r: 'OR 2026/9',  v: 18 }, { r: 'OR 2026/10', v: 118 }, { r: 'OR 2026/11', v: 18 } ] }
+    ],
+    nota: 'A linha a tracejado é a que está por confirmar.'
+  });
 </script>
 </body>
 </html>

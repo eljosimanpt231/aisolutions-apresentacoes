@@ -29,6 +29,13 @@
   --brand-c: 0.155;
   --brand-h: 247;
 
+  /* A atmosfera (shared/motion/atmosfera.css) trabalha em HSL, porque o
+     blur e os gradientes radiais ficam mais previsíveis assim. Mesmos
+     tons: o azul-água do site e o ciano das ondas do logótipo. */
+  --brand-hsl:  205 83% 44%;
+  --accent-hsl: 195 80% 58%;
+  --brand2-hsl: 216 64% 40%;
+
   --brand-50:  oklch(97.0% calc(var(--brand-c) * 0.07) calc(var(--brand-h) - 5));
   --brand-100: oklch(93.2% calc(var(--brand-c) * 0.15) calc(var(--brand-h) - 4));
   --brand-200: oklch(88.2% calc(var(--brand-c) * 0.28) calc(var(--brand-h) - 6));
@@ -193,20 +200,18 @@
      A moldura combina com o tema DO MOCK, não com o da marca.
      Default: escuro. Para um mock claro, redefinir estes sete.
      ============================================================ */
-  /* A conversa é uma interface de mensagens dentro de um documento claro:
-     vai clara, para a moldura combinar com o tema DO MOCK. O terminal
-     fica escuro, porque uma consola é escura em todo o lado. */
-  --mock-bg:        oklch(97.5% 0.005 var(--brand-h));
-  --mock-head:      oklch(99% 0.003 var(--brand-h));
-  --mock-linha:     oklch(22% 0.028 var(--brand-h) / 0.10);
-  --mock-txt:       oklch(22% 0.028 var(--brand-h));
-  --mock-txt-fraco: oklch(48% 0.020 var(--brand-h));
-  --mock-veu:       oklch(22% 0.028 var(--brand-h) / 0.035);
-  --mock-veu-2:     oklch(22% 0.028 var(--brand-h) / 0.06);
-  --mock-bolha-in:  oklch(100% 0 0);                    /* agente */
-  --mock-bolha-out: oklch(93% 0.035 var(--brand-h));    /* cliente */
-  --mock-bolha-out-txt: oklch(28% 0.05 var(--brand-h));
-  --mock-sombra:    oklch(22% 0.028 var(--brand-h) / 0.10);
+  /* Mocks escuros, coerentes com o deck. */
+  --mock-bg:        oklch(16% 0.020 var(--brand-h));
+  --mock-head:      oklch(20% 0.024 var(--brand-h));
+  --mock-linha:     oklch(100% 0 0 / 0.09);
+  --mock-txt:       oklch(95% 0.008 var(--brand-h));
+  --mock-txt-fraco: oklch(70% 0.014 var(--brand-h));
+  --mock-veu:       oklch(100% 0 0 / 0.035);
+  --mock-veu-2:     oklch(100% 0 0 / 0.06);
+  --mock-bolha-in:  oklch(25% 0.022 var(--brand-h));
+  --mock-bolha-out: oklch(40% 0.085 200);
+  --mock-bolha-out-txt: oklch(97% 0.01 200);
+  --mock-sombra:    oklch(0% 0 0 / 0.35);
   --mock-r:         var(--r-4);
 
   /* ============================================================

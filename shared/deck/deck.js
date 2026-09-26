@@ -183,14 +183,25 @@
     var root = document.getElementById(id), cfg = readCfg(id);
     if (!root || !cfg) return;
     var lines = cfg.lines || [], IV = cfg.intervalMs || 650, started = false, shown = 0, timer = null;
+    var alturaReservada = 0;   /* ver a correcção mais abaixo */
     function render() {
-      var h = '<div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>' + esc(cfg.title || "agente.log") + '</span></div><div class="term-body">';
+      var estilo = alturaReservada ? ' style="min-height:' + alturaReservada + 'px"' : '';
+      var h = '<div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>' + esc(cfg.title || "agente.log") + '</span></div><div class="term-body"' + estilo + '>';
       for (var i = 0; i < shown; i++) { var l = lines[i]; h += '<div class="term-line ' + (l.tone || "info") + '"><span class="pre">&gt;</span><span>' + esc(l.text) + "</span></div>"; }
       if (shown < lines.length) h += '<div class="term-line info"><span class="pre">&gt;</span><span class="term-cursor"></span></div>';
       h += "</div></div>"; root.innerHTML = h;
     }
     function tick() { if (shown < lines.length) { shown++; render(); timer = setTimeout(tick, IV); } else render(); }
-    render();
+
+    /* CORRIGIDO 26/09/2026: o terminal crescia enquanto as linhas apareciam,
+       e com ele a página inteira, o que faz o conteúdo fugir debaixo do
+       cursor de quem está a percorrer. Reserva-se a altura final ANTES de
+       começar: desenha-se tudo, mede-se, e só depois se volta ao início. */
+    shown = lines.length; render();
+    var corpo = root.querySelector('.term-body');
+    if (corpo) alturaReservada = Math.ceil(corpo.getBoundingClientRect().height);
+    shown = 0; render();   /* o render volta a aplicar a altura reservada */
+
     inView(root, function () { if (started) return; started = true; tick(); });
   };
 })();
