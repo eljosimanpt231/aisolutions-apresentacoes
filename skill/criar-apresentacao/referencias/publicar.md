@@ -29,6 +29,16 @@ Só para máquinas com um PAT válido (o dono do PAT é responsável por ele; nu
 - Ficheiros binários (PNG): base64 do binário
 - Verificação igual ao caminho normal
 
+## Antes de publicar: o cartão de partilha
+
+```bash
+node scripts/og.mjs [slug]
+```
+Gera `assets/img/og.png` a partir dos tokens da própria apresentação. **O link vai por WhatsApp e
+por email, e o cartão de pré-visualização é a primeira coisa que a lead vê.** Confirmar que o
+`og:image` no `index.html` aponta para o URL absoluto final. O WhatsApp faz cache agressiva: se for
+preciso corrigir depois, mudar o nome do ficheiro, não só o conteúdo.
+
 ## Depois de publicar
 - Confirmar que `robots.txt` continua a cobrir tudo (não mexer nele)
 - Testar o URL num browser em janela anónima (apanha erros de path relativos e de password)

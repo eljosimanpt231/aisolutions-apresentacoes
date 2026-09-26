@@ -14,6 +14,7 @@
   --brand: hsl(var(--brand-hsl));
   --accent: hsl(var(--accent-hsl));
   --on-brand: hsl(0 0% 100%);    /* texto sobre a cor da marca */
+  --brand2-hsl: 216 64% 40%;     /* segunda voz, usada no texto em gradiente */
 
   /* ---- Superfícies ---- */
   --bg: hsl(0 0% 100%);

@@ -12,9 +12,12 @@ Sistema interno que substitui o Lovable na criação de apresentações/demos we
 | `[slug]/` | Uma apresentação por pasta, na raiz (ex: `cfgroup-k3x9/`) |
 | `starter/` | Template base copiado para cada apresentação nova (nunca editar diretamente numa apresentação) |
 | `estilos/` | Biblioteca de estilos reutilizáveis (a "memória de design"): `registry.md` + 1 pasta por estilo |
-| `shared/` | Assets partilhados (protect.js) |
+| `shared/` | `deck/` (chat+raciocínio, fluxo, calculadora, terminal), `unibox/`, **`motion/` (atmosfera, acto de abertura, gráfico, GSAP auto-alojada)**, `js/protect.js` |
 | `skill/criar-apresentacao/` | Fonte canónica da skill Claude Code |
-| `scripts/` | `instalar-skill.cmd` (instala a skill nesta máquina) |
+| `scripts/` | `instalar-skill.cmd`, `fontes.mjs` (auto-alojar fontes), `og.mjs` (cartão de partilha) |
+| `qa.mjs` | Portão antes de publicar: contraste, medida, scroll, texto cortado, og, peso |
+| `motion.mjs` | Tira de fotogramas numa folha de contacto, para **ver** o movimento |
+| `comparar.mjs` | Duas apresentações lado a lado, com números |
 
 ## Setup de um comercial novo (uma vez por máquina)
 
@@ -32,4 +35,7 @@ No Claude Code: **"Cria uma apresentação para a lead [nome], site [url], com o
 - Português de Portugal; proibido o caráter de travessão em qualquer texto
 - Nunca números financeiros de outros clientes (o repo é público); valores da proposta à própria lead podem entrar
 - Slugs com sufixo aleatório (`lead-x9k2`); nomes reservados: starter, estilos, shared, skill, scripts
-- Push direto em `main` publica: rever os screenshots antes de publicar
+- Push direto em `main` publica. Antes: `node qa.mjs [slug]` sem erros, `node motion.mjs [slug]` para
+  ver o movimento, e `node comparar.mjs [anterior] [slug]` com a nova a ganhar na tabela
+- **Uma apresentação é marketing, não interface de produto**: admite atmosfera e um acto de abertura.
+  Ver `skill/criar-apresentacao/referencias/movimento.md`

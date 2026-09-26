@@ -4,6 +4,10 @@
    4. Simulação WhatsApp com guião (o "momento uau")
    ============================================================ */
 
+/* Marca que o JS está vivo. Só a partir daqui o CSS esconde o que vai
+   entrar: sem isto, uma falha de script deixa a página em branco. */
+document.documentElement.classList.add('js');
+
 /* ---------- 1. Reveal on scroll ---------- */
 (function () {
   const els = document.querySelectorAll('.reveal');

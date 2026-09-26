@@ -7,33 +7,57 @@
   <!-- SUBSTITUIR: título = [Lead] + promessa curta -->
   <title>Nome da Lead | Proposta AI Solutions</title>
   <meta name="description" content="Apresentação personalizada AI Solutions.">
+
+  <!-- CARTÃO DE PARTILHA. O link vai por WhatsApp e por email: isto é a
+       PRIMEIRA coisa que a lead vê, antes de abrir. Gerar a imagem com
+       `node scripts/og.mjs [slug]` e trocar [slug] pelo da apresentação. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nome da Lead × AI Solutions">
+  <meta property="og:description" content="Frase concreta com o que a solução faz pela lead.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/[slug]/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <!-- FONTES: ajustar ao estilo escolhido (ver estilos/[nome]/style.md) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
+  <!-- ATMOSFERA E MOVIMENTO: é isto que separa uma apresentação de um
+       documento. Ver referencias/movimento.md. -->
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
   <script src="config.js"></script>
 </head>
 <body>
+
+<!-- Profundidade antes de movimento. Apagar só se a direção de arte for
+     mesmo de fundo chapado, e escrever a razão no design.md. -->
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
 
   <!-- ============ 1. HERO: dor + promessa + prova ============
        Regras: nome da lead visível, promessa concreta (números),
        2-3 stat cards com a dor quantificada, 1 CTA para a demo. -->
   <section class="hero" id="topo">
     <div class="container">
-      <span class="kicker">Nome da Lead × AI Solutions</span>
-      <h1>Promessa principal <span class="grad">com destaque</span>.<br>Segunda linha da promessa.</h1>
-      <p class="lead" style="margin-top:18px">
+      <span class="kicker" data-acto="1" data-entra="sobe">Nome da Lead × AI Solutions</span>
+      <h1 data-linhas>Promessa principal <span class="g-brilho">com destaque</span>.<br>Segunda linha da promessa.</h1>
+      <p class="lead" data-acto="2" data-entra="sobe" style="margin-top:18px">
         Parágrafo que resume a dor de hoje e o que muda. Uma ou duas frases, concretas,
         com a linguagem do setor da lead.
       </p>
-      <div class="grid-3" style="margin-top:38px">
+      <div class="grid-3" data-acto="3" data-entra="sobe" style="margin-top:38px">
         <div class="card stat-card reveal"><div class="num">15 a 30 min</div><div class="desc">Tempo gasto hoje por pedido em trabalho repetitivo</div></div>
-        <div class="card stat-card reveal"><div class="num"><span class="count" data-to="90" data-suffix="%">0</span></div><div class="desc">Dos casos seguem sempre a mesma lógica</div></div>
+        <div class="card stat-card reveal"><div class="num"><span data-conta="90" data-sufixo="%">90%</span></div><div class="desc">Dos casos seguem sempre a mesma lógica</div></div>
         <div class="card stat-card reveal"><div class="num">+1/dia</div><div class="desc">Uma conversão extra por dia = X € de faturação adicional</div></div>
       </div>
       <div style="margin-top:34px">
-        <a href="#demo" class="btn btn-primary">Ver a demonstração ↓</a>
+        <a href="#demo" class="btn btn-primary premivel" data-iman="0.25">Ver a demonstração</a>
       </div>
     </div>
   </section>
@@ -169,6 +193,13 @@
     </div>
   </footer>
 
+  <!-- GSAP 3.15, gratuita por inteiro e auto-alojada: uma apresentação de
+       cliente não deve depender de um CDN para ter movimento. -->
+  <script src="../shared/motion/lib/gsap.min.js"></script>
+  <script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+  <script src="../shared/motion/lib/SplitText.min.js"></script>
+  <script src="../shared/motion/lib/CustomEase.min.js"></script>
+  <script src="../shared/motion/motion.js"></script>
   <script src="../shared/js/protect.js"></script>
   <script src="assets/js/app.js"></script>
   <script>waSim('waDemo');</script>

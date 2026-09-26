@@ -40,10 +40,24 @@ Cortar secções é permitido; mudar a ordem só com razão forte. O catálogo c
 - Verde = ganho/automático; vermelho = custo/manual. Usar para contar a história dos números
 - Contraste AA: texto normal 4.5:1 mínimo. Texto cinzento claro sobre branco é o erro mais comum
 
-## 6. Movimento orquestrado, não decorativo
-- Reveal on scroll (já no starter), contadores animados nos números, typing na simulação
-- Nada de animações em loop infinito fora do "dot live" e typing
-- `prefers-reduced-motion` já respeitado pelo starter, não remover
+## 6. Movimento e atmosfera
+
+**O detalhe todo está em `movimento.md`. Aqui fica o essencial.**
+
+- **Isto é marketing, não interface de produto.** Admite atmosfera, um acto de abertura de 600 a
+  1500ms e revelações coreografadas. Aplicar aqui as regras de contenção de UI de produto ("nada se
+  mexe", "tudo abaixo de 300ms") produz um documento parado, e já produziu.
+- **Atmosfera antes de movimento**: glow radial da marca, grelha esbatida por máscara, grão a 0,05,
+  uma ou duas palavras do título em gradiente, e a fotografia real da lead quando existe. É isto que
+  dá profundidade antes de se mexer o que quer que seja.
+- **Um acto de abertura** de 3 a 6 tempos sobrepostos, com a viagem (1100ms) e o aparecimento
+  (340ms) em relógios diferentes. Marca-se com `data-acto` e o `shared/motion/motion.js` faz o resto.
+- **Revelações ao longo da página** em lotes de 4, com stagger de 90ms.
+- **Micro-interacções** no que é clicável: `data-iman`, `data-inclina`, `holofote`.
+- **Um gráfico de dados reais** quando os números o justificarem (`shared/motion/grafico.js`).
+- **O estado final é sempre o default no CSS.** Sem JS, sem GSAP, ou com movimento reduzido, a
+  página fica completa e rica, nunca em branco.
+- Nada de loop infinito fora do "dot live", do typing e da deriva lenta dos glows.
 
 ## 7. Conteúdo é design
 - Vocabulário do SETOR da lead (coberturas, rubricas, baixadas, o que for). Genérico não convence
@@ -95,3 +109,7 @@ Isto é um NÍVEL de qualidade, não um template. O design, as cores, a estrutur
 - [ ] **Feito à medida**: vocabulário e serviços reais da lead, nome do decisor no CTA, pelo menos 1 detalhe hiper-específico (um hábito, uma frase, um sistema que ela usa). Se parece que serviria a qualquer empresa, falta trabalho.
 - [ ] **Confiança**: limites do agente claros, transparência de custos, e (em setores sensíveis) as 3 regras do agente.
 - [ ] **Interativo, não passivo**: algo mexe e responde ao toque (tabs, sliders, filtros da Unibox), não só scroll.
+- [ ] **Atmosfera**: fundo com profundidade (glows, grelha, grão), não uma cor chapada. Ver `movimento.md`.
+- [ ] **Movimento**: acto de abertura coreografado, revelações ao longo da página, micro-interacções
+      no que é clicável. Verificado com `node motion.mjs [slug]`, não com um screenshot parado.
+- [ ] **Ganha na comparação**: `node comparar.mjs [anterior] [slug]` e a nova ganha na tabela.

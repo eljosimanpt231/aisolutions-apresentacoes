@@ -10,6 +10,7 @@ Para usar: "cria a apresentação da [lead] **com o estilo [nome]**". Misturas s
 | `editorial-claro` | Protótipo Limonata | Leads premium/lifestyle/restauração; propostas longas com narrativa de ROI | Off-white, tipografia bold apertada, acento menta, números verde/vermelho, mockups dark embutidos, calculadora de custo |
 | `dark-premium` | Demo Thai Funchal | Momentos "uau" tecnológicos; leads jovens/digitais; demos de dashboard | Quase-preto com glows, gradiente de texto roxo+dourado, glassmorphism, dashboard com gráficos |
 | `deck-separadores` | Protótipo Aquisevende | Reuniões guiadas pelo comercial; conteúdo denso que beneficia de "1 ideia por ecrã" | FORMATO (não estética): barra superior com tabs, slides paginados, simulação de chat num separador próprio |
+| `noturno-vivo` | Recife Blue v2 | **O estilo com atmosfera e movimento.** Quando se quer presença: leads digitais, propostas de valor alto, reuniões em que a página é mostrada ao vivo | Quase-preto tingido com três glows, grelha e grão, fotografia da lead no cabeçalho, Literata + IBM Plex, acto de abertura coreografado, gráfico em SVG |
 | `deck-dark` | Protótipo Auto Bispo | Propostas de agentes de IA conversacionais (o caso mais comum); leads que combinam com tema escuro tech | Quase-preto com grid + glows, teal do agente + cor da marca da lead, componentes prontos chat+raciocínio, fluxo e Unibox |
 
 Regras:
