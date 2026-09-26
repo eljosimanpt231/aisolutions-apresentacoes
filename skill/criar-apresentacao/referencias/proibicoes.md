@@ -193,3 +193,4 @@ e a apresentação onde apareceu. Este ficheiro cresce; é suposto crescer.
 | 2026-09-26 | 28 blocos de texto invisíveis sem JavaScript numa só página | my-padel-center-b4q8 |
 | 2026-09-26 | 50 rótulos em CAIXA ALTA numa só página | my-padel-center-b4q8 |
 | 2026-09-26 | a mesma sombra em 57 elementos | my-padel-center-b4q8 |
+| 2026-09-26 | **os componentes de `shared/deck/` trazem os seus próprios tells**: rótulos em caixa alta (18 numa página), uma escala de tamanhos própria e cinco raios. Afinar por apresentação, e **fora de `@layer`**, porque CSS sem camada ganha a CSS em camada | recife-blue-n2d7 |

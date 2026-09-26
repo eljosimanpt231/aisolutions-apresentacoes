@@ -1,0 +1,339 @@
+/* ============================================================
+   BASE + COMPONENTES
+   Só usa tokens (var(--...)). PROIBIDO cores directas aqui.
+
+   Princípio que atravessa o ficheiro: O ESTADO FINAL É O DEFAULT.
+   Nada fica estacionado em opacity 0 à espera de JS. A animação
+   entra por cima, dentro de prefers-reduced-motion: no-preference.
+   Assim a página lê-se completa sem JS, com movimento reduzido,
+   e na miniatura de partilha.
+   ============================================================ */
+
+@layer reset, base, componentes, utilitarios;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; padding: 0; }
+  img, svg, video { max-width: 100%; display: block; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  :root { color-scheme: light; }
+  .deck-escuro { color-scheme: dark; }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* âncoras não ficam tapadas pela barra fixa (critério 2.4.11) */
+    scroll-padding-top: 80px;
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: var(--fs-0);
+    line-height: var(--lh-body);
+    letter-spacing: var(--tr-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+  }
+  /* NOTA: não há overflow-x: hidden no body. Esconder o overflow esconde
+     o bug em vez de o resolver, e o qa.mjs deixa de o apanhar. */
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    font-weight: 600;
+  }
+  h1 { font-size: var(--fs-4); line-height: var(--lh-h1); letter-spacing: var(--tr-h1); }
+  h2 { font-size: var(--fs-3); line-height: var(--lh-h2); letter-spacing: var(--tr-h2); }
+  h3 { font-size: var(--fs-2); line-height: var(--lh-h3); letter-spacing: var(--tr-h3); }
+  h4 { font-size: var(--fs-1); line-height: var(--lh-h3); }
+
+  p, li { text-wrap: pretty; max-width: var(--measure); }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  /* Foco: outline, nunca box-shadow (o box-shadow é cortado por overflow
+     hidden). 2px e offset, sem fade: o anel aparece instantaneamente. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: inherit;
+  }
+  :focus:not(:focus-visible) { outline: none; }
+  @media (forced-colors: active) {
+    :where(a, button, [tabindex]):focus-visible { outline-color: Highlight; }
+  }
+
+  ::selection { background: var(--brand-a30); }
+  :target { scroll-margin-top: 90px; }
+}
+
+@layer componentes {
+
+  /* ---------- Estrutura ---------- */
+  .container { max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+  .container-largo { max-width: 1320px; margin-inline: auto; padding-inline: var(--gutter); }
+
+  section { padding-block: var(--pad-secao); }
+  .secao-ampla { padding-block: var(--pad-secao-amplo); }
+  .secao-junta { padding-block: var(--pad-secao-junto); }
+  .section-alt { background: var(--bg-soft); }
+
+  /* Secções longas fora do ecrã: poupa trabalho de layout sem saltos */
+  .adiavel { content-visibility: auto; contain-intrinsic-size: auto 640px; }
+
+  /* Salto para o conteúdo (teclado e leitor de ecrã) */
+  .saltar {
+    position: absolute; left: -9999px; top: 0; z-index: 100;
+    background: var(--brand); color: var(--on-brand);
+    padding: var(--s-2) var(--s-4); border-radius: var(--r-2);
+  }
+  .saltar:focus { left: 0; }
+
+  .so-leitor {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip-path: inset(50%); white-space: nowrap;
+  }
+
+  /* ---------- Grelhas ----------
+     NÃO usar sempre 3 colunas iguais. Ver arquetipos-layout.md:
+     variar larguras e alturas é o que distingue de um template. */
+  .cols { display: grid; gap: var(--s-4); }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+  /* Assimétrica: a que foge ao "três cards iguais" */
+  .cols-assim { grid-template-columns: 1.4fr 1fr; }
+  @media (max-width: 860px) { .cols-assim { grid-template-columns: 1fr; } }
+
+  /* ---------- Tipografia de apoio ---------- */
+  .lead {
+    font-size: var(--fs-1); line-height: var(--lh-lead);
+    color: var(--muted); max-width: var(--measure-lead);
+  }
+  .display { font-size: var(--fs-5); line-height: var(--lh-hero); letter-spacing: var(--tr-hero); }
+  .hero-titulo { font-size: var(--fs-6); line-height: var(--lh-hero); letter-spacing: var(--tr-hero); }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+
+  /* Etiqueta de secção. USAR NO MÁXIMO 2 OU 3 NA PÁGINA INTEIRA:
+     o rótulo em caixa alta por cima de cada título é um tell nomeado.
+     Escrever o texto em caixa normal no HTML e transformar aqui. */
+  .etiqueta {
+    display: block;
+    font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 500;
+    text-transform: uppercase; letter-spacing: var(--tr-label);
+    color: var(--muted); margin-bottom: var(--s-2);
+    margin-inline-end: -0.09em;   /* compensa o tracking da última letra */
+  }
+
+  /* Ritmo da abertura: o título respira do que vem antes e do que vem depois.
+     Com a escala de display nova, colar o lead ao h1 esmaga os dois. */
+  .abertura .marca { margin-bottom: var(--s-6); }
+  .abertura h1 + .lead,
+  .abertura .hero-titulo + .lead { margin-top: var(--s-4); }
+
+  /* ---------- Abertura ----------
+     A secção de abertura NÃO tem estilos próprios de propósito: compõe-se
+     com os utilitários, conforme o arquétipo escolhido. Não usar a classe
+     `.hero`: existe no deck.css como legado e impõe ecrã inteiro centrado,
+     que é o default proibido. */
+
+  /* ---------- Cabeçalho da marca e metadados do hero ---------- */
+  .marca { display: flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-5); }
+  .marca img { height: 32px; width: auto; }
+  .marca span { color: var(--muted); font-size: var(--fs--1); }
+
+  /* Metadados do hero. Separador com barra, não com ponto médio:
+     a cadeia "A · B · C" é um tell nomeado. */
+  .meta {
+    margin-top: var(--s-6); padding-top: var(--s-3);
+    border-top: 1px solid var(--hairline);
+    color: var(--muted); font-size: var(--fs--1); max-width: none;
+  }
+  .meta b { color: var(--text); font-weight: 600; }
+  .meta span { display: inline-block; margin-right: var(--s-4); }
+  .meta span + span { padding-left: var(--s-4); border-left: 1px solid var(--hairline); }
+
+  /* ---------- Botões ----------
+     Um primário por página. O secundário é visivelmente mais fraco.
+     Sem pílula por defeito (é um dos defaults nomeados) e sem seta
+     colada ao texto. */
+  .btn {
+    display: inline-flex; align-items: center; gap: var(--s-2);
+    min-height: 44px; padding: 12px 22px;
+    border-radius: var(--r-2); border: 1px solid transparent;
+    font-size: var(--fs--1); font-weight: 600; cursor: pointer;
+    touch-action: manipulation;
+    transition: background-color var(--t-rapido) var(--ease-out),
+                border-color var(--t-rapido) var(--ease-out),
+                box-shadow var(--t-rapido) var(--ease-out);
+  }
+  .btn-primario { background: var(--brand); color: var(--on-brand); box-shadow: var(--e1); }
+  .btn-secundario { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn:disabled { opacity: 0.45; cursor: default; }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primario:hover { background: var(--brand-700); }
+    .btn-secundario:hover { border-color: var(--border-strong); background: var(--surface-2); }
+  }
+  .btn:active { transform: scale(0.98); }
+  @media (prefers-reduced-motion: reduce) { .btn:active { transform: none; } }
+
+  /* ---------- Cards ----------
+     Nem tudo é um card. Borda, preenchimento, raio e sombra dizem
+     "objecto separado": gastam-se por papel. */
+  .card {
+    background: var(--surface);
+    border-radius: var(--r-3); padding: var(--s-4);
+    box-shadow: var(--e1);
+  }
+  .card-plano { background: none; box-shadow: none; padding: 0; }     /* sem moldura */
+  .card-linha { background: none; box-shadow: none; border-top: 1px solid var(--hairline);
+                padding-block: var(--s-4) 0; }                        /* só um filete */
+  .card-destaque { box-shadow: var(--e2); border-radius: var(--r-4); padding: var(--s-5); }
+
+  /* ---------- Números de prova ---------- */
+  .stat .valor {
+    font-family: var(--font-display); font-size: var(--fs-3);
+    line-height: 1; color: var(--text);
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .stat .desc { color: var(--muted); font-size: var(--fs--1); margin-top: var(--s-2); max-width: 32ch; }
+
+  /* ---------- Listas de contraste ---------- */
+  .lista { list-style: none; display: grid; gap: var(--s-3); margin-top: var(--s-3); }
+  .lista li { padding-left: 30px; position: relative; font-size: var(--fs--1); max-width: 46ch; }
+  .lista-sim li::before, .lista-nao li::before {
+    content: ""; position: absolute; left: 0; top: 0.28em;
+    width: 18px; height: 18px; border-radius: 50%;
+    background-repeat: no-repeat; background-position: center; background-size: 11px;
+  }
+  .lista-sim li::before {
+    background-color: var(--ok-wash);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23117a52' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  }
+  .lista-nao li::before {
+    background-color: var(--danger-wash);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b02020' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- Badges ---------- */
+  .badge {
+    display: inline-block; padding: 4px 10px; border-radius: var(--r-2);
+    font-size: var(--fs--2); font-weight: 600;
+    background: var(--accent-a10); color: var(--brand-700);
+  }
+  .badge-ok { background: var(--ok-wash); color: var(--ok); }
+  .badge-aviso { background: var(--warn-wash); color: oklch(42% 0.12 75); }
+
+  /* ---------- Cronograma ---------- */
+  .fases { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+  .fase { border-top: 2px solid var(--border); padding-top: var(--s-3); }
+  .fase.ativa { border-top-color: var(--brand); }
+  .fase .quando { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--accent);
+                  letter-spacing: var(--tr-label); text-transform: uppercase; }
+  .fase .o-que { display: block; margin-top: var(--s-1); font-weight: 600; }
+  .fase p { color: var(--muted); font-size: var(--fs--1); margin-top: var(--s-1); }
+
+  /* ---------- Investimento ---------- */
+  .preco .rotulo { font-size: var(--fs--1); color: var(--muted); }
+  .preco .valor {
+    font-family: var(--font-display); font-size: var(--fs-3);
+    margin-block: var(--s-1); font-variant-numeric: tabular-nums lining-nums;
+  }
+  .preco .nota { color: var(--muted); font-size: var(--fs--1); }
+
+  /* ---------- Fecho ---------- */
+  .fecho { background: var(--brand-950); color: oklch(97% 0.01 var(--brand-h)); }
+  .fecho h2 { color: inherit; }
+  .fecho .lead { color: oklch(85% 0.02 var(--brand-h)); }
+  .fecho .btn-primario { background: var(--brand-300); color: var(--brand-950); }
+
+  /* ---------- Rodapé ---------- */
+  .rodape { padding-block: var(--s-6); border-top: 1px solid var(--hairline);
+            font-size: var(--fs--1); color: var(--muted); }
+  /* alvo de toque de 24px: um link de rodapé tem 18px de altura de texto */
+  .rodape a { color: var(--muted); font-weight: 600; display: inline-block; padding-block: 4px; }
+
+  /* ---------- Tabs ---------- */
+  .tabs { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+  .tab {
+    min-height: 40px; padding: 8px 16px;
+    border: 1px solid var(--border); border-radius: var(--r-2);
+    background: transparent; color: var(--muted);
+    font-size: var(--fs--1); font-weight: 600; cursor: pointer;
+    transition: color var(--t-rapido) var(--ease-out),
+                border-color var(--t-rapido) var(--ease-out),
+                background-color var(--t-rapido) var(--ease-out);
+  }
+  .tab[aria-selected="true"] { background: var(--brand-a10); border-color: var(--brand-a45); color: var(--brand-700); }
+  .deck-escuro .tab[aria-selected="true"] { color: var(--brand-300); }
+  .painel[hidden] { display: none; }
+
+  /* ---------- Navegação com scroll-spy ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in oklab, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav ul { display: flex; gap: var(--s-3); list-style: none; overflow-x: auto;
+            padding-block: 12px; scrollbar-width: none; }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav a { color: var(--muted); font-size: var(--fs--1); text-decoration: none; white-space: nowrap;
+           padding: 6px 2px; }
+  .nav a[aria-current="true"] { color: var(--text); box-shadow: inset 0 -2px 0 var(--brand); }
+}
+
+@layer utilitarios {
+  .flow > * + * { margin-top: var(--s-3); }
+  .flow-largo > * + * { margin-top: var(--s-5); }
+  .muted { color: var(--muted); }
+  .medida { max-width: var(--measure); }
+  .grao { position: relative; isolation: isolate; }
+  .grao::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 140px 140px; opacity: 0.05; mix-blend-mode: overlay;
+  }
+  @media (prefers-reduced-transparency: reduce) { .grao::after { display: none; } }
+}
+
+/* ============================================================
+   MOVIMENTO
+   Um momento orquestrado, não um reveal em todas as secções.
+   Marcar com .entra APENAS o bloco que merece: normalmente o hero
+   e o momento uau. Entrada de secção em tudo é um default nomeado.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes subir { from { opacity: 0; transform: translateY(12px); } }
+    .entra {
+      animation: subir auto linear both;   /* shorthand primeiro */
+      animation-timeline: view();          /* depois a timeline */
+      animation-range: entry 8% cover 30%; /* depois o intervalo */
+    }
+  }
+  @keyframes entrada-hero { from { opacity: 0; transform: translateY(14px); } }
+  .hero-seq > * {
+    animation: entrada-hero 520ms var(--ease-out) backwards;
+    animation-delay: calc(var(--i, 0) * 70ms);
+  }
+}
+
+/* ============================================================
+   IMPRESSÃO
+   Alguns decisores imprimem. Não se promove o PDF, mas também
+   não se entrega uma folha partida.
+   ============================================================ */
+@media print {
+  .nav, .saltar, .btn, .tabs { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  section { padding-block: 18pt; break-inside: avoid; }
+  .card, .stat, figure { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  details { display: block; }
+  details > summary { list-style: none; font-weight: 700; }
+  .painel[hidden] { display: block !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+  .preco, .fecho { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}

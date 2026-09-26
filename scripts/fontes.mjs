@@ -24,9 +24,12 @@ import { join } from 'node:path';
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
            '(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 
-const [slug, ...familias] = process.argv.slice(2);
+/* latin-ext (Latin Extended-A: polaco, checo, turco) não serve para português
+   e duplica o peso. Só entra com --ext. */
+const comExt = process.argv.includes('--ext');
+const [slug, ...familias] = process.argv.slice(2).filter(a => a !== '--ext');
 if (!slug || !familias.length) {
-  console.error('uso: node scripts/fontes.mjs [slug] "Familia:400,600" ["Outra:400"]');
+  console.error('uso: node scripts/fontes.mjs [slug] "Familia:400,600" ["Outra:400"] [--ext]');
   process.exit(1);
 }
 
@@ -49,12 +52,12 @@ for (const spec of familias) {
   if (!resp.ok) { console.error(`falhou ${nome}: HTTP ${resp.status}`); process.exit(1); }
   const css = await resp.text();
 
-  /* só os blocos latin e latin-ext: o resto é peso morto para PT */
+  /* só latin (mais latin-ext com --ext): o resto é peso morto para PT */
   const regex = /\/\*\s*([\w-]+)\s*\*\/\s*@font-face\s*\{([^}]+)\}/g;
   let m, n = 0;
   while ((m = regex.exec(css)) !== null) {
     const subset = m[1];
-    if (subset !== 'latin' && subset !== 'latin-ext') continue;
+    if (subset !== 'latin' && !(comExt && subset === 'latin-ext')) continue;
     const corpo = m[2];
     const peso = (corpo.match(/font-weight:\s*([^;]+);/) || [, '400'])[1].trim();
     const src = (corpo.match(/src:\s*url\(([^)]+)\)/) || [])[1];

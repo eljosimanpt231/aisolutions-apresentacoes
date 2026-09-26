@@ -41,7 +41,10 @@ if (existsSync(personalizado)) {
     const cs = getComputedStyle(document.documentElement);
     const v = (n) => cs.getPropertyValue(n).trim();
     const meta = (prop) => document.querySelector(`meta[property="${prop}"]`)?.content || '';
-    const logo = document.querySelector('.marca img, header img, .brandbar img');
+    /* o logótipo da lead pode estar em várias classes conforme o arquétipo:
+       apanhar a primeira imagem plausível no primeiro ecrã */
+    const logo = document.querySelector(
+      '.marca img, .doc-logo, .brandbar img, .logo-pill img, header img, main img');
     return {
       titulo: meta('og:title') || document.title,
       descricao: meta('og:description') || document.querySelector('meta[name=description]')?.content || '',

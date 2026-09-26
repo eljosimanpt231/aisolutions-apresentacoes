@@ -148,9 +148,14 @@ const AUDITORIA = () => {
     if (s.textTransform === 'uppercase' && temTextoProprio(el) && el.textContent.trim().length > 2)
       res.caixaAlta.push({ sel: el.className || tag, txt: el.textContent.trim().slice(0, 30) });
 
-    /* alvos de toque (WCAG 2.2 AA: 24x24 CSS px) */
-    const clicavel = ['a', 'button', 'input', 'select'].includes(tag) || s.cursor === 'pointer';
-    if (clicavel && (r.width < 24 || r.height < 24) && r.width > 0)
+    /* alvos de toque (WCAG 2.2 AA: 24x24 CSS px).
+       Um <span> dentro de uma linha clicável herda cursor:pointer mas não é
+       um alvo: o alvo é o antepassado. Só conta o elemento mais exterior. */
+    const interactivo = ['a', 'button', 'input', 'select', 'summary'].includes(tag);
+    const clicavel = interactivo || s.cursor === 'pointer';
+    const dentroDeOutro = !interactivo &&
+      el.parentElement?.closest('a, button, input, select, summary, [onclick], tr.clk');
+    if (clicavel && !dentroDeOutro && (r.width < 24 || r.height < 24) && r.width > 0)
       res.alvos.push({ sel: el.className || tag, w: Math.round(r.width), h: Math.round(r.height), txt: el.textContent.trim().slice(0, 25) });
 
     /* seta anexada ao texto do botão (tell de template) */

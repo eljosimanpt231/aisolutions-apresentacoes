@@ -8,7 +8,16 @@ Se for mesmo preciso repetir, escrever a razão no `design.md`.
 
 | Data | Lead | Arquétipo | Display | Corpo | Campo | Floco de neve |
 |---|---|---|---|---|---|---|
-| | | | | | | |
+| 2026-09-26 | Recife Blue (v2) | Documento | Literata | IBM Plex Sans | editorial | Rubricas com os nomes das rubricas dos orçamentos dele |
+
+Antes do registo existir, e só para memória do que não se deve repetir a seguir:
+
+| Data | Lead | Arquétipo | Display | Corpo |
+|---|---|---|---|---|
+| 2026-09-25 | A. Menarini Diagnostics | Produto à direita (slide) | Inter | Inter |
+| 2026-09-23 | Castelo Real Estate | Hero centrado | Sora | Inter |
+| 2026-09-18 | My Padel Center | Afirmação editorial | Outfit | Inter |
+| 2026-09-16 | Recife Blue (v1) | Hero sobre fotografia | Barlow Condensed | Inter |
 
 ## Como preencher
 
