@@ -475,7 +475,8 @@
    partiam o eixo de leitura */
 .cr-tabs { justify-content: flex-start; }
 .cr-shell, .fluxo-shell { border-radius: var(--r-4); background: var(--surface); }
-.cr-chat, .cr-reason { border-radius: var(--r-3); height: 480px; }
+.cr-chat { border-radius: var(--r-3); height: 480px; }
+.cr-reason { border-radius: var(--r-3); min-height: 480px; }
 .cr-bubble { border-radius: var(--r-3); font-size: var(--fs--1); }
 .cr-head h3 { font-size: var(--fs-1); font-weight: 600; }
 .cr-head p, .cr-step-l { font-size: var(--fs--1); }

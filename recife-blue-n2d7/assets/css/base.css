@@ -23,8 +23,9 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* âncoras não ficam tapadas pela barra fixa (critério 2.4.11) */
-    scroll-padding-top: 80px;
+    /* âncoras não ficam tapadas pela barra fixa (critério 2.4.11).
+       Medir a barra: um valor a mais encurta cada página de scroll. */
+    scroll-padding-top: 60px;
   }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -81,7 +82,15 @@
   .secao-junta { padding-block: var(--pad-secao-junto); }
   .section-alt { background: var(--bg-soft); }
 
-  /* Secções longas fora do ecrã: poupa trabalho de layout sem saltos */
+  /* PERIGO: só usar com uma altura MEDIDA, nunca com uma estimativa.
+     `content-visibility: auto` salta o layout das secções fora do ecrã, mas
+     enquanto a altura real não for conhecida o browser usa a estimativa de
+     `contain-intrinsic-size`. Se a estimativa for menor que a realidade, a
+     página cresce à medida que se faz scroll e o conteúdo foge debaixo do
+     cursor: o utilizador sente que "não consegue dar scroll".
+     Numa página de 10 a 13 ecrãs isto não compensa. Se for mesmo usado,
+     medir a altura real de cada secção e correr `node qa.mjs`, que tem um
+     teste de estabilidade de scroll. */
   .adiavel { content-visibility: auto; contain-intrinsic-size: auto 640px; }
 
   /* Salto para o conteúdo (teclado e leitor de ecrã) */

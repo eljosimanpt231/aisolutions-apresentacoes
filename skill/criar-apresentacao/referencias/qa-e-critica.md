@@ -32,6 +32,8 @@ bloqueadas por CORS) e mede a página a 1440, 768 e 390px.
 | `:focus-visible` declarado (procura dentro de `@layer` e `@media`) | Sem ele, o teclado é invisível |
 | `og:title` e `og:image` | O cartão que a lead vê no WhatsApp antes de abrir |
 | Peso e número de pedidos | Orçamento: 250 KB de código, menos de 25 pedidos |
+| **Estabilidade do scroll** | A página não pode crescer enquanto se percorre, e cada volta da roda tem de andar o que foi pedido (descontando o `scroll-padding`) |
+| **Regiões que roubam o scroll** | Blocos altos com `overflow-y: auto` engolem a roda e o dedo. Lê-se como "não consigo dar scroll" |
 | Erros de consola e de página | |
 
 **Os ERROS corrigem-se antes de publicar. Os AVISOS decidem-se caso a caso** e a decisão escreve-se
@@ -57,6 +59,8 @@ Ler os PNG (Read aos ficheiros, não adivinhar) e responder honestamente:
 - [ ] Os espaçamentos têm ritmo, ou é tudo o mesmo padding?
 - [ ] Em telemóvel: nada cortado, nada espremido, a demo empilha, o texto não encolheu?
 - [ ] O contraste aguenta sobre os gradientes e as imagens?
+- [ ] **Percorrer a página de cima a baixo com o cursor sobre a zona central**, não só tirar
+      screenshots. Um screenshot estático não apanha uma página que encrava.
 - [ ] **Abrir a apresentação anterior ao lado.** Se as duas pudessem trocar de cliente trocando as
       cores, falta trabalho.
 

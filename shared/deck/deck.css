@@ -73,10 +73,16 @@
 @keyframes cr-blink { 0%, 60%, 100% { opacity: 0.3; } 30% { opacity: 1; } }
 
 /* reasoning column */
-.cr-reason { display: flex; flex-direction: column; height: 520px; overflow: hidden; border-radius: 14px; border: 1px solid color-mix(in oklab, var(--accent) 20%, transparent); background: linear-gradient(to bottom right, color-mix(in oklab, var(--accent) 5%, transparent), transparent); }
+.cr-reason { display: flex; flex-direction: column; height: auto; min-height: 520px; border-radius: 14px; border: 1px solid color-mix(in oklab, var(--accent) 20%, transparent); background: linear-gradient(to bottom right, color-mix(in oklab, var(--accent) 5%, transparent), transparent); }
 .cr-reason-head { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
 .cr-reason-head .t { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); }
-.cr-steps { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 8px; list-style: none; }
+/* CORRIGIDO 26/09/2026: a coluna do raciocínio tinha altura fixa com
+   overflow-y auto. Quando os passos não cabiam, ganhava scroll próprio e
+   ENGOLIA a roda do rato e o arrasto do dedo: quem percorresse a página
+   com o cursor por cima sentia que ela tinha encravado. Agora cresce com
+   o conteúdo. A coluna da conversa mantém o scroll, que ali é preciso. */
+.cr-steps { flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 8px; list-style: none; }
+.cr-cols { align-items: start; }
 .cr-step { display: flex; align-items: flex-start; gap: 12px; border-radius: 10px; border: 1px solid transparent; padding: 12px; opacity: 0.25; transform: translateY(4px); transition: all 0.5s ease; }
 .cr-step.on { opacity: 1; transform: none; border-color: color-mix(in oklab, var(--accent) 20%, transparent); background: var(--mock-veu, hsl(0 0% 100% / 0.03)); }
 .cr-step-ic { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: color-mix(in oklab, var(--accent) 15%, transparent); color: var(--accent); }

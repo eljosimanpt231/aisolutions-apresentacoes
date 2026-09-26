@@ -113,6 +113,25 @@ uppercase, metadados com ponto médio, seta no texto do botão).
   `ease-out`. Nada de deslizes de 40px nem de `scale(0.8)`.
 - Anéis de foco aparecem **instantaneamente**, nunca com fade.
 
+## 4b. Scroll (a página tem de andar quando a pessoa a empurra)
+
+Dois defeitos que passaram despercebidos numa apresentação já entregue, e que se sentem os dois
+como **"não consigo dar scroll"**. O `qa.mjs` passou a testar ambos.
+
+- **Proibida uma região alta com scroll próprio no meio da página.** Uma coluna com altura fixa e
+  `overflow-y: auto` engole a roda do rato e o arrasto do dedo: quem percorre a página com o cursor
+  por cima dela sente que encravou, e só volta a andar depois de esgotar o scroll interior. Foi o
+  que aconteceu com a coluna do raciocínio do `chatRaciocinio`, corrigida no componente a
+  26/09/2026. Se não for um mock de aplicação a fingir de aplicação, o bloco cresce com o conteúdo.
+  A Unibox é a excepção legítima: são três painéis de uma caixa de entrada, e é suposto terem
+  scroll. Mesmo aí, não a pôr a ocupar o ecrã inteiro.
+- **Proibido `content-visibility: auto` com uma altura estimada.** Enquanto a altura real não é
+  conhecida, o browser usa a `contain-intrinsic-size`; se ela for menor que a realidade, a página
+  vai crescendo à medida que se percorre e o conteúdo foge debaixo do cursor. Numa página de 10 a
+  13 ecrãs não compensa. Se for mesmo usado, medir a altura real de cada secção.
+- **`scroll-padding-top` só o da barra que existe.** Um valor a mais encurta de propósito cada
+  página de scroll. Medir a barra, não pôr um número a olho.
+
 ## 5. Conteúdo e números
 
 - **Proibido inventar métricas.** "+47% de conversão", "mais de 50 empresas confiam em nós": no

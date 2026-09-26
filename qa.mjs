@@ -217,6 +217,50 @@ const AUDITORIA = () => {
 const consolas = [];
 const pedidos = { total: 0, bytes: 0, fontes: 0 };
 
+/* ---------- ESTABILIDADE DO SCROLL ----------
+   Se a página cresce enquanto se percorre, o conteúdo foge debaixo do
+   cursor e o utilizador sente que não consegue fazer scroll. Causa
+   habitual: `content-visibility: auto` com uma `contain-intrinsic-size`
+   estimada por baixo. Também apanha imagens sem dimensões e tipos de
+   letra a chegar tarde. */
+{
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
+  const p = await ctx.newPage();
+  await p.goto(`${BASE}/${slug}/index.html`, { waitUntil: 'load' });
+  await p.waitForTimeout(1800);
+  const alturaInicial = await p.evaluate(() => document.documentElement.scrollHeight);
+  const posicoes = [];
+  for (let i = 0; i < 12; i++) {
+    await p.mouse.wheel(0, 900);
+    await p.waitForTimeout(260);
+    posicoes.push(await p.evaluate(() => Math.round(window.scrollY)));
+  }
+  const alturaFinal = await p.evaluate(() => document.documentElement.scrollHeight);
+  const crescimento = alturaFinal - alturaInicial;
+  relatorio.metricas.crescimentoScroll = crescimento;
+
+  /* mais de 1% de crescimento já se sente */
+  if (crescimento > Math.max(80, alturaInicial * 0.01)) add('erros',
+    `A página cresce ${crescimento}px enquanto se faz scroll (${alturaInicial} para ${alturaFinal}). ` +
+    `O conteúdo foge debaixo do cursor e lê-se como "não consigo dar scroll". ` +
+    `Suspeitos: content-visibility com contain-intrinsic-size estimada por baixo, ` +
+    `imagens sem width/height, ou fontes a chegar depois do primeiro layout.`);
+
+  /* Cada volta da roda tem de andar o que foi pedido. Descontar o
+     scroll-padding-top: com uma barra fixa, o browser encurta de propósito
+     cada página de scroll para o conteúdo não ficar tapado. Isso é correcto. */
+  const almofada = await p.evaluate(() =>
+    parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0);
+  const esperado = 900 - almofada - 10;   /* 10px de folga */
+  const avancos = posicoes.map((v, i) => (i ? v - posicoes[i - 1] : v));
+  const curtos = avancos.filter((a, i) => a > 0 && a < esperado && posicoes[i] < alturaFinal - 1000);
+  if (curtos.length > 1) add('avisos',
+    `${curtos.length} voltas da roda avançaram menos do que o esperado (${curtos.join(', ')}px, ` +
+    `esperado pelo menos ${Math.round(esperado)}px com scroll-padding de ${almofada}px). ` +
+    `Normalmente é a mesma causa do crescimento da página.`);
+  await ctx.close();
+}
+
 /* ---------- passagem SEM JAVASCRIPT ----------
    A página tem de ler-se parada. Se o conteúdo está estacionado em
    opacity 0 à espera de um observer, basta o JS falhar (ou o utilizador
