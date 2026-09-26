@@ -124,9 +124,18 @@ const movimentoReduzido = matchMedia('(prefers-reduced-motion: reduce)');
       if (!en.isIntersecting) return;
       links.forEach(l => l.removeAttribute('aria-current'));
       const atual = links.find(l => l.getAttribute('href') === '#' + en.target.id);
-      if (atual) {
-        atual.setAttribute('aria-current', 'true');
-        atual.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      if (!atual) return;
+      atual.setAttribute('aria-current', 'true');
+
+      /* NUNCA usar scrollIntoView aqui. Ele percorre TODOS os antepassados
+         com scroll, incluindo a própria página, e com `scroll-padding-top`
+         puxa a página para trás alguns pixels de cada vez que a secção
+         muda. Quem está a percorrer a página sente-a a saltar para cima e
+         a encravar. Aqui só se mexe no scroll horizontal da própria lista. */
+      const faixa = atual.parentElement.parentElement;      /* o <ul> */
+      if (faixa.scrollWidth > faixa.clientWidth + 4) {
+        const alvo = atual.offsetLeft - (faixa.clientWidth - atual.offsetWidth) / 2;
+        faixa.scrollLeft = Math.max(0, alvo);
       }
     });
   }, { rootMargin: '-45% 0px -50% 0px' });

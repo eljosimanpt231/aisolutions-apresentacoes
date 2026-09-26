@@ -32,8 +32,9 @@ bloqueadas por CORS) e mede a página a 1440, 768 e 390px.
 | `:focus-visible` declarado (procura dentro de `@layer` e `@media`) | Sem ele, o teclado é invisível |
 | `og:title` e `og:image` | O cartão que a lead vê no WhatsApp antes de abrir |
 | Peso e número de pedidos | Orçamento: 250 KB de código, menos de 25 pedidos |
-| **Estabilidade do scroll** | A página não pode crescer enquanto se percorre, e cada volta da roda tem de andar o que foi pedido (descontando o `scroll-padding`) |
-| **Regiões que roubam o scroll** | Blocos altos com `overflow-y: auto` engolem a roda e o dedo. Lê-se como "não consigo dar scroll" |
+| **A página anda?** | Percorre a página inteira com o cursor ao centro do ecrã e falha se ela prender ou saltar para trás. Corre duas vezes: ao carregar e com as animações já corridas, porque há caixas que só ganham scroll depois de encherem |
+| **Estabilidade do scroll** | A página não pode crescer enquanto se percorre |
+| **Regiões que roubam o scroll** | Blocos altos com `overflow-y: auto` engolem a roda e o dedo |
 | Erros de consola e de página | |
 
 **Os ERROS corrigem-se antes de publicar. Os AVISOS decidem-se caso a caso** e a decisão escreve-se

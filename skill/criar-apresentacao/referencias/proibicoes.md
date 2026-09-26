@@ -115,14 +115,26 @@ uppercase, metadados com ponto médio, seta no texto do botão).
 
 ## 4b. Scroll (a página tem de andar quando a pessoa a empurra)
 
-Dois defeitos que passaram despercebidos numa apresentação já entregue, e que se sentem os dois
-como **"não consigo dar scroll"**. O `qa.mjs` passou a testar ambos.
+Três defeitos que passaram despercebidos numa apresentação já entregue, e que se sentem todos da
+mesma maneira: **"não consigo dar scroll, fica presa"**. O `qa.mjs` passou a testar os três, e a
+maneira de testar é a que interessa: **percorrer a página inteira com o cursor ao CENTRO do ecrã**,
+e exigir que ela ande. Um screenshot nunca apanha isto, e medir com o cursor no canto também não.
 
-- **Proibida uma região alta com scroll próprio no meio da página.** Uma coluna com altura fixa e
+- **PROIBIDO `scrollIntoView` dentro de um observer de scroll.** É a causa mais traiçoeira das três,
+  porque a página não fica lenta: **salta para trás**. O `scrollIntoView` percorre *todos* os
+  antepassados com scroll, incluindo a própria página, e com `scroll-padding-top` declarado puxa a
+  página uns pixels para cima de cada vez que a secção activa muda. A pessoa empurra para baixo e a
+  página responde para cima. Num scroll-spy que só quer acompanhar uma barra horizontal, mexe-se no
+  `scrollLeft` da própria barra, nunca em `scrollIntoView`.
+
+- **Proibida uma região alta com scroll próprio no meio da página.** Uma caixa com altura fixa e
   `overflow-y: auto` engole a roda do rato e o arrasto do dedo: quem percorre a página com o cursor
-  por cima dela sente que encravou, e só volta a andar depois de esgotar o scroll interior. Foi o
-  que aconteceu com a coluna do raciocínio do `chatRaciocinio`, corrigida no componente a
-  26/09/2026. Se não for um mock de aplicação a fingir de aplicação, o bloco cresce com o conteúdo.
+  por cima dela só volta a andar depois de esgotar o scroll interior. No `chatRaciocinio` isto
+  acontecia duas vezes: na coluna do raciocínio (quando os passos não cabiam) e na coluna da
+  conversa (que **só ganha scroll depois de a conversa encher**, por isso não se vê ao carregar a
+  página). As duas corrigidas no componente a 26/09/2026: o raciocínio cresce com o conteúdo, e a
+  conversa passou a `overflow: hidden`, o que **não impede o auto-scroll** porque o componente põe
+  o `scrollTop` por código. Uma conversa simulada é uma reprodução, não uma caixa para navegar.
   A Unibox é a excepção legítima: são três painéis de uma caixa de entrada, e é suposto terem
   scroll. Mesmo aí, não a pôr a ocupar o ecrã inteiro.
 - **Proibido `content-visibility: auto` com uma altura estimada.** Enquanto a altura real não é

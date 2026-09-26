@@ -217,47 +217,80 @@ const AUDITORIA = () => {
 const consolas = [];
 const pedidos = { total: 0, bytes: 0, fontes: 0 };
 
-/* ---------- ESTABILIDADE DO SCROLL ----------
-   Se a página cresce enquanto se percorre, o conteúdo foge debaixo do
-   cursor e o utilizador sente que não consegue fazer scroll. Causa
-   habitual: `content-visibility: auto` com uma `contain-intrinsic-size`
-   estimada por baixo. Também apanha imagens sem dimensões e tipos de
-   letra a chegar tarde. */
-{
+/* ---------- A PÁGINA ANDA? ----------
+   O teste que interessa, e o que faltava: percorrer a página inteira com o
+   cursor ao CENTRO do ecrã, como uma pessoa faz, e exigir que ela ande.
+   Um screenshot nunca apanha uma página que encrava, e medir com o cursor
+   no canto também não: o que prende é o que está a meio do ecrã.
+   Corre duas vezes: logo a seguir a carregar, e outra vez depois de as
+   animações terem corrido, porque há caixas (a conversa do agente) que só
+   ganham scroll próprio DEPOIS de encherem. */
+for (const [quando, esperaInicial] of [['ao carregar', 1500], ['com as animações já corridas', 16000]]) {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
   const p = await ctx.newPage();
   await p.goto(`${BASE}/${slug}/index.html`, { waitUntil: 'load' });
-  await p.waitForTimeout(1800);
+  await p.waitForTimeout(esperaInicial);
+
   const alturaInicial = await p.evaluate(() => document.documentElement.scrollHeight);
-  const posicoes = [];
-  for (let i = 0; i < 12; i++) {
-    await p.mouse.wheel(0, 900);
-    await p.waitForTimeout(260);
-    posicoes.push(await p.evaluate(() => Math.round(window.scrollY)));
-  }
-  const alturaFinal = await p.evaluate(() => document.documentElement.scrollHeight);
-  const crescimento = alturaFinal - alturaInicial;
-  relatorio.metricas.crescimentoScroll = crescimento;
-
-  /* mais de 1% de crescimento já se sente */
-  if (crescimento > Math.max(80, alturaInicial * 0.01)) add('erros',
-    `A página cresce ${crescimento}px enquanto se faz scroll (${alturaInicial} para ${alturaFinal}). ` +
-    `O conteúdo foge debaixo do cursor e lê-se como "não consigo dar scroll". ` +
-    `Suspeitos: content-visibility com contain-intrinsic-size estimada por baixo, ` +
-    `imagens sem width/height, ou fontes a chegar depois do primeiro layout.`);
-
-  /* Cada volta da roda tem de andar o que foi pedido. Descontar o
-     scroll-padding-top: com uma barra fixa, o browser encurta de propósito
-     cada página de scroll para o conteúdo não ficar tapado. Isso é correcto. */
   const almofada = await p.evaluate(() =>
     parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0);
-  const esperado = 900 - almofada - 10;   /* 10px de folga */
-  const avancos = posicoes.map((v, i) => (i ? v - posicoes[i - 1] : v));
-  const curtos = avancos.filter((a, i) => a > 0 && a < esperado && posicoes[i] < alturaFinal - 1000);
-  if (curtos.length > 1) add('avisos',
-    `${curtos.length} voltas da roda avançaram menos do que o esperado (${curtos.join(', ')}px, ` +
-    `esperado pelo menos ${Math.round(esperado)}px com scroll-padding de ${almofada}px). ` +
-    `Normalmente é a mesma causa do crescimento da página.`);
+  const PASSO = 500;
+  const minimo = PASSO - almofada - 10;
+
+  await p.mouse.move(720, 450);
+  let anterior = 0;
+  const presos = [];
+  const limite = Math.ceil(alturaInicial / PASSO) + 4;
+  const maxScroll = () => p.evaluate(() =>
+    document.documentElement.scrollHeight - window.innerHeight);
+
+  for (let i = 0; i < limite; i++) {
+    await p.mouse.wheel(0, PASSO);
+    await p.waitForTimeout(190);
+    const y = await p.evaluate(() => Math.round(window.scrollY));
+    const avanco = y - anterior;
+    const fundo = await maxScroll();
+    const noFim = y >= fundo - 5;
+    /* perto do fim o último passo é naturalmente curto: não é bloqueio */
+    const ultimoPasso = anterior + PASSO > fundo;
+    if (avanco < minimo && !noFim && !ultimoPasso) {
+      const sob = await p.evaluate(() => {
+        const e = document.elementFromPoint(720, 450);
+        if (!e) return '?';
+        /* subir até ao primeiro antepassado com scroll próprio */
+        let n = e;
+        while (n && n !== document.body) {
+          const st = getComputedStyle(n);
+          if ((st.overflowY === 'auto' || st.overflowY === 'scroll') && n.scrollHeight > n.clientHeight + 4)
+            return (n.className || n.tagName).toString().split(' ')[0] + ' (rouba o scroll)';
+          n = n.parentElement;
+        }
+        return (e.className || e.tagName).toString().split(' ')[0];
+      });
+      presos.push({ y: anterior, avanco, sob });
+    }
+    if (noFim) break;
+    anterior = y;
+  }
+
+  const alturaFinal = await p.evaluate(() => document.documentElement.scrollHeight);
+  const crescimento = alturaFinal - alturaInicial;
+  if (quando === 'ao carregar') relatorio.metricas.crescimentoScroll = crescimento;
+
+  if (crescimento > Math.max(80, alturaInicial * 0.01)) add('erros',
+    `${quando}: a página cresce ${crescimento}px enquanto se percorre (${alturaInicial} para ` +
+    `${alturaFinal}). O conteúdo foge debaixo do cursor. Suspeitos: content-visibility com ` +
+    `contain-intrinsic-size estimada por baixo, imagens sem width/height, fontes a chegar tarde.`);
+
+  const bloqueios = presos.filter(x => x.avanco < minimo * 0.6);
+  if (bloqueios.length) add('erros',
+    `${quando}: a página PRENDE em ${bloqueios.length} ponto(s) com o cursor ao centro do ecrã. ` +
+    bloqueios.slice(0, 3).map(x => `a ${x.y}px avançou ${x.avanco}px, cursor sobre .${x.sob}`).join('; ') +
+    `. É isto que o utilizador sente como "não consigo fazer scroll".`);
+  else if (presos.length > 2) add('avisos',
+    `${quando}: ${presos.length} passos avançaram menos do que o esperado (mínimo ${Math.round(minimo)}px). ` +
+    presos.slice(0, 2).map(x => `a ${x.y}px andou ${x.avanco}px sobre .${x.sob}`).join('; '));
+
   await ctx.close();
 }
 
