@@ -217,10 +217,30 @@
   /* ============================================================
      10. CANAIS (cores canónicas, iguais em todos os estilos)
      ============================================================ */
-  --wa-green: #128C7E;
+  --wa-green: #0E7065;   /* o #128C7E oficial dá 4.1:1 com texto branco */
   --wa-green-dark: #075E54;
   --wa-light: #25D366;
   --wa-blue: #34B7F1;
+
+  /* ============================================================
+     11. PONTE PARA O STARTER
+     Este estilo nasceu para o sistema de deck (shared/deck), que tem
+     nomes próprios. O starter/base.css usa estes. Sem eles, quem
+     copiasse este tokens.css para cima do starter ficava com a secção
+     final sem fundo e o texto branco sobre branco (1:1).
+     ============================================================ */
+  --success-hsl: 152 60% 40%; --success: var(--ok);
+  --danger-hsl: 8 72% 52%;
+  --ok-texto: oklch(48% 0.13 152);
+  --acento-texto: var(--brand-700);
+  --brand-solido: var(--brand-700);
+  --grad-text: linear-gradient(120deg, var(--brand-600), var(--brand-400));
+  --grad-cta: linear-gradient(160deg, var(--brand-900), var(--brand-700));
+  --radius: 14px;
+  --section-pad: clamp(72px, 10vw, 128px);
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.06);
+  --shadow-md: 0 8px 24px -8px oklch(0% 0 0 / 0.14);
+  --shadow-lg: 0 16px 40px -12px oklch(0% 0 0 / 0.20);
 }
 
 /* ============================================================
@@ -247,6 +267,8 @@
   --brand:  var(--brand-400);   /* no escuro a marca sobe de luminosidade */
   --accent: var(--brand-400);
   --on-brand: oklch(16% 0.02 var(--brand-h));
+  --acento-texto: var(--brand-300);
+  --ok-texto: oklch(76% 0.14 152);
 
   --e1: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.06),
         0 1px 2px oklch(0% 0 0 / 0.40);

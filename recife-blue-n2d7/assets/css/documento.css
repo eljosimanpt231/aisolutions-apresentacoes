@@ -60,10 +60,13 @@
   }
   .doc-meta dd { font-size: var(--fs--1); color: var(--text); font-weight: 500; }
 
+  /* Escala de hero, não de título de secção: é a primeira coisa que a
+     lead lê e é o que o acto de abertura revela. A 61px ficava metade do
+     ecrã vazio e a entrada por linhas perdia o impacto. 42px a 92px. */
   .promessa {
-    margin-top: var(--s-7); font-size: var(--fs-5);
-    line-height: 1.06; letter-spacing: var(--tr-h1);
-    font-weight: 400; max-width: 20ch;
+    margin-top: var(--s-6); font-size: clamp(2.6rem, 1.8rem + 4.4vw, 5.75rem);
+    line-height: 1.0; letter-spacing: -0.028em;
+    font-weight: 400; max-width: 17ch; text-wrap: balance;
   }
   
   .cabecalho .lead { margin-top: var(--s-4); }

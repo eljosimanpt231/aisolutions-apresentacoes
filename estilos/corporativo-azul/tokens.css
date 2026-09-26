@@ -1,6 +1,9 @@
 /* Estilo corporativo-azul (igual ao default do starter).
    Ao aplicar: trocar --brand-hsl/--accent-hsl pela cor da lead se fizer sentido. */
 :root {
+  /* acento como texto: em fundo claro desce de luminosidade para passar AA */
+  --acento-texto: hsl(217 80% 40%);
+  --ok-texto: hsl(152 62% 30%);
   --brand-hsl: 217 71% 30%;
   --accent-hsl: 217 91% 55%;
   --brand: hsl(var(--brand-hsl));

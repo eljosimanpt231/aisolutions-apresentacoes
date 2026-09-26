@@ -3,6 +3,23 @@
    Só usa tokens (var(--...)). PROIBIDO cores diretas aqui.
    ============================================================ */
 
+/* ============================================================
+   VALORES POR DEFEITO DE COMPONENTES
+   `:where(:root)` tem especificidade zero, por isso qualquer tokens.css
+   sobrepõe estes valores. Existem porque 3 dos 5 estilos da biblioteca
+   não definiam as cores do WhatsApp, e quem copiava o tokens.css de um
+   estilo (que é o que a skill manda fazer) ficava com o cabeçalho do
+   telemóvel branco sobre branco.
+   ============================================================ */
+:where(:root) {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -44,7 +61,7 @@ h3 { font-size: 1.2rem; font-weight: 700; }
   display: inline-block; font-size: 0.78rem; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
   /* o acento puro não passa AA a 12px: escurece-se só para texto pequeno */
-  color: color-mix(in oklab, var(--accent) 78%, black); margin-bottom: 14px;
+  color: var(--acento-texto, var(--accent)); margin-bottom: 14px;
 }
 .grad {
   background: var(--grad-text);
@@ -59,7 +76,7 @@ h3 { font-size: 1.2rem; font-weight: 700; }
   font-family: var(--font-body); font-size: 0.98rem; font-weight: 600;
   border: 1px solid transparent; cursor: pointer; transition: all 0.22s ease;
 }
-.btn-primary { background: var(--brand); color: var(--on-brand); box-shadow: var(--shadow-md); }
+.btn-primary { background: var(--brand-solido, var(--brand)); color: var(--on-brand); box-shadow: var(--shadow-md); }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
@@ -97,10 +114,10 @@ h3 { font-size: 1.2rem; font-weight: 700; }
   display: inline-block; padding: 5px 12px; border-radius: 999px;
   font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   background: hsl(var(--accent-hsl) / 0.12);
-  color: color-mix(in oklab, var(--accent) 74%, black);
+  color: var(--acento-texto, var(--accent));
 }
 .badge-success { background: hsl(var(--success-hsl) / 0.13);
-                 color: color-mix(in oklab, var(--success) 78%, black); }
+                 color: var(--ok-texto, var(--success)); }
 
 /* ---------- Telemóvel / simulação WhatsApp ---------- */
 .phone {
@@ -176,11 +193,11 @@ h3 { font-size: 1.2rem; font-weight: 700; }
 .tl-step { text-align: center; position: relative; }
 .tl-dot {
   width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 12px;
-  background: var(--brand); color: var(--on-brand);
+  background: var(--brand-solido, var(--brand)); color: var(--on-brand);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.2rem; position: relative; z-index: 1; box-shadow: var(--shadow-md);
 }
-.tl-step strong { display: block; color: color-mix(in oklab, var(--accent) 78%, black);
+.tl-step strong { display: block; color: var(--acento-texto, var(--accent));
                   font-size: 0.85rem; margin-bottom: 4px; }
 .tl-step span { color: var(--muted); font-size: 0.88rem; }
 
@@ -194,7 +211,7 @@ h3 { font-size: 1.2rem; font-weight: 700; }
 .cta-final { background: var(--grad-cta); color: var(--on-brand); text-align: center; }
 .cta-final h2 { color: var(--on-brand); }
 .cta-final .lead { color: hsl(0 0% 100% / 0.75); }
-.cta-final .btn-primary { background: var(--on-brand); color: var(--brand); }
+.cta-final .btn-primary { background: var(--on-brand); color: var(--brand-solido, var(--brand)); }
 
 /* ---------- Footer AIS (discreto, obrigatório) ---------- */
 .ais-footer {
@@ -221,7 +238,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   border: 0; background: transparent; color: var(--muted);
   padding: 9px 18px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; cursor: pointer;
 }
-.tab.active { background: var(--brand); color: var(--on-brand); }
+.tab.active { background: var(--brand-solido, var(--brand)); color: var(--on-brand); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; animation: wa-pop 0.3s ease; }
 
@@ -237,4 +254,16 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .timeline { grid-template-columns: 1fr; }
   .phone { width: 300px; }
   .wa-body { height: 390px; }
+}
+
+/* ---------- Impressão ----------
+   Há decisores que imprimem a proposta. Sem isto, tudo o que ainda não
+   tinha entrado no ecrã sai em branco, e a atmosfera gasta tinta. */
+@media print {
+  .reveal, [data-entra], [data-acto], [data-linhas] .linha > * {
+    opacity: 1 !important; transform: none !important;
+  }
+  .atmosfera, .grelha, .dotnav { display: none !important; }
+  body { background: #fff !important; color: #111 !important; }
+  section { break-inside: avoid; }
 }

@@ -49,8 +49,6 @@
     window.__lenis = lenis;
   }
 
-  const mm = gsap.matchMedia();
-
   /* ============================================================
      1. O ACTO DE ABERTURA
      Um só, 3 a 6 tempos, com sobreposição: cada tempo começa antes de
@@ -105,9 +103,12 @@
         type: 'lines', mask: 'lines', autoSplit: true, linesClass: 'linha',
         onSplit(self) {
           tocou = true;
-          return gsap.from(self.lines, {
+          const tw = gsap.from(self.lines, {
             yPercent: 108, duration: .95, stagger: .085, ease: 'expo.out', delay: .1,
           });
+          /* o arnês ?t= também tem de apanhar este, que vive fora da timeline mestra */
+          if (paragem) tw.pause().totalTime(Math.max(0, parseFloat(paragem)));
+          return tw;
         }
       });
       setTimeout(() => {

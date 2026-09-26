@@ -42,6 +42,26 @@ const navegador = await chromium.launch();
 async function medir(slug) {
   const ctx = await navegador.newContext({ viewport: { width: 1440, height: 900 } });
   const p = await ctx.newPage();
+  /* O GSAP anima por JS, por isso document.getAnimations() não o vê: uma
+     página toda em GSAP parecia parada nesta tabela. Conta-se na origem,
+     embrulhando gsap.to/from/fromTo/set quando a biblioteca se regista. */
+  await p.addInitScript(() => {
+    window.__gsapConta = { tweens: 0, timelines: 0 };
+    let real;
+    Object.defineProperty(window, 'gsap', { configurable: true,
+      get() { return real; },
+      set(g) {
+        real = g;
+        if (!g || g.__contado) return;
+        g.__contado = true;
+        for (const m of ['to', 'from', 'fromTo']) {
+          const orig = g[m].bind(g);
+          g[m] = (...a) => { window.__gsapConta.tweens++; return orig(...a); };
+        }
+        const tl = g.timeline.bind(g);
+        g.timeline = (...a) => { window.__gsapConta.timelines++; return tl(...a); };
+      } });
+  });
   await p.goto(`${BASE}/${slug}/index.html`, { waitUntil: 'load' });
   await p.waitForTimeout(2200);
 
@@ -99,11 +119,16 @@ async function medir(slug) {
     frames.push(f);
   }
 
+  const gsapConta = await p.evaluate(() => ({
+    ...window.__gsapConta,
+    gatilhos: window.ScrollTrigger ? ScrollTrigger.getAll().length : 0,
+  }));
+
   const peso = await p.evaluate(() => performance.getEntriesByType('resource')
     .reduce((t, r) => t + (r.transferSize || 0), 0));
 
   await ctx.close();
-  return { slug, presenca, movimento: { distintas: [...vistos.keys()], maxSimultaneas }, frames,
+  return { slug, presenca, movimento: { distintas: [...vistos.keys()], maxSimultaneas, gsap: gsapConta }, frames,
            altura: alturaTotal + 900, pesoKB: Math.round(peso / 1024) };
 }
 
@@ -141,8 +166,10 @@ linha('canvas (gráficos)', A.presenca.canvas, B.presenca.canvas);
 linha('svg', A.presenca.svg, B.presenca.svg);
 linha('imagens', A.presenca.imagens, B.presenca.imagens);
 linha('', '', '');
-linha('ANIMAÇÕES distintas', A.movimento.distintas.length, B.movimento.distintas.length);
-linha('  máx. em simultâneo', A.movimento.maxSimultaneas, B.movimento.maxSimultaneas);
+linha('ANIMAÇÕES CSS distintas', A.movimento.distintas.length, B.movimento.distintas.length);
+linha('  máx. em simultâneo (CSS)', A.movimento.maxSimultaneas, B.movimento.maxSimultaneas);
+linha('tweens GSAP criados', A.movimento.gsap.tweens, B.movimento.gsap.tweens);
+linha('  timelines / gatilhos scroll', `${A.movimento.gsap.timelines} / ${A.movimento.gsap.gatilhos}`, `${B.movimento.gsap.timelines} / ${B.movimento.gsap.gatilhos}`);
 linha('', '', '');
 linha('altura (px)', A.altura, B.altura);
 linha('peso (KB)', A.pesoKB, B.pesoKB);

@@ -77,6 +77,7 @@ sem movimento nenhum passou por boa.**
 
 ```bash
 node qa.mjs [slug]                         # contraste, medida, scroll, texto cortado, og, peso
+node motion.mjs [slug] --acto              # o acto de abertura, fotograma a fotograma
 node motion.mjs [slug]                     # tira de fotogramas, para VER o movimento
 node comparar.mjs [anterior] [slug]        # lado a lado com números
 ```

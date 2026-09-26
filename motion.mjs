@@ -4,6 +4,8 @@
    node motion.mjs [slug]                  → tira do scroll da página
    node motion.mjs [slug] --alvo #demo     → tira de um componente a correr
    node motion.mjs [slug] --video          → grava um .webm da passagem
+   node motion.mjs [slug] --acto           → o acto de abertura congelado a
+                                             cada 0,2s (usa o arnês ?t= do motion.js)
 
    Porque existe: screenshots parados não mostram animação nenhuma. Foi
    assim que uma apresentação sem movimento nenhum passou por boa. Isto
@@ -17,9 +19,10 @@ import { extname, join, normalize } from 'node:path';
 
 const args = process.argv.slice(2);
 const slug = args[0];
-if (!slug) { console.error('uso: node motion.mjs [slug] [--alvo #sel] [--video] [--frames N]'); process.exit(1); }
+if (!slug) { console.error('uso: node motion.mjs [slug] [--acto] [--alvo #sel] [--video] [--frames N]'); process.exit(1); }
 const alvo = args.includes('--alvo') ? args[args.indexOf('--alvo') + 1] : null;
 const video = args.includes('--video');
+const modoActo = args.includes('--acto');
 const nFrames = args.includes('--frames') ? parseInt(args[args.indexOf('--frames') + 1], 10) : 12;
 
 const TIPOS = { '.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.json':'application/json',
@@ -53,7 +56,24 @@ await p.waitForTimeout(600);
 
 const frames = [];
 
-if (alvo) {
+if (modoActo) {
+  /* o acto de abertura, tempo a tempo. Cada fotograma é uma página nova
+     congelada em ?t=, por isso cai sempre no mesmo instante: dá para
+     comparar duas versões fotograma a fotograma. */
+  const passo = 0.2;
+  for (let i = 0; i < nFrames; i++) {
+    const t = +(i * passo).toFixed(2);
+    await p.goto(`${BASE}/${slug}/index.html?t=${t}`, { waitUntil: 'load' });
+    await p.evaluate(() => document.fonts.ready);
+    await p.waitForTimeout(350);
+    const f = join(saida, `a${String(i).padStart(2, '0')}.jpg`);
+    await p.screenshot({ path: f, type: 'jpeg', quality: 55 });
+    frames.push(f);
+  }
+  const congelado = await p.evaluate(() => document.documentElement.dataset.congelado || null);
+  console.log(`${nFrames} fotogramas do acto, de 0 a ${((nFrames - 1) * passo).toFixed(1)}s` +
+    (congelado ? '' : '  AVISO: a página não tem o motion.js, nada foi congelado'));
+} else if (alvo) {
   /* um componente a correr: fotogramas ao longo do tempo, no mesmo sítio */
   await p.evaluate(s => document.querySelector(s)?.scrollIntoView({ block: 'center' }), alvo);
   await p.waitForTimeout(400);

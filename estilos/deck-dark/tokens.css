@@ -12,6 +12,11 @@
   --brand: hsl(var(--brand-hsl));
   --accent: hsl(var(--accent-hsl));
   --on-brand: hsl(0 0% 100%);
+  /* fundo sólido sob texto branco: o teal a 44% só dá 1.9:1. Ao trocar
+     a marca, manter este tom com luminosidade à volta de 26%. */
+  --brand-solido: hsl(168 90% 24%);
+  --acento-texto: hsl(168 80% 52%);
+  --ok-texto: hsl(150 62% 58%);
 
   --bg: hsl(240 24% 5%);
   --bg-soft: hsl(240 22% 7%);

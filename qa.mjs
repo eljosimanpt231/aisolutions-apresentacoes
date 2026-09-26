@@ -404,6 +404,54 @@ for (const [nome, w, h] of [['desktop', 1440, 900], ['tablet', 768, 1024], ['tel
       `Primeiro ecrã: ${cortado.length} bloco(s) de texto CORTADOS por uma máscara e invisíveis ` +
       `(não estão a opacity 0, estão fora da caixa que os corta). Ex.: "${cortado[0]}". ` +
       `Causa habitual: um reveal por linhas que nunca chegou a tocar.`);
+
+    /* Texto MEIO cortado: a máscara de linha é da altura da entrelinha, e
+       com entrelinha apertada (títulos a 1.0) as descendentes de g, ç, p
+       saem da caixa e ficam decepadas para sempre, não só na entrada.
+       Mede-se a caixa do texto (ascendente + descendente da fonte) contra
+       a caixa que o corta. Só conta em caixas do tamanho de uma linha,
+       que é o que uma máscara é; um card com overflow não entra. */
+    const decepado = await p.evaluate(() => {
+      const fora = [];
+      /* A caixa de um Range é a métrica da fonte, maior do que a tinta:
+         medida assim, até um título bem mascarado acusava. A tinta real
+         (quanto o g desce de facto) vem do measureText do canvas. */
+      const cx = document.createElement('canvas').getContext('2d');
+      const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let n;
+      while ((n = w.nextNode())) {
+        if (!n.textContent.trim()) continue;
+        const el = n.parentElement;
+        const fs = parseFloat(getComputedStyle(el).fontSize);
+        const rg = document.createRange(); rg.selectNodeContents(n);
+        const r = rg.getBoundingClientRect();
+        if (r.top > window.innerHeight || r.bottom < 0 || r.height === 0) continue;
+        let pai = el;
+        while (pai && pai !== document.body) {
+          const s = getComputedStyle(pai);
+          if (/hidden|clip/.test(s.overflow + s.overflowY)) {
+            const pr = pai.getBoundingClientRect();
+            const mascara = pr.height < fs * 2.2;
+            const cs = getComputedStyle(el);
+            cx.font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+            const m = cx.measureText(n.textContent.trim());
+            const linhaBase = r.bottom - m.fontBoundingBoxDescent;
+            const tintaBaixo = linhaBase + m.actualBoundingBoxDescent;
+            const tintaCima = linhaBase - m.actualBoundingBoxAscent;
+            const excesso = Math.max(tintaBaixo - pr.bottom, pr.top - tintaCima);
+            if (mascara && excesso > 1.5 && excesso < r.height * 0.9)
+              fora.push(`${n.textContent.trim().slice(0, 30)} (${Math.round(excesso)}px fora)`);
+            break;
+          }
+          pai = pai.parentElement;
+        }
+      }
+      return [...new Set(fora)];
+    });
+    if (decepado.length) add('erros',
+      `Primeiro ecrã: ${decepado.length} linha(s) de texto com as letras cortadas pela máscara ` +
+      `(descendentes de g, ç, p decepadas). Ex.: "${decepado[0]}". A máscara tem de ser mais alta ` +
+      `do que a entrelinha: ver [data-linhas] .linha em shared/motion/atmosfera.css.`);
   }
 
   /* 2) overflow horizontal */
@@ -448,8 +496,13 @@ for (const [nome, w, h] of [['desktop', 1440, 900], ['tablet', 768, 1024], ['tel
     /* fontes */
     const usadas = Object.keys(r.fontes);
     const banidas = usadas.filter(f => FONTES_BANIDAS.some(x => f.includes(x)));
-    if (banidas.length) add('erros',
-      `Fontes genéricas em uso: ${banidas.join(', ')}. São o tell número um de página gerada. Fontes detetadas: ${usadas.join(', ')}`);
+    /* AVISO e não ERRO: é uma escolha de gosto por lead, não um defeito.
+       Os erros ficam reservados ao que é objectivo (contraste, texto
+       invisível, scroll que prende). Um erro que dispara sempre acaba
+       ignorado, e leva os erros verdadeiros com ele. */
+    if (banidas.length) add('avisos',
+      `Fontes genéricas em uso: ${banidas.filter(f => f !== 'arial').join(', ') || banidas.join(', ')}. ` +
+      `Escolher o par por lead (ver regras-design.md). Fontes detetadas: ${usadas.join(', ')}`);
     else add('notas', `Fontes em uso: ${usadas.join(', ')}`);
 
     /* medida: o defeito mais universal do repo (16 de 19 páginas acima de 80) */

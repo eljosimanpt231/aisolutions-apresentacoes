@@ -1,62 +1,82 @@
 /* ============================================================
    TOKENS DE DESIGN (fonte única de verdade visual)
    Regra de ouro: os componentes NUNCA usam cores diretas.
-   Tudo deriva destas variáveis. Para mudar o look da
-   apresentação inteira, muda-se APENAS este ficheiro
-   (normalmente copiando o tokens.css de um estilo em /estilos).
-   Default: estilo corporativo-azul (claro).
+   Para mudar o look da apresentação inteira, muda-se APENAS este
+   ficheiro (normalmente copiando o tokens.css de um estilo em /estilos).
+
+   Default: ESCURO ATMOSFÉRICO, o padrão da casa (deck-dark / noturno-vivo).
+   É o que funciona melhor numa apresentação comercial, que é marketing.
+   Para uma lead que peça claro (setor conservador, pedido do comercial),
+   copiar o tokens.css de estilos/corporativo-azul ou estilos/editorial-claro
+   e pôr class="atmosfera--claro" no <div class="atmosfera">.
    ============================================================ */
 
 :root {
-  /* ---- Marca da lead (ajustar SEMPRE à cor do cliente) ---- */
-  --brand-hsl: 217 71% 30%;      /* cor principal, em componentes HSL */
-  --accent-hsl: 217 91% 55%;     /* cor de destaque/energia */
+  /* ---- Marca da lead (ajustar SEMPRE à cor do cliente) ----
+     Num fundo escuro a marca tem de ser luminosa (L 50 a 65%), senão
+     não se vê nem nos glows nem nos botões. */
+  --brand-hsl: 205 83% 52%;      /* TROCAR pela cor da lead */
+  --accent-hsl: 172 80% 46%;     /* a segunda voz, e a cor do agente */
+  --brand2-hsl: 222 70% 62%;     /* terceira, usada no texto em gradiente */
   --brand: hsl(var(--brand-hsl));
   --accent: hsl(var(--accent-hsl));
-  --on-brand: hsl(0 0% 100%);    /* texto sobre a cor da marca */
-  --brand2-hsl: 216 64% 40%;     /* segunda voz, usada no texto em gradiente */
+  --on-brand: hsl(0 0% 100%);
 
-  /* ---- Superfícies ---- */
-  --bg: hsl(0 0% 100%);
-  --bg-soft: hsl(214 50% 96%);   /* secções alternadas */
-  --surface: hsl(0 0% 100%);     /* cards */
-  --surface-2: hsl(214 45% 98%);
-  --border: hsl(215 28% 89%);
+  /* A marca como PREENCHIMENTO por baixo de texto branco (botões, dots).
+     No escuro a marca tem de ser luminosa para brilhar nos glows, mas
+     branco por cima dela fica abaixo de 4.5:1. Aqui desce o suficiente. */
+  --brand-solido: color-mix(in oklab, var(--brand) 74%, black);
+
+  /* Acento como TEXTO. Não é o mesmo que o acento como cor: em fundo
+     escuro sobe de luminosidade, em fundo claro desce. Usar sempre este
+     em texto pequeno (kickers, badges, datas), nunca o --accent cru. */
+  --acento-texto: hsl(var(--accent-hsl) / 1);
+  --ok-texto: hsl(150 62% 58%);
+
+  /* ---- Superfícies: quase-preto tingido, nunca preto puro ---- */
+  --bg: hsl(228 26% 6%);
+  --bg-soft: hsl(228 22% 8.5%);   /* secções alternadas */
+  --surface: hsl(228 20% 11%);    /* cards */
+  --surface-2: hsl(228 18% 14%);
+  --border: hsl(228 16% 21%);
 
   /* ---- Texto ---- */
-  --text: hsl(218 35% 13%);
-  --muted: hsl(218 14% 44%);
+  --text: hsl(228 25% 95%);
+  --muted: hsl(228 12% 68%);
 
   /* ---- Semânticos ---- */
-  --success-hsl: 152 60% 38%;
+  --success-hsl: 150 62% 46%;
   --success: hsl(var(--success-hsl));
-  --danger-hsl: 355 72% 50%;
+  --danger-hsl: 356 80% 62%;
   --danger: hsl(var(--danger-hsl));
-  --warning-hsl: 40 90% 50%;
+  --warning-hsl: 40 92% 56%;
   --warning: hsl(var(--warning-hsl));
 
-  /* ---- Gradientes semânticos (derivados da marca) ---- */
-  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
+  /* ---- Gradientes (derivados da marca) ---- */
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.18), transparent 62%);
   --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
-  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 60%, hsl(var(--accent-hsl) / 0.85));
+  --grad-cta: linear-gradient(160deg, hsl(228 26% 8%), hsl(var(--brand-hsl) / 0.34));
 
-  /* ---- Sombras (tingidas pela marca, nunca preto puro) ---- */
-  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
-  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
-  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+  /* ---- Sombras: no escuro são mais pesadas e tingidas ---- */
+  --shadow-sm: 0 1px 3px hsl(228 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(228 60% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(228 60% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.35);
 
   /* ---- Forma ---- */
   --radius: 14px;
   --radius-lg: 22px;
 
   /* ---- Tipografia ----
-     O estilo define as famílias; carregar no <head> via Google Fonts. */
-  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+     ESCOLHER por lead e carregar no <head>. Default neutro: Space Grotesk
+     no título e Inter no corpo, que é o par da deck-dark. O qa.mjs avisa
+     quando ficam as genéricas, para lembrar que a escolha é por lead. */
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
   /* ---- Ritmo ---- */
-  --container: 1120px;
-  --section-pad: clamp(64px, 9vw, 120px);
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 128px);
 }
 
 /* WhatsApp (mockup): cores canónicas do canal, iguais em todos os estilos */

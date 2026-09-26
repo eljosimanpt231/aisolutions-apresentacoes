@@ -140,6 +140,23 @@ Por ordem de retorno:
 6. **Ritmo de superfícies.** Num deck escuro, secções todas com a mesma luminosidade lêem-se como
    uma mancha só. Alternar com a classe `faixa-clara`.
 
+**O starter é escuro por defeito.** Para uma apresentação clara (só com razão escrita no
+`design.md`), copiar o `tokens.css` de um estilo claro e pôr `class="atmosfera atmosfera--claro"`:
+em fundo branco um glow com a cor de uma marca escura fica uma mancha cinzenta suja, e esta
+variante usa o acento, muito mais fraco.
+
+**Três tokens de cor que cada estilo define, porque a mesma cor não serve para tudo:**
+
+| Token | Para quê | Porquê |
+|---|---|---|
+| `--acento-texto` | texto em cor (kicker, badge, etapa) | o acento de um tema escuro é claro de mais para texto em fundo claro, e vice-versa |
+| `--brand-solido` | fundo sólido debaixo de texto branco (botão, ponto da timeline) | um teal ou um azul vivo dá 1,9 a 3,2:1 com branco; o sólido é o mesmo tom mais escuro |
+| `--ok-texto` | texto verde de sucesso | o verde de preenchimento não passa AA como texto |
+
+O `base.css` do starter também traz as cores do mock de WhatsApp por defeito, com especificidade
+zero: três dos cinco estilos não as tinham, e quem copiava o `tokens.css` ficava com o cabeçalho
+do telemóvel branco sobre branco.
+
 ## 7. Gráficos
 
 Um gráfico de dados reais é o maior diferenciador que temos, e é o que a referência do Thai Funchal
@@ -179,6 +196,10 @@ escrever animação nova tem de os conhecer.
   sente que a página encravou. A conversa e a coluna do raciocínio faziam isso.
 - **`scrollIntoView` dentro de um observer de scroll puxa a página inteira.** Num scroll-spy
   mexe-se no `scrollLeft` da barra, nunca em `scrollIntoView`.
+- **A máscara de linha corta as descendentes.** A caixa que esconde cada linha do título tem a
+  altura da entrelinha, e num título a 1.0 o g, o ç e o p saem dela e ficam decepados para
+  sempre, não só na entrada. O `atmosfera.css` alarga a máscara (padding .2em com margem negativa).
+  O `qa.mjs` mede a tinta das letras e acusa.
 - **O estado final é sempre o default no CSS.** A animação vive dentro de
   `@media (prefers-reduced-motion: no-preference)` e a classe `js` só é posta quando o motor
   arranca. Sem JS, sem GSAP, ou com movimento reduzido, a página está completa e rica.
@@ -189,13 +210,19 @@ Um screenshot parado não mostra animação nenhuma. Foi assim que uma apresenta
 passou por boa.
 
 ```bash
+node motion.mjs [slug] --acto             # o acto de abertura congelado a cada 0,2s
 node motion.mjs [slug]                    # tira de fotogramas ao longo do scroll
 node motion.mjs [slug] --alvo "#demo"     # um componente a correr, no tempo
 node comparar.mjs [slugAntigo] [slugNovo] # as duas lado a lado, com números
 ```
 
+O `--acto` é o que mostra se a abertura é coreografia ou slideshow: cada fotograma é a página
+congelada nesse instante, por isso duas versões comparam-se fotograma a fotograma.
+
 O `comparar.mjs` mede o que distingue presença de página plana: tema, gradientes, glows radiais,
-desfoques, texto em gradiente, sombras, gráficos, animações distintas e simultâneas. **Usar sempre
+desfoques, texto em gradiente, sombras, gráficos, animações CSS distintas e simultâneas, e os
+tweens GSAP e gatilhos de scroll (o GSAP anima por JS e não aparece nas animações do browser; sem
+esta contagem, uma página toda em GSAP parecia parada). **Usar sempre
 contra a apresentação anterior do mesmo cliente, ou contra a última que ficou boa.** Se a nova não
 ganhar na tabela, não está pronta.
 

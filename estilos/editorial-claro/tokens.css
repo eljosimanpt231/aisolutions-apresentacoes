@@ -1,5 +1,8 @@
 /* Estilo editorial-claro (base: Limonata) */
 :root {
+  /* acento como texto: em fundo claro desce de luminosidade para passar AA */
+  --acento-texto: hsl(160 60% 28%);
+  --ok-texto: hsl(152 62% 30%);
   --brand-hsl: 220 25% 12%;      /* quase-preto: a "marca" aqui é o texto */
   --accent-hsl: 160 70% 38%;     /* verde-menta */
   --brand: hsl(var(--brand-hsl));

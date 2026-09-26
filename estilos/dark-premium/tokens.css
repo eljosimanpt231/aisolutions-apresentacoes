@@ -7,6 +7,10 @@
   --accent: hsl(var(--accent-hsl));
   --gold: hsl(var(--gold-hsl));
   --on-brand: hsl(0 0% 100%);
+  /* texto em cor sobre o fundo escuro, e fundo sólido sob texto branco */
+  --acento-texto: hsl(249 90% 78%);
+  --ok-texto: hsl(150 62% 58%);
+  --brand-solido: hsl(249 58% 52%);
 
   --bg: hsl(243 40% 6%);
   --bg-soft: hsl(243 35% 8%);

@@ -68,6 +68,16 @@
 @keyframes deriva-3 { 0%,100% { transform: translate3d(0,0,0) scale(.96);  }
                       50%     { transform: translate3d(7vw,-9vh,0) scale(1.22); } }
 
+/* FUNDO CLARO: um glow com a cor da marca, quando a marca é escura
+   (navy, verde-garrafa), fica uma mancha cinzenta suja sobre branco.
+   Em fundo claro usa-se o acento, mais luminoso, e muito mais fraco.
+   Pôr class="atmosfera atmosfera--claro" e a grelha fica mais leve. */
+.atmosfera--claro .atmosfera__glow { --glow-cor: var(--accent-hsl); --glow-blur: 90px; }
+.atmosfera--claro .atmosfera__glow--1 { --glow-op: .14; }
+.atmosfera--claro .atmosfera__glow--2 { --glow-op: .10; }
+.atmosfera--claro .atmosfera__glow--3 { --glow-op: .07; }
+.atmosfera--claro ~ .grelha, .grelha.grelha--claro { opacity: .6; }
+
 /* Em telemóvel o glow custa mais do que vale: o Linear também o desliga */
 @media (max-width: 640px) {
   .atmosfera__glow--2, .atmosfera__glow--3 { display: none; }
@@ -182,7 +192,11 @@
   html.js [data-entra="escala"]  { transform: scale(.965); }
   html.js [data-entra="lado"]    { transform: translateX(26px); }
   /* as máscaras de linha só existem depois de o SplitText correr */
-  html.js [data-linhas] .linha { overflow: clip; }
+  /* A máscara corta pela caixa da linha, e com entrelinha abaixo de ~1.15
+     as descendentes (g, ç, p) saem dela e ficam cortadas PARA SEMPRE, não
+     só durante a entrada. O padding alarga a máscara, a margem negativa
+     devolve o espaço, e o desenho do título não muda. */
+  html.js [data-linhas] .linha { overflow: clip; padding-bottom: .2em; margin-bottom: -.2em; }
   html.js [data-linhas] .linha__i { transform: translateY(105%); }
 }
 
