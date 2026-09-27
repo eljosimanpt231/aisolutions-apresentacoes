@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Solcor | Faturas classificadas e lançadas no TOConline</title>
+  <meta name="description" content="Proposta AI Solutions para a Solcor: faturas de fornecedores lidas, classificadas por conta, IVA, centro de custo e obra, e lançadas no TOConline, com validação humana abaixo de 90% de certeza.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solcor × AI Solutions">
+  <meta property="og:description" content="Cada fatura na conta, no IVA e na obra certos, lançada no TOConline sem ninguém a passá-la à mão.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/solcor-f6k2/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try { var t = localStorage.getItem('ais-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/solcor.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img src="assets/img/solcor-logo.png" alt="Solcor">
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#demo">Demonstração</a>
+    <a href="#relatorio">Relatório</a>
+    <a href="#toconline">TOConline</a>
+    <a href="#fases">Fases</a>
+    <a href="#investimento">Investimento</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <span class="eyebrow" data-acto="1" data-entra="sobe">Solcor × AI Solutions · faturas de fornecedores</span>
+    <h1 data-linhas>Cada fatura na conta, no IVA e na <span class="g-brilho">obra certa</span>, sem ninguém a passá-la à mão.</h1>
+    <p class="lead" data-acto="2" data-entra="sobe">
+      As faturas seguem para um endereço de email, como hoje. O agente lê-as, classifica-as com as regras
+      da Solcor e lança no TOConline o que passa os 90% de certeza. O resto chega à equipa já com a proposta feita.
+    </p>
+    <div class="hero-meta" data-acto="3" data-entra="sobe">
+      <span>Para <b>Vincent Vangeel</b></span>
+      <span>Seguimento da reunião de <b>16/09/2026</b></span>
+      <span>Protótipo a funcionar nesta página</span>
+    </div>
+    <div class="grid-3 hero-stats" data-acto="4" data-entra="sobe">
+      <div class="card stat-card"><div class="num"><span data-conta="2000">2000</span></div><div class="desc">Faturas por ano no grupo, cerca de 1.000 por empresa e 15 fornecedores por obra</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="90" data-sufixo="%">90%</span></div><div class="desc">O grau de certeza a partir do qual a fatura entra no TOConline sem ninguém lhe tocar</div></div>
+      <div class="card stat-card"><div class="num">1 de 4</div><div class="desc">Começamos por uma empresa do grupo, na versão mais simples possível, e só depois alargamos</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. RESUMO DE 30 SEGUNDOS ============ -->
+<section class="resumo" aria-label="Resumo">
+  <div class="container">
+    <div class="resumo-grid" data-entra="sobe">
+      <div><span class="k">O quê</span><p>Leitura, classificação e lançamento das faturas de compra no TOConline, com validação por email quando há dúvida.</p></div>
+      <div><span class="k">Onde começa</span><p>Numa empresa do grupo, à escolha da Solcor. As outras três entram depois, sobre a mesma base.</p></div>
+      <div><span class="k">Em quanto tempo</span><p>Cerca de 4 semanas até ao arranque, incluindo a auditoria às últimas 1.000 faturas.</p></div>
+      <div><span class="k">Próximo passo</span><p>Ver esta demonstração juntos e escolher a empresa do piloto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 16/09</span>
+      <h2>O problema não é ler a fatura. É decidir onde ela vai.</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>Um projeto recebe 15 faturas de fornecedores diferentes.</blockquote>
+        <p>Cada uma tem de ir para um centro de custo (o tipo de material) e uma rubrica (a obra), com a conta e a conta de IVA certas.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Desde que esteja em cima de 90%, pode ser lançado.</blockquote>
+        <p>Abaixo disso, um email a duas ou três pessoas, e a classificação segue a resposta. Nada entra às cegas.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Testei fazer a classificação e consegui em 13 horas.</blockquote>
+        <p>As regras existem, nos lançamentos dos anos anteriores. Falta o tempo para as pôr a trabalhar e a garantia de que o lançamento fica feito no TOConline.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Compramos material para stock e ainda não sabemos para que obras é.</blockquote>
+        <p>Entra em "projetos futuros" e alguém tem de se lembrar de o distribuir. Um lembrete semanal resolve.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Há faturas que vêm de Espanha.</blockquote>
+        <p>Aí a dúvida não está no reconhecimento: está no tratamento contabilístico, na conta e no IVA.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>O mais simples possível, um produto mínimo viável.</blockquote>
+        <p>Uma empresa primeiro, o essencial primeiro. O TOConline já é o painel: não precisa de outro.</p>
+      </div>
+    </div>
+    <p class="sintese">A leitura é a parte fácil. <b>O valor está em decidir a conta, o IVA e a obra mil vezes por ano, sem errar, e em perguntar quando não tem a certeza.</b></p>
+  </div>
+</section>
+
+<!-- ============ 4. HOJE VS COM O AGENTE ============ -->
+<section id="mudanca">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que muda</span>
+      <h2>A contabilidade deixa de lançar e passa a confirmar exceções</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Hoje</h3>
+        <ul class="list-x">
+          <li>Cada fatura aberta, lida e passada à mão para o TOConline</li>
+          <li>Centro de custo e rubrica decididos de cabeça, fatura a fatura</li>
+          <li>Material para stock fica em "projetos futuros" até alguém se lembrar</li>
+          <li>Faturas estrangeiras resolvidas caso a caso, sem registo da decisão</li>
+          <li>Nenhuma visão diária do que entrou e do que falta</li>
+        </ul>
+      </div>
+      <div class="card card-do" data-entra="sobe">
+        <h3>Com o agente</h3>
+        <ul class="list-check">
+          <li>As faturas seguem para um email e são lidas sozinhas (PDF, digitalização ou foto)</li>
+          <li>Conta, IVA, centro de custo e rubrica propostos com base nas regras e no histórico</li>
+          <li>Acima de 90% de certeza, lançado no TOConline e arquivado na Drive</li>
+          <li>Abaixo de 90%, uma pergunta concreta a quem sabe, e a resposta vira regra</li>
+          <li>Relatório diário e lembrete semanal dos projetos futuros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. DEMONSTRAÇÃO: A CAIXA DE FATURAS ============ -->
+<section class="section-alt" id="demo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Demonstração</span>
+      <h2>Um dia na caixa <span class="g-brilho">faturas@</span></h2>
+      <p class="lead">Cinco faturas chegam ao longo do dia. Veja o agente a ler cada uma, a classificá-la e a decidir sozinho ou a perguntar. Clique em qualquer email para o repetir.</p>
+    </div>
+    <div class="fx" id="fxDemo" data-entra="escala"></div>
+    <p class="fx-legenda">
+      <span>Fornecedores, NIF, números e valores fictícios.</span>
+      <span>Contas, centros de custo e rubricas ilustrativos: na auditoria usamos os da Solcor.</span>
+    </p>
+  </div>
+</section>
+<script type="application/json" id="fxDemo-config">
+{
+  "windowTitle": "faturas@solcor.pt · agente de faturas · segunda-feira, 28/09/2026",
+  "mailbox": "faturas@solcor.pt",
+  "threshold": 90,
+  "pauseMs": 3400,
+  "docs": [
+    {
+      "mail": { "from": "Engenharia · Obras", "time": "08:12", "subject": "Módulos para a obra de Leiria",
+        "body": "Segue a fatura dos módulos. **Obra OB-2026-031 (Leiria).**" },
+      "doc": { "supplier": "Fotolux Distribuição, Lda.", "addr": "Zona Industrial, Lote 12, Leiria", "nif": "NIF 5•• ••• 187",
+        "title": "Fatura", "number": "FT A/1187", "date": "21/09/2026", "client": "Solcor Portugal", "ref": "Obra OB-2026-031",
+        "lines": [["Módulo FV 580 Wp bifacial", "120", "92,00", "11.040,00"], ["Transporte e descarga em obra", "1", "180,00", "180,00"]],
+        "base": "11.220,00 €", "vatLabel": "IVA 23%", "vat": "2.580,60 €", "total": "13.800,60 €" },
+      "read": [["Fornecedor", "Fotolux Distribuição", "fornecedor"], ["NIF", "5•• ••• 187", "nif"], ["Número", "FT A/1187", "numero"], ["Data", "21/09/2026", "data"], ["Linhas", "2 (módulos, transporte)", "linhas"], ["Base", "11.220,00 €", "base"], ["IVA", "2.580,60 € (23%)", "iva"], ["Total", "13.800,60 €", "total"]],
+      "classify": [
+        { "k": "Conta", "v": "3121 · Compras de matérias-primas", "c": 98, "why": "Regra: módulos e estruturas vão a compras" },
+        { "k": "IVA", "v": "Dedutível 23% · existências", "c": 99, "why": "Igual às 37 faturas anteriores deste fornecedor" },
+        { "k": "Centro de custo", "v": "CC02 · Módulos FV", "c": 97, "why": "Tipo de material das linhas da fatura" },
+        { "k": "Rubrica (obra)", "v": "OB-2026-031 · Cobertura 480 kWp, Leiria", "c": 99, "why": "Indicada no email e na referência da fatura" }
+      ],
+      "certainty": 97,
+      "outcome": { "kind": "ok", "title": "Lançada no TOConline às 08:14",
+        "lines": ["Documento de compra criado, fornecedor encontrado pelo **NIF**", "Obra **OB-2026-031** · centro de custo **CC02 Módulos FV**", "PDF arquivado na Drive: Faturas/2026/09/OB-2026-031"] }
+    },
+    {
+      "mail": { "from": "Luzmar Energia (fornecedor)", "time": "09:40", "subject": "A sua fatura de eletricidade de agosto",
+        "body": "Enviada diretamente pelo fornecedor para faturas@. **Sem texto da equipa.**" },
+      "doc": { "supplier": "Luzmar Energia, S.A.", "addr": "Av. da Liberdade 200, Lisboa", "nif": "NIF 5•• ••• 442",
+        "title": "Fatura", "number": "FT LZ26/0918442", "date": "24/09/2026", "client": "Solcor Portugal", "ref": "Escritório, período 01/08 a 31/08",
+        "lines": [["Energia ativa (kWh)", "1.412", "0,1180", "166,62"], ["Potência contratada (dias)", "31", "0,5210", "16,15"], ["Tarifa de acesso às redes (kWh)", "1.412", "0,0215", "30,36"], ["Taxa de exploração DGEG", "1", "0,07", "0,07"]],
+        "base": "213,20 €", "vatLabel": "IVA 23%", "vat": "49,04 €", "total": "262,24 €" },
+      "read": [["Fornecedor", "Luzmar Energia", "fornecedor"], ["NIF", "5•• ••• 442", "nif"], ["Número", "FT LZ26/0918442", "numero"], ["Data", "24/09/2026", "data"], ["Linhas", "4 (energia, potência, redes, DGEG)", "linhas"], ["Base", "213,20 €", "base"], ["IVA", "49,04 € (23%)", "iva"], ["Total", "262,24 €", "total"]],
+      "classify": [
+        { "k": "Conta", "v": "6241 · Eletricidade", "c": 99, "why": "12 faturas iguais nos últimos 12 meses" },
+        { "k": "IVA", "v": "Dedutível 23% · outros bens e serviços", "c": 99, "why": "Mesmo tratamento de todas as anteriores" },
+        { "k": "Centro de custo", "v": "CC09 · Estrutura", "c": 99, "why": "Despesa recorrente do escritório" },
+        { "k": "Rubrica (obra)", "v": "Gastos gerais · escritório", "c": 99, "why": "Não é de obra: regra das despesas fixas" }
+      ],
+      "certainty": 99,
+      "outcome": { "kind": "ok", "title": "Lançada no TOConline às 09:41",
+        "lines": ["Despesa recorrente: **classificação 100% repetida** do mês anterior", "Centro de custo **CC09 Estrutura** · gastos gerais", "PDF arquivado na Drive: Faturas/2026/09/Gastos gerais"] }
+    },
+    {
+      "mail": { "from": "Compras", "time": "11:31", "subject": "Fatura estruturas (Espanha)",
+        "body": "Fatura das estruturas de Sevilha. **Obra OB-2026-034.**" },
+      "doc": { "supplier": "Estructuras Solares del Sur, S.L.", "addr": "Polígono Industrial, Sevilla, España", "nif": "CIF ES B•••••412",
+        "title": "Factura", "number": "F-2026-0412", "date": "18/09/2026", "client": "Solcor Portugal (NIF PT 5•• ••• •••)", "ref": "Obra OB-2026-034",
+        "lines": [["Estructura coplanar aluminio, kit 4 módulos", "60", "48,50", "2.910,00"], ["Tornillería y ganchos de teja", "1", "322,80", "322,80"], ["Portes", "1", "180,00", "180,00"]],
+        "base": "3.412,80 €", "vatLabel": "IVA 0%", "vat": "0,00 €", "total": "3.412,80 €",
+        "note": "Operación intracomunitaria exenta de IVA (art. 25 Ley 37/1992)." },
+      "read": [["Fornecedor", "Estructuras Solares del Sur", "fornecedor"], ["NIF", "ES B•••••412 (Espanha)", "nif"], ["Número", "F-2026-0412", "numero"], ["Data", "18/09/2026", "data"], ["Linhas", "3 (estrutura, fixação, portes)", "linhas"], ["Base", "3.412,80 €", "base"], ["IVA", "0% · menção de isenção", "nota"], ["Total", "3.412,80 €", "total"]],
+      "classify": [
+        { "k": "Conta", "v": "3121 · Compras de matérias-primas", "c": 94, "why": "Estruturas de fixação: mesma regra dos módulos" },
+        { "k": "IVA", "v": "Aquisição intracomunitária · autoliquidação 23%", "c": 74, "why": "Fornecedor novo, sem histórico; a fatura não indica o local de entrega" },
+        { "k": "Centro de custo", "v": "CC03 · Estruturas", "c": 95, "why": "Tipo de material das linhas da fatura" },
+        { "k": "Rubrica (obra)", "v": "OB-2026-034", "c": 96, "why": "Indicada no email de Compras" }
+      ],
+      "certainty": 74,
+      "outcome": { "kind": "val", "title": "Pedido de validação enviado",
+        "lines": ["Para: **Contabilidade, Vincent Vangeel, Compras**", "Proposta já feita: autoliquidação intracomunitária, 784,94 € de IVA", "Não entra no TOConline até haver resposta"] }
+    },
+    {
+      "mail": { "from": "Engenharia · Armazém", "time": "14:02", "subject": "Cabo e conectores para stock",
+        "body": "Material para stock, **ainda sem obra definida.**" },
+      "doc": { "supplier": "Cabelsol Material Elétrico, Lda.", "addr": "Rua da Indústria 45, Aveiro", "nif": "NIF 5•• ••• 291",
+        "title": "Fatura", "number": "FT 2026/2291", "date": "25/09/2026", "client": "Solcor Portugal", "ref": "",
+        "lines": [["Cabo solar H1Z2Z2-K 6 mm² preto (m)", "1.000", "0,86", "860,00"], ["Cabo solar H1Z2Z2-K 6 mm² vermelho (m)", "1.000", "0,86", "860,00"], ["Conectores MC4 (par)", "200", "1,95", "390,00"]],
+        "base": "2.110,00 €", "vatLabel": "IVA 23%", "vat": "485,30 €", "total": "2.595,30 €" },
+      "read": [["Fornecedor", "Cabelsol Material Elétrico", "fornecedor"], ["NIF", "5•• ••• 291", "nif"], ["Número", "FT 2026/2291", "numero"], ["Data", "25/09/2026", "data"], ["Linhas", "3 (cabo, cabo, MC4)", "linhas"], ["Base", "2.110,00 €", "base"], ["IVA", "485,30 € (23%)", "iva"], ["Total", "2.595,30 €", "total"]],
+      "classify": [
+        { "k": "Conta", "v": "3121 · Compras de matérias-primas", "c": 95, "why": "Material elétrico de obra" },
+        { "k": "IVA", "v": "Dedutível 23% · existências", "c": 99, "why": "Fornecedor habitual, 21 faturas anteriores" },
+        { "k": "Centro de custo", "v": "Projetos futuros", "c": 96, "why": "O email diz: para stock, sem obra", "tone": "fut" },
+        { "k": "Rubrica (obra)", "v": "Por definir · lembrete semanal", "c": 100, "why": "Regra da Solcor para material de stock", "tone": "fut" }
+      ],
+      "certainty": 95,
+      "outcome": { "kind": "fut", "title": "Lançada em Projetos futuros",
+        "lines": ["Lembrete **todas as segundas, às 9h00**, à engenharia", "Até ser distribuída pelas obras a que o material foi", "Aparece no relatório diário enquanto estiver por distribuir"] }
+    },
+    {
+      "mail": { "from": "Fotolux (fornecedor)", "time": "16:20", "subject": "2.ª via: fatura FT A/1187",
+        "body": "O fornecedor reenviou a fatura com o assunto **segunda via.**" },
+      "doc": { "supplier": "Fotolux Distribuição, Lda.", "addr": "Zona Industrial, Lote 12, Leiria", "nif": "NIF 5•• ••• 187",
+        "title": "Fatura · 2.ª via", "number": "FT A/1187", "date": "21/09/2026", "client": "Solcor Portugal", "ref": "Obra OB-2026-031",
+        "lines": [["Módulo FV 580 Wp bifacial", "120", "92,00", "11.040,00"], ["Transporte e descarga em obra", "1", "180,00", "180,00"]],
+        "base": "11.220,00 €", "vatLabel": "IVA 23%", "vat": "2.580,60 €", "total": "13.800,60 €" },
+      "read": [["Fornecedor", "Fotolux Distribuição", "fornecedor"], ["NIF", "5•• ••• 187", "nif"], ["Número", "FT A/1187", "numero"], ["Data", "21/09/2026", "data"], ["Linhas", "2 (módulos, transporte)", "linhas"], ["Base", "11.220,00 €", "base"], ["IVA", "2.580,60 € (23%)", "iva"], ["Total", "13.800,60 €", "total"]],
+      "classify": [
+        { "k": "Verificação de duplicados", "v": "Mesmo NIF e mesmo número já lançados", "c": 100, "why": "FT A/1187 entrou hoje às 08:14", "tone": "bad" },
+        { "k": "Conta, IVA, centro de custo, rubrica", "v": "Não classificada", "c": 0, "why": "Não se classifica o que já está lançado", "tone": "bad" }
+      ],
+      "certainty": null,
+      "outcome": { "kind": "block", "title": "Bloqueada: fatura duplicada",
+        "lines": ["**Não entra no TOConline** (seria lançada duas vezes)", "Arquivada como 2.ª via junto do original na Drive", "Fica no relatório do dia, para confirmar"] }
+    }
+  ]
+}
+</script>
+
+<!-- ============ 6. CHAT + RACIOCÍNIO: quando o agente pergunta ============ -->
+<section id="perguntas">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Quando o agente tem dúvidas</span>
+      <h2>Pergunta a quem sabe, por email, e aprende com a resposta</h2>
+      <p class="lead">Os 5% a 10% que não passam o limite não ficam parados nem entram às cegas. Quatro situações reais do dia a dia da Solcor.</p>
+    </div>
+    <div class="cr" id="crDemo" data-entra="escala"></div>
+    <p class="demo-note">Conversas por email com a equipa da Solcor. Nomes de fornecedores e valores fictícios.</p>
+  </div>
+</section>
+<script type="application/json" id="crDemo-config">
+{
+  "agentName": "Agente de faturas · Solcor",
+  "agentInitials": "AF",
+  "chatStatus": "faturas@solcor.pt · email",
+  "stepMs": 1500,
+  "endPauseMs": 3200,
+  "scenarios": [
+    {
+      "title": "A fatura de Espanha",
+      "subtitle": "Certeza de 74% no IVA: pergunta com a proposta já feita e grava a regra.",
+      "chat": [
+        { "sender": "system", "text": "F-2026-0412 · Estructuras Solares del Sur · certeza 74%", "time": "11:32" },
+        { "sender": "agent", "text": "Bom dia. Recebi a fatura da **Estructuras Solares del Sur** (3.412,80 €, sem IVA espanhol), obra OB-2026-034. É o primeiro documento deste fornecedor. Proponho **aquisição intracomunitária, com autoliquidação do IVA a 23% (784,94 €)**, conta 3121. Confirmam?", "time": "11:32" },
+        { "sender": "client", "text": "Confirmo. As estruturas vieram de Sevilha para o armazém. Fica assim para este fornecedor.", "time": "11:58" },
+        { "sender": "agent", "text": "Lançada no TOConline. **Regra gravada:** as próximas faturas deste fornecedor seguem sozinhas quando o resto bater certo.", "time": "11:58" }
+      ],
+      "steps": [
+        { "icon": "alert", "label": "Deteta certeza abaixo de 90% no tratamento do IVA" },
+        { "icon": "search", "label": "Procura o fornecedor no histórico: sem registos" },
+        { "icon": "send", "label": "Pergunta à Contabilidade, ao Vincent e a Compras, com a proposta feita" },
+        { "icon": "check", "label": "Recebe a confirmação e lança no TOConline" },
+        { "icon": "book", "label": "Grava a regra para a próxima fatura deste fornecedor" }
+      ]
+    },
+    {
+      "title": "Projetos futuros",
+      "subtitle": "O lembrete de segunda-feira até o material de stock estar distribuído por obra.",
+      "chat": [
+        { "sender": "system", "text": "Lembrete semanal · segunda-feira, 9h00", "time": "09:00" },
+        { "sender": "agent", "text": "Bom dia. Continua em **Projetos futuros** a fatura da Cabelsol (cabo solar e conectores MC4, 2.110,00 € sem IVA). Já sabem para que obras foi o material?", "time": "09:00" },
+        { "sender": "client", "text": "O cabo foi 60% para a OB-2026-031 e 40% para a OB-2026-036. Os MC4 continuam em stock.", "time": "10:14" },
+        { "sender": "agent", "text": "Registado: **cabo repartido 60/40** pelas duas obras. Os MC4 ficam em Projetos futuros e volto a perguntar na próxima segunda.", "time": "10:14" }
+      ],
+      "steps": [
+        { "icon": "clock", "label": "Segunda às 9h00: junta o que está em Projetos futuros" },
+        { "icon": "message", "label": "Pergunta à engenharia para que obras foi o material" },
+        { "icon": "list", "label": "Lê a resposta e reparte o valor pelas obras indicadas" },
+        { "icon": "calendar", "label": "Mantém o resto em lembrete para a semana seguinte" }
+      ]
+    },
+    {
+      "title": "Sem obra indicada",
+      "subtitle": "A fatura chega sem referência: deduz a obra pela morada e confirma antes de lançar.",
+      "chat": [
+        { "sender": "client", "text": "Segue fatura do aluguer da grua.", "time": "15:05" },
+        { "sender": "agent", "text": "Obrigado. A fatura não refere obra, mas a **morada de montagem é em Leiria**, a mesma da OB-2026-031, e as datas batem com a instalação da cobertura. Lanço nessa obra?", "time": "15:05" },
+        { "sender": "client", "text": "Sim, é dessa.", "time": "15:21" },
+        { "sender": "agent", "text": "Lançada na **OB-2026-031**, centro de custo Aluguer de equipamento.", "time": "15:21" }
+      ],
+      "steps": [
+        { "icon": "search", "label": "Procura a obra no email e na fatura: não está indicada" },
+        { "icon": "globe", "label": "Cruza a morada de montagem com as obras em curso" },
+        { "icon": "message", "label": "Propõe a obra e pede confirmação a quem enviou" },
+        { "icon": "check", "label": "Com o sim, lança e arquiva na pasta da obra" }
+      ]
+    },
+    {
+      "title": "Empresa errada",
+      "subtitle": "A fatura vem em nome de outra empresa do grupo: não lança na empresa errada.",
+      "chat": [
+        { "sender": "system", "text": "FT 2026/0877 · NIF do cliente não é o da empresa do piloto", "time": "16:48" },
+        { "sender": "agent", "text": "Esta fatura está emitida ao **NIF de outra empresa do grupo**, que ainda não está ligada ao agente. **Não a lancei.** Reencaminhei-a para a Contabilidade e fica no relatório de hoje.", "time": "16:48" },
+        { "sender": "client", "text": "Bem visto, é da outra empresa. Tratamos nós.", "time": "17:02" },
+        { "sender": "agent", "text": "Combinado. Quando as quatro empresas estiverem ligadas, sigo o NIF e lanço cada fatura na empresa certa.", "time": "17:02" }
+      ],
+      "steps": [
+        { "icon": "id", "label": "Confere o NIF do cliente na fatura" },
+        { "icon": "ban", "label": "Não bate com a empresa do piloto: recusa lançar" },
+        { "icon": "send", "label": "Reencaminha à Contabilidade e regista no relatório" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 7. FLUXO ============ -->
+<section class="section-alt" id="fluxo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do email ao TOConline, com uma porta nos 90%</h2>
+    </div>
+    <div class="fluxo" id="fxFluxo" data-entra="sobe"></div>
+  </div>
+</section>
+<script type="application/json" id="fxFluxo-config">
+{
+  "stepMs": 1800,
+  "channels": [
+    { "icon": "message", "label": "Email com PDF" },
+    { "icon": "book", "label": "Fatura em papel digitalizada" },
+    { "icon": "whatsapp", "label": "Foto por WhatsApp (opcional)" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Chega a faturas@", "detail": "Com uma linha a dizer a obra, quando se sabe.", "tone": "brand" },
+    { "icon": "search", "title": "Lê a fatura", "detail": "Fornecedor, NIF, número, linhas, base, IVA e total.", "tone": "teal" },
+    { "icon": "brain", "title": "Classifica", "detail": "Conta, IVA, centro de custo e rubrica, pelas regras e pelo histórico.", "tone": "teal" },
+    { "icon": "shield", "title": "Decide", "detail": "90% ou mais segue. Abaixo, pergunta a 2 ou 3 pessoas.", "tone": "teal" },
+    { "icon": "database", "title": "Lança e arquiva", "detail": "Documento de compra no TOConline, PDF na Drive.", "tone": "teal" },
+    { "icon": "list", "title": "Relatório", "detail": "O que entrou, com que certeza, o que falta validar.", "tone": "brand" }
+  ],
+  "note": "Uma fatura duplicada, de outra empresa ou abaixo do limite nunca entra no TOConline sem uma pessoa dizer que sim."
+}
+</script>
+
+<!-- ============ 8. RELATÓRIO DIÁRIO ============ -->
+<section id="relatorio">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O relatório do dia</span>
+      <h2>O TOConline continua a ser o painel. Isto é o resumo que chega por email.</h2>
+    </div>
+    <div class="relatorio" data-entra="sobe">
+      <div class="mailmock">
+        <div class="mailmock-head">
+          <div><span>De:</span> <b>Agente de faturas</b> &lt;faturas@solcor.pt&gt;</div>
+          <div><span>Para:</span> Contabilidade, Vincent Vangeel</div>
+          <div><span>Assunto:</span> <b>Faturas de segunda-feira, 28/09: 5 recebidas, 1 à espera de validação</b></div>
+        </div>
+        <div class="mailmock-body">
+          <div class="kpis">
+            <div class="ok"><b>2</b><span>Lançadas</span></div>
+            <div class="fut"><b>1</b><span>Em projetos futuros</span></div>
+            <div class="val"><b>1</b><span>À espera de validação</span></div>
+            <div class="block"><b>1</b><span>Bloqueada</span></div>
+          </div>
+          <div class="tabela-wrap">
+            <table class="tabela">
+              <thead><tr><th>Fornecedor</th><th>Documento</th><th>Classificação</th><th>Certeza</th><th>Estado</th><th>Total</th></tr></thead>
+              <tbody>
+                <tr><td>Fotolux Distribuição</td><td>FT A/1187</td><td>3121 · CC02 Módulos · OB-2026-031</td><td class="n">97%</td><td><span class="tag ok">Lançada</span></td><td class="n">13.800,60 €</td></tr>
+                <tr><td>Luzmar Energia</td><td>FT LZ26/0918442</td><td>6241 · CC09 Estrutura · Gastos gerais</td><td class="n">99%</td><td><span class="tag ok">Lançada</span></td><td class="n">262,24 €</td></tr>
+                <tr><td>Estructuras Solares del Sur</td><td>F-2026-0412</td><td>3121 · CC03 Estruturas · OB-2026-034</td><td class="n">74%</td><td><span class="tag val">A validar</span></td><td class="n">3.412,80 €</td></tr>
+                <tr><td>Cabelsol Material Elétrico</td><td>FT 2026/2291</td><td>3121 · Projetos futuros</td><td class="n">95%</td><td><span class="tag fut">Projetos futuros</span></td><td class="n">2.595,30 €</td></tr>
+                <tr><td>Fotolux Distribuição</td><td>FT A/1187 (2.ª via)</td><td>Duplicado da primeira linha</td><td class="n">n/a</td><td><span class="tag block">Bloqueada</span></td><td class="n">13.800,60 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mailmock-foot">Todos os PDF estão na Drive, em Faturas/2026/09, numa pasta por obra. Para validar a fatura de Espanha, basta responder a este email.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. TOCONLINE: PORQUE É SEGURO ============ -->
+<section class="section-alt" id="toconline">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Ligação ao TOConline</span>
+      <h2>Pela porta oficial, e só com o que está certo</h2>
+    </div>
+    <div class="tec">
+      <div class="card holofote" data-entra="sobe">
+        <h3>API oficial do TOConline</h3>
+        <p>A ligação usa a API pública do TOConline, com credenciais que a própria Solcor gera em <code>Empresa › Dados API</code> e pode revogar quando quiser.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>A porta dos 90% existe por uma razão</h3>
+        <p>Um documento de compra lançado fica finalizado. Por isso só entra o que passou o limite de certeza, os duplicados são travados antes, e tudo o resto espera por uma pessoa.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>Com as regras da Solcor, não com regras genéricas</h3>
+        <p>Plano de contas, centros de custo e rubricas mapeados na auditoria, a partir dos lançamentos dos anos anteriores e da classificação que o Vincent já testou. Cada resposta da equipa acrescenta uma regra.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>Os documentos ficam em casa</h3>
+        <p>Os PDF ficam na Drive da Solcor, numa pasta por obra, e o histórico das decisões (quem validou o quê, e quando) fica registado para a contabilidade e para o contabilista certificado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. REGRAS DO AGENTE ============ -->
+<section id="regras">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Limites claros</span>
+      <h2>O que o agente faz sozinho e o que fica sempre com a equipa</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Sozinho</h3>
+        <ul class="list-check">
+          <li>Ler todas as faturas que chegam a faturas@, em PDF, digitalizadas ou em foto</li>
+          <li>Propor conta, IVA, centro de custo e rubrica em todas</li>
+          <li>Lançar no TOConline as que passam os 90% de certeza</li>
+          <li>Arquivar o PDF na Drive, na pasta da obra</li>
+          <li>Enviar o lembrete dos projetos futuros e o relatório diário</li>
+        </ul>
+      </div>
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Sempre com a equipa</h3>
+        <ul class="list-x">
+          <li>Qualquer fatura abaixo de 90% de certeza</li>
+          <li>Fornecedores novos, até haver histórico que chegue</li>
+          <li>Duplicados e faturas emitidas a outra empresa do grupo</li>
+          <li>Alterações às regras de classificação</li>
+          <li>O fecho contabilístico, que continua com o contabilista certificado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. FASES ============ -->
+<section class="section-alt" id="fases">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Uma empresa, quatro semanas, e só depois o grupo</h2>
+      <p class="lead">Prazos indicativos, que se fecham na auditoria da primeira semana.</p>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semana 1</span>
+        <h3>Auditoria</h3>
+        <p>Análise das últimas 1.000 faturas da empresa escolhida: fornecedores, tipos de despesa e casos difíceis. As regras de conta, IVA, centro de custo e rubrica ficam escritas e validadas com a contabilidade.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 2 e 3</span>
+        <h3>Montagem</h3>
+        <p>Endereço faturas@, leitura, classificação, ligação ao TOConline, pastas na Drive, emails de validação, lembrete dos projetos futuros e relatório diário.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semana 4</span>
+        <h3>Em paralelo</h3>
+        <p>O agente propõe e a contabilidade confirma tudo antes de lançar. Afinamos até a certeza que o agente mostra ser a certeza real.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">A seguir</span>
+        <h3>Autónomo acima de 90%</h3>
+        <p>A porta abre: o que passa o limite entra sozinho, o resto continua a chegar à equipa com a proposta feita.</p>
+      </div>
+    </div>
+    <div class="fase2" data-entra="sobe">
+      <span class="quando">Fase 2</span>
+      <p><b>As outras três empresas do grupo.</b> A base já está montada: entra o NIF, o plano de contas e as rubricas de cada empresa, e cada fatura passa a ser lançada na empresa certa. Só avança quando a primeira empresa estiver a funcionar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. INVESTIMENTO (sempre a última secção) ============ -->
+<section id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Começar pequeno, numa empresa, e crescer sobre a mesma base</h2>
+    </div>
+    <div class="invest">
+      <div class="card price-card highlight" data-entra="sobe">
+        <span class="pin">Por aqui começamos</span>
+        <div class="label">Fase 1 · uma empresa do grupo</div>
+        <div class="price">1.500 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>Auditoria às últimas 1.000 faturas</li>
+          <li>Regras de conta, IVA, centro de custo e rubrica</li>
+          <li>Ligação ao TOConline e à Drive</li>
+          <li>Validação por email, projetos futuros e relatório diário</li>
+          <li>Quatro semanas até ao arranque, com a semana em paralelo</li>
+        </ul>
+        <span class="quando">Pagamento único</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Fase 2 · as outras três empresas</div>
+        <div class="price">2.500 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>Regras, plano de contas e rubricas de cada empresa</li>
+          <li>Cada fatura lançada na empresa certa pelo NIF</li>
+          <li>Relatório por empresa e do grupo</li>
+        </ul>
+        <span class="quando">Só quando a Fase 1 estiver a funcionar</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Mensalidade</div>
+        <div class="price">90 € <small>+ IVA / mês</small></div>
+        <ul class="price-list">
+          <li>Servidor e custos de IA</li>
+          <li>Manutenção da ligação ao TOConline</li>
+          <li>Novas regras e ajustes pedidos pela equipa</li>
+          <li>Acompanhamento e suporte</li>
+        </ul>
+        <span class="quando">A partir do arranque</span>
+      </div>
+    </div>
+    <p class="invest-nota">Hoje decide-se só a <b>Fase 1</b>. A Fase 2 é uma decisão à parte, com a primeira empresa já a funcionar.</p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Solcor, setembro de 2026
+    <span class="disclaimer">Demonstração com dados ilustrativos: fornecedores, NIF, números de documento e valores são fictícios.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/faturas.js"></script>
+<script>
+  caixaFaturas('fxDemo');
+  chatRaciocinio('crDemo');
+  fluxo('fxFluxo');
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var atual = r.getAttribute('data-theme') || 'dark';
+    var next = atual === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+/* ============================================================
+   TOKENS: Solcor (estilo deck-dark, com a identidade da Solcor)
+   Marca: verde #38D430 do logo e do site solcor.pt, sobre quase-preto
+   azulado (#0d1117), com gradiente verde para verde-água no título.
+   Tipografia do próprio site: Syne (títulos), DM Sans (corpo),
+   JetBrains Mono (etiquetas técnicas).
+   Escuro por defeito; claro em :root[data-theme="light"].
+   ============================================================ */
+
+:root {
+  --brand-hsl: 116 66% 51%;       /* #38D430, verde Solcor */
+  --accent-hsl: 158 78% 46%;      /* verde-água do gradiente do site: a cor do agente */
+  --brand2-hsl: 140 70% 48%;      /* ponto intermédio do texto em gradiente */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  /* o site da Solcor põe texto escuro sobre o verde: branco não passa AA */
+  --on-brand: hsl(216 30% 7%);
+  --brand-solido: hsl(var(--brand-hsl));
+  --acento-texto: hsl(152 70% 56%);
+  --marca-texto: hsl(116 62% 58%);
+  --ok-texto: hsl(140 62% 60%);
+
+  --bg: hsl(216 28% 6%);
+  --bg-soft: hsl(216 26% 8.5%);
+  --surface: hsl(216 22% 11%);
+  --surface-2: hsl(216 20% 14%);
+  --border: hsl(216 16% 21%);
+
+  --text: hsl(210 25% 95%);
+  --muted: hsl(214 12% 68%);
+
+  --success-hsl: 140 62% 46%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 80% 62%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 40 92% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(216 28% 8%), hsl(var(--brand-hsl) / 0.22));
+
+  --shadow-sm: 0 1px 3px hsl(216 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(216 60% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(216 60% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.30);
+
+  /* Janela de produto (a caixa de faturas): escura nos dois temas,
+     porque está a fingir ser uma ferramenta de trabalho */
+  --app-bg: hsl(216 30% 7%);
+  --app-panel: hsl(216 24% 10.5%);
+  --app-panel-2: hsl(216 22% 13.5%);
+  --app-line: hsl(216 18% 20%);
+  --app-text: hsl(210 25% 93%);
+  --app-muted: hsl(214 12% 64%);
+  /* O papel da fatura: branco nos dois temas */
+  --paper: hsl(40 20% 98%);
+  --paper-ink: hsl(216 25% 14%);
+  --paper-muted: hsl(216 10% 42%);
+  --paper-line: hsl(216 14% 86%);
+
+  /* Estados (texto sobre o fundo da página) */
+  --st-ok: hsl(140 62% 60%);
+  --st-val: hsl(40 95% 62%);
+  --st-fut: hsl(265 85% 78%);
+  --st-block: hsl(356 90% 72%);
+  --st-fut-hsl: 265 70% 62%;
+  /* Estados dentro da janela de produto (sempre escura) */
+  --app-ler: hsl(200 90% 72%);   --app-ler-bg: hsl(200 80% 50% / 0.16);
+  --app-ok: hsl(130 70% 62%);    --app-ok-hsl: 130 60% 45%;
+  --app-val: hsl(40 95% 64%);    --app-val-hsl: 40 90% 50%;
+  --app-fut: hsl(265 85% 78%);   --app-fut-hsl: 265 70% 60%;
+  --app-block: hsl(356 90% 72%); --app-block-hsl: 356 80% 55%;
+  --app-fila-bg: hsl(216 16% 20% / 0.6);
+  --app-sombra: 0 18px 40px hsl(216 60% 2% / 0.5);
+  --paper-nota: hsl(40 70% 90%);
+  --grad-agente: linear-gradient(135deg, hsl(116 66% 51%), hsl(158 78% 46%));
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Syne', 'DM Sans', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --container: 1180px;
+  --section-pad: clamp(72px, 10vw, 124px);
+  --grelha-passo: 72px;
+}
+
+:root[data-theme="light"] {
+  --brand-hsl: 116 62% 36%;
+  --accent-hsl: 160 80% 30%;
+  --brand2-hsl: 140 70% 32%;
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(116 62% 30%);
+  --acento-texto: hsl(160 80% 25%);
+  --marca-texto: hsl(116 62% 28%);
+  --ok-texto: hsl(140 62% 28%);
+
+  --bg: hsl(100 18% 97%);
+  --bg-soft: hsl(110 20% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(110 18% 96%);
+  --border: hsl(120 10% 85%);
+
+  --text: hsl(216 30% 11%);
+  --muted: hsl(216 10% 38%);
+
+  --success-hsl: 140 62% 32%;
+  --danger-hsl: 356 72% 46%;
+  --warning-hsl: 34 92% 40%;
+
+  --grad-cta: linear-gradient(160deg, hsl(110 22% 92%), hsl(var(--brand-hsl) / 0.16));
+  --shadow-sm: 0 1px 3px hsl(216 30% 20% / 0.08);
+  --shadow-md: 0 8px 28px hsl(216 30% 20% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(216 30% 20% / 0.16);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.18);
+  --st-ok: hsl(140 62% 26%);
+  --st-val: hsl(34 92% 30%);
+  --st-fut: hsl(265 55% 42%);
+  --st-block: hsl(356 72% 40%);
+  --st-fut-hsl: 265 55% 45%;
+}
+
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
