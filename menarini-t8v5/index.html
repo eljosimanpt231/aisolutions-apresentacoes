@@ -145,30 +145,22 @@
     <div class="slide section-alt">
       <div class="container">
         <span class="eyebrow">Ao vivo · experimente</span>
-        <h2>Ligue ao agente como se fosse um cliente</h2>
-        <p class="lead">Um agente em versão de demonstração, já em português de Portugal. Faça de técnico de laboratório com uma avaria ao fim do dia.</p>
+        <h2>Ligue à Bia e faça o role play</h2>
+        <p class="lead">A Bia ainda não conhece a Menarini: dê-lhe o contexto em três passos e ela passa a fazer de assistente do serviço técnico.</p>
         <div class="rp">
           <div class="persona reveal">
-            <div class="k">O seu papel</div>
-            <h3>Técnica de laboratório, 19h10</h3>
-            <p>Trabalha num laboratório de análises clínicas em Santarém. O analisador de hemoglobina glicada deu um erro e parou a meio da série. Há amostras em espera para amanhã de manhã. Ligou para o serviço técnico da Menarini.</p>
-            <div class="call"><i></i>Ligação em curso com o agente de demonstração</div>
+            <div class="k">O seu papel no passo 3</div>
+            <h3>Técnica de laboratório, 19h30</h3>
+            <p>Trabalha num laboratório de análises clínicas em Santarém. O analisador de hemoglobina glicada deu um erro de pressão e parou a meio da série. Há amostras em espera para amanhã de manhã e a equipa de piquete já saiu.</p>
+            <div class="call"><i></i>Ligar à Bia: 923 272 849</div>
           </div>
           <div class="card reveal">
-            <div class="prompt-head"><h3>O prompt do agente</h3><button class="prompt-copy" type="button" data-copy="rpPrompt">Copiar</button></div>
-            <div class="prompt" id="rpPrompt">És a assistente virtual do serviço técnico da A. Menarini Diagnostics Portugal e falas português de Portugal, com frases curtas e tom calmo.
-
-Começa assim: «Boa tarde, fala a assistente virtual do serviço técnico da A. Menarini Diagnostics. O horário de atendimento já terminou, mas posso registar o seu pedido e avisar a equipa agora. Com quem estou a falar?»
-
-Do outro lado está uma técnica de laboratório com um equipamento avariado. Recolhe, uma pergunta de cada vez:
-1. Nome e função
-2. Laboratório e localidade
-3. Equipamento (modelo ou número de série, se souber)
-4. O que está a acontecer: parado ou só degradado
-5. Urgência: amostras em espera
-6. Contacto de retorno
-
-Não prometas prazos nem dês instruções técnicas. No fim, confirma que o técnico da zona já foi avisado, dá um número de pedido e despede-te.</div>
+            <h3>O que dizer à Bia</h3>
+            <ol class="rp-steps">
+              <li><b>Apresente-se</b><q>Olá, Bia. Sou o [nome], da A. Menarini Diagnostics Portugal. Temos mais de 500 equipamentos instalados pelo país e queremos uma assistente como tu no serviço técnico.</q></li>
+              <li><b>Diga-lhe o que vai ter de fazer</b><q>São 19h30, o piquete já saiu e um cliente liga com um equipamento avariado. Atendes como assistente do serviço técnico e percebes quem liga e a função, a entidade e a localidade, o equipamento (modelo ou número de série), o que está a acontecer, a urgência e um telemóvel para retorno. Não prometes prazos nem dás instruções técnicas.</q></li>
+              <li><b>Simule a conversa</b><q>Vamos fazer um role play: eu sou do laboratório e tu atendes. Faz de conta que o telefone está a tocar.</q><span>A partir daqui, fale como o cliente da esquerda.</span></li>
+            </ol>
           </div>
         </div>
       </div>
@@ -453,13 +445,7 @@ Não prometas prazos nem dês instruções técnicas. No fim, confirma que o té
   <script src="assets/js/app.js"></script>
   <script>
     consola('csDemo');
-    fluxo('fxDemo');
-    document.querySelectorAll('.prompt-copy').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var t = document.getElementById(b.dataset.copy).innerText;
-        navigator.clipboard.writeText(t).then(function () { b.textContent = 'Copiado'; setTimeout(function () { b.textContent = 'Copiar'; }, 1500); });
-      });
-    });
+    fluxo('fxDemo');
     prioridades('pv');
     document.getElementById('themeBtn').addEventListener('click', function () {
       var r = document.documentElement;
