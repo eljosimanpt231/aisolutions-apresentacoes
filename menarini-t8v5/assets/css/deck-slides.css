@@ -302,3 +302,9 @@ body { background: var(--bg); }
   .pager { right: 12px; bottom: 12px; padding: 5px 8px; }
   .pager .hint { display: none; }
 }
+
+/* Prompt do agente (slide do roleplay) */
+.prompt-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.prompt-copy { font: inherit; font-size: 0.78rem; font-weight: 700; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border, hsl(0 0% 50% / 0.3)); background: transparent; color: var(--accent); cursor: pointer; }
+.prompt-copy:hover { background: hsl(var(--accent-hsl) / 0.1); }
+.prompt { margin-top: 12px; white-space: pre-line; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.8rem; line-height: 1.55; color: var(--text); background: hsl(var(--accent-hsl) / 0.06); border: 1px solid hsl(var(--accent-hsl) / 0.18); border-radius: var(--radius-md, 12px); padding: 14px 16px; max-height: 52vh; overflow: auto; }

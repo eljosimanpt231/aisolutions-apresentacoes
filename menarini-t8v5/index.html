@@ -155,15 +155,20 @@
             <div class="call"><i></i>Ligação em curso com o agente de demonstração</div>
           </div>
           <div class="card reveal">
-            <h3>O que o agente tem de apanhar</h3>
-            <ol class="collect">
-              <li><div><b>Quem liga</b><span>Nome e função</span></div></li>
-              <li><div><b>Entidade e localidade</b><span>É o que define a zona e o técnico</span></div></li>
-              <li><div><b>Equipamento</b><span>Modelo ou número de série, se a pessoa souber</span></div></li>
-              <li><div><b>O que está a acontecer</b><span>Erro, sintoma, parado ou só degradado</span></div></li>
-              <li><div><b>Urgência</b><span>Amostras em espera, equipamento de urgência</span></div></li>
-              <li><div><b>Contacto de retorno</b><span>E fecha a tranquilizar, com o número do pedido</span></div></li>
-            </ol>
+            <div class="prompt-head"><h3>O prompt do agente</h3><button class="prompt-copy" type="button" data-copy="rpPrompt">Copiar</button></div>
+            <div class="prompt" id="rpPrompt">És a assistente virtual do serviço técnico da A. Menarini Diagnostics Portugal e falas português de Portugal, com frases curtas e tom calmo.
+
+Começa assim: «Boa tarde, fala a assistente virtual do serviço técnico da A. Menarini Diagnostics. O horário de atendimento já terminou, mas posso registar o seu pedido e avisar a equipa agora. Com quem estou a falar?»
+
+Do outro lado está uma técnica de laboratório com um equipamento avariado. Recolhe, uma pergunta de cada vez:
+1. Nome e função
+2. Laboratório e localidade
+3. Equipamento (modelo ou número de série, se souber)
+4. O que está a acontecer: parado ou só degradado
+5. Urgência: amostras em espera
+6. Contacto de retorno
+
+Não prometas prazos nem dês instruções técnicas. No fim, confirma que o técnico da zona já foi avisado, dá um número de pedido e despede-te.</div>
           </div>
         </div>
       </div>
@@ -244,95 +249,6 @@
         [29400, "quiet", {}],
         [30300, "queue", { "time": "19:10", "who": "Laboratório Tejo Norte", "what": "HbA1c parado · **técnico avisado às 19:13**", "tag": "Alta · em curso", "tone": "alta" }],
         [31500, "clock", { "value": "19:13" }]
-      ]
-    }
-    </script>
-
-    <!-- 6. Cenários: chat + raciocínio -->
-    <div class="slide section-alt tight">
-      <div class="container">
-        <span class="eyebrow">Outras noites, outras chamadas</span>
-        <h2>Quatro chamadas, quatro caminhos diferentes</h2>
-        <p class="lead">A conversa à esquerda, o que o agente está a decidir à direita.</p>
-        <div class="cr" id="crDemo" style="margin-top:18px"></div>
-      </div>
-    </div>
-    <script type="application/json" id="crDemo-config">
-    {
-      "agentName": "Serviço técnico Menarini",
-      "agentInitials": "MD",
-      "chatStatus": "Chamada de voz · transcrição em direto",
-      "stepMs": 1350,
-      "endPauseMs": 2800,
-      "scenarios": [
-        {
-          "title": "Urgência às 3h",
-          "subtitle": "Equipamento de urgência hospitalar parado, com contrato de piquete.",
-          "chat": [
-            { "sender": "system", "text": "Chamada recebida às 03:12, fora de horas", "time": "03:12" },
-            { "sender": "client", "text": "Fala do laboratório de urgência do Hospital do Litoral. O analisador parou e temos doentes à espera de resultados.", "time": "03:12" },
-            { "sender": "agent", "text": "Vou tratar disto já. Consegue dizer-me o erro que aparece no ecrã?", "time": "03:12" },
-            { "sender": "client", "text": "Erro de comunicação com o módulo de amostras. Não arranca.", "time": "03:13" },
-            { "sender": "agent", "text": "Obrigada. O técnico de piquete está a ser **avisado neste momento** e liga-lhe diretamente. O seu pedido é o **00012851**.", "time": "03:13" }
-          ],
-          "steps": [
-            { "icon": "phone", "label": "Atende em português de Portugal, fora de horas" },
-            { "icon": "id", "label": "Identifica o hospital na base instalada" },
-            { "icon": "shield", "label": "Confirma contrato de piquete 24h para este equipamento" },
-            { "icon": "alert", "label": "Gravidade crítica: urgência hospitalar parada" },
-            { "icon": "send", "label": "Liga ao técnico de piquete e envia o resumo por WhatsApp, assistente em cópia" }
-          ]
-        },
-        {
-          "title": "Hora de almoço",
-          "subtitle": "Não é uma avaria: é um pedido comercial.",
-          "chat": [
-            { "sender": "system", "text": "Chamada recebida às 13:05, sem ninguém na receção", "time": "13:05" },
-            { "sender": "client", "text": "Boa tarde, queria encomendar reagentes para a próxima semana.", "time": "13:05" },
-            { "sender": "agent", "text": "Com certeza. Qual é o laboratório e que reagentes precisa?", "time": "13:05" },
-            { "sender": "client", "text": "Laboratório Foz do Mondego. As tiras e os calibradores do costume.", "time": "13:06" },
-            { "sender": "agent", "text": "Fica registado e segue já para a equipa comercial, que lhe confirma a encomenda ainda hoje à tarde.", "time": "13:06" }
-          ],
-          "steps": [
-            { "icon": "ear", "label": "Percebe que não é avaria: é pedido comercial" },
-            { "icon": "search", "label": "Identifica o cliente e o histórico de encomendas" },
-            { "icon": "list", "label": "Regista o pedido com o que foi dito" },
-            { "icon": "arrows", "label": "Encaminha para a equipa comercial, não para o técnico" }
-          ]
-        },
-        {
-          "title": "Avaria que pode esperar",
-          "subtitle": "O equipamento trabalha: vai para a fila da manhã.",
-          "chat": [
-            { "sender": "system", "text": "Chamada recebida às 18:34", "time": "18:34" },
-            { "sender": "client", "text": "O equipamento está a dar uma leitura intermitente, mas continua a trabalhar.", "time": "18:34" },
-            { "sender": "agent", "text": "Percebo. Está a conseguir processar as amostras de hoje?", "time": "18:35" },
-            { "sender": "client", "text": "Sim, está só estranho. Amanhã de manhã chega.", "time": "18:35" },
-            { "sender": "agent", "text": "Fica na primeira lista da assistente de serviço técnico amanhã às 9h00. Vai receber o número do pedido por SMS.", "time": "18:35" }
-          ],
-          "steps": [
-            { "icon": "wrench", "label": "Recolhe o sintoma e o estado do equipamento" },
-            { "icon": "check", "label": "Equipamento a trabalhar, sem amostras em risco" },
-            { "icon": "clock", "label": "Gravidade normal: não acorda ninguém" },
-            { "icon": "calendar", "label": "Entra na fila da manhã, ordenada por gravidade" }
-          ]
-        },
-        {
-          "title": "O agente não promete",
-          "subtitle": "Pedem um prazo e instruções técnicas: o agente não inventa.",
-          "chat": [
-            { "sender": "client", "text": "Garante-me que o técnico chega cá em duas horas? E diga-me já como desmonto o módulo.", "time": "20:02" },
-            { "sender": "agent", "text": "Não lhe consigo garantir um prazo, isso é o técnico que confirma. E para não arriscar o equipamento, **não vou dar instruções de desmontagem**.", "time": "20:02" },
-            { "sender": "agent", "text": "O que faço agora: aviso o técnico da zona com tudo o que me disse, marcado como urgente, e ele liga-lhe a confirmar quando chega.", "time": "20:03" },
-            { "sender": "client", "text": "Está bem, fico à espera.", "time": "20:03" }
-          ],
-          "steps": [
-            { "icon": "ban", "label": "Não promete prazos de intervenção" },
-            { "icon": "book", "label": "Não dá instruções técnicas fora da base aprovada" },
-            { "icon": "user-cog", "label": "Passa a decisão ao técnico, com o contexto todo" },
-            { "icon": "send", "label": "Resumo ao técnico e à assistente, marcado urgente" }
-          ]
-        }
       ]
     }
     </script>
@@ -537,8 +453,13 @@
   <script src="assets/js/app.js"></script>
   <script>
     consola('csDemo');
-    chatRaciocinio('crDemo');
     fluxo('fxDemo');
+    document.querySelectorAll('.prompt-copy').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var t = document.getElementById(b.dataset.copy).innerText;
+        navigator.clipboard.writeText(t).then(function () { b.textContent = 'Copiado'; setTimeout(function () { b.textContent = 'Copiar'; }, 1500); });
+      });
+    });
     prioridades('pv');
     document.getElementById('themeBtn').addEventListener('click', function () {
       var r = document.documentElement;
