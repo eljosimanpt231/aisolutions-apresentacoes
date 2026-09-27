@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>VDO Publicidade | O sistema comercial em cima dos vossos mapas</title>
+  <meta name="description" content="Como um pedido de orçamento passa do WhatsApp ao mapa, ao orçamento e à venda, dentro das ferramentas Google da VDO.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VDO Publicidade × AI Solutions">
+  <meta property="og:description" content="Os vossos mapas, a trabalhar sozinhos: do primeiro contacto à venda, com o Jorge a decidir o preço.">
+  <meta property="og:image" content="https://eljosimanpt231.github.io/aisolutions-apresentacoes/vdo-publicidade-k6r2/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/vdo-logo.png">
+  <script>
+    try { var t = localStorage.getItem('vdo-tema'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/vdo.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topo">
+  <div class="container">
+    <a href="#topo" class="topo-marca"><img src="assets/img/vdo-logo.png" alt="VDO Publicidade">VDO Publicidade <span>× AI Solutions</span></a>
+    <nav class="topo-nav" aria-label="Secções">
+      <a href="#pedido">O vosso pedido</a>
+      <a href="#demo">A demo</a>
+      <a href="#assistente">O assistente</a>
+      <a href="#regras">Regras</a>
+      <a href="#decide">Quem decide</a>
+      <a href="#vosso">O que fica vosso</a>
+      <a href="#metodo">Método</a>
+      <a href="#investimento">Investimento</a>
+    </nav>
+    <button class="tema-btn" id="temaBtn" type="button" aria-label="Mudar entre tema claro e escuro">☀</button>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow" data-acto="1" data-entra="sobe">VDO Publicidade × AI Solutions</span>
+      <h1 data-linhas>Os vossos mapas,<br>a trabalhar <span class="letreiro">sozinhos</span>.</h1>
+      <p class="lead" data-acto="2" data-entra="sobe" style="margin-top:20px">
+        Um sistema comercial montado em cima das folhas Google que arrancam a 1 de outubro. Cada pedido chega completo,
+        entra no mapa, tem follow-up e acaba nas vendas. A equipa valida, o Jorge põe o preço.
+      </p>
+      <blockquote class="frase-jorge" data-acto="2" data-entra="sobe">"A resposta rápida é a chave da conversão. Mais do que o preço." <cite>Jorge Grosso, março de 2026</cite></blockquote>
+      <div class="stats" data-acto="3" data-entra="sobe">
+        <div class="stat"><div class="n"><span data-conta="10">10</span></div><div class="d">pedidos de orçamento por dia</div></div>
+        <div class="stat"><div class="n"><span data-conta="6">6</span></div><div class="d">canais: site, email, WhatsApp, telefone, redes sociais e referências</div></div>
+        <div class="stat"><div class="n">8 em 10</div><div class="d">chegam incompletos: "só uma fotografia, sem logótipo"</div></div>
+      </div>
+      <div class="hero-meta" data-acto="4" data-entra="sobe">
+        <span>Para <b>Jorge Grosso</b></span>
+        <span>Reunião de <b>28 de setembro de 2026</b></span>
+        <a href="#demo" class="btn btn-primary premivel" data-iman="0.2" style="padding:10px 20px">Ver um pedido do início ao fim</a>
+      </div>
+    </div>
+    <div data-acto="3" data-entra="escala">
+      <div class="ficha-hero holofote" data-inclina="4">
+        <div class="fh-top">
+          <div><small>Pedido que entrou às 21:47</small><b>OP-0412 · Reclamo luminoso</b></div>
+          <span class="fh-estado" id="fichaHeroEstado">A recolher</span>
+        </div>
+        <ul class="fh-lista" id="fichaHero">
+          <li class="on"><span class="lamp"></span><span>Serviço</span><span class="v">Reclamo luminoso</span></li>
+          <li class="on"><span class="lamp"></span><span>Fotografia do local</span><span class="v">fachada.jpg</span></li>
+          <li class="on"><span class="lamp"></span><span>Morada da instalação</span><span class="v">Almada</span></li>
+          <li class="on"><span class="lamp"></span><span>Medidas</span><span class="v">5,0 m</span></li>
+          <li class="on"><span class="lamp"></span><span>Logótipo</span><span class="v">logotipo.pdf</span></li>
+          <li class="on"><span class="lamp"></span><span>Prazo</span><span class="v">até 30/10</span></li>
+        </ul>
+        <p class="fh-pe">As 6 perguntas do vosso script, feitas em conversa. Exemplo com dados fictícios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O VOSSO PEDIDO ============ -->
+<section class="section-alt" id="pedido">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O vosso pedido de 14 de setembro</span>
+      <h2>Oito objetivos. Hoje vão vê-los a funcionar.</h2>
+      <p class="lead">Pegámos nos objetivos que escreveram, um a um. Cada cartão leva ao passo da demonstração onde se vê a resposta.</p>
+    </div>
+    <blockquote class="citacao" data-entra="sobe">
+      "Não procuramos simplesmente uma ferramenta de IA. Procuramos uma solução de processo, construída à medida da nossa operação."
+      <small>Do vosso pedido de proposta. É por isso que tudo o que vão ver acontece dentro das Google Sheets, da Drive e do Gmail que a equipa já usa.</small>
+    </blockquote>
+    <div class="objetivos">
+      <button class="obj" data-entra="sobe" data-ir-passo="0"><span class="num-lum">1</span><p>Responder mais rapidamente aos pedidos</p><span class="ir">Ver no passo 1</span></button>
+      <button class="obj" data-entra="sobe" data-ir-passo="1"><span class="num-lum">2</span><p>Reduzir as trocas de mensagens para obter informação em falta</p><span class="ir">Ver no passo 2</span></button>
+      <button class="obj" data-entra="sobe" data-ir-passo="4"><span class="num-lum">3</span><p>Acelerar a preparação de orçamentos</p><span class="ir">Ver no passo 5</span></button>
+      <button class="obj" data-entra="sobe" data-ir-passo="5"><span class="num-lum">4</span><p>Garantir um follow-up consistente</p><span class="ir">Ver no passo 6</span></button>
+      <button class="obj" data-entra="sobe" data-ir-passo="2"><span class="num-lum">5</span><p>Reduzir a introdução duplicada de informação</p><span class="ir">Ver no passo 3</span></button>
+      <button class="obj" data-entra="sobe" data-ir-passo="2"><span class="num-lum">6</span><p>Melhorar a qualidade dos dados comerciais</p><span class="ir">Ver no passo 3</span></button>
+      <button class="obj" data-entra="sobe" data-ir-passo="6"><span class="num-lum">7</span><p>Ter uma visão clara das oportunidades e vendas</p><span class="ir">Ver no passo 7</span></button>
+      <button class="obj" data-entra="sobe" data-ir-passo="3"><span class="num-lum">8</span><p>Libertar tempo da administração e da gerência</p><span class="ir">Ver no passo 4</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE JÁ SABÍAMOS ============ -->
+<section id="marco">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que já sabíamos desde março</span>
+      <h2>A conversa de março continua válida. Agora com mapas novos.</h2>
+    </div>
+    <div class="dores">
+      <div class="dor" data-entra="sobe">
+        <h3>Os pedidos chegam aos bocados</h3>
+        <p>Uns só perguntam se podem pedir orçamento, outros mandam o projeto mas esquecem a morada. A maioria fica no meio.</p>
+        <q>80% mandam só uma fotografia, não têm o logótipo.</q>
+      </div>
+      <div class="dor" data-entra="sobe">
+        <h3>Tudo se resume a seis perguntas</h3>
+        <p>O script existe e funciona. Só não pode ir para um formulário, porque um formulário comprido faz perder o contacto.</p>
+        <q>Na verdade tudo isto se resume a seis perguntas. Nós temos um script.</q>
+      </div>
+      <div class="dor" data-entra="sobe">
+        <h3>O preço depende do sítio</h3>
+        <p>O piso inclinado, a pedra que obriga a ferros, a rua onde não se estaciona. Isso é experiência de anos e fica com o Jorge. O sistema trata de tudo o que vem antes.</p>
+        <q>Se me pedirem um trabalho em Santa Apolónia vai ser mais caro do que 500 metros mais à frente.</q>
+      </div>
+      <div class="dor" data-entra="sobe">
+        <h3>Uma pessoa boa, sempre interrompida</h3>
+        <p>Quem trata dos orçamentos conhece a casa e faz 80% do trabalho. O que não se consegue é estar sempre com a cabeça no sítio certo.</p>
+        <q>Os telefones tocam a toda a hora.</q>
+      </div>
+    </div>
+    <p class="sintese" data-entra="sobe">O objetivo não é produzir mais. É responder depressa, para poderem escolher os trabalhos que interessam.</p>
+  </div>
+</section>
+
+<!-- ============ 4. A DEMO ============ -->
+<section class="section-alt" id="demo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">A demonstração</span>
+      <h2>Um pedido, do WhatsApp à venda, em 7 passos.</h2>
+      <p class="lead">Carregue em "Seguinte" ou nos números. Cada passo mostra o que acontece, quem o faz e que objetivo do vosso pedido responde.</p>
+    </div>
+    <div class="demo" data-entra="escala">
+      <div class="demo-passos" id="demoPassos" role="tablist" aria-label="Passos da demonstração"></div>
+      <div class="demo-barra"><i id="demoBarra"></i></div>
+      <div class="demo-corpo">
+        <div class="demo-texto" id="demoTexto">
+          <div class="demo-quem"></div>
+          <div class="demo-hora"></div>
+          <h3></h3>
+          <p></p>
+          <div class="demo-obj"></div>
+          <div class="demo-ctrl">
+            <button type="button" class="btn btn-ghost" id="demoAnt">← Anterior</button>
+            <button type="button" class="btn btn-primary" id="demoSeg">Seguinte →</button>
+            <button type="button" class="auto" id="demoAuto">▶ Reproduzir sozinho</button>
+          </div>
+        </div>
+        <div class="demo-palco" id="demoPalco" aria-live="polite"></div>
+      </div>
+    </div>
+    <p class="nota">Maqueta: as colunas finais do mapa e as perguntas saem da arquitetura que a VDO já desenhou. Nomes, moradas e valores são fictícios.</p>
+  </div>
+</section>
+
+<!-- ============ 5. O ASSISTENTE A PENSAR ============ -->
+<section id="assistente">
+  <div class="container">
+    <div class="sec-head center center">
+      <span class="eyebrow">O assistente a pensar</span>
+      <h2>Quatro situações que a vossa equipa conhece bem.</h2>
+      <p class="lead">À esquerda a conversa, à direita o raciocínio. Repare no terceiro: quando lhe pedem um preço, o assistente não inventa.</p>
+    </div>
+    <div class="cr" id="vdoDemo"></div>
+    <p class="nota" style="text-align:center">Conversas ilustrativas. Nomes, moradas e contactos fictícios.</p>
+  </div>
+</section>
+<script type="application/json" id="vdoDemo-config">
+{
+  "agentName": "VDO Orçamentos",
+  "agentInitials": "VDO",
+  "chatStatus": "WhatsApp e email de orçamentos",
+  "stepMs": 1500,
+  "endPauseMs": 3200,
+  "scenarios": [
+    {
+      "title": "Email sem nada",
+      "subtitle": "O clássico \"podem enviar orçamento?\" para a frota de uma empresa.",
+      "chat": [
+        { "sender": "system", "text": "Email recebido em orcamentos@ · quarta-feira, 09:12" },
+        { "sender": "client", "text": "Bom dia, podem enviar orçamento para decorar as nossas carrinhas? Obrigado.", "time": "09:12" },
+        { "sender": "agent", "text": "Bom dia, obrigado pelo contacto. Para prepararmos o orçamento: **quantas viaturas** e **que modelos**? A decoração é **total ou parcial**? Já têm a **arte final** ou precisam que a VDO a desenvolva?", "time": "09:13" },
+        { "sender": "client", "text": "São 3 Renault Master. Laterais e traseira. Temos o logótipo, o resto não. Estamos no Seixal.", "time": "10:40" },
+        { "sender": "agent", "text": "Obrigado. Pode enviar **uma fotografia de cada carrinha**, de lado, e o logótipo em ficheiro? Com isso o pedido fica completo.", "time": "10:41" },
+        { "sender": "client", "text": "📎 3 fotografias · logotipo.ai", "time": "11:05" },
+        { "sender": "agent", "text": "Recebido. A equipa da VDO prepara o orçamento e responde-lhe por este email.", "time": "11:05" }
+      ],
+      "steps": [
+        { "icon": "search", "label": "Lê o email: pedido de orçamento sem nenhum dado" },
+        { "icon": "id", "label": "Identifica o serviço: decoração de viaturas" },
+        { "icon": "list", "label": "Faz as perguntas deste serviço, não as de um reclamo" },
+        { "icon": "database", "label": "Regista 3 viaturas, laterais e traseira, arte por desenvolver" },
+        { "icon": "message", "label": "Pede fotografias das viaturas e o logótipo" },
+        { "icon": "check", "label": "Guarda os anexos na pasta do cliente e marca o pedido como completo" }
+      ]
+    },
+    {
+      "title": "Só uma fotografia",
+      "subtitle": "WhatsApp às 21:47, com a VDO fechada. O pedido típico.",
+      "chat": [
+        { "sender": "system", "text": "WhatsApp de orçamentos · terça-feira, 21:47" },
+        { "sender": "client", "text": "📷 Fotografia da fachada. Boa noite, queria um reclamo assim para a minha pastelaria", "time": "21:47" },
+        { "sender": "client", "text": "É urgente", "time": "21:47" },
+        { "sender": "agent", "text": "Boa noite! Recebi a fotografia, obrigado. Para a equipa preparar o orçamento preciso de: **a morada da loja**, **a largura da fachada** (mesmo aproximada), **se o reclamo é luminoso** e **o logótipo**, se o tiver em ficheiro.", "time": "21:48" },
+        { "sender": "client", "text": "Rua Cândido dos Reis 12, Almada. Uns 5 metros. Luminoso sim", "time": "21:52" },
+        { "sender": "agent", "text": "Obrigado. Disse que era urgente: **para quando** precisa dele montado?", "time": "21:52" },
+        { "sender": "client", "text": "Até ao fim do mês. 📎 logotipo.pdf", "time": "21:55" },
+        { "sender": "agent", "text": "Recebido! O pedido ficou completo. A equipa da VDO dá-lhe notícias amanhã de manhã.", "time": "21:55" }
+      ],
+      "steps": [
+        { "icon": "message", "label": "Recebe o pedido no WhatsApp de orçamentos, fora de horas" },
+        { "icon": "clock", "label": "Espera: o cliente ainda está a escrever" },
+        { "icon": "list", "label": "Compara com o script: faltam morada, medidas, iluminação e logótipo" },
+        { "icon": "send", "label": "Pede tudo numa só mensagem, sem formulário" },
+        { "icon": "alert", "label": "Guarda as respostas e marca o pedido como urgente" },
+        { "icon": "search", "label": "Ainda faltam o prazo e o logótipo: aguarda" },
+        { "icon": "database", "label": "Pedido completo: linha no mapa e pasta na Drive" }
+      ]
+    },
+    {
+      "title": "\"Quanto custa?\"",
+      "subtitle": "O cliente quer um valor já. O assistente recusa inventar e passa ao Jorge.",
+      "chat": [
+        { "sender": "client", "text": "Boa tarde, quanto custa um toldo para uma esplanada de 6 metros?", "time": "15:20" },
+        { "sender": "agent", "text": "Boa tarde! O valor depende sempre do local e da instalação, por isso não lhe quero dar um número às cegas. Pode dizer-me a **morada** e enviar uma **fotografia da fachada**?", "time": "15:20" },
+        { "sender": "client", "text": "Rua Augusta, na Baixa. Mas diga-me só um valor aproximado, é para decidir hoje", "time": "15:23" },
+        { "sender": "agent", "text": "Percebo. Nesse caso passo já o seu pedido ao **Jorge Grosso**, que é quem avalia a instalação e os acessos, com a indicação de que precisa de resposta hoje. Este número é o melhor para o contactar?", "time": "15:23" },
+        { "sender": "client", "text": "Sim, pode ser este", "time": "15:24" },
+        { "sender": "agent", "text": "Combinado. O Jorge já tem a sua mensagem e a morada.", "time": "15:24" },
+        { "sender": "system", "text": "Passado ao Jorge Grosso · prioridade: hoje" }
+      ],
+      "steps": [
+        { "icon": "alert", "label": "Pedido de preço sem morada nem fotografia" },
+        { "icon": "ban", "label": "Não inventa valores: o preço é sempre da VDO" },
+        { "icon": "search", "label": "Baixa de Lisboa: acessos e estacionamento a avaliar" },
+        { "icon": "user-cog", "label": "Cliente com pressa: passa ao Jorge em vez de insistir" },
+        { "icon": "phone", "label": "Confirma o contacto para a chamada" },
+        { "icon": "send", "label": "Alerta prioritário ao Jorge, com a conversa toda" }
+      ]
+    },
+    {
+      "title": "Três dias sem resposta",
+      "subtitle": "Orçamento enviado, silêncio do cliente. O follow-up sai sozinho.",
+      "chat": [
+        { "sender": "system", "text": "Regra: orçamento sem resposta há 3 dias úteis" },
+        { "sender": "agent", "text": "Bom dia, Sr. Carlos. Enviámos na quarta-feira o orçamento do reclamo luminoso para a pastelaria. Conseguiu ver? Se tiver dúvidas sobre as medidas ou a montagem, estou por aqui.", "time": "10:00" },
+        { "sender": "client", "text": "Vi sim. Dá para fazer com 4 metros em vez de 5?", "time": "11:14" },
+        { "sender": "agent", "text": "Dá para ver, sim. Vou pedir à equipa que **reveja o orçamento para 4 metros** e envio-lhe a nova versão.", "time": "11:14" },
+        { "sender": "system", "text": "Mapa: estado muda para \"Revisão de orçamento\"" },
+        { "sender": "client", "text": "Ok, obrigado", "time": "11:15" }
+      ],
+      "steps": [
+        { "icon": "clock", "label": "Deteta o orçamento parado há 3 dias úteis" },
+        { "icon": "send", "label": "Envia o acompanhamento com o contexto do orçamento" },
+        { "icon": "brain", "label": "Percebe um pedido de alteração de medida" },
+        { "icon": "shield", "label": "Não mexe no preço: devolve à equipa" },
+        { "icon": "database", "label": "Atualiza o estado no mapa e avisa quem orçamentou" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 6. FLUXO ============ -->
+<section class="section-alt" id="fluxo">
+  <div class="container">
+    <div class="sec-head center center">
+      <span class="eyebrow">O caminho de cada pedido</span>
+      <h2>Seis canais, um só mapa.</h2>
+      <p class="lead">Venha de onde vier, o pedido segue o mesmo caminho e entra no mesmo mapa.</p>
+    </div>
+    <div class="fluxo" id="vdoFluxo"></div>
+  </div>
+</section>
+<script type="application/json" id="vdoFluxo-config">
+{
+  "stepMs": 1900,
+  "channels": [
+    { "icon": "message", "label": "Email" },
+    { "icon": "globe", "label": "Site" },
+    { "icon": "whatsapp", "label": "WhatsApp" },
+    { "icon": "phone", "label": "Telefone" },
+    { "icon": "instagram", "label": "Redes sociais" },
+    { "icon": "user-cog", "label": "Referências" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Pedido recebido", "detail": "Qualquer canal, a qualquer hora.", "tone": "brand" },
+    { "icon": "list", "title": "As 6 respostas", "detail": "O vosso script, feito em conversa.", "tone": "teal" },
+    { "icon": "database", "title": "Mapa e pasta", "detail": "Linha nas Sheets, pasta na Drive.", "tone": "teal" },
+    { "icon": "user-cog", "title": "Orçamento validado", "detail": "O sistema prepara, o Jorge põe o preço.", "tone": "teal" },
+    { "icon": "clock", "title": "Follow-up por regras", "detail": "Nenhum orçamento fica esquecido.", "tone": "teal" },
+    { "icon": "star", "title": "Venda e painel", "detail": "Aceite passa a venda. A gerência vê tudo.", "tone": "brand" }
+  ],
+  "note": "Tudo acontece dentro das ferramentas Google que a VDO já usa."
+}
+</script>
+
+<!-- ============ 7. REGRAS ============ -->
+<section id="regras">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">As regras são vossas</span>
+      <h2>Quando acontece isto, o sistema faz aquilo.</h2>
+      <p class="lead">A VDO já desenhou os mapas, os fluxos e as regras. Nós ligamos, não reinventamos. Experimente ligar e desligar: é assim que as regras se afinam depois do arranque.</p>
+    </div>
+    <div class="regras">
+      <button type="button" class="regra on" data-entra="sobe"><div><div class="q">Quando</div><p>Chega um pedido completo</p><div class="e"><div class="q">Então</div><p>Linha no mapa, pasta na Drive e aviso a quem orçamenta.</p></div></div><span class="interr" aria-hidden="true"></span></button>
+      <button type="button" class="regra on" data-entra="sobe"><div><div class="q">Quando</div><p>Um pedido está incompleto há 24 horas</p><div class="e"><div class="q">Então</div><p>O assistente volta a pedir só o que falta, uma vez.</p></div></div><span class="interr" aria-hidden="true"></span></button>
+      <button type="button" class="regra on" data-entra="sobe"><div><div class="q">Quando</div><p>Um orçamento está sem resposta há 3 dias úteis</p><div class="e"><div class="q">Então</div><p>Sai a mensagem de acompanhamento, ou fica à espera de aprovação: escolhem vocês.</p></div></div><span class="interr" aria-hidden="true"></span></button>
+      <button type="button" class="regra on" data-entra="sobe"><div><div class="q">Quando</div><p>O trabalho é grande ou tem acessos difíceis</p><div class="e"><div class="q">Então</div><p>Vai diretamente para o Jorge, marcado como prioritário.</p></div></div><span class="interr" aria-hidden="true"></span></button>
+      <button type="button" class="regra on" data-entra="sobe"><div><div class="q">Quando</div><p>O cliente aceita o orçamento</p><div class="e"><div class="q">Então</div><p>Cria a linha no mapa de vendas e avisa a produção.</p></div></div><span class="interr" aria-hidden="true"></span></button>
+      <button type="button" class="regra" data-entra="sobe"><div><div class="q">Quando</div><p>Sexta-feira, 17h</p><div class="e"><div class="q">Então</div><p>Resumo da semana para a gerência: pedidos, orçamentos e vendas.</p></div></div><span class="interr" aria-hidden="true"></span></button>
+    </div>
+    <div class="regras-pe"><span><b id="regrasAtivas">5</b> regras ativas neste exemplo</span><span>As regras finais saem da reunião de levantamento, a partir da vossa arquitetura.</span></div>
+  </div>
+</section>
+
+<!-- ============ 8. BASTIDORES ============ -->
+<section class="section-alt" id="bastidores">
+  <div class="container">
+    <div class="grid-2" style="align-items:center; gap:48px">
+      <div>
+        <span class="eyebrow">Nos bastidores</span>
+        <h2>17:05. A VDO fecha, o sistema faz o fecho do dia.</h2>
+        <p class="lead">O que antes era uma tarde de emails e telefonemas para completar pedidos, fica feito sem ninguém dar por isso. E quando algo não bate certo, não se esconde: fica sinalizado para a equipa.</p>
+      </div>
+      <div class="term" id="vdoTerm"></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="vdoTerm-config">
+{
+  "title": "fecho-do-dia.log",
+  "intervalMs": 620,
+  "lines": [
+    { "text": "17:05 Fecho do dia: 11 pedidos recebidos", "tone": "info" },
+    { "text": "Email 5 · WhatsApp 4 · Site 2", "tone": "info" },
+    { "text": "8 pedidos completos, com linha no mapa de oportunidades", "tone": "ok" },
+    { "text": "8 pastas de cliente criadas na Drive, com fotografias e logótipos", "tone": "ok" },
+    { "text": "2 pedidos incompletos: o assistente voltou a pedir a morada", "tone": "info" },
+    { "text": "Pedido do site com medidas por confirmar: sinalizado à equipa", "tone": "warn" },
+    { "text": "3 orçamentos sem resposta há 3 dias úteis: follow-up enviado", "tone": "ok" },
+    { "text": "1 orçamento aceite: linha criada no mapa de vendas", "tone": "success" },
+    { "text": "Resumo do dia enviado à gerência", "tone": "success" }
+  ]
+}
+</script>
+
+<!-- ============ 9. QUEM DECIDE ============ -->
+<section id="decide">
+  <div class="container">
+    <div class="sec-head center center">
+      <span class="eyebrow">Validação humana</span>
+      <h2>O sistema trabalha. A VDO decide.</h2>
+    </div>
+    <div class="lados">
+      <div class="lado sis" data-entra="sobe">
+        <h3>O sistema faz</h3>
+        <p>O trabalho repetitivo, sempre da mesma maneira.</p>
+        <ul>
+          <li>Responde na hora, a qualquer hora, em todos os canais</li>
+          <li>Faz as perguntas do vosso script e pede fotografias e logótipos</li>
+          <li>Preenche o mapa e cria a pasta do cliente, sem erros de cópia</li>
+          <li>Prepara os rascunhos de resposta e de orçamento</li>
+          <li>Lembra e envia os follow-ups, segundo as vossas regras</li>
+          <li>Liga o aceite à venda e mantém o painel atualizado</li>
+        </ul>
+      </div>
+      <div class="lado hum" data-entra="sobe">
+        <h3>A VDO decide</h3>
+        <p>Tudo o que exige experiência e responsabilidade.</p>
+        <ul>
+          <li>O preço e a margem de cada trabalho</li>
+          <li>A avaliação do local e da instalação: a pedra, o piso, os ferros</li>
+          <li>Que mensagens saem sozinhas e quais esperam aprovação</li>
+          <li>Os clientes especiais e as exceções</li>
+          <li>As regras, as perguntas e o tom das mensagens</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. O QUE FICA VOSSO ============ -->
+<section class="section-alt" id="vosso">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que fica sob controlo da VDO</span>
+      <h2>Nada fica preso a uma plataforma nova.</h2>
+      <p class="lead">Perguntaram o que fica entregue e sob vosso controlo. A resposta curta: os dados nunca saem das vossas contas.</p>
+    </div>
+    <div class="vosso">
+      <div class="card" data-entra="sobe"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 9h16M4 14h16M10 4v16"/></svg></div><h3>Os mapas</h3><p>Continuam nas vossas Google Sheets, com a estrutura que desenharam para 1 de outubro.</p></div>
+      <div class="card" data-entra="sobe"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h3>As pastas de cliente</h3><p>Fotografias, logótipos e documentos ficam na vossa Drive, organizados por pedido.</p></div>
+      <div class="card" data-entra="sobe"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg></div><h3>O histórico</h3><p>Cada conversa fica guardada e ligada ao pedido. Quem pegar no cliente sabe tudo o que foi dito.</p></div>
+      <div class="card" data-entra="sobe"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M4 12h16M4 18h8M17 4v4M20 16v4"/></svg></div><h3>As regras e as perguntas</h3><p>São vossas. Mudam quando o negócio muda: um serviço novo, uma pergunta a mais, um prazo diferente.</p></div>
+      <div class="card" data-entra="sobe"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M4 21c0-3.5 3.5-6 8-6s8 2.5 8 6"/></svg></div><h3>A forma de trabalhar</h3><p>A equipa continua nas ferramentas que já conhece. Não há software novo para aprender.</p></div>
+      <div class="card" data-entra="sobe"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg></div><h3>Espaço para crescer</h3><p>O mesmo sistema recebe mais canais, mais regras e mais painéis, sem começar de novo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. MÉTODO ============ -->
+<section id="metodo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como trabalhamos</span>
+      <h2>Primeiro ouvir, depois construir.</h2>
+      <p class="lead">Não começamos pelo código. Começamos pelos vossos mapas e pelas vossas conversas.</p>
+    </div>
+    <ol class="metodo">
+      <li data-entra="sobe"><span class="num-lum">1</span><b>Levantamento</b><p>Sentamo-nos com os mapas, os fluxos e as regras que a VDO já desenhou.</p></li>
+      <li data-entra="sobe"><span class="num-lum">2</span><b>Escuta</b><p>Lemos conversas reais com clientes, para o assistente falar como a VDO fala.</p><span class="dur">5 dias úteis</span></li>
+      <li data-entra="sobe"><span class="num-lum">3</span><b>Construção</b><p>Ligamos WhatsApp, email e site às folhas e à Drive, com as vossas regras.</p></li>
+      <li data-entra="sobe"><span class="num-lum">4</span><b>Testes</b><p>A equipa usa com pedidos reais e corrige. Só depois o sistema fala sozinho com clientes.</p></li>
+      <li data-entra="sobe"><span class="num-lum">5</span><b>Acompanhamento</b><p>Uma pessoa da nossa equipa dedicada à VDO, a afinar com o que a equipa reporta.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 12. INVESTIMENTO (sempre a última) ============ -->
+<section class="section-alt" id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>O sistema que viram nesta página.</h2>
+      <p class="lead">Dez pedidos por dia, respondidos na hora e com os dados completos. Nas vossas palavras, quando respondem de imediato fecham 80%.</p>
+    </div>
+    <div class="invest">
+      <div class="inv-card inv-impl" data-entra="sobe">
+        <span class="inv-k">Implementação</span>
+        <div class="inv-v">3.500 € <small>+ IVA</small></div>
+        <p>Levantamento dos vossos mapas, escuta, construção, testes com a equipa e arranque.</p>
+        <ol class="inv-tr">
+          <li><b>2.000 € + IVA</b><span>na adjudicação</span></li>
+          <li><b>1.500 € + IVA</b><span>quando a equipa começa os testes com pedidos reais</span></li>
+        </ol>
+      </div>
+      <div class="inv-card" data-entra="sobe">
+        <span class="inv-k">Mensalidade</span>
+        <div class="inv-v">200 € <small>+ IVA / mês</small></div>
+        <p>Inclui os custos de IA, o alojamento da solução e o acompanhamento contínuo por uma pessoa da nossa equipa.</p>
+        <ul class="inv-lista">
+          <li>Afinação das perguntas, das regras e dos textos</li>
+          <li>Suporte à equipa da VDO</li>
+          <li>Os dados continuam nas vossas contas Google</li>
+        </ul>
+      </div>
+    </div>
+    <p class="nota">Novos canais ou funcionalidades fora do que está nesta página são orçamentados à parte, sempre antes de avançar.</p>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="container">
+    <span>Preparado para a <b>VDO Publicidade</b> por <b>AI Solutions</b> · Diogo Gonçalves</span>
+    <span>Demonstração com dados fictícios, para fins de apresentação.</span>
+  </div>
+</footer>
+
+<script src="../shared/deck/deck.js"></script>
+<script>chatRaciocinio('vdoDemo'); fluxo('vdoFluxo'); terminal('vdoTerm');</script>
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/demo.js"></script>
+</body>
+</html>

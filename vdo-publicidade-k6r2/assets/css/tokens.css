@@ -1,0 +1,143 @@
+/* ============================================================
+   TOKENS: VDO Publicidade
+   Azul do logótipo #0197E5 (200 99% 45%) + luz quente de LED.
+   Escuro por defeito; claro em [data-theme="light"] ou quando o
+   sistema pede claro e o visitante ainda não escolheu.
+   ============================================================ */
+
+:root {
+  --brand-hsl: 200 95% 56%;
+  --accent-hsl: 46 100% 58%;
+  --brand2-hsl: 196 100% 70%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(210 60% 6%);
+  --brand-solido: hsl(200 99% 36%);
+  --acento-texto: hsl(46 100% 62%);
+  --ok-texto: hsl(150 62% 58%);
+  --brand-texto: hsl(200 95% 62%);
+
+  --bg: hsl(212 28% 5%);
+  --bg-soft: hsl(212 24% 7.5%);
+  --surface: hsl(212 22% 10%);
+  --surface-2: hsl(212 20% 13%);
+  --border: hsl(212 18% 20%);
+
+  --text: hsl(210 25% 95%);
+  --muted: hsl(210 12% 68%);
+
+  --success-hsl: 150 62% 46%;
+  --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 80% 62%;
+  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 28 95% 60%;
+  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.18), transparent 62%);
+  --grad-text: linear-gradient(120deg, hsl(var(--brand2-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(212 28% 8%), hsl(var(--brand-hsl) / 0.30));
+
+  --shadow-sm: 0 1px 3px hsl(212 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(212 60% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(212 60% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.35);
+
+  /* letreiro luminoso */
+  --neon: hsl(var(--brand2-hsl));
+  --neon-glow: 0 0 6px hsl(var(--brand-hsl) / .9), 0 0 22px hsl(var(--brand-hsl) / .55), 0 0 60px hsl(var(--brand-hsl) / .35);
+  --neon-off: hsl(210 14% 26%);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --container: 1180px;
+  --section-pad: clamp(72px, 10vw, 124px);
+
+  /* ---- Maquetas de produto (iguais nos dois temas: fingem ser ferramentas reais) ---- */
+  --gs-bg: hsl(0 0% 100%);
+  --gs-chrome: hsl(210 20% 97%);
+  --gs-line: hsl(216 12% 88%);
+  --gs-head: hsl(216 16% 95%);
+  --gs-text: hsl(216 18% 18%);
+  --gs-muted: hsl(216 8% 45%);
+  --gs-green: hsl(142 64% 32%);
+  --gs-sel: hsl(214 90% 52%);
+  --gs-new: hsl(46 100% 90%);
+  --gs-ok-bg: hsl(142 50% 92%);
+  --gs-ok-tx: hsl(142 64% 26%);
+  --gs-wait-bg: hsl(40 95% 90%);
+  --gs-wait-tx: hsl(30 80% 30%);
+  --gs-info-bg: hsl(210 90% 94%);
+  --gs-info-tx: hsl(214 70% 36%);
+  --gs-bad-bg: hsl(0 80% 95%);
+  --gs-bad-tx: hsl(0 60% 40%);
+
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
+/* ---------- Claro ---------- */
+:root[data-theme="light"] {
+  --brand-hsl: 200 99% 38%;
+  --accent-hsl: 42 100% 50%;
+  --brand2-hsl: 205 90% 30%;
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(200 99% 34%);
+  --acento-texto: hsl(34 90% 30%);
+  --ok-texto: hsl(150 70% 26%);
+    --brand-texto: hsl(200 99% 27%);
+  --bg: hsl(210 30% 98%);
+  --bg-soft: hsl(208 36% 95%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(210 30% 97%);
+  --border: hsl(210 22% 87%);
+  --text: hsl(212 40% 11%);
+  --muted: hsl(212 14% 38%);
+  --success-hsl: 150 70% 32%;
+  --danger-hsl: 356 70% 45%;
+  --warning-hsl: 26 90% 44%;
+  --grad-cta: linear-gradient(160deg, hsl(208 40% 94%), hsl(var(--brand-hsl) / 0.14));
+  --shadow-sm: 0 1px 3px hsl(212 40% 20% / 0.08);
+  --shadow-md: 0 8px 28px hsl(212 40% 20% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(212 40% 20% / 0.14);
+  --shadow-glow: 0 0 30px hsl(var(--brand-hsl) / 0.18);
+  --neon: hsl(200 99% 40%);
+  --neon-glow: 0 0 1px hsl(200 99% 40% / .6), 0 0 18px hsl(200 99% 50% / .35);
+  --neon-off: hsl(210 16% 80%);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --brand-hsl: 200 99% 38%;
+    --accent-hsl: 42 100% 50%;
+    --brand2-hsl: 205 90% 30%;
+    --on-brand: hsl(0 0% 100%);
+    --brand-solido: hsl(200 99% 34%);
+    --acento-texto: hsl(34 90% 30%);
+    --ok-texto: hsl(150 70% 26%);
+    --brand-texto: hsl(200 99% 27%);
+    --bg: hsl(210 30% 98%);
+    --bg-soft: hsl(208 36% 95%);
+    --surface: hsl(0 0% 100%);
+    --surface-2: hsl(210 30% 97%);
+    --border: hsl(210 22% 87%);
+    --text: hsl(212 40% 11%);
+    --muted: hsl(212 14% 38%);
+    --success-hsl: 150 70% 32%;
+    --danger-hsl: 356 70% 45%;
+    --warning-hsl: 26 90% 44%;
+    --grad-cta: linear-gradient(160deg, hsl(208 40% 94%), hsl(var(--brand-hsl) / 0.14));
+    --shadow-sm: 0 1px 3px hsl(212 40% 20% / 0.08);
+    --shadow-md: 0 8px 28px hsl(212 40% 20% / 0.10);
+    --shadow-lg: 0 20px 56px hsl(212 40% 20% / 0.14);
+    --shadow-glow: 0 0 30px hsl(var(--brand-hsl) / 0.18);
+    --neon: hsl(200 99% 40%);
+    --neon-glow: 0 0 1px hsl(200 99% 40% / .6), 0 0 18px hsl(200 99% 50% / .35);
+    --neon-off: hsl(210 16% 80%);
+  }
+}
