@@ -85,7 +85,9 @@
         h += '<div class="cr-row ' + (agent ? "agent" : "client") + (i === rc ? " cr-nova" : "") + '"><div class="cr-bubble">' + rich(m.text) + (m.time ? "<time>" + esc(m.time) + "</time>" : "") + "</div></div>";
       });
       if (rc < s.chat.length - 1) h += '<div class="cr-typing"><i></i><i></i><i></i></div>';
-      h += "</div></div>";
+      /* barra de escrita: sem ela, o espaço por cima da conversa lia-se
+         como uma caixa vazia e não como o ecrã de uma conversa */
+      h += '</div><div class="cr-input" aria-hidden="true"><span>Mensagem</span></div></div>';
       // reasoning
       h += '<div class="cr-reason"><div class="cr-reason-head"><span style="color:var(--accent)">' + icon("bot") + '</span><span class="t">Raciocínio do agente</span></div><ol class="cr-steps">';
       s.steps.forEach(function (p, i) {
@@ -97,20 +99,22 @@
       var mv = document.getElementById(id + "-msgs"); if (mv) mv.scrollTop = mv.scrollHeight;
     }
 
-    function tick() {
+    function tick(primeiro) {
       if (timer) clearTimeout(timer);
       var s = scen[st.idx], len = seq(s).length;
-      if (st.prog < len) timer = setTimeout(function () { st.prog++; render(); tick(); }, STEP);
+      /* o primeiro passo sai logo: com o ritmo normal, quem chegava à
+         secção via 1,4s de caixa vazia antes de acontecer alguma coisa */
+      if (st.prog < len) timer = setTimeout(function () { st.prog++; render(); tick(); }, primeiro ? 350 : STEP);
       else if (!st.manual) timer = setTimeout(function () { st.idx = (st.idx + 1) % scen.length; st.prog = 0; render(); tick(); }, END);
     }
 
     root.addEventListener("click", function (e) {
       var b = e.target.closest(".cr-tab"); if (!b) return;
-      st.manual = true; st.idx = +b.getAttribute("data-i"); st.prog = 0; render(); tick();
+      st.manual = true; st.idx = +b.getAttribute("data-i"); st.prog = 0; render(); tick(true);
     });
 
     render();
-    inView(root, function () { if (!started) { started = true; tick(); } });
+    inView(root, function () { if (!started) { started = true; tick(true); } });
   };
 
   /* ---------------- fluxo ---------------- */

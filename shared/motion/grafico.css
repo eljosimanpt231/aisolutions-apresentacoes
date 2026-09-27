@@ -7,7 +7,7 @@
 .gr { width: 100%; height: auto; overflow: visible; }
 
 .gr-grelha { stroke: color-mix(in oklab, var(--text) 10%, transparent); stroke-width: 1; }
-.gr-eixo   { fill: var(--faint); font-size: 11px; font-family: var(--font-mono); }
+.gr-eixo   { fill: var(--muted); font-size: min(calc(12px * var(--gr-k, 1)), 20px); font-family: var(--font-mono); }
 
 .gr-linha { stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }
 .gr-linha.gr-aviso { stroke-dasharray: 6 5; }   /* o que está por confirmar */
@@ -23,7 +23,7 @@
 .gr-ponto.gr-ok     { fill: var(--ok); }
 .gr-ponto.gr-warn   { fill: var(--warn); }
 
-.gr-rot { font-size: 11px; font-family: var(--font-mono); font-weight: 500; stroke: none; }
+.gr-rot { font-size: min(calc(12px * var(--gr-k, 1)), 20px); font-family: var(--font-mono); font-weight: 500; stroke: none; }
 .gr-rot.gr-brand  { fill: var(--brand); }
 .gr-rot.gr-accent { fill: var(--accent); }
 .gr-rot.gr-ok     { fill: var(--ok); }

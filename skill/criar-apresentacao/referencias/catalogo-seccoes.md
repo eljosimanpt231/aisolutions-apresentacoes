@@ -24,10 +24,13 @@ Ordem que se repete e converte. Cortar é livre, reordenar só com razão forte.
 6. **Diagrama de integração**: como o agente se liga aos sistemas da lead (CRM, ERP, agenda).
 7. **Unibox** (opcional): caixa de entrada unificada, quando a lead tem atendimento omnicanal disperso.
 8. **Limites / regras do agente**: o que faz vs o que fica com o humano. Ver `copy-padroes`.
-9. **Referências / casos**: prova social com métricas reais (com nome quando há autorização, por setor quando não há).
-10. **Investimento**: implementação + mensalidade, sem rodeios.
+9. **Referências / casos**: prova social do mesmo setor, honesta sobre o estado (em testes diz-se em testes), por setor quando não há autorização para o nome. Fica ANTES do investimento.
+10. **Investimento**: abre com a conta de valor (números da lead, uma frase), depois implementação + mensalidade, sem rodeios.
 11. **Cronograma**: fases ou semanas civis concretas.
-12. **Footer**: logos + contacto do comercial.
+12. **Próximos passos + acção**: 3 passos concretos e os botões "Quero avançar" / "Tenho uma pergunta" para o WhatsApp do comercial. Ver `fecho.md`.
+13. **Footer**: logos + contacto do comercial.
+
+Logo a seguir ao hero, um **resumo de 30 segundos** (o quê, em quanto tempo, quanto custa, próximo passo): é o que o sócio lê quando a página lhe é reencaminhada.
 
 ## Secções opcionais de alto valor (usar quando aplicam)
 

@@ -57,13 +57,14 @@ Repetir ao longo do deck para desarmar o medo de automação cega:
 - Comparar a mensalidade com o custo de um funcionário: "comparável a cerca de um quarto do custo de um funcionário dedicado".
 - Framing de perda: "A pergunta não é quanto custa. É quanto está a custar não ter isto."
 - Ganho já calculado antes da calculadora: "De 15 minutos para 2 minutos por orçamento. Com 17 por dia, poupas 3h45 todos os dias."
-- Garantia: "Se ao fim do primeiro mês o agente não fizer o que foi contratado, devolvemos na íntegra o valor da implementação."
+- Garantia: "Se ao fim do primeiro mês o agente não fizer o que foi contratado, devolvemos na íntegra o valor da implementação." **Só com confirmação do comercial para esta proposta**: é um compromisso comercial, não um bloco de copy.
 
 ## CTA
 
-- Principal: "Confirmar Implementação" (pode abrir um modal ou ser um mailto pré-preenchido).
-- Dar uma saída secundária sem pressão: "Tenho mais perguntas" / "Agendar reunião de seguimento".
-- Nota de segurança: "Sem compromisso imediato. Confirmamos por escrito antes de arrancar."
+- Principal: "Quero avançar", link para o WhatsApp do comercial com a mensagem já escrita (`https://wa.me/[numero]?text=Olá [Comercial], vi a proposta da [Lead] e quero avançar.`).
+- Saída secundária sem pressão: "Tenho uma pergunta", também para o WhatsApp com texto pré-escrito.
+- Nota de segurança: "Nada arranca sem confirmares por escrito."
+- Nunca um link de agenda (Calendly, Google Calendar): as reuniões marcam-se pelo CRM.
 
 ## Prova social
 

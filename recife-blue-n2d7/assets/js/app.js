@@ -113,6 +113,8 @@ const movimentoReduzido = matchMedia('(prefers-reduced-motion: reduce)');
     const a = document.createElement('a');
     a.href = '#' + s.id;
     a.textContent = s.dataset.nav;
+    /* a última entrada é a acção, não um capítulo: fica sempre à vista */
+    if ('navCta' in s.dataset) { a.className = 'nav-cta'; li.className = 'nav-cta-li'; }
     li.append(a); nav.append(li);
   });
 

@@ -238,7 +238,11 @@
 
   --text:   oklch(96.0% 0.006 var(--brand-h));
   --muted:  oklch(72.0% 0.014 var(--brand-h));
-  --faint:  oklch(58.0% 0.014 var(--brand-h));
+  /* 58% dava 4,3:1 sobre as superfícies e o faint acaba sempre em texto
+     pequeno (datas, notas, legendas). 64% passa AA e continua um degrau
+     abaixo do muted. */
+  --faint:  oklch(64.0% 0.014 var(--brand-h));
+  --danger: oklch(70% 0.17 27);   /* no escuro o vermelho sobe, senão não se lê como texto */
 
   --hairline: oklch(100% 0 0 / 0.08);
   --border:   oklch(100% 0 0 / 0.13);

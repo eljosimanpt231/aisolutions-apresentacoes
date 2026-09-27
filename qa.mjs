@@ -47,9 +47,26 @@ const add = (nivel, msg) => relatorio[nivel].push(msg);
 /* ---------- função injetada na página ---------- */
 const AUDITORIA = () => {
   /* --- utilitários de cor --- */
+  /* O Chrome devolve a cor computada no espaço em que foi escrita:
+     oklch(), oklab(), color(srgb ...) de um color-mix. Um regex de rgb()
+     deixava TODAS essas cores de fora, em silêncio, e uma página inteira
+     escrita em oklch passava o contraste sem ter sido medida. Tudo o que
+     não é rgb() passa pelo canvas, que converte qualquer cor CSS. */
+  const cvCor = document.createElement('canvas'); cvCor.width = cvCor.height = 1;
+  const gCor = cvCor.getContext('2d', { willReadFrequently: true });
+  const cacheCor = new Map();
   const parse = (c) => {
-    const m = c.match(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/);
-    return m ? { r: +m[1], g: +m[2], b: +m[3], a: m[4] === undefined ? 1 : +m[4] } : null;
+    if (!c || c === 'transparent') return { r: 0, g: 0, b: 0, a: 0 };
+    const m = c.match(/^rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)$/);
+    if (m) return { r: +m[1], g: +m[2], b: +m[3], a: m[4] === undefined ? 1 : +m[4] };
+    if (cacheCor.has(c)) return cacheCor.get(c);
+    gCor.clearRect(0, 0, 1, 1);
+    gCor.fillStyle = '#000'; gCor.fillStyle = c;
+    gCor.fillRect(0, 0, 1, 1);
+    const [r, g, b, a] = gCor.getImageData(0, 0, 1, 1).data;
+    const v = { r, g, b, a: Math.round(a / 255 * 1000) / 1000 };
+    cacheCor.set(c, v);
+    return v;
   };
   const over = (fg, bg) => ({
     r: fg.r * fg.a + bg.r * (1 - fg.a),
@@ -474,6 +491,52 @@ for (const [nome, w, h] of [['desktop', 1440, 900], ['tablet', 768, 1024], ['tel
   await p.evaluate('scrollTo(0,0)'); await p.waitForTimeout(400);
   const r = await p.evaluate(AUDITORIA);
 
+  /* Blocos que já entraram têm de estar no sítio. O clearProps do GSAP
+     devolve o elemento ao CSS de entrada (translateY 22px) e cada bloco
+     ficava deslocado para sempre, por cima do seguinte, sem opacidade
+     nenhuma a denunciá-lo. Percorre-se devagar para tudo entrar. */
+  if (nome === 'desktop') {
+    for (let y = 0; y < alt; y += 450) { await p.evaluate(`scrollTo(0,${y})`); await p.waitForTimeout(260); }
+    await p.waitForTimeout(1600);
+    const deslocados = await p.evaluate(() => [...document.querySelectorAll('[data-entra], [data-acto]')]
+      .filter(e => getComputedStyle(e).opacity === '1')
+      .filter(e => { const t = getComputedStyle(e).transform;
+        if (!t || t === 'none') return false;
+        const m = t.match(/matrix\(([^)]+)\)/); if (!m) return true;
+        const v = m[1].split(',').map(Number);
+        return Math.abs(v[4]) > 1 || Math.abs(v[5]) > 1 || Math.abs(v[0] - 1) > .01; })
+      .map(e => (e.textContent || e.tagName).trim().replace(/\s+/g, ' ').slice(0, 40)));
+    if (deslocados.length) add('erros',
+      `${deslocados.length} bloco(s) já visíveis mas fora do sítio (transform que ficou depois da entrada). ` +
+      `Ex.: "${deslocados[0]}". Sobrepõem-se ao que vem a seguir. Ver a classe .entrou em shared/motion.`);
+    await p.evaluate('scrollTo(0,0)'); await p.waitForTimeout(300);
+
+    /* FECHO (ver referencias/fecho.md). A página é lida sem o comercial:
+       se acaba numa pergunta sem nada para carregar, a lead convencida
+       não tem para onde ir. */
+    const fecho = await p.evaluate(() => {
+      const secoes = [...document.querySelectorAll('main section, body > section')]
+        .filter(x => !x.closest('[data-view], .app, .ub-root') && x.getBoundingClientRect().height > 80);
+      const ultima = secoes[secoes.length - 1];
+      const accao = 'a[href^="https://wa.me"], a[href^="whatsapp:"], a[href^="mailto:"], a[href^="tel:"], a[href*="aisolutions.pt/comecar"], button[data-aceitar]';
+      const naUltima = ultima ? ultima.querySelectorAll(accao).length : 0;
+      const wa = [...document.querySelectorAll('a[href^="https://wa.me"]')];
+      const waSemTexto = wa.filter(a => !/[?&]text=/.test(a.getAttribute('href'))).length;
+      const barra = document.querySelector('nav, .nav, .top-nav, .dotnav');
+      const entradas = barra ? barra.querySelectorAll('a').length : 0;
+      return { naUltima, waSemTexto, entradas, temWa: wa.length > 0,
+               ultimaTxt: ultima ? (ultima.querySelector('h2, h3')?.textContent || '').trim().slice(0, 40) : '' };
+    });
+    if (!fecho.naUltima) add('erros',
+      `Fecho sem acção: a última secção ("${fecho.ultimaTxt}") não tem nenhum botão ou link para avançar ` +
+      `(WhatsApp do comercial com texto pré-escrito, email ou telefone). Ver referencias/fecho.md, 1.1.`);
+    if (fecho.waSemTexto) add('avisos',
+      `${fecho.waSemTexto} link(s) de WhatsApp sem mensagem pré-escrita (?text=). Com o texto já escrito, avançar é um toque.`);
+    if (fecho.entradas > 8) add('avisos',
+      `Barra de navegação com ${fecho.entradas} entradas. Acima de 7 mais o "Avançar" deixa de ser navegação e passa a índice. ` +
+      `Tirar da barra as secções de detalhe (ficam na página). Ver referencias/fecho.md, 1.5.`);
+  }
+
   if (nome === 'desktop') {
     relatorio.metricas.altura = alt;
     relatorio.metricas.ecras = Math.round(alt / 900 * 10) / 10;
@@ -484,9 +547,9 @@ for (const [nome, w, h] of [['desktop', 1440, 900], ['tablet', 768, 1024], ['tel
     /* contraste */
     const certos = r.contraste.filter(c => !c.incerto);
     const duvidas = r.contraste.filter(c => c.incerto);
-    certos.slice(0, 12).forEach(c => add('erros',
+    certos.slice(0, process.env.QA_TUDO ? 999 : 12).forEach(c => add('erros',
       `Contraste ${c.ratio}:1 (mínimo ${c.minimo}) em .${c.sel} ${c.px}px: "${c.txt}"`));
-    if (certos.length > 12) add('erros', `... mais ${certos.length - 12} falhas de contraste`);
+    if (!process.env.QA_TUDO && certos.length > 12) add('erros', `... mais ${certos.length - 12} falhas de contraste (QA_TUDO=1 mostra todas)`);
     if (duvidas.length) add('notas', `${duvidas.length} textos sobre gradiente/imagem: contraste não calculável, verificar no screenshot`);
 
     /* texto semi-apagado */

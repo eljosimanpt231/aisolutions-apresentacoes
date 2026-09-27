@@ -291,7 +291,43 @@
   /* ---------- Fecho ---------- */
   .fecho { position: relative; overflow: hidden;
           background: linear-gradient(180deg in oklab, transparent, hsl(var(--brand-hsl) / .16)); }
-  .fecho h2 { max-width: none; font-family: var(--font-display); font-size: var(--fs-4); font-weight: 400; }
+  .fecho h2 { max-width: none; font-family: var(--font-display); font-size: var(--fs-5); font-weight: 400;
+             line-height: 1.05; }
+  .fecho .lead { margin-top: var(--s-3); }
+  .passos-fecho {
+    list-style: none; display: grid; gap: var(--s-4) var(--s-6); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  }
+  .passos-fecho li { border-top: 1px solid color-mix(in oklab, var(--accent) 40%, transparent); padding-top: var(--s-3); }
+  .passos-fecho .n { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand-300); }
+  .passos-fecho b { display: block; margin-top: var(--s-1); font-size: var(--fs-0); }
+  .passos-fecho p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); max-width: 34ch; }
+  .fecho-acoes { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
+  .fecho .btn-primario { background: var(--brand-300); color: var(--brand-950); font-weight: 600; }
+  .fecho-contacto { margin-top: var(--s-4); color: var(--muted); font-size: var(--fs--1); }
+  .fecho-contacto a { color: var(--text); display: inline-block; padding-block: 4px; }
+
+  /* ---------- Âncora de valor: a conta antes do preço ---------- */
+  .ancora {
+    margin-top: var(--s-4); padding-left: var(--s-4); border-left: 2px solid var(--brand-300);
+    font-family: var(--font-display); font-size: var(--fs-1); line-height: 1.4;
+    color: var(--text); max-width: 46ch;
+  }
+  .ancora b { font-weight: 500; color: var(--brand-200); font-variant-numeric: tabular-nums lining-nums; }
+  .ancora + .fatura { margin-top: var(--s-6); }
+
+  /* ---------- Prova social ---------- */
+  .prova {
+    margin-top: var(--s-6); padding: var(--s-5); border-radius: var(--r-4);
+    background: linear-gradient(135deg in oklab, color-mix(in oklab, var(--accent) 10%, var(--surface)), var(--surface));
+    border: 1px solid color-mix(in oklab, var(--accent) 24%, transparent);
+  }
+  .prova-k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand-300); }
+  .prova h3 { margin-top: var(--s-2); font-family: var(--font-display); font-weight: 400; font-size: var(--fs-2); max-width: 30ch; line-height: 1.2; }
+  .prova p { margin-top: var(--s-3); color: var(--muted); max-width: 62ch; }
+  .prova .prova-nota { font-size: var(--fs--2); color: var(--faint); }
+  .rodape-marca { display: block; }
+  .fases + .doc-nota { margin-top: var(--s-5); }
   .rodape-logo { display: inline-block; height: 28px; width: auto; margin-bottom: var(--s-3); }
   .rodape .disclaimer { display: block; margin-top: var(--s-2); font-size: var(--fs--2); color: var(--faint); max-width: 70ch; }
 
@@ -343,7 +379,7 @@
   @media (max-width: 860px) { .app-user { margin-left: auto; margin-top: 0; padding-top: 0; border: 0; } }
   .app-av {
     width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
-    display: grid; place-items: center; background: var(--brand-700); color: var(--on-brand);
+    display: grid; place-items: center; background: var(--brand-700); color: oklch(98% 0.01 var(--brand-h));
     font-size: var(--fs--2); font-weight: 600;
   }
   .app-user b { display: block; color: var(--text); }
@@ -363,7 +399,7 @@
     color: var(--muted); font-size: var(--fs--2); cursor: pointer;
     transition: background-color var(--t-rapido) var(--ease-out), color var(--t-rapido) var(--ease-out);
   }
-  .chip.is-on { background: var(--brand-700); border-color: var(--brand-700); color: var(--on-brand); }
+  .chip.is-on { background: var(--brand-700); border-color: var(--brand-700); color: oklch(98% 0.01 var(--brand-h)); }
 
   .tbl-wrap { overflow-x: auto; margin-top: var(--s-3); }
   .app-tb { width: 100%; border-collapse: collapse; font-size: var(--fs--1); }
@@ -387,25 +423,32 @@
   @media (hover: hover) and (pointer: fine) { .app-tb tr.clk:hover td { background: var(--brand-a06); } }
   .app-tb tr.flagged td { background: var(--warn-wash); }
   .app-tb .grp td {
-    font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand-700);
+    font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand-300);
     padding-top: var(--s-3); border-bottom-color: var(--border);
   }
   .app-tb .origin { display: block; color: var(--faint); font-size: var(--fs--2); margin-top: 1px; }
-  .app-tb .origin.flag { color: oklch(46% 0.12 75); }
+  .app-tb .origin.flag { color: oklch(82% 0.12 75); }
   .app-tb .t { color: var(--text); }
+  /* No telemóvel a lista de orçamentos tinha cinco colunas em 300px: os
+     valores e o estado ficavam fora, atrás de um scroll horizontal que
+     ninguém adivinha. Fica o essencial: cliente, valor, estado. */
+  @media (max-width: 600px) {
+    #rbLista th:nth-child(1), #rbLista td:nth-child(1),
+    #rbLista th:nth-child(3), #rbLista td:nth-child(3) { display: none; }
+  }
   .app-tb .flash { background: var(--brand-a16); transition: background-color 900ms var(--ease-out); }
 
   .ref { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--muted); white-space: nowrap; }
-  .ref b { color: oklch(46% 0.12 75); font-weight: 500; }
+  .ref b { color: oklch(82% 0.12 75); font-weight: 500; }
   .pill {
     display: inline-block; padding: 2px 9px; border-radius: var(--r-pill);
     font-size: var(--fs--2); white-space: nowrap;
   }
   .pill.rev { background: var(--brand-a16); color: var(--brand-200); }
-  .pill.qual { background: var(--warn-wash); color: oklch(42% 0.12 75); }
+  .pill.qual { background: var(--warn-wash); color: oklch(82% 0.12 75); }
   .pill.esp { background: var(--surface-3); color: var(--muted); }
-  .pill.adj { background: var(--ok-wash); color: oklch(42% 0.12 152); }
-  .pill.perd { background: var(--danger-wash); color: oklch(45% 0.16 27); }
+  .pill.adj { background: var(--ok-wash); color: oklch(80% 0.13 152); }
+  .pill.perd { background: var(--danger-wash); color: oklch(76% 0.14 27); }
   .panel-note { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--faint); }
 
   .pre-head {
@@ -450,7 +493,7 @@
     border-radius: var(--r-pill); background: transparent;
     color: var(--muted); font-size: var(--fs--2); cursor: pointer;
   }
-  @media (hover: hover) and (pointer: fine) { .sug:hover { border-color: var(--brand-500); color: var(--brand-700); } }
+  @media (hover: hover) and (pointer: fine) { .sug:hover { border-color: var(--brand-500); color: var(--brand-200); } }
   .reply { margin-top: var(--s-2); font-size: var(--fs--2); color: var(--ok); min-height: 1.2em; }
   .reply.err { color: var(--danger); }
 
@@ -466,7 +509,7 @@
   .emitted {
     margin-top: var(--s-2); padding: var(--s-2) var(--s-3);
     background: var(--ok-wash); border-radius: var(--r-2);
-    font-size: var(--fs--2); color: oklch(38% 0.10 152);
+    font-size: var(--fs--2); color: oklch(82% 0.12 152);
   }
 
   .kpis {
@@ -479,7 +522,7 @@
   .insights { list-style: none; margin-top: var(--s-4); display: grid; gap: var(--s-2); }
   .insights li { font-size: var(--fs--1); color: var(--muted); padding-left: var(--s-3); position: relative; }
   .insights li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 5px; height: 1px; background: var(--border-strong); }
-  .insights li.flag { color: oklch(42% 0.12 75); }
+  .insights li.flag { color: oklch(82% 0.12 75); }
   .insights li.flag::before { background: var(--warn); }
 }
 
@@ -511,7 +554,7 @@
    partiam o eixo de leitura */
 .cr-tabs { justify-content: flex-start; }
 .cr-shell, .fluxo-shell { border-radius: var(--r-4); background: var(--surface); }
-.cr-chat { border-radius: var(--r-3); height: 480px; }
+.cr-chat { border-radius: var(--r-3); }
 .cr-reason { border-radius: var(--r-3); min-height: 480px; }
 .cr-bubble { border-radius: var(--r-3); font-size: var(--fs--1); }
 .cr-head h3 { font-size: var(--fs-1); font-weight: 600; }

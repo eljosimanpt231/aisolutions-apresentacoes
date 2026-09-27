@@ -191,6 +191,8 @@
   html.js [data-entra="sobe"]    { transform: translateY(22px); }
   html.js [data-entra="escala"]  { transform: scale(.965); }
   html.js [data-entra="lado"]    { transform: translateX(26px); }
+  /* depois de entrar, o estado final volta a ser do CSS (ver motion.js) */
+  html.js [data-entra].entrou    { opacity: 1; transform: none; }
   /* as máscaras de linha só existem depois de o SplitText correr */
   /* A máscara corta pela caixa da linha, e com entrelinha abaixo de ~1.15
      as descendentes (g, ç, p) saem dela e ficam cortadas PARA SEMPRE, não

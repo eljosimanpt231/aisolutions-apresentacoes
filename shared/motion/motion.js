@@ -70,7 +70,12 @@
       /* a viagem é longa (1.1s) mas a opacidade resolve-se cedo (0.34s):
          assim lê-se o texto antes de ele parar, e o movimento continua
          a ser sentido. É o truque que faz isto parecer caro. */
-      tl.fromTo(el, de, { y: 0, x: 0, scale: 1, duration: 1.1, clearProps: 'transform' },
+      /* CUIDADO: o clearProps devolve o elemento ao CSS, e o CSS de
+         entrada diz translateY(22px). Sem a classe `entrou` cada bloco
+         acabava 22px abaixo do sítio, por cima do que vinha a seguir.
+         Foi assim que títulos e parágrafos se sobrepuseram. */
+      tl.fromTo(el, de, { y: 0, x: 0, scale: 1, duration: 1.1, clearProps: 'transform',
+                          onStart: () => el.classList.add('entrou') },
                 i === 0 ? 0 : `-=${0.86}`)
         .fromTo(el, { opacity: 0 }, { opacity: 1, duration: .34, ease: 'none' }, '<0.08');
     });
@@ -131,9 +136,12 @@
 
     ScrollTrigger.batch(alvos, {
       start: 'top 88%', interval: .1, batchMax: 4,
+      /* a classe só no fim: posta antes, o GSAP lia o estado final como
+         ponto de partida e não animava nada */
       onEnter: lote => gsap.to(lote, {
         opacity: 1, y: 0, x: 0, scale: 1, duration: .75, stagger: .09,
         ease: 'power3.out', overwrite: true, clearProps: 'transform',
+        onComplete: () => lote.forEach(e => e.classList.add('entrou')),
       }),
     });
   }

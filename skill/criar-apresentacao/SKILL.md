@@ -20,6 +20,10 @@ Cria uma página web de apresentação personalizada para uma lead, com o brandi
   Admite atmosfera, um acto de abertura de 600 a 1500ms e revelações coreografadas. A orientação de
   contenção que anda por aí ("nada se mexe", "tudo abaixo de 300ms") é para aplicações, e aplicada
   aqui produz um documento parado. Ver `referencias/movimento.md`, ponto 0
+- **A página tem de fechar sozinha.** O decisor lê-a sem o comercial, no telemóvel, e reencaminha-a
+  ao sócio. Acaba SEMPRE numa acção de um toque (WhatsApp do comercial com a mensagem pré-escrita),
+  com os próximos passos concretos, a conta de valor antes do preço e um caso do setor. Ver
+  `referencias/fecho.md`. Uma página que acaba em "Avançamos?" sem botão não sai
 - Português de Portugal em TODO o conteúdo. PROIBIDO usar travessões (o caráter — ou –); usar vírgula, dois pontos ou parênteses
 - NUNCA números financeiros de outros clientes AI Solutions (o repo é público). Os valores da proposta à própria lead podem entrar
 - Nunca afirmar capacidades não confirmadas; em dúvida escrever "configurável"
@@ -43,7 +47,8 @@ Seguir `referencias/branding-lead.md`: extrair logo e cores do site dela, gerar 
 
 ### 3. Direção de design (ANTES de qualquer HTML)
 - Ler `estilos/registry.md` e o `style.md` do estilo escolhido (mais os dos estilos a misturar, blocos por nome)
-- Ler `referencias/catalogo-seccoes.md` (secções, componentes e o momento uau) e `referencias/copy-padroes.md` (blocos de copy: 3 regras do agente, transparência de custos, garantia, CTA)
+- Ler `referencias/catalogo-seccoes.md` (secções, componentes e o momento uau), `referencias/copy-padroes.md` (blocos de copy: 3 regras do agente, transparência de custos, garantia, CTA) e **`referencias/fecho.md`** (o que a página precisa para a lead dizer que sim, e o que muda por nicho)
+- Escolher o caso de prova: o mais próximo do setor da lead em `~/aisolutions/cerebro/06-matriz-negocio-x-solucao.md`, confirmado na ficha (estado real, sem valores financeiros)
 - Ver os screenshots do estilo (Read aos PNG) para calibrar o olho. **Calibrar sempre no que é bom:
   abrir `estilos/dark-premium/screenshots/` e `estilos/deck-dark/screenshots/`, que são o padrão da
   casa (escuro, glows de cor, palavras em gradiente, painéis densos, gráficos). Não calibrar nas
@@ -69,6 +74,12 @@ Seguir `referencias/branding-lead.md`: extrair logo e cores do site dela, gerar 
   (`shared/motion/grafico.js`). É o maior diferenciador que temos, e o que se tinha perdido
 - Polish ao nível do Lovable: eyebrow em pill (`class="eyebrow"`), cards com borda subtil, `animate-float-in`/reveal, fundo com `bg-grid` e glow radial da marca, par tipográfico (display + Inter). Cumprir `referencias/regras-design.md`
 - Cumprir `referencias/regras-design.md` à letra
+- **Fecho (ver `referencias/fecho.md`):** resumo de 30 segundos logo a seguir ao hero; a conta de
+  valor com os números da lead imediatamente ANTES da tabela de preços; o caso do setor entre os
+  limites e o investimento; secção final com 3 próximos passos, botão "Quero avançar" e saída
+  "Tenho uma pergunta", ambos para o WhatsApp do comercial (`comercial.whatsapp` do perfil) com
+  `?text=` pré-escrito; o "Avançar" fixo na barra; a barra com 7 entradas no máximo
+- Nunca inventar garantias, pacotes ou descontos: só entram se o comercial os confirmar
 
 ### 5. Verificação (obrigatório antes de publicar)
 
@@ -82,16 +93,18 @@ node motion.mjs [slug]                     # tira de fotogramas, para VER o movi
 node comparar.mjs [anterior] [slug]        # lado a lado com números
 ```
 
-- O `qa.mjs` não pode ter ERROS. Ele apanha o que o olho falha: contraste, alvos de toque, texto
-  parado a opacity 0, **texto cortado por máscara**, páginas que crescem durante o scroll, regiões
-  que engolem a roda do rato, e `og:image` em falta
+- O `qa.mjs` não pode ter ERROS. Ele apanha o que o olho falha: contraste (em qualquer espaço de
+  cor, oklch incluído), alvos de toque, texto parado a opacity 0, **texto cortado por máscara**,
+  **blocos que ficaram deslocados depois de entrar**, páginas que crescem durante o scroll, regiões
+  que engolem a roda do rato, **fecho sem acção**, e `og:image` em falta. `QA_TUDO=1` mostra todas
+  as falhas de contraste
 - O `comparar.mjs` corre **contra a apresentação anterior do mesmo cliente, ou contra a última que
   ficou boa**. Se a nova não ganhar na tabela (tema, glows, texto em gradiente, animações, gráficos),
   não está pronta
 - Depois disto, a crítica visual dos screenshots
 
 ### 5b. Loop de screenshots
-- Screenshot desktop (1440px) e mobile (390px) da página completa (script pronto em `referencias/regras-design.md`)
+- `node shot.mjs [slug]`: desktop (1440px) e telemóvel (390px), ecrã a ecrã, em `tmp/shots/[slug]/`. Ler TODOS os ecrãs do telemóvel: é lá que a lead abre o link
 - Ler os screenshots e criticar contra o design.md e os screenshots do estilo: contraste, overflow, alinhamento, hierarquia, "parece genérico?"
 - Correr o checklist "Standard de qualidade (o nível Lovable)" de `referencias/regras-design.md`: momento uau interativo, componentes prontos (não caseiros), Unibox completa, polish, feito à medida da lead
 - Corrigir e repetir. Mínimo 2 passagens, parar quando não houver defeitos óbvios
@@ -103,12 +116,13 @@ Seguir `referencias/publicar.md`. Resultado: URL online verificado.
 Se o design final ficou bom e diferente do estilo de origem, perguntar "quero dar um nome a este estilo para reutilizar?" e seguir `referencias/registar-estilo.md`.
 
 ### 8. Entrega
-Responder com: URL final, password (se ativada), e um guião de 3 pontos para o comercial usar na reunião (onde está o momento uau, o que clicar, como fechar).
+Responder com: URL final, password (se ativada), e um guião de 3 pontos para o comercial usar na reunião (onde está o momento uau, o que clicar, como fechar). Lembrar que o follow-up se faz nas 48 horas seguintes ao envio (as propostas ganhas fecham em média 2,5 dias depois de vistas), e sugerir ao comercial gravar um vídeo de 60 a 90 segundos para o topo da página (ver `fecho.md`, 1.6).
 
 ## Mapa dos ficheiros de referência
 
 | Ficheiro | Para quê |
 |---|---|
+| `fecho.md` | **O que a página precisa para fechar: acção, próximos passos, valor antes do preço, prova do setor, por nicho** |
 | `movimento.md` | **Registo, atmosfera, acto de abertura, números, gráficos, e os erros que já custaram caro** |
 | `regras-design.md` | Tokens, cor, tipografia, o padrão de qualidade |
 | `catalogo-seccoes.md` | Secções, componentes, formatos |

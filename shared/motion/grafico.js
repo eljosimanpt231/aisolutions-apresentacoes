@@ -92,6 +92,13 @@ function grafico(id, cfg) {
     raiz.appendChild(h);
   }
   raiz.appendChild(svg);
+  /* O SVG escala com a largura, e as letras escalavam com ele: a 460px os
+     rótulos de 11 unidades ficavam com 7px, no telemóvel com 5. Mantém-se
+     o tamanho do texto em px de ecrã, compensando a escala. */
+  const acertar = () => { const w = svg.getBoundingClientRect().width;
+    if (w) svg.style.setProperty('--gr-k', (W / w).toFixed(3)); };
+  acertar();
+  if ('ResizeObserver' in window) new ResizeObserver(acertar).observe(svg);
   raiz.appendChild(leg);
   if (cfg.nota) {
     const n = document.createElement('p'); n.className = 'gr-nota'; n.textContent = cfg.nota;

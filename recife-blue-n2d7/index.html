@@ -47,7 +47,7 @@
 <main id="conteudo">
 
   <!-- ============ CABEÇALHO DO DOCUMENTO ============ -->
-  <section class="cabecalho" id="topo" data-nav="Início">
+  <section class="cabecalho" id="topo">
     <div class="agua" aria-hidden="true"><img src="assets/img/agua.jpg" alt="" data-paralaxe="6"></div>
     <div class="container">
       <div class="doc-topo" data-acto="1" data-entra="sobe">
@@ -94,7 +94,7 @@
   </section>
 
   <!-- ============ 1. EM 30 SEGUNDOS ============ -->
-  <section class="secao-junta faixa" id="resumo" data-nav="Em 30 segundos">
+  <section class="secao-junta faixa" id="resumo" data-nav="Resumo">
     <div class="container">
       <p class="rubrica"><span>1</span> A proposta em 30 segundos</p>
       <dl class="sumario" data-entra="sobe">
@@ -244,7 +244,7 @@
   </script>
 
   <!-- ============ 4. O QUE MUDA ============ -->
-  <section id="mudanca" data-nav="O que muda">
+  <section id="mudanca">
     <div class="container">
       <p class="rubrica"><span>4</span> O que muda</p>
       <h2>A mesma decisão, sem o trabalho à volta.</h2>
@@ -530,7 +530,7 @@
   </section>
 
   <!-- ============ 7. DO EMAIL AO TOCONLINE ============ -->
-  <section class="faixa" id="integracao" data-nav="Integração">
+  <section class="faixa" id="integracao">
     <div class="container">
       <p class="rubrica"><span>7</span> Do email ao TOConline</p>
       <h2>O caminho de um pedido, de quando chega até sair com o teu número de série.</h2>
@@ -556,7 +556,7 @@
   </script>
 
   <!-- ============ 8. LIMITES ============ -->
-  <section id="limites" data-nav="Limites">
+  <section id="limites">
     <div class="container">
       <p class="rubrica"><span>8</span> Limites</p>
       <h2>O que o agente faz e o que fica contigo.</h2>
@@ -601,6 +601,17 @@
           contigo que o teu plano do TOConline dá acesso à API e criamos o acesso.</p>
       </aside>
 
+      <aside class="prova" data-entra="sobe">
+        <p class="prova-k">Já estamos a fazer isto no teu setor</p>
+        <h3>Uma empresa portuguesa do setor das piscinas, que só vende a profissionais.</h3>
+        <p>Cada orçamento levava 15 a 30 minutos, com os pedidos a chegar por email, telefone e WhatsApp e
+          o pico no verão. O sistema que construímos lê o pedido, calcula com as tabelas de preços da
+          empresa e devolve o orçamento em PDF em segundos. Os casos fora do normal passam para uma pessoa.</p>
+        <p>Está construído e validado de ponta a ponta, na fase final de validação com a equipa antes do
+          arranque.</p>
+        <p class="prova-nota">Por respeito aos contratos, não identificamos os clientes.</p>
+      </aside>
+
       <details class="detalhe">
         <summary>Onde ficam os teus dados</summary>
         <ul>
@@ -619,6 +630,10 @@
     <div class="container">
       <p class="rubrica"><span>9</span> Investimento</p>
       <h2>O que custa e o que inclui.</h2>
+
+      <p class="ancora" data-entra="sobe">Um serviço técnico completo anda entre <b class="num">8.000 €</b> e
+        <b class="num">12.000 €</b>. Basta um trabalho que hoje se perde por atraso na resposta para
+        pagar a implementação.</p>
 
       <table class="fatura" data-entra="escala">
         <caption class="so-leitor">Valores da proposta</caption>
@@ -649,15 +664,11 @@
           <tr class="total"><th scope="row">Total da implementação</th><td class="num">5.043 €</td></tr>
         </tfoot>
       </table>
-
-      <p class="retorno">Um serviço técnico completo anda entre <b class="num">8.000 €</b> e
-        <b class="num">12.000 €</b>. Basta um trabalho que hoje se perde por atraso na resposta para
-        cobrir a implementação.</p>
     </div>
   </section>
 
   <!-- ============ 10. CRONOGRAMA ============ -->
-  <section id="prazo" data-nav="Prazo">
+  <section id="prazo">
     <div class="container">
       <p class="rubrica"><span>10</span> Cerca de seis semanas, em conjunto</p>
       <h2>Construímos, tu dás feedback, ajustamos. Só avança quando estiveres satisfeito.</h2>
@@ -688,7 +699,7 @@
   </section>
 
   <!-- ============ 11. FASE SEGUINTE ============ -->
-  <section class="faixa-clara" id="depois" data-nav="Fase seguinte">
+  <section class="faixa-clara" id="depois">
     <div class="container">
       <p class="rubrica"><span>11</span> O que fica para depois</p>
       <h2>Falámos destes pontos na segunda-feira e fazem sentido. Não fazem parte desta proposta.</h2>
@@ -714,17 +725,41 @@
   </section>
 
   <!-- ============ 12. FECHO ============ -->
-  <section class="fecho secao-ampla" id="fecho" data-nav="Fecho">
+  <section class="fecho secao-ampla" id="fecho" data-nav="Avançar" data-nav-cta>
     <div class="container">
+      <p class="rubrica"><span>12</span> Próximos passos</p>
       <h2 data-entra="sobe">Avançamos, Gonçalo?</h2>
-      <p class="lead">Confirmamos tudo por escrito antes de arrancar.</p>
+      <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmares por escrito.</p>
+      <ol class="passos-fecho" data-entra="sobe">
+        <li>
+          <span class="n">1</span>
+          <b>Dizes que sim</b>
+          <p>Por WhatsApp ou por email, com as dúvidas que ainda tenhas.</p>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <b>Recebes a proposta formal</b>
+          <p>O documento com o âmbito, os valores e as condições desta página, para assinares.</p>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <b>Semana 1: acessos</b>
+          <p>Email, TOConline e os orçamentos anteriores. Confirmamos logo o acesso à API.</p>
+        </li>
+      </ol>
+      <div class="fecho-acoes">
+        <a class="btn btn-primario premivel" data-iman="0.2" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20proposta%20da%20Recife%20Blue%20e%20quero%20avan%C3%A7ar." target="_blank" rel="noopener">Quero avançar</a>
+        <a class="btn btn-secundario" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20proposta%20da%20Recife%20Blue%20e%20tenho%20uma%20pergunta%3A%20" target="_blank" rel="noopener">Tenho uma pergunta</a>
+      </div>
+      <p class="fecho-contacto">Manuel Condeço, AI Solutions<br>
+        <a href="tel:+351964251889">964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a></p>
     </div>
   </section>
 </main>
 
 <footer class="rodape">
   <div class="container">
-    <img src="assets/img/logo.jpg" alt="" width="120" height="32" class="rodape-logo">
+    <span class="rodape-marca"><img src="assets/img/logo.jpg" alt="" width="120" height="32" class="rodape-logo"></span>
     Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a Recife Blue, Piscinas e Spa,
     18 de setembro de 2026.<br>
     Manuel Condeço, manuel.condeco@aisolutions.pt

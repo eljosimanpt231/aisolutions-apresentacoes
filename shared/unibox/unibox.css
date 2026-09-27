@@ -278,3 +278,13 @@
   .ub-aside, .ub-view, .ub-panel { display: none; }
   .ub-list { width: 100%; border-right: none; }
 }
+
+/* ============================================================
+   O SCROLL É DA PÁGINA, NÃO DA MAQUETA
+   Listas com overflow-y: auto dentro da página engolem a roda do rato:
+   quem percorre a apresentação com o cursor por cima da caixa de entrada
+   sente a página encravar (o qa.mjs acusava-o em todas as apresentações
+   com Unibox). Numa maqueta, cortar a lista lê-se como um ecrã real; o
+   JS continua a poder posicionar a conversa com scrollTop.
+   ============================================================ */
+.ub-nav, .ub-items, .ub-thread, .ub-panel-body { overflow-y: hidden; }

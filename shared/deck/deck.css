@@ -71,7 +71,25 @@
 .cr-reason-head { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
 .cr-reason-head .t { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); }
 .cr-steps { flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 8px; list-style: none; }
-.cr-cols { align-items: start; }
+/* A conversa acompanha a altura do raciocínio, em vez de ficar uma caixa
+   de altura fixa com um vazio preto por baixo. Não faz a página crescer:
+   com flex-basis 0 e min-height 0 as mensagens não contam para a altura
+   da coluna, que é dada pelo raciocínio (constante desde o primeiro
+   frame, porque os passos estão todos desenhados desde o início). */
+.cr-cols { align-items: stretch; }
+.cr-chat { height: auto; min-height: 480px; }
+@media (min-width: 1000px) { .cr-chat { min-height: 0; } }
+/* A conversa cresce de baixo para cima, junto à barra de escrita, como
+   no telemóvel. Com overflow hidden o que sai é o mais antigo, em cima. */
+.cr-msgs { justify-content: flex-end; }
+.cr-msgs > :first-child { margin-top: auto; }
+.cr-input { flex-shrink: 0; padding: 10px 12px; border-top: 1px solid var(--border); background: #111118; }
+.cr-input span { display: block; padding: 8px 14px; border-radius: 999px; background: hsl(0 0% 100% / 0.06);
+  font-size: 0.8rem; color: var(--muted); }
+.cr-msgs { flex: 1 1 0; min-height: 0;
+  /* ecrã de conversa, não um buraco preto: grelha de pontos muito leve */
+  background: radial-gradient(circle at 1px 1px, hsl(0 0% 100% / 0.045) 1px, transparent 0) 0 0 / 18px 18px,
+              radial-gradient(ellipse at 50% 0%, hsl(var(--accent-hsl) / 0.07), transparent 70%); }
 .cr-step { display: flex; align-items: flex-start; gap: 12px; border-radius: 10px; border: 1px solid transparent; padding: 12px; opacity: 0.25; transform: translateY(4px); transition: all 0.5s ease; }
 .cr-step.on { opacity: 1; transform: none; border-color: hsl(var(--accent-hsl) / 0.2); background: hsl(0 0% 100% / 0.03); }
 .cr-step-ic { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: hsl(var(--accent-hsl) / 0.15); color: var(--accent); }
