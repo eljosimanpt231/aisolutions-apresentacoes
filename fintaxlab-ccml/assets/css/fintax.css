@@ -1,0 +1,125 @@
+/* ============================================================
+   FINTAXLAB: blocos próprios desta proposta
+   Só tokens, zero cores directas. Mesma camada do documento.css,
+   para as regras seguirem a ordem normal da cascata.
+   ============================================================ */
+
+@layer componentes {
+
+  /* O logótipo da FintaxLab é empilhado (marca por cima do nome) e só
+     existe a 300 px: na pastilha fica a 100 px de largura, nunca mais. */
+  .doc-logo-pastilha { padding: 8px 14px; }
+  .doc-logo { height: 76px; width: auto; }
+
+  /* Rodapé: o logótipo é escuro e transparente; no fundo escuro passa a
+     branco, como manda o aviso do extractor de marca. */
+  .rodape-logo { height: 56px; filter: brightness(0) invert(1); opacity: .85; }
+
+  /* A DM Serif Display só tem o peso 400: tudo o que o documento pedia a
+     600 em letra display ficaria em negrito sintético. */
+  .fatura tfoot .total td { font-weight: 400; }
+
+  /* ---------- As quatro mãos de um pedido ---------- */
+  .quatro-maos {
+    list-style: none; counter-reset: mao; margin-top: var(--s-4);
+    display: grid; gap: var(--s-2);
+  }
+  .quatro-maos li {
+    counter-increment: mao; position: relative;
+    padding: var(--s-3) var(--s-3) var(--s-3) calc(var(--s-6) + var(--s-1));
+    background: var(--surface); border-radius: var(--r-3); box-shadow: var(--e1);
+    color: var(--muted); font-size: var(--fs--1);
+  }
+  .quatro-maos li::before {
+    content: counter(mao); position: absolute; left: var(--s-3); top: 50%;
+    translate: 0 -50%; width: 28px; height: 28px; border-radius: var(--r-pill);
+    display: grid; place-items: center;
+    font-family: var(--font-mono); font-size: var(--fs--2);
+    color: var(--danger); background: var(--danger-wash);
+  }
+  .quatro-maos b { color: var(--text); font-weight: 600; }
+  .duas .horas {
+    margin-top: var(--s-4); font-family: var(--font-display);
+    font-size: var(--fs-1); line-height: 1.35; color: var(--text); max-width: 30ch;
+  }
+  .duas .horas b { font-weight: 400; color: var(--brand-300); }
+  .duas .legenda-fina { margin-top: var(--s-2); font-size: var(--fs--2); color: var(--faint); }
+
+  /* ---------- Moldura da Unibox ----------
+     A caixa tem paleta própria de produto; a moldura só lhe dá o
+     assento no documento, com o mesmo raio das outras maquetas. */
+  .caixa-moldura {
+    margin-top: var(--s-5); border-radius: var(--r-4); overflow: hidden;
+    box-shadow: var(--e3); border: 1px solid var(--border);
+  }
+
+  /* ---------- As três regras do agente (setor regulado) ---------- */
+  .tres-regras {
+    display: grid; gap: var(--s-4); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+  .tres-regras article {
+    position: relative; padding: var(--s-4) var(--s-4) var(--s-4);
+    border-radius: var(--r-3); background: var(--surface); box-shadow: var(--e1);
+    border-top: 2px solid var(--brand-300);
+  }
+  .tres-regras .tr-n {
+    font-family: var(--font-display); font-size: var(--fs-3); line-height: 1;
+    color: var(--brand-300);
+  }
+  .tres-regras h3 {
+    margin-top: var(--s-2); font-family: var(--font-body);
+    font-size: var(--fs-0); font-weight: 600;
+  }
+  .tres-regras p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
+
+  /* ---------- Três provas lado a lado ---------- */
+  .prova-grid {
+    display: grid; gap: var(--s-4) var(--s-5); margin-top: var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+  .prova-grid > div { border-top: 1px solid var(--border); padding-top: var(--s-3); }
+  .prova-grid b { display: block; color: var(--text); font-weight: 600; font-size: var(--fs-0); }
+  .prova .prova-grid p { margin-top: var(--s-2); font-size: var(--fs--1); }
+  .prova-link {
+    display: inline-block; margin-top: var(--s-2); padding-block: var(--s-1);
+    font-size: var(--fs--1);
+    color: var(--acento-texto); text-underline-offset: 3px;
+  }
+
+  /* ---------- O plano, fase a fase ---------- */
+  .plano {
+    list-style: none; display: grid; gap: var(--s-4); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  }
+  .plano li {
+    display: flex; flex-direction: column; gap: var(--s-2);
+    padding: var(--s-4); border-radius: var(--r-3);
+    border: 1px dashed var(--border-strong);
+  }
+  .plano li.agora {
+    border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
+    background: linear-gradient(160deg in oklab,
+      color-mix(in oklab, var(--accent) 14%, var(--surface)), var(--surface));
+    box-shadow: var(--e2);
+  }
+  .plano-k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand-300); }
+  .plano h3 { font-size: var(--fs-1); font-weight: 400; line-height: 1.2; }
+  .plano p { color: var(--muted); font-size: var(--fs--1); }
+  .plano-v {
+    margin-top: auto; padding-top: var(--s-3);
+    font-family: var(--font-mono); font-size: var(--fs--1); color: var(--text);
+  }
+}
+
+/* ---------- Unibox ----------
+   O unibox.css não está em camada nenhuma, por isso ganha a qualquer regra
+   em @layer. Estas correcções ficam de fora de propósito. O acento da caixa
+   é o lilás claro da marca: a hora na bolha do agente, a preto a 55%,
+   dava 3,5:1 sobre o índigo médio. */
+#flInbox {
+  --ub-accent-weak: color-mix(in oklab, var(--brand-300) 14%, transparent);
+  --ub-accent-weak2: color-mix(in oklab, var(--brand-300) 20%, transparent);
+}
+#flInbox .ub-row.out .ub-bubble-time { color: color-mix(in oklab, var(--brand-950) 85%, transparent); }
+#flInbox .ub-subbtn.is-cur { background: var(--ub-accent-weak2); }

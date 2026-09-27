@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+
+  <title>FintaxLab | Agente para os pedidos no WhatsApp</title>
+  <meta name="description" content="O pedido chega ao grupo, a fatura fica pronta no TOC Online, a equipa só aprova. Proposta da AI Solutions para a FintaxLab.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FintaxLab × AI Solutions">
+  <meta property="og:description" content="O pedido chega ao grupo. A fatura fica pronta no TOC Online. Vocês só aprovam.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/fintaxlab-ccml/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preload" href="assets/fonts/dm-serif-display-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fontes.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/unibox/unibox.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/documento.css">
+  <link rel="stylesheet" href="assets/css/fintax.css">
+  <script src="config.js"></script>
+</head>
+<body class="deck-escuro grao">
+
+<a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<nav class="nav" aria-label="Secções da proposta">
+  <div class="container"><ul></ul></div>
+</nav>
+
+<main id="conteudo">
+
+  <!-- ============ CABEÇALHO DO DOCUMENTO ============ -->
+  <section class="cabecalho" id="topo">
+    <div class="container">
+      <div class="doc-topo" data-acto="1" data-entra="sobe">
+        <span class="doc-logo-pastilha"><img class="doc-logo" src="assets/img/logo.png" alt="FintaxLab, Accounting e Consulting" width="300" height="225"></span>
+        <span class="doc-ref">Proposta <b>AI/2026-FL</b></span>
+      </div>
+
+      <dl class="doc-meta" data-acto="2" data-entra="sobe">
+        <div><dt>Para</dt><dd>Miguel Anjos, diretor técnico da FintaxLab</dd></div>
+        <div><dt>Assunto</dt><dd>Agente de IA para os pedidos dos clientes no WhatsApp</dd></div>
+        <div><dt>Reunião</dt><dd>21 de setembro de 2026</dd></div>
+        <div><dt>Preparado por</dt><dd>Manuel Condeço, AI Solutions</dd></div>
+      </dl>
+
+      <h1 class="promessa" data-linhas>
+        O pedido chega ao grupo.<br>
+        A fatura fica pronta no TOC&nbsp;Online.<br>
+        <span class="promessa-fecho g-brilho">Vocês só aprovam.</span>
+      </h1>
+
+      <p class="lead" data-acto="3" data-entra="sobe">
+        Hoje cada pedido de fatura passa por quatro mãos: ler no WhatsApp, emitir no TOC Online, enviar
+        por email e confirmar no grupo. Com o agente, a mensagem é lida no momento em que chega, na língua
+        do cliente, e a fatura fica preparada. A equipa aprova, e o resto acontece sozinho.
+      </p>
+
+      <ul class="numeros" data-acto="4" data-entra="sobe">
+        <li>
+          <span class="n"><span class="num" data-conta="150">150</span> grupos</span>
+          <span class="d">Um por cliente, todos no WhatsApp</span>
+        </li>
+        <li>
+          <span class="n">2 a 3 horas</span>
+          <span class="d">Por dia útil, só em pedidos de fatura</span>
+        </li>
+        <li>
+          <span class="n">Menos de 24 h</span>
+          <span class="d">O SLA de resposta que hoje cumprem à mão</span>
+        </li>
+      </ul>
+
+      <p class="doc-nota" data-acto="5" data-entra="sobe">5 minutos de leitura. Os valores estão no ponto 9.</p>
+    </div>
+  </section>
+
+  <!-- ============ 1. EM 30 SEGUNDOS ============ -->
+  <section class="secao-junta faixa" id="resumo" data-nav="Resumo">
+    <div class="container">
+      <p class="rubrica"><span>1</span> A proposta em 30 segundos</p>
+      <dl class="sumario" data-entra="sobe">
+        <div>
+          <dt>O que construímos</dt>
+          <dd>Um agente de IA que lê os pedidos dos grupos de WhatsApp, prepara as faturas no TOC Online
+            para a equipa aprovar, reenvia segundas vias e envia as declarações de IVA, na língua de cada
+            cliente.</dd>
+        </div>
+        <div>
+          <dt>Em quanto tempo</dt>
+          <dd>Cerca de seis semanas a contar da adjudicação: duas de auditoria à vossa comunicação, depois
+            construção e testes lado a lado com a forma atual.</dd>
+        </div>
+        <div>
+          <dt>Investimento</dt>
+          <dd><span class="num">3.100 €</span> de implementação e <span class="num">200 €</span> por mês,
+            ambos sem IVA.</dd>
+        </div>
+        <div>
+          <dt>Próximo passo</dt>
+          <dd>Confirmamos tudo por escrito antes de arrancar. Na primeira semana: os acessos e uma sessão
+            com a equipa sobre o que muda para cada pessoa.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ 2. O QUE OUVIMOS ============ -->
+  <section id="diagnostico" data-nav="O que ouvimos">
+    <div class="container">
+      <p class="rubrica"><span>2</span> O que ouvimos na reunião</p>
+      <h2>Não é um diagnóstico do setor. É o que nos contou a 21 de setembro.</h2>
+
+      <div class="pontos" data-entra="sobe">
+        <article>
+          <h3>Quatro passos por cada fatura</h3>
+          <p>O cliente pede no grupo, a equipa emite no TOC Online, envia por email e volta ao WhatsApp
+            para confirmar. O TOC Online até já envia o email sozinho.</p>
+          <blockquote>Nós vamos ao TOC Online, emitimos a fatura, mandamos por email e dizemos no WhatsApp:
+            fatura já foi enviada.</blockquote>
+        </article>
+        <article>
+          <h3>Um SLA que é todo manual</h3>
+          <p>Muitos clientes vieram para a FintaxLab porque os contabilistas demoravam a responder. A vossa
+            resposta a isso é um compromisso de menos de 24 horas, cumprido à mão.</p>
+          <blockquote>Nós temos um SLA de resposta inferior a 24 horas. E é tudo manual.</blockquote>
+        </article>
+        <article>
+          <h3>150 grupos, pedidos misturados</h3>
+          <p>Cada cliente tem o seu grupo. Pedidos simples, documentos e temas que deviam ir por email
+            chegam todos pelo mesmo sítio, e é isso que põe o prazo em risco.</p>
+        </article>
+        <article>
+          <h3>Clientes de fora</h3>
+          <p>80% dos clientes são estrangeiros: empresas e freelancers, muitos deles nómadas digitais a
+            viver em Portugal. A resposta tem de sair na língua deles.</p>
+        </article>
+        <article>
+          <h3>Os picos do IVA</h3>
+          <p>No último prazo seguiram cerca de 130 declarações, uma a uma, cada uma com o mapa de
+            exploração. Enviam a todos, haja ou não imposto a pagar.</p>
+          <blockquote>É uma questão de transparência. Nem todos os gabinetes de contabilidade fazem
+            isto.</blockquote>
+        </article>
+        <article>
+          <h3>A equipa tem de fazer parte</h3>
+          <p>A organização já existe: pastas iguais para todos os clientes no OneDrive, sem sistemas antigos
+            a travar. Falta que a equipa perceba o projeto e o veja como seu.</p>
+          <blockquote>Eu gostava que elas comprassem o projeto.</blockquote>
+        </article>
+      </div>
+
+      <p class="sintese">O problema não é o volume. É que cada pedido ainda passa por quatro mãos.</p>
+    </div>
+  </section>
+
+  <!-- ============ 3. OS VOSSOS NÚMEROS ============ -->
+  <section class="faixa-clara" id="numeros">
+    <div class="container">
+      <p class="rubrica"><span>3</span> Os vossos números</p>
+      <h2>Cada número conta uma história. Estes são os da FintaxLab.</h2>
+      <p class="lead">A frase é do vosso site. Os números são os que nos deu na reunião.</p>
+
+      <dl class="contagens" data-entra="sobe">
+        <div><dt class="num" data-conta="150">150</dt><dd>Clientes, cada um no seu grupo<small>Empresas, freelancers e particulares</small></dd></div>
+        <div><dt class="num"><span data-conta="80">80</span>%</dt><dd>Clientes estrangeiros<small>A resposta tem de sair na língua deles</small></dd></div>
+        <div><dt class="num" data-conta="130">130</dt><dd>Declarações de IVA<small>Enviadas uma a uma no último prazo</small></dd></div>
+        <div><dt class="num"><span data-conta="24">24</span> h</dt><dd>SLA de resposta<small>Cumprido à mão, todos os dias</small></dd></div>
+      </dl>
+
+      <div class="duas" data-entra="sobe">
+        <div>
+          <h3>O caminho de um pedido de fatura, hoje</h3>
+          <ol class="quatro-maos">
+            <li><b>Ler</b> a mensagem num dos 150 grupos</li>
+            <li><b>Emitir</b> a fatura no TOC Online</li>
+            <li><b>Enviar</b> a fatura por email</li>
+            <li><b>Confirmar</b> no grupo que já foi</li>
+          </ol>
+          <p class="horas">2 a 3 horas por dia útil, ou seja, <b class="num">entre 44 e 66 horas</b> por mês,
+            só nisto.</p>
+          <p class="legenda-fina">Contas a 22 dias úteis por mês, a partir das horas que nos indicou.</p>
+        </div>
+        <div>
+          <p class="pre-term">Uma manhã nos grupos, com o agente. Clientes e valores ilustrativos.</p>
+          <div class="term" id="flTerm"></div>
+        </div>
+      </div>
+
+      <p class="sintese">O agente não substitui ninguém. Tira as quatro mãos de cada pedido e deixa a equipa
+        com o que precisa de um contabilista.</p>
+    </div>
+  </section>
+  <script type="application/json" id="flTerm-config">
+  {
+    "title": "grupos-whatsapp.log",
+    "intervalMs": 640,
+    "lines": [
+      { "text": "08:02  Grupo Jonas Weber (freelancer): pedido de fatura, em inglês", "tone": "info" },
+      { "text": "Adquirente encontrado no TOC Online: Hafen Digital GmbH. Regime da última fatura: autoliquidação", "tone": "ok" },
+      { "text": "Fatura preparada no TOC Online. À espera de aprovação da equipa", "tone": "ok" },
+      { "text": "08:09  Grupo Casa Lima Arquitetura (empresa): segunda via da fatura de junho", "tone": "info" },
+      { "text": "PDF encontrado no TOC Online e reenviado no grupo", "tone": "ok" },
+      { "text": "08:17  Grupo Sarah Okafor (freelancer): carta das Finanças sobre o IRS", "tone": "info" },
+      { "text": "Tema fiscal: sem resposta de conteúdo. Marcado como urgente e passado à equipa", "tone": "warn" },
+      { "text": "08:31  A equipa marcou 3 declarações periódicas de IVA como submetidas", "tone": "info" },
+      { "text": "Enviadas aos 3 clientes, com o comprovativo e o mapa de exploração", "tone": "ok" },
+      { "text": "Um cliente sem email na ficha: enviado só pelo grupo, sinalizado para completar", "tone": "warn" },
+      { "text": "Manhã: 11 pedidos lidos, 5 faturas para aprovar, 2 temas para a equipa, 0 fora do SLA", "tone": "success" }
+    ]
+  }
+  </script>
+
+  <!-- ============ 4. O QUE MUDA ============ -->
+  <section id="mudanca">
+    <div class="container">
+      <p class="rubrica"><span>4</span> O que muda</p>
+      <h2>O mesmo serviço, sem o trabalho à volta.</h2>
+      <div class="antes-depois" data-entra="sobe">
+        <div>
+          <h3>Passa a ser automático</h3>
+          <ul class="lista lista-sim">
+            <li>Ler cada mensagem dos grupos no momento em que chega, na língua do cliente</li>
+            <li>Separar pedido de fatura, segunda via, documento, dúvida e urgência</li>
+            <li>Preparar a fatura no TOC Online com o cliente, o adquirente e o regime da última fatura</li>
+            <li>Confirmar no grupo que a fatura saiu, com o PDF</li>
+            <li>Reenviar segundas vias a partir do TOC Online</li>
+            <li>Enviar as declarações de IVA já submetidas, com o comprovativo e o mapa de exploração</li>
+            <li>Contar as 24 horas de cada pedido e avisar a equipa antes de o prazo passar</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Deixam de fazer à mão</h3>
+          <ul class="lista lista-nao">
+            <li>Percorrer os grupos para ver quem pediu o quê</li>
+            <li>Copiar os dados da mensagem para o TOC Online</li>
+            <li>Voltar ao WhatsApp só para dizer que a fatura já foi enviada</li>
+            <li>Procurar a fatura de junho que o cliente diz não ter recebido</li>
+            <li>Enviar 130 declarações, uma a uma, no último dia do prazo</li>
+            <li>Responder às mesmas perguntas de sempre, em várias línguas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. O AGENTE A TRABALHAR ============ -->
+  <section class="faixa secao-ampla" id="demo" data-nav="O agente">
+    <div class="container">
+      <p class="rubrica"><span>5</span> O agente a trabalhar</p>
+      <h2>Quatro mensagens, quatro decisões.</h2>
+      <p class="lead">A conversa no grupo, e ao lado o que o agente consultou e decidiu em cada passo. Em
+        quatro situações reais da vossa semana.</p>
+      <div class="cr holofote" data-entra="escala" id="flDemo" style="margin-top: var(--s-5)"></div>
+      <p class="so-leitor">
+        Simulação de quatro cenários. No primeiro, um freelancer pede em inglês uma fatura a uma empresa
+        alemã; o agente prepara-a no TOC Online com o regime da última fatura, a equipa aprova e o agente
+        confirma no grupo. No segundo, uma empresa pede a segunda via de uma fatura de junho e o agente
+        reenvia o PDF, perguntando antes de a enviar ao adquirente. No terceiro, o agente envia uma
+        declaração de IVA já submetida pela equipa, com o mapa de exploração, e passa uma pergunta de
+        análise à equipa. No quarto, uma cliente pergunta por uma carta das Finanças; o agente recusa dar
+        parecer, pede a carta por email e marca o caso como urgente.
+      </p>
+      <p class="doc-nota">Simulação do fluxo que vamos construir. Os clientes, os adquirentes e os valores
+        são inventados.</p>
+    </div>
+  </section>
+  <script type="application/json" id="flDemo-config">
+  {
+    "agentName": "Assistente FintaxLab",
+    "agentInitials": "FL",
+    "chatStatus": "Assistente de IA nos grupos de WhatsApp",
+    "stepMs": 1500,
+    "endPauseMs": 3200,
+    "scenarios": [
+      {
+        "title": "Pedido de fatura",
+        "subtitle": "Em inglês, num grupo de freelancer. A fatura fica pronta e a equipa aprova.",
+        "chat": [
+          { "sender": "client", "text": "Hi! Could you issue my September invoice to Hafen Digital GmbH? 3,200 € for software development.", "time": "08:02" },
+          { "sender": "agent", "text": "Hi Jonas, this is FintaxLab's AI assistant. Got it: **Hafen Digital GmbH, 3,200 €, software development, September**.", "time": "08:02" },
+          { "sender": "agent", "text": "Same terms as your August invoice to them: **VAT reverse charge**, 30 days. It's ready, and our team will approve it shortly.", "time": "08:03" },
+          { "sender": "system", "text": "Fatura aprovada pela equipa às 08:41" },
+          { "sender": "agent", "text": "Done! Your invoice was issued in TOC Online and **emailed to Hafen Digital**. The PDF is here.", "time": "08:41" },
+          { "sender": "client", "text": "Perfect, thanks!", "time": "08:44" }
+        ],
+        "steps": [
+          { "icon": "message", "label": "Lê a mensagem no grupo e reconhece um pedido de fatura" },
+          { "icon": "id", "label": "Identifica o cliente pelo grupo e responde na língua dele" },
+          { "icon": "database", "label": "Encontra o adquirente no TOC Online e repete o regime da última fatura" },
+          { "icon": "user-cog", "label": "Deixa a fatura preparada e pede aprovação à equipa" },
+          { "icon": "send", "label": "Depois de aprovada, o TOC Online emite e envia por email" },
+          { "icon": "check", "label": "Confirma no grupo, com o PDF, e fecha o pedido" }
+        ]
+      },
+      {
+        "title": "Segunda via",
+        "subtitle": "Uma fatura de junho que o adquirente diz não ter recebido.",
+        "chat": [
+          { "sender": "client", "text": "Bom dia. Conseguem reenviar a fatura que emitimos à Construções Duarte em junho? Dizem que não a receberam.", "time": "10:15" },
+          { "sender": "agent", "text": "Bom dia, Rita. Sou o assistente de IA da FintaxLab. Encontrei **uma fatura à Construções Duarte, de 12 de junho, 4.850 €**. Segue o PDF.", "time": "10:15" },
+          { "sender": "agent", "text": "Quer que a reenvie também **diretamente para a Construções Duarte**, para o email que está na ficha deles?", "time": "10:16" },
+          { "sender": "client", "text": "Sim, por favor.", "time": "10:19" },
+          { "sender": "agent", "text": "Enviada. Fica registado no histórico da fatura.", "time": "10:19" }
+        ],
+        "steps": [
+          { "icon": "message", "label": "Reconhece um pedido de segunda via" },
+          { "icon": "search", "label": "Procura no TOC Online as faturas a esse adquirente em junho" },
+          { "icon": "send", "label": "Encontra uma só e envia o PDF no grupo" },
+          { "icon": "user-cog", "label": "Enviar a terceiros é decisão do cliente: pergunta antes" },
+          { "icon": "check", "label": "Reenvia ao adquirente e regista" }
+        ]
+      },
+      {
+        "title": "Declarações de IVA",
+        "subtitle": "A equipa submete, o agente entrega a cada cliente com o mapa de exploração.",
+        "chat": [
+          { "sender": "system", "text": "A equipa marcou 130 declarações periódicas de IVA como submetidas" },
+          { "sender": "agent", "text": "Olá Paulo. A equipa da FintaxLab já submeteu a sua **declaração periódica de IVA**. Seguem o comprovativo e o **mapa de exploração** do período.", "time": "16:05" },
+          { "sender": "agent", "text": "Este período há **imposto a pagar**. O valor e a referência estão na guia em anexo.", "time": "16:05" },
+          { "sender": "client", "text": "Obrigado. Porque é que é mais alto do que no último trimestre?", "time": "17:30" },
+          { "sender": "agent", "text": "Pelo mapa de exploração, faturou mais neste período: **7 faturas, contra 4 no anterior**. Quer que a equipa reveja os números consigo?", "time": "17:30" },
+          { "sender": "client", "text": "Sim, por favor.", "time": "17:34" },
+          { "sender": "system", "text": "Pedido passado à equipa, com o mapa em anexo. Resposta dentro das 24 horas." }
+        ],
+        "steps": [
+          { "icon": "list", "label": "Recebe da equipa a lista das declarações já submetidas" },
+          { "icon": "book", "label": "Junta a cada cliente o comprovativo e o mapa de exploração" },
+          { "icon": "send", "label": "Envia a todos, haja ou não imposto a pagar, na língua de cada um" },
+          { "icon": "search", "label": "Responde só com o que está no mapa, sem interpretar" },
+          { "icon": "user-cog", "label": "A análise é da equipa: passa o pedido com o contexto" }
+        ]
+      },
+      {
+        "title": "O que o agente não faz",
+        "subtitle": "Uma carta das Finanças às 21h. O agente não dá parecer e passa à equipa.",
+        "chat": [
+          { "sender": "client", "text": "I got a letter from the tax office about my 2024 IRS. Do I have to pay a fine??", "time": "21:47" },
+          { "sender": "agent", "text": "Hi Sarah, this is FintaxLab's AI assistant. I can't advise on this: **letters from the tax office are always handled by our team**, and a wrong answer could cost you money.", "time": "21:47" },
+          { "sender": "agent", "text": "Could you **email a photo of the letter** to the team, so it stays on record? I've marked this as **urgent**: you'll hear from us within 24 hours.", "time": "21:48" },
+          { "sender": "client", "text": "Ok, sending it now. Thank you!", "time": "21:52" },
+          { "sender": "system", "text": "Marcado como urgente. Resumo enviado à equipa às 21:52." }
+        ],
+        "steps": [
+          { "icon": "alert", "label": "Deteta um tema fiscal com risco: carta da AT e possível coima" },
+          { "icon": "ban", "label": "Não dá parecer: tudo o que é fiscal é da equipa" },
+          { "icon": "message", "label": "Pede a carta por email, para ficar registada" },
+          { "icon": "clock", "label": "Marca como urgente e começa a contar as 24 horas" },
+          { "icon": "user-cog", "label": "Deixa o caso à equipa com um resumo, pronto para a manhã" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ 6. A CAIXA DA EQUIPA ============ -->
+  <section id="caixa" data-nav="A caixa">
+    <div class="container">
+      <p class="rubrica"><span>6</span> Onde a equipa vê tudo</p>
+      <h2>Os 150 grupos, numa só caixa.</h2>
+      <p class="lead">O que o agente fez, o que espera aprovação e o que é urgente. Separado como as vossas
+        pastas no OneDrive: empresas, freelancers e particulares.</p>
+      <p class="doc-nota">Maqueta navegável. Filtre por área e por etiqueta, e abra as conversas. Nomes e
+        valores ilustrativos.</p>
+      <div class="caixa-moldura holofote" data-entra="escala">
+        <div class="unibox" id="flInbox" style="--ub-accent: var(--brand-300); --ub-accent-fg: var(--brand-950)"></div>
+      </div>
+    </div>
+  </section>
+  <script type="application/json" id="flInbox-config">
+  {
+    "brand": "FintaxLab",
+    "teamName": "Equipa FintaxLab",
+    "teamInitials": "FL",
+    "teamShort": "Contabilidade",
+    "agentName": "Assistente FintaxLab",
+    "accounts": ["Empresas", "Freelancers", "Particulares"],
+    "channels": ["whatsapp", "email"],
+    "labels": {
+      "urgente": { "name": "Urgente", "color": "#ff9d9d", "priority": 0 },
+      "fatura": { "name": "Pedido de fatura", "color": "#bcb2ff", "priority": 1 },
+      "duvida": { "name": "Dúvida fiscal", "color": "#ffcb7d", "priority": 1 },
+      "iva": { "name": "IVA", "color": "#aeb8ff", "priority": 2 },
+      "documentos": { "name": "Documentos", "color": "#8adbff", "priority": 3 }
+    },
+    "conversations": [
+      {
+        "id": 1, "name": "Sarah Okafor", "initials": "SO", "phone": "+351 912 000 318",
+        "account": "Freelancers", "channel": "whatsapp", "label": "urgente", "tab": "unassigned",
+        "timeAgo": "10h", "unread": 1, "priority": "Alta",
+        "preview": "I got a letter from the tax office about my 2024 IRS...",
+        "messages": [
+          { "sender": "client", "text": "I got a letter from the tax office about my 2024 IRS. Do I have to pay a fine??", "time": "21:47" },
+          { "sender": "agent", "isAI": true, "text": "Hi Sarah, this is FintaxLab's AI assistant. Letters from the tax office are always handled by our team. Could you **email a photo of the letter**? You'll hear from us within 24 hours.", "time": "21:48" },
+          { "sender": "system", "text": "Marcado como urgente. A aguardar a equipa.", "time": "21:52" }
+        ],
+        "attributes": [ { "key": "Idioma", "value": "Inglês" }, { "key": "SLA", "value": "14 h restantes" } ],
+        "notes": ["Carta da AT sobre o IRS de 2024. Cliente vai enviar foto por email."]
+      },
+      {
+        "id": 2, "name": "Nomad Studio Lda", "initials": "NS", "phone": "+351 913 000 522",
+        "account": "Empresas", "channel": "whatsapp", "label": "fatura", "tab": "unassigned",
+        "timeAgo": "12m", "unread": 2,
+        "preview": "Invoice please: 12 hours of consulting to Aurora BV",
+        "messages": [
+          { "sender": "client", "text": "Invoice please: 12 hours of consulting to Aurora BV, 95 € per hour.", "time": "08:50" },
+          { "sender": "agent", "isAI": true, "text": "Got it: **Aurora BV, 12 h × 95 € = 1,140 €**. The invoice is ready and waiting for our team's approval.", "time": "08:51" }
+        ],
+        "attributes": [ { "key": "Idioma", "value": "Inglês" }, { "key": "Estado", "value": "Fatura por aprovar" } ],
+        "notes": ["Primeira fatura a Aurora BV: adquirente novo, confirmar o NIF antes de aprovar."]
+      },
+      {
+        "id": 3, "name": "Jonas Weber", "initials": "JW", "phone": "+351 914 000 207",
+        "account": "Freelancers", "channel": "whatsapp", "label": "fatura", "tab": "mine",
+        "timeAgo": "25m", "unread": 0,
+        "preview": "Done! Your invoice was issued in TOC Online...",
+        "messages": [
+          { "sender": "client", "text": "Could you issue my September invoice to Hafen Digital GmbH? 3,200 € for software development.", "time": "08:02" },
+          { "sender": "agent", "isAI": true, "text": "Same terms as your August invoice: **VAT reverse charge**, 30 days. Waiting for our team's approval.", "time": "08:03" },
+          { "sender": "system", "text": "Fatura aprovada pela equipa.", "time": "08:41" },
+          { "sender": "agent", "isAI": true, "text": "Done! Your invoice was issued in TOC Online and **emailed to Hafen Digital**.", "time": "08:41" }
+        ],
+        "attributes": [ { "key": "Idioma", "value": "Inglês" }, { "key": "Faturas este mês", "value": "2" } ],
+        "notes": []
+      },
+      {
+        "id": 4, "name": "Lucía Fernández", "initials": "LF", "phone": "+351 915 000 640",
+        "account": "Freelancers", "channel": "whatsapp", "label": "duvida", "tab": "unassigned",
+        "timeAgo": "1h", "unread": 1,
+        "preview": "¿Puedo deducir el alquiler de mi coworking?",
+        "messages": [
+          { "sender": "client", "text": "¿Puedo deducir el alquiler de mi coworking?", "time": "07:58" },
+          { "sender": "agent", "isAI": true, "text": "Hola Lucía, soy el asistente de IA de FintaxLab. Esa pregunta la responde **el equipo**, para darte una respuesta segura. Te contestan en menos de 24 horas.", "time": "07:58" },
+          { "sender": "system", "text": "Passado à equipa com o resumo.", "time": "07:59" }
+        ],
+        "attributes": [ { "key": "Idioma", "value": "Espanhol" }, { "key": "SLA", "value": "23 h restantes" } ],
+        "notes": []
+      },
+      {
+        "id": 5, "name": "Casa Lima Arquitetura", "initials": "CL", "phone": "+351 916 000 115",
+        "account": "Empresas", "channel": "whatsapp", "label": "documentos", "tab": "mine",
+        "timeAgo": "2h", "unread": 0,
+        "preview": "Enviada. Fica registado no histórico da fatura.",
+        "messages": [
+          { "sender": "client", "text": "Conseguem reenviar a fatura que emitimos à Construções Duarte em junho?", "time": "10:15" },
+          { "sender": "agent", "isAI": true, "text": "Encontrei **uma fatura de 12 de junho, 4.850 €**. Segue o PDF. Reenvio também para a Construções Duarte?", "time": "10:16" },
+          { "sender": "client", "text": "Sim, por favor.", "time": "10:19" },
+          { "sender": "agent", "isAI": true, "text": "Enviada. Fica registado no histórico da fatura.", "time": "10:19" }
+        ],
+        "attributes": [ { "key": "Contacto", "value": "Rita Lima" }, { "key": "Idioma", "value": "Português" } ],
+        "notes": []
+      },
+      {
+        "id": 6, "name": "Studio Norte, Paulo Martins", "initials": "PM", "phone": "+351 917 000 904",
+        "account": "Empresas", "channel": "whatsapp", "label": "iva", "tab": "mine",
+        "timeAgo": "ontem", "unread": 0,
+        "preview": "Pedido passado à equipa, com o mapa em anexo.",
+        "messages": [
+          { "sender": "agent", "isAI": true, "text": "A equipa já submeteu a sua **declaração periódica de IVA**. Seguem o comprovativo e o mapa de exploração.", "time": "16:05" },
+          { "sender": "client", "text": "Porque é que é mais alto do que no último trimestre?", "time": "17:30" },
+          { "sender": "system", "text": "Pedido passado à equipa, com o mapa em anexo.", "time": "17:34" }
+        ],
+        "attributes": [ { "key": "Idioma", "value": "Português" }, { "key": "Declaração", "value": "Submetida" } ],
+        "notes": ["Quer rever o aumento do IVA. Mapa de exploração em anexo."]
+      },
+      {
+        "id": 7, "name": "Marco Bianchi", "initials": "MB", "email": "marco.bianchi@exemplo.it",
+        "account": "Particulares", "channel": "email", "label": "documentos", "tab": "mine",
+        "timeAgo": "ontem", "unread": 0,
+        "preview": "Here are my three payslips for the IRS.",
+        "messages": [
+          { "sender": "client", "text": "Here are my three payslips for the IRS.", "time": "18:20" },
+          { "sender": "agent", "isAI": true, "text": "Thank you, Marco. **3 payslips received**. The team will include them in your IRS return.", "time": "18:21" }
+        ],
+        "attributes": [ { "key": "Idioma", "value": "Inglês" }, { "key": "Anexos", "value": "3 PDF" } ],
+        "notes": []
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ 7. DO WHATSAPP AO TOC ONLINE ============ -->
+  <section class="faixa" id="integracao">
+    <div class="container">
+      <p class="rubrica"><span>7</span> Do WhatsApp ao TOC Online</p>
+      <h2>O caminho de um pedido, do grupo até à fatura emitida.</h2>
+      <div class="fluxo" id="flFluxo" style="margin-top: var(--s-5)"></div>
+    </div>
+  </section>
+  <script type="application/json" id="flFluxo-config">
+  {
+    "stepMs": 1800,
+    "channels": [
+      { "icon": "whatsapp", "label": "Grupos de WhatsApp" },
+      { "icon": "message", "label": "Email" }
+    ],
+    "nodes": [
+      { "icon": "message", "title": "O pedido chega ao grupo", "detail": "Um dos 150, em qualquer língua.", "tone": "brand" },
+      { "icon": "brain", "title": "O agente lê e classifica", "detail": "Fatura, segunda via, IVA, dúvida ou urgência.", "tone": "teal" },
+      { "icon": "database", "title": "Prepara no TOC Online", "detail": "Cliente, adquirente e o regime da última fatura.", "tone": "teal" },
+      { "icon": "user-cog", "title": "A equipa aprova", "detail": "Um clique. As dúvidas fiscais vêm direto para vocês.", "tone": "teal" },
+      { "icon": "send", "title": "Emitida, enviada, confirmada", "detail": "O TOC Online emite e envia. O agente confirma no grupo.", "tone": "brand" }
+    ],
+    "note": "A fatura é sempre emitida pelo TOC Online, que é o programa certificado. O agente prepara, a equipa aprova."
+  }
+  </script>
+
+  <!-- ============ 8. LIMITES ============ -->
+  <section id="limites">
+    <div class="container">
+      <p class="rubrica"><span>8</span> Limites</p>
+      <h2>O que o agente faz e o que fica com a equipa.</h2>
+      <p class="lead">Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
+
+      <div class="tres-regras" data-entra="sobe">
+        <article>
+          <span class="tr-n">1</span>
+          <h3>Não inventa</h3>
+          <p>Responde só a partir do TOC Online, dos documentos de cada cliente e da base de conhecimento
+            que a FintaxLab aprovar.</p>
+        </article>
+        <article>
+          <span class="tr-n">2</span>
+          <h3>Não dá parecer fiscal</h3>
+          <p>Cartas das Finanças, deduções, coimas, planeamento: passa à equipa, com um resumo pronto a
+            pegar.</p>
+        </article>
+        <article>
+          <span class="tr-n">3</span>
+          <h3>Diz sempre que é IA</h3>
+          <p>Identifica-se como assistente de IA da FintaxLab, como a lei exige desde agosto, e passa a uma
+            pessoa quando o cliente pede.</p>
+        </article>
+      </div>
+
+      <div class="regras" data-entra="sobe">
+        <article class="faz">
+          <h3>Faz sozinho</h3>
+          <ul>
+            <li>Lê e classifica todas as mensagens dos grupos</li>
+            <li>Responde a pedidos simples e a segundas vias</li>
+            <li>Prepara as faturas no TOC Online</li>
+            <li>Envia as declarações que a equipa já submeteu</li>
+            <li>Conta as 24 horas de cada pedido e avisa</li>
+          </ul>
+        </article>
+        <article class="pergunta">
+          <h3>Pergunta antes</h3>
+          <ul>
+            <li>A emissão de cada fatura: no arranque, todas passam pela equipa</li>
+            <li>Envios a terceiros, como os adquirentes</li>
+            <li>Clientes ou adquirentes sem histórico</li>
+            <li>Valores ou regimes fora do habitual</li>
+          </ul>
+        </article>
+        <article class="nunca">
+          <h3>Nunca faz</h3>
+          <ul>
+            <li>Não submete nada à AT nem ao Portal das Finanças</li>
+            <li>Não altera nem anula faturas já emitidas</li>
+            <li>Não interpreta cartas das Finanças</li>
+            <li>Não esconde que é um assistente de IA</li>
+            <li>Não responde fora da base de conhecimento</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="apanhado">
+        <h3>A fatura continua a sair do TOC Online</h3>
+        <p>A fatura é um documento certificado pela AT: é o TOC Online que a emite, numera e comunica. O
+          agente prepara os dados e pede a emissão pela API, que o Miguel já tinha visto que existe. Na
+          primeira semana confirmamos convosco o acesso à API para as empresas dos vossos clientes. Quando
+          a equipa confiar, os clientes recorrentes podem passar a emissão automática. Até lá, cada fatura
+          espera por um clique.</p>
+      </aside>
+
+      <aside class="prova" data-entra="sobe">
+        <p class="prova-k">Já fazemos isto</p>
+        <h3>Em clientes com o mesmo problema.</h3>
+        <div class="prova-grid">
+          <div>
+            <b>Luxflor, distribuição B2B</b>
+            <p>695 clientes em WhatsApp que antes só três comerciais viam. Hoje as conversas estão 100%
+              visíveis à gestão: quando alguém falta, outro pega sem o cliente sentir. Em produção.</p>
+            <a class="prova-link" href="https://aisolutions.pt/case-studies/luxflor-centralization" target="_blank" rel="noopener">Ler o caso da Luxflor</a>
+          </div>
+          <div>
+            <b>Escola de Condução Abadias</b>
+            <p>Muitos alunos estrangeiros e uma equipa que não conseguia atender em inglês. O agente passou
+              a responder em inglês e espanhol de forma nativa. Em produção.</p>
+            <a class="prova-link" href="https://aisolutions.pt/case-studies/abadias-gestao-alunos-whatsapp" target="_blank" rel="noopener">Ler o caso da Abadias</a>
+          </div>
+        </div>
+      </aside>
+
+      <details class="detalhe">
+        <summary>Onde ficam os vossos dados</summary>
+        <ul>
+          <li>Os dados dos vossos clientes não são usados para treinar modelos.</li>
+          <li>Acedem à caixa as pessoas que autorizarem, e a AI Solutions para suporte.</li>
+          <li>O agente identifica-se sempre como assistente de IA em todas as mensagens que envia.</li>
+          <li>Se o serviço parar, as faturas continuam no TOC Online, que é a fonte.</li>
+          <li>O acordo de tratamento de dados (RGPD) segue com a proposta formal, para assinar antes de
+            arrancar.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 9. INVESTIMENTO ============ -->
+  <section class="faixa-clara" id="investimento" data-nav="Investimento">
+    <div class="container">
+      <p class="rubrica"><span>9</span> Investimento</p>
+      <h2>O que custa e o que inclui.</h2>
+
+      <p class="ancora" data-entra="sobe">Hoje são <b class="num">44 a 66 horas</b> por mês só em pedidos de
+        fatura. Se o agente devolver apenas metade à equipa, a mensalidade fica entre <b class="num">6 €</b>
+        e <b class="num">9 €</b> por hora devolvida.</p>
+
+      <table class="fatura" data-entra="escala">
+        <caption class="so-leitor">Valores da proposta</caption>
+        <thead>
+          <tr><th scope="col">Descrição</th><th scope="col" class="num">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              Implementação
+              <small>Auditoria à comunicação nas duas primeiras semanas, com relatório de KPIs. Agente nos
+                grupos de WhatsApp, na língua de cada cliente. Ligação ao TOC Online para faturas e
+                segundas vias. Envio das declarações de IVA com o mapa de exploração. Caixa unificada para
+                a equipa. Pagamento único.</small>
+            </th>
+            <td class="num">3.100 €</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Mensalidade
+              <small>Alojamento, IA, suporte e melhoria contínua: a equipa envia correções e o agente fica
+                mais autónomo mês a mês.</small>
+            </th>
+            <td class="num">200 € <i>/ mês</i></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><th scope="row">Implementação sem IVA</th><td class="num">3.100 €</td></tr>
+          <tr><th scope="row">IVA 23%</th><td class="num">713 €</td></tr>
+          <tr class="total"><th scope="row">Total da implementação</th><td class="num">3.813 €</td></tr>
+        </tfoot>
+      </table>
+      <p class="doc-nota">A mensalidade com IVA fica em 246 € por mês.</p>
+    </div>
+  </section>
+
+  <!-- ============ 10. CRONOGRAMA ============ -->
+  <section id="prazo">
+    <div class="container">
+      <p class="rubrica"><span>10</span> Cerca de seis semanas, em conjunto</p>
+      <h2>Construímos, a equipa dá feedback, ajustamos. Só avança quando estiverem satisfeitos.</h2>
+      <ol class="fases" data-entra="sobe">
+        <li>
+          <span class="quando">Semanas 1 e 2</span>
+          <span class="o-que">Acessos e auditoria</span>
+          <p>Ligamos o WhatsApp e o email e medimos a comunicação real: dias com mais mensagens, temas,
+            tempo médio de resposta. Sessão com a equipa sobre o que muda para cada pessoa.</p>
+        </li>
+        <li>
+          <span class="quando">Semanas 3 e 4</span>
+          <span class="o-que">Agente e TOC Online</span>
+          <p>Base de conhecimento feita com a equipa, ligação à API, regras de aprovação e de
+            encaminhamento.</p>
+        </li>
+        <li>
+          <span class="quando">Semana 5</span>
+          <span class="o-que">Testes lado a lado</span>
+          <p>Pedidos reais tratados em paralelo com a forma atual. Nada chega aos clientes sem a equipa
+            ver.</p>
+        </li>
+        <li>
+          <span class="quando">Semana 6</span>
+          <span class="o-que">Arranque</span>
+          <p>O agente entra nos grupos, com ajustes finos. Primeiro relatório de KPIs, para comparar com a
+            auditoria.</p>
+        </li>
+      </ol>
+      <p class="doc-nota">As semanas contam a partir da adjudicação.</p>
+    </div>
+  </section>
+
+  <!-- ============ 11. O PLANO ============ -->
+  <section class="faixa-clara" id="plano" data-nav="O plano">
+    <div class="container">
+      <p class="rubrica"><span>11</span> O plano, fase a fase</p>
+      <h2>Pediu a visão global, não só o passo imediato. É esta.</h2>
+      <p class="lead">Só a primeira fase faz parte desta proposta. As seguintes avançam quando fizerem
+        sentido para vocês, com condições de cliente da casa.</p>
+
+      <ol class="plano" data-entra="sobe">
+        <li class="agora">
+          <span class="plano-k">Fase 1 · esta proposta</span>
+          <h3>Os pedidos no WhatsApp e o TOC Online</h3>
+          <p>Tudo o que está nesta página: faturas, segundas vias, declarações de IVA e a caixa da
+            equipa.</p>
+          <span class="plano-v num">3.100 € + 200 € / mês</span>
+        </li>
+        <li>
+          <span class="plano-k">Fase 2</span>
+          <h3>O FinTax Brain</h3>
+          <p>O agente interno da equipa, ligado à base de conhecimento que quer construir, acessível pelo
+            WhatsApp em vez da janela do ChatGPT. Serve a equipa, não o cliente, e tem um valor
+            próprio.</p>
+        </li>
+        <li>
+          <span class="plano-k">Fase 3</span>
+          <h3>Relatórios mensais para os clientes</h3>
+          <p>Gerados a partir dos documentos já processados, com o que a FintaxLab quiser mostrar a cada
+            cliente no fim do mês.</p>
+        </li>
+        <li>
+          <span class="plano-k">Mais à frente</span>
+          <h3>O que ficou em aberto</h3>
+          <p>Publicações sobre temas fiscais no LinkedIn, lembretes e convites automáticos, e a qualificação
+            de contactos se investirem em anúncios.</p>
+        </li>
+      </ol>
+
+      <aside class="apanhado">
+        <h3>O inventário de processos que pediu</h3>
+        <p>A auditoria das duas primeiras semanas já mede a comunicação e está incluída. O levantamento
+          completo dos processos, feito com a equipa e com uma visão de fora, tem proposta própria.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 12. FECHO ============ -->
+  <section class="fecho secao-ampla" id="fecho" data-nav="Avançar" data-nav-cta>
+    <div class="container">
+      <p class="rubrica"><span>12</span> Próximos passos</p>
+      <h2 data-entra="sobe">Avançamos, Miguel?</h2>
+      <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmar por
+        escrito.</p>
+      <ol class="passos-fecho" data-entra="sobe">
+        <li>
+          <span class="n">1</span>
+          <b>O seu sim</b>
+          <p>Por WhatsApp ou por email, com as dúvidas que ainda tenha.</p>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <b>A proposta formal</b>
+          <p>O documento com o âmbito, os valores e as condições desta página, e o acordo de dados, para
+            assinar.</p>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <b>Semana 1: acessos e equipa</b>
+          <p>WhatsApp, email e TOC Online. E a sessão com a equipa sobre o que muda.</p>
+        </li>
+      </ol>
+      <div class="fecho-acoes">
+        <a class="btn btn-primario premivel" data-iman="0.2" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20proposta%20da%20FintaxLab%20e%20quero%20avan%C3%A7ar." target="_blank" rel="noopener">Quero avançar</a>
+        <a class="btn btn-secundario" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20proposta%20da%20FintaxLab%20e%20tenho%20uma%20pergunta%3A%20" target="_blank" rel="noopener">Tenho uma pergunta</a>
+      </div>
+      <p class="fecho-contacto">Manuel Condeço, AI Solutions<br>
+        <a href="tel:+351964251889">964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <span class="rodape-marca"><img src="assets/img/logo.png" alt="" width="300" height="225" class="rodape-logo"></span>
+    Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a FintaxLab, Accounting e
+    Consulting, 28 de setembro de 2026.<br>
+    Manuel Condeço, manuel.condeco@aisolutions.pt
+    <span class="disclaimer">
+      As conversas, os clientes, os adquirentes e os valores das simulações são inventados. Os números da
+      secção 3 são os que a FintaxLab indicou na reunião de 21 de setembro.
+    </span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="../shared/unibox/unibox.js"></script>
+<script>
+  chatRaciocinio('flDemo');
+  fluxo('flFluxo');
+  terminal('flTerm');
+  unibox('flInbox');
+</script>
+</body>
+</html>
