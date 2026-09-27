@@ -35,7 +35,7 @@ Cria uma página web de apresentação personalizada para uma lead, com o brandi
 ## Processo (seguir por ordem)
 
 ### 1. Briefing (perguntar só o que faltar)
-- Nome da lead, site/Instagram, setor, nome do decisor
+- Nome da lead, setor, nome do decisor. **O site não se pergunta:** vem do pedido, ou da coluna `website` da lead no CRM, ou do domínio do email dela (ver `referencias/branding-lead.md`, ponto 1)
 - Tipo de demo (A a F do guia "05-criar-demos"): na dúvida, tipo C (à medida) em formato página
 - Formato: **deck narrativo** (default, vender uma visão), **demo de plataforma** (a lead vai usar uma ferramenta: orçamentação, CRM, faturação) ou **slide** (apresentação presencial guiada). Ver `referencias/catalogo-seccoes.md`
 - O que a solução vai fazer (1 frase) e valores da proposta, se existirem
@@ -43,7 +43,7 @@ Cria uma página web de apresentação personalizada para uma lead, com o brandi
 - Propor o slug: `[lead-em-kebab]-[4 chars aleatórios]` (ex: `cfgroup-k3x9`). Nunca usar os nomes reservados starter, estilos, shared, skill, scripts
 
 ### 2. Branding da lead
-Seguir `referencias/branding-lead.md`: extrair logo e cores do site dela, gerar a paleta HSL, guardar os assets na pasta da apresentação.
+Automático, sem pedir nada ao comercial: `node scripts/marca.mjs [site] [slug]` tira do site dela o logótipo (SVG quando existe), as cores da marca com os tokens sugeridos, a fotografia principal, as fontes e o vocabulário, e avisa dos problemas (logótipo de fundo branco, escuro sobre escuro, site sem cor de marca, site que bloqueia robôs). **Ler o `marca-relatorio.png` e agir sobre os avisos** seguindo `referencias/branding-lead.md`. Só se pergunta ao comercial quando o site bloqueia ou não há logótipo com confiança.
 
 ### 3. Direção de design (ANTES de qualquer HTML)
 - Ler `estilos/registry.md` e o `style.md` do estilo escolhido (mais os dos estilos a misturar, blocos por nome)
@@ -116,7 +116,7 @@ Seguir `referencias/publicar.md`. Resultado: URL online verificado.
 Se o design final ficou bom e diferente do estilo de origem, perguntar "quero dar um nome a este estilo para reutilizar?" e seguir `referencias/registar-estilo.md`.
 
 ### 8. Entrega
-Responder com: URL final, password (se ativada), e um guião de 3 pontos para o comercial usar na reunião (onde está o momento uau, o que clicar, como fechar). Lembrar que o follow-up se faz nas 48 horas seguintes ao envio (as propostas ganhas fecham em média 2,5 dias depois de vistas), e sugerir ao comercial gravar um vídeo de 60 a 90 segundos para o topo da página (ver `fecho.md`, 1.6).
+Responder com: URL final, password (se ativada), de onde veio o logótipo e a cor da marca (uma linha), e um guião de 3 pontos para o comercial usar na reunião (onde está o momento uau, o que clicar, como fechar). Lembrar que o follow-up se faz nas 48 horas seguintes ao envio (as propostas ganhas fecham em média 2,5 dias depois de vistas), e sugerir ao comercial gravar um vídeo de 60 a 90 segundos para o topo da página (ver `fecho.md`, 1.6).
 
 ## Mapa dos ficheiros de referência
 
@@ -129,7 +129,7 @@ Responder com: URL final, password (se ativada), e um guião de 3 pontos para o 
 | `copy-padroes.md` | Biblioteca de copy |
 | `deck-componentes.md` | chat+raciocínio, fluxo, calculadora, terminal |
 | `unibox-config.md` | Caixa de entrada unificada |
-| `branding-lead.md` | Logótipo e paleta da lead |
+| `branding-lead.md` | **Site da lead (CRM), `scripts/marca.mjs`, avisos do logótipo, paleta, fotografia** |
 | `publicar.md` | Git, GitHub Pages, password |
 | `registar-estilo.md` | Guardar um estilo na biblioteca |
 

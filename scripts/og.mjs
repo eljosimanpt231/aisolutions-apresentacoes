@@ -13,7 +13,9 @@
    ============================================================ */
 import { chromium } from 'playwright';
 import { existsSync, mkdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { readFile } from 'node:fs/promises';
+import { createServer } from 'node:http';
+import { join, extname, normalize } from 'node:path';
 
 const slug = process.argv[2];
 if (!slug) { console.error('uso: node scripts/og.mjs [slug]'); process.exit(1); }
@@ -22,19 +24,35 @@ const raiz = process.cwd();
 const destino = join(raiz, slug, 'assets', 'img');
 mkdirSync(destino, { recursive: true });
 
+/* Por HTTP e não como ficheiro: aberta como ficheiro, as fontes
+   auto-alojadas são bloqueadas por CORS e o cartão saía com a letra errada. */
+const TIPOS = { '.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.json':'application/json',
+  '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.svg':'image/svg+xml', '.webp':'image/webp', '.woff2':'font/woff2' };
+const servidor = createServer(async (req, res) => {
+  try {
+    let c = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    if (c.endsWith('/')) c += 'index.html';
+    const f = join(raiz, normalize(c).replace(/^(\.\.[/\\])+/, ''));
+    const d = await readFile(f);
+    res.writeHead(200, { 'Content-Type': TIPOS[extname(f).toLowerCase()] || 'application/octet-stream' }); res.end(d);
+  } catch { res.writeHead(404); res.end('404'); }
+});
+await new Promise(r => servidor.listen(0, '127.0.0.1', r));
+const BASE = `http://127.0.0.1:${servidor.address().port}`;
+
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 2 });
 const p = await ctx.newPage();
 
 const personalizado = join(raiz, slug, 'og.html');
 if (existsSync(personalizado)) {
-  await p.goto('file://' + personalizado);
+  await p.goto(`${BASE}/${slug}/og.html`);
   await p.waitForTimeout(800);
   await p.screenshot({ path: join(destino, 'og.png') });
   console.log('og.png a partir de og.html');
 } else {
   /* 1. ler os tokens e metadados da apresentação */
-  await p.goto('file://' + join(raiz, slug, 'index.html'));
+  await p.goto(`${BASE}/${slug}/index.html`);
   await p.waitForTimeout(1200);
 
   const d = await p.evaluate(() => {
@@ -43,8 +61,11 @@ if (existsSync(personalizado)) {
     const meta = (prop) => document.querySelector(`meta[property="${prop}"]`)?.content || '';
     /* o logótipo da lead pode estar em várias classes conforme o arquétipo:
        apanhar a primeira imagem plausível no primeiro ecrã */
-    const logo = document.querySelector(
-      '.marca img, .doc-logo, .brandbar img, .logo-pill img, header img, main img');
+    /* Por ordem de prioridade, não pela ordem no documento: com um
+       seletor único, a fotografia do hero (que vem antes no HTML) ganhava
+       ao logótipo. */
+    const logo = ['.doc-logo', '.marca img', '.brandbar img', '.logo-pill img', 'img[src*="logo"]', 'header img', 'main img']
+      .map(sel => document.querySelector(sel)).find(Boolean);
     return {
       titulo: meta('og:title') || document.title,
       descricao: meta('og:description') || document.querySelector('meta[name=description]')?.content || '',
@@ -96,7 +117,7 @@ if (existsSync(personalizado)) {
 </body></html>`;
 
   const p2 = await ctx.newPage();
-  await p2.goto('file://' + join(raiz, slug, 'index.html'));   /* fixa a base para os caminhos relativos */
+  await p2.goto(`${BASE}/${slug}/index.html`);   /* fixa a base para os caminhos relativos */
   await p2.setContent(html, { waitUntil: 'load' });
   await p2.waitForTimeout(900);
   await p2.screenshot({ path: join(destino, 'og.png') });
@@ -104,6 +125,7 @@ if (existsSync(personalizado)) {
 }
 
 await b.close();
+servidor.close();
 console.log(`\nConfirmar no index.html:
   <meta property="og:image" content="https://apresentacoes.aisolutions.pt/${slug}/assets/img/og.png">
 Depois de publicar, validar o cartão em opengraph.xyz ou enviando o link a si próprio.`);
