@@ -1,0 +1,246 @@
+/* ============================================================
+   VOGAL: blocos próprios desta proposta
+   Só tokens, zero cores directas. Mesma camada do documento.css.
+   ============================================================ */
+
+@layer componentes {
+
+  /* ---------- Marca em texto ----------
+     Sem logótipo confirmado: o nome na letra display, com o kicker da
+     parceria em pequeno. Nítido a qualquer tamanho. */
+  .doc-marca {
+    font-family: var(--font-display); font-weight: 600; font-size: var(--fs-2);
+    letter-spacing: -0.02em; color: var(--text); line-height: 1;
+  }
+  .doc-marca i {
+    font-style: normal; font-family: var(--font-mono); font-weight: 400;
+    font-size: var(--fs--2); letter-spacing: 0.04em; color: var(--acento-texto);
+    margin-left: var(--s-2); vertical-align: middle;
+  }
+  .rodape-marca {
+    font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1);
+    color: var(--text); margin-bottom: var(--s-3);
+  }
+
+  .legenda-fina { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--faint); max-width: 70ch; }
+  .duas .horas {
+    margin-top: var(--s-4); font-family: var(--font-display);
+    font-size: var(--fs-1); line-height: 1.35; color: var(--text); max-width: 30ch;
+  }
+  .duas .horas b { font-weight: 400; color: var(--brand-300); }
+
+  /* ---------- O funil à escala ----------
+     As barras são proporcionais aos números dele (300, 10, 3). À escala
+     linear o 3 quase desaparece, e é esse o ponto. */
+  .funil { margin-top: var(--s-6); display: grid; gap: var(--s-3); }
+  .funil-linha {
+    display: grid; align-items: center; gap: var(--s-2) var(--s-4);
+    grid-template-columns: 5ch minmax(0, 1fr);
+    grid-template-areas: "n pista" ". d";
+  }
+  .funil-n {
+    grid-area: n; font-family: var(--font-display); font-size: var(--fs-3);
+    line-height: 1; color: var(--text); text-align: right;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .funil-pista {
+    grid-area: pista; height: 14px; border-radius: var(--r-pill);
+    background: var(--brand-a10); overflow: hidden;
+  }
+  .funil-barra {
+    display: block; height: 100%; border-radius: inherit;
+    width: max(10px, calc(var(--v) / 300 * 100%));
+    background: linear-gradient(90deg in oklab, var(--brand-600), var(--brand-300));
+    transform-origin: left center;
+  }
+  .funil-linha--fim .funil-barra {
+    background: linear-gradient(90deg in oklab, hsl(var(--accent-hsl)), hsl(var(--accent-hsl) / .75));
+  }
+  .funil-linha--fim .funil-n { color: hsl(var(--accent-hsl)); }
+  .funil-d { grid-area: d; color: var(--muted); font-size: var(--fs--1); }
+
+  /* ---------- Moldura da Unibox ---------- */
+  .caixa-moldura {
+    margin-top: var(--s-5); border-radius: var(--r-4); overflow: hidden;
+    box-shadow: var(--e3); border: 1px solid var(--border);
+  }
+
+  /* ---------- As três regras do agente (setor regulado) ---------- */
+  .tres-regras {
+    display: grid; gap: var(--s-4); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+  .tres-regras article {
+    position: relative; padding: var(--s-4);
+    border-radius: var(--r-3); background: var(--surface); box-shadow: var(--e1);
+    border-top: 2px solid var(--brand-300);
+  }
+  .tres-regras .tr-n { font-family: var(--font-display); font-size: var(--fs-3); line-height: 1; color: var(--brand-300); }
+  .tres-regras h3 { margin-top: var(--s-2); font-family: var(--font-body); font-size: var(--fs-0); font-weight: 600; }
+  .tres-regras p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
+
+  /* ---------- Provas lado a lado ---------- */
+  .prova-grid {
+    display: grid; gap: var(--s-4) var(--s-5); margin-top: var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  }
+  .prova-grid > div { border-top: 1px solid var(--border); padding-top: var(--s-3); }
+  .prova-grid b { display: block; color: var(--text); font-weight: 600; font-size: var(--fs-0); }
+  .prova .prova-grid p { margin-top: var(--s-2); font-size: var(--fs--1); }
+  .prova-citacao {
+    margin-top: var(--s-3); padding-left: var(--s-3);
+    border-left: 2px solid hsl(var(--accent-hsl) / .7);
+    font-family: var(--font-display); font-size: var(--fs-0); line-height: 1.45; color: var(--text);
+  }
+  .prova .prova-citacao p { margin-top: 0; color: var(--text); font-size: var(--fs-0); }
+  .prova-citacao p::before, .objetivo p::before { content: "\201C"; }
+  .prova-citacao p::after, .objetivo p::after { content: "\201D"; }
+  .prova-citacao cite, .objetivo cite {
+    display: block; margin-top: var(--s-2); font-family: var(--font-body);
+    font-style: normal; font-size: var(--fs--2); color: var(--faint);
+  }
+  .prova-link {
+    display: inline-block; margin-top: var(--s-2); padding-block: var(--s-1);
+    font-size: var(--fs--1); color: var(--acento-texto); text-underline-offset: 3px;
+  }
+
+  /* ---------- A frase dele, antes das opções ---------- */
+  .objetivo {
+    margin-top: var(--s-5); max-width: 44ch;
+    font-family: var(--font-display); font-style: italic; font-size: var(--fs-1);
+    line-height: 1.4; color: var(--text);
+  }
+
+  /* ---------- As duas opções ----------
+     A conjunta vem primeiro e tem a superfície acesa. Sem selo de
+     "recomendado": a diferença diz-se em factos, mais abaixo. */
+  .opcoes {
+    display: grid; gap: var(--s-4); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    align-items: stretch;
+  }
+  .opcao {
+    display: flex; flex-direction: column; gap: var(--s-3);
+    padding: var(--s-5); border-radius: var(--r-4);
+    background: var(--surface); box-shadow: var(--e1);
+  }
+  .opcao--conjunto {
+    background: linear-gradient(160deg in oklab,
+      color-mix(in oklab, var(--brand-500) 18%, var(--surface)) 0%,
+      var(--surface) 70%);
+    border: 1px solid color-mix(in oklab, var(--brand-400) 45%, transparent);
+    box-shadow: var(--e3), 0 0 60px -20px hsl(var(--brand-hsl) / .55);
+  }
+  .opcao--separado { border: 1px solid var(--border); }
+  .opcao-k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--acento-texto); letter-spacing: .02em; }
+  .opcao--separado .opcao-k { color: var(--muted); }
+  .opcao h3 { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-2); line-height: 1.15; max-width: 22ch; }
+
+  .opcao-valores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); margin-top: var(--s-2); }
+  .opcao-valores div { border-top: 1px solid var(--border); padding-top: var(--s-2); }
+  .opcao-valores dt { font-size: var(--fs--2); color: var(--muted); }
+  .opcao-valores dd {
+    margin-top: var(--s-1); font-family: var(--font-display); font-weight: 600;
+    font-size: var(--fs-4); line-height: 1; color: var(--text);
+    font-variant-numeric: tabular-nums lining-nums; letter-spacing: -0.02em;
+  }
+  .opcao-valores dd i { font-style: normal; font-family: var(--font-body); font-weight: 400; font-size: var(--fs--1); color: var(--muted); letter-spacing: 0; }
+
+  .opcao-tabela { width: 100%; border-collapse: collapse; margin-top: var(--s-2); font-size: var(--fs--1); }
+  .opcao-tabela th, .opcao-tabela td { padding: var(--s-2) 0; text-align: left; border-bottom: 1px solid var(--hairline); }
+  .opcao-tabela thead th { font-weight: 400; font-size: var(--fs--2); color: var(--muted); }
+  .opcao-tabela .num { text-align: right; padding-left: var(--s-3); white-space: nowrap; font-variant-numeric: tabular-nums lining-nums; }
+  .opcao-tabela tbody th { font-weight: 400; color: var(--text); }
+  .opcao-tabela tbody td { color: var(--text); }
+  .opcao-tabela tfoot th, .opcao-tabela tfoot td {
+    border-bottom: 0; padding-top: var(--s-3);
+    font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1); color: var(--text);
+  }
+
+  .opcao-lista { list-style: none; display: grid; gap: var(--s-2); margin-top: auto; padding-top: var(--s-3); }
+  .opcao-lista li { position: relative; padding-left: var(--s-4); font-size: var(--fs--1); color: var(--muted); }
+  .opcao-lista li::before {
+    content: ""; position: absolute; left: 2px; top: .6em; width: 8px; height: 8px;
+    border-radius: var(--r-pill); background: var(--brand-400);
+  }
+  .opcao--separado .opcao-lista li::before { background: var(--border-strong); }
+  .opcao-lista b { color: var(--text); font-weight: 600; }
+
+  /* ---------- A diferença, em factos ---------- */
+  .diferenca {
+    margin-top: var(--s-5); padding: var(--s-4) var(--s-5); border-radius: var(--r-4);
+    border: 1px solid hsl(var(--accent-hsl) / .35);
+    background: linear-gradient(120deg in oklab, hsl(var(--accent-hsl) / .10), transparent 70%);
+  }
+  .diferenca-k { font-family: var(--font-mono); font-size: var(--fs--2); color: hsl(var(--accent-hsl)); }
+  .diferenca ul {
+    list-style: none; margin-top: var(--s-3); display: grid; gap: var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  }
+  .diferenca b {
+    display: block; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-3);
+    line-height: 1; color: var(--text); font-variant-numeric: tabular-nums lining-nums;
+  }
+  .diferenca span { display: block; margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); max-width: 24ch; }
+
+  /* ---------- Linha do tempo das duas opções ---------- */
+  .linha-tempo {
+    margin-top: var(--s-6); padding: var(--s-5); border-radius: var(--r-4);
+    background: var(--surface); box-shadow: var(--e1);
+    --rot: 9.5rem;
+  }
+  .lt-escala {
+    display: grid; grid-template-columns: repeat(12, minmax(0, 1fr));
+    margin-left: calc(var(--rot) + var(--s-3));
+    font-family: var(--font-mono); font-size: var(--fs--2); color: var(--faint); text-align: center;
+  }
+  .lt-grupo { margin-top: var(--s-4); display: grid; gap: var(--s-2); }
+  .lt-grupo + .lt-grupo { padding-top: var(--s-4); border-top: 1px solid var(--hairline); }
+  .lt-nome { font-weight: 600; font-size: var(--fs--1); color: var(--text); }
+  .lt-linha { display: grid; grid-template-columns: var(--rot) minmax(0, 1fr); gap: var(--s-3); align-items: center; }
+  .lt-rot { font-size: var(--fs--2); color: var(--muted); }
+  .lt-pista {
+    position: relative; height: 12px; border-radius: var(--r-pill);
+    background: repeating-linear-gradient(90deg, var(--hairline) 0 1px, transparent 1px calc(100% / 12));
+  }
+  .lt-barra {
+    position: absolute; top: 0; bottom: 0; border-radius: var(--r-pill);
+    left: calc((var(--de) - 1) / 12 * 100%);
+    width: calc((var(--ate) - var(--de) + 1) / 12 * 100%);
+    background: linear-gradient(90deg in oklab, var(--brand-600), var(--brand-300));
+    transform-origin: left center;
+  }
+  .lt-grupo--separado .lt-barra { background: var(--surface-3); box-shadow: inset 0 0 0 1px var(--border-strong); }
+  .lt-fim { font-size: var(--fs--2); color: var(--acento-texto); margin-left: calc(var(--rot) + var(--s-3)); }
+  .lt-grupo--separado .lt-fim { color: var(--muted); }
+
+  @media (max-width: 560px) {
+    .linha-tempo { padding: var(--s-4); --rot: 0px; }
+    .lt-linha { grid-template-columns: minmax(0, 1fr); gap: var(--s-1); }
+    .lt-escala, .lt-fim { margin-left: 0; }
+    .funil-linha { grid-template-columns: 4ch minmax(0, 1fr); }
+  }
+}
+
+/* ---------- As barras crescem quando o bloco entra ----------
+   O estado final é o default: sem JS, sem GSAP ou com movimento reduzido,
+   as barras estão no tamanho certo. A classe `entrou` vem do motion.js. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .funil .funil-barra,
+  .js .linha-tempo .lt-barra { transition: transform 1100ms var(--e-expo, cubic-bezier(.16,1,.3,1)); }
+  .js .funil:not(.entrou) .funil-barra,
+  .js .linha-tempo:not(.entrou) .lt-barra { transform: scaleX(0); }
+  .js .funil .funil-linha:nth-child(2) .funil-barra { transition-delay: 180ms; }
+  .js .funil .funil-linha:nth-child(3) .funil-barra { transition-delay: 360ms; }
+  .js .linha-tempo .lt-grupo--separado .lt-linha:nth-of-type(2) .lt-barra { transition-delay: 500ms; }
+}
+
+/* ---------- Unibox ----------
+   O unibox.css não está em camada nenhuma; estas correcções ficam de fora
+   de propósito, com o acento no azul claro da marca. */
+#vgInbox {
+  --ub-accent-weak: color-mix(in oklab, var(--brand-300) 14%, transparent);
+  --ub-accent-weak2: color-mix(in oklab, var(--brand-300) 20%, transparent);
+}
+#vgInbox .ub-row.out .ub-bubble-time { color: color-mix(in oklab, var(--brand-950) 85%, transparent); }
+#vgInbox .ub-subbtn.is-cur { background: var(--ub-accent-weak2); }
