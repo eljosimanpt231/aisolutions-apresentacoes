@@ -275,96 +275,8 @@
 }
 </script>
 
-<!-- ============ 6. CHAT + RACIOCÍNIO: quando o agente pergunta ============ -->
-<section id="perguntas">
-  <div class="container">
-    <div class="sec-head">
-      <span class="eyebrow">Quando o agente tem dúvidas</span>
-      <h2>Pergunta a quem sabe, por email, e aprende com a resposta</h2>
-      <p class="lead">Os 5% a 10% que não passam o limite não ficam parados nem entram às cegas. Quatro situações reais do dia a dia da Solcor.</p>
-    </div>
-    <div class="cr" id="crDemo" data-entra="escala"></div>
-    <p class="demo-note">Conversas por email com a equipa da Solcor. Nomes de fornecedores e valores fictícios.</p>
-  </div>
-</section>
-<script type="application/json" id="crDemo-config">
-{
-  "agentName": "Agente de faturas · Solcor",
-  "agentInitials": "AF",
-  "chatStatus": "faturas@solcor.pt · email",
-  "stepMs": 1500,
-  "endPauseMs": 3200,
-  "scenarios": [
-    {
-      "title": "A fatura de Espanha",
-      "subtitle": "Certeza de 74% no IVA: pergunta com a proposta já feita e grava a regra.",
-      "chat": [
-        { "sender": "system", "text": "F-2026-0412 · Estructuras Solares del Sur · certeza 74%", "time": "11:32" },
-        { "sender": "agent", "text": "Bom dia. Recebi a fatura da **Estructuras Solares del Sur** (3.412,80 €, sem IVA espanhol), obra OB-2026-034. É o primeiro documento deste fornecedor. Proponho **aquisição intracomunitária, com autoliquidação do IVA a 23% (784,94 €)**, conta 3121. Confirmam?", "time": "11:32" },
-        { "sender": "client", "text": "Confirmo. As estruturas vieram de Sevilha para o armazém. Fica assim para este fornecedor.", "time": "11:58" },
-        { "sender": "agent", "text": "Lançada no TOConline. **Regra gravada:** as próximas faturas deste fornecedor seguem sozinhas quando o resto bater certo.", "time": "11:58" }
-      ],
-      "steps": [
-        { "icon": "alert", "label": "Deteta certeza abaixo de 90% no tratamento do IVA" },
-        { "icon": "search", "label": "Procura o fornecedor no histórico: sem registos" },
-        { "icon": "send", "label": "Pergunta à Contabilidade, ao Vincent e a Compras, com a proposta feita" },
-        { "icon": "check", "label": "Recebe a confirmação e lança no TOConline" },
-        { "icon": "book", "label": "Grava a regra para a próxima fatura deste fornecedor" }
-      ]
-    },
-    {
-      "title": "Projetos futuros",
-      "subtitle": "O lembrete de segunda-feira até o material de stock estar distribuído por obra.",
-      "chat": [
-        { "sender": "system", "text": "Lembrete semanal · segunda-feira, 9h00", "time": "09:00" },
-        { "sender": "agent", "text": "Bom dia. Continua em **Projetos futuros** a fatura da Cabelsol (cabo solar e conectores MC4, 2.110,00 € sem IVA). Já sabem para que obras foi o material?", "time": "09:00" },
-        { "sender": "client", "text": "O cabo foi 60% para a OB-2026-031 e 40% para a OB-2026-036. Os MC4 continuam em stock.", "time": "10:14" },
-        { "sender": "agent", "text": "Registado: **cabo repartido 60/40** pelas duas obras. Os MC4 ficam em Projetos futuros e volto a perguntar na próxima segunda.", "time": "10:14" }
-      ],
-      "steps": [
-        { "icon": "clock", "label": "Segunda às 9h00: junta o que está em Projetos futuros" },
-        { "icon": "message", "label": "Pergunta à engenharia para que obras foi o material" },
-        { "icon": "list", "label": "Lê a resposta e reparte o valor pelas obras indicadas" },
-        { "icon": "calendar", "label": "Mantém o resto em lembrete para a semana seguinte" }
-      ]
-    },
-    {
-      "title": "Sem obra indicada",
-      "subtitle": "A fatura chega sem referência: deduz a obra pela morada e confirma antes de lançar.",
-      "chat": [
-        { "sender": "client", "text": "Segue fatura do aluguer da grua.", "time": "15:05" },
-        { "sender": "agent", "text": "Obrigado. A fatura não refere obra, mas a **morada de montagem é em Leiria**, a mesma da OB-2026-031, e as datas batem com a instalação da cobertura. Lanço nessa obra?", "time": "15:05" },
-        { "sender": "client", "text": "Sim, é dessa.", "time": "15:21" },
-        { "sender": "agent", "text": "Lançada na **OB-2026-031**, centro de custo Aluguer de equipamento.", "time": "15:21" }
-      ],
-      "steps": [
-        { "icon": "search", "label": "Procura a obra no email e na fatura: não está indicada" },
-        { "icon": "globe", "label": "Cruza a morada de montagem com as obras em curso" },
-        { "icon": "message", "label": "Propõe a obra e pede confirmação a quem enviou" },
-        { "icon": "check", "label": "Com o sim, lança e arquiva na pasta da obra" }
-      ]
-    },
-    {
-      "title": "Empresa errada",
-      "subtitle": "A fatura vem em nome de outra empresa do grupo: não lança na empresa errada.",
-      "chat": [
-        { "sender": "system", "text": "FT 2026/0877 · NIF do cliente não é o da empresa do piloto", "time": "16:48" },
-        { "sender": "agent", "text": "Esta fatura está emitida ao **NIF de outra empresa do grupo**, que ainda não está ligada ao agente. **Não a lancei.** Reencaminhei-a para a Contabilidade e fica no relatório de hoje.", "time": "16:48" },
-        { "sender": "client", "text": "Bem visto, é da outra empresa. Tratamos nós.", "time": "17:02" },
-        { "sender": "agent", "text": "Combinado. Quando as quatro empresas estiverem ligadas, sigo o NIF e lanço cada fatura na empresa certa.", "time": "17:02" }
-      ],
-      "steps": [
-        { "icon": "id", "label": "Confere o NIF do cliente na fatura" },
-        { "icon": "ban", "label": "Não bate com a empresa do piloto: recusa lançar" },
-        { "icon": "send", "label": "Reencaminha à Contabilidade e regista no relatório" }
-      ]
-    }
-  ]
-}
-</script>
-
 <!-- ============ 7. FLUXO ============ -->
-<section class="section-alt" id="fluxo">
+<section id="fluxo">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">Como funciona</span>
@@ -394,7 +306,7 @@
 </script>
 
 <!-- ============ 8. RELATÓRIO DIÁRIO ============ -->
-<section id="relatorio">
+<section class="section-alt" id="relatorio">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">O relatório do dia</span>
@@ -434,7 +346,7 @@
 </section>
 
 <!-- ============ 9. TOCONLINE: PORQUE É SEGURO ============ -->
-<section class="section-alt" id="toconline">
+<section id="toconline">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">Ligação ao TOConline</span>
@@ -462,7 +374,7 @@
 </section>
 
 <!-- ============ 10. REGRAS DO AGENTE ============ -->
-<section id="regras">
+<section class="section-alt" id="regras">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">Limites claros</span>
@@ -494,7 +406,7 @@
 </section>
 
 <!-- ============ 11. FASES ============ -->
-<section class="section-alt" id="fases">
+<section id="fases">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">Como arrancamos</span>
@@ -531,7 +443,7 @@
 </section>
 
 <!-- ============ 12. INVESTIMENTO (sempre a última secção) ============ -->
-<section id="investimento">
+<section class="section-alt" id="investimento">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">Investimento</span>
@@ -541,7 +453,7 @@
       <div class="card price-card highlight" data-entra="sobe">
         <span class="pin">Por aqui começamos</span>
         <div class="label">Fase 1 · uma empresa do grupo</div>
-        <div class="price">1.500 € <small>+ IVA</small></div>
+        <div class="price">2.000 € <small>+ IVA</small></div>
         <ul class="price-list">
           <li>Auditoria às últimas 1.000 faturas</li>
           <li>Regras de conta, IVA, centro de custo e rubrica</li>
@@ -553,7 +465,7 @@
       </div>
       <div class="card price-card" data-entra="sobe">
         <div class="label">Fase 2 · as outras três empresas</div>
-        <div class="price">2.500 € <small>+ IVA</small></div>
+        <div class="price">2.000 € <small>+ IVA</small></div>
         <ul class="price-list">
           <li>Regras, plano de contas e rubricas de cada empresa</li>
           <li>Cada fatura lançada na empresa certa pelo NIF</li>
@@ -595,7 +507,6 @@
 <script src="assets/js/faturas.js"></script>
 <script>
   caixaFaturas('fxDemo');
-  chatRaciocinio('crDemo');
   fluxo('fxFluxo');
   document.getElementById('themeBtn').addEventListener('click', function () {
     var r = document.documentElement;

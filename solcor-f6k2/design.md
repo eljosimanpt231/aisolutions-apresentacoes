@@ -24,11 +24,10 @@
 ## Secções
 1. Hero (promessa + 2.000 faturas, 90%, 1 de 4) · 2 resumo de 30 segundos (sem preço) · 3 o que ouvimos (6 citações da reunião) · 4 hoje vs com o agente
 5. Demonstração: caixa de faturas, 5 documentos (módulos FV com obra, eletricidade recorrente, estruturas de Espanha a 74%, cabo para stock em projetos futuros, 2.ª via duplicada bloqueada)
-6. chatRaciocinio, 4 cenários por email (Espanha, lembrete de projetos futuros, sem obra indicada, empresa errada = recusa)
 7. fluxo (6 nós) · 8 relatório diário (email) · 9 TOConline · 10 limites · 11 fases (4 semanas + Fase 2) · 12 investimento (último)
 
 ## Regras do Diogo aplicadas
-Sem CTA (o QA acusa "fecho sem acção": é intencional), sem casos de estudo, preço só no fim e só "+ IVA". Valores: Fase 1 1.500 €, Fase 2 2.500 €, mensalidade 90 €/mês (decisão do Diogo, 27/09/2026).
+Sem CTA (o QA acusa "fecho sem acção": é intencional), sem casos de estudo, preço só no fim e só "+ IVA". Valores: Fase 1 2.000 €, Fase 2 2.000 €, mensalidade 90 €/mês (decisão do Diogo, 27/09/2026).
 
 ## Cuidados de verdade
 - API TOConline (pesquisa 27/09): cria documentos de compra (`commercial_purchases_documents`), conta via categoria de despesa; NÃO documenta centro de custo, rubrica nem lançamentos contabilísticos. A página não afirma que a imputação analítica vai pela API: diz que se mapeia na auditoria. Confirmar com o suporte TOConline antes de fechar.
@@ -37,3 +36,4 @@ Sem CTA (o QA acusa "fecho sem acção": é intencional), sem casos de estudo, p
 ## Iterações
 - v1: Syne 800 alargava o título para 5 linhas (passou a 700 e escala menor); coluna do agente cortava a certeza e a decisão (janela 660 para 790px, secções compactadas); lista de emails no telemóvel não acompanhava a fatura (scrollLeft); contraste das etiquetas "projetos futuros" e "bloqueada" (tokens de estado por tema); medida de linha em 66ch.
 - QA: o "PRENDE" do qa.mjs reproduz-se também na recife-blue-n2d7; teste próprio com 400ms entre passos percorre a página sem bloqueios.
+- v2 (27/09, pedido do Diogo): retirado o capítulo "Pergunta a quem sabe" (chatRaciocinio); preços passam a 2.000 € + 2.000 €.
