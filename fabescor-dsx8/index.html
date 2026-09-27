@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Fabescor | Cada encomenda à vista, do orçamento à entrega</title>
+  <meta name="description" content="Proposta AI Solutions para a Fabescor: uma plataforma à medida da fábrica, com o estado de cada encomenda por secção, fichas nos tablets, pré-orçamentos com as vossas matrizes e um assistente que só trabalha para a equipa.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fabescor × AI Solutions">
+  <meta property="og:description" content="Cada encomenda à vista, do orçamento à entrega, sem papéis a correr pela fábrica.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/fabescor-dsx8/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try { var t = localStorage.getItem('ais-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preload" href="assets/fonts/jost-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fontes.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/fabescor.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img class="simbolo simbolo--branco" src="assets/img/fabescor-simbolo-branco.png" alt="">
+    <img class="simbolo simbolo--roxo" src="assets/img/fabescor-simbolo-roxo.png" alt="">
+    <b>FABESCOR</b>
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#plataforma">A plataforma</a>
+    <a href="#assistente">O assistente</a>
+    <a href="#controlo">Controlo</a>
+    <a href="#arranque">Arranque</a>
+    <a href="#investimento">Investimento</a>
+  </nav>
+  <div class="topbar-acoes">
+    <a class="btn btn-primary btn-sm" href="#avancar">Avançar</a>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+      <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="hero-simbolo" aria-hidden="true" data-paralaxe="10">
+    <img class="simbolo--branco" src="assets/img/fabescor-simbolo-branco.png" alt="">
+    <img class="simbolo--roxo" src="assets/img/fabescor-simbolo-roxo.png" alt="">
+  </div>
+  <div class="container">
+    <span class="eyebrow" data-acto="1" data-entra="sobe">Fabescor × AI Solutions<span class="so-largo"> · estofos e cortinados</span></span>
+    <h1 data-linhas>Cada encomenda <span class="g-brilho">à&nbsp;vista</span>, do orçamento à entrega, sem papéis a correr pela fábrica.</h1>
+    <p class="lead" data-acto="2" data-entra="sobe">
+      Uma plataforma feita à medida da Fabescor: o estado de cada peça em cada secção, a ficha técnica no tablet de quem
+      a produz, e o pré-orçamento feito com as vossas matrizes. A inteligência artificial trabalha só para a equipa, nunca fala com os vossos clientes.
+    </p>
+    <div class="hero-meta" data-acto="3" data-entra="sobe">
+      <span>Para <b>Marco da Silva Lopes</b> e sócios</span>
+      <span>Seguimento da reunião de <b>16/09/2026</b></span>
+      <span>6 minutos de leitura, os valores estão no fim</span>
+    </div>
+    <div class="grid-3 hero-stats" data-acto="4" data-entra="sobe">
+      <div class="card stat-card"><div class="num"><span data-conta="22">22</span> pessoas</div><div class="desc">Em dois pisos: a confeção em cima, a carpintaria, o estofo e o corte e costura em baixo</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="3">3</span> margens</div><div class="desc">Institucional, designers e arquitetos, particulares: cada orçamento com a sua, sem fazer contas de cabeça</div></div>
+      <div class="card stat-card"><div class="num">0</div><div class="desc">Mensagens da IA aos vossos clientes. A comunicação continua a ser vossa, como pediu</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. RESUMO DE 30 SEGUNDOS ============ -->
+<section class="resumo" aria-label="Resumo">
+  <div class="container">
+    <div class="resumo-grid" data-entra="sobe">
+      <div><span class="k">O quê</span><p>Uma plataforma vossa: encomendas, estado por secção, fichas técnicas nos tablets, preços e margens, e um assistente interno.</p></div>
+      <div><span class="k">Como arranca</span><p>Em duas fases. Primeiro ver a produção, depois orçamentar. A segunda só avança com a primeira a funcionar.</p></div>
+      <div><span class="k">Quanto</span><p>Fase 1: 4.000 € + IVA. Fase 2: 3.500 € + IVA. Mensalidade de 150 € a 280 € + IVA, conforme a fase.</p></div>
+      <div><span class="k">Próximo passo</span><p>Ver esta demonstração juntos e decidir a Fase 1. Nada arranca sem confirmação por escrito.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 16/09</span>
+      <h2>A Fabescor já faz bem. O que falta é a informação chegar inteira.</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>O CRM tem que justificar a dimensão que a gente tem, não criando atrito.</blockquote>
+        <p>Uma fábrica híbrida de 22 pessoas não precisa de um sistema de fábrica de 100. Precisa do seu, e de nada a mais.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Nós nunca sabemos o estado em que está.</blockquote>
+        <p>Se iniciou produção, se está em execução, se tem um problema. Hoje pergunta-se ao chefe de cada secção, a pé.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Iniciou o processo, concluiu.</blockquote>
+        <p>É tudo o que um artesão deve ter de marcar. Mais uma fotografia no restofo, antes de despir a peça.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Ninguém se lembra como é que uma aresta tinha vindo.</blockquote>
+        <p>O exemplo de sexta-feira no estofo: sem registo fotográfico do desmanche, alguém perde tempo à procura de quem se lembre.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Queríamos saber exatamente quanto é que nos custa. Ao cêntimo.</blockquote>
+        <p>Incluindo o que custa uma peça que volta para trás para ser corrigida. As margens já se sabem; o custo real, não.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Nós não queremos que a IA responda por nós a rigorosamente nada.</blockquote>
+        <p>Fica assim. A IA faz trabalho de sapa, como uma calculadora, e a informação da Fabescor não sai para onde não se sabe.</p>
+      </div>
+    </div>
+    <p class="sintese">O problema não é fazer bem as peças. <b>É o orçamento, as medidas e as fotografias chegarem inteiros a quem produz, e o estado voltar a quem coordena.</b></p>
+  </div>
+</section>
+
+<!-- ============ 4. HOJE VS COM A PLATAFORMA ============ -->
+<section id="mudanca">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que muda</span>
+      <h2>Os papéis deixam de correr pela fábrica. A informação vai ter com quem precisa.</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Hoje</h3>
+        <ul class="list-x">
+          <li>Orçamentos feitos à mão, com as matrizes em papel, na pasta de quem os fez</li>
+          <li>Nota de encomenda em papel entregue a cada chefe de secção</li>
+          <li>Saber o que está feito obriga a descer ou subir e perguntar</li>
+          <li>Fotografias e plantas dos clientes espalhadas por pastas e emails impressos</li>
+          <li>O custo real de cada peça, e o das que voltam para trás, fica por apurar</li>
+        </ul>
+      </div>
+      <div class="card card-do" data-entra="sobe">
+        <h3>Com a plataforma</h3>
+        <ul class="list-check">
+          <li>Cada pedido registado com as fotografias, plantas e emails num só sítio</li>
+          <li>Pré-orçamento calculado com as vossas matrizes, revisto e aprovado por vocês</li>
+          <li>Ficha técnica gerada a partir do orçamento, no tablet de cada secção</li>
+          <li>Cada item com o seu estado: por começar, em curso, concluído, com dúvida</li>
+          <li>Preços de materiais e margens atualizados pela equipa, sem pedir a ninguém</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. A PLATAFORMA (DEMO) ============ -->
+<section class="section-alt" id="plataforma">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Demonstração</span>
+      <h2>A plataforma da Fabescor, <span class="g-brilho">a funcionar</span></h2>
+      <p class="lead">Quatro separadores ligados entre si. Mude o preço de uma espuma e o pré-orçamento muda. Marque "Concluí" no tablet e o painel da encomenda atualiza.</p>
+    </div>
+    <div class="pf" id="pf" data-entra="escala">
+      <div class="pf-bar"><i></i><i></i><i></i><span>plataforma.fabescor.pt · segunda-feira, 28/09/2026</span></div>
+      <div class="pf-cols">
+        <aside class="pf-side" role="tablist" aria-label="Separadores da plataforma">
+          <div class="pf-marca"><img src="assets/img/fabescor-simbolo-branco.png" alt=""><b>Fabescor</b></div>
+          <button class="pf-tab on" role="tab" aria-selected="true" data-tab="encomendas"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg>Encomendas</button>
+          <button class="pf-tab" role="tab" aria-selected="false" data-tab="orcamento"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Pré-orçamento</button>
+          <button class="pf-tab" role="tab" aria-selected="false" data-tab="ficha"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><circle cx="12" cy="17.5" r=".8"/></svg>Ficha no tablet</button>
+          <button class="pf-tab" role="tab" aria-selected="false" data-tab="materiais"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>Materiais e margens</button>
+          <div class="pf-side-nota">Só a equipa da Fabescor entra aqui.</div>
+        </aside>
+
+        <!-- Encomendas -->
+        <div class="pf-view on" data-view="encomendas" role="tabpanel">
+          <div class="pf-head"><h3>Encomendas em produção</h3><small><span class="vivo" aria-hidden="true"></span>Atualizado ao minuto, pelas secções</small></div>
+          <div class="pf-kpis" id="pfKpis"></div>
+          <div class="pf-enc">
+            <ul class="pf-lista" id="pfLista"></ul>
+            <div class="pf-det" id="pfDet"></div>
+          </div>
+        </div>
+
+        <!-- Pré-orçamento -->
+        <div class="pf-view" data-view="orcamento" role="tabpanel">
+          <div class="pf-head"><h3>Pré-orçamento</h3><small>Calculado com as vossas matrizes. Vocês revêem e aprovam.</small></div>
+          <div class="pf-seg" role="group" aria-label="Tipo de peça">
+            <button class="on" data-peca="sofa" type="button">Sofá novo</button>
+            <button data-peca="cortinado" type="button">Cortinados</button>
+          </div>
+          <div class="pf-orc">
+            <form class="pf-form" id="pfForm" onsubmit="return false"></form>
+            <div class="pf-papel" id="pfPapel"></div>
+          </div>
+        </div>
+
+        <!-- Ficha no tablet -->
+        <div class="pf-view" data-view="ficha" role="tabpanel">
+          <div class="pf-head"><h3>O que o estofo vê no tablet</h3><small>Três botões. Nada para escrever.</small></div>
+          <div class="tablet">
+            <div class="tablet-ecra" id="pfFicha"></div>
+          </div>
+        </div>
+
+        <!-- Materiais e margens -->
+        <div class="pf-view" data-view="materiais" role="tabpanel">
+          <div class="pf-head"><h3>Materiais e margens</h3><small>A equipa altera; o pré-orçamento recalcula logo.</small></div>
+          <div class="pf-mat" id="pfMat"></div>
+        </div>
+      </div>
+    </div>
+    <p class="pf-legenda">
+      <span>Clientes, encomendas, horas, preços e margens são ilustrativos.</span>
+      <span>Na primeira semana passamos as vossas matrizes em papel para aqui.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 6. O ASSISTENTE ============ -->
+<section id="assistente">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O assistente</span>
+      <h2>Trabalho de sapa para a equipa. <span class="g-brilho">Nenhuma palavra</span> aos clientes.</h2>
+      <p class="lead">Lê os pedidos que chegam por email, prepara o pré-orçamento, responde às dúvidas das secções e avisa quem tem de decidir. Quatro situações reais de uma semana na Fabescor.</p>
+    </div>
+    <div class="cr" id="fbAssistente" data-entra="escala"></div>
+    <p class="cr-legenda">Nomes, números de encomenda e valores ilustrativos. O assistente usa sempre as matrizes e os preços da Fabescor.</p>
+  </div>
+</section>
+<script type="application/json" id="fbAssistente-config">
+{
+  "agentName": "Assistente Fabescor",
+  "agentInitials": "AF",
+  "chatStatus": "Interno, só a equipa",
+  "stepMs": 1400,
+  "endPauseMs": 2800,
+  "scenarios": [
+    {
+      "title": "Pedido de um designer",
+      "subtitle": "Um email vira pré-orçamento, e a dúvida vai para a coordenação, não para o cliente.",
+      "chat": [
+        { "sender": "system", "text": "Email recebido às 09:12 · atelier de interiores, com planta e fotografia", "time": "09:12" },
+        { "sender": "agent", "text": "Pedido novo registado: **designer**, sofá de 2,00 m, estrutura mista, braços altos. O pré-orçamento está feito com a matriz do sofá.", "time": "09:13" },
+        { "sender": "agent", "text": "Falta a referência do tecido. **Não pergunto ao cliente**: fica convosco. Querem que conte o tecido ou é fornecido por eles?", "time": "09:13" },
+        { "sender": "client", "text": "É tecido deles. Tira do custo.", "time": "09:31" },
+        { "sender": "agent", "text": "Feito. Pré-orçamento atualizado, com a margem de designer. Está à espera da vossa aprovação para gerar o PDF.", "time": "09:31" }
+      ],
+      "steps": [
+        { "icon": "message", "label": "Lê o email, a planta e a fotografia" },
+        { "icon": "id", "label": "Reconhece o cliente: designer, margem de designer" },
+        { "icon": "list", "label": "Aplica a matriz: sofá, estrutura mista, braços altos" },
+        { "icon": "alert", "label": "Falta o tecido: pergunta à coordenação" },
+        { "icon": "check", "label": "Pré-orçamento à espera de aprovação" }
+      ]
+    },
+    {
+      "title": "Cortinados para um hotel",
+      "subtitle": "38 janelas, três medidas, e o aviso de que o valor é provisório até à medição.",
+      "chat": [
+        { "sender": "system", "text": "Email às 11:40 · hotel, 38 janelas, fotografia do modelo de cortinado", "time": "11:40" },
+        { "sender": "agent", "text": "Pedido do **hotel** registado, cliente institucional. Pela fotografia, o modelo é de **onda**. 38 janelas em três medidas diferentes.", "time": "11:41" },
+        { "sender": "agent", "text": "Metragem calculada pelas medidas que enviaram. Como são medidas do cliente, marquei o orçamento como **provisório até à medição no local**.", "time": "11:41" },
+        { "sender": "client", "text": "A medição fica para quinta de manhã.", "time": "12:05" },
+        { "sender": "agent", "text": "Anotado na encomenda. Quando as medidas finais entrarem, recalculo e aviso se o valor mudar.", "time": "12:05" }
+      ],
+      "steps": [
+        { "icon": "search", "label": "Identifica o modelo pela fotografia: onda" },
+        { "icon": "id", "label": "Cliente institucional: aplica a margem de hotelaria" },
+        { "icon": "list", "label": "Calcula larguras e metros de tecido por janela" },
+        { "icon": "shield", "label": "Marca como provisório até à medição" },
+        { "icon": "calendar", "label": "Regista a medição na encomenda" }
+      ]
+    },
+    {
+      "title": "Uma dúvida no estofo",
+      "subtitle": "A pergunta do tablet responde-se com as fotografias do desmanche.",
+      "chat": [
+        { "sender": "client", "text": "Tablet do estofo: como era a aresta desta poltrona antes do desmanche? Encomenda 2026-114.", "time": "15:02" },
+        { "sender": "agent", "text": "Estão aqui as três fotografias tiradas no desmanche, a 22/09. A aresta era **viva, sem debrum**.", "time": "15:02" },
+        { "sender": "client", "text": "E a espuma do assento?", "time": "15:04" },
+        { "sender": "agent", "text": "**D35, 10 cm**, como está na ficha. Se quiserem mudar, a decisão é da coordenação: aviso-a?", "time": "15:04" }
+      ],
+      "steps": [
+        { "icon": "ear", "label": "Recebe a pergunta do tablet do estofo" },
+        { "icon": "search", "label": "Abre a encomenda 2026-114 e as fotografias" },
+        { "icon": "book", "label": "Responde com a ficha técnica" },
+        { "icon": "user-cog", "label": "Mudanças à peça ficam com a coordenação" }
+      ]
+    },
+    {
+      "title": "Um cliente pede desconto",
+      "subtitle": "O assistente recusa responder e passa ao responsável, com o contexto todo.",
+      "chat": [
+        { "sender": "system", "text": "Resposta de um cliente particular: \"Consegue fazer 10% de desconto?\"", "time": "17:20" },
+        { "sender": "agent", "text": "**Não respondo a clientes**, e um desconto não é decisão minha. Deixei o email na encomenda e avisei o Marco, com o orçamento e a margem ao lado.", "time": "17:20" },
+        { "sender": "client", "text": "Ok, eu trato disso amanhã.", "time": "17:48" },
+        { "sender": "agent", "text": "Marcado como **em negociação**. Se amanhã às 12h ainda estiver sem resposta, lembro-o.", "time": "17:48" }
+      ],
+      "steps": [
+        { "icon": "message", "label": "Lê a resposta do cliente" },
+        { "icon": "ban", "label": "Não responde: a comunicação é da Fabescor" },
+        { "icon": "user-cog", "label": "Passa ao responsável, com o orçamento e a margem" },
+        { "icon": "clock", "label": "Lembrete se o pedido ficar parado" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 7. FLUXO ============ -->
+<section class="section-alt" id="fluxo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Do pedido à entrega</span>
+      <h2>Um caminho só, e uma pessoa a aprovar antes de sair</h2>
+    </div>
+    <div class="fluxo" id="fbFluxo" data-entra="sobe"></div>
+  </div>
+</section>
+<script type="application/json" id="fbFluxo-config">
+{
+  "stepMs": 1800,
+  "channels": [
+    { "icon": "message", "label": "Email com fotografias e plantas" },
+    { "icon": "phone", "label": "Pedido por telefone, registado pela equipa" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Chega o pedido", "detail": "Fica registado com o cliente, os anexos e o tipo de cliente.", "tone": "brand" },
+    { "icon": "list", "title": "Pré-orçamento", "detail": "Matriz da peça, materiais, horas por secção e margem.", "tone": "teal" },
+    { "icon": "user-cog", "title": "Vocês aprovam", "detail": "Ajustam, aprovam e enviam ao cliente, como hoje.", "tone": "teal" },
+    { "icon": "book", "title": "Ficha técnica", "detail": "Gerada do orçamento e das medidas, no tablet de cada secção.", "tone": "teal" },
+    { "icon": "check", "title": "Iniciei, concluí", "detail": "Cada secção marca o seu item. O painel vê tudo.", "tone": "teal" },
+    { "icon": "star", "title": "Pronto a entregar", "detail": "Aviso para agendar a instalação e para faturar.", "tone": "brand" }
+  ],
+  "note": "A fatura continua a sair do vosso programa de faturação, pela pessoa que já a faz: a plataforma só avisa que o trabalho está concluído."
+}
+</script>
+
+<!-- ============ 8. CONTROLO ============ -->
+<section id="controlo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Controlo</span>
+      <h2>A plataforma é vossa. A informação também.</h2>
+      <p class="lead">As perguntas que fizeram na reunião, respondidas por escrito.</p>
+    </div>
+    <div class="tec">
+      <div class="card holofote" data-entra="sobe">
+        <h3>Onde fica a informação</h3>
+        <p>No vosso servidor, se preferirem, ou num servidor nosso na União Europeia. Os requisitos técnicos do servidor ficam definidos por escrito na primeira semana.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>A IA não guarda os vossos dados</h3>
+        <p>Usamos serviços de IA em versão empresarial, sem retenção de dados: o que o assistente lê para fazer um pré-orçamento não fica guardado do lado de quem fornece o modelo. Tudo dentro do RGPD.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>A plataforma fica do vosso lado</h3>
+        <p>Não é uma subscrição de software alheio: é construída para a Fabescor. A mensalidade paga o alojamento, a IA, a correção de erros e os ajustes que forem pedindo.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>Os preços mudam sem nos pedir</h3>
+        <p>Espumas, tecidos, custo por hora de cada secção e margens por tipo de cliente são vossos para alterar. Um erro na forma de calcular é nosso para corrigir.</p>
+      </div>
+    </div>
+    <div class="grid-2 limites">
+      <div class="card card-do" data-entra="sobe">
+        <h3>O assistente faz sozinho</h3>
+        <ul class="list-check">
+          <li>Registar os pedidos que chegam por email, com os anexos</li>
+          <li>Preparar o pré-orçamento com as vossas matrizes</li>
+          <li>Avisar a coordenação quando falta informação para orçamentar</li>
+          <li>Responder às dúvidas das secções a partir da ficha e das fotografias</li>
+          <li>Lembrar o que está parado e avisar quando uma encomenda está pronta</li>
+        </ul>
+      </div>
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Fica sempre com a equipa</h3>
+        <ul class="list-x">
+          <li>Qualquer contacto com clientes, por email, telefone ou WhatsApp</li>
+          <li>Aprovar e enviar um orçamento</li>
+          <li>Descontos, prazos e alterações a uma peça</li>
+          <li>A emissão de faturas, no vosso programa de faturação</li>
+          <li>Os desenhos à mão, que continuam a ser vossos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. CASOS ============ -->
+<section class="section-alt" id="casos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O mesmo trabalho noutras empresas</span>
+      <h2>Orçamentos com regras próprias e processos que viviam em papel</h2>
+      <p class="lead">Três projetos parecidos com o vosso, com o estado de cada um sem arredondar.</p>
+    </div>
+    <div class="casos">
+      <div class="card caso" data-entra="sobe">
+        <span class="estado estado--testes">Em testes com o cliente</span>
+        <h3>Fábrica de coberturas de piscina, 100% B2B</h3>
+        <p>Cada orçamento levava 15 a 30 minutos de trabalho manual, mesmo quando era largura vezes comprimento. O preço passou a ser calculado a partir das tabelas da fábrica, e os casos complexos seguem para uma pessoa.</p>
+      </div>
+      <div class="card caso" data-entra="sobe">
+        <span class="estado estado--obra">Em construção</span>
+        <h3>Confeção têxtil por encomenda</h3>
+        <p>Estamparia e bordados, com pedidos dispersos por vários canais. Uma plataforma calcula o preço a partir da tabela interna, com o pipeline de pedidos e os estados num só sítio.</p>
+      </div>
+      <div class="card caso" data-entra="sobe">
+        <span class="estado estado--obra">Em implementação</span>
+        <h3>Empresa de engenharia, cerca de 4.000 orçamentos por ano</h3>
+        <p>Fichas em papel e um Excel de 50 colunas. O pedido que chega por email abre o processo sozinho, pré-preenchido, e a direção vê em tempo real o que está aberto e em que fase.</p>
+      </div>
+    </div>
+    <p class="casos-nota">Por respeito aos contratos, não identificamos os clientes. Os casos publicados, já em produção, estão em <a href="https://aisolutions.pt" target="_blank" rel="noopener">aisolutions.pt</a>.</p>
+  </div>
+</section>
+
+<!-- ============ 10. ARRANQUE ============ -->
+<section id="arranque">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Primeiro ver a produção. Depois orçamentar.</h2>
+      <p class="lead">Prazos indicativos, que se fecham no levantamento da primeira semana. Cada fase só termina quando estiver a funcionar na fábrica.</p>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 1 · semana 1</span>
+        <h3>Levantamento na fábrica</h3>
+        <p>As secções, os tipos de peça, as fichas e notas de encomenda de hoje, e as matrizes de custo em papel (cortinados, estruturas, espumas, margens).</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 1 · semanas 2 a 4</span>
+        <h3>Encomendas e produção</h3>
+        <p>Registo das encomendas, estado por item e por secção, fichas técnicas nos tablets, fotografias do restofo, materiais e margens.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 1 · semana 5</span>
+        <h3>A funcionar numa secção</h3>
+        <p>Arranca numa secção à vossa escolha, com as encomendas reais, e ajusta-se ao que a equipa disser. Depois alarga-se às outras.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 2 · cerca de 4 semanas</span>
+        <h3>Orçamentar e coordenar</h3>
+        <p>Assistente de orçamentação (pedidos por email, pré-orçamento com as matrizes, custo por secção, peças que voltam para trás) e assistente de coordenação para as dúvidas das secções.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. INVESTIMENTO ============ -->
+<section class="section-alt" id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Quanto se paga, e quanto está a custar não ter isto</h2>
+      <p class="lead">A pergunta do Marco ao nosso colega: "quanto a gente vai pagar e quanto aquilo nos vai dar". Primeiro a segunda parte, com os vossos números.</p>
+    </div>
+    <div class="calc-wrap" data-entra="sobe">
+      <div class="calc" id="fbConta"></div>
+    </div>
+    <script type="application/json" id="fbConta-config">
+    {
+      "inputs": [
+        { "id": "pessoas", "label": "Pessoas que orçamentam e coordenam", "min": 1, "max": 6, "default": 4 },
+        { "id": "horas", "label": "Horas por semana, cada uma, perdidas a procurar e a perguntar", "min": 1, "max": 10, "default": 3, "suffix": " h" },
+        { "id": "custo", "label": "Custo de uma hora dessas pessoas", "min": 10, "max": 30, "default": 15, "suffix": " €" }
+      ],
+      "outputs": [
+        { "label": "Horas por ano (46 semanas de trabalho)", "expr": "pessoas*horas*46", "suffix": " h", "decimals": 0 },
+        { "label": "O que essas horas custam por ano", "expr": "pessoas*horas*46*custo", "suffix": " €", "decimals": 0, "highlight": true }
+      ],
+      "note": "Os valores de partida são uma estimativa nossa: ajustem aos vossos. Não contam o tempo perdido nas secções nem as peças que voltam para trás."
+    }
+    </script>
+    <p class="valor-frase" data-entra="sobe">Com os números de partida, <b>um ano disto custa mais do que as duas fases juntas</b>. E a plataforma fica.</p>
+
+    <div class="invest">
+      <div class="card price-card highlight" data-entra="sobe">
+        <span class="pin">Por aqui começamos</span>
+        <div class="label">Fase 1 · ver a produção</div>
+        <div class="price">4.000 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>Levantamento na fábrica e passagem das matrizes para a plataforma</li>
+          <li>Encomendas, estado por item e por secção, painel</li>
+          <li>Fichas técnicas nos tablets, com "iniciei" e "concluí"</li>
+          <li>Fotografias do restofo ligadas à encomenda</li>
+          <li>Materiais e margens por tipo de cliente</li>
+        </ul>
+        <span class="quando">2.000 € na adjudicação, 2.000 € na entrega</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Fase 2 · orçamentar e coordenar</div>
+        <div class="price">3.500 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>Assistente de orçamentação: pedidos por email, pré-orçamento com as matrizes</li>
+          <li>Custo por secção em cada peça, e registo das peças que voltam para trás</li>
+          <li>Assistente de coordenação para as dúvidas das secções</li>
+          <li>Avisos de pedidos parados e de encomendas prontas</li>
+        </ul>
+        <span class="quando">1.750 € no arranque, 1.750 € na entrega. Só com a Fase 1 a funcionar</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Mensalidade</div>
+        <div class="price">150 € <small>+ IVA / mês</small></div>
+        <ul class="price-list">
+          <li>Alojamento e manutenção da plataforma</li>
+          <li>Correção de erros e ajustes pedidos pela equipa</li>
+          <li>Acompanhamento e suporte</li>
+          <li><b>280 € + IVA / mês</b> quando a Fase 2 estiver ativa, com os custos de IA dos assistentes</li>
+        </ul>
+        <span class="quando">A partir da entrega da Fase 1</span>
+      </div>
+    </div>
+    <p class="invest-nota">Hoje decide-se só a <b>Fase 1</b>. A demonstração foi por nossa conta, como combinado. Os tablets das secções são da Fabescor e não entram nestes valores.</p>
+  </div>
+</section>
+
+<!-- ============ 12. FORA DESTA PROPOSTA ============ -->
+<section id="depois">
+  <div class="container">
+    <div class="fora" data-entra="sobe">
+      <span class="quando">Não faz parte desta proposta</span>
+      <p><b>Falado na reunião, fica para depois, se fizer sentido:</b> ligação ao programa de faturação (um botão "emitir fatura" na encomenda), leitura automática de desenhos feitos à mão, e qualquer resposta automática a clientes. Registamos aqui para não se perder nem entrar sem ser pedido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. PRÓXIMOS PASSOS + ACÇÃO ============ -->
+<section class="cta-final" id="avancar">
+  <div class="container center">
+    <h2>Avançamos, Marco?</h2>
+    <p class="lead" style="margin:14px auto 0">Três passos até à primeira semana na fábrica. Nada arranca sem confirmação por escrito.</p>
+    <ol class="passos-fecho">
+      <li><span class="n">1</span><b>Diz-nos que sim</b><p>Por WhatsApp ou por email, com as dúvidas que os sócios ainda tenham.</p></li>
+      <li><span class="n">2</span><b>Recebe a proposta formal</b><p>O documento com o âmbito, os valores e as condições desta página, para assinar.</p></li>
+      <li><span class="n">3</span><b>Semana 1: levantamento</b><p>Uma manhã na fábrica com quem orçamenta e coordena, e as matrizes de custo em papel para passarmos para a plataforma.</p></li>
+    </ol>
+    <div class="fecho-acoes">
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20proposta%20da%20Fabescor%20e%20queremos%20avan%C3%A7ar%20com%20a%20Fase%201." class="btn btn-primary premivel" data-iman="0.2" target="_blank" rel="noopener">Quero avançar</a>
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20proposta%20da%20Fabescor%20e%20tenho%20uma%20pergunta%3A%20" class="btn btn-ghost" target="_blank" rel="noopener">Tenho uma pergunta</a>
+    </div>
+    <p class="fecho-contacto">Manuel Condeço, AI Solutions<br><a href="tel:+351964251889">964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a></p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Fabescor, setembro de 2026
+    <span class="disclaimer">Demonstração com dados ilustrativos: clientes, encomendas, horas, preços e margens são fictícios.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/fabescor.js"></script>
+<script>
+  chatRaciocinio('fbAssistente');
+  fluxo('fbFluxo');
+  calculadora('fbConta');
+  (function () {
+    /* a calculadora partilhada escreve 8280; na página os milhares levam ponto */
+    var c = document.getElementById('fbConta');
+    var opts = { subtree: true, childList: true, characterData: true };
+    function pontos() {
+      c.querySelectorAll('*').forEach(function (el) {
+        if (el.children.length) return;
+        var t = el.textContent, n = t.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+        if (n !== t && /(€|h)\s*$/.test(t)) el.textContent = n;
+      });
+    }
+    var mo = new MutationObserver(function () { mo.disconnect(); pontos(); mo.observe(c, opts); });
+    pontos(); mo.observe(c, opts);
+  })();
+  plataforma('pf');
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var atual = r.getAttribute('data-theme') || 'dark';
+    var next = atual === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>

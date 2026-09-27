@@ -1,0 +1,117 @@
+/* ============================================================
+   TOKENS: Fabescor (estilo dark-premium, com a identidade da Fabescor)
+   Marca: roxo #653179 do logótipo (H 283, S 42%, L 33%), escuro de mais
+   para texto sobre preto: fica como cor das superfícies, dos glows e do
+   botão; o texto em cor usa a mesma matiz mais clara.
+   Segunda voz: dourado de latão, a cor do assistente (tachas, linha de
+   coser, o acabamento que se vê numa peça estofada).
+   Escuro por defeito; claro em :root[data-theme="light"].
+   ============================================================ */
+
+:root {
+  --brand-hsl: 283 46% 52%;       /* roxo Fabescor, levantado para ler no escuro */
+  --accent-hsl: 38 72% 58%;       /* latão: a cor do assistente */
+  --brand2-hsl: 318 48% 66%;      /* ponto intermédio do texto em gradiente */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(283 42% 38%);
+  --acento-texto: hsl(40 82% 68%);
+  --marca-texto: hsl(286 62% 78%);
+  --ok-texto: hsl(146 58% 60%);
+
+  --bg: hsl(278 30% 6%);
+  --bg-soft: hsl(278 26% 8.5%);
+  --surface: hsl(278 20% 11%);
+  --surface-2: hsl(278 18% 14%);
+  --border: hsl(278 14% 22%);
+
+  --text: hsl(280 20% 95%);
+  --muted: hsl(280 9% 69%);
+
+  --success-hsl: 146 58% 46%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 78% 62%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 90% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.18), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(286 62% 74%), hsl(var(--brand2-hsl)) 45%, hsl(40 82% 66%));
+  --grad-cta: linear-gradient(160deg, hsl(278 30% 9%), hsl(var(--brand-hsl) / 0.34));
+
+  --shadow-sm: 0 1px 3px hsl(278 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(278 60% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(278 60% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.30);
+
+  /* Janela de produto (a plataforma): escura nos dois temas,
+     porque está a fingir ser uma ferramenta de trabalho */
+  --app-bg: hsl(276 26% 7%);
+  --app-panel: hsl(276 20% 10.5%);
+  --app-panel-2: hsl(276 18% 14%);
+  --app-line: hsl(276 14% 21%);
+  --app-text: hsl(280 20% 93%);
+  --app-muted: hsl(280 9% 66%);
+  --app-brand: hsl(286 60% 74%);
+  --app-gold: hsl(40 82% 66%);
+  --app-ok: hsl(146 60% 62%);   --app-ok-hsl: 146 55% 45%;
+  --app-run: hsl(205 88% 72%);  --app-run-hsl: 205 80% 55%;
+  --app-wait: hsl(280 8% 60%);  --app-wait-hsl: 280 8% 50%;
+  --app-warn: hsl(38 92% 64%);  --app-warn-hsl: 38 90% 52%;
+  --app-sombra: 0 18px 40px hsl(278 60% 2% / 0.5);
+  --grad-agente: linear-gradient(135deg, hsl(40 80% 62%), hsl(24 78% 58%));
+  /* papel da ficha e do pré-orçamento: branco nos dois temas */
+  --paper: hsl(36 30% 97%);
+  --paper-ink: hsl(278 30% 14%);
+  --paper-muted: hsl(278 8% 40%);
+  --paper-line: hsl(278 10% 86%);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Jost', 'DM Sans', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --container: 1180px;
+  --section-pad: clamp(72px, 10vw, 124px);
+  --grelha-passo: 64px;
+}
+
+:root[data-theme="light"] {
+  --brand-hsl: 283 42% 36%;
+  --accent-hsl: 34 78% 40%;
+  --brand2-hsl: 318 44% 40%;
+  --brand-solido: hsl(283 42% 33%);
+  --acento-texto: hsl(32 82% 30%);
+  --marca-texto: hsl(283 46% 34%);
+  --ok-texto: hsl(146 60% 26%);
+
+  --bg: hsl(36 30% 97%);
+  --bg-soft: hsl(36 24% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(36 22% 95%);
+  --border: hsl(283 10% 86%);
+
+  --text: hsl(278 30% 12%);
+  --muted: hsl(278 8% 36%);
+
+  --success-hsl: 146 60% 30%;
+  --danger-hsl: 356 70% 44%;
+  --warning-hsl: 32 90% 38%;
+
+  --grad-text: linear-gradient(110deg, hsl(283 46% 34%), hsl(318 44% 38%) 50%, hsl(30 80% 34%));
+  --grad-cta: linear-gradient(160deg, hsl(283 38% 22%), hsl(283 42% 34%));
+  --shadow-sm: 0 1px 3px hsl(278 30% 20% / 0.08);
+  --shadow-md: 0 8px 28px hsl(278 30% 20% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(278 30% 20% / 0.16);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.18);
+}
+
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
