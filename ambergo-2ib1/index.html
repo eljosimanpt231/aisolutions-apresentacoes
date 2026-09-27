@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ambergo | Plataforma de gestão e propostas</title>
+  <meta name="description" content="Proposta AI Solutions para a Ambergo: plataforma que substitui o Primavera e junta propostas, ficha de cliente, follow-up, faturação e contas correntes.">
+  <script>
+    try {
+      var t = localStorage.getItem('ais-theme');
+      if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/deck-slides.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-chip"><img src="assets/img/ambergo-logo.png" alt="Ambergo"></span>
+      <small>Proposta para a Ambergo<br>Reunião de 28 de setembro</small>
+    </div>
+    <div class="right">
+      <nav class="tabs" data-scope="deck">
+        <button class="tab active" data-tab="contexto">Contexto</button>
+        <button class="tab" data-tab="propostas">As vossas propostas</button>
+        <button class="tab" data-tab="plataforma">Plataforma</button>
+        <button class="tab" data-tab="assistente">Assistente</button>
+        <button class="tab" data-tab="proposta">Proposta</button>
+      </nav>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro" title="Claro / escuro">◐</button>
+    </div>
+  </header>
+  <div class="progress"></div>
+
+  <main class="deck" id="deck">
+
+  <!-- ====================================================== -->
+  <!-- 1. CONTEXTO                                            -->
+  <!-- ====================================================== -->
+  <section class="tab-panel active" id="contexto">
+
+    <!-- 1.1 Capa -->
+    <div class="slide active">
+      <div class="container">
+        <div class="cover-grid">
+          <div>
+
+            <span class="kicker" style="display:block">Ambergo × AI Solutions</span>
+            <h1 class="cover-h1">A proposta escreve&#8209;se uma vez.<br><span class="grad">O resto passa a tratar&#8209;se sozinho.</span></h1>
+            <div class="ruler"><i></i></div>
+            <p class="lead">Uma plataforma feita para a Ambergo que substitui o Primavera e junta num só sítio as propostas, a ficha de cliente, o follow-up, a faturação e as contas correntes. Construída em cima dos dois modelos de proposta que o Paulo nos enviou.</p>
+          </div>
+          <div class="meta reveal">
+            <div><span>Para</span><b>Paulo Morais, Ambergo</b></div>
+            <div><span>Setor</span><b>Instrumentação e serviços de medição, áreas ambiental e laboral</b></div>
+            <div><span>Seguimento</span><b>Reunião de 22 de setembro de 2026</b></div>
+            <div><span>Hoje</span><b>Ver a plataforma e validar a direção</b></div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="card stat-card reveal"><div class="num">2 vezes</div><div class="desc">Cada proposta faz-se no Word e volta a lançar-se à mão no Primavera, só para ficar na ficha do cliente.</div></div>
+          <div class="card stat-card reveal"><div class="num">1 + 1</div><div class="desc">Um acesso e uma consulta ao Primavera, para uma equipa de seis pessoas.</div></div>
+          <div class="card stat-card reveal"><div class="num">~1 ano</div><div class="desc">Entre a proposta ao concurso da GNR e da PSP (8 de outubro de 2025) e o concurso a sair agora. Hoje, isto vive na memória.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.2 O que ouvimos -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que ouvimos a 22 de setembro</span>
+        <h2>O que o Paulo nos disse</h2>
+        <div class="pains">
+          <div class="card reveal"><div class="pain-num">01</div><h3>A mesma proposta, duas vezes</h3><p>O formato do Primavera não comporta as descrições técnicas: o que cabe em duas páginas passa a quatro ou cinco. A proposta faz-se no Word e depois relança-se no Primavera, só para ficar registada.</p></div>
+          <div class="card reveal"><div class="pain-num">02</div><h3>Pendentes só na memória</h3><p>Não há lista dos orçamentos por adjudicar. Liga-se ao cliente, dá-se tempo de maturação, e o resto depende de quem se lembra. Há decisões que levam meses, algumas anos.</p></div>
+          <div class="card reveal"><div class="pain-num">03</div><h3>Uma licença que fecha a porta</h3><p>Um acesso e uma consulta. Pôr mais alguém da equipa na gestão comercial custa um valor que não faz sentido para fornecedores, contas correntes, RH e faturação.</p></div>
+          <div class="card reveal"><div class="pain-num">04</div><h3>A central que funcionou uma semana</h3><p>A ficha do cliente devia abrir nas chamadas recebidas. Funcionou na primeira semana; a cada atualização, voltava tudo ao zero.</p></div>
+          <div class="card reveal"><div class="pain-num">05</div><h3>Um CRM à medida que não durou</h3><p>Há uns 15 anos, meses de um programador para um CRM próprio, abandonado ao fim de três ou quatro anos porque não compensava.</p></div>
+          <div class="card said reveal"><div class="pain-num">O QUE INTERESSA MAIS</div><blockquote>«Vai depender muito daquilo que vai trazer de positivo para a empresa: em termos de tempo, e em termos de eficácia nossa perante o cliente.»</blockquote><cite>Paulo Morais, 22 de setembro</cite></div>
+        </div>
+        <p class="quote">O problema não é a falta de ferramentas. É o trabalho feito duas vezes e o que fica só na memória.</p>
+      </div>
+    </div>
+
+    <!-- 1.3 As duas medidas -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">As duas medidas do Paulo</span>
+        <h2>Tempo e eficácia perante o cliente. É assim que medimos cada peça.</h2>
+        <p class="lead">À esquerda, o tempo que deixa de se gastar, com os vossos números. À direita, o que o cliente da Ambergo passa a sentir.</p>
+        <div class="measures">
+          <div>
+            <div class="m-head"><span>MEDIDA 1</span><b>Tempo</b></div>
+            <div class="calc" id="calcTempo"></div>
+          </div>
+          <div>
+            <div class="m-head"><span>MEDIDA 2</span><b>Eficácia perante o cliente</b></div>
+            <ul class="eff">
+              <li class="reveal"><b>Nenhuma proposta esquecida</b><span>Cada uma tem data de follow-up e fica no painel até haver decisão.</span></li>
+              <li class="reveal"><b>Validade sob controlo</b><span>Aviso antes de uma proposta perder a validade. A <span class="ref">PR/NF-509/2026</span> tinha 30 dias.</span></li>
+              <li class="reveal"><b>Chamada perdida devolvida com contexto</b><span>Quem liga de volta já sabe que propostas estão abertas e que equipamento o cliente tem.</span></li>
+              <li class="reveal"><b>Concursos longos não se perdem</b><span>Ficam à vista durante meses ou anos, com a proposta original pronta a reaproveitar.</span></li>
+              <li class="reveal"><b>A equipa toda vê a ficha</b><span>Não só quem tem a licença.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="application/json" id="calcTempo-config">
+    {
+      "inputs": [
+        { "id": "propostas", "label": "Propostas por mês", "min": 10, "max": 120, "default": 60, "step": 5 },
+        { "id": "relancar", "label": "Minutos a relançar cada uma no Primavera", "min": 2, "max": 30, "default": 10, "suffix": " min" },
+        { "id": "acompanhar", "label": "Minutos por proposta a procurar o estado e lembrar o follow-up", "min": 0, "max": 20, "default": 5, "suffix": " min" }
+      ],
+      "outputs": [
+        { "label": "Horas por mês que deixam de se gastar", "expr": "propostas*(relancar+acompanhar)/60", "suffix": " h", "decimals": 0, "highlight": true },
+        { "label": "Dias de trabalho por ano", "expr": "propostas*(relancar+acompanhar)*11/60/8", "suffix": " dias", "decimals": 0 }
+      ],
+      "note": "Ponto de partida de 60 propostas por mês: pela numeração, a PR/NF-509/2026 é de 25 de agosto, perto de 500 propostas em oito meses se a numeração recomeça em janeiro. Ajustem aos vossos números; 11 meses de trabalho por ano."
+    }
+    </script>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 2. AS VOSSAS PROPOSTAS                                 -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="propostas">
+
+    <!-- 2.1 O que nos enviaram -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Antes de prometer, lemos</span>
+        <h2>Os dois modelos que o Paulo nos enviou, já abertos e lidos</h2>
+        <p class="lead">Tudo o que vem a seguir foi construído em cima destes dois documentos. Nada é genérico.</p>
+        <div class="docs" style="margin-top:18px">
+          <div class="doc-card reveal">
+            <div class="k">Proposta comercial</div>
+            <h3>Fornecimento de equipamentos</h3>
+            <div class="sub"><span class="ref">PR/NF-509/2026</span> · 6 páginas · 25 de agosto de 2026</div>
+            <ul>
+              <li><span>Estrutura</span><b>8 capítulos, 41 posições</b></li>
+              <li><span>Equipamentos</span>Sonómetros, dosímetro, luxímetro, ambiente térmico, bomba de tubos colorimétricos</li>
+              <li><span>Alternativas</span>Opção A e B por equipamento (Classe 1 ou Classe 2, CIRRUS ou TSI, DELTA OHM ou GOSSEN)</li>
+              <li><span>Extras</span>Formação DGERT oferecida com o pack, calibrações no LabMetro ISQ ou EIA Lab</li>
+              <li><span>Condições</span>Validade 30 dias, entrega 7 a 9 semanas, garantia 2 anos, impresso Mod. 013/DA.2</li>
+            </ul>
+          </div>
+          <div class="doc-card reveal">
+            <div class="k">Concurso público</div>
+            <h3>Alcoolímetros para a GNR e a PSP</h3>
+            <div class="sub"><span class="ref">PR/PM-560/2025</span> · 11 páginas · 8 de outubro de 2025</div>
+            <ul>
+              <li><span>Entidade</span><b>SGMAI, procedimento n.º 6/DPIE/2025</b></li>
+              <li><span>Lotes</span>Lote 1 (GNR, pilhas alcalinas) e lote 4 (PSP, bateria recarregável)</li>
+              <li><span>Estrutura</span>Índice de 14 capítulos: entidade, organograma, proposta técnica, financeira, condições, pós-venda</li>
+              <li><span>Condições</span>Validade 99 dias do termo do prazo, entrega 60 dias, garantia 3 anos</li>
+              <li><span>Estado</span>Proposta feita há quase um ano; o concurso está a sair agora</li>
+            </ul>
+          </div>
+          <div class="tree reveal">
+            <div class="t-h">No vosso servidor</div>
+            <div>📁 Propostas</div>
+            <div class="d1">📁 2025</div>
+            <div class="d2">PR-PM-560-2025.docx</div>
+            <div class="d1">📁 2026</div>
+            <div class="d2">…</div>
+            <div class="d2 hl">PR-NF-509-2026.docx</div>
+            <div class="d2">PR-NF-510-2026.docx</div>
+            <div class="t-n">Como o Paulo descreveu: organizadas por ano e numeração sequencial. Nomes dos ficheiros ilustrativos.</div>
+          </div>
+        </div>
+        <div class="alert reveal"><span class="dot"></span><div><b>O que tirámos daqui:</b> as vossas propostas não cabem num formulário, e ainda bem. Por isso a plataforma não vos obriga a mudar de ferramenta: <b>lê o Word que já fazem</b>, na pasta onde já o guardam.</div></div>
+      </div>
+    </div>
+
+    <!-- 2.2 O que a plataforma tira de uma proposta -->
+    <div class="slide section-alt tight">
+      <div class="container">
+        <span class="eyebrow">Entrada e saída</span>
+        <h2>O Nuno grava a proposta. A ficha do cliente atualiza-se.</h2>
+        <p class="lead">À esquerda, a primeira página da PR/NF-509/2026 como está no vosso Word. À direita, o que a plataforma regista sem ninguém relançar nada.</p>
+        <div class="io">
+          <div>
+            <div class="paper reveal">
+              <div class="p-top">
+                <div>
+                  <img src="assets/img/ambergo-logo.png" alt="Ambergo">
+                  <div class="p-co" style="margin-top:6px">AMBERGO, Estudos e Equipamentos de Controlo Ambiental Lda.<br>Rua da Bela Vista, n.º 60, Gualtar · 4710-084 BRAGA</div>
+                </div>
+              </div>
+              <div class="p-title">PROPOSTA</div>
+              <div class="p-meta">
+                <div>From/De: <b class="mk">Nuno Faria</b></div><div>To/Para: <span class="miss">em branco</span></div>
+                <div>Proposta N.º: <b class="mk">PR/NF-509/2026</b></div><div>Empresa: <span class="miss">em branco</span></div>
+                <div>Date/Data: <b class="mk">25.AGO.2026</b></div><div>Email:</div>
+              </div>
+              <div class="p-subj">ASSUNTO: PROPOSTA PARA FORNECIMENTO DE EQUIPAMENTOS</div>
+              <div class="p-chap mk">1. SONÓMETRO / ANALISADOR ESPECTRAL EM TEMPO REAL</div>
+              <div style="font-weight:700; margin:2px 0 3px">OPÇÃO A: NOVA GERAÇÃO DE SONÓMETROS (CLASSE 1)</div>
+              <table>
+                <thead><tr><th>POS.</th><th>MODELO</th><th>DESIGNAÇÃO</th><th style="text-align:right">P. UNIT.</th></tr></thead>
+                <tbody>
+                  <tr><td class="mk">1.1</td><td>SC250FR</td><td>Analisador em tempo real, modelo SC250, marca CESVA, Classe 1, com módulo FR250 (1/1 e 1/3 de oitava)</td><td class="r mk">2.985,00 €</td></tr>
+                  <tr><td class="mk">1.1.a</td><td>CB011</td><td>Calibrador acústico, marca CESVA, modelo CB011, Classe 1</td><td class="r mk">974,00 €</td></tr>
+                </tbody>
+              </table>
+              <div style="font-weight:700; margin:8px 0 3px">OPÇÃO B: NOVA GERAÇÃO DE SONÓMETROS (CLASSE 2)</div>
+              <table>
+                <tbody>
+                  <tr><td class="mk">1.2</td><td>SC202FR</td><td>Analisador em tempo real, modelo SC202, marca CESVA, Classe 2</td><td class="r mk">2.140,00 €</td></tr>
+                  <tr><td class="mk">1.2.a</td><td>CB012</td><td>Calibrador acústico, marca CESVA, modelo CB012, Classe 2</td><td class="r mk">775,00 €</td></tr>
+                </tbody>
+              </table>
+              <div class="p-foot"><span class="mk">Mod. 013/DA.2</span><span>PR/NF-509/2026</span><span>Página 1 de 6</span></div>
+            </div>
+            <p class="paper-cap">A verde, o que a plataforma lê. A laranja, o que falta no documento e ela pergunta.</p>
+          </div>
+          <div class="fileview reveal">
+            <div class="fv-head"><span>Ficha criada pela plataforma</span><span>2 segundos depois de gravar</span></div>
+            <div class="fv-list">
+              <div class="fv-row"><b>Referência</b><span><span class="ref">PR/NF-509/2026</span><small>Comercial NF (Nuno Faria) · n.º 509 · 2026</small></span></div>
+              <div class="fv-row"><b>Data e validade</b><span>25/08/2026 · 30 dias<small>Válida até 24/09/2026. Aviso 5 dias antes.</small></span></div>
+              <div class="fv-row warn"><b>Cliente</b><span>Em branco no documento: a plataforma pergunta a quem gravou, não adivinha</span></div>
+              <div class="fv-row"><b>Capítulos</b><span>8<small>Sonómetro · Dosímetro · Luxímetro · Ambiente térmico · Bomba de tubos colorimétricos · Calibrações · Condições de fornecimento · Assistência pós-venda</small></span></div>
+              <div class="fv-row"><b>Posições</b><span>41<small>Com as opções A e B tratadas como alternativas, não somadas</small></span></div>
+              <div class="fv-row"><b>Marcas</b><span>CESVA, CIRRUS, TSI, DELTA OHM, SENSECA, GOSSEN, Honeywell</span></div>
+              <div class="fv-row"><b>Condições</b><span>Entrega 7 a 9 semanas · garantia 2 anos · formação DGERT com o pack completo</span></div>
+              <div class="fv-row go"><b>Follow-up</b><span>Marcado para 01/09/2026, 7 dias depois do envio</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.3 Experimente agora -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Experimente agora · ao vivo</span>
+        <h2>Largue aqui uma proposta vossa. Nada é pré-calculado.</h2>
+        <p class="lead">PDF ou Word. A leitura corre neste browser, à sua frente, e o ficheiro nunca sai do computador. Experimente com a PR/NF-509/2026, com a do concurso, ou com outra qualquer.</p>
+        <div class="grid-2" style="margin-top:22px; align-items:start">
+          <div class="exp" id="expDemo">
+            <div class="drop"><input type="file" accept=".pdf,.docx,.doc"><b>Largar a proposta aqui</b><span>ou clique para escolher · PDF ou Word (.docx)</span></div>
+            <div class="term-wrap" style="margin-top:14px"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>leitor-propostas.log</span></div><div class="term-body"></div></div>
+            <div class="exp-status"></div>
+            <p class="exp-privacy">Demonstração sem servidor: os ficheiros são lidos localmente e não são enviados nem guardados. Na plataforma, isto acontece sozinho quando a proposta é gravada na pasta do servidor.</p>
+          </div>
+          <div class="exp-out"><div class="exp-empty">A ficha aparece aqui, com a referência, as datas, a validade, os capítulos, as posições ou os lotes, as marcas e as condições que estão no documento.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 3. PLATAFORMA                                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="plataforma">
+
+    <!-- 3.1 Propostas e follow-up -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Prioridade 1 e 2 · tempo e follow-up</span>
+        <h2>Todas as propostas à vista, com o próximo passo de cada uma</h2>
+        <p class="lead">Esboço navegável: clique em Hoje, Propostas e Concursos. O aspeto final desenha-se convosco.</p>
+        <div class="app reveal">
+          <div class="app-top"><i></i><i></i><i></i><span class="url">plataforma.ambergo.pt · comercial</span></div>
+          <div class="app-body">
+            <aside class="app-side">
+              <div class="logo"><span class="logo-chip"><img src="assets/img/ambergo-logo.png" alt="Ambergo"></span></div>
+              <div class="nav">
+                <button class="active" data-view="vHoje">Hoje <em>5</em></button>
+                <button data-view="vProp">Propostas <em>42</em></button>
+                <button data-view="vConc">Concursos <em>3</em></button>
+              </div>
+              <div class="who">Sessão de Paulo Morais<br>Administração</div>
+            </aside>
+            <div class="app-main">
+              <div class="view active" id="vHoje">
+                <h4>Bom dia, Paulo · segunda-feira, 28 de setembro</h4>
+                <div class="sub">O que precisa de alguém hoje. Tudo o resto espera sem se perder.</div>
+                <div class="kpis">
+                  <div><small>Propostas em aberto</small><b>42</b></div>
+                  <div><small>Follow-ups para hoje</small><b>5</b></div>
+                  <div><small>Validade a terminar esta semana</small><b class="warn">3</b></div>
+                  <div><small>Adjudicadas em setembro</small><b class="ok">14</b></div>
+                </div>
+                <div class="task"><span class="st todo">!</span><span><span class="ref">PR/NF-509/2026</span> perdeu a validade a 24/09 sem resposta · email pronto a rever</span><span class="who">Nuno</span></div>
+                <div class="task"><span class="st call">☎</span><span>Chamada perdida às 12:47 · cliente com 1 proposta aberta · ligar de volta</span><span class="who">Nuno</span></div>
+                <div class="task"><span class="st todo">!</span><span>Concurso 6/DPIE/2025 publicado · rever <span class="ref">PR/PM-560/2025</span></span><span class="who">Paulo</span></div>
+                <div class="task"><span class="st done">✓</span><span><span class="ref">PR/NF-544/2026</span> adjudicada · fatura preparada para validar</span><span class="who">Administrativo</span></div>
+              </div>
+              <div class="view" id="vProp">
+                <h4>Propostas</h4>
+                <div class="sub">Registadas a partir do Word. Estado, validade e próximo passo em cada linha.</div>
+                <div style="overflow-x:auto">
+                <table class="tb">
+                  <thead><tr><th>Referência</th><th>Cliente</th><th>Data</th><th style="text-align:right">Valor</th><th>Estado</th><th>Próximo passo</th></tr></thead>
+                  <tbody>
+                    <tr class="hl"><td><span class="ref">PR/NF-544/2026</span></td><td>Laboratório de ensaios<small>Braga</small></td><td>09/09</td><td class="num">560 €</td><td><span class="chip ok">Adjudicada</span></td><td>Validar fatura</td></tr>
+                    <tr><td><span class="ref">PR/NF-531/2026</span></td><td>Serviços de HST<small>Porto</small></td><td>04/09</td><td class="num">2.170 €</td><td><span class="chip info">Follow-up hoje</span></td><td>Ligar · Nuno</td></tr>
+                    <tr><td><span class="ref">PR/PM-518/2026</span></td><td>Câmara municipal<small>Minho</small></td><td>29/08</td><td class="num">12.480 €</td><td><span class="chip">Aguarda cabimento</span></td><td>Rever a 15/10</td></tr>
+                    <tr><td><span class="ref">PR/NF-509/2026</span></td><td>Indústria têxtil<small>Guimarães</small></td><td>25/08</td><td class="num">3.959 €</td><td><span class="chip warn">Validade terminou</span></td><td>Email pronto a rever</td></tr>
+                    <tr><td><span class="ref">PR/NF-497/2026</span></td><td>Construtora<small>Viana do Castelo</small></td><td>14/08</td><td class="num">1.295 €</td><td><span class="chip bad">Perdida</span></td><td>Motivo: preço</td></tr>
+                  </tbody>
+                </table>
+                </div>
+                <div class="mini-note">Clientes e valores ilustrativos; o da PR/NF-509/2026 é a opção A do sonómetro (2.985 € + 974 €). Uma proposta perdida guarda o motivo: com o tempo, sabe-se porque se perde.</div>
+              </div>
+              <div class="view" id="vConc">
+                <h4>Concursos e decisões longas</h4>
+                <div class="sub">Nada sai daqui enquanto não houver decisão: ganho, perdido ou anulado.</div>
+                <div class="task"><span class="st todo">!</span><span><b>6/DPIE/2025 · SGMAI</b> · alcoolímetros para a GNR e a PSP, lotes 1 e 4<br><small style="color:var(--muted)">Proposta <span class="ref">PR/PM-560/2025</span> de 08/10/2025 · há 11 meses</small></span><span class="who"><span class="chip warn">Publicado · rever</span></span></div>
+                <div class="task"><span class="st lock">○</span><span><b>Universidade</b> · sonómetros para laboratório de acústica<br><small style="color:var(--muted)">Proposta de março de 2025 · há 18 meses</small></span><span class="who"><span class="chip">A aguardar</span></span></div>
+                <div class="task"><span class="st lock">○</span><span><b>Hospital</b> · monitorização de gases no bloco operatório<br><small style="color:var(--muted)">Proposta de junho de 2026 · há 3 meses</small></span><span class="who"><span class="chip info">Esclarecimentos</span></span></div>
+                <div class="mini-note go">O primeiro é o vosso concurso real. Os outros dois são ilustrativos. Quando um procedimento mexe, o responsável recebe o aviso com a proposta original anexada.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.2 Como tudo se liga -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Como tudo se liga</span>
+        <h2>Do Word gravado à fatura, sem relançar nada</h2>
+        <p class="lead">O que hoje passa por três sítios e pela memória de alguém passa a ser um só percurso.</p>
+        <div class="fluxo" id="fxDemo" style="margin-top:26px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="fxDemo-config">
+    {
+      "stepMs": 1800,
+      "channels": [
+        { "icon": "database", "label": "Pasta de propostas no servidor" },
+        { "icon": "phone", "label": "Email de chamadas da central" },
+        { "icon": "message", "label": "Email da empresa" }
+      ],
+      "nodes": [
+        { "icon": "book", "title": "Proposta gravada", "detail": "No Word, com as vossas descrições técnicas, na pasta de sempre.", "tone": "brand" },
+        { "icon": "search", "title": "Lida e registada", "detail": "Referência, datas, validade, capítulos, posições e valores.", "tone": "teal" },
+        { "icon": "id", "title": "Ficha do cliente", "detail": "Propostas, equipamentos, faturas, contas correntes e chamadas.", "tone": "teal" },
+        { "icon": "calendar", "title": "Follow-up e alertas", "detail": "Datas, validades e concursos. Ninguém depende da memória.", "tone": "teal" },
+        { "icon": "check", "title": "Adjudicação e fatura", "detail": "A proposta adjudicada dá origem à fatura. Uma pessoa valida.", "tone": "brand" }
+      ],
+      "note": "O mesmo registo alimenta a faturação, as contas correntes e os registos da ISO 9001."
+    }
+    </script>
+
+    <!-- 3.3 Ficha do cliente e chamadas -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Eficácia perante o cliente</span>
+        <h2>A ficha do cliente, e a chamada perdida que já não se perde</h2>
+        <p class="lead">A central já envia um email com as chamadas não atendidas. A plataforma lê esse email, reconhece o número e entrega a chamada a quem conhece o cliente.</p>
+        <div class="app reveal">
+          <div class="app-top"><i></i><i></i><i></i><span class="url">plataforma.ambergo.pt · clientes</span></div>
+          <div class="app-body">
+            <aside class="app-side">
+              <div class="logo"><span class="logo-chip"><img src="assets/img/ambergo-logo.png" alt="Ambergo"></span></div>
+              <div class="nav">
+                <button class="active" data-view="vFicha">Ficha do cliente</button>
+                <button data-view="vCham">Chamadas <em>2</em></button>
+              </div>
+              <div class="who">Sessão de Nuno Faria<br>Comercial</div>
+            </aside>
+            <div class="app-main">
+              <div class="view active" id="vFicha">
+                <div class="cli-head"><div class="cli-ava">LA</div><div><b>Laboratório de Acústica · Universidade</b><span>Prof. Rui Antunes · 253 ••• 214 · cliente desde 2019</span></div></div>
+                <div class="cli-grid">
+                  <div class="box"><div class="bh">Propostas</div>
+                    <div class="ln"><b><span class="ref">PR/NF-539/2026</span></b><span>Sonómetro Classe 1 · aberta há 12 dias</span></div>
+                    <div class="ln"><b><span class="ref">PR/NF-402/2026</span></b><span>Curso de ruído no trabalho · adjudicada</span></div>
+                    <div class="ln"><b><span class="ref">PR/PM-211/2025</span></b><span>Dosímetros · perdida (prazo)</span></div>
+                  </div>
+                  <div class="box"><div class="bh">Equipamentos vendidos</div>
+                    <div class="ln"><b>SC250 · CESVA</b><span>2024 · verificação a vencer em outubro</span></div>
+                    <div class="ln"><b>CB011 · calibrador</b><span>2024 · garantia até 2026</span></div>
+                  </div>
+                  <div class="box"><div class="bh">Conta corrente</div>
+                    <div class="ln"><b>Faturado em 2026</b><span>6.320 €</span></div>
+                    <div class="ln"><b>Em aberto</b><span>0 €</span></div>
+                  </div>
+                  <div class="box"><div class="bh">Chamadas e notas</div>
+                    <div class="ln"><b>Hoje, 12:47</b><span>Não atendida · tarefa para o Nuno</span></div>
+                    <div class="ln"><b>09/09</b><span>Pediu opção Classe 2 para comparar</span></div>
+                  </div>
+                </div>
+                <div class="mini-note">Cliente, contactos e valores ilustrativos. O lembrete de verificação dos equipamentos vendidos é uma sugestão nossa, a validar convosco.</div>
+              </div>
+              <div class="view" id="vCham">
+                <h4>Chamadas não atendidas · hoje</h4>
+                <div class="sub">Lidas do email que a central já envia. Sem mexer na central.</div>
+                <div class="mail"><div class="mh">Email da central · Assunto: chamadas não atendidas</div><div class="mb">12:47 · 253 ••• 214 · não atendida<br>15:10 · 912 ••• 087 · não atendida</div></div>
+                <div class="task"><span class="st call">☎</span><span><b>253 ••• 214 · Laboratório de Acústica</b> · 1 proposta aberta, 1 verificação a vencer</span><span class="who">tarefa: Nuno</span></div>
+                <div class="task"><span class="st lock">?</span><span><b>912 ••• 087 · número novo</b> · fica em «por identificar»; quem ligar de volta cria a ficha</span><span class="who">tarefa: comercial</span></div>
+                <div class="mini-note go">Abrir a ficha no ecrã no momento em que o telefone toca depende de a central expor as chamadas em tempo real de forma estável. Testamos na fase 3 e dizemos o resultado. Não prometemos o que a central já vos falhou.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.4 Gestão -->
+    <div class="slide section-alt tight">
+      <div class="container">
+        <span class="eyebrow">O que sai do Primavera</span>
+        <h2>Faturação, contas correntes e salários, com a equipa toda lá dentro</h2>
+        <p class="lead">O que usam hoje no Primavera, sem o limite de um acesso e uma consulta. A parte legal (faturas certificadas, salários, declarações) corre no TOConline: o que a API permite passa sozinho, o resto faz-se lá, como hoje no Primavera.</p>
+        <div class="app reveal">
+          <div class="app-top"><i></i><i></i><i></i><span class="url">plataforma.ambergo.pt · gestão</span></div>
+          <div class="app-body">
+            <aside class="app-side">
+              <div class="logo"><span class="logo-chip"><img src="assets/img/ambergo-logo.png" alt="Ambergo"></span></div>
+              <div class="nav">
+                <button class="active" data-view="vFat">Faturação</button>
+                <button data-view="vCC">Contas correntes</button>
+                <button data-view="vRH">Salários</button>
+                <button data-view="vToc">Ligação ao TOConline</button>
+                <button data-view="vUsers">Equipa e acessos</button>
+              </div>
+            </aside>
+            <div class="app-main">
+              <div class="view active" id="vFat">
+                <h4>Faturação · setembro</h4>
+                <div class="sub">A fatura nasce da proposta adjudicada, com as posições escolhidas. Uma pessoa valida, e a plataforma emite-a no TOConline pela API.</div>
+                <div style="overflow-x:auto">
+                <table class="tb">
+                  <thead><tr><th>Documento</th><th>Cliente</th><th>Origem</th><th style="text-align:right">Valor</th><th>Estado</th></tr></thead>
+                  <tbody>
+                    <tr class="hl"><td>FT (rascunho)</td><td>Laboratório de ensaios</td><td><span class="ref">PR/NF-544/2026</span></td><td class="num">560,00 €</td><td><span class="chip warn">Para validar</span></td></tr>
+                    <tr><td>FT 2026/412</td><td>Serviços de HST</td><td><span class="ref">PR/NF-488/2026</span></td><td class="num">2.170,00 €</td><td><span class="chip">Vence em 12 dias</span></td></tr>
+                    <tr><td>FT 2026/405</td><td>Indústria metalúrgica</td><td><span class="ref">PR/NF-471/2026</span></td><td class="num">1.540,00 €</td><td><span class="chip bad">Vencida há 9 dias</span></td></tr>
+                    <tr><td>RE 2026/318</td><td>Universidade</td><td>FT 2026/377</td><td class="num">975,00 €</td><td><span class="chip ok">Recebido</span></td></tr>
+                  </tbody>
+                </table>
+                </div>
+                <div class="mini-note">Valores sem IVA e ilustrativos. A fatura legal é emitida pelo TOConline, certificado pela AT: comunicação à AT, PDF e envio ao cliente por email, tudo pela API. O contabilista vê os mesmos documentos no TOConline.</div>
+              </div>
+              <div class="view" id="vCC">
+                <h4>Contas correntes</h4>
+                <div class="sub">Clientes e fornecedores, com o que está em aberto e há quanto tempo. O recibo tira a fatura da conta corrente, como hoje.</div>
+                <div class="cli-grid">
+                  <div class="box"><div class="bh">Clientes · em aberto</div>
+                    <div class="ln"><b>Indústria metalúrgica</b><span>1.540 € · vencida há 9 dias</span></div>
+                    <div class="ln"><b>Serviços de HST</b><span>2.170 € · vence em 12 dias</span></div>
+                    <div class="ln"><b>Câmara municipal</b><span>4.310 € · vence em 30 dias</span></div>
+                  </div>
+                  <div class="box"><div class="bh">Fornecedores · por pagar</div>
+                    <div class="ln"><b>Fabricante de sonómetros</b><span>8.940 € · 15/10</span></div>
+                    <div class="ln"><b>Laboratório de calibração</b><span>1.225 € · 30/10</span></div>
+                    <div class="ln"><b>Laboratório de análises</b><span>680 € · 05/11</span></div>
+                  </div>
+                </div>
+                <div class="mini-note">Nomes e valores ilustrativos. Recibos de clientes e pagamentos a fornecedores sincronizam com o TOConline pela API.</div>
+              </div>
+              <div class="view" id="vRH">
+                <h4>Salários · setembro</h4>
+                <div class="sub">Os salários passam do Primavera para o TOConline, que trata dos recibos de vencimento, da DMR e da Segurança Social. A plataforma lembra os prazos e guarda o que é de cada colaborador.</div>
+                <div class="task"><span class="st todo">!</span><span>Processar salários de setembro no TOConline · 6 colaboradores</span><span class="who">manual · lembrete</span></div>
+                <div class="task"><span class="st todo">!</span><span>DMR e Segurança Social · prazo de outubro</span><span class="who">manual · lembrete</span></div>
+                <div class="task"><span class="st lock">○</span><span>Férias e faltas do mês, registadas na plataforma, para lançar no processamento</span><span class="who">resumo pronto</span></div>
+                <div class="task"><span class="st done">✓</span><span>Recibos de vencimento arquivados na ficha de cada colaborador</span><span class="who">upload</span></div>
+                <div class="mini-note">A API do TOConline não inclui salários: o processamento faz-se no TOConline, e a plataforma trata dos lembretes, do resumo mensal e do arquivo.</div>
+              </div>
+              <div class="view" id="vToc">
+                <h4>Ligação ao TOConline</h4>
+                <div class="sub">O que passa sozinho pela API e o que continua a fazer-se à mão no TOConline. Confirmado na documentação da API a 27/09/2026.</div>
+                <div class="cli-grid">
+                  <div class="box"><div class="bh">Automático, pela API</div>
+                    <div class="ln"><b>Clientes e fornecedores</b><span>com morada e email</span></div>
+                    <div class="ln"><b>Produtos e serviços</b><span>o vosso catálogo</span></div>
+                    <div class="ln"><b>Documentos de venda</b><span>faturas, guias, notas de crédito</span></div>
+                    <div class="ln"><b>Recibos</b><span>tiram a fatura da conta corrente</span></div>
+                    <div class="ln"><b>Compras e pagamentos</b><span>faturas de fornecedores</span></div>
+                    <div class="ln"><b>Comunicação à AT</b><span>e PDF e envio por email</span></div>
+                  </div>
+                  <div class="box"><div class="bh">Manual, no TOConline</div>
+                    <div class="ln"><b>Processamento de salários</b><span>uma vez por mês</span></div>
+                    <div class="ln"><b>Recibos de vencimento</b><span>arquivados na plataforma</span></div>
+                    <div class="ln"><b>DMR e Segurança Social</b><span>com lembrete de prazo</span></div>
+                    <div class="ln"><b>Contabilidade</b><span>o contabilista, como hoje</span></div>
+                  </div>
+                </div>
+                <div class="mini-note go">Se o TOConline vier a abrir salários na API, a ligação acrescenta-se sem mudar nada do vosso lado.</div>
+              </div>
+              <div class="view" id="vUsers">
+                <h4>Equipa e acessos</h4>
+                <div class="sub">Cada pessoa entra com o seu perfil e vê o que precisa. Fica registado quem fez o quê.</div>
+                <div class="task"><span class="st done">✓</span><span><b>Paulo Morais</b> · administração · tudo</span><span class="who">perfil total</span></div>
+                <div class="task"><span class="st done">✓</span><span><b>Nuno Faria</b> · comercial · propostas, clientes, chamadas</span><span class="who">perfil comercial</span></div>
+                <div class="task"><span class="st done">✓</span><span><b>Administrativo</b> · faturação, contas correntes, salários</span><span class="who">perfil gestão</span></div>
+                <div class="task"><span class="st done">✓</span><span><b>Técnicos e formação</b> · fichas de cliente, pós-venda, cursos</span><span class="who">perfil técnico</span></div>
+                <div class="mini-note go">Hoje: um acesso e uma consulta. Aqui: a equipa toda.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.5 Porque desta vez fica -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Porque desta vez fica</span>
+        <h2>Já vos venderam soluções que não duraram. Isto é o que muda.</h2>
+        <div class="why">
+          <div class="card reveal"><div class="past">Antes: o CRM de há 15 anos</div><h3>Ninguém muda a forma de trabalhar</h3><p>As propostas continuam no Word, com as vossas descrições técnicas. A plataforma lê o que já fazem; não é mais um sítio para preencher.</p></div>
+          <div class="card reveal"><div class="past">Antes: a central que durou uma semana</div><h3>Não dependemos da central</h3><p>Usamos o email de chamadas que já recebem. O que depender da central é testado e dito antes, não vendido como certo.</p></div>
+          <div class="card reveal"><div class="past">Antes: atualizações que voltavam ao zero</div><h3>A manutenção é nossa</h3><p>A licença inclui manutenção e atualizações. Se algo deixar de funcionar, é trabalho nosso, não um pedido extra vosso.</p></div>
+          <div class="card reveal"><div class="past">Antes: um acesso e uma consulta</div><h3>Os dados são vossos</h3><p>A equipa toda entra. Cópias diárias, servidores na União Europeia e exportação completa se um dia quiserem sair.</p></div>
+        </div>
+        <div class="people">
+          <div class="card card-do reveal">
+            <h3>O que passa a ser automático</h3>
+            <ul class="list-check">
+              <li>Registar cada proposta a partir do Word, na ficha do cliente certo</li>
+              <li>Lembrar follow-ups, validades e concursos parados</li>
+              <li>Ligar as chamadas perdidas à ficha e a quem conhece o cliente</li>
+              <li>Preparar emails de seguimento e faturas para uma pessoa rever</li>
+              <li>Guardar os registos que a ISO 9001 pede, sem trabalho extra</li>
+            </ul>
+          </div>
+          <div class="card card-keep reveal">
+            <h3>O que fica com as pessoas</h3>
+            <ul class="list-keep">
+              <li>Falar com o cliente para perceber a aplicação: ruído laboral, ambiental ou acústica de edifícios</li>
+              <li>Escolher o equipamento e o preço; a plataforma não orçamenta sozinha</li>
+              <li>Consultar fornecedores e laboratórios sobre os gases a analisar</li>
+              <li>Enviar, faturar e submeter concursos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert reveal"><span class="dot"></span><div><b>ISO 9001:</b> se retomarem a certificação que os mercados dos Emirados, da Arábia Saudita, do Catar e de Omã começam a pedir, os registos (propostas numeradas, pós-venda, reclamações, formação) já estão na plataforma. Mapeamos convosco o que falta. Não é um módulo à parte.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 4. ASSISTENTE                                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="assistente">
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">O assistente dentro da plataforma</span>
+        <h2>Três situações da vossa semana, vistas por dentro</h2>
+        <p class="lead" style="margin-bottom:18px">À esquerda, o que a equipa vê. À direita, o que o assistente está a fazer em cada passo.</p>
+        <div class="cr" id="crDemo"></div>
+        <p class="demo-note" style="text-align:center; margin-top:10px; font-size:0.8rem; color:var(--muted)">Clientes, contactos e horas ilustrativos. A referência PR/NF-509/2026 e o seu conteúdo são da vossa proposta.</p>
+      </div>
+    </div>
+    <script type="application/json" id="crDemo-config">
+    {
+      "agentName": "Assistente Ambergo",
+      "agentInitials": "AA",
+      "chatStatus": "Na plataforma e por email, só para a equipa",
+      "stepMs": 1500,
+      "endPauseMs": 3000,
+      "scenarios": [
+        {
+          "title": "A proposta regista-se sozinha",
+          "subtitle": "O Nuno grava a proposta no servidor. Mais nada.",
+          "chat": [
+            { "sender": "system", "text": "Novo ficheiro em Propostas \\ 2026 · PR/NF-509/2026", "time": "17:42" },
+            { "sender": "agent", "text": "Nuno, registei a **PR/NF-509/2026**: fornecimento de equipamentos, 8 capítulos e 41 posições, com as opções A e B do sonómetro. Validade de 30 dias, até **24/09**.", "time": "17:42" },
+            { "sender": "agent", "text": "O cliente está em branco no documento. É para o pedido de ontem da Eng.ª Marta Leite (indústria têxtil, Guimarães)?", "time": "17:42" },
+            { "sender": "client", "text": "Sim, é essa.", "time": "17:44" },
+            { "sender": "agent", "text": "Feito. Está na ficha dela, ao lado das duas propostas anteriores. Follow-up marcado para **1/09** e aviso 5 dias antes de a validade acabar.", "time": "17:44" }
+          ],
+          "steps": [
+            { "icon": "database", "label": "Deteta a proposta nova na pasta do servidor" },
+            { "icon": "search", "label": "Lê o Word: referência, capítulos, posições, validade" },
+            { "icon": "alert", "label": "Destinatário em branco: pergunta em vez de adivinhar" },
+            { "icon": "id", "label": "Associa ao cliente e junta ao histórico" },
+            { "icon": "calendar", "label": "Marca o follow-up e o aviso de validade" }
+          ]
+        },
+        {
+          "title": "O follow-up não depende da memória",
+          "subtitle": "Segunda de manhã, o Paulo sabe o que está pendente.",
+          "chat": [
+            { "sender": "system", "text": "Segunda-feira · resumo semanal", "time": "08:30" },
+            { "sender": "agent", "text": "Bom dia, Paulo. Esta semana: **5 follow-ups**, **3 propostas** perdem a validade até sexta, e **1 concurso** mexeu.", "time": "08:30" },
+            { "sender": "agent", "text": "A **PR/NF-509/2026** perdeu a validade a 24/09 sem resposta. Preparei um email a perguntar pela decisão e a propor manter os preços mais 30 dias. Quer ver?", "time": "08:30" },
+            { "sender": "client", "text": "Mostra. Pergunta também se precisam da formação DGERT.", "time": "08:41" },
+            { "sender": "agent", "text": "Acrescentei o curso de 14 horas de ruído no trabalho. Rascunho pronto para rever, **não enviei**. O follow-up passa para quinta.", "time": "08:41" }
+          ],
+          "steps": [
+            { "icon": "clock", "label": "Junta o que vence esta semana" },
+            { "icon": "list", "label": "Ordena por validade e por valor" },
+            { "icon": "message", "label": "Prepara o email com o histórico da proposta" },
+            { "icon": "user-cog", "label": "Acrescenta o que o Paulo pediu" },
+            { "icon": "shield", "label": "Não envia sem aprovação; reagenda o follow-up" }
+          ]
+        },
+        {
+          "title": "A chamada perdida volta com contexto",
+          "subtitle": "O email da central passa a ser uma tarefa com a ficha aberta.",
+          "chat": [
+            { "sender": "system", "text": "Email da central · chamada não atendida · 253 ••• 214", "time": "12:47" },
+            { "sender": "agent", "text": "Chamada perdida de **253 ••• 214**: Laboratório de Acústica da universidade, Prof. Rui Antunes.", "time": "12:48" },
+            { "sender": "agent", "text": "Para quem ligar de volta: **1 proposta aberta** (sonómetro Classe 1, há 12 dias) e um **SC250 de 2024** com a verificação a vencer em outubro.", "time": "12:48" },
+            { "sender": "client", "text": "Ligo eu depois do almoço.", "time": "12:55" },
+            { "sender": "agent", "text": "Tarefa atribuída ao Nuno, com a ficha anexada. Quando a chamada for feita, fica no histórico do cliente.", "time": "12:55" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Lê o email de chamadas não atendidas" },
+            { "icon": "search", "label": "Procura o número nas fichas" },
+            { "icon": "id", "label": "Junta propostas abertas e equipamentos vendidos" },
+            { "icon": "user-cog", "label": "Entrega a quem conhece o cliente" },
+            { "icon": "check", "label": "Regista no histórico" }
+          ]
+        }
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 5. PROPOSTA                                            -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="proposta">
+
+    <!-- 5.1 Arranque -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Arranque</span>
+        <h2>Primeiro o que mais pesa: as propostas e o follow-up</h2>
+        <p class="lead">Seis a oito semanas. A fase 1 não depende do Primavera, por isso começa a poupar tempo antes de o resto estar pronto.</p>
+        <div class="phase">
+          <div class="card first reveal"><span class="tagp">Começa aqui</span><div class="n">FASE 1 · SEMANAS 1 A 3</div><h3>Propostas e follow-up</h3>
+            <ul><li>Leitura das propostas na pasta do servidor</li><li>Ficha do cliente com o histórico</li><li>Painel de pendentes, validades e concursos</li><li>Alertas e resumo semanal</li><li>Clientes importados do Primavera</li></ul></div>
+          <div class="card reveal"><div class="n">FASE 2 · SEMANAS 3 A 6</div><h3>Gestão e faturação</h3>
+            <ul><li>Faturação ligada ao TOConline pela API</li><li>Contas correntes de clientes e fornecedores</li><li>Salários passam para o TOConline</li><li>Migração dos dados do Primavera</li><li>Acessos para a equipa</li></ul></div>
+          <div class="card reveal"><div class="n">FASE 3 · SEMANAS 6 A 8</div><h3>Chamadas, qualidade e arranque</h3>
+            <ul><li>Chamadas não atendidas ligadas à ficha</li><li>Teste da ligação em tempo real à central</li><li>Registos da ISO 9001</li><li>Formação da equipa</li><li>Primavera desligado</li></ul></div>
+        </div>
+        <div class="bridge reveal">
+          <b>Um ponto a decidir hoje: o contrato do Primavera.</b>
+          <p>Renova no início de outubro (o Paulo apontou para dia 9, a confirmar). Como a plataforma fica completa em 6 a 8 semanas, é preciso cobrir esse intervalo sem parar a faturação. A migração dos dados é nossa.</p>
+          <div class="opts">
+            <div><b>Renovação mínima</b>O período mais curto que a Primavera aceitar.</div>
+            <div><b>Só o essencial</b>Manter faturação e consulta até à migração.</div>
+            <div><b>Ver o contrato juntos</b>Prazo de denúncia e exportação dos dados.</div>
+          </div>
+        </div>
+        <p class="demo-note" style="margin-top:14px; font-size:0.86rem; color:var(--muted)"><b style="color:var(--text)">O que precisamos de vocês:</b> acesso à pasta das propostas · exportação do Primavera · um exemplo do email de chamadas da central · uma hora por semana do Paulo e do Nuno. É isto que mais pesa no calendário.</p>
+      </div>
+    </div>
+
+    <!-- 5.2 Investimento -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Investimento</span>
+        <h2>O que custa, sem rodeios</h2>
+        <div class="inv-grid">
+          <div class="card price-card reveal">
+            <div class="label">Desenvolvimento da plataforma</div>
+            <div class="price">7.000 €<small>+ IVA</small></div>
+            <p class="note">Pago em três etapas, não de uma vez.</p>
+            <div class="steps3">
+              <div><b>ETAPA 1</b>Adjudicação<strong class="amt">4.000 €</strong></div>
+              <div><b>ETAPA 2</b>Testes<strong class="amt">2.000 €</strong></div>
+              <div><b>ETAPA 3</b>Entrega<strong class="amt">1.000 €</strong></div>
+            </div>
+            <ul class="incl">
+              <li>Propostas, ficha do cliente, follow-up e concursos</li>
+              <li>Faturação e contas correntes, ligadas ao TOConline pela API</li>
+              <li>Chamadas não atendidas ligadas à ficha</li>
+              <li>Registos da ISO 9001 mapeados convosco</li>
+              <li>Migração do Primavera e formação da equipa</li>
+            </ul>
+          </div>
+          <div class="card price-card reveal">
+            <div class="label">Licença anual</div>
+            <div class="price">cerca de 2.000 €<small>+ IVA / ano</small></div>
+            <p class="note">Na ordem do que pagam hoje ao Primavera, mas a cobrir a gestão, o CRM e as automações.</p>
+            <ul class="incl">
+              <li>Alojamento na União Europeia e cópias diárias</li>
+              <li>Manutenção e atualizações</li>
+              <li>A equipa toda com acesso</li>
+              <li>O assistente, os alertas e os resumos</li>
+            </ul>
+            <div class="vs-line">
+              <div class="old"><b>Hoje, Primavera</b>Gestão com um acesso e uma consulta. Sem CRM, sem automações.</div>
+              <div class="new"><b>Com a plataforma</b>Gestão, CRM e automações. A equipa toda.</div>
+            </div>
+            <div class="third">
+              <b>Custo de terceiros, pago diretamente ao TOConline</b>
+              <div class="ln"><span>Contabilidade e salários</span><strong>175 €/ano</strong></div>
+              <div class="ln"><span>Faturação e gestão</span><strong>108 €/ano</strong></div>
+              <small>Preços públicos, + IVA. A subscrição faz-se através do vosso contabilista certificado.</small>
+            </div>
+          </div>
+        </div>
+        <footer class="ais-footer">Ambergo × AI Solutions · Diogo Gonçalves · <a href="mailto:diogo.goncalves@aisolutions.pt">diogo.goncalves@aisolutions.pt</a><span class="disclaimer">Documento preparado para a reunião de 28 de setembro de 2026. Clientes e valores das demonstrações são ilustrativos.</span></footer>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <div class="pager">
+    <span class="hint">← → para navegar</span>
+    <button data-prev aria-label="Anterior">‹</button>
+    <span class="pos">1 / 3</span>
+    <button data-next aria-label="Seguinte">›</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="../shared/js/protect.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/experimente.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    calculadora('calcTempo');
+    fluxo('fxDemo');
+    chatRaciocinio('crDemo');
+    experimente('expDemo');
+    document.querySelectorAll('.app').forEach(function (app) {
+      app.querySelectorAll('.app-side .nav button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          app.querySelectorAll('.app-side .nav button').forEach(function (x) { x.classList.toggle('active', x === b); });
+          app.querySelectorAll('.app-main .view').forEach(function (v) { v.classList.toggle('active', v.id === b.dataset.view); });
+        });
+      });
+    });
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var r = document.documentElement;
+      var next = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('ais-theme', next); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
