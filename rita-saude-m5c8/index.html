@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Manutenção e cozinha | Unidade de saúde × AI Solutions</title>
+  <meta name="description" content="Protótipo navegável para a unidade de saúde da Rita Rito: pedidos de manutenção com estado à vista e agenda centralizada da cozinha por unidade e por dieta.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Manutenção e cozinha × AI Solutions">
+  <meta property="og:description" content="Quem pede fica a saber. A cozinha também. Duas ferramentas simples, feitas à medida da vossa unidade de saúde.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/rita-saude-m5c8/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>
+    try {
+      var t = localStorage.getItem('ais-theme');
+      if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/deck-slides.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">m</span>
+      <small><b>Manutenção e cozinha</b>Para a Rita Rito e a direção · 29 de setembro</small>
+    </div>
+    <div class="right">
+      <nav class="tabs" data-scope="deck">
+        <button class="tab active" data-tab="contexto">Contexto</button>
+        <button class="tab" data-tab="manutencao">Manutenção</button>
+        <button class="tab" data-tab="cozinha">Cozinha</button>
+        <button class="tab" data-tab="pordentro">Por dentro</button>
+        <button class="tab" data-tab="arranque">Arranque</button>
+      </nav>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro" title="Claro / escuro">◐</button>
+    </div>
+  </header>
+  <div class="progress"></div>
+
+  <main class="deck" id="deck">
+
+  <!-- ====================================================== -->
+  <!-- 1. CONTEXTO                                            -->
+  <!-- ====================================================== -->
+  <section class="tab-panel active" id="contexto">
+
+    <!-- 1.1 Capa -->
+    <div class="slide capa active">
+      <div class="container">
+        <div class="cover-grid">
+          <div>
+            <span class="kicker" style="display:block">Unidade de saúde × AI Solutions</span>
+            <h1 class="cover-h1">Quem pede fica a saber.<br><span class="grad">A cozinha também.</span></h1>
+            <div class="trilho grande" aria-hidden="true"><span class="feito"><i></i>Recebido</span><b></b><span class="feito"><i></i>Em curso</span><b></b><span class="agora"><i></i>Resolvido</span></div>
+            <p class="lead">Duas ferramentas simples, feitas à medida da vossa unidade de saúde: uma para os pedidos de manutenção, com o estado sempre à vista de quem pediu, e uma agenda centralizada para a cozinha, por unidade, por refeição e por dieta. Sem inventários de equipamentos e sem funcionalidades que não vão usar.</p>
+          </div>
+          <div class="meta reveal">
+            <div><span>Para</span><b>Rita Rito e a direção</b></div>
+            <div><span>Setor</span><b>Unidade de saúde com 11 unidades e cozinha centralizada</b></div>
+            <div><span>Seguimento</span><b>Reunião de 24 de setembro de 2026</b></div>
+            <div><span>Hoje</span><b>Ver as duas ferramentas a funcionar e confirmar que a estrutura é esta</b></div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="card stat-card reveal"><div class="num"><span class="count" data-to="420">420</span></div><div class="desc">Pessoas assistidas, distribuídas por 11 unidades, todas servidas pela mesma cozinha.</div></div>
+          <div class="card stat-card reveal"><div class="num">6 áreas</div><div class="desc">Carpintaria, canalização, eletricidade, pedreiro, ar condicionado e informática. Técnicos internos e de empresas externas.</div></div>
+          <div class="card stat-card reveal"><div class="num">5 refeições</div><div class="desc">Pequeno-almoço, almoço, lanche, jantar e ceia, com dietas diferentes em cada unidade, e alterações no próprio dia.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.2 O que ouvimos -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que ouvimos a 24 de setembro</span>
+        <h2>O que a Rita nos contou</h2>
+        <div class="pains">
+          <div class="card reveal"><div class="pain-num">01</div><h3>Pedir já é fácil. Saber, não.</h3><p>Os pedidos entram pelo formulário do Google. O encarregado acompanha, mas quem pediu nunca sabe se a torneira já foi arranjada.</p></div>
+          <div class="card reveal"><div class="pain-num">02</div><h3>Só os meus pedidos</h3><p>Hoje, ou se vê a lista toda, ou não se vê nada. Cada pessoa devia ver só os seus pedidos e o estado de cada um.</p></div>
+          <div class="card reveal"><div class="pain-num">03</div><h3>O mercado complica</h3><p>As plataformas de manutenção que viram pedem uma listagem de equipamentos «infinita» logo no início, e têm funcionalidades que não vão usar.</p></div>
+          <div class="card reveal"><div class="pain-num">04</div><h3>Licenças contadas</h3><p>Cinco utilizadores incluídos, e cada um a mais paga-se à parte. Entre quem pede e quem trata, na cozinha e na manutenção, são cerca de 30 pessoas.</p></div>
+          <div class="card reveal"><div class="pain-num">05</div><h3>A cozinha sem sistema</h3><p>420 pessoas, 11 unidades, cada uma com as suas dietas: normal, mole, pastosa, PET, hipolipídica, sem lactose, sem glúten. Uma saída hoje muda as contas de hoje.</p></div>
+          <div class="card said reveal"><div class="pain-num">A FRASE DA REUNIÃO</div><blockquote>«Nós abolimos os telefonemas para pedir, mas depois temos que fazer os telefonemas para saber se está feito.»</blockquote><cite>Rita Rito, 24 de setembro</cite></div>
+        </div>
+        <p class="quote">O que pediram foi simples: simplificar ao máximo. É isso que está nas próximas páginas.</p>
+      </div>
+    </div>
+
+    <!-- 1.3 Duas ferramentas -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">O que vamos construir</span>
+        <h2>Duas ferramentas simples, numa só entrada</h2>
+        <p class="lead">Cada pessoa entra com o seu acesso e vê só o que é seu. Funciona no computador e no telemóvel.</p>
+        <div class="duas">
+          <div class="card reveal">
+            <div class="k">Ferramenta 1</div>
+            <h3>Pedidos de manutenção</h3>
+            <p style="color:var(--muted)">Formulário por área, prioridade, encaminhamento automático para quem trata, e o estado à vista de quem pediu.</p>
+            <div class="quem">
+              <div><b>Quem pede</b><span>Faz o pedido em três passos e acompanha só os seus.</span></div>
+              <div><b>O técnico</b><span>Vê a sua área, muda o estado e deixa uma nota.</span></div>
+              <div><b>O encarregado</b><span>Vê tudo, por área, e sabe o que está parado.</span></div>
+            </div>
+          </div>
+          <div class="card coz reveal">
+            <div class="k">Ferramenta 2</div>
+            <h3>Agenda centralizada da cozinha</h3>
+            <p style="color:var(--muted)">Plano fixo de cada unidade, alterações no próprio dia, preparações para exames e pedidos da portaria e dos bombeiros.</p>
+            <div class="quem">
+              <div><b>Cada unidade</b><span>Regista só o que muda em relação ao plano.</span></div>
+              <div><b>Portaria e bombeiros</b><span>Pedem refeições quando precisam, no próprio dia.</span></div>
+              <div><b>A cozinha</b><span>Vê o total de cada refeição, já com tudo somado.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="sem">
+          <div class="reveal"><b>Sem inventário obrigatório</b>Começam a usar sem listar um único equipamento. Se um dia quiserem, acrescenta-se.</div>
+          <div class="reveal"><b>Sem funcionalidades a mais</b>Só o que ouvimos na reunião. O resto fica para quando fizer falta.</div>
+          <div class="reveal"><b>Sem contar utilizadores</b>As cerca de 30 pessoas da cozinha e da manutenção, todas lá dentro.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 2. MANUTENÇÃO                                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="manutencao">
+
+    <!-- 2.1 Experimente -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Experimente · ao vivo</span>
+        <h2>Peça o arranjo da torneira. Resolva-o. Veja-o resolvido.</h2>
+        <p class="lead">Protótipo a funcionar: o que fizer aqui fica registado e aparece nos outros ecrãs.</p>
+        <div class="guia" data-passos="pediu,resolveu,viu">
+          <ol>
+            <li>Faça um pedido como a Enf.ª Ana</li>
+            <li>Resolva-o como técnico</li>
+            <li>Veja o estado, sem telefonar</li>
+          </ol>
+          <button class="reset" data-reset type="button">Recomeçar a demonstração</button>
+        </div>
+        <div class="app" data-app="manut" data-start="novo"></div>
+      </div>
+    </div>
+
+    <!-- 2.2 Como anda um pedido -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Como anda um pedido</span>
+        <h2>Do formulário ao «está feito», sem um telefonema</h2>
+        <p class="lead">O que hoje acaba no formulário do Google passa a ter um percurso até ao fim, à vista de quem pediu.</p>
+        <div class="fluxo" id="fxManut" style="margin-top:26px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="fxManut-config">
+    {
+      "stepMs": 1800,
+      "nodes": [
+        { "icon": "list", "title": "Pedido feito", "detail": "Área, local, descrição e prioridade: urgente, não urgente ou revisão periódica.", "tone": "brand" },
+        { "icon": "arrows", "title": "Segue para a área certa", "detail": "Para o responsável dessa área, seja colaborador interno ou técnico de empresa externa.", "tone": "teal" },
+        { "icon": "wrench", "title": "O técnico atualiza", "detail": "No telemóvel, no sítio: começou, resolvido, e uma nota do que fez.", "tone": "teal" },
+        { "icon": "clock", "title": "Nada fica parado", "detail": "Um urgente sem início avisa o encarregado. O tempo de aviso é configurável.", "tone": "teal" },
+        { "icon": "check", "title": "Quem pediu sabe", "detail": "Vê o estado nos seus pedidos e recebe o aviso de resolvido, com a nota.", "tone": "brand" }
+      ],
+      "note": "Cada pedido guarda o histórico: quem pediu, quem tratou, quando, e o que foi feito."
+    }
+    </script>
+
+    <!-- 2.3 Quem vê o quê -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Quem vê o quê</span>
+        <h2>Cada pessoa vê o que é seu. O encarregado vê tudo.</h2>
+        <p class="lead">Foi o que a Rita pediu: segmentado, sem ninguém ter de percorrer a lista toda para encontrar o seu pedido.</p>
+        <div class="perfis">
+          <div class="card reveal">
+            <div class="who">Quem pede</div>
+            <h3>Enfermagem, cozinha, portaria, serviços</h3>
+            <ul>
+              <li>Faz o pedido por área, em três passos</li>
+              <li>Vê os seus pedidos e o estado de cada um</li>
+              <li>Recebe o aviso quando fica resolvido</li>
+              <li class="nao">Não vê os pedidos dos outros</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="who">O técnico</div>
+            <h3>Interno ou de empresa externa</h3>
+            <ul>
+              <li>Vê só os pedidos da sua área</li>
+              <li>Começa, resolve e deixa nota, no telemóvel</li>
+              <li>Tem o histórico do que já fez</li>
+              <li class="nao">Não vê as outras áreas nem a cozinha</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="who">O encarregado de manutenção</div>
+            <h3>Gere todas as áreas</h3>
+            <ul>
+              <li>Vê tudo, filtrado por área</li>
+              <li>Sabe o que está por começar e o que é urgente</li>
+              <li>É avisado quando um urgente fica parado</li>
+              <li>Pode passar um pedido a outro técnico</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert reveal"><span class="dot"></span><div><b>Técnicos de empresas externas:</b> como a Rita explicou, vêm sempre os mesmos. Cada um tem o seu acesso à sua área, e deixa de ser preciso ligar à empresa para saber se o técnico já passou.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 3. COZINHA                                             -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="cozinha">
+
+    <!-- 3.1 Experimente -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Experimente · ao vivo</span>
+        <h2>A unidade regista o que muda. A cozinha vê o total, já certo.</h2>
+        <p class="lead">O exemplo da Rita: Unidade 1, 29 pessoas, 20 normais, 6 pastosas e 3 específicas.</p>
+        <div class="guia" data-passos="alterou,cozinhaViu">
+          <ol>
+            <li>Registe uma alteração na unidade</li>
+            <li>Veja-a na agenda da cozinha</li>
+          </ol>
+          <button class="reset" data-reset type="button">Recomeçar a demonstração</button>
+        </div>
+        <div class="app" data-app="cozinha" data-start="unidade"></div>
+      </div>
+    </div>
+
+    <!-- 3.2 Como funciona -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Como funciona</span>
+        <h2>O plano fixo está sempre lá. Só se regista a exceção.</h2>
+        <p class="lead">Ninguém volta a escrever as 420 refeições todos os dias. Cada unidade mexe só no que muda, até no próprio dia, e a cozinha recebe a conta feita.</p>
+        <div class="fluxo" id="fxCoz" style="margin-top:26px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="fxCoz-config">
+    {
+      "stepMs": 1800,
+      "nodes": [
+        { "icon": "calendar", "title": "Plano fixo", "detail": "Por unidade, por refeição e por dieta. Configurado uma vez.", "tone": "brand" },
+        { "icon": "user-cog", "title": "A unidade altera", "detail": "Saídas, refeições a mais, mudanças de dieta. No próprio dia, para a refeição certa.", "tone": "teal" },
+        { "icon": "clock", "title": "Exames contam os dias", "detail": "Colonoscopia: 5 dias de preparação, e ao sexto volta sozinha à dieta habitual.", "tone": "teal" },
+        { "icon": "message", "title": "Pedidos pontuais", "detail": "Portaria e bombeiros: hoje dois almoços, amanhã três, depois nenhum.", "tone": "teal" },
+        { "icon": "list", "title": "Agenda da cozinha", "detail": "Por dia e por refeição: cada unidade, cada dieta, e o total.", "tone": "brand" }
+      ],
+      "note": "A cozinha continua a decidir a constituição de cada dieta e a ementa semanal. A plataforma diz quantas, de quê e para onde."
+    }
+    </script>
+
+    <!-- 3.3 A plataforma completa -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">A plataforma completa</span>
+        <h2>As duas ferramentas, na mesma entrada</h2>
+        <p class="lead">Manutenção e cozinha na mesma barra lateral, com os mesmos dados dos ecrãs anteriores: o que fez lá, está aqui.</p>
+        <div class="app" data-app="tudo" data-start="todos"></div>
+        <div class="mini-note" style="margin-top:12px">Nomes, locais, pedidos e a distribuição de dietas das Unidades 2 a 11 são ilustrativos. Os totais (420 pessoas, 11 unidades) e a Unidade 1 são os da reunião.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 4. POR DENTRO                                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="pordentro">
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Por dentro</span>
+        <h2>Quatro situações da vossa semana, e o que a plataforma faz em cada uma</h2>
+        <p class="lead" style="margin-bottom:18px">À esquerda, os avisos que as pessoas recebem. À direita, o que a plataforma está a fazer em cada passo.</p>
+        <div class="cr" id="crDemo"></div>
+        <p class="demo-note" style="text-align:center; margin-top:10px; font-size:0.8rem; color:var(--muted)">Nomes, horas e números ilustrativos. O canal dos avisos (email, telemóvel ou os dois) escolhe-se convosco.</p>
+      </div>
+    </div>
+    <script type="application/json" id="crDemo-config">
+    {
+      "agentName": "Plataforma de pedidos",
+      "agentInitials": "P",
+      "chatStatus": "Avisos à equipa, por email ou no telemóvel",
+      "stepMs": 1500,
+      "endPauseMs": 3000,
+      "scenarios": [
+        {
+          "title": "A torneira, sem telefonemas",
+          "subtitle": "A Enf.ª Ana pede de manhã e sabe quando fica feito.",
+          "chat": [
+            { "sender": "system", "text": "Novo pedido · Canalização · Unidade 3, casa de banho do piso 1 · não urgente", "time": "08:12" },
+            { "sender": "agent", "text": "Pedido **#216** recebido. Está com **Rui Almeida** (canalização). Pode acompanhar o estado em «Os meus pedidos».", "time": "08:12" },
+            { "sender": "agent", "text": "O Rui começou o seu pedido **#216**.", "time": "10:40" },
+            { "sender": "agent", "text": "Pedido **#216 resolvido**. Nota do técnico: «Vedante trocado, já não pinga.»", "time": "11:05" },
+            { "sender": "client", "text": "Obrigada!", "time": "11:07" }
+          ],
+          "steps": [
+            { "icon": "list", "label": "Lê a área escolhida: canalização" },
+            { "icon": "arrows", "label": "Encaminha para o técnico da empresa externa" },
+            { "icon": "message", "label": "Confirma a receção a quem pediu" },
+            { "icon": "wrench", "label": "O técnico muda o estado no telemóvel" },
+            { "icon": "check", "label": "Avisa quem pediu, com a nota, e guarda no histórico" }
+          ]
+        },
+        {
+          "title": "Colonoscopia: cinco dias sem lembretes",
+          "subtitle": "A unidade regista uma vez. A plataforma conta os dias.",
+          "chat": [
+            { "sender": "system", "text": "Unidade 1 · Quarto 2, cama A · preparação para colonoscopia · 5 dias", "time": "09:30" },
+            { "sender": "agent", "text": "Registado: **5 dias de preparação**, de terça 29/09 a sábado 03/10. A dieta normal desta pessoa sai do plano nesses dias.", "time": "09:30" },
+            { "sender": "agent", "text": "Agenda da cozinha atualizada: Unidade 1, **preparação dia 1 de 5**, em todas as refeições.", "time": "09:30" },
+            { "sender": "system", "text": "Domingo, 04/10", "time": "06:00" },
+            { "sender": "agent", "text": "Preparação terminada. Quarto 2, cama A **volta à dieta normal** a partir do pequeno-almoço de hoje.", "time": "06:00" }
+          ],
+          "steps": [
+            { "icon": "calendar", "label": "Marca os 5 dias no plano da unidade" },
+            { "icon": "arrows", "label": "Tira a pessoa da dieta habitual nesses dias" },
+            { "icon": "list", "label": "Mostra à cozinha o dia de preparação em que vai" },
+            { "icon": "clock", "label": "Conta os dias sem ninguém se lembrar" },
+            { "icon": "check", "label": "Repõe a dieta habitual no sexto dia" }
+          ]
+        },
+        {
+          "title": "Bombeiros, no próprio dia",
+          "subtitle": "Um pedido a meio da manhã chega ao jantar certo.",
+          "chat": [
+            { "sender": "system", "text": "Bombeiros · pedido para hoje · 6 jantares, dieta normal", "time": "11:20" },
+            { "sender": "agent", "text": "Cozinha: o jantar de hoje passa a ter **+6 normais** para os bombeiros. A portaria já tinha pedido **+2 almoços**.", "time": "11:20" },
+            { "sender": "client", "text": "Visto. E a Unidade 4?", "time": "11:24" },
+            { "sender": "agent", "text": "Unidade 4: **2 saídas** ao exterior, menos 2 normais ao almoço, ao lanche e ao jantar. Já está nos totais.", "time": "11:24" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Recebe o pedido pontual dos bombeiros" },
+            { "icon": "calendar", "label": "Soma ao jantar de hoje, na dieta certa" },
+            { "icon": "search", "label": "Junta as outras alterações do dia" },
+            { "icon": "list", "label": "Mostra à cozinha a conta já feita" }
+          ]
+        },
+        {
+          "title": "Urgente parado: não fica esquecido",
+          "subtitle": "A plataforma avisa, mas não decide sozinha.",
+          "chat": [
+            { "sender": "system", "text": "Pedido #213 · Ar condicionado · Unidade 3, quarto 12 · urgente · sem início há 2 horas", "time": "10:05" },
+            { "sender": "agent", "text": "Carlos, o pedido urgente **#213** (ar condicionado, quarto 12) ainda não foi começado pela empresa externa.", "time": "10:05" },
+            { "sender": "agent", "text": "Não o passei a outro técnico sozinha. **Liga à empresa, ou atribuo a outra pessoa?**", "time": "10:05" },
+            { "sender": "client", "text": "Ligo eu à empresa.", "time": "10:09" },
+            { "sender": "agent", "text": "Registado. A Enf.ª Ana vê «Em contacto com a empresa externa» no pedido dela.", "time": "10:09" }
+          ],
+          "steps": [
+            { "icon": "clock", "label": "Deteta um urgente sem início no tempo definido" },
+            { "icon": "alert", "label": "Avisa o encarregado de manutenção" },
+            { "icon": "shield", "label": "Não reatribui sem ordem de uma pessoa" },
+            { "icon": "user-cog", "label": "Regista a decisão do encarregado" },
+            { "icon": "message", "label": "Mantém quem pediu a par do estado" }
+          ]
+        }
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- 5. ARRANQUE                                            -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="arranque">
+
+    <!-- 5.1 Como avançamos -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Como avançamos</span>
+        <h2>Construído convosco, uma ferramenta de cada vez</h2>
+        <p class="lead">Primeiro percebemos convosco os pormenores, depois a manutenção, depois a cozinha. Cada fase é testada com uma unidade antes de chegar às outras.</p>
+        <div class="phase">
+          <div class="card first reveal"><span class="tagp">Começa aqui</span><div class="n">FASE 1</div><h3>Levantamento convosco</h3>
+            <ul><li>Áreas de manutenção e quem trata cada uma</li><li>Plano fixo de cada uma das 11 unidades</li><li>Categorias de dieta e preparações de exames</li><li>Quem entra e o que cada pessoa vê</li></ul></div>
+          <div class="card reveal"><div class="n">FASE 2</div><h3>Pedidos de manutenção</h3>
+            <ul><li>Formulário por área e prioridade</li><li>Acessos de quem pede, técnicos e encarregado</li><li>Avisos de estado e de urgentes parados</li><li>Teste com uma unidade, depois todas</li></ul></div>
+          <div class="card reveal"><div class="n">FASE 3</div><h3>Agenda da cozinha</h3>
+            <ul><li>Planos fixos das 11 unidades</li><li>Alterações e preparações para exames</li><li>Pedidos da portaria e dos bombeiros</li><li>Formação às unidades e à cozinha</li></ul></div>
+        </div>
+        <div class="sub" style="margin-top:22px; font-weight:700">O que precisamos de vocês</div>
+        <div class="precisa">
+          <div class="reveal"><b>Áreas e técnicos</b>Quem trata cada área, interno ou de empresa externa.</div>
+          <div class="reveal"><b>Plano de cada unidade</b>Pessoas por dieta e por refeição, e as preparações de exames que usam.</div>
+          <div class="reveal"><b>Quem entra</b>Os emails das cerca de 30 pessoas, e um contacto na cozinha e outro na manutenção.</div>
+        </div>
+        <p style="margin-top:12px; font-size:0.84rem; color:var(--muted)">Os prazos concretos seguem na proposta.</p>
+      </div>
+    </div>
+
+    <!-- 5.2 Fase seguinte + pergunta de hoje -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Fica para quando fizer falta</span>
+        <h2>O que não entra agora, mas pode entrar depois</h2>
+        <p class="lead">A Rita disse-o na reunião: hoje não precisam disto, mas daqui a um tempo pode vir a dar jeito. Por isso a base fica preparada, sem vos obrigar a nada hoje.</p>
+        <div class="depois">
+          <div class="reveal"><b>Inventário de equipamentos</b>Ligar os pedidos a cada equipamento, quando e se quiserem.</div>
+          <div class="reveal"><b>Manutenção preventiva</b>Revisões periódicas que se criam sozinhas no calendário.</div>
+          <div class="reveal"><b>Relatórios mensais</b>Tempos de resposta por área e por empresa externa.</div>
+          <div class="reveal"><b>Ementas e fichas técnicas</b>A cozinha a planear a partir dos totais da agenda.</div>
+        </div>
+        <div class="bridge reveal" style="margin-top:26px">
+          <b>A pergunta de hoje: é esta a estrutura?</b>
+          <p>O objetivo desta reunião não é que tudo esteja a 100%. É olharem e dizerem «sim, é isto». Os pormenores (nomes, campos, cores, quem vê o quê) acertam-se com a nossa equipa de desenvolvimento, e a proposta segue a seguir.</p>
+        </div>
+        <footer class="ais-footer">Unidade de saúde × AI Solutions · Diogo Gonçalves · <a href="mailto:diogo.goncalves@aisolutions.pt">diogo.goncalves@aisolutions.pt</a><span class="disclaimer">Documento preparado para a reunião de 29 de setembro de 2026. Nomes, locais e pedidos das demonstrações são ilustrativos.</span></footer>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <div class="pager">
+    <span class="hint">← → para navegar</span>
+    <button data-prev aria-label="Anterior">‹</button>
+    <span class="pos">1 / 3</span>
+    <button data-next aria-label="Seguinte">›</button>
+  </div>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/plataforma.js"></script>
+  <script>
+    chatRaciocinio('crDemo');
+    fluxo('fxManut');
+    fluxo('fxCoz');
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var r = document.documentElement;
+      var next = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('ais-theme', next); } catch (e) {}
+    });
+  </script>
+</body>
+</html>

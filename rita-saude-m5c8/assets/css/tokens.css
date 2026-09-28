@@ -1,0 +1,96 @@
+/* Estilo "cuidado sereno": claro, calmo, institucional.
+   Unidade de saúde sem marca conhecida à data: paleta própria do setor.
+   Marca: azul-petróleo (confiança, contexto clínico). Acento: dourado (cuidado).
+   O dourado é a cor da plataforma e do que "já está tratado".
+   Modo escuro em [data-theme="dark"] e, sem escolha guardada, pelo sistema. */
+:root {
+  --brand-hsl: 193 62% 24%;
+  --accent-hsl: 36 82% 36%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --ink-hsl: 196 55% 13%;
+  --ink: hsl(var(--ink-hsl));
+
+  --bg: hsl(40 30% 98%);
+  --bg-soft: hsl(38 32% 95%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(40 28% 96.5%);
+  --border: hsl(35 18% 86%);
+  --paper: hsl(0 0% 100%);
+  --paper-ink: hsl(196 30% 15%);
+  --paper-line: hsl(35 15% 80%);
+
+  --text: hsl(196 40% 12%);
+  --muted: hsl(196 10% 36%);
+
+  --success-hsl: 152 58% 28%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 68% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 28 90% 38%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(160deg, hsl(var(--brand-hsl)) 0%, hsl(var(--ink-hsl)) 110%);
+  --grad-text: linear-gradient(105deg, hsl(var(--brand-hsl)) 10%, hsl(var(--accent-hsl)) 95%);
+  --grad-cta: linear-gradient(165deg, hsl(var(--ink-hsl)), hsl(var(--brand-hsl)) 80%);
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  --radius: 12px;
+  --radius-lg: 18px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --container: 1180px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
+
+:root[data-theme="dark"] {
+  --brand-hsl: 190 52% 62%;
+  --accent-hsl: 40 80% 60%;
+  --on-brand: hsl(196 50% 8%);
+  --ink-hsl: 196 48% 13%;
+  --bg: hsl(198 32% 7%);
+  --bg-soft: hsl(198 28% 10%);
+  --surface: hsl(198 26% 12%);
+  --surface-2: hsl(198 24% 15%);
+  --border: hsl(198 18% 22%);
+  --paper: hsl(40 25% 96%);
+  --paper-ink: hsl(196 30% 15%);
+  --paper-line: hsl(35 15% 78%);
+  --text: hsl(40 25% 93%);
+  --muted: hsl(196 10% 68%);
+  --success-hsl: 150 45% 55%;
+  --danger-hsl: 356 80% 66%;
+  --warning-hsl: 32 90% 60%;
+  --grad-cta: linear-gradient(165deg, hsl(198 45% 11%), hsl(193 50% 22%) 80%);
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.3);
+  --shadow-md: 0 8px 28px hsl(0 0% 0% / 0.35);
+  --shadow-lg: 0 20px 56px hsl(0 0% 0% / 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-hsl: 190 52% 62%;
+    --accent-hsl: 40 80% 60%;
+    --on-brand: hsl(196 50% 8%);
+    --ink-hsl: 196 48% 13%;
+    --bg: hsl(198 32% 7%);
+    --bg-soft: hsl(198 28% 10%);
+    --surface: hsl(198 26% 12%);
+    --surface-2: hsl(198 24% 15%);
+    --border: hsl(198 18% 22%);
+    --paper: hsl(40 25% 96%);
+    --paper-ink: hsl(196 30% 15%);
+    --paper-line: hsl(35 15% 78%);
+    --text: hsl(40 25% 93%);
+    --muted: hsl(196 10% 68%);
+    --success-hsl: 150 45% 55%;
+    --danger-hsl: 356 80% 66%;
+    --warning-hsl: 32 90% 60%;
+    --grad-cta: linear-gradient(165deg, hsl(198 45% 11%), hsl(193 50% 22%) 80%);
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 8px 28px hsl(0 0% 0% / 0.35);
+    --shadow-lg: 0 20px 56px hsl(0 0% 0% / 0.45);
+  }
+}
