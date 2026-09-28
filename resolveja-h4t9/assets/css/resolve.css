@@ -8,7 +8,8 @@
 
   /* ---------- Cabeçalho: logótipo branco, direto no escuro ---------- */
   .logo-rj { height: 46px; width: auto; }
-  .cabecalho .agua img { opacity: .34; object-position: 30% 50%; }
+  .cabecalho .agua img { opacity: .5; object-position: 30% 50%; }
+  .cabecalho .agua::after { background: linear-gradient(0deg, var(--bg) 6%, transparent 60%), linear-gradient(90deg, var(--bg) 18%, color-mix(in oklab, var(--bg) 70%, transparent) 55%, transparent 90%); }
   .promessa { max-width: 15ch; }
   .promessa .g-brilho { font-weight: 600; }
 
@@ -79,7 +80,7 @@
   }
   .mt-chip i { font-style: normal; font-weight: 400; color: var(--faint); margin-left: 4px; font-family: var(--font-mono); font-size: var(--fs--2); }
   .mt-chip[aria-pressed="true"] { background: var(--accent-a20); border-color: var(--accent-a45); color: var(--text); }
-  .mt-chip[aria-pressed="true"] i { color: var(--laranja); }
+  .mt-chip[aria-pressed="true"] i { color: var(--laranja-txt); }
   @media (hover: hover) { .mt-chip:hover { border-color: var(--border-strong); color: var(--text); } }
 
   .mt-regras { border-top: 1px solid var(--hairline); padding-top: var(--s-3); }
@@ -103,7 +104,7 @@
   .mt-mapa-wrap { background: var(--bg); border-radius: var(--r-3); box-shadow: inset 0 0 0 1px var(--hairline); padding: var(--s-2); }
   .mt-mapa { width: 100%; height: auto; }
   .mm-anel { fill: color-mix(in oklab, var(--accent) 5%, transparent); stroke: var(--accent-a45); stroke-dasharray: 4 6; }
-  .mm-anel-t { fill: var(--laranja); font-family: var(--font-mono); font-size: 11px; }
+  .mm-anel-t { fill: var(--laranja-txt); font-family: var(--font-mono); font-size: 11px; }
   .mm-rota { fill: none; stroke-width: 1.4; stroke: var(--border-strong); stroke-dasharray: 3 5; }
   .mm-rota.top { stroke: var(--laranja); stroke-width: 2.4; stroke-dasharray: none; }
   .mm-serv { fill: var(--muted); opacity: .55; }
@@ -112,7 +113,7 @@
   .mm-casa rect { fill: var(--surface-3); stroke: var(--border-strong); }
   .mm-casa text { fill: var(--muted); font-family: var(--font-mono); font-size: 10px; }
   .mm-casa.top rect { fill: var(--laranja); stroke: var(--laranja); }
-  .mm-casa.top text { fill: var(--on-brand); font-weight: 700; }
+  .mm-casa.top text { fill: var(--on-laranja); font-weight: 700; }
   .mm-casa.cand rect { stroke: var(--accent-a45); }
   .mm-casa.cand text { fill: var(--text); }
   .mm-casa.fora { opacity: .4; }
@@ -129,7 +130,7 @@
   .mt-resumo { padding-bottom: var(--s-3); border-bottom: 1px solid var(--hairline); }
   .mt-k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--faint); }
   .mt-frase { font-family: var(--font-display); font-size: var(--fs-2); line-height: 1.2; margin-top: var(--s-1); }
-  .mt-frase b { color: var(--laranja); font-weight: 600; }
+  .mt-frase b { color: var(--laranja-txt); font-weight: 600; }
   .mt-frase.mt-alerta { color: var(--danger); }
   .mt-cliente { margin-top: var(--s-2); font-size: var(--fs--1); color: var(--muted); }
   .mt-cliente q { color: var(--text); }
@@ -139,7 +140,7 @@
   .mt-cand-cab { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--s-2); }
   .mt-cand-cab b { font-size: var(--fs-0); }
   .mt-cand-cab span { color: var(--muted); font-size: var(--fs--2); }
-  .mt-cand-cab em { font-style: normal; font-size: var(--fs--2); font-weight: 700; color: var(--on-brand); background: var(--laranja); border-radius: var(--r-pill); padding: 1px 8px; }
+  .mt-cand-cab em { font-style: normal; font-size: var(--fs--2); font-weight: 700; color: var(--on-laranja); background: var(--laranja); border-radius: var(--r-pill); padding: 1px 8px; }
   .mt-cand-cab time { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs--1); color: var(--text); }
   .mt-porque { margin-top: var(--s-2); font-size: var(--fs--2); color: var(--muted); max-width: none; }
   .tl { position: relative; height: 16px; margin-top: var(--s-2); border-radius: var(--r-1); background: var(--surface-3); overflow: hidden; }
@@ -378,14 +379,14 @@
   .migracao-linha { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--s-3); align-items: center;
                     font-size: var(--fs--1); padding: var(--s-2) 0; border-bottom: 1px solid var(--hairline); }
   .migracao-linha span:first-child { color: var(--muted); }
-  .migracao-linha i { font-style: normal; color: var(--laranja); font-family: var(--font-mono); }
+  .migracao-linha i { font-style: normal; color: var(--laranja-txt); font-family: var(--font-mono); }
   .migracao-linha span:last-child { color: var(--text); }
   .migracao-cab { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--faint); border-bottom-color: var(--border); }
   .migracao-cab span:last-child { color: var(--faint); }
 
   /* ---------- Extra: website ---------- */
   .extra { border: 1px dashed var(--border-strong); border-radius: var(--r-4); padding: var(--s-5); }
-  .extra-k { display: inline-block; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--laranja);
+  .extra-k { display: inline-block; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--laranja-txt);
              border: 1px solid var(--accent-a45); border-radius: var(--r-pill); padding: 2px 10px; margin-bottom: var(--s-3); }
   .lp { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--s-5); margin-top: var(--s-5); align-items: center; }
   @media (max-width: 860px) { .lp { grid-template-columns: minmax(0,1fr); } }
@@ -427,3 +428,16 @@
 .cr-bubble b { color: inherit; }
 
 
+
+.inclui .preco-final .num { font-size: var(--fs-4); font-weight: 600; letter-spacing: -0.02em; color: var(--text); }
+.inclui .preco-final i { font-style: normal; font-family: var(--font-body); font-size: var(--fs-0); color: var(--muted); }
+
+/* Tema claro: o chat do chatRaciocinio vem escuro de fábrica (#0a0a0f)
+   e a bolha do agente herdava a tinta escura. Passa a WhatsApp claro. */
+.cr-chat { background: var(--pl-fundo); border-color: var(--pl-linha); }
+.cr-chat-head, .cr-input { background: var(--pl-cartao); border-color: var(--pl-linha); }
+.cr-chat-who b { color: var(--pl-tinta); }
+.cr-row.agent .cr-bubble, .cr-typing { background: var(--pl-cartao); color: var(--pl-tinta); box-shadow: 0 0 0 1px var(--pl-linha); }
+.cr-row.client .cr-bubble { background: oklch(93% 0.06 150); color: var(--pl-tinta); }
+.cr-input span { background: var(--pl-fundo); color: var(--pl-tinta-2); }
+.cr-sys { color: var(--pl-tinta-2); background: var(--pl-linha); }

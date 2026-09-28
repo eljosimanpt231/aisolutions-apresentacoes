@@ -71,15 +71,15 @@
      na direcção da marca. Um cinzento perfeitamente neutro lê-se
      como não pensado. Nem preto puro nem branco puro.
      ============================================================ */
-  --bg:        oklch(99.0% 0.004 var(--brand-h));
-  --bg-soft:   oklch(97.2% 0.008 var(--brand-h));   /* secções alternadas */
-  --surface:   oklch(100%  0.002 var(--brand-h));   /* cards */
-  --surface-2: oklch(98.0% 0.006 var(--brand-h));
-  --surface-3: oklch(96.0% 0.009 var(--brand-h));
+  --bg:        oklch(99.0% 0.004 var(--surf-h));
+  --bg-soft:   oklch(97.2% 0.008 var(--surf-h));   /* secções alternadas */
+  --surface:   oklch(100%  0.002 var(--surf-h));   /* cards */
+  --surface-2: oklch(98.0% 0.006 var(--surf-h));
+  --surface-3: oklch(96.0% 0.009 var(--surf-h));
 
-  --text:   oklch(22.0% 0.028 var(--brand-h));   /* tinta principal */
-  --muted:  oklch(48.0% 0.020 var(--brand-h));   /* secundária (passa AA) */
-  --faint:  oklch(62.0% 0.016 var(--brand-h));   /* terciária: SÓ texto grande */
+  --text:   oklch(22.0% 0.028 var(--surf-h));   /* tinta principal */
+  --muted:  oklch(48.0% 0.020 var(--surf-h));   /* secundária (passa AA) */
+  --faint:  oklch(52.0% 0.018 var(--surf-h));   /* terciária: SÓ texto grande */
   /* Três tons de texto. Não criar um quarto. */
 
   --hairline: color-mix(in oklab, var(--text) 9%, transparent);
@@ -284,4 +284,19 @@
   --fq-tinta-2: oklch(50% 0.025 210);
   --fq-sel: oklch(94% 0.03 180);
   --fq-branco: oklch(99% 0.004 190);
+}
+
+/* ============================================================
+   12. TEMA CLARO (29/09/2026, a pedido do Diogo)
+   O documento.css foi escrito para o escuro e usa os passos 200 e
+   300 da marca como TEXTO. Em fundo claro esses passos não passam
+   AA, por isso no claro apontam para os passos escuros.
+   O laranja fica para preenchimentos; como texto usa --laranja-txt.
+   ============================================================ */
+:root {
+  --brand-300: var(--brand-700);
+  --brand-200: var(--brand-800);
+  --laranja-txt: oklch(53% 0.15 50);
+  --on-laranja: oklch(22% 0.03 256);
+  --sh: 256deg 30% 20%;
 }

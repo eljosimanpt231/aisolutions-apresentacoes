@@ -48,3 +48,6 @@
 - Casos de estudo (EcoDrive, Homem do Gás): regra do Diogo, sem prova social por defeito.
 - Nomes reais dos técnicos e clientes do Bitrix (repo público): todos fictícios.
 - A plataforma de e-commerce concreta que o Pedro referiu (nome nunca dito): "plataforma de e-commerce".
+
+## Iterações
+- v2 (28/09/2026, pedido do Diogo): tema claro (neutros no navy do site, `--brand-300/200` apontados para passos escuros, `--laranja-txt` para texto laranja, logótipo escuro gerado a partir do branco); nova secção 4 "A plataforma a funcionar" (plataforma.js/css): os 6 prints do Bitrix refeitos (conversa, negócio com linha do tempo, orçamento 221391 em PDF, calendário de técnicos, ficha de serviço #45167) mais pagamento e fatura, com percurso guiado de 6 passos; chat do chatRaciocinio passado a claro; investimento com 15.000 € + IVA (30% adjudicação, 70% entre testes e entrega); og renomeado para og-v2.png (cache do WhatsApp).

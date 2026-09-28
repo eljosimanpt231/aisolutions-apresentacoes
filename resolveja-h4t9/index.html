@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-PT" class="deck-escuro">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="light">
 
   <title>Resolve Já | O calendário no centro</title>
   <meta name="description" content="A plataforma da Resolve Já: o calendário dos técnicos no centro, a central, a MarIA, o franqueado e a faturação por cima. Esqueleto da AI Solutions para a reunião de 29 de setembro.">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Resolve Já × AI Solutions">
   <meta property="og:description" content="O calendário dos técnicos no centro. Tudo o resto construído por cima.">
-  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/resolveja-h4t9/assets/img/og.png">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/resolveja-h4t9/assets/img/og-v2.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_PT">
@@ -28,14 +28,15 @@
   <link rel="stylesheet" href="../shared/motion/atmosfera.css">
   <link rel="stylesheet" href="assets/css/documento.css">
   <link rel="stylesheet" href="assets/css/resolve.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
   <script src="config.js"></script>
 </head>
-<body class="deck-escuro grao">
+<body class="grao">
 
 <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
 
 <div class="grelha" aria-hidden="true"></div>
-<div class="atmosfera" aria-hidden="true">
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
   <div class="atmosfera__glow atmosfera__glow--1"></div>
   <div class="atmosfera__glow atmosfera__glow--2"></div>
   <div class="atmosfera__glow atmosfera__glow--3"></div>
@@ -54,7 +55,7 @@
     </div>
     <div class="container">
       <div class="doc-topo" data-acto="1" data-entra="sobe">
-        <img class="logo-rj" src="assets/img/logo.png" alt="Resolve Já" width="146" height="46">
+        <img class="logo-rj" src="assets/img/logo-escuro.png" alt="Resolve Já" width="146" height="46">
         <span class="doc-ref">Esqueleto da plataforma <b>RJ/2026-09</b></span>
       </div>
 
@@ -91,7 +92,7 @@
         </li>
       </ul>
 
-      <p class="doc-nota" data-acto="5" data-entra="sobe">Os ecrãs desta página respondem ao clique. O motor de agendamento está no ponto 4.</p>
+      <p class="doc-nota" data-acto="5" data-entra="sobe">Os ecrãs desta página respondem ao clique. A plataforma a funcionar está no ponto 4, o motor de agendamento no 5.</p>
     </div>
   </section>
 
@@ -119,7 +120,7 @@
         <div>
           <dt>O que falta de vós</dt>
           <dd>A duração de cada serviço, a regra do almoço e a casa de cada técnico. Com isso, o motor
-            do ponto 4 passa a usar os vossos números.</dd>
+            do ponto 5 passa a usar os vossos números.</dd>
         </div>
       </dl>
     </div>
@@ -186,7 +187,7 @@
   <!-- ============ 3. A PLATAFORMA ============ -->
   <section class="faixa-clara" id="plataforma">
     <div class="container">
-      <p class="rubrica"><span>3</span> A plataforma</p>
+      <p class="rubrica"><span>3</span> A arquitetura</p>
       <h2 data-linhas>Um núcleo, seis camadas.</h2>
       <p class="lead">A ordem é a que nos escreveste: primeiro o calendário e as regras de agendamento,
         depois todos os níveis comerciais em cima dele.</p>
@@ -232,10 +233,26 @@
     </div>
   </section>
 
-  <!-- ============ 4. O MOTOR DE AGENDAMENTO ============ -->
+  <!-- ============ 4. A PLATAFORMA A FUNCIONAR ============ -->
+  <section class="secao-ampla" id="central-demo" data-nav="Plataforma">
+    <div class="container">
+      <p class="rubrica"><span>4</span> A plataforma a funcionar</p>
+      <h2 data-linhas>Os ecrãs que nos mostraste no Bitrix, refeitos para vocês.</h2>
+      <p class="lead">Negócios, a ficha do negócio, o orçamento em PDF, a conversa, o calendário de técnicos
+        e a ficha de serviço, como na reunião, mais o que faltava: o pagamento e a fatura. Segue o pedido
+        da Marta do princípio ao fim, ou navega pela barra lateral.</p>
+    </div>
+    <div class="container-largo">
+      <div id="plataforma-demo" data-entra="sobe"></div>
+      <p class="doc-nota" style="max-width:80ch">Protótipo com clientes, técnicos e números inventados. Os preços do orçamento são os do
+        orçamento n.º 221391 que nos mostraste, e as etapas seguem as vossas. O desenho final faz-se convosco.</p>
+    </div>
+  </section>
+
+  <!-- ============ 5. O MOTOR DE AGENDAMENTO ============ -->
   <section class="secao-ampla" id="calendario" data-nav="Calendário">
     <div class="container">
-      <p class="rubrica"><span>4</span> O núcleo, a funcionar</p>
+      <p class="rubrica"><span>5</span> O núcleo, a funcionar</p>
       <h2 data-linhas>Escolhe o serviço e a morada. O motor escolhe o técnico.</h2>
       <p class="lead">As tuas regras, à letra: tempo de deslocação, tempo de serviço, tempo de
         estacionamento e de levar as máquinas até casa do cliente por cidade, a casa de cada técnico, e
@@ -255,7 +272,7 @@
   <!-- ============ 5. A MARIA ============ -->
   <section class="faixa secao-ampla" id="maria" data-nav="MarIA">
     <div class="container">
-      <p class="rubrica"><span>5</span> A MarIA, a sério</p>
+      <p class="rubrica"><span>6</span> A MarIA, a sério</p>
       <h2 data-linhas>Do "Olá, Guest" ao serviço marcado.</h2>
       <p class="lead">A mesma conversa que nos mostraste no Bitrix, e o que muda. À esquerda o que o
         cliente vê. À direita o que a MarIA consultou e decidiu em cada passo.</p>
@@ -274,7 +291,7 @@
             <li>Pergunta o nome e usa-o. O contacto fica criado com nome, canal e anúncio de origem.</li>
             <li>Leva a qualificação até ao fim, sem pedir a ninguém para entrar a meio.</li>
             <li>Gera o orçamento em PDF com a vossa tabela, igual ao que já enviam.</li>
-            <li>Marca no técnico certo, pelo motor do ponto 4, e avisa-o por WhatsApp.</li>
+            <li>Marca no técnico certo, pelo motor do ponto 5, e avisa-o por WhatsApp.</li>
             <li>Tudo o que envia, incluindo os automatismos, fica no histórico da conversa.</li>
           </ul>
         </div>
@@ -410,7 +427,7 @@
   <!-- ============ 6. A CENTRAL ============ -->
   <section id="central">
     <div class="container">
-      <p class="rubrica"><span>6</span> A central de vendas</p>
+      <p class="rubrica"><span>7</span> A central de vendas</p>
       <h2 data-linhas>Três canais, um ecrã, nada escondido.</h2>
       <p class="lead">A caixa que as sete pessoas da central abrem de manhã. As conversas da MarIA, do
         follow-up e do NPS estão lá, com a etiqueta do serviço e o pedido ao lado. Clica numa conversa.</p>
@@ -557,7 +574,7 @@
   <!-- ============ 7. DO PEDIDO AO NPS ============ -->
   <section class="faixa-clara" id="ciclo">
     <div class="container">
-      <p class="rubrica"><span>7</span> Do pedido ao NPS</p>
+      <p class="rubrica"><span>8</span> Do pedido ao NPS</p>
       <h2 data-linhas>O ciclo de um serviço, e o que acontece quando corre mal.</h2>
       <div class="fluxo" id="rjFluxo" style="margin-top: var(--s-5)"></div>
 
@@ -609,7 +626,7 @@
   <!-- ============ 8. O FRANQUEADO ============ -->
   <section class="secao-ampla" id="franqueado" data-nav="Franqueado">
     <div class="container">
-      <p class="rubrica"><span>8</span> O franqueado</p>
+      <p class="rubrica"><span>9</span> O franqueado</p>
       <h2 data-linhas>Os ecrãs que nos mandaste, a funcionar.</h2>
       <p class="lead">O mesmo menu, os mesmos blocos e a vossa linguagem visual, agora sobre a plataforma
         própria em vez do Bitrix. No computador para gerir, no telemóvel para o terreno. Carrega nos menus.</p>
@@ -649,7 +666,7 @@
   <!-- ============ 9. O DINHEIRO ============ -->
   <section class="faixa" id="dinheiro">
     <div class="container">
-      <p class="rubrica"><span>9</span> Faturação, pagamentos e conta corrente</p>
+      <p class="rubrica"><span>10</span> Faturação, pagamentos e conta corrente</p>
       <div class="duas">
         <div>
           <h2 data-linhas>O serviço fecha, a fatura sai, a sexta-feira acerta as contas.</h2>
@@ -689,7 +706,7 @@
   <!-- ============ 10. VOSSO, E SÓ VOSSO ============ -->
   <section id="exclusivo">
     <div class="container">
-      <p class="rubrica"><span>10</span> Vosso, e só vosso</p>
+      <p class="rubrica"><span>11</span> Vosso, e só vosso</p>
       <h2 data-linhas>O que construirmos para a Resolve Já não vai parar a outro lado.</h2>
       <div class="garantias" data-entra="sobe">
         <article>
@@ -725,7 +742,7 @@
   <!-- ============ 11. LIMITES ============ -->
   <section class="faixa-clara" id="limites">
     <div class="container">
-      <p class="rubrica"><span>11</span> Limites</p>
+      <p class="rubrica"><span>12</span> Limites</p>
       <h2>O que os agentes fazem e o que fica com a equipa.</h2>
       <div class="regras" data-entra="sobe">
         <article class="faz">
@@ -762,9 +779,9 @@
   </section>
 
   <!-- ============ 12. PRAZO ============ -->
-  <section id="prazo" data-nav="Prazo">
+  <section id="prazo">
     <div class="container">
-      <p class="rubrica"><span>12</span> Dois a três meses, pela ordem certa</p>
+      <p class="rubrica"><span>13</span> Dois a três meses, pela ordem certa</p>
       <h2>Primeiro o calendário. Depois tudo o que se apoia nele.</h2>
       <ol class="fases" data-entra="sobe">
         <li>
@@ -802,7 +819,7 @@
   <!-- ============ 13. FASE SEGUINTE ============ -->
   <section class="faixa-clara" id="depois">
     <div class="container">
-      <p class="rubrica"><span>13</span> Fase seguinte</p>
+      <p class="rubrica"><span>14</span> Fase seguinte</p>
       <h2>Falámos disto e faz sentido. Fica para depois do núcleo.</h2>
       <div class="pontos" data-entra="sobe">
         <article>
@@ -832,11 +849,11 @@
     <div class="container">
       <div class="extra" data-entra="sobe">
         <span class="extra-k">Extra</span>
-        <p class="rubrica" style="margin-bottom:var(--s-2)"><span>14</span> Website, landing pages e loja</p>
+        <p class="rubrica" style="margin-bottom:var(--s-2)"><span>15</span> Website, landing pages e loja</p>
         <h2>Comprar e marcar na mesma página.</h2>
         <div class="lp">
           <div class="lp-mock" aria-label="Exemplo de landing page de limpeza de sofás">
-            <div class="lp-top"><img src="assets/img/logo.png" alt="" width="70" height="22"><span>800 500 125</span></div>
+            <div class="lp-top"><img src="assets/img/logo-escuro.png" alt="" width="70" height="22"><span>800 500 125</span></div>
             <div class="lp-corpo">
               <h4>Limpeza de sofás ao domicílio</h4>
               <p>Removemos nódoas, manchas, odores e ácaros. Deslocação grátis.</p>
@@ -858,8 +875,9 @@
   <!-- ============ 15. INVESTIMENTO ============ -->
   <section class="faixa-clara" id="investimento" data-nav="Investimento">
     <div class="container">
-      <p class="rubrica"><span>15</span> Investimento</p>
-      <h2 data-linhas>O que está incluído.</h2>
+      <p class="rubrica"><span>16</span> Investimento</p>
+      <h2 data-linhas>O que está incluído, e quanto custa.</h2>
+      <p class="ancora" data-entra="sobe">Uma plataforma só, para as <b>quatro direções</b> da Resolve Já: comercial, técnica e operacional, financeira, e marketing e expansão. Hoje cada uma vive num pedaço do Bitrix e em processos à mão.</p>
       <div class="inclui" data-entra="sobe">
         <article>
           <span class="k">Implementação</span>
@@ -873,7 +891,7 @@
             <li>Loja online</li>
             <li>Migração do Bitrix e exclusividade no contrato</li>
           </ul>
-          <p class="valor-reuniao">Valor a fechar convosco com este esqueleto e o âmbito final<small>Como combinado no email de 25 de setembro. Valores sem IVA.</small></p>
+          <p class="valor-reuniao preco-final"><span class="num">15.000 €</span> <i>+ IVA</i><small>30% na adjudicação (4.500 € + IVA) e os restantes 70% (10.500 € + IVA) repartidos entre a entrada em testes e a entrega. Prazo de dois a três meses.</small></p>
         </article>
         <article>
           <span class="k">Mensalidade</span>
@@ -893,7 +911,7 @@
   <!-- ============ 16. PRÓXIMOS PASSOS ============ -->
   <section class="fecho secao-ampla" id="fecho">
     <div class="container">
-      <p class="rubrica"><span>16</span> Próximos passos</p>
+      <p class="rubrica"><span>17</span> Próximos passos</p>
       <h2 data-entra="sobe">Fechamos o calendário, Pedro?</h2>
       <p class="lead">Disseste que, se for para fazer, és rápido a decidir. Três passos até começarmos.</p>
       <ol class="passos-fecho" data-entra="sobe">
@@ -921,7 +939,7 @@
 
 <footer class="rodape">
   <div class="container">
-    <span class="rodape-marca"><img src="assets/img/logo.png" alt="" width="89" height="28" class="rodape-logo"></span>
+    <span class="rodape-marca"><img src="assets/img/logo-escuro.png" alt="" width="89" height="28" class="rodape-logo"></span>
     Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a Resolve Já, 29 de setembro de 2026.<br>
     Diogo Gonçalves, diogo.goncalves@aisolutions.pt
     <span class="disclaimer">
@@ -943,6 +961,7 @@
 <script src="../shared/unibox/unibox.js"></script>
 <script src="assets/js/motor.js"></script>
 <script src="assets/js/franqueado.js"></script>
+<script src="assets/js/plataforma.js"></script>
 <script>
   chatRaciocinio('rjDemo');
   unibox('rjInbox');
