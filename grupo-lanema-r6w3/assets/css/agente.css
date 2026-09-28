@@ -1,0 +1,50 @@
+/* ============================================================
+   GRUPO LANEMA: botões no topo da encomenda (sempre visíveis) e o
+   separador Agente IA dentro da plataforma. Só tokens.
+   ============================================================ */
+
+/* ---------- ações no topo da coluna da encomenda ---------- */
+.ec-top-acoes { display: none; margin-left: auto; gap: 6px; }
+.ec-order.pronto .ec-top-acoes { display: flex; }
+.ec-order.pronto [data-fase] { display: none; }
+.ec-top-acoes button { font: inherit; font-size: 0.72rem; font-weight: 600; padding: 5px 10px; border-radius: 8px; cursor: pointer; white-space: nowrap; border: 1px solid var(--app-line); background: var(--app-panel); color: var(--app-text); transition: border-color var(--d-toque, 160ms) ease, background var(--d-toque, 160ms) ease; }
+.ec-top-acoes .ec-abrir { background: var(--app-brand); border-color: var(--app-brand); color: var(--app-panel); }
+.ec-top-acoes button:hover { border-color: var(--app-brand); }
+.ec-top-acoes .ec-seg-b:hover { color: var(--app-brand); }
+.ec-order .ec-colhead { min-height: 47px; }
+
+/* ---------- separador Agente IA: o chat com as cores claras da plataforma ---------- */
+.ec-ag {
+  --text: var(--app-text); --muted: var(--app-muted); --border: var(--app-line); --surface: var(--app-panel);
+  --brand-hsl: var(--app-brand-hsl); --brand: var(--app-brand);
+  --accent-hsl: var(--app-azul-hsl); --accent: var(--app-azul);
+  color: var(--app-text); gap: 10px;
+}
+.ec-ag .ec-page-h b { max-width: 34ch; }
+.ec-ag .ec-page-h small { display: block; max-width: 70ch; margin-top: 2px; }
+.ec-fase-b { flex-shrink: 0; font-family: var(--font-mono); font-size: 0.66rem; padding: 4px 10px; border-radius: 999px; border: 1px dashed var(--app-line); color: var(--app-azul); background: var(--app-panel); }
+.ec-ag .cr-tabs { margin-bottom: 10px; justify-content: flex-start; }
+.ec-ag .cr-tab { background: var(--app-panel); border-color: var(--app-line); color: var(--app-muted); font-size: 0.7rem; padding: 6px 12px; }
+.ec-ag .cr-tab:hover { color: var(--app-text); border-color: var(--app-brand); }
+.ec-ag .cr-tab.active { background: hsl(var(--app-brand-hsl) / 0.1); border-color: var(--app-brand); color: var(--app-brand); }
+.ec-ag .cr-shell { background: var(--app-panel); padding: 12px 14px; border-radius: 14px; }
+.ec-ag .cr-head { margin-bottom: 10px; }
+.ec-ag .cr-head h3 { font-size: 1.05rem; }
+.ec-ag .cr-head p { font-size: 0.78rem; }
+.ec-ag .cr-cols { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 12px; }
+.ec-ag .cr-chat { background: var(--app-panel-2); min-height: 0; height: 440px; }
+.ec-ag .cr-chat-head, .ec-ag .cr-input { background: var(--app-panel); }
+.ec-ag .cr-input span { background: var(--app-panel-2); color: var(--app-muted); }
+.ec-ag .cr-row.agent .cr-bubble, .ec-ag .cr-typing { background: var(--app-panel); color: var(--app-text); border: 1px solid var(--app-line); box-shadow: none; }
+.ec-ag .cr-row.client .cr-bubble { background: var(--app-brand); color: var(--app-panel); }
+.ec-ag .cr-sys { background: var(--app-panel); }
+.ec-ag .cr-reason { min-height: 0; height: 440px; background: var(--app-panel); border-color: hsl(var(--app-azul-hsl) / 0.25); }
+.ec-ag .cr-steps { padding: 10px; gap: 6px; }
+.ec-ag .cr-step { padding: 9px 10px; }
+.ec-ag .cr-step.on { background: hsl(var(--app-azul-hsl) / 0.05); }
+.ec-ag .cr-step-l { font-size: 0.8rem; }
+@media (max-width: 700px) {
+  .ec-ag .ec-page-h { flex-direction: column; align-items: flex-start; }
+  .ec-ag .cr-cols { grid-template-columns: 1fr; }
+  .ec-ag .cr-chat, .ec-ag .cr-reason { height: auto; min-height: 360px; }
+}

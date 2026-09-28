@@ -1,0 +1,34 @@
+/* ============================================================
+   GRUPO LANEMA: popup do email enviado ao confirmar a encomenda,
+   e o nome do cliente nos casos. Só tokens.
+   ============================================================ */
+.ec-modal { position: absolute; inset: 0; z-index: 20; display: grid; place-items: center; padding: 20px; background: hsl(var(--app-azul-hsl) / 0.18); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); opacity: 0; transition: opacity 200ms ease; }
+.ec-modal.on { opacity: 1; }
+.ec-modal-c { width: min(720px, 100%); max-height: 100%; display: flex; flex-direction: column; background: var(--app-panel); color: var(--app-text); border-radius: 16px; border: 1px solid var(--app-line); box-shadow: var(--shadow-lg); overflow: hidden; transform: translateY(10px) scale(.985); transition: transform 260ms var(--e-quart, ease); }
+.ec-modal.on .ec-modal-c { transform: none; }
+.ec-modal-top { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--app-line); background: hsl(var(--app-ok-hsl) / 0.07); }
+.ec-modal-top b { display: block; font-size: 0.92rem; }
+.ec-modal-top small { font-size: 0.74rem; color: var(--app-muted); }
+.ec-modal-ok { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--app-ok); color: var(--app-panel); font-weight: 800; flex-shrink: 0; }
+.ec-modal-x { margin-left: auto; width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--app-line); background: var(--app-panel); color: var(--app-text); font-size: 1.1rem; cursor: pointer; }
+.ec-modal-x:hover { border-color: var(--app-brand); }
+.ec-modal-h { display: grid; gap: 2px; padding: 12px 18px; font-size: 0.78rem; border-bottom: 1px solid var(--app-line); }
+.ec-modal-h span { display: inline-block; min-width: 62px; color: var(--app-muted); }
+.ec-modal-b { padding: 14px 20px; font-size: 0.8rem; line-height: 1.5; overflow: hidden; }
+.ec-modal-b p { margin-bottom: 8px; }
+.ec-modal-f { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 18px; border-top: 1px solid var(--app-line); font-size: 0.76rem; color: var(--app-muted); background: var(--app-panel-2); }
+.ec-modal-f b { color: var(--app-text); }
+@media (max-width: 700px) {
+  .ec-modal { position: fixed; z-index: 100; padding: 12px; }
+  .ec-modal-c { max-height: 90vh; overflow-y: auto; }
+  .ec-modal-b { overflow-x: auto; }
+}
+
+/* casos: o nome do cliente por cima do setor */
+.caso-top { flex-direction: column; gap: 2px; }
+.caso-nome { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--text); }
+
+/* selo do cartão de implementação, legível nos dois temas */
+.invest .price-card .pin { background: hsl(var(--accent-hsl) / 0.16); color: var(--azul-texto); border: 1px solid hsl(var(--accent-hsl) / 0.35); }
+.invest .price-card.highlight .pin { position: static; display: inline-block; align-self: flex-start; margin: 0 0 12px; letter-spacing: 0.06em; }
+.invest .price-card.highlight { padding-top: 22px; }

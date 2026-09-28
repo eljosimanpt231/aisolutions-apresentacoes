@@ -1,0 +1,161 @@
+/* ============================================================
+   TOKENS: Grupo Lanema (base deck-dark, direção própria "oficina de precisão")
+   Marca: verde-água da Poly Lanema (#009a85, polylanema.pt) e o azul do
+   cubo do logótipo do Grupo. Fundo quase-preto frio, cor de alumínio.
+   Tipografia: Archivo (títulos, industrial), IBM Plex Sans (corpo),
+   IBM Plex Mono (cotas, referências, números de encomenda).
+   Escuro por defeito; claro em :root[data-theme="light"].
+   ============================================================ */
+
+:root {
+  --brand-hsl: 172 88% 40%;       /* verde-água Lanema, aclarado para ler em escuro */
+  --accent-hsl: 214 82% 64%;      /* azul do cubo do Grupo: a cor da plataforma */
+  --brand2-hsl: 190 80% 50%;      /* ponto intermédio do texto em gradiente */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(200 30% 6%);
+  --brand-solido: hsl(172 88% 40%);
+  --acento-texto: hsl(172 62% 62%);
+  --marca-texto: hsl(172 62% 62%);
+  --azul-texto: hsl(214 90% 74%);
+  --ok-texto: hsl(150 60% 60%);
+
+  --bg: hsl(205 22% 6%);
+  --bg-soft: hsl(205 20% 8.5%);
+  --surface: hsl(205 18% 11%);
+  --surface-2: hsl(205 16% 14%);
+  --border: hsl(205 14% 21%);
+
+  --text: hsl(200 20% 95%);
+  --muted: hsl(205 10% 68%);
+
+  --success-hsl: 150 60% 46%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 80% 62%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(205 22% 8%), hsl(var(--brand-hsl) / 0.22));
+
+  --shadow-sm: 0 1px 3px hsl(205 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(205 60% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(205 60% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.30);
+
+  /* Cotas do desenho técnico (hero) */
+  --cota: hsl(172 70% 56%);
+  --cota-2: hsl(214 90% 74%);
+  --chapa-topo: hsl(205 12% 72%);
+  --chapa-frente: hsl(205 10% 52%);
+  --chapa-lado: hsl(205 10% 40%);
+  --chapa-brilho: hsl(200 30% 92%);
+
+  /* A plataforma: clara nos dois temas. É a promessa "clean and simple",
+     o oposto dos ecrãs do PHC, e parece uma ferramenta de trabalho real. */
+  --app-bg: hsl(200 20% 97%);
+  --app-panel: hsl(0 0% 100%);
+  --app-panel-2: hsl(200 22% 95%);
+  --app-line: hsl(205 16% 88%);
+  --app-text: hsl(205 30% 14%);
+  --app-muted: hsl(205 10% 36%);
+  --app-brand: hsl(172 100% 23%);
+  --app-brand-hsl: 172 100% 30%;
+  --app-azul: hsl(214 70% 44%);
+  --app-azul-hsl: 214 70% 50%;
+  --app-sombra: 0 10px 28px hsl(205 40% 20% / 0.14);
+  /* O papel das encomendas */
+  --paper: hsl(40 20% 99%);
+  --paper-ink: hsl(205 25% 14%);
+  --paper-muted: hsl(205 10% 40%);
+  --paper-line: hsl(205 14% 85%);
+  --paper-scan: hsl(40 12% 93%);
+  --paper-red: hsl(356 45% 45%);
+
+  /* Estados dentro da plataforma (fundo claro) */
+  --app-fila: hsl(205 12% 32%);   --app-fila-bg: hsl(205 16% 92%);
+  --app-ler: hsl(214 70% 40%);    --app-ler-bg: hsl(214 80% 50% / 0.12);
+  --app-ok: hsl(150 62% 26%);     --app-ok-hsl: 150 60% 36%;
+  --app-prop: hsl(214 70% 38%);   --app-prop-hsl: 214 70% 48%;
+  --app-mail: hsl(265 50% 42%);   --app-mail-hsl: 265 55% 52%;
+  --app-val: hsl(30 90% 28%);     --app-val-hsl: 36 92% 46%;
+  --app-block: hsl(356 70% 42%);  --app-block-hsl: 356 72% 50%;
+  --grad-agente: linear-gradient(135deg, hsl(172 100% 32%), hsl(214 70% 50%));
+
+  /* Estados sobre o fundo da página */
+  --st-ok: hsl(150 60% 60%);
+  --st-prop: hsl(214 90% 74%);
+  --st-mail: hsl(265 85% 80%);
+  --st-val: hsl(38 95% 62%);
+  --st-mail-hsl: 265 70% 62%;
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Archivo', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --container: 1200px;
+  --section-pad: clamp(72px, 10vw, 124px);
+  --grelha-passo: 64px;
+}
+
+:root[data-theme="light"] {
+  --brand-hsl: 172 100% 29%;
+  --accent-hsl: 214 70% 46%;
+  --brand2-hsl: 190 80% 34%;
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(172 100% 26%);
+  --acento-texto: hsl(172 100% 19%);
+  --marca-texto: hsl(172 100% 19%);
+  --azul-texto: hsl(214 72% 33%);
+  --ok-texto: hsl(150 62% 28%);
+
+  --bg: hsl(200 22% 97%);
+  --bg-soft: hsl(200 20% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(200 20% 96%);
+  --border: hsl(205 14% 86%);
+
+  --text: hsl(205 30% 11%);
+  --muted: hsl(205 10% 36%);
+
+  --success-hsl: 150 62% 32%;
+  --danger-hsl: 356 72% 46%;
+  --warning-hsl: 34 92% 40%;
+
+  --grad-cta: linear-gradient(160deg, hsl(200 22% 92%), hsl(var(--brand-hsl) / 0.16));
+  --shadow-sm: 0 1px 3px hsl(205 30% 20% / 0.08);
+  --shadow-md: 0 8px 28px hsl(205 30% 20% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(205 30% 20% / 0.16);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.18);
+
+  --cota: hsl(172 100% 26%);
+  --cota-2: hsl(214 70% 42%);
+  --chapa-topo: hsl(205 12% 84%);
+  --chapa-frente: hsl(205 10% 66%);
+  --chapa-lado: hsl(205 10% 56%);
+  --chapa-brilho: hsl(0 0% 100%);
+
+  /* a plataforma continua clara, mas destaca-se do fundo claro pela moldura */
+  --app-bg: hsl(200 20% 98%);
+
+  --st-ok: hsl(150 62% 26%);
+  --st-prop: hsl(214 70% 38%);
+  --st-mail: hsl(265 50% 42%);
+  --st-val: hsl(32 90% 32%);
+  --st-mail-hsl: 265 55% 48%;
+}
+
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
+/* Categorias do dashboard: validadas com o validate_palette.js sobre branco, todas as verificações passam */
+:root { --cat0: #00917d; --cat1: #2b6cc4; --cat2: #e0762a; }

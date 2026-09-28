@@ -1,0 +1,2774 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Grupo Lanema | Encomendas do email ao PHC</title>
+  <meta name="description" content="Protótipo AI Solutions para o Grupo Lanema: encomendas de clientes lidas na caixa polilanema@, interpretadas com ligas e cotas de corte, cruzadas com o PHC e criadas por API, com pergunta ao cliente sempre que há dúvida.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Grupo Lanema × AI Solutions">
+  <meta property="og:description" content="Um email às 17:30 de sexta. Na segunda, a encomenda já está no PHC.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/grupo-lanema-r6w3/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try {
+      var t = localStorage.getItem('ais-theme');
+      if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
+      document.documentElement.setAttribute('data-theme', t || 'dark');
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/lanema.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
+  <link rel="stylesheet" href="assets/css/popup.css">
+  <link rel="stylesheet" href="assets/css/agente.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img src="assets/img/lanema-grupo.png" alt="Grupo Lanema">
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#documentos">Os vossos pedidos</a>
+    <a href="#plataforma">A plataforma</a>
+    <a href="#phc">PHC</a>
+    <a href="#investimento">Investimento</a>
+    <a href="#arranque">Arranque</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-acto="1" data-entra="sobe">Grupo Lanema × AI Solutions · encomendas de clientes</span>
+        <h1 data-linhas>Um email às 17:30 de sexta. Na segunda, a encomenda já está no <span class="g-brilho">PHC</span>.</h1>
+        <p class="lead" data-acto="2" data-entra="sobe">
+          A plataforma lê a caixa polilanema@, percebe ligas e cotas de corte escritas de cinquenta maneiras,
+          cruza tudo com as referências e os escalões do PHC e cria a encomenda por API. Quando tem dúvidas,
+          não assume: pergunta ao cliente. Os comerciais voltam a vender.
+        </p>
+        <div class="hero-meta" data-acto="3" data-entra="sobe">
+          <span>Para <b>Isabel Marques</b>, <b>Virgílio Marques</b> e <b>Rui Santos</b></span>
+          <span>Seguimento da reunião de <b>18/09/2026</b></span>
+          <span>Protótipo feito com <b>os vossos 5 pedidos</b></span>
+        </div>
+      </div>
+      <div class="peca" data-acto="4" data-entra="escala">
+        <svg viewBox="0 0 560 360" role="img" aria-label="Placa de alumínio 5083 H111 com as cotas espessura 10, largura 107 e comprimento 115 milímetros">
+          <polygon class="topo" points="60,160 290,70 480,150 250,240"/>
+          <polygon class="lado" points="60,160 250,240 250,268 60,188"/>
+          <polygon class="frente" points="250,240 480,150 480,178 250,268"/>
+          <polygon class="brilho" points="120,150 290,84 330,100 160,166"/>
+          <polyline class="aresta" points="60,160 250,240 480,150"/>
+          <!-- linhas de chamada -->
+          <line class="ext" x1="60" y1="190" x2="60" y2="232"/>
+          <line class="ext" x1="250" y1="270" x2="250" y2="312"/>
+          <line class="ext" x1="480" y1="180" x2="480" y2="222"/>
+          <line class="ext" x1="482" y1="150" x2="524" y2="150"/>
+          <line class="ext" x1="482" y1="178" x2="524" y2="178"/>
+          <!-- cotas -->
+          <line class="cota" data-traco="1" x1="60" y1="226" x2="250" y2="306"/>
+          <line class="cota" data-traco="2" x1="250" y1="306" x2="480" y2="216"/>
+          <line class="cota2" data-traco="3" x1="516" y1="150" x2="516" y2="178"/>
+          <circle cx="60" cy="226" r="3" fill="var(--cota)"/><circle cx="250" cy="306" r="3" fill="var(--cota)"/><circle cx="480" cy="216" r="3" fill="var(--cota)"/>
+          <g class="rot r1"><text class="k" x="96" y="298">Comprimento</text><text class="c1" x="96" y="316">115 mm</text></g>
+          <g class="rot r2"><text class="k" x="382" y="286">Largura</text><text class="c1" x="382" y="304">107 mm</text></g>
+          <g class="rot r3"><text class="k" x="470" y="118">Espessura</text><text class="c2" x="470" y="136">10 mm</text></g>
+        </svg>
+        <div class="peca-raw">
+          <div class="linha"><code>AL5083H111 10x107x115MM; ALUMINIO</code></div>
+          <div class="linha"><span class="seta">↳</span>
+            <span class="chip">Liga <b>5083 H111</b></span><span class="chip">E <b>10</b></span><span class="chip">L <b>107</b></span><span class="chip">C <b>115</b></span><span class="chip">Qtd. <b>30</b> em 3 entregas</span>
+          </div>
+          <small>Uma linha real de um dos vossos pedidos: 32 páginas, mais de 100 linhas como esta.</small>
+        </div>
+      </div>
+    </div>
+    <div class="grid-3 hero-stats" data-acto="5" data-entra="sobe">
+      <div class="card stat-card"><div class="num"><span data-conta="20000">20000</span></div><div class="desc">Pedidos por ano só em Portugal, antes da filial de Madrid e da Tecno Lanema</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="80" data-sufixo="%">80%</span></div><div class="desc">Do dia dos 5 comerciais passado a introduzir encomendas à mão no PHC</div></div>
+      <div class="card stat-card"><div class="num">5 de 5</div><div class="desc">Pedidos vossos lidos neste protótipo: 3 línguas, 5 formatos, incluindo um digitalizado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. RESUMO DE 30 SEGUNDOS ============ -->
+<section class="resumo" aria-label="Resumo">
+  <div class="container">
+    <div class="resumo-grid" data-entra="sobe">
+      <div><span class="k">O quê</span><p>Uma plataforma vossa, simples, que trata as encomendas desde o email até ao PHC, e só chama uma pessoa quando é mesmo preciso.</p></div>
+      <div><span class="k">Com quê</span><p>A caixa polilanema@ como hoje, o PHC pela API que já têm, e as regras de preço que já lá estão.</p></div>
+      <div><span class="k">Em quanto tempo</span><p>Auditoria em outubro, desenvolvimento até dezembro, e 2027 começa com a plataforma a trabalhar.</p></div>
+      <div><span class="k">Próximo passo</span><p>Ver o protótipo juntos, validar a direção e decidir o arranque da auditoria.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 18/09</span>
+      <h2>O problema não é o volume. É quem o está a tratar.</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>Nós costumamos dizer que os nossos comerciais são apontadores.</blockquote>
+        <p>Cinco comerciais passam 70 a 80% das 8 horas a passar encomendas para o PHC, em vez de negociar, procurar clientes e abrir mercados.</p>
+        <span class="quem">Isabel Marques</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Posso ter 50 clientes a enviar a mesma encomenda de 50 formas diferentes.</blockquote>
+        <p>PDF, corpo do email, Excel. Ligas, espessuras, larguras e comprimentos escritos à maneira de cada um, com encomendas de uma linha ou de 30 páginas.</p>
+        <span class="quem">Isabel Marques</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>O erro é fácil de acontecer, e eu não gosto de errar.</blockquote>
+        <p>Nove números por linha, centenas de linhas por encomenda. A introdução manual é lenta e sujeita a erro, por muito cuidado que haja.</p>
+        <span class="quem">Isabel Marques</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Quero pôr o cliente a trabalhar para mim.</blockquote>
+        <p>Sem correspondência certa, a plataforma escreve ao cliente e pede-lhe que escolha. Só depois a encomenda entra no PHC.</p>
+        <span class="quem">Isabel Marques</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>O que me dá trabalho são as encomendas que não vêm de proposta.</blockquote>
+        <p>As que vêm de proposta já se convertem com um botão. As outras exigem escrever tudo e deixar o PHC calcular o preço pelos escalões.</p>
+        <span class="quem">Isabel Marques</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>2027 vai ser gigante para a nossa organização.</blockquote>
+        <p>Defesa, aeronáutica e aeroespacial a puxar, marketing novo a chegar. O modelo atual obrigaria a contratar pessoas para introduzir dados.</p>
+        <span class="quem">Isabel Marques</span>
+      </div>
+    </div>
+    <p class="sintese">A regra já existe no PHC. <b>Falta quem leia o pedido como uma pessoa, aplique a regra sem se cansar e pergunte quando não tem a certeza.</b></p>
+  </div>
+</section>
+
+<!-- ============ 4. OS VOSSOS PEDIDOS ============ -->
+<section id="documentos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Os vossos pedidos</span>
+      <h2>Cinco pedidos, cinco maneiras de escrever a mesma placa</h2>
+      <p class="lead">Analisámos os cinco exemplos que a Isabel nos enviou a 14/09. É aqui que as ferramentas genéricas falham, e é por aqui que começámos.</p>
+    </div>
+    <div class="docs-stats" data-entra="sobe">
+      <div><b>3</b><span>línguas: português, espanhol e inglês, às vezes no mesmo documento</span></div>
+      <div><b>200+</b><span>linhas de material nos cinco pedidos, de 1 a 32 páginas</span></div>
+      <div><b>3</b><span>ordens diferentes para as mesmas três cotas</span></div>
+      <div><b>1</b><span>pedido digitalizado, lido como imagem</span></div>
+    </div>
+    <div class="dc" id="dcDemo" data-entra="sobe"></div>
+    <div class="frase-dificil">
+      <div class="card holofote" data-entra="sobe">
+        <span class="eyebrow">A frase que ficou por ler</span>
+        <q>Quero um alumínio 5083 de 10 por 30 por 50.</q>
+        <p>Foi aqui que a ferramenta de há três anos parou: dentro de uma frase, não sabia qual era a espessura, a largura e o comprimento. Hoje a inteligência artificial lê a frase como uma pessoa, e o histórico do cliente confirma a ordem que ele costuma usar.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <span class="eyebrow">E quando a ordem não é clara</span>
+        <q>5083 · 10 · 30 · 50 → E 10 · L 30 · C 50 ?</q>
+        <p>A plataforma não adivinha. Se o cliente nunca escreveu assim e as cotas não se deixam ordenar com segurança, a linha fica marcada e o cliente recebe a pergunta, com a leitura proposta para ele só confirmar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="dcDemo-config">
+{
+  "stepMs": 5600,
+  "samples": [
+    {
+      "tab": "PO260700152", "tabSub": "Aeronáutica · PT/EN",
+      "origem": "PDF, bloco em inglês",
+      "raw": "Aluminum AW7075-T651 Plate\n10 - Block 160 x 40\n30 UN",
+      "trap": "A espessura vem **antes do hífen**, separada do resto, e o bloco vem como **comprimento × largura**, sem dizer qual é qual.",
+      "fields": [["Matéria", "Alumínio"], ["Liga e têmpera", "7075 T651"], ["Forma", "Placa"], ["Espessura", "10 mm", "cota"], ["Largura", "40 mm", "cota"], ["Comprimento", "160 mm", "cota"], ["Quantidade", "30 unidades"], ["Origem", "Sem proposta"]]
+    },
+    {
+      "tab": "Pedido 26-305", "tabSub": "Industrial · ES, kg",
+      "origem": "PDF em espanhol, ao quilo",
+      "raw": "AL CHAPA 5083 H111 040 MM\n1P 2185X1840X40\n434,00 KG",
+      "trap": "Aqui a ordem é **comprimento × largura × espessura**, e a quantidade vem **em kg**: 1P quer dizer uma peça.",
+      "fields": [["Matéria", "Alumínio"], ["Liga e têmpera", "5083 H111"], ["Forma", "Placa (chapa)"], ["Espessura", "40 mm", "cota"], ["Largura", "1840 mm", "cota"], ["Comprimento", "2185 mm", "cota"], ["Quantidade", "1 peça"], ["Peso", "434 kg pedidos · 428 kg calculados"]]
+    },
+    {
+      "tab": "PO 4500080355", "tabSub": "Defesa · SAP, 32 págs",
+      "origem": "Encomenda SAP, 32 páginas",
+      "raw": "1015018  AL5083 DIA.310x78MM;ALUMINIO\n1022898  AL5083H111 10x107x115MM; ALUMINIO\n         18 Unidad  01.12 · 10 Unidad  15.12 · 2 Unidad  30.01",
+      "trap": "**DIA.** não é placa: é um redondo com 310 de diâmetro. E cada linha pode ter **três datas de entrega**.",
+      "fields": [["Linha 1", "Redondo AL 5083 · Ø310 × 78", "cota"], ["Linha 2", "Placa AL 5083 H111", ""], ["Cotas linha 2", "E 10 · L 107 · C 115", "cota"], ["Entregas linha 2", "18 + 10 + 2 em 3 datas"], ["Proposta", "PR 26/0871 (no email)", "full"]]
+    },
+    {
+      "tab": "ENC. 284", "tabSub": "Metalomecânica · tabela",
+      "origem": "Tabela sem cabeçalho de cliente",
+      "raw": "PLASTICO POM-ESD-PRETO( placa 12mm)   359   70   12   5\nALUMINIO RETIFICADO 5083              465  360   10   5",
+      "trap": "Não traz **nome do cliente, NIF, preços nem data de entrega**. E POM-ESD preto tem mais do que uma matéria possível.",
+      "fields": [["Linha 1", "Plástico POM ESD preto · a confirmar", "aviso"], ["Cotas linha 1", "E 12 · L 70 · C 359", "cota"], ["Linha 2", "Placa AL 5083 retificada"], ["Cotas linha 2", "E 10 · L 360 · C 465", "cota"], ["Cliente", "Pelo remetente e histórico"], ["Preço", "Escalões do PHC"]]
+    },
+    {
+      "tab": "26C003577", "tabSub": "Aeronáutica · digitalizado",
+      "origem": "Imagem digitalizada, espanhol",
+      "raw": "PLACA ALUMINIO 7075 T651 RECTIFICADA\nESPESOR :15 ANCHO:1100 LARG (mm):630\n_VALIDO PREMECANIZADO",
+      "trap": "**LARG** não é largura: em espanhol, largo é o **comprimento**. E aqui a largura (ancho) é maior do que o comprimento.",
+      "fields": [["Liga e têmpera", "7075 T651"], ["Acabamento", "Retificada"], ["Espessura", "15 mm", "cota"], ["Largura (ancho)", "1100 mm", "cota"], ["Comprimento (largo)", "630 mm", "cota"], ["Nota", "Pré-maquinado válido"]]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 6. A PLATAFORMA (momento uau) ============ -->
+<section id="plataforma">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">A plataforma · protótipo</span>
+      <h2>Um fim de semana na caixa <span class="g-brilho">polilanema@</span></h2>
+      <p class="lead">Os vossos cinco pedidos chegam entre sexta às 17:31 e domingo à noite. A plataforma trata o primeiro; para o seguinte, clique em <b>Seguinte →</b> ou noutro email da caixa. Depois, na barra lateral: <b>Encomendas</b> para abrir cada uma (editar produtos, quantidades e preços, ver os emails trocados com o cliente, o histórico dele e a confirmação enviada) <b>Dashboard</b> para ver a semana e <b>Agente IA</b> para perguntar ao PHC em português.</p>
+    </div>
+    <div class="ec" id="ecDemo" data-entra="escala"></div>
+    <p class="ec-legenda">
+      <span>Documentos reconstruídos a partir dos vossos exemplos: clientes, NIF, datas e preços alterados.</span>
+      <span>Referências PHC, números de encomenda e escalões ilustrativos: na auditoria usamos os vossos.</span>
+    </p>
+  </div>
+</section>
+<script type="application/json" id="ecDemo-config">
+{
+ "mailbox": "polilanema@lanema.pt",
+ "startClock": "Sexta, 25/09 · 17:30",
+ "nowClock": "Segunda, 28/09 · 08:04",
+ "nowTime": "08:04",
+ "threshold": 90,
+ "pauseMs": 3600,
+ "docs": [
+  {
+   "mail": {
+    "from": "Cliente A · aeronáutica",
+    "day": "Sexta, 25/09",
+    "time": "17:31",
+    "subject": "Encomenda PO260700152",
+    "att": "PDF · 2 págs",
+    "body": "Boa tarde. Segue a encomenda **PO260700152**, com entrega a **9 de outubro**. Obrigado."
+   },
+   "paper": {
+    "tpl": "po",
+    "file": "Encomenda Compra PO260700152.pdf",
+    "numberShow": "PO260700152",
+    "logo": "logótipo Cliente A",
+    "number": "PO260700152",
+    "date": "2026-09-25",
+    "pages": "1 /2",
+    "recipient": [
+     "Poly Lanema , Lda",
+     "Rua Do Brasil, Zona Industrial De Ovar, Nº 143 Lote 18",
+     "3880-108 OVAR",
+     "Portugal",
+     "NIF: 509581315"
+    ],
+    "strip": [
+     [
+      "Versão PO",
+      "PO260700152 V0"
+     ],
+     [
+      "INCOTERM",
+      "DAP"
+     ],
+     [
+      "Condições Pagamento",
+      "Pagamento a 30 Dias"
+     ],
+     [
+      "ID Comprador",
+      ""
+     ],
+     [
+      "N.º RFQ",
+      "4024"
+     ]
+    ],
+    "rows": [
+     [
+      "10000",
+      "M00-MRAW-B0237•0",
+      "Aluminum AW7075-T651 Plate",
+      "10 - Block 160 x 40",
+      "09/10/2026",
+      "30",
+      "UN",
+      "1,7400",
+      "52,20"
+     ],
+     [
+      "20000",
+      "M00-MRAW-B0237•1",
+      "Aluminum AW6082-T651 Plate",
+      "10 - Block 135 x 30",
+      "09/10/2026",
+      "10",
+      "UN",
+      "1,0500",
+      "10,50"
+     ],
+     [
+      "30000",
+      "M00-MRAW-B0237•2",
+      "Aluminum AW6082-T651 Plate",
+      "110 - Block 225 x 190",
+      "09/10/2026",
+      "20",
+      "UN",
+      "91,2000",
+      "1 824,00"
+     ],
+     [
+      "40000",
+      "M00-MRAW-B0237•4",
+      "Aluminum AW6082-T651 Plate",
+      "12 - Block 120 x 60",
+      "09/10/2026",
+      "5",
+      "UN",
+      "2,0600",
+      "10,30"
+     ],
+     [
+      "50000",
+      "M00-MRAW-B0237•7",
+      "Aluminum AW6082-T651 Plate",
+      "20 - Block 195 x 85",
+      "09/10/2026",
+      "10",
+      "UN",
+      "6,3100",
+      "63,10"
+     ],
+     [
+      "210000",
+      "TRANSPORTATION",
+      "Transportation",
+      "",
+      "09/10/2026",
+      "1",
+      "",
+      "134,0000",
+      "134,00"
+     ]
+    ],
+    "more": "Linhas 60000 a 200000 na página 2",
+    "transportar": "2 094,10",
+    "foot": "Esta ordem de compra é válida somente nas condições aqui especificadas. A aceitação desta ordem implica a concordância com todos os seus termos e condições, salvo acordo escrito em contrário."
+   },
+   "head": [
+    [
+     "Cliente",
+     "Cliente A · aeronáutica",
+     "cliente"
+    ],
+    [
+     "NIF",
+     "PT 5•• ••• 214",
+     "cliente"
+    ],
+    [
+     "N.º encomenda",
+     "PO260700152",
+     "numero"
+    ],
+    [
+     "Data",
+     "25/09/2026",
+     "data"
+    ],
+    [
+     "Entrega pedida",
+     "09/10/2026",
+     "entrega"
+    ],
+    [
+     "Origem",
+     "Sem proposta",
+     null
+    ]
+   ],
+   "lines": [
+    {
+     "raw": "AW7075-T651 Plate 10 - Block 160 x 40",
+     "ref": "Placa AL 7075 T651",
+     "dim": "10 × 40 × 160",
+     "qty": "30 un",
+     "c": 98,
+     "row": 0
+    },
+    {
+     "raw": "AW6082-T651 Plate 10 - Block 135 x 30",
+     "ref": "Placa AL 6082 T651",
+     "dim": "10 × 30 × 135",
+     "qty": "10 un",
+     "c": 98,
+     "row": 1
+    },
+    {
+     "raw": "AW6082-T651 Plate 110 - Block 225 x 190",
+     "ref": "Placa AL 6082 T651",
+     "dim": "110 × 190 × 225",
+     "qty": "20 un",
+     "c": 97,
+     "row": 2
+    },
+    {
+     "raw": "AW6082-T651 Plate 12 - Block 120 x 60",
+     "ref": "Placa AL 6082 T651",
+     "dim": "12 × 60 × 120",
+     "qty": "5 un",
+     "c": 98,
+     "row": 3
+    },
+    {
+     "raw": "TRANSPORTATION · Transportation",
+     "ref": "Portes de envio",
+     "dim": "serviço",
+     "qty": "1",
+     "c": 99,
+     "row": 5,
+     "tone": "svc"
+    }
+   ],
+   "moreLines": "+ 16 linhas, todas acima de 95% · cotas em E × L × C (mm)",
+   "checks": [
+    {
+     "t": "Cliente encontrado no PHC pelo **NIF**, categoria A"
+    },
+    {
+     "t": "Espessura antes do hífen: **padrão deste cliente**"
+    },
+    {
+     "t": "Preços iguais aos **escalões do PHC** em 20 de 20 linhas"
+    },
+    {
+     "t": "TRANSPORTATION é uma **linha de portes**, não material",
+     "tone": "info"
+    }
+   ],
+   "outcome": {
+    "kind": "ok",
+    "title": "Criada no PHC às 17:33",
+    "lines": [
+     "Encomenda **EC 26/04812** · 21 linhas · sem proposta",
+     "Confirmação enviada ao cliente às **17:34**"
+    ]
+   },
+   "detail": {
+    "ec": "EC 26/04812",
+    "estado": "ok",
+    "estadoTxt": "Criada no PHC",
+    "origem": "sem proposta, preços pelos escalões",
+    "entrega": "09/10/2026",
+    "comercial": "Fila automática",
+    "nLinhas": "21",
+    "cliente": {
+     "nome": "Cliente A · aeronáutica",
+     "nif": "PT 5•• ••• 214",
+     "categoria": "A"
+    },
+    "linhas": [
+     {
+      "ref": "AL7075T651-PL-010",
+      "desc": "Placa AL 7075 T651",
+      "alts": [
+       "Placa AL 7075 T651",
+       "Placa AL 7075 T651 retificada",
+       "Placa AL 7075 T6"
+      ],
+      "dim": "10 × 40 × 160",
+      "qty": 30,
+      "un": "un",
+      "preco": 1.74,
+      "esc": 1.74
+     },
+     {
+      "ref": "AL6082T651-PL-010",
+      "desc": "Placa AL 6082 T651",
+      "alts": [
+       "Placa AL 6082 T651",
+       "Placa AL 6082 T651 retificada"
+      ],
+      "dim": "10 × 30 × 135",
+      "qty": 10,
+      "un": "un",
+      "preco": 1.05,
+      "esc": 1.05
+     },
+     {
+      "ref": "AL6082T651-PL-110",
+      "desc": "Placa AL 6082 T651",
+      "alts": [
+       "Placa AL 6082 T651",
+       "Placa AL 6082 T651 retificada"
+      ],
+      "dim": "110 × 190 × 225",
+      "qty": 20,
+      "un": "un",
+      "preco": 91.2,
+      "esc": 91.2
+     },
+     {
+      "ref": "AL6082T651-PL-012",
+      "desc": "Placa AL 6082 T651",
+      "alts": [
+       "Placa AL 6082 T651",
+       "Placa AL 6082 T651 retificada"
+      ],
+      "dim": "12 × 60 × 120",
+      "qty": 5,
+      "un": "un",
+      "preco": 2.06,
+      "esc": 2.06
+     },
+     {
+      "ref": "AL6082T651-PL-020",
+      "desc": "Placa AL 6082 T651",
+      "alts": [
+       "Placa AL 6082 T651",
+       "Placa AL 6082 T651 retificada"
+      ],
+      "dim": "20 × 85 × 195",
+      "qty": 10,
+      "un": "un",
+      "preco": 6.31,
+      "esc": 6.31
+     },
+     {
+      "ref": "SRV-PORTES",
+      "desc": "Portes de envio",
+      "dim": "serviço",
+      "qty": 1,
+      "un": "",
+      "preco": 134,
+      "esc": 134
+     }
+    ],
+    "mais": "+ 15 linhas (página 2)",
+    "resto": 4361.2,
+    "emails": [
+     {
+      "dir": "in",
+      "who": "compras@cliente-a",
+      "when": "Sex 25/09 · 17:31",
+      "subject": "Encomenda PO260700152",
+      "body": "Boa tarde.\nSegue a encomenda **PO260700152**, com entrega a **9 de outubro**.\nObrigado."
+     },
+     {
+      "dir": "out",
+      "tag": "confirmacao",
+      "who": "compras@cliente-a",
+      "when": "Sex 25/09 · 17:34",
+      "subject": "Confirmação de encomenda EC 26/04812 · a vossa PO260700152"
+     },
+     {
+      "dir": "out",
+      "who": "compras@cliente-a",
+      "when": "14/08 · 09:02",
+      "subject": "Confirmação de encomenda EC 26/03988",
+      "body": "Bom dia.\nConfirmamos a vossa encomenda PO260700131 (9 linhas), com entrega a 28/08.\nCumprimentos,\nRui Santos"
+     },
+     {
+      "dir": "out",
+      "who": "compras@cliente-a",
+      "when": "12/08 · 18:05",
+      "subject": "Proposta PR 26/0655 · RFQ 3977",
+      "body": "Boa tarde.\nSegue a proposta PR 26/0655, com os preços pelos escalões em vigor e entrega a 10 dias úteis.\nCumprimentos,\nRui Santos"
+     },
+     {
+      "dir": "in",
+      "who": "compras@cliente-a",
+      "when": "12/08 · 16:40",
+      "subject": "RFQ 3977 · blocos 7075",
+      "body": "Boa tarde.\nPedimos cotação para 9 blocos em AW7075-T651, conforme lista em anexo.\nObrigado."
+     }
+    ],
+    "historico": {
+     "kpis": [
+      [
+       "Kg em 2026",
+       "8.940 kg"
+      ],
+      [
+       "Encomendas em 2026",
+       "27"
+      ],
+      [
+       "Preço médio 7075",
+       "9,05 €/kg"
+      ],
+      [
+       "Categoria",
+       "A · cliente desde 2019"
+      ]
+     ],
+     "rows": [
+      [
+       "14/08/2026",
+       "EC 26/03988",
+       "Encomenda",
+       "9 linhas · 7075 T651",
+       "1.284,00 €",
+       "Faturada"
+      ],
+      [
+       "12/08/2026",
+       "PR 26/0655",
+       "Proposta",
+       "9 linhas · 7075 T651",
+       "1.284,00 €",
+       "Convertida"
+      ],
+      [
+       "22/07/2026",
+       "EC 26/03502",
+       "Encomenda",
+       "16 linhas · 6082 T651",
+       "3.905,40 €",
+       "Faturada"
+      ],
+      [
+       "30/06/2026",
+       "PR 26/0512",
+       "Proposta",
+       "4 linhas · 5083 H111",
+       "612,80 €",
+       "Perdida"
+      ],
+      [
+       "18/06/2026",
+       "EC 26/02977",
+       "Encomenda",
+       "21 linhas · 6082 e 7075",
+       "5.872,10 €",
+       "Faturada"
+      ]
+     ],
+     "nota": "Lido do PHC em tempo real. Valores ilustrativos."
+    },
+    "confirm": {
+     "to": "compras@cliente-a",
+     "subject": "Confirmação de encomenda EC 26/04812 · a vossa PO260700152",
+     "when": "Sexta, 25/09 · 17:34",
+     "estado": "enviada",
+     "nota": "Enviada sozinha três minutos depois de a encomenda chegar.",
+     "txt": {
+      "ola": "Exmos. Senhores,",
+      "cols": [
+       "Produto",
+       "E × L × C (mm)",
+       "Qtd.",
+       "Preço unit.",
+       "Total"
+      ],
+      "total": "Total da encomenda (sem IVA)",
+      "fecho": "Qualquer divergência, basta responder a este email.",
+      "assin": "Com os melhores cumprimentos,",
+      "dep": "Departamento Comercial",
+      "intro": "Confirmamos a receção e o registo da vossa encomenda **PO260700152**, com a nossa referência **EC 26/04812**. Entrega prevista a **09/10/2026**, nas condições DAP e pagamento a 30 dias."
+     }
+    }
+   }
+  },
+  {
+   "mail": {
+    "from": "Cliente B · industrial (ES)",
+    "day": "Sexta, 25/09",
+    "time": "17:48",
+    "subject": "Pedido proveedor 26 - 305",
+    "att": "PDF · ES",
+    "body": "Buenas tardes. Adjuntamos pedido **26-305**. Fecha de entrega **13/10**. Saludos."
+   },
+   "paper": {
+    "tpl": "es",
+    "file": "pedido 26-305.pdf",
+    "numberShow": "Pedido 26-305",
+    "logo": "logo Cliente B",
+    "realizado": "41",
+    "numero": "26 - 305",
+    "fecha": "25/09/2026",
+    "cod": "790",
+    "destino": [
+     "POLYLANEMA LDA",
+     "RUA DO BRASIL , 143",
+     "3881-902 - OVAR"
+    ],
+    "cif": "PT509581315",
+    "pag": "1",
+    "pago": "TRANSFERENCIA 60 DIAS",
+    "items": [
+     [
+      "60015083040",
+      "AL CHAPA 5083 H111 040 MM",
+      "1P 2185X1840X40",
+      "434,00",
+      "KG",
+      "6,20",
+      "2.690,80",
+      "13/10/2026"
+     ],
+     [
+      "60015083050",
+      "AL CHAPA 5083 H111 050 MM",
+      "2P 1900X220X50",
+      "114,00",
+      "KG",
+      "6,20",
+      "706,80",
+      "13/10/2026"
+     ],
+     [
+      "60015083090",
+      "AL CHAPA 5083 H111 090 MM",
+      "1P 1900X220X90",
+      "102,00",
+      "KG",
+      "6,20",
+      "632,40",
+      "13/10/2026"
+     ],
+     [
+      "60015083060",
+      "AL CHAPA 5083 H111 060 MM",
+      "3P 1385X220X60",
+      "148,00",
+      "KG",
+      "6,20",
+      "917,60",
+      "13/10/2026"
+     ],
+     [
+      "60015083025",
+      "AL CHAPA 5083 025 RECTIFICADO",
+      "1P 2185X1840X25",
+      "272,00",
+      "KG",
+      "6,20",
+      "1.686,40",
+      "13/10/2026"
+     ]
+    ],
+    "more": "Continúa en la página 2: 9 artículos más",
+    "totals": [
+     "14.570,60",
+     "0,00",
+     "14.570,60",
+     "0,00",
+     "0,00",
+     "14.570,60 Eur"
+    ],
+    "foot": "En cumplimiento del requisito 8.4.3.e) de ISO9001:2015 se comunica que el control y el seguimiento del desempeño de los proveedores se realiza mensualmente."
+   },
+   "head": [
+    [
+     "Cliente",
+     "Cliente B · Espanha",
+     "cliente"
+    ],
+    [
+     "CIF",
+     "ES B•••••871",
+     "cliente"
+    ],
+    [
+     "N.º pedido",
+     "26 - 305",
+     "numero"
+    ],
+    [
+     "Data",
+     "25/09/2026",
+     "data"
+    ],
+    [
+     "Entrega pedida",
+     "13/10/2026",
+     "entrega"
+    ],
+    [
+     "Unidades",
+     "kg → peças",
+     null
+    ]
+   ],
+   "lines": [
+    {
+     "raw": "AL CHAPA 5083 H111 · 1P 2185X1840X40 · 434 KG",
+     "ref": "Placa AL 5083 H111",
+     "dim": "40 × 1840 × 2185",
+     "qty": "1 pç",
+     "c": 97,
+     "row": 0,
+     "note": "Peso calculado 428 kg · pedido 434 kg (1,4%)"
+    },
+    {
+     "raw": "AL CHAPA 5083 H111 · 2P 1900X220X50 · 114 KG",
+     "ref": "Placa AL 5083 H111",
+     "dim": "50 × 220 × 1900",
+     "qty": "2 pç",
+     "c": 97,
+     "row": 1,
+     "note": "Peso calculado 111 kg · pedido 114 kg (2,5%)"
+    },
+    {
+     "raw": "AL CHAPA 5083 H111 · 3P 1385X220X60 · 148 KG",
+     "ref": "Placa AL 5083 H111",
+     "dim": "60 × 220 × 1385",
+     "qty": "3 pç",
+     "c": 97,
+     "row": 3,
+     "note": "Peso calculado 146 kg · pedido 148 kg (1,4%)"
+    },
+    {
+     "raw": "AL CHAPA 5083 025 RECTIFICADO · 1P 2185X1840X25",
+     "ref": "Placa AL 5083 retificada",
+     "dim": "25 × 1840 × 2185",
+     "qty": "1 pç",
+     "c": 96,
+     "row": 4,
+     "note": "RECTIFICADO: acabamento retificado"
+    }
+   ],
+   "moreLines": "+ 10 linhas · peso confirmado em todas",
+   "checks": [
+    {
+     "t": "Pedido em **espanhol**: chapa é placa"
+    },
+    {
+     "t": "Ordem **C × L × E**, ao contrário do anterior"
+    },
+    {
+     "t": "Em **kg**: peso do PHC dentro de 3% em 14 de 14"
+    },
+    {
+     "t": "Preço por kg igual à **tabela deste cliente**"
+    }
+   ],
+   "outcome": {
+    "kind": "ok",
+    "title": "Criada no PHC às 17:50",
+    "lines": [
+     "Encomenda **EC 26/04813** · 14 linhas · entrega 13/10",
+     "Confirmação enviada ao cliente **em espanhol**"
+    ]
+   },
+   "detail": {
+    "ec": "EC 26/04813",
+    "estado": "ok",
+    "estadoTxt": "Criada no PHC",
+    "origem": "sem proposta, tabela do cliente ao kg",
+    "entrega": "13/10/2026",
+    "comercial": "Fila automática",
+    "nLinhas": "14",
+    "cliente": {
+     "nome": "Cliente B · Espanha",
+     "nif": "ES B•••••871",
+     "categoria": "A · tabela própria"
+    },
+    "linhas": [
+     {
+      "ref": "AL5083H111-CH-040",
+      "desc": "Placa AL 5083 H111",
+      "alts": [
+       "Placa AL 5083 H111",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "40 × 1840 × 2185 · 1 pç",
+      "qty": 434,
+      "un": "kg",
+      "preco": 6.2,
+      "esc": 6.2
+     },
+     {
+      "ref": "AL5083H111-CH-050",
+      "desc": "Placa AL 5083 H111",
+      "alts": [
+       "Placa AL 5083 H111",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "50 × 220 × 1900 · 2 pç",
+      "qty": 114,
+      "un": "kg",
+      "preco": 6.2,
+      "esc": 6.2
+     },
+     {
+      "ref": "AL5083H111-CH-090",
+      "desc": "Placa AL 5083 H111",
+      "alts": [
+       "Placa AL 5083 H111",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "90 × 220 × 1900 · 1 pç",
+      "qty": 102,
+      "un": "kg",
+      "preco": 6.2,
+      "esc": 6.2
+     },
+     {
+      "ref": "AL5083H111-CH-060",
+      "desc": "Placa AL 5083 H111",
+      "alts": [
+       "Placa AL 5083 H111",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "60 × 220 × 1385 · 3 pç",
+      "qty": 148,
+      "un": "kg",
+      "preco": 6.2,
+      "esc": 6.2
+     },
+     {
+      "ref": "AL5083-RET-025",
+      "desc": "Placa AL 5083 retificada",
+      "alts": [
+       "Placa AL 5083 retificada",
+       "Placa AL 5083 H111"
+      ],
+      "dim": "25 × 1840 × 2185 · 1 pç",
+      "qty": 272,
+      "un": "kg",
+      "preco": 6.2,
+      "esc": 6.2
+     }
+    ],
+    "mais": "+ 9 linhas",
+    "resto": 7936.6,
+    "emails": [
+     {
+      "dir": "in",
+      "who": "compras@cliente-b.es",
+      "when": "Sex 25/09 · 17:48",
+      "subject": "Pedido proveedor 26 - 305",
+      "body": "Buenas tardes.\nAdjuntamos pedido **26-305**. Fecha de entrega **13/10**.\nSaludos."
+     },
+     {
+      "dir": "out",
+      "tag": "confirmacao",
+      "who": "compras@cliente-b.es",
+      "when": "Sex 25/09 · 17:50",
+      "subject": "Confirmación de pedido 26-305 · EC 26/04813"
+     },
+     {
+      "dir": "out",
+      "who": "compras@cliente-b.es",
+      "when": "02/09 · 11:20",
+      "subject": "RE: Consulta plazo chapa 5083 H111",
+      "body": "Buenos días.\nTenemos stock. Plazo de 5 días laborables desde el pedido.\nSaludos,\nRui Santos"
+     },
+     {
+      "dir": "in",
+      "who": "compras@cliente-b.es",
+      "when": "02/09 · 09:47",
+      "subject": "Consulta plazo chapa 5083 H111",
+      "body": "Buenos días.\n¿Qué plazo tenéis para chapa 5083 H111 de 40 y 50 mm?\nGracias."
+     }
+    ],
+    "historico": {
+     "kpis": [
+      [
+       "Kg em 2026",
+       "21.300 kg"
+      ],
+      [
+       "Encomendas em 2026",
+       "14"
+      ],
+      [
+       "Preço médio 5083",
+       "6,18 €/kg"
+      ],
+      [
+       "Tabela",
+       "Própria, ao kg"
+      ]
+     ],
+     "rows": [
+      [
+       "24/09/2026",
+       "EC 26/04779",
+       "Encomenda",
+       "26 - 301 · 8 linhas · 5083",
+       "5.120,40 €",
+       "Faturada"
+      ],
+      [
+       "08/07/2026",
+       "EC 26/03310",
+       "Encomenda",
+       "26 - 247 · 14 linhas · 5083",
+       "12.940,10 €",
+       "Faturada"
+      ],
+      [
+       "11/06/2026",
+       "EC 26/02810",
+       "Encomenda",
+       "26 - 198 · 9 linhas · 5083 e 6082",
+       "7.415,60 €",
+       "Faturada"
+      ],
+      [
+       "20/05/2026",
+       "PR 26/0402",
+       "Proposta",
+       "Chapa 7075 · 3 linhas",
+       "2.980,00 €",
+       "Perdida"
+      ]
+     ],
+     "nota": "Lido do PHC em tempo real. Valores ilustrativos."
+    },
+    "confirm": {
+     "to": "compras@cliente-b.es",
+     "subject": "Confirmación de pedido 26-305 · EC 26/04813",
+     "when": "Sexta, 25/09 · 17:50",
+     "estado": "enviada",
+     "nota": "Enviada sozinha, em espanhol, na língua do pedido.",
+     "txt": {
+      "ola": "Estimados señores:",
+      "cols": [
+       "Producto",
+       "E × A × L (mm)",
+       "Cant.",
+       "Precio",
+       "Total"
+      ],
+      "total": "Total del pedido (sin IVA)",
+      "fecho": "Para cualquier diferencia, basta con responder a este correo.",
+      "assin": "Saludos cordiales,",
+      "dep": "Departamento Comercial",
+      "intro": "Confirmamos la recepción y el registro de su pedido **26-305**, con nuestra referencia **EC 26/04813**. Fecha de entrega prevista: **13/10/2026**."
+     }
+    }
+   }
+  },
+  {
+   "mail": {
+    "from": "Cliente C · defesa (ES)",
+    "day": "Sexta, 25/09",
+    "time": "18:05",
+    "subject": "PO 4500080355 · proposta PR 26/0871",
+    "att": "PDF · 32 págs",
+    "body": "Please find attached PO 4500080355, **as per your quotation PR 26/0871**. Partial deliveries as indicated."
+   },
+   "paper": {
+    "tpl": "sap",
+    "file": "4500080355.pdf",
+    "numberShow": "PO 4500080355",
+    "logo": "logo Cliente C",
+    "quotation": "PR 26/0871",
+    "number": "4500080355",
+    "date": "25.09.2026",
+    "page": "1 of 32",
+    "vendor": [
+     "POLY LANEMA, LDA",
+     "RUA DO BRASIL 143",
+     "3880-108 OVAR",
+     "Baixo Vouga, Portugal",
+     "NIF PT509581315"
+    ],
+    "delivery": "CPT",
+    "payment": "Pay period 60 days, due the 15th and 30th",
+    "items": [
+     {
+      "item": "00010",
+      "mat": "1015018",
+      "desc": "AL5083 DIA.310x78MM;ALUMINIO",
+      "amount": "28",
+      "price": "121,500",
+      "bruto": "3.402,00",
+      "date": "30.01.2027"
+     },
+     {
+      "item": "00020",
+      "mat": "1022898",
+      "desc": "AL5083H111 10x107x115MM; ALUMINIO",
+      "amount": "30",
+      "price": "2,050",
+      "bruto": "61,50",
+      "dates": [
+       [
+        "18",
+        "01.12.2026"
+       ],
+       [
+        "10",
+        "15.12.2026"
+       ],
+       [
+        "2",
+        "30.01.2027"
+       ]
+      ]
+     },
+     {
+      "item": "00030",
+      "mat": "1020278",
+      "desc": "AL5083H111 12x100x144MM;ALUMINIO",
+      "amount": "60",
+      "price": "2,860",
+      "bruto": "171,60",
+      "dates": [
+       [
+        "36",
+        "01.12.2026"
+       ],
+       [
+        "20",
+        "15.12.2026"
+       ],
+       [
+        "4",
+        "30.01.2027"
+       ]
+      ]
+     }
+    ],
+    "more": "Page 1 of 32 · more than 100 items follow",
+    "foot": "Enviar líneas completas, NO a entregas parciales de líneas. Certificados de material. < 1000 Kgs por pallet."
+   },
+   "head": [
+    [
+     "Cliente",
+     "Cliente C · defesa",
+     "cliente"
+    ],
+    [
+     "CIF",
+     "ES A•••••326",
+     "cliente"
+    ],
+    [
+     "N.º encomenda",
+     "4500080355",
+     "numero"
+    ],
+    [
+     "Data",
+     "25/09/2026",
+     "data"
+    ],
+    [
+     "Origem",
+     "Proposta PR 26/0871",
+     "prop",
+     "novo"
+    ],
+    [
+     "Entregas",
+     "Repartidas, 3 datas",
+     "entrega"
+    ]
+   ],
+   "lines": [
+    {
+     "raw": "AL5083 DIA.310x78MM;ALUMINIO",
+     "ref": "Redondo AL 5083",
+     "dim": "Ø310 × 78",
+     "qty": "28 un",
+     "c": 93,
+     "row": 0,
+     "note": "DIA. é diâmetro: disco cortado de redondo"
+    },
+    {
+     "raw": "AL5083H111 10x107x115MM",
+     "ref": "Placa AL 5083 H111",
+     "dim": "10 × 107 × 115",
+     "qty": "30 un",
+     "c": 99,
+     "row": 1,
+     "note": "18 a 01/12 · 10 a 15/12 · 2 a 30/01"
+    },
+    {
+     "raw": "AL5083H111 12x100x144MM",
+     "ref": "Placa AL 5083 H111",
+     "dim": "12 × 100 × 144",
+     "qty": "60 un",
+     "c": 99,
+     "row": 2,
+     "note": "36 a 01/12 · 20 a 15/12 · 4 a 30/01"
+    },
+    {
+     "raw": "AL6082T6 30X120X120 (página 2)",
+     "ref": "Placa AL 6082 T6",
+     "dim": "30 × 120 × 120",
+     "qty": "12 un",
+     "c": 98,
+     "row": null
+    }
+   ],
+   "moreLines": "+ as restantes linhas, todas iguais à proposta",
+   "checks": [
+    {
+     "t": "Proposta **PR 26/0871** no PHC: linhas e preços coincidem"
+    },
+    {
+     "t": "**Converte a proposta em encomenda**, o botão que já usam"
+    },
+    {
+     "t": "Certificados e embalagem vão para as **notas**",
+     "tone": "info"
+    },
+    {
+     "t": "**Seis dígitos**: aviso à Isabel e ao Rui (configurável)",
+     "tone": "info"
+    }
+   ],
+   "outcome": {
+    "kind": "prop",
+    "title": "Proposta convertida às 18:09",
+    "lines": [
+     "**EC 26/04814** criada a partir da **PR 26/0871**",
+     "Order acknowledgment enviado às **18:10**"
+    ]
+   },
+   "detail": {
+    "ec": "EC 26/04814",
+    "estado": "prop",
+    "estadoTxt": "Proposta convertida",
+    "origem": "convertida da PR 26/0871",
+    "entrega": "01/12, 15/12 e 30/01",
+    "comercial": "Rui Santos (avisado)",
+    "nLinhas": "100+",
+    "cliente": {
+     "nome": "Cliente C · defesa",
+     "nif": "ES A•••••326",
+     "categoria": "A · defesa"
+    },
+    "linhas": [
+     {
+      "ref": "AL5083-RED-310",
+      "desc": "Redondo AL 5083",
+      "alts": [
+       "Redondo AL 5083",
+       "Redondo AL 5083 H111"
+      ],
+      "dim": "Ø310 × 78",
+      "qty": 28,
+      "un": "un",
+      "preco": 121.5,
+      "esc": 121.5
+     },
+     {
+      "ref": "AL5083H111-PL-010",
+      "desc": "Placa AL 5083 H111",
+      "alts": [
+       "Placa AL 5083 H111",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "10 × 107 × 115",
+      "qty": 30,
+      "un": "un",
+      "preco": 2.05,
+      "esc": 2.05
+     },
+     {
+      "ref": "AL5083H111-PL-012",
+      "desc": "Placa AL 5083 H111",
+      "alts": [
+       "Placa AL 5083 H111",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "12 × 100 × 144",
+      "qty": 60,
+      "un": "un",
+      "preco": 2.86,
+      "esc": 2.86
+     },
+     {
+      "ref": "AL5083H111-PL-012",
+      "desc": "Placa AL 5083 H111",
+      "alts": [
+       "Placa AL 5083 H111",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "12 × 146 × 172",
+      "qty": 30,
+      "un": "un",
+      "preco": 4.89,
+      "esc": 4.89
+     },
+     {
+      "ref": "AL5083H111-PL-025",
+      "desc": "Placa AL 5083 H111",
+      "alts": [
+       "Placa AL 5083 H111",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "25 × 105 × 150",
+      "qty": 39,
+      "un": "un",
+      "preco": 5.96,
+      "esc": 5.96
+     },
+     {
+      "ref": "AL6082T6-PL-030",
+      "desc": "Placa AL 6082 T6",
+      "alts": [
+       "Placa AL 6082 T6",
+       "Placa AL 6082 T651"
+      ],
+      "dim": "30 × 120 × 120",
+      "qty": 12,
+      "un": "un",
+      "preco": 5.41,
+      "esc": 5.41
+     }
+    ],
+    "mais": "+ as restantes linhas da proposta (32 páginas)",
+    "resto": 274310,
+    "emails": [
+     {
+      "dir": "in",
+      "who": "purchasing@cliente-c.es",
+      "when": "Sex 25/09 · 18:05",
+      "subject": "PO 4500080355 · your quotation PR 26/0871",
+      "body": "Please find attached PO 4500080355, **as per your quotation PR 26/0871**.\nPartial deliveries as indicated."
+     },
+     {
+      "dir": "out",
+      "tag": "confirmacao",
+      "who": "purchasing@cliente-c.es",
+      "when": "Sex 25/09 · 18:10",
+      "subject": "Order acknowledgment · PO 4500080355 · EC 26/04814"
+     },
+     {
+      "dir": "out",
+      "who": "purchasing@cliente-c.es",
+      "when": "11/09 · 15:30",
+      "subject": "Quotation PR 26/0871 · 2027 programme",
+      "body": "Dear Sirs,\nPlease find attached our quotation PR 26/0871 for the 2027 programme, valid for 30 days.\nBest regards,\nRui Santos"
+     },
+     {
+      "dir": "in",
+      "who": "purchasing@cliente-c.es",
+      "when": "10/09 · 10:02",
+      "subject": "RFQ · aluminium plates, 2027 programme",
+      "body": "Dear Sirs,\nPlease quote the attached list (32 pages). Partial deliveries required.\nRegards."
+     }
+    ],
+    "historico": {
+     "kpis": [
+      [
+       "Kg em 2026",
+       "64.200 kg"
+      ],
+      [
+       "Encomendas em 2026",
+       "9"
+      ],
+      [
+       "Propostas em aberto",
+       "1"
+      ],
+      [
+       "Categoria",
+       "A · defesa"
+      ]
+     ],
+     "rows": [
+      [
+       "11/09/2026",
+       "PR 26/0871",
+       "Proposta",
+       "32 páginas · 5083, 6082, 7075",
+       "278.800,00 €",
+       "Convertida"
+      ],
+      [
+       "18/03/2026",
+       "EC 26/01120",
+       "Encomenda",
+       "32 páginas · programa 2026",
+       "251.400,00 €",
+       "Faturada"
+      ],
+      [
+       "02/03/2026",
+       "PR 26/0344",
+       "Proposta",
+       "32 páginas · programa 2026",
+       "251.400,00 €",
+       "Convertida"
+      ],
+      [
+       "12/01/2026",
+       "PR 26/0051",
+       "Proposta",
+       "6 linhas · 7075 T651",
+       "18.230,00 €",
+       "Perdida"
+      ]
+     ],
+     "nota": "Lido do PHC em tempo real. Valores ilustrativos."
+    },
+    "confirm": {
+     "to": "purchasing@cliente-c.es",
+     "subject": "Order acknowledgment · PO 4500080355 · EC 26/04814",
+     "when": "Sexta, 25/09 · 18:10",
+     "estado": "enviada",
+     "nota": "O cliente pede um order acknowledgment na própria encomenda: foi enviado sozinho, em inglês.",
+     "txt": {
+      "ola": "Dear Sirs,",
+      "cols": [
+       "Product",
+       "T × W × L (mm)",
+       "Qty",
+       "Unit price",
+       "Total"
+      ],
+      "total": "Order total (excl. VAT)",
+      "fecho": "Should you find any difference, simply reply to this email.",
+      "assin": "Best regards,",
+      "dep": "Sales Department",
+      "intro": "We acknowledge receipt of your purchase order **4500080355**, registered under our reference **EC 26/04814** and based on our quotation **PR 26/0871**. Partial deliveries as per your schedule."
+     }
+    }
+   }
+  },
+  {
+   "mail": {
+    "from": "Cliente D · metalomecânica",
+    "day": "Sexta, 25/09",
+    "time": "21:12",
+    "subject": "ENC. 284",
+    "att": "PDF · tabela",
+    "body": "Segue encomenda."
+   },
+   "paper": {
+    "tpl": "tabela",
+    "file": "284_25092026 210056.pdf",
+    "numberShow": "ENC. 284",
+    "title": "ENC. Nº 284",
+    "cols": [
+     "REF. CL.",
+     "Nº ENC. CL.",
+     "MAT. PRIMA",
+     "DIÂMETRO",
+     "COMPRIMENTO",
+     "LARGURA",
+     "ESPESSURA",
+     "QTD."
+    ],
+    "rows": [
+     [
+      "24236-A-10004-71-1",
+      "861",
+      "PLASTICO POM-ESD-PRETO( placa 12mm)",
+      "",
+      "359",
+      "70",
+      "12",
+      "5"
+     ],
+     [
+      "24251-A-10004-71-2",
+      "861",
+      "PLASTICO POM-ESD-PRETO( placa 30mm)",
+      "",
+      "315",
+      "105",
+      "30",
+      "5"
+     ],
+     [
+      "24236-A-10002-71-1",
+      "861",
+      "PLASTICO POM-ESD-PRETO( placa 50mm)",
+      "",
+      "360",
+      "90",
+      "50",
+      "5"
+     ],
+     [
+      "24236-A-10001-71-2",
+      "861",
+      "ALUMINIO RETIFICADO 5083",
+      "",
+      "465",
+      "360",
+      "10",
+      "5"
+     ],
+     [
+      "26120-4475-71-1",
+      "869",
+      "ALUMINIO LAMINADO 5083",
+      "",
+      "90",
+      "30",
+      "12",
+      "1"
+     ],
+     [
+      "26120-5021-71-1",
+      "869",
+      "ALUMINIO SERRADO 5083",
+      "",
+      "81",
+      "76",
+      "45",
+      "1"
+     ],
+     [
+      "26110-1976-71-1",
+      "867",
+      "ALUMINIO SERRADO 5083",
+      "",
+      "60",
+      "45",
+      "45",
+      "2"
+     ]
+    ],
+    "more": "… 35 linhas mais nesta página e na seguinte",
+    "page": "Página 1 de 2",
+    "created": "Criado em 25-09-2026 21:01"
+   },
+   "head": [
+    [
+     "Cliente",
+     "Cliente D · pelo remetente",
+     null,
+     "novo"
+    ],
+    [
+     "NIF",
+     "Da ficha no PHC",
+     null
+    ],
+    [
+     "N.º encomenda",
+     "284",
+     "numero"
+    ],
+    [
+     "Data",
+     "25/09/2026",
+     "data"
+    ],
+    [
+     "Entrega pedida",
+     "Não indicada",
+     null,
+     "warn",
+     "16/10/2026"
+    ],
+    [
+     "Preços",
+     "Escalões do PHC",
+     null
+    ]
+   ],
+   "lines": [
+    {
+     "raw": "PLASTICO POM-ESD-PRETO( placa 12mm) · 359 · 70 · 12",
+     "ref": "POM-C ESD ou POM-H ESD?",
+     "dim": "12 × 70 × 359",
+     "qty": "5 un",
+     "c": 61,
+     "row": 0,
+     "tone": "low",
+     "note": "Duas matérias possíveis no PHC: pergunta ao cliente",
+     "resolved": [
+      "Placa POM-C ESD preto",
+      "Confirmado pelo cliente no sábado"
+     ]
+    },
+    {
+     "raw": "PLASTICO POM-ESD-PRETO( placa 30mm) · 315 · 105 · 30",
+     "ref": "POM ESD preto, a confirmar",
+     "dim": "30 × 105 × 315",
+     "qty": "5 un",
+     "c": 61,
+     "row": 1,
+     "tone": "low",
+     "note": "A mesma dúvida em 6 linhas",
+     "resolved": [
+      "Placa POM-C ESD preto",
+      "As 6 linhas atualizadas"
+     ]
+    },
+    {
+     "raw": "ALUMINIO RETIFICADO 5083 · 465 · 360 · 10",
+     "ref": "Placa AL 5083 retificada",
+     "dim": "10 × 360 × 465",
+     "qty": "5 un",
+     "c": 98,
+     "row": 3
+    },
+    {
+     "raw": "ALUMINIO SERRADO 5083 · 81 · 76 · 45",
+     "ref": "Placa AL 5083 serrada",
+     "dim": "45 × 76 × 81",
+     "qty": "1 un",
+     "c": 97,
+     "row": 5
+    }
+   ],
+   "moreLines": "+ 38 linhas · 34 confirmadas, 4 com a mesma dúvida do POM-ESD",
+   "checks": [
+    {
+     "t": "**Sem nome, NIF nem preços**: cliente pelo remetente"
+    },
+    {
+     "t": "Preços pelos **escalões do PHC**: categoria e peso"
+    },
+    {
+     "t": "**POM-ESD preto**: duas matérias possíveis",
+     "tone": "warn",
+     "fix": "**POM-C ESD** confirmado pelo cliente"
+    },
+    {
+     "t": "**Data de entrega** não indicada",
+     "tone": "warn",
+     "fix": "**Entrega a 16/10** indicada pelo cliente"
+    }
+   ],
+   "outcome": {
+    "kind": "mail",
+    "title": "Pergunta enviada ao cliente às 21:14",
+    "lines": [
+     "**Duas perguntas**: a matéria do POM-ESD e a data",
+     "**Nada entra no PHC** sem a resposta"
+    ]
+   },
+   "thread": {
+    "sent": {
+     "to": "Cliente D (remetente da encomenda)",
+     "time": "Sexta, 21:14",
+     "subject": "Encomenda n.º 284: duas confirmações antes de avançarmos",
+     "body": "Boa noite.\nRecebemos a vossa encomenda n.º 284 (42 linhas). Para a lançarmos sem erros, precisamos de duas confirmações:\n**1.** Nas 6 linhas em POM-ESD preto, pretendem **POM-C ESD** ou **POM-H ESD**?\n**2.** Qual a data de entrega pretendida?\nAs restantes 36 linhas estão confirmadas.\nCom os melhores cumprimentos,\nPoly Lanema"
+    },
+    "gap": "… sábado de manhã",
+    "reply": {
+     "time": "Sábado, 09:14",
+     "body": "Bom dia. **POM-C ESD.** Entrega até **16/10**. Obrigado."
+    },
+    "final": {
+     "kind": "ok",
+     "title": "Criada no PHC no sábado às 09:15",
+     "lines": [
+      "**EC 26/04815** · 42 linhas · entrega 16/10",
+      "Nova regra: **POM-ESD, neste cliente, é POM-C**"
+     ]
+    }
+   },
+   "detail": {
+    "ec": "EC 26/04815",
+    "estado": "ok",
+    "estadoTxt": "Criada no PHC",
+    "origem": "sem proposta, escalões da categoria B",
+    "entrega": "16/10/2026",
+    "comercial": "Fila automática",
+    "nLinhas": "42",
+    "cliente": {
+     "nome": "Cliente D · metalomecânica",
+     "nif": "PT 5•• ••• 903",
+     "categoria": "B"
+    },
+    "linhas": [
+     {
+      "ref": "POMC-ESD-PR-012",
+      "desc": "Placa POM-C ESD preto",
+      "alts": [
+       "Placa POM-C ESD preto",
+       "Placa POM-H ESD preto"
+      ],
+      "dim": "12 × 70 × 359",
+      "qty": 5,
+      "un": "un",
+      "preco": 9.8,
+      "esc": 9.8
+     },
+     {
+      "ref": "POMC-ESD-PR-030",
+      "desc": "Placa POM-C ESD preto",
+      "alts": [
+       "Placa POM-C ESD preto",
+       "Placa POM-H ESD preto"
+      ],
+      "dim": "30 × 105 × 315",
+      "qty": 5,
+      "un": "un",
+      "preco": 18.4,
+      "esc": 18.4
+     },
+     {
+      "ref": "AL5083-RET-010",
+      "desc": "Placa AL 5083 retificada",
+      "alts": [
+       "Placa AL 5083 retificada",
+       "Placa AL 5083 laminada"
+      ],
+      "dim": "10 × 360 × 465",
+      "qty": 5,
+      "un": "un",
+      "preco": 14.9,
+      "esc": 14.9
+     },
+     {
+      "ref": "AL5083-LAM-012",
+      "desc": "Placa AL 5083 laminada",
+      "alts": [
+       "Placa AL 5083 laminada",
+       "Placa AL 5083 retificada"
+      ],
+      "dim": "12 × 30 × 90",
+      "qty": 1,
+      "un": "un",
+      "preco": 1.95,
+      "esc": 1.95
+     },
+     {
+      "ref": "AL5083-SER-045",
+      "desc": "Placa AL 5083 serrada",
+      "alts": [
+       "Placa AL 5083 serrada",
+       "Placa AL 5083 laminada"
+      ],
+      "dim": "45 × 76 × 81",
+      "qty": 1,
+      "un": "un",
+      "preco": 4.2,
+      "esc": 4.2
+     }
+    ],
+    "mais": "+ 37 linhas",
+    "resto": 1286.45,
+    "emails": [
+     {
+      "dir": "in",
+      "who": "encomendas@cliente-d",
+      "when": "Sex 25/09 · 21:12",
+      "subject": "ENC. 284",
+      "body": "Segue encomenda."
+     },
+     {
+      "dir": "out",
+      "who": "encomendas@cliente-d",
+      "when": "Sex 25/09 · 21:14",
+      "subject": "Encomenda n.º 284: duas confirmações antes de avançarmos",
+      "body": "Boa noite.\nRecebemos a vossa encomenda n.º 284 (42 linhas). Para a lançarmos sem erros, precisamos de duas confirmações:\n**1.** Nas 6 linhas em POM-ESD preto, pretendem **POM-C ESD** ou **POM-H ESD**?\n**2.** Qual a data de entrega pretendida?\nAs restantes 36 linhas estão confirmadas.\nCom os melhores cumprimentos,\nPoly Lanema"
+     },
+     {
+      "dir": "in",
+      "who": "encomendas@cliente-d",
+      "when": "Sáb 26/09 · 09:14",
+      "subject": "RE: Encomenda n.º 284: duas confirmações",
+      "body": "Bom dia. **POM-C ESD.** Entrega até **16/10**. Obrigado."
+     },
+     {
+      "dir": "out",
+      "tag": "confirmacao",
+      "who": "encomendas@cliente-d",
+      "when": "Sáb 26/09 · 09:15",
+      "subject": "Confirmação de encomenda EC 26/04815 · a vossa ENC. 284"
+     },
+     {
+      "dir": "out",
+      "who": "encomendas@cliente-d",
+      "when": "30/07 · 10:41",
+      "subject": "Confirmação de encomenda ENC. 261",
+      "body": "Bom dia.\nConfirmamos a vossa ENC. 261 (18 linhas), com entrega a 07/08.\nCumprimentos,\nRui Santos"
+     }
+    ],
+    "historico": {
+     "kpis": [
+      [
+       "Kg em 2026",
+       "3.120 kg"
+      ],
+      [
+       "Encomendas em 2026",
+       "31"
+      ],
+      [
+       "Matéria mais pedida",
+       "5083 laminado"
+      ],
+      [
+       "Categoria",
+       "B"
+      ]
+     ],
+     "rows": [
+      [
+       "30/07/2026",
+       "EC 26/03620",
+       "Encomenda",
+       "ENC. 261 · 18 linhas",
+       "842,30 €",
+       "Faturada"
+      ],
+      [
+       "16/07/2026",
+       "EC 26/03371",
+       "Encomenda",
+       "ENC. 255 · 40 linhas",
+       "1.910,55 €",
+       "Faturada"
+      ],
+      [
+       "02/07/2026",
+       "EC 26/03105",
+       "Encomenda",
+       "ENC. 249 · 12 linhas",
+       "506,10 €",
+       "Faturada"
+      ],
+      [
+       "18/06/2026",
+       "EC 26/02890",
+       "Encomenda",
+       "ENC. 241 · 27 linhas",
+       "1.322,75 €",
+       "Faturada"
+      ]
+     ],
+     "nota": "Regra criada a 26/09 com a resposta do cliente: POM-ESD, para este cliente, é sempre POM-C."
+    },
+    "confirm": {
+     "to": "encomendas@cliente-d",
+     "subject": "Confirmação de encomenda EC 26/04815 · a vossa ENC. 284",
+     "when": "Sábado, 26/09 · 09:15",
+     "estado": "enviada",
+     "nota": "Enviada um minuto depois da resposta do cliente.",
+     "txt": {
+      "ola": "Exmos. Senhores,",
+      "cols": [
+       "Produto",
+       "E × L × C (mm)",
+       "Qtd.",
+       "Preço unit.",
+       "Total"
+      ],
+      "total": "Total da encomenda (sem IVA)",
+      "fecho": "Qualquer divergência, basta responder a este email.",
+      "assin": "Com os melhores cumprimentos,",
+      "dep": "Departamento Comercial",
+      "intro": "Confirmamos a receção e o registo da vossa encomenda **n.º 284**, com a nossa referência **EC 26/04815**, já com o **POM-C ESD** que indicaram. Entrega prevista a **16/10/2026**."
+     }
+    }
+   }
+  },
+  {
+   "mail": {
+    "from": "Cliente E · aeronáutica (ES)",
+    "day": "Domingo, 27/09",
+    "time": "19:40",
+    "subject": "Pedido de compra 26C003577",
+    "att": "PDF digitalizado",
+    "body": "Adjuntamos pedido **26C003577**. Fecha de entrega **06/10**."
+   },
+   "paper": {
+    "tpl": "scan",
+    "file": "26C003577.pdf (digitalizado)",
+    "numberShow": "Pedido 26C003577",
+    "logo": "logo Cliente E",
+    "company": [
+     "POLY LANEMA, LDA",
+     "Z.I. de Ovar - Rua do Brasil, N.º 143",
+     "3880-108 Ovar - Aveiro (Aveiro) PORTUGAL",
+     "CIF: PT509581315",
+     "Telf.: +351 256 581 400"
+    ],
+    "number": "26C003577",
+    "fecha": "25/09/2026",
+    "entrega": "06/10/2026",
+    "transporte": "Sus Medios",
+    "pag": "Pág.1 de 3",
+    "rows": [
+     [
+      "1",
+      "MP_ALU_PLA_7075T651_REC_151100630",
+      "PLACA ALUMINIO 7075 T651 RECTIFICADA ESPESOR :15 ANCHO:1100 LARG (mm):630_VALIDO PREMECANIZADO",
+      "•••603-257010-01",
+      "1,00 Ud",
+      "452,10",
+      "452,10"
+     ],
+     [
+      "2",
+      "MP_ALU_PLA_7075T651_REC_5650550",
+      "PLACA ALUMINIO 7075 T651 RECTIFICADA ESPESOR :5 ANCHO:650 LARG (mm):550__VALIDO PREMECANIZADO",
+      "•••603-257010-03",
+      "1,00 Ud",
+      "129,15",
+      "129,15"
+     ],
+     [
+      "3",
+      "MP_ALU_PLA_7075T651_558055",
+      "PLACA ALUMINIO 7075 T651 ESPESOR :55 ANCHO:80 LARG (mm):55",
+      "•••603-257002-01",
+      "2,00 Ud",
+      "6,53",
+      "13,06"
+     ],
+     [
+      "8",
+      "MP_ALU_RED_7075T651_100250",
+      "REDONDO ALUMINIO 7075 T651 DIA:100 LARG (mm):250",
+      "•••603-257007-09",
+      "1,00 Ud",
+      "62,20",
+      "62,20"
+     ]
+    ],
+    "more": "… 30 posiciones en 3 páginas"
+   },
+   "head": [
+    [
+     "Cliente",
+     "Cliente E · aeronáutica",
+     "cliente"
+    ],
+    [
+     "N.º pedido",
+     "26C003577",
+     "numero"
+    ],
+    [
+     "Data",
+     "25/09/2026",
+     "data"
+    ],
+    [
+     "Entrega pedida",
+     "06/10/2026",
+     "entrega"
+    ],
+    [
+     "Leitura",
+     "Imagem digitalizada",
+     null
+    ],
+    [
+     "Acabamento",
+     "Pré-maquinado válido",
+     null
+    ]
+   ],
+   "lines": [
+    {
+     "raw": "RECTIFICADA ESPESOR:15 ANCHO:1100 LARG (mm):630",
+     "ref": "Placa AL 7075 T651 retificada",
+     "dim": "15 × 1100 × 630",
+     "qty": "1 un",
+     "c": 95,
+     "row": 0,
+     "note": "LARG é largo, o comprimento, e não a largura"
+    },
+    {
+     "raw": "RECTIFICADA ESPESOR:5 ANCHO:650 LARG (mm):550 · 129,15",
+     "ref": "Placa AL 7075 T651 retificada",
+     "dim": "5 × 650 × 550",
+     "qty": "1 un",
+     "c": 96,
+     "row": 1,
+     "tone": "preco",
+     "note": "Preço do cliente 129,15 € · escalão do PHC 143,20 € (−9,8%)"
+    },
+    {
+     "raw": "REDONDO ALUMINIO 7075 T651 DIA:100 LARG (mm):250",
+     "ref": "Redondo AL 7075 T651",
+     "dim": "Ø100 × 250",
+     "qty": "1 un",
+     "c": 97,
+     "row": 3
+    }
+   ],
+   "moreLines": "+ 27 posições, todas acima de 95%",
+   "checks": [
+    {
+     "t": "Documento **digitalizado**: lido como imagem"
+    },
+    {
+     "t": "**LARG** lido como largo (comprimento) em 30 de 30"
+    },
+    {
+     "t": "**Válido pré-maquinado** vai para as notas",
+     "tone": "info"
+    },
+    {
+     "t": "Posição 2: preço **9,8% abaixo** do escalão",
+     "tone": "warn"
+    }
+   ],
+   "outcome": {
+    "kind": "val",
+    "title": "Para o Rui validar, segunda às 08:00",
+    "lines": [
+     "29 de 30 posições prontas; **a posição 2** abaixo do escalão",
+     "A resposta ao cliente já está escrita, à espera de ok"
+    ]
+   },
+   "detail": {
+    "ec": "EC 26/04816",
+    "estado": "val",
+    "estadoTxt": "Para validar",
+    "origem": "sem proposta, preços do cliente a confirmar",
+    "entrega": "06/10/2026",
+    "comercial": "Rui Santos",
+    "nLinhas": "30",
+    "cliente": {
+     "nome": "Cliente E · aeronáutica",
+     "nif": "ES B•••••440",
+     "categoria": "A"
+    },
+    "linhas": [
+     {
+      "ref": "AL7075T651-RET-015",
+      "desc": "Placa AL 7075 T651 retificada",
+      "alts": [
+       "Placa AL 7075 T651 retificada",
+       "Placa AL 7075 T651"
+      ],
+      "dim": "15 × 1100 × 630",
+      "qty": 1,
+      "un": "un",
+      "preco": 452.1,
+      "esc": 452.1
+     },
+     {
+      "ref": "AL7075T651-RET-005",
+      "desc": "Placa AL 7075 T651 retificada",
+      "alts": [
+       "Placa AL 7075 T651 retificada",
+       "Placa AL 7075 T651"
+      ],
+      "dim": "5 × 650 × 550",
+      "qty": 1,
+      "un": "un",
+      "preco": 129.15,
+      "esc": 143.2
+     },
+     {
+      "ref": "AL7075T651-PL-055",
+      "desc": "Placa AL 7075 T651",
+      "alts": [
+       "Placa AL 7075 T651",
+       "Placa AL 7075 T651 retificada"
+      ],
+      "dim": "55 × 80 × 55",
+      "qty": 2,
+      "un": "un",
+      "preco": 6.53,
+      "esc": 6.53
+     },
+     {
+      "ref": "AL7075T651-RED-100",
+      "desc": "Redondo AL 7075 T651",
+      "alts": [
+       "Redondo AL 7075 T651"
+      ],
+      "dim": "Ø100 × 250",
+      "qty": 1,
+      "un": "un",
+      "preco": 62.2,
+      "esc": 62.2
+     },
+     {
+      "ref": "AL7075T651-PL-030",
+      "desc": "Placa AL 7075 T651",
+      "alts": [
+       "Placa AL 7075 T651",
+       "Placa AL 7075 T651 retificada"
+      ],
+      "dim": "30 × 50 × 240",
+      "qty": 1,
+      "un": "un",
+      "preco": 10.35,
+      "esc": 10.35
+     }
+    ],
+    "mais": "+ 25 posições",
+    "resto": 812.44,
+    "emails": [
+     {
+      "dir": "in",
+      "who": "compras@cliente-e.es",
+      "when": "Dom 27/09 · 19:40",
+      "subject": "Pedido de compra 26C003577",
+      "body": "Adjuntamos pedido **26C003577**.\nFecha de entrega **06/10**."
+     },
+     {
+      "dir": "out",
+      "draft": true,
+      "who": "compras@cliente-e.es",
+      "when": "Rascunho · à espera do Rui",
+      "subject": "Pedido 26C003577: precio de la posición 2",
+      "body": "Estimados señores:\nHemos registrado su pedido **26C003577** (30 posiciones).\nEn la **posición 2** (placa 7075 T651 rectificada 5 × 650 × 550) el precio indicado, 129,15 €, no corresponde a nuestra tarifa vigente, **143,20 €**. ¿Podemos proceder con el precio de tarifa?\nSaludos cordiales,\nPoly Lanema"
+     },
+     {
+      "dir": "out",
+      "who": "compras@cliente-e.es",
+      "when": "01/07 · 09:12",
+      "subject": "Confirmación de pedido 26C003412",
+      "body": "Buenos días.\nConfirmamos su pedido 26C003412 (22 posiciones), con entrega el 08/07.\nSaludos,\nRui Santos"
+     },
+     {
+      "dir": "in",
+      "who": "compras@cliente-e.es",
+      "when": "30/06 · 17:55",
+      "subject": "Pedido de compra 26C003412",
+      "body": "Adjuntamos pedido 26C003412."
+     }
+    ],
+    "historico": {
+     "kpis": [
+      [
+       "Kg em 2026",
+       "4.380 kg"
+      ],
+      [
+       "Encomendas em 2026",
+       "23"
+      ],
+      [
+       "Preço médio 7075",
+       "9,12 €/kg"
+      ],
+      [
+       "Categoria",
+       "A"
+      ]
+     ],
+     "rows": [
+      [
+       "01/07/2026",
+       "EC 26/03088",
+       "Encomenda",
+       "26C003412 · 22 posições",
+       "1.214,60 €",
+       "Faturada"
+      ],
+      [
+       "10/06/2026",
+       "EC 26/02741",
+       "Encomenda",
+       "26C003301 · 30 posições",
+       "1.396,14 €",
+       "Faturada"
+      ],
+      [
+       "21/05/2026",
+       "EC 26/02390",
+       "Encomenda",
+       "26C003190 · 14 posições",
+       "688,90 €",
+       "Faturada"
+      ],
+      [
+       "07/05/2026",
+       "PR 26/0371",
+       "Proposta",
+       "Placas 7075 retificadas",
+       "3.120,00 €",
+       "Perdida"
+      ]
+     ],
+     "nota": "A posição 2 foi faturada a 143,20 € nas duas últimas encomendas deste cliente."
+    },
+    "confirm": {
+     "to": "compras@cliente-e.es",
+     "subject": "Confirmación de pedido 26C003577 · EC 26/04816",
+     "when": "À espera da decisão sobre a posição 2",
+     "estado": "rascunho",
+     "nota": "Não sai sem aprovação: a posição 2 está abaixo do escalão.",
+     "txt": {
+      "ola": "Estimados señores:",
+      "cols": [
+       "Producto",
+       "E × A × L (mm)",
+       "Cant.",
+       "Precio",
+       "Total"
+      ],
+      "total": "Total del pedido (sin IVA)",
+      "fecho": "Para cualquier diferencia, basta con responder a este correo.",
+      "assin": "Saludos cordiales,",
+      "dep": "Departamento Comercial",
+      "intro": "Confirmamos la recepción y el registro de su pedido **26C003577**, con nuestra referencia **EC 26/04816**. Fecha de entrega prevista: **06/10/2026**."
+     }
+    }
+   }
+  }
+ ],
+ "agente": {
+  "titulo": "Perguntar ao PHC em português, e ter resposta em segundos",
+  "sub": "Em vez de pedir um filtro ou uma análise multidimensional à equipa de TI: escrever a pergunta. Um assistente ligado aos vossos dados, sobre a mesma base da plataforma.",
+  "badge": "Fase seguinte · fora do valor desta proposta",
+  "nota": "Clientes e números ilustrativos. O assistente só lê o PHC: não altera nada."
+ },
+ "anteriores": [
+  [
+   "Qui 24/09",
+   "Cliente F · moldes",
+   "ENC 1187",
+   "EC 26/04788",
+   "12",
+   "3.412,80 €"
+  ],
+  [
+   "Qui 24/09",
+   "Cliente B · Espanha",
+   "26 - 301",
+   "EC 26/04779",
+   "8",
+   "5.120,40 €"
+  ],
+  [
+   "Qua 23/09",
+   "Cliente G · automação",
+   "PO 88213",
+   "EC 26/04751",
+   "3",
+   "412,90 €"
+  ]
+ ],
+ "dashboard": {
+  "sub": "Ilustrativo: duas semanas típicas com o volume da Lanema, cerca de 80 encomendas por dia",
+  "kpis": [
+   [
+    "Encomendas esta semana",
+    "412",
+    "+1,5% que a anterior"
+   ],
+   [
+    "Sem ninguém lhes tocar",
+    "80%",
+    "331 de 412"
+   ],
+   [
+    "Do email ao PHC",
+    "3 min",
+    "tempo médio"
+   ],
+   [
+    "À espera de decisão",
+    "2",
+    "na fila das exceções"
+   ]
+  ],
+  "series": [
+   "Criadas sozinhas",
+   "Após resposta do cliente",
+   "Validadas pela equipa"
+  ],
+  "dias": [
+   "Seg 14/09",
+   "Ter 15/09",
+   "Qua 16/09",
+   "Qui 17/09",
+   "Sex 18/09",
+   "Seg 21/09",
+   "Ter 22/09",
+   "Qua 23/09",
+   "Qui 24/09",
+   "Sex 25/09"
+  ],
+  "valores": [
+   [
+    61,
+    64,
+    59,
+    67,
+    58,
+    68,
+    71,
+    63,
+    66,
+    63
+   ],
+   [
+    14,
+    12,
+    15,
+    11,
+    13,
+    12,
+    10,
+    13,
+    11,
+    11
+   ],
+   [
+    7,
+    6,
+    8,
+    5,
+    6,
+    5,
+    4,
+    6,
+    4,
+    5
+   ]
+  ],
+  "motivos": [
+   [
+    "Matéria ambígua",
+    24,
+    1
+   ],
+   [
+    "Data de entrega em falta",
+    19,
+    1
+   ],
+   [
+    "Cotas incompletas",
+    14,
+    1
+   ],
+   [
+    "Preço abaixo do escalão",
+    15,
+    2
+   ],
+   [
+    "Sem referência no PHC",
+    6,
+    2
+   ],
+   [
+    "Digitalização ilegível",
+    3,
+    2
+   ]
+  ],
+  "clientes": [
+   [
+    "Cliente C · defesa",
+    "18,4 t",
+    "+22%"
+   ],
+   [
+    "Cliente B · Espanha",
+    "7,9 t",
+    "+4%"
+   ],
+   [
+    "Cliente A · aeronáutica",
+    "3,1 t",
+    "−8%"
+   ],
+   [
+    "Cliente E · aeronáutica",
+    "1,2 t",
+    "+11%"
+   ],
+   [
+    "Cliente D · metalomecânica",
+    "0,9 t",
+    "−3%"
+   ]
+  ]
+ }
+}
+</script>
+
+<!-- ============ 8. LIGAÇÃO AO PHC ============ -->
+<section id="phc">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do email ao PHC, com as regras que já lá estão</h2>
+      <p class="lead">A inteligência artificial lê e interpreta. As regras do PHC decidem. É a arquitetura híbrida de que falámos, e é o que torna as decisões fiáveis.</p>
+    </div>
+    <div class="fluxo" id="phcFluxo" data-entra="sobe"></div>
+  </div>
+</section>
+<script type="application/json" id="phcFluxo-config">
+{
+  "stepMs": 1900,
+  "channels": [
+    { "icon": "message", "label": "Corpo do email" },
+    { "icon": "book", "label": "PDF" },
+    { "icon": "list", "label": "Excel" },
+    { "icon": "search", "label": "Digitalização" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Chega a polilanema@", "detail": "A caixa geral de sempre, a qualquer hora.", "tone": "brand" },
+    { "icon": "search", "title": "Lê tudo", "detail": "Email e anexos, em português, espanhol ou inglês.", "tone": "teal" },
+    { "icon": "brain", "title": "Interpreta", "detail": "Matéria, liga, forma, cotas, quantidades e entregas.", "tone": "teal" },
+    { "icon": "database", "title": "Cruza com o PHC", "detail": "Referências, cliente, categoria, escalões e propostas.", "tone": "teal" },
+    { "icon": "shield", "title": "Decide", "detail": "Cria, converte a proposta, pergunta ao cliente ou pede validação.", "tone": "teal" },
+    { "icon": "check", "title": "Encomenda no PHC", "detail": "Criada por API e confirmada ao cliente.", "tone": "brand" }
+  ],
+  "note": "Nenhuma encomenda com dúvida, preço fora do escalão ou material sem correspondência entra no PHC sem uma resposta do cliente ou de uma pessoa da Lanema."
+}
+</script>
+
+<!-- ============ 10. A PESSOA DAS EXCEÇÕES ============ -->
+<section id="equipa">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">A equipa</span>
+      <h2>Uma pessoa para as exceções. As outras voltam a vender.</h2>
+      <p class="lead">"Eu só quero ter uma pessoa a tratar de encomendas, a fazer as validações que a inteligência não consiga." Acaba também o quem-chega-primeiro-fica-com-a-fácil: a plataforma trata de todas.</p>
+    </div>
+    <div class="papeis">
+      <div class="card" data-entra="sobe">
+        <h3>A pessoa das exceções</h3>
+        <p>Abre a fila de manhã e decide o que a plataforma não pode decidir sozinha.</p>
+        <ul>
+          <li>Preços do cliente fora do escalão do PHC</li>
+          <li>Dúvidas que o cliente não esclareceu</li>
+          <li>Encomendas acima do valor que definirem para aviso</li>
+          <li>Materiais novos que ainda não existem no PHC</li>
+          <li>Cada decisão ensina a plataforma: vira regra</li>
+        </ul>
+      </div>
+      <div class="card" data-entra="sobe">
+        <h3>Os outros comerciais</h3>
+        <p>O tempo que hoje vai para a introdução volta para o que só uma pessoa sabe fazer.</p>
+        <ul>
+          <li>Negociar propostas e pegar no telefone</li>
+          <li>Seguir as propostas grandes que esperam resposta há semanas</li>
+          <li>Novos clientes, setores e mercados, com a defesa e a aeronáutica a crescer</li>
+          <li>Preparar 2027 sem contratar para introduzir dados</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. LIMITES ============ -->
+<section class="section-alt" id="limites">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Limites claros</span>
+      <h2>O que a plataforma faz sozinha e o que fica sempre com a Lanema</h2>
+      <p class="lead">A Isabel pediu as limitações atuais no primeiro email. Aqui estão.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Sozinha</h3>
+        <ul class="list-check">
+          <li>Ler todos os emails e anexos da polilanema@, a qualquer hora</li>
+          <li>Interpretar as linhas e ligá-las às referências do PHC</li>
+          <li>Aplicar os escalões e as tabelas de cliente do PHC</li>
+          <li>Escrever ao cliente quando falta informação ou há mais do que uma matéria possível</li>
+          <li>Criar a encomenda, ou converter a proposta, e enviar a confirmação</li>
+        </ul>
+      </div>
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Sempre com uma pessoa</h3>
+        <ul class="list-x">
+          <li>Aceitar um preço abaixo do escalão ou uma condição especial</li>
+          <li>Prometer prazos fora das regras que definirem</li>
+          <li>Mudar regras de preço, categorias ou escalões no PHC</li>
+          <li>Digitalizações ilegíveis ou escrita à mão com baixa certeza: vão para validação</li>
+          <li>O grau de automação: não se promete antes de ver os dados, mede-se na auditoria</li>
+        </ul>
+      </div>
+    </div>
+    <p class="limites-nota">A criação no PHC usa a API que já têm. Na auditoria confirmamos o módulo, as permissões e o caminho de conversão das propostas. Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
+  </div>
+</section>
+
+<!-- ============ 11b. CASOS ============ -->
+<section id="casos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O mesmo motor, noutros setores</span>
+      <h2>O pedido chega num formato que ninguém controla. Do outro lado sai o documento certo.</h2>
+      <p class="lead">Os quatro projetos que partilhámos por email a 24/09. Setores diferentes do vosso e entre si, e é esse o ponto: interpretar, confirmar as regras do sistema de gestão e perguntar quando há dúvida.</p>
+    </div>
+    <div class="casos">
+      <article class="card caso holofote" data-entra="sobe">
+        <div class="caso-top"><span class="caso-nome">MM Protek</span><span class="caso-setor">Equipamento de proteção individual · distribuição B2B</span></div>
+        <div class="caso-num"><b>+100</b><span>pedidos por dia, em 3 caixas de email</span></div>
+        <p>O sistema vai ao <b>PHC</b> buscar preços, stocks e escalões de desconto, prepara a resposta e o comercial valida antes de sair. Inclui um assistente interno onde os comerciais perguntam, em linguagem corrente, o histórico de cada cliente.</p>
+        <span class="caso-liga">Como na Lanema: PHC, escalões, validação humana e perguntas ao ERP</span>
+      </article>
+      <article class="card caso holofote" data-entra="sobe">
+        <div class="caso-top"><span class="caso-nome">Mani Jobs</span><span class="caso-setor">Trabalho temporário · construção civil</span></div>
+        <div class="caso-num"><b>+1.000</b><span>mapas de horas por mês, de 170 locais de obra</span></div>
+        <p>Chegam em PDF, em Excel e até em fotografias de folhas escritas à mão. A solução lê tudo, confirma se as somas batem certo e levanta a mão nas exceções, em vez de assumir.</p>
+        <span class="caso-liga">Como na Lanema: formatos misturados, digitalizações e "nunca assume"</span>
+      </article>
+      <article class="card caso holofote" data-entra="sobe">
+        <div class="caso-top"><span class="caso-nome">TopGim</span><span class="caso-setor">Material desportivo · escolas, municípios e clubes</span></div>
+        <div class="caso-num"><b>4</b><span>caixas de email, vários milhares de referências</span></div>
+        <p>Pedidos de orçamento, dúvidas de produto e reclamações misturados. O objetivo é automatizar a esmagadora maioria dos orçamentos, e quase todos se contarmos os que precisam só de uma pergunta direta ao cliente.</p>
+        <span class="caso-liga">Como na Lanema: a auditoria primeiro, milhares de referências a corresponder</span>
+      </article>
+      <article class="card caso holofote" data-entra="sobe">
+        <div class="caso-top"><span class="caso-nome">Rotações Anónimas</span><span class="caso-setor">Peças para automóvel · direção e transmissão</span></div>
+        <div class="caso-num"><b>Centenas</b><span>de pedidos por dia, por WhatsApp</span></div>
+        <p>O mesmo racional, num canal mais caótico. Os agentes fazem a triagem e ligam-se ao ERP interno para orçamentos e estados de encomenda. Muda o canal, o motor é o mesmo.</p>
+        <span class="caso-liga">Como na Lanema: triagem automática e ligação ao ERP</span>
+      </article>
+    </div>
+      </div>
+</section>
+
+<!-- ============ 12. FASE SEGUINTE: PERGUNTAR AO PHC ============ -->
+<section id="agente">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">E a seguir</span>
+      <h2>A mesma plataforma, para o resto do grupo</h2>
+      <p class="lead">Fora do valor desta proposta. O assistente que pergunta ao PHC em português já está no protótipo, no separador Agente IA da plataforma.</p>
+    </div>
+    <div class="seguinte">
+      <div class="card" data-entra="sobe"><span class="n">Mesma base</span><h3>Filial de Madrid</h3><p>Mais cerca de 10.000 pedidos por ano, já em espanhol, com as regras da filial.</p></div>
+      <div class="card" data-entra="sobe"><span class="n">Mesma base</span><h3>Tecno Lanema</h3><p>Cerca de 20.000 dossiês de maquinação, com o seu próprio fluxo.</p></div>
+      <div class="card" data-entra="sobe"><span class="n">Mesma base</span><h3>Pedidos de cotação</h3><p>Da cotação à proposta, pelos escalões do PHC, antes de o pedido virar encomenda.</p></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="ecDemo-cr-config">
+{
+  "agentName": "Assistente Lanema",
+  "agentInitials": "AL",
+  "chatStatus": "Ligado ao PHC, só leitura",
+  "stepMs": 1500,
+  "endPauseMs": 3000,
+  "scenarios": [
+    {
+      "title": "Quem compra menos",
+      "subtitle": "A pergunta que a Isabel fez na reunião.",
+      "chat": [
+        { "sender": "client", "text": "Na zona de Lisboa, que clientes me estão a comprar menos este ano?", "time": "10:02" },
+        { "sender": "agent", "text": "Comparei janeiro a setembro de 2026 com o mesmo período de 2025, nos distritos de Lisboa e Setúbal. **Três clientes caíram mais de 30%:**\n• Cliente L-014: de 18,2 t para 10,6 t (−42%)\n• Cliente L-031: de 9,8 t para 6,1 t (−38%)\n• Cliente L-007: de 22,4 t para 15,3 t (−32%)", "time": "10:02" },
+        { "sender": "client", "text": "Manda isso ao Rui, com os contactos.", "time": "10:03" },
+        { "sender": "agent", "text": "Enviado ao **Rui Santos** às 10:03, com os contactos e as últimas cinco encomendas de cada um.", "time": "10:03" }
+      ],
+      "steps": [
+        { "icon": "brain", "label": "Percebe a pergunta: zona de Lisboa, este ano contra o anterior" },
+        { "icon": "database", "label": "Lê a faturação por cliente no PHC, em peso e em valor" },
+        { "icon": "filter", "label": "Filtra os distritos e ordena pela maior queda" },
+        { "icon": "send", "label": "Envia ao Rui com contactos e histórico" }
+      ]
+    },
+    {
+      "title": "A meio de uma encomenda",
+      "subtitle": "O Rui quer saber o histórico antes de responder.",
+      "chat": [
+        { "sender": "client", "text": "Quantos kg de 7075 nos comprou o Cliente E este ano, e a que preço médio?", "time": "11:20" },
+        { "sender": "agent", "text": "Este ano: **4.380 kg de 7075 T651** em 23 encomendas, a **9,12 €/kg** de média. Em 2025 foram 3.150 kg a 8,74 €/kg.", "time": "11:20" },
+        { "sender": "client", "text": "E a última encomenda?", "time": "11:21" },
+        { "sender": "agent", "text": "Pedido **26C003577**, de domingo: 30 posições, 29 prontas e 1 à tua espera por causa do preço da posição 2.", "time": "11:21" }
+      ],
+      "steps": [
+        { "icon": "id", "label": "Identifica o cliente e a liga" },
+        { "icon": "database", "label": "Soma o peso e calcula o preço médio no PHC" },
+        { "icon": "clock", "label": "Compara com o ano anterior" },
+        { "icon": "list", "label": "Liga à encomenda que está em aberto na plataforma" }
+      ]
+    },
+    {
+      "title": "Como correu a semana",
+      "subtitle": "A pergunta de gestão, sem abrir o Power BI.",
+      "chat": [
+        { "sender": "client", "text": "Quantas encomendas entraram esta semana sem ninguém lhes tocar?", "time": "18:05" },
+        { "sender": "agent", "text": "Esta semana entraram **412 encomendas**: 331 criadas sozinhas, 57 depois de resposta do cliente e 24 validadas pela equipa. Tempo médio do email ao PHC: **3 minutos**.", "time": "18:05" },
+        { "sender": "client", "text": "Quais foram os motivos das 24?", "time": "18:06" },
+        { "sender": "agent", "text": "15 por preço abaixo do escalão, 6 por material novo sem referência no PHC e 3 por digitalizações ilegíveis.", "time": "18:06" }
+      ],
+      "steps": [
+        { "icon": "list", "label": "Conta as encomendas da semana por resultado" },
+        { "icon": "clock", "label": "Mede o tempo entre a chegada e a criação no PHC" },
+        { "icon": "filter", "label": "Agrupa as exceções por motivo" },
+        { "icon": "check", "label": "Responde com números da própria plataforma" }
+      ]
+    },
+    {
+      "title": "Isso não faço",
+      "subtitle": "Um pedido que muda preços: recusa e encaminha.",
+      "chat": [
+        { "sender": "client", "text": "Baixa 5% o escalão B do 6082 a partir de amanhã.", "time": "16:40" },
+        { "sender": "agent", "text": "**Isso não posso fazer.** Tenho acesso de leitura ao PHC, e as regras de preço só mudam por quem tem essa permissão.", "time": "16:40" },
+        { "sender": "agent", "text": "Posso preparar a simulação: com −5% no escalão B, as 38 encomendas de 6082 do último mês teriam dado **menos 2.140 €**. Envio à Isabel para decidir?", "time": "16:41" },
+        { "sender": "client", "text": "Sim, envia.", "time": "16:41" }
+      ],
+      "steps": [
+        { "icon": "alert", "label": "Reconhece um pedido para alterar preços" },
+        { "icon": "shield", "label": "Confirma as permissões: só leitura" },
+        { "icon": "ban", "label": "Recusa alterar o PHC" },
+        { "icon": "user-cog", "label": "Simula o impacto e encaminha a quem decide" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 14. A CONTA ============ -->
+<section class="section-alt" id="conta">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">A conta</span>
+      <h2>Não é contratar para 2027. É devolver três comerciais à venda.</h2>
+      <p class="lead">Com os números da reunião. Mexa nos valores.</p>
+    </div>
+    <div class="calc" id="contaCalc" data-entra="sobe"></div>
+    <p class="conta-frase">"Se eu olhar para um ordenado de um comercial e multiplicar por 14, <b>isto vai-me substituir dois ou três comerciais</b>." A conta do custo, a Isabel já a fez.</p>
+  </div>
+</section>
+<script type="application/json" id="contaCalc-config">
+{
+  "inputs": [
+    { "id": "comerciais", "label": "Comerciais a introduzir encomendas", "min": 1, "max": 10, "default": 5 },
+    { "id": "hoje", "label": "Tempo em introdução, hoje", "min": 40, "max": 90, "step": 5, "default": 80, "suffix": "%" },
+    { "id": "depois", "label": "Tempo em introdução, com a plataforma", "min": 5, "max": 40, "step": 5, "default": 20, "suffix": "%" }
+  ],
+  "outputs": [
+    { "label": "Comerciais a tempo inteiro devolvidos à venda", "expr": "Math.max(0, comerciais*(hoje-depois)/100)", "decimals": 1, "highlight": true },
+    { "label": "Horas por mês devolvidas à venda", "expr": "Math.max(0, comerciais*(hoje-depois)/100*8*21)", "suffix": " h", "decimals": 0 }
+  ],
+  "note": "Dias de 8 horas, 21 dias úteis por mês. Só tempo, sem salários nem promessas de faturação."
+}
+</script>
+
+<!-- ============ 15. INVESTIMENTO ============ -->
+<section id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Um valor fechado, pago à medida que o projeto avança</h2>
+    </div>
+    <div class="invest">
+      <div class="card price-card highlight" data-entra="sobe">
+        <span class="pin">Projeto completo, chave na mão</span>
+        <div class="label">Implementação</div>
+        <div class="price">10.500 € <small>+ IVA</small></div>
+        <ul class="list-check price-list">
+          <li>Auditoria aos emails e encomendas reais</li>
+          <li>Plataforma à medida, simples de usar</li>
+          <li>Leitura de PDF, corpo do email, Excel e digitalizações</li>
+          <li>Ligação ao PHC por API, emails e confirmações ao cliente</li>
+          <li>Encomendas editáveis, histórico do cliente e dashboard</li>
+          <li>Fila das exceções e formação da equipa</li>
+        </ul>
+        <span class="quando">Valor fechado, pago em três momentos</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Pagamento em três momentos</div>
+        <ol class="tranches">
+          <li><span class="tq">Adjudicação</span><b>4.000 €</b><small>Arranca a auditoria</small></li>
+          <li><span class="tq">Início dos testes</span><b>3.500 €</b><small>A plataforma em paralelo com a equipa</small></li>
+          <li><span class="tq">Entrega</span><b>3.000 €</b><small>A plataforma a trabalhar sozinha</small></li>
+        </ol>
+        <span class="quando">Valores + IVA</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Manutenção e melhoria contínua</div>
+        <div class="price">475 € <small>+ IVA / mês</small></div>
+        <ul class="list-check price-list">
+          <li>Tokens de inteligência artificial incluídos, sem custo por documento</li>
+          <li>Alojamento da plataforma</li>
+          <li>Manutenção da ligação ao PHC</li>
+          <li>Novas regras e produtos que ela não reconheça</li>
+          <li>Ajustes, melhorias e suporte</li>
+        </ul>
+        <span class="quando">A partir da entrada em produção</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. ARRANQUE ============ -->
+<section class="section-alt" id="arranque">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Para 2027 começar com a plataforma a trabalhar</h2>
+      <p class="lead">Cerca de dois a três meses da adjudicação até a plataforma trabalhar sozinha.</p>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 1 · cerca de 3 semanas</span>
+        <h3>Auditoria</h3>
+        <p>Analisamos os emails e as encomendas reais da polilanema@ (cerca de 2.000 em três semanas), os formatos de cada cliente, as referências e as regras do PHC. É o arranque do projeto.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 2 · cerca de 6 semanas</span>
+        <h3>Desenvolvimento</h3>
+        <p>A plataforma, a leitura dos formatos, a ligação ao PHC por API, os emails ao cliente e a fila das exceções. Visitamos a equipa em Ovar.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Cerca de 2 semanas</span>
+        <h3>Em paralelo e formação</h3>
+        <p>A plataforma propõe e a equipa confirma tudo antes de entrar no PHC. Afinamos até a certeza que ela mostra ser a certeza real.</p>
+      </div>
+      <div class="fase alvo" data-entra="sobe">
+        <span class="quando">Depois</span>
+        <h3>A trabalhar sozinha</h3>
+        <p>O que passa o limite de certeza entra sozinho no PHC. O resto chega à pessoa das exceções já com a proposta feita.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para o Grupo Lanema, setembro de 2026
+    <span class="disclaimer">Protótipo com documentos reconstruídos a partir dos exemplos enviados pela Lanema: nomes de clientes, NIF, datas, preços, referências PHC e números de encomenda são alterados ou ilustrativos.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/encomendas.js"></script>
+<script>
+  descodificador('dcDemo');
+  plataformaEncomendas('ecDemo');
+  fluxo('phcFluxo');
+  calculadora('contaCalc');
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var next = (r.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
