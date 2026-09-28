@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="../shared/deck/deck.css">
-  <link rel="stylesheet" href="../shared/unibox/unibox.css">
   <link rel="stylesheet" href="../shared/motion/atmosfera.css">
   <link rel="stylesheet" href="assets/css/documento.css">
   <link rel="stylesheet" href="assets/css/resolve.css">
@@ -248,150 +247,7 @@
       <p class="doc-nota" style="max-width:80ch">Protótipo com clientes, técnicos e números inventados. Os preços do orçamento são os do
         orçamento n.º 221391 que nos mostraste, e as etapas seguem as vossas. O desenho final faz-se convosco.</p>
     </div>
-    <div class="container" id="central-vendas">
-      <h3 class="sub-secao" data-entra="sobe">A central de vendas: WhatsApp, Instagram e Facebook num só ecrã</h3>
-      <p class="lead">A caixa que as sete pessoas da central abrem de manhã. As conversas da MarIA, do
-        follow-up e do NPS estão lá, com o canal, a etiqueta do serviço e o pedido ao lado. Filtra por canal
-        na barra lateral e clica numa conversa.</p>
-    </div>
-    <div class="container-largo" style="margin-top: var(--s-6)">
-      <div class="unibox" id="rjInbox" style="--ub-accent:#f59432; --ub-accent-fg:#1b2230" data-entra="escala"></div>
-      </div>
-    <div class="container"><p class="unibox-nota">Contactos e mensagens inventados. Na plataforma, cada conversa liga à ficha do
-        cliente, aos orçamentos e aos serviços no calendário.</p></div>
-    <div class="container">
-      <div class="antes-depois" data-entra="sobe">
-        <div>
-          <h3>O funil, arrumado</h3>
-          <p class="muted" style="font-size:var(--fs--1);margin-top:var(--s-2)">Poucas etapas, cada uma com uma regra que a faz avançar sozinha.</p>
-          <div class="etapas novas"><span>Pedido</span><span>Orçamento enviado</span><span>Agendado</span><span>Realizado</span><span>Pago e faturado</span><span>Avaliado</span></div>
-          <div class="etapas exc"><span>Reagendar</span><span>Cancelado</span><span>Pagamento pendente</span><span>Resolução</span></div>
-        </div>
-        <div>
-          <h3>Hoje, no Bitrix24</h3>
-          <p class="muted" style="font-size:var(--fs--1);margin-top:var(--s-2)">Os números do quadro que nos mostraste, na manhã de 24 de setembro.</p>
-          <div class="etapas"><span>Entrada de leads<b>1</b></span><span>Qualificação<b>195</b></span><span>Tentando contacto<b>77</b></span><span>Proposta enviada<b>391</b></span><span>Negociação<b>440</b></span></div>
-          <p class="muted" style="font-size:var(--fs--1);margin-top:var(--s-3)">831 negócios parados entre a proposta e a negociação: é aqui que o follow-up visível e a marcação pela MarIA rendem primeiro.</p>
-        </div>
-      </div>
-    </div>
   </section>
-  <script type="application/json" id="rjInbox-config">
-  {
-    "brand": "Resolve Já",
-    "teamName": "Central de vendas",
-    "teamEmail": "info@resolveja.pt",
-    "teamInitials": "RJ",
-    "agentName": "MarIA",
-    "accounts": ["Central de vendas", "Central de resoluções", "Hotel Clean"],
-    "channels": ["whatsapp", "instagram", "facebook"],
-    "labels": {
-      "sofa": { "name": "Sofás", "color": "#f59432", "priority": 1 },
-      "colchao": { "name": "Colchões", "color": "#e43721", "priority": 2 },
-      "tapete": { "name": "Tapetes", "color": "#34bb48", "priority": 3 },
-      "cortinado": { "name": "Cortinados", "color": "#a4a8ac", "priority": 4 },
-      "imper": { "name": "Impermeabilização", "color": "#5b8def", "priority": 5 },
-      "resolucao": { "name": "Resolução", "color": "#ff5a5f", "priority": 0 },
-      "empresa": { "name": "Empresarial", "color": "#9b7bd4", "priority": 6 }
-    },
-    "conversations": [
-      {
-        "id": 1, "name": "Marta Figueiredo", "initials": "MF", "phone": "+351 912 000 101",
-        "account": "Central de vendas", "channel": "instagram", "label": "sofa", "tab": "mine", "timeAgo": "9h", "unread": 0,
-        "preview": "Fica marcado: quinta às 16:30",
-        "messages": [
-          { "sender": "client", "text": "Olá, vi a vossa empresa no Instagram e gostaria de obter mais informações!", "time": "22:41" },
-          { "sender": "agent", "isAI": true, "text": "Boa noite! Sou a MarIA, da Resolve Já. Com quem tenho o gosto de falar?", "time": "22:41" },
-          { "sender": "client", "text": "Marta. Um sofá com chaise longue e um colchão de casal, no Restelo", "time": "22:43" },
-          { "sender": "agent", "isAI": true, "text": "Orçamento: sofá 3 lugares **90 €** e colchão de casal **70 €**, total **160 €**. Segue o PDF.", "time": "22:45" },
-          { "sender": "client", "text": "Quinta às 16:30", "time": "22:47" },
-          { "sender": "agent", "isAI": true, "text": "Fica marcado: **quinta, 1 de outubro, às 16:30**.", "time": "22:47" },
-          { "sender": "system", "text": "Serviço criado no calendário. Técnico avisado por WhatsApp.", "time": "22:47" }
-        ],
-        "attributes": [ { "key": "Origem", "value": "Anúncio Instagram" }, { "key": "Orçamento", "value": "N.º 221402, 160 €" }, { "key": "Serviço", "value": "Qui 1 out, 16:30" } ],
-        "notes": ["Chaise longue conta como 3 lugares, confirmado com a cliente."]
-      },
-      {
-        "id": 2, "name": "Rita Almeida", "initials": "RA", "phone": "+351 913 000 202",
-        "account": "Central de vendas", "channel": "whatsapp", "label": "tapete", "tab": "mine", "timeAgo": "12m", "unread": 1,
-        "preview": "Tem uns 2 por 1,5",
-        "messages": [
-          { "sender": "agent", "isAI": true, "text": "Olá, Rita! Ontem enviei-lhe o orçamento da limpeza do tapete da sala. Ficou com alguma dúvida, ou quer que lhe proponha um dia?", "time": "15:10" },
-          { "sender": "system", "text": "Follow-up automático de 24 horas", "time": "15:10" },
-          { "sender": "client", "text": "Olá! Afinal são dois tapetes, o do quarto também.", "time": "18:02" },
-          { "sender": "agent", "isAI": true, "text": "Sabe as medidas do segundo?", "time": "18:02" },
-          { "sender": "client", "text": "Tem uns 2 por 1,5", "time": "18:05" }
-        ],
-        "attributes": [ { "key": "Orçamento", "value": "Tapete 4 m², a atualizar" }, { "key": "Zona", "value": "Oeiras" } ],
-        "notes": []
-      },
-      {
-        "id": 3, "name": "Joana Tavares", "initials": "JT", "phone": "+351 914 000 303",
-        "account": "Central de resoluções", "channel": "whatsapp", "label": "resolucao", "tab": "unassigned", "timeAgo": "4m", "unread": 2,
-        "preview": "[2 fotografias]",
-        "messages": [
-          { "sender": "client", "text": "O técnico esteve cá ontem e a mancha do sofá continua lá. Paguei para isto?", "time": "10:14" },
-          { "sender": "agent", "isAI": true, "text": "Lamento muito, Sra. Joana. Vou passar já o seu caso à nossa central de resoluções. Consegue enviar uma fotografia da mancha?", "time": "10:15" },
-          { "sender": "client", "text": "[2 fotografias]", "time": "10:19" },
-          { "sender": "system", "text": "Passado à central de resoluções. Prioridade alta, contacto até às 13:00.", "time": "10:20" }
-        ],
-        "attributes": [ { "key": "Serviço", "value": "#45188, ontem 15:00" }, { "key": "Técnico", "value": "Técnico Lisboa" }, { "key": "Prazo", "value": "Hoje, 13:00" } ],
-        "notes": ["Ver relatório do técnico: mancha de tinta, avisada antes do serviço?"]
-      },
-      {
-        "id": 4, "name": "Paulo Reis", "initials": "PR", "phone": "+351 915 000 404",
-        "account": "Central de vendas", "channel": "whatsapp", "label": "sofa", "tab": "mine", "timeAgo": "1h", "unread": 0,
-        "preview": "Fica para sexta às 15:30",
-        "messages": [
-          { "sender": "client", "text": "Bom dia, hoje às 14:30 afinal não vou conseguir estar em casa. Dá para amanhã?", "time": "08:52" },
-          { "sender": "agent", "isAI": true, "text": "Para amanhã tenho **às 10:00** ou **às 15:30**. Qual prefere?", "time": "08:53" },
-          { "sender": "client", "text": "15:30", "time": "08:55" },
-          { "sender": "agent", "isAI": true, "text": "Fica para **sexta, 2 de outubro, às 15:30**. O técnico já sabe.", "time": "08:55" },
-          { "sender": "system", "text": "Exceção registada: reagendado pelo cliente.", "time": "08:55" }
-        ],
-        "attributes": [ { "key": "Serviço", "value": "Sofá 3 lugares" }, { "key": "Novo horário", "value": "Sex 2 out, 15:30" } ],
-        "notes": []
-      },
-      {
-        "id": 5, "name": "Hotel Miradouro", "initials": "HM", "phone": "+351 216 000 505",
-        "account": "Hotel Clean", "channel": "facebook", "label": "empresa", "tab": "unassigned", "timeAgo": "35m", "unread": 1,
-        "preview": "Somos um hotel com 40 quartos em Lisboa",
-        "messages": [
-          { "sender": "client", "text": "Boa tarde. Somos um hotel com 40 quartos em Lisboa e queríamos uma proposta para colchões e cadeirões.", "time": "15:02" },
-          { "sender": "agent", "isAI": true, "text": "Boa tarde! Obrigada pelo contacto. Para a proposta da Hotel Clean, quantos colchões e cadeirões são, e com que regularidade pensam fazer a higienização?", "time": "15:02" },
-          { "sender": "client", "text": "40 colchões e uns 25 cadeirões, duas vezes por ano.", "time": "15:10" },
-          { "sender": "system", "text": "Pedido empresarial: passado à equipa comercial da Hotel Clean.", "time": "15:10" }
-        ],
-        "attributes": [ { "key": "Segmento", "value": "Hotelaria" }, { "key": "Volume", "value": "40 colchões, 25 cadeirões" } ],
-        "notes": ["Proposta empresarial: preço decidido pela equipa, não pela MarIA."]
-      },
-      {
-        "id": 6, "name": "António Serra", "initials": "AS", "phone": "+351 916 000 606",
-        "account": "Central de vendas", "channel": "whatsapp", "label": "sofa", "tab": "mine", "timeAgo": "2h", "unread": 0,
-        "preview": "9. O técnico foi impecável",
-        "messages": [
-          { "sender": "system", "text": "Serviço concluído às 12:10. Pago por MB Way.", "time": "12:10" },
-          { "sender": "agent", "isAI": true, "text": "Olá, Sr. António! De 0 a 10, quanto recomendaria a Resolve Já a um amigo?", "time": "14:10" },
-          { "sender": "client", "text": "9. O técnico foi impecável, explicou tudo", "time": "14:32" },
-          { "sender": "agent", "isAI": true, "text": "Que bom saber! Uma avaliação no Google ajuda-nos muito. Daqui a um ano lembro-o da próxima higienização.", "time": "14:32" }
-        ],
-        "attributes": [ { "key": "NPS", "value": "9, promotor" }, { "key": "Recompra", "value": "Out 2027" } ],
-        "notes": []
-      },
-      {
-        "id": 7, "name": "Inês Carvalho", "initials": "IC", "phone": "+351 917 000 707",
-        "account": "Central de vendas", "channel": "facebook", "label": "cortinado", "tab": "unassigned", "timeAgo": "3m", "unread": 1,
-        "preview": "Também limpam cortinados de linho?",
-        "messages": [
-          { "sender": "client", "text": "Também limpam cortinados de linho? São 4 metros na sala.", "time": "16:21" },
-          { "sender": "agent", "isAI": true, "text": "Limpamos, sim. Os cortinados são orçamentados ao metro. Para lhe enviar o orçamento, em que localidade fica a casa?", "time": "16:21" }
-        ],
-        "attributes": [ { "key": "Serviço", "value": "Cortinados, 4 m" } ],
-        "notes": []
-      }
-    ]
-  }
-  </script>
 
 
   <!-- ============ 5. O MOTOR DE AGENDAMENTO ============ -->
@@ -777,48 +633,11 @@
     </div>
   </section>
 
-  <!-- ============ 12. PRAZO ============ -->
-  <section id="prazo">
-    <div class="container">
-      <p class="rubrica"><span>12</span> Dois a três meses, pela ordem certa</p>
-      <h2>Primeiro o calendário. Depois tudo o que se apoia nele.</h2>
-      <ol class="fases" data-entra="sobe">
-        <li>
-          <span class="quando">Semanas 1 e 2</span>
-          <span class="o-que">Regras e levantamento</span>
-          <p>Durações de cada serviço, regra do almoço, estacionamento por cidade, casas dos técnicos.
-            Mapeamento do Bitrix com a vossa equipa e plano de migração.</p>
-        </li>
-        <li>
-          <span class="quando">Semanas 3 a 5</span>
-          <span class="o-que">O núcleo e a central</span>
-          <p>Calendário e motor de agendamento, CRM e caixa unificada com a API oficial da Meta.</p>
-        </li>
-        <li>
-          <span class="quando">Semanas 6 a 8</span>
-          <span class="o-que">Agentes e dinheiro</span>
-          <p>A MarIA nova, follow-up e NPS. Faturação integrada, pagamentos e conta corrente.</p>
-        </li>
-        <li>
-          <span class="quando">Semanas 9 e 10</span>
-          <span class="o-que">A rede</span>
-          <p>Painel e app do franqueado e do técnico. Loja online.</p>
-        </li>
-        <li>
-          <span class="quando">Semanas 11 e 12</span>
-          <span class="o-que">Testes e arranque</span>
-          <p>A central trabalha em paralelo com o Bitrix, migração final dos dados e arranque.</p>
-        </li>
-      </ol>
-      <p class="doc-nota">As semanas contam a partir do arranque dos trabalhos. Cada bloco só avança quando o
-        anterior estiver validado por vocês.</p>
-    </div>
-  </section>
 
   <!-- ============ 13. FASE SEGUINTE ============ -->
   <section class="faixa-clara" id="depois">
     <div class="container">
-      <p class="rubrica"><span>13</span> Fase seguinte</p>
+      <p class="rubrica"><span>12</span> Fase seguinte</p>
       <h2>Falámos disto e faz sentido. Fica para depois do núcleo.</h2>
       <div class="pontos" data-entra="sobe">
         <article>
@@ -847,7 +666,7 @@
   <!-- ============ 15. INVESTIMENTO ============ -->
   <section class="faixa-clara" id="investimento" data-nav="Investimento">
     <div class="container">
-      <p class="rubrica"><span>14</span> Investimento</p>
+      <p class="rubrica"><span>13</span> Investimento</p>
       <h2 data-linhas>O que está incluído, e quanto custa.</h2>
       <p class="ancora" data-entra="sobe">Uma plataforma só, para as <b>quatro direções</b> da Resolve Já: comercial, técnica e operacional, financeira, e marketing e expansão. Hoje cada uma vive num pedaço do Bitrix e em processos à mão.</p>
       <div class="precos" data-entra="sobe">
@@ -890,6 +709,44 @@
           <p class="preco-rodape">A partir da entrada em produção. Mensagens da API do WhatsApp pagas à Meta.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ 12. PRAZO ============ -->
+  <section id="prazo">
+    <div class="container">
+      <p class="rubrica"><span>14</span> Dois a três meses, pela ordem certa</p>
+      <h2>Primeiro o calendário. Depois tudo o que se apoia nele.</h2>
+      <ol class="fases" data-entra="sobe">
+        <li>
+          <span class="quando">Semanas 1 e 2</span>
+          <span class="o-que">Regras e levantamento</span>
+          <p>Durações de cada serviço, regra do almoço, estacionamento por cidade, casas dos técnicos.
+            Mapeamento do Bitrix com a vossa equipa e plano de migração.</p>
+        </li>
+        <li>
+          <span class="quando">Semanas 3 a 5</span>
+          <span class="o-que">O núcleo e a central</span>
+          <p>Calendário e motor de agendamento, CRM e caixa unificada com a API oficial da Meta.</p>
+        </li>
+        <li>
+          <span class="quando">Semanas 6 a 8</span>
+          <span class="o-que">Agentes e dinheiro</span>
+          <p>A MarIA nova, follow-up e NPS. Faturação integrada, pagamentos e conta corrente.</p>
+        </li>
+        <li>
+          <span class="quando">Semanas 9 e 10</span>
+          <span class="o-que">A rede</span>
+          <p>Painel e app do franqueado e do técnico. Loja online.</p>
+        </li>
+        <li>
+          <span class="quando">Semanas 11 e 12</span>
+          <span class="o-que">Testes e arranque</span>
+          <p>A central trabalha em paralelo com o Bitrix, migração final dos dados e arranque.</p>
+        </li>
+      </ol>
+      <p class="doc-nota">As semanas contam a partir do arranque dos trabalhos. Cada bloco só avança quando o
+        anterior estiver validado por vocês.</p>
     </div>
   </section>
 
@@ -943,13 +800,11 @@
 <script src="../shared/js/protect.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="../shared/deck/deck.js"></script>
-<script src="../shared/unibox/unibox.js"></script>
 <script src="assets/js/motor.js"></script>
 <script src="assets/js/franqueado.js"></script>
 <script src="assets/js/plataforma.js"></script>
 <script>
   chatRaciocinio('rjDemo');
-  unibox('rjInbox');
   fluxo('rjFluxo');
   terminal('rjTerm');
 </script>
