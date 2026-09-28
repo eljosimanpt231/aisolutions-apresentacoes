@@ -53,3 +53,4 @@ Sem CTA, sem casos de estudo, preço só no último ecrã e só "+ IVA", sem tot
 
 ## Iterações
 - v1 (27/09): primeira versão. Crítica dos screenshots: o browser saltava para a secção do # ao carregar e escondia o topo do slide (corrigido em app.js); capa mais alta que 900px (logo grande removido, h1 menor, hífenes não separáveis); raciocínio do assistente a transbordar (passos compactos); logo esmagado na barra da app no telemóvel (escondido). Leitor: versaletes do PDF partiam palavras (junção por distância entre itens), posições contadas por itens isolados (40 para 41), milhares com ponto, formação DGERT só quando há curso.
+- v2 (28/09): último ecrã do separador Plataforma, "A plataforma completa": um só mockup com as 10 secções dos ecrãs anteriores na barra lateral, agrupadas em Comercial, Clientes e Gestão. As vistas são copiadas por JS dos mockups originais (ids com prefixo all-), por isso ficam sempre iguais.

@@ -341,3 +341,14 @@ body { background: var(--bg); }
 .third .ln { display: flex; justify-content: space-between; gap: 10px; padding: 2px 0; }
 .third .ln strong { color: var(--text); font-variant-numeric: tabular-nums; }
 .third small { display: block; margin-top: 4px; color: var(--muted); font-size: 0.76rem; }
+
+/* A plataforma completa: barra lateral com grupos */
+.app-all { margin-top: 14px; }
+.app-all .app-body { min-height: 0; }
+.app-all .app-side { padding: 12px 10px; }
+.app-all .app-side .logo { padding: 2px 8px 10px; }
+.app-all .app-side .who { margin-top: 8px; padding: 8px 10px; }
+.app-side .nav .grp { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: hsl(0 0% 100% / 0.5); padding: 8px 12px 2px; }
+.app-side .nav .grp:first-child { padding-top: 0; }
+.app-all .app-side .nav button { padding: 6px 12px; }
+@media (max-width: 900px) { .app-side .nav .grp { display: none; } }

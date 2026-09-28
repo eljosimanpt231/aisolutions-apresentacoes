@@ -547,6 +547,26 @@
         <div class="alert reveal"><span class="dot"></span><div><b>ISO 9001:</b> se retomarem a certificação que os mercados dos Emirados, da Arábia Saudita, do Catar e de Omã começam a pedir, os registos (propostas numeradas, pós-venda, reclamações, formação) já estão na plataforma. Mapeamos convosco o que falta. Não é um módulo à parte.</div></div>
       </div>
     </div>
+
+    <!-- 3.6 A plataforma completa (as vistas dos ecrãs anteriores, copiadas por JS) -->
+    <div class="slide section-alt tight">
+      <div class="container">
+        <span class="eyebrow">A plataforma completa</span>
+        <h2>Tudo o que vimos, num só sítio</h2>
+        <p class="lead">Comercial, clientes e gestão na mesma barra lateral. Clique em qualquer secção.</p>
+        <div class="app app-all reveal" id="appAll">
+          <div class="app-top"><i></i><i></i><i></i><span class="url">plataforma.ambergo.pt</span></div>
+          <div class="app-body">
+            <aside class="app-side">
+              <div class="logo"><span class="logo-chip"><img src="assets/img/ambergo-logo.png" alt="Ambergo"></span></div>
+              <div class="nav"></div>
+              <div class="who">Sessão de Paulo Morais<br>Administração</div>
+            </aside>
+            <div class="app-main"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ====================================================== -->
@@ -731,6 +751,23 @@
     fluxo('fxDemo');
     chatRaciocinio('crDemo');
     experimente('expDemo');
+    /* A plataforma completa: copia as vistas dos outros mockups, agrupadas na barra lateral */
+    (function () {
+      var all = document.getElementById('appAll'); if (!all) return;
+      var nav = all.querySelector('.nav'), main = all.querySelector('.app-main');
+      var grupos = [['Comercial', ['vHoje', 'vProp', 'vConc']], ['Clientes', ['vFicha', 'vCham']], ['Gestão', ['vFat', 'vCC', 'vRH', 'vToc', 'vUsers']]];
+      var primeiro = true;
+      grupos.forEach(function (g) {
+        var h = document.createElement('div'); h.className = 'grp'; h.textContent = g[0]; nav.appendChild(h);
+        g[1].forEach(function (id) {
+          var v = document.getElementById(id), b0 = document.querySelector('.app-side .nav button[data-view="' + id + '"]');
+          if (!v || !b0) return;
+          var c = v.cloneNode(true); c.id = 'all-' + id; c.classList.toggle('active', primeiro); main.appendChild(c);
+          var b = document.createElement('button'); b.innerHTML = b0.innerHTML; b.dataset.view = c.id; b.classList.toggle('active', primeiro); nav.appendChild(b);
+          primeiro = false;
+        });
+      });
+    })();
     document.querySelectorAll('.app').forEach(function (app) {
       app.querySelectorAll('.app-side .nav button').forEach(function (b) {
         b.addEventListener('click', function () {
