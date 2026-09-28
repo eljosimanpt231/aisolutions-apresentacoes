@@ -227,3 +227,11 @@
   .pl-fatura-nova svg { width: 22px; height: 22px; color: var(--pl-verde-t); stroke-width: 2.4; flex: none; }
   .pl-fatura-nova p { font-size: 12px; color: var(--pl-tinta-2); max-width: none; }
 }
+
+/* filtros de canal da caixa de conversas */
+.pl-canais { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 6px; }
+.pl-canais button { display: flex; align-items: center; gap: 6px; min-height: 30px; padding: 4px 8px; border: 1px solid var(--pl-linha); border-radius: 8px;
+                    background: var(--pl-cartao); font-size: 11.5px; font-weight: 600; color: var(--pl-tinta); cursor: pointer; }
+.pl-canais button i { margin-left: auto; font-style: normal; font-size: 10.5px; color: var(--pl-tinta-2); }
+.pl-canais button[aria-pressed="true"] { border-color: var(--laranja); background: color-mix(in oklab, var(--laranja) 12%, var(--pl-cartao)); }
+.pl-canal.todas { background: conic-gradient(var(--pl-wa) 0 33%, var(--pl-ig) 0 66%, var(--pl-fb) 0); }

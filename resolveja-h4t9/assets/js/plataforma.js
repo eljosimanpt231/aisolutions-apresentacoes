@@ -76,7 +76,8 @@
   BLOCOS.push([5, 3, 16.5, 2.25, 'novo']);     /* o serviço que a MarIA marcou: Samuel, quinta 16:30 */
   BLOCOS.push([2, 3, 15, 2, 'hoje']);          /* o serviço #45167, hoje 15:00 às 17:00 */
 
-  const estado = { vista: 'conversas', etapaMarta: 5, pago: false, metodo: null };
+  const CONVS = [['Marta Figueiredo', 'Quinta às 16:30', 'instagram', true], ['Rita Almeida', 'Tem uns 2 por 1,5', 'whatsapp'], ['Joana Tavares', '[2 fotografias] · resoluções', 'whatsapp'], ['Hotel Miradouro', '40 colchões e 25 cadeirões', 'facebook'], ['Hugo Matos', 'Seguimento automático, 15:00', 'whatsapp'], ['Sofia Lima', 'Fazem impermeabilização?', 'instagram'], ['Inês Carvalho', 'Também limpam cortinados de linho?', 'facebook'], ['António Serra', 'NPS: 9', 'whatsapp']];
+  const estado = { canal: 'todas', vista: 'conversas', etapaMarta: 5, pago: false, metodo: null };
 
   /* ---------------- VISTAS ---------------- */
   const V = {};
@@ -84,7 +85,9 @@
   V.conversas = () => `
     <div class="pl-conv">
       <div class="pl-conv-lista">
-        ${[['Marta Figueiredo', 'Quinta às 16:30', 'instagram', true], ['Rita Almeida', 'Tem uns 2 por 1,5', 'whatsapp'], ['Hugo Matos', 'Seguimento automático, 15:00', 'whatsapp'], ['Inês Carvalho', 'Também limpam cortinados de linho?', 'facebook']].map(c =>
+        <div class="pl-canais" role="group" aria-label="Filtrar por canal">${[['todas', 'Todas'], ['whatsapp', 'WhatsApp'], ['instagram', 'Instagram'], ['facebook', 'Facebook']].map(([id, n]) =>
+          `<button type="button" data-canal="${id}" aria-pressed="${estado.canal === id}"><span class="pl-canal ${id}"></span>${n}<i>${id === 'todas' ? CONVS.length : CONVS.filter(c => c[2] === id).length}</i></button>`).join('')}</div>
+        ${CONVS.filter(c => estado.canal === 'todas' || c[2] === estado.canal).map(c =>
           `<div class="pl-conv-it${c[3] ? ' on' : ''}"><i class="pl-av">${c[0].split(' ').map(w => w[0]).join('')}</i><b>${c[0]}</b><small><span class="pl-canal ${c[2]}"></span>${c[1]}</small></div>`).join('')}
       </div>
       <div class="pl-chat">
@@ -270,8 +273,9 @@
     });
   }
   raiz.addEventListener('click', (e) => {
-    const t = e.target.closest('[data-ir],[data-menu],[data-passo],[data-met]');
+    const t = e.target.closest('[data-ir],[data-menu],[data-passo],[data-met],[data-canal]');
     if (!t) return;
+    if (t.dataset.canal) { estado.canal = t.dataset.canal; ir('conversas'); return; }
     if (t.dataset.met) { estado.pago = true; estado.metodo = t.dataset.met; ir('financeiro'); return; }
     ir(t.dataset.ir || t.dataset.menu || t.dataset.passo);
   });

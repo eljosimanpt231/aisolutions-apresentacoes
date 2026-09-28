@@ -229,19 +229,31 @@
     estado.est[z] = Math.max(0, Math.min(45, +e.target.value || 0)); calcular();
   });
 
-  function timeline(tec, r) {
+  function timeline(tec, r, i = 0) {
     const pct = (m) => ((m - DIA_INI) / (DIA_FIM - DIA_INI) * 100).toFixed(2) + '%';
     const larg = (a, b) => ((b - a) / (DIA_FIM - DIA_INI) * 100).toFixed(2) + '%';
     let blocos = tec.dia.map(s => `<span class="tl-b" style="left:${pct(s.ini)};width:${larg(s.ini, s.fim)}" title="${esc(s.h + ' ' + s.nome + ', ' + s.s)}"></span>`).join('');
     if (r && r.ok) {
       const cheg = r.ini - r.eIn - r.tIn;
       blocos += `<span class="tl-v" style="left:${pct(Math.max(DIA_INI, cheg))};width:${larg(Math.max(DIA_INI, cheg), r.ini)}"></span>`;
-      blocos += `<span class="tl-n" style="left:${pct(r.ini)};width:${larg(r.ini, r.fim)}"></span>`;
+      blocos += `<span class="tl-n" style="left:${pct(r.ini)};width:${larg(r.ini, r.fim)};--i:${i}"></span>`;
     }
     return `<div class="tl" aria-hidden="true">${blocos}<span class="tl-h" style="left:${pct(h('13:00'))}">13h</span></div>`;
   }
 
+  /* Cada mudança passa por um momento curto de cálculo e depois anima o
+     resultado. Com movimento reduzido, desenha logo o estado final. */
+  const reduzido = matchMedia('(prefers-reduced-motion: reduce)');
+  let tCalc = null;
   function calcular() {
+    if (reduzido.matches || !raiz.dataset.pronto) { raiz.dataset.pronto = 1; return desenhar(); }
+    clearTimeout(tCalc);
+    raiz.classList.remove('mt-anima');
+    const X = MORADAS.find(m => m.id === estado.morada);
+    $('mtResumo').innerHTML = `<div class="mt-a-calcular"><span>A ler a agenda de ${TECNICOS.length} técnicos para quinta-feira</span><span>A medir deslocações até ${esc(X.nome)}</span><span>A aplicar estacionamento, ${estado.maxKm} km e almoço</span><span>A escolher o menor desvio</span></div>`;
+    tCalc = setTimeout(() => { desenhar(); void raiz.offsetWidth; raiz.classList.add('mt-anima'); }, 650);
+  }
+  function desenhar() {
     const X = MORADAS.find(m => m.id === estado.morada);
     const dur = SERVICOS.filter(s => estado.servicos.has(s.id)).reduce((a, s) => a + s.min, 0);
     const res = TECNICOS.map(t => ({ t, r: avaliar(t, X, dur) }));
@@ -268,9 +280,9 @@
       const r = x.r;
       const de = r.g === 0 ? 'de casa (' + esc(x.t.casa.nome) + ')' : 'do serviço em ' + esc(r.ant.nome);
       const para = r.prox ? 'segue para ' + esc(r.prox.nome) + ' às ' + r.prox.h : 'volta a casa no fim do dia';
-      return `<li class="mt-cand${i === 0 ? ' top' : ''}">
+      return `<li class="mt-cand${i === 0 ? ' top' : ''}" style="--i:${i}">
         <div class="mt-cand-cab"><b>${esc(x.t.nome)}</b><span>${esc(x.t.zona)}</span>${i === 0 ? '<em>Sugerido</em>' : ''}<time>${hhmm(r.ini)} às ${hhmm(r.fim)}</time></div>
-        ${timeline(x.t, r)}
+        ${timeline(x.t, r, i)}
         <p class="mt-porque">Sai ${de}: ${fmtKm(r.kIn)}, ${r.tIn} min de viagem + ${r.eIn} min de estacionamento. Depois ${para}. Desvio: ${fmtKm(r.desvio)}.</p>
       </li>`;
     }).join('');
@@ -313,7 +325,7 @@
         const r = bons[pos].r;
         const seq = [t.casa, ...t.dia.slice(0, r.g), X, ...t.dia.slice(r.g)];
         const d = seq.map(P).map((q, i) => (i ? 'L' : 'M') + q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join(' ');
-        s += `<path class="mm-rota ${cls}" d="${d}"/>`;
+        s += `<path class="mm-rota ${cls}" d="${d}"${cls === 'top' ? ' pathLength="1"' : ''}/>`;
       }
       t.dia.forEach(sv => { const [x, y] = P(sv); s += `<circle class="mm-serv ${cls}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4"/>`; });
       const [x, y] = P(t.casa);
@@ -321,10 +333,18 @@
       s += `<g class="mm-casa ${cls}"><rect x="${(x - 13).toFixed(1)}" y="${(y - 13).toFixed(1)}" width="26" height="26" rx="7"/><text x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="middle">${ini}</text></g>`;
     });
     /* o cliente: o pin do "já" */
-    s += `<g class="mm-cli" transform="translate(${cx.toFixed(1)} ${cy.toFixed(1)})"><path d="M0 0 C-4 -9 -13 -14 -13 -24 A13 13 0 1 1 13 -24 C13 -14 4 -9 0 0Z"/><circle cx="0" cy="-24" r="5.5"/></g>`;
+    s += `<circle class="mm-pulso" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="10"/>`;
+    s += `<g class="mm-cli" transform="translate(${cx.toFixed(1)} ${cy.toFixed(1)})"><g class="mm-cli-in"><path d="M0 0 C-4 -9 -13 -14 -13 -24 A13 13 0 1 1 13 -24 C13 -14 4 -9 0 0Z"/><circle cx="0" cy="-24" r="5.5"/></g></g>`;
     s += `<text class="mm-cli-t" x="${(cx + 16).toFixed(1)}" y="${(cy - 26).toFixed(1)}">${esc(X.nome)}</text>`;
     svg.innerHTML = s;
   }
 
   calcular();
+  /* a primeira vez que o motor entra no ecrã, corre o cálculo à vista */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((en) => {
+      if (en.some(e => e.isIntersecting)) { io.disconnect(); calcular(); }
+    }, { threshold: 0.35 });
+    io.observe(raiz);
+  }
 })();

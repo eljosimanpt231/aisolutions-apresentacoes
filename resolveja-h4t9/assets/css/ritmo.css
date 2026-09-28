@@ -1,0 +1,120 @@
+/* ============================================================
+   RITMO, SECÇÕES ESCURAS, PREÇOS E MOTOR ANIMADO (v3, 28/09/2026)
+   O tema claro tinha perdido a alternância: as faixas lia-se tudo
+   igual. Aqui as faixas ganham temperatura (fria e quente) e duas
+   secções voltam ao escuro: o motor (o momento uau) e o fecho.
+   ============================================================ */
+
+/* ---------- Faixas com temperatura ---------- */
+.faixa { background: oklch(95.2% 0.014 256); border-block: 1px solid oklch(90% 0.016 256); }
+.faixa-clara {
+  background: linear-gradient(180deg in oklab, oklch(96.6% 0.03 62), oklch(98.2% 0.016 62));
+  border-block: 1px solid oklch(90% 0.04 62);
+}
+section:not(.faixa):not(.faixa-clara):not(.escuro-local):not(.cabecalho) { background: var(--bg); }
+.sub-secao { margin-top: var(--s-8); font-size: var(--fs-3); font-weight: 400; max-width: 26ch; }
+.sub-secao + .lead { margin-top: var(--s-3); }
+
+/* ---------- Secção escura dentro da página clara ---------- */
+.escuro-local {
+  --bg:        oklch(17% 0.022 var(--surf-h));
+  --bg-soft:   oklch(19.5% 0.024 var(--surf-h));
+  --surface:   oklch(22% 0.026 var(--surf-h));
+  --surface-2: oklch(25% 0.028 var(--surf-h));
+  --surface-3: oklch(29% 0.03 var(--surf-h));
+  --text:   oklch(96% 0.006 var(--surf-h));
+  --muted:  oklch(76% 0.014 var(--surf-h));
+  --faint:  oklch(68% 0.014 var(--surf-h));
+  --hairline: oklch(100% 0 0 / 0.09);
+  --border:   oklch(100% 0 0 / 0.14);
+  --border-strong: oklch(100% 0 0 / 0.24);
+  --brand-300: oklch(80.9% calc(var(--brand-c) * 0.49) calc(var(--brand-h) - 8));
+  --brand-200: oklch(88.2% calc(var(--brand-c) * 0.28) calc(var(--brand-h) - 6));
+  --brand: oklch(70.7% calc(var(--brand-c) * 0.77) calc(var(--brand-h) - 5));
+  --laranja-txt: var(--laranja);
+  --danger: oklch(72% 0.17 27);
+  --e1: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.06), 0 1px 2px oklch(0% 0 0 / 0.4);
+  --e3: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.08), 0 16px 40px -12px oklch(0% 0 0 / 0.55);
+  color-scheme: dark;
+  position: relative; isolation: isolate; overflow: clip;
+  background: var(--bg); color: var(--text);
+}
+/* atmosfera própria: glows da marca e do laranja, e a grelha */
+.escuro-local::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(45rem 28rem at 12% 8%, hsl(var(--brand-hsl) / .22), transparent 70%),
+    radial-gradient(40rem 26rem at 92% 70%, hsl(var(--accent-hsl) / .16), transparent 70%),
+    linear-gradient(oklch(100% 0 0 / 0.035) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, oklch(100% 0 0 / 0.035) 1px, transparent 1px) 0 0 / 48px 48px;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent);
+          mask-image: linear-gradient(180deg, #000 55%, transparent);
+}
+.escuro-local h2, .escuro-local .fecho-contacto a { color: var(--text); }
+.escuro-local .mt-mapa-wrap { background: oklch(14% 0.02 var(--surf-h)); }
+.escuro-local .mm-cli-t { stroke: oklch(14% 0.02 var(--surf-h)); }
+.escuro-local .mt-est input { color-scheme: dark; }
+.fecho.escuro-local { background: var(--bg); }
+
+/* ---------- Motor animado ---------- */
+.mt-a-calcular {
+  display: flex; flex-direction: column; gap: 6px; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--muted);
+}
+.mt-a-calcular span::before { content: "› "; color: var(--laranja); }
+.mm-pulso { fill: none; stroke: var(--brand); stroke-width: 2; transform-box: fill-box; transform-origin: center; opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes mt-desenha { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes mt-cai { 0% { transform: translateY(-26px); opacity: 0; } 60% { transform: translateY(2px); opacity: 1; } 100% { transform: none; } }
+  @keyframes mt-pulso { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(3.2); opacity: 0; } }
+  @keyframes mt-sobe { from { opacity: 0; transform: translateY(10px); } }
+  @keyframes mt-cresce { from { transform: scaleX(0); } }
+  @keyframes mt-linha { from { opacity: 0; transform: translateX(-6px); } }
+  .mt-anima .mm-rota.top { stroke-dasharray: 1; stroke-dashoffset: 1; animation: mt-desenha 1.2s cubic-bezier(.16,1,.3,1) .15s forwards; }
+  .mt-anima .mm-cli-in { animation: mt-cai .6s cubic-bezier(.22,1,.36,1) both; }
+  .mt-anima .mm-pulso { animation: mt-pulso 1.6s cubic-bezier(.16,1,.3,1) .25s 2; }
+  .mt-anima .mm-casa.top rect { animation: mt-sobe .5s .9s both; }
+  .mt-anima .mt-cand { animation: mt-sobe .5s cubic-bezier(.16,1,.3,1) both; animation-delay: calc(var(--i, 0) * 110ms + 250ms); }
+  .mt-anima .tl-n { transform-origin: left; animation: mt-cresce .7s cubic-bezier(.16,1,.3,1) both; animation-delay: calc(var(--i, 0) * 110ms + 500ms); }
+  .mt-anima .mt-frase { animation: mt-sobe .45s both; }
+  .mt-a-calcular span { animation: mt-linha .25s both; }
+  .mt-a-calcular span:nth-child(2) { animation-delay: .12s; } .mt-a-calcular span:nth-child(3) { animation-delay: .24s; } .mt-a-calcular span:nth-child(4) { animation-delay: .36s; }
+}
+
+/* ---------- Preços em três cartões ---------- */
+.precos { display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); align-items: stretch; }
+.preco-card {
+  display: flex; flex-direction: column; background: var(--surface); border-radius: var(--r-4);
+  padding: var(--s-5); box-shadow: var(--e2); border: 1px solid var(--hairline); border-top: 4px solid var(--laranja);
+}
+.preco-card.destaque { border: 1px solid color-mix(in oklab, var(--brand) 55%, transparent); border-top: 4px solid var(--brand); box-shadow: var(--e3); }
+.preco-selo {
+  align-self: flex-start; font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--brand-700); background: var(--brand-a10); border: 1px solid var(--brand-a30); border-radius: var(--r-pill); padding: 4px 12px; margin-bottom: var(--s-3);
+}
+.preco-k { font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.preco-v { margin-top: var(--s-2); font-family: var(--font-display); font-weight: 700; font-size: var(--fs-5); line-height: 1; letter-spacing: -0.02em; color: var(--brand-700); }
+.preco-v.pequeno { font-size: var(--fs-3); color: var(--text); }
+.preco-iva { margin-top: var(--s-2); font-weight: 600; color: var(--muted); font-size: var(--fs--1); }
+.preco-lista { list-style: none; display: grid; gap: var(--s-2); margin-top: var(--s-4); }
+.preco-lista li { position: relative; padding-left: 30px; font-size: var(--fs--1); color: var(--muted); max-width: none; }
+.preco-lista li b { color: var(--text); font-weight: 600; }
+.preco-lista li::before {
+  content: "✓"; position: absolute; left: 0; top: .05em; width: 20px; height: 20px; border-radius: 6px; display: grid; place-items: center;
+  font-size: 12px; font-weight: 700; color: var(--ok); background: var(--ok-wash);
+}
+.preco-momentos { list-style: none; margin-top: var(--s-4); display: grid; }
+.preco-momentos li { display: grid; grid-template-columns: 30px 1fr auto; column-gap: var(--s-3); align-items: baseline; padding-block: var(--s-3); border-bottom: 1px solid var(--hairline); max-width: none; }
+.preco-momentos li:last-child { border-bottom: 0; }
+.preco-momentos .n { align-self: center; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-mono); font-size: var(--fs--2);
+                     background: var(--accent-a20); color: var(--laranja-txt); font-weight: 600; }
+.preco-momentos b { font-size: var(--fs-0); font-weight: 600; }
+.preco-momentos .v { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-2); color: var(--brand-700); font-variant-numeric: tabular-nums; }
+.preco-momentos small { grid-column: 2 / -1; font-size: var(--fs--2); color: var(--muted); margin-top: 2px; }
+.preco-rodape { margin-top: auto; padding-top: var(--s-5); font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand-700); }
+.preco-momentos .v, .preco-v .num { white-space: nowrap; }
+.preco-momentos .v { font-size: var(--fs-1); }
+.preco-momentos li { grid-template-columns: 30px minmax(0, 1fr) auto; }
+.preco-selo { white-space: nowrap; font-size: 11px; }
+.precos { grid-template-columns: 1.05fr 1fr 1fr; }
+@media (max-width: 960px) { .precos { grid-template-columns: minmax(0, 1fr); } }
+@media (min-width: 1100px) { #investimento .precos { margin-inline: -50px; } }
