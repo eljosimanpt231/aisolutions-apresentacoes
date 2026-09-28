@@ -24,7 +24,7 @@
 - `shared/deck`: chatRaciocinio (4 cenários, o 4.º é escalar ao encarregado sem reatribuir sozinho; rótulo trocado por CSS para "O que a plataforma faz"), fluxo x2
 
 ## Regras do Diogo
-Sem CTA, sem casos. Investimento no último ecrã, igual ao email de 24/09: cerca de 4.500 € + IVA e 200 a 250 €/mês + IVA (pedido do Diogo a 28/09). Fecha com "é esta a estrutura?".
+Sem CTA, sem casos. Investimento no último ecrã, igual ao email de 24/09: 4.500 € + IVA e 250 €/mês + IVA (pedido do Diogo a 28/09). Fecha com "é esta a estrutura?".
 
 ## Por confirmar
 - Nome e logótipo da instituição (trocar kicker, barra e og)
