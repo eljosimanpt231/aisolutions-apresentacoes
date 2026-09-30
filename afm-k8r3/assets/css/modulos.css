@@ -177,3 +177,34 @@
   .pg-frow > .pg-v:nth-child(5)::before { content: "conversão "; color: var(--app-muted); }
   .pg-frow > .pg-v:nth-child(6)::before { content: "por cliente "; color: var(--app-muted); }
 }
+
+/* ---------- explicação de cada módulo: fora do "ecrã" da aplicação ---------- */
+.cg-explica {
+  margin: 16px 18px 4px; padding: 16px 18px 14px; border-radius: 14px;
+  background: hsl(207 90% 54% / 0.07); border: 1px solid hsl(207 90% 54% / 0.28); border-left: 4px solid var(--cg-blue);
+}
+.cg-explica-k { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--cg-blue-txt); }
+.cg-explica h3 { margin: 4px 0 12px; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.05rem, 1.6vw, 1.25rem); letter-spacing: -0.01em; color: var(--app-text); }
+.cg-explica ol { list-style: none; counter-reset: p; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.cg-explica li { counter-increment: p; position: relative; display: flex; gap: 9px; align-items: flex-start; font-size: 0.86rem; font-weight: 600; line-height: 1.35; padding: 10px 12px; border-radius: 10px; background: var(--app-bg); border: 1px solid var(--app-line); }
+.cg-explica li::before { content: counter(p); flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 600 0.7rem/1 var(--font-mono); background: var(--cg-blue); color: var(--cg-on-navy); }
+.cg-explica li:not(:last-child)::after { content: "→"; position: absolute; right: -9px; top: 50%; transform: translateY(-50%); font-family: var(--font-mono); font-size: 0.8rem; color: var(--cg-blue-txt); background: var(--app-bg); line-height: 1; }
+.cg-explica-d { margin-top: 12px; font-size: 0.84rem; color: var(--app-muted); }
+.cg-explica-d::before { content: "▸ "; color: var(--cg-blue-txt); }
+@media (max-width: 900px) {
+  .cg-explica ol { grid-template-columns: 1fr 1fr; }
+  .cg-explica li::after { display: none; }
+}
+@media (max-width: 520px) { .cg-explica ol { grid-template-columns: 1fr; } }
+@media (max-width: 860px) {
+  .df { grid-template-columns: minmax(0, 1fr); }
+  .df-main { min-width: 0; }
+  .df-mail { overflow-x: auto; }
+  .df-val > i { display: none; }
+  .df-val-s { flex: 1 1 40%; }
+}
+@media (max-width: 600px) {
+  .df-t { min-width: 0; }
+  .df-t th:nth-child(2), .df-t td:nth-child(2) { display: none; }
+  .df-mail-body { overflow-x: visible; }
+}

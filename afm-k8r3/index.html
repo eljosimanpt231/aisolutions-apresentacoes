@@ -212,25 +212,25 @@
 
         <!-- 01 -->
         <div class="cg-pane" id="mod-falta" role="tabpanel">
-          <p class="cg-intro">O agente não vai ao Portal das Finanças: pede ao <b>CentralGest</b> as faturas que ele já traz do e-fatura para cada empresa cliente. Tira as que já têm lançamento, tira as que já chegaram à Contabilidade Digital à espera de lançamento (cruzando NIF do emitente, número e valor), e o que sobra vai num email, no idioma e na periodicidade do cliente. Escolha uma empresa, mude o idioma ou a frequência.</p>
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Pede aos clientes só o que falta, sem ninguém escrever o email</h3><ol><li>Pede ao CentralGest as faturas do e-fatura de cada empresa</li><li>Desconta as que já estão lançadas</li><li>Desconta as que já chegaram e esperam lançamento</li><li>Envia a lista no idioma e na frequência do cliente</li></ol><p class="cg-explica-d">Experimente: escolha uma empresa à esquerda, mude o idioma ou a frequência.</p></div>
           <div class="cg-body" style="padding:14px 0 0"><div id="dfDemo"></div></div>
         </div>
 
         <!-- 02 -->
         <div class="cg-pane" id="mod-captura" role="tabpanel">
-          <p class="cg-intro">Quatro emails com faturas chegam durante o dia. Veja o agente a ler cada um, a identificar a empresa do cliente, a propor diário, conta e IVA, e a decidir: lança no CentralGest acima de 90% de certeza, pergunta abaixo. Clique num documento para o repetir.</p>
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Lê as faturas que chegam por email e lança-as no CentralGest</h3><ol><li>Lê a fatura, em PDF ou fotografada</li><li>Identifica a empresa do cliente</li><li>Propõe diário, conta e IVA</li><li>Lança acima de 90% de certeza; abaixo, pergunta</li></ol><p class="cg-explica-d">Quatro emails ao longo do dia. Clique num deles para ver esse documento outra vez.</p></div>
           <div class="cg-body" style="padding:14px 0 0"><div class="fx" id="fxDemo"></div></div>
         </div>
 
         <!-- 03 -->
         <div class="cg-pane" id="mod-triagem" role="tabpanel">
-          <p class="cg-intro">O lote da manhã sai do scanner para uma pasta, como hoje. Em vez de ser separado à mão, cada documento é lido e segue para a <b>empresa certa</b> (pelo NIF do adquirente), para o <b>diário certo</b> e para a pasta da Contabilidade Digital. O que não se lê com segurança fica para a pessoa da gestão documental.</p>
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Distribui o lote do scanner pelas empresas e pelos diários</h3><ol><li>Lê cada documento digitalizado</li><li>Identifica a empresa pelo NIF do adquirente</li><li>Escolhe o diário e a pasta da Contabilidade Digital</li><li>O que não lê com segurança fica para uma pessoa</li></ol><p class="cg-explica-d">O lote de hoje de manhã: carregue em "Distribuir o lote outra vez" para repetir.</p></div>
           <div class="cg-body"><div id="trDemo"></div></div>
         </div>
 
         <!-- 04 -->
         <div class="cg-pane" id="mod-email" role="tabpanel">
-          <p class="cg-intro">Os clientes escrevem em inglês, francês ou português, e o agente responde na mesma língua. Responde sozinho ao que é seguro, prepara rascunho quando há números a confirmar e <b>nunca dá aconselhamento fiscal</b>: aí passa a quem sabe.</p>
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Responde aos clientes na língua deles, dentro das regras da AFM</h3><ol><li>Arruma cada email na pasta certa</li><li>Procura a resposta no CentralGest</li><li>Responde sozinho ao que é seguro</li><li>Valores vão em rascunho; aconselhamento fiscal passa ao sócio</li></ol><p class="cg-explica-d">Quatro emails, três desfechos. Clique num email para o ver tratado outra vez.</p></div>
           <div class="cg-body" style="padding:14px 0 0">
             <div class="em-wrap" id="emDemo"></div>
             <div class="pastas" style="padding:0 18px 18px"><span class="pastas-k">Pastas criadas sozinhas</span><span class="pasta">Documentos recebidos<b>214</b></span><span class="pasta">IVA e prazos<b>63</b></span><span class="pasta">2.ª vias e faturação AFM<b>41</b></span><span class="pasta">IRS<b>38</b></span><span class="pasta">Aconselhamento, para o sócio<b>12</b></span><span class="pasta">Urgente<b>5</b></span></div>
@@ -239,7 +239,7 @@
 
         <!-- 05 -->
         <div class="cg-pane" id="mod-stripe" role="tabpanel">
-          <p class="cg-intro">Um cliente compra um serviço no site da AFM e paga no Stripe. O Stripe avisa no próprio segundo; a fatura-recibo é criada na <b>série do Stripe</b> no CentralGest, comunicada à AT pelo próprio CentralGest e enviada ao cliente. O financeiro só vê o resumo do dia.</p>
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Pagou no Stripe, recebe a fatura em segundos</h3><ol><li>O Stripe avisa o pagamento no próprio segundo</li><li>Encontra ou cria o cliente no CentralGest</li><li>Emite a fatura-recibo na série STRIPE, comunicada à AT</li><li>Envia o PDF ao cliente</li></ol><p class="cg-explica-d">O financeiro deixa de emitir estas faturas: recebe só o resumo do dia.</p></div>
           <div class="cg-body">
             <div class="st">
               <div>
@@ -269,7 +269,7 @@
 
         <!-- 06 -->
         <div class="cg-pane" id="mod-dash" role="tabpanel">
-          <p class="cg-intro">Um só painel com os dados dos três sistemas: faturação, custos, salários e saldos do <b>CentralGest</b>, leads e reuniões do <b>Dynamics</b>, clientes do <b>CRM Contab</b>. Atualiza-se todas as manhãs e assinala sozinho o que merece atenção. Passe o rato pelos gráficos.</p>
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Os números da gestão num só painel, sem Excel</h3><ol><li>Faturação, custos, salários e saldos do CentralGest</li><li>Leads e reuniões do Dynamics</li><li>Clientes do CRM Contab</li><li>Alertas automáticos do que merece atenção</li></ol><p class="cg-explica-d">Troque de aba e passe o rato pelos gráficos. Atualiza-se todas as manhãs.</p></div>
           <div class="cg-body"><div id="pgDemo"></div></div>
         </div>
       </div>
