@@ -230,7 +230,7 @@
   .badge {
     display: inline-block; padding: 4px 10px; border-radius: var(--r-2);
     font-size: var(--fs--2); font-weight: 600;
-    background: var(--accent-a10); color: var(--brand-200);
+    background: var(--accent-a10); color: var(--acento-texto);
   }
   .badge-ok { background: var(--ok-wash); color: var(--ok); }
   .badge-aviso { background: var(--warn-wash); color: oklch(82% 0.12 75); }
@@ -256,7 +256,7 @@
   .fecho { background: var(--brand-950); color: oklch(97% 0.01 var(--brand-h)); }
   .fecho h2 { color: inherit; }
   .fecho .lead { color: oklch(85% 0.02 var(--brand-h)); }
-  .fecho .btn-primario { background: var(--brand-300); color: var(--brand-950); }
+  .fecho .btn-primario { background: var(--brand-solido); color: var(--on-brand); }
 
   /* ---------- Rodapé ---------- */
   .rodape { padding-block: var(--s-6); border-top: 1px solid var(--hairline);
@@ -275,7 +275,7 @@
                 border-color var(--t-rapido) var(--ease-out),
                 background-color var(--t-rapido) var(--ease-out);
   }
-  .tab[aria-selected="true"] { background: var(--brand-a10); border-color: var(--brand-a45); color: var(--brand-200); }
+  .tab[aria-selected="true"] { background: var(--brand-a10); border-color: var(--brand-a45); color: var(--acento-texto); }
   .deck-escuro .tab[aria-selected="true"] { color: var(--brand-300); }
   .painel[hidden] { display: none; }
 

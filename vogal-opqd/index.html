@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="light">
 
   <title>Vogal | Qualificação das leads e acompanhamento dos processos</title>
   <meta name="description" content="300 leads por mês. A comercial só liga a quem pode avançar. Proposta da AI Solutions para a Vogal.">
@@ -29,12 +29,12 @@
   <link rel="stylesheet" href="assets/css/vogal.css">
   <script src="config.js"></script>
 </head>
-<body class="deck-escuro grao">
+<body class="grao">
 
 <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
 
 <div class="grelha" aria-hidden="true"></div>
-<div class="atmosfera" aria-hidden="true">
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
   <div class="atmosfera__glow atmosfera__glow--1"></div>
   <div class="atmosfera__glow atmosfera__glow--2"></div>
   <div class="atmosfera__glow atmosfera__glow--3"></div>
@@ -88,7 +88,7 @@
         </li>
       </ul>
 
-      <p class="doc-nota" data-acto="5" data-entra="sobe">5 minutos de leitura. Os valores estão no ponto 9.</p>
+      <p class="doc-nota" data-acto="5" data-entra="sobe">5 minutos de leitura. Os valores estão no ponto 10.</p>
     </div>
   </section>
 
@@ -112,12 +112,12 @@
           <dt>Investimento</dt>
           <dd>Os dois agentes em conjunto: <span class="num">4.100 €</span> de implementação e
             <span class="num">315 €</span> por mês, sem IVA. Também se fazem um de cada vez: a comparação
-            está no ponto 9.</dd>
+            está no ponto 10.</dd>
         </div>
         <div>
           <dt>Próximo passo</dt>
-          <dd>Confirmamos tudo por escrito antes de arrancar. Na primeira semana: os acessos e os scripts
-            de qualificação que já usas com a tua comercial.</dd>
+          <dd>Dizes que sim, enviamos a proposta formal, assinas e pagas a implementação. O kick-off fica
+            marcado para a semana seguinte.</dd>
         </div>
       </dl>
     </div>
@@ -276,20 +276,20 @@
   </section>
 
   <!-- ============ 5. OS AGENTES A TRABALHAR ============ -->
-  <section class="faixa secao-ampla" id="demo" data-nav="Os agentes">
+  <section class="faixa secao-ampla" id="demo" data-nav="Qualificação">
     <div class="container">
-      <p class="rubrica"><span>5</span> Os agentes a trabalhar</p>
-      <h2>Quatro conversas, quatro decisões.</h2>
+      <p class="rubrica"><span>5</span> O agente de qualificação</p>
+      <h2>Três conversas, três decisões.</h2>
       <p class="lead">A conversa no WhatsApp e, ao lado, o que o agente consultou e decidiu em cada passo.
-        A terceira é do agente de acompanhamento; as outras, do agente de qualificação.</p>
+        Três leads reais do teu dia: uma que avança, uma que não encaixa e uma que pede o que o agente
+        não pode dar.</p>
       <div class="cr holofote" data-entra="escala" id="vgDemo" style="margin-top: var(--s-5)"></div>
       <p class="so-leitor">
-        Simulação de quatro cenários. No primeiro, uma lead de consolidação de créditos às 21h responde às
+        Simulação de três cenários. No primeiro, uma lead de consolidação de créditos às 21h responde às
         perguntas de qualificação em conversa, fica qualificada no GoHighLevel e a comercial recebe o
         resumo com a hora combinada. No segundo, uma lead com 1.000 euros de rendimento e 100.000 euros em
         créditos fica fora dos critérios e o agente responde com cordialidade, sem ocupar a comercial. No
-        terceiro, o agente de acompanhamento vê no Pipedrive uma atividade de documentos por fechar há dois
-        dias, pede ao cliente só o que falta e anexa o que recebe. No quarto, uma lead pede uma taxa e uma
+        terceiro, uma lead pede uma taxa e uma
         garantia de aprovação; o agente não promete nada e passa o caso à comercial.
       </p>
       <p class="doc-nota">Simulação do que vamos construir. Os nomes e os valores são inventados; o agente
@@ -349,25 +349,6 @@
         ]
       },
       {
-        "title": "Documentos em falta",
-        "subtitle": "Agente de acompanhamento: uma atividade no Pipedrive por fechar há dois dias.",
-        "chat": [
-          { "sender": "system", "text": "Pipedrive: 'Documentos do cliente' por fechar há 2 dias" },
-          { "sender": "agent", "text": "Bom dia, Marta. Daqui é o assistente virtual da Vogal. Para avançarmos com o seu processo, faltam-nos **os 3 últimos recibos de vencimento** e o **mapa de responsabilidades do Banco de Portugal**. Consegue enviar por aqui?", "time": "09:30" },
-          { "sender": "client", "text": "Ai, esqueci-me. Mando já os recibos. O mapa não sei onde se tira", "time": "09:41" },
-          { "sender": "system", "text": "3 documentos recebidos" },
-          { "sender": "agent", "text": "Recebidos os 3 recibos, obrigado. Para o mapa, deixo-lhe **o passo a passo que enviamos a todos os clientes**. Se na quinta ainda faltar, volto a lembrar.", "time": "09:48" },
-          { "sender": "system", "text": "Recibos anexados no Pipedrive. Lembrete do mapa para quinta." }
-        ],
-        "steps": [
-          { "icon": "clock", "label": "Vê no Pipedrive a atividade por fechar há dois dias" },
-          { "icon": "list", "label": "Sabe, pela etapa, que documentos faltam a este cliente" },
-          { "icon": "send", "label": "Pede só o que falta, e explica para quê" },
-          { "icon": "book", "label": "Responde com o guia que a Vogal aprovou" },
-          { "icon": "database", "label": "Anexa no Pipedrive e marca o lembrete seguinte" }
-        ]
-      },
-      {
         "title": "Não promete condições",
         "subtitle": "Uma lead pede uma taxa e uma garantia. O agente passa à comercial.",
         "chat": [
@@ -388,10 +369,175 @@
   }
   </script>
 
-  <!-- ============ 6. DO FORMULÁRIO AO PIPEDRIVE ============ -->
+  <!-- ============ 6. O AGENTE DE ACOMPANHAMENTO ============ -->
+  <section id="acompanhamento" data-nav="Acompanhamento">
+    <div class="container">
+      <p class="rubrica"><span>6</span> O agente de acompanhamento</p>
+      <h2>Tu mudas a etapa no Pipedrive. O agente avisa, pede e lembra.</h2>
+      <p class="lead">Depois do sim, o processo é longo e quase tudo se repete de cliente para cliente. O
+        segundo agente trabalha dentro do Pipedrive: lê a etapa de cada negócio e as atividades que
+        marcas, e trata da conversa com o cliente em cada passo.</p>
+
+      <blockquote class="objetivo" data-entra="sobe"><p>Eu meto uma atividade para daqui a dois dias. Se eu não
+        marcar a atividade como feito, o agente (...) vai mandar um SMS ao cliente.</p><cite>Sérgio Sousa, na
+        reunião de 25 de setembro. É exatamente isto, etapa a etapa.</cite></blockquote>
+
+      <ol class="etapas" data-entra="sobe">
+        <li>
+          <span class="et-n">1</span>
+          <div class="et-corpo">
+            <h3>Documentos pedidos</h3>
+            <p class="et-agente">Envia ao cliente a lista certa para o tipo de crédito, com o porquê de cada
+              documento.</p>
+            <p class="et-tu">Contigo: nada. Basta o negócio entrar na etapa.</p>
+          </div>
+        </li>
+        <li>
+          <span class="et-n">2</span>
+          <div class="et-corpo">
+            <h3>À espera dos documentos</h3>
+            <p class="et-agente">Quando a atividade passa do prazo sem estar feita, lembra o cliente e pede só
+              o que falta. O que chega fica anexado no negócio.</p>
+            <p class="et-tu">Contigo: nada. Deixas de marcar e cumprir o lembrete dos dois dias.</p>
+          </div>
+        </li>
+        <li>
+          <span class="et-n">3</span>
+          <div class="et-corpo">
+            <h3>Documentação completa</h3>
+            <p class="et-agente">Confirma ao cliente que está tudo e diz-lhe o passo seguinte.</p>
+            <p class="et-tu">Contigo: validar os documentos e passar à etapa seguinte.</p>
+          </div>
+        </li>
+        <li>
+          <span class="et-n">4</span>
+          <div class="et-corpo">
+            <h3>Enviado aos bancos</h3>
+            <p class="et-agente">Responde ao "então, já há novidades?" com o ponto em que o processo está e o
+              prazo que definires para esta etapa.</p>
+            <p class="et-tu">Contigo: a negociação com os bancos.</p>
+          </div>
+        </li>
+        <li>
+          <span class="et-n">5</span>
+          <div class="et-corpo">
+            <h3>Avaliação do imóvel</h3>
+            <p class="et-agente">Quando marcas a data, avisa o cliente e lembra-o na véspera.</p>
+            <p class="et-tu">Contigo: marcar a avaliação.</p>
+          </div>
+        </li>
+        <li>
+          <span class="et-n">6</span>
+          <div class="et-corpo">
+            <h3>Propostas dos bancos</h3>
+            <p class="et-agente">Avisa o cliente de que há propostas e marca a chamada contigo. Não explica
+              condições nem compara taxas.</p>
+            <p class="et-tu">Contigo: apresentar as propostas. É aqui que se fecha.</p>
+          </div>
+        </li>
+        <li>
+          <span class="et-n">7</span>
+          <div class="et-corpo">
+            <h3>Aprovação e escritura</h3>
+            <p class="et-agente">Envia o que é preciso para a escritura e lembra a data.</p>
+            <p class="et-tu">Contigo: a aprovação final.</p>
+          </div>
+        </li>
+        <li class="et-alerta">
+          <span class="et-n">!</span>
+          <div class="et-corpo">
+            <h3>Um processo que parou</h3>
+            <p class="et-agente">Se o cliente deixa de responder numa etapa, tenta duas vezes e depois avisa-te
+              que aquele processo está em risco, antes de arrefecer.</p>
+            <p class="et-tu">Contigo: decidir se ligas.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="legenda-fina">Etapas ilustrativas. Na primeira semana usamos as tuas dez, com os nomes que já
+        têm no Pipedrive, e defines tu o que o agente diz em cada uma.</p>
+
+      <div class="cr holofote" data-entra="escala" id="vgAcomp" style="margin-top: var(--s-6)"></div>
+      <p class="so-leitor">
+        Simulação de três cenários do agente de acompanhamento. No primeiro, uma atividade de documentos
+        está por fechar há dois dias e o agente pede ao cliente só o que falta e anexa o que recebe no
+        Pipedrive. No segundo, o negócio passa à etapa de avaliação e o agente avisa o cliente da data e
+        lembra-o na véspera. No terceiro, chegam as propostas dos bancos: o agente avisa o cliente, não
+        explica condições e marca a chamada com o Sérgio.
+      </p>
+      <p class="doc-nota">Simulação. Os nomes, as datas e os documentos são ilustrativos; o agente usa as
+        etapas, os prazos e os textos que a Vogal definir.</p>
+    </div>
+  </section>
+  <script type="application/json" id="vgAcomp-config">
+  {
+    "agentName": "Assistente Vogal",
+    "agentInitials": "VG",
+    "chatStatus": "Acompanhamento do processo, ligado ao Pipedrive",
+    "stepMs": 1500,
+    "endPauseMs": 3200,
+    "scenarios": [
+      {
+        "title": "Documentos em falta",
+        "subtitle": "A atividade dos dois dias passou do prazo. Ninguém teve de se lembrar.",
+        "chat": [
+          { "sender": "system", "text": "Pipedrive: 'Documentos do cliente' por fechar há 2 dias" },
+          { "sender": "agent", "text": "Bom dia, Marta. Daqui é o assistente virtual da Vogal. Para avançarmos com o seu processo, faltam-nos **os 3 últimos recibos de vencimento** e o **mapa de responsabilidades do Banco de Portugal**. Consegue enviar por aqui?", "time": "09:30" },
+          { "sender": "client", "text": "Ai, esqueci-me. Mando já os recibos. O mapa não sei onde se tira", "time": "09:41" },
+          { "sender": "system", "text": "3 documentos recebidos" },
+          { "sender": "agent", "text": "Recebidos os 3 recibos, obrigado. Para o mapa, deixo-lhe **o passo a passo que enviamos a todos os clientes**. Se na quinta ainda faltar, volto a lembrar.", "time": "09:48" },
+          { "sender": "system", "text": "Recibos anexados no Pipedrive. Lembrete do mapa para quinta." }
+        ],
+        "steps": [
+          { "icon": "clock", "label": "Vê no Pipedrive a atividade por fechar há dois dias" },
+          { "icon": "list", "label": "Sabe, pela etapa, que documentos faltam a este cliente" },
+          { "icon": "send", "label": "Pede só o que falta, e explica para quê" },
+          { "icon": "book", "label": "Responde com o guia que a Vogal aprovou" },
+          { "icon": "database", "label": "Anexa no Pipedrive e marca o lembrete seguinte" }
+        ]
+      },
+      {
+        "title": "A avaliação ficou marcada",
+        "subtitle": "Mudas a etapa e escreves a data. O cliente sabe no minuto a seguir.",
+        "chat": [
+          { "sender": "system", "text": "Pipedrive: negócio Paulo Santos passou a 'Avaliação do imóvel', sexta às 10h" },
+          { "sender": "agent", "text": "Boa tarde, Paulo. Boas notícias: **a avaliação da casa ficou marcada para sexta-feira às 10h**. O perito liga-lhe antes para combinar a entrada.", "time": "16:12" },
+          { "sender": "client", "text": "Ótimo. Tenho de estar lá eu?", "time": "16:20" },
+          { "sender": "agent", "text": "Tem de estar alguém com acesso à casa. Na quinta à tarde **volto a lembrar-lhe**, e aviso-o assim que o relatório chegar.", "time": "16:20" },
+          { "sender": "system", "text": "Lembrete agendado para quinta, 18h. Resposta registada no Pipedrive." }
+        ],
+        "steps": [
+          { "icon": "arrows", "label": "Deteta a mudança de etapa no Pipedrive" },
+          { "icon": "calendar", "label": "Lê a data que marcaste na atividade" },
+          { "icon": "send", "label": "Avisa o cliente com o texto desta etapa" },
+          { "icon": "book", "label": "Responde à dúvida com o que a Vogal definiu" },
+          { "icon": "clock", "label": "Agenda o lembrete da véspera e regista tudo no negócio" }
+        ]
+      },
+      {
+        "title": "Chegaram as propostas",
+        "subtitle": "O agente marca a chamada. As condições explicas tu.",
+        "chat": [
+          { "sender": "system", "text": "Pipedrive: negócio Ana Ribeiro passou a 'Propostas dos bancos'" },
+          { "sender": "agent", "text": "Bom dia, Ana. **Já temos resposta dos bancos ao seu processo.** O Sérgio quer apresentar-lhe as propostas com calma: dá-lhe jeito uma chamada amanhã às 18h ou quinta às 12h?", "time": "10:05" },
+          { "sender": "client", "text": "Amanhã às 18h. Mas já me pode dizer qual é a prestação?", "time": "10:31" },
+          { "sender": "agent", "text": "Percebo a curiosidade! As condições **é o Sérgio que lhe explica**, para as comparar consigo lado a lado. Fica marcado para amanhã às 18h.", "time": "10:31" },
+          { "sender": "system", "text": "Chamada marcada no Pipedrive, amanhã às 18h. Aviso enviado ao Sérgio." }
+        ],
+        "steps": [
+          { "icon": "arrows", "label": "Deteta que o negócio chegou às propostas" },
+          { "icon": "calendar", "label": "Propõe as horas livres que definiste" },
+          { "icon": "ban", "label": "Não fala de prestações nem de taxas" },
+          { "icon": "user-cog", "label": "Marca a chamada no Pipedrive e avisa-te" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ 7. DO FORMULÁRIO AO PIPEDRIVE ============ -->
   <section id="integracao" data-nav="Como funciona">
     <div class="container">
-      <p class="rubrica"><span>6</span> Do formulário ao Pipedrive</p>
+      <p class="rubrica"><span>7</span> Do formulário ao Pipedrive</p>
       <h2>Um só caminho, da lead ao processo fechado.</h2>
       <p class="lead">Continuas a usar o GoHighLevel e o Pipedrive como hoje. Os agentes trabalham dentro
         deles, pela API de cada um.</p>
@@ -419,7 +565,7 @@
   <!-- ============ 7. A CAIXA ============ -->
   <section class="faixa" id="caixa">
     <div class="container">
-      <p class="rubrica"><span>7</span> Onde vês tudo</p>
+      <p class="rubrica"><span>8</span> Onde vês tudo</p>
       <h2>As leads e os clientes, numa só caixa.</h2>
       <p class="lead">O que os agentes trataram sozinhos, o que passou para vocês e o que está à espera de
         documentos. Separado como tu já separas: leads no GoHighLevel, clientes no Pipedrive.</p>
@@ -546,7 +692,7 @@
   <!-- ============ 8. LIMITES ============ -->
   <section id="limites" data-nav="Limites">
     <div class="container">
-      <p class="rubrica"><span>8</span> Limites</p>
+      <p class="rubrica"><span>9</span> Limites</p>
       <h2>O que os agentes fazem e o que fica com vocês.</h2>
       <p class="lead">Num setor regulado, isto não é pormenor. Preferimos dizer agora do que prometer o que
         não se cumpre.</p>
@@ -651,7 +797,7 @@
   <!-- ============ 9. INVESTIMENTO ============ -->
   <section class="faixa-clara" id="investimento" data-nav="Investimento">
     <div class="container">
-      <p class="rubrica"><span>9</span> Investimento</p>
+      <p class="rubrica"><span>10</span> Investimento</p>
       <h2>Duas formas de chegar ao mesmo sítio.</h2>
 
       <p class="ancora" data-entra="sobe">Hoje, de <b class="num">300</b> leads saem <b class="num">2</b>
@@ -723,7 +869,7 @@
   <!-- ============ 10. SEIS SEMANAS ============ -->
   <section id="prazo">
     <div class="container">
-      <p class="rubrica"><span>10</span> Seis semanas, contigo</p>
+      <p class="rubrica"><span>11</span> Seis semanas, contigo</p>
       <h2>Construímos, dás feedback, ajustamos. Só entra em produção quando estiveres satisfeito.</h2>
       <ol class="fases" data-entra="sobe">
         <li>
@@ -771,11 +917,10 @@
   <!-- ============ 11. FECHO ============ -->
   <section class="fecho secao-ampla" id="fecho" data-nav="Avançar" data-nav-cta>
     <div class="container">
-      <p class="rubrica"><span>11</span> Próximos passos</p>
-      <h2 data-entra="sobe">Avançamos, Sérgio?</h2>
-      <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmares por
-        escrito.</p>
-      <ol class="passos-fecho" data-entra="sobe">
+      <p class="rubrica"><span>12</span> Próximos passos</p>
+      <h2 data-entra="sobe">Dizes que sim, e na semana seguinte arrancamos.</h2>
+      <p class="lead">Quatro passos, sem esperas pelo meio.</p>
+      <ol class="passos-fecho passos-fecho--quatro" data-entra="sobe">
         <li>
           <span class="n">1</span>
           <b>O teu sim</b>
@@ -784,14 +929,20 @@
         <li>
           <span class="n">2</span>
           <b>A proposta formal</b>
-          <p>O documento com o âmbito, os valores e as condições desta página, e o acordo de dados, para
-            assinar.</p>
+          <p>Enviamos-ta logo a seguir: o âmbito, os valores e as condições desta página, e o acordo de
+            dados.</p>
         </li>
         <li>
           <span class="n">3</span>
-          <b>Semana 1: acessos e scripts</b>
-          <p>WhatsApp, GoHighLevel e Pipedrive. E os scripts de qualificação que já usas com a tua
-            comercial.</p>
+          <b>Assinas e pagas a implementação</b>
+          <p>A proposta formal é o contrato. Com a assinatura e o pagamento, o projeto fica reservado para
+            ti.</p>
+        </li>
+        <li>
+          <span class="n">4</span>
+          <b>Kick-off na semana seguinte</b>
+          <p>Marcamos logo a reunião de arranque: acessos ao WhatsApp, GoHighLevel e Pipedrive, os teus
+            scripts de qualificação e as tuas dez etapas.</p>
         </li>
       </ol>
       <div class="fecho-acoes">
@@ -827,6 +978,7 @@
 <script src="../shared/unibox/unibox.js"></script>
 <script>
   chatRaciocinio('vgDemo');
+  chatRaciocinio('vgAcomp');
   fluxo('vgFluxo');
   terminal('vgTerm');
   unibox('vgInbox');

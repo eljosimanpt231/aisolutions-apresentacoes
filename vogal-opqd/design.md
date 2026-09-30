@@ -75,3 +75,13 @@ créditos) é fechado com cordialidade, sem ocupar a comercial.
 - DS Créditos (Georgina Moura), intermediação de crédito, caso público: qualificação e acompanhamento
   por estados, em produção desde março de 2026. Sem valores financeiros.
 - Uma segunda intermediária de crédito, anonimizada (sem caso público).
+
+## Revisão de 30/09/2026 (pedido do Manuel)
+- **Tema claro** a pedido do comercial. A demo (chat+raciocínio) e o fecho mantêm-se como blocos
+  escuros: a demo como janela de produto, o fecho como remate com o botão em destaque.
+- **Secção nova 6, o agente de acompanhamento:** o processo no Pipedrive etapa a etapa (o que o agente
+  faz, o que fica com o Sérgio), a citação dele sobre a atividade dos dois dias, e uma demo própria com
+  três cenários (documentos em falta, avaliação marcada, propostas dos bancos). Etapas ilustrativas,
+  ditas como tal. A demo da qualificação ficou com três cenários.
+- **Fecho:** em vez de "Avançamos, Sérgio?", o caminho até ao arranque em quatro passos: sim, proposta
+  formal, assinatura e pagamento, kick-off na semana seguinte.

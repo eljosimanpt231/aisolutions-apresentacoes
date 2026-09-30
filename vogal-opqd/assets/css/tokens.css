@@ -34,8 +34,9 @@
 
   /* A atmosfera (shared/motion/atmosfera.css) trabalha em HSL. */
   --brand-hsl:  218 72% 48%;   /* o azul da marca, a brilhar no escuro */
-  --accent-hsl: 40 88% 62%;    /* dourado: a segunda voz */
-  --brand2-hsl: 208 80% 70%;   /* azul claro, o meio do gradiente */
+  --accent-hsl: 38 78% 44%;    /* dourado escuro: em fundo claro tem de se ler como texto */
+  --brand2-hsl: 214 72% 42%;   /* azul fundo, o meio do gradiente */
+  --ouro-texto: oklch(50% 0.11 70);  /* o dourado quando é texto pequeno */
 
   --brand-50:  oklch(97.0% calc(var(--brand-c) * 0.07) calc(var(--brand-h) - 5));
   --brand-100: oklch(93.2% calc(var(--brand-c) * 0.15) calc(var(--brand-h) - 4));
@@ -77,7 +78,7 @@
 
   --text:   oklch(22.0% 0.028 var(--brand-h));   /* tinta principal */
   --muted:  oklch(48.0% 0.020 var(--brand-h));   /* secundária (passa AA) */
-  --faint:  oklch(62.0% 0.016 var(--brand-h));   /* terciária: SÓ texto grande */
+  --faint:  oklch(50.0% 0.016 var(--brand-h));   /* terciária: a 62% falhava AA em fundo claro */
   /* Três tons de texto. Não criar um quarto. */
 
   --hairline: color-mix(in oklab, var(--text) 9%, transparent);

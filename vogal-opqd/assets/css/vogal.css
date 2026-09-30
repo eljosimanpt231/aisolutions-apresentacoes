@@ -27,7 +27,7 @@
     margin-top: var(--s-4); font-family: var(--font-display);
     font-size: var(--fs-1); line-height: 1.35; color: var(--text); max-width: 30ch;
   }
-  .duas .horas b { font-weight: 400; color: var(--brand-300); }
+  .duas .horas b { font-weight: 400; color: var(--acento-texto); }
 
   /* ---------- O funil à escala ----------
      As barras são proporcionais aos números dele (300, 10, 3). À escala
@@ -56,7 +56,7 @@
   .funil-linha--fim .funil-barra {
     background: linear-gradient(90deg in oklab, hsl(var(--accent-hsl)), hsl(var(--accent-hsl) / .75));
   }
-  .funil-linha--fim .funil-n { color: hsl(var(--accent-hsl)); }
+  .funil-linha--fim .funil-n { color: var(--ouro-texto); }
   .funil-d { grid-area: d; color: var(--muted); font-size: var(--fs--1); }
 
   /* ---------- Moldura da Unibox ---------- */
@@ -75,7 +75,7 @@
     border-radius: var(--r-3); background: var(--surface); box-shadow: var(--e1);
     border-top: 2px solid var(--brand-300);
   }
-  .tres-regras .tr-n { font-family: var(--font-display); font-size: var(--fs-3); line-height: 1; color: var(--brand-300); }
+  .tres-regras .tr-n { font-family: var(--font-display); font-size: var(--fs-3); line-height: 1; color: var(--acento-texto); }
   .tres-regras h3 { margin-top: var(--s-2); font-family: var(--font-body); font-size: var(--fs-0); font-weight: 600; }
   .tres-regras p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
 
@@ -172,7 +172,7 @@
     border: 1px solid hsl(var(--accent-hsl) / .35);
     background: linear-gradient(120deg in oklab, hsl(var(--accent-hsl) / .10), transparent 70%);
   }
-  .diferenca-k { font-family: var(--font-mono); font-size: var(--fs--2); color: hsl(var(--accent-hsl)); }
+  .diferenca-k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--ouro-texto); }
   .diferenca ul {
     list-style: none; margin-top: var(--s-3); display: grid; gap: var(--s-4);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
@@ -214,6 +214,37 @@
   .lt-fim { font-size: var(--fs--2); color: var(--acento-texto); margin-left: calc(var(--rot) + var(--s-3)); }
   .lt-grupo--separado .lt-fim { color: var(--muted); }
 
+  /* ---------- As etapas do Pipedrive ----------
+     Um carril vertical: o que o agente faz em cada etapa a destaque, o que
+     continua com o Sérgio por baixo, em tom secundário. */
+  .etapas {
+    list-style: none; margin-top: var(--s-6); display: grid; gap: var(--s-3);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  }
+  .etapas li {
+    display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: var(--s-3);
+    padding: var(--s-4); border-radius: var(--r-3);
+    background: var(--surface); box-shadow: var(--e1);
+  }
+  .et-n {
+    width: 2.25rem; height: 2.25rem; border-radius: var(--r-pill);
+    display: grid; place-items: center;
+    font-family: var(--font-mono); font-size: var(--fs--1);
+    background: var(--brand-a10); color: var(--acento-texto);
+  }
+  .etapas h3 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-0); }
+  .et-agente {
+    margin-top: var(--s-2); font-size: var(--fs--1); color: var(--text);
+    padding-left: var(--s-3); border-left: 2px solid var(--brand-400);
+  }
+  .et-tu { margin-top: var(--s-2); font-size: var(--fs--2); color: var(--muted); }
+  .et-alerta { border: 1px solid color-mix(in oklab, var(--warn) 55%, transparent); }
+  .et-alerta .et-n { background: var(--warn-wash); color: var(--ouro-texto); }
+  .et-alerta .et-agente { border-left-color: var(--warn); }
+
+  /* Fecho com quatro passos em vez de três */
+  .passos-fecho--quatro { grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+
   @media (max-width: 560px) {
     .linha-tempo { padding: var(--s-4); --rot: 0px; }
     .lt-linha { grid-template-columns: minmax(0, 1fr); gap: var(--s-1); }
@@ -244,3 +275,41 @@
 }
 #vgInbox .ub-row.out .ub-bubble-time { color: color-mix(in oklab, var(--brand-950) 85%, transparent); }
 #vgInbox .ub-subbtn.is-cur { background: var(--ub-accent-weak2); }
+
+/* ---------- A demo é uma janela de produto escura ----------
+   O chat+raciocínio foi desenhado para fundo escuro (bolha do agente em cor
+   fixa, texto a vir da página). Numa página clara, dá-se-lhe o próprio
+   tema escuro: lê-se como uma aplicação aberta dentro do documento. */
+.cr, .fecho {
+  --bg:        oklch(14.0% 0.014 var(--brand-h));
+  --bg-soft:   oklch(16.5% 0.016 var(--brand-h));
+  --surface:   oklch(19.0% 0.018 var(--brand-h));
+  --surface-2: oklch(22.0% 0.020 var(--brand-h));
+  --surface-3: oklch(25.0% 0.022 var(--brand-h));
+  --text:   oklch(96.0% 0.006 var(--brand-h));
+  --muted:  oklch(74.0% 0.014 var(--brand-h));
+  --faint:  oklch(66.0% 0.014 var(--brand-h));
+  --hairline: oklch(100% 0 0 / 0.08);
+  --border:   oklch(100% 0 0 / 0.13);
+  --border-strong: oklch(100% 0 0 / 0.22);
+  --brand:  var(--brand-300);
+  --accent: var(--brand-300);
+  --accent-hsl: 40 88% 62%;
+  --acento-texto: var(--brand-300);
+  background: var(--bg); color: var(--text);
+  border-radius: var(--r-4); box-shadow: var(--e3);
+}
+
+#vgInbox .ub-user-badge { background: var(--brand-600); color: oklch(99% 0.004 252); }
+
+/* O fecho é o remate escuro da página clara. */
+.fecho {
+  background:
+    radial-gradient(60% 80% at 15% 0%, hsl(218 72% 48% / .35), transparent 70%),
+    radial-gradient(50% 70% at 90% 100%, hsl(40 88% 62% / .16), transparent 70%),
+    oklch(14.0% 0.014 var(--brand-h));
+  border-radius: 0; box-shadow: none;
+}
+.fecho .btn-primario { background: var(--brand-300); color: var(--brand-950); }
+.fecho .btn-secundario { color: var(--text); border-color: var(--border-strong); }
+.fecho .passos-fecho b { color: var(--text); }
