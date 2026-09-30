@@ -41,6 +41,7 @@
   var ICO = {
     caixa: "M3 7l9 6 9-6M3 7v10h18V7M3 7l2-3h14l2 3",
     lista: "M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01",
+    pipe: "M4 4h4v16H4zM10 4h4v10h-4zM16 4h4v6h-4z",
     dash: "M4 20V10M10 20V4M16 20v-7M22 20H2",
     bot: "M5 9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM12 7V3M9 13h.01M15 13h.01M4 12H2M22 12h-2"
   };
@@ -136,7 +137,7 @@
       var hora = vista === "caixa" ? (atual < 0 ? cfg.startClock : d.mail.day + " · " + d.mail.time) : cfg.nowClock;
       var h = '<div class="ec-win"><div class="ec-titlebar"><i></i><i></i><i></i><span class="ec-app"><b>Lanema</b> · Encomendas</span><span class="ec-clock">' + esc(hora) + "</span></div>";
       h += '<div class="ec-shell"><nav class="ec-rail" aria-label="Vistas da plataforma">';
-      [["caixa", "Caixa", ICO.caixa], ["encomendas", "Encomendas", ICO.lista], ["dashboard", "Dashboard", ICO.dash], ["agente", "Agente IA", ICO.bot]].forEach(function (v) {
+      [["caixa", "Caixa", ICO.caixa], ["encomendas", "Encomendas", ICO.lista], ["pipeline", "Pipeline", ICO.pipe], ["dashboard", "Dashboard", ICO.dash], ["agente", "Agente IA", ICO.bot]].forEach(function (v) {
         var on = vista === v[0] || (v[0] === "encomendas" && vista === "detalhe");
         h += '<button type="button" class="ec-rail-b' + (on ? " on" : "") + '" data-vista="' + v[0] + '">' + ico(v[2]) + "<span>" + v[1] + "</span></button>";
       });
@@ -171,7 +172,7 @@
           '<div class="ec-tmail-m"><span>Para:</span> ' + esc(t.sent.to) + '</div><div class="ec-tmail-m"><span>Assunto:</span> <b>' + esc(t.sent.subject) + "</b></div>" +
           '<div class="ec-tmail-b">' + rich(t.sent.body) + "</div></div>";
         h += '<div class="ec-gap">' + esc(t.gap) + "</div>";
-        h += '<div class="ec-tmail ec-tmail--reply"><div class="ec-tmail-h"><span class="ec-tag-in">Resposta do cliente</span><time>' + esc(t.reply.time) + '</time></div>' +
+        h += '<div class="ec-tmail ec-tmail--reply"><div class="ec-tmail-h"><span class="ec-tag-in">' + esc(t.reply.tag || "Resposta do cliente") + '</span><time>' + esc(t.reply.time) + '</time></div>' +
           '<div class="ec-tmail-b">' + rich(t.reply.body) + "</div></div>";
         h += "</div>";
       }
@@ -402,9 +403,72 @@
       });
     }
 
+    /* ============ VISTA 5: PIPELINE (mini CRM das propostas) ============ */
+    var P = cfg.pipeline || { cols: [], items: [] };
+    var pItems = P.items.map(function (x) { return JSON.parse(JSON.stringify(x)); });
+    var pSel = null, pFiltro = "todos";
+    function pFind(id) { for (var k = 0; k < pItems.length; k++) if (pItems[k].id === id) return pItems[k]; return null; }
+    function pParado(x) { return (x.col === "esp" || x.col === "fup") && x.dias >= 10; }
+    function vistaPipeline() {
+      var abertos = pItems.filter(function (x) { return x.col === "cot" || x.col === "esp" || x.col === "fup"; });
+      var parados = pItems.filter(pParado);
+      var gan = pItems.filter(function (x) { return x.col === "gan"; }).length, per = pItems.filter(function (x) { return x.col === "per"; }).length;
+      var soma = function (a) { return a.reduce(function (s, x) { return s + x.v; }, 0); };
+      var h = '<div class="ec-page ec-pipe"><div class="ec-page-h"><div><b>Pipeline</b><small>' + esc(P.sub) + '</small></div><div class="ec-seg" role="group" aria-label="Filtro">' +
+        '<button type="button" data-pfiltro="todos" class="' + (pFiltro === "todos" ? "on" : "") + '">Todos</button><button type="button" data-pfiltro="rui" class="' + (pFiltro === "rui" ? "on" : "") + '">Rui Santos</button><button type="button" data-pfiltro="parados" class="' + (pFiltro === "parados" ? "on" : "") + '">Parados há +10 dias</button></div></div>';
+      h += '<div class="ec-kpis"><div class="ec-kpi"><span>Em aberto</span><b>' + abertos.length + "</b><small>" + eur(soma(abertos), 0) + '</small></div><div class="ec-kpi ec-kpi--warn"><span>Sem resposta há +10 dias</span><b>' + parados.length + "</b><small>" + eur(soma(parados), 0) + ' em jogo</small></div><div class="ec-kpi"><span>Conversão (30 dias)</span><b>' + Math.round(gan / Math.max(1, gan + per) * 100) + "%</b><small>" + gan + " ganhas, " + per + ' perdidas</small></div><div class="ec-kpi"><span>Resposta do cliente</span><b>' + esc(P.tempo) + '</b><small>tempo médio</small></div></div>';
+      h += '<div class="ec-board">';
+      P.cols.forEach(function (c) {
+        var its = pItems.filter(function (x) { return x.col === c[0]; });
+        var vis = its.filter(function (x) { return pFiltro === "todos" || (pFiltro === "rui" && x.resp === "RS") || (pFiltro === "parados" && pParado(x)); });
+        h += '<div class="ec-col ec-col--' + c[0] + '"><div class="ec-col-h"><b>' + esc(c[1]) + "</b><span>" + its.length + " · " + eur(soma(its), 0) + '</span></div><div class="ec-cards">';
+        vis.forEach(function (x) {
+          h += '<button type="button" class="ec-card' + (pParado(x) ? " parado" : "") + (pSel === x.id ? " on" : "") + '" data-card="' + x.id + '"><span class="ec-card-t"><b>' + esc(x.cliente) + '</b><i class="ec-av" title="' + esc(x.respNome) + '">' + esc(x.resp) + "</i></span><span class=\"ec-card-d\">" + esc(x.doc) + " · " + esc(x.desc) + '</span><span class="ec-card-f"><b>' + eur(x.v, 0) + "</b><small>" + esc(x.estado) + "</small></span></button>";
+        });
+        if (!vis.length) h += '<div class="ec-card-vazio">Nada aqui com este filtro</div>';
+        h += "</div></div>";
+      });
+      h += "</div>";
+      h += '<p class="ec-page-nota">' + esc(P.nota) + "</p>";
+      if (pSel) h += painelProcesso(pFind(pSel));
+      return h + "</div>";
+    }
+    function painelProcesso(x) {
+      var col = P.cols.filter(function (c) { return c[0] === x.col; })[0];
+      var h = '<aside class="ec-drawer" aria-label="Processo"><div class="ec-drawer-h"><div><b>' + esc(x.cliente) + "</b><small>" + esc(x.doc) + " · " + esc(col[1]) + '</small></div><button type="button" class="ec-modal-x" data-pfechar aria-label="Fechar">×</button></div>';
+      h += '<div class="ec-drawer-kv"><div><span>Valor</span><b>' + eur(x.v) + '</b></div><div><span>Responsável</span><b>' + esc(x.respNome) + "</b></div><div><span>Conteúdo</span><b>" + esc(x.desc) + "</b></div><div><span>Estado</span><b>" + esc(x.estado) + "</b></div></div>";
+      if (x.proximo) h += '<div class="ec-drawer-next"><span>Próximo passo sugerido</span>' + rich(x.proximo) + "</div>";
+      h += '<div class="ec-drawer-tl"><span class="k">Histórico</span><ol>';
+      x.tl.forEach(function (t) { h += "<li><time>" + esc(t[0]) + "</time>" + rich(t[1]) + "</li>"; });
+      h += "</ol></div>";
+      h += '<div class="ec-drawer-acoes">';
+      if (x.col === "cot") h += '<button type="button" class="ec-btn pri" data-pacao="enviar">Marcar proposta enviada</button>';
+      if (x.col === "esp" || x.col === "fup") h += '<button type="button" class="ec-btn pri" data-pacao="followup">Enviar follow-up</button><button type="button" class="ec-btn" data-pacao="ganha">Ganha</button><button type="button" class="ec-btn" data-pacao="perdida">Perdida</button>';
+      h += "</div></aside>";
+      return h;
+    }
+    function followupModal(x) {
+      var win = root.querySelector(".ec-win");
+      var m = document.createElement("div");
+      m.className = "ec-modal"; m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true"); m.setAttribute("aria-label", "Follow-up");
+      m.innerHTML = '<div class="ec-modal-c"><div class="ec-modal-top ec-modal-top--azul"><span class="ec-modal-ok">@</span><div><b>Follow-up pronto a enviar</b><small>Escrito pela plataforma a partir da proposta e do histórico do cliente</small></div><button type="button" class="ec-modal-x" data-fechar aria-label="Fechar">×</button></div>' +
+        '<div class="ec-modal-h"><div><span>De:</span> ' + esc(x.respNome) + " · Poly Lanema</div><div><span>Para:</span> " + esc(x.email) + "</div><div><span>Assunto:</span> <b>" + esc(x.fu.assunto) + "</b></div></div>" +
+        '<div class="ec-modal-b">' + rich(x.fu.corpo) + "</div>" +
+        '<div class="ec-modal-f"><span>Sai com o nome e a assinatura do comercial.</span><span class="ec-modal-bts"><button type="button" class="ec-btn" data-fechar>Cancelar</button><button type="button" class="ec-btn pri" data-penviar>Enviar</button></span></div></div>';
+      win.appendChild(m);
+      requestAnimationFrame(function () { m.classList.add("on"); });
+    }
+    function pAcao(q) {
+      var x = pFind(pSel); if (!x) return;
+      if (q === "followup") { followupModal(x); return; }
+      if (q === "enviar") { x.col = "esp"; x.dias = 0; x.estado = "Enviada hoje"; x.tl.push([cfg.nowTime, "Proposta enviada ao cliente"]); render(); toast("Proposta marcada como enviada. A plataforma lembra ao fim de 7 dias sem resposta."); return; }
+      if (q === "ganha") { x.col = "gan"; x.estado = "Ganha hoje"; x.proximo = null; x.tl.push([cfg.nowTime, "Marcada como **ganha**: encomenda a criar a partir da proposta"]); render(); toast(x.cliente + ": ganha. A encomenda nasce da proposta, com um clique."); return; }
+      if (q === "perdida") { x.col = "per"; x.estado = "Perdida · motivo por registar"; x.proximo = null; x.tl.push([cfg.nowTime, "Marcada como **perdida**"]); render(); toast("Registada como perdida. O motivo alimenta o dashboard."); return; }
+    }
+
     /* ---------- desenhar a vista atual ---------- */
     function render() {
-      var c = vista === "caixa" ? vistaCaixa() : vista === "encomendas" ? vistaLista() : vista === "detalhe" ? vistaDetalhe() : vista === "agente" ? vistaAgente() : vistaDashboard();
+      var c = vista === "caixa" ? vistaCaixa() : vista === "encomendas" ? vistaLista() : vista === "detalhe" ? vistaDetalhe() : vista === "agente" ? vistaAgente() : vista === "pipeline" ? vistaPipeline() : vistaDashboard();
       root.innerHTML = moldura(c);
       root.classList.toggle("ec-idle", vista === "caixa" && atual < 0);
       if (vista === "dashboard") desenhaBarras(false);
@@ -569,6 +633,23 @@
           if (D.estado === "val") { D.estado = "ok"; D.estadoTxt = "Criada no PHC"; }
           enviaConfirmacao(aberto, "");
         }
+      }
+      if (vista === "pipeline") {
+        var pc = e.target.closest("[data-card]");
+        if (pc) { pSel = pc.getAttribute("data-card"); render(); return; }
+        if (e.target.closest("[data-pfechar]")) { pSel = null; render(); return; }
+        var pf = e.target.closest("[data-pfiltro]");
+        if (pf) { pFiltro = pf.getAttribute("data-pfiltro"); render(); return; }
+        var pa = e.target.closest("[data-pacao]");
+        if (pa) { pAcao(pa.getAttribute("data-pacao")); return; }
+        if (e.target.closest("[data-penviar]")) {
+          var x = pFind(pSel);
+          x.col = "esp"; x.dias = 0; x.estado = "Follow-up enviado hoje"; x.proximo = "Se não houver resposta em 5 dias, **telefonar** ao comprador.";
+          x.tl.push([cfg.nowTime, "Follow-up enviado: **" + x.fu.assunto + "**"]);
+          render(); toast("Follow-up enviado a " + x.email + ". Registado no processo.");
+          return;
+        }
+        return;
       }
       if (vista !== "caixa") return;
       var r = e.target.closest(".ec-replay");

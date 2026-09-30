@@ -34,6 +34,8 @@
   <link rel="stylesheet" href="assets/css/plataforma.css">
   <link rel="stylesheet" href="assets/css/popup.css">
   <link rel="stylesheet" href="assets/css/agente.css">
+  <link rel="stylesheet" href="assets/css/pipeline.css">
+  <link rel="stylesheet" href="assets/css/portal.css">
   <script src="config.js"></script>
 </head>
 <body class="grao">
@@ -54,6 +56,7 @@
     <a href="#ouvimos">O que ouvimos</a>
     <a href="#documentos">Os vossos pedidos</a>
     <a href="#plataforma">A plataforma</a>
+    <a href="#portal">Portal do cliente</a>
     <a href="#phc">PHC</a>
     <a href="#investimento">Investimento</a>
     <a href="#arranque">Arranque</a>
@@ -78,6 +81,7 @@
         </p>
         <div class="hero-meta" data-acto="3" data-entra="sobe">
           <span>Para <b>Isabel Marques</b>, <b>Virgílio Marques</b> e <b>Rui Santos</b></span>
+          <span>Poly Lanema e <b>Lanema España</b></span>
           <span>Seguimento da reunião de <b>18/09/2026</b></span>
           <span>Protótipo feito com <b>os vossos 5 pedidos</b></span>
         </div>
@@ -114,7 +118,7 @@
       </div>
     </div>
     <div class="grid-3 hero-stats" data-acto="5" data-entra="sobe">
-      <div class="card stat-card"><div class="num"><span data-conta="20000">20000</span></div><div class="desc">Pedidos por ano só em Portugal, antes da filial de Madrid e da Tecno Lanema</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="20000">20000</span></div><div class="desc">Pedidos por ano na Poly Lanema, e a Lanema España entra na mesma plataforma</div></div>
       <div class="card stat-card"><div class="num"><span data-conta="80" data-sufixo="%">80%</span></div><div class="desc">Do dia dos 5 comerciais passado a introduzir encomendas à mão no PHC</div></div>
       <div class="card stat-card"><div class="num">5 de 5</div><div class="desc">Pedidos vossos lidos neste protótipo: 3 línguas, 5 formatos, incluindo um digitalizado</div></div>
     </div>
@@ -125,10 +129,10 @@
 <section class="resumo" aria-label="Resumo">
   <div class="container">
     <div class="resumo-grid" data-entra="sobe">
-      <div><span class="k">O quê</span><p>Uma plataforma vossa, simples, que trata as encomendas desde o email até ao PHC, e só chama uma pessoa quando é mesmo preciso.</p></div>
-      <div><span class="k">Com quê</span><p>A caixa polilanema@ como hoje, o PHC pela API que já têm, e as regras de preço que já lá estão.</p></div>
-      <div><span class="k">Em quanto tempo</span><p>Auditoria em outubro, desenvolvimento até dezembro, e 2027 começa com a plataforma a trabalhar.</p></div>
-      <div><span class="k">Próximo passo</span><p>Ver o protótipo juntos, validar a direção e decidir o arranque da auditoria.</p></div>
+      <div><span class="k">O quê</span><p>Uma plataforma do grupo, simples, que trata as encomendas da Poly Lanema e da Lanema España desde o email até ao PHC, e só chama uma pessoa quando é mesmo preciso.</p></div>
+      <div><span class="k">Com quê</span><p>As caixas de email de cada empresa, cada PHC pela sua API, e as regras de preço que já lá estão.</p></div>
+      <div><span class="k">Em quanto tempo</span><p>Cerca de dois meses: a plataforma a trabalhar antes do Natal, para 2027 arrancar em pleno.</p></div>
+      <div><span class="k">Próximo passo</span><p>Rever esta proposta com o Sr. Virgílio e decidir o arranque.</p></div>
     </div>
   </div>
 </section>
@@ -137,7 +141,7 @@
 <section class="section-alt" id="ouvimos">
   <div class="container">
     <div class="sec-head">
-      <span class="eyebrow">O que ouvimos a 18/09</span>
+      <span class="eyebrow">O que ouvimos a 18 e a 29/09</span>
       <h2>O problema não é o volume. É quem o está a tratar.</h2>
     </div>
     <div class="ouvimos">
@@ -152,14 +156,14 @@
         <span class="quem">Isabel Marques</span>
       </div>
       <div class="card" data-entra="sobe">
-        <blockquote>O erro é fácil de acontecer, e eu não gosto de errar.</blockquote>
-        <p>Nove números por linha, centenas de linhas por encomenda. A introdução manual é lenta e sujeita a erro, por muito cuidado que haja.</p>
-        <span class="quem">Isabel Marques</span>
+        <blockquote>A Lanema de Espanha é uma cópia da Poly Lanema. Só muda a língua e o PHC.</blockquote>
+        <p>Mesmos produtos, preços e medidas. Por isso a proposta é do grupo, e não só da Poly Lanema.</p>
+        <span class="quem">Isabel Marques, 29/09</span>
       </div>
       <div class="card" data-entra="sobe">
-        <blockquote>Quero pôr o cliente a trabalhar para mim.</blockquote>
-        <p>Sem correspondência certa, a plataforma escreve ao cliente e pede-lhe que escolha. Só depois a encomenda entra no PHC.</p>
-        <span class="quem">Isabel Marques</span>
+        <blockquote>Criar um portal para o próprio cliente, com um link que só ele vê, e ele próprio altera.</blockquote>
+        <p>Quando há dúvida, o cliente escolhe num minuto e a encomenda segue sozinha para o PHC. Está no protótipo, mais abaixo.</p>
+        <span class="quem">Isabel Marques, 29/09</span>
       </div>
       <div class="card" data-entra="sobe">
         <blockquote>O que me dá trabalho são as encomendas que não vêm de proposta.</blockquote>
@@ -254,7 +258,7 @@
     <div class="sec-head">
       <span class="eyebrow">A plataforma · protótipo</span>
       <h2>Um fim de semana na caixa <span class="g-brilho">polilanema@</span></h2>
-      <p class="lead">Os vossos cinco pedidos chegam entre sexta às 17:31 e domingo à noite. A plataforma trata o primeiro; para o seguinte, clique em <b>Seguinte →</b> ou noutro email da caixa. Depois, na barra lateral: <b>Encomendas</b> para abrir cada uma (editar produtos, quantidades e preços, ver os emails trocados com o cliente, o histórico dele e a confirmação enviada) <b>Dashboard</b> para ver a semana e <b>Agente IA</b> para perguntar ao PHC em português.</p>
+      <p class="lead">Os vossos cinco pedidos chegam entre sexta às 17:31 e domingo à noite. A plataforma trata o primeiro; para o seguinte, clique em <b>Seguinte →</b> ou noutro email da caixa. Depois, na barra lateral: <b>Encomendas</b> para abrir cada uma (editar produtos, quantidades e preços, ver os emails trocados com o cliente, o histórico dele e a confirmação enviada) <b>Pipeline</b> para acompanhar cotações, propostas à espera e follow-ups, <b>Dashboard</b> para ver a semana e <b>Agente IA</b> para perguntar ao PHC em português.</p>
     </div>
     <div class="ec" id="ecDemo" data-entra="escala"></div>
     <p class="ec-legenda">
@@ -1609,7 +1613,7 @@
      "note": "Duas matérias possíveis no PHC: pergunta ao cliente",
      "resolved": [
       "Placa POM-C ESD preto",
-      "Confirmado pelo cliente no sábado"
+      "Escolhido pelo cliente no portal"
      ]
     },
     {
@@ -1654,33 +1658,34 @@
     {
      "t": "**POM-ESD preto**: duas matérias possíveis",
      "tone": "warn",
-     "fix": "**POM-C ESD** confirmado pelo cliente"
+     "fix": "**POM-C ESD** escolhido pelo cliente no portal"
     },
     {
      "t": "**Data de entrega** não indicada",
      "tone": "warn",
-     "fix": "**Entrega a 16/10** indicada pelo cliente"
+     "fix": "**Entrega a 16/10** escolhida no portal"
     }
    ],
    "outcome": {
     "kind": "mail",
-    "title": "Pergunta enviada ao cliente às 21:14",
+    "title": "Portal enviado ao cliente às 21:14",
     "lines": [
-     "**Duas perguntas**: a matéria do POM-ESD e a data",
-     "**Nada entra no PHC** sem a resposta"
+     "**Portal do cliente** enviado: matéria do POM-ESD e data",
+     "**Nada entra no PHC** sem a confirmação"
     ]
    },
    "thread": {
     "sent": {
      "to": "Cliente D (remetente da encomenda)",
      "time": "Sexta, 21:14",
-     "subject": "Encomenda n.º 284: duas confirmações antes de avançarmos",
-     "body": "Boa noite.\nRecebemos a vossa encomenda n.º 284 (42 linhas). Para a lançarmos sem erros, precisamos de duas confirmações:\n**1.** Nas 6 linhas em POM-ESD preto, pretendem **POM-C ESD** ou **POM-H ESD**?\n**2.** Qual a data de entrega pretendida?\nAs restantes 36 linhas estão confirmadas.\nCom os melhores cumprimentos,\nPoly Lanema"
+     "subject": "Encomenda n.º 284: duas escolhas no portal antes de avançarmos",
+     "body": "Boa noite.\nRecebemos a vossa encomenda n.º 284 (42 linhas). 36 linhas estão confirmadas; faltam **duas escolhas** para a lançarmos sem erros: a matéria das 6 linhas em POM-ESD preto e a data de entrega.\nPode fazê-lo num minuto, no portal da vossa encomenda:\n**→ Rever e confirmar a encomenda n.º 284**\nAssim que confirmar, a encomenda segue para produção e recebe a confirmação por email.\nCom os melhores cumprimentos,\nPoly Lanema"
     },
-    "gap": "… sábado de manhã",
+    "gap": "… sábado de manhã, o cliente abre o portal",
     "reply": {
+     "tag": "Confirmado no portal do cliente",
      "time": "Sábado, 09:14",
-     "body": "Bom dia. **POM-C ESD.** Entrega até **16/10**. Obrigado."
+     "body": "Matéria: **POM-C ESD preto** nas 6 linhas.\nEntrega pretendida: **16/10/2026**.\nConfirmado por encomendas@cliente-d, sem precisar de responder ao email."
     },
     "final": {
      "kind": "ok",
@@ -1785,15 +1790,15 @@
       "dir": "out",
       "who": "encomendas@cliente-d",
       "when": "Sex 25/09 · 21:14",
-      "subject": "Encomenda n.º 284: duas confirmações antes de avançarmos",
-      "body": "Boa noite.\nRecebemos a vossa encomenda n.º 284 (42 linhas). Para a lançarmos sem erros, precisamos de duas confirmações:\n**1.** Nas 6 linhas em POM-ESD preto, pretendem **POM-C ESD** ou **POM-H ESD**?\n**2.** Qual a data de entrega pretendida?\nAs restantes 36 linhas estão confirmadas.\nCom os melhores cumprimentos,\nPoly Lanema"
+      "subject": "Encomenda n.º 284: duas escolhas no portal antes de avançarmos",
+      "body": "Boa noite.\nRecebemos a vossa encomenda n.º 284 (42 linhas). 36 linhas estão confirmadas; faltam **duas escolhas** para a lançarmos sem erros: a matéria das 6 linhas em POM-ESD preto e a data de entrega.\nPode fazê-lo num minuto, no portal da vossa encomenda:\n**→ Rever e confirmar a encomenda n.º 284**\nAssim que confirmar, a encomenda segue para produção e recebe a confirmação por email.\nCom os melhores cumprimentos,\nPoly Lanema"
      },
      {
       "dir": "in",
       "who": "encomendas@cliente-d",
       "when": "Sáb 26/09 · 09:14",
-      "subject": "RE: Encomenda n.º 284: duas confirmações",
-      "body": "Bom dia. **POM-C ESD.** Entrega até **16/10**. Obrigado."
+      "subject": "Portal do cliente: encomenda 284 confirmada",
+      "body": "Confirmado no **portal do cliente**:\nMatéria das 6 linhas em POM-ESD preto: **POM-C ESD preto**.\nEntrega pretendida: **16/10/2026**.\nA encomenda seguiu para o PHC às 09:15."
      },
      {
       "dir": "out",
@@ -2236,8 +2241,423 @@
  "agente": {
   "titulo": "Perguntar ao PHC em português, e ter resposta em segundos",
   "sub": "Em vez de pedir um filtro ou uma análise multidimensional à equipa de TI: escrever a pergunta. Um assistente ligado aos vossos dados, sobre a mesma base da plataforma.",
-  "badge": "Fase seguinte · fora do valor desta proposta",
+  "badge": "Incluído nesta proposta · Poly Lanema e Lanema España",
   "nota": "Clientes e números ilustrativos. O assistente só lê o PHC: não altera nada."
+ },
+ "pipeline": {
+  "sub": "Cotações, propostas e respostas em curso, lidas do PHC e da polilanema@",
+  "tempo": "4,2 dias",
+  "nota": "Ilustrativo. A plataforma lembra o comercial ao fim de 7 dias sem resposta e sugere o follow-up (prazos configuráveis). Clique num cartão para abrir o processo.",
+  "cols": [
+   [
+    "cot",
+    "Cotação recebida"
+   ],
+   [
+    "esp",
+    "Proposta enviada · à espera"
+   ],
+   [
+    "fup",
+    "Sem resposta · follow-up"
+   ],
+   [
+    "gan",
+    "Ganhas (30 dias)"
+   ],
+   [
+    "per",
+    "Perdidas (30 dias)"
+   ]
+  ],
+  "items": [
+   {
+    "id": "p1",
+    "col": "cot",
+    "cliente": "Cliente H · automação",
+    "doc": "RFQ 1402",
+    "desc": "6 linhas · 6082 T651",
+    "v": 1240,
+    "dias": 0,
+    "resp": "RS",
+    "respNome": "Rui Santos",
+    "estado": "Recebida hoje, 09:12",
+    "email": "compras@cliente-h",
+    "proximo": "Preços calculados pelos **escalões do PHC**. Falta rever e enviar.",
+    "tl": [
+     [
+      "Hoje 09:12",
+      "Pedido de cotação recebido na polilanema@"
+     ],
+     [
+      "Hoje 09:13",
+      "Linhas lidas e ligadas às referências do PHC"
+     ]
+    ]
+   },
+   {
+    "id": "p2",
+    "col": "cot",
+    "cliente": "Cliente B · Espanha",
+    "doc": "Consulta",
+    "desc": "3 linhas · chapa 7075",
+    "v": 2980,
+    "dias": 1,
+    "resp": "C2",
+    "respNome": "Comercial 2",
+    "estado": "Recebida ontem",
+    "email": "compras@cliente-b.es",
+    "proximo": "Cliente categoria A: aplicar a **tabela própria ao kg**.",
+    "tl": [
+     [
+      "Ontem 16:40",
+      "Consulta recebida em espanhol"
+     ],
+     [
+      "Ontem 16:41",
+      "Pedido de prazo para chapa 7075 de 20 e 30 mm"
+     ]
+    ]
+   },
+   {
+    "id": "p3",
+    "col": "cot",
+    "cliente": "Cliente I · moldes",
+    "doc": "RFQ 118",
+    "desc": "2 linhas · tubo POM-C",
+    "v": 410,
+    "dias": 1,
+    "resp": "C3",
+    "respNome": "Comercial 3",
+    "estado": "Recebida ontem",
+    "email": "geral@cliente-i",
+    "proximo": "Tubo: confirmar **diâmetro interior**, que não vem no pedido.",
+    "tl": [
+     [
+      "Ontem 11:05",
+      "RFQ recebido com 2 linhas"
+     ],
+     [
+      "Ontem 11:06",
+      "Diâmetro interior em falta: pergunta preparada ao cliente"
+     ]
+    ]
+   },
+   {
+    "id": "p4",
+    "col": "esp",
+    "cliente": "Cliente A · aeronáutica",
+    "doc": "PR 26/0902",
+    "desc": "9 linhas · 7075 T651",
+    "v": 1310,
+    "dias": 3,
+    "resp": "RS",
+    "respNome": "Rui Santos",
+    "estado": "Enviada há 3 dias",
+    "email": "compras@cliente-a",
+    "fu": {
+     "assunto": "Proposta PR 26/0902 · blocos 7075",
+     "corpo": "Bom dia.\nVoltamos à proposta **PR 26/0902** que enviámos na sexta, com 9 blocos em 7075 T651.\nMantemos preço e prazo até **9 de outubro**. Se ajudar, podemos lançar a encomenda já com a vossa referência.\nCom os melhores cumprimentos,\nRui Santos"
+    },
+    "tl": [
+     [
+      "24/09",
+      "RFQ 4051 recebido"
+     ],
+     [
+      "25/09",
+      "Proposta PR 26/0902 enviada"
+     ]
+    ]
+   },
+   {
+    "id": "p5",
+    "col": "esp",
+    "cliente": "Cliente F · moldes",
+    "doc": "PR 26/0888",
+    "desc": "12 linhas · 5083 e 6082",
+    "v": 3450,
+    "dias": 6,
+    "resp": "C2",
+    "respNome": "Comercial 2",
+    "estado": "Enviada há 6 dias",
+    "email": "compras@cliente-f",
+    "proximo": "Amanhã faz 7 dias: a plataforma **lembra o comercial**.",
+    "fu": {
+     "assunto": "Proposta PR 26/0888",
+     "corpo": "Bom dia.\nQueria confirmar se receberam a proposta **PR 26/0888** (12 linhas em 5083 e 6082) e se há alguma dúvida.\nTemos stock para entrega na próxima semana.\nCom os melhores cumprimentos,\nPoly Lanema"
+    },
+    "tl": [
+     [
+      "21/09",
+      "Pedido recebido"
+     ],
+     [
+      "22/09",
+      "Proposta PR 26/0888 enviada"
+     ]
+    ]
+   },
+   {
+    "id": "p6",
+    "col": "esp",
+    "cliente": "Cliente E · aeronáutica",
+    "doc": "Pedido 26C003577",
+    "desc": "Preço da posição 2",
+    "v": 1493.35,
+    "dias": 0,
+    "resp": "RS",
+    "respNome": "Rui Santos",
+    "estado": "Pergunta enviada hoje",
+    "email": "compras@cliente-e.es",
+    "proximo": "Encomenda criada; falta a resposta sobre a **posição 2** (129,15 € ou 143,20 €).",
+    "fu": {
+     "assunto": "Pedido 26C003577: precio de la posición 2",
+     "corpo": "Buenos días.\nLes recordamos la consulta sobre la **posición 2** del pedido 26C003577: nuestra tarifa vigente es de **143,20 €**.\n¿Podemos proceder con este precio?\nSaludos cordiales,\nRui Santos"
+    },
+    "tl": [
+     [
+      "Dom 19:40",
+      "Pedido digitalizado recebido"
+     ],
+     [
+      "Seg 08:04",
+      "Pergunta sobre o preço da posição 2 enviada"
+     ]
+    ]
+   },
+   {
+    "id": "p7",
+    "col": "fup",
+    "cliente": "Cliente K · aeroespacial",
+    "doc": "PR 26/0790",
+    "desc": "24 linhas · 7075 T7351",
+    "v": 42300,
+    "dias": 19,
+    "resp": "RS",
+    "respNome": "Rui Santos",
+    "estado": "Sem resposta há 19 dias",
+    "email": "purchasing@cliente-k",
+    "proximo": "Proposta grande parada: **telefonar ao comprador** e enviar o follow-up.",
+    "fu": {
+     "assunto": "PR 26/0790 · 7075 T7351, 24 items",
+     "corpo": "Dear Sirs,\nFollowing up on our quotation **PR 26/0790** (24 items in 7075 T7351), sent on 10 September.\nWe can hold prices and the stated lead time until **15 October**. Happy to adjust quantities or delivery dates if needed.\nBest regards,\nRui Santos"
+    },
+    "tl": [
+     [
+      "09/09",
+      "RFQ 2207 recebido"
+     ],
+     [
+      "10/09",
+      "Proposta PR 26/0790 enviada"
+     ],
+     [
+      "17/09",
+      "Lembrete ao Rui: 7 dias sem resposta"
+     ],
+     [
+      "24/09",
+      "Segundo lembrete: 14 dias"
+     ]
+    ]
+   },
+   {
+    "id": "p8",
+    "col": "fup",
+    "cliente": "Cliente J · defesa",
+    "doc": "PR 26/0851",
+    "desc": "18 linhas · 6082 T651",
+    "v": 18600,
+    "dias": 12,
+    "resp": "C3",
+    "respNome": "Comercial 3",
+    "estado": "Sem resposta há 12 dias",
+    "email": "compras@cliente-j",
+    "proximo": "Enviar follow-up e confirmar se o **prazo** ainda serve.",
+    "fu": {
+     "assunto": "Proposta PR 26/0851",
+     "corpo": "Bom dia.\nVoltamos à proposta **PR 26/0851** (18 linhas em 6082 T651), enviada a 16 de setembro.\nConseguimos manter preço e prazo até **12 de outubro**. Há algum ajuste que possamos fazer?\nCom os melhores cumprimentos,\nPoly Lanema"
+    },
+    "tl": [
+     [
+      "15/09",
+      "Pedido de cotação recebido"
+     ],
+     [
+      "16/09",
+      "Proposta PR 26/0851 enviada"
+     ],
+     [
+      "23/09",
+      "Lembrete: 7 dias sem resposta"
+     ]
+    ]
+   },
+   {
+    "id": "p9",
+    "col": "fup",
+    "cliente": "Cliente G · automação",
+    "doc": "PR 26/0812",
+    "desc": "5 linhas · POM-C",
+    "v": 1860,
+    "dias": 15,
+    "resp": "C2",
+    "respNome": "Comercial 2",
+    "estado": "Sem resposta há 15 dias",
+    "email": "compras@cliente-g",
+    "proximo": "Segundo lembrete já enviado ao comercial.",
+    "fu": {
+     "assunto": "Proposta PR 26/0812",
+     "corpo": "Bom dia.\nQueria saber se a proposta **PR 26/0812** (5 linhas em POM-C) continua em análise e se precisam de alguma alteração.\nCom os melhores cumprimentos,\nPoly Lanema"
+    },
+    "tl": [
+     [
+      "12/09",
+      "Pedido recebido"
+     ],
+     [
+      "13/09",
+      "Proposta PR 26/0812 enviada"
+     ],
+     [
+      "20/09",
+      "Lembrete: 7 dias"
+     ],
+     [
+      "27/09",
+      "Lembrete: 14 dias"
+     ]
+    ]
+   },
+   {
+    "id": "p10",
+    "col": "gan",
+    "cliente": "Cliente C · defesa",
+    "doc": "PR 26/0871 → EC 26/04814",
+    "desc": "32 páginas · programa 2027",
+    "v": 278800,
+    "dias": 0,
+    "resp": "RS",
+    "respNome": "Rui Santos",
+    "estado": "Convertida a 25/09",
+    "email": "purchasing@cliente-c.es",
+    "tl": [
+     [
+      "10/09",
+      "RFQ recebido (32 páginas)"
+     ],
+     [
+      "11/09",
+      "Proposta PR 26/0871 enviada"
+     ],
+     [
+      "25/09",
+      "Encomenda recebida e **convertida da proposta** pela plataforma"
+     ]
+    ]
+   },
+   {
+    "id": "p11",
+    "col": "gan",
+    "cliente": "Cliente F · moldes",
+    "doc": "PR 26/0833 → EC 26/04788",
+    "desc": "12 linhas",
+    "v": 3412.8,
+    "dias": 0,
+    "resp": "C2",
+    "respNome": "Comercial 2",
+    "estado": "Ganha a 24/09",
+    "email": "compras@cliente-f",
+    "tl": [
+     [
+      "15/09",
+      "Proposta PR 26/0833 enviada"
+     ],
+     [
+      "22/09",
+      "Follow-up enviado"
+     ],
+     [
+      "24/09",
+      "Encomenda recebida"
+     ]
+    ]
+   },
+   {
+    "id": "p12",
+    "col": "gan",
+    "cliente": "Cliente B · Espanha",
+    "doc": "PR 26/0845 → EC 26/04779",
+    "desc": "8 linhas · 5083",
+    "v": 5120.4,
+    "dias": 0,
+    "resp": "C2",
+    "respNome": "Comercial 2",
+    "estado": "Ganha a 24/09",
+    "email": "compras@cliente-b.es",
+    "tl": [
+     [
+      "18/09",
+      "Proposta PR 26/0845 enviada"
+     ],
+     [
+      "24/09",
+      "Pedido 26-301 recebido"
+     ]
+    ]
+   },
+   {
+    "id": "p13",
+    "col": "per",
+    "cliente": "Cliente L · metalomecânica",
+    "doc": "PR 26/0796",
+    "desc": "7 linhas · 5083",
+    "v": 2140,
+    "dias": 0,
+    "resp": "C3",
+    "respNome": "Comercial 3",
+    "estado": "Perdida · preço",
+    "email": "compras@cliente-l",
+    "tl": [
+     [
+      "08/09",
+      "Proposta PR 26/0796 enviada"
+     ],
+     [
+      "15/09",
+      "Follow-up enviado"
+     ],
+     [
+      "19/09",
+      "Cliente respondeu: comprou mais barato"
+     ]
+    ]
+   },
+   {
+    "id": "p14",
+    "col": "per",
+    "cliente": "Cliente M · energia",
+    "doc": "PR 26/0760",
+    "desc": "10 linhas · 6082",
+    "v": 7800,
+    "dias": 0,
+    "resp": "RS",
+    "respNome": "Rui Santos",
+    "estado": "Perdida · prazo",
+    "email": "compras@cliente-m",
+    "tl": [
+     [
+      "02/09",
+      "Proposta PR 26/0760 enviada"
+     ],
+     [
+      "12/09",
+      "Cliente precisava de entrega em 3 dias"
+     ]
+    ]
+   }
+  ]
  },
  "anteriores": [
   [
@@ -2255,6 +2675,14 @@
    "EC 26/04779",
    "8",
    "5.120,40 €"
+  ],
+  [
+   "Qui 24/09",
+   "Cliente N · Lanema España",
+   "PED 4471",
+   "PV 26/01892",
+   "5",
+   "1.840,20 €"
   ],
   [
    "Qua 23/09",
@@ -2407,13 +2835,26 @@
 }
 </script>
 
+<!-- ============ 7b. PORTAL DO CLIENTE ============ -->
+<section class="section-alt" id="portal">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Portal do cliente · a ideia da Isabel</span>
+      <h2>Quando há dúvida, o cliente escolhe. A encomenda segue sozinha para o PHC.</h2>
+      <p class="lead">Em vez de um email a pedir resposta, o cliente recebe um link só dele: vê a encomenda já lida, escolhe o que está em dúvida e confirma. Faça de cliente: abra o email e confirme a encomenda.</p>
+    </div>
+    <div class="pt" id="ptDemo" data-entra="sobe"></div>
+    <p class="pt-legenda">O Cliente D da demonstração. Link, matérias e número de encomenda ilustrativos; o portal usa as referências e os escalões do PHC de cada empresa.</p>
+  </div>
+</section>
+
 <!-- ============ 8. LIGAÇÃO AO PHC ============ -->
 <section id="phc">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">Como funciona</span>
       <h2>Do email ao PHC, com as regras que já lá estão</h2>
-      <p class="lead">A inteligência artificial lê e interpreta. As regras do PHC decidem. É a arquitetura híbrida de que falámos, e é o que torna as decisões fiáveis.</p>
+      <p class="lead">A inteligência artificial lê e interpreta. As regras do PHC decidem. Na Poly Lanema e na Lanema España, cada uma com o seu PHC, na mesma plataforma.</p>
     </div>
     <div class="fluxo" id="phcFluxo" data-entra="sobe"></div>
   </div>
@@ -2503,7 +2944,7 @@
         </ul>
       </div>
     </div>
-    <p class="limites-nota">A criação no PHC usa a API que já têm. Na auditoria confirmamos o módulo, as permissões e o caminho de conversão das propostas. Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
+    <p class="limites-nota">A criação no PHC usa a API de cada empresa. Na auditoria confirmamos, na Poly Lanema e na Lanema España, o módulo, as permissões e o caminho de conversão das propostas. Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
   </div>
 </section>
 
@@ -2549,12 +2990,11 @@
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">E a seguir</span>
-      <h2>A mesma plataforma, para o resto do grupo</h2>
-      <p class="lead">Fora do valor desta proposta. O assistente que pergunta ao PHC em português já está no protótipo, no separador Agente IA da plataforma.</p>
+      <h2>A Tecno Lanema, com a Susana</h2>
+      <p class="lead">Outro tipo de pedido, na mesma plataforma. Fica fora do valor desta proposta até conversarmos com a Susana Marques.</p>
     </div>
-    <div class="seguinte">
-      <div class="card" data-entra="sobe"><span class="n">Mesma base</span><h3>Filial de Madrid</h3><p>Mais cerca de 10.000 pedidos por ano, já em espanhol, com as regras da filial.</p></div>
-      <div class="card" data-entra="sobe"><span class="n">Mesma base</span><h3>Tecno Lanema</h3><p>Cerca de 20.000 dossiês de maquinação, com o seu próprio fluxo.</p></div>
+    <div class="seguinte seguinte--2">
+      <div class="card" data-entra="sobe"><span class="n">Reunião de 30 minutos com a Susana</span><h3>Tecno Lanema</h3><p>Desenhos técnicos de peças maquinadas: ler o número do desenho e a revisão no PDF, ir ao PHC ver se a peça já foi feita e se mudou o material.</p></div>
       <div class="card" data-entra="sobe"><span class="n">Mesma base</span><h3>Pedidos de cotação</h3><p>Da cotação à proposta, pelos escalões do PHC, antes de o pedido virar encomenda.</p></div>
     </div>
   </div>
@@ -2672,14 +3112,16 @@
     <div class="invest">
       <div class="card price-card highlight" data-entra="sobe">
         <span class="pin">Projeto completo, chave na mão</span>
-        <div class="label">Implementação</div>
-        <div class="price">10.500 € <small>+ IVA</small></div>
+        <div class="label">Implementação · Poly Lanema e Lanema España</div>
+        <div class="price">13.500 € <small>+ IVA</small></div>
         <ul class="list-check price-list">
-          <li>Auditoria aos emails e encomendas reais</li>
-          <li>Plataforma à medida, simples de usar</li>
+          <li>Auditoria aos emails e encomendas das duas empresas</li>
+          <li>Plataforma do grupo, à medida, simples de usar</li>
           <li>Leitura de PDF, corpo do email, Excel e digitalizações</li>
-          <li>Ligação ao PHC por API, emails e confirmações ao cliente</li>
-          <li>Encomendas editáveis, histórico do cliente e dashboard</li>
+          <li>Ligação aos dois PHC por API, emails e confirmações ao cliente em português e espanhol</li>
+          <li>Portal do cliente para as linhas em dúvida</li>
+          <li>Encomendas editáveis, histórico do cliente, pipeline e dashboard</li>
+          <li>Agente IA que responde sobre o PHC em português</li>
           <li>Fila das exceções e formação da equipa</li>
         </ul>
         <span class="quando">Valor fechado, pago em três momentos</span>
@@ -2687,19 +3129,19 @@
       <div class="card price-card" data-entra="sobe">
         <div class="label">Pagamento em três momentos</div>
         <ol class="tranches">
-          <li><span class="tq">Adjudicação</span><b>4.000 €</b><small>Arranca a auditoria</small></li>
-          <li><span class="tq">Início dos testes</span><b>3.500 €</b><small>A plataforma em paralelo com a equipa</small></li>
-          <li><span class="tq">Entrega</span><b>3.000 €</b><small>A plataforma a trabalhar sozinha</small></li>
+          <li><span class="tq">Adjudicação</span><b>5.000 €</b><small>Arranca a auditoria</small></li>
+          <li><span class="tq">Início dos testes</span><b>4.500 €</b><small>A plataforma em paralelo com a equipa</small></li>
+          <li><span class="tq">Entrega</span><b>4.000 €</b><small>A plataforma a trabalhar sozinha</small></li>
         </ol>
         <span class="quando">Valores + IVA</span>
       </div>
       <div class="card price-card" data-entra="sobe">
         <div class="label">Manutenção e melhoria contínua</div>
-        <div class="price">475 € <small>+ IVA / mês</small></div>
+        <div class="price">595 € <small>+ IVA / mês</small></div>
         <ul class="list-check price-list">
-          <li>Tokens de inteligência artificial incluídos, sem custo por documento</li>
+          <li>Tokens de inteligência artificial das duas empresas incluídos, sem custo por documento</li>
           <li>Alojamento da plataforma</li>
-          <li>Manutenção da ligação ao PHC</li>
+          <li>Manutenção da ligação aos dois PHC</li>
           <li>Novas regras e produtos que ela não reconheça</li>
           <li>Ajustes, melhorias e suporte</li>
         </ul>
@@ -2715,18 +3157,18 @@
     <div class="sec-head">
       <span class="eyebrow">Como arrancamos</span>
       <h2>Para 2027 começar com a plataforma a trabalhar</h2>
-      <p class="lead">Cerca de dois a três meses da adjudicação até a plataforma trabalhar sozinha.</p>
+      <p class="lead">Cerca de dois meses da adjudicação até a plataforma trabalhar sozinha. O Rui chamou-lhe prenda de Natal, e é esse o prazo.</p>
     </div>
     <div class="fases">
       <div class="fase" data-entra="sobe">
         <span class="quando">Fase 1 · cerca de 3 semanas</span>
         <h3>Auditoria</h3>
-        <p>Analisamos os emails e as encomendas reais da polilanema@ (cerca de 2.000 em três semanas), os formatos de cada cliente, as referências e as regras do PHC. É o arranque do projeto.</p>
+        <p>Analisamos os emails e as encomendas reais (cerca de 2.000 em três semanas na polilanema@, e uma amostra da Lanema España), os formatos de cada cliente, as referências e as regras de cada PHC.</p>
       </div>
       <div class="fase" data-entra="sobe">
-        <span class="quando">Fase 2 · cerca de 6 semanas</span>
+        <span class="quando">Fase 2 · em paralelo, cerca de 5 semanas</span>
         <h3>Desenvolvimento</h3>
-        <p>A plataforma, a leitura dos formatos, a ligação ao PHC por API, os emails ao cliente e a fila das exceções. Visitamos a equipa em Ovar.</p>
+        <p>Começa durante a auditoria: a plataforma, a leitura dos formatos, a ligação aos dois PHC, o portal do cliente e a fila das exceções. Visitamos a equipa em Ovar.</p>
       </div>
       <div class="fase" data-entra="sobe">
         <span class="quando">Cerca de 2 semanas</span>
@@ -2734,7 +3176,7 @@
         <p>A plataforma propõe e a equipa confirma tudo antes de entrar no PHC. Afinamos até a certeza que ela mostra ser a certeza real.</p>
       </div>
       <div class="fase alvo" data-entra="sobe">
-        <span class="quando">Depois</span>
+        <span class="quando">Antes do Natal</span>
         <h3>A trabalhar sozinha</h3>
         <p>O que passa o limite de certeza entra sozinho no PHC. O resto chega à pessoa das exceções já com a proposta feita.</p>
       </div>
@@ -2758,8 +3200,10 @@
 <script src="../shared/deck/deck.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/encomendas.js"></script>
+<script src="assets/js/portal.js"></script>
 <script>
   descodificador('dcDemo');
+  portalCliente('ptDemo');
   plataformaEncomendas('ecDemo');
   fluxo('phcFluxo');
   calculadora('contaCalc');
