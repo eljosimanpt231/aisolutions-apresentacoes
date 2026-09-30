@@ -26,5 +26,5 @@ Sem CTA, sem casos de estudo, preço no fim e só "+ IVA". Valores do resumo de 
 - Módulo 04 passa a caixa de email (componente caixaEmail em consola.js), não chat.
 - Dashboard com 5 abas (visão geral com linha 12 meses e alertas, colaboradores, serviços, cobranças por antiguidade, comercial por canal), tooltips; paleta validada com o validate_palette (dataviz).
 - Retirado o cartão "Aproveitar o que o CentralGest já faz".
-- Preço: 10.000 € + IVA (6.000 adjudicação, 4.000 início dos testes); avença 320 €/mês ou 3.600 €/ano + IVA (atualizado 30/09).
+- Preço: 10.500 € + IVA (6.000 adjudicação, 4.500 início dos testes), atualizado 30/09; avença 320 €/mês ou 3.600 €/ano + IVA (atualizado 30/09).
 - "Como arrancamos" passa para depois do investimento (pedido explícito do Diogo).
