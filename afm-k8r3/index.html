@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>AFM | A contabilidade no CentralGest, sem trabalho de mordomo</title>
+  <meta name="description" content="Proposta AI Solutions para a All Finance Matters: documentos em falta pedidos sozinhos, faturas estrangeiras lançadas no CentralGest, triagem documental, agentes de email, faturação do Stripe e dashboard de gestão.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="All Finance Matters × AI Solutions">
+  <meta property="og:description" content="O CentralGest a falar com o email, com o Stripe e com a equipa. Sem sistema novo.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/afm-k8r3/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try { var t = localStorage.getItem('ais-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/afm.css">
+  <link rel="stylesheet" href="assets/css/consola.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img src="assets/img/afm-logo.png" alt="All Finance Matters">
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#prototipo">Protótipo</a>
+    <a href="#api">API CentralGest</a>
+    <a href="#fases">Fases</a>
+    <a href="#investimento">Investimento</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <span class="eyebrow" data-acto="1" data-entra="sobe">All Finance Matters × AI Solutions · sobre o CentralGest</span>
+    <h1 data-linhas>Contabilistas a fazer contabilidade. <span class="g-brilho">O CentralGest trata do resto.</span></h1>
+    <p class="lead" data-acto="2" data-entra="sobe">
+      Os pedidos de documentos, as faturas estrangeiras, a triagem das digitalizações, as respostas repetidas e as faturas do Stripe
+      passam a correr sozinhos, ligados ao CentralGest que a equipa já usa. Sem sistema novo, sem mudar de programa.
+    </p>
+    <div class="hero-meta" data-acto="3" data-entra="sobe">
+      <span>Para <b>Ricardo Chaves</b> e <b>Alfredo da Silva</b></span>
+      <span>Seguimento da reunião de <b>24/09/2026</b></span>
+      <span>Protótipo a funcionar nesta página</span>
+    </div>
+    <div class="grid-3 hero-stats" data-acto="4" data-entra="sobe">
+      <div class="card stat-card"><div class="num">15 a 18</div><div class="desc">Caixas de email da contabilidade com agente, na primeira fase</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="6">6</span> automações</div><div class="desc">Todas em cima do CentralGest, do email e do Stripe, os sistemas que já existem</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="2">2</span> meses</div><div class="desc">Até tudo a funcionar, a começar por duas semanas de auditoria aos emails</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. RESUMO DE 30 SEGUNDOS ============ -->
+<section class="resumo" aria-label="Resumo">
+  <div class="container">
+    <div class="resumo-grid" data-entra="sobe">
+      <div><span class="k">O quê</span><p>Seis automações para a equipa de contabilidade, todas ligadas ao CentralGest pela API oficial.</p></div>
+      <div><span class="k">Por onde começa</span><p>Auditoria aos emails de toda a empresa. Nesta fase constrói-se só a parte da contabilidade.</p></div>
+      <div><span class="k">Em quanto tempo</span><p>Cerca de dois meses, com resultados visíveis logo nas primeiras semanas (Stripe e documentos em falta).</p></div>
+      <div><span class="k">Próximo passo</span><p>Ver o protótipo juntos, alinhar valores e marcar 30 minutos para rever a proposta.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 24/09</span>
+      <h2>Pessoas altamente qualificadas a fazer trabalho que não precisa delas</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>Passam a vida a enviar emails aos clientes a pedir que nos mandem as faturas.</blockquote>
+        <p>Contabilistas certificados a servir de "mordomo ao cliente", quando o CentralGest já sabe, pelo e-fatura, o que está em falta.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Há muitas faturas que não estão no e-fatura, emitidas por fornecedores internacionais.</blockquote>
+        <p>Com 99% dos clientes estrangeiros, são muitas. Hoje são introduzidas à mão.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Estas vão para o cliente A e é para o diário 4. A máquina consegue fazer isso se for ensinada.</blockquote>
+        <p>Uma pessoa digitaliza, abre a pasta e distribui documento a documento pelos clientes e pelos diários.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>A maior parte das perguntas são semelhantes e já foram respondidas para outro cliente.</blockquote>
+        <p>Rascunhos seguros, com a informação a não sair da rede da AFM, e um humano a validar o que precisa de validação.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Não passem pela cabeça ter mais um sistema para a faturação.</blockquote>
+        <p>As vendas online pagas no Stripe têm série própria no CentralGest, mas a fatura sai à mão, no departamento financeiro.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Não posso estar todos os meses a ir buscar informação ao CentralGest e depois estar a reportar.</blockquote>
+        <p>Faturação por colaborador contra custos por colaborador, cruzada em Excel. Com o CRM Contab e o Dynamics ao lado.</p>
+      </div>
+    </div>
+    <p class="sintese">Nada disto pede um programa novo. <b>Pede que o CentralGest converse com o email, com o Stripe e com a equipa.</b></p>
+  </div>
+</section>
+
+<!-- ============ 4. O QUE MUDA ============ -->
+<section id="mudanca">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que muda</span>
+      <h2>Seis tarefas que deixam de ser feitas à mão</h2>
+      <p class="lead">Cada cartão abre o módulo correspondente no protótipo.</p>
+    </div>
+    <div class="muda">
+      <div class="card" data-entra="sobe">
+        <span class="n">01 · Documentos em falta</span>
+        <h3>Os pedidos aos clientes saem sozinhos</h3>
+        <p class="antes">Emails escritos um a um, cliente a cliente, a pedir faturas.</p>
+        <p class="depois">O agente cruza o e-fatura com o que já foi recebido e envia a cada cliente a lista do que falta, no idioma e na periodicidade dele.</p>
+        <a href="#prototipo" data-abre="mod-falta">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">02 · Captura de faturas</span>
+        <h3>Faturas estrangeiras lançadas sem digitação</h3>
+        <p class="antes">Fornecedores internacionais fora do e-fatura, introduzidos à mão.</p>
+        <p class="depois">O cliente reencaminha o email ou manda uma foto. O agente lê, identifica a empresa, propõe diário, conta e IVA, e lança.</p>
+        <a href="#prototipo" data-abre="mod-captura">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">03 · Triagem documental</span>
+        <h3>A digitalização distribui-se sozinha</h3>
+        <p class="antes">Tudo cai numa pasta e alguém separa por cliente e por diário.</p>
+        <p class="depois">Cada documento vai para a empresa certa (pelo NIF do adquirente) e para o diário certo. Só o ilegível fica para uma pessoa.</p>
+        <a href="#prototipo" data-abre="mod-triagem">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">04 · Agentes de email</span>
+        <h3>As perguntas repetidas respondem-se sozinhas</h3>
+        <p class="antes">Segundas vias, prazos e "já receberam?" respondidos à mão, todos os dias.</p>
+        <p class="depois">A caixa organiza-se em pastas, o seguro é respondido na hora, o resto chega à equipa em rascunho. Aconselhamento fiscal nunca.</p>
+        <a href="#prototipo" data-abre="mod-email">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">05 · Faturação do Stripe</span>
+        <h3>Pagou, recebe a fatura em segundos</h3>
+        <p class="antes">Cada pagamento online obriga o financeiro a emitir a fatura no CentralGest.</p>
+        <p class="depois">O pagamento gera a fatura-recibo na série do Stripe, comunicada à AT pelo CentralGest e enviada ao cliente.</p>
+        <a href="#prototipo" data-abre="mod-stripe">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">06 · Dashboard de gestão</span>
+        <h3>Os números sem Excel pelo meio</h3>
+        <p class="antes">Mapas exportados do CentralGest e cruzados à mão, todos os meses.</p>
+        <p class="depois">Faturação e custo por colaborador e por serviço, com as leads do Dynamics e os clientes do CRM Contab, atualizados sozinhos.</p>
+        <a href="#prototipo" data-abre="mod-dash">Ver no protótipo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PROTÓTIPO: A CONSOLA ============ -->
+<section class="section-alt" id="prototipo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Protótipo</span>
+      <h2>Um dia na contabilidade da AFM, <span class="g-brilho">com o CentralGest a trabalhar</span></h2>
+      <p class="lead">Seis módulos, um por automação. Os que correm sozinhos arrancam quando os abre; os restantes respondem ao clique.</p>
+    </div>
+
+    <div class="consola" id="consola" data-entra="escala">
+      <div class="cg-win">
+        <div class="cg-top">
+          <img src="assets/img/centralgest-branco.png" alt="CentralGest">
+          <span class="cg-emp">AFM · All Finance Matters <small>gabinete · 6 empresas na demo</small></span>
+          <span class="cg-ais"><i></i>agentes AI Solutions ligados</span>
+        </div>
+        <div class="cg-mods" role="tablist" aria-label="Módulos">
+          <button type="button" role="tab" data-mod="mod-falta" data-titulo="Documentos em falta · lembretes aos clientes"><b>01</b>Documentos em falta</button>
+          <button type="button" role="tab" data-mod="mod-captura" data-titulo="Captura de faturas · email e WhatsApp"><b>02</b>Captura de faturas</button>
+          <button type="button" role="tab" data-mod="mod-triagem" data-titulo="Triagem documental · lote digitalizado"><b>03</b>Triagem documental</button>
+          <button type="button" role="tab" data-mod="mod-email" data-titulo="Agentes de email · caixa da contabilidade"><b>04</b>Agentes de email</button>
+          <button type="button" role="tab" data-mod="mod-stripe" data-titulo="Faturação do Stripe · série STRIPE"><b>05</b>Faturação Stripe</button>
+          <button type="button" role="tab" data-mod="mod-dash" data-titulo="Dashboard de gestão · setembro de 2026"><b>06</b>Dashboard</button>
+        </div>
+        <div class="cg-crumb"><span>Contabilidade › <b data-crumb>Documentos em falta</b></span><span class="fonte">quarta-feira, 30/09/2026</span></div>
+
+        <!-- 01 -->
+        <div class="cg-pane" id="mod-falta" role="tabpanel">
+          <p class="cg-intro">O agente compara, para cada empresa cliente, as faturas que o <b>e-fatura</b> mostra com as que já chegaram à AFM. O que falta vai num email, no idioma do cliente e na periodicidade definida para ele. Escolha uma empresa, mude o idioma ou a frequência.</p>
+          <div class="cg-body" style="padding:14px 0 0"><div id="dfDemo"></div></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="cg-pane" id="mod-captura" role="tabpanel">
+          <p class="cg-intro">Quatro documentos chegam durante a manhã, por email e por WhatsApp. Veja o agente a ler cada um, a identificar a empresa do cliente, a propor diário, conta e IVA, e a decidir: lança no CentralGest acima de 90% de certeza, pergunta abaixo. Clique num documento para o repetir.</p>
+          <div class="cg-body" style="padding:14px 0 0"><div class="fx" id="fxDemo"></div></div>
+        </div>
+
+        <!-- 03 -->
+        <div class="cg-pane" id="mod-triagem" role="tabpanel">
+          <p class="cg-intro">O lote da manhã sai do scanner para uma pasta, como hoje. Em vez de ser separado à mão, cada documento é lido e segue para a <b>empresa certa</b> (pelo NIF do adquirente), para o <b>diário certo</b> e para a pasta da Contabilidade Digital. O que não se lê com segurança fica para a pessoa da gestão documental.</p>
+          <div class="cg-body"><div id="trDemo"></div></div>
+        </div>
+
+        <!-- 04 -->
+        <div class="cg-pane" id="mod-email" role="tabpanel">
+          <p class="cg-intro">Os clientes escrevem em inglês, francês ou português, e o agente responde na mesma língua. Responde sozinho ao que é seguro, prepara rascunho quando há números a confirmar e <b>nunca dá aconselhamento fiscal</b>: aí passa a quem sabe.</p>
+          <div class="cg-body">
+            <div class="cr" id="crDemo"></div>
+            <div class="pastas"><span class="pastas-k">Pastas criadas sozinhas</span><span class="pasta">Documentos recebidos<b>214</b></span><span class="pasta">IVA e prazos<b>63</b></span><span class="pasta">2.ª vias e faturação AFM<b>41</b></span><span class="pasta">IRS<b>38</b></span><span class="pasta">Aconselhamento, para o sócio<b>12</b></span><span class="pasta">Urgente<b>5</b></span></div>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="cg-pane" id="mod-stripe" role="tabpanel">
+          <p class="cg-intro">Um cliente compra um serviço no site da AFM e paga no Stripe. O Stripe avisa no próprio segundo; a fatura-recibo é criada na <b>série do Stripe</b> no CentralGest, comunicada à AT pelo próprio CentralGest e enviada ao cliente. O financeiro só vê o resumo do dia.</p>
+          <div class="cg-body">
+            <div class="st">
+              <div>
+                <div class="st-pay"><span class="ic">S</span><b>Pagamento recebido · Stripe Checkout</b><span class="v">350,00 €</span><small>Michael O'Brien · Irlanda · "Fiscal Representation, 12 months"</small></div>
+                <div class="term" id="stTerm"></div>
+              </div>
+              <div class="st-doc" aria-label="Fatura-recibo gerada">
+                <div class="st-doc-head">
+                  <div><img src="assets/img/afm-logo.png" alt="AFM"><div class="m">AFM All Finance Matters Unipessoal, Lda.<br>Rua Detrás dos Álamos 1B, 8800-604 Tavira</div></div>
+                  <div class="st-doc-t"><b>Fatura-recibo</b><span>FR STRIPE/2026/148</span><span>30/09/2026</span></div>
+                </div>
+                <div class="st-doc-cli"><span>Cliente</span> Michael O'Brien · Dublin, Irlanda · consumidor final</div>
+                <table>
+                  <thead><tr><th>Descrição</th><th class="n">Qtd.</th><th class="n">Preço</th><th class="n">Total</th></tr></thead>
+                  <tbody><tr><td>Fiscal Representation, 12 months</td><td class="n">1</td><td class="n">284,55</td><td class="n">284,55</td></tr></tbody>
+                </table>
+                <div class="st-doc-tot">
+                  <div><span>Base</span><b>284,55 €</b></div>
+                  <div><span>IVA 23%</span><b>65,45 €</b></div>
+                  <div class="t"><span>Total pago</span><b>350,00 €</b></div>
+                </div>
+                <div class="st-doc-foot"><span>Pago por cartão · Stripe</span><span>ATCUD: JF7Q2K9M-148</span><span>Processado por programa certificado (CentralGest)</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="cg-pane" id="mod-dash" role="tabpanel">
+          <p class="cg-intro">Um só painel com os dados dos três sistemas: a faturação e os custos do <b>CentralGest</b>, as leads do <b>Dynamics</b> e os clientes do <b>CRM Contab</b>. Atualiza-se sozinho; troque a vista entre colaborador e serviço.</p>
+          <div class="cg-body"><div id="pgDemo"></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="cg-legenda">
+      <span>Empresas, pessoas, NIF, fornecedores, números de documento e valores são fictícios.</span>
+      <span>Diários, contas e pastas ilustrativos: na auditoria usamos os da AFM.</span>
+    </p>
+  </div>
+</section>
+
+<!-- configs dos módulos -->
+<script type="application/json" id="dfDemo-config">
+{
+  "totalEmpresas": "as empresas da carteira",
+  "mes": { "en": "September", "pt": "setembro", "fr": "septembre" },
+  "freqs": {
+    "semanal": { "label": "Semanal", "proximo": "terça-feira, 6/10, às 9h00", "nota": "segunda, 5/10, é feriado" },
+    "quinzenal": { "label": "Quinzenal", "proximo": "terça-feira, 13/10, às 9h00", "nota": "" },
+    "mensal": { "label": "Mensal", "proximo": "segunda-feira, 2/11, às 9h00", "nota": "primeiro dia útil do mês" }
+  },
+  "i18n": {
+    "en": {
+      "subject": "{empresa}: invoices missing for {m}",
+      "subjectOk": "All {m} documents received, thank you",
+      "hi": "Hi {nome},",
+      "intro": "We checked e-fatura for {empresa} and {n} invoice(s) from {m} have not reached us yet:",
+      "cols": ["Supplier", "Date", "Invoice", "Total"],
+      "how": "You can reply to this email with the documents attached, or send a photo of each one to our WhatsApp. No need to scan.",
+      "allOk": "Everything from {m} has arrived. Nothing else is needed for now.",
+      "bye": "Kind regards,",
+      "sign": "AFM · Accounting team"
+    },
+    "pt": {
+      "subject": "{empresa}: faturas em falta de {m}",
+      "subjectOk": "Documentos de {m} recebidos, obrigado",
+      "hi": "Olá {nome},",
+      "intro": "Consultámos o e-fatura da {empresa} e ainda não recebemos {n} fatura(s) de {m}:",
+      "cols": ["Fornecedor", "Data", "Fatura", "Total"],
+      "how": "Pode responder a este email com os documentos em anexo, ou enviar uma fotografia de cada um para o nosso WhatsApp. Não é preciso digitalizar.",
+      "allOk": "Recebemos tudo de {m}. Por agora não precisamos de mais nada.",
+      "bye": "Com os melhores cumprimentos,",
+      "sign": "AFM · Equipa de contabilidade"
+    },
+    "fr": {
+      "subject": "{empresa} : factures manquantes de {m}",
+      "subjectOk": "Tous les documents de {m} reçus, merci",
+      "hi": "Bonjour {nome},",
+      "intro": "Nous avons consulté l'e-fatura de {empresa} : {n} facture(s) de {m} ne nous sont pas encore parvenues :",
+      "cols": ["Fournisseur", "Date", "Facture", "Total"],
+      "how": "Vous pouvez répondre à cet e-mail avec les documents en pièce jointe, ou envoyer une photo de chacun sur notre WhatsApp. Pas besoin de scanner.",
+      "allOk": "Tout est arrivé pour {m}. Nous n'avons besoin de rien d'autre pour le moment.",
+      "bye": "Bien cordialement,",
+      "sign": "AFM · Équipe comptable"
+    }
+  },
+  "clients": [
+    { "company": "Algarve Sun Rentals, Lda.", "owner": "Pieter de Vries", "first": "Pieter", "email": "pieter@algarvesun.nl", "lang": "en", "langName": "inglês", "freq": "semanal", "efatura": 19,
+      "missing": [["Energia Sul, S.A.", "04/09/2026", "FT 2026/88412", "64,20 €"], ["Ferragens Tavira, Lda.", "11/09/2026", "FT A/3321", "118,90 €"], ["Telecom Algarve, S.A.", "15/09/2026", "FT 9/77120", "45,99 €"], ["Lavandaria Ria Formosa", "18/09/2026", "FS 1/2045", "212,40 €"], ["Águas do Sotavento", "22/09/2026", "FT 26/10934", "38,17 €"], ["Piscinas Castro, Lda.", "25/09/2026", "FT 2026/551", "95,94 €"]] },
+    { "company": "Casa Azul Tavira, Lda.", "owner": "Emma Clarke", "first": "Emma", "email": "emma@casaazultavira.com", "lang": "en", "langName": "inglês", "freq": "quinzenal", "efatura": 11,
+      "missing": [["Energia Sul, S.A.", "03/09/2026", "FT 2026/87102", "71,35 €"], ["Limpezas Gilão, Lda.", "12/09/2026", "FT 2026/318", "184,50 €"], ["Leroy Obras Algarve, S.A.", "19/09/2026", "FT 44/10288", "326,12 €"], ["Telecom Algarve, S.A.", "20/09/2026", "FT 9/76544", "39,99 €"]] },
+    { "company": "Le Petit Jardin, Unipessoal Lda.", "owner": "Sophie Laurent", "first": "Sophie", "email": "sophie@lepetitjardin.fr", "lang": "fr", "langName": "francês", "freq": "mensal", "efatura": 8,
+      "missing": [["Viveiros do Sul, Lda.", "09/09/2026", "FT V/1187", "147,60 €"], ["Combustíveis Castro Marim", "21/09/2026", "FS 3/88410", "62,00 €"]] },
+    { "company": "Nordic Coast Consulting, Lda.", "owner": "Lars Nilsson", "first": "Lars", "email": "lars@nordiccoast.se", "lang": "en", "langName": "inglês", "freq": "quinzenal", "efatura": 14,
+      "missing": [["Papelaria Central Faro", "02/09/2026", "FT 2026/901", "23,85 €"], ["Restaurante O Pescador", "17/09/2026", "FS 1/2188", "54,00 €"], ["Rent-a-Car Sotavento", "24/09/2026", "FT RC/4410", "189,00 €"]] },
+    { "company": "Quinta das Oliveiras Turismo, Lda.", "owner": "João Mendes", "first": "João", "email": "joao@quintadasoliveiras.pt", "lang": "pt", "langName": "português", "freq": "semanal", "efatura": 22,
+      "missing": [["Gás Algarve, S.A.", "28/09/2026", "FT G/20931", "88,40 €"]] },
+    { "company": "Brightwave Digital, Unipessoal Lda.", "owner": "Aoife Byrne", "first": "Aoife", "email": "aoife@brightwave.ie", "lang": "en", "langName": "inglês", "freq": "mensal", "efatura": 6,
+      "missing": [] }
+  ]
+}
+</script>
+
+<script type="application/json" id="fxDemo-config">
+{
+  "windowTitle": "Captura de faturas",
+  "mailbox": "documentos AFM · email e WhatsApp",
+  "agentName": "Agente de documentos",
+  "threshold": 90,
+  "pauseMs": 3600,
+  "docs": [
+    {
+      "mail": { "from": "Emma Clarke · Casa Azul Tavira", "time": "08:52", "subject": "StayBook invoice, September", "clip": "PDF",
+        "body": "Hi! Here's the StayBook invoice for September. Thanks, Emma. **Fornecedor holandês: não vai aparecer no e-fatura.**" },
+      "doc": { "supplier": "StayBook B.V.", "addr": "Herengracht 480, Amsterdam, Netherlands", "nif": "VAT NL 8•••••••B01",
+        "title": "Invoice", "number": "SB-2026-PT-99813", "date": "30/09/2026", "client": "Casa Azul Tavira, Lda. · VAT PT 5•• ••• 318", "ref": "Commission, September 2026",
+        "lines": [["Commission on 14 reservations, Sep 2026", "1", "612,40", "612,40"]],
+        "base": "612,40 €", "vatLabel": "VAT 0%", "vat": "0,00 €", "total": "612,40 €",
+        "note": "Reverse charge: VAT to be accounted for by the recipient (art. 196, Directive 2006/112/EC)." },
+      "read": [["Fornecedor", "StayBook B.V. (Países Baixos)", "fornecedor"], ["NIF", "NL 8•••••••B01", "nif"], ["Número", "SB-2026-PT-99813", "numero"], ["Data", "30/09/2026", "data"], ["Adquirente", "Casa Azul Tavira, PT 5•• ••• 318", "ref"], ["Base", "612,40 €", "base"], ["IVA", "0% · autoliquidação", "nota"], ["Total", "612,40 €", "total"]],
+      "classify": [
+        { "k": "Empresa cliente", "v": "Casa Azul Tavira, Lda.", "c": 99, "why": "NIF do adquirente na fatura e remetente conhecido" },
+        { "k": "Diário", "v": "Compras", "c": 97, "why": "Fatura de fornecedor, serviço adquirido" },
+        { "k": "Conta", "v": "6225 · Comissões", "c": 96, "why": "Igual às 8 faturas StayBook anteriores desta empresa" },
+        { "k": "IVA", "v": "Autoliquidação 23% · serviços intracomunitários", "c": 95, "why": "Menção de reverse charge e regra da AFM para plataformas" }
+      ],
+      "certainty": 95,
+      "outcome": { "kind": "ok", "title": "Lançada no CentralGest às 08:53",
+        "lines": ["Empresa **Casa Azul Tavira** · diário **Compras** · conta **6225**", "Autoliquidação: **140,85 €** de IVA liquidado e dedutível", "PDF anexado ao lançamento na Contabilidade Digital"] }
+    },
+    {
+      "mail": { "from": "WhatsApp · Lars Nilsson", "time": "11:20", "subject": "Foto: almoço com cliente", "clip": "FOTO",
+        "body": "Lunch with a client today. **Foto tirada ao talão no restaurante.**" },
+      "doc": { "supplier": "Restaurante O Pescador, Lda.", "addr": "Rua do Cais 12, Tavira", "nif": "NIF 5•• ••• 604",
+        "title": "Fatura simplificada", "number": "FS 1/2211", "date": "30/09/2026", "client": "Nordic Coast Consulting, Lda. · NIF 5•• ••• 552", "ref": "",
+        "lines": [["Menu do dia", "2", "13,27", "26,54"], ["Sobremesas e cafés", "1", "7,97", "7,97"]],
+        "base": "34,51 €", "vatLabel": "IVA 13%", "vat": "4,49 €", "total": "39,00 €",
+        "note": "QR code ATCUD JJ3K7M2P-2211 · comunicado à AT" },
+      "read": [["Fornecedor", "Restaurante O Pescador", "fornecedor"], ["NIF", "5•• ••• 604", "nif"], ["Número", "FS 1/2211", "numero"], ["Data", "30/09/2026", "data"], ["Adquirente", "Nordic Coast, NIF 5•• ••• 552", "ref"], ["Base", "34,51 €", "base"], ["IVA", "4,49 € (13%)", "iva"], ["QR code", "válido · vai estar no e-fatura", "nota"]],
+      "classify": [
+        { "k": "Empresa cliente", "v": "Nordic Coast Consulting, Lda.", "c": 99, "why": "NIF no QR code e número de WhatsApp associado" },
+        { "k": "e-fatura", "v": "Já comunicada pelo restaurante", "c": 100, "why": "Não se lança à parte: associa-se quando o e-fatura sincronizar" },
+        { "k": "Conta", "v": "6268 · Despesas de representação", "c": 93, "why": "O cliente escreveu: almoço com um cliente" },
+        { "k": "IVA", "v": "Não dedutível (art. 21.º CIVA)", "c": 96, "why": "Regra da AFM para despesas de representação" }
+      ],
+      "certainty": 93,
+      "outcome": { "kind": "fut", "title": "Guardada e associada ao e-fatura",
+        "lines": ["Não entra em duplicado: fica **à espera da linha do e-fatura**", "Imagem na Contabilidade Digital da Nordic Coast", "Resposta no WhatsApp: **Got it, thanks Lars!**"] }
+    },
+    {
+      "mail": { "from": "Pieter de Vries · Algarve Sun", "time": "12:07", "subject": "Fwd: Invoice INV-0457 website", "clip": "PDF",
+        "body": "Forwarding the web designer's invoice. **Fornecedor do Reino Unido, em libras.**" },
+      "doc": { "supplier": "Harbour Design Studio Ltd", "addr": "12 Wharf Road, London, United Kingdom", "nif": "Company no. 1•••••48",
+        "title": "Invoice", "number": "INV-0457", "date": "22/09/2026", "client": "Mr Pieter de Vries", "ref": "Website redesign",
+        "lines": [["Website redesign and booking pages", "1", "£1,250.00", "£1,250.00"]],
+        "base": "£1,250.00", "vatLabel": "VAT", "vat": "outside scope", "total": "£1,250.00",
+        "note": "Service supplied to a customer outside the UK: outside the scope of UK VAT." },
+      "read": [["Fornecedor", "Harbour Design Studio (Reino Unido)", "fornecedor"], ["Registo", "Company no. 1•••••48", "nif"], ["Número", "INV-0457", "numero"], ["Data", "22/09/2026", "data"], ["Adquirente", "Pieter de Vries (pessoa, sem NIF)", "ref"], ["Base", "£1,250.00 (em libras)", "base"], ["IVA", "fora do âmbito no Reino Unido", "iva"], ["Total", "£1,250.00", "total"]],
+      "classify": [
+        { "k": "Empresa cliente", "v": "Algarve Sun Rentals, Lda. (pelo remetente)", "c": 68, "why": "A fatura está em nome do sócio, não da empresa, e não tem NIF" },
+        { "k": "Conta", "v": "Gasto 6221 ou ativo intangível?", "c": 71, "why": "Redesign do site: a decisão é do contabilista" },
+        { "k": "IVA", "v": "Autoliquidação 23% · serviço de fora da UE", "c": 90, "why": "Prestador sem estabelecimento em Portugal" },
+        { "k": "Câmbio", "v": "Libras para euros, câmbio BCE de 22/09", "c": 99, "why": "Regra da AFM para faturas em moeda estrangeira" }
+      ],
+      "certainty": 68,
+      "outcome": { "kind": "val", "title": "Enviada ao contabilista responsável",
+        "lines": ["Duas dúvidas: **fatura em nome do sócio** e **gasto ou ativo**", "Proposta já preparada, com o valor convertido em euros", "Se preciso, o agente pede ao cliente uma fatura em nome da empresa"] }
+    },
+    {
+      "mail": { "from": "WhatsApp · Emma Clarke", "time": "14:31", "subject": "Foto: StayBook invoice", "clip": "FOTO",
+        "body": "Did you get this one? **A mesma fatura da manhã, agora em fotografia.**" },
+      "doc": { "supplier": "StayBook B.V.", "addr": "Herengracht 480, Amsterdam, Netherlands", "nif": "VAT NL 8•••••••B01",
+        "title": "Invoice", "number": "SB-2026-PT-99813", "date": "30/09/2026", "client": "Casa Azul Tavira, Lda. · VAT PT 5•• ••• 318", "ref": "Commission, September 2026",
+        "lines": [["Commission on 14 reservations, Sep 2026", "1", "612,40", "612,40"]],
+        "base": "612,40 €", "vatLabel": "VAT 0%", "vat": "0,00 €", "total": "612,40 €" },
+      "read": [["Fornecedor", "StayBook B.V. (Países Baixos)", "fornecedor"], ["NIF", "NL 8•••••••B01", "nif"], ["Número", "SB-2026-PT-99813", "numero"], ["Data", "30/09/2026", "data"], ["Adquirente", "Casa Azul Tavira", "ref"], ["Base", "612,40 €", "base"], ["IVA", "0% · autoliquidação", "iva"], ["Total", "612,40 €", "total"]],
+      "classify": [
+        { "k": "Verificação de duplicados", "v": "Mesmo fornecedor, número e valor já lançados", "c": 100, "why": "SB-2026-PT-99813 entrou hoje às 08:53", "tone": "bad" },
+        { "k": "Diário, conta e IVA", "v": "Não classificada", "c": 0, "why": "Não se lança o que já está lançado", "tone": "bad" }
+      ],
+      "certainty": null,
+      "outcome": { "kind": "block", "title": "Bloqueada: fatura duplicada",
+        "lines": ["**Não entra no CentralGest** (seria lançada duas vezes)", "Resposta no WhatsApp: **Yes Emma, we got it this morning.**", "Fica no resumo do dia do contabilista"] }
+    }
+  ]
+}
+</script>
+
+<script type="application/json" id="trDemo-config">
+{
+  "lote": "Lote digitalizado de 30/09, 08:47 · 9 documentos",
+  "origem": "Scanner da receção → pasta de entrada, como hoje",
+  "nota": "Numeração de diários ilustrativa.",
+  "rows": [
+    { "file": "scan_0930_001.pdf", "tipo": "Fatura de fornecedor", "empresa": "Quinta das Oliveiras Turismo", "diario": "2 · Compras", "destino": "Contab. Digital › Compras › 2026-09" },
+    { "file": "scan_0930_002.pdf", "tipo": "Fatura de venda (emitida)", "empresa": "Le Petit Jardin", "diario": "1 · Vendas", "destino": "Contab. Digital › Vendas › 2026-09" },
+    { "file": "scan_0930_003.pdf", "tipo": "Extrato bancário", "empresa": "Algarve Sun Rentals", "diario": "3 · Bancos", "destino": "Contab. Digital › Bancos › 2026-09" },
+    { "file": "scan_0930_004.pdf", "tipo": "Talão de combustível", "empresa": "Nordic Coast Consulting", "diario": "2 · Compras", "destino": "Contab. Digital › Compras › 2026-09" },
+    { "file": "scan_0930_005.pdf", "tipo": "Recibo de renda", "empresa": "Casa Azul Tavira", "diario": "5 · Operações diversas", "destino": "Contab. Digital › Diversos › 2026-09" },
+    { "file": "scan_0930_006.pdf", "tipo": "Talão sem NIF legível", "empresa": "Duas empresas possíveis", "diario": "por decidir", "destino": "Gestão documental decide", "estado": "val" },
+    { "file": "scan_0930_007.pdf", "tipo": "Fatura de fornecedor", "empresa": "Brightwave Digital", "diario": "2 · Compras", "destino": "Contab. Digital › Compras › 2026-09" },
+    { "file": "scan_0930_008.pdf", "tipo": "Carta das Finanças", "empresa": "Quinta das Oliveiras Turismo", "diario": "não contabilístico", "destino": "Correspondência + aviso ao contabilista", "estado": "fut" },
+    { "file": "scan_0930_009.pdf", "tipo": "Nota de crédito", "empresa": "Algarve Sun Rentals", "diario": "2 · Compras", "destino": "Contab. Digital › Compras › 2026-09" }
+  ]
+}
+</script>
+
+<script type="application/json" id="crDemo-config">
+{
+  "agentName": "Assistente AFM",
+  "agentInitials": "AF",
+  "chatStatus": "Email · caixa da contabilidade",
+  "stepMs": 1350,
+  "endPauseMs": 2800,
+  "scenarios": [
+    {
+      "title": "Segunda via, em francês",
+      "subtitle": "Pedido simples: o agente encontra a fatura no CentralGest e responde sozinho, na língua da cliente.",
+      "chat": [
+        { "sender": "client", "text": "Bonjour, pourriez-vous me renvoyer la facture de vos honoraires de septembre ? Ma banque la demande. Merci, Sophie", "time": "09:02" },
+        { "sender": "system", "text": "Pasta: 2.ª vias e faturação AFM", "time": "09:02" },
+        { "sender": "agent", "text": "Bonjour Sophie, voici la facture **FT A/2026/1184** de nos honoraires de septembre, en pièce jointe. Bonne journée ! L'équipe comptable AFM", "time": "09:03" }
+      ],
+      "steps": [
+        { "icon": "id", "label": "Reconhece a Sophie Laurent, Le Petit Jardin" },
+        { "icon": "database", "label": "Procura no CentralGest a fatura de avença de setembro" },
+        { "icon": "send", "label": "Anexa o PDF e responde em francês, sem intervenção" }
+      ]
+    },
+    {
+      "title": "Já receberam tudo?",
+      "subtitle": "O agente confere o que chegou contra o e-fatura e diz exatamente o que falta.",
+      "chat": [
+        { "sender": "client", "text": "Hi, I sent all the September receipts last week. Is anything still missing? Pieter", "time": "10:14" },
+        { "sender": "system", "text": "e-fatura: 19 faturas · recebidas: 13", "time": "10:14" },
+        { "sender": "agent", "text": "Hi Pieter, thank you! We have 13 of the 19 invoices for September. Still missing: **Energia Sul** (FT 2026/88412), **Ferragens Tavira** (FT A/3321), **Telecom Algarve** (FT 9/77120) and 3 more, listed below. A photo on WhatsApp is enough.", "time": "10:15" },
+        { "sender": "client", "text": "Great, sending them tonight.", "time": "10:22" }
+      ],
+      "steps": [
+        { "icon": "search", "label": "Consulta o e-fatura da Algarve Sun Rentals no CentralGest" },
+        { "icon": "list", "label": "Compara com os documentos já recebidos" },
+        { "icon": "send", "label": "Responde com a lista exata, em inglês" },
+        { "icon": "calendar", "label": "Adia o lembrete automático: o cliente já disse quando envia" }
+      ]
+    },
+    {
+      "title": "Prazo do IVA: rascunho para validar",
+      "subtitle": "Há um valor em jogo: o agente prepara a resposta, mas quem a envia é a contabilista.",
+      "chat": [
+        { "sender": "client", "text": "When do I have to pay the VAT for this quarter, and roughly how much will it be? Lars", "time": "11:40" },
+        { "sender": "system", "text": "Rascunho criado para a contabilista responsável", "time": "11:41" },
+        { "sender": "system", "text": "Validado e enviado às 12:05", "time": "12:05" },
+        { "sender": "agent", "text": "Hi Lars, the VAT return for July to September is due by **20 November** and the payment by **25 November**. We will confirm the amount once September is closed, next week.", "time": "12:05" }
+      ],
+      "steps": [
+        { "icon": "database", "label": "Lê no CentralGest o regime de IVA da Nordic Coast: trimestral" },
+        { "icon": "calendar", "label": "Calcula os prazos do 3.º trimestre" },
+        { "icon": "shield", "label": "Valor estimado: não sai sem a contabilista, fica em rascunho" },
+        { "icon": "check", "label": "Enviado depois da validação" }
+      ]
+    },
+    {
+      "title": "Aconselhamento fiscal: passa ao sócio",
+      "subtitle": "Recusa consciente: o agente nunca aconselha. Agradece, dá um prazo e entrega o caso resumido a quem decide.",
+      "chat": [
+        { "sender": "client", "text": "We're moving to Portugal next year. Should my husband apply for IFICI, and would his Swedish pension be taxed here?", "time": "15:12" },
+        { "sender": "system", "text": "Aconselhamento fiscal: não responde", "time": "15:12" },
+        { "sender": "agent", "text": "Thank you for your message. This needs one of our tax advisers, and I've passed it on with your details. You'll hear from us by **Friday, 2 October**.", "time": "15:13" },
+        { "sender": "system", "text": "Encaminhado: consultoria internacional, com resumo", "time": "15:13" }
+      ],
+      "steps": [
+        { "icon": "brain", "label": "Deteta um pedido de aconselhamento (IFICI, pensões)" },
+        { "icon": "ban", "label": "Regra da AFM: o agente nunca dá opinião fiscal" },
+        { "icon": "message", "label": "Responde a agradecer e dá um prazo concreto" },
+        { "icon": "user-cog", "label": "Entrega o caso à consultoria internacional, já resumido" }
+      ]
+    }
+  ]
+}
+</script>
+
+<script type="application/json" id="stTerm-config">
+{
+  "title": "stripe-centralgest.log · 30/09/2026",
+  "intervalMs": 700,
+  "lines": [
+    { "text": "09:14:02  Stripe: pagamento concluído, 350,00 EUR, Fiscal Representation 12 months", "tone": "info" },
+    { "text": "09:14:02  Cliente procurado no CentralGest pelo email: não existe", "tone": "info" },
+    { "text": "09:14:03  Ficha criada: Michael O'Brien, Irlanda, consumidor final", "tone": "ok" },
+    { "text": "09:14:03  Série STRIPE · fatura-recibo FR STRIPE/2026/148", "tone": "ok" },
+    { "text": "09:14:04  Base 284,55 EUR + IVA 23% 65,45 EUR = 350,00 EUR (bate com o Stripe)", "tone": "ok" },
+    { "text": "09:14:05  Comunicada à AT pelo CentralGest · ATCUD JF7Q2K9M-148", "tone": "ok" },
+    { "text": "09:14:06  PDF enviado ao cliente: \"Your AFM invoice\"", "tone": "success" },
+    { "text": "09:20:41  Reembolso no Stripe (pagamento de 28/09): nota de crédito não é automática, aviso ao financeiro", "tone": "warn" },
+    { "text": "18:00:00  Resumo do dia ao financeiro: 6 faturas emitidas, 1 reembolso por tratar", "tone": "success" }
+  ]
+}
+</script>
+
+<script type="application/json" id="pgDemo-config">
+{
+  "periodo": "setembro de 2026 · atualizado hoje às 07:00",
+  "kpis": [
+    { "fonte": "CentralGest", "valor": "68.420 €", "label": "Faturação do mês" },
+    { "fonte": "Dynamics", "valor": "312", "label": "Leads novas no mês" },
+    { "fonte": "Dynamics + CentralGest", "valor": "19 €", "label": "Custo por lead" },
+    { "fonte": "CRM Contab", "valor": "1.284", "label": "Clientes ativos" }
+  ],
+  "vistas": [
+    { "id": "colab", "label": "Por colaborador", "titulo": "Faturação e custo por colaborador", "custoLabel": "Custo (salários no CentralGest)",
+      "nota": "Faturação por vendedor atribuído a cada fatura; custo a partir do processamento de salários. Nomes fictícios.",
+      "linhas": [["A. Ribeiro · Contabilidade", 9800, 3900], ["M. Costa · Contabilidade", 8600, 3700], ["T. Sousa · IRS", 12400, 3400], ["R. Lopes · Consultoria internacional", 14900, 4300], ["C. Martins · Alojamento local", 7200, 3100], ["J. Pires · Representação fiscal", 4100, 3300]] },
+    { "id": "serv", "label": "Por serviço", "titulo": "Faturação e custo por serviço", "custoLabel": "Custo (horas da equipa)",
+      "nota": "Linhas de serviço lidas das famílias de artigos no CentralGest. Valores fictícios.",
+      "linhas": [["Contabilidade de empresas", 21600, 11800], ["IRS de não residentes", 16300, 6100], ["Consultoria internacional", 14900, 4300], ["Alojamento local", 9400, 5200], ["Representação fiscal", 6220, 4700]] }
+  ]
+}
+</script>
+
+<!-- ============ 6. FLUXO ============ -->
+<section id="fluxo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como se liga</span>
+      <h2>O CentralGest continua no centro. O agente trabalha à volta dele.</h2>
+    </div>
+    <div class="fluxo" id="fxFluxo" data-entra="sobe"></div>
+  </div>
+</section>
+<script type="application/json" id="fxFluxo-config">
+{
+  "stepMs": 1800,
+  "channels": [
+    { "icon": "message", "label": "Emails dos clientes" },
+    { "icon": "whatsapp", "label": "Fotos por WhatsApp" },
+    { "icon": "book", "label": "Scanner da receção" },
+    { "icon": "globe", "label": "Pagamentos Stripe" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Chega um pedido ou documento", "detail": "Pelos canais que os clientes já usam.", "tone": "brand" },
+    { "icon": "id", "title": "Identifica a empresa", "detail": "Pelo NIF, pelo email ou pelo número de telefone.", "tone": "teal" },
+    { "icon": "database", "title": "Consulta o CentralGest", "detail": "e-fatura, documentos, séries, regime de IVA, histórico.", "tone": "teal" },
+    { "icon": "shield", "title": "Decide", "detail": "Seguro e acima de 90%: faz. Abaixo, ou fiscal: pergunta.", "tone": "teal" },
+    { "icon": "check", "title": "Regista e responde", "detail": "Lança, emite, arquiva e responde ao cliente.", "tone": "brand" }
+  ],
+  "note": "A informação dos clientes fica nos sistemas da AFM. O agente lê e escreve pela API oficial do CentralGest, com um utilizador próprio e permissões que a AFM controla."
+}
+</script>
+
+<!-- ============ 7. A API DO CENTRALGEST ============ -->
+<section class="section-alt" id="api">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Validação técnica</span>
+      <h2>Fomos ver a API do CentralGest antes de vos mostrar isto</h2>
+      <p class="lead">Na reunião ficou a dúvida: o CentralGest deixa? Pedimos o acesso à CentralGest, recebemos a documentação e o acesso à versão de demonstração, e testámos. Esta é a correspondência de cada automação com a API.</p>
+    </div>
+    <div class="api-top">
+      <div class="card" data-entra="sobe"><b>2.159</b><span>Operações documentadas na API REST do CentralGest, de contabilidade a faturação, e-fatura e gestão documental</span></div>
+      <div class="card" data-entra="sobe"><b>6 de 6</b><span>Automações com operações correspondentes na API, verificadas na documentação oficial</span></div>
+      <div class="card" data-entra="sobe"><b>Parceria</b><span>A AI Solutions é parceira da CentralGest: a CentralGest dá o acesso e o suporte técnico, o desenvolvimento é nosso</span></div>
+    </div>
+    <div class="api-t-wrap" data-entra="sobe">
+      <table class="api-t">
+        <thead><tr><th>Automação</th><th>O que usamos no CentralGest</th><th>Operações da API</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td>Documentos em falta</td><td>Verificação de e-faturas por empresa e documentos da contabilidade sem documento digital</td><td><code>verificaEFaturas</code> <code>contabilidadedigital/documents/semdocsdigital</code></td><td><span class="api-ok">Na API</span></td></tr>
+          <tr><td>Captura de faturas</td><td>Documentos da Contabilidade Digital (com OCR), documentos de contabilidade com PDF anexo e diário</td><td><code>contabilidadedigital/documents</code> <code>docscontabilidade</code> <code>diarios</code></td><td><span class="api-ok">Na API</span></td></tr>
+          <tr><td>Triagem documental</td><td>Estrutura de pastas por empresa, mover documentos de pasta, empresas do gabinete</td><td><code>contabilidadedigital/folderstructure</code> <code>movedocsfolder</code> <code>empresas</code></td><td><span class="api-ok">Na API</span></td></tr>
+          <tr><td>Agentes de email</td><td>Faturas de avença e PDF, regime de IVA e ficha de cada empresa cliente</td><td><code>docscomerciais/{id}/pdf</code> <code>empresas/{n}/periodosIVA</code></td><td><span class="api-ok">Na API</span></td></tr>
+          <tr><td>Faturação Stripe</td><td>Criar documento numa série, comunicar à AT por webservice, enviar o PDF por email</td><td><code>docscomerciais</code> <code>docfasnums</code> <code>faturaswebserviceat</code></td><td><span class="api-ok">Na API</span></td></tr>
+          <tr><td>Dashboard de gestão</td><td>Estatísticas de documentos por vendedor e por artigo, vendedores, processamento de salários</td><td><code>docscomerciaisestatisticas</code> <code>vendedores</code></td><td><span class="api-ok">Na API</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="api-notas">
+      <div class="card holofote" data-entra="sobe">
+        <h3>Sem avisos de eventos: consultas regulares</h3>
+        <p>A API documentada não envia notificações de eventos (webhooks). O agente consulta-a em intervalos curtos (minutos). No Stripe é o contrário: o aviso chega no próprio segundo do pagamento.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>Aproveitar o que o CentralGest já faz</h3>
+        <p>A Contabilidade Digital tem OCR e um robô de lançamento próprio. Onde a licença da AFM o incluir, o agente entrega lá os documentos em vez de duplicar, e trata do que o robô não vê: email, WhatsApp, estrangeiros e a empresa certa.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>O que falta para arrancar</h3>
+        <p>A CentralGest analisa cada integração: preenchemos o questionário técnico deles e ativamos o acesso à instância da AFM, com um utilizador próprio para os agentes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. LIMITES ============ -->
+<section id="regras">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Limites claros</span>
+      <h2>O que os agentes fazem sozinhos e o que fica sempre com a equipa</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Sozinhos</h3>
+        <ul class="list-check">
+          <li>Pedir aos clientes os documentos em falta, no idioma e na frequência de cada um</li>
+          <li>Ler faturas de email, WhatsApp e scanner, e lançar as que passam os 90% de certeza</li>
+          <li>Distribuir as digitalizações por empresa, diário e pasta</li>
+          <li>Responder a segundas vias, pedidos de estado e dúvidas já respondidas antes</li>
+          <li>Emitir a fatura dos pagamentos do Stripe na série própria</li>
+        </ul>
+      </div>
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Sempre com a equipa</h3>
+        <ul class="list-x">
+          <li>Qualquer aconselhamento fiscal, sem exceção</li>
+          <li>Valores de impostos a pagar, antes de o contabilista confirmar</li>
+          <li>Faturas abaixo de 90%, em nome de outra pessoa ou com dúvida de tratamento</li>
+          <li>Notas de crédito e reembolsos</li>
+          <li>O fecho, as declarações e a responsabilidade do contabilista certificado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. FASES ============ -->
+<section class="section-alt" id="fases">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Auditar a empresa toda, construir primeiro para a contabilidade</h2>
+      <p class="lead">Cerca de dois meses. Prazos indicativos, fechados na auditoria.</p>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 1 e 2</span>
+        <h3>Auditoria</h3>
+        <p>Emails de todas as caixas desde janeiro: perguntas mais frequentes, o que se pode automatizar e o que não. Mapeamento dos processos da contabilidade e acesso à API.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 3 e 4</span>
+        <h3>Ganhos rápidos</h3>
+        <p>Faturação do Stripe e documentos em falta: as duas automações que se sentem logo no dia a dia.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 4 a 6</span>
+        <h3>Documentos</h3>
+        <p>Captura de faturas por email e WhatsApp, estrangeiras incluídas, e triagem das digitalizações.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 5 a 8</span>
+        <h3>Emails e painel</h3>
+        <p>Agentes nas 15 a 18 caixas da contabilidade, primeiro em rascunho e depois autónomos no que é seguro. Dashboard de gestão.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semana 8</span>
+        <h3>Relatório da empresa</h3>
+        <p>Com a auditoria das outras equipas, mostramos o grau de automação possível em cada uma. Decisão à parte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FASE SEGUINTE ============ -->
+<section id="seguinte">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Fase seguinte</span>
+      <h2>O que ficou falado e fica para depois</h2>
+      <p class="lead">Fora desta proposta. Entra quando a contabilidade estiver a funcionar e a auditoria o justificar.</p>
+    </div>
+    <div class="seguinte">
+      <div class="card" data-entra="sobe"><h3>As restantes equipas</h3><p>Agentes nas outras caixas da empresa (perto de 40 no total), com o que a auditoria mostrar.</p></div>
+      <div class="card" data-entra="sobe"><h3>IRS e alojamento local</h3><p>As renovações anuais de IRS (cerca de 1.300 clientes) e a faturação semanal do alojamento local.</p></div>
+      <div class="card" data-entra="sobe"><h3>Para os clientes da AFM</h3><p>A ideia do Alfredo: oferecer estas ferramentas aos próprios clientes, depois de provadas em casa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. INVESTIMENTO (sempre a última secção) ============ -->
+<section class="section-alt" id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Um projeto, faseado, para a contabilidade</h2>
+      <p class="lead">Os valores de referência do nosso resumo de 25/09, a fechar na proposta.</p>
+    </div>
+    <div class="invest">
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Agentes de email</div>
+        <div class="price">5.000 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>Auditoria aos emails de toda a empresa</li>
+          <li>Agentes nas 15 a 18 caixas da contabilidade</li>
+          <li>Pastas, respostas autónomas e rascunhos</li>
+          <li>Regras de encaminhamento (fiscal, urgente)</li>
+        </ul>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Automações CentralGest</div>
+        <div class="price">5.000 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>Documentos em falta, em três idiomas</li>
+          <li>Captura de faturas e triagem documental</li>
+          <li>Faturação automática do Stripe</li>
+          <li>Dashboard de gestão (CentralGest, CRM Contab, Dynamics)</li>
+        </ul>
+      </div>
+      <div class="card price-card highlight total" data-entra="sobe">
+        <span class="pin">Projeto completo</span>
+        <div class="label">Tudo, faseado em cerca de dois meses</div>
+        <div class="price">10.000 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>As seis automações desta página</li>
+          <li>Ligação à API do CentralGest</li>
+          <li>Relatório de automação das outras equipas</li>
+        </ul>
+        <span class="quando">Mensalidade de manutenção e custos de IA: fechada com os volumes da auditoria</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a All Finance Matters, setembro de 2026
+    <span class="disclaimer">Protótipo com dados ilustrativos: empresas, pessoas, NIF, fornecedores, números de documento e valores são fictícios.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/faturas.js"></script>
+<script src="assets/js/consola.js"></script>
+<script>
+  consolaAbas('consola');
+  docsEmFalta('dfDemo');
+  caixaFaturas('fxDemo');
+  triagem('trDemo');
+  chatRaciocinio('crDemo');
+  terminal('stTerm');
+  painelGestao('pgDemo');
+  fluxo('fxFluxo');
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var atual = r.getAttribute('data-theme') || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = atual === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
