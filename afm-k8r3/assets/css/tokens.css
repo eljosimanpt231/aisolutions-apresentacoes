@@ -175,3 +175,14 @@
   --wa-in: hsl(0 0% 100%);
   --wa-text: hsl(200 15% 15%);
 }
+
+/* Séries dos gráficos (validadas com o validate_palette da skill dataviz, modo claro):
+   faturação #1f78d1, custos #e0474a; antiguidade numa rampa sequencial de azul */
+:root {
+  --dv-1: hsl(210 74% 47%);
+  --dv-2: hsl(359 71% 58%);
+  --dv-q0: hsl(210 70% 78%);
+  --dv-q1: hsl(210 70% 62%);
+  --dv-q2: hsl(210 74% 47%);
+  --dv-q3: hsl(214 75% 32%);
+}

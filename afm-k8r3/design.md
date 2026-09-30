@@ -19,3 +19,12 @@ Sem CTA, sem casos de estudo, preço no fim e só "+ IVA". Valores do resumo de 
 ## Verdade
 - API CentralGest verificada a 30/09/2026 na documentação oficial (swagger, 2.159 operações) e com o token de demonstração (só leituras). Sem webhooks documentados. Endpoints de e-fatura exigem credenciais AT (não testáveis na demo).
 - Todos os dados de clientes, NIF, fornecedores e valores são fictícios (dito na página). Token de demonstração NUNCA entra no repo.
+
+## v2 (30/09/2026, pedidos do Diogo)
+- Módulo 01 mostra a validação: e-fatura trazido pelo CentralGest, menos lançadas (lançamento associado), menos recebidas por lançar (Contabilidade Digital, NIF + número + valor) = em falta.
+- Captura só por email (sem WhatsApp em lado nenhum).
+- Módulo 04 passa a caixa de email (componente caixaEmail em consola.js), não chat.
+- Dashboard com 5 abas (visão geral com linha 12 meses e alertas, colaboradores, serviços, cobranças por antiguidade, comercial por canal), tooltips; paleta validada com o validate_palette (dataviz).
+- Retirado o cartão "Aproveitar o que o CentralGest já faz".
+- Preço: 10.000 € + IVA (6.000 adjudicação, 4.000 início dos testes); avença 300 €/mês ou 3.000 €/ano + IVA.
+- "Como arrancamos" passa para depois do investimento (pedido explícito do Diogo).

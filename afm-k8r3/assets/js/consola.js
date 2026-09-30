@@ -1,7 +1,7 @@
 /* ============================================================
    CONSOLA AFM (janela CentralGest Cloud com os agentes AI Solutions)
    1. Abas dos módulos      2. Documentos em falta (lembretes)
-   3. Triagem documental    4. Dashboard de gestão
+   3. Triagem documental    4. Caixa de email    5. Dashboard de gestão
    Dados em <script type="application/json" id="[id]-config">.
    Os módulos que correm sozinhos só arrancam quando ficam visíveis
    (aba ativa e janela no ecrã).
@@ -82,7 +82,14 @@
       h += '</div><div class="df-ctl"><span>Envio</span>';
       Object.keys(FREQ).forEach(function (k) { h += '<button type="button" class="df-chip' + (k === freq ? " on" : "") + '" data-freq="' + k + '">' + esc(FREQ[k].label) + "</button>"; });
       h += "</div></div>";
-      h += '<div class="df-origem"><span class="df-src">e-fatura: <b>' + c.efatura + '</b> faturas de ' + esc(cfg.mes.pt) + '</span><span class="df-src">recebidas: <b>' + (c.efatura - n) + '</b></span><span class="df-src ' + (n ? "falta" : "ok") + '">em falta: <b>' + n + "</b></span></div>";
+      /* a validação, passo a passo: o que o CentralGest traz do e-fatura,
+         menos o que já está lançado, menos o que já chegou e espera lançamento */
+      var lanc = c.lancadas != null ? c.lancadas : Math.round((c.efatura - n) * 0.7), porLanc = c.efatura - n - lanc;
+      h += '<div class="df-val">' +
+        '<div class="df-val-s"><b>' + c.efatura + '</b><span>faturas de ' + esc(cfg.mes.pt) + ' no e-fatura</span><small>trazidas pelo CentralGest</small></div><i>−</i>' +
+        '<div class="df-val-s"><b>' + lanc + '</b><span>já lançadas</span><small>com lançamento associado</small></div><i>−</i>' +
+        '<div class="df-val-s"><b>' + porLanc + '</b><span>recebidas, por lançar</span><small>na Contabilidade Digital (NIF, número, valor)</small></div><i>=</i>' +
+        '<div class="df-val-s ' + (n ? "falta" : "ok") + '"><b>' + n + '</b><span>em falta</span><small>' + (n ? "vão no email" : "nada a pedir") + '</small></div></div>';
       h += email(c);
       h += '<div class="df-agenda">' + (n ? "Próximo envio: <b>" + esc(f.proximo) + "</b>" + (f.nota ? " · " + esc(f.nota) : "") : "Sem lembrete este mês: <b>não há nada em falta</b>") + "</div>";
       h += "</div>";
@@ -125,29 +132,167 @@
     inView(root, function () { if (!iniciado) { iniciado = true; corre(); } });
   };
 
-  /* ---------- 4. Dashboard ---------- */
+  /* ---------- 4. Caixa de email da contabilidade ---------- */
+  window.caixaEmail = function (id) {
+    var root = document.getElementById(id), cfg = readCfg(id);
+    if (!root || !cfg) return;
+    var sc = cfg.scenarios, estado = sc.map(function () { return "fila"; }), atual = -1, timers = [], iniciado = false;
+    var PILL = { fila: ["Na fila", "fila"], ler: ["A tratar", "ler"], auto: ["Respondido", "ok"], draft: ["Rascunho", "val"], validado: ["Validado e enviado", "ok"], escalate: ["Encaminhado", "fut"] };
+    function limpa() { timers.forEach(clearTimeout); timers = []; }
+    function depois(ms, fn) { timers.push(setTimeout(fn, reduz ? 0 : ms)); }
+    function pill(k) { var p = PILL[k]; return '<span class="fx-pill fx-pill--' + p[1] + '">' + p[0] + "</span>"; }
+    function par(a) { return a.map(function (p) { return "<p>" + rich(p).replace(/&lt;br&gt;/g, "<br>") + "</p>"; }).join(""); }
+
+    function render() {
+      var s = sc[Math.max(atual, 0)], h = '<div class="em">';
+      h += '<div class="em-inbox"><div class="em-head"><span class="fx-dot"></span><b>' + esc(cfg.mailbox) + '</b><small>' + sc.length + ' novos</small></div><ul>';
+      sc.forEach(function (x, i) {
+        h += '<li><button type="button" class="em-item' + (i === atual ? " on" : "") + '" data-i="' + i + '"><span class="em-top"><b>' + esc(x.from) + '</b><time>' + esc(x.time) + '</time></span><span class="em-subj">' + esc(x.subject) + '</span><span class="em-foot"><span class="em-lang">' + esc(x.lang) + "</span>" + pill(estado[i]) + "</span></button></li>";
+      });
+      h += '</ul><button type="button" class="fx-replay em-replay">↻ Tratar a caixa outra vez</button></div>';
+      h += '<div class="em-read"><div class="em-msg"><div class="em-msg-h"><div><span>De</span> ' + esc(s.from) + " &lt;" + esc(s.email) + '&gt;</div><div><span>Para</span> ' + esc(cfg.mailbox) + '</div><div><span>Assunto</span> <b>' + esc(s.subject) + '</b></div><time>' + esc(s.time) + '</time></div><div class="em-msg-b">' + par(s.body) + "</div></div>";
+      var r = s.reply;
+      h += '<div class="em-reply em-reply--' + r.kind + '"><div class="em-reply-tag"><span class="em-reply-k">' + esc(r.badge) + '</span>' + (r.after ? '<span class="em-after">' + esc(r.after) + "</span>" : "") + '</div>';
+      h += '<div class="em-msg-h"><div><span>Para</span> ' + esc(r.to) + '</div><div><span>Assunto</span> <b>' + esc(r.subject) + '</b></div>' + (r.attach ? '<div><span>Anexo</span> <em class="em-att">' + esc(r.attach) + "</em></div>" : "") + '</div><div class="em-msg-b">' + par(r.body) + "</div></div></div>";
+      h += '<div class="em-agent"><div class="em-head"><span class="fx-bot"></span><b>Agente de email</b><small data-fase>à espera</small></div>';
+      h += '<div class="em-folder"><span>Pasta</span><b>' + esc(s.folder) + '</b></div><ol class="em-steps">';
+      s.steps.forEach(function (p, i) { h += '<li data-s="' + i + '"><i>' + (i + 1) + "</i><span>" + esc(p) + "</span></li>"; });
+      h += '</ol><div class="em-dec em-dec--' + r.kind + '">' + esc(r.decision) + "</div></div></div>";
+      root.innerHTML = h;
+      if (atual < 0) root.classList.add("em-idle"); else root.classList.remove("em-idle");
+    }
+    function processa(i, seguinte) {
+      limpa(); atual = i; estado[i] = "ler"; render();
+      var s = sc[i], t = 0, fase = root.querySelector("[data-fase]");
+      depois(t += 250, function () { root.querySelector(".em-msg").classList.add("on"); root.querySelector(".em-folder").classList.add("on"); fase.textContent = "a ler"; });
+      s.steps.forEach(function (p, k) { depois(t += 850, function () { var el = root.querySelector('[data-s="' + k + '"]'); if (el) el.classList.add("on"); fase.textContent = "a tratar"; }); });
+      depois(t += 700, function () { root.querySelector(".em-dec").classList.add("on"); root.querySelector(".em-reply").classList.add("on"); estado[i] = s.reply.kind; atualiza(); fase.textContent = "concluído"; });
+      if (s.reply.after) depois(t += 1600, function () { root.querySelector(".em-after").classList.add("on"); estado[i] = "validado"; atualiza(); });
+      if (seguinte) depois(t += (cfg.pauseMs || 3200), seguinte);
+    }
+    function atualiza() {
+      root.querySelectorAll(".em-item").forEach(function (b, k) { b.classList.toggle("on", k === atual); var p = b.querySelector(".fx-pill"); if (p) p.outerHTML = pill(estado[k]); });
+    }
+    function corre() { (function passo(i) { if (i >= sc.length) return; processa(i, function () { passo(i + 1); }); })(0); }
+    root.addEventListener("click", function (e) {
+      if (e.target.closest(".em-replay")) { estado = sc.map(function () { return "fila"; }); corre(); return; }
+      var b = e.target.closest(".em-item"); if (b) processa(+b.getAttribute("data-i"), null);
+    });
+    render();
+    inView(root, function () { if (!iniciado) { iniciado = true; corre(); } });
+  };
+
+  /* ---------- 5. Dashboard de gestão ---------- */
+  function mil(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+  function k(n) { return n >= 1000 ? (n / 1000).toLocaleString("pt-PT", { maximumFractionDigits: 1 }) + " mil €" : mil(n) + " €"; }
   window.painelGestao = function (id) {
     var root = document.getElementById(id), cfg = readCfg(id);
     if (!root || !cfg) return;
-    var vista = cfg.vistas[0].id, iniciado = false;
-    function render(anima) {
-      var v = cfg.vistas.filter(function (x) { return x.id === vista; })[0];
-      var max = 0; v.linhas.forEach(function (l) { max = Math.max(max, l[1], l[2]); });
-      var h = '<div class="pg"><div class="pg-kpis">';
-      cfg.kpis.forEach(function (k) { h += '<div class="pg-kpi"><span class="pg-src">' + esc(k.fonte) + "</span><b>" + esc(k.valor) + "</b><small>" + esc(k.label) + "</small></div>"; });
-      h += '</div><div class="pg-chart"><div class="pg-chart-head"><div><b>' + esc(v.titulo) + '</b><small>' + esc(cfg.periodo) + '</small></div><div class="pg-tabs">';
-      cfg.vistas.forEach(function (x) { h += '<button type="button" class="df-chip' + (x.id === vista ? " on" : "") + '" data-vista="' + x.id + '">' + esc(x.label) + "</button>"; });
-      h += '</div></div><div class="pg-leg"><span class="fat">Faturação (CentralGest)</span><span class="cus">' + esc(v.custoLabel) + '</span><span class="mg">Margem (%)</span></div><div class="pg-rows">';
-      v.linhas.forEach(function (l) {
-        var m = l[1] ? Math.round((l[1] - l[2]) / l[1] * 100) : 0;
-        h += '<div class="pg-row"><span class="pg-nome">' + esc(l[0]) + '</span><div class="pg-bars"><i class="fat" style="--w:' + (anima ? 0 : l[1] / max * 100) + '%" data-w="' + (l[1] / max * 100) + '"><em>' + eur(l[1]) + '</em></i><i class="cus" style="--w:' + (anima ? 0 : l[2] / max * 100) + '%" data-w="' + (l[2] / max * 100) + '"><em>' + eur(l[2]) + '</em></i></div><span class="pg-m ' + (m >= 40 ? "bom" : m >= 20 ? "medio" : "baixo") + '">' + m + "%</span></div>";
-      });
-      h += '</div><p class="pg-nota">' + esc(v.nota) + "</p></div></div>";
-      root.innerHTML = h;
-      if (anima) requestAnimationFrame(function () { requestAnimationFrame(function () { root.querySelectorAll(".pg-bars i").forEach(function (i) { i.style.setProperty("--w", i.getAttribute("data-w") + "%"); }); }); });
+    var aba = cfg.abas[0].id, iniciado = false, anima = false;
+
+    function tabs() {
+      var h = '<div class="pg-filtros"><div class="pg-tabs">';
+      cfg.abas.forEach(function (a) { h += '<button type="button" class="df-chip' + (a.id === aba ? " on" : "") + '" data-aba="' + a.id + '">' + esc(a.label) + "</button>"; });
+      return h + '</div><span class="pg-per">' + esc(cfg.periodo) + "</span></div>";
     }
-    root.addEventListener("click", function (e) { var b = e.target.closest("[data-vista]"); if (b) { vista = b.getAttribute("data-vista"); render(true); } });
-    render(false);
-    inView(root, function () { if (!iniciado && !reduz) { iniciado = true; render(true); } });
+    function kpis(list) {
+      var h = '<div class="pg-kpis">';
+      list.forEach(function (x) {
+        h += '<div class="pg-kpi"><span class="pg-src">' + esc(x.fonte) + "</span><b>" + esc(x.valor) + "</b><small>" + esc(x.label) + "</small>" + (x.delta ? '<em class="pg-d ' + (x.bom ? "bom" : "mau") + '">' + (x.sobe ? "▲ " : "▼ ") + esc(x.delta) + "</em>" : "") + "</div>";
+      });
+      return h + "</div>";
+    }
+    function alertas(list) {
+      var h = '<div class="pg-alertas"><div class="pg-bloco-t">O que o painel assinala este mês</div><ul>';
+      list.forEach(function (a) { h += '<li class="' + a.tipo + '"><span class="pg-ic">' + (a.tipo === "risco" ? "!" : a.tipo === "bom" ? "✓" : "i") + "</span><span>" + rich(a.texto) + "</span></li>"; });
+      return h + "</ul></div>";
+    }
+    /* linha: faturação e custos, 12 meses, um só eixo */
+    function linha(d) {
+      var W = 720, H = 230, L = 46, R = 14, T = 14, B = 28, n = d.meses.length;
+      var max = Math.max.apply(null, d.fat.concat(d.custo)), topo = Math.ceil(max / 20000) * 20000;
+      function x(i) { return L + i * (W - L - R) / (n - 1); }
+      function y(v) { return T + (1 - v / topo) * (H - T - B); }
+      var g = "";
+      for (var t = 0; t <= 4; t++) { var v = topo * t / 4; g += '<line class="pg-grid" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v) + '" y2="' + y(v) + '"/><text class="pg-ax" x="' + (L - 8) + '" y="' + (y(v) + 4) + '" text-anchor="end">' + (v ? (v / 1000) + "k" : "0") + "</text>"; }
+      d.meses.forEach(function (m, i) { g += '<text class="pg-ax" x="' + x(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + esc(m) + "</text>"; });
+      function path(a) { return a.map(function (v, i) { return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); }).join(" "); }
+      var hit = "";
+      d.meses.forEach(function (m, i) { var w = (W - L - R) / (n - 1); hit += '<rect class="pg-hit" data-i="' + i + '" x="' + (x(i) - w / 2) + '" y="' + T + '" width="' + w + '" height="' + (H - T - B) + '"/>'; });
+      var ult = n - 1;
+      return '<div class="pg-card pg-linha"><div class="pg-card-h"><div><b>Faturação e custos, últimos 12 meses</b><small>CentralGest · faturação emitida e custos lançados</small></div><div class="pg-leg"><span class="s1">Faturação</span><span class="s2">Custos</span></div></div>' +
+        '<div class="pg-svgw"><svg viewBox="0 0 ' + W + " " + H + '" class="pg-svg" role="img" aria-label="Faturação e custos por mês">' + g +
+        '<path class="pg-l s1' + (anima ? " desenha" : "") + '" d="' + path(d.fat) + '"/><path class="pg-l s2' + (anima ? " desenha" : "") + '" d="' + path(d.custo) + '"/>' +
+        '<circle class="pg-pt s1" cx="' + x(ult) + '" cy="' + y(d.fat[ult]) + '" r="4.5"/><circle class="pg-pt s2" cx="' + x(ult) + '" cy="' + y(d.custo[ult]) + '" r="4.5"/>' +
+        '<text class="pg-lab" x="' + (x(ult) - 8) + '" y="' + (y(d.fat[ult]) - 10) + '" text-anchor="end">' + k(d.fat[ult]) + '</text>' +
+        '<line class="pg-cross" x1="0" x2="0" y1="' + T + '" y2="' + (H - B) + '"/>' + hit + "</svg></div></div>";
+    }
+    function barras(titulo, sub, linhas, extra) {
+      var max = 0; linhas.forEach(function (l) { max = Math.max(max, l.fat, l.custo); });
+      var h = '<div class="pg-card"><div class="pg-card-h"><div><b>' + esc(titulo) + "</b><small>" + esc(sub) + '</small></div><div class="pg-leg"><span class="s1">Faturação</span><span class="s2">' + esc(extra.custoLabel) + "</span></div></div>";
+      h += '<div class="pg-tabela"><div class="pg-row pg-row-h"><span></span><span></span>' + extra.cols.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") + "</div>";
+      linhas.forEach(function (l) {
+        var m = l.fat ? Math.round((l.fat - l.custo) / l.fat * 100) : 0;
+        var tip = esc(l.nome) + " · faturação " + mil(l.fat) + " € · custo " + mil(l.custo) + " € · margem " + m + "%";
+        h += '<div class="pg-row" data-tip="' + tip + '"><span class="pg-nome">' + esc(l.nome) + '</span><div class="pg-bars"><i class="s1" style="--w:' + (anima ? 0 : l.fat / max * 100) + '%" data-w="' + (l.fat / max * 100) + '"></i><i class="s2" style="--w:' + (anima ? 0 : l.custo / max * 100) + '%" data-w="' + (l.custo / max * 100) + '"></i></div>';
+        extra.valores(l, m).forEach(function (v) { h += '<span class="pg-v ' + (v.cls || "") + '">' + v.t + "</span>"; });
+        h += "</div>";
+      });
+      return h + '</div><p class="pg-nota">' + esc(extra.nota) + "</p></div>";
+    }
+    function idade(d) {
+      var max = Math.max.apply(null, d.escaloes.map(function (e) { return e[1]; })), tot = d.escaloes.reduce(function (a, e) { return a + e[1]; }, 0);
+      var h = '<div class="pg-card"><div class="pg-card-h"><div><b>Valores a receber por antiguidade</b><small>CentralGest · idade de saldos de clientes</small></div><div class="pg-tot">' + k(tot) + " em aberto</div></div><div class=\"pg-idade\">";
+      d.escaloes.forEach(function (e, i) { h += '<div class="pg-esc" data-tip="' + esc(e[0]) + ": " + mil(e[1]) + " € (" + Math.round(e[1] / tot * 100) + '%)"><span>' + esc(e[0]) + '</span><div class="pg-esc-bar"><i class="q' + i + '" style="--w:' + (anima ? 0 : e[1] / max * 100) + '%" data-w="' + (e[1] / max * 100) + '"></i></div><b>' + mil(e[1]) + " €</b></div>"; });
+      h += '</div><div class="pg-bloco-t" style="margin-top:14px">Clientes com mais valor em aberto</div><table class="df-t"><thead><tr><th>Cliente</th><th class="n">Em aberto</th><th class="n">Mais antigo</th><th>Lembrete automático</th></tr></thead><tbody>';
+      d.top.forEach(function (r) { h += "<tr><td>" + esc(r[0]) + '</td><td class="n">' + esc(r[1]) + '</td><td class="n">' + esc(r[2]) + "</td><td>" + esc(r[3]) + "</td></tr>"; });
+      return h + '</tbody></table><p class="pg-nota">' + esc(d.nota) + "</p></div>";
+    }
+    function funil(d) {
+      var h = '<div class="pg-card"><div class="pg-card-h"><div><b>Das leads aos clientes, por canal</b><small>Dynamics (leads e reuniões) · CentralGest (primeira fatura)</small></div></div><div class="pg-funil">';
+      h += '<div class="pg-frow pg-frow-h"><span>Canal</span><span>Leads</span><span>Reuniões</span><span>Clientes</span><span>Conversão</span><span>Custo por cliente</span></div>';
+      var maxL = Math.max.apply(null, d.canais.map(function (c) { return c[1]; }));
+      d.canais.forEach(function (c) {
+        var conv = (c[3] / c[1] * 100).toLocaleString("pt-PT", { maximumFractionDigits: 1 });
+        h += '<div class="pg-frow" data-tip="' + esc(c[0]) + ": " + c[1] + " leads, " + c[2] + " reuniões, " + c[3] + ' clientes"><span class="pg-nome">' + esc(c[0]) + '</span><span class="pg-fb"><i class="s1" style="--w:' + (anima ? 0 : c[1] / maxL * 100) + '%" data-w="' + (c[1] / maxL * 100) + '"></i><em>' + c[1] + '</em></span><span class="pg-fb"><i class="s1 b2" style="--w:' + (anima ? 0 : c[2] / maxL * 100) + '%" data-w="' + (c[2] / maxL * 100) + '"></i><em>' + c[2] + '</em></span><span class="pg-fb"><i class="s1 b3" style="--w:' + (anima ? 0 : c[3] / maxL * 100) + '%" data-w="' + (c[3] / maxL * 100) + '"></i><em>' + c[3] + '</em></span><span class="pg-v">' + conv + '%</span><span class="pg-v">' + esc(c[4]) + "</span></div>";
+      });
+      return h + '</div><p class="pg-nota">' + esc(d.nota) + "</p></div>";
+    }
+
+    function render() {
+      var a = cfg.abas.filter(function (x) { return x.id === aba; })[0], h = tabs();
+      if (a.id === "geral") h += kpis(a.kpis) + '<div class="pg-2">' + linha(a.serie) + alertas(a.alertas) + "</div>";
+      if (a.id === "colab") h += kpis(a.kpis) + barras("Faturação, custo e margem por colaborador", "Faturação pelo vendedor de cada fatura · custo do processamento de salários", a.linhas, { custoLabel: "Custo", cols: ["Margem", "Clientes", "€ por cliente"], nota: a.nota, valores: function (l, m) { return [{ t: m + "%", cls: m >= 40 ? "bom" : m >= 25 ? "medio" : "baixo" }, { t: l.clientes }, { t: mil(l.fat / l.clientes) + " €" }]; } });
+      if (a.id === "serv") h += kpis(a.kpis) + barras("Faturação, custo e margem por serviço", "Famílias de artigos no CentralGest · horas da equipa imputadas", a.linhas, { custoLabel: "Custo", cols: ["Margem", "Peso", "vs. 2025"], nota: a.nota, valores: function (l, m) { var tot = a.linhas.reduce(function (s, x) { return s + x.fat; }, 0); return [{ t: m + "%", cls: m >= 40 ? "bom" : m >= 25 ? "medio" : "baixo" }, { t: Math.round(l.fat / tot * 100) + "%" }, { t: l.var, cls: l.var.charAt(0) === "-" ? "baixo" : "bom" }]; } });
+      if (a.id === "cobr") h += kpis(a.kpis) + idade(a);
+      if (a.id === "com") h += kpis(a.kpis) + funil(a);
+      h += '<div class="pg-tip" role="tooltip"></div>';
+      root.innerHTML = '<div class="pg">' + h + "</div>";
+      if (anima) requestAnimationFrame(function () { requestAnimationFrame(function () { root.querySelectorAll("[data-w]").forEach(function (i) { i.style.setProperty("--w", i.getAttribute("data-w") + "%"); }); }); });
+      liga(a);
+    }
+    function liga(a) {
+      var tip = root.querySelector(".pg-tip"), box = root.querySelector(".pg");
+      function mostra(e, html) { tip.innerHTML = html; tip.classList.add("on"); var r = box.getBoundingClientRect(); var x = e.clientX - r.left + 14, yy = e.clientY - r.top + 14; if (x + 260 > r.width) x = e.clientX - r.left - 270; tip.style.left = x + "px"; tip.style.top = yy + "px"; }
+      root.querySelectorAll("[data-tip]").forEach(function (el) {
+        el.addEventListener("mousemove", function (e) { mostra(e, esc(el.getAttribute("data-tip"))); });
+        el.addEventListener("mouseleave", function () { tip.classList.remove("on"); });
+      });
+      if (a.id === "geral") {
+        var cross = root.querySelector(".pg-cross"), d = a.serie;
+        root.querySelectorAll(".pg-hit").forEach(function (r) {
+          r.addEventListener("mousemove", function (e) {
+            var i = +r.getAttribute("data-i"), cx = +r.getAttribute("x") + +r.getAttribute("width") / 2;
+            cross.setAttribute("x1", cx); cross.setAttribute("x2", cx); cross.classList.add("on");
+            var m = Math.round((d.fat[i] - d.custo[i]) / d.fat[i] * 100);
+            mostra(e, "<b>" + esc(d.meses[i]) + " " + esc(d.anos[i]) + '</b><span class="t1">Faturação ' + mil(d.fat[i]) + ' €</span><span class="t2">Custos ' + mil(d.custo[i]) + " €</span><span>Margem " + m + "%</span>");
+          });
+          r.addEventListener("mouseleave", function () { cross.classList.remove("on"); tip.classList.remove("on"); });
+        });
+      }
+    }
+    root.addEventListener("click", function (e) { var b = e.target.closest("[data-aba]"); if (b) { aba = b.getAttribute("data-aba"); anima = !reduz; render(); } });
+    render();
+    inView(root, function () { if (!iniciado && !reduz) { iniciado = true; anima = true; render(); } });
   };
 })();
