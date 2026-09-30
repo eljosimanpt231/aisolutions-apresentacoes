@@ -19,9 +19,9 @@
   <script>
     try {
       var t = localStorage.getItem('ais-theme');
-      if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
-      document.documentElement.setAttribute('data-theme', t || 'dark');
-    } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+      /* claro por defeito (pedido do Diogo, 30/09); o botão continua a alternar e fica guardado */
+      document.documentElement.setAttribute('data-theme', t || 'light');
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
