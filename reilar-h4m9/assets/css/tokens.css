@@ -1,0 +1,48 @@
+/* REILAR × AI Solutions — base corporativo-azul, paleta da REILAR.
+   Marca = navy do briefing dele. Acento = âmbar do logótipo (tulipa).
+   Fundo branco por pedido explícito do comercial. */
+:root {
+  --brand-hsl: 231 86% 17%;   /* #06114f, navy REILAR */
+  --accent-hsl: 37 91% 55%;   /* #f5a626, âmbar REILAR */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* âmbar puro sobre branco dá ~2:1 e chumba AA. Como TEXTO usa-se escurecido. */
+  --acento-texto: hsl(30 96% 28%);
+  --ok-texto: hsl(152 62% 26%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(228 44% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(228 40% 98%);
+  --border: hsl(228 26% 88%);
+
+  --text: hsl(231 40% 13%);
+  --muted: hsl(231 14% 40%);
+
+  /* painéis escuros embutidos (maqueta do agente, terminal) */
+  --app-panel: hsl(231 55% 11%);
+  --app-line: hsl(231 40% 24%);
+  --app-muted: hsl(228 22% 72%);
+
+  --success-hsl: 152 60% 34%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 46%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 37 91% 45%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(231 70% 28%) 115%);
+  --grad-text: linear-gradient(120deg, hsl(30 96% 34%), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 55%, hsl(231 72% 26%));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.10);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.12);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.18);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}

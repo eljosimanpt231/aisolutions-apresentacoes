@@ -1,0 +1,242 @@
+/* REILAR — peças próprias. Tudo em tokens, zero cores literais. */
+
+/* ---------- Barra de topo ---------- */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 10px clamp(14px, 3vw, 30px);
+  background: color-mix(in oklab, var(--bg) 84%, transparent);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+/* logótipo da REILAR é claro e transparente: precisa de pastilha navy */
+.logo-chip {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 7px 14px; border-radius: 999px;
+  background: var(--brand); border: 1px solid var(--brand);
+}
+.logo-chip img { height: 20px; width: auto; display: block; }
+.logo-chip span {
+  font-family: var(--font-mono); font-size: 0.68rem; color: hsl(0 0% 100% / 0.72);
+  letter-spacing: 0.04em; white-space: nowrap;
+}
+.topnav { display: flex; gap: 2px; }
+.topnav a {
+  font-size: 0.88rem; color: var(--muted); padding: 7px 11px; border-radius: 999px;
+  transition: color 160ms ease, background 160ms ease;
+}
+.topnav a:hover { color: var(--text); background: var(--surface-2); }
+.topbar .btn { padding: 9px 18px; font-size: 0.88rem; }
+@media (max-width: 1100px) { .topnav { display: none; } }
+@media (max-width: 460px) { .logo-chip span { display: none; } }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: clamp(120px, 16vh, 168px); }
+.hero h1 { max-width: 17ch; }
+.meta-linha {
+  display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 30px;
+  font-size: 0.86rem; color: var(--muted);
+}
+.meta-linha b { color: var(--text); font-weight: 600; }
+
+/* ---------- Resumo de 30 segundos ---------- */
+.resumo30 {
+  border: 1px solid var(--border); border-left: 4px solid var(--accent);
+  border-radius: var(--radius); background: var(--surface-2);
+  padding: clamp(20px, 3vw, 30px);
+}
+.resumo30 dl { display: grid; gap: 16px 28px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin: 0; }
+.resumo30 dt {
+  font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--acento-texto); margin-bottom: 5px;
+}
+.resumo30 dd { margin: 0; font-size: 0.98rem; color: var(--text); line-height: 1.5; }
+
+/* ---------- Briefing ponto por ponto ---------- */
+.briefing { display: grid; gap: 12px; }
+.bpt {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 18px; align-items: start;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); padding: 18px 20px; box-shadow: var(--shadow-sm);
+}
+.bpt__n {
+  width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+  background: var(--brand); color: var(--on-brand);
+  font-family: var(--font-mono); font-size: 0.86rem; font-weight: 600;
+}
+.bpt__pedido { font-weight: 600; color: var(--text); font-size: 0.97rem; line-height: 1.45; }
+.bpt__pedido small { display: block; margin-top: 5px; font-weight: 400; color: var(--muted); font-size: 0.86rem; }
+.bpt__resposta { font-size: 0.92rem; color: var(--muted); line-height: 1.55; }
+.bpt__resposta strong { color: var(--text); font-weight: 600; }
+.bpt__tag {
+  display: inline-block; margin-bottom: 7px; padding: 3px 9px; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.bpt__tag--sim { background: hsl(var(--success-hsl) / 0.13); color: var(--ok-texto); }
+.bpt__tag--rec { background: hsl(var(--accent-hsl) / 0.18); color: var(--acento-texto); }
+@media (max-width: 880px) {
+  .bpt { grid-template-columns: 34px minmax(0, 1fr); }
+  .bpt__resposta { grid-column: 2; padding-top: 4px; border-top: 1px solid var(--border); }
+}
+
+/* ---------- Circuitos ---------- */
+.circuitos { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.circuito { border-top: 4px solid var(--brand); }
+.circuito--arrend { border-top-color: var(--accent); }
+.circuito--prop { border-top-color: var(--success); }
+.circuito h3 { font-size: 1.12rem; }
+.circuito__ego {
+  margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--border);
+  font-size: 0.84rem; color: var(--muted);
+}
+.circuito__ego b { color: var(--text); }
+
+/* ---------- Scoring ---------- */
+.score-tab { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+.score-tab th {
+  text-align: left; padding: 11px 14px; background: var(--brand); color: var(--on-brand);
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.score-tab th:last-child, .score-tab td:last-child { text-align: right; }
+.score-tab td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text); }
+.score-tab tr:last-child td { border-bottom: 0; }
+.score-tab .pts { font-family: var(--font-mono); font-weight: 600; color: var(--acento-texto); }
+.score-env { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.limiares { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin-top: 18px; }
+.limiar { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; background: var(--surface); }
+.limiar .v { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--brand); }
+.limiar p { margin-top: 6px; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+.limiar--bloq { border-color: hsl(var(--danger-hsl) / 0.4); background: hsl(var(--danger-hsl) / 0.04); }
+.limiar--bloq .v { color: var(--danger); }
+
+/* ---------- Painel escuro embutido (base de dados) ---------- */
+.painel-escuro {
+  background: var(--app-panel); border: 1px solid var(--app-line); border-radius: var(--radius-lg);
+  padding: clamp(22px, 3.4vw, 36px); color: hsl(0 0% 100%);
+}
+.painel-escuro h3 { color: hsl(0 0% 100%); }
+.painel-escuro p, .painel-escuro li { color: var(--app-muted); }
+.painel-escuro .kicker { color: hsl(var(--accent-hsl)); }
+.perm-grid { display: grid; gap: 10px; margin-top: 20px; }
+.perm {
+  display: grid; grid-template-columns: minmax(0, 150px) minmax(0, 1fr); gap: 16px;
+  padding: 13px 16px; border: 1px solid var(--app-line); border-radius: 10px;
+  background: hsl(231 60% 8% / 0.6);
+}
+.perm b { color: hsl(0 0% 100%); font-size: 0.9rem; }
+.perm span { color: var(--app-muted); font-size: 0.88rem; line-height: 1.5; }
+@media (max-width: 640px) { .perm { grid-template-columns: 1fr; gap: 5px; } }
+
+/* ---------- Conta de valor ---------- */
+.conta {
+  border: 1px solid var(--border); border-left: 4px solid var(--accent);
+  background: var(--surface-2); border-radius: var(--radius);
+  padding: clamp(22px, 3vw, 32px);
+}
+.conta .numeros { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); margin-bottom: 20px; }
+.conta .numeros div .v { font-family: var(--font-mono); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--brand); }
+.conta .numeros div small { display: block; margin-top: 4px; font-size: 0.83rem; color: var(--muted); line-height: 1.45; }
+.conta .frase { font-size: clamp(1.02rem, 1.7vw, 1.18rem); color: var(--text); line-height: 1.55; font-weight: 500; }
+
+/* ---------- Limites ---------- */
+.limites { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.limite { border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; background: var(--surface); }
+.limite h4 { font-size: 0.98rem; margin-bottom: 8px; }
+.limite p { font-size: 0.89rem; color: var(--muted); line-height: 1.55; }
+
+/* ---------- Caso do setor ---------- */
+.caso { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(22px, 3vw, 34px); background: var(--surface); }
+.caso .estado {
+  display: inline-block; padding: 4px 11px; border-radius: 999px;
+  background: hsl(var(--success-hsl) / 0.13); color: var(--ok-texto);
+  font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.caso .nota { margin-top: 16px; font-size: 0.82rem; color: var(--muted); font-style: italic; }
+
+/* ---------- Investimento ---------- */
+.price-card { border-top: 4px solid var(--brand); }
+.price-card .label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--acento-texto); }
+.price-card .price { font-size: clamp(2rem, 4vw, 2.7rem); font-weight: 800; color: var(--brand); margin: 10px 0 8px; font-family: var(--font-display); }
+.price-card .note { font-size: 0.88rem; color: var(--muted); line-height: 1.55; }
+.price-nota-volume {
+  margin-top: 18px; padding: 16px 18px; border: 1px dashed var(--border);
+  border-radius: var(--radius); background: var(--surface-2);
+  font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+}
+.price-nota-volume b { color: var(--text); }
+
+/* ---------- Fase seguinte ---------- */
+.fase2 { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+/* ---------- Gráfico do funil ---------- */
+.funil { display: grid; gap: 10px; margin-top: 8px; }
+.funil-linha { display: grid; grid-template-columns: minmax(0, 190px) minmax(0, 1fr); gap: 14px; align-items: center; }
+.funil-linha .rot { font-size: 0.88rem; color: var(--text); }
+.funil-linha .rot small { display: block; color: var(--muted); font-size: 0.78rem; }
+.funil-barra { height: 34px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); overflow: hidden; }
+.funil-barra i {
+  display: block; height: 100%; width: var(--w, 0%);
+  background: linear-gradient(90deg, hsl(var(--brand-hsl)), hsl(231 70% 34%));
+  transition: width 900ms cubic-bezier(.22,.61,.36,1);
+}
+.funil-linha--destaque .funil-barra i { background: linear-gradient(90deg, hsl(var(--accent-hsl)), hsl(37 91% 46%)); }
+@media (max-width: 640px) { .funil-linha { grid-template-columns: 1fr; gap: 5px; } }
+
+/* ============================================================
+   Componentes deck em fundo claro
+   O chat+raciocínio e o fluxo foram desenhados para tema escuro.
+   Num deck claro a maqueta do chat ganha paleta própria escura
+   (mesmo padrão da Unibox: parece uma janela de produto real),
+   e o acento passa a acento-texto onde é usado como texto.
+   ============================================================ */
+.cr-chat {
+  --text: hsl(0 0% 100% / 0.95);
+  --muted: hsl(228 16% 72%);
+  --border: hsl(231 34% 24%);
+  color: var(--text);
+}
+.cr-chat-head { background: hsl(231 48% 10%); }
+.cr-chat { background: hsl(231 52% 7%); }
+.cr-input { background: hsl(231 48% 10%); }
+.cr-row.agent .cr-bubble { background: hsl(231 32% 20%); }
+.cr-row.client .cr-bubble { background: hsl(162 88% 16%); color: hsl(0 0% 100%); }
+.cr-typing { background: hsl(231 32% 20%); }
+.cr-chat-ava { background: hsl(var(--accent-hsl) / 0.22); color: hsl(37 91% 62%); }
+
+/* acento como texto sobre fundo claro */
+.cr-head .k,
+.cr-reason-head .t,
+.fluxo-chans .lbl { color: var(--acento-texto); }
+.cr-step-ic { background: hsl(var(--accent-hsl) / 0.16); color: var(--acento-texto); }
+.fluxo-node .ic.teal { background: hsl(var(--accent-hsl) / 0.16); color: var(--acento-texto); }
+.fluxo-chan svg { color: var(--acento-texto); }
+.fluxo-arrow.passed { color: var(--acento-texto); }
+
+/* ---------- Medida de leitura ---------- */
+p { max-width: 74ch; }
+.center p, .cta-final p { margin-left: auto; margin-right: auto; }
+.bpt__resposta, .bpt__pedido small, .limite p, .perm span,
+.circuito__ego, .price-card .note, .caso .nota { max-width: 62ch; }
+.funil-linha .rot small { max-width: none; }
+
+/* tags do briefing: sem caixa alta, são dez na mesma página */
+.bpt__tag { text-transform: none; letter-spacing: 0.01em; font-size: 0.7rem; }
+.resumo30 dt { text-transform: none; letter-spacing: 0.02em; font-size: 0.74rem; }
+
+/* alvo de toque no rodapé */
+.ais-footer a { display: inline-block; padding: 6px 2px; }
+
+/* O corporativo-azul evita gradientes de texto, e sobre três linhas o
+   gradiente ficava turvo no meio. Destaque a cor sólida.
+   O -webkit-text-fill-color TEM de ser reposto: sem isso o texto fica
+   transparente e desaparece (aconteceu, apanhado no screenshot do telemóvel). */
+.hero h1 .g-brilho {
+  background: none; -webkit-background-clip: initial; background-clip: initial;
+  color: var(--acento-texto); -webkit-text-fill-color: var(--acento-texto);
+}
+.hero h1 { max-width: 20ch; }
+@media (max-width: 640px) {
+  /* "O pré-atendimento" tem de caber numa linha: a 2.3rem sobrava o "O" sozinho */
+  .hero h1 { max-width: none; font-size: clamp(1.95rem, 8.2vw, 2.6rem); }
+}

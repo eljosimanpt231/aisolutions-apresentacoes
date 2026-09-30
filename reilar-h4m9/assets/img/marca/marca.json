@@ -1,0 +1,368 @@
+{
+  "site": "https://www.reilar.pt/",
+  "dominio": "reilar.pt",
+  "titulo": "Início",
+  "descricao": "Início",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "fundo",
+    "src": "https://media.egorealestate.com/ORIGINAL/8e0f77bc-0218-4be8-8561-0af5a6b92011.webp",
+    "porque": [
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda"
+    ],
+    "analise": {
+      "largura": 270,
+      "altura": 103,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 61
+        },
+        {
+          "rgb": [
+            256,
+            192,
+            0
+          ],
+          "parte": 20
+        },
+        {
+          "rgb": [
+            224,
+            160,
+            0
+          ],
+          "parte": 18
+        },
+        {
+          "rgb": [
+            256,
+            160,
+            0
+          ],
+          "parte": 1
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://media.egorealestate.com/SysV4Websites/WebsiteEditorResources//images/ego-realestate-crm-websites-light.svg",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "transparente ou vectorial"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 47,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://media.egorealestate.com/ORIGINAL/ba05fce2-0df6-41e9-a1bd-e31aab14a35f.png",
+      "pontos": 5,
+      "motivos": [
+        "no cabeçalho",
+        "no topo"
+      ],
+      "analise": {
+        "largura": 1254,
+        "altura": 1254,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              192
+            ],
+            "parte": 16
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              224
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              192
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "json-ld",
+      "src": "https://www.reilar.pt//media.egorealestate.com/ORIGINAL/d7bfa358-96e5-46ca-8480-252e273217cf.png",
+      "pontos": 5,
+      "motivos": [
+        "declarado como logo nos dados estruturados"
+      ],
+      "erro": "não descarregou"
+    },
+    {
+      "origem": "ícone",
+      "src": "https://www.reilar.pt/DevGear/Favicon/android-icon-192x192.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 192,
+        "altura": 192,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              160,
+              64
+            ],
+            "parte": 48
+          },
+          {
+            "rgb": [
+              224,
+              128,
+              32
+            ],
+            "parte": 48
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              64
+            ],
+            "parte": 0
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 0,
+      "motivos": [],
+      "analise": {
+        "largura": 300,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "og:image",
+      "src": "https://media.egorealestate.com/ORIGINAL/d7bfa358-96e5-46ca-8480-252e273217cf.png",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "analise": {
+        "largura": 1316,
+        "altura": 1335,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              96,
+              160
+            ],
+            "parte": 41
+          },
+          {
+            "rgb": [
+              256,
+              160,
+              0
+            ],
+            "parte": 29
+          },
+          {
+            "rgb": [
+              256,
+              192,
+              64
+            ],
+            "parte": 29
+          },
+          {
+            "rgb": [
+              256,
+              160,
+              32
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://media.egorealestate.com/SysV4Websites/WebsiteEditorResources/ImageLibrary/Edificios/house02.jpg"
+  },
+  "paleta": [
+    {
+      "hex": "#f5a626",
+      "hsl": "37 91% 55%",
+      "peso": 148958,
+      "onde": [
+        "botões",
+        "fundos",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#06114f",
+      "hsl": "231 86% 17%",
+      "peso": 77500,
+      "onde": [
+        "texto"
+      ]
+    },
+    {
+      "hex": "#22c55e",
+      "hsl": "142 71% 45%",
+      "peso": 81,
+      "onde": [
+        "fundos"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "37 91% 55%",
+    "--accent-hsl": "231 86% 17%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "sans-serif",
+    "corpo": "Lato-Regular",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "Empresa",
+      "Imóveis",
+      "Empreendimentos",
+      "Início",
+      "Quem somos",
+      "Equipa",
+      "Rede de Lojas",
+      "Serviços",
+      "Testemunhos",
+      "Recrutamento",
+      "Imóveis",
+      "Pesquisa avançada",
+      "Visita Virtual",
+      "Oferta Imóvel",
+      "Procuro Imóvel",
+      "Favoritos",
+      "Comparar",
+      "Empreendimentos",
+      "Pesquisa de Empreendimentos",
+      "Blog",
+      "Avaliação de Imóveis",
+      "Contactos",
+      " 0",
+      "Comparar  0"
+    ],
+    "titulos": [
+      "Saiba quanto vale o seu Imóvel Avalie o seu Imóvel Saiba quanto vale o seu Imóvel",
+      "QUER VENDER ?",
+      "Encontre o seu imóvel com a REILAR",
+      "QUER Comprar ou arrendar ?",
+      "Arrende o seu imóvel com a REILAR",
+      "QUer Arrendar ?",
+      "Diga-nos o que procura.",
+      "Diga-nos o que procura.",
+      "Moscavide - T1 Remodelado",
+      "Loures > Moscavide e Portela",
+      "Alenquer - Terreno 275 m2",
+      "Alenquer > Alenquer (Santo Estêvão e Triana)",
+      "Amoreiras - T3 Impecável",
+      "Lisboa > Campo de Ourique",
+      "Queluz - T2 Remodelado",
+      "Sintra > Queluz",
+      "Santa Iria de Azóia - T3 Novo",
+      "Loures > Santa Iria de Azoia, São João da Talha e Bobadela"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura."
+  ]
+}
