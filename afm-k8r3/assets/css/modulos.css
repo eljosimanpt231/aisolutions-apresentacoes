@@ -208,3 +208,6 @@
   .df-t th:nth-child(2), .df-t td:nth-child(2) { display: none; }
   .df-mail-body { overflow-x: visible; }
 }
+
+/* + IVA discreto junto de cada valor */
+.pag b small.iva { display: inline; font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0; margin-left: 2px; }
