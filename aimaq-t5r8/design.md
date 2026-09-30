@@ -28,7 +28,7 @@
 6. Assistente (chatRaciocinio, 4 cenários: áudio no carro, margens e parados, relatório das 19h, recusa de custo a um comercial)
 7. Key Invoice (fluxo + API oficial, faturação não muda, agnóstico) · 8 limites
 9. A conta (capital libertado do stock, sem preço) · 10 arranque (semana 1, 2 a 4, 5 e 6, produção; cerca de mês e meio, como dito na discovery)
-11. Investimento (último): 6.000 € + IVA em três momentos de 2.000 €; avença 2.000 € + IVA/ano
+11. Investimento (último): 6.000 € + IVA em três momentos: 3.000 na adjudicação, 2.000 no início dos testes, 1.000 na entrega (decisão do Diogo, 30/09); avença 2.000 € + IVA/ano
 
 ## Regras do Diogo aplicadas
 Sem CTA, preço só no fim e só "+ IVA", sem casos de estudo.
@@ -38,5 +38,5 @@ Sem CTA, preço só no fim e só "+ IVA", sem casos de estudo.
 - Referências internas, stocks, vendas, custos, PVP, margens, clientes (Metalomecânica A, Serralharia B, Revendedor C), prazos de entrega e números de documentos são ilustrativos (dito na página e no rodapé)
 - Stock por marca soma 250.380 € (o Pedro disse 250.000 €); Climax entra como marca real do catálogo
 - API do Key Invoice: existe e é gratuita (keyinvoice.com/api.php, produtos, stocks, clientes, encomendas, documentos); a encomenda a fornecedor por API fica "a confirmar no levantamento"
-- Tranches 2.000/2.000/2.000: proposta minha, a confirmar pelo Diogo (o email de 23/09 só diz "parte na adjudicação e o restante em testes e produção")
+- Tranches 3.000/2.000/1.000 decididas pelo Diogo a 30/09/2026
 - Números formatados com pontos (o Chrome escreve "106 000" em pt-PT): toLocaleString de pt-PT redirecionado para de-DE no index.html
