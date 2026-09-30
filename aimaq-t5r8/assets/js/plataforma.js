@@ -41,13 +41,6 @@
     { ref: 'TRN-PIST', nome: 'Pistola de alta pressão Tron', fam: 'Acessórios de lavagem', f: 'tron', emb: 5, stock: 6, enc: 0, v: [4, 5, 3, 6, 5, 7], custo: 32.00, pvp: 58.00, loc: 'E-05-2' }
   ];
 
-  var CHINA = [
-    { ref: 'CHN-0001', nome: 'Disco de lamelas 115 mm, grão 60', eq: 'SUH-MD125', emb: 50 },
-    { ref: 'CHN-0002', nome: 'Escova de copo, arame trançado M14, 75 mm', eq: null, emb: 20 },
-    { ref: 'CHN-0003', nome: 'Disco de corte inox 125 × 1,0 × 22,2', eq: 'SUH-TD125', emb: 100 },
-    { ref: 'CHN-0004', nome: 'Rebarbadora 125 mm, 1.400 W', eq: null, emb: 1 }
-  ];
-
   var PERFIS = {
     gerencia:  { nome: 'Pedro Airosa', cargo: 'Gerência', custo: true, margem: true, pvp: true, compras: true, perm: true },
     compras:   { nome: 'Compras', cargo: 'Compras', custo: true, margem: false, pvp: true, compras: true, perm: false },
@@ -94,7 +87,6 @@
     { id: 'painel', txt: 'Painel', ic: '<path d="M3 13h8V3H3zM13 21h8V11h-8zM3 21h8v-6H3zM13 3v6h8V3z"/>' },
     { id: 'compras', txt: 'Compras', ic: '<path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/>', req: 'compras' },
     { id: 'artigos', txt: 'Artigos', ic: '<path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/>' },
-    { id: 'china', txt: 'Importação China', ic: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>', req: 'compras' },
     { id: 'perm', txt: 'Permissões', ic: '<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>', req: 'perm' }
   ];
 
@@ -203,28 +195,6 @@
     return h;
   }
 
-  /* ---------- Importação China ---------- */
-  function vChina() {
-    if (!P().compras) return semAcesso('A importação');
-    var p = P();
-    var h = '<div class="am-page-h"><div><b>Importação China · nova representação</b><small>Cerca de 2.000 artigos novos. Pagamento antecipado, 3 a 4 meses até chegar.</small></div></div>';
-    h += '<div class="am-cn-tl"><div class="s1"><small>Hoje, 30/09</small><b>Pagamento antecipado</b>' + (p.custo ? '<span>20.000 a 30.000 € saem agora</span>' : '') + '</div>' +
-      '<div class="s2"><small>outubro a janeiro</small><b>Produção e transporte</b><span>3 a 4 meses sem o material</span></div>' +
-      '<div class="s3"><small>fevereiro a junho de 2027</small><b>Venda</b><span>o dinheiro volta até cerca de 9 meses depois</span></div></div>';
-    h += '<div class="am-cn-note"><b>Aqui a plataforma não inventa.</b> Artigos novos não têm histórico de vendas. Quando existe um artigo equivalente numa marca europeia, mostra quanto esse vende como referência. Quando não existe, a quantidade é da equipa, e fica registada para a próxima encomenda já ter base.</div>';
-    h += '<div class="am-tablewrap"><table class="am-table"><thead><tr><th>Artigo (exemplo)</th><th>Histórico</th><th>Referência para decidir</th><th class="n">Quantidade</th></tr></thead><tbody>';
-    CHINA.forEach(function (c) {
-      var e = c.eq ? art(c.eq) : null, ref = '';
-      if (e) {
-        var m = media(e, 3), cobre = Math.ceil(m * 8 / c.emb) * c.emb;
-        ref = '<span class="am-al info">Equivalente ' + e.ref + ' vende ' + Math.round(m) + '/mês. Para cobrir 4 meses de viagem e 4 de venda: cerca de ' + num(cobre) + ' un.</span>';
-      } else ref = '<span class="am-al warn">Sem equivalente no catálogo. A equipa decide a quantidade.</span>';
-      h += '<tr><td><b>' + esc(c.nome) + '</b><small>' + c.ref + ' · caixas de ' + c.emb + '</small></td><td><span class="am-mute">sem vendas, artigo novo</span></td><td class="am-why">' + ref + '</td><td class="n"><input class="am-q" type="number" min="0" step="' + c.emb + '" placeholder="definir" aria-label="Quantidade de ' + esc(c.nome) + '"></td></tr>';
-    });
-    h += '</tbody></table></div><p class="am-hint">Artigos de exemplo: a lista real entra quando a representação estiver fechada.</p>';
-    return h;
-  }
-
   /* ---------- Permissões ---------- */
   function vPerm() {
     if (!P().perm) return semAcesso('A gestão de permissões');
@@ -279,7 +249,7 @@
   var main = root.querySelector('.am-main');
   function render() {
     renderNav();
-    var v = { painel: vPainel, compras: vCompras, artigos: vArtigos, china: vChina, perm: vPerm }[st.view];
+    var v = { painel: vPainel, compras: vCompras, artigos: vArtigos, perm: vPerm }[st.view];
     main.innerHTML = '<div class="am-view">' + v() + '</div>';
   }
 

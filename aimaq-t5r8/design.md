@@ -24,7 +24,7 @@
 ## Secções
 1. Hero "Comprar com dados, não por sensibilidade" + etiqueta · 2 resumo (sem preço)
 3. O que ouvimos a 23/09 (6 citações do Pedro, da transcrição) · 4 hoje vs com a plataforma
-5. **Plataforma** (momento uau): Painel, Compras (base 1/3/6 meses, horizonte 1/3/6, prazos e caixas por fornecedor, compra recorrente da Metalomecânica A, stock parado, quantidades editáveis, modal da encomenda a fornecedor), Artigos (colunas que se fecham por perfil), Importação China (sem histórico: equivalente como referência ou decisão da equipa), Permissões. Seletor "Ver como" no topo
+5. **Plataforma** (momento uau): Painel, Compras (base 1/3/6 meses, horizonte 1/3/6, prazos e caixas por fornecedor, compra recorrente da Metalomecânica A, stock parado, quantidades editáveis, modal da encomenda a fornecedor), Artigos (colunas que se fecham por perfil), Permissões. (Separador Importação China retirado a 30/09 a pedido do Diogo: não foi pedido pelo Pedro e parecia módulo extra.) Seletor "Ver como" no topo
 6. Assistente (chatRaciocinio, 4 cenários: áudio no carro, margens e parados, relatório das 19h, recusa de custo a um comercial)
 7. Key Invoice (fluxo + API oficial, faturação não muda, agnóstico) · 8 limites
 9. A conta (capital libertado do stock, sem preço) · 10 arranque (semana 1, 2 a 4, 5 e 6, produção; cerca de mês e meio, como dito na discovery)
