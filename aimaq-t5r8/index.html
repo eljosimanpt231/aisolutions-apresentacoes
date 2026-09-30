@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Aimaq | Stock e compras com dados</title>
+  <meta name="description" content="Protótipo AI Solutions para a Aimaq, Airosa Máquinas: uma plataforma por cima do Key Invoice que calcula a encomenda por fornecedor com as vendas de 1, 3 ou 6 meses, com permissões por função e um assistente no WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aimaq × AI Solutions">
+  <meta property="og:description" content="Comprar com dados, não por sensibilidade.">
+  <meta property="og:locale" content="pt_PT">
+
+  <script>
+    try {
+      var t = localStorage.getItem('ais-theme');
+      if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) t = 'light';
+      document.documentElement.setAttribute('data-theme', t || 'dark');
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/aimaq.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img src="assets/img/aimaq-logo.png" alt="Aimaq, Airosa Máquinas">
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#plataforma">A plataforma</a>
+    <a href="#assistente">Assistente</a>
+    <a href="#keyinvoice">Key Invoice</a>
+    <a href="#arranque">Arranque</a>
+    <a href="#investimento">Investimento</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-acto="1" data-entra="sobe">Aimaq × AI Solutions · stock e compras</span>
+        <h1 data-linhas>Comprar com dados, não por <span class="g-brilho">sensibilidade</span>.</h1>
+        <p class="lead" data-acto="2" data-entra="sobe">
+          Uma plataforma da Aimaq por cima do Key Invoice. Lê as vendas de 1, 3 ou 6 meses, calcula a encomenda
+          por fornecedor e por família, e cada pessoa vê só o que lhe diz respeito.
+          Quem compra deixa de fazer contas e passa a validar, como no sistema que o Pedro usava antes.
+        </p>
+        <div class="hero-meta" data-acto="3" data-entra="sobe">
+          <span>Para <b>Pedro Airosa</b> e a sócia da Aimaq</span>
+          <span>Seguimento da reunião de <b>23/09/2026</b></span>
+          <span>Protótipo com artigos <b>Suhner, Sword, Piana e Tron</b></span>
+        </div>
+      </div>
+      <div class="oficina" data-acto="4" data-entra="escala">
+        <div class="oficina-foto"><img src="assets/img/oficina.jpg" alt="Técnico a trabalhar com uma máquina de eixo flexível Suhner"></div>
+        <div class="etiqueta" aria-label="Exemplo de sugestão de encomenda">
+          <div class="et-top"><span>SUH-TD125 · Suhner</span><span>Discos de corte inox</span></div>
+          <div class="et-nome">TURBO DISC 125 × 1,2 × 22,2</div>
+          <div class="et-linhas">
+            <div><small>Stock</small><b>34</b></div>
+            <div><small>Vende/mês</small><b>54</b></div>
+            <div class="bad"><small>Cobre</small><b>19 dias</b></div>
+          </div>
+          <div class="et-sug"><span>Sugestão, 1 mês</span><b>175 un. · 7 caixas</b></div>
+          <div class="et-why">Inclui a compra trimestral de 100 un. da Metalomecânica A. A Suhner demora cerca de 3 semanas.</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-3 hero-stats" data-acto="5" data-entra="sobe">
+      <div class="card stat-card"><div class="num"><span data-conta="106000">106.000</span></div><div class="desc">Artigos já criados no Key Invoice, a crescer</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="250000" data-sufixo=" €">250.000 €</span></div><div class="desc">Em stock, hoje, gerido pela experiência de quem compra</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="40">40</span></div><div class="desc">Fornecedores: cerca de 20 europeus e 20 nacionais</div></div>
+      <div class="card stat-card"><div class="num">+<span data-conta="2000">2.000</span></div><div class="desc">Artigos novos a chegar com a representação na China</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. RESUMO ============ -->
+<section class="resumo" aria-label="Resumo">
+  <div class="container">
+    <div class="resumo-grid" data-entra="sobe">
+      <div><span class="k">O quê</span><p>Uma plataforma vossa para compras, stock e permissões, com um assistente no WhatsApp.</p></div>
+      <div><span class="k">Com quê</span><p>O Key Invoice continua a faturar, sem mudar nada. A plataforma liga-se a ele pela API oficial.</p></div>
+      <div><span class="k">Em quanto tempo</span><p>Cerca de mês e meio da adjudicação até as compras passarem a ser validadas na plataforma.</p></div>
+      <div><span class="k">Hoje</span><p>Ver o protótipo juntos e validar se é esta a direção que a Aimaq quer seguir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 23/09</span>
+      <h2>A empresa cresceu. A forma de comprar ficou igual.</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>Tenho pessoas comigo com muita experiência, que acabam por comprar um bocadinho pela sensibilidade. Isso tem de ser ultrapassado.</blockquote>
+        <p>Com 106.000 artigos e 40 fornecedores, gerir tudo de cabeça é humanamente difícil.</p>
+        <span class="quem">Pedro Airosa</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>O Key Invoice dá-nos tudo o que queremos. Falha nesta gestão. Até é barato demais para aquilo que nos dá.</blockquote>
+        <p>Não é para deitar fora. É para completar onde ele não chega: previsão de compras.</p>
+        <span class="quem">Pedro Airosa</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Tenho seis pessoas internas que todas têm acesso aos preços de custo. E eu não quero isso.</blockquote>
+        <p>A parte comercial sem acesso a custos, o armazém sem acesso a outras áreas.</p>
+        <span class="quem">Pedro Airosa</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Quero fazer uma encomenda para um mês, três ou seis, e o programa dava-lhe toda essa informação.</blockquote>
+        <p>O sistema de compras da empresa anterior, ligado ao Sage: quem comprava só tinha de analisar e ajustar.</p>
+        <span class="quem">Pedro Airosa, sobre o que já conhecia</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Ele diz para comprar 50, mas eu sei que há aqui um cliente que de três em três meses me compra 100.</blockquote>
+        <p>A experiência da equipa não se perde: entra na conta e fica registada.</p>
+        <span class="quem">Pedro Airosa</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Na China há o pagamento antecipado. É um investimento que vou ter seguramente aí a nove meses.</blockquote>
+        <p>20.000 a 30.000 € em importação. Com o capital preso tanto tempo, cada euro de stock mal comprado pesa o dobro.</p>
+        <span class="quem">Pedro Airosa</span>
+      </div>
+    </div>
+    <p class="sintese">O problema não é o Key Invoice. <b>É o que falta por cima dele.</b></p>
+  </div>
+</section>
+
+<!-- ============ 4. HOJE VS DEPOIS ============ -->
+<section id="muda">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que muda</span>
+      <h2>Da conta de cabeça para a proposta que se valida</h2>
+    </div>
+    <div class="versus">
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Hoje <small>manual</small></h3>
+        <ul class="list-x">
+          <li>O que encomendar e quanto depende da experiência de quem compra</li>
+          <li>Mínimos e máximos fixos por artigo, que não acompanham as vendas</li>
+          <li>Contas por fornecedor feitas à mão, artigo a artigo</li>
+          <li>As seis pessoas da equipa veem o preço de custo</li>
+          <li>Stock parado só se descobre quando alguém repara</li>
+          <li>2.000 artigos novos da China a entrar sem histórico nenhum</li>
+        </ul>
+      </div>
+      <div class="card card-do" data-entra="sobe">
+        <h3>Com a plataforma <small>automático</small></h3>
+        <ul class="list-check">
+          <li>Proposta de encomenda por fornecedor e por família, com base em 1, 3 ou 6 meses de vendas</li>
+          <li>A sugestão acompanha as subidas e descidas e arredonda às caixas do fornecedor</li>
+          <li>Quem compra valida e ajusta; a encomenda entra no Key Invoice</li>
+          <li>Cada perfil vê só o que deve: custos e margens para quem decide</li>
+          <li>Stock parado sinalizado todos os dias, com o valor em euros</li>
+          <li>Artigos novos com o equivalente europeu como referência, e a decisão da equipa registada</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. A PLATAFORMA ============ -->
+<section class="section-alt" id="plataforma">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O protótipo · experimente</span>
+      <h2>A plataforma da Aimaq, por cima do Key Invoice</h2>
+      <p class="lead">Um ecrã só. Painel, compras, artigos, importação e permissões, com os artigos das marcas que representam.</p>
+    </div>
+    <div class="experimente">
+      <span>Em <b>Compras</b>, mude a base e o horizonte</span>
+      <span>Troque o perfil para <b>Comercial</b></span>
+      <span>Gere a encomenda à <b>Suhner</b></span>
+    </div>
+
+    <div class="am" id="am" data-entra="sobe">
+      <div class="am-bar">
+        <div class="am-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="am-url">gestao.aimaq.pt</span>
+        <div class="am-perfil" role="group" aria-label="Ver a plataforma como">
+          <span>Ver como</span>
+          <button type="button" data-perfil="gerencia" class="on">Gerência</button>
+          <button type="button" data-perfil="compras">Compras</button>
+          <button type="button" data-perfil="comercial">Comercial</button>
+          <button type="button" data-perfil="armazem">Armazém</button>
+        </div>
+      </div>
+      <div class="am-body">
+        <aside class="am-side">
+          <div class="am-brand"><img src="assets/img/aimaq-logo.png" alt="Aimaq"></div>
+          <div class="am-navs"></div>
+          <div class="am-user"></div>
+        </aside>
+        <main class="am-main"></main>
+      </div>
+    </div>
+    <p class="aviso-dados">Artigos reais dos vossos catálogos. Stocks, vendas, custos, preços e clientes ilustrativos: os reais vêm do Key Invoice.</p>
+  </div>
+</section>
+
+<!-- ============ 6. ASSISTENTE ============ -->
+<section id="assistente">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O assistente</span>
+      <h2>Perguntar à Aimaq por áudio, a caminho do escritório</h2>
+      <p class="lead">No WhatsApp, por texto ou mensagem de voz. Responde com os dados da plataforma e respeita o perfil de quem pergunta.</p>
+    </div>
+    <div class="agente-wrap" data-entra="sobe">
+      <div class="cr" id="agDemo"></div>
+    </div>
+    <p class="agente-nota">Valores ilustrativos. O assistente responde sempre com os números reais do Key Invoice.</p>
+  </div>
+</section>
+<script type="application/json" id="agDemo-config">
+{
+  "agentName": "Assistente Aimaq",
+  "agentInitials": "AI",
+  "chatStatus": "WhatsApp · ligado à plataforma",
+  "stepMs": 1500,
+  "endPauseMs": 3000,
+  "scenarios": [
+    {
+      "title": "No carro, por áudio",
+      "subtitle": "O Pedro pergunta enquanto conduz.",
+      "chat": [
+        { "sender": "client", "text": "Mensagem de voz (0:09): «Quando foi a última vez que encomendámos TURBO DISC 125 à Suhner, e quem nos comprou mais este mês?»", "time": "08:12" },
+        { "sender": "agent", "text": "Última encomenda à Suhner: **12 de agosto**, 150 un. de TURBO DISC 125. Este mês quem mais comprou foi a **Serralharia B** (22 un.). Stock atual: 34, cobre 19 dias. A **Metalomecânica A** deve voltar a comprar 100 em meados de outubro, e isso já está na proposta de encomenda: **175 un.**", "time": "08:12" },
+        { "sender": "client", "text": "Deixa pronta, valido quando chegar.", "time": "08:13" },
+        { "sender": "agent", "text": "Fica à sua espera em Compras. Nada sai para a Suhner sem a sua validação.", "time": "08:13" }
+      ],
+      "steps": [
+        { "icon": "ear", "label": "Transcreve o áudio do Pedro" },
+        { "icon": "search", "label": "Procura as encomendas à Suhner no Key Invoice" },
+        { "icon": "database", "label": "Cruza com as vendas do mês, por cliente" },
+        { "icon": "list", "label": "Junta a proposta de encomenda já calculada" },
+        { "icon": "shield", "label": "Deixa a encomenda à espera de validação" }
+      ]
+    },
+    {
+      "title": "Margens e parados",
+      "subtitle": "Uma pergunta que hoje pede uma tarde de Excel.",
+      "chat": [
+        { "sender": "client", "text": "Qual foi a margem bruta dos Suhner em setembro, comparada com agosto?", "time": "18:40" },
+        { "sender": "agent", "text": "Setembro: **38,4%** de margem bruta nos Suhner, contra **36,9%** em agosto. A subida vem sobretudo do MAGIC DISC 125, que vendeu +41% nos últimos 3 meses.", "time": "18:40" },
+        { "sender": "client", "text": "E o que está parado?", "time": "18:41" },
+        { "sender": "agent", "text": "Há mais de 6 meses sem vendas: o SUN-DISC M 230 da Suhner (75 un., 240 € a custo) e a lavadora-secadora Tron com condutor (**7.900 €** a custo). Quer que prepare a lista completa por marca?", "time": "18:41" }
+      ],
+      "steps": [
+        { "icon": "id", "label": "Perfil Gerência: pode ver custos e margens" },
+        { "icon": "database", "label": "Calcula a margem por mês a partir das vendas e custos" },
+        { "icon": "brain", "label": "Encontra o artigo que explica a diferença" },
+        { "icon": "filter", "label": "Filtra artigos sem vendas há mais de 6 meses" },
+        { "icon": "list", "label": "Soma o capital parado, a custo" }
+      ]
+    },
+    {
+      "title": "Relatório das 19h",
+      "subtitle": "Chega sozinho, todos os dias úteis.",
+      "chat": [
+        { "sender": "system", "text": "19:00 · relatório diário da Aimaq", "time": "19:00" },
+        { "sender": "agent", "text": "**Resumo de quarta, 30/09**\nVendas: 14 documentos, 6.820 € (+12% face à média das quartas).\nA entrar em rutura: fita SWORD-MASTER 27 × 0,9 (11 dias) e TURBO DISC 125 (19 dias).\nPropostas prontas a validar: Suhner (4 linhas) e Sword (2).\nParado há mais de 6 meses: 8.140 € a custo.", "time": "19:00" },
+        { "sender": "client", "text": "Amanhã de manhã vejo a da Sword.", "time": "19:07" },
+        { "sender": "agent", "text": "Combinado. Às 9:00 deixo-a no topo do Painel.", "time": "19:07" }
+      ],
+      "steps": [
+        { "icon": "clock", "label": "Dispara às 19:00, como configurado" },
+        { "icon": "database", "label": "Lê as vendas do dia no Key Invoice" },
+        { "icon": "alert", "label": "Junta os alertas de rutura e de stock parado" },
+        { "icon": "send", "label": "Envia o resumo ao Pedro no WhatsApp" },
+        { "icon": "calendar", "label": "Agenda o lembrete para as 9:00" }
+      ]
+    },
+    {
+      "title": "Comercial pede o custo",
+      "subtitle": "O assistente recusa, e resolve à mesma.",
+      "chat": [
+        { "sender": "client", "text": "Qual é o preço de custo do redutor Piana PU/4 I? O cliente quer desconto.", "time": "11:20" },
+        { "sender": "agent", "text": "Não posso partilhar preços de custo com o seu perfil. Posso dizer-lhe que o PVP é **69,00 €** e que o desconto máximo definido pela gerência para este artigo é de **15%**. Para mais do que isso, peço aprovação ao Pedro?", "time": "11:20" },
+        { "sender": "client", "text": "Sim, pede. O cliente quer 20%.", "time": "11:21" },
+        { "sender": "agent", "text": "Pedido enviado ao Pedro com o cliente, o artigo e os 20% pretendidos. Aviso-o assim que ele responder.", "time": "11:21" }
+      ],
+      "steps": [
+        { "icon": "id", "label": "Identifica quem pergunta: perfil Comercial" },
+        { "icon": "ban", "label": "Custos fora do perfil: não revela" },
+        { "icon": "book", "label": "Aplica a regra de desconto definida pela gerência" },
+        { "icon": "user-cog", "label": "Encaminha o pedido de aprovação ao Pedro" },
+        { "icon": "check", "label": "Fica a aguardar a resposta para avisar o comercial" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 7. KEY INVOICE ============ -->
+<section class="section-alt" id="keyinvoice">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como liga ao Key Invoice</span>
+      <h2>O Key Invoice fatura. A plataforma pensa as compras.</h2>
+      <p class="lead">Não há dois programas para abrir: a equipa trabalha na plataforma, e ela fala com o Key Invoice.</p>
+    </div>
+    <div class="fluxo" id="kiFluxo" data-entra="sobe"></div>
+    <div class="ki-lados">
+      <div class="card" data-entra="sobe"><span class="tag">Por API oficial</span><h3>Ligação documentada</h3><p>O Key Invoice tem uma API própria para integrações, com documentação gratuita: artigos, stocks, clientes, encomendas e documentos. No levantamento confirmamos que a encomenda a fornecedor entra como hoje a criam à mão.</p></div>
+      <div class="card" data-entra="sobe"><span class="tag">Nada muda</span><h3>A faturação fica onde está</h3><p>Faturas, IVA e tudo o que é legal continuam no Key Invoice, como hoje. Não fazemos software de faturação: fazemos o que falta por cima dele.</p></div>
+      <div class="card" data-entra="sobe"><span class="tag">Sem amarras</span><h3>Se um dia mudarem</h3><p>Se fizer sentido trocar de programa de faturação, a plataforma liga-se ao próximo. As regras, os perfis e o histórico ficam vossos.</p></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="kiFluxo-config">
+{
+  "stepMs": 1800,
+  "channels": [
+    { "icon": "database", "label": "Key Invoice" },
+    { "icon": "whatsapp", "label": "WhatsApp" },
+    { "icon": "message", "label": "Email" }
+  ],
+  "nodes": [
+    { "icon": "database", "title": "Lê o Key Invoice", "detail": "Artigos, stock, vendas e compras, por API.", "tone": "brand" },
+    { "icon": "brain", "title": "Calcula as necessidades", "detail": "Vendas de 1, 3 ou 6 meses, prazos e caixas.", "tone": "teal" },
+    { "icon": "list", "title": "Propõe a encomenda", "detail": "Por fornecedor, com o porquê de cada linha.", "tone": "teal" },
+    { "icon": "user-cog", "title": "A equipa valida", "detail": "Ajusta quantidades. Nada sai sem o clique.", "tone": "teal" },
+    { "icon": "send", "title": "Encomenda no Key Invoice", "detail": "E o email ao fornecedor, pronto a enviar.", "tone": "brand" }
+  ],
+  "note": "O Key Invoice continua a ser o programa de faturação da Aimaq."
+}
+</script>
+
+<!-- ============ 8. LIMITES ============ -->
+<section id="limites">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Limites claros</span>
+      <h2>A plataforma faz as contas. A decisão é da Aimaq.</h2>
+    </div>
+    <div class="limites">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Faz sozinha</h3>
+        <ul class="list-check">
+          <li>Recalcula as propostas de encomenda todos os dias</li>
+          <li>Sinaliza rutura, vendas a subir e stock parado</li>
+          <li>Prepara a encomenda no Key Invoice e o email ao fornecedor</li>
+          <li>Responde a perguntas dentro do perfil de quem pergunta</li>
+          <li>Envia os relatórios diário, semanal e mensal</li>
+        </ul>
+      </div>
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Fica sempre com a equipa</h3>
+        <ul class="list-x">
+          <li>Aprovar e enviar cada encomenda a fornecedor</li>
+          <li>Quantidades de artigos novos sem histórico</li>
+          <li>Negociação de preços e condições com fornecedores</li>
+          <li>Faturação, que continua no Key Invoice</li>
+          <li>Decidir quem vê o quê, que é da gerência</li>
+        </ul>
+      </div>
+    </div>
+    <p class="limites-frase">Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
+  </div>
+</section>
+
+<!-- ============ 9. A CONTA ============ -->
+<section class="section-alt" id="conta">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">A conta</span>
+      <h2>Stock a mais é dinheiro que não vai para a China</h2>
+      <p class="lead">Com os 250.000 € que nos deu. Mexa nos valores.</p>
+    </div>
+    <div class="calc" id="contaCalc" data-entra="sobe"></div>
+    <p class="conta-frase">Não é dinheiro que se ganha. <b>É dinheiro que deixa de estar parado na prateleira</b> e pode ir para a importação.</p>
+  </div>
+</section>
+<script type="application/json" id="contaCalc-config">
+{
+  "inputs": [
+    { "id": "stock", "label": "Valor em stock, a custo", "min": 100, "max": 500, "step": 10, "default": 250, "suffix": " mil €" },
+    { "id": "excesso", "label": "Parte do stock parada ou a mais", "min": 5, "max": 30, "default": 15, "suffix": "%" },
+    { "id": "reducao", "label": "Quanto disso a plataforma ajuda a libertar", "min": 10, "max": 50, "step": 5, "default": 30, "suffix": "%" }
+  ],
+  "outputs": [
+    { "label": "Capital libertado da prateleira", "expr": "stock*1000*excesso/100*reducao/100", "suffix": " €", "decimals": 0, "highlight": true },
+    { "label": "Cada 1% de stock a mais custa", "expr": "stock*10", "suffix": " € parados", "decimals": 0 }
+  ],
+  "note": "Estimativa ilustrativa. O stock parado real apuramos no levantamento, com os vossos dados do Key Invoice."
+}
+</script>
+
+<!-- ============ 10. ARRANQUE ============ -->
+<section id="arranque">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Cerca de mês e meio até as compras passarem a ser validadas</h2>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semana 1</span>
+        <h3>Levantamento</h3>
+        <p>Ligação à API do Key Invoice, regras por fornecedor (prazos, caixas, mínimos) e os perfis da equipa.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 2 a 4</span>
+        <h3>Construção</h3>
+        <p>A plataforma, o cálculo das compras, as permissões, o assistente e os relatórios no WhatsApp.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 5 e 6</span>
+        <h3>Testes com a equipa</h3>
+        <p>As propostas da plataforma lado a lado com as compras de hoje. Afinamos até a equipa confiar nelas.</p>
+      </div>
+      <div class="fase alvo" data-entra="sobe">
+        <span class="quando">Depois</span>
+        <h3>Em produção</h3>
+        <p>Quem compra abre a proposta, ajusta e valida. A encomenda segue para o Key Invoice e para o fornecedor.</p>
+      </div>
+    </div>
+    <p class="china-nota">Se arrancarmos em outubro, a plataforma está a trabalhar <b>antes de chegarem os artigos da nova representação na China</b>. Entram já com regras, em vez de se juntarem aos 106.000.</p>
+  </div>
+</section>
+
+<!-- ============ 11. INVESTIMENTO (sempre o último) ============ -->
+<section class="section-alt" id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Um valor fechado, pago à medida que o projeto avança</h2>
+    </div>
+    <div class="invest">
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Desenvolvimento</div>
+        <div class="price">6.000 € <small>+ IVA</small></div>
+        <ul class="list-check price-list">
+          <li>Plataforma à medida, por cima do Key Invoice</li>
+          <li>Previsão e proposta de encomenda por fornecedor e família</li>
+          <li>Permissões por função, com utilizadores ilimitados</li>
+          <li>Assistente no WhatsApp, por texto e por voz</li>
+          <li>Relatórios diário, semanal e mensal no WhatsApp</li>
+          <li>Formação da equipa</li>
+        </ul>
+        <span class="quando">Valor fechado, pago em três momentos</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Pagamento em três momentos</div>
+        <ol class="tranches">
+          <li><span class="tq">Adjudicação</span><b>2.000 €</b><small>Arranca o levantamento</small></li>
+          <li><span class="tq">Início dos testes</span><b>2.000 €</b><small>A equipa usa a plataforma lado a lado com o que faz hoje</small></li>
+          <li><span class="tq">Entrada em produção</span><b>2.000 €</b><small>As compras passam a ser validadas na plataforma</small></li>
+        </ol>
+        <span class="quando">Valores + IVA</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Avença anual</div>
+        <div class="price">2.000 € <small>+ IVA / ano</small></div>
+        <ul class="list-check price-list">
+          <li>Alojamento da plataforma</li>
+          <li>Manutenção da ligação ao Key Invoice</li>
+          <li>Suporte à equipa</li>
+          <li>Melhorias contínuas e novos pedidos pequenos</li>
+          <li>Sem custo por utilizador</li>
+        </ul>
+        <span class="quando">A partir da entrada em produção</span>
+      </div>
+    </div>
+    <p class="invest-nota"><b>O mesmo valor</b> para o Pedro sozinho ou para a equipa toda.</p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Aimaq, Airosa Máquinas, setembro de 2026
+    <span class="disclaimer">Protótipo com artigos reais dos catálogos que a Aimaq representa. Stocks, vendas, custos, preços, clientes, margens e números de documentos são ilustrativos; os reais vêm do Key Invoice.</span>
+  </div>
+</footer>
+
+<script>
+  /* O Chrome escreve 106 000 em pt-PT; na Aimaq escreve-se 106.000 */
+  (function () { var o = Number.prototype.toLocaleString; Number.prototype.toLocaleString = function (l, op) { return l === "pt-PT" ? o.call(this, "de-DE", op) : o.call(this, l, op); }; })();
+</script>
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/plataforma.js"></script>
+<script>
+  chatRaciocinio('agDemo');
+  fluxo('kiFluxo');
+  calculadora('contaCalc');
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var next = (r.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>

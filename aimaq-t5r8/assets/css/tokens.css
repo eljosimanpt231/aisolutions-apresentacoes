@@ -1,0 +1,148 @@
+/* ============================================================
+   TOKENS: Aimaq, Airosa Máquinas (direção própria "armazém técnico")
+   Marca: vermelho do logótipo (#c9162b, aimaq.pt) sobre grafite
+   (#282828, o preto do logótipo). Fundo grafite quente, cor de aço.
+   Tipografia: Barlow Condensed (títulos, letreiro industrial),
+   Barlow (corpo), JetBrains Mono (referências, quantidades, stock).
+   Escuro por defeito; claro em :root[data-theme="light"].
+   ============================================================ */
+
+:root {
+  --brand-hsl: 353 78% 56%;        /* vermelho Aimaq, aclarado para ler em escuro */
+  --accent-hsl: 28 92% 58%;        /* laranja de faísca: a cor da sugestão calculada */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(353 81% 44%);
+  --marca-texto: hsl(353 90% 70%);
+  --acento-texto: hsl(28 95% 66%);
+  --ok-texto: hsl(145 55% 60%);
+
+  --bg: hsl(20 6% 7%);
+  --bg-soft: hsl(20 6% 9.5%);
+  --surface: hsl(20 5% 12%);
+  --surface-2: hsl(20 5% 15%);
+  --border: hsl(20 5% 22%);
+
+  --text: hsl(30 12% 95%);
+  --muted: hsl(25 6% 68%);
+
+  --success-hsl: 145 55% 46%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 353 80% 62%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.14), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(20 6% 9%), hsl(var(--brand-hsl) / 0.2));
+
+  --shadow-sm: 0 1px 3px hsl(20 40% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(20 40% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(20 40% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.28);
+
+  /* A plataforma: clara nos dois temas, como uma ferramenta de trabalho real */
+  --app-bg: hsl(30 14% 97%);
+  --app-panel: hsl(0 0% 100%);
+  --app-panel-2: hsl(30 14% 95%);
+  --app-line: hsl(25 10% 87%);
+  --app-text: hsl(20 12% 13%);
+  --app-muted: hsl(20 6% 38%);
+  --app-side: hsl(20 6% 14%);
+  --app-side-2: hsl(20 5% 20%);
+  --app-side-text: hsl(30 10% 88%);
+  --app-side-muted: hsl(25 6% 62%);
+  --app-brand: hsl(353 81% 42%);
+  --app-brand-hsl: 353 81% 44%;
+  --app-sug: hsl(24 90% 34%);
+  --app-sug-hsl: 28 92% 50%;
+  --app-ok: hsl(145 60% 26%);   --app-ok-hsl: 145 55% 38%;
+  --app-warn: hsl(32 90% 30%);  --app-warn-hsl: 38 92% 48%;
+  --app-bad: hsl(353 75% 40%);  --app-bad-hsl: 353 75% 48%;
+  --app-info: hsl(210 60% 36%); --app-info-hsl: 210 60% 46%;
+  --app-sombra: 0 10px 28px hsl(20 30% 15% / 0.14);
+
+  /* O papel da encomenda ao fornecedor */
+  --paper: hsl(40 20% 99%);
+  --paper-ink: hsl(20 12% 14%);
+  --paper-muted: hsl(20 6% 40%);
+  --paper-line: hsl(25 10% 85%);
+
+  /* Barras do painel (validadas sobre branco) */
+  --bar: hsl(353 70% 46%);
+  --bar-soft: hsl(353 50% 88%);
+
+  --veu: hsl(20 20% 4% / 0.6);
+  --brand2-hsl: 18 88% 58%;
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --container: 1200px;
+  --section-pad: clamp(72px, 10vw, 124px);
+  --grelha-passo: 64px;
+}
+
+:root[data-theme="light"] {
+  --brand-hsl: 353 81% 44%;
+  --accent-hsl: 26 90% 44%;
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(353 81% 42%);
+  --marca-texto: hsl(353 81% 38%);
+  --acento-texto: hsl(24 90% 32%);
+  --ok-texto: hsl(145 62% 26%);
+
+  --bg: hsl(30 16% 96%);
+  --bg-soft: hsl(30 14% 92.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(30 14% 95%);
+  --border: hsl(25 10% 85%);
+
+  --text: hsl(20 12% 11%);
+  --muted: hsl(20 6% 36%);
+
+  --success-hsl: 145 62% 30%;
+  --danger-hsl: 353 75% 44%;
+  --warning-hsl: 34 92% 40%;
+
+  --grad-cta: linear-gradient(160deg, hsl(30 14% 92%), hsl(var(--brand-hsl) / 0.12));
+  --shadow-sm: 0 1px 3px hsl(20 30% 20% / 0.08);
+  --shadow-md: 0 8px 28px hsl(20 30% 20% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(20 30% 20% / 0.16);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.16);
+
+  --app-bg: hsl(30 14% 98%);
+}
+
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
+/* Chat do assistente (o deck.css traz-o só escuro): cores próprias por tema */
+:root {
+  --chat-bg: hsl(20 6% 8%);
+  --chat-head: hsl(20 5% 11%);
+  --chat-in: hsl(20 5% 17%);
+  --chat-ink: hsl(30 12% 95%);
+  --chat-out: hsl(165 100% 19%);
+  --chat-out-ink: hsl(0 0% 100%);
+  --chat-sys: hsl(0 0% 100% / 0.05);
+}
+:root[data-theme="light"] {
+  --chat-bg: hsl(38 24% 91%);
+  --chat-head: hsl(0 0% 100%);
+  --chat-in: hsl(0 0% 100%);
+  --chat-ink: hsl(20 12% 13%);
+  --chat-out: hsl(100 50% 85%);
+  --chat-out-ink: hsl(20 12% 13%);
+  --chat-sys: hsl(0 0% 100% / 0.7);
+}
