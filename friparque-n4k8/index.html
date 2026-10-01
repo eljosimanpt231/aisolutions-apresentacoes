@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Friparque | Assistente de voz para as três linhas</title>
+  <meta name="description" content="Proposta AI Solutions para a Friparque: assistente de voz em português de Portugal nas linhas de peças, assistência técnica e encomendas.">
+  <meta property="og:title" content="Friparque × AI Solutions">
+  <meta property="og:description" content="Nenhuma chamada fica por atender: assistente de voz para as linhas de peças, assistência técnica e encomendas.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/friparque-n4k8/assets/img/og.png">
+  <meta property="og:type" content="website">
+  <script>
+    try { var t = localStorage.getItem('ais-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/deck-slides.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-chip"><img src="assets/img/friparque-logo.png" alt="Friparque"></span>
+    </div>
+    <div class="right">
+      <nav class="tabs" data-scope="deck">
+        <button class="tab active" data-tab="contexto">Contexto</button>
+        <button class="tab" data-tab="chamada">A chamada</button>
+        <button class="tab" data-tab="funciona">Como funciona</button>
+        <button class="tab" data-tab="proposta">Proposta</button>
+      </nav>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">◐</button>
+    </div>
+  </header>
+  <div class="progress"></div>
+
+  <main class="deck" id="deck">
+
+  <!-- ====================================================== -->
+  <!-- CONTEXTO                                               -->
+  <!-- ====================================================== -->
+  <section class="tab-panel active" id="contexto">
+
+    <!-- 1. Capa -->
+    <div class="slide active">
+      <div class="container">
+        <div class="cover-grid">
+          <div>
+            <span class="eyebrow"><span class="dots3"><i></i><i></i><i></i></span>Friparque × AI Solutions · 2 de outubro de 2026</span>
+            <h1>Nenhuma chamada<br>fica <span class="grad">por atender.</span></h1>
+            <p class="lead" style="margin-top:20px">
+              Um assistente de voz em português de Portugal nas linhas de peças, assistência técnica e encomendas.
+              Atende quando a equipa não pode, identifica o cliente e o equipamento sem erros e deixa tudo pronto para a equipa fechar.
+            </p>
+          </div>
+          <div class="night reveal">
+            <div class="clock">10:41 <small>segunda-feira, hoje</small></div>
+            <div class="lines"><span><i></i>Peças · ocupada</span><span><i></i>Assistência · ocupada</span><span><i></i>Encomendas · ocupada</span></div>
+            <ol>
+              <li><time>10:41</time><span>Toca a linha de peças. Quem atende já está noutra chamada.</span></li>
+              <li class="bad"><time>10:41</time><span>Toca, toca, toca. Ninguém pode atender.</span></li>
+              <li class="bad"><time>10:42</time><span>O cliente desliga. Não deixou nome, nem número, nem o que queria.</span></li>
+              <li><time>10:43</time><span><q>Se não atendem, para que é que vamos insistir?</q> Não volta a ligar.</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="card stat-card reveal"><div class="num"><span class="count" data-to="100">0</span>+ por dia</div><div class="desc">Chamadas nos dias de pico, nas três linhas</div></div>
+          <div class="card stat-card reveal"><div class="num"><span class="count" data-to="3">0</span> linhas</div><div class="desc">Assistência técnica, peças e encomendas, cada uma com o seu número</div></div>
+          <div class="card stat-card reveal"><div class="num"><span class="count" data-to="37">0</span> anos</div><div class="desc">De peças para linha branca, com milhares de referências no catálogo</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. O que ouvimos -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que ouvimos a 25 de setembro</span>
+        <h2>Quatro pontos, por ordem de arranque</h2>
+        <div class="pains">
+          <div class="card reveal">
+            <div class="pain-num">01 · Chamadas perdidas</div>
+            <h3 style="margin-top:8px">Mais de 100 chamadas por dia, poucas pessoas</h3>
+            <p class="small">Nos picos, muitas chamadas ficam por atender. As horas de mais e de menos movimento já estão sinalizadas, e o número de chamadas está a descer: quem não é atendido deixa de ligar, e é negócio que se perde.</p>
+            <span class="prio">Arranque: fase 1</span>
+          </div>
+          <div class="card reveal">
+            <div class="pain-num">02 · Peças</div>
+            <h3 style="margin-top:8px">A peça certa, à primeira</h3>
+            <p class="small">Nome, telemóvel e email para abrir a ficha. Marca, modelo, número de série e, se houver, fotografia. O cliente tem medo de errar, e uma peça errada custa aos dois lados.</p>
+            <span class="prio">Arranque: fase 1</span>
+          </div>
+          <div class="card reveal">
+            <div class="pain-num">03 · Assistência técnica</div>
+            <h3 style="margin-top:8px">O técnico vai com a peça certa</h3>
+            <p class="small">Em garantia e fora de garantia: registar os dados, perceber a avaria e preparar a visita para não haver segunda deslocação. Depois segue o aviso automático ao cliente.</p>
+            <span class="prio">Arranque: fase 1</span>
+          </div>
+          <div class="card reveal">
+            <div class="pain-num">04 · PHC</div>
+            <h3 style="margin-top:8px">Uma licença cara e difícil de ligar</h3>
+            <p class="small">PHC Advanced com 12 utilizadores e muitos anos de desenvolvimento próprio. Um custo anual que sobe sem retorno visível e uma API que obriga a desenvolvimentos para cada ligação.</p>
+            <span class="prio later">Mais à frente</span>
+          </div>
+        </div>
+        <p class="quote">Em junho ou julho, o teste com outro agente de voz falhou nos nomes, nas letras e nos números. É exatamente isso que vamos pôr à prova hoje.</p>
+      </div>
+    </div>
+
+    <!-- 3. Hoje vs com o assistente -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">A mesma chamada, duas manhãs</span>
+        <h2>O que muda para quem liga às 10h41</h2>
+        <div class="vs">
+          <div class="card card-dont reveal">
+            <h3>Hoje</h3>
+            <ul class="tl">
+              <li><time>10:41</time><span>As três linhas estão ocupadas. A chamada toca sem resposta.</span></li>
+              <li><time>10:42</time><span>O cliente desliga. Não fica registo de quem ligou nem do que queria.</span></li>
+              <li><time>10:43</time><span>Procura a peça noutro lado, ou simplesmente não volta a ligar.</span></li>
+              <li><time>?</time><span>Na Friparque ninguém sabe que esta venda existiu.</span></li>
+            </ul>
+          </div>
+          <div class="card card-do reveal">
+            <h3>Com o assistente de voz</h3>
+            <ul class="tl">
+              <li><time>10:41</time><span>Atende ao primeiro toque: «Friparque, bom dia.»</span></li>
+              <li><time>10:42</time><span>Identifica o cliente e o equipamento. Soletra o email e repete o número de série para confirmar.</span></li>
+              <li><time>10:43</time><span>Consulta o catálogo: a peça está disponível. Diz o preço e pergunta se envia ou se o cliente vem buscar.</span></li>
+              <li><time>10:44</time><span>O cliente recebe a cotação por email, com a referência Multibanco. A equipa vê o pedido no PHC.</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="quote">O assistente não substitui a equipa. Atende a chamada que hoje ninguém consegue atender.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- A CHAMADA                                              -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="chamada">
+
+    <!-- 4. Os testes de junho -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que falhou em junho</span>
+        <h2>Cinco coisas difíceis de ouvir ao telefone</h2>
+        <p class="lead">Um assistente que ouve mal não serve. Por isso confirma sempre o que ouviu antes de registar. Experimente cada uma destas no role play.</p>
+        <div class="spell">
+          <div class="card reveal">
+            <div class="n">01</div>
+            <h3>Um nome com duas formas</h3>
+            <div class="say"><b>Diga</b>«Fala o Isaías. Ou Isaac, como quiser.»</div>
+            <div class="back"><b>Ela confirma</b>«Isaías Isaac Soares. Como prefere que o tratemos?»</div>
+          </div>
+          <div class="card reveal">
+            <div class="n">02</div>
+            <h3>Um email soletrado</h3>
+            <div class="say"><b>Diga</b>«joana.sa arroba gmail ponto com»</div>
+            <div class="back"><b>Ela confirma</b>«j, o, a, n, a, ponto, s, a, arroba gmail ponto com. Está correto?»</div>
+          </div>
+          <div class="card reveal">
+            <div class="n">03</div>
+            <h3>Uma referência com letras</h3>
+            <div class="say"><b>Diga</b>«É o pressostato 6601ER1006.»</div>
+            <div class="back"><b>Ela confirma</b>«Seis, seis, zero, um, E de Évora, R de Roma, um, zero, zero, seis.»</div>
+          </div>
+          <div class="card reveal">
+            <div class="n">04</div>
+            <h3>Um telemóvel à pressa</h3>
+            <div class="say"><b>Diga</b>«Nove um seis, quatro oito dois, dois um quatro.»</div>
+            <div class="back"><b>Ela confirma</b>«916 482 214. Confirma?»</div>
+          </div>
+          <div class="card reveal">
+            <div class="n">05</div>
+            <h3>Como se fala no Norte</h3>
+            <div class="say"><b>Diga</b>«A máquina não bota a água fora.»</div>
+            <div class="back"><b>Ela percebe</b>«A máquina não está a escoar. É a de lavar roupa ou a de loiça?»</div>
+          </div>
+        </div>
+        <p class="quote">Se ouviu mal, pede para repetir. O que fica no PHC é o que o cliente confirmou ao telefone.</p>
+      </div>
+    </div>
+
+    <!-- 5. Roleplay -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Ao vivo · experimente</span>
+        <h2>Ligue à Bia e faça o role play</h2>
+        <p class="lead">A Bia é a nossa assistente genérica: ainda não conhece a Friparque. Dê-lhe o contexto em três passos e ela passa a atender a linha de peças.</p>
+        <div class="rp">
+          <div class="persona reveal">
+            <div class="k">O seu papel no passo 3</div>
+            <h3>Cliente com o esquentador parado, 12h50</h3>
+            <p>Mora em Oliveira de Azeméis. O esquentador Vulcano não acende quando abre a água quente, e o técnico que lá foi disse que é a membrana. Liga à hora de almoço para saber se a Friparque tem a peça, quanto custa e se a pode ir buscar à loja. Pelo meio, dita o email e o número da chapa à pressa.</p>
+            <div class="call"><i></i>Ligar à Bia · 923 272 849</div>
+          </div>
+          <div class="card reveal">
+            <h3>O que dizer à Bia</h3>
+            <ol class="rp-steps">
+              <li><b>Apresente-se</b><q>Olá, Bia. Sou o [nome], da Friparque, em São João da Madeira. Há 37 anos que vendemos peças e acessórios para eletrodomésticos de linha branca e temos assistência técnica, em garantia e fora de garantia. Queremos uma assistente como tu nas nossas linhas.</q></li>
+              <li><b>Diga-lhe o que vai ter de fazer</b><q>Vais atender a linha de peças. Recolhes o nome, o telemóvel e o email do cliente, e do equipamento a marca, o modelo e o número de série. Soletras o email e repetes os números para confirmar. Não inventas preços nem prazos: se não souberes, dizes que a equipa liga de volta.</q></li>
+              <li><b>Simule a conversa</b><q>Vamos fazer um role play: eu sou um cliente e tu atendes a linha de peças da Friparque. Faz de conta que o telefone está a tocar.</q><span>A partir daqui, fale como o cliente da esquerda e use os testes do slide anterior.</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Consola: linha de peças -->
+    <div class="slide tight wide">
+      <div class="container">
+        <span class="eyebrow">O que aconteceu por trás · linha de peças</span>
+        <h2>Enquanto o cliente fala, a ficha preenche-se sozinha</h2>
+        <div class="cs" id="csPecas"></div>
+        <p class="cs-note">Replay de uma chamada como a que acabou de fazer. A peça, a foto e a referência são do catálogo Friparque; cliente, contactos, número da chapa, preço e cotação são ilustrativos.</p>
+      </div>
+    </div>
+    <script type="application/json" id="csPecas-config">
+    {
+      "title": "Linha de peças · consola do assistente",
+      "clockStart": "12:50",
+      "number": "+351 916 ··· 214",
+      "callerLabel": "Fernando",
+      "timeScale": 4.4,
+      "tone": "ok",
+      "labels": {
+        "clockNote": "hora de almoço · loja fechada até às 14h00",
+        "form": "Ficha do cliente",
+        "client": "Catálogo Friparque",
+        "clientEmpty": "À espera do equipamento…",
+        "rules": "Confirmações",
+        "levelEmpty": "por confirmar",
+        "routes": "Enviado",
+        "queue": "Fila da equipa de peças às 14h00",
+        "agent": "Assistente"
+      },
+      "fields": [
+        { "key": "nome", "label": "Nome" },
+        { "key": "tlm", "label": "Telemóvel" },
+        { "key": "email", "label": "Email" },
+        { "key": "equip", "label": "Equipamento" },
+        { "key": "modelo", "label": "Modelo" },
+        { "key": "serie", "label": "N.º da chapa" },
+        { "key": "peca", "label": "Peça" },
+        { "key": "entrega", "label": "Entrega" }
+      ],
+      "rules": [
+        { "label": "Telemóvel repetido e confirmado" },
+        { "label": "Email soletrado e confirmado" },
+        { "label": "Modelo e n.º da chapa repetidos" },
+        { "label": "Peça disponível no catálogo" }
+      ],
+      "queue": [
+        { "time": "12:34", "who": "Linha de encomendas", "what": "Ponto de situação de uma encomenda · ligar de volta", "tag": "Encomendas", "tone": "com" },
+        { "time": "12:41", "who": "Linha de assistência", "what": "Frigorífico sem frio, em garantia · visita por marcar", "tag": "Assistência", "tone": "" }
+      ],
+      "events": [
+        [0,     "status", { "label": "a tocar", "cls": "ring" }],
+        [800,   "status", { "label": "em curso", "cls": "live" }],
+        [1200,  "say", { "who": "agent", "text": "Friparque, boa tarde. Fala a assistente virtual da linha de peças. A loja está em hora de almoço, mas posso ajudar já. Com quem estou a falar?" }],
+        [4300,  "say", { "who": "caller", "text": "Boa tarde, é o Fernando Brandão, de Oliveira de Azeméis. Precisava de uma membrana para o esquentador." }],
+        [6100,  "field", { "key": "nome", "value": "Fernando Brandão" }],
+        [6600,  "say", { "who": "agent", "text": "Com certeza, senhor Fernando. Para lhe enviar a cotação, qual é o seu telemóvel e o seu email?" }],
+        [8600,  "say", { "who": "caller", "text": "Nove um seis, quatro oito dois, dois um quatro. O email é fbrandao arroba sapo ponto pt." }],
+        [10800, "field", { "key": "tlm", "value": "916 482 214" }],
+        [11100, "say", { "who": "agent", "text": "Confirmo: 916 482 214. E o email: f, b, r, a, n, d, a, o, arroba sapo ponto pt. Está certo?" }],
+        [13900, "say", { "who": "caller", "text": "Está certo." }],
+        [14300, "field", { "key": "email", "value": "fbrandao@sapo.pt" }],
+        [14500, "rule", { "i": 0, "ok": true }],
+        [14800, "rule", { "i": 1, "ok": true }],
+        [15000, "clock", { "value": "12:51" }],
+        [15200, "say", { "who": "agent", "text": "Qual é a marca e o modelo do esquentador? Costuma estar numa chapa por baixo." }],
+        [17100, "say", { "who": "caller", "text": "É um Vulcano WR11-2 B. Na chapa diz 7701 331 014." }],
+        [18900, "field", { "key": "equip", "value": "Esquentador Vulcano" }],
+        [19100, "field", { "key": "modelo", "value": "WR11-2 B" }],
+        [19300, "field", { "key": "serie", "value": "7701 331 014" }],
+        [19500, "say", { "who": "agent", "text": "Repito: Vulcano WR11-2 B, número sete sete zero um, três três um, zero um quatro. Correto?" }],
+        [22200, "say", { "who": "caller", "text": "Correto." }],
+        [22500, "rule", { "i": 2, "ok": true }],
+        [22700, "lookup", { "text": "A procurar «membrana» para Vulcano WR11-2 B no catálogo…" }],
+        [24200, "client", { "img": "assets/img/peca-membrana.jpg", "name": "MEMBRANA COMPLETA (MC13A01) ESQUENTADOR VULCANO/JUNKERS", "sub": "Disponível", "rows": [["Ref.", "VL8700503053"], ["Preço", "**18,90 €** + IVA"], ["Loja", "Levanta a partir das 14h00"]] }],
+        [24600, "rule", { "i": 3, "ok": true }],
+        [24900, "severity", { "level": "Pronto para cotação", "cls": "ok", "text": "Dados confirmados, peça em stock" }],
+        [25100, "clock", { "value": "12:52" }],
+        [25300, "say", { "who": "agent", "text": "Temos a membrana completa Vulcano em stock. Custa dezoito euros e noventa, mais IVA. Prefere que lha enviemos ou passa na loja?" }],
+        [28700, "say", { "who": "caller", "text": "Passo aí logo à tarde." }],
+        [29800, "field", { "key": "peca", "value": "Membrana MC13A01 · VL8700503053" }],
+        [30000, "field", { "key": "entrega", "value": "Levanta na loja, hoje" }],
+        [30300, "say", { "who": "agent", "text": "Fica reservada em seu nome. Envio-lhe já por email a cotação com a referência Multibanco. Na loja, basta dizer o nome." }],
+        [32300, "clock", { "value": "12:53" }],
+        [32500, "route", { "channel": "Email", "to": "fbrandao@sapo.pt", "time": "12:53", "kind": "mail", "text": "**Cotação Friparque 2026/0412**\nMembrana completa MC13A01 · Ref. VL8700503053\n18,90 € + IVA · pagamento por referência Multibanco\nLevantamento na loja: hoje, a partir das 14h00" }],
+        [33600, "route", { "channel": "PHC", "to": "Dossier interno de cotação", "time": "12:53", "kind": "crm", "text": "Fernando Brandão · 916 482 214 · fbrandao@sapo.pt\nVulcano WR11-2 B · membrana MC13A01 reservada\nOrigem: chamada, linha de peças · gravação e transcrição" }],
+        [34400, "say", { "who": "caller", "text": "Perfeito, obrigado." }],
+        [35500, "say", { "who": "agent", "text": "Obrigada eu, senhor Fernando. Boa tarde." }],
+        [36800, "status", { "label": "terminada · 2:41", "cls": "done" }],
+        [37000, "quiet", {}],
+        [37800, "queue", { "time": "12:50", "who": "Fernando Brandão · Oliveira de Azeméis", "what": "Membrana MC13A01 reservada · **cotação enviada às 12:53**", "tag": "Levanta hoje", "tone": "ok" }]
+      ]
+    }
+    </script>
+
+    <!-- 7. Consola: assistência técnica -->
+    <div class="slide tight wide section-alt">
+      <div class="container">
+        <span class="eyebrow">Linha de assistência técnica · depois das 19h00</span>
+        <h2>A avaria fica registada e o técnico sabe o que levar</h2>
+        <div class="cs" id="csAssist"></div>
+        <p class="cs-note">A bomba e a referência são do catálogo Friparque; cliente, morada, números e pedido são ilustrativos. A peça provável é uma sugestão para o técnico: ao cliente, o assistente não diagnostica.</p>
+      </div>
+    </div>
+    <script type="application/json" id="csAssist-config">
+    {
+      "title": "Assistência técnica · consola do assistente",
+      "clockStart": "19:20",
+      "number": "+351 935 ··· 607",
+      "callerLabel": "Carla",
+      "timeScale": 4.6,
+      "tone": "ok",
+      "labels": {
+        "clockNote": "depois do horário · linha fechada às 19h00",
+        "form": "Pedido de assistência",
+        "client": "Equipamento e peça provável",
+        "clientEmpty": "À espera da marca e do modelo…",
+        "rules": "Preparação da visita",
+        "levelEmpty": "por preparar",
+        "routes": "Enviado",
+        "queue": "Visitas de amanhã",
+        "agent": "Assistente"
+      },
+      "fields": [
+        { "key": "nome", "label": "Nome" },
+        { "key": "tlm", "label": "Telemóvel" },
+        { "key": "local", "label": "Localidade" },
+        { "key": "equip", "label": "Equipamento" },
+        { "key": "modelo", "label": "Marca e modelo" },
+        { "key": "serie", "label": "N.º FD" },
+        { "key": "garantia", "label": "Garantia" },
+        { "key": "avaria", "label": "Avaria" },
+        { "key": "periodo", "label": "Preferência" }
+      ],
+      "rules": [
+        { "label": "Dentro da garantia (3 anos)" },
+        { "label": "Avaria descrita com detalhe" },
+        { "label": "Peça provável identificada" },
+        { "label": "Peça em stock para levar" }
+      ],
+      "queue": [
+        { "time": "Manhã", "who": "Ovar", "what": "Frigorífico sem frio · em garantia", "tag": "Confirmada", "tone": "" },
+        { "time": "Tarde", "who": "Santa Maria da Feira", "what": "Placa não liga · fora de garantia", "tag": "Confirmada", "tone": "" }
+      ],
+      "events": [
+        [0,     "status", { "label": "a tocar", "cls": "ring" }],
+        [800,   "status", { "label": "em curso", "cls": "live" }],
+        [1200,  "say", { "who": "agent", "text": "Friparque, boa noite. Fala a assistente virtual da assistência técnica. Já passa do nosso horário, mas registo já a sua avaria para a equipa preparar a visita. Com quem estou a falar?" }],
+        [4700,  "say", { "who": "caller", "text": "Boa noite, é a Carla Pinho. A minha máquina de lavar roupa não bota a água fora, ficou cheia a meio da lavagem." }],
+        [6700,  "field", { "key": "nome", "value": "Carla Pinho" }],
+        [6900,  "field", { "key": "equip", "value": "Máquina de lavar roupa" }],
+        [7100,  "field", { "key": "avaria", "value": "Não escoa: parou cheia a meio" }],
+        [7400,  "say", { "who": "agent", "text": "Lamento, Carla. Qual é a marca e o modelo? Está numa etiqueta no aro da porta, por dentro." }],
+        [9600,  "say", { "who": "caller", "text": "É uma Balay, diz 3TS986BT barra zero quatro. E por baixo FD 9603. Comprei-a há dois anos." }],
+        [12000, "field", { "key": "modelo", "value": "Balay 3TS986BT/04" }],
+        [12200, "field", { "key": "serie", "value": "FD 9603" }],
+        [12400, "field", { "key": "garantia", "value": "**Sim** · compra há 2 anos" }],
+        [12600, "rule", { "i": 0, "ok": true }],
+        [12800, "say", { "who": "agent", "text": "Repito: Balay, três, T de Tomar, S de Setúbal, nove oito seis, B de Braga, T de Tomar, barra zero quatro, FD nove seis zero três. Correto?" }],
+        [16300, "say", { "who": "caller", "text": "Isso mesmo." }],
+        [16600, "lookup", { "text": "A cruzar Balay 3TS986BT e «não escoa» com o catálogo…" }],
+        [16900, "say", { "who": "agent", "text": "Para o técnico ir preparado: a água ficou toda dentro da máquina? Ouve algum ruído quando tenta escoar?" }],
+        [19400, "say", { "who": "caller", "text": "Ficou toda lá dentro. E faz um zumbido." }],
+        [20800, "field", { "key": "avaria", "value": "Não escoa nada, faz zumbido · parou a meio" }],
+        [21000, "rule", { "i": 1, "ok": true }],
+        [21600, "client", { "img": "assets/img/peca-bomba.jpg", "name": "BOMBA ESGOTO BALAY/SIEMENS", "sub": "Disponível · sugestão para o técnico", "rows": [["Ref.", "165 046 000"], ["Sintoma", "Não escoa, zumbido"], ["Ver também", "Filtro da bomba"]] }],
+        [22000, "rule", { "i": 2, "ok": true }],
+        [22300, "rule", { "i": 3, "ok": true }],
+        [22600, "severity", { "level": "Levar na 1.ª visita", "cls": "ok", "text": "Bomba de esgoto 165 046 000 e filtro da bomba" }],
+        [22900, "clock", { "value": "19:22" }],
+        [23100, "say", { "who": "agent", "text": "Fica registado em garantia. Em que localidade é, e prefere a visita de manhã ou de tarde?" }],
+        [25600, "say", { "who": "caller", "text": "São João da Madeira. De manhã, se puder ser." }],
+        [27000, "field", { "key": "local", "value": "São João da Madeira" }],
+        [27200, "field", { "key": "periodo", "value": "Manhã" }],
+        [27400, "field", { "key": "tlm", "value": "935 ··· 607 (este número)" }],
+        [27600, "say", { "who": "agent", "text": "Perfeito. Amanhã de manhã a equipa confirma-lhe o dia da visita por SMS, para este número. O técnico vai preparado para resolver à primeira." }],
+        [30600, "clock", { "value": "19:23" }],
+        [30800, "route", { "channel": "PHC", "to": "Pedido de assistência · garantia", "time": "19:23", "kind": "crm", "text": "Carla Pinho · São João da Madeira · 935 ··· 607\nBalay 3TS986BT/04 · FD 9603 · em garantia\nNão escoa, zumbido · peça provável: bomba 165 046 000" }],
+        [31900, "route", { "channel": "WhatsApp", "to": "Equipa de assistência", "time": "19:23", "text": "**Nova visita · manhã** · São João da Madeira\nBalay 3TS986BT · não escoa, zumbido\nLevar: bomba de esgoto 165 046 000 e filtro" }],
+        [33000, "route", { "channel": "SMS", "to": "Carla Pinho", "time": "19:23", "kind": "sms", "text": "Friparque: registámos o seu pedido de assistência 1187 (Balay, em garantia). Amanhã de manhã confirmamos o dia da visita." }],
+        [33800, "say", { "who": "caller", "text": "Muito obrigada." }],
+        [34800, "say", { "who": "agent", "text": "Obrigada eu, Carla. Boa noite." }],
+        [36100, "status", { "label": "terminada · 3:02", "cls": "done" }],
+        [36300, "quiet", {}],
+        [37100, "queue", { "time": "Manhã", "who": "São João da Madeira", "what": "Balay não escoa · **leva bomba de esgoto**", "tag": "Por confirmar", "tone": "ok" }]
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- COMO FUNCIONA                                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="funciona">
+
+    <!-- 8. Outros casos (chat + raciocínio) -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Quatro chamadas diferentes</span>
+        <h2>Quando a resposta não está no catálogo</h2>
+        <p class="lead">O assistente sabe o que pode resolver e o que tem de passar à equipa. Veja o raciocínio em cada chamada.</p>
+        <div class="cr" id="crCasos" style="margin-top:18px"></div>
+        <p class="cs-note">O pressostato e a referência são do catálogo Friparque. Nomes, horas e números de pedido são ilustrativos.</p>
+      </div>
+    </div>
+    <script type="application/json" id="crCasos-config">
+    {
+      "agentName": "Assistente Friparque",
+      "agentInitials": "FP",
+      "chatStatus": "Chamada em curso · transcrição em direto",
+      "stepMs": 1500,
+      "endPauseMs": 3200,
+      "scenarios": [
+        {
+          "title": "Não sei o modelo",
+          "subtitle": "A cliente quer a borracha da porta mas não sabe o modelo: o assistente pede a fotografia da etiqueta.",
+          "chat": [
+            { "sender": "system", "text": "Linha de peças · 11:05" },
+            { "sender": "client", "text": "Preciso da borracha da porta da máquina de lavar, mas não faço ideia do modelo.", "time": "11:05" },
+            { "sender": "agent", "text": "Não há problema. A etiqueta com o modelo costuma estar no aro da porta, por dentro. Envio-lhe agora uma mensagem por WhatsApp: basta responder com uma fotografia.", "time": "11:05" },
+            { "sender": "client", "text": "Está bem, já tiro a foto.", "time": "11:06" },
+            { "sender": "agent", "text": "Recebi a fotografia, obrigada. A equipa confirma a borracha certa para esse modelo e liga-lhe **ainda hoje** com o preço.", "time": "11:07" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Percebe o pedido: borracha do óculo, modelo desconhecido" },
+            { "icon": "book", "label": "Explica onde está a etiqueta de características" },
+            { "icon": "send", "label": "Envia uma mensagem por WhatsApp para receber a fotografia" },
+            { "icon": "search", "label": "Lê o modelo na fotografia e procura no catálogo" },
+            { "icon": "user-cog", "label": "Junta foto e modelo ao pedido e passa à equipa de peças" }
+          ]
+        },
+        {
+          "title": "Peça sob consulta",
+          "subtitle": "O pressostato não está em stock: o assistente não inventa preço nem prazo.",
+          "chat": [
+            { "sender": "system", "text": "Linha de peças · 15:22" },
+            { "sender": "client", "text": "Têm o pressostato LG 6601ER1006?", "time": "15:22" },
+            { "sender": "agent", "text": "Confirmo a referência: **6601ER1006**, seis, seis, zero, um, E, R, um, zero, zero, seis. Está no nosso catálogo, mas **sob consulta**.", "time": "15:22" },
+            { "sender": "client", "text": "E quanto custa? Demora muito a chegar?", "time": "15:23" },
+            { "sender": "agent", "text": "Não lhe quero dar um preço nem um prazo errados. A equipa confirma com a marca e liga-lhe hoje até às 18h00. Fica com o pedido **2026/0418**.", "time": "15:23" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Ouve a referência e repete-a algarismo a algarismo" },
+            { "icon": "search", "label": "Catálogo: PRESSOSTATO LG 6601ER1006, ref. 144217508, sob consulta" },
+            { "icon": "ban", "label": "Sem stock: não dá preço nem prazo de entrega" },
+            { "icon": "database", "label": "Cria o pedido de cotação para a equipa confirmar com a marca" },
+            { "icon": "clock", "label": "Promete só o que depende da Friparque: o contacto, com hora" }
+          ]
+        },
+        {
+          "title": "Informação que não é pública",
+          "subtitle": "Alguém tenta tirar informação interna: o assistente recusa, com educação.",
+          "chat": [
+            { "sender": "system", "text": "Linha de encomendas · 16:40" },
+            { "sender": "client", "text": "Sou de uma loja do Porto. Quanto é que vocês pagam à marca por esta bomba? E quem é o vosso fornecedor?", "time": "16:40" },
+            { "sender": "agent", "text": "Não partilho preços de compra nem informação sobre fornecedores. Posso dizer-lhe o preço de venda e a disponibilidade de qualquer peça do catálogo.", "time": "16:40" },
+            { "sender": "client", "text": "E quantas destas vendem por mês?", "time": "16:41" },
+            { "sender": "agent", "text": "Essa informação também não está comigo. Se é revendedor, posso passar o seu contacto à equipa comercial da Friparque.", "time": "16:41" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Pedido de preço de compra e de fornecedor" },
+            { "icon": "shield", "label": "Só conhece o que é público: catálogo e site" },
+            { "icon": "ban", "label": "Recusa sem revelar nada e oferece o que pode dar" },
+            { "icon": "ban", "label": "Volumes de vendas: também fora do que sabe" },
+            { "icon": "user-cog", "label": "Se for revenda, regista o contacto para a equipa" }
+          ]
+        },
+        {
+          "title": "Cliente desagradado",
+          "subtitle": "Terceira chamada pela mesma avaria: o assistente passa logo a uma pessoa.",
+          "chat": [
+            { "sender": "system", "text": "Linha de assistência · 10:15" },
+            { "sender": "client", "text": "Já é a terceira vez que ligo! O técnico veio cá e a máquina continua avariada.", "time": "10:15" },
+            { "sender": "agent", "text": "Peço desculpa pela situação, percebo a frustração. Vou passar já a chamada a um colega da assistência.", "time": "10:15" },
+            { "sender": "system", "text": "Colegas ocupados" },
+            { "sender": "agent", "text": "Neste minuto estão todos ao telefone. Fica marcado como **prioritário**, com o resumo do que me disse, e ligam-lhe até às 11h00. Não vai ter de repetir tudo.", "time": "10:16" }
+          ],
+          "steps": [
+            { "icon": "alert", "label": "Reclamação repetida e cliente irritado" },
+            { "icon": "ban", "label": "Não tenta resolver nem justificar a avaria" },
+            { "icon": "arrows", "label": "Tenta passar a chamada a um colega" },
+            { "icon": "list", "label": "Resumo para a equipa: 3.ª chamada, técnico já foi, avaria mantém-se" },
+            { "icon": "clock", "label": "Fila prioritária, com hora para ligar de volta" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- 9. Fluxo -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Ligação aos vossos sistemas</span>
+        <h2>Do primeiro toque ao PHC, sem ninguém ao telefone</h2>
+        <p class="lead">O assistente trabalha em cima do que a Friparque já tem: os três números de sempre, o catálogo que sincroniza todos os dias com o site, e a automação que já põe os emails no PHC como dossier interno.</p>
+        <div class="fluxo" id="fxDemo" style="margin-top:26px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="fxDemo-config">
+    {
+      "stepMs": 1800,
+      "channels": [
+        { "icon": "phone", "label": "Peças" },
+        { "icon": "wrench", "label": "Assistência técnica" },
+        { "icon": "list", "label": "Encomendas" }
+      ],
+      "nodes": [
+        { "icon": "phone", "title": "Atende", "detail": "Nos números de sempre, quando a equipa não pode: linhas ocupadas, almoço, depois das 19h00.", "tone": "brand" },
+        { "icon": "id", "title": "Identifica", "detail": "Cliente e equipamento: contactos, marca, modelo, n.º de série. Tudo confirmado em voz alta.", "tone": "teal" },
+        { "icon": "search", "title": "Consulta", "detail": "O catálogo: disponibilidade e preço de venda. Nada de dados internos.", "tone": "teal" },
+        { "icon": "send", "title": "Envia", "detail": "Cotação por email com referência Multibanco, SMS de confirmação ao cliente.", "tone": "teal" },
+        { "icon": "database", "title": "Regista", "detail": "No PHC, pela porta que já existe: o email que entra como dossier interno.", "tone": "brand" }
+      ],
+      "note": "A ligação à central telefónica, à base de dados do catálogo e à automação do PHC confirma-se na auditoria inicial, com o vosso parceiro PHC."
+    }
+    </script>
+
+    <!-- 10. Regras -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Controlo</span>
+        <h2>Três regras que o assistente não quebra</h2>
+        <div class="rules3">
+          <div class="card reveal"><h3>Só sabe o que é público</h3><p>Trabalha com o catálogo e com o que está no site. Não tem acesso a faturação, preços de compra, fornecedores ou dados de outros clientes, por isso não os pode revelar, mesmo que alguém insista.</p></div>
+          <div class="card reveal"><h3>Confirma antes de registar</h3><p>Soletra emails, repete números de série, referências e telemóveis. O que fica no PHC é o que o cliente confirmou ao telefone.</p></div>
+          <div class="card reveal"><h3>Não inventa</h3><p>Sem stock ou sem certeza, não dá preço nem prazo: passa à equipa e diz quando vão ligar. Não diagnostica avarias ao cliente; a peça provável é uma sugestão para o técnico.</p></div>
+        </div>
+        <div class="people">
+          <div class="card card-do reveal">
+            <h3>O assistente faz</h3>
+            <ul class="list-check">
+              <li>Atende as três linhas quando ninguém pode, sem tempo de espera</li>
+              <li>Recolhe e confirma os dados do cliente e do equipamento</li>
+              <li>Diz a disponibilidade e o preço do catálogo e envia a cotação</li>
+              <li>Regista a avaria com o detalhe para a primeira visita resultar</li>
+              <li>Passa à equipa o que precisa de uma pessoa, já com o resumo</li>
+            </ul>
+          </div>
+          <div class="card reveal" style="border-top:4px solid var(--brand)">
+            <h3>Fica com a equipa</h3>
+            <ul class="list-check">
+              <li>As peças sob consulta e o contacto com as marcas</li>
+              <li>O diagnóstico e a reparação</li>
+              <li>As reclamações e os casos sensíveis</li>
+              <li>Os preços, as regras e o tom: a Friparque define, o assistente cumpre</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- PROPOSTA                                               -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="proposta">
+
+    <!-- 11. Fases -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Passo a passo</span>
+        <h2>Por onde começamos, e o que vem depois</h2>
+        <div class="phase">
+          <div class="card now reveal">
+            <div class="n">Fase 1 · agora</div>
+            <h3>Assistente de voz nas três linhas</h3>
+            <ul>
+              <li>Auditoria às chamadas: horas de pico, tipos de pedido e as perguntas reais dos clientes</li>
+              <li>Catálogo ligado: disponibilidade e preço de venda das peças</li>
+              <li>Peças e assistência com o fluxo completo; encomendas com identificação e passagem à equipa</li>
+              <li>Arranque em transbordo: atende só o que fica por atender e o que chega fora de horas</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="n">Fase seguinte</div>
+            <h3>Quando a fase 1 estiver a render</h3>
+            <ul>
+              <li>Consulta aos sites das marcas para as peças sem stock, depois de validarmos a viabilidade</li>
+              <li>Chamada na véspera a lembrar a visita do técnico</li>
+              <li>O pequeno cérebro interno: a equipa pergunta, o assistente responde com o que a Friparque sabe</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="n">Mais à frente</div>
+            <h3>Uma plataforma vossa, no lugar do PHC</h3>
+            <ul>
+              <li>Feita de raiz para os vossos processos, sem custo por utilizador</li>
+              <li>Custo anual que estimamos em cerca de metade do atual</li>
+              <li>Só depois de conhecermos bem a operação, como combinámos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert reveal"><span class="dot"></span><div>Nesta primeira fase o assistente vê apenas o catálogo e a informação pública do site. Não tem acesso a faturação nem a dados internos da Friparque.</div></div>
+      </div>
+    </div>
+
+    <!-- 12. Investimento (o preço só aparece aqui) -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Investimento</span>
+        <h2>Assistente de voz para as três linhas</h2>
+        <div class="inv-grid">
+          <div class="card price-card voz reveal">
+            <div class="label">Implementação</div>
+            <div class="price">7.000 €<small>+ IVA</small></div>
+            <div class="note">Pagamento único. Auditoria às chamadas, assistente nas linhas de peças, assistência técnica e encomendas, ligação ao catálogo e ao PHC, testes com a equipa e arranque acompanhado.</div>
+          </div>
+          <div class="card price-card reveal">
+            <div class="label">Mensalidade</div>
+            <div class="price">300 €<small>/ mês + IVA</small></div>
+            <div class="note">Inclui os custos de inteligência artificial e a manutenção da solução. Correções sem bolsa de horas.</div>
+          </div>
+        </div>
+        <div class="terms">
+          <div><b>Pagamento faseado</b>50% na adjudicação e 50% na entrada em produção.</div>
+          <div><b>Volume de chamadas</b>Os minutos incluídos na mensalidade fecham-se na proposta, com os números reais da auditoria.</div>
+          <div><b>Fase seguinte</b>Sites das marcas, chamadas de véspera e plataforma própria orçamentados à parte.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. Como arrancamos -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Do sim à primeira chamada atendida</span>
+        <h2>Seis semanas, com a equipa por perto</h2>
+        <div class="weeks">
+          <div class="wk reveal"><div class="dot">1</div><div class="card"><div class="k">Semana 1</div><h3>Auditoria</h3><p>Gravação das chamadas nas três linhas, acesso ao catálogo, conversa com o parceiro PHC.</p><div class="pay">50% na adjudicação</div></div></div>
+          <div class="wk reveal"><div class="dot">2</div><div class="card"><div class="k">Semana 2</div><h3>Guiões e voz</h3><p>Perguntas por linha, tom, e o que o assistente diz e não diz.</p></div></div>
+          <div class="wk reveal"><div class="dot">3</div><div class="card"><div class="k">Semana 3</div><h3>Construção</h3><p>Catálogo, cotação com referência Multibanco, registo no PHC.</p></div></div>
+          <div class="wk reveal"><div class="dot">4</div><div class="card"><div class="k">Semana 4</div><h3>Testes com a equipa</h3><p>A equipa liga com nomes, emails e referências difíceis. Afinamos até passar.</p></div></div>
+          <div class="wk reveal"><div class="dot">5</div><div class="card"><div class="k">Semana 5</div><h3>Transbordo</h3><p>Atende só as chamadas que ficam por atender e as de fora de horas.</p></div></div>
+          <div class="wk go reveal"><div class="dot">6</div><div class="card"><div class="k">Semana 6</div><h3>Produção</h3><p>As três linhas, acompanhadas de perto no primeiro mês.</p><div class="pay">50% na entrada em produção</div></div></div>
+        </div>
+        <p class="weeks-note">Semanas contadas a partir da adjudicação. O que costuma esticar o prazo é o acesso aos sistemas.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <div class="pager">
+    <button data-prev aria-label="Anterior">‹</button>
+    <span class="pos">1 / 3</span>
+    <button data-next aria-label="Seguinte">›</button>
+    <span class="hint">← → no teclado</span>
+  </div>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Friparque, Lda · Diogo Gonçalves
+      <span class="disclaimer">Esboço de solução. Peças e referências do catálogo Friparque; clientes, números e preços dos exemplos são ilustrativos.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/consola.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    consola('csPecas');
+    consola('csAssist');
+    chatRaciocinio('crCasos');
+    fluxo('fxDemo');
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var r = document.documentElement;
+      var next = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('ais-theme', next); } catch (e) {}
+    });
+  </script>
+</body>
+</html>

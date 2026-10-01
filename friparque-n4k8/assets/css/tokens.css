@@ -1,0 +1,75 @@
+/* Estilo "linha-branca-friparque": claro como esmalte de eletrodoméstico,
+   verde Friparque e os três pontos do logo (vermelho, amarelo, verde) como
+   semáforo de estado: chamada perdida, em espera, atendida.
+   Cores do logo: verde #00824A, vermelho #E13346, amarelo #F5E32E.
+   Modo escuro em [data-theme="dark"]. */
+:root {
+  --brand-hsl: 154 100% 25%;
+  --accent-hsl: 160 85% 30%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --ink-hsl: 160 45% 11%;
+  --ink: hsl(var(--ink-hsl));
+
+  --dot-red-hsl: 354 74% 54%;
+  --dot-yellow-hsl: 52 91% 57%;
+  --dot-green-hsl: 150 70% 42%;
+
+  --bg: hsl(150 14% 97%);
+  --bg-soft: hsl(150 18% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(150 16% 96%);
+  --border: hsl(150 12% 86%);
+
+  --text: hsl(160 30% 10%);
+  --muted: hsl(160 8% 38%);
+
+  --success-hsl: 154 100% 27%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 354 70% 46%;   --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 40%;   --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--ink-hsl)) 110%);
+  --grad-text: linear-gradient(110deg, hsl(154 100% 24%), hsl(172 80% 30%));
+  --grad-cta: linear-gradient(160deg, hsl(var(--ink-hsl)), hsl(154 70% 20%) 75%);
+
+  --shadow-sm: 0 1px 3px hsl(160 40% 10% / 0.07);
+  --shadow-md: 0 8px 28px hsl(160 40% 10% / 0.09);
+  --shadow-lg: 0 20px 56px hsl(160 40% 10% / 0.15);
+
+  /* consola (janela de produto, escura nos dois temas) */
+  --cs-bg: hsl(165 30% 7%);
+  --cs-panel: hsl(165 24% 10.5%);
+  --cs-line: hsl(165 18% 19%);
+  --cs-text: hsl(150 20% 92%);
+  --cs-muted: hsl(155 10% 62%);
+  --wa-hsl: 142 70% 40%;
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1180px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
+
+:root[data-theme="dark"] {
+  --brand-hsl: 152 70% 44%;
+  --accent-hsl: 158 65% 48%;
+  --on-brand: hsl(160 45% 7%);
+  --bg: hsl(160 22% 6%);
+  --bg-soft: hsl(160 20% 8.5%);
+  --surface: hsl(160 18% 10.5%);
+  --surface-2: hsl(160 16% 13%);
+  --border: hsl(160 14% 20%);
+  --text: hsl(150 18% 93%);
+  --muted: hsl(150 8% 66%);
+  --success-hsl: 152 65% 48%;
+  --danger-hsl: 354 80% 64%;
+  --warning-hsl: 45 92% 58%;
+  --grad-text: linear-gradient(110deg, hsl(150 70% 50%), hsl(172 70% 50%));
+  --grad-cta: linear-gradient(160deg, hsl(160 30% 11%), hsl(154 55% 18%) 75%);
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.3);
+  --shadow-md: 0 8px 28px hsl(0 0% 0% / 0.35);
+  --shadow-lg: 0 20px 56px hsl(0 0% 0% / 0.45);
+}
