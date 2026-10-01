@@ -1,0 +1,317 @@
+/* ============================================================
+   DDGS: blocos próprios desta proposta
+   Só tokens, zero cores directas. Mesma camada do documento.css.
+   Tema claro, a pedido do comercial: fundo branco em toda a página.
+   A única superfície escura é a demo, que se lê como uma aplicação
+   aberta dentro do documento.
+   ============================================================ */
+
+:root {
+  /* Fundo branco de verdade (pedido do comercial), com um resto de croma
+     só nas faixas alternadas para a página não ficar uma mancha só. */
+  --bg:      oklch(99.6% 0.002 var(--brand-h));
+  --surface: oklch(100% 0 0);
+  --bg-soft: oklch(97.6% 0.008 var(--brand-h));
+}
+
+@layer componentes {
+
+  /* ---------- Marca em texto ----------
+     Sem logótipo confirmado (site fora do ar): o nome na letra display,
+     com o ponto do domínio a âmbar, como um pequeno sol. */
+  .doc-marca {
+    font-family: var(--font-display); font-weight: 700; font-size: var(--fs-2);
+    letter-spacing: -0.03em; color: var(--text); line-height: 1;
+  }
+  .doc-marca .ponto { color: hsl(var(--accent-hsl)); }
+  .doc-marca i {
+    font-style: normal; font-family: var(--font-mono); font-weight: 400;
+    font-size: var(--fs--2); letter-spacing: 0.04em; color: var(--acento-texto);
+    margin-left: var(--s-2); vertical-align: middle;
+  }
+  .rodape-marca {
+    display: block; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-1);
+    letter-spacing: -0.02em; color: var(--text); margin-bottom: var(--s-3);
+  }
+  .rodape-marca .ponto { color: hsl(var(--accent-hsl)); }
+
+  .promessa { font-weight: 700; letter-spacing: -0.035em; }
+  h2 { font-weight: 700; letter-spacing: -0.028em; }
+
+  .legenda-fina { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--faint); max-width: 70ch; }
+
+  /* ---------- O primeiro minuto (elemento assinatura) ----------
+     Uma régua de tempo à escala logarítmica (segundos a um dia), com a
+     memória do anúncio a apagar-se por cima. O marcador da resposta
+     salta entre "Hoje" e "Com o agente". */
+  .minuto {
+    margin-top: var(--s-6); padding: var(--s-5); border-radius: var(--r-4);
+    background: var(--surface); box-shadow: var(--e2);
+    display: grid; gap: var(--s-5);
+  }
+  .minuto-topo { display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5); align-items: flex-end; justify-content: space-between; }
+  .minuto-alterna {
+    display: inline-flex; padding: 4px; gap: 4px; border-radius: var(--r-pill);
+    background: var(--bg-soft); box-shadow: inset 0 0 0 1px var(--border);
+  }
+  .minuto-alterna button {
+    font: inherit; font-size: var(--fs--1); font-weight: 600; cursor: pointer;
+    min-height: 44px; padding: 0 var(--s-4); border: 0; border-radius: var(--r-pill);
+    background: transparent; color: var(--muted);
+    transition: background var(--t-normal) var(--ease-out), color var(--t-normal) var(--ease-out);
+  }
+  .minuto-alterna button[aria-pressed="true"] { background: var(--brand-solido); color: var(--on-brand); }
+  .minuto-alterna button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .minuto-leitura { display: grid; gap: var(--s-1); }
+  .minuto-leitura .k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--muted); letter-spacing: .02em; }
+  .minuto-leitura .v {
+    font-family: var(--font-display); font-weight: 700; font-size: var(--fs-4);
+    line-height: 1; letter-spacing: -0.03em; color: var(--text);
+  }
+
+  .regua { position: relative; padding-top: 72px; }
+  .regua-memoria {
+    height: 14px; border-radius: var(--r-pill);
+    background: linear-gradient(90deg in oklab,
+      hsl(var(--accent-hsl)) 0%, hsl(var(--accent-hsl) / .85) 22%,
+      hsl(var(--accent-hsl) / .35) 42%, hsl(var(--accent-hsl) / .08) 62%, transparent 80%);
+    box-shadow: inset 0 0 0 1px var(--hairline);
+  }
+  .regua-memoria-rot {
+    display: flex; justify-content: space-between; margin-top: var(--s-2);
+    font-size: var(--fs--2); color: var(--muted);
+  }
+  .regua-eixo {
+    position: relative; margin-top: var(--s-4); height: 1px; background: var(--border-strong);
+  }
+  .regua-marcas { position: relative; height: 3.2em; margin-top: var(--s-2); font-family: var(--font-mono); font-size: var(--fs--2); color: var(--faint); }
+  .regua-marcas span { position: absolute; left: var(--x); transform: translateX(-50%); white-space: nowrap; }
+  .regua-marcas span::before {
+    content: ""; position: absolute; left: 50%; top: calc(-1 * var(--s-2) - 5px);
+    width: 1px; height: 9px; background: var(--border-strong);
+  }
+  .regua-marcas span:first-child { transform: none; }
+  .regua-marcas span:last-child { transform: translateX(-100%); }
+
+  /* O marcador vive à posição exacta; a etiqueta desliza em proporção
+     (translateX de -x da própria largura), por isso nunca sai da régua. */
+  .regua-pino {
+    position: absolute; top: 32px; left: var(--x, 4%);
+    width: 2px; height: 47px; margin-left: -1px; border-radius: 2px;
+    background: var(--brand-solido);
+    transition: left 900ms var(--e-expo, cubic-bezier(.16,1,.3,1));
+  }
+  .regua-pino::after {
+    content: ""; position: absolute; left: -5px; bottom: -6px;
+    width: 12px; height: 12px; border-radius: var(--r-pill);
+    background: var(--brand-solido); box-shadow: 0 0 0 5px var(--brand-a16);
+  }
+  .pino-rot {
+    position: absolute; top: 0; left: var(--x, 4%);
+    transform: translateX(calc(var(--x, 4%) * -1));
+    padding: 6px 12px; border-radius: var(--r-pill); white-space: nowrap;
+    font-family: var(--font-body); font-size: var(--fs--2); font-weight: 600; letter-spacing: 0; text-transform: none;
+    background: var(--brand-solido); color: var(--on-brand); box-shadow: var(--e2);
+    transition: left 900ms var(--e-expo, cubic-bezier(.16,1,.3,1)), transform 900ms var(--e-expo, cubic-bezier(.16,1,.3,1));
+  }
+  .minuto[data-modo="hoje"] .pino-rot,
+  .minuto[data-modo="hoje"] .regua-pino,
+  .minuto[data-modo="hoje"] .regua-pino::after { background: var(--muted); }
+  .minuto[data-modo="hoje"] .regua-pino::after { box-shadow: 0 0 0 5px var(--hairline); }
+
+  .minuto-texto { max-width: 62ch; color: var(--muted); font-size: var(--fs--1); }
+  .minuto-texto b { color: var(--text); font-weight: 600; }
+
+  /* ---------- Três peças: marketing, vendas, agente ---------- */
+  .pecas {
+    display: grid; gap: var(--s-4); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  }
+  .peca {
+    position: relative; padding: var(--s-5) var(--s-4) var(--s-4);
+    border-radius: var(--r-3); background: var(--surface); box-shadow: var(--e1);
+    display: grid; gap: var(--s-2); align-content: start;
+  }
+  .peca::before {
+    content: ""; position: absolute; inset: 0 0 auto; height: 3px; border-radius: var(--r-3) var(--r-3) 0 0;
+    background: var(--border-strong);
+  }
+  .peca--agente::before { background: linear-gradient(90deg in oklab, var(--brand-600), hsl(var(--accent-hsl))); }
+  .peca--agente { box-shadow: var(--e3); }
+  .peca-k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--muted); letter-spacing: .02em; }
+  .peca--agente .peca-k { color: var(--acento-texto); }
+  .peca h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-2); letter-spacing: -0.02em; line-height: 1.1; }
+  .peca p { color: var(--muted); font-size: var(--fs--1); }
+  .peca .quem { margin-top: var(--s-2); padding-top: var(--s-2); border-top: 1px solid var(--hairline); color: var(--text); }
+
+  .aviso-honesto {
+    margin-top: var(--s-5); padding: var(--s-4) var(--s-5); border-radius: var(--r-3);
+    border-left: 3px solid hsl(var(--accent-hsl));
+    background: linear-gradient(90deg in oklab, hsl(var(--accent-hsl) / .09), transparent 80%);
+    max-width: 72ch;
+  }
+  .aviso-honesto b { display: block; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-1); letter-spacing: -0.015em; }
+  .aviso-honesto p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
+
+  /* ---------- A notificação que o comercial recebe ---------- */
+  .duas-notif {
+    display: grid; gap: var(--s-5); margin-top: var(--s-6); align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  }
+  .duas-notif h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-2); letter-spacing: -0.02em; line-height: 1.12; }
+  .duas-notif > div > p { margin-top: var(--s-3); color: var(--muted); max-width: 44ch; }
+  .notif {
+    border-radius: var(--r-4); overflow: hidden; box-shadow: var(--e3);
+    background: var(--mock-bg); color: var(--mock-txt); max-width: 26rem; justify-self: center; width: 100%;
+  }
+  .notif-topo {
+    display: flex; align-items: center; gap: var(--s-2); padding: var(--s-3) var(--s-4);
+    background: var(--wa-green-dark); color: oklch(98% 0.01 170); font-size: var(--fs--1); font-weight: 600;
+  }
+  .notif-topo small { margin-left: auto; font-weight: 400; opacity: .85; font-size: var(--fs--2); }
+  .notif-avatar {
+    width: 32px; height: 32px; border-radius: var(--r-pill); display: grid; place-items: center;
+    background: oklch(100% 0 0 / .18); font-size: var(--fs--2); font-weight: 600;
+  }
+  .notif-corpo { padding: var(--s-4); display: grid; gap: var(--s-2); }
+  .notif-bolha {
+    background: var(--mock-bolha-in); border-radius: var(--r-3); padding: var(--s-3) var(--s-4);
+    font-size: var(--fs--1); line-height: 1.5;
+  }
+  .notif-bolha b { display: block; margin-bottom: var(--s-2); color: oklch(88% 0.12 80); font-weight: 600; }
+  .notif-bolha dl { display: grid; grid-template-columns: auto 1fr; gap: 4px var(--s-3); }
+  .notif-bolha dt { color: var(--mock-txt-fraco); }
+  .notif-bolha dd { color: var(--mock-txt); }
+  .notif-bolha time { display: block; margin-top: var(--s-2); text-align: right; font-size: var(--fs--2); color: var(--mock-txt-fraco); }
+
+  /* ---------- Provas lado a lado ---------- */
+  .prova-grid {
+    display: grid; gap: var(--s-4) var(--s-5); margin-top: var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  }
+  .prova-grid > div { border-top: 1px solid var(--border); padding-top: var(--s-3); }
+  .prova-grid b { display: block; color: var(--text); font-weight: 600; font-size: var(--fs-0); }
+  .prova .prova-grid p { margin-top: var(--s-2); font-size: var(--fs--1); }
+
+  /* ---------- A frase dele ---------- */
+  .objetivo {
+    margin-top: var(--s-5); max-width: 46ch;
+    font-family: var(--font-display); font-weight: 500; font-size: var(--fs-1);
+    line-height: 1.35; letter-spacing: -0.01em; color: var(--text);
+    padding-left: var(--s-4); border-left: 3px solid hsl(var(--accent-hsl));
+  }
+  .objetivo p::before { content: "\201C"; }
+  .objetivo p::after { content: "\201D"; }
+  .objetivo cite {
+    display: block; margin-top: var(--s-2); font-family: var(--font-body);
+    font-style: normal; font-size: var(--fs--2); color: var(--faint); letter-spacing: 0;
+  }
+
+  /* ---------- Investimento: um só cartão ---------- */
+  .investe {
+    margin-top: var(--s-6); padding: var(--s-5); border-radius: var(--r-4);
+    background:
+      radial-gradient(70% 120% at 100% 0%, hsl(var(--accent-hsl) / .10), transparent 60%),
+      linear-gradient(160deg in oklab, color-mix(in oklab, var(--brand-500) 9%, var(--surface)) 0%, var(--surface) 65%);
+    border: 1px solid color-mix(in oklab, var(--brand-400) 40%, transparent);
+    box-shadow: var(--e3), 0 0 60px -24px hsl(var(--brand-hsl) / .45);
+    display: grid; gap: var(--s-4);
+  }
+  .investe-k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--acento-texto); letter-spacing: .02em; }
+  .investe-valores {
+    display: grid; gap: var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  }
+  .investe-valores div { border-top: 1px solid var(--border); padding-top: var(--s-3); }
+  .investe-valores dt { font-size: var(--fs--1); color: var(--muted); }
+  .investe-valores dd {
+    margin-top: var(--s-2); font-family: var(--font-display); font-weight: 700;
+    font-size: var(--fs-5); line-height: 1; color: var(--text); letter-spacing: -0.035em;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .investe-valores dd i { font-style: normal; font-family: var(--font-body); font-weight: 400; font-size: var(--fs-0); color: var(--muted); letter-spacing: 0; }
+  .investe-valores small { display: block; margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--2); }
+  .investe-lista { list-style: none; display: grid; gap: var(--s-2); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+  .investe-lista li { position: relative; padding-left: var(--s-4); font-size: var(--fs--1); color: var(--muted); }
+  .investe-lista li::before {
+    content: ""; position: absolute; left: 2px; top: .6em; width: 8px; height: 8px;
+    border-radius: var(--r-pill); background: var(--brand-500);
+  }
+  .investe-lista b { color: var(--text); font-weight: 600; }
+
+  .meta-custo {
+    margin-top: var(--s-4); padding: var(--s-4); border-radius: var(--r-3);
+    background: var(--surface); box-shadow: var(--e1); max-width: 72ch;
+  }
+  .meta-custo b { display: block; font-weight: 600; }
+  .meta-custo p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
+
+  /* ---------- Fases ---------- */
+  .fases-dd {
+    list-style: none; margin-top: var(--s-6); display: grid; gap: var(--s-3);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    counter-reset: fase;
+  }
+  .fases-dd li {
+    position: relative; padding: var(--s-4); border-radius: var(--r-3);
+    background: var(--surface); box-shadow: var(--e1); display: grid; gap: var(--s-2); align-content: start;
+  }
+  .fases-dd .quando { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--acento-texto); }
+  .fases-dd .o-que { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-1); letter-spacing: -0.015em; line-height: 1.15; }
+  .fases-dd p { color: var(--muted); font-size: var(--fs--1); }
+  .fases-dd .contigo { color: var(--text); font-size: var(--fs--2); border-top: 1px solid var(--hairline); padding-top: var(--s-2); margin-top: auto; }
+
+  .passos-fecho--quatro { grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+
+  @media (max-width: 560px) {
+    .minuto { padding: var(--s-4); }
+    .regua-marcas { font-size: 0.6875rem; }
+    .regua-marcas .so-largo { display: none; }
+  }
+}
+
+/* ---------- A demo é uma janela de produto escura ----------
+   O chat+raciocínio foi desenhado para fundo escuro. Numa página branca,
+   dá-se-lhe o próprio tema escuro: lê-se como uma aplicação aberta. */
+.cr {
+  --bg:        oklch(15.0% 0.016 var(--brand-h));
+  --bg-soft:   oklch(17.5% 0.018 var(--brand-h));
+  --surface:   oklch(20.0% 0.020 var(--brand-h));
+  --surface-2: oklch(23.0% 0.022 var(--brand-h));
+  --surface-3: oklch(26.0% 0.024 var(--brand-h));
+  --text:   oklch(96.0% 0.006 var(--brand-h));
+  --muted:  oklch(74.0% 0.014 var(--brand-h));
+  --faint:  oklch(66.0% 0.014 var(--brand-h));
+  --hairline: oklch(100% 0 0 / 0.08);
+  --border:   oklch(100% 0 0 / 0.13);
+  --border-strong: oklch(100% 0 0 / 0.22);
+  --brand:  var(--brand-300);
+  --accent: var(--brand-300);
+  --accent-hsl: 38 92% 60%;
+  --acento-texto: var(--brand-300);
+  background: var(--bg); color: var(--text);
+  border-radius: var(--r-4); box-shadow: var(--e3);
+}
+
+/* O fecho continua branco (pedido do comercial): destaca-se pela moldura
+   e pelo botão, não por mudar de tema. */
+.fecho {
+  background:
+    radial-gradient(55% 70% at 12% 0%, hsl(var(--brand-hsl) / .10), transparent 70%),
+    radial-gradient(45% 60% at 92% 100%, hsl(var(--accent-hsl) / .12), transparent 70%),
+    var(--bg-soft);
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+.fecho .lead { color: var(--muted); }
+.fecho h2 { font-weight: 700; letter-spacing: -0.035em; }
+.fecho .btn-primario { background: var(--brand-solido); color: var(--on-brand); }
+.fecho .btn-secundario { color: var(--text); border-color: var(--border-strong); }
+
+@media (prefers-reduced-motion: reduce) {
+  .regua-pino, .pino-rot { transition: none; }
+}
+
+/* O verde-petróleo no passo 600 dá 4,3:1 com branco: o link de salto usa o sólido. */
+.saltar { background: var(--brand-solido); }
