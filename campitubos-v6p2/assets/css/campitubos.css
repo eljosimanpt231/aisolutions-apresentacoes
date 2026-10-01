@@ -500,3 +500,11 @@ section { padding: 0; }
 .tbl.mo td:first-child { white-space: nowrap; font-size: 0.76rem; }
 .tbl.mo .in-num { width: 54px; padding: 3px 4px; }
 .tbl.mo td, .tbl.mo th { padding: 6px 6px; }
+/* v4: tranches primeiro, total discreto em baixo */
+.tranches-fortes .tr { padding: 13px 0; }
+.tranches-fortes .tr span { font-size: 0.98rem; font-weight: 600; }
+.tranches-fortes .tr span small { font-weight: 400; }
+.tranches-fortes .tr b { font-size: 1.45rem; color: var(--brand); }
+.inv-total { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; font-size: 0.82rem; color: var(--muted); }
+.inv-total span { font-family: var(--font-mono); font-size: 0.86rem; color: var(--muted); }
+.inv-total span small { font-size: 0.8em; margin-left: 4px; }
