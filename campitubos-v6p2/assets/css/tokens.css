@@ -1,53 +1,49 @@
-/* Campitubos: "folha de projeto" escura.
-   Marca: anel navy do logótipo (é o fundo) + azul-aço do tubo do logótipo (--brand)
-   + azul-céu do site deles (--accent). Semânticos: verde (automático/ok),
+/* Campitubos: tema claro. Marca: navy do anel do logótipo (--brand)
+   e azul do tubo do logótipo (--accent). Semânticos: verde (automático/ok),
    âmbar (confirmar), vermelho (manual/erro). */
 :root {
-  --brand-hsl: 226 78% 72%;
-  --accent-hsl: 199 90% 66%;
+  --brand-hsl: 228 62% 32%;
+  --accent-hsl: 214 82% 48%;
   --brand: hsl(var(--brand-hsl));
   --accent: hsl(var(--accent-hsl));
-  --on-brand: hsl(226 60% 10%);
+  --on-brand: hsl(0 0% 100%);
 
-  --navy-hsl: 228 62% 30%;
+  --navy-hsl: 228 62% 22%;
   --navy: hsl(var(--navy-hsl));
 
-  --bg: hsl(226 50% 6%);
-  --bg-soft: hsl(226 44% 8.5%);
-  --surface: hsl(226 38% 11%);
-  --surface-2: hsl(226 34% 14.5%);
-  --border: hsl(224 30% 22%);
-  --line: hsl(var(--brand-hsl) / 0.07);
-  --line-strong: hsl(var(--brand-hsl) / 0.13);
+  --bg: hsl(222 33% 97%);
+  --bg-soft: hsl(222 30% 95%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(222 33% 97.5%);
+  --border: hsl(222 22% 88%);
+  --line: hsl(var(--brand-hsl) / 0.045);
+  --line-strong: hsl(var(--brand-hsl) / 0.08);
 
-  --text: hsl(220 35% 95%);
-  --muted: hsl(221 18% 70%);
-  --faint: hsl(221 14% 55%);
+  --text: hsl(224 40% 14%);
+  --muted: hsl(222 14% 40%);
+  --faint: hsl(222 12% 52%);
 
   --paper: hsl(0 0% 100%);
   --paper-text: hsl(222 40% 14%);
   --paper-muted: hsl(222 14% 42%);
   --paper-line: hsl(222 20% 88%);
 
-  --success-hsl: 150 58% 52%; --success: hsl(var(--success-hsl));
-  --danger-hsl: 356 82% 66%;  --danger: hsl(var(--danger-hsl));
-  --warning-hsl: 38 94% 60%;  --warning: hsl(var(--warning-hsl));
+  --success-hsl: 152 62% 32%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 70% 46%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 32 92% 40%;  --warning: hsl(var(--warning-hsl));
 
-  --grad-hero: linear-gradient(165deg, hsl(var(--navy-hsl)) 0%, hsl(var(--bg)) 100%);
-  --grad-text: linear-gradient(110deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)) 70%);
-  --grad-cta: linear-gradient(160deg, hsl(var(--navy-hsl)), hsl(226 50% 18%));
+  --grad-text: linear-gradient(110deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)) 75%);
+  --grad-cta: linear-gradient(160deg, hsl(var(--navy-hsl)), hsl(var(--brand-hsl)));
 
-  --shadow-sm: 0 1px 3px hsl(226 80% 2% / 0.5);
-  --shadow-md: 0 10px 30px hsl(226 80% 2% / 0.55);
-  --shadow-lg: 0 24px 60px hsl(226 80% 2% / 0.65);
+  --shadow-sm: 0 1px 2px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 24px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 22px 54px hsl(var(--brand-hsl) / 0.16);
 
-  --radius: 12px;
-  --radius-lg: 18px;
+  --radius: 10px;
+  --radius-lg: 14px;
   --font-display: 'Archivo', system-ui, sans-serif;
   --font-body: 'Archivo', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
   --container: 1200px;
   --section-pad: clamp(64px, 9vw, 120px);
-
-  --wa-green: hsl(165 49% 32%);
 }

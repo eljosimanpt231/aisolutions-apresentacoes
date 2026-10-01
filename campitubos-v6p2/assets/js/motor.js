@@ -44,6 +44,7 @@
     $('[data-prev]').disabled = g === 1; $('[data-next]').disabled = g === T;
     history.replaceState(null, '', '#' + current + (pos[current] ? '/' + (pos[current] + 1) : ''));
     if (act) { $$('.reveal', act).forEach(function (e) { e.classList.add('visible'); }); act.dispatchEvent(new CustomEvent('slide:show', { bubbles: true })); }
+    if (current === 'plataforma') { var cr = $('#crumb'); if (cr) cr.textContent = act ? act.dataset.titulo : ''; lateral(); }
     window.scrollTo(0, 0);
   }
   function go(d) {
@@ -54,6 +55,10 @@
     if (d < 0 && pi > 0) { current = panels[pi - 1].id; pos[current] = slidesOf(current).length - 1; return render(); }
   }
   window.irPara = function (tab, n) { current = tab; pos[tab] = n || 0; render(); };
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-ir]'); if (b) { window.irPara('plataforma', +b.dataset.ir); return; }
+    var a = e.target.closest('.side a[data-v]'); if (a) { e.preventDefault(); window.irPara('plataforma', +a.dataset.v); }
+  });
   tabs.forEach(function (t) { t.addEventListener('click', function () { current = t.dataset.tab; render(); }); });
   $('[data-prev]').addEventListener('click', function () { go(-1); });
   $('[data-next]').addEventListener('click', function () { go(1); });
@@ -80,8 +85,17 @@
     $('img', lb).src = b.dataset.zoom; $('small', lb).textContent = b.dataset.leg || ''; lb.classList.add('open'); }); });
   lb.addEventListener('click', function (e) { if (e.target === lb || e.target.tagName === 'BUTTON') lb.classList.remove('open'); });
 
-  /* Stepper: marca o passo atual e os já validados */
-  function stepper() {
+  /* Barra lateral da plataforma: passo atual e passos já feitos */
+  function lateral() {
+    var at = current === 'plataforma' ? pos.plataforma : -1;
+    $$('.side a[data-v]').forEach(function (a) {
+      var v = +a.dataset.v;
+      a.classList.toggle('active', v === at && (!a.classList.contains('dup') || a.classList.contains('ast')));
+      if (v <= 6 && !a.classList.contains('dup')) { var done = v < at && !(v === 4 && !S.validTempos) && !(v === 5 && !S.validFin); a.classList.toggle('done', done); a.querySelector('i').textContent = done ? '✓' : (v + 1); }
+    });
+  }
+  function stepper() { lateral(); }
+  function stepperAntigo() {
     $$('.stepper').forEach(function (st) {
       var at = +st.dataset.at;
       $$('div', st).forEach(function (d, i) {

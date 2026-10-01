@@ -24,8 +24,7 @@
   </div>
   <nav class="tabs">
     <button class="tab active" data-tab="contexto">Contexto</button>
-    <button class="tab" data-tab="pedido">O vosso pedido, passo a passo</button>
-    <button class="tab" data-tab="assistente">Assistente</button>
+    <button class="tab" data-tab="plataforma">Plataforma</button>
     <button class="tab" data-tab="proposta">Proposta</button>
   </nav>
 </header>
@@ -34,31 +33,31 @@
 <main class="deck" id="deck">
 
 <!-- =================================================================== -->
-<!-- SEPARADOR 1: CONTEXTO                                                -->
+<!-- CONTEXTO                                                             -->
 <!-- =================================================================== -->
 <section class="tab-panel active" id="contexto">
 
-  <!-- 1. Capa -->
-  <div class="slide capa active" data-titulo="Capa">
-    <div class="container">
-      <span class="kicker">Campitubos × AI Solutions · Ribeirão, 1 de outubro de 2026</span>
-      <h1>Um orçamento base em horas, <span class="grad">com a vossa tabela, o vosso catálogo e a vossa margem.</span></h1>
-      <p class="lead" style="margin-top:20px">
-        Uma plataforma feita à medida da Campitubos que lê o pedido, cruza o desenho com as listas, liga cada linha às vossas referências
-        e propõe tempos, equipas e preço. A decisão final continua a ser do José e do Martinho.
-      </p>
-      <div class="stats">
-        <div class="stat reveal"><div class="n"><span class="count" data-to="36">0</span> <small>pedidos</small></div><p>Chegaram ao email de orçamentos em duas semanas. Respondidos: uma fração mínima.</p></div>
-        <div class="stat reveal"><div class="n"><span class="count" data-to="14">0</span> <small>pontos</small></div><p>Encontrados no pedido que nos enviaram, antes de mexer num preço: flanges, reduções, válvulas, etiquetas.</p></div>
-        <div class="stat reveal"><div class="n"><span class="count" data-to="44">0</span> <small>linhas</small></div><p>Do pedido ligadas ao vosso catálogo, com o código da referência e os minutos da vossa tabela.</p></div>
+  <div class="slide folha capa active" data-titulo="Capa">
+    <div class="container capa-grid">
+      <div>
+        <span class="kicker">Campitubos × AI Solutions · Ribeirão, 1 de outubro de 2026</span>
+        <h1>Um orçamento base em horas, <span class="grad">com a vossa tabela, o vosso catálogo e a vossa margem.</span></h1>
+        <p class="lead" style="margin-top:18px">
+          Uma plataforma feita à medida da Campitubos que lê o pedido, cruza o desenho com as listas, liga cada linha às vossas referências
+          e propõe tempos, equipas e preço. A decisão final continua a ser do José e do Martinho.
+        </p>
+        <div class="stats">
+          <div class="stat reveal"><div class="n"><span class="count" data-to="36">0</span> <small>pedidos</small></div><p>Em duas semanas no email de orçamentos. Respondidos: uma fração mínima.</p></div>
+          <div class="stat reveal"><div class="n"><span class="count" data-to="6">0</span> <small>dúvidas</small></div><p>No pedido que nos enviaram, num só email ao projetista. Outras 6 resolvemos lendo o desenho.</p></div>
+          <div class="stat reveal"><div class="n"><span class="count" data-to="44">0</span> <small>linhas</small></div><p>Ligadas ao vosso catálogo, com o código da referência e os minutos da vossa tabela.</p></div>
+        </div>
+        <div class="meta"><span>Para <b>José Araújo · Martinho Rodrigues</b></span><span>Seguimento da reunião de <b>18/09/2026</b></span></div>
       </div>
-      <div class="meta"><span>Para <b>José Araújo · Martinho Rodrigues</b></span><span>Seguimento da reunião de <b>18/09/2026</b></span><span>Demonstração com <b>o pedido enviado a 22/09</b></span></div>
+      <figure class="capa-foto reveal"><img src="assets/img/sines.jpg" alt="Data center de Sines"><figcaption>Data center de Sines, obra da Campitubos (foto: campitubos.pt)</figcaption></figure>
     </div>
-    <span class="foto-legenda">Data center de Sines, obra da Campitubos (foto: campitubos.pt)</span>
   </div>
 
-  <!-- 2. O que ouvimos -->
-  <div class="slide" data-titulo="O que ouvimos">
+  <div class="slide folha" data-titulo="O que ouvimos">
     <div class="container">
       <span class="eyebrow">O que ouvimos a 18 de setembro</span>
       <h2>Seis coisas que o José e o Martinho nos disseram</h2>
@@ -74,29 +73,28 @@
     </div>
   </div>
 
-  <!-- 3. O vosso Excel -->
-  <div class="slide" data-titulo="O vosso Excel">
+  <div class="slide folha" data-titulo="O vosso Excel">
     <div class="container">
       <span class="eyebrow">Antes de prometer, lemos o vosso ficheiro</span>
       <h2>O vosso Excel já tem a estrutura. Falta-lhe o motor.</h2>
       <p class="lead">Abrimos o Ficheiro_orcamental que o Martinho nos enviou. Não é rudimentar: é um sistema de orçamentação completo, construído com a ajuda do ChatGPT. O que lhe falta são os dados e a ligação automática entre o pedido e o catálogo.</p>
       <div class="excel-grid">
         <div class="card reveal">
-          <h3>O que já está feito</h3>
+          <h3 style="margin-bottom:12px">O que já está feito</h3>
           <div class="contagens" style="grid-template-columns:repeat(2,1fr)">
             <div class="cont"><div class="n">22 <small>folhas</small></div><p>Do Início à Proposta: recursos, custos indiretos, análise de risco, fecho, curva S</p></div>
             <div class="cont"><div class="n">4.132 <small>ref.</small></div><p>Tubo, curvas, tês, reduções e flanges, com código, norma, DN e peso</p></div>
             <div class="cont"><div class="n">~2.000 <small>linhas</small></div><p>De macros: fita própria, revisões, exportar proposta, conclusões automáticas</p></div>
             <div class="cont"><div class="n">32 <small>DN</small></div><p>Na tabela de tempos: minutos de pré-fabrico e montagem do DN15 ao DN1200</p></div>
           </div>
-          <div class="folhas-xl"><span>INICIO</span><span class="hl">ORÇAMENTO</span><span>RESUMO ORÇ</span><span>RECURSOS</span><span>CUSTOS INDIRETOS</span><span>ANALISE_RISCO</span><span class="hl">FECHO</span><span>PROPOSTA</span><span class="hl">PRICEBOOK</span><span>BIB_COMPOSIÇOES</span><span class="hl">PARAMETROS</span><span>REFERENCIAS</span><span>ESTRUTURA_CUSTOS</span><span>FICHA_CUSTO</span><span>%M.O.</span><span>+ 7</span></div>
+          <div class="folhas-xl"><span>INICIO</span><span class="hl">ORÇAMENTO</span><span>RESUMO ORÇ</span><span>RECURSOS</span><span>CUSTOS INDIRETOS</span><span>ANALISE_RISCO</span><span class="hl">FECHO</span><span>PROPOSTA</span><span class="hl">PRICEBOOK</span><span>BIB_COMPOSIÇOES</span><span class="hl">PARAMETROS</span><span>REFERENCIAS</span><span>%M.O.</span><span>+ 9</span></div>
         </div>
         <div class="card reveal">
           <h3>O que lhe falta</h3>
           <div class="meter"><div class="row"><span>Referências do catálogo com preço</span><b>102 de 4.132</b></div><div class="bar"><i style="width:2.5%"></i></div></div>
           <div class="meter"><div class="row"><span>Composições de custo com horas</span><b>0 de 589</b></div><div class="bar"><i style="width:0.4%"></i></div></div>
           <div class="meter"><div class="row"><span>Linhas do pedido de exemplo ligadas a uma referência</span><b>0 de 72</b></div><div class="bar"><i style="width:0.4%"></i></div></div>
-          <div class="motor-falta"><b>O passo que o José descreveu ainda não existe:</b> colar o mapa de quantidades e o ficheiro "ler tubo DN25, ir ao pricebook, ir aos minutos, multiplicar pela equipa". Hoje, a coluna "Composição CUSTO" escolhe-se à mão, linha a linha, e sem ela o orçamento dá 0 €.</div>
+          <div class="motor-falta"><b>O passo que o José descreveu ainda não existe:</b> colar o mapa de quantidades e o ficheiro "ler tubo DN25, ir ao pricebook, ir aos minutos, multiplicar pela equipa". Hoje a coluna "Composição CUSTO" escolhe-se à mão, linha a linha, e sem ela o orçamento dá 0 €.</div>
           <p class="small" style="margin-top:12px">Não deitamos nada fora: a plataforma usa as vossas referências, a vossa tabela de tempos e as vossas fórmulas de fecho.</p>
         </div>
       </div>
@@ -105,160 +103,163 @@
 </section>
 
 <!-- =================================================================== -->
-<!-- SEPARADOR 2: O PEDIDO, PASSO A PASSO                                 -->
+<!-- PLATAFORMA                                                           -->
 <!-- =================================================================== -->
-<section class="tab-panel" id="pedido">
+<section class="tab-panel" id="plataforma">
+ <div class="app">
+  <aside class="side">
+    <div class="app-name"><img src="assets/img/campitubos-logo.png" alt=""><div><b>Orçamentação</b><small>Campitubos · plataforma</small></div></div>
+    <div class="grp">Pedido em análise</div>
+    <div class="pedido-card"><b>Central de água gelada e quente</b><span>Unidade farmacêutica · recebido a 22/09</span></div>
+    <a data-v="0"><i>1</i>Entrada e triagem</a>
+    <a data-v="1"><i>2</i>Leitura dos ficheiros</a>
+    <a data-v="2"><i>3</i>Auditoria</a>
+    <a data-v="3"><i>4</i>Ligação ao catálogo</a>
+    <a data-v="4"><i>5</i>Tempos e equipas</a>
+    <a data-v="5"><i>6</i>Financeiro</a>
+    <a data-v="6"><i>7</i>Proposta e PHC</a>
+    <div class="grp">Base Campitubos</div>
+    <a class="dup ast" data-v="7"><i>✦</i>Assistente</a>
+    <a class="dup" data-v="3"><i>≡</i>Catálogo<span class="badge-n">4.132</span></a>
+    <a class="dup" data-v="4"><i>◷</i>Tabela de tempos<span class="badge-n">32 DN</span></a>
+    <a class="dup" data-v="0"><i>✉</i>Caixa de orçamentos<span class="badge-n">36</span></a>
+  </aside>
+  <div class="main">
+    <div class="app-head">
+      <div class="crumbs">Pedidos › Central de água gelada e quente › <b id="crumb">Entrada e triagem</b></div>
+      <div class="search">⌕ Procurar pedido, referência, cliente</div>
+      <div class="bell">🔔<em>6</em></div>
+      <div class="user"><span class="av">JA</span><div><b>José Araújo</b><small>Orçamentação</small></div></div>
+    </div>
 
-  <!-- 4. Entrada e triagem -->
-  <div class="slide" id="s-entrada" data-titulo="1. Entrada e triagem">
-    <div class="container">
-      <div class="stepper" data-at="1"><div><i>1</i><span>Entrada</span></div><div><i>2</i><span>Leitura</span></div><div><i>3</i><span>Auditoria</span></div><div><i>4</i><span>Catálogo</span></div><div><i>5</i><span>Tempos</span></div><div><i>6</i><span>Financeiro</span></div><div><i>7</i><span>Proposta</span></div></div>
-      <h2>O pedido chega por email e é triado antes de alguém lhe tocar</h2>
-      <div class="two w" style="margin-top:18px">
-        <div class="mail reveal">
+    <!-- 1. Entrada -->
+    <div class="slide" id="s-entrada" data-titulo="Entrada e triagem">
+      <div class="view-h"><div><span class="k">PASSO 1 DE 7</span><h2>O pedido chega por email e é triado antes de alguém lhe tocar</h2></div><span class="estado ok">Triado automaticamente</span></div>
+      <div class="two w">
+        <div class="panel reveal">
           <div class="panel-h"><b>Caixa de orçamentos</b><span>36 pedidos · últimas 2 semanas</span></div>
-          <div class="mail-list">
-            <div class="it sel"><span class="dot"></span><span><b>Pedido de orçamento: central de água gelada e quente</b>Unidade farmacêutica · tubagem, acessórios e valvulária · projetista internacional</span><time>22/09</time></div>
-          </div>
+          <div class="mail-list"><div class="it sel"><span class="dot"></span><span><b>Pedido de orçamento: central de água gelada e quente</b>Unidade farmacêutica · tubagem, acessórios e valvulária · projetista internacional</span><time>22/09</time></div></div>
           <div class="anexos">
-            <div class="anexo"><span class="ext">PDF</span>ACe-260001 CHILLER UNIT_V13 dwg Model.pdf<small>7 folhas · 628 KB</small></div>
-            <div class="anexo"><span class="ext x">XLSX</span>Piping_length.xlsx<small>Revit · 296 troços</small></div>
-            <div class="anexo"><span class="ext x">XLSX</span>Piping_fittings.xlsx<small>Revit · 268 peças</small></div>
-            <div class="anexo"><span class="ext x">XLSX</span>BOM_List_valvulas_acessorios.xlsx<small>44 linhas</small></div>
+            <div class="anexo"><span class="ext">PDF</span>ACe-260001 CHILLER UNIT_V13 dwg Model.pdf<small>628 KB</small></div>
+            <div class="anexo"><span class="ext x">XLSX</span>Piping_length.xlsx<small>13 KB</small></div>
+            <div class="anexo"><span class="ext x">XLSX</span>Piping_fittings.xlsx<small>12 KB</small></div>
+            <div class="anexo"><span class="ext x">XLSX</span>BOM_List_valvulas_acessorios.xlsx<small>11 KB</small></div>
           </div>
           <p class="small" style="padding:0 14px 14px">O pedido real que nos enviaram. Os nomes do cliente final e do projetista ficam ocultos nesta página.</p>
         </div>
         <div class="triagem">
-          <div class="tri"><span class="ic ok">✓</span><div><b>Dentro da vossa área</b><span>Tubagem de água gelada (2 °C) e quente (45 °C) em aço, DN50 a DN200, com valvulária e bombas.</span></div></div>
+          <div class="tri"><span class="ic ok">✓</span><div><b>Dentro da vossa área</b><span>Tubagem de água gelada (2 °C) e quente (45 °C), DN50 a DN200, com valvulária e bombas.</span></div></div>
           <div class="tri"><span class="ic bad">✕</span><div><b>Fora da vossa área, excluído</b><span>16 registos de ar, ligações à GTC e quadros MCC das bombas. Como fazem hoje com a passagem de cabos.</span></div></div>
           <div class="tri"><span class="ic warn">!</span><div><b>Dimensão: 577 m de tubo</b><span>Abaixo da regra dos 2.000 m que o José deu como exemplo: prioridade média. A regra é vossa e ajusta-se, tal como a lista de clientes que entram sempre.</span></div></div>
           <div class="tri"><span class="ic warn">!</span><div><b>Documentos em falta</b><span>Não vem caderno de encargos nem mapa de quantidades do cliente; o desenho vem em PDF, não em DWG.</span></div></div>
-          <div class="tri"><span class="ic warn">!</span><div><b>Prazo de resposta não indicado</b><span>Fica como pergunta no email ao projetista, junto com o resto da auditoria.</span></div></div>
+          <div class="tri"><span class="ic warn">!</span><div><b>Prazo de resposta não indicado</b><span>Fica como pergunta no email ao projetista.</span></div></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 5. Leitura -->
-  <div class="slide" data-titulo="2. Leitura dos ficheiros">
-    <div class="container">
-      <div class="stepper" data-at="2"><div><i>1</i><span>Entrada</span></div><div><i>2</i><span>Leitura</span></div><div><i>3</i><span>Auditoria</span></div><div><i>4</i><span>Catálogo</span></div><div><i>5</i><span>Tempos</span></div><div><i>6</i><span>Financeiro</span></div><div><i>7</i><span>Proposta</span></div></div>
-      <h2>Sete folhas de desenho e três tabelas, lidas e contadas</h2>
-      <div class="two" style="margin-top:16px">
+    <!-- 2. Leitura -->
+    <div class="slide" data-titulo="Leitura dos ficheiros">
+      <div class="view-h"><div><span class="k">PASSO 2 DE 7</span><h2>Carregue os ficheiros do pedido</h2><p>O desenho em PDF, as tabelas do Revit e a lista de material. A leitura é feita aqui, no próprio computador.</p></div></div>
+      <div class="two" id="leitor">
         <div>
+          <label class="drop" id="drop"><span class="ico">⇪</span><b>Arraste os ficheiros para aqui</b><span>ou clique para escolher · PDF, XLSX</span><input type="file" id="ficheiros" multiple accept=".pdf,.xlsx,.xls,.xlsm,.dwg"></label>
+          <div class="drop-alt">Sem os ficheiros à mão? <button type="button" id="simular">Simular com o pedido de 22/09</button></div>
+          <div class="fila" id="fila"></div>
+          <div class="log" id="log"><div class="info">&gt; À espera dos ficheiros do pedido.</div></div>
+        </div>
+        <div>
+          <div class="resultado">
+            <div class="res vazio"><div class="n" id="rMetros">—</div><p>de tubo (Revit)</p></div>
+            <div class="res vazio"><div class="n" id="rTrocos">—</div><p>troços de tubo</p></div>
+            <div class="res vazio"><div class="n" id="rAces">—</div><p id="rAcesD">acessórios</p></div>
+            <div class="res vazio"><div class="n" id="rFolhas">—</div><p>de desenho</p></div>
+            <div class="res vazio"><div class="n" id="rMV">—</div><p>válvulas manuais</p></div>
+            <div class="res vazio"><div class="n" id="rCV">—</div><p>válvulas de controlo</p></div>
+            <div class="res vazio"><div class="n" id="rInst">—</div><p>instrumentos</p></div>
+            <div class="res vazio"><div class="n" id="rBom">—</div><p>na lista de material</p></div>
+          </div>
           <div class="thumbs">
-            <button data-zoom="assets/img/folhas/folha1.png" data-leg="Folha 1: chiller, filtros e juntas flexíveis"><img src="assets/img/folhas/folha1-mini.png" alt="Folha 1"><span>01 chiller</span></button>
-            <button data-zoom="assets/img/folhas/folha2.png" data-leg="Folha 2: bombas PU001 e PU002"><img src="assets/img/folhas/folha2-mini.png" alt="Folha 2"><span>02 bombas</span></button>
-            <button data-zoom="assets/img/folhas/folha3.png" data-leg="Folha 3: coletores e vasos de expansão"><img src="assets/img/folhas/folha3-mini.png" alt="Folha 3"><span>03 coletores</span></button>
-            <button data-zoom="assets/img/folhas/folha4.png" data-leg="Folha 4: unidades de tratamento de ar"><img src="assets/img/folhas/folha4-mini.png" alt="Folha 4"><span>04 UTA</span></button>
-            <button data-zoom="assets/img/folhas/folha5.png" data-leg="Folha 5: unidades de tratamento de ar"><img src="assets/img/folhas/folha5-mini.png" alt="Folha 5"><span>05 UTA</span></button>
-            <button data-zoom="assets/img/folhas/folha6.png" data-leg="Folha 6: unidades de tratamento de ar"><img src="assets/img/folhas/folha6-mini.png" alt="Folha 6"><span>06 UTA</span></button>
-            <button data-zoom="assets/img/folhas/folha7.png" data-leg="Folha 7: unidades de tratamento de ar"><img src="assets/img/folhas/folha7-mini.png" alt="Folha 7"><span>07 UTA</span></button>
+            <button data-zoom="assets/img/folhas/folha1.png" data-leg="Folha 1: chiller, filtros e juntas flexíveis"><img src="assets/img/folhas/folha1-mini.png" alt="Folha 1"><span>01</span></button>
+            <button data-zoom="assets/img/folhas/folha2.png" data-leg="Folha 2: bombas PU001 e PU002"><img src="assets/img/folhas/folha2-mini.png" alt="Folha 2"><span>02</span></button>
+            <button data-zoom="assets/img/folhas/folha3.png" data-leg="Folha 3: coletores e vasos de expansão"><img src="assets/img/folhas/folha3-mini.png" alt="Folha 3"><span>03</span></button>
+            <button data-zoom="assets/img/folhas/folha4.png" data-leg="Folha 4: unidades de tratamento de ar"><img src="assets/img/folhas/folha4-mini.png" alt="Folha 4"><span>04</span></button>
+            <button data-zoom="assets/img/folhas/folha5.png" data-leg="Folha 5: unidades de tratamento de ar"><img src="assets/img/folhas/folha5-mini.png" alt="Folha 5"><span>05</span></button>
+            <button data-zoom="assets/img/folhas/folha6.png" data-leg="Folha 6: unidades de tratamento de ar"><img src="assets/img/folhas/folha6-mini.png" alt="Folha 6"><span>06</span></button>
+            <button data-zoom="assets/img/folhas/folha7.png" data-leg="Folha 7: unidades de tratamento de ar"><img src="assets/img/folhas/folha7-mini.png" alt="Folha 7"><span>07</span></button>
           </div>
-          <p class="small" style="margin-top:6px">Clique numa folha para a ver inteira. Carimbo do projetista ocultado.</p>
-          <div class="xls-row">
-            <div class="xls"><b>Piping_length</b>296 troços de tubo, 4 circuitos, comprimento real do modelo</div>
-            <div class="xls"><b>Piping_fittings</b>268 curvas, tês, reduções, com diâmetro e ângulo</div>
-            <div class="xls"><b>BOM_List</b>44 linhas de válvulas, instrumentos e equipamento</div>
-          </div>
-          <div class="term" id="tLeitura" style="margin-top:10px"></div>
-          <script type="application/json" id="tLeitura-config">{"title":"leitura-do-pedido.log","intervalMs":420,"lines":[
-            {"text":"PDF: 7 folhas vetoriais, 2.596 textos e símbolos da legenda","tone":"info"},
-            {"text":"Etiquetas lidas: 61 MV, 24 CV, 16 PI, 8 PT, 36 TI, 28 TT, 16 TMT","tone":"ok"},
-            {"text":"Revit: 296 troços, 576,8 m em 4 circuitos (frio/quente, ida/retorno)","tone":"ok"},
-            {"text":"Revit: 268 acessórios; 2 reduções 200x200 e 4 peças sem tipo","tone":"warn"},
-            {"text":"Lista de material: 44 linhas; 1 linha repetida, 1 descrição '?????'","tone":"warn"},
-            {"text":"Cruzamento desenho x Revit x lista: 14 pontos a esclarecer","tone":"success"}]}</script>
-        </div>
-        <div>
-          <div class="contagens" style="margin-top:0">
-            <div class="cont reveal"><div class="n">576,8 <small>m</small></div><p>de tubo em 296 troços, DN50 a DN200</p></div>
-            <div class="cont reveal"><div class="n">268</div><p>acessórios: 155 curvas, 48 tês, 61 reduções, 4 sem tipo</p></div>
-            <div class="cont reveal"><div class="n">61</div><p>válvulas manuais: 12 DN200, 1 DN150, 24 DN80, 24 DN65</p></div>
-            <div class="cont reveal"><div class="n">24</div><p>válvulas de controlo, 8 delas em pares em série</p></div>
-            <div class="cont reveal"><div class="n">104</div><p>instrumentos: manómetros, termómetros e transmissores</p></div>
-            <div class="cont reveal"><div class="n">2</div><p>bombas: 170 e 128 m³/h, 2,0 bar</p></div>
-            <div class="cont reveal"><div class="n">2 × 200 <small>L</small></div><p>vasos de expansão a 6 bar, com válvulas de segurança</p></div>
-            <div class="cont reveal"><div class="n">8</div><p>unidades de tratamento de ar, cada uma com bateria de frio e de quente</p></div>
-          </div>
-          <p class="frase" style="font-size:0.98rem">Isto é o que hoje só se vê "quando se mete a mão na massa". Aqui aparece no primeiro dia, antes de se gastar uma hora a orçamentar.</p>
+          <p class="small" style="margin-top:6px">As 7 folhas do pedido, com o carimbo do projetista ocultado. Clique para ampliar.</p>
+          <div class="validar" id="fimLeitura" hidden><p><b>Leitura concluída.</b> 6 pontos resolvidos pelo próprio desenho e 6 dúvidas para o projetista.</p><button class="btn btn-primary" data-ir="2">Ver auditoria</button></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 6. Auditoria -->
-  <div class="slide" data-titulo="3. Auditoria técnica">
-    <div class="container">
-      <div class="stepper" data-at="3"><div><i>1</i><span>Entrada</span></div><div><i>2</i><span>Leitura</span></div><div><i>3</i><span>Auditoria</span></div><div><i>4</i><span>Catálogo</span></div><div><i>5</i><span>Tempos</span></div><div><i>6</i><span>Financeiro</span></div><div><i>7</i><span>Proposta</span></div></div>
-      <h2>14 pontos encontrados no vosso pedido, todos de uma vez</h2>
-      <div class="aud-sum" id="audChips">
-        <button class="chip active" data-f="all">Todos · 14</button>
-        <button class="chip" data-f="b"><i class="sev-b"></i>Bloqueia o preço · 1</button>
-        <button class="chip" data-f="p"><i class="sev-p"></i>Pergunta ao projetista · 9</button>
-        <button class="chip" data-f="n"><i class="sev-n"></i>Tratamos nós · 3</button>
-        <button class="chip" data-f="e"><i class="sev-e"></i>Excluído · 1</button>
-      </div>
-      <div class="two w">
-        <div class="aud-list" id="audList"></div>
+    <!-- 3. Auditoria -->
+    <div class="slide" data-titulo="Auditoria">
+      <div class="view-h"><div><span class="k">PASSO 3 DE 7</span><h2>6 dúvidas, num só email ao projetista</h2><p>Antes de perguntar, o sistema procura a resposta no próprio desenho. Só pergunta o que o desenho não responde.</p></div><span class="estado warn">Aguarda validação do Martinho</span></div>
+      <div class="aud-cols">
+        <div class="aud-col duv-col">
+          <h3>Dúvidas para o projetista <em>6</em></h3>
+          <div class="item"><b>1. Material e série do tubo</b><p>Nem o desenho nem as tabelas dizem o aço nem a espessura, e o caderno de encargos não veio. Para avançar, assumimos aço carbono EN 10216-2 P235GH, série média.</p></div>
+          <div class="item"><b>2. Onze válvulas DN150 que não aparecem</b><p>A lista de material tem 12 válvulas manuais DN150. O desenho só tem uma, a MV013 (válvula de arranque).</p><div class="vs">lista 12 · desenho 1</div></div>
+          <div class="item"><b>3. HR001 a HR004, sem descrição</b><p>Quatro peças DN150 dos dois lados de cada bomba, que não estão na legenda; na lista aparecem como "?????". Pelo símbolo, parecem juntas anti-vibráticas.</p><button class="ver" data-zoom="assets/img/folhas/crop-bombas.png" data-leg="Folha 2: HR001 e HR002 junto à bomba PU001">Ver no desenho</button></div>
+          <div class="item"><b>4. A instrumentação da GTC é vossa?</b><p>O desenho tem 28 transmissores de temperatura e 16 de temperatura e humidade, quase todos nas UTA e ligados à GTC. A lista só tem 12. Fornecimento vosso ou do integrador da GTC?</p><div class="vs">lista 12 TT · desenho 28 TT + 16 TMT</div></div>
+          <div class="item"><b>5. Âmbito: fornecimento e isolamento</b><p>Valvulária, bombas e vasos são fornecimento vosso ou só montagem? E o isolamento térmico, num circuito a 2 °C, não é referido.</p></div>
+          <div class="item"><b>6. Prazo de resposta</b><p>O pedido não indica até quando é preciso responder.</p></div>
+        </div>
         <div>
-          <div class="panel aud-det" id="audDetWrap"><div id="audDet"></div></div>
-          <div class="email" id="emailProj" hidden>
-            <div class="email-top"><span>Rascunho · para o projetista</span><span class="st">Aguarda validação do Martinho</span></div>
-            <div class="email-f"><span>Para: <b>projetista do pedido (ocultado)</b></span><span>Assunto: <b>Pedido de orçamento, central de água gelada e quente: pedidos de esclarecimento</b></span></div>
+          <div class="email">
+            <div class="email-top"><span>Rascunho · email ao projetista</span><span class="st">Por validar</span></div>
+            <div class="email-f"><span>Para: <b>projetista do pedido (ocultado)</b></span><span>De: <b>Martinho Rodrigues · Campitubos</b></span><span>Assunto: <b>Central de água gelada e quente: pedidos de esclarecimento para orçamento</b></span></div>
             <div class="email-b">
               <p>Bom dia,</p>
-              <p>Na análise do pedido de orçamento encontrámos os seguintes pontos, que agradecíamos que confirmassem para fecharmos a proposta:</p>
+              <p>Para fecharmos a proposta, agradecíamos a confirmação dos seguintes pontos:</p>
               <ol>
-                <li>Material e série do tubo: não constam do pedido. Podem enviar o caderno de encargos?</li>
-                <li>Reduções: a lista de material indica 32 e o modelo 61. Qual prevalece?</li>
-                <li>Reduções junto às bombas: 4 no desenho, 6 na lista.</li>
-                <li>HR001 a HR004 (DN150): não constam da legenda. São juntas anti-vibráticas?</li>
-                <li>Válvulas manuais DN150: 12 na lista, 1 no desenho (MV013).</li>
-                <li>Válvulas de controlo: 16 na lista, 24 no desenho.</li>
-                <li>Transmissores de pressão: 8 no desenho, 16 na lista. Transmissores de temperatura: 28 no desenho, 12 na lista.</li>
-                <li>Folha 7: o PT014 está ligado ao balão PT010; a MV025 repete-se nas folhas 4 e 5.</li>
-                <li>Modelo: duas reduções 200×200 e quatro peças sem tipo. Qual é o prazo para a resposta ao orçamento?</li>
+                <li>Qual o material e a série do tubo? Podem enviar o caderno de encargos?</li>
+                <li>A lista de material indica 12 válvulas manuais DN150; o desenho só mostra a MV013. Onde ficam as restantes?</li>
+                <li>As peças HR001 a HR004 (DN150, junto às bombas) são juntas anti-vibráticas?</li>
+                <li>Os transmissores ligados à GTC (TT, TMT e PT) são fornecimento nosso ou do integrador da GTC?</li>
+                <li>A valvulária, as bombas e os vasos de expansão são fornecimento nosso ou só montagem? O isolamento térmico está incluído?</li>
+                <li>Qual é o prazo para a resposta ao orçamento?</li>
               </ol>
+              <p>Para vossa informação: na folha 7 o PT014 está ligado ao balão PT010, e a MV025 repete-se nas folhas 4 e 5.</p>
               <p>Com os melhores cumprimentos,<br>Martinho Rodrigues · Campitubos</p>
             </div>
+            <div class="email-acts"><button class="btn btn-primary" type="button">Aprovar e enviar</button><button class="btn btn-ghost" type="button">Editar</button></div>
           </div>
-          <button class="btn btn-ghost" id="verEmail" style="margin-top:12px">Ver email ao projetista</button>
+          <div class="aud-col res-col" style="margin-top:18px">
+            <h3>Resolvido pelo próprio desenho <em>6</em></h3>
+            <div class="item"><b>Reduções: vale o modelo, não a lista</b><p>As 16 válvulas de controlo DN50 estão em linhas DN65 e DN80 e levam 2 reduções cada.</p><div class="vs"><s>lista 32</s> → 61 reduções</div></div>
+            <div class="item"><b>Reduções junto às bombas</b><p>Duas por bomba, uma bomba por circuito.</p><div class="vs"><s>lista 6</s> → 4</div></div>
+            <div class="item"><b>Válvulas de controlo</b><p>TV001 a TV016, mais dois pares em série em duas folhas.</p><div class="vs"><s>lista 16</s> → 24</div></div>
+            <div class="item"><b>Transmissores de pressão</b><p>Cada um aparece duas vezes: no campo e no balão da GTC.</p><div class="vs"><s>lista 16</s> → 8</div><button class="ver" data-zoom="assets/img/folhas/crop-pt.png" data-leg="Folha 7: transmissores no campo e balões da GTC">Ver no desenho</button></div>
+            <div class="item"><b>Válvulas de descarga</b><p>A linha DN25 está repetida na lista; o desenho tem DV01 a DV06.</p><div class="vs"><s>lista 12</s> → 6</div></div>
+            <div class="item"><b>Flanges</b><p>Nenhuma lista as conta: 2 por cada válvula, filtro, junta, bomba e válvula de controlo flangeada.</p><div class="vs"><s>listas 0</s> → 190 flanges, 87 h de pré-fabrico</div></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 7. Catálogo -->
-  <div class="slide" data-titulo="4. Ligação ao catálogo">
-    <div class="container">
-      <div class="stepper" data-at="4"><div><i>1</i><span>Entrada</span></div><div><i>2</i><span>Leitura</span></div><div><i>3</i><span>Auditoria</span></div><div><i>4</i><span>Catálogo</span></div><div><i>5</i><span>Tempos</span></div><div><i>6</i><span>Financeiro</span></div><div><i>7</i><span>Proposta</span></div></div>
-      <h2>Cada linha do pedido ligada a uma referência vossa</h2>
-      <p class="lead" style="margin-bottom:14px">O passo que hoje é manual. Nenhum preço é inventado: cada valor diz de onde veio, e o que não existe no catálogo fica marcado para criar.</p>
+    <!-- 4. Catálogo -->
+    <div class="slide" data-titulo="Ligação ao catálogo">
+      <div class="view-h"><div><span class="k">PASSO 4 DE 7</span><h2>Cada linha do pedido ligada a uma referência vossa</h2><p>Nenhum preço é inventado: cada valor diz de onde veio, e o que não existe no catálogo fica marcado para criar.</p></div><span class="estado info">44 linhas · 4.132 referências</span></div>
       <div class="resumo-cat" id="catFiltros">
         <div class="cont active" data-f="all"><div class="n" id="nTot">44</div><p>linhas de tubo, acessórios e flanges</p></div>
         <div class="cont" data-f="cat"><div class="n ok" id="nCat">4</div><p>com preço do vosso catálogo</p></div>
         <div class="cont" data-f="est"><div class="n" style="color:var(--accent)" id="nEst">31</div><p>estimadas pelo peso × €/kg dos vossos preços de aço carbono</p></div>
-        <div class="cont" data-f="sem"><div class="n bad" id="nSem">9</div><p>sem referência no catálogo</p></div>
+        <div class="cont" data-f="sem"><div class="n bad" id="nSem">9</div><p>sem referência no catálogo (tês de redução e peças sem tipo)</p></div>
       </div>
       <p class="pressuposto">⚠ O pedido não indica o material do tubo: assumido aço carbono EN 10216-2 P235GH, série média, até chegar o caderno de encargos.</p>
-      <div class="tbl-wrap">
-        <table class="tbl"><thead><tr><th>Linha do pedido</th><th class="num">Qtd.</th><th>Referência do vosso catálogo</th><th class="num">Preço un.</th><th>Origem do preço</th></tr></thead><tbody id="catBody"></tbody></table>
-      </div>
+      <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Linha do pedido</th><th class="num">Qtd.</th><th>Referência do vosso catálogo</th><th class="num">Preço un.</th><th>Origem do preço</th></tr></thead><tbody id="catBody"></tbody></table></div>
       <div class="cotacao">
-        <b>Material estimado: <span id="matTotal" class="mono">0 €</span></b> <span class="estim">estimativa</span> · Fora deste valor: <b><span id="cotN">24</span> artigos de valvulária, instrumentação e equipamento (<span id="cotUn">0</span> unidades)</b>, que não existem no vosso catálogo. Seguem para cotação aos fornecedores.
+        <b>Material estimado: <span id="matTotal" class="mono">0 €</span></b> <span class="estim">estimativa</span> · Fora deste valor: <b><span id="cotN">24</span> artigos de valvulária, instrumentação e equipamento (<span id="cotUn">0</span> unidades)</b>, que não existem no vosso catálogo e seguem para cotação aos fornecedores.
         <button class="btn btn-ghost" data-cot style="margin-left:8px;padding:6px 12px;font-size:0.78rem">Ver pedido de cotação</button>
         <div class="cot-list" id="cotLista"></div>
       </div>
     </div>
-  </div>
 
-  <!-- 8. Tempos e equipas -->
-  <div class="slide" data-titulo="5. Tempos e equipas">
-    <div class="container">
-      <div class="stepper" data-at="5"><div><i>1</i><span>Entrada</span></div><div><i>2</i><span>Leitura</span></div><div><i>3</i><span>Auditoria</span></div><div><i>4</i><span>Catálogo</span></div><div><i>5</i><span>Tempos</span></div><div><i>6</i><span>Financeiro</span></div><div><i>7</i><span>Proposta</span></div></div>
-      <h2>Tempos e equipas, primeiro. O dinheiro vem depois.</h2>
-      <p class="lead" style="margin-bottom:14px">Como o José pediu: a auditoria por passos, com a parte de tempos separada da financeira. Os minutos são os da vossa folha PARAMETROS; os fatores são os da execução Misto do vosso ficheiro.</p>
+    <!-- 5. Tempos -->
+    <div class="slide" data-titulo="Tempos e equipas">
+      <div class="view-h"><div><span class="k">PASSO 5 DE 7</span><h2>Tempos e equipas, primeiro. O dinheiro vem depois.</h2><p>A auditoria por passos que o José pediu. Minutos da vossa folha PARAMETROS, fatores da execução Misto do vosso ficheiro.</p></div></div>
       <div class="two">
         <div>
           <div class="kpis">
@@ -279,25 +280,22 @@
             <label><span class="top">Equipas de pré-fabrico na sede <b id="vEqP">1</b></span><input type="range" id="eqPref" min="1" max="4" value="1"></label>
             <label><span class="top">Equipas em obra <b id="vEqO">1</b></span><input type="range" id="eqObra" min="1" max="4" value="1"></label>
             <label class="toggle"><input type="checkbox" id="togFl" checked> Incluir as 190 flanges que não vêm nas listas</label>
-            <div style="max-height:236px;overflow:auto;border:1px solid var(--border)"><table class="tabela-tempos" id="tabTempos"></table></div>
+            <div style="max-height:236px;overflow:auto;border:1px solid var(--border);border-radius:6px"><table class="tabela-tempos" id="tabTempos"></table></div>
             <p class="small">Minutos por metro (tubo) ou por peça, da vossa folha PARAMETROS. Jornada de 9 h, 22 dias por mês, como no vosso Início.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 9. Financeiro -->
-  <div class="slide" data-titulo="6. Financeiro">
-    <div class="container">
-      <div class="stepper" data-at="6"><div><i>1</i><span>Entrada</span></div><div><i>2</i><span>Leitura</span></div><div><i>3</i><span>Auditoria</span></div><div><i>4</i><span>Catálogo</span></div><div><i>5</i><span>Tempos</span></div><div><i>6</i><span>Financeiro</span></div><div><i>7</i><span>Proposta</span></div></div>
-      <h2>O preço, com as fórmulas da vossa folha de fecho</h2>
+    <!-- 6. Financeiro -->
+    <div class="slide" data-titulo="Financeiro">
+      <div class="view-h"><div><span class="k">PASSO 6 DE 7</span><h2>O preço, com as fórmulas da vossa folha de fecho</h2></div><span class="estado warn">Estimativa</span></div>
       <div class="bloqueado" id="finBloco">
-        <div class="lock"><div><b>Os tempos ainda não foram validados</b><p>Como pediu o José: primeiro a auditoria aos tempos, depois a financeira.</p><button class="btn btn-primary" data-abrir-tempos>Ir validar os tempos</button></div></div>
+        <div class="lock"><div><b>Os tempos ainda não foram validados</b><p>Como pediu o José: primeiro a auditoria aos tempos, depois a financeira.</p><button class="btn btn-primary" data-ir="4">Ir validar os tempos</button></div></div>
         <div class="two w">
           <div>
-            <table class="fin" id="finTab"></table>
-            <div class="kpis" style="margin-top:14px">
+            <div class="panel"><table class="fin" id="finTab"></table></div>
+            <div class="kpis" style="margin-top:12px">
               <div class="kpi hl"><small>Venda <span class="estim">estimativa</span></small><b id="kVenda">0 €</b><span>sem o capítulo a cotar</span></div>
               <div class="kpi"><small>Margem bruta</small><b id="kMargem">0 €</b><span id="kMargemP"></span></div>
               <div class="kpi"><small>Cada ponto de margem</small><b id="kPonto">0 €</b><span>"2 ou 3% num orçamento destes é muito dinheiro"</span></div>
@@ -307,7 +305,7 @@
           <div class="panel">
             <div class="panel-h"><b>Fecho</b><span>valores iniciais: vossa folha FECHO</span></div>
             <div class="panel-b ctrl">
-              <label>Localização da obra (custo da hora de equipa, folha %M.O.)<select id="local"></select></label>
+              <label>Localização da obra (hora de equipa, folha %M.O.)<select id="local"></select></label>
               <label><span class="top">Score de risco do projeto <b id="vScore">25</b></span><input type="range" id="score" min="0" max="100" value="25"></label>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
                 <label>% estrutura<input type="number" step="0.5" data-m="estrutura"></label>
@@ -322,15 +320,12 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 10. Proposta e PHC -->
-  <div class="slide" data-titulo="7. Proposta e PHC">
-    <div class="container">
-      <div class="stepper" data-at="7"><div><i>1</i><span>Entrada</span></div><div><i>2</i><span>Leitura</span></div><div><i>3</i><span>Auditoria</span></div><div><i>4</i><span>Catálogo</span></div><div><i>5</i><span>Tempos</span></div><div><i>6</i><span>Financeiro</span></div><div><i>7</i><span>Proposta</span></div></div>
-      <h2>A proposta no vosso formato, e as linhas prontas para o PHC</h2>
+    <!-- 7. Proposta -->
+    <div class="slide" data-titulo="Proposta e PHC">
+      <div class="view-h"><div><span class="k">PASSO 7 DE 7</span><h2>A proposta no vosso formato, e as linhas prontas para o PHC</h2></div><span class="estado info">Revisão 0</span></div>
       <div class="bloqueado" id="propBloco">
-        <div class="lock"><div><b>O financeiro ainda não foi validado</b><p>A proposta só se gera depois das duas validações.</p><button class="btn btn-primary" data-abrir-fin>Ir ao financeiro</button></div></div>
+        <div class="lock"><div><b>O financeiro ainda não foi validado</b><p>A proposta só se gera depois das duas validações.</p><button class="btn btn-primary" data-ir="5">Ir ao financeiro</button></div></div>
         <div class="two w">
           <div class="papel">
             <div class="papel-h">
@@ -341,31 +336,17 @@
             <div class="rodape">Estimativa de demonstração: materiais estimados pelo peso onde o catálogo não tem preço. Capítulo 2 depende das cotações dos fornecedores. Não inclui o que foi excluído na triagem. Sujeito a verificação interna antes do envio.</div>
           </div>
           <div>
-            <div class="panel">
-              <div class="panel-h"><b>Linhas para o PHC</b><span>referências do vosso catálogo</span></div>
-              <div class="phc" id="phc"></div>
-            </div>
+            <div class="panel"><div class="panel-h"><b>Linhas para o PHC</b><span>referências do vosso catálogo</span></div><div class="phc" id="phc"></div></div>
             <p class="small" style="margin-top:8px">O formato de importação para o PHC (ou para o vosso software em .NET, que já trabalha sobre a base do PHC) acerta-se com o vosso informático.</p>
-            <div class="card aprende">
-              <h3 style="font-size:1rem">E aprende com as vossas correções</h3>
-              <p class="small" style="margin-top:6px">Se o Martinho corrige um tempo ou o José muda um preço, a alteração fica registada com data e autor e passa a valer para os pedidos seguintes. É assim que o conhecimento sai da cabeça para a base.</p>
-            </div>
+            <div class="card" style="margin-top:12px"><h3 style="font-size:1rem">E aprende com as vossas correções</h3><p class="small" style="margin-top:6px">Se o Martinho corrige um tempo ou o José muda um preço, a alteração fica registada com data e autor e passa a valer para os pedidos seguintes.</p></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- =================================================================== -->
-<!-- SEPARADOR 3: ASSISTENTE                                              -->
-<!-- =================================================================== -->
-<section class="tab-panel" id="assistente">
-  <div class="slide" data-titulo="Assistente">
-    <div class="container">
-      <span class="eyebrow">Falar com o orçamento</span>
-      <h2>O José pergunta, o sistema responde e aprende</h2>
-      <p class="lead" style="margin-bottom:22px">Quatro situações com este pedido. A última é a mais importante: o que o sistema se recusa a fazer sozinho.</p>
+    <!-- 8. Assistente -->
+    <div class="slide" data-titulo="Assistente">
+      <div class="view-h"><div><span class="k">BASE CAMPITUBOS</span><h2>O José pergunta, o sistema responde e aprende</h2><p>Quatro situações com este pedido. A última é a mais importante: o que o sistema se recusa a fazer sozinho.</p></div></div>
       <div class="cr" id="crDemo"></div>
       <script type="application/json" id="crDemo-config">{
         "agentName": "Orçamentação Campitubos",
@@ -374,90 +355,70 @@
         "stepMs": 1500,
         "endPauseMs": 3200,
         "scenarios": [
-          {
-            "title": "Só o tempo de obra",
-            "subtitle": "A auditoria por passos que o José pediu: tempos primeiro, dinheiro depois.",
+          { "title": "Só o tempo de obra", "subtitle": "A auditoria por passos que o José pediu: tempos primeiro, dinheiro depois.",
             "chat": [
               { "sender": "client", "text": "Faz-me só a auditoria ao tempo de obra do pedido da central de água gelada. O financeiro vemos depois.", "time": "09:12" },
               { "sender": "agent", "text": "Com a vossa tabela e execução Misto: **447 h de pré-fabrico** e **220 h de montagem**, em equipas de 3. Com 1 equipa na sede e 1 em obra: cerca de **10 semanas** de pré-fabrico e **5 semanas** de montagem.", "time": "09:12" },
               { "sender": "agent", "text": "Atenção: **as válvulas e os instrumentos não têm tempo de montagem** na tabela. São 61 válvulas manuais e 24 de controlo.", "time": "09:12" },
               { "sender": "client", "text": "Mete 2 equipas em obra.", "time": "09:14" },
-              { "sender": "agent", "text": "Com 2 equipas em obra, a montagem desce para **cerca de 2,5 semanas** e ficam 6 pessoas em obra. O financeiro só abre quando validar os tempos.", "time": "09:14" }
-            ],
+              { "sender": "agent", "text": "Com 2 equipas em obra, a montagem desce para **cerca de 2,5 semanas** e ficam 6 pessoas em obra. O financeiro só abre quando validar os tempos.", "time": "09:14" } ],
             "steps": [
               { "icon": "book", "label": "Abre o pedido já lido: 576,8 m de tubo, 268 acessórios, 190 flanges" },
               { "icon": "clock", "label": "Aplica os minutos da folha PARAMETROS, DN a DN" },
               { "icon": "wrench", "label": "Aplica os fatores da execução Misto (0,9 e 0,65)" },
               { "icon": "alert", "label": "Sinaliza o que não tem tempo definido" },
-              { "icon": "user-cog", "label": "Redimensiona as equipas e recalcula a duração" }
-            ]
-          },
-          {
-            "title": "O José ensina",
-            "subtitle": "Quando falta uma regra, o sistema pergunta a quem sabe e guarda a resposta.",
+              { "icon": "user-cog", "label": "Redimensiona as equipas e recalcula a duração" } ] },
+          { "title": "O José ensina", "subtitle": "Quando falta uma regra, o sistema pergunta a quem sabe e guarda a resposta.",
             "chat": [
               { "sender": "agent", "text": "Para fechar os tempos falta-me uma regra que não está na tabela: **quanto demora a montar uma válvula flangeada DN200?**", "time": "09:20" },
               { "sender": "client", "text": "Uma DN200 com as duas flanges, 2 horas com uma equipa. As DN65 e DN80, meia hora.", "time": "09:21" },
               { "sender": "agent", "text": "Registado como regra da Campitubos. Neste pedido: 12 × 2 h + 48 × 0,5 h = **48 h de montagem a mais**. A DN150 (MV013) fica por definir.", "time": "09:21" },
-              { "sender": "agent", "text": "A regra fica na base e passa a valer para todos os pedidos. Quer que proponha valores para DN100 a DN150, para validar?", "time": "09:21" }
-            ],
+              { "sender": "agent", "text": "A regra fica na base e passa a valer para todos os pedidos. Quer que proponha valores para DN100 a DN150, para validar?", "time": "09:21" } ],
             "steps": [
               { "icon": "search", "label": "Deteta que a tabela não tem tempo para válvulas" },
               { "icon": "message", "label": "Pergunta ao José, com a dúvida concreta" },
               { "icon": "database", "label": "Guarda a resposta como regra da Campitubos" },
               { "icon": "check", "label": "Aplica ao pedido: 12 DN200 e 48 DN65/DN80" },
-              { "icon": "brain", "label": "Propõe os diâmetros intermédios, para validar" }
-            ]
-          },
-          {
-            "title": "O Martinho corrige",
-            "subtitle": "O exemplo do Martinho na reunião: um tempo mal calculado corrige-se uma vez.",
+              { "icon": "brain", "label": "Propõe os diâmetros intermédios, para validar" } ] },
+          { "title": "O Martinho corrige", "subtitle": "O exemplo do Martinho na reunião: um tempo mal calculado corrige-se uma vez.",
             "chat": [
               { "sender": "client", "text": "O tubo DN15 está mal calculado: na montagem são 20 minutos por metro, não 16.", "time": "10:05" },
               { "sender": "agent", "text": "Corrigido na tabela de tempos: DN15, montagem **16 → 20 min/m**. Este pedido não tem DN15, por isso não muda.", "time": "10:05" },
               { "sender": "agent", "text": "Já agora: na tabela, o DN15 tem **mais** pré-fabrico (2,59 min/m) do que o DN20 (1,47) e o DN25 (1,83). Quer rever também?", "time": "10:05" },
               { "sender": "client", "text": "Sim, o DN15 deve ser 1,2.", "time": "10:07" },
-              { "sender": "agent", "text": "Atualizado. As duas alterações ficam registadas com data e autor, e os orçamentos em aberto com DN15 ficam marcados para recalcular.", "time": "10:07" }
-            ],
+              { "sender": "agent", "text": "Atualizado. As duas alterações ficam registadas com data e autor, e os orçamentos em aberto com DN15 ficam marcados para recalcular.", "time": "10:07" } ],
             "steps": [
               { "icon": "ear", "label": "Recebe a correção do Martinho" },
               { "icon": "database", "label": "Atualiza a tabela de tempos" },
               { "icon": "search", "label": "Verifica o impacto no pedido atual" },
               { "icon": "alert", "label": "Deteta uma incoerência vizinha na tabela" },
-              { "icon": "shield", "label": "Regista quem mudou, o quê e quando" }
-            ]
-          },
-          {
-            "title": "O que não faz sozinho",
-            "subtitle": "Recusa consciente: não envia uma proposta com buracos, mesmo que lhe peçam.",
+              { "icon": "shield", "label": "Regista quem mudou, o quê e quando" } ] },
+          { "title": "O que não faz sozinho", "subtitle": "Recusa consciente: não envia uma proposta com buracos, mesmo que lhe peçam.",
             "chat": [
               { "sender": "client", "text": "Está ótimo. Manda já o orçamento ao cliente com 8% de margem.", "time": "11:30" },
               { "sender": "agent", "text": "Não envio já, por três razões: **24 artigos de valvulária e equipamento estão por cotar**; o material do tubo não consta do pedido; e 8% fica abaixo das margens da vossa folha de fecho.", "time": "11:30" },
-              { "sender": "agent", "text": "Proponho: preparo o rascunho da proposta e o email ao projetista com as 9 perguntas, e fica tudo à espera da vossa validação.", "time": "11:30" },
+              { "sender": "agent", "text": "Proponho: preparo o rascunho da proposta e o email ao projetista com as 6 dúvidas, e fica tudo à espera da vossa validação.", "time": "11:30" },
               { "sender": "client", "text": "Prepara.", "time": "11:32" },
-              { "sender": "agent", "text": "Rascunho da proposta (revisão 0) e email ao projetista prontos para rever. **Nada sai sem o vosso OK.**", "time": "11:32" }
-            ],
+              { "sender": "agent", "text": "Rascunho da proposta (revisão 0) e email ao projetista prontos para rever. **Nada sai sem o vosso OK.**", "time": "11:32" } ],
             "steps": [
               { "icon": "list", "label": "Verifica o que ainda está por cotar" },
               { "icon": "book", "label": "Verifica os pressupostos: material sem caderno de encargos" },
               { "icon": "filter", "label": "Compara a margem pedida com a folha de fecho" },
               { "icon": "ban", "label": "Recusa enviar ao cliente sozinho" },
-              { "icon": "send", "label": "Prepara rascunhos para a validação humana" }
-            ]
-          }
+              { "icon": "send", "label": "Prepara rascunhos para a validação humana" } ] }
         ]
       }</script>
     </div>
   </div>
+ </div>
 </section>
 
 <!-- =================================================================== -->
-<!-- SEPARADOR 4: PROPOSTA                                                -->
+<!-- PROPOSTA                                                             -->
 <!-- =================================================================== -->
 <section class="tab-panel" id="proposta">
 
-  <!-- Integração -->
-  <div class="slide" data-titulo="Como se liga ao que já têm">
+  <div class="slide folha" data-titulo="Como se liga ao que já têm">
     <div class="container">
       <span class="eyebrow">Como se liga ao que já têm</span>
       <h2>Do email de orçamentos ao PHC, sem copiar à mão</h2>
@@ -468,7 +429,7 @@
         "channels": [ { "icon": "message", "label": "Email de orçamentos" }, { "icon": "book", "label": "Desenhos PDF ou DWG" }, { "icon": "list", "label": "Tabelas Revit e mapas em Excel" } ],
         "nodes": [
           { "icon": "filter", "title": "Recebe e tria", "detail": "Área de negócio, dimensão, clientes que entram sempre, documentos em falta.", "tone": "brand" },
-          { "icon": "search", "title": "Lê e cruza", "detail": "Desenho, modelo e listas: contagens e discrepâncias num só sítio.", "tone": "teal" },
+          { "icon": "search", "title": "Lê e cruza", "detail": "Desenho, modelo e listas: o que o desenho resolve e o que fica para perguntar.", "tone": "teal" },
           { "icon": "database", "title": "Liga e calcula", "detail": "Vosso catálogo, vossa tabela de tempos, vossas fórmulas de fecho.", "tone": "teal" },
           { "icon": "user-cog", "title": "José e Martinho validam", "detail": "Tempos primeiro, financeiro depois. Correções ficam na base.", "tone": "teal" },
           { "icon": "check", "title": "Proposta e PHC", "detail": "Proposta no vosso formato e linhas com as vossas referências.", "tone": "brand" }
@@ -478,8 +439,7 @@
     </div>
   </div>
 
-  <!-- O que fica com as pessoas -->
-  <div class="slide" data-titulo="O que fica com as pessoas">
+  <div class="slide folha" data-titulo="O que fica com as pessoas">
     <div class="container">
       <span class="eyebrow">Regras claras</span>
       <h2>O sistema propõe. A Campitubos decide.</h2>
@@ -489,7 +449,7 @@
           <ul class="list-check">
             <li>Recebe os pedidos do email de orçamentos e faz a triagem com as vossas regras</li>
             <li>Lê desenhos, tabelas do Revit, mapas de quantidades e listas de material</li>
-            <li>Cruza as fontes e junta todas as discrepâncias num único email ao projetista</li>
+            <li>Resolve pelo desenho o que pode, e junta o resto num único email ao projetista</li>
             <li>Liga cada linha às vossas referências e diz de onde vem cada preço</li>
             <li>Calcula tempos, equipas, duração e preço com os vossos parâmetros</li>
             <li>Prepara a proposta e as linhas para o PHC</li>
@@ -500,7 +460,7 @@
           <ul class="list-check">
             <li>Validar os tempos e validar o financeiro, por esta ordem</li>
             <li>Decidir a margem e o risco de cada obra</li>
-            <li>Enviar a proposta ao cliente: nada sai sem o vosso OK</li>
+            <li>Enviar a proposta ao cliente e o email ao projetista: nada sai sem o vosso OK</li>
             <li>Ensinar as regras que ainda não estão na base (e corrigir as que estão)</li>
           </ul>
           <p class="small" style="margin-top:16px">E uma regra do sistema: <b style="color:var(--text)">nunca inventa um preço.</b> Quando não sabe, marca "estimado" ou "a cotar", e pergunta.</p>
@@ -509,8 +469,7 @@
     </div>
   </div>
 
-  <!-- Investimento -->
-  <div class="slide" data-titulo="Investimento">
+  <div class="slide folha" data-titulo="Investimento">
     <div class="container">
       <span class="eyebrow">Investimento</span>
       <h2>Pago por entregas, à medida que a plataforma fica pronta</h2>
@@ -538,15 +497,15 @@
     </div>
   </div>
 
-  <!-- Como arrancamos -->
-  <div class="slide" data-titulo="Como arrancamos">
+  <div class="slide folha" data-titulo="Como arrancamos">
     <div class="container">
       <span class="eyebrow">Como arrancamos</span>
-      <h2>Três entregas, construídas com o vosso ficheiro e com pedidos reais</h2>
+      <h2>Três meses, três entregas, com pedidos reais</h2>
+      <div class="gantt reveal" id="gantt"></div>
       <div class="fases">
-        <div class="fase reveal"><span class="k">ENTREGA 1</span><h3>Leitura dos pedidos e auditoria técnica</h3><ul><li>Caixa de orçamentos ligada à plataforma, com triagem</li><li>Leitura de PDF, DWG, tabelas Revit e mapas em Excel</li><li>Cruzamento das fontes e email de esclarecimento ao projetista</li></ul><div class="entrega">Entrega: os pedidos novos chegam já lidos e auditados.</div></div>
-        <div class="fase reveal"><span class="k">ENTREGA 2</span><h3>Motor de orçamento e ligação ao PHC</h3><ul><li>Catálogo e tabela de tempos passados para a base, com histórico</li><li>Base de preços de fornecedores, a crescer a cada cotação</li><li>Tempos, equipas, fecho e proposta; linhas para o PHC</li></ul><div class="entrega">Entrega: orçamento base com as duas validações.</div></div>
-        <div class="fase reveal"><span class="k">ENTREGA 3</span><h3>Validação com pedidos reais</h3><ul><li>Orçamentos feitos em paralelo com os vossos, a comparar</li><li>Regras do José registadas na base</li><li>Afinação com as correções do Martinho</li></ul><div class="entrega">Entrega: a equipa a orçamentar na plataforma.</div></div>
+        <div class="fase"><span class="k">MÊS 1 · ENTREGA 1</span><h3>Leitura dos pedidos e auditoria</h3><ul><li>Caixa de orçamentos ligada, com triagem</li><li>Leitura de PDF, DWG, Revit e Excel</li><li>Email de esclarecimento ao projetista</li></ul></div>
+        <div class="fase"><span class="k">MÊS 2 · ENTREGA 2</span><h3>Motor de orçamento e PHC</h3><ul><li>Catálogo e tabela de tempos na base, com histórico</li><li>Base de preços a crescer a cada cotação</li><li>Tempos, fecho, proposta e linhas para o PHC</li></ul></div>
+        <div class="fase"><span class="k">MÊS 3 · ENTREGA 3</span><h3>Validação com pedidos reais</h3><ul><li>Orçamentos em paralelo com os vossos</li><li>Regras do José registadas na base</li><li>Afinação com as correções do Martinho</li></ul></div>
       </div>
       <div class="seguinte"><b>Fase seguinte, como combinámos:</b> o portal para os clientes da World Piping fazerem os próprios pedidos e receberem o preço na hora, ligado ao software que já calcula tempos, material e preço de venda.</div>
     </div>
@@ -554,7 +513,6 @@
 </section>
 </main>
 
-<!-- Carimbo da folha = paginador -->
 <div class="carimbo" aria-label="Navegação">
   <div class="meta"><small>Folha</small><b id="folhaN">01 / 15</b></div>
   <div class="meta"><small>Título</small><b id="folhaT">Capa</b></div>
@@ -566,7 +524,7 @@
 <script src="assets/js/dados.js"></script>
 <script src="../shared/deck/deck.js"></script>
 <script>
-  chatRaciocinio('crDemo'); fluxo('fxCT'); terminal('tLeitura');
+  chatRaciocinio('crDemo'); fluxo('fxCT');
   (function () {
     var I = window.APRESENTACAO.investimento, eu = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €'; };
     document.getElementById('invTotal').innerHTML = eu(I.total) + '<small>+ IVA</small>';
@@ -574,8 +532,21 @@
     document.getElementById('invAno').innerHTML = eu(I.anual) + '<small>/ano + IVA</small>';
     document.getElementById('invTranches').innerHTML = I.tranches.map(function (t, i) {
       return '<div class="tr"><span class="n">' + (i + 1) + '</span><span>' + t[0] + '<small>' + t[1] + '</small></span><b>' + eu(t[2]) + '<small>+ IVA</small></b></div>'; }).join('');
+    /* Cronograma: 12 semanas, entregas e pagamentos alinhados com as tranches */
+    var sem = '<span></span>'.repeat(12);
+    var bar = function (cls, a, b, txt) { return '<div class="g-bar ' + cls + '" style="left:calc(' + (a - 1) + ' / 12 * 100% + 3px);width:calc(' + (b - a + 1) + ' / 12 * 100% - 6px)">' + txt + '</div>'; };
+    var ms = function (s, txt) { return '<div class="g-ms' + (s > 10 ? ' fim' : '') + '" style="left:calc(' + s + ' / 12 * 100%)"><em>' + txt + '</em></div>'; };
+    var T = I.tranches;
+    document.getElementById('gantt').innerHTML =
+      '<div class="g-meses"><div>SEMANAS</div><div><b>Mês 1<small>semanas 1 a 4</small></b><b>Mês 2<small>semanas 5 a 8</small></b><b>Mês 3<small>semanas 9 a 12</small></b></div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Arranque</b><small>acessos ao email, PHC e ficheiros</small></div><div class="g-track">' + sem + bar('lt', 1, 1, 'Arranque') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Entrega 1</b><small>leitura dos pedidos e auditoria</small></div><div class="g-track">' + sem + bar('e1', 1, 4, 'Leitura e auditoria') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Entrega 2</b><small>motor de orçamento e PHC</small></div><div class="g-track">' + sem + bar('e2', 5, 8, 'Catálogo, tempos, fecho, PHC') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Entrega 3</b><small>validação com pedidos reais</small></div><div class="g-track">' + sem + bar('e3', 9, 12, 'Orçamentos em paralelo e afinação') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Pagamentos</b><small>tranches ligadas às entregas</small></div><div class="g-track">' + sem + ms(0, eu(T[0][2]) + ' + IVA') + ms(4, eu(T[1][2]) + ' + IVA') + ms(8, eu(T[2][2]) + ' + IVA') + ms(11.95, eu(T[3][2]) + ' + IVA') + '</div></div>';
   })();
 </script>
 <script src="assets/js/motor.js"></script>
+<script src="assets/js/leitor.js"></script>
 </body>
 </html>
