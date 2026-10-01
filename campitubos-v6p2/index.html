@@ -120,8 +120,10 @@
     <a data-v="6"><i>7</i>Proposta e PHC</a>
     <div class="grp">Base Campitubos</div>
     <a class="dup ast" data-v="7"><i>✦</i>Assistente</a>
-    <a class="dup" data-v="3"><i>≡</i>Catálogo<span class="badge-n">4.132</span></a>
-    <a class="dup" data-v="4"><i>◷</i>Tabela de tempos<span class="badge-n">32 DN</span></a>
+    <a class="dup ast" data-v="8"><i>€</i>Preços e fornecedores<span class="badge-n">4.132</span></a>
+    <a class="dup ast" data-v="9"><i>⚒</i>Mão de obra<span class="badge-n">16</span></a>
+    <a class="dup ast" data-v="10"><i>◷</i>Tabela de tempos<span class="badge-n">32 DN</span></a>
+    <a class="dup ast" data-v="11"><i>▦</i>Custos indiretos</a>
     <a class="dup" data-v="0"><i>✉</i>Caixa de orçamentos<span class="badge-n">36</span></a>
   </aside>
   <div class="main">
@@ -269,9 +271,10 @@
           </div>
           <div class="bars" id="hBars"></div>
           <div class="avisos">
-            <div class="aviso">⚠ Válvulas, instrumentos e equipamentos: sem tempo de montagem na vossa tabela. Ficam a 0 h até o José definir a regra.</div>
+            <div class="aviso" id="avisoValv">⚠ Válvulas, instrumentos e equipamentos: sem tempo de montagem na vossa tabela. Ficam a 0 h até o José definir a regra. <button class="link" data-ir="10">Definir na tabela de tempos</button></div>
             <div class="aviso">⚠ Reduções: a tabela não tem tempo de pré-fabrico. Ficam a 0 h, a definir.</div>
           </div>
+          <div class="panel" style="margin-top:14px"><div class="panel-h"><b>Prazo pedido pelo cliente</b><span>quantas equipas são precisas</span></div><div class="panel-b ctrl"><label><span class="top">Prazo total <b id="vPrazo">8 semanas</b></span><input type="range" id="prazoCli" min="4" max="26" value="8"></label><p class="small" id="prazoRes"></p><p class="small">Capacidade: na Entrega 2 liga-se ao vosso software de gestão de pessoal, para ver se as equipas estão livres nas datas da obra antes de se responder.</p></div></div>
           <div class="validar"><p><b>Validação 1: tempos.</b> Nada avança para o financeiro sem o OK do José ou do Martinho.</p><button class="btn btn-primary" id="valTempos">Validar tempos</button></div>
         </div>
         <div class="panel">
@@ -281,7 +284,7 @@
             <label><span class="top">Equipas em obra <b id="vEqO">1</b></span><input type="range" id="eqObra" min="1" max="4" value="1"></label>
             <label class="toggle"><input type="checkbox" id="togFl" checked> Incluir as 190 flanges que não vêm nas listas</label>
             <div style="max-height:236px;overflow:auto;border:1px solid var(--border);border-radius:6px"><table class="tabela-tempos" id="tabTempos"></table></div>
-            <p class="small">Minutos por metro (tubo) ou por peça, da vossa folha PARAMETROS. Jornada de 9 h, 22 dias por mês, como no vosso Início.</p>
+            <p class="small">Minutos por metro (tubo) ou por peça, da vossa folha PARAMETROS. Jornada de 9 h, 22 dias por mês, como no vosso Início. <button class="link" data-ir="10">Editar a tabela</button> · <button class="link" data-ir="9">Custos de mão de obra</button></p>
           </div>
         </div>
       </div>
@@ -338,6 +341,7 @@
           <div>
             <div class="panel"><div class="panel-h"><b>Linhas para o PHC</b><span>referências do vosso catálogo</span></div><div class="phc" id="phc"></div></div>
             <p class="small" style="margin-top:8px">O formato de importação para o PHC (ou para o vosso software em .NET, que já trabalha sobre a base do PHC) acerta-se com o vosso informático.</p>
+            <div class="panel" style="margin-top:12px"><div class="panel-h"><b>Revisões</b><span>o cliente pede sempre alterações</span></div><div class="panel-b small"><div class="rev"><b>Rev. 0</b> rascunho para validação · hoje</div><div class="rev muted"><b>Rev. 1</b> quando o cliente pedir alterações: duplica a revisão, muda só o que é preciso e mostra a diferença de preço face à anterior</div></div></div>
             <div class="card" style="margin-top:12px"><h3 style="font-size:1rem">E aprende com as vossas correções</h3><p class="small" style="margin-top:6px">Se o Martinho corrige um tempo ou o José muda um preço, a alteração fica registada com data e autor e passa a valer para os pedidos seguintes.</p></div>
           </div>
         </div>
@@ -408,6 +412,69 @@
               { "icon": "send", "label": "Prepara rascunhos para a validação humana" } ] }
         ]
       }</script>
+    </div>
+
+    <!-- 9. Preços e fornecedores -->
+    <div class="slide" data-titulo="Preços e fornecedores">
+      <div class="view-h"><div><span class="k">BASE CAMPITUBOS</span><h2>Preços e fornecedores</h2><p>O vosso catálogo com os preços de compra. Mudar um preço aqui atualiza logo o orçamento em curso, e fica registado quem mudou e quando.</p></div><span class="estado warn" id="pxEstado">102 de 4.132 com preço</span></div>
+      <div class="resumo-cat">
+        <div class="cont"><div class="n">4.132</div><p>referências no catálogo</p></div>
+        <div class="cont"><div class="n warn">102</div><p>com preço de compra no vosso ficheiro (2,5%)</p></div>
+        <div class="cont"><div class="n" id="pxPedido">35</div><p>referências usadas neste pedido</p></div>
+        <div class="cont"><div class="n ok" id="pxAtual">0</div><p>preços atualizados nesta sessão</p></div>
+      </div>
+      <div class="sub-tabs" id="pxTabs"><button class="active" data-t="pedido">Usadas neste pedido</button><button data-t="todas">Com preço no ficheiro (102)</button></div>
+      <div class="tbl-wrap"><table class="tbl" id="pxTab"></table></div>
+      <p class="small" style="margin-top:8px">As tabelas dos fornecedores (Excel ou PDF) entram aqui e atualizam os preços com data e fornecedor. Cada cotação recebida num pedido fica também na base.</p>
+    </div>
+
+    <!-- 10. Mão de obra -->
+    <div class="slide" data-titulo="Mão de obra">
+      <div class="view-h"><div><span class="k">BASE CAMPITUBOS</span><h2>Mão de obra: custo hora e equipas</h2><p>Custo seco por hora de cada categoria, por localização da obra, da vossa folha %M.O. A equipa tipo define a hora de equipa que entra nos orçamentos.</p></div></div>
+      <div class="two w">
+        <div class="tbl-wrap" style="max-height:520px"><table class="tbl mo" id="moTab"></table></div>
+        <div>
+          <div class="panel"><div class="panel-h"><b>Equipa tipo</b><span>pessoas por equipa</span></div><div class="panel-b ctrl" id="moEquipa"></div></div>
+          <div class="panel" style="margin-top:12px"><div class="panel-h"><b>Hora de equipa</b><span>entra no orçamento</span></div><div class="panel-b" id="moHora"></div></div>
+          <div class="aviso" style="margin-top:12px">⚠ Na vossa folha, o cenário Europa (custo de deslocado × 3) fica acima de Fora da Europa (× 2). Confirmar se é intencional.</div>
+        </div>
+      </div>
+      <div class="hist" data-hist></div>
+    </div>
+
+    <!-- 11. Tabela de tempos -->
+    <div class="slide" data-titulo="Tabela de tempos">
+      <div class="view-h"><div><span class="k">BASE CAMPITUBOS</span><h2>Tabela de tempos</h2><p>Minutos por metro de tubo e por peça, do DN15 ao DN1200, da vossa folha PARAMETROS. Mudar um valor recalcula o pedido em curso.</p></div></div>
+      <div class="two w">
+        <div class="tbl-wrap" style="max-height:540px"><table class="tbl tt" id="ttTab"></table></div>
+        <div>
+          <div class="panel"><div class="panel-h"><b>Regras que ainda faltam</b><span>o que está na cabeça do José</span></div>
+            <div class="panel-b ctrl" id="ttRegras"></div>
+          </div>
+          <div class="kpis" style="margin-top:12px;grid-template-columns:1fr 1fr">
+            <div class="kpi hl"><small>Pré-fabrico do pedido</small><b id="ttPref">0 h</b><span>execução Misto</span></div>
+            <div class="kpi hl"><small>Montagem do pedido</small><b id="ttInst">0 h</b><span>execução Misto</span></div>
+          </div>
+          <div class="hist" data-hist></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Custos indiretos -->
+    <div class="slide" data-titulo="Custos indiretos">
+      <div class="view-h"><div><span class="k">BASE CAMPITUBOS</span><h2>Custos indiretos de obra</h2><p>Estaleiro, transportes, meios de elevação, direção de obra e logística das pessoas deslocadas, da vossa folha CUSTOS INDIRETOS.</p></div></div>
+      <div class="two">
+        <div class="panel"><div class="panel-h"><b>Custos mensais de obra</b><span>€ por mês</span></div><div class="panel-b ctrl" id="indLista"></div></div>
+        <div>
+          <div class="panel"><div class="panel-h"><b>Pessoas deslocadas</b><span>só quando a obra não é no Norte</span></div><div class="panel-b ctrl" id="indPessoas"></div></div>
+          <div class="kpis" style="margin-top:12px;grid-template-columns:1fr 1fr">
+            <div class="kpi hl"><small>Custo mensal de obra</small><b id="indMes">0 €</b><span id="indMesB"></span></div>
+            <div class="kpi"><small>Neste pedido</small><b id="indTot">0 €</b><span id="indTotB"></span></div>
+          </div>
+          <p class="small" style="margin-top:10px">As margens e os custos de estrutura editam-se no passo Financeiro do pedido. <button class="link" data-ir="5">Ir ao Financeiro</button></p>
+          <div class="hist" data-hist></div>
+        </div>
+      </div>
     </div>
   </div>
  </div>
@@ -507,7 +574,7 @@
         <div class="fase"><span class="k">MÊS 2 · ENTREGA 2</span><h3>Motor de orçamento e PHC</h3><ul><li>Catálogo e tabela de tempos na base, com histórico</li><li>Base de preços a crescer a cada cotação</li><li>Tempos, fecho, proposta e linhas para o PHC</li></ul></div>
         <div class="fase"><span class="k">MÊS 3 · ENTREGA 3</span><h3>Validação com pedidos reais</h3><ul><li>Orçamentos em paralelo com os vossos</li><li>Regras do José registadas na base</li><li>Afinação com as correções do Martinho</li></ul></div>
       </div>
-      <div class="seguinte"><b>Fase seguinte, como combinámos:</b> o portal para os clientes da World Piping fazerem os próprios pedidos e receberem o preço na hora, ligado ao software que já calcula tempos, material e preço de venda.</div>
+      <div class="seguinte"><b>Fases seguintes:</b> depois da adjudicação, o orçamento aprovado passa a ser a base das ordens de produção, do estado da obra e dos autos de medição, como disse o Martinho. E, como combinámos, o portal para os clientes da World Piping fazerem os próprios pedidos e receberem o preço na hora.</div>
     </div>
   </div>
 </section>

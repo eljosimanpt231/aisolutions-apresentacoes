@@ -10,7 +10,7 @@ window.APRESENTACAO = {
     tranches: [
       ["Adjudicação", "no arranque do projeto", 8000],
       ["Entrega 1: leitura dos pedidos e auditoria técnica", "pedidos novos já lidos e auditados", 7500],
-      ["Entrega 2: motor de orçamento e ligação ao PHC", "orçamento base com as duas validações", 7500],
+      ["Entrega 2: motor de orçamento e ligação ao PHC", "orçamento base com as duas validações", 7000],
       ["Entrega 3: validação com pedidos reais", "equipa a orçamentar na plataforma", 2000]
     ],
     mensal: 500,

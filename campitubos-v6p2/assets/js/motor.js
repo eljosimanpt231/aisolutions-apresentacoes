@@ -156,6 +156,7 @@
 
   /* ---------------- 5. Catálogo ---------------- */
   var suspeitos = { '030000170': 'Preço igual ao do metro de tubo DN125: confirmar no catálogo', '030000172': 'Preço quase igual ao do metro de tubo DN150: confirmar no catálogo' };
+  var catDraw = function () {};
   function precoLinha(l) { return l.pr ? l.pr * l.q : 0; }
   function linhasAtivas() { return CT.linhas.filter(function (l) { return S.flanges || l.g !== 'Flanges (inferidas)'; }); }
   function materialTotal() { return linhasAtivas().reduce(function (s, l) { return s + precoLinha(l); }, 0); }
@@ -178,7 +179,7 @@
     }
     $$('#catFiltros .cont').forEach(function (c) { c.addEventListener('click', function () {
       $$('#catFiltros .cont').forEach(function (x) { x.classList.remove('active'); }); c.classList.add('active'); filt = c.dataset.f; draw(); }); });
-    draw();
+    draw(); catDraw = draw;
     $('#matTotal').textContent = eur(materialTotal());
     $('#cotLista').innerHTML = CT.cotar.map(function (c) { return '<div><span>' + c[0] + '</span><b>' + c[1] + '</b></div>'; }).join('');
     $('#cotUn').textContent = CT.cotar.reduce(function (s, c) { return s + c[1]; }, 0);
@@ -188,6 +189,29 @@
 
   /* ---------------- 6. Tempos ---------------- */
   var F = CT.fecho.fator.Misto; // [pré-fabrico, instalação]
+  /* Base Campitubos: estado editável (mão de obra, indiretos, regras de válvulas, histórico) */
+  var LOC = { 'Obra Norte (não deslocado)': 2, 'Deslocado em Portugal': 3, 'Açores': 4, 'Europa': 5, 'Fora da Europa': 6 };
+  S.equipaT = { 'Tubista': 1, 'Soldador': 1, 'Ajudante': 1 };
+  S.ind = CT.indiretosMes.map(function (x) { return [x[0], x[1]]; });
+  S.ferr = CT.ferramentasEquipaMes; S.aloj = 0; S.alim = 0;
+  S.valv = { 200: 0, 150: 0, 80: 0, 65: 0 }; var VALV_N = { 200: 12, 150: 1, 80: 24, 65: 24 };
+  S.hist = [];
+  function horaEquipa(col) { return CT.mo.reduce(function (s, r) { return s + (S.equipaT[r[0]] || 0) * r[col]; }, 0); }
+  function custoIndMes() {
+    var base = S.ind.reduce(function (s, x) { return s + x[1]; }, 0) + S.ferr * S.eqObra;
+    var desl = S.local.indexOf('Norte') < 0 ? pessoasEquipa() * S.eqObra * (20 * S.aloj + 22 * S.alim) : 0;
+    return base + desl;
+  }
+  function pessoasEquipa() { return Object.keys(S.equipaT).reduce(function (s, k) { return s + S.equipaT[k]; }, 0); }
+  function recomputaTempos() {
+    CT.linhas.forEach(function (l) {
+      var T = CT.tempos[l.dn]; if (!T) return;
+      if (l.g === 'Tubo') { l.tp = l.q * T[0] / 60; l.ti = l.q * T[1] / 60; }
+      else if (/Curva/.test(l.p)) l.tp = l.q * T[3] / 60;
+      else if (/Tê/.test(l.p)) l.tp = l.q * T[4] / 60;
+      else if (l.g === 'Flanges (inferidas)') l.tp = l.q * T[2] / 60;
+    });
+  }
   function horas() {
     var g = { Tubo: 0, Curvas: 0, 'Tês': 0, Flanges: 0 }, inst = 0;
     linhasAtivas().forEach(function (l) {
@@ -196,8 +220,9 @@
       else if (/Tê/.test(l.p)) g['Tês'] += l.tp;
       else if (l.g === 'Flanges (inferidas)') g.Flanges += l.tp;
     });
-    var baseP = g.Tubo + g.Curvas + g['Tês'] + g.Flanges;
-    return { grupos: g, baseP: baseP, baseI: inst, p: baseP * F[0], i: inst * F[1] };
+    var valv = Object.keys(S.valv).reduce(function (s, d) { return s + S.valv[d] * VALV_N[d]; }, 0);
+    var baseP = g.Tubo + g.Curvas + g['Tês'] + g.Flanges, baseI = inst + valv;
+    return { grupos: g, valv: valv, tuboI: inst, baseP: baseP, baseI: baseI, p: baseP * F[0], i: baseI * F[1] };
   }
   var HMES = 9 * 22;
   function duracoes(h) {
@@ -210,8 +235,17 @@
     $('#hInst').textContent = fmt0(h.i) + ' h'; $('#hInstB').textContent = 'base ' + fmt0(h.baseI) + ' h × 0,65 (Misto)';
     $('#hDur').textContent = fmt1(Math.max(d.semP, d.semI)) + ' sem.';
     $('#hDurB').textContent = 'sede ' + fmt1(d.semP) + ' · obra ' + fmt1(d.semI) + ' · ' + d.pico + ' pessoas em obra';
-    var mx = Math.max(h.grupos.Tubo, h.grupos.Curvas, h.grupos['Tês'], h.grupos.Flanges, h.baseI);
-    var bars = [['Tubo, pré-fabrico', h.grupos.Tubo, ''], ['Curvas', h.grupos.Curvas, ''], ['Tês', h.grupos['Tês'], ''], ['Flanges inferidas', h.grupos.Flanges, ''], ['Tubo, montagem', h.baseI, 'inst']];
+    var mx = Math.max(h.grupos.Tubo, h.grupos.Curvas, h.grupos['Tês'], h.grupos.Flanges, h.tuboI, h.valv);
+    var bars = [['Tubo, pré-fabrico', h.grupos.Tubo, ''], ['Curvas', h.grupos.Curvas, ''], ['Tês', h.grupos['Tês'], ''], ['Flanges inferidas', h.grupos.Flanges, ''], ['Tubo, montagem', h.tuboI, 'inst']];
+    if (h.valv) bars.push(['Válvulas (regra do José)', h.valv, 'inst']);
+    var av = $('#avisoValv'); if (av) av.hidden = h.valv > 0;
+    /* planeamento a partir do prazo do cliente (Martinho: "precisamos disto em 6 meses") */
+    var pz = $('#prazoCli'); if (pz) {
+      var sem = +pz.value, horasSem = 9 * 5;
+      var eqP = Math.max(1, Math.ceil(h.p / (horasSem * sem))), eqO = Math.max(1, Math.ceil(h.i / (horasSem * Math.max(1, sem / 2))));
+      $('#vPrazo').textContent = sem + ' semanas';
+      $('#prazoRes').innerHTML = 'Para cumprir em <b>' + sem + ' semanas</b> (pré-fabrico em paralelo, montagem na segunda metade): <b>' + eqP + '</b> equipa(s) na sede e <b>' + eqO + '</b> em obra, ' + (eqO * pessoasEquipa()) + ' pessoas em obra no pico. A confirmar contra a carga das equipas nas obras em curso.';
+    }
     $('#hBars').innerHTML = bars.map(function (b) { return '<div class="hbar"><span>' + b[0] + '</span><span class="t"><i class="' + b[2] + '" style="width:' + (b[1] / mx * 100) + '%"></i></span><span class="v">' + fmt0(b[1]) + ' h</span></div>'; }).join('');
     $('#vEqP').textContent = S.eqPref; $('#vEqO').textContent = S.eqObra;
   }
@@ -220,8 +254,8 @@
     $('#eqPref').addEventListener('input', function () { S.eqPref = +this.value; drawTempos(); drawFin(); });
     $('#eqObra').addEventListener('input', function () { S.eqObra = +this.value; drawTempos(); drawFin(); });
     $('#togFl').addEventListener('change', function () { S.flanges = this.checked; drawTempos(); drawFin(); $('#matTotal').textContent = eur(materialTotal()); });
-    $('#tabTempos').innerHTML = '<tr><th>DN</th><th>Tubo pré-f.</th><th>Tubo mont.</th><th>Flange</th><th>Curva</th><th>Tê</th></tr>' +
-      Object.keys(CT.tempos).map(function (dn) { var t = CT.tempos[dn]; return '<tr><td>DN' + dn + '</td>' + t.map(function (v) { return '<td>' + String(v).replace('.', ',') + '</td>'; }).join('') + '</tr>'; }).join('');
+    window.__tabTempos = function () { $('#tabTempos').innerHTML = '<tr><th>DN</th><th>Tubo pré-f.</th><th>Tubo mont.</th><th>Flange</th><th>Curva</th><th>Tê</th></tr>' +
+      Object.keys(CT.tempos).map(function (dn) { var t = CT.tempos[dn]; return '<tr><td>DN' + dn + '</td>' + t.map(function (v) { return '<td>' + String(v).replace('.', ',') + '</td>'; }).join('') + '</tr>'; }).join(''); }; window.__tabTempos();
     $('#valTempos').addEventListener('click', function () {
       S.validTempos = !S.validTempos;
       this.textContent = S.validTempos ? 'Tempos validados ✓' : 'Validar tempos';
@@ -235,9 +269,9 @@
   var R = {};
   function calcFin() {
     var h = horas(), d = duracoes(h), m = S.m;
-    var mat = materialTotal(), pref = h.p * CT.equipa.pref, inst = h.i * CT.equipa.local[S.local];
+    var mat = materialTotal(), pref = h.p * horaEquipa(1), inst = h.i * horaEquipa(LOC[S.local]);
     var meses = Math.max(0.5, Math.ceil(d.mI * 2) / 2);
-    var indMes = CT.indiretosMes.reduce(function (s, x) { return s + x[1]; }, 0) + CT.ferramentasEquipaMes * S.eqObra;
+    var indMes = custoIndMes();
     var ind = indMes * meses;
     var w = CT.fecho.pesoInd.Misto;
     var L9 = 1 + (S.score / 100) * 0.05, fM = 1 + (L9 - 1) * 0.15, fP = 1 + (L9 - 1) * 0.5, fI = 1 + (L9 - 1);
@@ -254,9 +288,9 @@
     var linha = function (t, sub, c, i, v) { return '<tr><td>' + t + (sub ? '<small>' + sub + '</small>' : '') + '</td><td>' + eur(c) + '</td><td>' + eur(i) + '</td><td>' + eur(v) + '</td></tr>'; };
     $('#finTab').innerHTML = '<tr><th>Rubrica</th><th>Custo</th><th>Indiretos imputados</th><th>Venda</th></tr>' +
       linha('Materiais <span class="estim">estimativa</span>', 'tubo, acessórios e flanges; preços do catálogo ou pelo peso', r.mat, r.ind * w[0], r.vM) +
-      linha('Pré-fabrico na sede', fmt0(r.h.p) + ' h × ' + eur2(CT.equipa.pref) + ' por hora de equipa', r.pref, r.ind * w[1], r.vP) +
-      linha('Montagem em obra', fmt0(r.h.i) + ' h × ' + eur2(CT.equipa.local[S.local]) + ' (' + S.local.split(' (')[0] + ')', r.inst, r.ind * w[2], r.vI) +
-      '<tr><td>Custos indiretos<small>' + fmt1(r.meses) + ' meses de obra × ' + eur(r.indMes) + '/mês (estaleiro, transportes, Manitou, direção de obra)</small></td><td>' + eur(r.ind) + '</td><td>repartidos 20/25/55%</td><td>incluído</td></tr>' +
+      linha('Pré-fabrico na sede', fmt0(r.h.p) + ' h × ' + eur2(horaEquipa(1)) + ' por hora de equipa', r.pref, r.ind * w[1], r.vP) +
+      linha('Montagem em obra', fmt0(r.h.i) + ' h × ' + eur2(horaEquipa(LOC[S.local])) + ' (' + S.local.split(' (')[0] + ')', r.inst, r.ind * w[2], r.vI) +
+      '<tr><td>Custos indiretos<small>' + fmt1(r.meses) + ' meses de obra × ' + eur(r.indMes) + '/mês (estaleiro, transportes, Manitou, direção de obra' + (S.local.indexOf('Norte') < 0 ? ', alojamento e alimentação' : '') + ')</small></td><td>' + eur(r.ind) + '</td><td>repartidos 20/25/55%</td><td>incluído</td></tr>' +
       '<tr class="tot"><td>Total</td><td>' + eur(r.custo) + '</td><td></td><td>' + eur(r.venda) + '</td></tr>';
     $('#kVenda').textContent = eur(r.venda);
     var mg = r.venda - r.custo;
@@ -268,7 +302,7 @@
   }
   (function () {
     if (!$('#finTab')) return;
-    var sel = $('#local'); sel.innerHTML = Object.keys(CT.equipa.local).map(function (k) { return '<option>' + k + '</option>'; }).join('');
+    var sel = $('#local'); sel.innerHTML = Object.keys(LOC).map(function (k) { return '<option>' + k + '</option>'; }).join('');
     sel.addEventListener('change', function () { S.local = this.value; drawFin(); });
     $('#score').addEventListener('input', function () { S.score = +this.value; drawFin(); });
     $$('[data-m]').forEach(function (inp) { inp.value = (S.m[inp.dataset.m] * 100).toFixed(1); inp.addEventListener('input', function () { var v = parseFloat(this.value.replace(',', '.')); if (isFinite(v) && v >= 0 && v < 60) { S.m[this.dataset.m] = v / 100; drawFin(); } }); });
@@ -306,6 +340,125 @@
     var phc = L.filter(function (l) { return l.ref; }).slice(0, 9).map(function (l) { return '<div class="linha"><b>' + l.ref + '</b><span>' + l.des.split(', Série')[0].slice(0, 60) + '</span><span>' + fmt1(l.q).replace(',0', '') + ' ' + l.u + '</span><span>' + (l.pr ? eur2(l.pr * k) : '') + '</span></div>'; }).join('');
     $('#phc').innerHTML = '<div class="linha h"><span>Ref.</span><span>Designação</span><span>Qtd.</span><span>Preço venda</span></div>' + phc + '<div class="linha"><span></span><span>+ ' + (L.filter(function (l) { return l.ref; }).length - 9) + ' linhas com referência</span><span></span><span></span></div>';
   }
+
+  /* ---------------- 9. Base Campitubos: preços, mão de obra, tempos, indiretos ---------------- */
+  function hora() { var d = new Date(); return 'hoje ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+  function regista(txt) { S.hist.unshift(hora() + ' · José Araújo · ' + txt); drawHist(); }
+  function drawHist() {
+    $$('[data-hist]').forEach(function (h) {
+      h.innerHTML = '<div class="hist-h">Histórico de alterações</div>' + (S.hist.length ? S.hist.slice(0, 6).map(function (x) { return '<div>' + x + '</div>'; }).join('') : '<div class="vazio">Ainda sem alterações. Cada mudança fica registada com data e autor.</div>');
+    });
+  }
+  function recalc() {
+    recomputaTempos(); drawTempos(); drawFin(); catDraw(); if (window.__tabTempos) window.__tabTempos();
+    $('#matTotal').textContent = eur(materialTotal());
+    var h = horas(); if ($('#ttPref')) { $('#ttPref').textContent = fmt0(h.p) + ' h'; $('#ttInst').textContent = fmt0(h.i) + ' h'; }
+    drawInd(); drawMOHora();
+  }
+  var num = function (v) { var x = parseFloat(String(v).replace(',', '.')); return isFinite(x) ? x : null; };
+
+  /* Preços e fornecedores */
+  (function () {
+    var tab = $('#pxTab'); if (!tab) return;
+    var modo = 'pedido', atual = {};
+    var usadas = CT.linhas.filter(function (l) { return l.ref; });
+    $('#pxPedido').textContent = usadas.length;
+    function draw() {
+      if (modo === 'pedido') {
+        tab.innerHTML = '<thead><tr><th>Referência</th><th class="num">Preço (€/un. ou €/m)</th><th>Origem</th><th>Fornecedor</th><th>Atualizado</th></tr></thead><tbody>' +
+          usadas.map(function (l, i) {
+            var o = atual[i] ? '<span class="org cat">Atualizado</span>' : l.f === 'catálogo' ? '<span class="org cat">Catálogo</span>' : '<span class="org est">Estimado pelo peso</span>';
+            return '<tr><td><span class="ref">' + l.ref + '</span><span class="des">' + l.des + '</span></td><td class="num"><input class="in-num" data-px="' + i + '" value="' + l.pr.toFixed(2).replace('.', ',') + '"></td><td>' + o + '</td><td><input class="in-txt" placeholder="por preencher" value="' + (l.forn || '') + '" data-fo="' + i + '"></td><td class="mono small">' + (atual[i] || (l.f === 'catálogo' ? 'sem data no ficheiro' : '—')) + '</td></tr>';
+          }).join('') + '</tbody>';
+      } else {
+        tab.innerHTML = '<thead><tr><th>Referência</th><th>Tipo</th><th class="num">DN</th><th class="num">Preço</th><th class="num">€/kg</th><th>Fornecedor</th></tr></thead><tbody>' +
+          CT.precos.map(function (p) { return '<tr><td><span class="ref">' + p[0] + '</span><span class="des">' + p[1] + '</span></td><td>' + p[2] + '</td><td class="num">' + p[3] + '</td><td class="num">' + eur2(p[4]) + '</td><td class="num">' + String(p[5]).replace('.', ',') + '</td><td class="small">por preencher</td></tr>'; }).join('') + '</tbody>';
+      }
+    }
+    tab.addEventListener('change', function (e) {
+      var i = e.target.dataset.px, j = e.target.dataset.fo;
+      if (i != null) { var l = usadas[+i], v = num(e.target.value); if (v == null || v < 0 || v === l.pr) return; var antes = l.pr; l.pr = v; l.f = 'catálogo'; atual[i] = hora(); $('#pxAtual').textContent = Object.keys(atual).length; regista(l.ref + ': preço ' + eur2(antes) + ' → ' + eur2(v)); recalc(); draw(); }
+      if (j != null) { usadas[+j].forn = e.target.value; regista(usadas[+j].ref + ': fornecedor ' + e.target.value); }
+    });
+    $$('#pxTabs button').forEach(function (b) { b.addEventListener('click', function () { $$('#pxTabs button').forEach(function (x) { x.classList.remove('active'); }); b.classList.add('active'); modo = b.dataset.t; draw(); }); });
+    draw();
+  })();
+
+  /* Mão de obra */
+  var COLS = ['Pré-fabrico', 'Obra Norte', 'Deslocado PT', 'Açores', 'Europa', 'Fora Europa'];
+  function drawMOHora() {
+    var el = $('#moHora'); if (!el) return;
+    el.innerHTML = '<div class="mo-hora">' + COLS.map(function (c, k) { return '<div><small>' + c + '</small><b>' + eur2(horaEquipa(k + 1)) + '</b></div>'; }).join('') + '</div><p class="small" style="margin-top:8px">Por hora de equipa de ' + pessoasEquipa() + ' pessoas. O pedido em curso usa "' + S.local.split(' (')[0] + '" na montagem.</p>';
+  }
+  (function () {
+    var t = $('#moTab'); if (!t) return;
+    t.innerHTML = '<thead><tr><th>Categoria (€/hora)</th>' + COLS.map(function (c) { return '<th class="num">' + c + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      CT.mo.map(function (r, i) { return '<tr class="' + (S.equipaT[r[0]] ? 'eq' : '') + '"><td>' + r[0] + '</td>' + r.slice(1).map(function (v, k) { return '<td class="num"><input class="in-num" data-mo="' + i + ',' + (k + 1) + '" value="' + v.toFixed(2).replace('.', ',') + '"></td>'; }).join('') + '</tr>'; }).join('') + '</tbody>';
+    t.addEventListener('change', function (e) {
+      var a = e.target.dataset.mo; if (!a) return; a = a.split(',').map(Number); var v = num(e.target.value); if (v == null || v < 0) return;
+      var antes = CT.mo[a[0]][a[1]]; if (antes === v) return; CT.mo[a[0]][a[1]] = v; regista(CT.mo[a[0]][0] + ', ' + COLS[a[1] - 1] + ': ' + eur2(antes) + ' → ' + eur2(v) + '/h'); recalc();
+    });
+    var eq = $('#moEquipa');
+    eq.innerHTML = ['Encarregado geral', 'Chefe de equipa', 'Tubista', 'Soldador', 'Ajudante', 'Serralheiro'].map(function (c) { return '<label><span class="top">' + c + ' <b data-eqv="' + c + '">' + (S.equipaT[c] || 0) + '</b></span><input type="range" min="0" max="3" value="' + (S.equipaT[c] || 0) + '" data-eq="' + c + '"></label>'; }).join('');
+    eq.addEventListener('input', function (e) {
+      var c = e.target.dataset.eq; if (!c) return; S.equipaT[c] = +e.target.value; $('[data-eqv="' + c + '"]').textContent = e.target.value;
+      $$('#moTab tbody tr').forEach(function (tr, i) { tr.classList.toggle('eq', !!S.equipaT[CT.mo[i][0]]); });
+      recalc();
+    });
+    eq.addEventListener('change', function (e) { if (e.target.dataset.eq) regista('Equipa tipo: ' + Object.keys(S.equipaT).filter(function (k) { return S.equipaT[k]; }).map(function (k) { return S.equipaT[k] + ' ' + k.toLowerCase(); }).join(', ')); });
+    drawMOHora();
+  })();
+
+  /* Tabela de tempos */
+  (function () {
+    var t = $('#ttTab'); if (!t) return;
+    var noPedido = { 50: 1, 65: 1, 80: 1, 100: 1, 125: 1, 150: 1, 200: 1 };
+    t.innerHTML = '<thead><tr><th>DN</th><th class="num">Tubo pré-fabrico</th><th class="num">Tubo montagem</th><th class="num">Flange</th><th class="num">Curva</th><th class="num">Tê</th></tr></thead><tbody>' +
+      CT.temposFull.map(function (r, i) { return '<tr class="' + (noPedido[r[0]] ? 'eq' : '') + '"><td>DN' + r[0] + ' <span class="small">' + r[1] + '</span></td>' + r.slice(2).map(function (v, k) { return '<td class="num"><input class="in-num" data-tt="' + i + ',' + k + '" value="' + String(Math.round(v * 100) / 100).replace('.', ',') + '"></td>'; }).join('') + '</tr>'; }).join('') + '</tbody>';
+    var nomes = ['tubo pré-fabrico', 'tubo montagem', 'flange', 'curva', 'tê'];
+    t.addEventListener('change', function (e) {
+      var a = e.target.dataset.tt; if (!a) return; a = a.split(',').map(Number); var v = num(e.target.value); if (v == null || v < 0) return;
+      var r = CT.temposFull[a[0]], antes = r[a[1] + 2]; if (antes === v) return; r[a[1] + 2] = v; if (CT.tempos[r[0]]) CT.tempos[r[0]][a[1]] = v;
+      regista('DN' + r[0] + ', ' + nomes[a[1]] + ': ' + String(antes).replace('.', ',') + ' → ' + String(v).replace('.', ',') + ' min'); recalc();
+    });
+    var rg = $('#ttRegras');
+    rg.innerHTML = '<p class="small">Montagem de válvula flangeada, em horas de equipa por válvula. Hoje não existe na tabela, por isso a montagem de válvulas conta 0 h.</p>' +
+      [200, 150, 80, 65].map(function (d) { return '<label><span class="top">Válvula DN' + d + ' <span class="small">(' + VALV_N[d] + ' neste pedido)</span></span><input type="number" step="0.25" min="0" placeholder="por definir" data-vv="' + d + '"></label>'; }).join('') +
+      '<p class="small">Reduções: também sem tempo de pré-fabrico na tabela.</p>';
+    rg.addEventListener('change', function (e) { var d = e.target.dataset.vv; if (!d) return; var v = num(e.target.value) || 0; if (S.valv[d] === v) return; S.valv[d] = v; regista('Regra nova: válvula DN' + d + ' = ' + String(v).replace('.', ',') + ' h por válvula'); recalc(); });
+    var h = horas(); $('#ttPref').textContent = fmt0(h.p) + ' h'; $('#ttInst').textContent = fmt0(h.i) + ' h';
+  })();
+
+  /* Custos indiretos */
+  function drawInd() {
+    if (!$('#indMes')) return;
+    var r = calcFin();
+    $('#indMes').textContent = eur(custoIndMes()); $('#indMesB').textContent = S.local.split(' (')[0] + ', ' + S.eqObra + ' equipa(s) em obra';
+    $('#indTot').textContent = eur(r.ind); $('#indTotB').textContent = fmt1(r.meses) + ' meses de montagem';
+  }
+  (function () {
+    var l = $('#indLista'); if (!l) return;
+    l.innerHTML = S.ind.map(function (x, i) { return '<label>' + x[0] + '<input type="number" step="10" data-ind="' + i + '" value="' + x[1] + '"></label>'; }).join('') +
+      '<label>Ferramentas e consumíveis, por equipa<input type="number" step="10" data-ferr value="' + S.ferr + '"></label>';
+    l.addEventListener('change', function (e) {
+      var v = num(e.target.value); if (v == null || v < 0) return;
+      if (e.target.dataset.ind != null) { var x = S.ind[+e.target.dataset.ind]; regista(x[0] + ': ' + eur(x[1]) + ' → ' + eur(v) + '/mês'); x[1] = v; }
+      else if (e.target.hasAttribute('data-ferr')) { regista('Ferramentas por equipa: ' + eur(S.ferr) + ' → ' + eur(v) + '/mês'); S.ferr = v; }
+      recalc();
+    });
+    var p = $('#indPessoas');
+    p.innerHTML = '<p class="small">Na vossa folha estes valores estão por preencher. Contam quando a obra não é no Norte (20 noites e 22 dias por mês, por pessoa em obra).</p>' +
+      '<label>Alojamento (€ por pessoa e noite)<input type="number" step="5" min="0" placeholder="por preencher" data-al="aloj"></label>' +
+      '<label>Alimentação (€ por pessoa e dia)<input type="number" step="1" min="0" placeholder="por preencher" data-al="alim"></label>' +
+      '<label>Localização do pedido em curso<select id="indLocal">' + Object.keys(LOC).map(function (k) { return '<option' + (k === S.local ? ' selected' : '') + '>' + k + '</option>'; }).join('') + '</select></label>';
+    p.addEventListener('change', function (e) {
+      if (e.target.id === 'indLocal') { S.local = e.target.value; var s = $('#local'); if (s) s.value = S.local; recalc(); return; }
+      var k = e.target.dataset.al; if (!k) return; var v = num(e.target.value) || 0; S[k] = v; regista((k === 'aloj' ? 'Alojamento' : 'Alimentação') + ': ' + eur(v) + ' por pessoa'); recalc();
+    });
+    drawInd();
+  })();
+  $('#local') && $('#local').addEventListener('change', function () { var s = $('#indLocal'); if (s) s.value = S.local; drawInd(); drawMOHora(); });
+  drawHist();
 
   /* arranque */
   stepper();

@@ -475,3 +475,28 @@ section { padding: 0; }
 .two > *, .aud-cols > *, .bloqueado { min-width: 0; }
 .panel { max-width: 100%; }
 @media (max-width: 700px) { .resultado { grid-template-columns: repeat(2, 1fr); } }
+/* v3: base Campitubos */
+.sub-tabs { display: flex; gap: 4px; margin-bottom: 10px; }
+.sub-tabs button { border: 1px solid var(--border); background: var(--surface); color: var(--muted); font: 600 0.8rem var(--font-body); padding: 7px 14px; border-radius: 6px; cursor: pointer; }
+.sub-tabs button.active { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+.in-num, .in-txt { font: 500 0.78rem var(--font-mono); color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 4px 6px; width: 76px; text-align: right; }
+.in-txt { font-family: var(--font-body); width: 130px; text-align: left; }
+.in-num:focus, .in-txt:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 2px hsl(var(--accent-hsl) / 0.15); }
+.tbl tr.eq td { background: hsl(var(--accent-hsl) / 0.05); }
+.tbl tr.eq td:first-child { font-weight: 600; color: var(--brand); }
+.tbl.mo .in-num, .tbl.tt .in-num { width: 64px; }
+.mo-hora { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.mo-hora div { border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; }
+.mo-hora small { display: block; font-size: 0.66rem; color: var(--faint); text-transform: uppercase; letter-spacing: 0.08em; }
+.mo-hora b { font-family: var(--font-mono); font-size: 0.95rem; color: var(--brand); }
+.hist { margin-top: 12px; border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 10px 12px; font-size: 0.76rem; color: var(--muted); }
+.hist .hist-h { font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); font-weight: 700; margin-bottom: 6px; }
+.hist div + div { padding-top: 4px; border-top: 1px dashed var(--border); margin-top: 4px; }
+.hist .vazio { font-style: italic; }
+.link { background: none; border: 0; padding: 0; color: var(--accent); font-family: var(--font-body); font-weight: 600; font-size: inherit; cursor: pointer; text-decoration: underline; }
+.rev + .rev { margin-top: 6px; }
+.rev.muted { color: var(--faint); }
+@media (max-width: 700px) { .mo-hora { grid-template-columns: 1fr 1fr; } }
+.tbl.mo td:first-child { white-space: nowrap; font-size: 0.76rem; }
+.tbl.mo .in-num { width: 54px; padding: 3px 4px; }
+.tbl.mo td, .tbl.mo th { padding: 6px 6px; }
