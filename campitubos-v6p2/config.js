@@ -13,7 +13,7 @@ window.APRESENTACAO = {
       ["Entrega 2: motor de orçamento e ligação ao PHC", "orçamento base com as duas validações", 7000],
       ["Entrega 3: validação com pedidos reais", "equipa a orçamentar na plataforma", 2000]
     ],
-    mensal: 500,
-    anual: 5000
+    mensal: 400,
+    anual: 4400
   }
 };
