@@ -308,6 +308,10 @@
         <span class="eyebrow">Pedido 3 · o levantamento</span>
         <h2>Cada móvel e cada porta, com medidas, materiais e ferragens</h2>
         <p class="lead">A verde, o que bate certo entre o MQT e os desenhos. A amarelo, o que diverge e precisa de decisão ou de pergunta à ICON.</p>
+        <div class="poc-band reveal" style="margin-top:0; margin-bottom:16px; justify-content:space-between">
+          <span><b>Experimente agora:</b> o levantamento completo num Excel com 5 folhas. Mapa para preço com as fórmulas já feitas, áreas de frente calculadas, as 12 perguntas à ICON e os 42 desenhos lidos. Preencham os preços unitários e o total da subempreitada sai sozinho.</span>
+          <button class="btn btn-primary" id="iconXlsx" style="white-space:nowrap">⬇ Descarregar o Excel do ICON Sailor</button>
+        </div>
         <div class="xl" style="margin-top:20px">
           <div class="xl-bar">ICON Sailor · levantamento de carpintarias<span class="f">MQT cruzado com 42 desenhos</span></div>
           <div style="max-height:420px; overflow:auto">
@@ -324,7 +328,7 @@
               <tr><td>VI-03, 05, 06</td><td>Portas de correr pocket</td><td>0,80 x 2,20 e 2,45</td><td class="n">17</td><td>JNF</td><td class="fill">MQT = desenho</td></tr>
               <tr><td>VI-04</td><td>Porta pivotante sem aro</td><td>0,76 x 2,20</td><td class="n">3</td><td>JNF</td><td class="fill">MQT = desenho</td></tr>
               <tr><td>VI-07</td><td>Porta corta-fogo metálica</td><td></td><td class="n">1</td><td>serralharia</td><td class="chk">não é carpintaria</td></tr>
-              <tr><td>ARM.TEC / TE</td><td>Armários técnicos</td><td>cotas nos desenhos</td><td class="n">21</td><td>MDF termolaminado carvalho, abertura push</td><td class="chk">14 sem desenho; MDF no MQT</td></tr>
+              <tr><td>ARM.TEC / TE</td><td>Armários técnicos</td><td>cotas nos desenhos</td><td class="n">22</td><td>MDF termolaminado carvalho, abertura push</td><td class="chk">14 sem desenho; MDF no MQT</td></tr>
               <tr><td>ARMTE</td><td>Armários do quadro elétrico</td><td>cotas nos desenhos</td><td class="n">6</td><td>termolaminado carvalho</td><td class="fill">MQT = desenho</td></tr>
               <tr><td>LAV-01 / 02</td><td>Móveis de lavatório, 2 gavetas, tampo HIMACS</td><td>cotas nos desenhos</td><td class="n">17</td><td>MDF hidrófugo folheado carvalho</td><td class="chk">interior: lacado preto ou melamina</td></tr>
               <tr><td>PR-01 / 02</td><td>Painéis ripados 20x30, afastamento 30</td><td>parede inteira</td><td class="n">3</td><td>OSB hidrófugo, Sonae M4451</td><td class="chk">PR-01: MQT 2, desenho 1</td></tr>
@@ -334,7 +338,7 @@
           </table>
           </div>
         </div>
-        <p class="demo-note" style="text-align:left">Quantidades do MQT, conferidas com o mapa de armários e com o mapa de vãos. O preço sai da vossa tabela de interiores, que é a primeira coisa que montamos convosco.</p>
+        
       </div>
     </div>
 
@@ -419,7 +423,7 @@
                 <h4>Pedidos por responder</h4>
                 <div class="sub">Ordenados por prazo de entrega. A coluna "leitura" diz se o sistema já preparou o Excel.</div>
                                 <div class="req head"><span>Pedido</span><span>Área</span><span>Volume lido</span><span>Prazo</span><span>Leitura</span></div>
-                <div class="req sel" data-open="vFicha"><span><b>ICON Sailor, Barra</b><small>ICON · MQT + 42 desenhos</small></span><span>Interiores</span><span>28 roupeiros · 61 portas · 17 lavatórios</span><span><span class="tg red">9 out · 4 dias úteis</span></span><span><span class="tg mid">12 dúvidas</span></span></div>
+                <div class="req sel" data-open="vFicha"><span><b>ICON Sailor, Barra</b><small>ICON · MQT + 42 desenhos</small></span><span>Interiores</span><span>28 roupeiros · 51 portas · 17 lavatórios</span><span><span class="tg red">9 out · 4 dias úteis</span></span><span><span class="tg mid">12 dúvidas</span></span></div>
                 <div class="req"><span><b>Tagus Hotel, Cais do Sodré</b><small>HCI · Excel + 5 DWF</small></span><span>Caixilharia</span><span>213 vãos · 169 portadas</span><span><span class="tg lo">só janelas</span></span><span><span class="tg hi">Excel pronto</span></span></div>
                 <div class="req"><span><b>Varandas da Alegria, Lisboa</b><small>Baltor · Excel + 3 PDF</small></span><span>Caixilharia</span><span>80 vãos · 5 artigos</span><span><span class="tg lo">dono de obra conhecido</span></span><span><span class="tg hi">Excel pronto</span></span></div>
                 <div class="req"><span><b>Moradia unifamiliar</b><small>exemplo · particular</small></span><span>Interiores</span><span>1 cozinha · 4 roupeiros</span><span><span class="tg lo">sem prazo</span></span><span><span class="tg hi">Excel pronto</span></span></div>
@@ -432,8 +436,8 @@
                 <div class="sub">Subempreitada de carpintarias. Rua da Praia 87 e 89, Barra. Projeto em fase de licenciamento, 01/09/2026. Proposta pedida até 9 de outubro.</div>
                 <div class="task"><span class="st done">✓</span>Mapa de quantidades lido e cruzado com os desenhos<span class="who">MQT + 42 PDF</span></div>
                 <div class="task"><span class="st done">✓</span>28 roupeiros ARM-01 a 10, todos com 0,60 de fundo<span class="who">MDF lacado RAL 9010</span></div>
-                <div class="task"><span class="st done">✓</span>61 portas interiores VI-01 a 06, ferragens JNF<span class="who">batente, pocket, pivotante</span></div>
-                <div class="task"><span class="st done">✓</span>27 armários técnicos, 17 móveis de lavatório, 3 ripados, 293,72 ml de rodapé<span class="who">termolaminado carvalho</span></div>
+                <div class="task"><span class="st done">✓</span>51 portas interiores VI-01 a 06, ferragens JNF<span class="who">batente, pocket, pivotante</span></div>
+                <div class="task"><span class="st done">✓</span>28 armários técnicos e do quadro, 17 móveis de lavatório, 3 ripados, 293,72 ml de rodapé<span class="who">termolaminado carvalho</span></div>
                 <div class="task"><span class="st todo">!</span>Cozinhas CZ-01 a 05 desenhadas mas fora do MQT<span class="who">pergunta à ICON</span></div>
                 <div class="task"><span class="st todo">!</span>12 pedidos de esclarecimento escritos<span class="who">rascunho para o Carlos</span></div>
                 <div class="task"><span class="st lock">○</span>Preço: tabela de interiores da Casanova<span class="who">montada no arranque</span></div>
@@ -594,6 +598,9 @@
   <script src="../shared/js/protect.js"></script>
   <script src="../shared/deck/deck.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="assets/js/icon-data.js"></script>
+  <script src="assets/js/icon-excel.js"></script>
   <script src="assets/js/vaos.js"></script>
   <script src="assets/js/casanova.js"></script>
   <script>
