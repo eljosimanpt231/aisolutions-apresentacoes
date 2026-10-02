@@ -21,7 +21,7 @@
   <script src="config.js"></script>
 </head>
 <body>
-  <img class="doc-logo" src="assets/img/casanova-logo-escuro.png" alt="" hidden>
+  <img class="doc-logo" src="assets/img/casanova-logo-escuro.png" alt="" hidden style="display:none">
 
   <header class="topbar">
     <div class="brand">
@@ -34,7 +34,6 @@
         <button class="tab active" data-tab="contexto">Contexto</button>
         <button class="tab" data-tab="pedidos">Os vossos pedidos</button>
         <button class="tab" data-tab="plataforma">Como funciona</button>
-        <button class="tab" data-tab="assistente">Assistente</button>
         <button class="tab" data-tab="proposta">Proposta</button>
       </nav>
       <button class="theme-btn" id="themeBtn" aria-label="Mudar tema claro ou escuro">◐</button>
@@ -363,7 +362,6 @@
             <div class="ask reveal"><b>12. Fase do projeto.</b> Os desenhos são de licenciamento. Haverá projeto de execução antes da adjudicação?</div>
           </div>
         </div>
-        <div class="poc-band reveal"><b>O teste de hoje:</b><span>a Casanova faz o orçamento da ICON como sempre; nós entregamos o levantamento e o Excel. Comparamos linha a linha antes de 9 de outubro.</span></div>
       </div>
     </div>
 
@@ -402,7 +400,7 @@
 
     <div class="slide section-alt">
       <div class="container">
-        <span class="eyebrow">A caixa de pedidos</span>
+        <span class="eyebrow">Módulo opcional · gestão de pedidos</span>
         <h2>Todos os pedidos numa lista, já com a ficha feita</h2>
         <p class="lead">Em vez de abrir email a email, a triagem faz-se aqui. Cada pedido já vem lido: o que é, quanto vale de trabalho, até quando. Clique num pedido.</p>
         <div class="app reveal" style="margin-top:22px">
@@ -510,110 +508,18 @@
   </section>
 
   <!-- ====================================================== -->
-  <!-- SEPARADOR 4: ASSISTENTE                                -->
-  <!-- ====================================================== -->
-  <section class="tab-panel" id="assistente">
-    <div class="slide">
-      <div class="container">
-        <span class="eyebrow">Falar com o sistema</span>
-        <h2>Perguntar, pedir e confirmar, por texto ou por voz</h2>
-        <p class="lead">Quatro situações reais do dia a dia do orçamentista, com os vossos pedidos. Numa delas, o assistente recusa avançar sozinho.</p>
-        <div class="cr" id="ccDemo" style="margin-top:26px"></div>
-      </div>
-    </div>
-    <script type="application/json" id="ccDemo-config">
-    {
-      "agentName": "Orçamentos Casanova",
-      "agentInitials": "CN",
-      "chatStatus": "No email e no computador, por texto ou voz",
-      "stepMs": 1500,
-      "endPauseMs": 2800,
-      "scenarios": [
-        {
-          "title": "Pedido novo",
-          "subtitle": "O que chegou, o que é e o que falta saber.",
-          "chat": [
-            { "sender": "client", "text": "Chegou alguma coisa da ICON?", "time": "08:40" },
-            { "sender": "agent", "text": "Sim, **ICON Sailor, Barra**: MQT e 42 desenhos. **28 roupeiros, 61 portas interiores, 17 móveis de lavatório, 27 armários técnicos, 3 ripados** e 293,72 ml de rodapé. Prazo **9 de outubro**, 4 dias úteis. Atenção: as cozinhas estão desenhadas mas **não estão no MQT**.", "time": "08:40" },
-            { "sender": "client", "text": "Prepara o email com as dúvidas.", "time": "08:42" },
-            { "sender": "agent", "text": "Preparei **12 perguntas**, cada uma com o desenho de onde saiu: cozinhas, bancadas, brilho do lacado, puxadores, portas pocket... Está nos rascunhos para rever. **Não enviei.**", "time": "08:42" }
-          ],
-          "steps": [
-            { "icon": "message", "label": "Encontra o email da ICON e os anexos" },
-            { "icon": "search", "label": "Lê o MQT e os 42 desenhos" },
-            { "icon": "list", "label": "Cruza quantidades: mapa de armários, mapa de vãos" },
-            { "icon": "alert", "label": "Deteta 12 diferenças entre MQT e desenhos" },
-            { "icon": "send", "label": "Escreve o rascunho, para o Carlos enviar" }
-          ]
-        },
-        {
-          "title": "Só as janelas",
-          "subtitle": "A decisão de triagem, aplicada ao orçamento.",
-          "chat": [
-            { "sender": "client", "text": "No Tagus Hotel respondemos só às janelas.", "time": "10:05" },
-            { "sender": "agent", "text": "Feito: **213 vãos em 36 posições** mais montagem. As **169 portadas** passaram para as exclusões da proposta. Excel pronto para o vosso cálculo.", "time": "10:05" },
-            { "sender": "agent", "text": "Antes de calcular: o **VEM 07** (1,22 x 3,39) está no pedido e não tem posição, e o **VEM 16.1** tem 3,02 de altura no mapa. Confirma?", "time": "10:06" },
-            { "sender": "client", "text": "O VEM 07 entra. O 16.1 é 2,11, já falei com eles.", "time": "10:08" }
-          ],
-          "steps": [
-            { "icon": "filter", "label": "Separa janelas (VEM) de portadas (PTD)" },
-            { "icon": "database", "label": "Agrupa as 56 linhas em posições" },
-            { "icon": "check", "label": "Escreve as exclusões no texto da proposta" },
-            { "icon": "alert", "label": "Confere pedido contra posições: 2 diferenças" },
-            { "icon": "ear", "label": "Regista a decisão do Carlos na ficha" }
-          ]
-        },
-        {
-          "title": "Não decide a margem",
-          "subtitle": "O assistente recusa e prepara a decisão.",
-          "chat": [
-            { "sender": "client", "text": "Manda a proposta das Varandas à Baltor com 5% de desconto.", "time": "16:20" },
-            { "sender": "agent", "text": "Não envio nem mexo no preço sozinho. Preparei as **duas versões** para comparar: a calculada, **248.985,17 €**, e com 5% sobre o fornecimento. A escolha é sua.", "time": "16:20" },
-            { "sender": "agent", "text": "Uma nota: o mapa pede **pinho nórdico lamelado** e a proposta está em **castanho ibérico CN78**. Quer que o email diga isso de forma explícita?", "time": "16:21" },
-            { "sender": "client", "text": "Sim, explica a opção pelo castanho. Fica a versão sem desconto.", "time": "16:24" }
-          ],
-          "steps": [
-            { "icon": "ban", "label": "Recusa alterar margem e enviar sem decisão" },
-            { "icon": "list", "label": "Prepara as duas versões lado a lado" },
-            { "icon": "brain", "label": "Compara o pedido com a solução proposta" },
-            { "icon": "alert", "label": "Sinaliza a troca de madeira" },
-            { "icon": "send", "label": "Email para revisão, nunca sai sozinho" }
-          ]
-        },
-        {
-          "title": "Histórico",
-          "subtitle": "O preço de referência em segundos.",
-          "chat": [
-            { "sender": "client", "text": "Quanto orçámos por uma janela de 2 folhas com cerca de 1,30 x 2,50?", "time": "11:30" },
-            { "sender": "agent", "text": "Dois casos parecidos: **Varandas da Alegria**, Vce.17, 1330 x 2500, castanho CN78, **2.661,36 €**. **Tagus Hotel**, VEM 14, 1310 x 3050 com fixo, pinho CC2 CN78, **2.919,00 €**.", "time": "11:30" },
-            { "sender": "client", "text": "E qual das obras ganhámos?", "time": "11:31" },
-            { "sender": "agent", "text": "Esse resultado ainda não está registado. Assim que marcarem ganho ou perdido em cada orçamento, passo a mostrar também a taxa de fecho por tipo de obra.", "time": "11:31" }
-          ],
-          "steps": [
-            { "icon": "search", "label": "Procura vãos parecidos nos orçamentos anteriores" },
-            { "icon": "database", "label": "Lê medida, madeira, série e preço" },
-            { "icon": "alert", "label": "Não inventa o que não está registado" }
-          ]
-        }
-      ]
-    }
-    </script>
-
-  </section>
-
-  <!-- ====================================================== -->
-  <!-- SEPARADOR 5: PROPOSTA                                  -->
+  <!-- SEPARADOR 4: PROPOSTA                                  -->
   <!-- ====================================================== -->
   <section class="tab-panel" id="proposta">
     <div class="slide">
       <div class="container">
         <span class="eyebrow">Como se constrói</span>
-        <h2>Três etapas, cada uma testada com pedidos vossos</h2>
-        <p class="lead">Começamos pelo que já está provado com os vossos ficheiros e acabamos com o sistema a trabalhar na vossa caixa de email.</p>
+        <h2>Duas etapas e um módulo opcional, testados com pedidos vossos</h2>
+        <p class="lead">Começamos pelo que já está provado com os vossos ficheiros: a caixilharia, depois os interiores. A gestão de pedidos na vossa caixa de email junta-se se fizer sentido para vocês.</p>
         <div class="phase" style="margin-top:26px; grid-template-columns: repeat(3, 1fr)">
           <div class="card reveal"><div class="n">Etapa 1 · caixilharia</div><h3>Do mapa à folha DADOS</h3><ul><li>Leitura de mapas em Excel e PDF</li><li>Folha DADOS do vosso modelo preenchida</li><li>Bandeiras, intervalos de medida e exclusões</li><li>Conferência do pedido contra a proposta</li><li>Exportação para o Lógico, se o Lógico a aceitar</li></ul></div>
-          <div class="card reveal"><div class="n">Etapa 2 · interiores</div><h3>Do MQT e dos desenhos ao levantamento</h3><ul><li>Tabela de preços de interiores, montada convosco</li><li>Roupeiros, cozinhas, portas, painéis, rodapés</li><li>Cruzamento MQT com desenhos</li><li>Pedidos de esclarecimento ao empreiteiro</li></ul></div>
-          <div class="card reveal"><div class="n">Etapa 3 · no dia a dia</div><h3>A caixa de pedidos</h3><ul><li>Ligação ao email onde os pedidos chegam</li><li>Ficha de triagem por pedido</li><li>Histórico de orçamentos e preços</li><li>Assistente por texto e voz</li><li>Formação da equipa</li></ul></div>
+          <div class="card reveal"><div class="n">Etapa 2 · interiores</div><h3>Do MQT e dos desenhos ao levantamento</h3><ul><li>Tabela de preços de interiores, montada convosco</li><li>Roupeiros, cozinhas, portas, painéis, rodapés</li><li>Cruzamento MQT com desenhos</li><li>Pedidos de esclarecimento ao empreiteiro</li><li>Formação da equipa</li></ul></div>
+          <div class="card reveal" style="border-style:dashed"><div class="n">Opcional · + 1.000 €</div><h3>Módulo de gestão de pedidos</h3><ul><li>Ligação ao email onde os pedidos chegam</li><li>Caixa de pedidos com ficha de triagem</li><li>Prazos e volume de cada pedido à vista</li><li>Histórico de orçamentos e preços</li></ul></div>
         </div>
         <div class="poc-band reveal"><b>Critério de aceitação:</b><span>orçamentos já feitos por vós, passados pelo sistema e comparados linha a linha com a vossa resposta. Começamos com o ICON Sailor, já esta semana.</span></div>
       </div>
@@ -621,19 +527,29 @@
 
     <div class="slide section-alt">
       <div class="container">
-        <span class="eyebrow">Investimento</span>
-        <h2>O valor que falámos a 28 de setembro</h2>
+        <span class="eyebrow">Proposta</span>
+        <h2>Investimento</h2>
         <div class="grid-2" style="margin-top:26px; align-items:start">
-          <div class="card price-card highlight reveal">
-            <span class="pin">Implementação</span>
-            <div class="label">Etapas 1 a 3</div>
-            <div class="price">4.000 € a 5.000 €<small>+ IVA</small></div>
-            <div class="note">Valor fechado depois desta demonstração e da análise dos exemplos, como combinado. Inclui a leitura de caixilharia e de interiores, a ligação ao vosso Excel, a caixa de pedidos e a formação.</div>
-            <ul class="price-list">
-              <li>Os vossos ficheiros e preços ficam vossos</li>
-              <li>Custos de funcionamento (alojamento e modelos de IA) apresentados por escrito antes do arranque, ajustados ao volume de pedidos</li>
-              <li>Sem custos por utilizador</li>
-            </ul>
+          <div style="display:grid; gap:18px">
+            <div class="card price-card highlight reveal">
+              <span class="pin">Implementação</span>
+              <div class="label">Caixilharia e interiores</div>
+              <div class="price">5.000 €<small>+ IVA</small></div>
+              <div class="note">Leitura dos pedidos de caixilharia e de interiores, ligação ao vosso Excel de cálculo, tabela de preços de interiores montada convosco e formação da equipa.</div>
+              <ul class="tranches">
+                <li><span>Implementação, etapas 1 e 2</span><b>5.000 €</b></li>
+                <li><span>Módulo de gestão de pedidos (opcional)</span><b>+ 1.000 €</b></li>
+              </ul>
+            </div>
+            <div class="card price-card reveal">
+              <div class="label">Avença</div>
+              <div class="price">200 €<small>+ IVA / mês</small></div>
+              <div class="note">Ou <b>2.000 € + IVA por ano</b>, pago de uma vez.</div>
+              <ul class="price-list">
+                <li>Os vossos ficheiros e preços ficam vossos</li>
+                <li>Sem custos por utilizador</li>
+              </ul>
+            </div>
           </div>
           <div class="card reveal" id="calc" style="padding:24px">
             <h3>Quanto vale responder a mais pedidos?</h3>
@@ -683,7 +599,6 @@
   <script>
     fluxo('pedFluxo');
     terminal('varTerm');
-    chatRaciocinio('ccDemo');
   </script>
 </body>
 </html>

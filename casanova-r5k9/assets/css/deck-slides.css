@@ -299,7 +299,7 @@
 
 /* Correções v1 */
 .slide { align-items: flex-start; padding-top: 44px; }
-.slide .center { margin-top: 6vh; }
+.slide .center { margin-top: 11vh; }
 #varCard .fv-row { grid-template-columns: 92px 1fr; gap: 10px; padding: 7px 0; }
 #varCard .tg { white-space: nowrap; }
 #varCard .vao svg { max-height: 260px; }
