@@ -610,3 +610,7 @@ body.na-capa .rodape-ais { display: block; }
   .tr b { grid-column: 2; }
   .preco { padding: 18px 16px; }
 }
+.preco .val.m { font-size: clamp(2rem, 3.6vw, 2.7rem); }
+.inclui { list-style: none; display: grid; gap: 7px; margin-top: 12px; font-size: 0.86rem; color: var(--muted); }
+.inclui li { padding-left: 18px; position: relative; }
+.inclui li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 2px; background: var(--success); }

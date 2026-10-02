@@ -422,10 +422,8 @@
     $('#invF1').innerHTML = e0(I.fase1) + iv;
     $('#invSem').textContent = I.semanas[0] + ' a ' + I.semanas[1];
     $('#invTranches').innerHTML = I.tranches.map(function (t, i) { return '<div class="tr"><span class="n">' + (i + 1) + '</span><span>' + t[0] + '<small>' + t[1] + '</small></span><b>' + e0(t[2]) + iv + '</b></div>'; }).join('');
-    $('#invF2').innerHTML = mil(String(I.fase2[0])) + ' a ' + e0(I.fase2[1]) + iv;
-    $('#invTeto').innerHTML = 'até ~' + e0(I.tetoProjeto) + iv;
-    $('#invAno').innerHTML = 'a partir de ~' + e0(I.anualAPartirDe) + '<small>/ano + IVA</small>';
-    $('#invPhc').textContent = 'Para ter noção: hoje pagam ' + mil(String(I.phcAnual[0])) + ' a ' + e0(I.phcAnual[1]) + ' por ano só em manutenção e atualizações fiscais do PHC. Com tudo a funcionar, a manutenção fica na mesma linha, com outras funcionalidades.';
+    $('#invLic').innerHTML = e0(I.licencaAnual) + '<small>/ano + IVA</small>';
+    $('#invPhc').textContent = 'Para ter noção: hoje pagam ' + mil(String(I.phcAnual[0])) + ' a ' + e0(I.phcAnual[1]) + ' por ano só em manutenção e atualizações fiscais do PHC.';
     var sem = '<span></span>'.repeat(8);
     var bar = function (cls, a, b, txt) { return '<div class="g-bar ' + cls + '" style="left:calc(' + (a - 1) + ' / 8 * 100% + 3px);width:calc(' + (b - a + 1) + ' / 8 * 100% - 6px)">' + txt + '</div>'; };
     var ms = function (s, txt, fim) { return '<div class="g-ms" style="left:calc(' + s + ' / 8 * 100%)"><em' + (fim ? ' style="left:auto;right:5px"' : '') + '>' + txt + '</em></div>'; };

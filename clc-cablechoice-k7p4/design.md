@@ -26,8 +26,8 @@
 - Sem CTA, sem casos de estudo, valores com "+ IVA", investimento no fim e "Como arrancamos" depois; resposta WhatsApp mostrada como WhatsApp, email como email
 
 ## Investimento (config.js)
-- Fase 1 orçamentação 5.000 € + IVA (decisão do Diogo a 02/10), 3.000 na adjudicação + 2.000 na entrada em testes
-- Fase 2 2.000 a 4.000 € + IVA; projeto completo até ~15.000 € + IVA; manutenção e IA a partir de ~4.000 €/ano + IVA (como no email)
+- Fase 1 orçamentação 8.000 € + IVA (decisão do Diogo a 02/10), 4.500 na adjudicação + 3.500 na entrada em testes
+- Licença anual da orçamentação 3.000 €/ano + IVA, depois da entrada em funcionamento; fases seguintes sem preço
 
 ## Iterações
 - v1 (01/10): primeira versão. Crítica: plurais "1 linhas", rodapé fixo a sobrepor conteúdo, linha do tempo colada ao parágrafo, contraste do "CLC" cinzento e dos rótulos do paginador, arredondamento dava 13.732,38. Tudo corrigido; sem overflow a 390 px.
