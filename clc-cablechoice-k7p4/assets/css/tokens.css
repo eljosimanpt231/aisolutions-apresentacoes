@@ -1,0 +1,85 @@
+/* CLC Cablechoice: tema claro por defeito, escuro pelo botão do topo.
+   Marca: navy do símbolo do logótipo (rgb 22 44 85) e cinzento das letras CLC.
+   Acento: cobre, o metal que mexe com os preços de todos os cabos.
+   Semânticos: verde (certeza), âmbar (dúvida, validar), vermelho (sem artigo). */
+:root {
+  --brand-hsl: 219 59% 24%;
+  --accent-hsl: 22 72% 40%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --navy-hsl: 219 62% 15%;
+  --navy: hsl(var(--navy-hsl));
+  --prata: hsl(220 7% 44%);
+
+  --bg: hsl(220 25% 96.5%);
+  --bg-soft: hsl(220 22% 93.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(220 25% 97.5%);
+  --border: hsl(220 18% 87%);
+  --line: hsl(var(--brand-hsl) / 0.05);
+
+  --text: hsl(220 40% 13%);
+  --muted: hsl(220 13% 38%);
+  --faint: hsl(220 10% 45%);
+
+  --paper: hsl(0 0% 100%);
+  --paper-text: hsl(220 30% 14%);
+  --paper-muted: hsl(220 10% 40%);
+  --paper-line: hsl(220 15% 86%);
+  --paper-soft: hsl(220 20% 97%);
+
+  --success-hsl: 150 60% 30%; --success: hsl(var(--success-hsl));
+  --warning-hsl: 36 95% 37%;  --warning: hsl(var(--warning-hsl));
+  --danger-hsl: 356 68% 45%;  --danger: hsl(var(--danger-hsl));
+
+  /* Cores dos condutores (assinatura): castanho, preto, cinzento, azul, verde-amarelo */
+  --c-castanho: hsl(24 48% 34%);
+  --c-preto: hsl(220 15% 16%);
+  --c-cinza: hsl(220 5% 60%);
+  --c-azul: hsl(210 80% 44%);
+  --c-verde: hsl(130 55% 38%);
+  --c-amarelo: hsl(52 95% 50%);
+
+  --grad-text: linear-gradient(100deg, hsl(var(--accent-hsl)), hsl(14 70% 36%) 60%, hsl(var(--brand-hsl)) 115%);
+  --shadow-sm: 0 1px 2px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 24px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 24px 60px hsl(var(--brand-hsl) / 0.18);
+  --log-bg: hsl(220 40% 11%);
+
+  --radius: 10px;
+  --radius-lg: 14px;
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --container: 1220px;
+  color-scheme: light;
+}
+
+/* Escuro: segue o sistema se o utilizador não escolheu, ou o botão do topo */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-hsl: 216 72% 72%; --accent-hsl: 24 85% 60%; --on-brand: hsl(220 40% 10%);
+    --navy-hsl: 220 45% 9%;
+    --bg: hsl(220 32% 8%); --bg-soft: hsl(220 26% 12%); --surface: hsl(220 28% 11%); --surface-2: hsl(220 26% 13.5%);
+    --border: hsl(220 18% 22%); --line: hsl(216 70% 70% / 0.05);
+    --text: hsl(220 25% 93%); --muted: hsl(220 14% 70%); --faint: hsl(220 10% 58%);
+    --success-hsl: 150 50% 52%; --warning-hsl: 38 92% 58%; --danger-hsl: 356 80% 66%;
+    --c-preto: hsl(220 10% 70%);
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.4); --shadow-md: 0 8px 24px hsl(0 0% 0% / 0.4); --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.5);
+    --log-bg: hsl(220 40% 6%);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --brand-hsl: 216 72% 72%; --accent-hsl: 24 85% 60%; --on-brand: hsl(220 40% 10%);
+  --navy-hsl: 220 45% 9%;
+  --bg: hsl(220 32% 8%); --bg-soft: hsl(220 26% 12%); --surface: hsl(220 28% 11%); --surface-2: hsl(220 26% 13.5%);
+  --border: hsl(220 18% 22%); --line: hsl(216 70% 70% / 0.05);
+  --text: hsl(220 25% 93%); --muted: hsl(220 14% 70%); --faint: hsl(220 10% 58%);
+  --success-hsl: 150 50% 52%; --warning-hsl: 38 92% 58%; --danger-hsl: 356 80% 66%;
+  --c-preto: hsl(220 10% 70%);
+  --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.4); --shadow-md: 0 8px 24px hsl(0 0% 0% / 0.4); --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.5);
+  --log-bg: hsl(220 40% 6%);
+  color-scheme: dark;
+}
