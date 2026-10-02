@@ -26,7 +26,7 @@
 - Sem CTA, sem casos de estudo, valores com "+ IVA", investimento no fim e "Como arrancamos" depois; resposta WhatsApp mostrada como WhatsApp, email como email
 
 ## Investimento (config.js)
-- Fase 1 orçamentação 8.000 € + IVA (decisão do Diogo a 02/10), 4.500 na adjudicação + 3.500 na entrada em testes
+- Fase 1 orçamentação 7.000 € + IVA (decisão do Diogo a 02/10), 4.000 na adjudicação + 3.000 na entrada em testes
 - Licença anual da orçamentação 3.000 €/ano + IVA, depois da entrada em funcionamento; fases seguintes sem preço
 
 ## Iterações
