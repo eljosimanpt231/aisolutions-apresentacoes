@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Carpintaria Casanova | Orçamentação automática</title>
+  <meta property="og:title" content="Carpintaria Casanova · Orçamentação automática">
+  <meta property="og:description" content="Os vossos pedidos de orçamento, lidos e passados para o vosso Excel. Preparado pela AI Solutions.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/casanova-r5k9/assets/img/og.png">
+  <meta property="og:type" content="website">
+  <meta name="description" content="AI Solutions para a Carpintaria Casanova: orçamentação automática de caixilharia em madeira e carpintaria de interiores, a partir dos pedidos que chegam por email.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>try{var t=localStorage.getItem('cc-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/deck-slides.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <img class="doc-logo" src="assets/img/casanova-logo-escuro.png" alt="" hidden>
+
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo-wide" src="assets/img/casanova-logo.png" alt="Carpintaria Casanova">
+      <span class="sep"></span>
+      <small>Orçamentação automática<br>caixilharia e interiores</small>
+    </div>
+    <div class="right">
+      <nav class="tabs" data-scope="deck">
+        <button class="tab active" data-tab="contexto">Contexto</button>
+        <button class="tab" data-tab="pedidos">Os vossos pedidos</button>
+        <button class="tab" data-tab="plataforma">Como funciona</button>
+        <button class="tab" data-tab="assistente">Assistente</button>
+        <button class="tab" data-tab="proposta">Proposta</button>
+      </nav>
+      <button class="theme-btn" id="themeBtn" aria-label="Mudar tema claro ou escuro">◐</button>
+    </div>
+  </header>
+  <div class="progress"></div>
+
+  <main class="deck" id="deck">
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 1: CONTEXTO                                  -->
+  <!-- ====================================================== -->
+  <section class="tab-panel active" id="contexto">
+
+    <div class="slide active">
+      <div class="container center">
+        <span class="kicker">Carpintaria Casanova × AI Solutions · 2 de outubro de 2026</span>
+        <h1>Responder a todos os pedidos,<br><span class="grad">não só aos que dá tempo.</span></h1>
+        <p class="lead" style="margin:22px auto 0">
+          Um sistema que lê os pedidos de orçamento que chegam por email, tira dos mapas e dos desenhos as quantidades,
+          dimensões, ferragens, vidros e acabamentos, e devolve o vosso Excel preenchido, pronto a rever.
+          Construído em cima dos três pedidos reais que o Carlos nos enviou.
+        </p>
+        <div class="grid-3" style="margin-top:40px; text-align:left">
+          <div class="card stat-card reveal"><div class="num">5 a 15</div><div class="desc">Pedidos de orçamento por dia, todos por email, com mapas e desenhos anexos</div></div>
+          <div class="card stat-card reveal"><div class="num">300 a 350</div><div class="desc">Orçamentos respondidos por ano. Os restantes ficam na triagem</div></div>
+          <div class="card stat-card reveal"><div class="num">8 a 10%</div><div class="desc">Dos orçamentos respondidos fecham, com obras entre 150.000 € e 300.000 €</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que ouvimos a 28 de setembro</span>
+        <h2>Não falta procura. Falta capacidade de resposta.</h2>
+        <div class="grid-3" style="margin-top:30px">
+          <div class="card reveal"><div class="ftile">📥</div><h3>Pedidos todos os dias</h3><p class="small">Entre 5 e 15 pedidos por dia chegam por email, de empreiteiros e donos de obra. Cada um traz mapa de quantidades, mapa de vãos ou de armários, alçados e pormenores.</p></div>
+          <div class="card reveal"><div class="ftile">🎯</div><h3>A triagem decide</h3><p class="small">Como não dá para orçamentar tudo, o Carlos escolhe os que parecem ter mais hipóteses de fechar. Com o risco de deixar passar a obra certa.</p></div>
+          <div class="card reveal"><div class="ftile">📊</div><h3>Excel e Lógico</h3><p class="small">O cálculo faz-se no vosso Excel com Visual Basic e, nas janelas, também no Lógico, o software ligado à produção. Cada vão é transcrito à mão do mapa para a folha.</p></div>
+          <div class="card reveal"><div class="ftile">🪟</div><h3>Duas áreas, dois mundos</h3><p class="small">Caixilharia em madeira: vãos, madeiras, vidros, ferragens. Carpintaria de interiores: cozinhas, armários, portas, painéis. Cada uma com a sua forma de calcular.</p></div>
+          <div class="card reveal"><div class="ftile">⏱️</div><h3>O tempo vai na transcrição</h3><p class="small">A experiência do orçamentista está nas decisões: que madeira, que margem, que risco. O resto é passar números de um documento para outro.</p></div>
+          <div class="card reveal diff"><div class="ftile">📈</div><h3>O objetivo</h3><p class="small">Numa fase de investimento e crescimento, responder a mais pedidos significa mais obras ganhas e mais margem para escolher as melhores.</p></div>
+        </div>
+        <p class="quote">Com um único projeto adicional ganho por ano, o investimento fica pago várias vezes.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Antes de prometer, lemos</span>
+        <h2>Os três pedidos que nos enviaram, já abertos e lidos</h2>
+        <p class="lead">Dois com a vossa resposta (para comparar) e um ainda por responder (para testarmos juntos). Tudo o que vem a seguir foi feito com estes ficheiros.</p>
+                <div class="files f3" style="margin-top:30px">
+          <div class="file reveal"><div class="k">Varandas da Alegria · Baltor</div><div class="n">80 vãos</div><div class="d">Mapa de caixilharia em Excel, 3 PDF de pormenores, o vosso cálculo ORC019-26 (Excel com Visual Basic, 19 folhas) e a proposta PE019-26.</div></div>
+          <div class="file reveal"><div class="k">Tagus Hotel · HCI</div><div class="n">382 un.</div><div class="d">Mapa de caixilhos em Excel, 5 desenhos DWF (plantas, alçados, fachada, vãos, carpintarias) e a proposta PE125-26 gerada no Lógico, 15 páginas.</div></div>
+          <div class="file reveal"><div class="k">ICON Sailor · ICON</div><div class="n">42 PDF</div><div class="d">Mapa de quantidades de carpintarias e as peças desenhadas de interiores: cozinhas, roupeiros, armários técnicos, ripados, portas. Ainda sem resposta vossa.</div></div>
+        </div>
+
+        <div class="alert reveal"><span class="dot"></span><div>Abrimos tudo com ferramentas nossas, sem AutoCAD nem Lógico. Os resultados nos ecrãs seguintes são reais. Onde ainda não sabemos, dizemos.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 2: OS VOSSOS PEDIDOS                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="pedidos">
+    <!-- V1. Varandas: o que entra -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Pedido 1 · Varandas da Alegria, Lisboa · Baltor Engenharia</span>
+        <h2>O mapa que chegou por email, lido vão a vão</h2>
+        <p class="lead">O mapa de caixilharia em Excel da Baltor: 5 artigos, 20 referências de vão, 80 unidades. As madeiras, os vidros, as cores e as ferragens não estão em colunas, estão no texto de cada artigo. O sistema lê esse texto e passa-o para cada vão. Clique num vão.</p>
+        <div class="stepbar reveal">
+          <div class="step on"><b>1</b><span>Email com o mapa e os pormenores em PDF</span></div>
+          <div class="step on"><b>2</b><span>Leitura dos 5 artigos e dos 20 vãos</span></div>
+          <div class="step"><b>3</b><span>Folha DADOS preenchida para o vosso cálculo</span></div>
+        </div>
+        <div class="grid-2" style="margin-top:20px; align-items:start; grid-template-columns: 1.1fr 1fr">
+          <div class="xl" id="varMapa">
+            <div class="xl-bar">105-25 CAIXILHARIA MADEIRA.xlsx<span class="f">mapa da Baltor · clique numa linha</span></div>
+            <div style="max-height:430px; overflow:auto"><table><thead><tr><th>Art.</th><th>Vão</th><th>Medidas (m)</th><th style="text-align:right">Qtd</th><th>Leitura</th></tr></thead><tbody></tbody></table></div>
+          </div>
+          <div class="card" id="varCard" style="padding:20px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- V2. Varandas: o processo -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Pedido 1 · o que o sistema faz com o mapa</span>
+        <h2>Do texto do artigo às linhas do vosso Excel</h2>
+        <p class="lead">O que hoje é feito à mão na folha DADOS do ORC019-26: referência na coluna G, quantidade em H, tipo em I, alturas em J e K, largura em L. Bandeiras numa linha à parte, com o sufixo -1, como vocês fazem.</p>
+        <div class="grid-2" style="margin-top:22px; align-items:start">
+          <div class="term" id="varTerm"></div>
+          <div class="xl">
+            <div class="xl-bar">ORC019-26 · folha DADOS<span class="f">preenchida pelo sistema</span></div>
+            <table>
+              <thead><tr><th>G · ref.</th><th style="text-align:right">H · qtd</th><th>I · tipo</th><th style="text-align:right">J · alt.</th><th style="text-align:right">L · larg.</th><th>Origem</th></tr></thead>
+              <tbody>
+                <tr><td>Vce01</td><td class="n">1</td><td class="fill">124 porta</td><td class="n fill">1600</td><td class="n fill">1070</td><td>mapa + pormenor</td></tr>
+                <tr><td>Vce02</td><td class="n">1</td><td class="fill">2 folhas</td><td class="n fill">1080</td><td class="n fill">1330</td><td>mapa</td></tr>
+                <tr><td>Vce03</td><td class="n">2</td><td class="fill">2 folhas</td><td class="n fill">1740</td><td class="n fill">1070</td><td>mapa</td></tr>
+                <tr><td>Vce03-1</td><td class="n">2</td><td class="fill">18 fixo</td><td class="n chk">curva</td><td class="n fill">1070</td><td>bandeira, do pormenor</td></tr>
+                <tr><td>Vce04</td><td class="n">3</td><td class="fill">2 folhas</td><td class="n fill">1920</td><td class="n fill">1080</td><td>mapa</td></tr>
+                <tr><td>Vce010</td><td class="n">21</td><td class="fill">2 folhas + bandeira</td><td class="n fill">2720</td><td class="n fill">1210</td><td>intervalo desdobrado</td></tr>
+                <tr><td>Vce010A</td><td class="n">3</td><td class="fill">2 folhas + bandeira</td><td class="n chk">2560 a 2720</td><td class="n chk">1150 a 1210</td><td>confirmar em obra</td></tr>
+                <tr><td>Vce019</td><td class="n">6</td><td class="fill">1 folha</td><td class="n fill">2140</td><td class="n chk">890</td><td>mapa diz 0,80: ver pormenor</td></tr>
+                <tr><td>Vce05, Vce06</td><td class="n">2</td><td class="chk">recuperar</td><td class="n">3810</td><td class="n">1980</td><td>não é fabrico novo</td></tr>
+                <tr class="tot"><td colspan="6">+ 17 linhas · opções gerais: madeira, acabamento, vidro, ferragem</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:18px">
+          <div class="ask reveal"><b>Madeira:</b> o mapa pede pinho nórdico lamelado; a vossa proposta foi em castanho ibérico, sistema CN78. O sistema propõe a vossa solução habitual e deixa a diferença escrita na ficha, para a equipa decidir.</div>
+          <div class="ask reveal"><b>Gralha no mapa:</b> o artigo 12.8 diz interior "RAL 90100". O sistema assume RAL 9010, como nos outros artigos, e sinaliza.</div>
+          <div class="ask reveal"><b>Fora do preço:</b> Vce.05 e Vce.06 são vãos existentes a recuperar e o Vce.08 não entra na vossa proposta. Ficam numa lista à parte e não somam.</div>
+        </div>
+      </div>
+    </div>
+    <script type="application/json" id="varTerm-config">
+    {
+      "title": "pedido-105-25-varandas-da-alegria.log",
+      "intervalMs": 520,
+      "lines": [
+        { "text": "Email recebido: 105-25 Varandas da Alegria Lisboa, pedido de cotação carpintaria", "tone": "info" },
+        { "text": "Anexos: 1 Excel, 3 PDF (mapa e pormenores de carpintarias exteriores)", "tone": "info" },
+        { "text": "Folha CAIXMAD: 5 artigos (12.5 a 12.9), 20 referências, 80 unidades", "tone": "ok" },
+        { "text": "Artigo 12.6: pinho nórdico lamelado, aro exterior vermelho escuro, RAL 9010", "tone": "ok" },
+        { "text": "Vidro: Planiclear 6 Cool-Lite Xtreme 70-33 + caixa 20 + PVB Silence 3,38", "tone": "ok" },
+        { "text": "Vce.10: medidas em intervalo, desdobrado em 2 linhas", "tone": "warn" },
+        { "text": "Bandeiras identificadas nos pormenores: linhas -1 criadas", "tone": "ok" },
+        { "text": "Artigo 12.8: RAL 90100 interpretado como RAL 9010", "tone": "warn" },
+        { "text": "Artigo 12.9: 2 vãos a recuperar, fora do fabrico", "tone": "warn" },
+        { "text": "A escrever 26 linhas na folha DADOS do vosso modelo", "tone": "info" },
+        { "text": "Folha pronta para o vosso cálculo. 4 pontos para rever.", "tone": "success" }
+      ]
+    }
+    </script>
+
+    <!-- V3. Varandas: o que sai -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Pedido 1 · o que sai</span>
+        <h2>A proposta que enviaram à Baltor, sem transcrever um vão</h2>
+        <p class="lead">Com a folha DADOS preenchida, o cálculo é o vosso: a mesma macro, a mesma tabela de preços, as mesmas regras. Os preços abaixo são os da vossa proposta PE019-26, a referência contra a qual o sistema é validado.</p>
+        <div class="xl" style="margin-top:20px">
+          <div class="xl-bar">PE019-26 · Varandas da Alegria, Lisboa<span class="f">castanho ibérico CN78 · Siegenia · Cool-Lite Xtreme</span></div>
+          <div style="max-height:380px; overflow:auto">
+          <table>
+            <thead><tr><th>Vão</th><th>Medida e tipo</th><th style="text-align:right">Qtd</th><th style="text-align:right">Unitário</th><th style="text-align:right">Total</th></tr></thead>
+            <tbody>
+              <tr><td>Vce.01</td><td>1600x1070 · porta 1 folha opaca + postigo fixo</td><td class="n">1</td><td class="n">2.402,59 €</td><td class="n">2.402,59 €</td></tr>
+              <tr><td>Vce.02</td><td>1080x1330 · janela 2 folhas</td><td class="n">1</td><td class="n">1.321,37 €</td><td class="n">1.321,37 €</td></tr>
+              <tr><td>Vce.03</td><td>1740x1070 · 2 folhas + bandeira fixa curva</td><td class="n">2</td><td class="n">2.095,88 €</td><td class="n">4.191,76 €</td></tr>
+              <tr><td>Vce.04</td><td>1920x1080</td><td class="n">3</td><td class="n">2.635,73 €</td><td class="n">7.907,19 €</td></tr>
+              <tr><td>Vce.07</td><td>2540x1330 · com bandeira</td><td class="n">1</td><td class="n">2.689,96 €</td><td class="n">2.689,96 €</td></tr>
+              <tr><td>Vce.10</td><td>2720x1210 · com bandeira decorativa</td><td class="n">21</td><td class="n">4.495,65 €</td><td class="n">94.408,65 €</td></tr>
+              <tr><td>Vce.10A</td><td>variante de medida</td><td class="n">3</td><td class="n">4.415,93 €</td><td class="n">13.247,79 €</td></tr>
+              <tr><td>Vce.11</td><td>com bandeira</td><td class="n">6</td><td class="n">2.818,65 €</td><td class="n">16.911,90 €</td></tr>
+              <tr><td>Vce.14</td><td>2540x1110</td><td class="n">3</td><td class="n">2.463,39 €</td><td class="n">7.390,17 €</td></tr>
+              <tr><td>Vce.17</td><td>2500x1330</td><td class="n">8</td><td class="n">2.661,36 €</td><td class="n">21.290,88 €</td></tr>
+              <tr><td>Vce.18</td><td>2560x1100 · almofada inferior</td><td class="n">4</td><td class="n">2.719,69 €</td><td class="n">10.878,76 €</td></tr>
+              <tr><td>Vce.19</td><td>2140x890 · 1 folha</td><td class="n">6</td><td class="n">1.462,01 €</td><td class="n">8.772,06 €</td></tr>
+              <tr><td>Vce.20</td><td>2140x890 · 1 folha</td><td class="n">2</td><td class="n">1.462,01 €</td><td class="n">2.924,02 €</td></tr>
+              <tr><td>Vce.12</td><td>1240x890</td><td class="n">8</td><td class="n">1.262,38 €</td><td class="n">10.099,04 €</td></tr>
+              <tr><td>Vce.13</td><td>1240x890</td><td class="n">2</td><td class="n">1.262,38 €</td><td class="n">2.524,76 €</td></tr>
+              <tr><td>Vce.15</td><td>2000x890 · sacada</td><td class="n">4</td><td class="n">1.794,87 €</td><td class="n">7.179,48 €</td></tr>
+              <tr><td>Vce.16</td><td>2000x890 · sacada</td><td class="n">1</td><td class="n">1.794,87 €</td><td class="n">1.794,87 €</td></tr>
+              <tr><td>Vce.09</td><td>2250x1070 · porta</td><td class="n">1</td><td class="n">2.549,92 €</td><td class="n">2.549,92 €</td></tr>
+              <tr><td>Montagem</td><td>Transporte e aplicação de 77 vãos</td><td class="n">vg</td><td class="n"></td><td class="n">30.500,00 €</td></tr>
+              <tr class="tot"><td colspan="4">Total sem IVA</td><td class="n">248.985,17 €</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="grid-3" style="margin-top:18px">
+          <div class="card reveal"><h3>77 de 80</h3><p class="small">Vãos que entram no preço. Os outros 3 (2 a recuperar e o Vce.08) ficam listados à parte, como na vossa proposta.</p></div>
+          <div class="card reveal"><h3>O preço é vosso</h3><p class="small">O sistema não inventa preços: preenche os dados e o vosso Excel calcula. Se mudarem a tabela, o resultado muda com ela.</p></div>
+          <div class="card reveal"><h3>As condições também</h3><p class="small">Pagamento 40/50/10, prazo de 18 a 24 semanas, validade de 15 dias, exclusões: o texto sai do vosso modelo de proposta.</p></div>
+        </div>
+      </div>
+    </div>
+    <!-- T1. Tagus: o que entra -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Pedido 2 · Tagus Hotel, Cais do Sodré · HCI</span>
+        <h2>382 unidades em 13 artigos, lidas sem abrir o Lógico</h2>
+        <p class="lead">Reabilitação de um conjunto de edifícios na Praça Duque da Terceira: hotel de 4 estrelas, 104 quartos. O mapa da HCI tem as quantidades na coluna das unidades (vêm trocadas) e as especificações num texto longo por artigo. O sistema endireita as colunas e separa o que é janela do que é portada.</p>
+        <div class="grid-2" style="margin-top:22px; align-items:start">
+          <div class="fileview reveal">
+            <div class="fv-head"><span>extraído do CaixilhosMadeira.xlsx e dos 5 DWF</span><span>folha Cx</span></div>
+            <div class="fv-list">
+              <div class="fv-row"><b>213 vãos VEM</b><span>56 linhas em 11 artigos (4.13.1.7 a 4.13.1.17): fixos, portas, batente e oscilobatente, pivotantes Ø0,92</span></div>
+              <div class="fv-row"><b>169 portadas PTD</b><span>PTD 01 a 10, artigos 4.13.1.19 e 20, interiores lacadas a branco</span></div>
+              <div class="fv-row"><b>Madeira</b><span>casquinha maciça, perfil 68, lacado verde escuro mate, RAL a aprovar pela fiscalização</span></div>
+              <div class="fv-row"><b>Vidro</b><span>Securit HST Cool-Lite SKN 083 II 6 + caixa 16 árgon 90% + Stadip Silence 55.2; Planidur 55.4 nos artigos .10, .11 e .16</span></div>
+              <div class="fv-row"><b>Ferragens</b><span>videoporteiro e fechadura eletromagnética (VEM 03, 06), leitor de cartões (VEM 08.1), cremone Batista Gomes, mola de paragem a 90º</span></div>
+              <div class="fv-row"><b>Desenhos</b><span>DWF 4-100 VÃOS EXTERIORES: 9 folhas, da legenda e quantidades ao VEM 21, portadas, VSM e grelhas</span></div>
+            </div>
+          </div>
+          <figure class="figure reveal">
+            <img src="assets/img/tagus-ficha.png" alt="Ficha do edifício Tagus Hotel" style="max-height:330px; object-fit:cover; object-position:top">
+            <figcaption>A ficha do edifício que veio no email: hotel de 4 estrelas, 104 quartos, 6.100 m² de construção. Entra na ficha de triagem.</figcaption>
+          </figure>
+        </div>
+        <div class="ask reveal" style="margin-top:16px"><b>Nota de triagem do Carlos:</b> "Responder apenas às janelas. Prioritário." O sistema aplica-a: as 169 portadas saem do cálculo e entram nas exclusões da proposta, como fizeram.</div>
+      </div>
+    </div>
+
+    <!-- T2. Tagus: o que sai -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Pedido 2 · o que sai</span>
+        <h2>Da linha do mapa à posição da vossa proposta</h2>
+        <p class="lead">A proposta PE125-26 tem 37 posições, cada uma com o desenho do vão, a série, a madeira, o vidro e o preço. O sistema prepara essa lista e deteta o que mudou entre o pedido e a proposta.</p>
+        <div class="grid-2" style="margin-top:22px; align-items:start; grid-template-columns: 1.15fr 1fr">
+          <div class="xl">
+            <div class="xl-bar">PE125-26 · Tagus Hotel · posições principais<span class="f">preço do vosso cálculo</span></div>
+            <table>
+              <thead><tr><th>Pos</th><th>Ref.</th><th>Medida</th><th style="text-align:right">Qt</th><th style="text-align:right">Unitário</th><th style="text-align:right">Total</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>VEM 01</td><td>2100x3230 · CN68</td><td class="n">2</td><td class="n">4.650,95</td><td class="n">9.301,90</td></tr>
+                <tr><td>19</td><td>VEM 09</td><td>2210x4460 · CN78</td><td class="n">2</td><td class="n">6.480,45</td><td class="n">12.960,90</td></tr>
+                <tr><td>22</td><td>VEM 12</td><td>2210x4040 · porta 2 folhas</td><td class="n">1</td><td class="n">10.630,35</td><td class="n">10.630,35</td></tr>
+                <tr><td>26</td><td>VEM 14</td><td>1310x3050 · fixo + 2 folhas</td><td class="n">20</td><td class="n">2.919,00</td><td class="n">58.380,00</td></tr>
+                <tr><td>29</td><td>VEM 16</td><td>1320x2100</td><td class="n">28</td><td class="n">2.048,12</td><td class="n">57.347,36</td></tr>
+                <tr><td>32</td><td>VEM 17</td><td>1320x1940 · quadrícula</td><td class="n">28</td><td class="n">2.342,04</td><td class="n">65.577,12</td></tr>
+                <tr><td>36</td><td>VEM 20</td><td>Ø920 · pivotante</td><td class="n">16</td><td class="n">2.697,50</td><td class="n">43.160,00</td></tr>
+                <tr><td>37</td><td>Montagem</td><td>transporte e aplicação</td><td class="n">1</td><td class="n">96.700,00</td><td class="n">96.700,00</td></tr>
+                <tr class="tot"><td colspan="5">Total sem IVA, 37 posições</td><td class="n">673.549,76 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="figure reveal">
+            <img src="assets/img/tagus-pe125-p10.png" alt="Página 10 da proposta PE125-26" style="max-height:380px; object-fit:cover; object-position:0 10%">
+            <figcaption>Página 10 da vossa proposta, como sai do Lógico: desenho, série, medida, madeira, vidro e preço por posição.</figcaption>
+          </figure>
+        </div>
+        <div class="grid-3" style="margin-top:18px">
+          <div class="ask reveal"><b>VEM 07</b> (1,22 x 3,39) está no pedido e não aparece na proposta. Esquecido ou excluído de propósito?</div>
+          <div class="ask reveal"><b>Posição 23</b> diz "VEM 12" mas tem as medidas do VEM 13 (1310x3680). Só o nome está trocado.</div>
+          <div class="ask reveal"><b>VEM 16.1</b> é 1,31 x 3,02 no pedido e 1310x2110 na proposta. Uma das duas alturas está errada.</div>
+        </div>
+        <p class="demo-note" style="text-align:left">Foram estas três as diferenças entre o pedido da HCI e a proposta enviada. É este tipo de conferência que o sistema faz sempre, antes de a proposta sair.</p>
+      </div>
+    </div>
+    <!-- I1. ICON: o que entra -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Pedido 3 · ICON Sailor, Barra · ainda por responder</span>
+        <h2>Um pedido novo: 42 desenhos e um MQT, lidos antes de vocês</h2>
+        <p class="lead">O pedido que o Carlos nos reencaminhou sem resposta, para compararmos com o orçamento que a Casanova vai fazer. Prazo da ICON: 9 de outubro. Isto é o que o sistema tirou dos desenhos e do mapa de quantidades.</p>
+        <div class="files f3" style="margin-top:22px">
+          <div class="file reveal"><div class="k">Mapa de quantidades</div><div class="n">MQT</div><div class="d">Excel de carpintarias da ICON, terceiro anexo do email. Cruzado artigo a artigo com os desenhos.</div></div>
+          <div class="file reveal"><div class="k">Peças desenhadas</div><div class="n">42 PDF</div><div class="d">Plantas, instalações sanitárias, cozinhas, roupeiros, armários técnicos, ripados e vãos interiores. Fase de licenciamento, 01/09/2026.</div></div>
+          <div class="file reveal"><div class="k">Para esclarecer</div><div class="n">12 pontos</div><div class="d">Diferenças entre o MQT e os desenhos, ou coisas que nenhum dos dois diz. Já escritas para enviar ao empreiteiro.</div></div>
+        </div>
+        <div class="thumbs reveal" style="grid-template-columns: repeat(3, 1fr); margin-top:20px">
+          <a href="assets/img/icon-armario.png" target="_blank"><img src="assets/img/icon-armario.png" alt="Roupeiros ARM-01 e ARM-02"><span>ARQ_12_01 · Roupeiros ARM-01 e ARM-02</span></a>
+          <a href="assets/img/icon-cozinha.png" target="_blank"><img src="assets/img/icon-cozinha.png" alt="Cozinha CZ-01"><span>ARQ_10_01 · Cozinha CZ-01</span></a>
+          <a href="assets/img/icon-vaos.png" target="_blank"><img src="assets/img/icon-vaos.png" alt="Vãos interiores VI-01 a VI-03"><span>ARQ_19_01 · Vãos interiores VI-01 a VI-03</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- I2. ICON: levantamento -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Pedido 3 · o levantamento</span>
+        <h2>Cada móvel e cada porta, com medidas, materiais e ferragens</h2>
+        <p class="lead">A verde, o que bate certo entre o MQT e os desenhos. A amarelo, o que diverge e precisa de decisão ou de pergunta à ICON.</p>
+        <div class="xl" style="margin-top:20px">
+          <div class="xl-bar">ICON Sailor · levantamento de carpintarias<span class="f">MQT cruzado com 42 desenhos</span></div>
+          <div style="max-height:420px; overflow:auto">
+          <table>
+            <thead><tr><th>Ref.</th><th>Descrição</th><th>Medidas (L x A x P)</th><th style="text-align:right">Qtd</th><th>Materiais e ferragens</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>ARM-01</td><td>Roupeiro</td><td>1,50 x 2,45 x 0,60</td><td class="n">6</td><td rowspan="1">MDF 19 lacado RAL 9010, interior melamina linho, Häfele</td><td class="fill">MQT = desenho</td></tr>
+              <tr><td>ARM-02</td><td>Roupeiro</td><td>1,90 x 2,45 x 0,60</td><td class="n">5</td><td>idem</td><td class="fill">MQT = desenho</td></tr>
+              <tr><td>ARM-03</td><td>Roupeiro</td><td>2,00 x 2,45 x 0,60</td><td class="n">4</td><td>idem</td><td class="fill">MQT = desenho</td></tr>
+              <tr><td>ARM-04</td><td>Roupeiro</td><td>1,80 x 2,45 x 0,60</td><td class="n">3</td><td>idem</td><td class="fill">MQT = desenho</td></tr>
+              <tr><td>ARM-05 a 10</td><td>Roupeiros (8 variantes)</td><td>1,20 a 3,00 x 2,40 a 2,45 x 0,60</td><td class="n">10</td><td>idem; puxador: cava no MQT, Häfele no desenho</td><td class="chk">puxador a confirmar</td></tr>
+              <tr><td>VI-01</td><td>Porta de entrada 37 dB, branca por dentro, preta por fora</td><td>0,90 x 2,20</td><td class="n">10</td><td>JNF; fechadura eletrónica do cliente</td><td class="chk">espessura 50 ou 55 mm</td></tr>
+              <tr><td>VI-02</td><td>Porta de batente lacada RAL 9010</td><td>0,80 x 2,20</td><td class="n">21</td><td>JNF</td><td class="chk">1 variante pocket no mapa</td></tr>
+              <tr><td>VI-03, 05, 06</td><td>Portas de correr pocket</td><td>0,80 x 2,20 e 2,45</td><td class="n">17</td><td>JNF</td><td class="fill">MQT = desenho</td></tr>
+              <tr><td>VI-04</td><td>Porta pivotante sem aro</td><td>0,76 x 2,20</td><td class="n">3</td><td>JNF</td><td class="fill">MQT = desenho</td></tr>
+              <tr><td>VI-07</td><td>Porta corta-fogo metálica</td><td></td><td class="n">1</td><td>serralharia</td><td class="chk">não é carpintaria</td></tr>
+              <tr><td>ARM.TEC / TE</td><td>Armários técnicos</td><td>cotas nos desenhos</td><td class="n">21</td><td>MDF termolaminado carvalho, abertura push</td><td class="chk">14 sem desenho; MDF no MQT</td></tr>
+              <tr><td>ARMTE</td><td>Armários do quadro elétrico</td><td>cotas nos desenhos</td><td class="n">6</td><td>termolaminado carvalho</td><td class="fill">MQT = desenho</td></tr>
+              <tr><td>LAV-01 / 02</td><td>Móveis de lavatório, 2 gavetas, tampo HIMACS</td><td>cotas nos desenhos</td><td class="n">17</td><td>MDF hidrófugo folheado carvalho</td><td class="chk">interior: lacado preto ou melamina</td></tr>
+              <tr><td>PR-01 / 02</td><td>Painéis ripados 20x30, afastamento 30</td><td>parede inteira</td><td class="n">3</td><td>OSB hidrófugo, Sonae M4451</td><td class="chk">PR-01: MQT 2, desenho 1</td></tr>
+              <tr><td>Rodapé</td><td>MDF lacado RAL 9010, 5 cm</td><td></td><td class="n">293,72 ml</td><td></td><td class="chk">inclui cozinhas?</td></tr>
+              <tr><td>CZ-01 a 05</td><td>Cozinhas e bancadas</td><td>desenhadas</td><td class="n">?</td><td>lacado RAL 9010 + M4451, Häfele</td><td class="chk">não estão no MQT</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <p class="demo-note" style="text-align:left">Quantidades do MQT, conferidas com o mapa de armários e com o mapa de vãos. O preço sai da vossa tabela de interiores, que é a primeira coisa que montamos convosco.</p>
+      </div>
+    </div>
+
+    <!-- I3. ICON: esclarecimentos -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Pedido 3 · antes de orçamentar</span>
+        <h2>As perguntas que vale a pena fazer à ICON, já escritas</h2>
+        <p class="lead">Um orçamentista experiente encontra estas diferenças ao fim de horas de desenho. Aqui vêm na primeira leitura, com o sítio de onde saíram. Seguem num email para o Carlos rever e enviar.</p>
+        <div class="grid-2" style="margin-top:22px; align-items:start">
+          <div>
+            <div class="ask reveal"><b>1. Cozinhas e bancadas.</b> Há desenhos CZ-01 a CZ-05 mas nenhum artigo no MQT. Entram na subempreitada? Quantas de cada tipo?</div>
+            <div class="ask reveal"><b>2. Bancadas.</b> Os desenhos CZ dizem atlasPLAN Bianco Dolomite; a folha Bancadas diz Silestone Nolita. Qual vale, e quem fornece?</div>
+            <div class="ask reveal"><b>3. Brilho do lacado.</b> O MQT diz meio brilho, o mapa de vãos diz mate, e as cozinhas têm escrito "MEIO BRILHO?".</div>
+            <div class="ask reveal"><b>4. Puxador dos roupeiros.</b> O MQT diz "em cava"; os desenhos mostram puxador Häfele 135.93.903.</div>
+            <div class="ask reveal"><b>5. VI-02 e VI-03.</b> O mapa de vãos tem variantes de correr pocket; o MQT trata-as como batente.</div>
+            <div class="ask reveal"><b>6. VI-01.</b> Espessura de 50 mm no desenho e 55 mm no MQT. A montagem da fechadura eletrónica do cliente está incluída?</div>
+          </div>
+          <div>
+            <div class="ask reveal"><b>7. Armários técnicos.</b> ARM.TEC-06 e ARM.TE-08 a 13 (14 unidades) não têm pormenor. MQT diz MDF, desenhos dizem termolaminado carvalho.</div>
+            <div class="ask reveal"><b>8. PR-01.</b> O MQT pede 2 unidades e o desenho mostra um local. O painel de correr ripado, marcado como opcional, entra?</div>
+            <div class="ask reveal"><b>9. Lavatórios.</b> Interior lacado preto no desenho, melamina no MQT.</div>
+            <div class="ask reveal"><b>10. Dobradiças das cozinhas.</b> O próprio desenho pede para confirmar o número por porta.</div>
+            <div class="ask reveal"><b>11. Rodapé.</b> Os 293,72 ml incluem as cozinhas?</div>
+            <div class="ask reveal"><b>12. Fase do projeto.</b> Os desenhos são de licenciamento. Haverá projeto de execução antes da adjudicação?</div>
+          </div>
+        </div>
+        <div class="poc-band reveal"><b>O teste de hoje:</b><span>a Casanova faz o orçamento da ICON como sempre; nós entregamos o levantamento e o Excel. Comparamos linha a linha antes de 9 de outubro.</span></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 3: COMO FUNCIONA                              -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="plataforma">
+
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Do email ao Excel</span>
+        <h2>O caminho de um pedido, sem ninguém transcrever nada</h2>
+        <p class="lead">O pedido chega ao email de sempre. O sistema faz a leitura e o preenchimento; o orçamentista revê, decide e envia.</p>
+        <div class="fluxo" id="pedFluxo" style="margin-top:22px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="pedFluxo-config">
+    {
+      "stepMs": 1700,
+      "channels": [
+        { "icon": "message", "label": "Email de pedidos de orçamento" },
+        { "icon": "globe", "label": "Links de WeTransfer e plataformas de concurso" }
+      ],
+      "nodes": [
+        { "icon": "message", "title": "Pedido recebido", "detail": "Empreiteiro, obra, prazo de entrega e anexos: MQT, mapas de vãos, PDF, DWF, Excel.", "tone": "brand" },
+        { "icon": "filter", "title": "Ficha de triagem", "detail": "Área (janelas ou interiores), volume, prazo, cliente conhecido, histórico com o empreiteiro.", "tone": "teal" },
+        { "icon": "search", "title": "Leitura dos documentos", "detail": "Cada vão ou móvel: referência, quantidade, dimensões, madeira, vidro, ferragens, acabamento.", "tone": "teal" },
+        { "icon": "database", "title": "Excel preenchido", "detail": "O vosso ficheiro de cálculo, com a vossa tabela de preços de materiais, fabrico e montagem.", "tone": "teal" },
+        { "icon": "check", "title": "Revisão e envio", "detail": "O orçamentista confirma o que ficou sinalizado, ajusta a margem e envia. Nunca sai sozinho.", "tone": "brand" }
+      ],
+      "note": "O que o sistema não consegue ler com certeza fica a amarelo, com a origem, para uma pessoa decidir."
+    }
+    </script>
+
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">A caixa de pedidos</span>
+        <h2>Todos os pedidos numa lista, já com a ficha feita</h2>
+        <p class="lead">Em vez de abrir email a email, a triagem faz-se aqui. Cada pedido já vem lido: o que é, quanto vale de trabalho, até quando. Clique num pedido.</p>
+        <div class="app reveal" style="margin-top:22px">
+          <div class="app-top"><i></i><i></i><i></i><span class="url">orcamentos.carpintariacasanova.com · caixa de pedidos</span></div>
+          <div class="app-body">
+            <aside class="app-side">
+              <div class="logo">CASANOVA</div>
+              <div class="nav">
+                <button class="active" data-view="vCaixa">Pedidos</button>
+                <button data-view="vFicha">Ficha do pedido</button>
+                <button data-view="vPrecos">Tabela de preços</button>
+              </div>
+            </aside>
+            <div class="app-main">
+              <div class="view active" id="vCaixa">
+                <h4>Pedidos por responder</h4>
+                <div class="sub">Ordenados por prazo de entrega. A coluna "leitura" diz se o sistema já preparou o Excel.</div>
+                                <div class="req head"><span>Pedido</span><span>Área</span><span>Volume lido</span><span>Prazo</span><span>Leitura</span></div>
+                <div class="req sel" data-open="vFicha"><span><b>ICON Sailor, Barra</b><small>ICON · MQT + 42 desenhos</small></span><span>Interiores</span><span>28 roupeiros · 61 portas · 17 lavatórios</span><span><span class="tg red">9 out · 4 dias úteis</span></span><span><span class="tg mid">12 dúvidas</span></span></div>
+                <div class="req"><span><b>Tagus Hotel, Cais do Sodré</b><small>HCI · Excel + 5 DWF</small></span><span>Caixilharia</span><span>213 vãos · 169 portadas</span><span><span class="tg lo">só janelas</span></span><span><span class="tg hi">Excel pronto</span></span></div>
+                <div class="req"><span><b>Varandas da Alegria, Lisboa</b><small>Baltor · Excel + 3 PDF</small></span><span>Caixilharia</span><span>80 vãos · 5 artigos</span><span><span class="tg lo">dono de obra conhecido</span></span><span><span class="tg hi">Excel pronto</span></span></div>
+                <div class="req"><span><b>Moradia unifamiliar</b><small>exemplo · particular</small></span><span>Interiores</span><span>1 cozinha · 4 roupeiros</span><span><span class="tg lo">sem prazo</span></span><span><span class="tg hi">Excel pronto</span></span></div>
+                <div class="req"><span><b>Reabilitação de edifício</b><small>exemplo · empreiteiro</small></span><span>Caixilharia</span><span>pedido sem mapa de vãos</span><span><span class="tg lo">por indicar</span></span><span><span class="tg mid">pedir mapa</span></span></div>
+                <div class="mini-alert">Os três primeiros são os pedidos que nos enviaram; os dois últimos são exemplo. A coluna "Leitura" é o que o sistema já fez sozinho.</div>
+
+              </div>
+              <div class="view" id="vFicha">
+                                <h4>ICON Sailor, Barra · ficha do pedido</h4>
+                <div class="sub">Subempreitada de carpintarias. Rua da Praia 87 e 89, Barra. Projeto em fase de licenciamento, 01/09/2026. Proposta pedida até 9 de outubro.</div>
+                <div class="task"><span class="st done">✓</span>Mapa de quantidades lido e cruzado com os desenhos<span class="who">MQT + 42 PDF</span></div>
+                <div class="task"><span class="st done">✓</span>28 roupeiros ARM-01 a 10, todos com 0,60 de fundo<span class="who">MDF lacado RAL 9010</span></div>
+                <div class="task"><span class="st done">✓</span>61 portas interiores VI-01 a 06, ferragens JNF<span class="who">batente, pocket, pivotante</span></div>
+                <div class="task"><span class="st done">✓</span>27 armários técnicos, 17 móveis de lavatório, 3 ripados, 293,72 ml de rodapé<span class="who">termolaminado carvalho</span></div>
+                <div class="task"><span class="st todo">!</span>Cozinhas CZ-01 a 05 desenhadas mas fora do MQT<span class="who">pergunta à ICON</span></div>
+                <div class="task"><span class="st todo">!</span>12 pedidos de esclarecimento escritos<span class="who">rascunho para o Carlos</span></div>
+                <div class="task"><span class="st lock">○</span>Preço: tabela de interiores da Casanova<span class="who">montada no arranque</span></div>
+                <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap"><button class="btn btn-primary">Abrir levantamento em Excel</button><button class="btn btn-ghost">Rever email de esclarecimentos</button></div>
+
+              </div>
+              <div class="view" id="vPrecos">
+                                <h4>Tabela de preços · caixilharia</h4>
+                <div class="sub">O sistema não tem preços próprios: usa os vossos, nos sítios onde já os têm. Mudam aqui, mudam em todos os orçamentos seguintes.</div>
+                <div class="task"><span class="st done">✓</span>Madeira por espécie, €/m³ (castanho, pinho, casquinha)<span class="who">DADOS · E32</span></div>
+                <div class="task"><span class="st done">✓</span>Vidro por composição e espessura, €/m²<span class="who">DADOS · D45</span></div>
+                <div class="task"><span class="st done">✓</span>Matrizes por tipo e medida, de 400 a 2400 mm<span class="who">folha TABELA</span></div>
+                <div class="task"><span class="st done">✓</span>Ferragens e acessórios por conjunto (Siegenia, Simonswerk, Maco)<span class="who">folha FERRAGEM</span></div>
+                <div class="task"><span class="st done">✓</span>Produção por metro, montagem por aro e por folha, embalagem<span class="who">folha ORÇAMENTO</span></div>
+                <div class="task"><span class="st lock">○</span>Interiores: MDF lacado, melamina, termolaminado, ferragens Häfele e JNF, horas de fabrico<span class="who">a montar convosco</span></div>
+                <div class="mini-alert">Os valores ficam no vosso ficheiro e só a equipa os vê. Nesta página mostramos onde estão, não quanto valem.</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Quem faz o quê</span>
+        <h2>O sistema transcreve. A Casanova decide.</h2>
+        <div class="grid-2" style="margin-top:26px">
+          <div class="card card-do reveal">
+            <h3>O que o sistema faz</h3>
+            <ul class="list-check">
+              <li>Lê o email e todos os anexos, mesmo os que chegam em ZIP ou por link</li>
+              <li>Identifica cada vão, móvel ou porta, com referência e quantidade</li>
+              <li>Tira dimensões, madeira, vidro, ferragens e acabamento do mapa e das notas</li>
+              <li>Preenche o vosso Excel de cálculo, linha a linha, com a vossa tabela de preços</li>
+              <li>Faz a ficha de triagem com prazo, área e volume estimado</li>
+              <li>Escreve a lista de pedidos de esclarecimento ao empreiteiro</li>
+              <li>Compara com orçamentos anteriores parecidos</li>
+            </ul>
+          </div>
+          <div class="card card-dont reveal">
+            <h3>O que fica sempre com a equipa</h3>
+            <ul class="list-x">
+              <li>Decidir a que pedidos se responde</li>
+              <li>Escolher a solução técnica quando o mapa deixa margem</li>
+              <li>Definir a margem e o preço final</li>
+              <li>Validar cada linha marcada a amarelo</li>
+              <li>Enviar a proposta ao cliente</li>
+              <li>Atualizar a tabela de preços quando os fornecedores mudam</li>
+            </ul>
+          </div>
+        </div>
+        <p class="quote">Nunca erra em silêncio: o que o sistema não sabe com certeza fica sinalizado, com o sítio de onde veio.</p>
+      </div>
+    </div>
+
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Integração e segurança</span>
+        <h2>Encaixa no que já usam, sem mudar de ferramentas</h2>
+        <div class="grid-3" style="margin-top:26px">
+          <div class="card reveal"><div class="ftile">📧</div><h3>O vosso email</h3><p class="small">Liga-se à caixa onde os pedidos já chegam. Os empreiteiros não mudam nada.</p></div>
+          <div class="card reveal"><div class="ftile">📗</div><h3>O vosso Excel</h3><p class="small">O resultado é o vosso ficheiro de cálculo, com as vossas fórmulas e a vossa macro. A proposta continua a sair como hoje.</p></div>
+          <div class="card reveal"><div class="ftile">🪚</div><h3>O Lógico</h3><p class="small">Nas janelas, a lista de vãos pode sair num formato para importar no Lógico. O que o Lógico aceita importar confirma-se no arranque.</p></div>
+          <div class="card reveal"><div class="ftile">📐</div><h3>Desenhos</h3><p class="small">PDF, Excel e Word leem-se diretamente. DWF e DWG convertem-se no servidor, como já fazemos para outros projetos de construção.</p></div>
+          <div class="card reveal"><div class="ftile">🔒</div><h3>Dados vossos</h3><p class="small">Alojamento na União Europeia, acessos por pessoa, os ficheiros dos clientes não são usados para treinar modelos.</p></div>
+          <div class="card reveal"><div class="ftile">📚</div><h3>Aprende com o histórico</h3><p class="small">Os orçamentos que já fizeram servem de referência: preços usados, soluções escolhidas, obras ganhas e perdidas.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 4: ASSISTENTE                                -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="assistente">
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Falar com o sistema</span>
+        <h2>Perguntar, pedir e confirmar, por texto ou por voz</h2>
+        <p class="lead">Quatro situações reais do dia a dia do orçamentista, com os vossos pedidos. Numa delas, o assistente recusa avançar sozinho.</p>
+        <div class="cr" id="ccDemo" style="margin-top:26px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="ccDemo-config">
+    {
+      "agentName": "Orçamentos Casanova",
+      "agentInitials": "CN",
+      "chatStatus": "No email e no computador, por texto ou voz",
+      "stepMs": 1500,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "Pedido novo",
+          "subtitle": "O que chegou, o que é e o que falta saber.",
+          "chat": [
+            { "sender": "client", "text": "Chegou alguma coisa da ICON?", "time": "08:40" },
+            { "sender": "agent", "text": "Sim, **ICON Sailor, Barra**: MQT e 42 desenhos. **28 roupeiros, 61 portas interiores, 17 móveis de lavatório, 27 armários técnicos, 3 ripados** e 293,72 ml de rodapé. Prazo **9 de outubro**, 4 dias úteis. Atenção: as cozinhas estão desenhadas mas **não estão no MQT**.", "time": "08:40" },
+            { "sender": "client", "text": "Prepara o email com as dúvidas.", "time": "08:42" },
+            { "sender": "agent", "text": "Preparei **12 perguntas**, cada uma com o desenho de onde saiu: cozinhas, bancadas, brilho do lacado, puxadores, portas pocket... Está nos rascunhos para rever. **Não enviei.**", "time": "08:42" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Encontra o email da ICON e os anexos" },
+            { "icon": "search", "label": "Lê o MQT e os 42 desenhos" },
+            { "icon": "list", "label": "Cruza quantidades: mapa de armários, mapa de vãos" },
+            { "icon": "alert", "label": "Deteta 12 diferenças entre MQT e desenhos" },
+            { "icon": "send", "label": "Escreve o rascunho, para o Carlos enviar" }
+          ]
+        },
+        {
+          "title": "Só as janelas",
+          "subtitle": "A decisão de triagem, aplicada ao orçamento.",
+          "chat": [
+            { "sender": "client", "text": "No Tagus Hotel respondemos só às janelas.", "time": "10:05" },
+            { "sender": "agent", "text": "Feito: **213 vãos em 36 posições** mais montagem. As **169 portadas** passaram para as exclusões da proposta. Excel pronto para o vosso cálculo.", "time": "10:05" },
+            { "sender": "agent", "text": "Antes de calcular: o **VEM 07** (1,22 x 3,39) está no pedido e não tem posição, e o **VEM 16.1** tem 3,02 de altura no mapa. Confirma?", "time": "10:06" },
+            { "sender": "client", "text": "O VEM 07 entra. O 16.1 é 2,11, já falei com eles.", "time": "10:08" }
+          ],
+          "steps": [
+            { "icon": "filter", "label": "Separa janelas (VEM) de portadas (PTD)" },
+            { "icon": "database", "label": "Agrupa as 56 linhas em posições" },
+            { "icon": "check", "label": "Escreve as exclusões no texto da proposta" },
+            { "icon": "alert", "label": "Confere pedido contra posições: 2 diferenças" },
+            { "icon": "ear", "label": "Regista a decisão do Carlos na ficha" }
+          ]
+        },
+        {
+          "title": "Não decide a margem",
+          "subtitle": "O assistente recusa e prepara a decisão.",
+          "chat": [
+            { "sender": "client", "text": "Manda a proposta das Varandas à Baltor com 5% de desconto.", "time": "16:20" },
+            { "sender": "agent", "text": "Não envio nem mexo no preço sozinho. Preparei as **duas versões** para comparar: a calculada, **248.985,17 €**, e com 5% sobre o fornecimento. A escolha é sua.", "time": "16:20" },
+            { "sender": "agent", "text": "Uma nota: o mapa pede **pinho nórdico lamelado** e a proposta está em **castanho ibérico CN78**. Quer que o email diga isso de forma explícita?", "time": "16:21" },
+            { "sender": "client", "text": "Sim, explica a opção pelo castanho. Fica a versão sem desconto.", "time": "16:24" }
+          ],
+          "steps": [
+            { "icon": "ban", "label": "Recusa alterar margem e enviar sem decisão" },
+            { "icon": "list", "label": "Prepara as duas versões lado a lado" },
+            { "icon": "brain", "label": "Compara o pedido com a solução proposta" },
+            { "icon": "alert", "label": "Sinaliza a troca de madeira" },
+            { "icon": "send", "label": "Email para revisão, nunca sai sozinho" }
+          ]
+        },
+        {
+          "title": "Histórico",
+          "subtitle": "O preço de referência em segundos.",
+          "chat": [
+            { "sender": "client", "text": "Quanto orçámos por uma janela de 2 folhas com cerca de 1,30 x 2,50?", "time": "11:30" },
+            { "sender": "agent", "text": "Dois casos parecidos: **Varandas da Alegria**, Vce.17, 1330 x 2500, castanho CN78, **2.661,36 €**. **Tagus Hotel**, VEM 14, 1310 x 3050 com fixo, pinho CC2 CN78, **2.919,00 €**.", "time": "11:30" },
+            { "sender": "client", "text": "E qual das obras ganhámos?", "time": "11:31" },
+            { "sender": "agent", "text": "Esse resultado ainda não está registado. Assim que marcarem ganho ou perdido em cada orçamento, passo a mostrar também a taxa de fecho por tipo de obra.", "time": "11:31" }
+          ],
+          "steps": [
+            { "icon": "search", "label": "Procura vãos parecidos nos orçamentos anteriores" },
+            { "icon": "database", "label": "Lê medida, madeira, série e preço" },
+            { "icon": "alert", "label": "Não inventa o que não está registado" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- SEPARADOR 5: PROPOSTA                                  -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="proposta">
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Como se constrói</span>
+        <h2>Três etapas, cada uma testada com pedidos vossos</h2>
+        <p class="lead">Começamos pelo que já está provado com os vossos ficheiros e acabamos com o sistema a trabalhar na vossa caixa de email.</p>
+        <div class="phase" style="margin-top:26px; grid-template-columns: repeat(3, 1fr)">
+          <div class="card reveal"><div class="n">Etapa 1 · caixilharia</div><h3>Do mapa à folha DADOS</h3><ul><li>Leitura de mapas em Excel e PDF</li><li>Folha DADOS do vosso modelo preenchida</li><li>Bandeiras, intervalos de medida e exclusões</li><li>Conferência do pedido contra a proposta</li><li>Exportação para o Lógico, se o Lógico a aceitar</li></ul></div>
+          <div class="card reveal"><div class="n">Etapa 2 · interiores</div><h3>Do MQT e dos desenhos ao levantamento</h3><ul><li>Tabela de preços de interiores, montada convosco</li><li>Roupeiros, cozinhas, portas, painéis, rodapés</li><li>Cruzamento MQT com desenhos</li><li>Pedidos de esclarecimento ao empreiteiro</li></ul></div>
+          <div class="card reveal"><div class="n">Etapa 3 · no dia a dia</div><h3>A caixa de pedidos</h3><ul><li>Ligação ao email onde os pedidos chegam</li><li>Ficha de triagem por pedido</li><li>Histórico de orçamentos e preços</li><li>Assistente por texto e voz</li><li>Formação da equipa</li></ul></div>
+        </div>
+        <div class="poc-band reveal"><b>Critério de aceitação:</b><span>orçamentos já feitos por vós, passados pelo sistema e comparados linha a linha com a vossa resposta. Começamos com o ICON Sailor, já esta semana.</span></div>
+      </div>
+    </div>
+
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Investimento</span>
+        <h2>O valor que falámos a 28 de setembro</h2>
+        <div class="grid-2" style="margin-top:26px; align-items:start">
+          <div class="card price-card highlight reveal">
+            <span class="pin">Implementação</span>
+            <div class="label">Etapas 1 a 3</div>
+            <div class="price">4.000 € a 5.000 €<small>+ IVA</small></div>
+            <div class="note">Valor fechado depois desta demonstração e da análise dos exemplos, como combinado. Inclui a leitura de caixilharia e de interiores, a ligação ao vosso Excel, a caixa de pedidos e a formação.</div>
+            <ul class="price-list">
+              <li>Os vossos ficheiros e preços ficam vossos</li>
+              <li>Custos de funcionamento (alojamento e modelos de IA) apresentados por escrito antes do arranque, ajustados ao volume de pedidos</li>
+              <li>Sem custos por utilizador</li>
+            </ul>
+          </div>
+          <div class="card reveal" id="calc" style="padding:24px">
+            <h3>Quanto vale responder a mais pedidos?</h3>
+            <p class="small">Mexa nos valores. Os de partida são os que nos deram na reunião.</p>
+            <div class="calc" style="grid-template-columns:1fr; gap:10px">
+              <div>
+                <label>Orçamentos a mais por mês <b data-o="extra"></b><input type="range" name="extra" min="1" max="30" value="5"></label>
+                <label>Taxa de fecho <b data-o="taxa"></b><input type="range" name="taxa" min="2" max="15" value="8"></label>
+                <label>Valor médio por obra <b data-o="valor"></b><input type="range" name="valor" min="50000" max="300000" step="10000" value="150000"></label>
+              </div>
+              <div class="out">
+                <div class="row"><span>Orçamentos a mais por ano (11 meses)</span><b data-r="ano"></b></div>
+                <div class="row"><span>Obras a mais por ano</span><b data-r="obras"></b></div>
+                <div style="margin-top:14px; opacity:0.8; font-size:0.85rem">Faturação adicional por ano</div>
+                <div class="big" data-r="fat"></div>
+                <small>Faturação, não margem. Basta uma obra ganha a mais para pagar o investimento.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  </main>
+
+  <div class="pager">
+    <button data-prev aria-label="Anterior">‹</button>
+    <span class="pos">1 / 3</span>
+    <button data-next aria-label="Seguinte">›</button>
+    <span class="hint">← → no teclado</span>
+  </div>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Carpintaria Casanova · Diogo Gonçalves
+      <span class="disclaimer">Esboço de solução. Os resultados com os ficheiros da Casanova são reais; os restantes ecrãs são de exemplo.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/vaos.js"></script>
+  <script src="assets/js/casanova.js"></script>
+  <script>
+    fluxo('pedFluxo');
+    terminal('varTerm');
+    chatRaciocinio('ccDemo');
+  </script>
+</body>
+</html>

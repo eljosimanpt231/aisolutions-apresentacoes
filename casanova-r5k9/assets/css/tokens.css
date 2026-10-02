@@ -1,0 +1,53 @@
+/* Casanova: carvão da marca (#212121) com o vermelho do logo (#A20001) como acento,
+   fundos quentes de madeira clara. Tema escuro por data-theme. */
+:root {
+  --brand-hsl: 0 0% 13%;
+  --accent-hsl: 0 100% 34%;
+  --wood-hsl: 28 45% 42%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --wood: hsl(var(--wood-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(36 30% 99%);
+  --bg-soft: hsl(32 28% 95%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(34 30% 97.5%);
+  --border: hsl(30 16% 87%);
+
+  --text: hsl(0 0% 12%);
+  --muted: hsl(20 6% 40%);
+
+  --success-hsl: 152 60% 34%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 46%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 90% 44%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 130%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--wood-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 60%, hsl(var(--accent-hsl) / 0.85));
+
+  --shadow-sm: 0 1px 3px hsl(20 20% 20% / 0.08);
+  --shadow-md: 0 8px 28px hsl(20 20% 20% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(20 20% 20% / 0.16);
+
+  --radius: 12px;
+  --radius-lg: 20px;
+  --font-display: 'Jost', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1140px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
+:root[data-theme="dark"] {
+  --brand-hsl: 0 0% 9%;
+  --accent-hsl: 0 85% 58%;
+  --wood-hsl: 30 55% 60%;
+  --bg: hsl(20 6% 8%);
+  --bg-soft: hsl(20 6% 11%);
+  --surface: hsl(20 6% 13%);
+  --surface-2: hsl(20 6% 15%);
+  --border: hsl(20 6% 24%);
+  --text: hsl(30 20% 94%);
+  --muted: hsl(30 8% 66%);
+  --success-hsl: 152 55% 52%;
+  --warning-hsl: 38 92% 58%;
+}
