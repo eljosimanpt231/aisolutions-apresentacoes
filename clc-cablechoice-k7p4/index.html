@@ -168,9 +168,8 @@
     <div class="grp">Base CLC</div>
     <a data-v="4"><i>%</i>Regras de preço</a>
     <a data-v="5"><i>⇄</i>Consultas a fornecedores<span class="badge-n">4</span></a>
-    <a data-v="6"><i>✦</i>Assistente</a>
     <div class="grp">Fase 2 · pré-visualização</div>
-    <a data-v="7"><i>▣</i>Receção de mercadoria</a>
+    <a data-v="6"><i>▣</i>Receção de mercadoria</a>
     <div class="side-foot">Ligado ao PHC da CLC<br><span>base de dados SQL · artigos, stock, famílias e clientes</span></div>
   </aside>
   <div class="main">
@@ -270,83 +269,11 @@
     <!-- 5. Consultas a fornecedores -->
     <div class="slide" data-titulo="Consultas a fornecedores">
       <div class="view-h"><div><span class="k">BASE CLC</span><h2>Antes de perguntar à fábrica, ver se alguém já perguntou</h2><p>Cada consulta fica registada com quem pediu, quando, a resposta e a validade. Quando um pedido novo precisa do mesmo cabo, o sistema avisa.</p></div><span class="estado info">Exemplo ilustrativo</span></div>
-      <div class="dup reveal" id="dupAviso">
-        <span class="sem a"></span>
-        <div><b>O operador B ia pedir à fábrica o preço do SZ1-K 3G2,5 para 150 m.</b><p>O Ricardo pediu o mesmo hoje às 09:40 e a fábrica respondeu às 11:02, válido por 3 dias. O preço foi usado no pedido A; não é preciso repetir.</p></div>
-        <button class="btn btn-ghost" type="button" id="dupOk">Usar a consulta das 09:40</button>
-      </div>
-      <div class="tbl-wrap" style="margin-top:12px"><table class="tbl" id="consTab"></table></div>
+            <div class="tbl-wrap"><table class="tbl" id="consTab"></table></div>
       <p class="small" style="margin-top:8px">Nomes das fábricas, operadores e horas desta vista são ilustrativos. Na plataforma vêm das consultas reais, por email, guardadas automaticamente.</p>
     </div>
 
-    <!-- 6. Assistente -->
-    <div class="slide" data-titulo="Assistente">
-      <div class="view-h"><div><span class="k">BASE CLC</span><h2>A equipa pergunta, o sistema procura nos artigos e responde</h2><p>Quatro situações com os vossos pedidos. A última é a mais importante: o que o sistema se recusa a fazer sozinho.</p></div></div>
-      <div class="cr" id="crDemo"></div>
-      <script type="application/json" id="crDemo-config">{
-        "agentName": "Orçamentos CLC",
-        "agentInitials": "CLC",
-        "chatStatus": "Na plataforma, ligado ao PHC",
-        "stepMs": 1500,
-        "endPauseMs": 3200,
-        "scenarios": [
-          { "title": "Só a fotografia", "subtitle": "O pedido C: um print de uma loja online, sem referência nem marca.",
-            "chat": [
-              { "sender": "client", "text": "Um cliente mandou este print por WhatsApp. Temos disto?", "time": "14:12" },
-              { "sender": "agent", "text": "Li a imagem: **ligador estanque IP68, 3 condutores, 0,75 a 1,5 mm², 450 V, 24 A**. Nos vossos artigos: **GAWPM203PQ, CONECTOR RAPIDO IP68 3P** (GAESTOPAS), localização 5A2-5.", "time": "14:12" },
-              { "sender": "agent", "text": "Stock: **27**, dos quais **10 reservados** para clientes; disponíveis 17. Vende-se em caixas de 20.", "time": "14:12" },
-              { "sender": "agent", "text": "O cliente viu-o a 5,15 € com IVA (4,19 € + IVA). Ao preço 2 da vossa tabela fica a **3,32 € + IVA**. Pergunto-lhe a quantidade?", "time": "14:13" },
-              { "sender": "client", "text": "Pergunta, e propõe a caixa de 20.", "time": "14:13" } ],
-            "steps": [
-              { "icon": "search", "label": "Lê a fotografia e extrai 6 atributos técnicos" },
-              { "icon": "database", "label": "Procura nos artigos do PHC por atributos, não por nome" },
-              { "icon": "list", "label": "Confirma stock, reservas e unidade de embalagem" },
-              { "icon": "filter", "label": "Aplica o nível de preço do cliente" },
-              { "icon": "message", "label": "Prepara a pergunta da quantidade ao cliente" } ] },
-          { "title": "O fio 1,5 azul", "subtitle": "Um instalador antigo pede pelo nome, como disse o Ricardo na reunião.",
-            "chat": [
-              { "sender": "client", "text": "Bom dia. Para amanhã: 2 rolos de fio 1,5 azul, 1 de castanho e 30 caixas de aparelhagem para pladur.", "time": "08:41" },
-              { "sender": "agent", "text": "\"Fio 1,5\": nos orçamentos anteriores deste cliente é sempre **condutor flexível H07V-K 1,5 mm²**, em rolo de 100 m. Azul e castanho ligados aos artigos da cor certa.", "time": "08:41" },
-              { "sender": "agent", "text": "\"Caixas para pladur\": **CAIXA AP. FUNDA VD (p/pladur)**, a mesma que vai nas vossas obras, com o desconto da família (40%).", "time": "08:41" },
-              { "sender": "agent", "text": "Rascunho pronto com 3 linhas verdes. Os dois rolos de cabo têm stock: seguem com o preço de tabela.", "time": "08:42" } ],
-            "steps": [
-              { "icon": "ear", "label": "Recebe o pedido em texto livre, por WhatsApp" },
-              { "icon": "book", "label": "Consulta o histórico de orçamentos deste cliente" },
-              { "icon": "database", "label": "Liga cada produto ao artigo e à cor certa" },
-              { "icon": "check", "label": "Verifica o stock: com stock, preço de tabela" },
-              { "icon": "send", "label": "Deixa o rascunho pronto para o operador" } ] },
-          { "title": "Já há consulta", "subtitle": "A consulta duplicada que o Ricardo descreveu, travada a tempo.",
-            "chat": [
-              { "sender": "client", "text": "Pede à fábrica o preço de 150 m de SZ1-K 3G2,5.", "time": "15:20" },
-              { "sender": "agent", "text": "Antes de pedir: **já existe uma consulta válida**. O Ricardo pediu este cabo hoje às 09:40 e a fábrica respondeu às 11:02, válida por 3 dias.", "time": "15:20" },
-              { "sender": "agent", "text": "Uso esse preço no seu pedido? Se a quantidade for muito maior, aí sim, vale a pena pedir de novo.", "time": "15:20" },
-              { "sender": "client", "text": "Usa esse.", "time": "15:21" },
-              { "sender": "agent", "text": "Feito. A linha passa a verde, com a origem do preço indicada: consulta das 09:40.", "time": "15:21" } ],
-            "steps": [
-              { "icon": "list", "label": "Recebe o pedido de consulta ao fornecedor" },
-              { "icon": "search", "label": "Procura consultas ao mesmo artigo nos últimos dias" },
-              { "icon": "clock", "label": "Confirma que a validade ainda não terminou" },
-              { "icon": "shield", "label": "Evita a consulta repetida à fábrica" },
-              { "icon": "check", "label": "Aplica o preço e regista a origem" } ] },
-          { "title": "O que não faz sozinho", "subtitle": "Recusa consciente: não envia um orçamento com dúvidas por resolver.",
-            "chat": [
-              { "sender": "client", "text": "Está ótimo. Manda já o orçamento da obra da clínica ao cliente.", "time": "17:05" },
-              { "sender": "agent", "text": "Não envio já. Há **5 linhas sem artigo** (ligadores, anilhas, manga, mastique e sinalética) e **4 linhas de cabo** à espera do preço do dia.", "time": "17:05" },
-              { "sender": "agent", "text": "E há duas dúvidas que mudam o valor: os **3.922 m de RV-K 3G2,5** podem ser metros de condutor (bastaria um terço), e as porcas pedidas são **M8**, não M10.", "time": "17:05" },
-              { "sender": "agent", "text": "Proponho: deixo o rascunho pronto e preparo um email ao cliente com estas duas perguntas. **Nada sai sem o vosso OK.**", "time": "17:06" },
-              { "sender": "client", "text": "Prepara.", "time": "17:06" } ],
-            "steps": [
-              { "icon": "alert", "label": "Verifica linhas vermelhas e preços por validar" },
-              { "icon": "brain", "label": "Cruza a lista com as notas do próprio cliente" },
-              { "icon": "filter", "label": "Separa o que muda o valor do que é pormenor" },
-              { "icon": "ban", "label": "Recusa enviar ao cliente sozinho" },
-              { "icon": "send", "label": "Prepara o rascunho e as perguntas para validação" } ] }
-        ]
-      }</script>
-      <p class="small" style="margin-top:10px">Os cenários 1 e 4 usam os artigos, o stock e os preços dos vossos documentos. Os cenários 2 e 3 são ilustrativos, tal como as horas das mensagens.</p>
-    </div>
-
-    <!-- 7. Receção (fase 2) -->
+    <!-- 6. Receção (fase 2) -->
     <div class="slide" data-titulo="Receção de mercadoria">
       <div class="view-h"><div><span class="k">FASE 2 · PRÉ-VISUALIZAÇÃO</span><h2>A receção conferida no telemóvel, e o PHC atualizado sozinho</h2><p>O cenário que o Ricardo descreveu: fotografa a guia, confere, e o sistema dá entrada, avisa o fornecedor do que falta e diz à faturação que já pode faturar.</p></div><span class="estado info">Exemplo ilustrativo</span></div>
       <div class="rec">
@@ -487,7 +414,7 @@
 </main>
 
 <div class="pager" aria-label="Navegação">
-  <div class="meta"><small>Ecrã</small><b id="folhaN">01 / 17</b></div>
+  <div class="meta"><small>Ecrã</small><b id="folhaN">01 / 16</b></div>
   <div class="meta tit"><small>Título</small><b id="folhaT">Capa</b></div>
   <div class="nav"><button data-prev aria-label="Anterior">‹</button><button data-next aria-label="Seguinte">›</button></div>
 </div>
@@ -496,7 +423,7 @@
 
 <script src="assets/js/dados.js"></script>
 <script src="../shared/deck/deck.js"></script>
-<script>chatRaciocinio('crDemo'); fluxo('fxCLC');</script>
+<script>fluxo('fxCLC');</script>
 <script src="assets/js/motor.js"></script>
 <script src="assets/js/leitor.js"></script>
 </body>

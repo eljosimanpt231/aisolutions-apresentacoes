@@ -162,17 +162,17 @@
       h += tri('', 'Produto reconhecido pela imagem:', 'ligador estanque IP68, 3 condutores.');
       h += tri('', 'Artigo GAWPM203PQ', 'CONECTOR RAPIDO IP68 3P, 17 disponíveis.');
       h += tri('w', 'Sem quantidade:', 'fica como pergunta ao cliente.');
-      h += '<div class="acts"><button class="btn btn-primary" data-ir="2" data-p="C">Abrir pré-orçamento</button><button class="btn btn-ghost" data-ir="6">Ver no assistente</button></div>';
+      h += '<div class="acts"><button class="btn btn-primary" data-ir="2" data-p="C">Abrir pré-orçamento</button></div>';
     } else if (m.p === 'D') {
       h += tri('', '"Fio 1,5 azul" e "castanho"', 'ligados ao condutor flexível de 1,5 mm² da cor certa.');
       h += tri('', '"Caixas para pladur"', 'ligadas à CAIXA AP. FUNDA VD (p/pladur).');
-      h += '<div class="acts"><button class="btn btn-primary" data-ir="6">Ver no assistente</button></div>';
+      h += tri('i', 'Rascunho pronto', 'com 3 linhas, à espera do operador.');
     } else if (m.p === 'F') {
       h += tri('i', 'Resposta a uma consulta vossa.', 'Os preços ficam guardados com a validade, para ninguém repetir a consulta.');
       h += '<div class="acts"><button class="btn btn-primary" data-ir="5">Ver consultas</button></div>';
     } else {
       h += tri('i', 'Não é um pedido de orçamento.', 'Na fase 2, o aviso de expedição prepara a conferência da receção.');
-      h += '<div class="acts"><button class="btn btn-primary" data-ir="7">Ver receção</button></div>';
+      h += '<div class="acts"><button class="btn btn-primary" data-ir="6">Ver receção</button></div>';
     }
     $('#inboxDet').innerHTML = h + '</div>';
   }
@@ -367,14 +367,7 @@
     var c = CONS[+b.dataset.pedir]; c.pedir = false; c.st = ['esp', 'Pedida às ' + agora()]; c.por = 'Ricardo'; c.qd = 'hoje ' + agora(); c.f = 'Fábrica de cabos 1';
     consultas();
   });
-  $('#dupOk').addEventListener('click', function () {
-    var d = $('#dupAviso'); d.classList.add('feito'); d.querySelector('.sem').className = 'sem v';
-    d.querySelector('b').textContent = 'Consulta reaproveitada: o operador B usou o preço das 09:40.';
-    d.querySelector('p').textContent = 'Uma chamada à fábrica a menos. A linha fica verde, com a origem do preço indicada.';
-    this.disabled = true; this.textContent = '✓ Feito';
-  });
-
-  /* ---------------- 8. Receção (fase 2) ---------------- */
+    /* ---------------- 8. Receção (fase 2) ---------------- */
   var REC = [
     { a: 'CONECTOR RAPIDO IP68 3P', ref: 'GAWPM203PQ', enc: 20, rec: 20, un: 'un' },
     { a: 'MTS CABO SZ1-K 3G2,5 LR', ref: 'cabo', enc: 200, rec: 100, un: 'm' },

@@ -31,3 +31,4 @@
 
 ## Iterações
 - v1 (01/10): primeira versão. Crítica: plurais "1 linhas", rodapé fixo a sobrepor conteúdo, linha do tempo colada ao parágrafo, contraste do "CLC" cinzento e dos rótulos do paginador, arredondamento dava 13.732,38. Tudo corrigido; sem overflow a 390 px.
+- v2 (02/10): a pedido do Diogo, retirados o aviso de consulta duplicada (Consultas a fornecedores) e o capítulo Assistente. 16 ecrãs.
