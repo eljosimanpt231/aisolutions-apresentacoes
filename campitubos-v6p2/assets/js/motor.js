@@ -244,7 +244,7 @@
       var sem = +pz.value, horasSem = 9 * 5;
       var eqP = Math.max(1, Math.ceil(h.p / (horasSem * sem))), eqO = Math.max(1, Math.ceil(h.i / (horasSem * Math.max(1, sem / 2))));
       $('#vPrazo').textContent = sem + ' semanas';
-      $('#prazoRes').innerHTML = 'Para cumprir em <b>' + sem + ' semanas</b> (pré-fabrico em paralelo, montagem na segunda metade): <b>' + eqP + '</b> equipa(s) na sede e <b>' + eqO + '</b> em obra, ' + (eqO * pessoasEquipa()) + ' pessoas em obra no pico. A confirmar contra a carga das equipas nas obras em curso.';
+      $('#prazoRes').innerHTML = 'Para cumprir em <b>' + sem + ' semanas</b> (pré-fabrico em paralelo, montagem na segunda metade): <b>' + eqP + '</b> equipa(s) na sede e <b>' + eqO + '</b> em obra, ' + (eqO * pessoasEquipa()) + ' pessoas em obra no pico.';
     }
     $('#hBars').innerHTML = bars.map(function (b) { return '<div class="hbar"><span>' + b[0] + '</span><span class="t"><i class="' + b[2] + '" style="width:' + (b[1] / mx * 100) + '%"></i></span><span class="v">' + fmt0(b[1]) + ' h</span></div>'; }).join('');
     $('#vEqP').textContent = S.eqPref; $('#vEqO').textContent = S.eqObra;
