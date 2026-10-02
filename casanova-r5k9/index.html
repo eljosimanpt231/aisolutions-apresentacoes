@@ -312,7 +312,7 @@
           <span id="iconBandTxt"><b>Experimente agora:</b> o pedido da ICON tal como chegou, um MQT e 42 desenhos. Carregue em gerar e veja o sistema ler, cruzar e montar o levantamento.</span>
           <span style="display:flex; gap:10px; flex-wrap:wrap">
             <button class="btn btn-primary" id="iconRun" style="white-space:nowrap">▶ Gerar análise</button>
-            <button class="btn btn-primary" id="iconXlsx" style="white-space:nowrap; display:none">⬇ Descarregar o Excel do ICON Sailor</button>
+            <a class="btn btn-primary" id="iconXlsx" href="assets/ficheiros/ICON-Sailor-levantamento-carpintarias.xlsx" download="ICON-Sailor-levantamento-carpintarias.xlsx" style="white-space:nowrap; display:none">⬇ Descarregar o Excel do ICON Sailor</a>
           </span>
         </div>
         <div class="runlog" id="iconLog" hidden>
@@ -606,9 +606,7 @@
   <script src="../shared/js/protect.js"></script>
   <script src="../shared/deck/deck.js"></script>
   <script src="assets/js/app.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="assets/js/icon-data.js"></script>
-  <script src="assets/js/icon-excel.js"></script>
   <script src="assets/js/icon-run.js"></script>
   <script src="assets/js/vaos.js"></script>
   <script src="assets/js/casanova.js"></script>
