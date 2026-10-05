@@ -30,7 +30,7 @@
 - Micro-interacções: íman nos botões, holofote nos princípios, telemóvel clicável
 
 ## Secções
-1. Hero · 2. Resumo de 30 s · 3. O que ouvimos (+ tira do mês) · 4. A tua visão, princípio a princípio (12) · 5. Fase 1: os quatro blocos + parâmetros do C6 · 6. Um dia no campo (telemóvel) · 7. O cruzamento (chat+raciocínio, 4 cenários) · 8. Integrações (fluxo + terminal + o que a API da John Deere dá e não dá) · 9. Limites · 10. Fase seguinte · 11. Como trabalhamos (prova) · 12. A conta · 13. Investimento · 14. Cronograma · 15. Avançamos
+1. Hero (sem resumo de 30 s, retirado a pedido do Manuel: o preço só aparece no fim) · 3. O que ouvimos (+ tira do mês) · 4. A tua visão, princípio a princípio (12) · 5. Fase 1: os quatro blocos + parâmetros do C6 · 6. Um dia no campo (telemóvel) · 7. O cruzamento (chat+raciocínio, 4 cenários) · 8. Integrações (fluxo + terminal + o que a API da John Deere dá e não dá) · 9. Limites · 10. Fase seguinte · 11. Como trabalhamos (prova) · 12. A conta · 13. Investimento · 14. Cronograma · 15. Avançamos
 
 Barra: Visão · Fase 1 · No campo · Integrações · Investimento (+ Avançar)
 
