@@ -29,7 +29,7 @@
 <body>
 
 <div class="grelha" aria-hidden="true"></div>
-<div class="atmosfera" aria-hidden="true">
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
   <div class="atmosfera__glow atmosfera__glow--1"></div>
   <div class="atmosfera__glow atmosfera__glow--2"></div>
   <div class="atmosfera__glow atmosfera__glow--3"></div>
@@ -37,15 +37,15 @@
 
 <header class="topbar">
   <a class="logo-marca" href="#topo" aria-label="Início">
-    <img src="assets/img/logo-engeglobal-branco.png" alt="EngeGlobal">
+    <img src="assets/img/logo-engeglobal-cor.png" alt="EngeGlobal">
     <span>× AI Solutions</span>
   </a>
   <nav class="topnav" aria-label="Secções">
     <a href="#ouvimos">O que ouvimos</a>
     <a href="#modulos">Os seis módulos</a>
     <a href="#demo">Ao vivo</a>
+    <a href="#projeto">Ler um projeto</a>
     <a href="#arquitetura">Arquitetura</a>
-    <a href="#limites">Limites</a>
     <a href="#investimento">Investimento</a>
     <a href="#prazo">Prazo</a>
   </nav>
@@ -97,7 +97,7 @@
         <div><dt>O quê</dt><dd>Os seis módulos do memorando: informação interna, concursos, propostas, contratos, chat comercial e follow-up.</dd></div>
         <div><dt>Como</dt><dd>Em cinco fases. Começa pelo levantamento e pela matriz requisito a requisito que pediram, antes de qualquer desenvolvimento.</dd></div>
         <div><dt>Quanto</dt><dd><b>17.500 €</b> de implementação, repartidos pelas fases. <b>550 € por mês</b> com tudo em produção.</dd></div>
-        <div><dt>Quando</dt><dd>6 a 8 meses, contados a partir dos acessos. Concursos e propostas são os primeiros a trabalhar.</dd></div>
+        <div><dt>Quando</dt><dd>3 a 4 meses, contados a partir dos acessos. Concursos e propostas são os primeiros a trabalhar.</dd></div>
       </dl>
     </div>
   </div>
@@ -335,8 +335,138 @@
   </div>
 </section>
 
+<!-- ============ 5b. LER UM PROJETO ============ -->
+<section class="section-alt" id="projeto">
+  <div class="container">
+    <span class="kicker">Ler um projeto</span>
+    <h2>Largam o projeto. A IA lê-o e devolve a folha preenchida.</h2>
+    <p class="lead">
+      O Hugo disse na reunião que o mais moroso é tirar o sumo do projeto. É isso que a leitura
+      automática faz: abre o caderno de encargos e as peças desenhadas, extrai o que interessa ao
+      orçamento, indica de onde veio cada valor e assinala o que não conseguiu confirmar.
+    </p>
+    <div class="stepbar reveal">
+      <div class="step"><b>1</b><span>Upload do caderno de encargos, do mapa de quantidades e das peças desenhadas</span></div>
+      <div class="step"><b>2</b><span>Leitura de segundos a poucos minutos, conforme o tamanho</span></div>
+      <div class="step"><b>3</b><span>Ficha do procedimento e folha de cálculo preenchidas, para validar</span></div>
+    </div>
+
+    <div class="bloco-proj">
+      <h3>Caderno de encargos: o que entra e o que sai</h3>
+      <p>À esquerda, um excerto como chega. À direita, a ficha que a IA preenche, com a cláusula de origem de cada campo.</p>
+      <div class="duas">
+        <div class="docin reveal">
+          <div class="cab"><span>caderno-de-encargos.pdf</span><span>excerto, exemplo ilustrativo</span></div>
+          <div class="corpo">
+            <h4>Cláusula 2.ª, Objeto</h4>
+            <p>O presente procedimento tem por objeto a <mark>requalificação do campo de jogos municipal, com substituição do relvado sintético</mark>, incluindo base, drenagem e equipamento desportivo.</p>
+            <h4>Cláusula 5.ª, Prazo de execução</h4>
+            <p>O prazo de execução da empreitada é de <mark>90 dias</mark>, contados da data da consignação.</p>
+            <h4>Cláusula 9.ª, Preço base</h4>
+            <p>O preço base do procedimento é de <mark>385.000,00 €</mark>, acrescido de IVA à taxa legal em vigor.</p>
+            <h4>Programa do procedimento, artigo 14.º</h4>
+            <p>A adjudicação é feita segundo o critério da proposta economicamente mais vantajosa, na modalidade <mark class="v">preço (60%) e valia técnica (40%)</mark>.</p>
+            <h4>Programa do procedimento, artigo 11.º</h4>
+            <p>A proposta é instruída com memória descritiva, plano de trabalhos, lista de preços unitários e <mark class="a">declaração do fabricante do relvado com a respetiva certificação</mark>.</p>
+          </div>
+        </div>
+        <div class="ficha-out reveal">
+          <div class="cab"><span>ficha do procedimento</span><span>preenchida pela IA</span></div>
+          <dl>
+            <div class="campo"><dt>Objeto</dt><dd>Requalificação de campo de jogos, relvado sintético, base e drenagem</dd><span class="orig">cl. 2.ª</span></div>
+            <div class="campo"><dt>Prazo de execução</dt><dd>90 dias após consignação</dd><span class="orig">cl. 5.ª</span></div>
+            <div class="campo"><dt>Preço base</dt><dd>385.000,00 € + IVA</dd><span class="orig">cl. 9.ª</span></div>
+            <div class="campo"><dt>Critério</dt><dd>Preço 60%, valia técnica 40%</dd><span class="orig">PP art. 14.º</span></div>
+            <div class="campo"><dt>Documentos</dt><dd>Memória descritiva, plano de trabalhos, lista de preços unitários</dd><span class="orig">PP art. 11.º</span></div>
+            <div class="campo alerta"><dt>A confirmar</dt><dd>Declaração do fabricante com certificação: não há modelo no vosso arquivo</dd><span class="orig">PP art. 11.º</span></div>
+            <div class="campo"><dt>Mapa de quantidades</dt><dd>Rubricas transcritas para a vossa folha de cálculo de relvados</dd><span class="orig">mapa</span></div>
+          </dl>
+        </div>
+      </div>
+      <p class="nota-fonte">Exemplo construído para esta apresentação. Com os vossos concursos, a ficha segue os campos que definirmos convosco.</p>
+    </div>
+
+    <div class="bloco-proj">
+      <h3>Peças desenhadas: a precisão, num projeto real</h3>
+      <p>Isto já não é ilustrativo. É o projeto real de uma moradia, de outro cliente, que lemos em setembro e comparámos linha a linha com o Excel do orçamentista dele. Nomes e localização retirados.</p>
+      <div class="precisao">
+        <div class="card reveal"><div class="v">9 folhas</div><small>Do ficheiro de estabilidade exportado do CYPECAD, lidas em pouco mais de um segundo</small></div>
+        <div class="card reveal"><div class="v">21 de 25</div><small>Vigas iguais ao milímetro ao Excel feito à mão pelo orçamentista</small></div>
+        <div class="card reveal"><div class="v">4</div><small>Sinalizadas para confirmar, em vez de adivinhadas</small></div>
+        <div class="card reveal"><div class="v">&lt; 0,2 m²</div><small>De diferença para a área do arquiteto, em 9 divisões medidas pela IA</small></div>
+      </div>
+      <div style="margin-top:20px">
+        <div class="tabela-wrap reveal">
+          <table class="cmp">
+            <thead><tr><th>Viga</th><th style="text-align:right">Comp. (m)</th><th style="text-align:right">Secção</th><th style="text-align:right">Betão (m³)</th><th style="text-align:right">Cofragem (m²)</th><th>Comparação</th></tr></thead>
+            <tbody>
+              <tr><td>Pórtico 1<small>P1-P2-B0-P3-P4</small></td><td class="num">14,636</td><td class="num">25x40</td><td class="num">1,464</td><td class="num">12,44</td><td class="ok">igual ao Excel</td></tr>
+              <tr><td>Pórtico 2<small>B1-P6-P7-P8-B2</small></td><td class="num">14,635</td><td class="num">20x40</td><td class="num">1,171</td><td class="num">11,71</td><td class="ok">igual ao Excel</td></tr>
+              <tr><td>Pórtico 3<small>P40-P41-P42-P43</small></td><td class="num">15,121</td><td class="num">20x40</td><td class="num">1,210</td><td class="num">12,10</td><td class="ok">igual ao Excel</td></tr>
+              <tr><td>Pórtico 4<small>P33-P47-P35</small></td><td class="num">11,350</td><td class="num">20x40</td><td class="num">0,908</td><td class="num">9,08</td><td class="ok">igual ao Excel</td></tr>
+              <tr><td>Pórtico 5<small>P14-P40-P29</small></td><td class="num">11,570</td><td class="num">20x40</td><td class="num">0,926</td><td class="num">9,26</td><td class="ok">igual ao Excel</td></tr>
+              <tr><td>Pórticos 6 a 11<small>seis vigas</small></td><td class="num"></td><td class="num"></td><td class="num">3,312</td><td class="num">33,12</td><td class="ok">iguais ao Excel</td></tr>
+              <tr class="soma"><td>Cobertura, 11 de 11</td><td></td><td></td><td class="num">8,991</td><td class="num">87,71</td><td></td></tr>
+              <tr><td>Teto do piso 0<small>pórticos 8, 9, 10 e 14</small></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="chk">4 a confirmar</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="duas">
+        <figure class="figure reveal">
+          <a href="assets/img/est-portico1.png" target="_blank"><img src="assets/img/est-portico1.png" alt="Pórtico de vigas da cobertura, folha de estabilidade"></a>
+          <figcaption>Um pórtico da cobertura. Os vãos 4,256 + 3,062 + 4,444 + 2,874 = 14,636 m, a secção 25x40 e as armaduras 3Ø12 são texto dentro do ficheiro, não desenho. Por isso lê-se sem ninguém olhar para a planta.</figcaption>
+        </figure>
+      <figure class="figure reveal">
+        <a href="assets/img/arq-divisoes.png" target="_blank"><img src="assets/img/arq-divisoes.png" alt="Divisões fechadas pela IA a partir das paredes do DWG de arquitetura"></a>
+        <figcaption>A planta de arquitetura aberta sem AutoCAD: 15 divisões com área, 16 vãos com largura, 12 portas e 231 cotas extraídos do ficheiro. Cada cor é uma divisão fechada pela IA a partir das linhas de parede; o que ficou branco não fechou e fica sinalizado.</figcaption>
+      </figure>
+      </div>
+
+      <div class="verdict">
+        <div class="card reveal"><div class="tag">Provado</div><h3>Texto e cotas do ficheiro</h3><p>Áreas, vãos, quadros de pilares, pórticos, prazos e cláusulas. Extração exata, com a origem de cada valor.</p></div>
+        <div class="card mid reveal"><div class="tag">Primeiro resultado, com prova de conceito</div><h3>Medir o que o projeto não escreve</h3><p>Perímetros e medições a partir das paredes. Já funciona no projeto acima; com os vossos projetos, provamos primeiro com dois ou três, com critérios escritos antes.</p></div>
+        <div class="card no reveal"><div class="tag">Fica com as pessoas</div><h3>O material e o preço</h3><p>O que é cada elemento quando o projeto não o diz, e o preço final. A IA agrupa e propõe, o técnico decide.</p></div>
+      </div>
+      <div class="criterios reveal">
+        <b>Proposta de critérios de aceitação, a fechar convosco antes da Fase 1 (o vosso ponto 11):</b>
+        <ul>
+          <li>em três concursos já entregues, todos os documentos obrigatórios identificados;</li>
+          <li>prazos, preço base e critérios de adjudicação iguais aos do programa, com a cláusula de origem;</li>
+          <li>quantidades do mapa transcritas sem erro para a vossa folha de cálculo;</li>
+          <li>nenhum valor inventado: o que não está no documento aparece como "a confirmar".</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bloco-proj">
+      <h3>Experimente agora: larguem aqui os ficheiros</h3>
+      <p>A leitura corre neste browser, à vossa frente, com o mesmo leitor que produziu os números acima. O ficheiro nunca sai do computador. No fim, descarrega-se um Excel com as medições.</p>
+      <div class="exp-grid">
+        <div class="exp" id="expEst">
+          <h3>Estabilidade</h3>
+          <div class="sub">Ficheiro DWFX exportado do CYPECAD ou do AutoCAD. Sai um Excel com vigas (betão e cofragem), pilares e fundações.</div>
+          <div class="drop"><input type="file" accept=".dwfx,.dwf,.zip"><b>Largar o ficheiro de estabilidade (DWFX)</b><span>ou clicar para escolher</span></div>
+          <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>estabilidade.log</span></div><div class="term-body"></div></div>
+          <div class="exp-status"></div>
+          <div class="exp-out"></div>
+        </div>
+        <div class="exp" id="expArq">
+          <h3>Arquitetura</h3>
+          <div class="sub">Planta em DXF, gravada do AutoCAD ou do GstarCAD. Sai um Excel com divisões (área e perímetro), vãos, portas e a verificação da implantação.</div>
+          <div class="drop"><input type="file" accept=".dxf,.dwg"><b>Largar a planta de arquitetura (DXF)</b><span>ou clicar para escolher; com um DWG, explica o que falta</span></div>
+          <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>arquitetura.log</span></div><div class="term-body"></div></div>
+          <div class="exp-status"></div>
+          <div class="exp-out"></div>
+        </div>
+      </div>
+      <p class="exp-privacy">Demonstração sem servidor: os ficheiros são lidos localmente, não são enviados nem guardados. As fórmulas de betão e cofragem desta demonstração são as do orçamentista do projeto de exemplo; na EngeGlobal, são as vossas.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 6. ARQUITETURA ============ -->
-<section class="section-alt" id="arquitetura">
+<section id="arquitetura">
   <div class="container">
     <span class="kicker">Arquitetura</span>
     <h2>Uma camada só, ligada ao que já usam</h2>
@@ -438,7 +568,7 @@
 </section>
 
 <!-- ============ 7. LIMITES ============ -->
-<section id="limites">
+<section class="section-alt" id="limites">
   <div class="container">
     <span class="kicker">Limites e dependências</span>
     <h2>O que não prometemos, e do que dependemos</h2>
@@ -448,9 +578,9 @@
     </p>
     <div class="limites">
       <div class="limite reveal">
-        <span class="estado-pill dep">Fase seguinte</span>
+        <span class="estado-pill dep">Prova de conceito</span>
         <h4>Medir obras a partir das peças desenhadas</h4>
-        <p>O Hugo falou na medição de obras sem mapa de quantidades, incluindo volumes de terra. É possível, mas é um projeto em si. Avaliamos com dados reais depois da Fase 1. Não faz parte desta proposta.</p>
+        <p>Já o fazemos num projeto real (ver <a href="#projeto">Ler um projeto</a>). Nos vossos projetos, provamos primeiro com duas ou três obras e critérios escritos antes. Volumes de terra ficam fora desta proposta.</p>
       </div>
       <div class="limite reveal">
         <span class="estado-pill dep">Depende de acesso</span>
@@ -482,7 +612,7 @@
 </section>
 
 <!-- ============ 8. PARCERIA ============ -->
-<section class="section-alt" id="parceria">
+<section id="parceria">
   <div class="container">
     <span class="kicker">Parceria</span>
     <h2>Construído convosco, para poder chegar a outras empresas</h2>
@@ -499,7 +629,7 @@
 </section>
 
 <!-- ============ 9. PROVA ============ -->
-<section id="casos">
+<section class="section-alt" id="casos">
   <div class="container">
     <span class="kicker">Projetos do mesmo tipo</span>
     <h2>Ler documentos técnicos e preparar propostas é o que já fazemos</h2>
@@ -530,7 +660,7 @@
 </section>
 
 <!-- ============ 10. INVESTIMENTO ============ -->
-<section class="section-alt" id="investimento">
+<section id="investimento">
   <div class="container">
     <span class="kicker">Investimento</span>
     <h2>A conta, antes do preço</h2>
@@ -602,17 +732,17 @@
 </section>
 
 <!-- ============ 11. PRAZO ============ -->
-<section id="prazo">
+<section class="section-alt" id="prazo">
   <div class="container center">
     <span class="kicker">Prazo</span>
-    <h2>6 a 8 meses, por esta ordem</h2>
+    <h2>3 a 4 meses, por esta ordem</h2>
     <p class="lead" style="margin:12px auto 0">Contados a partir dos acessos. Cada módulo só entra em produção depois dos testes de aceitação com casos reais.</p>
     <div class="timeline t5" style="margin-top:44px">
-      <div class="tl-step reveal"><div class="tl-dot">0</div><strong>Levantamento</strong><span>Arquitetura, matriz de requisitos, matriz de permissões</span><em>Semanas 1 a 3</em></div>
-      <div class="tl-step reveal"><div class="tl-dot">1</div><strong>Concursos e propostas</strong><span>Os primeiros a trabalhar todos os dias</span><em>Meses 1 a 3</em></div>
-      <div class="tl-step reveal"><div class="tl-dot">2</div><strong>Informação interna</strong><span>SharePoint e plataforma de gestão, com permissões</span><em>Meses 3 a 5</em></div>
-      <div class="tl-step reveal"><div class="tl-dot">3</div><strong>Contratos</strong><span>Reaproveita a leitura de documentos da Fase 1</span><em>Mês 6</em></div>
-      <div class="tl-step reveal"><div class="tl-dot">4</div><strong>Comercial</strong><span>Chat no site e WhatsApp, follow-up e CRM</span><em>Meses 6 a 8</em></div>
+      <div class="tl-step reveal"><div class="tl-dot">0</div><strong>Levantamento</strong><span>Arquitetura, matriz de requisitos, matriz de permissões</span><em>Semanas 1 e 2</em></div>
+      <div class="tl-step reveal"><div class="tl-dot">1</div><strong>Concursos e propostas</strong><span>Os primeiros a trabalhar todos os dias</span><em>Semanas 3 a 7</em></div>
+      <div class="tl-step reveal"><div class="tl-dot">2</div><strong>Informação interna</strong><span>SharePoint e plataforma de gestão, com permissões</span><em>Semanas 7 a 11</em></div>
+      <div class="tl-step reveal"><div class="tl-dot">3</div><strong>Contratos</strong><span>Reaproveita a leitura de documentos da Fase 1</span><em>Semanas 11 e 12</em></div>
+      <div class="tl-step reveal"><div class="tl-dot">4</div><strong>Comercial</strong><span>Chat no site e WhatsApp, follow-up e CRM</span><em>Semanas 13 a 16</em></div>
     </div>
   </div>
 </section>
@@ -620,7 +750,7 @@
 <!-- ============ 12. FECHO ============ -->
 <section class="cta-final" id="avancar">
   <div class="container center">
-    <img src="assets/img/logo-engeglobal-branco.png" alt="EngeGlobal" class="logo-cta">
+    <img src="assets/img/logo-engeglobal-cor.png" alt="EngeGlobal" class="logo-cta">
     <h2>Avançamos, Luís e Hugo?</h2>
     <p class="lead" style="margin:14px auto 0">
       Três passos até à primeira semana de trabalho. Nada arranca sem confirmação por escrito.
@@ -656,6 +786,11 @@
 <script src="../shared/js/protect.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="../shared/deck/deck.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="assets/js/leitores.js"></script>
+<script src="assets/js/perimetros.js"></script>
+<script src="assets/js/experimente.js"></script>
 <script>
   chatRaciocinio('engeDemo');
   fluxo('engeFluxo');

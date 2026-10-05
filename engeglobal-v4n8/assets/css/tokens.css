@@ -1,71 +1,72 @@
-/* EngeGlobal × AI Solutions. Base deck-dark, paleta tirada do LOGÓTIPO da EngeGlobal.
-   O site está em construção e o único azul que expõe é o azul por defeito do tema
-   WordPress (#2ea3f2), por isso as cores vêm das três faixas do símbolo:
-   azul-ciano (#10a0e0), azul-marinho (#2050a0) e verde (#60b040).
-   Marca = azul-ciano. Acento (a cor do agente) = verde. brand2 = marinho, só em gradientes.
-   Tema escuro: o logótipo branco sobre transparente foi feito para fundo escuro. */
+/* EngeGlobal × AI Solutions. Tema CLARO e neutro, a pedido do Manuel (05/10/2026: "esta cor
+   está muito azul, prefiro branco"). Base branca, tinta carvão, e as três cores do símbolo
+   EngeGlobal (marinho #2050a0, ciano #10a0e0, verde #60b040) só como pormenor: faixas,
+   letras dos módulos, palavras em gradiente. Botões a carvão, não a azul.
+   As cores vêm do LOGÓTIPO: o site está em construção e só expõe o azul por defeito do tema
+   WordPress (#2ea3f2). */
 :root {
-  --brand-hsl: 199 86% 50%;     /* azul-ciano EngeGlobal */
-  --accent-hsl: 100 48% 54%;    /* verde EngeGlobal, a voz do agente */
-  --brand2-hsl: 218 66% 58%;    /* marinho EngeGlobal, aclarado para o escuro */
+  --brand-hsl: 203 78% 38%;     /* ciano EngeGlobal, escurecido para ler sobre branco */
+  --accent-hsl: 100 46% 40%;    /* verde EngeGlobal, escurecido */
+  --brand2-hsl: 218 66% 38%;    /* marinho EngeGlobal */
   --brand: hsl(var(--brand-hsl));
   --accent: hsl(var(--accent-hsl));
   --brand2: hsl(var(--brand2-hsl));
   --on-brand: hsl(0 0% 100%);
 
-  /* fundo sólido sob texto branco (botões, pontos da timeline) */
-  --brand-solido: hsl(204 82% 34%);
-  --acento-texto: hsl(100 56% 64%);
-  --marca-texto: hsl(199 90% 66%);
-  --ok-texto: hsl(150 62% 62%);
-  --warn-texto: hsl(38 92% 64%);
-  --no-texto: hsl(356 86% 74%);
+  /* botões e pontos da timeline: carvão neutro, não azul */
+  --brand-solido: hsl(220 14% 15%);
+  --acento-texto: hsl(100 52% 28%);
+  --marca-texto: hsl(203 82% 32%);
+  --ok-texto: hsl(152 62% 26%);
+  --warn-texto: hsl(32 88% 30%);
+  --no-texto: hsl(355 70% 40%);
+  --excel: hsl(147 59% 27%);
 
-  --bg: hsl(212 32% 6%);
-  --bg-soft: hsl(212 28% 8%);
-  --surface: hsl(212 24% 11%);
-  --surface-2: hsl(212 22% 14%);
-  --border: hsl(212 18% 22%);
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(40 12% 97.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(40 10% 96.5%);
+  --border: hsl(220 10% 88%);
 
-  --text: hsl(210 30% 96%);
-  --muted: hsl(212 14% 71%);
+  --text: hsl(220 16% 12%);
+  --muted: hsl(220 8% 40%);
 
-  /* painéis de produto embutidos (chat, terminal) */
-  --app-panel: hsl(212 34% 8%);
-  --app-panel-2: hsl(212 26% 12%);
-  --app-line: hsl(212 18% 22%);
-  --app-muted: hsl(212 14% 70%);
+  /* painéis de produto embutidos (chat, terminal): ficam escuros de propósito */
+  --app-panel: hsl(220 22% 9%);
+  --app-panel-2: hsl(220 18% 13%);
+  --app-line: hsl(220 14% 22%);
+  --app-muted: hsl(220 10% 70%);
 
-  --success-hsl: 150 62% 46%; --success: hsl(var(--success-hsl));
-  --danger-hsl: 356 80% 64%;  --danger: hsl(var(--danger-hsl));
-  --warning-hsl: 38 92% 56%;  --warning: hsl(var(--warning-hsl));
+  --success-hsl: 152 60% 36%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 48%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 48%;  --warning: hsl(var(--warning-hsl));
 
-  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
+  --grad-hero: none;
   /* o símbolo da EngeGlobal: marinho, ciano, verde */
-  --grad-text: linear-gradient(105deg, hsl(var(--brand2-hsl)), hsl(var(--brand-hsl)) 48%, hsl(var(--accent-hsl)));
-  --grad-cta: linear-gradient(160deg, hsl(212 32% 8%), hsl(var(--brand2-hsl) / 0.40) 58%, hsl(var(--brand-hsl) / 0.30));
+  --grad-text: linear-gradient(105deg, hsl(218 66% 36%), hsl(199 86% 40%) 50%, hsl(100 48% 38%));
+  --grad-cta: linear-gradient(180deg, hsl(40 12% 97.5%), hsl(40 10% 95%));
   --grad-faixa: linear-gradient(90deg, hsl(var(--brand2-hsl)), hsl(var(--brand-hsl)), hsl(var(--accent-hsl)));
 
-  --shadow-sm: 0 1px 3px hsl(214 60% 2% / 0.5);
-  --shadow-md: 0 10px 32px hsl(214 60% 2% / 0.55);
-  --shadow-lg: 0 24px 64px hsl(214 60% 2% / 0.65);
-  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.32);
+  --shadow-sm: 0 1px 2px hsl(220 20% 20% / 0.06);
+  --shadow-md: 0 8px 24px hsl(220 20% 20% / 0.07);
+  --shadow-lg: 0 18px 48px hsl(220 20% 20% / 0.10);
+  --shadow-glow: none;
 
   --radius: 14px;
-  --radius-lg: 22px;
+  --radius-lg: 20px;
 
   --font-display: 'Sora', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --container: 1140px;
-  --section-pad: clamp(72px, 10vw, 124px);
+  --section-pad: clamp(64px, 9vw, 112px);
 }
 /* WhatsApp (mockup): cores canónicas do canal */
 :root {
   --wa-green: hsl(165 49% 32%);
   --wa-green-strong: hsl(145 63% 42%);
-  --wa-bg: hsl(38 22% 89%);
+  --wa-bg: hsl(38 22% 92%);
   --wa-out: hsl(100 55% 88%);
   --wa-in: hsl(0 0% 100%);
   --wa-text: hsl(200 15% 15%);

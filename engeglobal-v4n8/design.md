@@ -8,7 +8,7 @@
 
 ## Registo
 - **Espectáculo** (marketing): acto de abertura em 4 tempos, revelações em lote, contadores, chat+raciocínio com 4 cenários, fluxo e terminal
-- **Tema escuro:** o logótipo da EngeGlobal existe em versão branca sobre transparente, pensada para fundo escuro, e é o padrão da casa
+- **Tema claro (v2):** pedido explícito do Manuel a 05/10 ("esta cor está muito azul, prefiro branco"). Fundo branco e neutro, botões a carvão, logótipo a cores; as três cores do símbolo só como pormenor. atmosfera--claro
 
 ## Direção
 - **Estilo base:** deck-dark, arquitetura da hydra-portugal-bt07
@@ -53,3 +53,4 @@ O assistente a recusar mostrar a margem da obra de Leiria a um perfil de colabor
 - v1: ver abaixo
 - v1 (crítica dos screenshots): tabs da demo coladas ao texto (margem), cabeçalho "Mensalidade a partir daqui" cortado (encurtado), primeira coluna da matriz apertada (min-width), rótulos da tabela de fases em telemóvel, "Input" trocado por "Pergunta", cadeias com ponto médio retiradas
 - Verificação: qa.mjs sem erros (avisos de caixa alta vêm dos componentes partilhados) | motion.mjs --acto visto, contadores confirmados a 36 e 80% em tempo real | comparar.mjs contra hydra-portugal-bt07: mesmo nível de movimento (glows, chat, terminal, fluxo), peso equivalente
+- v2 (05/10, pedido do Manuel): tema claro e neutro; prazo de 6 a 8 meses para 3 a 4 meses (semanas 1-2, 3-7, 7-11, 11-12, 13-16); secção nova "Ler um projeto" com elementos da concroc-m7k4 do Diogo: ficha de caderno de encargos (ilustrativa, com cláusula de origem), precisão num projeto real anonimizado (21 de 25 vigas iguais ao Excel, 4 a confirmar, 9 divisões a menos de 0,2 m²), imagens do pórtico e das divisões, veredicto provado/prova de conceito/fica com as pessoas, critérios de aceitação propostos, e o "Experimente agora" ao vivo (leitores.js, perimetros.js, experimente.js copiados e anonimizados: sem nomes da Concroc nem do Ricardo, ficheiros de download "Demo_"). Testado com EST.5_Pecas desenhadas.dwfx (1,2 s, 21 preenchidos, 4 a confirmar) e 001_25-ARQ-desenhos.dxf (15 divisões, Excel gerado). Limite da medição passou de "fase seguinte" a "prova de conceito"
