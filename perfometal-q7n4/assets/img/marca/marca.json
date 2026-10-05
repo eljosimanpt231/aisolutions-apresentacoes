@@ -1,0 +1,290 @@
+{
+  "site": "https://www.perfometal.pt/",
+  "dominio": "perfometal.pt",
+  "titulo": "Perfometal | Perfometal",
+  "descricao": "Com mais de 50 anos de experiência, somos o parceiro ideal em chapa perfurada, assegurando qualidade, precisão e cumprimento de prazos em todos os projetos.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://www.perfometal.pt/site/imagens/logo_1.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 423,
+      "altura": 142,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 57
+        },
+        {
+          "rgb": [
+            160,
+            160,
+            160
+          ],
+          "parte": 30
+        },
+        {
+          "rgb": [
+            192,
+            192,
+            192
+          ],
+          "parte": 8
+        },
+        {
+          "rgb": [
+            224,
+            224,
+            224
+          ],
+          "parte": 2
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://www.perfometal.pt/site/uploads/paginas/imagens/gonvarri_20250505102607_0_1.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 691,
+        "altura": 275,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.perfometal.pt/site/uploads/paginas/imagens/joao-seixas-e-filhos_20250505102655_0_1.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 823,
+        "altura": 649,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.perfometal.pt/site/uploads/paginas/imagens/logo-reca_20250505102714_0_1.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 748,
+        "altura": 522,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.perfometal.pt/site/uploads/paginas/imagens/metalofarense-logo-cor_20250505102744_0_1.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 744,
+        "altura": 320,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.perfometal.pt/site/uploads/paginas/imagens/portugal-alves_20250505102809_0_1.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 757,
+        "altura": 612,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.perfometal.pt/site/uploads/paginas/imagens/aaff_new_logo_mc_alta_color_cmyk_20250505102527_0_1.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 846,
+        "altura": 663,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.png",
+    "src": "https://www.perfometal.pt/site/uploads/banners/imagens/12345170420260900055655_20260417091231_0_1.png"
+  },
+  "paleta": [
+    {
+      "hex": "#226ce5",
+      "hsl": "217 79% 52%",
+      "peso": 445016,
+      "onde": [
+        "botões",
+        "variáveis do tema"
+      ]
+    },
+    {
+      "hex": "#f9bc23",
+      "hsl": "43 95% 56%",
+      "peso": 34225,
+      "onde": [
+        "botões"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "217 79% 52%",
+    "--accent-hsl": "43 95% 56%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 0%",
+  "variaveisDoTema": [
+    [
+      "--color-primary",
+      "#226CE5"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Host Grotesk",
+    "corpo": "Host Grotesk",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [],
+    "titulos": [
+      "Produtos",
+      "A nossa nova Loja Online já Abriu!!",
+      "Soluções de perfuração Metálica",
+      "A nossa nova Loja Online já Abriu!!",
+      "Soluções de perfuração Metálica",
+      "A nossa nova Loja Online já Abriu!!",
+      "Soluções de perfuração Metálica",
+      "Chapa Perfurada",
+      "Metal Distendido",
+      "Gradil",
+      "Pisos e Degraus",
+      "Malha Electrosoldada",
+      "Chapa Lisa / Lagrimada",
+      "Necessita de ajuda?",
+      "Contactos",
+      "Morada",
+      "TEMOS PARA SI",
+      "Legal"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura.",
+    "O site da lead é escuro: um deck escuro fica natural."
+  ]
+}

@@ -1,0 +1,61 @@
+/* Estilo corporativo-azul (igual ao default do starter).
+   Ao aplicar: trocar --brand-hsl/--accent-hsl pela cor da lead se fizer sentido. */
+:root {
+  /* acento como texto: em fundo claro desce de luminosidade para passar AA */
+  --acento-texto: hsl(217 80% 40%);
+  --ok-texto: hsl(152 62% 30%);
+  --brand-hsl: 217 79% 34%;
+  --accent-hsl: 217 79% 52%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(214 50% 96%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(214 45% 98%);
+  --border: hsl(215 28% 89%);
+
+  --text: hsl(218 35% 13%);
+  --muted: hsl(218 14% 44%);
+
+  --success-hsl: 152 60% 38%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 50%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 43 95% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(var(--brand-hsl) / 0.98), hsl(var(--brand-hsl)) 60%, hsl(var(--accent-hsl) / 0.85));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.08);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.10);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Host Grotesk', 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Host Grotesk', 'Inter', system-ui, sans-serif;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
+
+/* Perfometal: segunda voz da marca (amarelo #f9bc23) e tinta navy do site */
+:root{
+  --ouro-hsl: 43 95% 56%;
+  --ouro: hsl(var(--ouro-hsl));
+  --ouro-texto: hsl(38 80% 34%);
+  --tinta: hsl(222 47% 11%);
+  --brand2-hsl: 217 79% 24%;
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand2-hsl)));
+}
+
+/* Chat (herdado do padrão da casa) */
+:root{
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 92%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+  --road-line: repeating-linear-gradient(90deg, hsl(var(--brand-hsl)/0.25) 0 8px, transparent 8px 16px);
+}

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Perfometal | Orçamentação automática por email</title>
+  <meta name="description" content="Dos 10 pedidos reais que nos enviaram, 7 fecham sem ninguém tocar. Proposta AI Solutions para a Perfometal.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Perfometal × AI Solutions">
+  <meta property="og:description" content="Pegámos nos 10 pedidos reais que nos enviaram. Sete fecham sozinhos, três ficam para uma pessoa. Aqui está como.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/perfometal-q7n4/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/light.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="../shared/motion/grafico.css">
+  <link rel="stylesheet" href="assets/css/perfometal.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topnav">
+  <div class="inner">
+    <span class="nav-brand"><img src="assets/img/marca/logo-recorte.png" alt="Perfometal" class="nav-logo"></span>
+    <nav id="nav">
+      <a href="#pedidos">Os vossos 10 pedidos</a>
+      <a href="#demo">O agente ao vivo</a>
+      <a href="#codigo">A lógica do código</a>
+      <a href="#fluxo">Como se liga</a>
+      <a href="#limites">O que fica para si</a>
+      <a href="#investimento">Investimento</a>
+    </nav>
+    <a href="#avancar" class="nav-cta btn btn-primary" style="padding:9px 18px; font-size:0.86rem">Avançar</a>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <span class="kicker" data-acto="1" data-entra="sobe">Perfometal × AI Solutions</span>
+    <h1 data-linhas>Enviaram-nos 10 pedidos reais.<br><span class="g-brilho">Sete fecham sem ninguém tocar.</span></h1>
+    <p class="lead" data-acto="2" data-entra="sobe" style="margin-top:18px">
+      Não é uma estimativa. Pegámos nos pedidos que o Carlos reencaminhou da caixa comercial,
+      cruzámos cada um com a folha de orçamentação v6.40 e verificámos quais fecham só com
+      códigos de tabela. São sete. Os outros três têm razão para passar por uma pessoa, e
+      mais à frente explicamos qual.
+    </p>
+    <div class="grid-3" data-acto="3" data-entra="sobe" style="margin-top:38px">
+      <div class="card stat-card reveal">
+        <div class="num"><span data-conta="150" data-sufixo="">150</span></div>
+        <div class="desc">Pedidos por dia na caixa comercial, 90% do negócio a entrar por email</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num">2.249</div>
+        <div class="desc">Referências de tabela na folha de orçamentação, com prazo e stock já na ficha</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num">7 em 10</div>
+        <div class="desc">Dos vossos pedidos reais resolvem-se com códigos que já existem na tabela</div>
+      </div>
+    </div>
+    <div style="margin-top:44px">
+      <a href="#demo" class="btn btn-primary premivel" data-iman="0.25">Ver o agente a responder</a>
+      <a href="#pedidos" class="btn btn-ghost">Ver a análise dos 10</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. RESUMO 30 SEGUNDOS ============ -->
+<section class="section-alt" id="resumo">
+  <div class="container">
+    <p class="sobretitulo">Em 30 segundos</p>
+    <div class="resumo30 reveal">
+      <p>
+        Hoje, cada pedido obriga ao mesmo percurso: ler o email, perceber o que é, preencher o Excel,
+        gravar com a vossa numeração, gerar o PDF e responder com o template. O
+        <b>Roberson</b> faz isto a tempo inteiro, o <b>David</b> cerca de metade do dia dele.
+      </p>
+      <p>
+        Propomos um agente que trata da parte repetitiva: lê a caixa comercial, identifica os pedidos
+        de orçamento, procura a referência na vossa tabela, aplica o desconto da tipologia do cliente,
+        gera o orçamento no vosso formato e responde. O que fugir ao padrão não é respondido:
+        é encaminhado para uma pessoa, com o motivo.
+      </p>
+      <p class="resumo30__meta">
+        <b>4.100 €</b> de implementação, <b>300 €</b> por mês. Primeira entrega a trabalhar em 4 a 6 semanas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. OS 10 PEDIDOS (o diferenciador) ============ -->
+<section id="pedidos">
+  <div class="container">
+    <span class="eyebrow">A análise</span>
+    <h2>Os vossos 10 pedidos, um a um</h2>
+    <p class="lead">
+      Estes são os pedidos que chegaram à caixa comercial entre 10 e 21 de setembro, com os
+      orçamentos que saíram em resposta. A classificação é nossa, feita por cruzamento com a
+      folha: verde quando o código existe em tabela, âmbar quando existe mas foi preciso assumir
+      alguma coisa que o cliente não disse, vermelho quando sai do catálogo.
+    </p>
+
+    <div class="tabela-pedidos reveal">
+      <table>
+        <thead>
+          <tr><th>Orçamento</th><th>O que o cliente pediu</th><th>O que decide o caso</th><th>Quem responde</th></tr>
+        </thead>
+        <tbody>
+          <tr data-linha>
+            <td class="rd">RD262049</td>
+            <td>4 chapas ferro 2500&times;1250, 2 mm <b>ou</b> 3 mm, R10 T15</td>
+            <td>Tudo especificado. Duas linhas, uma em alternativa.</td>
+            <td><span class="pill pill--ok">Agente</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD262007</td>
+            <td>2 chapas ferro 2000&times;1000&times;4 mm, furos &Oslash;5</td>
+            <td>Deu o diâmetro, não deu o passo. Assume-se o que está em entrega imediata.</td>
+            <td><span class="pill pill--ok">Agente</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD262015</td>
+            <td>1 chapa inox 304 2000&times;1000&times;4 mm, furo 5 mm</td>
+            <td>Mesma regra de assunção do passo. Material diferente, lógica igual.</td>
+            <td><span class="pill pill--ok">Agente</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD261974</td>
+            <td>2 chapas alumínio 3000&times;1000&times;1,5 mm, anodizado</td>
+            <td>O formato pedido não existe em tabela. Propõe-se o 3000&times;1500.</td>
+            <td><span class="pill pill--av">Agente, com nota</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD262028</td>
+            <td>6 degraus galvanizados 800&times;240, malha M30&times;30</td>
+            <td>A malha de catálogo é M34&times;38. Aproximação com aviso.</td>
+            <td><span class="pill pill--av">Agente, com nota</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD261955</td>
+            <td>2 chapas ferro 3,00&times;2,00 m, furo 20 mm, com transporte para Pombal</td>
+            <td>Medida fora de tabela e pedido de transporte. Duas assunções.</td>
+            <td><span class="pill pill--av">Agente, com nota</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD262004</td>
+            <td>Pedido vinha num ficheiro anexo, corpo do email vazio</td>
+            <td>Exige ler o anexo, não só o texto. É configurável.</td>
+            <td><span class="pill pill--av">Agente, se ler anexos</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD261965</td>
+            <td>Gradil PRFV 1500&times;800 e 1000&times;800, fixadores inox 316</td>
+            <td>Não se produz à medida e os grampos só existem em galvanizado. É uma decisão comercial.</td>
+            <td><span class="pill pill--no">Pessoa</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD261956</td>
+            <td>10 painéis inox 2000&times;1000 e 10 de 2500&times;1250</td>
+            <td>Um dos painéis saiu como "Especial": fora de tabela.</td>
+            <td><span class="pill pill--no">Pessoa</span></td>
+          </tr>
+          <tr data-linha>
+            <td class="rd">RD261981</td>
+            <td>Gradil com a barra alterada para 40&times;40 ou 40&times;30, 6 unidades</td>
+            <td>Alteração de especificação. Saiu como "Especial".</td>
+            <td><span class="pill pill--no">Pessoa</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-3" style="margin-top:34px">
+      <div class="card stat-card reveal"><div class="num num--ok">3</div><div class="desc">Respondem com o código direto de tabela</div></div>
+      <div class="card stat-card reveal"><div class="num num--av">4</div><div class="desc">Respondem com uma regra de assunção vossa, declarada no orçamento</div></div>
+      <div class="card stat-card reveal"><div class="num num--no">3</div><div class="desc">Ficam para uma pessoa, e devem mesmo ficar</div></div>
+    </div>
+
+    <p class="nota-fonte">
+      Fonte: 10 emails reencaminhados de comercial@perfometal.pt a 5 de outubro, mais o ficheiro
+      <code>PERFOMETAL_Orc v6.40.xlsm</code>. Nenhum número desta página foi estimado por nós.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 4. MOMENTO UAU ============ -->
+<section class="section-alt" id="demo">
+  <div class="container">
+    <span class="eyebrow">O agente ao vivo</span>
+    <h2>O mesmo pedido, respondido em segundos</h2>
+    <p class="lead">
+      À esquerda, a conversa como ela chega. À direita, o que o agente está a pensar em cada passo.
+      Os quatro cenários são pedidos vossos, reais. O último mostra o agente a recusar responder,
+      que é tão importante como os outros três.
+    </p>
+
+    <div class="cr" id="perfoDemo"></div>
+    <script type="application/json" id="perfoDemo-config">
+    {
+      "agentName": "Agente Perfometal",
+      "agentInitials": "PM",
+      "chatStatus": "caixa comercial@perfometal.pt",
+      "stepMs": 1500,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "Pedido completo",
+          "subtitle": "Tudo especificado. O caso mais simples, e o mais comum.",
+          "chat": [
+            { "sender": "system", "text": "Novo email na caixa comercial, 09:45", "time": "09:45" },
+            { "sender": "client", "text": "Bom dia, vimos pedir preço e prazo de entrega para o seguinte material: 4 chapas em aço carbono S235JR perfurado R10 T15 com 2500x1250x2mm. OU 4 chapas com 2500x1250x3mm.", "time": "09:45" },
+            { "sender": "agent", "text": "Identifiquei duas referências de tabela: **CPRF.B2R10T15** e **CPRF.B3R10T15**. A primeira está em entrega imediata, a segunda a uma semana.", "time": "09:46" },
+            { "sender": "agent", "text": "Orçamento **RD262049** gerado com as duas opções, a segunda como alternativa. Desconto de 15% aplicado pela tipologia do cliente. Rascunho pronto na caixa para validação.", "time": "09:46" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Lê o email e classifica como pedido de orçamento" },
+            { "icon": "search", "label": "Extrai material, formato, espessura e furação do texto" },
+            { "icon": "database", "label": "Procura na folha: 2500x1250 = formato B, ferro = CPRF" },
+            { "icon": "id", "label": "Identifica o cliente e a tipologia de desconto" },
+            { "icon": "check", "label": "Gera o PDF no vosso modelo e prepara a resposta" }
+          ]
+        },
+        {
+          "title": "Falta informação",
+          "subtitle": "O cliente deu o diâmetro mas não o passo. A regra da casa resolve.",
+          "chat": [
+            { "sender": "system", "text": "Novo email na caixa comercial, 14:29", "time": "14:29" },
+            { "sender": "client", "text": "Bom dia, venho solicitar cotação e prazo de entrega: 1x chapa inox 304 perfurada 2000 x 1000 x 4mm. Diâmetro furo = 5mm", "time": "14:29" },
+            { "sender": "agent", "text": "O pedido não indica o passo entre furos. Pela vossa regra, proponho o que está em entrega imediata: **R5 T8**.", "time": "14:30" },
+            { "sender": "agent", "text": "Referência **CPRI.C4R5T8**. Orçamento gerado com a furação assumida indicada em nota, para o cliente poder corrigir se não for o que quer.", "time": "14:30" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Lê o pedido e extrai o que está especificado" },
+            { "icon": "alert", "label": "Deteta que falta o passo entre furos" },
+            { "icon": "brain", "label": "Aplica a regra: na dúvida, o que está em entrega imediata" },
+            { "icon": "database", "label": "Confirma stock e prazo na ficha da referência" },
+            { "icon": "check", "label": "Declara a assunção no orçamento, não a esconde" }
+          ]
+        },
+        {
+          "title": "Cliente conhecido",
+          "subtitle": "A tipologia do cliente decide o desconto, sem ninguém ir ver.",
+          "chat": [
+            { "sender": "system", "text": "Novo email na caixa comercial, 11:12", "time": "11:12" },
+            { "sender": "client", "text": "Exmos. Srs. Agradecemos o envio do V/melhor preço e prazo de entrega para: 2 chapa perfurada ferro 2000 x 1000 x 4 mm (furos Ø5). Aguardamos resposta urgente", "time": "11:12" },
+            { "sender": "agent", "text": "Cliente reconhecido pelo domínio do email. Está classificado como **Geral**, logo a tabela de desconto é a desse escalão.", "time": "11:13" },
+            { "sender": "agent", "text": "**CPRF.C4R5T8**, entrega imediata, 3 em stock. Orçamento gerado e marcado como urgente na vossa caixa.", "time": "11:13" }
+          ],
+          "steps": [
+            { "icon": "id", "label": "Procura o remetente na base de clientes" },
+            { "icon": "filter", "label": "Lê a tipologia: Sem Desconto, Balcão, Geral, Especial ou Revenda" },
+            { "icon": "database", "label": "Vai à tabela de descontos desse escalão e desse produto" },
+            { "icon": "clock", "label": "Nota a urgência pedida e sinaliza na caixa" },
+            { "icon": "check", "label": "Orçamento pronto com o preço líquido certo" }
+          ]
+        },
+        {
+          "title": "O agente recusa",
+          "subtitle": "Sai do catálogo. Não responde, encaminha. É assim que tem de ser.",
+          "chat": [
+            { "sender": "system", "text": "Novo email na caixa comercial, 16:04", "time": "16:04" },
+            { "sender": "client", "text": "Bom dia, no seguimento de conversa telefónica, vimos solicitar cotação para gradil. Dispomos de gradil galvanizado 44x44 barra/barra 40x3. No entanto, queremos que passe a ser barra 40x40 ou 40x30. Necessitamos de 6 unidades.", "time": "16:04" },
+            { "sender": "agent", "text": "Isto é uma alteração de especificação: a barra pedida não corresponde a nenhuma referência de tabela.", "time": "16:05" },
+            { "sender": "system", "text": "Encaminhado para o Carlos com o motivo. Nenhuma resposta foi enviada ao cliente.", "time": "16:05" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Lê o pedido e extrai a especificação" },
+            { "icon": "search", "label": "Procura a referência na folha de orçamentação" },
+            { "icon": "ban", "label": "Não encontra: é material fora de tabela" },
+            { "icon": "user-cog", "label": "Encaminha para uma pessoa com o motivo escrito" },
+            { "icon": "shield", "label": "Não inventa preço nem promete prazo" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <p class="nota-fonte">
+      Os quatro cenários são pedidos reais da vossa caixa. Os valores e prazos citados saem da
+      folha v6.40 que nos enviaram.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 5. A LÓGICA DO CÓDIGO ============ -->
+<section id="codigo">
+  <div class="container">
+    <p class="sobretitulo">Porque é que isto funciona</p>
+    <h2>O vosso código de artigo já é uma regra</h2>
+    <p class="lead">
+      A razão de sermos capazes de prometer isto é simples: a vossa nomenclatura não é arbitrária.
+      Cada código diz exatamente o que o produto é, e por isso pode ser construído a partir do
+      texto do pedido em vez de ser procurado à mão numa lista de 2.249 linhas.
+    </p>
+
+    <div class="codigo-anatomia reveal">
+      <div class="codigo-exemplo">
+        <span class="seg seg--1">CPRF</span><span class="ponto">.</span><span class="seg seg--2">B</span><span class="seg seg--3">2</span><span class="seg seg--4">R10T15</span>
+      </div>
+      <div class="codigo-legenda">
+        <div class="leg"><span class="chip chip--1"></span><b>CPRF</b> Chapa perfurada de furo redondo, em ferro. Inox seria CPRI, alumínio CPRA, galvanizado CPRG.</div>
+        <div class="leg"><span class="chip chip--2"></span><b>B</b> O formato. A = 3000&times;1500, B = 2500&times;1250, C = 2000&times;1000. Estes três cobrem 92% do catálogo.</div>
+        <div class="leg"><span class="chip chip--3"></span><b>2</b> A espessura em milímetros.</div>
+        <div class="leg"><span class="chip chip--4"></span><b>R10T15</b> Furo redondo de 10 mm, passo de 15 mm.</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:36px">
+      <div class="card reveal">
+        <h3>O catálogo, por família</h3>
+        <div class="barras">
+          <div class="barra"><span class="barra__nome">Furo redondo</span><span class="barra__bar" style="--p:100%"></span><span class="barra__val">1.347</span></div>
+          <div class="barra"><span class="barra__nome">Furo quadrado</span><span class="barra__bar" style="--p:33%"></span><span class="barra__val">443</span></div>
+          <div class="barra"><span class="barra__nome">Pisos estampados</span><span class="barra__bar" style="--p:8%"></span><span class="barra__val">106</span></div>
+          <div class="barra"><span class="barra__nome">Decorativa</span><span class="barra__bar" style="--p:6%"></span><span class="barra__val">76</span></div>
+          <div class="barra"><span class="barra__nome">Outras 15 famílias</span><span class="barra__bar" style="--p:21%"></span><span class="barra__val">277</span></div>
+        </div>
+        <p class="card__nota">Uma família sozinha é 60% do catálogo. É aí que o agente acerta primeiro.</p>
+      </div>
+      <div class="card reveal">
+        <h3>O que já está na ficha</h3>
+        <ul class="list-check">
+          <li><b>Prazo de entrega</b> por referência: 369 em imediato, 297 a uma semana, 1.583 a 3 ou 4 semanas</li>
+          <li><b>Stock</b> atual: 373 referências com existências</li>
+          <li><b>Peso unitário</b>, que o orçamento usa para calcular o transporte</li>
+          <li><b>Tabela de descontos</b> pelos cinco escalões: Sem Desconto, Balcão, Geral, Especial e Revenda</li>
+        </ul>
+        <p class="card__nota">Nada disto precisa de ser construído. Já existe no ficheiro que nos enviaram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. FLUXO ============ -->
+<section class="section-alt" id="fluxo">
+  <div class="container">
+    <p class="sobretitulo">Como se liga ao que já têm</p>
+    <h2>Do email ao PDF, sem mudar o vosso processo</h2>
+    <p class="lead">
+      O agente entra à volta do que já existe. A folha continua a ser a fonte de preços, o PDF sai
+      no vosso modelo, a numeração segue a vossa regra. Ninguém muda de ferramenta.
+    </p>
+
+    <div class="fluxo" id="perfoFluxo"></div>
+    <script type="application/json" id="perfoFluxo-config">
+    {
+      "stepMs": 1900,
+      "channels": [
+        { "icon": "message", "label": "comercial@perfometal.pt" },
+        { "icon": "globe", "label": "Formulário do site" },
+        { "icon": "whatsapp", "label": "WhatsApp (opcional)" }
+      ],
+      "nodes": [
+        { "icon": "message", "title": "Pedido recebido", "detail": "Lê o email e separa o que é pedido de orçamento do resto.", "tone": "brand" },
+        { "icon": "search", "title": "Lê a especificação", "detail": "Material, formato, espessura, furação, quantidade.", "tone": "teal" },
+        { "icon": "database", "title": "Procura na folha", "detail": "Referência, preço de tabela, stock e prazo.", "tone": "teal" },
+        { "icon": "id", "title": "Aplica o desconto", "detail": "Pela tipologia do cliente, como a tabela manda.", "tone": "teal" },
+        { "icon": "check", "title": "Gera e responde", "detail": "PDF no vosso modelo, numeração vossa, rascunho para validar.", "tone": "brand" }
+      ],
+      "note": "O registo no ArtSoft entra no fim, não é condição para arrancar."
+    }
+    </script>
+
+    <div class="card card-artsoft reveal" style="margin-top:32px">
+      <h3>Sobre o ArtSoft, com franqueza</h3>
+      <p>
+        Ficou pendente a confirmação da API com a vossa equipa técnica. Entretanto encontrámos
+        uma coisa no ficheiro que nos enviaram: a folha <code>Artsoft</code>, com 2.269 linhas,
+        datada de 1 de outubro, já traz código de artigo, designação, stock, preço público,
+        encomendas e peso.
+      </p>
+      <p>
+        Ou seja, <b>já existe uma ponte entre o ArtSoft e o Excel</b>, ainda que atualizada à mão.
+        Isso significa que a resposta da equipa técnica deixa de ser um risco para o projeto:
+        se houver API, ligamo-nos; se não houver, trabalhamos sobre esta exportação como ela já
+        é feita hoje. <b>A orçamentação não depende disso para funcionar.</b>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. LIMITES ============ -->
+<section id="limites">
+  <div class="container">
+    <p class="sobretitulo">Honestidade</p>
+    <h2>O que o agente não vai fazer</h2>
+    <p class="lead">
+      Três dos vossos dez pedidos ficam para uma pessoa, e isso não é uma falha do sistema: é o
+      desenho certo. Preferimos dizer isto agora do que prometer 100% e entregar enganos.
+    </p>
+    <div class="grid-2">
+      <div class="card card-dont reveal">
+        <h3>Fica sempre para uma pessoa</h3>
+        <ul class="list-x">
+          <li>Material fora de tabela, o que sai como "Especial" nos vossos orçamentos</li>
+          <li>Alterações de especificação, como a barra do gradil da Metalização Triunfo</li>
+          <li>Propor alternativa quando não se produz o que foi pedido, como no caso do PRFV</li>
+          <li>Pedidos de volume elevado, acima do limite que definirem convosco</li>
+          <li>Negociação, que o Carlos separou logo na primeira conversa</li>
+        </ul>
+      </div>
+      <div class="card card-do reveal">
+        <h3>Como o agente se comporta</h3>
+        <ul class="list-check">
+          <li>Nunca inventa preço nem prazo: se não está na folha, não responde</li>
+          <li>Declara no orçamento qualquer coisa que tenha assumido</li>
+          <li>Encaminha com o motivo escrito, para quem recebe saber porquê</li>
+          <li>Os primeiros meses são de validação: os rascunhos passam por si antes de saírem</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. A CONTA DE VALOR ============ -->
+<section class="section-alt" id="valor">
+  <div class="container">
+    <p class="sobretitulo">A conta, antes do preço</p>
+    <h2>O que isto vale, com os vossos números</h2>
+    <div class="valor-conta reveal">
+      <p>
+        O Carlos disse-nos que o objetivo era poupar <b>metade do tempo que o Roberson dedica à
+        orçamentação</b>, e que os pedidos que passam por si e pelo David são de outro tipo,
+        já fora deste âmbito. É essa a medida pela qual queremos ser avaliados.
+      </p>
+      <p>
+        A amostra que nos enviaram diz que 7 em cada 10 pedidos são automatizáveis. Se a realidade
+        ficar abaixo disso, ajustamos sem custo até lá chegar: é para isso que servem os ciclos
+        de feedback do primeiro semestre.
+      </p>
+      <p class="valor-conta__fecho">
+        Há ainda a parte que não se mede em horas: responder em minutos em vez de horas, quando
+        metade dos pedidos vem de clientes novos que estão a pedir preço a mais do que um
+        fornecedor ao mesmo tempo.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. CASO DO SETOR ============ -->
+<section id="casos">
+  <div class="container">
+    <p class="sobretitulo">Um caso do mesmo tipo</p>
+    <h2>CF Group: o mesmo problema, noutro produto</h2>
+    <div class="caso reveal">
+      <p>
+        Fabrica e distribui coberturas de piscina, também 100% B2B. O paralelo é grande: o cliente
+        pede, o produto define-se por um punhado de medidas e opções, a maioria dos pedidos resolve-se
+        com a tabela de preços e a minoria complexa é que precisa mesmo de uma pessoa.
+      </p>
+      <p>
+        Construímos o motor de orçamentação sobre as tabelas de preços deles, que geram o PDF com a
+        identidade da casa e encaminham para humano os casos que fogem ao padrão. A CF Group também
+        tem ERP, e <b>deixámos o ERP de fora na primeira fase, de propósito</b>. A ligação ficou para
+        a fase seguinte.
+      </p>
+      <p class="caso__estado">
+        Estado atual: sistema construído e validado ponta a ponta, em validação final com o cliente
+        antes do arranque.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. INVESTIMENTO ============ -->
+<section class="section-alt" id="investimento">
+  <div class="container">
+    <span class="eyebrow">Investimento</span>
+    <h2>Valores</h2>
+    <div class="grid-2">
+      <div class="card price-card reveal" data-holofote>
+        <div class="label">Implementação</div>
+        <div class="price">4.100 € <span class="iva">+ IVA</span></div>
+        <div class="note">Pagamento único. Análise da folha, construção do agente, regras de assunção
+          definidas convosco, geração do PDF no vosso modelo e testes com pedidos reais.</div>
+      </div>
+      <div class="card price-card reveal" data-holofote>
+        <div class="label">Mensalidade</div>
+        <div class="price">300 € <span class="iva">+ IVA</span></div>
+        <div class="note">Inteligência artificial, alojamento, ferramentas, manutenção e os ciclos de
+          feedback: indicam o que o agente devia ter feito de outra forma e nós ajustamos, em horário
+          laboral, das 9h às 19h.</div>
+      </div>
+    </div>
+    <div class="card card-reavaliacao reveal">
+      <p>
+        <b>Sobre a pergunta do Carlos na reunião</b>, a de porque é que se paga isto para sempre:
+        o peso da mensalidade nos primeiros meses são as horas da nossa equipa nos ajustes.
+        À medida que a automação sobe e essas horas descem, a mensalidade é reavaliada. Ao fim de
+        cerca de seis meses, valores na ordem dos 150 € a 200 € são um cenário realista.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. FECHO ============ -->
+<section class="cta-final" id="avancar">
+  <div class="container center">
+    <h2>Avançamos, Carlos?</h2>
+    <p class="lead" style="margin:14px auto 0">
+      Três passos até à primeira semana de trabalho. Nada arranca sem confirmação por escrito.
+    </p>
+    <ol class="passos-fecho">
+      <li><span class="n">1</span><b>Diz que sim</b><p>Por WhatsApp ou por email, com as dúvidas que ainda tenha.</p></li>
+      <li><span class="n">2</span><b>Recebe a proposta formal</b><p>O documento com o âmbito, os valores e as condições desta página, para assinar.</p></li>
+      <li><span class="n">3</span><b>Semana 1: acessos e regras</b><p>Acesso de leitura à caixa comercial, a folha v6.40 atualizada, e uma sessão curta convosco para fixar as regras de assunção.</p></li>
+    </ol>
+    <div class="fecho-acoes">
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%20Perfometal%20e%20quero%20avan%C3%A7ar." class="btn btn-primary premivel" data-iman="0.2" target="_blank" rel="noopener">Quero avançar</a>
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%20Perfometal%20e%20tenho%20uma%20pergunta%3A%20" class="btn btn-ghost" target="_blank" rel="noopener">Tenho uma pergunta</a>
+    </div>
+    <p class="fecho-contacto">
+      Manuel Condeço, AI Solutions<br>
+      <a href="tel:+351964251889">+351 964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a>
+    </p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Perfometal Perfuração Metálica, Lda
+    <span class="disclaimer">Os pedidos e orçamentos citados são material fornecido pela Perfometal a 5 de outubro de 2026.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script>
+  chatRaciocinio('perfoDemo');
+  fluxo('perfoFluxo');
+</script>
+</body>
+</html>
