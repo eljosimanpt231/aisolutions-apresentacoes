@@ -1,0 +1,54 @@
+/* RYROX × AI Solutions. Base corporativo-azul, paleta do Group RYROX.
+   Marca = azul do escudo (#0d5c91, medido no logótipo do site).
+   Acento = turquesa da RYROX AGRO (#00b5c9, faixa da unidade AGRO no site).
+   Fundo branco por pedido explícito do comercial. */
+:root {
+  --brand-hsl: 204 84% 31%;    /* #0d5c91, azul RYROX */
+  --accent-hsl: 186 100% 39%;  /* #00b5c9, turquesa AGRO */
+  --brand2-hsl: 204 70% 42%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(var(--brand-hsl));
+
+  /* turquesa puro sobre branco dá ~2,5:1 e chumba AA. Como TEXTO usa-se escurecido. */
+  --acento-texto: hsl(190 100% 25%);
+  --ok-texto: hsl(152 62% 27%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(204 45% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(204 40% 98%);
+  --border: hsl(204 26% 88%);
+
+  --text: hsl(206 45% 12%);
+  --muted: hsl(206 14% 38%);
+
+  /* painéis escuros embutidos (telemóvel, chat, terminal) */
+  --app-panel: hsl(206 62% 10%);
+  --app-panel-2: hsl(206 52% 14%);
+  --app-line: hsl(206 40% 24%);
+  --app-muted: hsl(204 22% 72%);
+
+  --success-hsl: 152 60% 34%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 46%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 92% 46%;  --warning: hsl(var(--warning-hsl));
+  --warn-texto: hsl(30 90% 30%);
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(204 70% 22%) 115%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(190 100% 30%));
+  --grad-cta: linear-gradient(160deg, hsl(206 62% 12%), hsl(var(--brand-hsl)) 70%, hsl(190 90% 30%));
+
+  --shadow-sm: 0 1px 3px hsl(var(--brand-hsl) / 0.10);
+  --shadow-md: 0 8px 28px hsl(var(--brand-hsl) / 0.12);
+  --shadow-lg: 0 20px 56px hsl(var(--brand-hsl) / 0.18);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-marca: 'Orbitron', 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
