@@ -1,0 +1,353 @@
+/* Hydra Portugal, peças próprias (arquitetura da RYROX, tema escuro). Tudo em tokens. */
+
+/* ---------- Barra de topo ---------- */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 10px clamp(14px, 3vw, 30px);
+  background: color-mix(in oklab, var(--bg) 86%, transparent);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.logo-marca { display: inline-flex; align-items: center; gap: 12px; }
+.logo-marca img { height: 30px; width: auto; display: block; }
+.logo-marca span {
+  font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted);
+  letter-spacing: 0.04em; white-space: nowrap; padding-left: 12px; border-left: 1px solid var(--border);
+}
+.topnav { display: flex; gap: 2px; }
+.topnav a {
+  font-size: 0.88rem; color: var(--muted); padding: 7px 11px; border-radius: 999px;
+  transition: color 160ms ease, background 160ms ease;
+}
+.topnav a:hover { color: var(--text); background: var(--surface-2); }
+.topbar .btn { padding: 9px 18px; font-size: 0.88rem; }
+@media (max-width: 1000px) { .topnav { display: none; } }
+@media (max-width: 460px) { .logo-marca span { display: none; } .logo-marca img { height: 24px; } }
+section[id] { scroll-margin-top: 70px; }
+
+
+/* ---------- Hero ---------- */
+.hero { padding-top: clamp(118px, 15vh, 160px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.8fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+.hero h1 { max-width: 16ch; }
+.hero h1 .g-brilho {
+  background: var(--grad-text); -webkit-background-clip: text; background-clip: text;
+  color: var(--brand); -webkit-text-fill-color: transparent;
+}
+.hero-foto {
+  position: relative; border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--border); box-shadow: var(--shadow-lg); aspect-ratio: 1 / 1;
+}
+.hero-foto img { width: 100%; height: 100%; object-fit: cover; }
+.hero-foto figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 40px 18px 14px; color: hsl(0 0% 100%);
+  background: linear-gradient(180deg, transparent, hsl(248 30% 6% / 0.9));
+  font-size: 0.84rem; line-height: 1.45;
+}
+.hero-foto figcaption b { display: block; font-family: var(--font-marca); letter-spacing: 0.04em; font-size: 0.95rem; }
+.meta-linha {
+  display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 30px;
+  font-size: 0.86rem; color: var(--muted);
+}
+.meta-linha b { color: var(--text); font-weight: 600; }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-foto { max-width: 420px; aspect-ratio: 4 / 3; }
+}
+
+/* ---------- Resumo de 30 segundos ---------- */
+.resumo30 {
+  border: 1px solid var(--border); border-left: 4px solid var(--accent);
+  border-radius: var(--radius); background: var(--surface-2);
+  padding: clamp(20px, 3vw, 30px);
+}
+.resumo30 dl { display: grid; gap: 16px 28px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 0; }
+.resumo30 dt {
+  font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.02em;
+  color: var(--acento-texto); margin-bottom: 5px;
+}
+.resumo30 dd { margin: 0; font-size: 0.98rem; color: var(--text); line-height: 1.5; }
+
+/* ---------- O que ouvimos ---------- */
+.dores { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.dor { border-top: 4px solid var(--brand); }
+.dor h3 { font-size: 1.04rem; }
+.dor p { margin-top: 8px; font-size: 0.92rem; color: var(--muted); line-height: 1.55; }
+.citacao {
+  margin: 34px auto 0; max-width: 780px; padding: 22px 26px;
+  border-left: 4px solid var(--accent); background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow-sm);
+}
+.citacao p { font-size: clamp(1.02rem, 1.7vw, 1.16rem); font-style: italic; color: var(--text); line-height: 1.55; }
+.citacao cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.84rem; color: var(--muted); }
+
+/* ---------- Integrações: o que a API dá e não dá ---------- */
+.api-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 30px; }
+.api h3 { font-size: 1.02rem; }
+.api .list-check, .api .list-x { gap: 8px; margin-top: 12px; }
+.api .list-check li, .api .list-x li { font-size: 0.88rem; line-height: 1.5; }
+.api .estado { font-family: var(--font-mono); font-size: 0.72rem; color: var(--acento-texto); display: block; margin-bottom: 6px; }
+
+/* ---------- Limites ---------- */
+.limites { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.limite { border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; background: var(--surface); }
+.limite h4 { font-size: 0.98rem; margin-bottom: 8px; }
+.limite p { font-size: 0.89rem; color: var(--muted); line-height: 1.55; }
+
+/* ---------- Fase seguinte ---------- */
+.fase2 { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.fase2 .card p { color: var(--muted); font-size: 0.9rem; margin-top: 8px; line-height: 1.55; }
+
+/* ---------- Prova ---------- */
+.caso { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(22px, 3vw, 32px); background: var(--surface); }
+.caso .estado {
+  display: inline-block; padding: 4px 11px; border-radius: 999px;
+  background: hsl(var(--success-hsl) / 0.13); color: var(--ok-texto);
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.02em;
+}
+.caso h3 { margin-top: 12px; font-size: 1.1rem; }
+.caso p { margin-top: 8px; color: var(--muted); font-size: 0.93rem; line-height: 1.6; }
+.caso .nums { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 16px; }
+.caso .nums div b { display: block; font-family: var(--font-mono); font-size: 1.3rem; color: var(--brand); }
+.caso .nums div small { font-size: 0.8rem; color: var(--muted); }
+.caso .nota { margin-top: 14px; font-size: 0.82rem; color: var(--muted); font-style: italic; }
+
+/* ---------- Conta de valor ---------- */
+.conta {
+  border: 1px solid var(--border); border-left: 4px solid var(--accent);
+  background: var(--surface-2); border-radius: var(--radius);
+  padding: clamp(22px, 3vw, 32px);
+}
+.conta .numeros { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); margin-bottom: 20px; }
+.conta .numeros .v { font-family: var(--font-mono); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--brand); }
+.conta .numeros small { display: block; margin-top: 4px; font-size: 0.83rem; color: var(--muted); line-height: 1.45; }
+.conta .frase { font-size: clamp(1.02rem, 1.7vw, 1.16rem); color: var(--text); line-height: 1.55; font-weight: 500; }
+
+/* ---------- Investimento ---------- */
+.price-card { border-top: 4px solid var(--brand); }
+.price-card .label { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.04em; color: var(--acento-texto); }
+.price-card .price { font-size: clamp(2rem, 4vw, 2.7rem); font-weight: 800; color: var(--brand); margin: 10px 0 8px; font-family: var(--font-display); }
+.price-card .price small { font-size: 0.42em; font-weight: 600; color: var(--muted); }
+.price-card .note { font-size: 0.9rem; color: var(--muted); line-height: 1.55; }
+.linhas-preco { list-style: none; margin: 14px 0 16px; border-top: 1px solid var(--border); }
+.linhas-preco li { display: flex; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.93rem; }
+.linhas-preco li span:last-child { font-family: var(--font-mono); font-weight: 600; color: var(--text); white-space: nowrap; }
+.price-nota {
+  margin-top: 18px; padding: 16px 18px; border: 1px dashed var(--border);
+  border-radius: var(--radius); background: var(--surface-2);
+  font-size: 0.9rem; color: var(--muted); line-height: 1.6;
+}
+.price-nota b { color: var(--text); }
+
+/* ---------- Cronograma (5 passos) ---------- */
+.timeline.t5 { grid-template-columns: repeat(5, 1fr); }
+.tl-step em { display: block; margin-top: 6px; font-style: normal; font-family: var(--font-mono); font-size: 0.72rem; color: var(--acento-texto); }
+@media (max-width: 900px) { .timeline.t5 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .timeline.t5 { grid-template-columns: 1fr; } }
+
+/* ---------- CTA ---------- */
+.cta-final .logo-cta { height: 34px; width: auto; margin: 0 auto 22px; opacity: 0.95; }
+.cta-final .passos-fecho li { border-top-color: hsl(0 0% 100% / 0.28); }
+
+/* ---------- Medida de leitura ---------- */
+p { max-width: 74ch; }
+.center p, .cta-final p { margin-left: auto; margin-right: auto; }
+.bpt__resposta, .bpt__pedido small, .limite p, .price-card .note, .caso .nota { max-width: 64ch; }
+.ais-footer a { display: inline-block; padding: 6px 2px; }
+
+@media (max-width: 640px) {
+  .hero h1 { max-width: none; font-size: clamp(1.95rem, 8.4vw, 2.6rem); }
+}
+
+/* links dentro do texto: o turquesa puro não passa AA sobre branco */
+.bpt__resposta a, .limite a, .lead a { color: var(--acento-texto); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+/* rótulos sem caixa alta: são muitos na mesma página e informam mais em caixa normal */
+.kicker { text-transform: none; letter-spacing: 0.01em; font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600; }
+.badge { text-transform: none; letter-spacing: 0.01em; font-family: var(--font-mono); font-weight: 600; }
+
+/* hero alinhado à esquerda dentro da grelha */
+.hero .hero-grid > div:first-child { text-align: left; }
+.hero .hero-grid .stat-card { text-align: left; }
+.hero .hero-grid .lead { margin-left: 0; }
+
+/* etiqueta de estado: a primeira vai em linha própria, as do meio do texto não alteram a entrelinha */
+.bpt__resposta > .tag:first-child { display: table; margin-bottom: 7px; }
+.bpt__resposta .tag { margin-bottom: 0; line-height: 1.5; vertical-align: 1px; }
+
+/* notas centradas por baixo dos componentes */
+p[style*="text-align:center"] { margin-left: auto; margin-right: auto; }
+.price-card .label { text-transform: none; }
+
+/* ============================================================
+   HYDRA: dois agentes, duas cores
+   Voz = lavanda (--brand). Texto = ciano-água (--accent).
+   Os componentes do deck usam --accent como "cor do agente": dentro da
+   secção do agente de voz, o acento passa a ser a lavanda.
+   ============================================================ */
+.tema-voz {
+  --accent-hsl: 253 62% 74%;
+  --accent: hsl(var(--accent-hsl));
+  --acento-texto: var(--voz-texto);
+}
+.tema-texto {
+  --accent-hsl: 190 64% 58%;
+  --accent: hsl(var(--accent-hsl));
+  --acento-texto: hsl(190 70% 66%);
+}
+
+/* logótipo na barra: branco sobre transparente, serve tal e qual */
+.logo-marca img { height: 26px; }
+.topnav a.voz:hover { color: var(--voz-texto); }
+.topnav a.texto:hover { color: var(--acento-texto); }
+
+/* hero: o produto deles numa moldura clara, como no site */
+.hero-foto { background: hsl(0 0% 97%); aspect-ratio: 720 / 584; }
+.hero-foto img { object-fit: cover; }
+.hero-foto figcaption b { font-family: var(--font-display); letter-spacing: 0; }
+.hero-chips { position: absolute; top: 14px; left: 14px; display: flex; flex-direction: column; gap: 8px; }
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px;
+  background: hsl(248 30% 8% / 0.86); color: var(--text); font-size: 0.78rem; font-weight: 600;
+  border: 1px solid hsl(0 0% 100% / 0.14); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.hero-chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 10px var(--brand); }
+.hero-chip.t i { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+
+/* pílulas de agente (em títulos e cartões) */
+.pilula {
+  display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.01em;
+}
+.pilula i { width: 7px; height: 7px; border-radius: 50%; }
+.pilula--voz { background: hsl(var(--brand-hsl) / 0.14); color: var(--voz-texto); border: 1px solid hsl(var(--brand-hsl) / 0.32); }
+.pilula--voz i { background: var(--brand); }
+.pilula--texto { background: hsl(190 64% 58% / 0.13); color: hsl(190 70% 66%); border: 1px solid hsl(190 64% 58% / 0.32); }
+.pilula--texto i { background: hsl(190 64% 58%); }
+
+/* ---------- Dois agentes, lado a lado ---------- */
+.agentes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.agente {
+  position: relative; border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: clamp(22px, 3vw, 32px); background: var(--surface); overflow: hidden;
+}
+.agente::before { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.agente--voz { border-top: 4px solid var(--brand); }
+.agente--voz::before { background: var(--grad-voz); opacity: 0.55; }
+.agente--texto { border-top: 4px solid hsl(190 64% 58%); }
+.agente--texto::before { background: var(--grad-texto); opacity: 0.55; }
+.agente > * { position: relative; }
+.agente h3 { margin-top: 14px; font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
+.agente .proposito { margin-top: 10px; font-size: 1.02rem; color: var(--text); line-height: 1.5; font-weight: 500; }
+.ficha { margin-top: 18px; display: grid; gap: 0; border-top: 1px solid var(--border); }
+.ficha div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--border); }
+.ficha dt { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); padding-top: 2px; }
+.ficha dd { margin: 0; font-size: 0.92rem; color: var(--text); line-height: 1.5; }
+.agente .list-check { margin-top: 16px; gap: 8px; }
+.agente .list-check li { font-size: 0.92rem; line-height: 1.45; }
+.agente .ir { display: inline-block; margin-top: 14px; padding: 8px 0; font-weight: 600; font-size: 0.92rem; }
+.agente--voz .ir { color: var(--voz-texto); }
+.agente--texto .ir { color: hsl(190 70% 66%); }
+.divisao {
+  margin: 24px auto 0; max-width: 760px; text-align: center; font-size: 0.95rem; color: var(--muted); line-height: 1.6;
+}
+.divisao b { color: var(--text); }
+@media (max-width: 860px) { .agentes { grid-template-columns: 1fr; } .ficha div { grid-template-columns: 96px minmax(0, 1fr); } }
+
+/* ---------- Cabeçalho de secção de cada agente ---------- */
+.cab-agente { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.sub-bloco { margin-top: 56px; }
+.sub-bloco > .center h3 { font-size: clamp(1.2rem, 2.2vw, 1.45rem); }
+.sub-bloco > .center p { margin-top: 8px; color: var(--muted); }
+
+/* triagem: as perguntas que o agente faz, numa árvore simples */
+.triagem { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
+.tri {
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; background: var(--surface);
+}
+.tri .q { font-family: var(--font-mono); font-size: 0.74rem; color: var(--acento-texto); }
+.tri h4 { margin-top: 6px; font-size: 1rem; }
+.tri ul { list-style: none; margin-top: 10px; display: grid; gap: 6px; }
+.tri li { font-size: 0.88rem; color: var(--muted); line-height: 1.45; padding-left: 14px; position: relative; }
+.tri li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+@media (max-width: 860px) { .triagem { grid-template-columns: 1fr; } }
+
+/* aviso ao comercial (notificação do agente de texto) */
+.aviso-tlm {
+  max-width: 420px; margin: 26px auto 0; border-radius: 18px; padding: 14px 16px;
+  background: hsl(248 26% 14% / 0.92); border: 1px solid hsl(0 0% 100% / 0.12);
+  box-shadow: var(--shadow-lg); text-align: left;
+}
+.aviso-tlm .topo { display: flex; align-items: center; gap: 8px; font-size: 0.74rem; color: var(--muted); }
+.aviso-tlm .topo .wa { width: 18px; height: 18px; border-radius: 5px; background: var(--wa-green-strong); display: grid; place-items: center; color: hsl(0 0% 100%); font-size: 0.66rem; font-weight: 800; }
+.aviso-tlm .topo span:last-child { margin-left: auto; }
+.aviso-tlm b { display: block; margin-top: 8px; font-size: 0.94rem; color: var(--text); }
+.aviso-tlm p { margin-top: 4px; font-size: 0.86rem; color: var(--muted); line-height: 1.5; }
+
+/* ---------- Calculadora de minutos ---------- */
+.calc-envolve { max-width: 920px; margin: 30px auto 0; }
+
+/* ---------- Investimento: um cartão por agente ---------- */
+.inv-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
+.inv { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(22px, 3vw, 30px); background: var(--surface); }
+.inv--voz { border-top: 4px solid var(--brand); }
+.inv--texto { border-top: 4px solid hsl(190 64% 58%); }
+.inv h3 { margin-top: 12px; font-size: 1.2rem; }
+.inv .linhas { list-style: none; margin-top: 16px; border-top: 1px solid var(--border); }
+.inv .linhas li { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--border); }
+.inv .linhas li span:first-child { font-size: 0.93rem; color: var(--text); }
+.inv .linhas li span:first-child small { display: block; margin-top: 3px; font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
+.inv .linhas .v { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.25rem, 2.4vw, 1.6rem); white-space: nowrap; }
+.inv--voz .linhas .v { color: var(--voz-texto); }
+.inv--texto .linhas .v { color: hsl(190 70% 66%); }
+.inv .linhas .v small { font-size: 0.55em; font-weight: 600; color: var(--muted); }
+.inv .inclui { margin-top: 14px; font-size: 0.88rem; color: var(--muted); line-height: 1.55; }
+.total {
+  margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0;
+  border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+  background: linear-gradient(110deg, hsl(var(--brand-hsl) / 0.12), hsl(190 64% 58% / 0.10));
+}
+.total div { padding: 18px 22px; }
+.total div + div { border-left: 1px solid var(--border); }
+.total small { display: block; font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); }
+.total b { display: block; margin-top: 4px; font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--text); }
+.total b span { font-size: 0.5em; font-weight: 600; color: var(--muted); }
+@media (max-width: 860px) { .inv-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .total { grid-template-columns: 1fr; } .total div + div { border-left: 0; border-top: 1px solid var(--border); } }
+
+/* ---------- Como trabalhamos (o que o Márcio perguntou) ---------- */
+.depois { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 30px; text-align: left; }
+.depois .card h3 { font-size: 1rem; }
+.depois .card p { margin-top: 8px; font-size: 0.9rem; color: var(--muted); line-height: 1.55; }
+@media (max-width: 860px) { .depois { grid-template-columns: 1fr; } }
+.timeline.t3 { grid-template-columns: repeat(3, 1fr); max-width: 900px; margin-left: auto; margin-right: auto; }
+@media (max-width: 760px) { .timeline.t3 { grid-template-columns: 1fr; } }
+
+/* ritmo de superfícies num deck escuro */
+.section-alt { background: hsl(248 26% 8% / 0.72); }
+.dor { border-top-color: var(--brand); }
+.dor.t { border-top-color: hsl(190 64% 58%); }
+.cta-final .logo-cta { height: 40px; }
+
+/* ---------- Correções v1 ---------- */
+/* o agente de texto também puxa a "marca" para ciano: separadores e nós do fluxo */
+.tema-texto { --brand-hsl: 190 64% 58%; --brand: hsl(var(--brand-hsl)); }
+/* a demonstração do agente de voz é uma chamada, não um WhatsApp */
+.tema-voz .cr-input { display: none; }
+.tema-voz .cr-row.client .cr-bubble { background: hsl(262 34% 28%); color: var(--text); }
+.tema-voz .cr-chat-head::after {
+  content: "● em chamada"; margin-left: auto; font-family: var(--font-mono); font-size: 0.72rem;
+  color: var(--ok-texto); letter-spacing: 0.02em;
+}
+.tema-voz .cr-chat-head { display: flex; align-items: center; }
+/* a foto do produto respira: rótulos pequenos à esquerda, legenda curta */
+.hero-chips { top: 12px; left: 12px; }
+.hero-chip { font-size: 0.72rem; padding: 6px 11px; }
+.hero-foto figcaption { padding: 28px 16px 12px; font-size: 0.8rem; }
+/* números da conta em display, sem o espaçamento da mono */
+.conta .numeros .v { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.01em; }
+.demo-note { text-align: center; margin-left: auto; margin-right: auto; max-width: 70ch; }
+.hero-chips { align-items: flex-start; }
+.tema-voz .cr-chat-head::after { white-space: nowrap; }

@@ -1,0 +1,504 @@
+{
+  "site": "https://www.hydraportugal.pt/",
+  "dominio": "hydraportugal.pt",
+  "titulo": "Hydra Portugal | Água Hidrogenada Premium para Casa e Empresa",
+  "descricao": "Descubra os benefícios da água hidrogenada Hydra Portugal. Soluções para casa, escritório, ginásios e HORECA. Saúde e hidratação de alto nível. Encomende já.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://static.wixstatic.com/media/9f054b_5e9f9b13a26941e7bbb7642b5c896a34~mv2.png/v1/fill/w_239,h_60,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/HORIZONTAL%20-%20PNG.png",
+    "porque": [
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda"
+    ],
+    "analise": {
+      "largura": 239,
+      "altura": 60,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://static.wixstatic.com/media/9f054b_7e17bad701594f02b2ef094183cbf432~mv2.png/v1/fill/w_125,h_52,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/livro_reclamacoes-500x-207-b.png",
+      "pontos": 3,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 125,
+        "altura": 52,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 200,
+        "altura": 200,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              160,
+              256
+            ],
+            "parte": 18
+          },
+          {
+            "rgb": [
+              64,
+              160,
+              256
+            ],
+            "parte": 18
+          },
+          {
+            "rgb": [
+              32,
+              192,
+              224
+            ],
+            "parte": 15
+          },
+          {
+            "rgb": [
+              96,
+              160,
+              256
+            ],
+            "parte": 12
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 200,
+        "altura": 200,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://static.wixstatic.com/media/40541f_acc9bbfff8974703aa0d07ecac8c4a9b~mv2.png/v1/fill/w_55,h_56,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/PME%20Lider%2022%20logo%20(1).png",
+      "pontos": -3,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "parece selo de terceiros"
+      ],
+      "analise": {
+        "largura": 55,
+        "altura": 56,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              128,
+              192
+            ],
+            "parte": 37
+          },
+          {
+            "rgb": [
+              32,
+              128,
+              192
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              96,
+              160,
+              224
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              64,
+              160,
+              192
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://static.wixstatic.com/media/40541f_7d9fe6e319204ee38562917c6638a5a0~mv2.png/v1/crop/x_0,y_1,w_334,h_415/fill/w_84,h_104,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/PME%20Excel%C3%AAncia%2022%20Logo-c%C3%B3pia.png",
+      "pontos": -3,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "parece selo de terceiros"
+      ],
+      "analise": {
+        "largura": 84,
+        "altura": 104,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              224,
+              64
+            ],
+            "parte": 39
+          },
+          {
+            "rgb": [
+              256,
+              192,
+              64
+            ],
+            "parte": 31
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              64
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              96
+            ],
+            "parte": 9
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.png",
+    "src": "https://static.wixstatic.com/media/9f054b_cc74fbe61ff7472a8337d52e6dbc2dda~mv2.png/v1/fill/w_720,h_584,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/hydra_h2_pro.png"
+  },
+  "paleta": [
+    {
+      "hex": "#aa9be1",
+      "hsl": "253 54% 75%",
+      "peso": 219886,
+      "onde": [
+        "botões"
+      ]
+    },
+    {
+      "hex": "#8e3aab",
+      "hsl": "285 49% 45%",
+      "peso": 68590,
+      "onde": [
+        "botões",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#668ff7",
+      "hsl": "223 90% 68%",
+      "peso": 47000,
+      "onde": [
+        "botões",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#5bc4d9",
+      "hsl": "190 62% 60%",
+      "peso": 8000,
+      "onde": [
+        "botões"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "253 54% 75%",
+    "--accent-hsl": "285 49% 45%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--wst-button-color-fill-primary",
+      "rgb(var(--color_48))"
+    ],
+    [
+      "--wst-button-color-border-primary",
+      "rgb(var(--color_49))"
+    ],
+    [
+      "--wst-button-color-text-primary",
+      "rgb(var(--color_50))"
+    ],
+    [
+      "--wst-button-color-fill-primary-hover",
+      "rgb(var(--color_51))"
+    ],
+    [
+      "--wst-button-color-border-primary-hover",
+      "rgb(var(--color_52))"
+    ],
+    [
+      "--wst-button-color-text-primary-hover",
+      "rgb(var(--color_53))"
+    ],
+    [
+      "--wst-button-color-fill-primary-disabled",
+      "rgb(var(--color_54))"
+    ],
+    [
+      "--wst-button-color-border-primary-disabled",
+      "rgb(var(--color_55))"
+    ],
+    [
+      "--wst-button-color-text-primary-disabled",
+      "rgb(var(--color_56))"
+    ],
+    [
+      "--wst-button-color-fill-secondary",
+      "rgb(var(--color_57))"
+    ],
+    [
+      "--wst-button-color-border-secondary",
+      "rgb(var(--color_58))"
+    ],
+    [
+      "--wst-button-color-text-secondary",
+      "rgb(var(--color_59))"
+    ]
+  ],
+  "fontes": {
+    "titulos": "roboto-bold",
+    "corpo": "Arial",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "A MINHA CONTA",
+      "PEDIR ASSISTÊNCIA TÉCNICA",
+      "INÍCIO",
+      "TODOS OS PRODUTOS",
+      "HIDROGENADORES",
+      "LAVAGEM DA ROUPA",
+      "FILTROS DE CHUVEIRO",
+      "GARRAFAS E TERMOS",
+      "CASA",
+      "HYDRA H2 PRO",
+      "JUMAN I DISPENSADOR",
+      "COLOMBIA SODA UPPER",
+      "RO HYDRA I OSMOSE INVERSA",
+      "VITA ZERO I ÁGUA FILTRADA",
+      "JARRO HIDROGENADOR",
+      "DETOX HYDRA I HIDROGENADOR",
+      "HYDRO BOOST PORTÁTIL | HIDROGENADOR",
+      "ELEMENT H2 I HIDROGENADOR",
+      "VDBLACK | DESCALCIFICADOR",
+      "CALMAT PLUS | DESCALCIFICADOR",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "SISTEMA MULTICAMADAS",
+      "LAUNDRY 800",
+      "HORECA",
+      "COLUMBIA SODA I ÁGUA FILTRADA",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "ESCRITÓRIO",
+      "HYDRA H2 PRO",
+      "IDRA I Purificador de água",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "GINÁSIOS",
+      "IDRA I Purificador de água",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "OS NOSSOS VALORES",
+      "CONTACTOS",
+      "BLOG",
+      "INÍCIO",
+      "OS NOSSOS VALORES",
+      "CONTACTOS",
+      "A MINHA CONTA",
+      "PEDIR ASSISTÊNCIA TÉCNICA",
+      "INÍCIO",
+      "TODOS OS PRODUTOS",
+      "HIDROGENADORES",
+      "LAVAGEM DA ROUPA",
+      "FILTROS DE CHUVEIRO",
+      "GARRAFAS E TERMOS",
+      "CASA",
+      "HYDRA H2 PRO",
+      "JUMAN I DISPENSADOR",
+      "COLOMBIA SODA UPPER",
+      "RO HYDRA I OSMOSE INVERSA",
+      "VITA ZERO I ÁGUA FILTRADA",
+      "JARRO HIDROGENADOR",
+      "DETOX HYDRA I HIDROGENADOR",
+      "HYDRO BOOST PORTÁTIL | HIDROGENADOR",
+      "ELEMENT H2 I HIDROGENADOR",
+      "VDBLACK | DESCALCIFICADOR",
+      "CALMAT PLUS | DESCALCIFICADOR",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "SISTEMA MULTICAMADAS",
+      "LAUNDRY 800",
+      "HORECA",
+      "COLUMBIA SODA I ÁGUA FILTRADA",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "ESCRITÓRIO",
+      "HYDRA H2 PRO",
+      "IDRA I Purificador de água",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "GINÁSIOS",
+      "IDRA I Purificador de água",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "OS NOSSOS VALORES",
+      "CONTACTOS",
+      "BLOG",
+      "A MINHA CONTA",
+      "PEDIR ASSISTÊNCIA TÉCNICA",
+      "INÍCIO",
+      "TODOS OS PRODUTOS",
+      "HIDROGENADORES",
+      "LAVAGEM DA ROUPA",
+      "FILTROS DE CHUVEIRO",
+      "GARRAFAS E TERMOS",
+      "CASA",
+      "HYDRA H2 PRO",
+      "JUMAN I DISPENSADOR",
+      "COLOMBIA SODA UPPER",
+      "RO HYDRA I OSMOSE INVERSA",
+      "VITA ZERO I ÁGUA FILTRADA",
+      "JARRO HIDROGENADOR",
+      "DETOX HYDRA I HIDROGENADOR",
+      "HYDRO BOOST PORTÁTIL | HIDROGENADOR",
+      "ELEMENT H2 I HIDROGENADOR",
+      "VDBLACK | DESCALCIFICADOR",
+      "CALMAT PLUS | DESCALCIFICADOR",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "SISTEMA MULTICAMADAS",
+      "LAUNDRY 800",
+      "HORECA",
+      "COLUMBIA SODA I ÁGUA FILTRADA",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "ESCRITÓRIO",
+      "HYDRA H2 PRO",
+      "IDRA I Purificador de água",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "GINÁSIOS",
+      "IDRA I Purificador de água",
+      "PURECALM I DESFRAGMENTADOR DE CALCÁRIO",
+      "OS NOSSOS VALORES",
+      "CONTACTOS",
+      "BLOG"
+    ],
+    "titulos": [
+      "Novidade Hydra H2 Pro",
+      "Água filtrada e hidrogenada à distância de um clique. Sem instalação necessária.",
+      "NOVIDADE",
+      "VISÃO",
+      "Estamos aqui para revolucionar a forma como se consome e vende água.",
+      "Somos uma empresa com 20 anos de experiência no sector de distribuição de água filtrada.",
+      "PRODUTOS",
+      "No conforto de sua casa - água para a sua família",
+      "SISTEMAS DE ÁGUA FILTRADA - Osmose inversa",
+      "SISTEMA DE ÁGUA HIDROGENADA",
+      "JARRO HIDROGENADOR",
+      "PRODUTOS",
+      "Setor Horeca - água purificada para os seus clientes",
+      "PRODUTOS",
+      "PRODUTOS",
+      "EMPRESA",
+      "Água pura para o dia a dia da sua família.",
+      "Para a minha casa"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura.",
+    "Logótipo pequeno (239px de largura): no hero fica esborratado acima de 120px CSS em ecrãs retina."
+  ]
+}

@@ -1,0 +1,71 @@
+/* Hydra Portugal × AI Solutions. Base deck-dark, paleta do site da Hydra.
+   Marca = lavanda dos botões do site (#aa9be1), a voz do agente de voz.
+   Acento = ciano-água dos botões do site (#5bc4d9), a voz do agente de texto.
+   brand2 = azul do site (#668ff7), ponte entre as duas no gradiente.
+   Tema escuro: o logótipo da Hydra é branco sobre transparente. */
+:root {
+  --brand-hsl: 253 62% 74%;     /* lavanda Hydra, agente de voz */
+  --accent-hsl: 190 64% 58%;    /* ciano-água Hydra, agente de texto */
+  --brand2-hsl: 223 90% 68%;    /* azul Hydra */
+  --roxo-hsl: 285 49% 45%;      /* roxo Hydra, só em gradientes */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --brand2: hsl(var(--brand2-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* fundo sólido sob texto branco (botões, pontos da timeline) */
+  --brand-solido: hsl(262 48% 42%);
+  --acento-texto: hsl(190 70% 66%);
+  --voz-texto: hsl(253 80% 82%);
+  --ok-texto: hsl(150 62% 62%);
+  --warn-texto: hsl(38 92% 64%);
+
+  --bg: hsl(248 30% 6%);
+  --bg-soft: hsl(248 26% 8%);
+  --surface: hsl(248 22% 11%);
+  --surface-2: hsl(248 20% 14%);
+  --border: hsl(248 16% 22%);
+
+  --text: hsl(248 30% 96%);
+  --muted: hsl(248 12% 70%);
+
+  /* painéis de produto embutidos (chat, terminal) */
+  --app-panel: hsl(248 32% 8%);
+  --app-panel-2: hsl(248 26% 12%);
+  --app-line: hsl(248 18% 22%);
+  --app-muted: hsl(248 14% 70%);
+
+  --success-hsl: 150 62% 46%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 80% 64%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(var(--brand2-hsl)) 52%, hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(248 30% 8%), hsl(var(--roxo-hsl) / 0.42) 62%, hsl(var(--brand2-hsl) / 0.32));
+  --grad-voz: linear-gradient(135deg, hsl(var(--brand-hsl) / 0.20), hsl(var(--roxo-hsl) / 0.10));
+  --grad-texto: linear-gradient(135deg, hsl(var(--accent-hsl) / 0.20), hsl(var(--brand2-hsl) / 0.10));
+
+  --shadow-sm: 0 1px 3px hsl(250 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(250 60% 2% / 0.55);
+  --shadow-lg: 0 24px 64px hsl(250 60% 2% / 0.65);
+
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  --font-display: 'Manrope', 'Inter', system-ui, sans-serif;
+  --font-marca: 'Manrope', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 124px);
+}
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
