@@ -1,0 +1,198 @@
+{
+  "site": "https://engeglobal.pt/",
+  "dominio": "engeglobal.pt",
+  "titulo": "EngeGlobal | Engenharia e Construção",
+  "descricao": "",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://engeglobal.pt/wp-content/uploads/2026/08/logo-engeglobal-01-branco.png",
+    "porque": [
+      "diz logo",
+      "no cabeçalho",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 1300,
+      "altura": 403,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://engeglobal.pt/wp-content/uploads/2026/08/logo-engeglobal-01.png",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "no topo",
+        "à esquerda",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 1300,
+        "altura": 403,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 56
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              32,
+              160,
+              224
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              32,
+              128,
+              192
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://engeglobal.pt/wp-content/uploads/2026/08/barra-ppr.png",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 1200,
+        "altura": 173,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              64,
+              160
+            ],
+            "parte": 36
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 30
+          },
+          {
+            "rgb": [
+              224,
+              32,
+              32
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "og:image",
+      "src": "https://engeglobal.pt/",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "erro": "não descarregou"
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#2ea3f2",
+      "hsl": "204 88% 56%",
+      "peso": 92500,
+      "onde": [
+        "texto",
+        "variáveis do tema"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "204 88% 56%",
+    "--accent-hsl": "204 95% 62%",
+    "nota": "acento = a marca mais viva (a marca só tem uma cor forte)"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--gcid-primary-color",
+      "#2ea3f2"
+    ],
+    [
+      "--gcid-secondary-color",
+      "#2ea3f2"
+    ]
+  ],
+  "fontes": {
+    "titulos": null,
+    "corpo": "Open Sans",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "Home",
+      "Home"
+    ],
+    "titulos": [],
+    "tratamento": "indefinido"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura."
+  ]
+}
