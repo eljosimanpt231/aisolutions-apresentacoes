@@ -1,0 +1,67 @@
+/* ============================================================
+   TOKENS: Sá Castro (claro, a pedido do Manuel)
+   Base corporativo-azul, com o ciano e o cinzento do logótipo.
+   ============================================================ */
+:root {
+  /* Marca: ciano do logótipo (#00b3e6) escurecido para preencher botões e texto (AA com branco) */
+  --brand-hsl: 195 100% 30%;
+  /* Acento: o ciano tal como está no logótipo, para glows, barras e pormenores */
+  --accent-hsl: 193 100% 45%;
+  /* Terceira voz, para o gradiente do texto */
+  --brand2-hsl: 205 70% 36%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(var(--brand-hsl));
+
+  /* O cinzento do logótipo levado a tinta */
+  --grafite-hsl: 210 12% 18%;
+  --grafite: hsl(var(--grafite-hsl));
+  --grafite-2: hsl(210 11% 24%);
+  --grafite-3: hsl(210 10% 31%);
+  --aco: hsl(210 6% 52%);
+
+  --acento-texto: hsl(196 100% 29%);
+  --ok-texto: hsl(152 62% 28%);
+  --av-texto: hsl(32 90% 32%);
+  --no-texto: hsl(355 65% 42%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(200 30% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(200 25% 98%);
+  --border: hsl(205 18% 88%);
+
+  --text: hsl(210 22% 13%);
+  --muted: hsl(210 10% 40%);
+
+  --success-hsl: 152 60% 38%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 50%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 95% 52%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.10), transparent 62%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand2-hsl)));
+  --grad-cta: linear-gradient(170deg, hsl(200 40% 97%), hsl(var(--accent-hsl) / 0.10));
+
+  --shadow-sm: 0 1px 3px hsl(var(--grafite-hsl) / 0.08);
+  --shadow-md: 0 10px 30px hsl(var(--grafite-hsl) / 0.09);
+  --shadow-lg: 0 24px 60px hsl(var(--grafite-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --container: 1140px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
+
+/* Chat (padrão da casa) */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 92%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}

@@ -1,0 +1,292 @@
+{
+  "site": "https://www.sacastro-ferragens.com/pt/ferragens/",
+  "dominio": "sacastro-ferragens.com",
+  "titulo": "Sá Castro Comércio De Ferragens Lda",
+  "descricao": "Comércio e Distribuição por Grosso de ferragens",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.svg",
+    "origem": "svg",
+    "src": "(SVG em linha no site)",
+    "porque": [
+      "diz logo",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda"
+    ],
+    "analise": {
+      "largura": 300,
+      "altura": 109,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "média",
+      "coresTinta": [
+        {
+          "rgb": [
+            128,
+            128,
+            128
+          ],
+          "parte": 81
+        },
+        {
+          "rgb": [
+            0,
+            192,
+            224
+          ],
+          "parte": 19
+        },
+        {
+          "rgb": [
+            64,
+            160,
+            192
+          ],
+          "parte": 0
+        },
+        {
+          "rgb": [
+            32,
+            160,
+            192
+          ],
+          "parte": 0
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://bastidores.sacastro-ferragens.com/cdn/imagens/site/prr.svg",
+      "pontos": 12,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "transparente ou vectorial"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 30,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://bastidores.sacastro-ferragens.com/cdn/imagens/site/home/noticias/terno_scorrevoli.webp",
+      "pontos": 2,
+      "motivos": [],
+      "erro": "não descarregou"
+    },
+    {
+      "origem": "ícone",
+      "src": "https://bastidores.sacastro-ferragens.com/cdn/favicon/apple-touch-icon.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 180,
+        "altura": 180,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 77
+          },
+          {
+            "rgb": [
+              0,
+              192,
+              224
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://bastidores.sacastro-ferragens.com/cdn/imagens/site/home/noticias/novidades.png",
+      "pontos": 0,
+      "motivos": [],
+      "analise": {
+        "largura": 128,
+        "altura": 60,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              192,
+              224
+            ],
+            "parte": 91
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              32,
+              192,
+              224
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              64,
+              192,
+              224
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "og:image",
+      "src": "https://www.sacastro-ferragens.com/pt/ferragens/",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "erro": "não descarregou"
+    },
+    {
+      "origem": "img",
+      "src": "https://bastidores.sacastro-ferragens.com/cdn/imagens/site/home/banner/hb1.webp",
+      "pontos": -11,
+      "motivos": [
+        "à esquerda",
+        "grande demais, parece banner",
+        "parece foto"
+      ],
+      "erro": "não descarregou"
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#00b3e6",
+      "hsl": "193 100% 45%",
+      "peso": 117800,
+      "onde": [
+        "texto",
+        "variáveis do tema",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#485ff2",
+      "hsl": "232 87% 62%",
+      "peso": 45000,
+      "onde": [
+        "variáveis do tema"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "193 100% 45%",
+    "--accent-hsl": "232 87% 62%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--primary",
+      "#007bff"
+    ],
+    [
+      "--secondary",
+      "#6c757d"
+    ],
+    [
+      "--theme-deafult",
+      "#00b3e6"
+    ],
+    [
+      "--theme-gradient1",
+      "#01effc"
+    ],
+    [
+      "--theme-gradient2",
+      "#485ff2"
+    ]
+  ],
+  "fontes": {
+    "titulos": "sans-serif",
+    "corpo": "sans-serif",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "Entrar ou Registar Aqui",
+      "ferragens",
+      "catálogos",
+      "empresa",
+      "contactos",
+      "ferragens",
+      "catálogos",
+      "empresa",
+      "contactos",
+      "Pesquisa",
+      "Favoritos",
+      "Carrinho",
+      "Entrar",
+      "Novo Registo"
+    ],
+    "titulos": [
+      "Pesquise por Famílias, Filtros Avançados ou Destaques"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": []
+}
