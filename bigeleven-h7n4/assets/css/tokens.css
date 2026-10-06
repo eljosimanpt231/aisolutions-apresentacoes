@@ -1,0 +1,52 @@
+/* Águas do Monte (Bigeleven) — claro, papel quente do Alentejo + dourado da marca.
+   Base: editorial-claro, com a cor e as fontes reais da marca da lead.
+   O dourado do site (#c0a080, hsl 30 34% 63%) é claro de mais para texto:
+   --acento-texto e --brand-solido descem de luminosidade para passar AA. */
+:root {
+  --brand-hsl: 30 34% 63%;        /* dourado do logótipo Águas do Monte */
+  --accent-hsl: 28 42% 48%;       /* o mesmo dourado, mais fundo, para UI */
+  --brand2-hsl: 150 22% 34%;      /* verde-oliveira do Alentejo, 2.ª voz */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(40 30% 98%);
+
+  --acento-texto: hsl(28 55% 32%);   /* texto em cor sobre fundo claro */
+  --brand-solido: hsl(28 48% 38%);   /* fundo sólido debaixo de texto branco */
+  --ok-texto: hsl(152 58% 26%);
+
+  --bg: hsl(40 33% 98%);          /* papel quente, quase branco */
+  --bg-soft: hsl(38 28% 95%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(38 26% 96%);
+  --border: hsl(34 20% 87%);
+
+  --text: hsl(28 18% 14%);
+  --muted: hsl(28 10% 40%);
+
+  --success-hsl: 152 52% 32%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 6 68% 48%;    --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 86% 44%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: none;
+  --grad-text: linear-gradient(118deg, hsl(28 52% 42%), hsl(30 40% 56%));
+  --grad-cta: linear-gradient(168deg, hsl(28 22% 15%), hsl(28 18% 22%));
+
+  --shadow-sm: 0 1px 2px hsl(28 25% 14% / 0.05);
+  --shadow-md: 0 8px 24px hsl(28 25% 14% / 0.07);
+  --shadow-lg: 0 20px 52px hsl(28 25% 14% / 0.12);
+
+  --radius: 12px;
+  --radius-lg: 18px;
+  --font-display: 'Forum', Georgia, 'Times New Roman', serif;
+  --font-body: 'Sarabun', system-ui, sans-serif;
+  --container: 1080px;
+  --section-pad: clamp(76px, 10vw, 136px);
+}
+
+/* O display da marca é uma serifa fina: precisa de mais tamanho e menos peso
+   do que a Inter Tight do estilo de origem. */
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.5rem, 5.6vw, 4.1rem); line-height: 1.08; }
+h2 { font-size: clamp(1.85rem, 3.4vw, 2.7rem); line-height: 1.14; }
+body { font-family: var(--font-body); }
+.kicker, .eyebrow { font-family: var(--font-body); color: var(--acento-texto); }

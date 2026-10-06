@@ -1,0 +1,357 @@
+{
+  "site": "https://aguasdomonte.pt/",
+  "dominio": "aguasdomonte.pt",
+  "titulo": "Hotel Águas do Monte",
+  "descricao": "Um refúgio no coração do Alentejo, onde a natureza, a tranquilidade e o conforto se unem para proporcionar uma experiência autêntica.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://aguasdomonte.pt/wp-content/themes/hotel-aguas-monte/assets/images/branding.png",
+    "porque": [
+      "diz logo",
+      "no topo",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 323,
+      "altura": 279,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "média",
+      "coresTinta": [
+        {
+          "rgb": [
+            192,
+            160,
+            128
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "ícone",
+      "src": "https://aguasdomonte.pt/wp-content/uploads/2026/08/Branding.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 323,
+        "altura": 279,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              160,
+              128
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "og:image",
+      "src": "https://aguasdomonte.pt/wp-content/themes/hotel-aguas-monte/assets/images/bg.jpg",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "analise": {
+        "largura": 1920,
+        "altura": 1070,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 50
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              224
+            ],
+            "parte": 27
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              224
+            ],
+            "parte": 22
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aguasdomonte.pt/wp-content/uploads/2026/09/aguas-do-monte_villa-2-02_exterior_01-01-1-1112x800.jpg",
+      "pontos": -7,
+      "motivos": [
+        "à esquerda",
+        "grande demais, parece banner"
+      ],
+      "analise": {
+        "largura": 1112,
+        "altura": 800,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              160,
+              192
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              160
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aguasdomonte.pt/wp-content/uploads/2026/09/aguas-do-monte_villa-1-02_exterior_02-07-1-1112x800.jpg",
+      "pontos": -8,
+      "motivos": [
+        "grande demais, parece banner"
+      ],
+      "analise": {
+        "largura": 1112,
+        "altura": 800,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              160,
+              192
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              192
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              32
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aguasdomonte.pt/wp-content/uploads/2026/09/aguas-do-monte_villa-1-02_exterior_02-02-1-1112x800.jpg",
+      "pontos": -8,
+      "motivos": [
+        "grande demais, parece banner"
+      ],
+      "analise": {
+        "largura": 1112,
+        "altura": 800,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              128,
+              96
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              128
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              64
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              160
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aguasdomonte.pt/wp-content/uploads/2026/09/aguas-do-monte_nocturnas_01-20-1-1112x800.jpg",
+      "pontos": -8,
+      "motivos": [
+        "grande demais, parece banner"
+      ],
+      "analise": {
+        "largura": 1112,
+        "altura": 800,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              32,
+              32
+            ],
+            "parte": 19
+          },
+          {
+            "rgb": [
+              160,
+              64,
+              64
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              224
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              160,
+              128,
+              96
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#c0a080",
+      "hsl": "30 34% 63%",
+      "peso": 219000,
+      "onde": [
+        "botões",
+        "texto",
+        "variáveis do tema",
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "30 34% 63%",
+    "--accent-hsl": "30 46% 62%",
+    "nota": "acento = a marca mais viva (a marca só tem uma cor forte)"
+  },
+  "fundoDoSite": "0 0% 98%",
+  "variaveisDoTema": [
+    [
+      "--wp--preset--color--primary",
+      "#bfa576"
+    ],
+    [
+      "--hadm-primary",
+      "#bfa576"
+    ],
+    [
+      "--hadm-gap-brand",
+      "min(clamp(1.5rem, 2.865vw, 3.4375rem), 5.1vh)"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Forum",
+    "corpo": "Sarabun",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/"
+    ]
+  },
+  "vocabulario": {
+    "menu": [],
+    "titulos": [
+      "O nosso novo espaço digital chega em breve."
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": []
+}
