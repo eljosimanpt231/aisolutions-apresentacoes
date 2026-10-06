@@ -334,3 +334,37 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .passos-fecho .n { width: 30px; height: 30px; font-size: 0.88rem; }
   .fecho-acoes .btn { width: 100%; text-align: center; }
 }
+
+/* ---------- Revisão de 06/10: ramo do fornecedor e opção do ERP ---------- */
+.pill--forn {
+  background: hsl(var(--accent-hsl) / 0.13);
+  color: hsl(217 85% 32%);
+  border: 1px solid hsl(var(--accent-hsl) / 0.35);
+}
+.num--forn { color: hsl(217 85% 34%); }
+
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .grid-4 { grid-template-columns: 1fr; } }
+
+.card-opcao {
+  margin-top: 26px;
+  background: var(--surface);
+  border: 1px solid hsl(var(--ouro-hsl) / 0.45);
+  border-left: 4px solid var(--ouro);
+  border-radius: var(--radius-lg);
+  padding: clamp(22px, 3.4vw, 32px);
+  box-shadow: var(--shadow-sm);
+}
+.card-opcao p { margin: 0; line-height: 1.68; max-width: 68ch; }
+.card-opcao h3 { margin: 4px 0 0; }
+.opcao-cab {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  align-items: baseline; justify-content: space-between;
+  margin-bottom: 14px;
+}
+.card-opcao .label {
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ouro-texto);
+}
+.price--opcao { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; color: var(--brand); white-space: nowrap; }
