@@ -23,7 +23,7 @@ a quadrícula de fundo é papel de desenho (malha de 24px com linha mestra a 120
 2. Resumo de 30 segundos
 3. O R0028 desmontado: cascata 1 → 19 → 51 → 517 → 73, árvore de uma linha, barras de componentes, notas do orçamentista ← diferenciador
 4. Momento uau: chat+raciocínio, 6 cenários do R0028 (um de correção por chat, um de recusa)
-5. Fluxo + plataforma + franqueza sobre a API da Megaval
+5. Fluxo + plataforma + franqueza sobre a API da Megavale
 6. Limites
 7. A conta de valor (1 → 4 orçamentos por dia)
 8. Caso: CF Group
