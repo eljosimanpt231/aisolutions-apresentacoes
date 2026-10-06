@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="../shared/motion/atmosfera.css">
   <link rel="stylesheet" href="../shared/motion/grafico.css">
   <link rel="stylesheet" href="assets/css/dmflex.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
   <script src="config.js"></script>
 </head>
 <body>
@@ -43,6 +44,7 @@
     <nav id="nav">
       <a href="#r0028">O vosso R0028</a>
       <a href="#demo">O agente ao vivo</a>
+      <a href="#plataforma">A plataforma</a>
       <a href="#fluxo">Como se liga</a>
       <a href="#limites">O que fica para si</a>
       <a href="#valor">A conta</a>
@@ -348,6 +350,82 @@
   </div>
 </section>
 
+<!-- ============ 4b. PLATAFORMA ============ -->
+<section id="plataforma">
+  <div class="container">
+    <span class="eyebrow">A plataforma</span>
+    <h2>Onde o orçamentista trabalha, <span class="g-brilho">a funcionar</span></h2>
+    <p class="lead">
+      Quatro separadores ligados entre si, com o R0028 lá dentro. Aceite os dois pontos por
+      validar, peça uma alteração ao agente por chat e feche o orçamento: o painel atualiza.
+    </p>
+    <div class="pf" id="pfDm" data-entra="escala">
+      <div class="pf-bar"><i></i><i></i><i></i><span>Plataforma de orçamentação DmFlex · terça-feira, 06/10/2026</span></div>
+      <div class="pf-cols">
+        <aside class="pf-side" role="tablist" aria-label="Separadores da plataforma">
+          <div class="pf-marca"><img src="assets/img/marca/logo.png" alt="DmFlex"></div>
+          <button class="pf-tab on" role="tab" aria-selected="true" data-tab="pedidos"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg>Pedidos</button>
+          <button class="pf-tab" role="tab" aria-selected="false" data-tab="revisao"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Revisão R0028<span class="cnt">2</span></button>
+          <button class="pf-tab" role="tab" aria-selected="false" data-tab="mapa"><svg viewBox="0 0 24 24"><path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3z"/><path d="M9 4v13M15 7v13"/></svg>Mapa de necessidades</button>
+          <button class="pf-tab" role="tab" aria-selected="false" data-tab="regras"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>Regras da casa</button>
+          <div class="pf-side-nota">Só a equipa da DmFlex entra aqui. O Gestão de Obra continua a ser a fonte dos compostos.</div>
+        </aside>
+
+        <div class="pf-view on" data-view="pedidos" role="tabpanel">
+          <div class="pf-head"><h3>Pedidos de orçamento</h3><small>Cada pedido que entra no email aparece aqui</small></div>
+          <div class="pf-kpis" id="pfKpis"></div>
+          <div class="pf-enc">
+            <ul class="pf-lista" id="pfLista"></ul>
+            <div class="pf-det" id="pfDet"></div>
+          </div>
+        </div>
+
+        <div class="pf-view" data-view="revisao" role="tabpanel">
+          <div class="pf-head"><h3>R0028 · Centro de saúde</h3><small id="pfResumo"></small></div>
+          <div class="pf-rev">
+            <div style="min-width:0">
+              <div class="pf-avisos" id="pfAvisos"></div>
+              <div class="pf-grelha-wrap">
+                <table class="pf-grelha">
+                  <thead><tr><th>Tipologia</th><th>Descrição</th><th>Qtd.</th><th>Comp.</th><th>Estado</th></tr></thead>
+                  <tbody id="pfLinhas"></tbody>
+                </table>
+              </div>
+              <div class="pf-rodape"><span>Valores calculados com a vossa tabela no Gestão de Obra.</span><button type="button" class="pf-btn" id="pfFechar">Fechar orçamento</button></div>
+            </div>
+            <div class="pf-chat">
+              <div class="pf-chat-head"><span class="vivo" aria-hidden="true"></span>Agente DmFlex</div>
+              <div class="pf-msgs" id="pfMsgs" aria-live="polite"></div>
+              <div class="pf-chips">
+                <button type="button">Aceita a placa de 4mm na Pi.c-1.50</button>
+                <button type="button">As portas de batente são em B116</button>
+                <button type="button">Quantas dobradiças leva a obra?</button>
+                <button type="button">Fecha o orçamento</button>
+              </div>
+              <form class="pf-input" id="pfForm"><input id="pfTexto" type="text" placeholder="Escreva ao agente…" aria-label="Mensagem para o agente"><button type="submit" class="pf-btn">Enviar</button></form>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-view" data-view="mapa" role="tabpanel">
+          <div class="pf-head"><h3>Mapa de necessidades · R0028</h3><small>73 artigos no total, gerados a partir das 517 linhas de decomposição</small></div>
+          <div class="pf-mapa" id="pfMapa"></div>
+          <div class="pf-rodape"><span>Quantidades reais do vosso mapa de 06/10. Preços omitidos nesta página.</span><button type="button" class="pf-btn sec" id="pfExportar">Enviar lista para compras</button></div>
+        </div>
+
+        <div class="pf-view" data-view="regras" role="tabpanel">
+          <div class="pf-head"><h3>Regras da casa</h3><small>A experiência dos orçamentistas, escrita. Fica na empresa.</small></div>
+          <div class="pf-regras" id="pfRegras"></div>
+        </div>
+      </div>
+    </div>
+    <p class="pf-legenda">
+      <span>O R0028 usa os vossos ficheiros reais. As outras obras do painel são ilustrativas.</span>
+      <span>Na primeira semana, as regras escrevem-se com os vossos orçamentistas.</span>
+    </p>
+  </div>
+</section>
+
 <!-- ============ 5. FLUXO ============ -->
 <section id="fluxo">
   <div class="container">
@@ -580,9 +658,11 @@
 <script src="../shared/js/protect.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="../shared/deck/deck.js"></script>
+<script src="assets/js/plataforma.js"></script>
 <script>
   chatRaciocinio('dmDemo');
   fluxo('dmFluxo');
+  plataformaDm('pfDm');
 </script>
 </body>
 </html>
