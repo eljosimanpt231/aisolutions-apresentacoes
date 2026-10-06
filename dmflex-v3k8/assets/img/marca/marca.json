@@ -1,0 +1,159 @@
+{
+  "site": "https://www.dmflex.eu/",
+  "dominio": "dmflex.eu",
+  "titulo": "",
+  "descricao": "",
+  "logotipoTexto": null,
+  "logotipo": null,
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://www.dmflex.eu/index_files/image003.jpg",
+      "pontos": 3,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 304,
+        "altura": 105,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 16
+          },
+          {
+            "rgb": [
+              64,
+              96,
+              32
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              96
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              64,
+              128,
+              32
+            ],
+            "parte": 9
+          }
+        ]
+      }
+    },
+    {
+      "origem": "og:image",
+      "src": "https://www.dmflex.eu/",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "erro": "não descarregou"
+    },
+    {
+      "origem": "img",
+      "src": "https://www.dmflex.eu/index_files/image001.png",
+      "pontos": -3,
+      "motivos": [],
+      "analise": {
+        "largura": 377,
+        "altura": 134,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "vazia",
+        "coresTinta": []
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.dmflex.eu/index_files/image005.jpg",
+      "pontos": -5,
+      "motivos": [
+        "no topo",
+        "à esquerda",
+        "grande demais, parece banner"
+      ],
+      "analise": {
+        "largura": 1123,
+        "altura": 674,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              160,
+              128,
+              128
+            ],
+            "parte": 23
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              128
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              128
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              160,
+              128,
+              96
+            ],
+            "parte": 8
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://www.dmflex.eu/index_files/image005.jpg"
+  },
+  "paleta": [],
+  "tokens": null,
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": null,
+    "corpo": "Calibri",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [],
+    "titulos": [],
+    "tratamento": "indefinido"
+  },
+  "avisos": [
+    "Nenhum logótipo com confiança suficiente. Ver logo-recorte.png e as alternativas em marca.json, ou pedir o ficheiro ao comercial. Sem logo bom: o nome da lead em texto, com a fonte display.",
+    "O site não tem cor de marca forte (só neutros). Manter a paleta do estilo escolhido e deixar a marca aparecer no logótipo e nas fotos."
+  ]
+}

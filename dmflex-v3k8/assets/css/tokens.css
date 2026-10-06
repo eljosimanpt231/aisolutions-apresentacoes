@@ -1,0 +1,57 @@
+/* DmFlex: base corporativo-azul, recolorida com o verde do logótipo (#446F2A) e o cinza do "Flex".
+   Fundo branco, a pedido do comercial. */
+:root {
+  --acento-texto: hsl(97 48% 26%);
+  --ok-texto: hsl(152 62% 26%);
+  --brand-hsl: 97 45% 30%;
+  --accent-hsl: 97 40% 40%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(0 0% 100%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(90 14% 97.5%);
+  --border: hsl(90 8% 88%);
+
+  --text: hsl(100 12% 12%);
+  --muted: hsl(100 5% 38%);
+
+  --success-hsl: 152 60% 38%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 50%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 43 95% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--accent-hsl)) 115%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(97 50% 20%));
+  --grad-cta: linear-gradient(160deg, hsl(97 48% 22%), hsl(var(--brand-hsl)) 60%, hsl(var(--accent-hsl)));
+
+  --shadow-sm: 0 1px 3px hsl(100 20% 20% / 0.07);
+  --shadow-md: 0 8px 28px hsl(100 20% 20% / 0.08);
+  --shadow-lg: 0 20px 56px hsl(100 20% 20% / 0.12);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Host Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Host Grotesk', 'Inter', system-ui, sans-serif;
+  --container: 1120px;
+  --section-pad: clamp(64px, 9vw, 120px);
+
+  /* segunda voz: o cinza do "Flex"; o âmbar marca só o que pede validação */
+  --cinza-flex: hsl(0 0% 38%);
+  --ouro-hsl: 40 92% 52%;
+  --ouro: hsl(var(--ouro-hsl));
+  --ouro-texto: hsl(33 88% 28%);
+  --tinta: hsl(100 14% 10%);
+}
+
+/* Chat (herdado do padrão da casa) */
+:root{
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(60 12% 94%);
+  --wa-out: hsl(97 45% 90%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+  --road-line: repeating-linear-gradient(90deg, hsl(var(--brand-hsl)/0.25) 0 8px, transparent 8px 16px);
+}

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>DmFlex | Orçamentação assistida por inteligência artificial</title>
+  <meta name="description" content="O orçamento R0028 desmontado: 19 linhas, 51 portas, 517 linhas de decomposição. Proposta AI Solutions para a DmFlex.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DmFlex × AI Solutions">
+  <meta property="og:description" content="Um orçamento de um dia, revisto numa hora. O agente prepara, o orçamentista revê.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/dmflex-v3k8/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/light.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="../shared/motion/grafico.css">
+  <link rel="stylesheet" href="assets/css/dmflex.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topnav">
+  <div class="inner">
+    <span class="nav-brand"><img src="assets/img/marca/logo.png" alt="DmFlex" class="nav-logo"></span>
+    <nav id="nav">
+      <a href="#r0028">O vosso R0028</a>
+      <a href="#demo">O agente ao vivo</a>
+      <a href="#fluxo">Como se liga</a>
+      <a href="#limites">O que fica para si</a>
+      <a href="#valor">A conta</a>
+      <a href="#investimento">Investimento</a>
+    </nav>
+    <a href="#avancar" class="nav-cta btn btn-primary" style="padding:9px 18px; font-size:0.86rem">Avançar</a>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <span class="kicker" data-acto="1" data-entra="sobe">DmFlex × AI Solutions</span>
+    <h1 data-linhas>Um orçamento de um dia.<br><span class="g-brilho">Revisto numa hora.</span></h1>
+    <p class="lead" data-acto="2" data-entra="sobe" style="margin-top:18px">
+      Pegámos no orçamento que o Humberto nos enviou, o R0028, e seguimo-lo do princípio ao fim:
+      19 linhas de orçamento, 51 portas, 517 linhas de decomposição e 73 artigos no mapa de
+      necessidades. É esse trabalho que o agente prepara. O orçamentista deixa de o construir
+      e passa a revê-lo.
+    </p>
+    <div class="grid-3" data-acto="3" data-entra="sobe" style="margin-top:38px">
+      <div class="card stat-card reveal">
+        <div class="num"><span data-conta="250" data-sufixo="">250</span></div>
+        <div class="desc">Pedidos de orçamento por mês, dos quais só uma pequena parte tem hoje resposta</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num">8 horas</div>
+        <div class="desc">Um orçamento normal, feito por um orçamentista do princípio ao fim</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num"><span data-conta="517" data-sufixo="">517</span></div>
+        <div class="desc">Linhas de decomposição num só orçamento, o R0028, até ao último parafuso</div>
+      </div>
+    </div>
+    <div style="margin-top:44px">
+      <a href="#demo" class="btn btn-primary premivel" data-iman="0.25">Ver o agente a orçamentar</a>
+      <a href="#r0028" class="btn btn-ghost">Ver o R0028 desmontado</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. RESUMO 30 SEGUNDOS ============ -->
+<section class="section-alt" id="resumo">
+  <div class="container">
+    <p class="sobretitulo">Em 30 segundos</p>
+    <div class="resumo30 reveal">
+      <p>
+        A produção da DmFlex aguenta muito mais obras do que as que hoje consegue orçamentar.
+        O que trava é a orçamentação: <b>um dia de trabalho por orçamento</b>, feito por
+        orçamentistas difíceis de encontrar e que, ao fim de um ano de formação, há quem saia.
+      </p>
+      <p>
+        Propomos um agente que recebe o pedido no email, lê os desenhos e o mapa de quantidades,
+        <b>aponta as discrepâncias</b>, vai buscar os compostos certos ao Gestão de Obra e monta o
+        orçamento e o mapa de necessidades. O orçamentista revê numa plataforma própria e
+        <b>corrige o agente por chat</b>, até o orçamento estar fechado.
+      </p>
+      <p class="resumo30__meta">
+        <b>9.500 €</b> de implementação, <b>325 €</b> por mês. Objetivo de partida: 70 a 80% do
+        trabalho feito pelo agente, a subir mês a mês com o uso.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. O R0028 (o diferenciador) ============ -->
+<section id="r0028">
+  <div class="container">
+    <span class="eyebrow">O vosso orçamento</span>
+    <h2>O R0028, desmontado</h2>
+    <p class="lead">
+      Um centro de saúde: portas fenólicas de batente, de correr e corta-fogo, mais cabines.
+      Seguimos o orçamento desde o pedido até ao mapa de necessidades. Cada número abaixo foi
+      contado por nós nos ficheiros que nos enviaram.
+    </p>
+
+    <div class="cascata reveal">
+      <div class="cascata__passo">
+        <div class="cascata__num">1</div>
+        <div class="cascata__rot">Pedido</div>
+        <div class="cascata__det">Desenhos da obra e mapa de quantidades do cliente</div>
+      </div>
+      <div class="cascata__passo">
+        <div class="cascata__num"><span data-conta="19">19</span></div>
+        <div class="cascata__rot">Linhas de orçamento</div>
+        <div class="cascata__det">Por tipologia, medida e ferragem</div>
+      </div>
+      <div class="cascata__passo">
+        <div class="cascata__num"><span data-conta="51">51</span></div>
+        <div class="cascata__rot">Portas, mais 2 baterias de cabines</div>
+        <div class="cascata__det">36 de batente, 6 de correr e 9 corta-fogo</div>
+      </div>
+      <div class="cascata__passo">
+        <div class="cascata__num"><span data-conta="517">517</span></div>
+        <div class="cascata__rot">Linhas de decomposição</div>
+        <div class="cascata__det">Cada linha abre um composto, em três níveis</div>
+      </div>
+      <div class="cascata__passo">
+        <div class="cascata__num"><span data-conta="73">73</span></div>
+        <div class="cascata__rot">Artigos a comprar</div>
+        <div class="cascata__det">Placas, perfis, ferragens, mão de obra e subempreitadas</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:30px">
+      <div class="card reveal">
+        <h3>Uma linha, por dentro</h3>
+        <p class="card__nota" style="margin:0 0 14px">Linha 1.1.1.1: 4 portas Pi.b-0.80, de 2100&times;800 com uma folha de batente. É assim que ela aparece no vosso ficheiro de processo.</p>
+<div class="arvore"><span class="n1">Porta 2100x800, 1 folha de batente      <span class="q">4 UN</span></span>
+├ <span class="n2">Porta sandwich 46mm, fenólico 3mm</span>
+│ ├ <span class="n3">Polirey compact 3mm B070       <span class="q">16,68 PL</span></span>
+│ ├ <span class="n3">Max compact 12mm               <span class="q">0,98 PL</span></span>
+│ ├ <span class="n3">Poliestireno extrudido 40mm    <span class="q">6,72 M2</span></span>
+│ ├ <span class="n3">Cola PU MONO 6060              <span class="q">3,2 BID</span></span>
+│ ├ <span class="n3">(mais 2 placas)</span>
+│ ├ <span class="n2">Aro em alumínio, porta batente <span class="q">4 ML</span></span>
+│ │ ├ <span class="n3">Perfil anodizado NZ836001    <span class="q">24,54 MT</span></span>
+│ │ ├ <span class="n3">Vedante 197                  <span class="q">44 ML</span></span>
+│ │ └ <span class="n3">(mais 3 componentes)</span>
+│ ├ <span class="n2">Ferragens porta sandwich       <span class="q">4 UN</span></span>
+│ │ ├ <span class="n3">Dobradiça inox IN.05.011D    <span class="q">16 UN</span></span>
+│ │ ├ <span class="n3">Parafuso M4x60               <span class="q">92 UN</span></span>
+│ │ ├ <span class="n3">Fechadura 725S/R             <span class="q">4 UN</span></span>
+│ │ └ <span class="n3">(mais 5 componentes)</span>
+│ ├ <span class="n3">Mecanização                    <span class="q">4 UN</span></span>
+│ └ <span class="n3">Montagem                       <span class="q">4 UN</span></span>
+└ <span class="n3">Perfil bruto NZ836008            <span class="q">24,85 BR</span></span></div>
+        <p class="card__nota">22 componentes para uma linha só. O R0028 tem 19 linhas destas.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Componentes por porta, no R0028</h3>
+        <div class="barras">
+          <div class="barra"><span class="barra__nome">Corta-fogo, 2 folhas, antipânico</span><span class="barra__bar" style="--p:100%"></span><span class="barra__val">32</span></div>
+          <div class="barra"><span class="barra__nome">Porta de correr</span><span class="barra__bar" style="--p:87%"></span><span class="barra__val">28</span></div>
+          <div class="barra"><span class="barra__nome">Corta-fogo, 1 folha</span><span class="barra__bar" style="--p:78%"></span><span class="barra__val">25</span></div>
+          <div class="barra"><span class="barra__nome">Batente com mola</span><span class="barra__bar" style="--p:78%"></span><span class="barra__val">25</span></div>
+          <div class="barra"><span class="barra__nome">Batente simples</span><span class="barra__bar" style="--p:69%"></span><span class="barra__val">22</span></div>
+          <div class="barra"><span class="barra__nome">Bateria de cabines</span><span class="barra__bar" style="--p:44%"></span><span class="barra__val">14</span></div>
+        </div>
+        <p class="card__nota">
+          O máximo, por tipologia. O trabalho não é difícil, é longo e não pode falhar uma peça:
+          exatamente o tipo de trabalho que um agente faz bem, desde que as regras estejam escritas.
+        </p>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:24px">
+      <h3>O que o vosso orçamentista escreveu nas notas</h3>
+      <p class="card__nota" style="margin:0 0 16px">
+        As notas do R0028 são a parte mais valiosa do orçamento: é ali que está a experiência
+        que leva um ano a formar. Cada uma delas é uma regra que o agente pode aplicar.
+      </p>
+      <div class="notas-orc">
+        <div class="nota-orc">
+          «Na porta de correr Pi.c-1.50, houve alteração da placa, uma vez que em 3mm não temos
+          placa que encaixe nas dimensões 2100x1500mm, daí a placa orçamentada ser de 4mm.»
+          <span><b>Regra de encaixe da placa.</b> O agente testa-a em todas as medidas, não só nas que alguém se lembra de ver.</span>
+        </div>
+        <div class="nota-orc">
+          «Alterei a dimensão das portas corta-fogo Pi.2bacf, de modo a que não tenha de alterar
+          a placa (...) Daí a folha de 1260mm passar para 1240mm.»
+          <span><b>Ajuste de medida.</b> O agente propõe a alternativa, o orçamentista decide.</span>
+        </div>
+        <div class="nota-orc">
+          «(...) exigem mínimos e múltiplos de placa, temos de comprar placas em excesso, o que
+          inflaciona o preço final.»
+          <span><b>Aproveitamento de placa.</b> Entra no cálculo de todas as obras, não fica de memória.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="nota-fonte">
+      Fonte: orçamento R0028/8, mapa de necessidades e ficheiro do processo de orçamentação,
+      enviados pelo Humberto a 6 de outubro. As contagens são nossas, sobre esses ficheiros.
+      Nenhum número desta secção foi estimado.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 4. MOMENTO UAU ============ -->
+<section class="section-alt" id="demo">
+  <div class="container">
+    <span class="eyebrow">O agente ao vivo</span>
+    <h2>O R0028, orçamentado pelo agente</h2>
+    <p class="lead">
+      À esquerda, o que chega e o que o agente responde. À direita, o que ele está a pensar em
+      cada passo. Os cenários usam o vosso orçamento real. O último mostra o agente a recusar
+      decidir, que é tão importante como os outros.
+    </p>
+
+    <div class="cr" id="dmDemo"></div>
+    <script type="application/json" id="dmDemo-config">
+    {
+      "agentName": "Agente DmFlex",
+      "agentInitials": "DM",
+      "chatStatus": "orçamentação DmFlex",
+      "stepMs": 1500,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "Pedido novo",
+          "subtitle": "Desenhos e mapa de quantidades num email. O agente faz o levantamento.",
+          "chat": [
+            { "sender": "system", "text": "Novo pedido de orçamento recebido, 09:12", "time": "09:12" },
+            { "sender": "client", "text": "Bom dia, junto enviamos os desenhos e o mapa de quantidades para orçamentação das portas e cabines da obra do centro de saúde. Aguardamos a vossa proposta.", "time": "09:12" },
+            { "sender": "agent", "text": "Li os desenhos e o mapa de quantidades. Levantei **51 portas** e **2 baterias de cabines**: 36 de batente, 6 de correr e 9 corta-fogo, em 19 tipologias.", "time": "09:16" },
+            { "sender": "agent", "text": "Rascunho do orçamento aberto na plataforma, com as 19 linhas e o mapa de necessidades. Pronto para revisão.", "time": "09:21" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Lê o email e abre os anexos" },
+            { "icon": "search", "label": "Extrai do mapa de quantidades as tipologias e as quantidades" },
+            { "icon": "filter", "label": "Separa o que é atividade da DmFlex do que não é" },
+            { "icon": "database", "label": "Associa cada tipologia ao composto certo" },
+            { "icon": "check", "label": "Abre o orçamento e o mapa de necessidades para revisão" }
+          ]
+        },
+        {
+          "title": "Mapa e desenho não batem",
+          "subtitle": "O exemplo que o Humberto deu na reunião: 10 no mapa, 12 no projeto.",
+          "chat": [
+            { "sender": "system", "text": "Verificação cruzada do pedido, 09:14", "time": "09:14" },
+            { "sender": "agent", "text": "Numa das tipologias de porta de batente, o mapa de quantidades indica **10 unidades** e os desenhos mostram **12**.", "time": "09:14" },
+            { "sender": "agent", "text": "Não escolhi sozinho. A discrepância ficou assinalada no topo do orçamento, com as duas quantidades, para decidir na revisão e confirmar com o cliente.", "time": "09:15" }
+          ],
+          "steps": [
+            { "icon": "search", "label": "Conta as portas de cada tipologia no mapa de quantidades" },
+            { "icon": "search", "label": "Conta as mesmas portas nos desenhos" },
+            { "icon": "alert", "label": "Deteta a diferença: 10 contra 12" },
+            { "icon": "brain", "label": "Não decide: é uma questão para o cliente" },
+            { "icon": "check", "label": "Assinala as duas quantidades para a revisão" }
+          ]
+        },
+        {
+          "title": "Da linha ao composto",
+          "subtitle": "Uma linha do orçamento vira 22 componentes, como na vossa folha de processo.",
+          "chat": [
+            { "sender": "agent", "text": "Linha **Pi.b-0.80**: 4 portas de 2100x800, uma folha de batente. Fui buscar ao Gestão de Obra o composto da porta sandwich de 46mm.", "time": "09:17" },
+            { "sender": "agent", "text": "Composto aberto em **22 componentes**: placas, aro em alumínio, kit de ferragens com **16 dobradiças IN.05.011D**, mecanização e montagem. Quantidades calculadas pela medida e custos da vossa tabela.", "time": "09:17" }
+          ],
+          "steps": [
+            { "icon": "id", "label": "Identifica a tipologia e a medida" },
+            { "icon": "database", "label": "Vai buscar o composto da porta ao Gestão de Obra" },
+            { "icon": "filter", "label": "Abre o aro e o kit de ferragens nos seus componentes" },
+            { "icon": "brain", "label": "Calcula as quantidades pela medida e pelo número de portas" },
+            { "icon": "check", "label": "Soma tudo ao mapa de necessidades" }
+          ]
+        },
+        {
+          "title": "A placa não encaixa",
+          "subtitle": "A regra que o vosso orçamentista aplicou na Pi.c-1.50, feita pelo agente.",
+          "chat": [
+            { "sender": "agent", "text": "A porta de correr **Pi.c-1.50** tem 2100x1500. Em 3mm não há placa que encaixe nesta medida.", "time": "09:19" },
+            { "sender": "agent", "text": "Orcei com placa de **4mm** e acrescentei a nota ao orçamento, como é feito hoje. A alteração fica marcada para validar na revisão.", "time": "09:19" }
+          ],
+          "steps": [
+            { "icon": "search", "label": "Lê a medida da folha da porta" },
+            { "icon": "database", "label": "Procura nas placas de 3mm um formato que encaixe" },
+            { "icon": "alert", "label": "Não encontra: testa a espessura seguinte" },
+            { "icon": "check", "label": "Aplica a de 4mm e escreve a nota para o cliente" },
+            { "icon": "user-cog", "label": "Marca a alteração para o orçamentista validar" }
+          ]
+        },
+        {
+          "title": "O orçamentista corrige",
+          "subtitle": "A revisão faz-se por chat, na plataforma. O agente refaz as contas.",
+          "chat": [
+            { "sender": "client", "text": "Nas portas de batente desta obra a placa é a B116, não a branca.", "time": "10:02" },
+            { "sender": "agent", "text": "Troquei a placa nas **8 linhas de porta de batente** para a referência B116 e recalculei o mapa de necessidades. O total do orçamento foi atualizado.", "time": "10:02" },
+            { "sender": "client", "text": "Perfeito. Pode fechar.", "time": "10:05" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Percebe a correção e a que linhas se aplica" },
+            { "icon": "database", "label": "Troca a referência da placa nos compostos" },
+            { "icon": "brain", "label": "Recalcula quantidades e o mapa de necessidades" },
+            { "icon": "check", "label": "Atualiza o orçamento" },
+            { "icon": "shield", "label": "Guarda a correção para a próxima obra parecida" }
+          ]
+        },
+        {
+          "title": "Fica para uma pessoa",
+          "subtitle": "Fora da vossa atividade, ou sem composto. O agente não inventa.",
+          "chat": [
+            { "sender": "agent", "text": "Os desenhos incluem **controlo de acessos e CDI**. Não é atividade da DmFlex: ficou excluído e escrito nas notas, como no R0028.", "time": "09:20" },
+            { "sender": "agent", "text": "Há também uma divisória de vidro com medida especial para a qual não existe composto no Gestão de Obra. Não a orcei.", "time": "09:20" },
+            { "sender": "system", "text": "Encaminhado para o orçamentista com o motivo. Essa linha fica em aberto até alguém decidir.", "time": "09:20" }
+          ],
+          "steps": [
+            { "icon": "filter", "label": "Separa o que não é da vossa atividade" },
+            { "icon": "check", "label": "Escreve a exclusão nas notas do orçamento" },
+            { "icon": "search", "label": "Procura composto para a divisória: não existe" },
+            { "icon": "ban", "label": "Não inventa composto nem preço" },
+            { "icon": "user-cog", "label": "Encaminha para o orçamentista com o motivo escrito" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <p class="nota-fonte">
+      Os cenários usam o R0028 real. O segundo usa o exemplo que o Humberto deu na reunião de 30
+      de setembro. As referências e quantidades saem dos ficheiros que nos enviaram.
+    </p>
+  </div>
+</section>
+
+<!-- ============ 5. FLUXO ============ -->
+<section id="fluxo">
+  <div class="container">
+    <p class="sobretitulo">Como se liga ao que já têm</p>
+    <h2>Do email ao orçamento, sem mudar de ferramenta</h2>
+    <p class="lead">
+      O Gestão de Obra continua a ser a fonte dos compostos e dos preços, e o Sage não muda.
+      O agente faz o caminho que o orçamentista faz hoje, pela mesma ordem, e entrega-lhe o
+      orçamento para rever.
+    </p>
+
+    <div class="fluxo" id="dmFluxo"></div>
+    <script type="application/json" id="dmFluxo-config">
+    {
+      "stepMs": 1900,
+      "channels": [
+        { "icon": "message", "label": "Email de orçamentos" },
+        { "icon": "search", "label": "Desenhos da obra" },
+        { "icon": "database", "label": "Mapa de quantidades" }
+      ],
+      "nodes": [
+        { "icon": "message", "title": "Pedido recebido", "detail": "Lê o email e todos os anexos.", "tone": "brand" },
+        { "icon": "search", "title": "Levantamento", "detail": "Tipologias e quantidades, desenho contra mapa.", "tone": "teal" },
+        { "icon": "database", "title": "Compostos", "detail": "Vai buscar cada composto ao Gestão de Obra.", "tone": "teal" },
+        { "icon": "brain", "title": "Regras da casa", "detail": "Encaixe de placa, mínimos e múltiplos, exclusões.", "tone": "teal" },
+        { "icon": "id", "title": "Orçamento e mapa", "detail": "No vosso modelo, com as notas escritas.", "tone": "teal" },
+        { "icon": "check", "title": "Revisão", "detail": "O orçamentista revê e corrige por chat.", "tone": "brand" }
+      ],
+      "note": "O caminho é o do vosso orçamentista. Muda quem faz a parte longa."
+    }
+    </script>
+
+    <div class="grid-3" style="margin-top:32px">
+      <div class="card reveal">
+        <h3>Um painel para todos os pedidos</h3>
+        <p class="card__nota" style="margin-top:8px">Quantos orçamentos estão em curso, em que fase está cada um, e quais esperam por revisão.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Revisão com chat</h3>
+        <p class="card__nota" style="margin-top:8px">O orçamentista diz o que está mal e o agente refaz. Várias voltas, se for preciso, até fechar.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Disponível sempre</h3>
+        <p class="card__nota" style="margin-top:8px">O agente trabalha todos os dias, também ao fim de semana. O pedido de sexta à noite está preparado na segunda de manhã.</p>
+      </div>
+    </div>
+
+    <div class="card card-artsoft reveal" style="margin-top:28px">
+      <h3>Sobre a ligação ao Gestão de Obra, com franqueza</h3>
+      <p>
+        A Megaval tem uma API para o Sage, que funciona bem, como o Humberto confirmou. A API para
+        aplicações externas, a que o agente precisa, ainda estava em fase de testes da última vez
+        que a vimos, noutro projeto com o mesmo Gestão de Obra.
+      </p>
+      <p>
+        Se estiver pronta quando arrancarmos, o agente lê os compostos diretamente no Gestão de
+        Obra. Se não estiver, a alternativa é trabalhar sobre exportações: o ficheiro do processo
+        de orçamentação que nos enviaram já traz a decomposição completa de cada linha. <b>Qual
+        dos dois caminhos fica decidido na primeira semana</b>, depois de falarmos com a Megaval.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. LIMITES ============ -->
+<section class="section-alt" id="limites">
+  <div class="container">
+    <p class="sobretitulo">Honestidade</p>
+    <h2>O que o agente não vai fazer</h2>
+    <p class="lead">
+      Dissemos na reunião e repetimos aqui: o agente não vai fazer 100% de cada orçamento.
+      70 a 80% já muda a forma de trabalhar, e o resto deve mesmo ficar com quem sabe.
+    </p>
+    <div class="grid-2">
+      <div class="card card-dont reveal">
+        <h3>Fica sempre para uma pessoa</h3>
+        <ul class="list-x">
+          <li>O preço final e o fecho de cada obra</li>
+          <li>Alterar uma medida do projeto, como a da folha de 1260mm para 1240mm: o agente propõe, não decide</li>
+          <li>Peças sem composto no Gestão de Obra</li>
+          <li>Discrepâncias entre o mapa e o desenho, que se confirmam com o cliente</li>
+          <li>Trabalhos fora da vossa atividade, que ficam excluídos e escritos nas notas</li>
+        </ul>
+      </div>
+      <div class="card card-do reveal">
+        <h3>Como o agente se comporta</h3>
+        <ul class="list-check">
+          <li>Nunca inventa composto nem preço: se não está no Gestão de Obra, não orça</li>
+          <li>Escreve nas notas tudo o que alterou, como o vosso orçamentista faz hoje</li>
+          <li>Assinala as discrepâncias em vez de escolher uma das quantidades</li>
+          <li>Nenhum orçamento sai sem revisão de um orçamentista</li>
+          <li>Cada correção feita por chat fica a valer para as obras seguintes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. A CONTA DE VALOR ============ -->
+<section id="valor">
+  <div class="container">
+    <p class="sobretitulo">A conta, antes do preço</p>
+    <h2>O que isto vale, com os vossos números</h2>
+    <div class="grid-3" style="margin-bottom:26px">
+      <div class="card stat-card reveal">
+        <div class="num">1 por dia</div>
+        <div class="desc">Hoje: 8 horas por orçamento normal, por orçamentista</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num">4 por dia</div>
+        <div class="desc">Com o agente a fazer 75% do trabalho: cerca de 2 horas de revisão por orçamento</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="num">30 a 60 min</div>
+        <div class="desc">O objetivo com a plataforma afinada: rever e fechar</div>
+      </div>
+    </div>
+    <div class="valor-conta reveal">
+      <p>
+        Recebem cerca de <b>250 pedidos por mês</b> e respondem a uma pequena parte. Na reunião, o
+        Humberto disse que a produção aguentava o triplo dos pedidos. O que falta é orçamentar.
+      </p>
+      <p>
+        Com a mesma equipa a fazer <b>quatro orçamentos por dia em vez de um</b>, a DmFlex passa a
+        responder a muito mais obras sem ir ao mercado buscar orçamentistas que levam um ano a
+        formar. E a experiência que hoje está na cabeça de quem orçamenta passa a estar escrita
+        em regras, que ficam na empresa.
+      </p>
+      <p class="valor-conta__fecho">
+        A avença mensal fica abaixo do custo de um orçamentista. E o agente não sai ao fim de um
+        ano de formação.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. CASO DO SETOR ============ -->
+<section class="section-alt" id="casos">
+  <div class="container">
+    <p class="sobretitulo">Um caso do mesmo tipo</p>
+    <h2>CF Group: orçamentar produto feito à medida</h2>
+    <div class="caso reveal">
+      <p>
+        A CF Group fabrica e distribui coberturas de piscina, 100% B2B. O paralelo com a DmFlex é
+        direto: o produto define-se por medidas e opções, cada orçamento depende de regras que só
+        a equipa conhecia, e a minoria de casos complexos é que precisa mesmo de uma pessoa.
+      </p>
+      <p>
+        Construímos o motor de orçamentação sobre as tabelas e regras deles, que gera o orçamento
+        com a identidade da casa e encaminha para uma pessoa os casos que fogem ao padrão. Também
+        tinham ERP, e <b>deixámos a ligação ao ERP para a fase seguinte, de propósito</b>, para o
+        orçamento não ficar à espera.
+      </p>
+      <p class="caso__estado">
+        Estado atual: sistema construído e validado de ponta a ponta, em validação final com o
+        cliente antes do arranque.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. INVESTIMENTO ============ -->
+<section id="investimento">
+  <div class="container">
+    <span class="eyebrow">Investimento</span>
+    <h2>Valores</h2>
+    <div class="grid-2">
+      <div class="card price-card reveal" data-holofote>
+        <div class="label">Implementação</div>
+        <div class="price">9.500 € <span class="iva">+ IVA</span></div>
+        <div class="note">Análise do vosso processo com os orçamentistas, construção do agente, as
+          regras da casa (encaixe de placa, mínimos e múltiplos, exclusões), <b>ligação ao Gestão de
+          Obra</b>, <b>plataforma de revisão com chat</b> e testes com orçamentos reais, a começar
+          pelo R0028.</div>
+      </div>
+      <div class="card price-card reveal" data-holofote>
+        <div class="label">Avença mensal</div>
+        <div class="price">325 € <span class="iva">+ IVA</span></div>
+        <div class="note">Manutenção da solução, ajustes contínuos para subir a taxa de automação
+          e <b>suporte direto por WhatsApp</b>, com alguém da nossa equipa dedicado à DmFlex.
+          Sem tickets que demoram três dias.</div>
+      </div>
+    </div>
+    <div class="card card-reavaliacao reveal">
+      <p>
+        <b>Porque é que há uma avença.</b> O agente arranca a fazer cerca de 70% do trabalho. Os
+        casos menos frequentes, os que ele só vê de vez em quando, é que fazem esse número subir
+        para 72, 74, 80% ao longo dos meses. Cada correção que o orçamentista faz é trabalho
+        nosso a ensinar o agente, e é isso que a avença paga.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FECHO ============ -->
+<section class="cta-final" id="avancar">
+  <div class="container center">
+    <h2>Avançamos, Humberto?</h2>
+    <p class="lead" style="margin:14px auto 0">
+      Três passos até o agente estar a orçamentar, e nada arranca sem confirmação por escrito.
+    </p>
+    <ol class="passos-fecho">
+      <li><span class="n">1</span><b>Recebe a proposta formal</b><p>O documento com o âmbito, os valores e as condições desta página, para assinar.</p></li>
+      <li><span class="n">2</span><b>Semana 1: o processo, de ponta a ponta</b><p>Sessões com os orçamentistas para escrever as regras, e mais orçamentos fechados como o R0028.</p></li>
+      <li><span class="n">3</span><b>Ligação ao Gestão de Obra</b><p>Falamos com a Megaval, confirmamos o estado da API e fechamos o caminho da ligação.</p></li>
+    </ol>
+    <div class="fecho-acoes">
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%20DmFlex%20e%20quero%20avan%C3%A7ar." class="btn btn-primary premivel" data-iman="0.2" target="_blank" rel="noopener">Quero avançar</a>
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%20DmFlex%20e%20tenho%20uma%20pergunta%3A%20" class="btn btn-ghost" target="_blank" rel="noopener">Tenho uma pergunta</a>
+    </div>
+    <p class="fecho-contacto">
+      Manuel Condeço, AI Solutions<br>
+      <a href="tel:+351964251889">+351 964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a>
+    </p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a DmFlex, Lda
+    <span class="disclaimer">O orçamento R0028 e os ficheiros citados são material fornecido pela DmFlex a 6 de outubro de 2026.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script>
+  chatRaciocinio('dmDemo');
+  fluxo('dmFluxo');
+</script>
+</body>
+</html>
