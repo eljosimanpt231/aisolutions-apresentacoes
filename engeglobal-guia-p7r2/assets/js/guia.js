@@ -26,6 +26,13 @@
     }).join('')}</ol>`;
   }
 
+  /* processo etapa a etapa (só onde existir) */
+  function processo(m) {
+    return `<div class="processo-bloco"><h3>O processo completo, etapa a etapa</h3>
+      <p>Da entrada do pedido ao que acontece depois da entrega. Para cada etapa: quem a faz, quanto tempo leva e de onde vem a informação.</p>
+      <ol class="processo">${m.processo.map((e, i) => `<li class="etapa"><span class="etapa-n">${i + 1}</span><h4>${esc(e.etapa)}</h4>${lista(m.id + '-p' + i, e.perguntas).replace('data-mod="' + m.id + '-p' + i + '"', 'data-mod="' + m.id + '"')}</li>`).join('')}</ol></div>`;
+  }
+
   /* módulos */
   const mods = document.getElementById('modulos');
   mods.innerHTML = G.modulos.map(m => `
@@ -42,6 +49,7 @@
         <p class="mod-quem">Quem responde: ${m.quem.map(q => `<b>${esc(q)}</b>`).join(', ')}</p>
         <p class="mod-porque">${esc(m.porque)}</p>
         ${m.arvores.map(arvore).join('')}
+        ${m.processo ? processo(m) : ''}
         <div class="mod-duas">
           <div class="cartao">
             <h3>Perguntas complementares</h3>
@@ -57,7 +65,7 @@
 
   /* mapa */
   document.getElementById('mapa').innerHTML = G.modulos.map(m => {
-    const n = m.perguntas.length + m.arvores.reduce((s, a) => s + contar(a), 0);
+    const n = m.perguntas.length + m.arvores.reduce((s, a) => s + contar(a), 0) + (m.processo ? m.processo.reduce((s, e) => s + e.perguntas.length, 0) : 0);
     return `<a class="mapa-c" href="#${m.id}"><span class="mod-letra">${m.letra}</span><b>${esc(m.titulo)}</b><small>${esc(m.fase)}, ${n} perguntas</small><span class="mapa-quem">${m.quem.map(esc).join(', ')}</span></a>`;
   }).join('') + `<a class="mapa-c t" href="#transversal"><span class="mod-letra">+</span><b>Transversal</b><small>Pessoas, dados, financiamento</small><span class="mapa-quem">Luís, Hugo, José Matias</span></a>`;
   function contar(n) { return n.fim ? 0 : 1 + n.ramos.reduce((s, r) => s + contar(r.vai), 0); }

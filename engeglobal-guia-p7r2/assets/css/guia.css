@@ -197,3 +197,18 @@ p { max-width: 78ch; }
 .mapa-c, .mapa-c b { color: var(--text); }
 .contacto { margin-top: 14px; font-size: 0.9rem; color: var(--muted); }
 .contacto a { color: var(--marca-texto); font-weight: 600; }
+
+/* ---------- processo etapa a etapa (orçamentação) ---------- */
+.processo-bloco { margin-top: 26px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-sm); padding: 20px clamp(14px, 2.4vw, 26px) 24px; }
+.processo-bloco > h3 { font-size: 1.08rem; }
+.processo-bloco > p { margin-top: 6px; font-size: 0.9rem; color: var(--muted); }
+.processo { list-style: none; padding: 0; margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: none; }
+.etapa { position: relative; border: 1px solid var(--border); border-top: 4px solid var(--brand); border-radius: var(--radius); padding: 14px 14px 10px; background: var(--surface); }
+.etapa:nth-child(3n+2) { border-top-color: var(--brand2); }
+.etapa:nth-child(3n) { border-top-color: var(--accent); }
+.etapa-n { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--brand-solido); color: var(--on-brand); font-family: var(--font-display); font-weight: 700; font-size: 0.8rem; }
+.etapa h4 { display: inline; margin-left: 8px; font-size: 0.98rem; vertical-align: 2px; }
+.etapa .perguntas { margin-top: 8px; }
+.etapa .perguntas label { font-size: 0.86rem; padding: 6px 4px; }
+@media (max-width: 960px) { .processo { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .processo { grid-template-columns: 1fr; } }

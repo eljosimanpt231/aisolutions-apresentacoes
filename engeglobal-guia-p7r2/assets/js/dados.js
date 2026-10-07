@@ -50,7 +50,7 @@ window.GUIA = {
     {
       id: 'propostas', letra: 'C', fase: 'Fase 1', titulo: 'Assistente de propostas e orçamentação',
       quem: ['Hélder Freitas', 'Luís', 'Hugo'],
-      porque: 'É o coração do projeto e onde está mais incerteza: os mapas do Hélder, de onde vêm os preços, e se o projeto chega com mapa de quantidades ou tem de ser medido.',
+      porque: 'É o coração do projeto. A folha dos relvados é a parte mais simples: o processo completo vai do estudo da obra à submissão, passa por medições, consultas ao mercado e formação do preço, e cada etapa tem as suas dependências. É aqui que está a maior incerteza do projeto.',
       arvores: [
         {
           titulo: 'Como se faz hoje um orçamento',
@@ -72,6 +72,25 @@ window.GUIA = {
           ]
         },
         {
+          titulo: 'De onde vêm os preços',
+          q: 'Como formam o preço de cada rubrica?', quem: ['Hélder Freitas'],
+          ramos: [
+            { r: 'Base de preços própria', tom: 'ok', vai: {
+              q: 'Está atualizada e num só sítio?', quem: ['Hélder Freitas'],
+              ramos: [
+                { r: 'Sim', tom: 'ok', vai: { fim: 'O agente aplica os preços e indica a origem', tom: 'ok' } },
+                { r: 'Dispersa ou antiga', tom: 'inv', vai: { fim: 'Consolidar a base na auditoria', tom: 'inv' } }
+              ] } },
+            { r: 'Cotações de fornecedores e subempreiteiros', tom: 'inv', vai: {
+              q: 'Como pedem e comparam as cotações?', quem: ['Hélder Freitas'],
+              ramos: [
+                { r: 'Email e Excel', tom: 'inv', vai: { fim: 'Avaliar na auditoria: pedidos automáticos e mapa comparativo', tom: 'inv' } },
+                { r: 'Plataforma de compras', tom: 'terc', vai: { fim: 'Depende da ligação a essa plataforma', tom: 'terc' } }
+              ] } },
+            { r: 'Decomposição (rendimentos e custos)', tom: 'inv', vai: { fim: 'Passar as regras do Hélder a fórmulas, rubrica a rubrica', tom: 'inv' } }
+          ]
+        },
+        {
           titulo: 'As quantidades',
           q: 'O concurso traz mapa de quantidades?', quem: ['Hélder Freitas'],
           ramos: [
@@ -86,11 +105,58 @@ window.GUIA = {
           ]
         }
       ],
+      processo: [
+        { etapa: 'Entrada do pedido', perguntas: [
+          'Que parte dos orçamentos vem de concursos públicos e que parte de clientes privados?',
+          'Quando um cliente privado pede apoio técnico antes do concurso, o que lhe entregam?',
+          'Quem recebe cada pedido e onde fica registado?'
+        ] },
+        { etapa: 'Estudo da obra', perguntas: [
+          'Quem estuda o processo (caderno de encargos, cláusulas técnicas, peças desenhadas) e quanto tempo leva, por tipo de obra?',
+          'Que informação tiram do projeto e onde a anotam?',
+          'Quando as peças se contradizem, qual prevalece e quem decide?'
+        ] },
+        { etapa: 'Quantidades', perguntas: [
+          'Conferem o mapa de quantidades do dono de obra? Com que frequência encontram erros?',
+          'Apresentam lista de erros e omissões? Quem a prepara e com que prazo?',
+          'Quando são vocês a medir, com que software e quanto tempo demora?'
+        ] },
+        { etapa: 'Formação do preço', perguntas: [
+          'Como decompõem o preço de uma rubrica: mão de obra, materiais, equipamento, subempreitada?',
+          'Onde estão os rendimentos de mão de obra e os custos de equipamento?',
+          'Como calculam estaleiro, custos indiretos e margem? Quem define a margem?'
+        ] },
+        { etapa: 'Consultas ao mercado', perguntas: [
+          'Para que rubricas pedem cotação a fornecedores e subempreiteiros, e a quantos?',
+          'Como enviam os pedidos e como comparam as respostas (mapa comparativo)?',
+          'Quanto tempo esperam pelas respostas e o que fazem quando não chegam a tempo?'
+        ] },
+        { etapa: 'Base de preços e histórico', perguntas: [
+          'Têm base de preços própria? Onde está e quando foi atualizada?',
+          'Guardam os preços das obras ganhas e perdidas para comparação?',
+          'Usam os relatórios de análise das propostas para conhecer os preços dos concorrentes?'
+        ] },
+        { etapa: 'Montagem da proposta', perguntas: [
+          'Em que formato entregam a lista de preços unitários (modelo da entidade ou Excel próprio)?',
+          'Que peças técnicas preparam sempre: memória descritiva, plano de trabalhos, cronograma financeiro, planos de mão de obra e equipamento?',
+          'Quanto tempo levam essas peças, comparado com o preço?'
+        ] },
+        { etapa: 'Revisão e submissão', perguntas: [
+          'Quem revê e aprova o preço final, e em que momento?',
+          'Que verificações fazem antes de submeter?',
+          'Quem submete na plataforma e com que assinatura digital?'
+        ] },
+        { etapa: 'Depois da entrega', perguntas: [
+          'Analisam porque ganharam ou perderam cada concurso?',
+          'Comparam o orçamento com o custo real da obra executada?',
+          'Que indicadores querem acompanhar (taxa de sucesso, desvio entre orçamento e custo real)?'
+        ] }
+      ],
       perguntas: [
-        'Quantos orçamentos de relvados fazem por mês? E de outras obras?',
+        'Quantos orçamentos fazem por mês, por tipo de obra (relvados, infraestruturas, estradas, drenagem, edifícios)?',
+        'Em que etapa se perde mais tempo hoje? É a mesma em todos os tipos de obra?',
         'Que variáveis mudam o preço de um relvado (base, drenagem, tipo de enchimento, linhas, equipamento)?',
         'Onde estão as propostas anteriores, em que formato e quantas? Podem servir de base ao rascunho?',
-        'Que modelos têm para memória descritiva, plano de trabalhos e lista de preços unitários?',
         'Ferramentas auxiliares do Hélder (custo de mão de obra por localização, tempo, dificuldade): quais e onde estão?',
         'O Hugo falou em plantas com curvas de nível para escavação e aterro. Em que formato chegam e com que frequência?',
         'Como validamos a Fase 1: três concursos já entregues, com o orçamento real deles ao lado?'
@@ -132,8 +198,7 @@ window.GUIA = {
         'Que 5 a 10 perguntas querem ver respondidas primeiro? (horas por obra, estado financeiro, documentos de uma obra)',
         'Onde se registam as horas e os recursos de cada obra?',
         'Que perfis existem (colaborador, gestão, administração) e quem vê o quê?',
-        'A parte contabilística vem da contabilidade externa: chega por que via e com que regularidade?',
-        'O assistente é só para a EngeGlobal ou também para a Nelugo, que tem a mesma gestão?'
+        'A parte contabilística vem da contabilidade externa: chega por que via e com que regularidade?'
       ],
       expectativa: 'Respeita sempre as permissões da origem e diz de onde vem cada resposta. Se a ligação ao PHC custar mais do que vale, começamos pelos mapas em Excel e o PHC entra depois.'
     },
@@ -231,7 +296,7 @@ window.GUIA = {
       titulo: 'Pessoas e tempo', icone: 'P',
       perguntas: [
         'Quem é o nosso ponto de contacto único durante o projeto?',
-        'Quanto tempo por semana conseguem dar o Hugo, o Luís, o Hélder (presencial uma vez por semana) e a Elsa?',
+        'Quantas horas por mês conseguem dar o Hugo, o Luís, o Hélder e a Elsa? As sessões de acompanhamento são por chamada.',
         'Qual é o papel do José Matias no projeto?',
         'Vão contratar alguém com perfil para estes temas, como o Luís sugeriu? Quando?'
       ]
@@ -239,7 +304,7 @@ window.GUIA = {
     {
       titulo: 'Dados e segurança', icone: 'S',
       perguntas: [
-        'NDA: quem assina, que âmbito, e se cobre também a Nelugo.',
+        'NDA: quem assina e com que âmbito.',
         'Há restrições sobre onde os dados podem ser processados (por exemplo, só na União Europeia)?',
         'Que informação nunca pode sair da empresa, nem anonimizada?'
       ]
