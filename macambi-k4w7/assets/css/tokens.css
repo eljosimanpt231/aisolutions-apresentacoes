@@ -1,0 +1,70 @@
+/* ============================================================
+   TOKENS: Macambi (claro, a pedido do Manuel)
+   Base corporativo-azul, recolorida com o vermelho e o castanho do
+   logótipo "macambi", e a madeira como segunda voz (carpintaria).
+   ============================================================ */
+:root {
+  /* Marca: o vermelho do logótipo (#c02020) escurecido para botões e texto (AA com branco) */
+  --brand-hsl: 0 66% 38%;
+  /* Acento: o vermelho tal como está no logótipo, para glows, barras e pormenores */
+  --accent-hsl: 0 71% 44%;
+  /* Segunda voz: madeira, para o gradiente do texto */
+  --brand2-hsl: 28 46% 40%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --madeira: hsl(var(--brand2-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(var(--brand-hsl));
+
+  /* O castanho do logótipo (#402020) levado a tinta */
+  --grafite-hsl: 0 33% 19%;
+  --grafite: hsl(var(--grafite-hsl));
+  --grafite-2: hsl(0 24% 25%);
+  --grafite-3: hsl(0 18% 32%);
+  --aco: hsl(10 8% 52%);
+
+  --acento-texto: hsl(0 70% 35%);
+  --madeira-texto: hsl(28 55% 30%);
+  --ok-texto: hsl(152 62% 26%);
+  --av-texto: hsl(32 90% 30%);
+  --no-texto: hsl(355 65% 40%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(24 24% 97.4%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(24 22% 98.2%);
+  --border: hsl(18 14% 88%);
+
+  --text: hsl(0 14% 12%);
+  --muted: hsl(0 6% 37%);
+
+  --success-hsl: 152 60% 36%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 48%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 95% 50%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.08), transparent 62%);
+  --grad-text: linear-gradient(115deg, hsl(var(--accent-hsl)), hsl(var(--brand2-hsl)));
+  --grad-cta: linear-gradient(170deg, hsl(24 30% 97%), hsl(var(--accent-hsl) / 0.07));
+
+  --shadow-sm: 0 1px 3px hsl(var(--grafite-hsl) / 0.08);
+  --shadow-md: 0 10px 30px hsl(var(--grafite-hsl) / 0.09);
+  --shadow-lg: 0 24px 60px hsl(var(--grafite-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Jost', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --container: 1140px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
+
+/* Chat (padrão da casa) */
+:root {
+  --wa-green: hsl(165 49% 30%);
+  --wa-green-strong: hsl(145 63% 40%);
+  --wa-bg: hsl(30 24% 93%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}

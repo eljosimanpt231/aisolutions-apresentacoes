@@ -1,0 +1,330 @@
+{
+  "site": "http://www.macambi.com/",
+  "dominio": "macambi.com",
+  "titulo": "Macambi - Macambi",
+  "descricao": "Macambi",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "http://www.macambi.com/includes/macambi2013/imagens/logo.png",
+    "porque": [
+      "diz logo",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 290,
+      "altura": 115,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            192,
+            32,
+            32
+          ],
+          "parte": 67
+        },
+        {
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "parte": 10
+        },
+        {
+          "rgb": [
+            64,
+            32,
+            32
+          ],
+          "parte": 9
+        },
+        {
+          "rgb": [
+            32,
+            32,
+            32
+          ],
+          "parte": 5
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "fundo",
+      "src": "http://www.macambi.com/includes/macambi2013/imagens/catalogo_pt.png",
+      "pontos": 7,
+      "motivos": [
+        "diz logo",
+        "no topo"
+      ],
+      "analise": {
+        "largura": 200,
+        "altura": 406,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              192
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              64
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              64
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "http://www.macambi.com/includes/macambi2013/imagens/livro_reclamacoes.png",
+      "pontos": 4,
+      "motivos": [
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 140,
+        "altura": 58,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 90
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 2
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "http://www.macambi.com/includes/macambi2013/imagens/CENTRO2030_BarraCofinan.png",
+      "pontos": 4,
+      "motivos": [
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 220,
+        "altura": 25,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "http://www.macambi.com/includes/macambi2013/imagens/apoios_04.png",
+      "pontos": 0,
+      "motivos": [
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 85,
+        "altura": 25,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "http://www.macambi.com/includes/macambi2013/imagens/apoios_05.png",
+      "pontos": 0,
+      "motivos": [
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 68,
+        "altura": 25,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "http://www.macambi.com/includes/macambi2013/imagens/fb.png",
+      "pontos": -1,
+      "motivos": [
+        "no topo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 20,
+        "altura": 21,
+        "fundo": "colorido",
+        "fundoRgb": [
+          224,
+          224,
+          224
+        ],
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              160,
+              160
+            ],
+            "parte": 26
+          },
+          {
+            "rgb": [
+              160,
+              128,
+              128
+            ],
+            "parte": 21
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 16
+          },
+          {
+            "rgb": [
+              128,
+              96,
+              96
+            ],
+            "parte": 16
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#c02020",
+      "hsl": "0 71% 44%",
+      "peso": 80400,
+      "onde": [
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#402020",
+      "hsl": "0 33% 19%",
+      "peso": 10800,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "0 71% 44%",
+    "--accent-hsl": "0 83% 58%",
+    "nota": "acento = a marca mais viva (a marca só tem uma cor forte)"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": null,
+    "corpo": "Trebuchet MS",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [],
+    "titulos": [],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático."
+  ]
+}
