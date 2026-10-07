@@ -1,0 +1,99 @@
+/* Living Kuatro M's: tema claro por defeito (papel de desenho quente),
+   escuro em grafite pelo botão. Marca: cinza-ardósia do logótipo (--brand)
+   e azul-água da assinatura do logótipo (--accent). Madeira de nogueira
+   para a régua, as cotas e o gradiente do título. Semânticos: verde
+   lançado, âmbar a confirmar, vermelho bloqueado. */
+:root {
+  --brand-hsl: 200 14% 26%;
+  --accent-hsl: 190 61% 46%;
+  --wood-hsl: 26 46% 38%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --wood: hsl(var(--wood-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --acento-texto: hsl(190 72% 30%);
+  --wood-texto: hsl(26 50% 32%);
+  --logo-cinza: hsl(200 11% 44%);
+
+  --bg: hsl(40 20% 97%);
+  --bg-soft: hsl(38 22% 93.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(40 24% 98.5%);
+  --border: hsl(34 14% 86%);
+  --border-strong: hsl(34 12% 76%);
+  --line: hsl(var(--wood-hsl) / 0.06);
+
+  --text: hsl(200 18% 12%);
+  --muted: hsl(200 9% 36%);
+  --faint: hsl(200 7% 46%);
+
+  --paper: hsl(42 38% 97%);
+  --paper-text: hsl(220 18% 16%);
+  --paper-muted: hsl(220 8% 38%);
+  --paper-line: hsl(36 14% 80%);
+
+  --app-side: hsl(200 16% 15%);
+  --app-side-text: hsl(200 12% 84%);
+  --app-side-muted: hsl(200 8% 62%);
+
+  --success-hsl: 152 58% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 66% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 32 90% 36%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-text: linear-gradient(105deg, hsl(26 52% 36%) 5%, hsl(190 70% 34%) 85%);
+  --grad-cta: linear-gradient(160deg, hsl(200 16% 18%), hsl(200 14% 30%));
+
+  --shadow-sm: 0 1px 2px hsl(26 30% 20% / 0.07);
+  --shadow-md: 0 10px 28px hsl(26 30% 20% / 0.10);
+  --shadow-lg: 0 26px 60px hsl(26 30% 20% / 0.16);
+
+  --radius: 10px;
+  --radius-lg: 16px;
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --font-site: 'Fraunces', Georgia, serif;
+  --container: 1200px;
+  --section-pad: 0px;
+}
+
+/* ---------- Escuro: grafite ---------- */
+:root[data-theme="dark"] {
+  --brand-hsl: 200 12% 82%;
+  --accent-hsl: 190 64% 56%;
+  --wood-hsl: 28 52% 56%;
+  --on-brand: hsl(200 18% 9%);
+  --acento-texto: hsl(190 66% 62%);
+  --wood-texto: hsl(28 60% 66%);
+  --logo-cinza: hsl(200 10% 70%);
+
+  --bg: hsl(200 14% 7.5%);
+  --bg-soft: hsl(200 13% 10%);
+  --surface: hsl(200 12% 11.5%);
+  --surface-2: hsl(200 12% 13.5%);
+  --border: hsl(200 9% 21%);
+  --border-strong: hsl(200 8% 30%);
+  --line: hsl(var(--accent-hsl) / 0.05);
+
+  --text: hsl(40 18% 93%);
+  --muted: hsl(200 8% 70%);
+  --faint: hsl(200 6% 60%);
+
+  --paper: hsl(42 30% 94%);
+  --paper-text: hsl(220 18% 16%);
+  --paper-muted: hsl(220 8% 36%);
+  --paper-line: hsl(36 14% 78%);
+
+  --app-side: hsl(200 14% 5.5%);
+
+  --success-hsl: 150 52% 52%;
+  --danger-hsl: 356 78% 66%;
+  --warning-hsl: 36 92% 58%;
+
+  --grad-text: linear-gradient(105deg, hsl(28 62% 62%) 5%, hsl(190 70% 60%) 85%);
+  --grad-cta: linear-gradient(160deg, hsl(190 50% 30%), hsl(200 14% 18%));
+
+  --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.4);
+  --shadow-md: 0 12px 30px hsl(0 0% 0% / 0.45);
+  --shadow-lg: 0 28px 64px hsl(0 0% 0% / 0.55);
+}
