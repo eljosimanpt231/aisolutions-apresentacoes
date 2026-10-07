@@ -165,7 +165,7 @@ section[id] { scroll-margin-top: 64px; }
 .perguntas input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-color: hsl(var(--t-ok-hsl) / 0.6); }
 
 /* transversal */
-.trans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
+.trans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
 @media (max-width: 900px) { .trans { grid-template-columns: 1fr; } }
 .t-ico { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 9px; background: hsl(var(--accent-hsl) / 0.12); color: var(--acento-texto); font-family: var(--font-display); font-weight: 800; margin-bottom: 8px; }
 

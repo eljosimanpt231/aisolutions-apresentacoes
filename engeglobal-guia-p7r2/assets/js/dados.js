@@ -43,7 +43,9 @@ window.GUIA = {
         'Quem decide concorrer e em quanto tempo? Onde querem receber o resumo (email, CRM, WhatsApp)?',
         'Que documentos são sempre exigidos e quais variam de concurso para concurso? Onde está esse arquivo?',
         'Ideia do Luís: cruzar com o Código dos Contratos Públicos para detetar exigências que já não são enquadráveis. Quem valida a reclamação?',
-        'Alertas na internet por palavras-chave (obras e relvados planeados): que palavras, que fontes, com que frequência?'
+        'Alertas na internet por palavras-chave (obras e relvados planeados): que palavras, que fontes, com que frequência?',
+        'Têm registo das decisões passadas (concorreram ou não, e porquê) para o agente aprender com elas? (ponto 8.2)',
+        'Querem que o agente aponte concursos parecidos com obras que já fizeram? (ponto 8.2)'
       ],
       expectativa: 'A IA filtra e resume; a decisão de concorrer continua com eles. Se as peças estiverem atrás de um login que não podemos usar, a Elsa continua a descarregá-las e o agente trata do resto.'
     },
@@ -159,7 +161,8 @@ window.GUIA = {
         'Onde estão as propostas anteriores, em que formato e quantas? Podem servir de base ao rascunho?',
         'Ferramentas auxiliares do Hélder (custo de mão de obra por localização, tempo, dificuldade): quais e onde estão?',
         'O Hugo falou em plantas com curvas de nível para escavação e aterro. Em que formato chegam e com que frequência?',
-        'Como validamos a Fase 1: três concursos já entregues, com o orçamento real deles ao lado?'
+        'Como validamos a Fase 1: três concursos já entregues, com o orçamento real deles ao lado?',
+        'Têm uma biblioteca de conteúdos técnicos (fichas técnicas, certificados, currículo de obras) para as propostas? (ponto 8.3)'
       ],
       expectativa: 'Objetivo realista: 85% a 90% do orçamento preparado pelo agente, ao fim de alguns meses de ajustes. O preço final é sempre de uma pessoa. A medição a partir de desenhos é prova de conceito, não promessa.'
     },
@@ -198,7 +201,10 @@ window.GUIA = {
         'Que 5 a 10 perguntas querem ver respondidas primeiro? (horas por obra, estado financeiro, documentos de uma obra)',
         'Onde se registam as horas e os recursos de cada obra?',
         'Que perfis existem (colaborador, gestão, administração) e quem vê o quê?',
-        'A parte contabilística vem da contabilidade externa: chega por que via e com que regularidade?'
+        'A parte contabilística vem da contabilidade externa: chega por que via e com que regularidade?',
+        'Além do PHC, que outras plataformas de gestão e repositórios entram no assistente? (ponto 2.2)',
+        'Com que frequência a informação tem de estar atualizada: diária, várias vezes ao dia? (ponto 8.1)',
+        'Querem exportar resultados e resumos? Em que formato? (ponto 8.1)'
       ],
       expectativa: 'Respeita sempre as permissões da origem e diz de onde vem cada resposta. Se a ligação ao PHC custar mais do que vale, começamos pelos mapas em Excel e o PHC entra depois.'
     },
@@ -221,7 +227,8 @@ window.GUIA = {
         'Que tipos de contrato têm (empreitada, subempreitada, fornecimento)? Quantos por ano?',
         'O que mais dói hoje: prazos, penalizações, cauções e garantias, ou acompanhar datas?',
         'Têm modelos internos aprovados? Quem os mantém?',
-        'Quem faz a revisão jurídica? A IA apoia, não substitui o parecer.'
+        'Quem faz a revisão jurídica? A IA apoia, não substitui o parecer.',
+        'Recebem várias versões do mesmo contrato e precisam de as comparar? (ponto 8.4)'
       ],
       expectativa: 'Cada elemento extraído leva ao parágrafo que o suporta. A decisão de assinar e a revisão jurídica ficam com eles.'
     },
@@ -254,7 +261,8 @@ window.GUIA = {
         'Que tipos de pedido chegam e de quem (clubes, municípios, particulares, loteadores)?',
         'Que conteúdos aprovados existem: catálogos, brochuras, vídeos, perguntas frequentes?',
         'Quem recebe cada tipo de pedido, e em que horário?',
-        'O chatbot do parceiro no Brasil: há árvore de decisão que possamos reaproveitar?'
+        'O chatbot do parceiro no Brasil: há árvore de decisão que possamos reaproveitar?',
+        'Atendem clientes fora de Portugal (o Luís continua a vender relva para o Brasil)? Em que línguas? (ponto 8.5)'
       ],
       expectativa: 'Começa pelos relvados e alarga depois. O agente nunca dá preço nem prazo fechado: qualifica e passa a uma pessoa.'
     },
@@ -286,7 +294,9 @@ window.GUIA = {
         'Onde está a base de contactos, quantos são e têm consentimento para comunicações (RGPD)?',
         'Que regras de follow-up fazem sentido (por exemplo, 5 dias e 15 dias depois da proposta)?',
         'Por email, por WhatsApp, ou os dois? Com aprovação humana antes de cada envio?',
-        'Quem não deve receber comunicações (exclusões)?'
+        'Quem não deve receber comunicações (exclusões)?',
+        'Há contactos antigos que valha a pena reativar? (ponto 4.3)',
+        'Que tarefas querem que o CRM crie sozinho (ligar, enviar proposta, visitar a obra)? (ponto 4.3)'
       ],
       expectativa: 'Nada sai para um cliente sem as regras acordadas e, se quiserem, sem aprovação. O WhatsApp tem custo da Meta por mensagem.'
     }
@@ -306,7 +316,10 @@ window.GUIA = {
       perguntas: [
         'NDA: quem assina e com que âmbito.',
         'Há restrições sobre onde os dados podem ser processados (por exemplo, só na União Europeia)?',
-        'Que informação nunca pode sair da empresa, nem anonimizada?'
+        'Que informação nunca pode sair da empresa, nem anonimizada?',
+        'Querem entrar com as contas Microsoft da empresa? (ponto 9)',
+        'Quanto tempo guardamos conversas, documentos e registos de auditoria? (ponto 9)',
+        'Que contas de serviços externos ficam em nome da EngeGlobal (Meta, Microsoft, outras)? (ponto 13)'
       ]
     },
     {
@@ -315,6 +328,16 @@ window.GUIA = {
         'Que linha de financiamento é, e que critérios o projeto tem de cumprir?',
         'Há prazos do financiamento que condicionem as fases?',
         'Que entregáveis ou relatórios o financiamento exige de nós?'
+      ]
+    },
+    {
+      titulo: 'Aceitação, formação e suporte', icone: 'A',
+      perguntas: [
+        'Quem aprova os critérios de aceitação de cada módulo, antes de o começarmos? (ponto 11)',
+        'Que casos reais usamos nos testes de cada módulo, e quem os escolhe? (ponto 11)',
+        'Querem um ambiente de testes separado antes de cada entrada em produção? (ponto 10)',
+        'Quantas pessoas vamos formar, e quem fica administrador do sistema do vosso lado? (ponto 10)',
+        'Que suporte esperam depois da entrada em produção: horário, canal, tempo de resposta? (ponto 10)'
       ]
     }
   ],
