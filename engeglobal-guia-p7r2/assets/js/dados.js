@@ -52,10 +52,10 @@ window.GUIA = {
     {
       id: 'propostas', letra: 'C', fase: 'Fase 1', titulo: 'Assistente de propostas e orçamentação',
       quem: ['Hélder Freitas', 'Luís', 'Hugo'],
-      porque: 'É o coração do projeto. A folha dos relvados é a parte mais simples: o processo completo vai do estudo da obra à submissão, passa por medições, consultas ao mercado e formação do preço, e cada etapa tem as suas dependências. É aqui que está a maior incerteza do projeto.',
+      porque: 'É o coração do projeto. Os relvados são só o ponto de partida que o Luís sugeriu, e a parte mais simples: depois alarga-se às infraestruturas, vias, drenagem, loteamentos e movimentação de terras. O processo completo vai do estudo da obra à submissão, passa por medições, consultas ao mercado e formação do preço, e cada etapa tem as suas dependências. É aqui que está a maior incerteza do projeto.',
       arvores: [
         {
-          titulo: 'Como se faz hoje um orçamento',
+          titulo: 'Relvados sintéticos, o ponto de partida',
           q: 'Como é feito hoje um orçamento de relvado sintético?', quem: ['Luís', 'Hélder Freitas'],
           ramos: [
             { r: 'Folha de Excel própria', tom: 'ok', vai: {
@@ -71,6 +71,20 @@ window.GUIA = {
                 { r: 'Não', tom: 'terc', vai: { fim: 'Trabalhar sobre exportações do software', tom: 'terc' } }
               ] } },
             { r: 'Depende de quem orçamenta', tom: 'fora', vai: { fim: 'Primeiro escrever as regras com o Hélder, na auditoria', tom: 'inv' } }
+          ]
+        },
+        {
+          titulo: 'Os restantes tipos de obra',
+          q: 'Os outros tipos de obra orçamentam-se da mesma forma que os relvados?', quem: ['Hélder Freitas', 'Hugo'],
+          ramos: [
+            { r: 'Cada tipo tem a sua folha', tom: 'inv', vai: { fim: 'Mapear cada folha na auditoria e alargar tipo a tipo', tom: 'inv' } },
+            { r: 'Preços unitários sobre o mapa do dono de obra', tom: 'ok', vai: {
+              q: 'O mapa vem sempre, ou em parte das obras é preciso medir?', quem: ['Hélder Freitas'],
+              ramos: [
+                { r: 'Vem sempre', tom: 'ok', vai: { fim: 'Aplicar a base de preços ao mapa: viável', tom: 'ok' } },
+                { r: 'Às vezes é preciso medir', tom: 'inv', vai: { fim: 'Medição por prova de conceito, por tipo de obra', tom: 'inv' } }
+              ] } },
+            { r: 'Depende de quem orçamenta', tom: 'fora', vai: { fim: 'Escrever as regras de cada tipo com o Hélder antes de automatizar', tom: 'inv' } }
           ]
         },
         {
@@ -106,6 +120,38 @@ window.GUIA = {
               ] } }
           ]
         }
+      ],
+      tipos: [
+        { etapa: 'Relvados sintéticos (ponto de partida)', perguntas: [
+          'Quantos orçamentos de relvado fazem por ano, e quantos são para clubes privados e quantos para câmaras?',
+          'Além do relvado, que elementos entram muitas vezes (iluminação, vedação, balneários, bancadas)?',
+          'A folha de Excel dos relvados cobre todos os casos, ou há exceções frequentes?'
+        ] },
+        { etapa: 'Infraestruturas e vias', perguntas: [
+          'Que obras são as mais frequentes: arruamentos, estradas, passeios, requalificações urbanas?',
+          'O preço sai sobretudo de equipamento e rendimentos, ou de materiais? Onde estão esses valores?',
+          'Quanto tempo leva hoje um orçamento destes, do estudo à proposta?'
+        ] },
+        { etapa: 'Drenagem e redes', perguntas: [
+          'Que redes orçamentam (águas pluviais, saneamento, abastecimento)?',
+          'As quantidades vêm dos perfis longitudinais do projeto? Em que formato?',
+          'Há regras próprias (profundidades, entivação, tipos de tubagem) que mudam o preço?'
+        ] },
+        { etapa: 'Loteamentos', perguntas: [
+          'O Hugo disse que muitos privados querem saber o preço de um loteamento pelas características. Que características dão, normalmente?',
+          'É possível uma estimativa por indicadores (área, número de lotes, metros de arruamento) antes do orçamento detalhado?',
+          'Quantos pedidos destes recebem, e quantos se transformam em obra?'
+        ] },
+        { etapa: 'Movimentação de terras', perguntas: [
+          'Escavação, aterro e decapagem: como calculam hoje os volumes, e com que software?',
+          'As plantas com curvas de nível e os perfis chegam em DWG, DXF ou PDF?',
+          'Em quantas obras por ano isto pesa no preço final?'
+        ] },
+        { etapa: 'Construção civil e edifícios', perguntas: [
+          'O Hugo disse que a construção civil pura não é tanto a vossa vertente. Que peso tem hoje?',
+          'Quando orçamentam edifícios, que especialidades fazem e quais subcontratam?',
+          'Faz sentido entrar neste projeto, ou fica para mais tarde?'
+        ] }
       ],
       processo: [
         { etapa: 'Entrada do pedido', perguntas: [
@@ -155,7 +201,9 @@ window.GUIA = {
         ] }
       ],
       perguntas: [
-        'Quantos orçamentos fazem por mês, por tipo de obra (relvados, infraestruturas, estradas, drenagem, edifícios)?',
+        'Quantos orçamentos fazem por mês, por tipo de obra, e que tipo pesa mais na faturação?',
+        'Depois dos relvados, por que ordem querem alargar aos outros tipos de obra?',
+        'O orçamento muda quando o cliente é uma câmara ou um privado? Em quê? (o Luís referiu esta diferença)',
         'Em que etapa se perde mais tempo hoje? É a mesma em todos os tipos de obra?',
         'Que variáveis mudam o preço de um relvado (base, drenagem, tipo de enchimento, linhas, equipamento)?',
         'Onde estão as propostas anteriores, em que formato e quantas? Podem servir de base ao rascunho?',
