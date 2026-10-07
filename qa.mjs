@@ -535,6 +535,29 @@ for (const [nome, w, h] of [['desktop', 1440, 900], ['tablet', 768, 1024], ['tel
     if (fecho.entradas > 8) add('avisos',
       `Barra de navegação com ${fecho.entradas} entradas. Acima de 7 mais o "Avançar" deixa de ser navegação e passa a índice. ` +
       `Tirar da barra as secções de detalhe (ficam na página). Ver referencias/fecho.md, 1.5.`);
+
+    /* O PREÇO NÃO SE MOSTRA LOGO (decisão do Manuel, 08/10/2026).
+       Proibido o resumo "a proposta em 30 segundos" e qualquer referência
+       aos valores antes da secção de investimento. Ver fecho.md, 1.5. */
+    const precoCedo = await p.evaluate(() => {
+      const achados = [];
+      const txt = document.body.innerText;
+      if (/em\s+(30|60)\s+segundos/i.test(txt)) achados.push('resumo "em 30/60 segundos"');
+      if (/valores\s+est[ãa]o\s+no\s+ponto/i.test(txt)) achados.push('"os valores estão no ponto..." no topo');
+      if (document.querySelector('.sumario, #resumo, [data-nav="Resumo"]')) achados.push('secção de resumo (.sumario / #resumo / nav "Resumo")');
+      const inv = document.querySelector('#investimento, [data-nav="Investimento"]');
+      if (inv) {
+        const r = document.createRange();
+        r.setStart(document.body, 0); r.setEndBefore(inv);
+        const antes = r.toString();
+        const m = antes.match(/(implementa[çc][ãa]o|mensalidade|aven[çc]a)[^.\n]{0,60}\d[\d.,]*\s?€|\d[\d.,]*\s?€\s?(\+|e)\s?\d[\d.,]*\s?€\s?\/\s?m[êe]s/i);
+        if (m) achados.push(`valor da proposta antes do investimento ("${m[0].slice(0, 50)}")`);
+      }
+      return achados;
+    });
+    if (precoCedo.length) add('erros',
+      `Preço mostrado cedo de mais: ${precoCedo.join('; ')}. Os valores só aparecem na secção de investimento, ` +
+      `sem resumo de 30 segundos. Ver referencias/fecho.md, 1.5.`);
   }
 
   if (nome === 'desktop') {

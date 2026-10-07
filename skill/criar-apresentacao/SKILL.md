@@ -24,6 +24,7 @@ Cria uma página web de apresentação personalizada para uma lead, com o brandi
   ao sócio. Acaba SEMPRE numa acção de um toque (WhatsApp do comercial com a mensagem pré-escrita),
   com os próximos passos concretos, a conta de valor antes do preço e um caso do setor. Ver
   `referencias/fecho.md`. Uma página que acaba em "Avançamos?" sem botão não sai
+- **O preço nunca aparece logo.** PROIBIDO o resumo "a proposta em 30 segundos" (ou "em 60 segundos", ou qualquer bloco no topo com o que custa), e PROIBIDO apontar para os valores no hero ("Os valores estão no ponto X"). Os valores só aparecem na secção de investimento, depois da conta de valor. Decisão do Manuel a 08/10/2026: não gosta de mostrar logo o valor. O `qa.mjs` dá ERRO se encontrar o resumo, a nota, a entrada "Resumo" na barra ou um valor da proposta antes do investimento
 - Português de Portugal em TODO o conteúdo. PROIBIDO usar travessões (o caráter — ou –); usar vírgula, dois pontos ou parênteses
 - NUNCA números financeiros de outros clientes AI Solutions (o repo é público). Os valores da proposta à própria lead podem entrar
 - Nunca afirmar capacidades não confirmadas; em dúvida escrever "configurável"
@@ -74,7 +75,7 @@ Automático, sem pedir nada ao comercial: `node scripts/marca.mjs [site] [slug]`
   (`shared/motion/grafico.js`). É o maior diferenciador que temos, e o que se tinha perdido
 - Polish ao nível do Lovable: eyebrow em pill (`class="eyebrow"`), cards com borda subtil, `animate-float-in`/reveal, fundo com `bg-grid` e glow radial da marca, par tipográfico (display + Inter). Cumprir `referencias/regras-design.md`
 - Cumprir `referencias/regras-design.md` à letra
-- **Fecho (ver `referencias/fecho.md`):** resumo de 30 segundos logo a seguir ao hero; a conta de
+- **Fecho (ver `referencias/fecho.md`):** a conta de
   valor com os números da lead imediatamente ANTES da tabela de preços; o caso do setor entre os
   limites e o investimento; secção final com 3 próximos passos, botão "Quero avançar" e saída
   "Tenho uma pergunta", ambos para o WhatsApp do comercial (`comercial.whatsapp` do perfil) com

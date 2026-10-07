@@ -67,6 +67,11 @@
       transparent 70%);
     filter: blur(2px);
   }
+  /* o sol desvanece antes do fim da abertura, sem corte seco na secção seguinte */
+  .abertura::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 12%; z-index: -1; pointer-events: none;
+    background: linear-gradient(0deg, var(--bg) 0%, transparent);
+  }
   .sol-nascente::after {          /* a linha do horizonte acesa */
     content: ""; position: absolute; left: -40%; right: -40%; top: 24%; height: 1px;
     background: linear-gradient(90deg, transparent, hsl(var(--sol-hsl) / .55), transparent);
@@ -126,13 +131,6 @@
   .linha-tempo span.seg { display: inline; margin: 0; font-family: var(--font-mono); color: var(--ok-texto); }
 
   .sem-quebra { white-space: nowrap; }
-
-  /* ---------- 1. Resumo em 30 segundos ---------- */
-  .sumario { display: grid; gap: var(--s-4) var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
-  .sumario div { border-left: 2px solid color-mix(in oklab, var(--brand) 55%, transparent); padding-left: var(--s-3); }
-  .sumario dt { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--sol-texto); }
-  .sumario dd { margin-top: 6px; font-size: var(--fs--1); }
-  .sumario dd b { font-family: var(--font-display); font-size: var(--fs-1); font-weight: 600; display: block; margin-bottom: 2px; }
 
   /* ---------- 2. O que ouvimos ---------- */
   .ouvimos { display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }

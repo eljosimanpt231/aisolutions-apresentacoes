@@ -30,7 +30,7 @@ Ordem que se repete e converte. Cortar é livre, reordenar só com razão forte.
 12. **Próximos passos + acção**: 3 passos concretos e os botões "Quero avançar" / "Tenho uma pergunta" para o WhatsApp do comercial. Ver `fecho.md`.
 13. **Footer**: logos + contacto do comercial.
 
-Logo a seguir ao hero, um **resumo de 30 segundos** (o quê, em quanto tempo, quanto custa, próximo passo): é o que o sócio lê quando a página lhe é reencaminhada.
+**Sem resumo de 30 segundos a seguir ao hero, e sem valores no topo.** O preço só aparece na secção de investimento (decisão do Manuel a 08/10/2026; ver `fecho.md`, 1.5).
 
 ## Secções opcionais de alto valor (usar quando aplicam)
 

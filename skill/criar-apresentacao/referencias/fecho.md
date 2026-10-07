@@ -83,13 +83,14 @@ do setor da lead vale mais do que três casos genéricos.
 As propostas que ganham têm em média 7 secções e 11 páginas; as que perdem, 13 (Proposify). Não se
 corta conteúdo que a reunião pediu, mas:
 
-- **Resumo de 30 segundos logo a seguir ao hero** (o quê, quanto tempo, quanto custa, próximo
-  passo). É o que o sócio lê quando a página lhe é reencaminhada, e as propostas vistas por mais
-  do que uma pessoa fecham 20% mais
+- **NUNCA um resumo de 30 segundos no topo** (o quê, quanto tempo, quanto custa). Já foi regra e
+  foi retirada a 08/10/2026 por decisão do Manuel: não se mostra o valor logo. A página conta a
+  história primeiro e o preço só aparece na secção de investimento, depois da conta de valor. O
+  `qa.mjs` dá erro se o resumo voltar
 - **Barra de navegação com 6 a 7 entradas no máximo**, mais o "Avançar". Com 13 entradas a barra
   deixa de ser navegação e passa a ser um índice que ninguém lê. Secções de detalhe (limites,
   integração, fase seguinte) não entram na barra, mas continuam na página
-- Dizer o tempo de leitura no hero ("5 minutos de leitura. Os valores estão no ponto 9")
+- Dizer o tempo de leitura no hero ("5 minutos de leitura."), **sem apontar para os valores**
 
 ### 1.6 Vídeo do comercial (opcional, forte)
 
@@ -150,8 +151,8 @@ não substitui a ficha.
 - [ ] Os próximos passos são três passos concretos, não uma frase
 - [ ] A conta de valor aparece ANTES da tabela de preços, com números da lead
 - [ ] Há um caso do setor (ou do mesmo tipo de solução), honesto sobre o estado, sem valores de outros clientes
-- [ ] O resumo de 30 segundos está logo a seguir ao hero
+- [ ] Nenhum valor da proposta antes da secção de investimento: sem resumo de 30 segundos, sem "os valores estão no ponto X"
 - [ ] A barra tem no máximo 7 entradas mais o "Avançar"
 - [ ] Nenhuma garantia, pacote ou desconto sem aprovação do comercial
 
-O `qa.mjs` verifica os três primeiros pontos e a contagem da barra.
+O `qa.mjs` verifica os três primeiros pontos, a contagem da barra e o preço mostrado cedo de mais.

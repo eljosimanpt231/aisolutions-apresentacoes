@@ -27,7 +27,7 @@ de produto e saiu um documento branco e parado. Este estilo é a resposta.
   destinatário e assunto em lista de definição, promessa em serifada grande com a última linha em
   gradiente, três números separados por filete
 - **rubrica**: numeração da secção em mono sublinhada, com o título por baixo
-- **sumario**: "a proposta em 30 segundos", quatro pares em duas colunas
+- ~~sumario~~: RETIRADO a 08/10/2026. Não usar: o valor não se mostra no topo (ver `fecho.md`, 1.5)
 - **pontos**: diagnóstico em colunas com filete no topo, citações literais em serifada itálica
 - **grafico**: linhas em SVG com desenho progressivo, escala de raiz quadrada
 - **fatura**: o investimento composto como o rodapé de um orçamento, com IVA e total
