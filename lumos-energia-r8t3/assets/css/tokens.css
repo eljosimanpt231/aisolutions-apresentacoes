@@ -1,0 +1,188 @@
+/* ============================================================
+   TOKENS: Lumos Energia (estilo noturno-vivo, com a identidade da Lumos)
+   Fonte única de verdade visual. Os componentes NUNCA usam cores
+   directas: para mudar o look inteiro, muda-se só este ficheiro.
+
+   Marca: o perfil de Instagram da Lumos é lima (#B4F482) sobre azul
+   elétrico (#2238F0). O azul é a marca e as superfícies; a lima é a
+   luz: o agente, os botões, a grelha e o texto em gradiente.
+   ============================================================ */
+
+:root {
+
+  /* ---------- 1. MARCA ----------
+     Azul elétrico #2238F0 em OKLCH: 48,0% 0,266 267. O croma desce um
+     pouco na rampa para os passos claros não saírem do gamut. */
+  --brand-l: 48%;
+  --brand-c: 0.25;
+  --brand-h: 267;
+
+  /* Matiz das superfícies: o mesmo azul. O fundo é quase-preto azulado,
+     o território da marca, e não um preto genérico. */
+  --neutro-h: 267;
+
+  /* A atmosfera e o deck.css trabalham em HSL: azul elétrico, lima, azul-luz */
+  --brand-hsl:  233 87% 54%;
+  --accent-hsl: 93 83% 73%;
+  --brand2-hsl: 228 100% 76%;
+
+  --brand-50:  oklch(97.0% calc(var(--brand-c) * 0.08) var(--brand-h));
+  --brand-100: oklch(93.4% calc(var(--brand-c) * 0.18) var(--brand-h));
+  --brand-200: oklch(87.6% calc(var(--brand-c) * 0.34) var(--brand-h));
+  --brand-300: oklch(80.0% calc(var(--brand-c) * 0.52) var(--brand-h));
+  --brand-400: oklch(70.5% calc(var(--brand-c) * 0.74) var(--brand-h));
+  --brand-500: oklch(59.0% calc(var(--brand-c) * 0.94) var(--brand-h));
+  --brand-600: oklch(var(--brand-l) var(--brand-c) var(--brand-h));
+  --brand-700: oklch(42.0% calc(var(--brand-c) * 0.96) var(--brand-h));
+  --brand-800: oklch(35.0% calc(var(--brand-c) * 0.80) var(--brand-h));
+  --brand-900: oklch(28.0% calc(var(--brand-c) * 0.60) var(--brand-h));
+  --brand-950: oklch(20.0% calc(var(--brand-c) * 0.40) var(--brand-h));
+
+  --brand:    var(--brand-600);
+  --accent:   oklch(89.9% 0.159 133);      /* lima: o agente e a luz */
+  --accent-forte: oklch(84% 0.19 133);     /* lima mais carregada, para o hover */
+  --on-brand: oklch(99% 0.004 var(--brand-h));
+  --on-accent: oklch(17% 0.05 var(--neutro-h));   /* tinta quase-preta sobre lima */
+
+  --brand-a06: color-mix(in oklab, var(--brand) 6%,  transparent);
+  --brand-a10: color-mix(in oklab, var(--brand) 10%, transparent);
+  --brand-a16: color-mix(in oklab, var(--brand) 16%, transparent);
+  --brand-a30: color-mix(in oklab, var(--brand) 30%, transparent);
+  --brand-a45: color-mix(in oklab, var(--brand) 45%, transparent);
+  --accent-a10: color-mix(in oklab, var(--accent) 10%, transparent);
+  --accent-a20: color-mix(in oklab, var(--accent) 20%, transparent);
+  --accent-a45: color-mix(in oklab, var(--accent) 45%, transparent);
+
+  /* ---------- 2. SUPERFÍCIES E TINTA (claro, só como base) ---------- */
+  --bg:        oklch(99.0% 0.004 var(--neutro-h));
+  --bg-soft:   oklch(97.2% 0.008 var(--neutro-h));
+  --surface:   oklch(100%  0.002 var(--neutro-h));
+  --surface-2: oklch(98.0% 0.006 var(--neutro-h));
+  --surface-3: oklch(96.0% 0.009 var(--neutro-h));
+
+  --text:   oklch(22.0% 0.030 var(--neutro-h));
+  --muted:  oklch(48.0% 0.022 var(--neutro-h));
+  --faint:  oklch(62.0% 0.016 var(--neutro-h));
+
+  --hairline: color-mix(in oklab, var(--text) 9%, transparent);
+  --border:   color-mix(in oklab, var(--text) 13%, transparent);
+  --border-strong: color-mix(in oklab, var(--text) 22%, transparent);
+  --focus: var(--accent);
+
+  /* ---------- 3. SEMÂNTICOS ----------
+     Verde = ganho/automático. Vermelho = custo/manual. Âmbar = excepção.
+     O verde puxa para o azul-esverdeado, para não se confundir com a lima. */
+  --ok:        oklch(56% 0.13 165);
+  --ok-wash:   color-mix(in oklab, var(--ok) 12%, transparent);
+  --danger:    oklch(55% 0.20 22);
+  --danger-wash: color-mix(in oklab, var(--danger) 11%, transparent);
+  --warn:      oklch(70% 0.15 70);
+  --warn-wash: color-mix(in oklab, var(--warn) 14%, transparent);
+
+  /* ---------- 4. TIPOGRAFIA ----------
+     Orbitron só no logótipo. Unbounded nos títulos: larga, jovem, da
+     mesma família de formas do logótipo. Hanken Grotesk no corpo. */
+  --font-logo:    'Orbitron', 'Unbounded', system-ui, sans-serif;
+  --font-display: 'Unbounded', 'Hanken Grotesk', system-ui, sans-serif;
+  --font-body:    'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --fs--2: clamp(0.75rem,   0.7292rem + 0.0926vw, 0.8125rem);
+  --fs--1: clamp(0.875rem,  0.8542rem + 0.0926vw, 0.9375rem);
+  --fs-0:  clamp(1.0625rem, 1.0208rem + 0.1852vw, 1.1875rem);
+  --fs-1:  clamp(1.1875rem, 1.1250rem + 0.2778vw, 1.375rem);
+  --fs-2:  clamp(1.375rem,  1.2500rem + 0.5556vw, 1.75rem);
+  --fs-3:  clamp(1.625rem,  1.4375rem + 0.8333vw, 2.1875rem);
+  --fs-4:  clamp(1.875rem,  1.6250rem + 1.1111vw, 2.625rem);
+  --fs-5:  clamp(2.125rem,  1.7500rem + 1.6667vw, 3.25rem);
+  --fs-6:  clamp(2.75rem,   2.2500rem + 2.2222vw, 4.25rem);
+
+  --lh-hero: 1.06; --lh-h1: 1.08; --lh-h2: 1.14; --lh-h3: 1.24;
+  --lh-lead: 1.45; --lh-body: 1.62;
+
+  /* A Unbounded é muito larga: tracking negativo para os títulos não fugirem */
+  --tr-hero: -0.03em; --tr-h1: -0.026em; --tr-h2: -0.02em; --tr-h3: -0.012em;
+  --tr-body: 0em; --tr-label: 0.08em;
+
+  --measure: 66ch;
+  --measure-lead: 56ch;
+
+  /* ---------- 5. ESPAÇO ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 16px; --s-4: 24px;
+  --s-5: 32px; --s-6: 48px; --s-7: 64px; --s-8: 96px;
+
+  --container: 1120px;
+  --gutter: clamp(16px, 4vw, 32px);
+
+  --pad-secao:       clamp(56px, 7vw, 104px);
+  --pad-secao-amplo: clamp(80px, 10vw, 140px);
+  --pad-secao-junto: clamp(32px, 4vw, 56px);
+
+  /* ---------- 6. FORMA ---------- */
+  --r-1: 4px; --r-2: 8px; --r-3: 14px; --r-4: 22px; --r-pill: 999px;
+
+  /* ---------- 7. ELEVAÇÃO (claro) ---------- */
+  --sh: 267deg 40% 18%;
+  --e1: 0 0 0 1px var(--hairline), 0 1px 2px hsl(var(--sh) / 0.05), 0 2px 4px -2px hsl(var(--sh) / 0.05);
+  --e2: 0 0 0 1px var(--hairline), 0 1px 2px hsl(var(--sh) / 0.04), 0 4px 8px -2px hsl(var(--sh) / 0.04), 0 8px 16px -6px hsl(var(--sh) / 0.05);
+  --e3: 0 0 0 1px var(--hairline), 0 2px 4px hsl(var(--sh) / 0.03), 0 16px 32px -8px hsl(var(--sh) / 0.05), 0 32px 64px -16px hsl(var(--sh) / 0.06);
+
+  /* ---------- 8. MOVIMENTO (dentro das maquetas: registo de produto) ---------- */
+  --t-rapido: 120ms;
+  --t-normal: 200ms;
+  --t-lento:  300ms;
+  --ease-out:   cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-suave: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* ---------- 9. MAQUETAS (notificação, registo) ---------- */
+  --mock-bg:        oklch(15.5% 0.03 var(--neutro-h));
+  --mock-head:      oklch(19.5% 0.036 var(--neutro-h));
+  --mock-linha:     oklch(100% 0 0 / 0.09);
+  --mock-txt:       oklch(95% 0.008 var(--neutro-h));
+  --mock-txt-fraco: oklch(72% 0.02 var(--neutro-h));
+  --mock-bolha-in:  oklch(24% 0.034 var(--neutro-h));
+  --mock-sombra:    oklch(0% 0 0 / 0.35);
+  --mock-veu:       oklch(100% 0 0 / 0.05);
+  --mock-veu-2:     oklch(100% 0 0 / 0.07);
+  /* texto em cor dentro das maquetas escuras */
+  --ok-texto:       oklch(83% 0.12 165);
+  --ambar-texto:    oklch(86% 0.12 75);
+  --lima-texto:     oklch(90% 0.15 133);
+
+  /* ---------- 10. CANAIS (cores canónicas) ---------- */
+  --wa-green: #128C7E;
+  --wa-green-dark: #075E54;
+  --wa-light: #25D366;
+
+  --grelha-passo: 56px;
+}
+
+/* ============================================================
+   MODO ESCURO DO DOCUMENTO INTEIRO
+   Troca as superfícies e a tinta, não a rampa da marca.
+   ============================================================ */
+.deck-escuro {
+  --bg:        oklch(13.2% 0.034 var(--neutro-h));
+  --bg-soft:   oklch(15.8% 0.040 var(--neutro-h));
+  --surface:   oklch(18.8% 0.044 var(--neutro-h));
+  --surface-2: oklch(22.0% 0.046 var(--neutro-h));
+  --surface-3: oklch(26.0% 0.046 var(--neutro-h));
+
+  --text:   oklch(96.5% 0.008 var(--neutro-h));
+  --muted:  oklch(75.0% 0.024 var(--neutro-h));
+  --faint:  oklch(67.0% 0.022 var(--neutro-h));
+  --danger: oklch(72% 0.16 22);
+  --ok:     oklch(76% 0.13 165);
+  --warn:   oklch(81% 0.14 75);
+
+  --hairline: oklch(100% 0 0 / 0.08);
+  --border:   oklch(100% 0 0 / 0.13);
+  --border-strong: oklch(100% 0 0 / 0.22);
+
+  --brand:  var(--brand-400);
+  --on-brand: oklch(99% 0.004 var(--brand-h));
+
+  --e1: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.06), 0 1px 2px oklch(0% 0 0 / 0.40);
+  --e2: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.07), 0 1px 2px oklch(0% 0 0 / 0.40), 0 8px 24px -8px oklch(0% 0 0 / 0.45);
+  --e3: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.08), 0 2px 4px oklch(0% 0 0 / 0.40), 0 16px 40px -12px oklch(0% 0 0 / 0.55);
+}
