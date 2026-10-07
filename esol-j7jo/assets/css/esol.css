@@ -1,0 +1,461 @@
+/* ============================================================
+   E-SOL: da noite ao nascer do sol
+   Base: atmosfera do noturno-vivo + componentes do deck-dark.
+   A ideia que atravessa a página: o pedido entra de noite ou ao fim
+   de semana (o azul-noite do site da E-Sol) e o sol nasce quando
+   alguém responde (o laranja da marca). Só tokens, zero cores directas.
+   ============================================================ */
+
+@layer componentes {
+
+  /* ---------- Superfícies ---------- */
+  .faixa { background: var(--bg-soft); }
+  .faixa-clara {
+    background: linear-gradient(180deg in oklab,
+      color-mix(in oklab, var(--brand) 7%, var(--bg)),
+      color-mix(in oklab, var(--brand) 2%, var(--bg)));
+    border-block: 1px solid color-mix(in oklab, var(--brand) 16%, transparent);
+  }
+
+  /* ---------- Rubrica: o número da secção em pastilha ---------- */
+  .rubrica {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 5px 14px 5px 5px; margin-bottom: var(--s-4);
+    border-radius: var(--r-pill);
+    border: 1px solid color-mix(in oklab, var(--brand) 32%, transparent);
+    background: color-mix(in oklab, var(--brand) 9%, transparent);
+    font-size: var(--fs--1); font-weight: 600; color: var(--brand-200);
+    max-width: none;
+  }
+  .rubrica span {
+    display: grid; place-items: center; min-width: 26px; height: 26px; padding-inline: 6px; border-radius: var(--r-pill);
+    background: var(--brand-solido); color: var(--on-brand-solido);
+    font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400;
+  }
+  section h2 { max-width: 24ch; }
+  section h2 + .lead { margin-top: var(--s-3); }
+
+  /* ============================================================
+     ABERTURA: a casa à noite, e o sol a nascer no horizonte
+     ============================================================ */
+  .abertura {
+    position: relative; isolation: isolate; overflow: clip;
+    padding-block: var(--s-7) var(--pad-secao-amplo);
+    min-height: min(100svh, 960px);
+  }
+  .noite { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+  .noite img {
+    position: absolute; inset: -4% 0 auto 0; width: 100%; height: 112%;
+    object-fit: cover; object-position: 62% 40%;
+    opacity: .62; filter: saturate(1.05) contrast(1.05);
+  }
+  .noite::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(0deg, var(--bg) 4%, transparent 46%),
+      linear-gradient(90deg, var(--bg) 6%, color-mix(in oklab, var(--bg) 62%, transparent) 46%, transparent 82%);
+  }
+  /* O sol: um disco e um halo no horizonte, por trás do texto */
+  .sol-nascente {
+    position: absolute; z-index: -1; pointer-events: none;
+    right: -8vw; bottom: -34vw; width: 62vw; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%,
+      hsl(var(--sol-hsl) / .95) 0%,
+      hsl(var(--brand2-hsl) / .80) 16%,
+      hsl(var(--brand-hsl) / .42) 34%,
+      hsl(var(--brand-hsl) / .10) 56%,
+      transparent 70%);
+    filter: blur(2px);
+  }
+  .sol-nascente::after {          /* a linha do horizonte acesa */
+    content: ""; position: absolute; left: -40%; right: -40%; top: 24%; height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--sol-hsl) / .55), transparent);
+  }
+
+  .abertura-grelha {
+    display: grid; gap: var(--s-6); align-items: end;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, .9fr);
+  }
+  @media (max-width: 940px) { .abertura-grelha { grid-template-columns: 1fr; } }
+
+  .marca-par { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: var(--s-6); }
+  .marca-par img { width: 40px; height: 40px; border-radius: var(--r-3); box-shadow: var(--e2); }
+  .marca-par .nome { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-1); letter-spacing: -0.02em; }
+  .marca-par .x { color: var(--muted); font-size: var(--fs--1); }
+  .marca-par .ref {
+    margin-left: auto; font-family: var(--font-mono); font-size: var(--fs--2);
+    color: var(--muted); padding: 4px 10px; border: 1px solid var(--border); border-radius: var(--r-pill);
+  }
+  @media (max-width: 640px) { .marca-par .ref { margin-left: 0; } }
+
+  .promessa { font-size: clamp(2.35rem, 1.2rem + 4vw, 3.9rem); line-height: var(--lh-hero); letter-spacing: var(--tr-hero); font-weight: 700; max-width: 20ch; margin-bottom: var(--s-6); }
+  .abertura .lead { margin-top: 0; color: var(--text); color: color-mix(in oklab, var(--text) 84%, transparent); }
+
+  .numeros { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); margin-top: var(--s-6); max-width: 46rem; }
+  .numeros li { max-width: none; padding-top: var(--s-3); border-top: 1px solid color-mix(in oklab, var(--brand) 40%, transparent); }
+  .numeros .n { display: block; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-3); line-height: 1.05; letter-spacing: -0.03em; }
+  .numeros .d { display: block; margin-top: 6px; font-size: var(--fs--1); color: var(--muted); max-width: 26ch; }
+  @media (max-width: 640px) { .numeros { grid-template-columns: 1fr; } }
+
+  .abertura-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-top: var(--s-6); }
+  .abertura-acoes .nota { font-size: var(--fs--1); color: var(--muted); }
+
+  /* A linha do tempo do fim de semana, ao lado do título */
+  .linha-tempo { list-style: none; display: grid; gap: 12px; position: relative; padding-left: 22px; }
+  .linha-tempo::before {
+    content: ""; position: absolute; left: 6px; top: 14px; bottom: 14px; width: 2px;
+    background: linear-gradient(180deg, hsl(var(--accent-hsl) / .7), hsl(var(--brand-hsl) / .9));
+    
+  }
+  .linha-tempo li {
+    position: relative; max-width: none;
+    background: color-mix(in oklab, var(--surface) 78%, transparent);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border); border-radius: var(--r-3);
+    padding: 12px 14px; box-shadow: var(--e2);
+  }
+  .linha-tempo li::before {
+    content: ""; position: absolute; left: -21px; top: 18px; width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--accent);
+  }
+  .linha-tempo li.sol::before { border-color: var(--brand); background: var(--brand); box-shadow: 0 0 16px hsl(var(--brand-hsl) / .8); }
+  .linha-tempo time { display: block; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--acento-texto); }
+  .linha-tempo li.sol time { color: var(--sol-texto); }
+  .linha-tempo b { display: block; font-size: var(--fs--1); margin-top: 2px; }
+  .linha-tempo span { display: block; font-size: var(--fs--2); color: var(--muted); margin-top: 2px; }
+  .linha-tempo span.seg { display: inline; margin: 0; font-family: var(--font-mono); color: var(--ok-texto); }
+
+  .sem-quebra { white-space: nowrap; }
+
+  /* ---------- 1. Resumo em 30 segundos ---------- */
+  .sumario { display: grid; gap: var(--s-4) var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+  .sumario div { border-left: 2px solid color-mix(in oklab, var(--brand) 55%, transparent); padding-left: var(--s-3); }
+  .sumario dt { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--sol-texto); }
+  .sumario dd { margin-top: 6px; font-size: var(--fs--1); }
+  .sumario dd b { font-family: var(--font-display); font-size: var(--fs-1); font-weight: 600; display: block; margin-bottom: 2px; }
+
+  /* ---------- 2. O que ouvimos ---------- */
+  .ouvimos { display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+  .ouvimos article {
+    background: var(--surface); border-radius: var(--r-4); padding: var(--s-5);
+    box-shadow: var(--e1); display: flex; flex-direction: column; gap: var(--s-3);
+  }
+  .ouvimos .i { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--brand); }
+  .ouvimos h3 { font-size: var(--fs-1); }
+  .ouvimos p { font-size: var(--fs--1); color: var(--muted); }
+  .ouvimos blockquote {
+    margin-top: auto; padding: 12px 14px; border-radius: var(--r-3);
+    background: color-mix(in oklab, var(--brand) 8%, transparent);
+    border-left: 2px solid var(--brand);
+    font-size: var(--fs--1); font-style: italic; color: var(--text);
+  }
+  .ouvimos blockquote::before { content: "\201C"; }
+  .ouvimos blockquote::after { content: "\201D"; }
+  .ouvimos article.reserva { background: color-mix(in oklab, var(--accent) 7%, var(--surface)); }
+  .ouvimos article.reserva blockquote { border-left-color: var(--accent); background: color-mix(in oklab, var(--accent) 9%, transparent); }
+  .sintese { margin-top: var(--s-6); font-family: var(--font-display); font-size: var(--fs-2); font-weight: 600; letter-spacing: -0.02em; max-width: 30ch; }
+  .sintese em { font-style: normal; color: var(--brand); }
+
+  /* ============================================================
+     3. O RELÓGIO DA LEAD (elemento assinatura)
+     ============================================================ */
+  .relogio {
+    margin-top: var(--s-6); border-radius: var(--r-4); padding: clamp(18px, 3vw, 32px);
+    background: color-mix(in oklab, var(--surface) 88%, transparent);
+    box-shadow: var(--e3);
+  }
+  .relogio-escolha { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
+  .relogio-escolha .rot { font-size: var(--fs--1); color: var(--muted); margin-right: var(--s-2); }
+  .relogio-escolha button {
+    min-height: 44px; padding: 8px 16px; cursor: pointer;
+    border: 1px solid var(--border); border-radius: var(--r-pill);
+    background: transparent; color: var(--muted);
+    font-family: var(--font-mono); font-size: var(--fs--1);
+    transition: color var(--t-rapido) var(--ease-out), border-color var(--t-rapido) var(--ease-out), background-color var(--t-rapido) var(--ease-out);
+  }
+  .relogio-escolha button[aria-pressed="true"] {
+    color: var(--on-brand-solido); background: var(--brand-solido); border-color: var(--brand-solido);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .relogio-escolha button:not([aria-pressed="true"]):hover { color: var(--text); border-color: var(--border-strong); }
+  }
+
+  .relogio-pistas { display: grid; gap: var(--s-5); margin-top: var(--s-6); }
+  .pista-topo { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px var(--s-4); }
+  .pista-topo .quem { font-weight: 600; }
+  .pista-topo .quando { font-size: var(--fs--1); color: var(--muted); }
+  .pista-espera { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-4); letter-spacing: -0.03em; line-height: 1; }
+  .pista-hoje .pista-espera { color: var(--danger); }
+  .pista-agente .pista-espera { color: var(--ok); }
+  .pista-espera small { font-family: var(--font-body); font-size: var(--fs--1); font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+  .pista-barra { position: relative; height: 14px; margin-top: 12px; border-radius: var(--r-pill); background: color-mix(in oklab, var(--text) 7%, transparent); overflow: hidden; }
+  .pista-barra i {
+    position: absolute; inset: 0 auto 0 0; width: var(--w, 0%); border-radius: inherit;
+    transition: width 900ms var(--e-expo);
+  }
+  .pista-hoje .pista-barra i { background: linear-gradient(90deg, hsl(var(--brand-hsl) / .55), var(--danger)); }
+  .pista-agente .pista-barra i { background: var(--ok); min-width: 10px; }
+  .pista-escala { display: flex; justify-content: space-between; margin-top: 6px; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--faint); }
+  .relogio-fonte { margin-top: var(--s-5); font-size: var(--fs--2); color: var(--muted); max-width: 70ch; }
+
+  .estudo { display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+  .estudo div { padding: var(--s-4); border-radius: var(--r-3); border: 1px solid var(--border); background: color-mix(in oklab, var(--surface) 60%, transparent); }
+  .estudo .n { display: block; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-4); line-height: 1; letter-spacing: -0.03em; }
+  .estudo .d { display: block; margin-top: 8px; font-size: var(--fs--1); color: var(--muted); }
+  .estudo-nota { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--muted); }
+
+  .antes-depois { display: grid; gap: var(--s-6); margin-top: var(--s-7); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+  .antes-depois h3 { font-size: var(--fs-1); }
+
+  /* ---------- 4. Experimenta a Bia ---------- */
+  .bia {
+    margin-top: var(--s-6); display: grid; gap: var(--s-4) var(--s-6); align-items: center;
+    grid-template-columns: minmax(0, 1.3fr) auto;
+    padding: var(--s-5); border-radius: var(--r-4);
+    background: linear-gradient(120deg in oklab, color-mix(in oklab, var(--accent) 12%, var(--surface)), var(--surface));
+    box-shadow: var(--e2);
+  }
+  @media (max-width: 760px) { .bia { grid-template-columns: 1fr; } }
+  .bia h3 { font-size: var(--fs-1); }
+  .bia p { margin-top: 6px; font-size: var(--fs--1); color: var(--muted); }
+  .bia-acoes { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+  /* ============================================================
+     5. Como liga: o que o comercial recebe e a ficha na Reonic
+     ============================================================ */
+  .recebe { display: grid; gap: var(--s-6); margin-top: var(--s-6); align-items: start; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+  @media (max-width: 900px) { .recebe { grid-template-columns: 1fr; } }
+  .recebe h3 { font-size: var(--fs-1); margin-bottom: var(--s-3); }
+  .recebe figcaption { margin-top: 10px; font-size: var(--fs--2); color: var(--muted); }
+
+  .notif { margin: 0; }
+  .notif-caixa { border-radius: var(--r-4); overflow: hidden; background: var(--mock-bg); box-shadow: 0 30px 60px -24px var(--mock-sombra), 0 0 0 1px var(--mock-linha); }
+  .notif-topo { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--mock-head); color: var(--mock-txt); font-size: var(--fs--1); }
+  .notif-topo time { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--mock-txt-fraco); }
+  .notif-ic { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--wa-green); color: var(--mock-txt); }
+  .notif-ic svg { width: 15px; height: 15px; }
+  .notif-corpo { padding: 16px; }
+  .notif-bolha { background: var(--mock-bolha-in); color: var(--mock-txt); border-radius: var(--r-3); border-top-left-radius: 4px; padding: 14px 16px; }
+  .notif-tit { font-weight: 700; font-size: var(--fs--1); }
+  .notif-dados { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin-top: 10px; font-size: var(--fs--2); }
+  .notif-dados dt { color: var(--mock-txt-fraco); }
+  .notif-resumo { margin-top: 12px; font-size: var(--fs--2); color: var(--mock-txt); line-height: 1.5; }
+  .notif-acoes { display: grid; grid-template-columns: 1fr 1fr; margin-top: 12px; border-top: 1px solid var(--mock-linha); }
+  .notif-acoes span { text-align: center; padding-top: 10px; font-size: var(--fs--2); font-weight: 600; color: var(--acento-texto); }
+
+  .ficha { border-radius: var(--r-4); background: var(--surface); box-shadow: var(--e3); overflow: hidden; }
+  .ficha-topo { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--hairline); }
+  .ficha-ava { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in oklab, var(--brand) 22%, transparent); color: var(--brand-200); font-weight: 700; font-size: var(--fs--2); }
+  .ficha-topo b { display: block; font-size: var(--fs--1); }
+  .ficha-topo small { display: block; color: var(--muted); font-size: var(--fs--2); }
+  .ficha-estado { margin-left: auto; padding: 4px 10px; border-radius: var(--r-pill); font-size: var(--fs--2); font-weight: 600; background: var(--ok-wash); color: var(--ok-texto); white-space: nowrap; }
+  .ficha-grupos { display: grid; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 560px) { .ficha-grupos { grid-template-columns: 1fr; } }
+  .ficha-grupo { padding: 16px 18px; }
+  .ficha-grupo + .ficha-grupo { border-left: 1px solid var(--hairline); background: color-mix(in oklab, var(--accent) 5%, transparent); }
+  @media (max-width: 560px) { .ficha-grupo + .ficha-grupo { border-left: 0; border-top: 1px solid var(--hairline); } }
+  .ficha-grupo h4 { font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--muted); }
+  .ficha-grupo + .ficha-grupo h4 { color: var(--acento-texto); }
+  .ficha-grupo dl { display: grid; gap: 8px; margin-top: 12px; font-size: var(--fs--2); }
+  .ficha-grupo dt { color: var(--muted); }
+  .ficha-grupo dd { color: var(--text); font-weight: 500; }
+  .ficha-resumo { padding: 14px 18px; border-top: 1px solid var(--hairline); font-size: var(--fs--2); color: var(--muted); }
+  .ficha-resumo b { color: var(--text); }
+
+  /* O seguimento: quem não responde não fica esquecido */
+  .seguimento-t { margin-top: var(--s-7); font-size: var(--fs-2); max-width: 26ch; }
+  .seguimento { list-style: none; display: grid; gap: 0; margin-top: var(--s-5); grid-template-columns: repeat(6, minmax(0, 1fr)); position: relative; }
+  .seguimento::before { content: ""; position: absolute; left: 0; right: 0; top: 9px; height: 2px; background: linear-gradient(90deg, var(--accent), hsl(var(--brand-hsl))); opacity: .55; }
+  .seguimento li { position: relative; padding: 30px 12px 0 0; max-width: none; }
+  .seguimento li::before { content: ""; position: absolute; left: 0; top: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .seguimento li.pos::before { border-color: var(--brand); }
+  .seguimento b { display: block; font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--acento-texto); }
+  .seguimento li.pos b { color: var(--sol-texto); }
+  .seguimento span { display: block; margin-top: 4px; font-size: var(--fs--2); color: var(--muted); }
+  @media (max-width: 860px) {
+    .seguimento { grid-template-columns: 1fr; gap: var(--s-3); padding-left: 28px; }
+    .seguimento::before { left: 7px; right: auto; top: 6px; bottom: 6px; width: 2px; height: auto; background: linear-gradient(180deg, var(--accent), hsl(var(--brand-hsl))); }
+    .seguimento li { padding: 0; }
+    .seguimento li::before { left: -28px; top: 3px; }
+  }
+  .relatorio { margin-top: var(--s-6); padding: var(--s-4) var(--s-5); border-radius: var(--r-3); border: 1px dashed var(--border-strong); font-size: var(--fs--1); color: var(--muted); max-width: 70ch; }
+  .relatorio b { color: var(--text); }
+
+  /* ---------- 6. Para a reunião com a Reonic ---------- */
+  .perguntas { list-style: none; counter-reset: p; display: grid; gap: var(--s-3); margin-top: var(--s-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+  .perguntas li {
+    counter-increment: p; position: relative; max-width: none;
+    padding: var(--s-4) var(--s-4) var(--s-4) 64px; border-radius: var(--r-3);
+    background: color-mix(in oklab, var(--surface) 70%, transparent); border: 1px solid var(--border); font-size: var(--fs--1);
+  }
+  .perguntas li::before {
+    content: counter(p); position: absolute; left: 18px; top: 18px; width: 30px; height: 30px; border-radius: 50%;
+    display: grid; place-items: center; font-family: var(--font-mono); font-size: var(--fs--2);
+    color: var(--acento-texto); border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
+  }
+  .perguntas b { display: block; margin-bottom: 4px; color: var(--text); }
+  .perguntas span { color: var(--muted); }
+
+  /* ---------- 7. Limites e prova ---------- */
+  .regras { display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+  .regras article { border-radius: var(--r-4); padding: var(--s-5); background: var(--surface); box-shadow: var(--e1); border-top: 3px solid var(--ok); }
+  .regras article.pessoa { border-top-color: var(--warn); }
+  .regras article.nunca { border-top-color: var(--danger); }
+  .regras h3 { font-size: var(--fs-1); }
+  .regras ul { margin-top: var(--s-3); padding-left: 1.1em; display: grid; gap: 8px; font-size: var(--fs--1); color: var(--muted); }
+  .regras li::marker { color: var(--faint); }
+  .limites-fecho { margin-top: var(--s-5); font-style: italic; color: var(--muted); }
+
+  .prova {
+    margin-top: var(--s-7); display: grid; gap: var(--s-5); align-items: center;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: var(--s-6) var(--s-5); border-radius: var(--r-4);
+    background:
+      radial-gradient(ellipse 60% 90% at 4% 50%, hsl(var(--brand-hsl) / .20), transparent 70%),
+      var(--surface);
+    box-shadow: var(--e2);
+  }
+  @media (max-width: 720px) { .prova { grid-template-columns: 1fr; } }
+  .prova-num { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-6); line-height: .9; letter-spacing: -0.04em; color: var(--brand); }
+  .prova-num small { display: block; margin-top: 10px; font-family: var(--font-body); font-size: var(--fs--1); font-weight: 500; letter-spacing: 0; color: var(--muted); max-width: 16ch; line-height: 1.35; }
+  .prova-k { font-family: var(--font-mono); font-size: var(--fs--2); text-transform: uppercase; letter-spacing: var(--tr-label); color: var(--sol-texto); }
+  .prova h3 { margin-top: 8px; font-size: var(--fs-2); }
+  .prova p { margin-top: var(--s-3); font-size: var(--fs--1); color: var(--muted); }
+  .prova p b { color: var(--text); }
+  .prova-nota { font-size: var(--fs--2) !important; color: var(--faint) !important; }
+
+  /* ---------- 8. Investimento ---------- */
+  .ancora {
+    margin-top: var(--s-5); max-width: 46ch;
+    font-family: var(--font-display); font-size: var(--fs-2); font-weight: 600; line-height: 1.25; letter-spacing: -0.02em;
+  }
+  .ancora b { color: var(--brand); font-weight: 700; }
+  .fatura { width: 100%; max-width: 54rem; margin-top: var(--s-6); border-collapse: collapse; border-radius: var(--r-4); overflow: hidden; background: var(--surface); box-shadow: var(--e3); }
+  .fatura th, .fatura td { padding: 18px 22px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--hairline); }
+  .fatura thead th { font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--muted); background: var(--surface-2); }
+  .fatura tbody th { font-family: var(--font-display); font-size: var(--fs-1); font-weight: 600; }
+  .fatura tbody th small { display: block; margin-top: 8px; font-family: var(--font-body); font-size: var(--fs--1); font-weight: 400; color: var(--muted); line-height: 1.55; max-width: 56ch; }
+  .fatura td.num { text-align: right; white-space: nowrap; font-family: var(--font-display); font-size: var(--fs-2); font-weight: 700; }
+  .fatura td.num i { font-style: normal; font-family: var(--font-body); font-size: var(--fs--1); font-weight: 500; color: var(--muted); }
+  .fatura tfoot th, .fatura tfoot td { font-size: var(--fs--1); color: var(--muted); padding-block: 10px; border-bottom: 0; }
+  .fatura tfoot td.num { font-size: var(--fs--1); font-family: var(--font-mono); font-weight: 400; }
+  .fatura tfoot tr.total th, .fatura tfoot tr.total td { color: var(--text); font-weight: 700; padding-bottom: 18px; }
+  .fatura tfoot tr:first-child th, .fatura tfoot tr:first-child td { padding-top: 16px; }
+  @media (max-width: 560px) {
+    .fatura th, .fatura td { padding: 14px; }
+    .fatura td.num { font-size: var(--fs-1); }
+  }
+  .retorno { margin-top: var(--s-4); max-width: 62ch; font-size: var(--fs--1); color: var(--muted); }
+  .retorno b { color: var(--text); }
+
+  /* ---------- 9. Cronograma ---------- */
+  .fases { list-style: none; display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); counter-reset: f; }
+  .fases li { max-width: none; padding: var(--s-4); border-radius: var(--r-3); background: color-mix(in oklab, var(--surface) 70%, transparent); border: 1px solid var(--border); position: relative; overflow: hidden; }
+  .fases li::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, var(--accent), hsl(var(--brand-hsl))); opacity: calc(.35 + var(--k, 0) * .2); }
+  .fases .quando { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--acento-texto); }
+  .fases .o-que { display: block; margin-top: 6px; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1); }
+  .fases p { margin-top: 8px; font-size: var(--fs--1); color: var(--muted); }
+  .doc-nota { margin-top: var(--s-4); font-size: var(--fs--2); color: var(--muted); max-width: 70ch; }
+
+  .fora { margin-top: var(--s-7); padding-top: var(--s-5); border-top: 1px solid var(--hairline); }
+  .fora h3 { font-size: var(--fs-1); }
+  .fora > p { margin-top: 6px; color: var(--muted); font-size: var(--fs--1); }
+  .fora ul { list-style: none; display: grid; gap: var(--s-3); margin-top: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+  .fora li { max-width: none; font-size: var(--fs--1); color: var(--muted); padding: var(--s-3) var(--s-4); border-radius: var(--r-3); border: 1px solid var(--border); }
+  .fora li b { display: block; color: var(--text); margin-bottom: 4px; }
+
+  /* ============================================================
+     10. FECHO: o nascer do sol
+     ============================================================ */
+  .fecho { position: relative; isolation: isolate; overflow: clip; background: var(--bg); }
+  .nascer { position: absolute; inset: 0; z-index: -1; }
+  .nascer img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; opacity: .82; }
+  .nascer::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 55%, transparent) 26%, color-mix(in oklab, var(--bg) 40%, transparent) 70%, var(--bg) 100%),
+      linear-gradient(90deg, color-mix(in oklab, var(--bg) 92%, transparent) 8%, color-mix(in oklab, var(--bg) 62%, transparent) 52%, transparent 88%);
+  }
+  .fecho h2 { font-size: var(--fs-5); line-height: var(--lh-h1); letter-spacing: var(--tr-h1); max-width: 16ch; }
+  .fecho .lead { color: var(--text); color: color-mix(in oklab, var(--text) 82%, transparent); }
+  .passos-fecho { list-style: none; display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); max-width: 64rem; }
+  .passos-fecho li { max-width: none; padding: var(--s-4); border-radius: var(--r-3); background: color-mix(in oklab, var(--surface) 82%, transparent); backdrop-filter: blur(10px); box-shadow: var(--e2); }
+  .passos-fecho .n { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--brand-solido); color: var(--on-brand-solido); font-family: var(--font-mono); font-size: var(--fs--2); }
+  .passos-fecho b { display: block; margin-top: 12px; font-family: var(--font-display); font-size: var(--fs-1); font-weight: 600; line-height: 1.25; }
+  .passos-fecho p { margin-top: 6px; font-size: var(--fs--1); color: var(--muted); }
+  .fecho-acoes { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
+  .fecho-acoes .btn { min-height: 52px; padding-inline: 28px; font-size: var(--fs-0); }
+  .fecho-contacto { margin-top: var(--s-5); font-size: var(--fs--1); color: var(--muted); }
+  .fecho-contacto a { color: var(--text); font-weight: 600; display: inline-block; padding-block: 4px; }
+
+  /* ---------- Rodapé ---------- */
+  .rodape .container { display: grid; gap: 6px; }
+  .rodape-marca { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: var(--text); font-family: var(--font-display); font-weight: 700; }
+  .rodape-marca img { width: 26px; height: 26px; border-radius: var(--r-2); }
+  .disclaimer { display: block; margin-top: 8px; font-size: var(--fs--2); color: var(--faint); max-width: 80ch; }
+}
+
+/* ============================================================
+   BOTÕES E BARRA NESTA PALETA
+   O laranja da E-Sol é claro (L 72%): com texto branco por cima não
+   passa AA. Como no site deles, o botão é laranja com tinta escura.
+   ============================================================ */
+.btn-primario { background: var(--brand-solido); color: var(--on-brand-solido); box-shadow: 0 10px 30px -10px hsl(var(--brand-hsl) / .7); }
+@media (hover: hover) and (pointer: fine) { .btn-primario:hover { background: var(--brand-400); } }
+.btn-secundario { color: var(--text); border-color: var(--border-strong); background: color-mix(in oklab, var(--surface) 50%, transparent); }
+.btn-ceu { background: color-mix(in oklab, var(--accent) 16%, transparent); color: var(--acento-texto); border-color: color-mix(in oklab, var(--accent) 45%, transparent); }
+@media (hover: hover) and (pointer: fine) { .btn-ceu:hover { background: color-mix(in oklab, var(--accent) 24%, transparent); } }
+.nav a.nav-cta { background: var(--brand-solido); color: var(--on-brand-solido); }
+.nav a.nav-cta[aria-current="true"] { background: var(--brand-400); color: var(--on-brand-solido); }
+.nav a[aria-current="true"] { box-shadow: inset 0 -2px 0 var(--brand); }
+.saltar { background: var(--brand-solido); color: var(--on-brand-solido); }
+
+/* O texto em gradiente é o sol: âmbar claro a laranja da marca */
+.g-brilho {
+  color: hsl(var(--sol-hsl));
+  background: linear-gradient(100deg in oklab, hsl(var(--sol-hsl)) 0%, hsl(var(--brand2-hsl)) 45%, hsl(var(--brand-hsl)) 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* O primeiro glow fica baixo e quente, como o sol antes de nascer */
+.atmosfera__glow--1 { top: auto; bottom: -26%; left: auto; right: -14%; --glow-op: .26; }
+.atmosfera__glow--2 { top: -18%; left: -16%; right: auto; --glow-op: .16; }
+.atmosfera__glow--3 { --glow-cor: var(--navy-hsl); --glow-op: .5; top: 30%; }
+
+/* ---------- Impressão ---------- */
+@media print {
+  .cr, .fluxo, .relogio-escolha, .bia-acoes, .sol-nascente { display: none !important; }
+}
+
+/* ============================================================
+   AFINAÇÃO DOS COMPONENTES PARTILHADOS
+   Sem @layer de propósito: o deck.css não está em camada, e CSS sem
+   camada ganha sempre à CSS em camada.
+   ============================================================ */
+.cr-head .k, .cr-reason-head .t, .cr-step-k,
+.fluxo-node .k, .fluxo-chans .lbl, .cr-tab {
+  text-transform: none; letter-spacing: 0;
+  font-family: var(--font-mono); font-size: var(--fs--2);
+}
+.cr-tab { border-radius: var(--r-pill); font-weight: 500; min-height: 40px; }
+.cr-tab.active { color: var(--brand-200); }
+.cr-tabs { justify-content: flex-start; }
+.cr-shell, .fluxo-shell { border-radius: var(--r-4); background: var(--surface); box-shadow: var(--e3); }
+.cr-chat { border-radius: var(--r-3); background: var(--mock-bg); }
+.cr-chat-head, .cr-input { background: var(--mock-head); }
+.cr-row.agent .cr-bubble { background: var(--mock-bolha-in); }
+.cr-row.client .cr-bubble { background: var(--wa-green-dark); color: var(--mock-txt); }
+.cr-chat-ava { font-size: 0.64rem; letter-spacing: 0.02em; }
+.cr-reason { border-radius: var(--r-3); min-height: 520px; }
+.cr-bubble { border-radius: var(--r-3); font-size: var(--fs--1); white-space: pre-line; }
+.cr-head h3 { font-size: var(--fs-1); font-weight: 600; }
+.cr-head p, .cr-step-l { font-size: var(--fs--1); }
+.cr-chat-who b { font-size: var(--fs--1); }
+.cr-chat-who small, .cr-progress, .cr-sys, .cr-bubble time,
+.fluxo-node p, .fluxo-note { font-size: var(--fs--2); }
+.cr-bubble time { opacity: .75; }
+.fluxo-node { border-radius: var(--r-3); padding: 18px 12px; }
+.fluxo-node .ic { border-radius: var(--r-2); }
+.fluxo-node strong { font-size: var(--fs--1); line-height: 1.3; }
+.cr-step { opacity: 0.55; border-radius: var(--r-3); }
+.cr-step.on { opacity: 1; }
