@@ -1,0 +1,624 @@
+/* ============================================================
+   EDIÇÕES DO GOSTO: a proposta como um documento, com a luz do passe
+   Base: arquitetura deck-dark, atmosfera noturno-vivo. Só tokens.
+   Peças desta apresentação: a fotografia da cozinha do site atrás do
+   cabeçalho, o passe com as comandas (cada pergunta de um evento), o
+   calendário de 2026 com as datas do site, os três públicos que
+   perguntam, o cartão que a gestora recebe e o registo da semana.
+   ============================================================ */
+
+@layer componentes {
+
+  /* ---------- Cabeçalho do documento ---------- */
+  .cabecalho { padding-block: var(--s-7) var(--pad-secao); position: relative; isolation: isolate; }
+
+  /* A fotografia da cozinha do site, escurecida, com o fundo a fechar
+     em baixo para a secção seguinte nascer do escuro */
+  .cozinha { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+  .cozinha img {
+    width: 100%; height: 118%; object-fit: cover; object-position: 60% 40%;
+    opacity: .34; filter: saturate(.9) contrast(1.05);
+  }
+  .cozinha::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, color-mix(in oklab, var(--bg) 70%, transparent) 0%, transparent 30%),
+      linear-gradient(0deg, var(--bg) 3%, transparent 60%),
+      linear-gradient(90deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 55%, transparent) 50%, transparent 85%);
+  }
+  @media (max-width: 760px) {
+    .cozinha img { opacity: .26; object-position: 70% 30%; }
+    .cozinha::after {
+      background:
+        linear-gradient(0deg, var(--bg) 8%, transparent 70%),
+        linear-gradient(90deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 40%, transparent) 100%);
+    }
+  }
+
+  .faixa { background: var(--bg-soft); }
+  /* Ritmo de superfícies: a faixa clara leva um resto de cobre */
+  .faixa-clara {
+    background: linear-gradient(180deg in oklab,
+      color-mix(in oklab, var(--brand-700) 12%, var(--bg)),
+      color-mix(in oklab, var(--brand-700) 4%, var(--bg)));
+    border-block: 1px solid color-mix(in oklab, var(--brand-500) 20%, transparent);
+  }
+
+  .doc-topo {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: var(--s-4); flex-wrap: wrap;
+    padding-bottom: var(--s-4);
+    border-bottom: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+  .doc-marca { display: inline-flex; align-items: center; gap: var(--s-3); }
+  .doc-logo { width: 72px; height: auto; display: block; }
+  .doc-marca > span { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--muted); }
+  .doc-ref { font-family: var(--font-mono); font-size: var(--fs--1); color: var(--muted); }
+  .doc-ref b { color: var(--text); font-weight: 400; }
+
+  .doc-meta {
+    display: grid; gap: var(--s-2) var(--s-6); margin-top: var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  }
+  .doc-meta div { display: grid; gap: 2px; }
+  .doc-meta dt { font-size: var(--fs--2); color: var(--faint); font-family: var(--font-mono); }
+  .doc-meta dd { font-size: var(--fs--1); color: var(--text); font-weight: 500; }
+
+  /* O título à esquerda, o passe à direita */
+  .abre {
+    display: grid; gap: var(--s-6); margin-top: var(--s-6);
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: center;
+  }
+  @media (max-width: 920px) { .abre { grid-template-columns: 1fr; gap: var(--s-5); } }
+
+  .promessa {
+    font-size: clamp(1.85rem, 1.05rem + 2vw, 2.6rem);
+    line-height: 1.1; letter-spacing: var(--tr-hero);
+    font-weight: 500; max-width: 24ch; text-wrap: balance;
+  }
+  .cabecalho .lead { margin-top: var(--s-4); }
+
+  /* ============================================================
+     O PASSE: o varão das comandas
+     Cada comanda é uma pergunta de um evento. Papel creme, tinta
+     escura, número em mono, estado no rodapé. O estado final é o
+     default; o acto de abertura só as faz entrar.
+     ============================================================ */
+  .passe {
+    position: relative; justify-self: end; width: min(100%, 420px);
+    padding: 26px 18px 18px; border-radius: var(--r-4);
+    background:
+      radial-gradient(120% 70% at 50% 0%, hsl(var(--accent-hsl) / .16), transparent 60%),
+      color-mix(in oklab, var(--surface) 82%, transparent);
+    box-shadow: var(--e3), 0 30px 80px -30px hsl(var(--brand-hsl) / .55);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  }
+  @media (max-width: 920px) { .passe { justify-self: start; } }
+  /* O varão de inox onde as comandas ficam presas */
+  .passe::before {
+    content: ""; position: absolute; left: 14px; right: 14px; top: 14px; height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, oklch(86% 0.01 var(--neutro-h)), oklch(52% 0.012 var(--neutro-h)));
+    box-shadow: 0 2px 6px oklch(0% 0 0 / .5);
+  }
+  .passe-topo {
+    display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-2);
+    margin: 4px 2px 12px; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--muted);
+  }
+  .passe-topo b { color: var(--cobre-texto); font-weight: 400; }
+  .comandas { list-style: none; display: grid; gap: 10px; }
+  .comanda {
+    max-width: none; position: relative;
+    background: var(--papel); color: var(--papel-tinta);
+    border-radius: 3px 3px var(--r-2) var(--r-2);
+    padding: 12px 14px 10px;
+    box-shadow: 0 1px 0 oklch(100% 0 0 / .6) inset, 0 10px 24px -12px oklch(0% 0 0 / .7);
+    transform: rotate(var(--rot, 0deg));
+  }
+  .comanda:nth-child(1) { --rot: -0.8deg; }
+  .comanda:nth-child(2) { --rot: 0.6deg; }
+  .comanda:nth-child(3) { --rot: -0.4deg; }
+  /* o picotado do talão */
+  .comanda::before {
+    content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 4px;
+    background: radial-gradient(circle at 4px -1px, transparent 3px, var(--papel) 3.5px) 0 0 / 8px 4px repeat-x;
+  }
+  .comanda-cab {
+    display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+    font-family: var(--font-mono); font-size: var(--fs--2); color: var(--papel-fraco);
+    border-bottom: 1px dashed color-mix(in oklab, var(--papel-tinta) 30%, transparent);
+    padding-bottom: 6px;
+  }
+  .comanda-cab b { color: var(--papel-tinta); font-weight: 400; }
+  .comanda-q {
+    margin-top: 8px; font-family: var(--font-display); font-weight: 500;
+    font-size: var(--fs-0); line-height: 1.3; color: var(--papel-tinta); max-width: none;
+  }
+  .comanda-est {
+    display: flex; align-items: center; gap: 8px; margin-top: 8px;
+    font-size: var(--fs--2); font-weight: 600; color: var(--papel-tinta);
+  }
+  .comanda-est i {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    background: oklch(52% 0.13 160);
+  }
+  .comanda-est.gestora i { background: oklch(60% 0.15 60); }
+  .comanda-est span { font-weight: 400; color: var(--papel-fraco); margin-left: auto; font-family: var(--font-mono); }
+
+  .numeros {
+    list-style: none; display: grid; margin-top: var(--s-7);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    border-top: 1px solid var(--border);
+  }
+  .numeros li { padding: var(--s-4) var(--s-4) var(--s-4) 0; max-width: none; }
+  .numeros li + li { border-left: 1px solid var(--hairline); padding-left: var(--s-4); }
+  @media (max-width: 760px) {
+    .numeros li + li { border-left: 0; padding-left: 0; border-top: 1px solid var(--hairline); }
+  }
+  .numeros .n {
+    display: block; font-family: var(--font-display); font-weight: 500;
+    font-size: var(--fs-4); line-height: 1.05; color: var(--text); letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .numeros .n em { font-style: normal; color: var(--cobre-texto); }
+  .numeros .d { display: block; margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); max-width: 30ch; }
+
+  .doc-nota { margin-top: var(--s-4); color: var(--faint); font-size: var(--fs--1); }
+
+  /* ---------- Rubricas ---------- */
+  .rubrica {
+    display: flex; align-items: baseline; gap: var(--s-3);
+    font-size: var(--fs--1); color: var(--muted); margin-bottom: var(--s-3);
+    max-width: none;
+  }
+  .rubrica span {
+    font-family: var(--font-mono); font-size: var(--fs--2);
+    color: var(--cobre-texto); font-weight: 400;
+    min-width: 1.6em; padding-bottom: 2px;
+    border-bottom: 2px solid var(--accent);
+  }
+  section h2 { max-width: 24ch; font-weight: 500; }
+  section h2 + .lead { margin-top: var(--s-3); }
+  section .lead + .doc-nota { margin-top: var(--s-3); }
+
+  .sintese {
+    margin-top: var(--s-6); padding-left: var(--s-4);
+    border-left: 2px solid var(--accent);
+    font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: var(--fs-1);
+    line-height: 1.4; color: var(--text); max-width: 46ch; letter-spacing: -0.005em;
+  }
+
+  /* ---------- A resposta do Paulo Amado ---------- */
+  .citacao {
+    margin-top: var(--s-5); display: grid; gap: var(--s-3);
+    padding: var(--s-5); border-radius: var(--r-4);
+    background: linear-gradient(135deg in oklab, color-mix(in oklab, var(--brand-700) 18%, var(--surface)), var(--surface) 70%);
+    box-shadow: var(--e2), 0 0 0 1px hsl(var(--brand-hsl) / .18);
+  }
+  .citacao blockquote {
+    font-family: var(--font-display); font-weight: 500; font-style: italic;
+    font-size: var(--fs-2); line-height: 1.3; color: var(--text); max-width: 38ch;
+    letter-spacing: -0.01em;
+  }
+  .citacao blockquote::before { content: "\201C"; color: var(--cobre-texto); }
+  .citacao blockquote::after { content: "\201D"; color: var(--cobre-texto); }
+  .citacao figcaption { font-size: var(--fs--1); color: var(--muted); }
+  .citacao figcaption b { color: var(--text); font-weight: 500; }
+  .citacao p { color: var(--muted); font-size: var(--fs--1); max-width: 64ch; }
+
+  /* ---------- Pontos (os eventos e as regras de cada um) ---------- */
+  .pontos {
+    display: grid; gap: var(--s-5) var(--s-6); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  }
+  .pontos article { border-top: 1px solid var(--border); padding-top: var(--s-3); }
+  .pontos .k { font-size: var(--fs--2); font-weight: 600; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--cobre-texto); }
+  .pontos h3 { margin-top: var(--s-1); font-size: var(--fs-1); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+  .pontos p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
+  .pontos blockquote {
+    margin-top: var(--s-3); padding-left: var(--s-3);
+    border-left: 2px solid var(--brand-400);
+    font-family: var(--font-body); font-weight: 500;
+    color: var(--brand-200); font-size: var(--fs--1); line-height: 1.5;
+  }
+  .pontos blockquote::before { content: "\201C"; }
+  .pontos blockquote::after { content: "\201D"; }
+  .pontos .cite { margin-top: 4px; padding-left: calc(var(--s-3) + 2px); color: var(--faint); font-size: var(--fs--2); }
+
+  .mais {
+    margin-top: var(--s-5); display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    list-style: none;
+  }
+  .mais li {
+    max-width: none; font-size: var(--fs--2); color: var(--muted);
+    padding: 5px 11px; border-radius: var(--r-pill);
+    background: var(--surface); box-shadow: inset 0 0 0 1px var(--hairline);
+  }
+  .mais li.k { background: none; box-shadow: none; padding-left: 0; font-family: var(--font-mono); color: var(--faint); }
+
+  /* ============================================================
+     O ANO: calendário de 2026 com as datas do site
+     12 colunas (meses). Faixas e marcadores posicionados em
+     percentagem do ano. Estado final por defeito; .pre só se põe
+     por JS e é retirado ao entrar no ecrã.
+     ============================================================ */
+  .ano {
+    margin-top: var(--s-7); padding: var(--s-5); border-radius: var(--r-4);
+    background: color-mix(in oklab, var(--surface) 78%, transparent);
+    box-shadow: var(--e2);
+  }
+  @media (max-width: 760px) { .ano { padding: var(--s-4) var(--s-3); } }
+  .ano-cab { display: flex; justify-content: space-between; gap: var(--s-3); flex-wrap: wrap; align-items: baseline; }
+  .ano-cab h3 { font-size: var(--fs-1); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+  .ano-cab span { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--faint); }
+  .ano-grelha { margin-top: var(--s-5); display: grid; gap: 14px; }
+  .ano-meses, .ano-linha .pista {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+  }
+  .ano-meses { margin-left: var(--rotulo-w); font-family: var(--font-mono); font-size: var(--fs--2); color: var(--faint); }
+  .ano-meses span { padding-left: 4px; border-left: 1px solid var(--hairline); }
+  .ano-grelha { --rotulo-w: 11.5rem; }
+  .ano-linha { display: grid; grid-template-columns: var(--rotulo-w) 1fr; align-items: center; min-height: 54px; }
+  .ano-linha > b { font-size: var(--fs--1); font-weight: 600; padding-right: var(--s-3); line-height: 1.25; }
+  .ano-linha > b small { display: block; font-weight: 400; color: var(--faint); font-size: var(--fs--2); }
+  .pista {
+    position: relative; height: 54px; border-radius: var(--r-2);
+    background:
+      repeating-linear-gradient(90deg, var(--hairline) 0 1px, transparent 1px calc(100% / 12));
+  }
+  .faixa-ev, .marca-ev {
+    position: absolute; top: 50%;
+    left: calc(var(--de) * 1%);
+  }
+  .faixa-ev {
+    translate: 0 -50%;
+    width: calc((var(--ate) - var(--de)) * 1%); height: 22px; border-radius: var(--r-pill);
+    background: linear-gradient(90deg in oklab, hsl(var(--brand-hsl) / .55), hsl(var(--accent-hsl) / .55));
+    box-shadow: inset 0 0 0 1px hsl(var(--accent-hsl) / .5);
+    transform-origin: left center;
+    transition: transform 1100ms var(--e-expo);
+    transition-delay: calc(var(--i, 0) * 120ms);
+  }
+  .faixa-ev.jtg { background: linear-gradient(90deg in oklab, oklch(60% 0.08 200 / .55), oklch(70% 0.09 190 / .5)); box-shadow: inset 0 0 0 1px oklch(78% 0.08 190 / .5); }
+  /* O marcador é um ponto de largura zero: o círculo é o ::before (é só
+     ele que cresce na entrada) e o rótulo fica sempre visível. */
+  .marca-ev { width: 0; height: 0; }
+  .marca-ev::before {
+    content: ""; position: absolute; left: -7px; top: -7px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px hsl(var(--accent-hsl) / .22), 0 0 18px hsl(var(--accent-hsl) / .7);
+    transition: transform 700ms var(--e-expo);
+    transition-delay: calc(var(--i, 0) * 120ms + 300ms);
+  }
+  .marca-ev.fim::before { background: var(--acafrao); width: 18px; height: 18px; left: -9px; top: -9px; }
+  .marca-ev.limite::before { border-radius: 3px; background: var(--danger); box-shadow: 0 0 0 4px color-mix(in oklab, var(--danger) 25%, transparent); }
+  .marca-ev.hoje::before {
+    width: 2px; height: 54px; left: -1px; top: -27px; border-radius: 0;
+    background: var(--text); box-shadow: none; opacity: .55;
+  }
+  .ano.pre .faixa-ev { transform: scaleX(0); }
+  .ano.pre .marca-ev::before { transform: scale(0); }
+  .marca-ev .t {
+    position: absolute; left: 0; bottom: 14px; translate: -50% 0;
+    white-space: nowrap; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--muted);
+  }
+  .ano-leg {
+    margin-top: var(--s-4); list-style: none; display: grid; gap: 6px var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+  .ano-leg li { max-width: none; font-size: var(--fs--2); color: var(--muted); display: flex; gap: 8px; align-items: baseline; }
+  .ano-leg li b { color: var(--text); font-weight: 500; font-family: var(--font-mono); white-space: nowrap; }
+  .ano-fonte { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--faint); max-width: 70ch; }
+  @media (max-width: 760px) {
+    .ano-grelha { --rotulo-w: 0px; }
+    .ano-linha { grid-template-columns: 1fr; min-height: 0; gap: 6px; }
+    .ano-meses { margin-left: 0; font-size: 10px; }
+    .ano-meses span { padding-left: 2px; }
+    .marca-ev .t { display: none; }
+  }
+
+  /* ---------- Os três públicos que perguntam ---------- */
+  .publicos {
+    display: grid; gap: var(--s-4); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  }
+  .publicos article {
+    padding: var(--s-4); border-radius: var(--r-3);
+    background: var(--surface); box-shadow: var(--e1);
+  }
+  .publicos .k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--cobre-texto); }
+  .publicos h3 { margin-top: var(--s-1); font-size: var(--fs-1); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+  .publicos ul { list-style: none; margin-top: var(--s-3); display: grid; gap: 8px; }
+  .publicos li {
+    max-width: none; font-family: var(--font-display); font-style: italic; font-weight: 500;
+    font-size: var(--fs--1); color: var(--text); line-height: 1.4;
+    padding: 9px 12px; border-radius: var(--r-3); border-top-left-radius: var(--r-1);
+    background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--hairline);
+  }
+  .publicos li small { display: block; font-family: var(--font-mono); font-style: normal; font-weight: 400; font-size: 11px; color: var(--faint); margin-top: 3px; }
+  .publicos .quem { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--muted); }
+
+  /* ---------- Antes e depois ---------- */
+  .antes-depois { display: grid; gap: var(--s-6); margin-top: var(--s-7); grid-template-columns: 1fr 1fr; }
+  @media (max-width: 860px) { .antes-depois { grid-template-columns: 1fr; } }
+  .antes-depois > div { border-top: 2px solid var(--border); padding-top: var(--s-3); }
+  .antes-depois > div:first-child { border-top-color: var(--ok); }
+  .antes-depois > div:last-child { border-top-color: var(--danger); }
+  .antes-depois h3 { font-size: var(--fs-1); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+
+  /* ============================================================
+     O QUE A GESTORA RECEBE: cartão + registo
+     ============================================================ */
+  .recebe {
+    display: grid; gap: var(--s-5); margin-top: var(--s-6);
+    grid-template-columns: minmax(0, 380px) minmax(0, 1fr); align-items: start;
+  }
+  @media (max-width: 940px) { .recebe { grid-template-columns: 1fr; } }
+  .recebe-t { margin-top: var(--s-7); font-size: var(--fs-2); font-weight: 500; }
+  .recebe-t + p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); max-width: 60ch; }
+
+  .notif { margin: 0; }
+  .notif-caixa {
+    border-radius: var(--r-4); overflow: hidden;
+    background: var(--mock-bg); color: var(--mock-txt);
+    box-shadow: var(--e3), 0 0 60px -20px hsl(var(--brand-hsl) / .55);
+  }
+  .notif-topo {
+    display: flex; align-items: center; gap: var(--s-2);
+    padding: 12px 14px; background: var(--mock-head); border-bottom: 1px solid var(--mock-linha);
+    font-size: var(--fs--2);
+  }
+  .notif-ic { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--brand-700); color: var(--on-brand); flex-shrink: 0; }
+  .notif-ic svg { width: 15px; height: 15px; }
+  .notif-topo b { font-weight: 600; }
+  .notif-topo time { margin-left: auto; font-family: var(--font-mono); color: var(--mock-txt-fraco); }
+  .notif-corpo { padding: var(--s-3) 14px var(--s-4); }
+  .notif-para { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--mock-txt-fraco); margin-bottom: 8px; }
+  .notif-bolha { background: var(--mock-bolha-in); border-radius: var(--r-3); border-top-left-radius: var(--r-1); padding: 12px 14px; }
+  .notif-tit { font-weight: 700; font-size: var(--fs--1); color: var(--ambar-texto); max-width: none; }
+  .notif-dados { display: grid; grid-template-columns: auto 1fr; gap: 5px 12px; margin-top: 10px; font-size: var(--fs--2); }
+  .notif-dados dt { color: var(--mock-txt-fraco); }
+  .notif-dados dd { color: var(--mock-txt); font-weight: 500; }
+  .notif-resumo { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--mock-linha); font-size: var(--fs--2); color: var(--mock-txt-fraco); max-width: none; }
+  .notif-resumo b { color: var(--mock-txt); font-weight: 500; }
+  .notif-acoes { display: flex; gap: 6px; margin-top: 10px; }
+  .notif-acoes span {
+    flex: 1; text-align: center; padding: 7px 8px; border-radius: var(--r-2);
+    background: var(--mock-veu); font-size: var(--fs--2); color: var(--cobre-texto); font-weight: 500;
+  }
+  .notif figcaption, .registo-legenda { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--faint); }
+
+  .registo {
+    border-radius: var(--r-4); overflow: hidden;
+    background: var(--mock-bg); color: var(--mock-txt); box-shadow: var(--e2);
+  }
+  .registo-topo {
+    display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); flex-wrap: wrap;
+    padding: 12px 16px; background: var(--mock-head); border-bottom: 1px solid var(--mock-linha);
+  }
+  .registo-topo b { font-size: var(--fs--1); font-weight: 600; }
+  .registo-topo span { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--mock-txt-fraco); }
+  .registo-wrap { overflow-x: auto; }
+  .registo table { width: 100%; border-collapse: collapse; font-size: var(--fs--2); }
+  .registo th {
+    text-align: left; font-family: var(--font-mono); font-weight: 400; color: var(--mock-txt-fraco);
+    padding: 10px 12px; border-bottom: 1px solid var(--mock-linha); white-space: nowrap;
+  }
+  .registo td { padding: 10px 12px; border-bottom: 1px solid var(--mock-linha); vertical-align: top; }
+  .registo tr:last-child td { border-bottom: 0; }
+  .registo td small { display: block; color: var(--mock-txt-fraco); margin-top: 2px; }
+  .registo .quando { font-family: var(--font-mono); white-space: nowrap; color: var(--mock-txt-fraco); }
+  .estado { display: inline-block; padding: 2px 9px; border-radius: var(--r-pill); white-space: nowrap; font-weight: 500; }
+  .estado.ok { background: color-mix(in oklab, var(--ok) 16%, transparent); color: var(--ok-texto); }
+  .estado.ges { background: color-mix(in oklab, var(--warn) 16%, transparent); color: var(--ambar-texto); }
+  .estado.reg { background: hsl(var(--brand-hsl) / .2); color: var(--cobre-texto); }
+  @media (max-width: 640px) {
+    .registo th:nth-child(4), .registo td:nth-child(4) { display: none; }
+  }
+
+  /* ---------- Unibox: nota por cima ---------- */
+  .unibox-nota { margin-top: var(--s-4); margin-bottom: var(--s-4); font-size: var(--fs--2); color: var(--faint); }
+
+  /* ---------- Regras (faz, passa à gestora, nunca faz) ---------- */
+  .regras {
+    display: grid; gap: var(--s-5); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  }
+  .regras article { border-top: 2px solid var(--border); padding-top: var(--s-3); }
+  .regras .faz { border-top-color: var(--ok); }
+  .regras .pergunta { border-top-color: var(--warn); }
+  .regras .nunca { border-top-color: var(--danger); }
+  .regras h3 { font-size: var(--fs-0); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+  .regras ul { list-style: none; margin-top: var(--s-3); display: grid; gap: var(--s-2); }
+  .regras li { font-size: var(--fs--1); color: var(--muted); padding-left: var(--s-3); position: relative; }
+  .regras li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 5px; height: 1px; background: var(--border-strong); }
+
+  .seguinte {
+    margin-top: var(--s-6); display: flex; gap: var(--s-4); align-items: flex-start;
+    padding: var(--s-4); border-radius: var(--r-3);
+    border: 1px dashed var(--border-strong);
+  }
+  .seguinte .k { flex-shrink: 0; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--faint); padding-top: 3px; }
+  .seguinte h3 { font-size: var(--fs-0); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+  .seguinte p { margin-top: var(--s-1); color: var(--muted); font-size: var(--fs--1); max-width: 70ch; }
+  @media (max-width: 640px) { .seguinte { flex-direction: column; gap: var(--s-2); } }
+
+  /* ---------- Prova social ---------- */
+  .prova {
+    margin-top: var(--s-7); padding: var(--s-5); border-radius: var(--r-4);
+    background: linear-gradient(135deg in oklab, color-mix(in oklab, var(--brand-700) 22%, var(--surface)), var(--surface));
+    border: 1px solid hsl(var(--brand-hsl) / .25);
+  }
+  @media (max-width: 640px) { .prova { padding: var(--s-4); } }
+  .prova-k { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--cobre-texto); }
+  .prova h3 { margin-top: var(--s-2); font-weight: 500; font-size: var(--fs-2); max-width: 30ch; line-height: 1.25; }
+  .prova p { margin-top: var(--s-3); color: var(--muted); max-width: 64ch; }
+  .prova p b { color: var(--text); font-weight: 500; }
+  .prova-nums {
+    list-style: none; display: grid; gap: var(--s-3); margin-top: var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  }
+  .prova-nums li { max-width: none; border-top: 1px solid hsl(var(--brand-hsl) / .35); padding-top: var(--s-2); }
+  .prova-nums .n { display: block; font-family: var(--font-display); font-weight: 500; font-size: var(--fs-3); line-height: 1.1; color: var(--text); font-variant-numeric: tabular-nums lining-nums; }
+  .prova-nums .d { display: block; margin-top: 4px; font-size: var(--fs--2); color: var(--muted); }
+  .prova blockquote {
+    margin-top: var(--s-4); padding-left: var(--s-3); border-left: 2px solid var(--accent);
+    font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: var(--fs-0);
+    color: var(--text); max-width: 60ch; line-height: 1.45;
+  }
+  .prova .prova-nota { font-size: var(--fs--2); color: var(--faint); }
+  .prova a { color: var(--cobre-texto); text-underline-offset: 3px; display: inline-block; padding-block: 4px; }
+
+  /* ---------- O valor ---------- */
+  .ancora {
+    margin-top: var(--s-4); padding-left: var(--s-4); border-left: 2px solid var(--accent);
+    font-family: var(--font-display); font-weight: 500; font-size: var(--fs-1); line-height: 1.45;
+    color: var(--text); max-width: 48ch; letter-spacing: -0.005em;
+  }
+  .ancora b { font-weight: 600; color: var(--cobre-texto); }
+  .ganhos {
+    display: grid; gap: var(--s-4); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+  .ganhos article { border-top: 1px solid var(--border); padding-top: var(--s-3); }
+  .ganhos h3 { font-size: var(--fs-0); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+  .ganhos p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
+  .calc-moldura { margin-top: var(--s-6); }
+  .calc-moldura h3 { font-size: var(--fs-1); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+  .calc-moldura > p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); max-width: 62ch; }
+  .calc-moldura .calc { margin-top: var(--s-4); }
+
+  /* ---------- Cronograma ---------- */
+  .fases {
+    list-style: none; display: grid; gap: var(--s-5);
+    margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  }
+  .fases li { border-top: 2px solid var(--brand-500); padding-top: var(--s-3); }
+  .fases li:last-child { border-top-color: var(--acafrao); }
+  .fases .quando { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--cobre-texto); }
+  .fases .o-que { display: block; margin-top: var(--s-1); font-weight: 600; font-size: var(--fs-0); }
+  .fases p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); }
+  .fases + .doc-nota { margin-top: var(--s-5); }
+
+  /* ---------- Fecho ---------- */
+  .fecho {
+    position: relative; overflow: hidden; color: var(--text);
+    background:
+      radial-gradient(60% 80% at 85% 100%, hsl(var(--accent-hsl) / .12), transparent 70%),
+      linear-gradient(180deg in oklab, transparent, hsl(var(--brand2-hsl) / .2));
+  }
+  .fecho h2 { max-width: none; font-size: var(--fs-5); font-weight: 500; line-height: 1.06; }
+  .fecho .lead { margin-top: var(--s-3); color: var(--muted); }
+  .passos-fecho {
+    list-style: none; display: grid; gap: var(--s-4) var(--s-6); margin-top: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  }
+  .passos-fecho li { border-top: 1px solid hsl(var(--accent-hsl) / .4); padding-top: var(--s-3); }
+  .passos-fecho .n { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--cobre-texto); }
+  .passos-fecho b { display: block; margin-top: var(--s-1); font-size: var(--fs-0); }
+  .passos-fecho p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); max-width: 34ch; }
+  .fecho-acoes { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
+  .fecho-contacto { margin-top: var(--s-4); color: var(--muted); font-size: var(--fs--1); }
+  .fecho-contacto a { color: var(--text); display: inline-block; padding-block: 4px; }
+
+  .rodape .rodape-logo { width: 56px; height: auto; display: block; margin-bottom: var(--s-3); opacity: .9; }
+  .rodape .disclaimer { display: block; margin-top: var(--s-2); font-size: var(--fs--2); color: var(--faint); max-width: 70ch; }
+}
+
+/* ---------- Texto em gradiente: açafrão, cobre, brasa clara ---------- */
+.g-brilho {
+  color: var(--acafrao);
+  background: linear-gradient(100deg in oklab, var(--acafrao) 0%, var(--accent) 55%, oklch(72% 0.14 35) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Botões nesta paleta ----------
+   Cobre polido com tinta quase-preta (contraste muito acima de AA). */
+.btn-primario { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 0 1px hsl(var(--accent-hsl) / .5), 0 10px 30px -10px hsl(var(--brand-hsl) / .7); }
+@media (hover: hover) and (pointer: fine) { .btn-primario:hover { background: var(--accent-forte); } }
+.btn-secundario { color: var(--text); }
+.nav a.nav-cta { background: var(--accent); color: var(--on-accent); }
+.nav a.nav-cta[aria-current="true"] { background: var(--accent-forte); color: var(--on-accent); }
+.saltar { background: var(--accent); color: var(--on-accent); }
+
+/* ---------- Impressão ---------- */
+@media print {
+  .cr, .fluxo, .unibox, .calc { display: none !important; }
+  .numeros li + li { border-left: 0; }
+}
+
+/* ============================================================
+   AFINAÇÃO DOS COMPONENTES PARTILHADOS
+   Sem @layer de propósito: o deck.css não está em camada.
+   ============================================================ */
+.cr-head .k, .cr-reason-head .t, .cr-step-k,
+.fluxo-node .k, .fluxo-chans .lbl, .cr-tab {
+  text-transform: none; letter-spacing: 0;
+  font-family: var(--font-mono); font-size: var(--fs--2);
+}
+.cr-tab { border-radius: var(--r-2); font-weight: 400; }
+.cr-tabs { justify-content: flex-start; }
+.cr-shell, .fluxo-shell { border-radius: var(--r-4); background: var(--surface); }
+.cr-chat { border-radius: var(--r-3); background: var(--mock-bg); }
+.cr-chat-head, .cr-input { background: var(--mock-head); }
+.cr-row.agent .cr-bubble { background: var(--mock-bolha-in); }
+.cr-chat-ava { font-family: var(--font-display); font-size: 0.82rem; background: var(--brand-800); color: var(--cobre-texto); }
+.cr-reason { border-radius: var(--r-3); min-height: 520px; }
+.cr-bubble { border-radius: var(--r-3); font-size: var(--fs--1); white-space: pre-line; }
+.cr-head h3 { font-size: var(--fs-1); font-weight: 600; font-family: var(--font-body); letter-spacing: 0; }
+.cr-head p, .cr-step-l { font-size: var(--fs--1); }
+.cr-chat-who b { font-size: var(--fs--1); }
+.cr-chat-who small, .cr-progress, .cr-sys, .cr-bubble time,
+.fluxo-node p, .fluxo-note { font-size: var(--fs--2); }
+.cr-bubble time { opacity: .72; }
+.ub-row.out .ub-bubble-time { color: var(--on-accent); }
+#egInbox { --ub-accent-weak: hsl(var(--brand-hsl) / .14); --ub-accent-weak2: hsl(var(--brand-hsl) / .22); }
+#egInbox .ub-item.is-sel { background: hsl(var(--brand-hsl) / .10); }
+@media (min-width: 921px) { .promessa .sem-quebra { white-space: nowrap; } }
+.fluxo-node { border-radius: var(--r-3); padding: 18px 12px; }
+.fluxo-node .ic { border-radius: var(--r-2); }
+.fluxo-node strong { font-size: var(--fs--1); line-height: 1.3; font-family: var(--font-body); }
+.cr-step { opacity: 0.55; border-radius: var(--r-3); }
+.calc { border-radius: var(--r-4); }
+.calc-out .val { font-family: var(--font-display); font-weight: 500; }
+.calc-note { color: var(--faint); }
+
+/* ============================================================
+   O PASSE EM SERVIÇO
+   As comandas chegam uma a uma depois do acto de abertura, a luz de
+   calor do passe respira, e o ponto de estado pulsa como "ao vivo".
+   Tudo dentro de no-preference e só com .js: sem JS, sem GSAP ou com
+   movimento reduzido, as comandas estão paradas e completas.
+   ============================================================ */
+.passe::after {
+  content: ""; position: absolute; left: 18%; right: 18%; top: 4px; height: 140px; z-index: -1;
+  pointer-events: none; border-radius: 50%;
+  background: radial-gradient(50% 60% at 50% 0%, hsl(var(--accent-hsl) / .32), transparent 70%);
+  filter: blur(12px);
+}
+.comanda { box-shadow: 0 1px 0 oklch(100% 0 0 / .6) inset, 0 12px 26px -12px oklch(0% 0 0 / .75), 0 2px 0 -1px hsl(var(--brand-hsl) / .25); }
+@media (prefers-reduced-motion: no-preference) {
+  .passe::after { animation: calor 4.5s var(--e-suave) infinite alternate; }
+  .comanda-est i { animation: pulsa-est 1.8s ease-in-out infinite; }
+  .js .comanda { animation: comanda-chega 760ms var(--e-expo) both; animation-delay: calc(1100ms + var(--n, 0) * 320ms); }
+  .comanda:nth-child(2) { --n: 1; }
+  .comanda:nth-child(3) { --n: 2; }
+}
+@keyframes calor { from { opacity: .45; transform: scaleX(.92); } to { opacity: 1; transform: scaleX(1.06); } }
+@keyframes pulsa-est { 0%, 100% { box-shadow: 0 0 0 0 oklch(60% 0.12 160 / .45); } 50% { box-shadow: 0 0 0 5px oklch(60% 0.12 160 / 0); } }
+@keyframes comanda-chega {
+  from { opacity: 0; transform: translateY(-16px) rotate(var(--rot, 0deg)); }
+  to   { opacity: 1; transform: translateY(0) rotate(var(--rot, 0deg)); }
+}
+
+/* Profundidade extra nos painéis grandes: a luz de cobre por trás */
+.ano {
+  background:
+    radial-gradient(70% 90% at 100% 0%, hsl(var(--accent-hsl) / .09), transparent 60%),
+    color-mix(in oklab, var(--surface) 78%, transparent);
+}
+.prova { box-shadow: 0 30px 70px -40px hsl(var(--brand2-hsl) / .7), inset 0 1px 0 oklch(100% 0 0 / .06); }
+.citacao { box-shadow: var(--e2), 0 0 0 1px hsl(var(--brand-hsl) / .18), 0 24px 60px -36px hsl(var(--accent-hsl) / .55); }
+.calc-moldura .calc { box-shadow: 0 0 0 1px hsl(var(--brand-hsl) / .2), 0 28px 64px -40px hsl(var(--brand-hsl) / .7); }

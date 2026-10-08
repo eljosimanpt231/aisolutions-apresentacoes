@@ -1,0 +1,201 @@
+/* ============================================================
+   TOKENS: Edições do Gosto (arquitetura deck-dark, atmosfera noturno-vivo)
+   Fonte única de verdade visual. Os componentes NUNCA usam cores
+   directas: para mudar o look inteiro, muda-se só este ficheiro.
+
+   Marca: o site da Edições do Gosto é preto e branco. A cor vem da
+   fotografia principal do site: as juntas cor de cobre dos azulejos
+   escuros de uma cozinha, e as luzes de calor do passe. O cobre é a
+   marca; o açafrão é a segunda voz; a brasa só aparece nos glows.
+   As superfícies levam a matiz do azulejo (azul-ardósia, croma baixo).
+   ============================================================ */
+
+:root {
+
+  /* ---------- 1. MARCA ---------- */
+  --brand-l: 62%;
+  --brand-c: 0.13;
+  --brand-h: 48;
+
+  /* Matiz das superfícies: o azulejo escuro da fotografia */
+  --neutro-h: 255;
+
+  /* A atmosfera e o deck.css trabalham em HSL: cobre, açafrão, brasa */
+  --brand-hsl:  22 58% 56%;
+  --accent-hsl: 36 78% 60%;
+  --brand2-hsl: 8 62% 50%;
+
+  --brand-50:  oklch(97.0% calc(var(--brand-c) * 0.10) var(--brand-h));
+  --brand-100: oklch(93.5% calc(var(--brand-c) * 0.22) var(--brand-h));
+  --brand-200: oklch(88.0% calc(var(--brand-c) * 0.42) var(--brand-h));
+  --brand-300: oklch(81.0% calc(var(--brand-c) * 0.66) var(--brand-h));
+  --brand-400: oklch(72.5% calc(var(--brand-c) * 0.90) var(--brand-h));
+  --brand-500: oklch(66.0% calc(var(--brand-c) * 1.00) var(--brand-h));
+  --brand-600: oklch(var(--brand-l) var(--brand-c) var(--brand-h));
+  --brand-700: oklch(50.0% calc(var(--brand-c) * 0.96) calc(var(--brand-h) - 4));
+  --brand-800: oklch(41.0% calc(var(--brand-c) * 0.82) calc(var(--brand-h) - 6));
+  --brand-900: oklch(32.0% calc(var(--brand-c) * 0.62) calc(var(--brand-h) - 8));
+  --brand-950: oklch(23.0% calc(var(--brand-c) * 0.42) calc(var(--brand-h) - 8));
+
+  --brand:    var(--brand-600);
+  --accent:   oklch(74% 0.125 52);          /* cobre polido: CTA, o assistente, as rubricas */
+  --accent-forte: oklch(79% 0.13 58);       /* hover */
+  --acafrao:  oklch(80% 0.13 75);           /* a segunda voz */
+  --on-brand: oklch(99% 0.004 var(--brand-h));
+  --on-accent: oklch(17% 0.02 var(--neutro-h));   /* tinta quase-preta sobre o cobre */
+
+  --brand-a06: color-mix(in oklab, var(--brand) 6%,  transparent);
+  --brand-a10: color-mix(in oklab, var(--brand) 10%, transparent);
+  --brand-a16: color-mix(in oklab, var(--brand) 16%, transparent);
+  --brand-a30: color-mix(in oklab, var(--brand) 30%, transparent);
+  --brand-a45: color-mix(in oklab, var(--brand) 45%, transparent);
+  --accent-a10: color-mix(in oklab, var(--accent) 10%, transparent);
+  --accent-a20: color-mix(in oklab, var(--accent) 20%, transparent);
+  --accent-a45: color-mix(in oklab, var(--accent) 45%, transparent);
+
+  /* ---------- 2. SUPERFÍCIES E TINTA (claro, só como base) ---------- */
+  --bg:        oklch(99.0% 0.004 var(--neutro-h));
+  --bg-soft:   oklch(97.2% 0.008 var(--neutro-h));
+  --surface:   oklch(100%  0.002 var(--neutro-h));
+  --surface-2: oklch(98.0% 0.006 var(--neutro-h));
+  --surface-3: oklch(96.0% 0.009 var(--neutro-h));
+
+  --text:   oklch(22.0% 0.020 var(--neutro-h));
+  --muted:  oklch(48.0% 0.018 var(--neutro-h));
+  --faint:  oklch(62.0% 0.014 var(--neutro-h));
+
+  --hairline: color-mix(in oklab, var(--text) 9%, transparent);
+  --border:   color-mix(in oklab, var(--text) 13%, transparent);
+  --border-strong: color-mix(in oklab, var(--text) 22%, transparent);
+  --focus: var(--accent);
+
+  /* ---------- 3. SEMÂNTICOS ----------
+     Verde = automático/resolvido. Vermelho = manual/custo. Âmbar = para a gestora. */
+  --ok:        oklch(58% 0.12 160);
+  --ok-wash:   color-mix(in oklab, var(--ok) 12%, transparent);
+  --danger:    oklch(55% 0.18 25);
+  --danger-wash: color-mix(in oklab, var(--danger) 11%, transparent);
+  --warn:      oklch(72% 0.14 80);
+  --warn-wash: color-mix(in oklab, var(--warn) 14%, transparent);
+
+  /* ---------- 4. TIPOGRAFIA ----------
+     Fraunces: serifada com carácter, da família de formas do logótipo
+     circular. Instrument Sans no corpo. JetBrains Mono nas comandas. */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:    'Instrument Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-logo:    var(--font-display);
+
+  --fs--2: clamp(0.75rem,   0.7292rem + 0.0926vw, 0.8125rem);
+  --fs--1: clamp(0.875rem,  0.8542rem + 0.0926vw, 0.9375rem);
+  --fs-0:  clamp(1.0625rem, 1.0208rem + 0.1852vw, 1.1875rem);
+  --fs-1:  clamp(1.1875rem, 1.1250rem + 0.2778vw, 1.375rem);
+  --fs-2:  clamp(1.375rem,  1.2500rem + 0.5556vw, 1.75rem);
+  --fs-3:  clamp(1.625rem,  1.4375rem + 0.8333vw, 2.1875rem);
+  --fs-4:  clamp(1.875rem,  1.6250rem + 1.1111vw, 2.625rem);
+  --fs-5:  clamp(2.125rem,  1.7500rem + 1.6667vw, 3.25rem);
+  --fs-6:  clamp(2.75rem,   2.2500rem + 2.2222vw, 4.25rem);
+
+  --lh-hero: 1.04; --lh-h1: 1.08; --lh-h2: 1.12; --lh-h3: 1.24;
+  --lh-lead: 1.45; --lh-body: 1.62;
+
+  /* A Fraunces tem eixo óptico: o tracking negativo fica a meio */
+  --tr-hero: -0.018em; --tr-h1: -0.016em; --tr-h2: -0.014em; --tr-h3: -0.01em;
+  --tr-body: 0em; --tr-label: 0.08em;
+
+  --measure: 66ch;
+  --measure-lead: 56ch;
+
+  /* ---------- 5. ESPAÇO ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 16px; --s-4: 24px;
+  --s-5: 32px; --s-6: 48px; --s-7: 64px; --s-8: 96px;
+
+  --container: 1120px;
+  --gutter: clamp(16px, 4vw, 32px);
+
+  --pad-secao:       clamp(56px, 7vw, 104px);
+  --pad-secao-amplo: clamp(80px, 10vw, 140px);
+  --pad-secao-junto: clamp(32px, 4vw, 56px);
+
+  /* ---------- 6. FORMA ---------- */
+  --r-1: 4px; --r-2: 8px; --r-3: 14px; --r-4: 22px; --r-pill: 999px;
+
+  /* ---------- 7. ELEVAÇÃO (claro) ---------- */
+  --sh: 255deg 30% 14%;
+  --e1: 0 0 0 1px var(--hairline), 0 1px 2px hsl(var(--sh) / 0.05), 0 2px 4px -2px hsl(var(--sh) / 0.05);
+  --e2: 0 0 0 1px var(--hairline), 0 1px 2px hsl(var(--sh) / 0.04), 0 4px 8px -2px hsl(var(--sh) / 0.04), 0 8px 16px -6px hsl(var(--sh) / 0.05);
+  --e3: 0 0 0 1px var(--hairline), 0 2px 4px hsl(var(--sh) / 0.03), 0 16px 32px -8px hsl(var(--sh) / 0.05), 0 32px 64px -16px hsl(var(--sh) / 0.06);
+
+  /* ---------- 8. MOVIMENTO (dentro das maquetas: registo de produto) ---------- */
+  --t-rapido: 120ms;
+  --t-normal: 200ms;
+  --t-lento:  300ms;
+  --ease-out:   cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-suave: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* ---------- 9. MAQUETAS (comandas, cartão da gestora, registo) ---------- */
+  --mock-bg:        oklch(17% 0.016 var(--neutro-h));
+  --mock-head:      oklch(21% 0.018 var(--neutro-h));
+  --mock-linha:     oklch(100% 0 0 / 0.09);
+  --mock-txt:       oklch(95% 0.006 var(--neutro-h));
+  --mock-txt-fraco: oklch(73% 0.014 var(--neutro-h));
+  --mock-bolha-in:  oklch(25% 0.02 var(--neutro-h));
+  --mock-sombra:    oklch(0% 0 0 / 0.35);
+  --mock-veu:       oklch(100% 0 0 / 0.05);
+  --mock-veu-2:     oklch(100% 0 0 / 0.07);
+  /* papel da comanda: creme quente, tinta quase-preta */
+  --papel:          oklch(95% 0.018 80);
+  --papel-tinta:    oklch(24% 0.02 60);
+  --papel-fraco:    oklch(45% 0.025 60);
+  /* texto em cor dentro das maquetas escuras */
+  --ok-texto:       oklch(84% 0.11 160);
+  --ambar-texto:    oklch(86% 0.12 80);
+  --cobre-texto:    oklch(82% 0.10 55);
+
+  /* ---------- 10. CANAIS (cores canónicas) ---------- */
+  --wa-green: #128C7E;
+  --wa-green-dark: #075E54;
+  --wa-light: #25D366;
+
+  --grelha-passo: 56px;
+
+  /* ---------- 11. PONTE PARA O DECK E O STARTER ---------- */
+  --acento-texto: var(--cobre-texto);
+  --brand-solido: var(--brand-800);
+  --grad-text: linear-gradient(120deg, var(--acafrao), var(--accent) 55%, hsl(var(--brand2-hsl)));
+  --grad-cta: linear-gradient(160deg, var(--brand-950), var(--brand-800));
+  --radius: 14px;
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.30);
+  --shadow-md: 0 8px 24px -8px oklch(0% 0 0 / 0.45);
+  --shadow-lg: 0 16px 40px -12px oklch(0% 0 0 / 0.55);
+}
+
+/* ============================================================
+   MODO ESCURO DO DOCUMENTO INTEIRO
+   Troca as superfícies e a tinta, não a rampa da marca.
+   ============================================================ */
+.deck-escuro {
+  --bg:        oklch(14.0% 0.014 var(--neutro-h));
+  --bg-soft:   oklch(16.5% 0.016 var(--neutro-h));
+  --surface:   oklch(19.5% 0.018 var(--neutro-h));
+  --surface-2: oklch(22.5% 0.020 var(--neutro-h));
+  --surface-3: oklch(26.5% 0.020 var(--neutro-h));
+
+  --text:   oklch(96.5% 0.006 var(--neutro-h));
+  --muted:  oklch(76.0% 0.014 var(--neutro-h));
+  --faint:  oklch(68.0% 0.014 var(--neutro-h));
+  --danger: oklch(72% 0.15 25);
+  --ok:     oklch(76% 0.12 160);
+  --warn:   oklch(82% 0.13 80);
+
+  --hairline: oklch(100% 0 0 / 0.08);
+  --border:   oklch(100% 0 0 / 0.13);
+  --border-strong: oklch(100% 0 0 / 0.22);
+
+  --brand:  var(--brand-400);
+  --on-brand: oklch(99% 0.004 var(--brand-h));
+
+  --e1: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.06), 0 1px 2px oklch(0% 0 0 / 0.40);
+  --e2: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.07), 0 1px 2px oklch(0% 0 0 / 0.40), 0 8px 24px -8px oklch(0% 0 0 / 0.45);
+  --e3: 0 0 0 1px var(--hairline), inset 0 1px 0 oklch(100% 0 0 / 0.08), 0 2px 4px oklch(0% 0 0 / 0.40), 0 16px 40px -12px oklch(0% 0 0 / 0.55);
+}

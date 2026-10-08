@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="deck-escuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+
+  <title>Edições do Gosto | Um assistente para as perguntas dos vossos eventos</title>
+  <meta name="description" content="Um assistente que responde na hora às perguntas sobre inscrições, regulamentos e bilhetes do Chefe do Ano, do Congresso de Cozinha, do Jovem Talento e dos concursos regionais, e passa às gestoras só o que precisa delas. Apresentação da AI Solutions para as Edições do Gosto.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Edições do Gosto × AI Solutions">
+  <meta property="og:description" content="As perguntas de inscrições, regulamentos e bilhetes respondidas na hora, com a informação de cada evento. As gestoras ficam com o que é delas.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/edicoes-do-gosto-cc8a/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fontes.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/unibox/unibox.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/egosto.css">
+  <style>
+    /* Três glows: cobre, açafrão e brasa, como as luzes de calor do passe */
+    .atmosfera__glow--1 { --glow-op: .30; }
+    .atmosfera__glow--2 { --glow-op: .16; }
+    .atmosfera__glow--3 { --glow-cor: var(--brand2-hsl); --glow-op: .16; }
+  </style>
+  <script src="config.js"></script>
+</head>
+<body class="deck-escuro grao">
+
+<a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<nav class="nav" aria-label="Secções da apresentação">
+  <div class="container"><ul></ul></div>
+</nav>
+
+<main id="conteudo">
+
+  <!-- ============ CABEÇALHO DO DOCUMENTO ============ -->
+  <section class="cabecalho" id="topo">
+    <div class="cozinha" aria-hidden="true"><img src="assets/img/cozinha.jpg" alt="" data-paralaxe="6"></div>
+    <div class="container">
+      <div class="doc-topo" data-acto="1" data-entra="sobe">
+        <span class="doc-marca"><img class="doc-logo" src="assets/img/logo-eg-branco.png" alt="Edições do Gosto" width="72" height="76"><span>× AI Solutions</span></span>
+        <span class="doc-ref">Apresentação <b>AI/2026-EG</b></span>
+      </div>
+
+      <dl class="doc-meta" data-acto="2" data-entra="sobe">
+        <div><dt>Para</dt><dd>Paulo Amado, fundador e diretor-geral das Edições do Gosto</dd></div>
+        <div><dt>Assunto</dt><dd>Um assistente para as perguntas de inscrições, regulamentos e bilhetes</dd></div>
+        <div><dt>Pedida</dt><dd>No LinkedIn, em outubro de 2026</dd></div>
+        <div><dt>Preparada por</dt><dd>Manuel Condeço, AI Solutions</dd></div>
+      </dl>
+
+      <div class="abre">
+        <div>
+          <h1 class="promessa" data-linhas>
+            A pergunta chega a meio da produção.<br>
+            <span class="sem-quebra">O assistente responde <span class="g-brilho">na hora.</span></span><br>
+            A gestora fica com o que é dela.
+          </h1>
+          <p class="lead" data-acto="3" data-entra="sobe">
+            Quem quer concorrer ao Chefe do Ano, inscrever-se no Jovem Talento ou ir ao Congresso de Cozinha
+            tem perguntas. Um assistente responde-lhes no site, no email, no WhatsApp e no Instagram, com a
+            informação de cada evento, recolhe os dados de inscrição e passa às gestoras só o que precisa
+            mesmo delas.
+          </p>
+        </div>
+
+        <figure class="passe" data-acto="4" data-entra="escala" data-inclina="4" aria-label="O passe: três perguntas de eventos diferentes, como comandas de cozinha, com o estado de cada uma">
+          <div class="passe-topo"><span>O passe, esta noite</span><b>3 comandas</b></div>
+          <ol class="comandas">
+            <li class="comanda">
+              <div class="comanda-cab"><b>#0412 Chefe do Ano</b><span>Instagram, 23:10</span></div>
+              <p class="comanda-q">“Posso levar o meu ajudante para as provas?”</p>
+              <p class="comanda-est"><i></i>Respondida pelo regulamento<span>9 s</span></p>
+            </li>
+            <li class="comanda">
+              <div class="comanda-cab"><b>#0413 Jovem Talento</b><span>WhatsApp, 23:24</span></div>
+              <p class="comanda-q">“Sou aluna de pastelaria. Como me inscrevo?”</p>
+              <p class="comanda-est"><i></i>Pré-inscrição registada<span>2 min</span></p>
+            </li>
+            <li class="comanda">
+              <div class="comanda-cab"><b>#0414 Bola de Lamego</b><span>Facebook, 23:41</span></div>
+              <p class="comanda-q">“Temos banca no mercado de Lamego. Podemos concorrer?”</p>
+              <p class="comanda-est gestora"><i></i>Caso especial, para a gestora<span>resumido</span></p>
+            </li>
+          </ol>
+        </figure>
+      </div>
+
+      <ul class="numeros" data-acto="5" data-entra="sobe">
+        <li>
+          <span class="n">1989</span>
+          <span class="d">O ano em que as Edições do Gosto começaram a elevar a gastronomia em Portugal</span>
+        </li>
+        <li>
+          <span class="n"><span data-conta="37">37</span><em>.ª</em></span>
+          <span class="d">Edição do Chefe do Ano em 2026, o maior e mais antigo concurso de cozinha para profissionais</span>
+        </li>
+        <li>
+          <span class="n"><span data-conta="22">22</span><em>.ª</em></span>
+          <span class="d">Edição do Congresso de Cozinha, com bilheteira, patrocinadores e imprensa</span>
+        </li>
+      </ul>
+
+      <p class="doc-nota">5 minutos de leitura. Não houve reunião: o que se segue é a nossa leitura do vosso site e da
+        vossa resposta no LinkedIn. Corrijam-nos onde estivermos errados.</p>
+    </div>
+  </section>
+
+  <!-- ============ 1. O PONTO DE PARTIDA ============ -->
+  <section id="partida" data-nav="O ponto de partida">
+    <div class="container">
+      <p class="rubrica"><span>1</span> O ponto de partida</p>
+      <h2>Várias gestoras, vários eventos, cada um com as suas regras.</h2>
+
+      <figure class="citacao" data-entra="sobe">
+        <blockquote>Dependendo do evento, há várias gestoras que terão gosto em esclarecer qualquer dúvida.</blockquote>
+        <figcaption><b>Paulo Amado</b>, no LinkedIn, quando perguntámos quem responde às perguntas sobre os
+          regulamentos em época de inscrições.</figcaption>
+        <p>É aqui que um assistente ajuda. Não substitui as gestoras: tira-lhes da frente as perguntas que já têm
+          resposta escrita, e deixa-lhes as que precisam mesmo delas.</p>
+      </figure>
+
+      <div class="pontos" data-entra="sobe">
+        <article>
+          <span class="k">37.ª edição</span>
+          <h3>Chefe do Ano</h3>
+          <p>O maior e mais antigo concurso de cozinha para profissionais. Fichas técnicas codificadas e enviadas
+            ao júri sem identificação, 18 apurados para três etapas regionais, e uma final nacional.</p>
+          <blockquote>Posso levar um ajudante?</blockquote>
+          <p class="cite">Uma das perguntas das FAQ do concurso</p>
+        </article>
+        <article>
+          <span class="k">Desde 2009</span>
+          <h3>Jovem Talento da Gastronomia</h3>
+          <p>Para estudantes de hotelaria e restauração, em cinco áreas: Cozinha, Pastelaria, Bar, Sala e Gestão
+            F&amp;B. Pré-inscrição no site, e o JTG on-tour pelas escolas entre março e junho.</p>
+        </article>
+        <article>
+          <span class="k">22.ª edição</span>
+          <h3>Congresso de Cozinha</h3>
+          <p>Dois dias nos Jardins do Palácio Marquês de Pombal, em Oeiras. Bilheteira online, política de venda de
+            bilhetes, e três endereços de email: informações gerais, patrocínio e acreditação de imprensa.</p>
+        </article>
+        <article>
+          <span class="k">Desde 2025</span>
+          <h3>A Melhor Bola de Lamego</h3>
+          <p>Participação gratuita, só para estabelecimentos com fabrico próprio e com sede ou postos de venda no
+            Município de Lamego. Prova cega, com júri profissional.</p>
+        </article>
+      </div>
+
+      <ul class="mais" data-entra="sobe" aria-label="Outros projetos das Edições do Gosto">
+        <li class="k">E ainda</li>
+        <li>Lisbon Food Week</li>
+        <li>Porto Food Week</li>
+        <li>Barman do Ano</li>
+        <li>A Mesa dos Portugueses</li>
+        <li>Ordem da Cabidela</li>
+        <li>Revista Manja</li>
+      </ul>
+
+      <!-- O calendário de 2026, com as datas do site -->
+      <div class="ano holofote" id="ano2026" data-entra="escala">
+        <div class="ano-cab">
+          <h3>2026 num só ecrã, com as datas do vosso site</h3>
+          <span>jan a dez</span>
+        </div>
+        <div class="ano-grelha" role="img" aria-label="Calendário de 2026: inscrições do Chefe do Ano fecham a 30 de janeiro, academia em março, etapas regionais a 14, 22 e 29 de abril, final a 18 de junho; JTG on-tour de março a junho; Congresso de Cozinha a 27 e 28 de setembro; hoje, 9 de outubro.">
+          <div class="ano-meses" aria-hidden="true">
+            <span>jan</span><span>fev</span><span>mar</span><span>abr</span><span>mai</span><span>jun</span>
+            <span>jul</span><span>ago</span><span>set</span><span>out</span><span>nov</span><span>dez</span>
+          </div>
+          <div class="ano-linha">
+            <b>Chefe do Ano<small>37.ª edição</small></b>
+            <div class="pista">
+              <span class="faixa-ev" style="--de:8.0; --ate:46.2; --i:0"></span>
+              <span class="marca-ev limite" style="--de:8.0; --i:0"><span class="t">30 jan</span></span>
+              <span class="marca-ev" style="--de:20.3; --i:1"><span class="t">academia</span></span>
+              <span class="marca-ev" style="--de:28.2; --i:2"></span>
+              <span class="marca-ev" style="--de:30.5; --i:2"><span class="t">etapas</span></span>
+              <span class="marca-ev" style="--de:32.4; --i:2"></span>
+              <span class="marca-ev fim" style="--de:46.2; --i:3"><span class="t">18 jun</span></span>
+              <span class="marca-ev hoje" style="--de:77.3"></span>
+            </div>
+          </div>
+          <div class="ano-linha">
+            <b>Jovem Talento<small>JTG on-tour</small></b>
+            <div class="pista">
+              <span class="faixa-ev jtg" style="--de:16.2; --ate:49.6; --i:1"></span>
+              <span class="marca-ev hoje" style="--de:77.3"></span>
+            </div>
+          </div>
+          <div class="ano-linha">
+            <b>Congresso de Cozinha<small>22.ª edição</small></b>
+            <div class="pista">
+              <span class="marca-ev fim" style="--de:74.0; --i:4"><span class="t">27 e 28 set</span></span>
+              <span class="marca-ev hoje" style="--de:77.3"></span>
+            </div>
+          </div>
+        </div>
+        <ul class="ano-leg">
+          <li><b>30 jan</b> fecho das inscrições do Chefe do Ano</li>
+          <li><b>março</b> academia dos 18 apurados</li>
+          <li><b>14, 22, 29 abr</b> etapas regionais: Caldas, Portimão, Porto</li>
+          <li><b>18 jun</b> final nacional, em Sintra</li>
+          <li><b>mar a jun</b> JTG on-tour, Futurália e escolas</li>
+          <li><b>27 e 28 set</b> Congresso de Cozinha, em Oeiras</li>
+        </ul>
+        <p class="ano-fonte">Datas tiradas das páginas do Chefe do Ano, do Jovem Talento e do Congresso de Cozinha, em
+          egosto.pt. A linha fina é hoje, 9 de outubro. Faltam no gráfico os eventos sem datas publicadas.</p>
+      </div>
+
+      <p class="sintese" data-entra="sobe">O problema não é falta de informação: está toda nos regulamentos e nas FAQ.
+        É quem a repete, pergunta a pergunta, enquanto produz o evento seguinte.</p>
+    </div>
+  </section>
+
+  <!-- ============ 2. AS PERGUNTAS DE SEMPRE ============ -->
+  <section class="faixa-clara" id="perguntas" data-nav="As perguntas">
+    <div class="container">
+      <p class="rubrica"><span>2</span> As perguntas de sempre</p>
+      <h2 data-linhas>Três públicos, as mesmas perguntas, todas as épocas.</h2>
+      <p class="lead">Nenhuma destas perguntas é inventada: as respostas já estão nas vossas FAQ, nos regulamentos e
+        nas páginas de cada evento. É por isso que um assistente as pode responder sem errar.</p>
+
+      <div class="publicos" data-entra="sobe">
+        <article>
+          <span class="k">Concorrentes</span>
+          <h3>Inscrições e regras</h3>
+          <ul>
+            <li>Quem pode participar?<small>Chefe do Ano, FAQ</small></li>
+            <li>Quais são os critérios de pontuação?<small>Chefe do Ano, FAQ</small></li>
+            <li>A participação é paga?<small>A Melhor Bola de Lamego</small></li>
+          </ul>
+          <p class="quem">Hoje: a gestora de cada concurso.</p>
+        </article>
+        <article>
+          <span class="k">Público</span>
+          <h3>Bilhetes, local e horários</h3>
+          <ul>
+            <li>Onde é, e onde se estaciona?<small>Congresso, Como Chegar / Estacionar</small></li>
+            <li>Posso trocar o meu bilhete?<small>Congresso, Política de Venda de Bilhetes</small></li>
+            <li>Qual é o programa de cada dia?<small>Congresso, Programa</small></li>
+          </ul>
+          <p class="quem">Hoje: o email de informações gerais.</p>
+        </article>
+        <article>
+          <span class="k">Patrocinadores e imprensa</span>
+          <h3>Parcerias e acreditações</h3>
+          <ul>
+            <li>Como podemos patrocinar a próxima edição?<small>Congresso, informações para patrocínio</small></li>
+            <li>Como peço acreditação de imprensa?<small>Congresso, acreditação de imprensa</small></li>
+            <li>Que marcas patrocinam este ano?<small>Página de patrocinadores</small></li>
+          </ul>
+          <p class="quem">Hoje: dois endereços de email próprios.</p>
+        </article>
+      </div>
+
+      <div class="antes-depois" data-entra="sobe">
+        <div>
+          <h3>Passa a ser automático</h3>
+          <ul class="lista lista-sim">
+            <li>Respostas sobre inscrições, regras, prazos e categorias, a qualquer hora</li>
+            <li>Local, horários, programa, como chegar e política de bilhetes</li>
+            <li>Pré-inscrições e contactos recolhidos e registados por evento</li>
+            <li>O aviso a quem quer saber quando abrem as inscrições</li>
+            <li>A mesma resposta no site, no email, no WhatsApp e no Instagram</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Deixa de cair nas gestoras</h3>
+          <ul class="lista lista-nao">
+            <li>A mesma pergunta do regulamento, outra vez</li>
+            <li>O "onde se estaciona?" a meio da montagem de um evento</li>
+            <li>Mensagens de sábado à noite que só são vistas na segunda</li>
+            <li>Copiar dados de inscrição de mensagens para folhas</li>
+            <li>Patrocínios e imprensa misturados com dúvidas de bilhetes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. O ASSISTENTE A TRABALHAR ============ -->
+  <section class="secao-ampla" id="assistente" data-nav="O assistente">
+    <div class="container">
+      <p class="rubrica"><span>3</span> O assistente a trabalhar</p>
+      <h2>Quatro perguntas reais, de quatro eventos.</h2>
+      <p class="lead">De um lado, a conversa. Do outro, o que o assistente verificou e decidiu em cada passo, com a
+        informação do evento certo. Escolha um cenário ou deixe correr.</p>
+      <div class="cr holofote" data-entra="escala" id="egDemo" style="margin-top: var(--s-5)"></div>
+      <p class="so-leitor">
+        Simulação de quatro cenários. No primeiro, às 23h10, alguém pergunta no Instagram do Chefe do Ano se pode
+        levar o seu ajudante; o assistente responde com a regra das FAQ (o ajudante é assegurado pela organização),
+        confirma que a pessoa cumpre as condições de participação, diz que as datas da próxima edição ainda não
+        foram anunciadas e regista o pedido de aviso. No segundo, uma estudante de pastelaria pergunta pelo Jovem
+        Talento no WhatsApp; o assistente explica as cinco áreas e faz a pré-inscrição. No terceiro, alguém
+        pergunta no site do Congresso onde é e onde se estaciona, e se pode trocar o bilhete; o assistente dá o
+        local e as datas e envia a política de venda de bilhetes. No quarto, uma pastelaria do Peso da Régua com
+        banca no mercado de Lamego pergunta se pode concorrer à Bola de Lamego; o assistente explica a regra, não
+        decide pela organização e passa o caso à gestora.
+      </p>
+      <p class="doc-nota">Simulação. As pessoas são inventadas; as regras, os locais e as datas são os do vosso site.</p>
+    </div>
+  </section>
+  <script type="application/json" id="egDemo-config">
+  {
+    "agentName": "Assistente Edições do Gosto",
+    "agentInitials": "eg",
+    "chatStatus": "Site, email, WhatsApp e Instagram, sempre ligado",
+    "stepMs": 1500,
+    "endPauseMs": 3400,
+    "scenarios": [
+      {
+        "title": "Chefe do Ano, às 23h10",
+        "subtitle": "Uma dúvida do regulamento, à noite, respondida com as FAQ do concurso.",
+        "chat": [
+          { "sender": "system", "text": "Instagram do Chefe do Ano, mensagem privada, 23:10" },
+          { "sender": "client", "text": "Boa noite. Estou a pensar concorrer ao Chefe do Ano. Posso levar o meu ajudante para as provas?", "time": "23:10" },
+          { "sender": "agent", "text": "Boa noite! Não: em cada prova, a organização assegura um ajudante a cada concorrente, e não é possível levar o seu. Esse ajudante só faz limpeza, higienização e preparação dos produtos; a confeção e o empratamento são sempre seus.", "time": "23:10" },
+          { "sender": "client", "text": "Ok. E tenho 29 anos mas só 3 de cozinha, posso concorrer?", "time": "23:12" },
+          { "sender": "agent", "text": "Pode. Podem participar profissionais de cozinha residentes em Portugal com **mais de cinco anos de experiência comprovada ou idade superior a 25 anos**. Com 29 anos, cumpre.", "time": "23:12" },
+          { "sender": "client", "text": "Boa! E quando abrem as inscrições?", "time": "23:13" },
+          { "sender": "agent", "text": "As datas da próxima edição ainda não foram anunciadas. Em 2026, as inscrições fecharam a 30 de janeiro. Quer que lhe enviemos uma mensagem quando abrirem?", "time": "23:13" },
+          { "sender": "client", "text": "Quero, obrigado.", "time": "23:14" },
+          { "sender": "agent", "text": "Fica registado. Boa sorte na preparação do menu!", "time": "23:14" }
+        ],
+        "steps": [
+          { "icon": "instagram", "label": "Pergunta no Instagram do Chefe do Ano, às 23h10" },
+          { "icon": "book", "label": "FAQ do concurso: o ajudante é assegurado pela organização" },
+          { "icon": "list", "label": "Condições: mais de 5 anos de experiência ou mais de 25 anos" },
+          { "icon": "check", "label": "29 anos, residente em Portugal: cumpre" },
+          { "icon": "calendar", "label": "Datas de 2027 por anunciar: não inventa, dá a referência de 2026" },
+          { "icon": "database", "label": "Regista o pedido de aviso para a abertura das inscrições" }
+        ]
+      },
+      {
+        "title": "Jovem Talento, pré-inscrição",
+        "subtitle": "Uma estudante descobre o concurso e fica pré-inscrita na mesma conversa.",
+        "chat": [
+          { "sender": "system", "text": "WhatsApp, 16:40" },
+          { "sender": "client", "text": "Olá! Estou no 2.º ano de pastelaria numa escola de hotelaria. O Jovem Talento é para quem?", "time": "16:40" },
+          { "sender": "agent", "text": "Olá! O Jovem Talento da Gastronomia é para estudantes de hotelaria e restauração, e existe desde 2009. Há cinco áreas: **Cozinha, Pastelaria, Bar, Sala e Gestão F&B**. A sua seria Pastelaria.", "time": "16:40" },
+          { "sender": "client", "text": "Fixe! Como me inscrevo?", "time": "16:41" },
+          { "sender": "agent", "text": "Faço já a sua pré-inscrição por aqui. Diga-me o nome completo, a escola, o ano que está a frequentar e um email.", "time": "16:41" },
+          { "sender": "client", "text": "Beatriz Nunes, 2.º ano de Pastelaria, escola de hotelaria de Setúbal, beatriz.nunes@exemplo.pt", "time": "16:43" },
+          { "sender": "agent", "text": "Pré-inscrição feita, Beatriz! Recebe por email os passos seguintes. Boa sorte!", "time": "16:43" }
+        ],
+        "steps": [
+          { "icon": "whatsapp", "label": "Pergunta no WhatsApp" },
+          { "icon": "search", "label": "Identifica o evento: Jovem Talento da Gastronomia" },
+          { "icon": "book", "label": "Explica a quem se destina e as cinco áreas" },
+          { "icon": "id", "label": "Recolhe nome, escola, ano e email" },
+          { "icon": "database", "label": "Regista a pré-inscrição na lista do JTG, área Pastelaria" }
+        ]
+      },
+      {
+        "title": "Congresso, local e bilhete",
+        "subtitle": "O público pergunta, o assistente responde com as páginas do Congresso.",
+        "chat": [
+          { "sender": "system", "text": "Chat do site do Congresso de Cozinha, 10:05" },
+          { "sender": "client", "text": "Bom dia. O Congresso é onde, ao certo? E há estacionamento?", "time": "10:05" },
+          { "sender": "agent", "text": "Bom dia! A 22.ª edição é a **27 e 28 de setembro**, nos **Jardins do Palácio Marquês de Pombal, em Oeiras**. As indicações para chegar e estacionar estão na página Como Chegar / Estacionar: envio-lhe o link.", "time": "10:05" },
+          { "sender": "client", "text": "Obrigado. Já comprei bilhete, mas afinal não posso ir no primeiro dia. Posso trocar?", "time": "10:07" },
+          { "sender": "agent", "text": "As trocas seguem a Política de Venda de Bilhetes do Congresso, que lhe envio aqui. Se o seu caso não estiver lá previsto, passo o pedido à equipa com o número do bilhete.", "time": "10:07" },
+          { "sender": "client", "text": "Está lá, obrigado!", "time": "10:09" },
+          { "sender": "agent", "text": "Às ordens. Bom Congresso!", "time": "10:09" }
+        ],
+        "steps": [
+          { "icon": "globe", "label": "Pergunta no chat do site do Congresso" },
+          { "icon": "calendar", "label": "Datas e local da 22.ª edição" },
+          { "icon": "send", "label": "Envia a página Como Chegar / Estacionar" },
+          { "icon": "ban", "label": "Não decide trocas: aplica a Política de Venda de Bilhetes" },
+          { "icon": "check", "label": "Resolvido sem chegar à equipa" }
+        ]
+      },
+      {
+        "title": "Bola de Lamego, caso especial",
+        "subtitle": "O regulamento não responde. O assistente não decide pela organização.",
+        "chat": [
+          { "sender": "system", "text": "Facebook de A Melhor Bola de Lamego, 09:20" },
+          { "sender": "client", "text": "Bom dia. Somos uma pastelaria do Peso da Régua, com fabrico próprio. Aos sábados temos banca no mercado de Lamego. Podemos concorrer?", "time": "09:20" },
+          { "sender": "agent", "text": "Bom dia! A participação é gratuita e é para estabelecimentos com fabrico próprio de Bolas de Lamego e com **sede ou postos de venda no Município de Lamego**.", "time": "09:20" },
+          { "sender": "agent", "text": "Se uma banca semanal no mercado conta como posto de venda é uma decisão da organização, e não lhe quero dar uma resposta errada. Passo já o seu caso à gestora do concurso.", "time": "09:21" },
+          { "sender": "client", "text": "Obrigada. Sou a Ana, 912 000 384.", "time": "09:23" },
+          { "sender": "agent", "text": "Registado, Ana. A gestora fala consigo com a resposta. Entretanto, envio-lhe o regulamento do concurso.", "time": "09:23" },
+          { "sender": "system", "text": "Passado à gestora de A Melhor Bola de Lamego, com o caso resumido" }
+        ],
+        "steps": [
+          { "icon": "facebook", "label": "Pedido de participação na Bola de Lamego" },
+          { "icon": "book", "label": "Regulamento: fabrico próprio e sede ou posto de venda em Lamego" },
+          { "icon": "alert", "label": "Banca semanal no mercado: a regra não é clara para este caso" },
+          { "icon": "ban", "label": "Não decide pela organização, não responde às cegas" },
+          { "icon": "id", "label": "Recolhe nome e contacto" },
+          { "icon": "user-cog", "label": "Passa à gestora do concurso, com o caso resumido" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ 4. DA PERGUNTA À GESTORA ============ -->
+  <section class="faixa" id="caminho">
+    <div class="container">
+      <p class="rubrica"><span>4</span> Da pergunta à gestora</p>
+      <h2>O caminho de uma pergunta, do primeiro clique à pessoa certa.</h2>
+      <div class="fluxo" id="egFluxo" data-entra="sobe" style="margin-top: var(--s-5)"></div>
+
+      <h3 class="recebe-t" data-entra="sobe">O que a gestora recebe</h3>
+      <p>Quando um caso precisa dela, a gestora do evento recebe isto: quem é, o que perguntou, o que o assistente já
+        respondeu e o que falta decidir. E todos os pedidos da semana ficam registados, por evento.</p>
+
+      <div class="recebe" data-entra="sobe">
+        <figure class="notif">
+          <div class="notif-caixa">
+            <div class="notif-topo">
+              <span class="notif-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg></span>
+              <b>Assistente Edições do Gosto</b>
+              <time>09:23</time>
+            </div>
+            <div class="notif-corpo">
+              <p class="notif-para">Para: gestora de A Melhor Bola de Lamego</p>
+              <div class="notif-bolha">
+                <p class="notif-tit">Caso especial: precisa da sua decisão.</p>
+                <dl class="notif-dados">
+                  <dt>Quem</dt><dd>Ana, pastelaria do Peso da Régua</dd>
+                  <dt>Contacto</dt><dd>912 000 384</dd>
+                  <dt>Fabrico próprio</dt><dd>Sim</dd>
+                  <dt>Em Lamego</dt><dd>Banca no mercado, aos sábados</dd>
+                  <dt>A dúvida</dt><dd>A banca conta como posto de venda?</dd>
+                </dl>
+                <p class="notif-resumo"><b>Resumo:</b> perguntou pelo Facebook se pode concorrer. Expliquei a regra e
+                  que a decisão é da organização. Enviei o regulamento.</p>
+                <div class="notif-acoes" aria-hidden="true"><span>Ver conversa</span><span>Responder</span></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>O que a gestora recebe. Dados inventados.</figcaption>
+        </figure>
+
+        <div>
+          <div class="registo">
+            <div class="registo-topo">
+              <b>Pedidos da semana</b>
+              <span>todos os eventos</span>
+            </div>
+            <div class="registo-wrap">
+              <table>
+                <caption class="so-leitor">Registo dos pedidos tratados pelo assistente</caption>
+                <thead>
+                  <tr><th scope="col">Quando</th><th scope="col">Evento e pedido</th><th scope="col">Estado</th><th scope="col">Nota</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="quando">Seg 23:14</td>
+                    <td>Chefe do Ano<small>Ajudante e condições</small></td>
+                    <td><span class="estado ok">Respondido</span></td>
+                    <td>Pediu aviso das inscrições<small>Lista de 2027</small></td>
+                  </tr>
+                  <tr>
+                    <td class="quando">Ter 16:43</td>
+                    <td>Jovem Talento<small>Pré-inscrição</small></td>
+                    <td><span class="estado reg">Registado</span></td>
+                    <td>Beatriz N., Pastelaria<small>2.º ano</small></td>
+                  </tr>
+                  <tr>
+                    <td class="quando">Qua 10:09</td>
+                    <td>Congresso<small>Local e troca de bilhete</small></td>
+                    <td><span class="estado ok">Respondido</span></td>
+                    <td>Política de bilhetes enviada<small>Sem passar à equipa</small></td>
+                  </tr>
+                  <tr>
+                    <td class="quando">Qui 09:23</td>
+                    <td>Bola de Lamego<small>Banca no mercado conta?</small></td>
+                    <td><span class="estado ges">Para a gestora</span></td>
+                    <td>Caso especial<small>Regulamento enviado</small></td>
+                  </tr>
+                  <tr>
+                    <td class="quando">Qui 15:02</td>
+                    <td>Congresso<small>Patrocínio da próxima edição</small></td>
+                    <td><span class="estado ges">Para a gestora</span></td>
+                    <td>Marca de azeite<small>Interesse no Palco Produto</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="registo-legenda">Numa folha partilhada ou no sistema que já usam: o registo muda de sítio, não de lógica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="application/json" id="egFluxo-config">
+  {
+    "stepMs": 1800,
+    "channels": [
+      { "icon": "globe", "label": "Sites dos eventos" },
+      { "icon": "message", "label": "Email" },
+      { "icon": "whatsapp", "label": "WhatsApp" },
+      { "icon": "instagram", "label": "Instagram" },
+      { "icon": "facebook", "label": "Facebook" }
+    ],
+    "nodes": [
+      { "icon": "message", "title": "A pergunta chega", "detail": "Em qualquer canal, a qualquer hora.", "tone": "brand" },
+      { "icon": "search", "title": "Qual evento?", "detail": "Pela conta, pelo email ou pela própria pergunta.", "tone": "teal" },
+      { "icon": "book", "title": "A informação desse evento", "detail": "Regulamento, FAQ, calendário, local e bilheteira.", "tone": "teal" },
+      { "icon": "id", "title": "Recolhe os dados", "detail": "Pré-inscrições, contactos e pedidos de acreditação.", "tone": "teal" },
+      { "icon": "filter", "title": "Resolve ou passa", "detail": "Casos especiais, patrocínios e imprensa seguem para quem decide.", "tone": "teal" },
+      { "icon": "user-cog", "title": "A gestora certa", "detail": "Recebe só o que precisa dela, já resumido.", "tone": "brand" }
+    ],
+    "note": "Cada evento tem a sua base: o que o assistente diz do Chefe do Ano nunca se mistura com o Congresso."
+  }
+  </script>
+
+  <!-- ============ 5. A CAIXA ÚNICA ============ -->
+  <section id="caixa" data-nav="A caixa">
+    <div class="container">
+      <p class="rubrica"><span>5</span> A caixa única</p>
+      <h2 data-linhas>Todos os eventos, todos os canais, num só sítio.</h2>
+      <p class="lead">As gestoras veem, por evento, o que o assistente já respondeu e o que ficou para elas. Uma conta
+        por evento, as etiquetas por tipo de pedido. Experimente os filtros e abra as conversas.</p>
+      <p class="unibox-nota">Conversas de exemplo, com nomes inventados. As respostas usam a informação do vosso site.</p>
+      <div class="unibox" id="egInbox" data-entra="sobe" style="--ub-accent:#d08a5c; --ub-accent-fg:#16130f"></div>
+      <script type="application/json" id="egInbox-config">
+      {
+        "brand": "Edições do Gosto",
+        "teamName": "Gestoras de eventos",
+        "teamEmail": "eventos@egosto.pt",
+        "teamInitials": "EG",
+        "agentName": "Assistente Edições do Gosto",
+        "accounts": ["Chefe do Ano", "Congresso de Cozinha", "Jovem Talento", "Bola de Lamego"],
+        "channels": ["email", "instagram", "facebook", "whatsapp"],
+        "labels": {
+          "inscricao": { "name": "Inscrição", "color": "#e3a25a", "priority": 0 },
+          "regulamento": { "name": "Regulamento", "color": "#e8ab82", "priority": 1 },
+          "bilhetes": { "name": "Bilhetes e local", "color": "#8fc7b8", "priority": 2 },
+          "patrocinio": { "name": "Patrocínio", "color": "#e8c06a", "priority": 3 },
+          "imprensa": { "name": "Imprensa", "color": "#b9a3e0", "priority": 4 }
+        },
+        "conversations": [
+          {
+            "id": 1, "name": "Rui Fonseca", "initials": "RF", "phone": "+351 913 000 271",
+            "account": "Chefe do Ano", "channel": "instagram", "label": "regulamento", "tab": "mine", "timeAgo": "4m", "unread": 1,
+            "preview": "E os critérios de pontuação, onde os vejo?",
+            "messages": [
+              { "sender": "client", "text": "Boa noite. Como é que o júri pontua as receitas que enviamos?", "time": "22:51" },
+              { "sender": "agent", "isAI": true, "text": "Boa noite! Na fase de apuramento, cada menu vale até 100 pontos: **criatividade e inovação (25), composição e harmonia (25), uso de produtos do receituário tradicional português (20), equilíbrio nutricional (15) e preparação de acordo com a moderna arte culinária (15)**.", "time": "22:51" },
+              { "sender": "client", "text": "E os critérios de pontuação, onde os vejo?", "time": "22:53" },
+              { "sender": "agent", "isAI": true, "text": "Estão nas FAQ do Chefe do Ano, com os das etapas regionais e da final. Envio-lhe o link.", "time": "22:53" }
+            ],
+            "attributes": [ { "key": "Evento", "value": "Chefe do Ano" }, { "key": "Perfil", "value": "Possível concorrente" } ],
+            "notes": ["Respondido com as FAQ do concurso."]
+          },
+          {
+            "id": 2, "name": "Marta Lopes", "initials": "ML", "phone": "+351 936 000 118",
+            "account": "Congresso de Cozinha", "channel": "whatsapp", "label": "bilhetes", "tab": "mine", "timeAgo": "12m", "unread": 0,
+            "preview": "Perfeito, obrigada!",
+            "messages": [
+              { "sender": "client", "text": "Olá, o Congresso é em Oeiras, certo? Onde se estaciona?", "time": "10:02" },
+              { "sender": "agent", "isAI": true, "text": "Olá! Sim, nos **Jardins do Palácio Marquês de Pombal, em Oeiras**, a 27 e 28 de setembro. As indicações para chegar e estacionar estão na página Como Chegar / Estacionar: aqui está o link.", "time": "10:02" },
+              { "sender": "client", "text": "Perfeito, obrigada!", "time": "10:03" }
+            ],
+            "attributes": [ { "key": "Evento", "value": "Congresso de Cozinha" }, { "key": "Tipo", "value": "Público" } ],
+            "notes": []
+          },
+          {
+            "id": 3, "name": "Lagar Serra Nova", "initials": "LS", "email": "marketing@exemplo.pt",
+            "account": "Congresso de Cozinha", "channel": "email", "label": "patrocinio", "tab": "unassigned", "timeAgo": "1h", "unread": 1,
+            "preview": "Gostávamos de estar no Palco Produto na próxima edição.",
+            "messages": [
+              { "sender": "client", "text": "Bom dia. Somos um produtor de azeite e gostávamos de patrocinar o Congresso na próxima edição, com uma demonstração no Palco Produto. Com quem falamos?", "time": "15:00" },
+              { "sender": "agent", "isAI": true, "text": "Bom dia, e obrigado pelo interesse! Os patrocínios são tratados diretamente pela nossa equipa. Para lhe responderem com tudo, pode dizer-me o nome e o contacto da pessoa responsável, e o que imaginam para a presença no Congresso?", "time": "15:01" },
+              { "sender": "client", "text": "Sou a Carla Mendes, 210 000 455. Pensamos numa demonstração com um chefe convidado.", "time": "15:02" },
+              { "sender": "system", "text": "Passado à gestora de patrocínios do Congresso, com o resumo", "time": "15:02" }
+            ],
+            "attributes": [ { "key": "Evento", "value": "Congresso de Cozinha" }, { "key": "Interesse", "value": "Palco Produto" } ],
+            "notes": ["Sem valores nem condições dados pelo assistente."]
+          },
+          {
+            "id": 4, "name": "Inês Carvalho", "initials": "IC", "email": "ines.carvalho@exemplo.pt",
+            "account": "Congresso de Cozinha", "channel": "email", "label": "imprensa", "tab": "unassigned", "timeAgo": "2h", "unread": 1,
+            "preview": "Pedido de acreditação para os dois dias.",
+            "messages": [
+              { "sender": "client", "text": "Boa tarde, sou jornalista e queria pedir acreditação para os dois dias do Congresso.", "time": "14:10" },
+              { "sender": "agent", "isAI": true, "text": "Boa tarde! Registo já o pedido para a equipa de imprensa. Pode indicar-me o meio para que trabalha e se vem acompanhada de fotógrafo?", "time": "14:10" },
+              { "sender": "client", "text": "Uma revista de viagens. Venho com um fotógrafo.", "time": "14:12" },
+              { "sender": "system", "text": "Pedido de acreditação passado à equipa de imprensa", "time": "14:12" }
+            ],
+            "attributes": [ { "key": "Evento", "value": "Congresso de Cozinha" }, { "key": "Pedido", "value": "Acreditação, 2 pessoas" } ],
+            "notes": []
+          },
+          {
+            "id": 5, "name": "Prof. Jorge Antunes", "initials": "JA", "email": "jorge.antunes@exemplo.pt",
+            "account": "Jovem Talento", "channel": "email", "label": "inscricao", "tab": "mine", "timeAgo": "3h", "unread": 0,
+            "preview": "Gostávamos de receber o JTG on-tour na escola.",
+            "messages": [
+              { "sender": "client", "text": "Bom dia. Sou professor numa escola de hotelaria e gostávamos que os alunos conhecessem o Jovem Talento. Vêm às escolas?", "time": "09:30" },
+              { "sender": "agent", "isAI": true, "text": "Bom dia! Sim: entre março e junho, o JTG on-tour vai à Futurália e a várias escolas do país, com um antigo participante ou um membro do júri. Passo o pedido à gestora do JTG para combinar convosco. Quantos alunos e de que áreas?", "time": "09:31" },
+              { "sender": "client", "text": "Cerca de 40, de cozinha e pastelaria.", "time": "09:34" },
+              { "sender": "system", "text": "Passado à gestora do Jovem Talento", "time": "09:34" }
+            ],
+            "attributes": [ { "key": "Evento", "value": "Jovem Talento" }, { "key": "Alunos", "value": "Cerca de 40" } ],
+            "notes": ["Visita a combinar pela gestora."]
+          },
+          {
+            "id": 6, "name": "Doces da Ribeira", "initials": "DR", "phone": "+351 912 000 384",
+            "account": "Bola de Lamego", "channel": "facebook", "label": "regulamento", "tab": "unassigned", "timeAgo": "5h", "unread": 1,
+            "preview": "Temos banca no mercado de Lamego. Podemos concorrer?",
+            "messages": [
+              { "sender": "client", "text": "Bom dia. Somos uma pastelaria do Peso da Régua, com fabrico próprio. Aos sábados temos banca no mercado de Lamego. Podemos concorrer?", "time": "09:20" },
+              { "sender": "agent", "isAI": true, "text": "Bom dia! A participação é gratuita e é para estabelecimentos com fabrico próprio de Bolas de Lamego e com **sede ou postos de venda no Município de Lamego**. Se a banca conta como posto de venda é uma decisão da organização: passo já o seu caso à gestora.", "time": "09:21" },
+              { "sender": "system", "text": "Caso especial passado à gestora de A Melhor Bola de Lamego", "time": "09:23" }
+            ],
+            "attributes": [ { "key": "Evento", "value": "A Melhor Bola de Lamego" }, { "key": "Decisão", "value": "Por tomar" } ],
+            "notes": ["A regra não é clara para bancas semanais."]
+          },
+          {
+            "id": 7, "name": "Tiago Freitas", "initials": "TF", "phone": "+351 917 000 652",
+            "account": "Chefe do Ano", "channel": "whatsapp", "label": "inscricao", "tab": "mine", "timeAgo": "1d", "unread": 0,
+            "preview": "Combinado, aguardo o aviso.",
+            "messages": [
+              { "sender": "client", "text": "Bom dia, as inscrições para o Chefe do Ano já abriram?", "time": "11:15" },
+              { "sender": "agent", "isAI": true, "text": "Bom dia! Ainda não: as datas da próxima edição vão ser anunciadas. Em 2026, as inscrições fecharam a 30 de janeiro. Quer que lhe enviemos uma mensagem quando abrirem?", "time": "11:15" },
+              { "sender": "client", "text": "Combinado, aguardo o aviso.", "time": "11:16" }
+            ],
+            "attributes": [ { "key": "Evento", "value": "Chefe do Ano" }, { "key": "Lista", "value": "Aviso de inscrições" } ],
+            "notes": []
+          }
+        ]
+      }
+      </script>
+    </div>
+  </section>
+
+  <!-- ============ 6. LIMITES E PROVA ============ -->
+  <section class="faixa" id="prova" data-nav="Prova">
+    <div class="container">
+      <p class="rubrica"><span>6</span> Limites, e um caso com a mesma forma</p>
+      <h2>O que o assistente faz sozinho, e o que fica sempre com as gestoras.</h2>
+      <p class="lead">Dito agora, para não haver surpresas depois.</p>
+
+      <div class="regras" data-entra="sobe">
+        <article class="faz">
+          <h3>Faz sozinho</h3>
+          <ul>
+            <li>Responde sobre inscrições, regulamentos, prazos, categorias, local, horários e bilhetes, com a informação de cada evento</li>
+            <li>Recolhe pré-inscrições e contactos, e regista-os por evento</li>
+            <li>Envia o documento certo: regulamento, programa, política de bilhetes, como chegar</li>
+            <li>Avisa quem pediu quando abrem as inscrições</li>
+            <li>Responde no site, no email, no WhatsApp e no Instagram, no tom das Edições do Gosto</li>
+          </ul>
+        </article>
+        <article class="pergunta">
+          <h3>Passa à gestora</h3>
+          <ul>
+            <li>Casos que o regulamento não resolve</li>
+            <li>Pedidos de patrocínio</li>
+            <li>Acreditações de imprensa</li>
+            <li>Pedidos de exceção a prazos ou regras</li>
+            <li>Quem pede para falar com uma pessoa</li>
+          </ul>
+        </article>
+        <article class="nunca">
+          <h3>Nunca faz</h3>
+          <ul>
+            <li>Não abre exceções a prazos nem a regras</li>
+            <li>Não comenta pontuações nem decisões do júri</li>
+            <li>Não negoceia patrocínios nem condições</li>
+            <li>Não inventa datas que ainda não foram anunciadas</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="seguinte" data-entra="sobe">
+        <span class="k">Fase seguinte</span>
+        <div>
+          <h3>Manja: loja e revista</h3>
+          <p>As perguntas sobre encomendas da loja e da revista Manja podem entrar na mesma caixa mais tarde. Não fazem
+            parte deste primeiro passo: começamos pelos eventos, onde as perguntas se acumulam em época de inscrições.</p>
+        </div>
+      </aside>
+
+      <aside class="prova" data-entra="sobe">
+        <p class="prova-k">Já está a funcionar, com a mesma forma do vosso caso</p>
+        <h3>EcoDrive: uma rede de mais de 20 escolas de condução, cada uma com a sua informação.</h3>
+        <p>Como nos vossos eventos, cada escola tem oferta, preços e horários próprios, e as perguntas chegavam por
+          vários canais ao mesmo tempo. O assistente que construímos responde no WhatsApp, no Instagram e no Facebook
+          com o contexto da escola certa, recolhe os dados de quem está interessado e passa à equipa os casos
+          complexos, já com o histórico.</p>
+        <ul class="prova-nums">
+          <li><span class="n">45.800+</span><span class="d">mensagens geridas em 3 meses</span></li>
+          <li><span class="n">85%</span><span class="d">das interações sem intervenção humana</span></li>
+          <li><span class="n">20 h → minutos</span><span class="d">no tempo da primeira resposta</span></li>
+        </ul>
+        <blockquote>Hoje respondemos em segundos, em todas as escolas, 24 horas por dia. É outro negócio.</blockquote>
+        <p class="prova-nota">Testemunho e números do caso publicado no site da AI Solutions, não das Edições do Gosto.
+          <a href="https://aisolutions.pt/case-studies/ecodrive-multichannel-ai" target="_blank" rel="noopener">Ler o caso completo da EcoDrive</a></p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 7. O VALOR ============ -->
+  <section class="faixa-clara" id="valor" data-nav="O valor">
+    <div class="container">
+      <p class="rubrica"><span>7</span> O valor</p>
+      <h2 data-linhas>O tempo que volta às gestoras.</h2>
+
+      <p class="ancora" data-entra="sobe">Cada pergunta que o assistente resolve é uma pergunta que <b>não interrompe a
+        produção do evento seguinte</b>. E as que chegam à gestora já vêm resumidas, com o contacto e com o que falta
+        decidir.</p>
+
+      <div class="ganhos" data-entra="sobe">
+        <article>
+          <h3>Resposta à hora a que perguntam</h3>
+          <p>O concorrente que escreve às 23h10 ou ao domingo recebe a resposta logo, e não na segunda-feira, quando
+            já desistiu ou foi perguntar a outro lado.</p>
+        </article>
+        <article>
+          <h3>A mesma resposta, sempre</h3>
+          <p>O assistente cita o regulamento e as FAQ de cada evento. A resposta não depende de quem está de serviço
+            nem de memória.</p>
+        </article>
+        <article>
+          <h3>Inscrições que não se perdem</h3>
+          <p>Os dados de quem quer participar ficam registados no momento, mesmo quando a pergunta chega fora de
+            horas ou a meio de outro evento.</p>
+        </article>
+      </div>
+
+      <div class="calc-moldura" data-entra="sobe">
+        <h3>Faça a conta com os vossos números</h3>
+        <p>Não sabemos quantas perguntas chegam às gestoras numa época de inscrições: só vocês sabem. Os valores
+          iniciais são um exemplo. Mude-os para os vossos.</p>
+        <div class="calc holofote" id="egCalc"></div>
+      </div>
+      <script type="application/json" id="egCalc-config">
+      {
+        "inputs": [
+          { "id": "perguntas", "label": "Perguntas por semana, em época de inscrições", "min": 10, "max": 300, "step": 10, "default": 60 },
+          { "id": "minutos", "label": "Minutos de uma gestora por resposta", "min": 2, "max": 15, "default": 5, "suffix": " min" },
+          { "id": "resolve", "label": "Parte que o assistente resolve sozinho", "min": 40, "max": 90, "step": 5, "default": 70, "suffix": "%" }
+        ],
+        "outputs": [
+          { "label": "Horas por semana devolvidas às gestoras", "expr": "perguntas*minutos*(resolve/100)/60", "suffix": " h", "decimals": 1, "highlight": true },
+          { "label": "Perguntas por semana que já não lhes chegam", "expr": "perguntas*resolve/100", "decimals": 0 },
+          { "label": "Horas numa época de 8 semanas", "expr": "perguntas*minutos*(resolve/100)/60*8", "suffix": " h", "decimals": 0 }
+        ],
+        "note": "Exemplo ilustrativo, não são números das Edições do Gosto. A parte que o assistente resolve depende de cada evento e mede-se nas primeiras semanas."
+      }
+      </script>
+    </div>
+  </section>
+
+  <!-- ============ 8. COMO ARRANCAMOS ============ -->
+  <section id="arranque">
+    <div class="container">
+      <p class="rubrica"><span>8</span> Como arrancamos</p>
+      <h2>Começar por um evento, e juntar os outros depois.</h2>
+      <ol class="fases" data-entra="sobe">
+        <li>
+          <span class="quando">Semanas 1 e 2</span>
+          <span class="o-que">Levantamento</span>
+          <p>Lemos os regulamentos, as FAQ e as mensagens reais que as gestoras recebem. Escolhemos convosco o
+            primeiro evento e o que deve passar sempre por uma pessoa.</p>
+        </li>
+        <li>
+          <span class="quando">Semanas 3 e 4</span>
+          <span class="o-que">Construção</span>
+          <p>A base do primeiro evento, os canais, a recolha das inscrições, e o caminho de cada caso até à gestora
+            certa.</p>
+        </li>
+        <li>
+          <span class="quando">Semanas 5 e 6</span>
+          <span class="o-que">Testes com as gestoras</span>
+          <p>As gestoras fazem as perguntas mais difíceis que conhecem. Ajustamos até estarem satisfeitas.</p>
+        </li>
+        <li>
+          <span class="quando">Depois</span>
+          <span class="o-que">Os outros eventos</span>
+          <p>Cada evento novo é uma base nova sobre a mesma estrutura. Uma captura de ecrã por WhatsApp chega para
+            corrigirmos o que não agradar.</p>
+        </li>
+      </ol>
+      <p class="doc-nota">Semanas indicativas, a fechar convosco. Se o calendário de 2027 for parecido com o de 2026, as
+        inscrições do Chefe do Ano fecham no fim de janeiro: começar agora deixa o assistente pronto antes disso.</p>
+    </div>
+  </section>
+
+  <!-- ============ 9. FECHO ============ -->
+  <section class="fecho secao-ampla" id="fecho" data-nav="Avançar" data-nav-cta>
+    <div class="container">
+      <p class="rubrica"><span>9</span> Próximos passos</p>
+      <h2 data-entra="sobe">Falamos, Paulo Amado?</h2>
+      <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmação por escrito.</p>
+      <ol class="passos-fecho" data-entra="sobe">
+        <li>
+          <span class="n">1</span>
+          <b>Diga-nos que sim, ou pergunte</b>
+          <p>Por WhatsApp ou por email. Se preferir, a primeira conversa pode ser com a gestora de um dos eventos.</p>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <b>Escolhemos o primeiro evento</b>
+          <p>Uma conversa curta para ver as perguntas reais e o que deve passar sempre pela gestora.</p>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <b>Recebe a proposta formal</b>
+          <p>Âmbito, prazos e valores por escrito, para decidir com tudo à frente.</p>
+        </li>
+      </ol>
+      <div class="fecho-acoes">
+        <a class="btn btn-primario premivel" data-iman="0.2" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20das%20Edi%C3%A7%C3%B5es%20do%20Gosto%20e%20quero%20avan%C3%A7ar." target="_blank" rel="noopener">Quero avançar</a>
+        <a class="btn btn-secundario" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20das%20Edi%C3%A7%C3%B5es%20do%20Gosto%20e%20tenho%20uma%20pergunta%3A%20" target="_blank" rel="noopener">Tenho uma pergunta</a>
+      </div>
+      <p class="fecho-contacto">Manuel Condeço, AI Solutions<br>
+        <a href="tel:+351964251889">964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <img class="rodape-logo" src="assets/img/logo-eg-branco.png" alt="" width="56" height="59">
+    Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para as Edições do Gosto, outubro de 2026.<br>
+    Manuel Condeço, manuel.condeco@aisolutions.pt
+    <span class="disclaimer">
+      As conversas e os contactos dos exemplos são simulações. As regras, os locais e as datas dos eventos vêm do site
+      egosto.pt, consultado a 9 de outubro de 2026. A citação do Paulo Amado vem da conversa no LinkedIn.
+    </span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="../shared/unibox/unibox.js"></script>
+<script src="assets/js/egosto.js"></script>
+<script>
+  chatRaciocinio('egDemo');
+  fluxo('egFluxo');
+  unibox('egInbox');
+  calculadora('egCalc');
+</script>
+</body>
+</html>
