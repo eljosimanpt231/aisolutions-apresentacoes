@@ -17,7 +17,7 @@
 - fluxo (shared/deck)
 
 ## Regras do Diogo
-Sem CTA, sem casos de estudo, preço no fim e só "+ IVA", fases depois do preço. Valores: 4.500 € + IVA (2.250 + 2.250) e 150 €/mês + IVA, dentro do intervalo do resumo de 06/10 (4.000 a 4.500; 100 a 150).
+Sem CTA, sem casos de estudo, preço no fim e só "+ IVA", fases depois do preço. Valores: 4.500 € + IVA (3.000 na adjudicação + 1.500 no início dos testes, pedido do Diogo a 08/10) e 150 €/mês + IVA, dentro do intervalo do resumo de 06/10 (4.000 a 4.500; 100 a 150).
 
 ## Verdade
 - Factos da reunião: PHC com acesso SQL, ~200 faturas/mês de ~20 fornecedores (95% PDF por email), 4 h/dia, reconciliação ~5 dias/mês, relatórios semanais em Excel, regra SCO+ref+tamanho, decisão também do Vítor.
