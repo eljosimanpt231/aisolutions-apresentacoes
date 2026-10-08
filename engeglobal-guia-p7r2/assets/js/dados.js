@@ -38,14 +38,9 @@ window.GUIA = {
         }
       ],
       perguntas: [
-        'Quantos concursos aparecem por semana, quantos analisam e a quantos concorrem? (o Hugo falou em 10 para 2 ou 3)',
-        'Critérios: zona geográfica, tipo de obra, valor base mínimo, categorias e classes de alvará, equipas disponíveis. Há mais algum?',
-        'Quem decide concorrer e em quanto tempo? Onde querem receber o resumo (email, CRM, WhatsApp)?',
-        'Que documentos são sempre exigidos e quais variam de concurso para concurso? Onde está esse arquivo?',
-        'Ideia do Luís: cruzar com o Código dos Contratos Públicos para detetar exigências que já não são enquadráveis. Quem valida a reclamação?',
-        'Alertas na internet por palavras-chave (obras e relvados planeados): que palavras, que fontes, com que frequência?',
-        'Têm registo das decisões passadas (concorreram ou não, e porquê) para o agente aprender com elas? (ponto 8.2)',
-        'Querem que o agente aponte concursos parecidos com obras que já fizeram? (ponto 8.2)'
+        'Quantos concursos aparecem por semana, quantos analisam e a quantos concorrem?',
+        'Que documentos são sempre exigidos e quais variam de concurso para concurso? Estão todos num arquivo digital?',
+        'As duas ideias novas (alertas por palavras-chave na internet e cruzamento com o Código dos Contratos Públicos) entram já, ou ficam para depois?'
       ],
       expectativa: 'A IA filtra e resume; a decisão de concorrer continua com eles. Se as peças estiverem atrás de um login que não podemos usar, a Elsa continua a descarregá-las e o agente trata do resto.'
     },
@@ -123,116 +118,56 @@ window.GUIA = {
       ],
       tipos: [
         { etapa: 'Relvados sintéticos (ponto de partida)', perguntas: [
-          'Quantos orçamentos de relvado fazem por ano, e quantos são para clubes privados e quantos para câmaras?',
-          'Além do relvado, que elementos entram muitas vezes (iluminação, vedação, balneários, bancadas)?',
-          'A folha de Excel dos relvados cobre todos os casos, ou há exceções frequentes?'
+          'A folha de Excel dos relvados cobre todos os casos (incluindo iluminação, vedação, balneários), ou há exceções frequentes?'
         ] },
         { etapa: 'Infraestruturas e vias', perguntas: [
-          'Que obras são as mais frequentes: arruamentos, estradas, passeios, requalificações urbanas?',
-          'O preço sai sobretudo de equipamento e rendimentos, ou de materiais? Onde estão esses valores?',
-          'Quanto tempo leva hoje um orçamento destes, do estudo à proposta?'
+          'O preço sai sobretudo de equipamento e rendimentos, ou de materiais? Onde estão esses valores?'
         ] },
         { etapa: 'Drenagem e redes', perguntas: [
-          'Que redes orçamentam (águas pluviais, saneamento, abastecimento)?',
-          'As quantidades vêm dos perfis longitudinais do projeto? Em que formato?',
-          'Há regras próprias (profundidades, entivação, tipos de tubagem) que mudam o preço?'
+          'As quantidades vêm dos perfis longitudinais do projeto? Em que formato?'
         ] },
         { etapa: 'Loteamentos', perguntas: [
-          'O Hugo disse que muitos privados querem saber o preço de um loteamento pelas características. Que características dão, normalmente?',
-          'É possível uma estimativa por indicadores (área, número de lotes, metros de arruamento) antes do orçamento detalhado?',
-          'Quantos pedidos destes recebem, e quantos se transformam em obra?'
+          'Para os privados, chega uma estimativa por indicadores (área, número de lotes, metros de arruamento) antes do orçamento detalhado?'
         ] },
         { etapa: 'Movimentação de terras', perguntas: [
-          'Escavação, aterro e decapagem: como calculam hoje os volumes, e com que software?',
-          'As plantas com curvas de nível e os perfis chegam em DWG, DXF ou PDF?',
-          'Em quantas obras por ano isto pesa no preço final?'
+          'Como calculam hoje os volumes de escavação, aterro e decapagem, com que software, e em que formato chegam as plantas com curvas de nível?'
         ] },
         { etapa: 'Construção civil e edifícios', perguntas: [
-          'O Hugo disse que a construção civil pura não é tanto a vossa vertente. Que peso tem hoje?',
-          'Quando orçamentam edifícios, que especialidades fazem e quais subcontratam?',
-          'Faz sentido entrar neste projeto, ou fica para mais tarde?'
+          'Entra neste projeto, ou fica para mais tarde?'
         ] }
       ],
       processo: [
-        { etapa: 'Entrada do pedido', perguntas: [
-          'Que parte dos orçamentos vem de concursos públicos e que parte de clientes privados?',
-          'Quando um cliente privado pede apoio técnico antes do concurso, o que lhe entregam?',
-          'Quem recebe cada pedido e onde fica registado?'
-        ] },
         { etapa: 'Estudo da obra', perguntas: [
-          'Quem estuda o processo (caderno de encargos, cláusulas técnicas, peças desenhadas) e quanto tempo leva, por tipo de obra?',
-          'Que informação tiram do projeto e onde a anotam?',
+          'Que informação tiram do projeto e do caderno de encargos, e onde a anotam?',
           'Quando as peças se contradizem, qual prevalece e quem decide?'
         ] },
         { etapa: 'Quantidades', perguntas: [
-          'Conferem o mapa de quantidades do dono de obra? Com que frequência encontram erros?',
-          'Apresentam lista de erros e omissões? Quem a prepara e com que prazo?',
-          'Quando são vocês a medir, com que software e quanto tempo demora?'
+          'Apresentam lista de erros e omissões? Querem que o agente a prepare?'
         ] },
         { etapa: 'Formação do preço', perguntas: [
-          'Como decompõem o preço de uma rubrica: mão de obra, materiais, equipamento, subempreitada?',
-          'Onde estão os rendimentos de mão de obra e os custos de equipamento?',
-          'Como calculam estaleiro, custos indiretos e margem? Quem define a margem?'
+          'Como decompõem o preço de uma rubrica (mão de obra, materiais, equipamento, subempreitada), e onde estão os rendimentos e custos?',
+          'Como calculam estaleiro, custos indiretos e margem?'
         ] },
         { etapa: 'Consultas ao mercado', perguntas: [
-          'Para que rubricas pedem cotação a fornecedores e subempreiteiros, e a quantos?',
-          'Como enviam os pedidos e como comparam as respostas (mapa comparativo)?',
-          'Quanto tempo esperam pelas respostas e o que fazem quando não chegam a tempo?'
-        ] },
-        { etapa: 'Base de preços e histórico', perguntas: [
-          'Têm base de preços própria? Onde está e quando foi atualizada?',
-          'Guardam os preços das obras ganhas e perdidas para comparação?',
-          'Usam os relatórios de análise das propostas para conhecer os preços dos concorrentes?'
+          'Querem que o agente envie os pedidos de cotação e monte o mapa comparativo, ou só use os preços que já têm?'
         ] },
         { etapa: 'Montagem da proposta', perguntas: [
           'Em que formato entregam a lista de preços unitários (modelo da entidade ou Excel próprio)?',
-          'Que peças técnicas preparam sempre: memória descritiva, plano de trabalhos, cronograma financeiro, planos de mão de obra e equipamento?',
-          'Quanto tempo levam essas peças, comparado com o preço?'
-        ] },
-        { etapa: 'Revisão e submissão', perguntas: [
-          'Quem revê e aprova o preço final, e em que momento?',
-          'Que verificações fazem antes de submeter?',
-          'Quem submete na plataforma e com que assinatura digital?'
-        ] },
-        { etapa: 'Depois da entrega', perguntas: [
-          'Analisam porque ganharam ou perderam cada concurso?',
-          'Comparam o orçamento com o custo real da obra executada?',
-          'Que indicadores querem acompanhar (taxa de sucesso, desvio entre orçamento e custo real)?'
+          'Querem que o agente redija também memória descritiva, plano de trabalhos e cronograma financeiro?'
         ] }
       ],
       perguntas: [
-        'Quantos orçamentos fazem por mês, por tipo de obra, e que tipo pesa mais na faturação?',
-        'Depois dos relvados, por que ordem querem alargar aos outros tipos de obra?',
-        'O orçamento muda quando o cliente é uma câmara ou um privado? Em quê? (o Luís referiu esta diferença)',
-        'Em que etapa se perde mais tempo hoje? É a mesma em todos os tipos de obra?',
-        'Que variáveis mudam o preço de um relvado (base, drenagem, tipo de enchimento, linhas, equipamento)?',
-        'Onde estão as propostas anteriores, em que formato e quantas? Podem servir de base ao rascunho?',
-        'Ferramentas auxiliares do Hélder (custo de mão de obra por localização, tempo, dificuldade): quais e onde estão?',
-        'O Hugo falou em plantas com curvas de nível para escavação e aterro. Em que formato chegam e com que frequência?',
-        'Como validamos a Fase 1: três concursos já entregues, com o orçamento real deles ao lado?',
-        'Têm uma biblioteca de conteúdos técnicos (fichas técnicas, certificados, currículo de obras) para as propostas? (ponto 8.3)'
+        'Quantos orçamentos fazem por mês, por tipo de obra, e que tipo pesa mais?',
+        'O orçamento muda quando o cliente é uma câmara ou um privado? Em quê?',
+        'Onde estão as propostas anteriores e os conteúdos técnicos (fichas, certificados, currículo de obras), em que formato e quantos?'
       ],
       expectativa: 'Objetivo realista: 85% a 90% do orçamento preparado pelo agente, ao fim de alguns meses de ajustes. O preço final é sempre de uma pessoa. A medição a partir de desenhos é prova de conceito, não promessa.'
     },
     {
       id: 'informacao', letra: 'A', fase: 'Fase 2', titulo: 'Gestão inteligente de informação',
-      quem: ['Hugo', 'Parceiro PHC', 'IT'],
-      porque: 'É o módulo mais dependente de terceiros. Se o PHC não tiver forma de ligação, o custo e o prazo mudam, e é isso que temos de saber antes de fechar.',
+      quem: ['Hugo', 'IT'],
+      porque: 'O PHC já ficou falado: a ligação depende da API que o parceiro desenvolver. O que falta saber é o resto, e é isso que define o tamanho do módulo: que perguntas, que fontes, que perfis e com que frequência.',
       arvores: [
-        {
-          titulo: 'O PHC',
-          q: 'Já existe API ou Web Services no vosso PHC?', quem: ['Hugo', 'Parceiro PHC'],
-          ramos: [
-            { r: 'Sim', tom: 'ok', vai: { fim: 'Ligação de leitura: custos, faturação e produção por obra', tom: 'ok' } },
-            { r: 'Não', tom: 'terc', vai: {
-              q: 'O parceiro PHC desenvolve? Com que custo e prazo?', quem: ['Parceiro PHC'],
-              ramos: [
-                { r: 'Sim', tom: 'terc', vai: { fim: 'Orçamento do parceiro entra no projeto', tom: 'terc' } },
-                { r: 'Não, ou caro demais', tom: 'inv', vai: { fim: 'Exportações periódicas dos mapas', tom: 'inv' } }
-              ] } },
-            { r: 'Não sabem', tom: 'inv', vai: { fim: 'Contactar o parceiro PHC já esta semana', tom: 'inv' } }
-          ]
-        },
         {
           titulo: 'Documentos e permissões',
           q: 'Onde estão os documentos de cada obra?', quem: ['Hugo', 'IT'],
@@ -244,21 +179,18 @@ window.GUIA = {
         }
       ],
       perguntas: [
-        'Que versão do PHC têm, está na cloud ou em servidor próprio, e quem é o parceiro PHC?',
-        'Quem gere o IT (interno ou externo)? Quem nos pode dar acessos de leitura?',
         'Que 5 a 10 perguntas querem ver respondidas primeiro? (horas por obra, estado financeiro, documentos de uma obra)',
+        'Além do PHC, que outras plataformas e repositórios entram no assistente?',
         'Onde se registam as horas e os recursos de cada obra?',
         'Que perfis existem (colaborador, gestão, administração) e quem vê o quê?',
-        'A parte contabilística vem da contabilidade externa: chega por que via e com que regularidade?',
-        'Além do PHC, que outras plataformas de gestão e repositórios entram no assistente? (ponto 2.2)',
-        'Com que frequência a informação tem de estar atualizada: diária, várias vezes ao dia? (ponto 8.1)',
-        'Querem exportar resultados e resumos? Em que formato? (ponto 8.1)'
+        'A informação tem de estar atualizada ao minuto, ou basta uma vez por dia?',
+        'A parte contabilística que querem cruzar com a económica chega da contabilidade externa por que via?'
       ],
       expectativa: 'Respeita sempre as permissões da origem e diz de onde vem cada resposta. Se a ligação ao PHC custar mais do que vale, começamos pelos mapas em Excel e o PHC entra depois.'
     },
     {
       id: 'contratos', letra: 'D', fase: 'Fase 3', titulo: 'Análise e preparação contratual',
-      quem: ['Elsa', 'Assessoria jurídica'],
+      quem: ['Elsa'],
       porque: 'Segundo o Hugo, os contratos estão com a Elsa, em servidores próprios, sem passar pelo PHC. Falta saber o formato e o que mais dói.',
       arvores: [
         {
@@ -272,11 +204,9 @@ window.GUIA = {
         }
       ],
       perguntas: [
-        'Que tipos de contrato têm (empreitada, subempreitada, fornecimento)? Quantos por ano?',
+        'Que tipos de contrato têm e quantos por ano?',
         'O que mais dói hoje: prazos, penalizações, cauções e garantias, ou acompanhar datas?',
-        'Têm modelos internos aprovados? Quem os mantém?',
-        'Quem faz a revisão jurídica? A IA apoia, não substitui o parecer.',
-        'Recebem várias versões do mesmo contrato e precisam de as comparar? (ponto 8.4)'
+        'Têm modelos internos aprovados para os rascunhos?'
       ],
       expectativa: 'Cada elemento extraído leva ao parágrafo que o suporta. A decisão de assinar e a revisão jurídica ficam com eles.'
     },
@@ -306,11 +236,8 @@ window.GUIA = {
         }
       ],
       perguntas: [
-        'Que tipos de pedido chegam e de quem (clubes, municípios, particulares, loteadores)?',
-        'Que conteúdos aprovados existem: catálogos, brochuras, vídeos, perguntas frequentes?',
-        'Quem recebe cada tipo de pedido, e em que horário?',
-        'O chatbot do parceiro no Brasil: há árvore de decisão que possamos reaproveitar?',
-        'Atendem clientes fora de Portugal (o Luís continua a vender relva para o Brasil)? Em que línguas? (ponto 8.5)'
+        'Que conteúdos aprovados existem para o agente usar (catálogos, brochuras, perguntas frequentes, vídeos)?',
+        'Atendem clientes fora de Portugal? Em que línguas?'
       ],
       expectativa: 'Começa pelos relvados e alarga depois. O agente nunca dá preço nem prazo fechado: qualifica e passa a uma pessoa.'
     },
@@ -339,12 +266,7 @@ window.GUIA = {
         }
       ],
       perguntas: [
-        'Onde está a base de contactos, quantos são e têm consentimento para comunicações (RGPD)?',
-        'Que regras de follow-up fazem sentido (por exemplo, 5 dias e 15 dias depois da proposta)?',
-        'Por email, por WhatsApp, ou os dois? Com aprovação humana antes de cada envio?',
-        'Quem não deve receber comunicações (exclusões)?',
-        'Há contactos antigos que valha a pena reativar? (ponto 4.3)',
-        'Que tarefas querem que o CRM crie sozinho (ligar, enviar proposta, visitar a obra)? (ponto 4.3)'
+        'Onde está a base de contactos, quantos são, e têm consentimento para comunicações?'
       ],
       expectativa: 'Nada sai para um cliente sem as regras acordadas e, se quiserem, sem aprovação. O WhatsApp tem custo da Meta por mensagem.'
     }
@@ -354,38 +276,28 @@ window.GUIA = {
       titulo: 'Pessoas e tempo', icone: 'P',
       perguntas: [
         'Quem é o nosso ponto de contacto único durante o projeto?',
-        'Quantas horas por mês conseguem dar o Hugo, o Luís, o Hélder e a Elsa? As sessões de acompanhamento são por chamada.',
-        'Qual é o papel do José Matias no projeto?',
-        'Vão contratar alguém com perfil para estes temas, como o Luís sugeriu? Quando?'
+        'Quantas horas por mês conseguem dar o Hugo, o Luís, o Hélder e a Elsa? As sessões de acompanhamento são por chamada.'
       ]
     },
     {
       titulo: 'Dados e segurança', icone: 'S',
       perguntas: [
-        'NDA: quem assina e com que âmbito.',
         'Há restrições sobre onde os dados podem ser processados (por exemplo, só na União Europeia)?',
         'Que informação nunca pode sair da empresa, nem anonimizada?',
-        'Querem entrar com as contas Microsoft da empresa? (ponto 9)',
-        'Quanto tempo guardamos conversas, documentos e registos de auditoria? (ponto 9)',
-        'Que contas de serviços externos ficam em nome da EngeGlobal (Meta, Microsoft, outras)? (ponto 13)'
+        'Querem entrar com as contas Microsoft da empresa?'
       ]
     },
     {
       titulo: 'Financiamento', icone: 'F',
       perguntas: [
-        'Que linha de financiamento é, e que critérios o projeto tem de cumprir?',
-        'Há prazos do financiamento que condicionem as fases?',
-        'Que entregáveis ou relatórios o financiamento exige de nós?'
+        'O financiamento impõe prazos ou entregáveis (relatórios, documentação) que tenhamos de cumprir?'
       ]
     },
     {
-      titulo: 'Aceitação, formação e suporte', icone: 'A',
+      titulo: 'Aceitação e formação', icone: 'A',
       perguntas: [
-        'Quem aprova os critérios de aceitação de cada módulo, antes de o começarmos? (ponto 11)',
-        'Que casos reais usamos nos testes de cada módulo, e quem os escolhe? (ponto 11)',
-        'Querem um ambiente de testes separado antes de cada entrada em produção? (ponto 10)',
-        'Quantas pessoas vamos formar, e quem fica administrador do sistema do vosso lado? (ponto 10)',
-        'Que suporte esperam depois da entrada em produção: horário, canal, tempo de resposta? (ponto 10)'
+        'Que casos reais usamos nos testes de cada módulo, e quem os escolhe?',
+        'Quantas pessoas vamos formar?'
       ]
     }
   ],
@@ -406,13 +318,11 @@ window.GUIA = {
     ]
   },
   saida: [
-    'Lista de pessoas e tempo disponível de cada uma',
-    'Contacto do parceiro PHC e a versão do PHC',
-    'Quem gere o IT e o Microsoft 365',
+    'Pessoas, ponto de contacto e horas por mês de cada uma',
     'Plataformas de concursos usadas e quem tem as contas',
-    'Três concursos já entregues, com o orçamento real, para os testes',
-    'A folha de Excel dos relvados e os mapas do Hélder (depois do NDA)',
-    'Data da reunião com a Elsa (cerca de uma hora) e da reunião com o Hélder',
-    'Critérios e prazos do financiamento'
+    'Tipos de obra por ordem de peso, e o método de cada um',
+    'Três concursos já entregues, com o orçamento real, para os testes (depois do NDA)',
+    'As 5 a 10 perguntas prioritárias do assistente interno',
+    'Restrições de dados e prazos do financiamento'
   ]
 };
