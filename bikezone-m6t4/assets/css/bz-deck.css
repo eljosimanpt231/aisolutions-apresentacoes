@@ -1,0 +1,31 @@
+/* ============================================================
+   Bike Zone: acertos do deck (por cima da base AFM)
+   O logótipo tem o "zone" em branco: vive sempre sobre preto,
+   como no cabeçalho do site. Títulos em Archivo Narrow, em caixa
+   normal e apertados, como o menu do site.
+   ============================================================ */
+.logo-chip { background: var(--cg-navy); border-color: var(--cg-navy); }
+.logo-chip span { color: var(--cg-on-navy-muted); }
+.logo-chip img { height: 20px; }
+.cg-top img { height: 20px; }
+
+h1, h2, h3, .stat-card .num, .price-card .price, .pag b, .rc-kpis b, .pg-kpi b, .cg-explica h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.005em; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); max-width: 18ch; line-height: 1.02; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.08; }
+.stat-card .num { font-size: 2.3rem; }
+.ouvimos blockquote { font-size: 1.04rem; }
+
+.seguinte.bz-q4 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .seguinte.bz-q4 { grid-template-columns: 1fr; } }
+
+/* a coluna do agente: leitura, artigos, condições e decisão têm de caber */
+.cg-pane .fx { --fx-h: 730px; }
+.fx-cols { grid-template-columns: 250px minmax(0, 1fr) 390px; }
+@media (max-width: 1080px) { .fx-cols { grid-template-columns: 230px minmax(0, 1fr); } }
+@media (max-width: 700px) { .fx-cols { grid-template-columns: 1fr; } }
+
+/* painel de vendas: colunas da tabela sem quebrar, ícone de informação neutro */
+@media (min-width: 761px) { .pv-lr { grid-template-columns: minmax(150px, 210px) minmax(0, 1fr) 86px 70px 62px 76px; } }
+.pv-lr .pg-v, .pv-lr-h span { white-space: nowrap; }
+@media (min-width: 761px) { .pv-mix-r { grid-template-columns: 168px minmax(0, 1fr) 76px 44px; } }
+.pv-alertas .info .pg-ic, .pg-alertas .info .pg-ic { background: var(--cg-navy); }

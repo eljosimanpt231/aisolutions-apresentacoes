@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Bike Zone | O PHC a trabalhar sozinho</title>
+  <meta name="description" content="Proposta AI Solutions para a Bike Zone: faturas de fornecedor lançadas no PHC com as referências criadas pelas vossas regras, reconciliação bancária automática e painel de vendas por loja.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bike Zone × AI Solutions">
+  <meta property="og:description" content="Faturas no PHC sem digitação, bancos conciliados sozinhos e as vendas de cada loja à vista a qualquer hora.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/bikezone-m6t4/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try { var t = localStorage.getItem('ais-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=1">
+  <link rel="stylesheet" href="assets/css/base.css?v=1">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/bikezone.css?v=1">
+  <link rel="stylesheet" href="assets/css/consola.css?v=1">
+  <link rel="stylesheet" href="assets/css/modulos.css?v=1">
+  <link rel="stylesheet" href="assets/css/bz-modulos.css?v=1">
+  <link rel="stylesheet" href="assets/css/bz-deck.css?v=1">
+  <script src="config.js?v=1"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img src="assets/img/bikezone-logo.png" alt="Bike Zone">
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#prototipo">Protótipo</a>
+    <a href="#phc">Ligação ao PHC</a>
+    <a href="#investimento">Investimento</a>
+    <a href="#fases">Fases</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <span class="eyebrow" data-acto="1" data-entra="sobe">Bike Zone × AI Solutions · sobre o PHC</span>
+    <h1 data-linhas>O PHC já tem a informação. <span class="g-brilho">Falta tirar-lhe o trabalho à mão.</span></h1>
+    <p class="lead" data-acto="2" data-entra="sobe">
+      As faturas dos fornecedores entram no PHC sozinhas, com as referências criadas pelas vossas regras.
+      Os bancos concilia-os o sistema, e a equipa só vê o que não bate.
+      E cada loja abre o seu painel de vendas quando quiser, sem esperar pelo Excel de segunda-feira.
+    </p>
+    <div class="hero-meta" data-acto="3" data-entra="sobe">
+      <span>Para <b>Nuno Barbosa</b> e <b>Vítor</b></span>
+      <span>Seguimento da reunião de <b>06/10/2026</b></span>
+      <span>Protótipo a funcionar nesta página</span>
+    </div>
+    <div class="grid-3 hero-stats" data-acto="4" data-entra="sobe">
+      <div class="card stat-card"><div class="num"><span data-conta="4">4</span> h por dia</div><div class="desc">A lançar faturas à mão no PHC: valores, stock, descontos e referências novas</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="5">5</span> dias por mês</div><div class="desc">A cruzar o PHC com os extratos dos bancos, linha a linha</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="9">9</span> a 14 lojas</div><div class="desc">Cada uma com o seu painel de vendas, sempre atualizado, só com os seus números</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 06/10</span>
+      <h2>Um PHC bem montado, rodeado de trabalho repetitivo</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>As faturas chegam em PDF por email e são introduzidas no PHC à mão. A introdução das faturas gera o stock.</blockquote>
+        <p>Cerca de 200 faturas por mês, de uns 20 fornecedores de mercadoria. Perto de 4 horas por dia de uma pessoa.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Praticamente em todas as faturas existem referências novas.</blockquote>
+        <p>E cada uma segue uma regra: as três primeiras letras da marca, a referência do fornecedor e o tamanho. Uma Scott 1234 em M passa a SCO1234M.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Cada marca tem uma condição de desconto que tem de ser verificada.</blockquote>
+        <p>Para ver se o fornecedor não falhou nenhuma condição. Hoje, à vista, fatura a fatura.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Só o trabalho de confirmar tudo o que está certo, que deve ser 90 e tal por cento, já tira muito trabalho.</blockquote>
+        <p>A reconciliação faz-se entre o PHC e o Excel dos bancos, por uma pessoa do financeiro: cerca de 5 dias por mês, com as correções.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Se o fim do mês for a uma quinta-feira, eles só vão ter essa informação na segunda.</blockquote>
+        <p>Os relatórios de vendas fazem-se na central, em Excel, uma vez por semana. Nos últimos dias do mês, quando as lojas mais precisavam de saber, a informação chega tarde.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>A IA não vai tomar grandes decisões, vai simplesmente seguir regras.</blockquote>
+        <p>Exatamente. E quando encontra algo que as regras não resolvem, não inventa: avisa quem decide.</p>
+      </div>
+    </div>
+    <p class="sintese">Nada disto pede outro programa. <b>Pede que o PHC trabalhe sozinho no que é repetitivo, e com as regras da Bike Zone.</b></p>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE MUDA ============ -->
+<section id="mudanca">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que muda</span>
+      <h2>Três tarefas que deixam de ser feitas à mão</h2>
+      <p class="lead">Cada cartão abre o módulo correspondente no protótipo.</p>
+    </div>
+    <div class="muda">
+      <div class="card" data-entra="sobe">
+        <span class="n">01 · Faturas de fornecedor</span>
+        <h3>Do email para o PHC, sem digitação</h3>
+        <p class="antes">Cada PDF introduzido à mão: linhas, valores, stock, descontos e as referências novas criadas uma a uma.</p>
+        <p class="depois">O sistema lê a fatura, cria as referências novas pela vossa regra, soma o stock, confere o desconto de cada marca e lança. O que não sabe resolver fica em rascunho, com um aviso.</p>
+        <a href="#prototipo" data-abre="mod-faturas">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">02 · Reconciliação bancária</span>
+        <h3>O que está certo confirma-se sozinho</h3>
+        <p class="antes">O extrato em Excel ao lado do PHC, movimento a movimento, durante cerca de 5 dias por mês.</p>
+        <p class="depois">Os recebimentos das lojas, os pagamentos a fornecedores e as comissões ficam conciliados sozinhos. Ao financeiro chegam só as exceções, cada uma com o motivo.</p>
+        <a href="#prototipo" data-abre="mod-banco">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">03 · Painel de vendas</span>
+        <h3>Cada loja vê o seu mês, a qualquer hora</h3>
+        <p class="antes">Um Excel feito na central uma vez por semana e enviado às lojas.</p>
+        <p class="depois">Um painel ligado ao PHC: a central vê a rede inteira, cada loja vê só a sua, com o objetivo, o ritmo e quanto falta por dia para fechar o mês.</p>
+        <a href="#prototipo" data-abre="mod-vendas">Ver no protótipo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PROTÓTIPO: A CONSOLA ============ -->
+<section class="section-alt" id="prototipo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Protótipo</span>
+      <h2>Um dia de outubro na Bike Zone, <span class="g-brilho">com o PHC a trabalhar sozinho</span></h2>
+      <p class="lead">Três módulos, um por tarefa. Os dois primeiros correm sozinhos quando os abre; o painel responde ao clique.</p>
+    </div>
+
+    <div class="consola" id="consola" data-entra="escala">
+      <div class="cg-win">
+        <div class="cg-top">
+          <img src="assets/img/bikezone-logo.png" alt="Bike Zone">
+          <span class="cg-emp">Central · Braga <small>ligado ao PHC</small></span>
+          <span class="cg-ais"><i></i>agentes AI Solutions ligados</span>
+        </div>
+        <div class="cg-mods" role="tablist" aria-label="Módulos">
+          <button type="button" role="tab" data-mod="mod-faturas" data-titulo="Faturas de fornecedor · caixa de faturas"><b>01</b>Faturas de fornecedor</button>
+          <button type="button" role="tab" data-mod="mod-banco" data-titulo="Reconciliação bancária · conta à ordem principal"><b>02</b>Reconciliação bancária</button>
+          <button type="button" role="tab" data-mod="mod-vendas" data-titulo="Painel de vendas · outubro de 2026"><b>03</b>Painel de vendas</button>
+        </div>
+        <div class="cg-crumb"><span>Central › <b data-crumb>Faturas de fornecedor</b></span><span class="fonte">terça-feira, 27/10/2026</span></div>
+
+        <!-- 01 -->
+        <div class="cg-pane" id="mod-faturas" role="tabpanel">
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Lê as faturas que chegam por email e lança-as no PHC</h3><ol><li>Lê a fatura em PDF, linha a linha</li><li>Procura cada artigo no PHC; se é novo, cria a referência pela regra da marca</li><li>Confere o desconto faturado com a condição de cada marca</li><li>Lança e soma o stock; na dúvida, rascunho e aviso</li></ol><p class="cg-explica-d">Quatro faturas ao longo do dia, quatro desfechos. Clique numa delas para a ver tratada outra vez.</p></div>
+          <div class="cg-body" style="padding:14px 0 0"><div class="fx" id="fxDemo"></div></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="cg-pane" id="mod-banco" role="tabpanel">
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Cruza o extrato do banco com o PHC e confirma o que está certo</h3><ol><li>Lê o extrato que o financeiro já descarrega</li><li>Procura cada movimento no PHC: vendas das lojas, faturas, pagamentos</li><li>Confirma sozinho o que bate, ao cêntimo</li><li>O que não bate vai ao responsável, com o motivo</li></ol><p class="cg-explica-d">Uma semana de movimentos. Carregue em "Conciliar outra vez" para repetir.</p></div>
+          <div class="cg-body"><div id="rcDemo"></div></div>
+        </div>
+
+        <!-- 03 -->
+        <div class="cg-pane" id="mod-vendas" role="tabpanel">
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>As vendas do mês, para a central e para cada loja</h3><ol><li>Lê as vendas do PHC, de minutos a minutos</li><li>Compara com o objetivo e com o mesmo mês de 2025</li><li>Diz a cada loja quanto falta por dia para fechar o mês</li><li>Cada acesso vê só o que lhe pertence</li></ol><p class="cg-explica-d">Entre como central ou como uma das lojas, e passe o rato pelo gráfico.</p></div>
+          <div class="cg-body"><div id="pvDemo"></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="cg-legenda">
+      <span>Fornecedores, faturas, referências, condições de desconto, movimentos, comerciais e valores são ilustrativos.</span>
+      <span>As lojas são as da Bike Zone; os números não.</span>
+    </p>
+  </div>
+</section>
+
+<!-- configs dos módulos -->
+<script type="application/json" id="fxDemo-config">
+{
+  "windowTitle": "Faturas de fornecedor",
+  "mailbox": "faturas de fornecedores · email",
+  "agentName": "Agente de faturas",
+  "regra": "marca (3 letras) + ref. + tamanho",
+  "inboxNote": "Hoje chegaram **4** faturas. Num mês normal são **cerca de 200**, de uns **20** fornecedores.",
+  "pauseMs": 3600,
+  "docs": [
+    {
+      "mail": { "from": "Iberciclo Distribuição", "time": "08:41", "subject": "Fatura FT 2026/18833", "clip": "PDF",
+        "body": "Bom dia, segue em anexo a fatura da encomenda de outubro. **Duas referências que a Bike Zone ainda não tem no PHC.**" },
+      "doc": { "supplier": "Iberciclo Distribuição, S.A.", "addr": "Distribuidor Scott · Maia", "nif": "NIF 5•• ••• 210",
+        "title": "Fatura", "number": "FT 2026/18833", "date": "27/10/2026", "client": "Bike Zone, S.A.", "ref": "Encomenda EC-2026/0912",
+        "lines": [
+          ["290341", "Scott Spark RC 900 Team · M", "2", "3.250,00", "30%", "4.550,00"],
+          ["290341", "Scott Spark RC 900 Team · L", "1", "3.250,00", "30%", "2.275,00"],
+          ["288012", "Scott Aspect 950 · M", "3", "690,00", "30%", "1.449,00"],
+          ["280455", "Capacete Scott Centric Plus · M", "4", "120,00", "35%", "312,00"]
+        ],
+        "base": "8.586,00 €", "vatLabel": "IVA 23%", "vat": "1.974,78 €", "total": "10.560,78 €" },
+      "read": [["Fornecedor", "Iberciclo Distribuição", "fornecedor"], ["Fatura", "FT 2026/18833", "numero"], ["Data", "27/10/2026", "data"], ["Linhas", "4 artigos · 10 unidades", "l0"], ["Base", "8.586,00 €", "base"], ["Total", "10.560,78 €", "total"]],
+      "artigos": [
+        { "forn": "290341 · M", "bz": "SCO290341M", "desc": "Scott Spark RC 900 Team, tamanho M", "estado": "nova", "stock": "stock 0 → 2", "linha": "l0" },
+        { "forn": "290341 · L", "bz": "SCO290341L", "desc": "Scott Spark RC 900 Team, tamanho L", "estado": "nova", "stock": "stock 0 → 1", "linha": "l1" },
+        { "forn": "288012 · M", "bz": "SCO288012M", "desc": "Scott Aspect 950, tamanho M", "estado": "existe", "stock": "stock 4 → 7", "linha": "l2" },
+        { "forn": "280455 · M", "bz": "SCO280455M", "desc": "Capacete Scott Centric Plus, tamanho M", "estado": "existe", "stock": "stock 2 → 6", "linha": "l3" }
+      ],
+      "condicoes": [
+        { "marca": "Scott · bicicletas", "acordado": "30%", "faturado": "30%", "ok": true, "linha": "d0" },
+        { "marca": "Scott · equipamento", "acordado": "35%", "faturado": "35%", "ok": true, "linha": "d3" }
+      ],
+      "outcome": { "kind": "ok", "title": "Lançada no PHC às 08:42",
+        "lines": ["Fatura de fornecedor com **4 linhas** e **8.586,00 €** + IVA", "**2 referências novas** criadas pela regra da Scott", "Stock atualizado: **+10 unidades**, PDF anexado ao documento"] }
+    },
+    {
+      "mail": { "from": "Velonorte Distribuição", "time": "10:15", "subject": "Fatura FT B/2026/4471", "clip": "PDF",
+        "body": "Envio fatura dos pneus e capacetes. **O desconto da Maxxis veio a 25%; o acordado é 30%.**" },
+      "doc": { "supplier": "Velonorte Distribuição, Lda.", "addr": "Distribuidor Maxxis e Fox · Guimarães", "nif": "NIF 5•• ••• 877",
+        "title": "Fatura", "number": "FT B/2026/4471", "date": "26/10/2026", "client": "Bike Zone, S.A.", "ref": "",
+        "lines": [
+          ["TB00055", "Pneu Maxxis Minion DHF 29x2.50", "10", "58,00", "25%", "435,00"],
+          ["31437", "Capacete Fox Speedframe Pro · L", "3", "150,00", "30%", "315,00"]
+        ],
+        "base": "750,00 €", "vatLabel": "IVA 23%", "vat": "172,50 €", "total": "922,50 €" },
+      "read": [["Fornecedor", "Velonorte Distribuição", "fornecedor"], ["Fatura", "FT B/2026/4471", "numero"], ["Data", "26/10/2026", "data"], ["Linhas", "2 artigos · 13 unidades", "l0"], ["Base", "750,00 €", "base"], ["Total", "922,50 €", "total"]],
+      "artigos": [
+        { "forn": "TB00055", "bz": "MAXTB00055", "desc": "Pneu Maxxis Minion DHF 29x2.50", "estado": "existe", "stock": "stock 6 → 16", "linha": "l0" },
+        { "forn": "31437 · L", "bz": "FOX31437L", "desc": "Capacete Fox Speedframe Pro, tamanho L", "estado": "nova", "stock": "stock 0 → 3", "linha": "l1" }
+      ],
+      "condicoes": [
+        { "marca": "Maxxis · pneus", "acordado": "30%", "faturado": "25%", "ok": false, "nota": "Faturado a mais: **29,00 €**", "linha": "d0" },
+        { "marca": "Fox · capacetes", "acordado": "30%", "faturado": "30%", "ok": true, "linha": "d1" }
+      ],
+      "outcome": { "kind": "val", "title": "Lançada no PHC, com a diferença assinalada",
+        "lines": ["Stock atualizado: **+13 unidades**, 1 referência nova", "Maxxis faturada a **25%**, acordado **30%**: **29,00 €** a mais", "Email ao fornecedor a pedir nota de crédito, **em rascunho para aprovar**"] }
+    },
+    {
+      "mail": { "from": "Atlântico Bikes Distribuição", "time": "11:52", "subject": "Fatura 2026/A/1290", "clip": "PDF",
+        "body": "Segue a fatura da encomenda Giant. **Numa das linhas, o tamanho não vem indicado.**" },
+      "doc": { "supplier": "Atlântico Bikes Distribuição, S.A.", "addr": "Distribuidor Giant · Vila Nova de Gaia", "nif": "NIF 5•• ••• 342",
+        "title": "Fatura", "number": "2026/A/1290", "date": "27/10/2026", "client": "Bike Zone, S.A.", "ref": "",
+        "lines": [
+          ["2300112", "Giant Talon 29 2", "2", "640,00", "28%", "921,60"],
+          ["2300087", "Giant Fathom 29 1 · L", "1", "1.050,00", "28%", "756,00"],
+          ["7400215", "Capacete Giant Roost MIPS · M", "5", "55,00", "28%", "198,00"]
+        ],
+        "base": "1.875,60 €", "vatLabel": "IVA 23%", "vat": "431,39 €", "total": "2.306,99 €" },
+      "read": [["Fornecedor", "Atlântico Bikes Distribuição", "fornecedor"], ["Fatura", "2026/A/1290", "numero"], ["Data", "27/10/2026", "data"], ["Linhas", "3 artigos · 8 unidades", "l0"], ["Base", "1.875,60 €", "base"], ["Total", "2.306,99 €", "total"]],
+      "artigos": [
+        { "forn": "2300112 · ?", "bz": "GIA2300112 ?", "desc": "Giant Talon 29 2: a linha não diz o tamanho", "estado": "falta", "stock": "por lançar", "linha": "l0" },
+        { "forn": "2300087 · L", "bz": "GIA2300087L", "desc": "Giant Fathom 29 1, tamanho L", "estado": "nova", "stock": "stock 0 → 1", "linha": "l1" },
+        { "forn": "7400215 · M", "bz": "GIA7400215M", "desc": "Capacete Giant Roost MIPS, tamanho M", "estado": "existe", "stock": "stock 1 → 6", "linha": "l2" }
+      ],
+      "condicoes": [
+        { "marca": "Giant · todas as linhas", "acordado": "28%", "faturado": "28%", "ok": true, "linha": "d0" }
+      ],
+      "outcome": { "kind": "fut", "title": "Em rascunho no PHC: falta um tamanho",
+        "lines": ["A linha **Giant Talon 29 2** não traz o tamanho: sem ele, a referência ficava errada", "O sistema **não inventa**: avisa quem lança as faturas, com a linha marcada", "Confirmado o tamanho, a fatura entra no PHC com um clique"] }
+    },
+    {
+      "mail": { "from": "Iberciclo Distribuição", "time": "14:30", "subject": "Reenvio: Fatura FT 2026/18833", "clip": "PDF",
+        "body": "Reenviamos a fatura em anexo, por precaução. **A mesma fatura das 08:41, enviada outra vez.**" },
+      "doc": { "supplier": "Iberciclo Distribuição, S.A.", "addr": "Distribuidor Scott · Maia", "nif": "NIF 5•• ••• 210",
+        "title": "Fatura", "number": "FT 2026/18833", "date": "27/10/2026", "client": "Bike Zone, S.A.", "ref": "Encomenda EC-2026/0912",
+        "lines": [
+          ["290341", "Scott Spark RC 900 Team · M", "2", "3.250,00", "30%", "4.550,00"],
+          ["290341", "Scott Spark RC 900 Team · L", "1", "3.250,00", "30%", "2.275,00"],
+          ["288012", "Scott Aspect 950 · M", "3", "690,00", "30%", "1.449,00"],
+          ["280455", "Capacete Scott Centric Plus · M", "4", "120,00", "35%", "312,00"]
+        ],
+        "base": "8.586,00 €", "vatLabel": "IVA 23%", "vat": "1.974,78 €", "total": "10.560,78 €" },
+      "read": [["Fornecedor", "Iberciclo Distribuição", "fornecedor"], ["Fatura", "FT 2026/18833", "numero"], ["Data", "27/10/2026", "data"], ["Linhas", "4 artigos · 10 unidades", "l0"], ["Base", "8.586,00 €", "base"], ["Total", "10.560,78 €", "total"]],
+      "artigos": [
+        { "forn": "FT 2026/18833", "bz": "já no PHC desde as 08:42", "desc": "Mesmo fornecedor, mesmo número, mesmo valor", "estado": "dup", "stock": "stock sem mexer", "linha": "" }
+      ],
+      "condicoes": [],
+      "outcome": { "kind": "block", "title": "Bloqueada: fatura repetida",
+        "lines": ["**Não entra no PHC**: o stock subia duas vezes", "A original entrou hoje às **08:42**", "Fica no resumo do dia, para quem lança as faturas"] }
+    }
+  ]
+}
+</script>
+
+<script type="application/json" id="rcDemo-config">
+{
+  "extrato": "Conta à ordem principal · extrato de 19 a 23/10/2026 (.xlsx)",
+  "origem": "O Excel que o financeiro já descarrega do banco, cruzado com o PHC",
+  "total": 46,
+  "excecoes": 3,
+  "tempo": "2 min",
+  "rows": [
+    { "data": "19/10", "desc": "TPA BIKEZONE PORTO 18/10", "valor": "+3.418,60", "phc": "**Recebimentos da loja Porto**, sábado 18/10 · 14 vendas", "estado": "ok" },
+    { "data": "19/10", "desc": "TPA BIKEZONE BRAGA LAMACAES 18/10", "valor": "+6.902,15", "phc": "**Recebimentos Braga - Lamaçães**, sábado 18/10 · 23 vendas", "estado": "ok" },
+    { "data": "19/10", "desc": "COMISSAO SERV TPA", "valor": "-48,37", "phc": "**Comissões bancárias**, lançadas pela regra dos gastos bancários", "estado": "ok", "tag": "Lançado e conciliado" },
+    { "data": "20/10", "desc": "TRF IBERCICLO DISTRIBUICAO SA", "valor": "-18.240,00", "phc": "**Pagamento ao fornecedor**: FT 2026/17410 e FT 2026/17522", "estado": "ok" },
+    { "data": "20/10", "desc": "TRF R COSTA", "valor": "+2.199,00", "phc": "**Fatura-recibo FR 2026/4410**: Scott Aspect 950, loja Viseu", "estado": "ok" },
+    { "data": "20/10", "desc": "TRF SEPA 000184122", "valor": "+1.240,00", "phc": "Nenhum documento com este valor exato", "motivo": "Duas faturas em aberto perto do valor (1.239,90 € e 1.245,00 €): **perguntado ao financeiro qual é**", "estado": "val" },
+    { "data": "21/10", "desc": "DEP NUMERARIO LEIRIA CENTRO", "valor": "+1.987,30", "phc": "**Fecho de caixa de Leiria - Centro**, 20/10", "motivo": "No PHC o fecho é de **2.007,30 €**: faltam **20,00 €**. **Aviso enviado à loja.**", "estado": "val", "tag": "Diferença de 20 €" },
+    { "data": "21/10", "desc": "TRF FINANCIAMENTO VENDA 88213", "valor": "+4.350,00", "phc": "**Venda a crédito**: Giant Fathom 29 1, contrato 88213, loja Coimbra", "estado": "ok" },
+    { "data": "22/10", "desc": "DD ELETRICIDADE 2210", "valor": "-612,48", "phc": "**Fatura da eletricidade** de setembro, já lançada", "estado": "ok" },
+    { "data": "22/10", "desc": "DD 4471029 SUBSCRICAO", "valor": "-89,90", "phc": "Sem fatura no PHC", "motivo": "Débito direto novo: **pedida a fatura ao fornecedor** e avisado o financeiro", "estado": "fut", "tag": "Fatura pedida" },
+    { "data": "23/10", "desc": "TPA EBIKEZONE BRAGA CENTRO 22/10", "valor": "+2.845,00", "phc": "**Recebimentos E-Bike Zone Braga Centro**, 22/10 · 3 vendas", "estado": "ok" },
+    { "data": "23/10", "desc": "MBWAY LOJA ONLINE 22/10", "valor": "+1.164,85", "phc": "**Encomendas da loja online** de 22/10 · 7 encomendas", "estado": "ok" }
+  ],
+  "mais": "**+ 34 movimentos** conciliados da mesma maneira: recebimentos de TPA das lojas, pagamentos a fornecedores, comissões e débitos diretos já conhecidos.",
+  "nota": "Hoje isto são **cerca de 5 dias por mês** de uma pessoa do financeiro. Com o sistema, ela só olha para as exceções, cada uma já com o motivo e com o responsável avisado."
+}
+</script>
+
+<script type="application/json" id="pvDemo-config">
+{
+  "ano": 2026, "mes": 10, "diasMes": 31, "hoje": 27, "mesNome": "outubro",
+  "pesoDia": [0, 0.7, 1, 1, 1, 1.1, 1.6],
+  "periodo": "terça-feira, 27/10/2026 · atualizado às 18:40",
+  "mix": [["Bicicletas", 0.44, "+5%"], ["Elétricas", 0.27, "+12%"], ["Equipamento e vestuário", 0.12, "-2%"], ["Componentes e acessórios", 0.09, "+1%"], ["Oficina", 0.08, "+3%"]],
+  "lojas": [
+    { "id": "braga", "nome": "Bike Zone Braga - Lamaçães", "curto": "Braga - Lamaçães", "objetivo": 142000, "vendas": 121300, "ano": 109800, "anoMes": 128900,
+      "equipa": [["Rui M.", "Colaborador", 0.31, 1450], ["Tiago S.", "Colaborador", 0.27, 1200], ["Hugo P.", "Comissionista", 0.25, 2350], ["Ana R.", "Colaborador", 0.17, 410]] },
+    { "id": "ebike", "nome": "E-Bike Zone Braga Centro", "curto": "E-Bike Braga Centro", "objetivo": 68000, "vendas": 49900, "ano": 41200, "anoMes": 48700,
+      "mix": [["Elétricas", 0.63, "+18%"], ["Bicicletas", 0.12, "-4%"], ["Oficina", 0.11, "+6%"], ["Equipamento e vestuário", 0.08, "+2%"], ["Componentes e acessórios", 0.06, "+1%"]],
+      "equipa": [["Marta L.", "Colaborador", 0.46, 2900], ["João F.", "Comissionista", 0.54, 3400]] },
+    { "id": "porto", "nome": "Bike Zone Porto", "curto": "Porto", "objetivo": 118000, "vendas": 104600, "ano": 98300, "anoMes": 115100,
+      "equipa": [["Pedro A.", "Colaborador", 0.33, 1380], ["Sofia C.", "Colaborador", 0.26, 960], ["Hélder T.", "Comissionista", 0.29, 2600], ["Diana V.", "Colaborador", 0.12, 330]] },
+    { "id": "barcelos", "nome": "Bike Zone Barcelos", "curto": "Barcelos", "objetivo": 54000, "vendas": 47200, "ano": 49900, "anoMes": 57800,
+      "equipa": [["Carlos B.", "Colaborador", 0.55, 1150], ["Inês M.", "Colaborador", 0.45, 690]] },
+    { "id": "penafiel", "nome": "Bike Zone Penafiel", "curto": "Penafiel", "objetivo": 46000, "vendas": 33100, "ano": 35800, "anoMes": 41900,
+      "equipa": [["André G.", "Comissionista", 0.58, 2100], ["Rita S.", "Colaborador", 0.42, 720]] },
+    { "id": "viseu", "nome": "Bike Zone Viseu", "curto": "Viseu", "objetivo": 61000, "vendas": 55900, "ano": 47600, "anoMes": 55300,
+      "equipa": [["Miguel R.", "Colaborador", 0.47, 1500], ["Bruno C.", "Comissionista", 0.36, 2700], ["Joana P.", "Colaborador", 0.17, 380]] },
+    { "id": "coimbra", "nome": "Bike Zone Coimbra", "curto": "Coimbra", "objetivo": 72000, "vendas": 58400, "ano": 60100, "anoMes": 70200,
+      "equipa": [["Luís F.", "Colaborador", 0.41, 1300], ["Catarina D.", "Colaborador", 0.33, 880], ["Paulo N.", "Comissionista", 0.26, 2450]] },
+    { "id": "leiria", "nome": "Bike Zone Leiria - Centro", "curto": "Leiria - Centro", "objetivo": 49000, "vendas": 41700, "ano": 39900, "anoMes": 46800,
+      "equipa": [["Ricardo E.", "Colaborador", 0.6, 1100], ["Filipa A.", "Colaborador", 0.4, 640]] },
+    { "id": "lisboa", "nome": "Bike Zone Lisboa - Calçada de Carriche", "curto": "Lisboa - Carriche", "objetivo": 96000, "vendas": 79800, "ano": 84200, "anoMes": 98100,
+      "equipa": [["Gonçalo M.", "Colaborador", 0.32, 1420], ["Vera S.", "Colaborador", 0.24, 870], ["Daniel O.", "Comissionista", 0.31, 2550], ["Teresa L.", "Colaborador", 0.13, 360]] }
+  ],
+  "alertasExtra": [
+    { "tipo": "info", "texto": "**Elétricas** a subir 12% face a outubro de 2025, em toda a rede." }
+  ],
+  "notaLojas": "Objetivos e vendas ilustrativos. Na versão real entram as lojas e os objetivos que a Bike Zone definir.",
+  "notaEquipa": "Nomes e valores ilustrativos. Colaboradores e comissionistas aparecem lado a lado; o que cada pessoa vê decide a Bike Zone."
+}
+</script>
+
+<!-- ============ 5. FLUXO ============ -->
+<section id="fluxo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como se liga</span>
+      <h2>O PHC continua no centro. O sistema trabalha à volta dele.</h2>
+    </div>
+    <div class="fluxo" id="bzFluxo" data-entra="sobe"></div>
+  </div>
+</section>
+<script type="application/json" id="bzFluxo-config">
+{
+  "stepMs": 1800,
+  "channels": [
+    { "icon": "message", "label": "Faturas por email" },
+    { "icon": "list", "label": "Extratos dos bancos" },
+    { "icon": "database", "label": "Base de dados do PHC" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Chega uma fatura ou um extrato", "detail": "Pelos caminhos que já existem hoje.", "tone": "brand" },
+    { "icon": "search", "title": "Lê e identifica", "detail": "Fornecedor, marca, artigos, tamanhos, movimentos.", "tone": "teal" },
+    { "icon": "book", "title": "Aplica as regras da Bike Zone", "detail": "Referências, descontos por marca, conciliação.", "tone": "teal" },
+    { "icon": "shield", "title": "Decide", "detail": "Cumpre as regras: faz. Não cumpre: rascunho e aviso.", "tone": "teal" },
+    { "icon": "database", "title": "Escreve no PHC", "detail": "Artigos, stock, faturas e conciliações. O painel atualiza-se.", "tone": "brand" }
+  ],
+  "note": "A informação fica nos sistemas da Bike Zone. O sistema lê e escreve na base de dados do PHC com um utilizador próprio, com as permissões que a Bike Zone controla."
+}
+</script>
+
+<!-- ============ 6. LIGAÇÃO AO PHC ============ -->
+<section class="section-alt" id="phc">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Do lado técnico</span>
+      <h2>Sem programa novo: o PHC que já usam, a trabalhar mais</h2>
+      <p class="lead">A Bike Zone já tira análises da base de dados do PHC. É por aí que o sistema se liga.</p>
+    </div>
+    <div class="tec">
+      <div class="card holofote" data-entra="sobe">
+        <h3>A base de dados do PHC</h3>
+        <p>O painel lê as vendas diretamente da base de dados, de minutos a minutos. As faturas, as referências novas, o stock e as conciliações escrevem-se lá, como se fosse uma pessoa da equipa a fazê-lo.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>A caixa onde chegam as faturas</h3>
+        <p>Os fornecedores continuam a enviar para o mesmo email, como hoje. O sistema lê cada PDF que entra; não é preciso pedir nada a ninguém.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>Os extratos dos bancos</h3>
+        <p>Para começar, o mesmo Excel que o financeiro já descarrega. Uma ligação direta ao banco é configurável mais tarde, banco a banco.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <h3>Acessos por loja</h3>
+        <p>Cada loja entra com o seu acesso e vê só a sua informação. A central vê tudo. Quem vê o quê define-se na primeira semana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. REGRAS E LIMITES ============ -->
+<section id="regras">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Regras claras</span>
+      <h2>O que o sistema faz sozinho e o que fica sempre com a equipa</h2>
+      <p class="lead">As regras são as da Bike Zone. Mapeiam-se numa reunião como a de dia 6, com o documento que o Nuno ficou de preparar.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Sozinho</h3>
+        <ul class="list-check">
+          <li>Ler as faturas que chegam por email e lançá-las no PHC, com o stock</li>
+          <li>Criar as referências novas pela regra de cada marca (letras da marca, referência, tamanho)</li>
+          <li>Conferir o desconto faturado com a condição acordada de cada marca</li>
+          <li>Confirmar no banco tudo o que bate com o PHC, ao cêntimo</li>
+          <li>Atualizar o painel de cada loja e o da central</li>
+        </ul>
+      </div>
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Sempre com a equipa</h3>
+        <ul class="list-x">
+          <li>Linhas a que falta informação para a regra (um tamanho, uma marca sem regra)</li>
+          <li>Pedidos de nota de crédito aos fornecedores: saem em rascunho, para aprovar</li>
+          <li>Faturas repetidas: não entram, ficam no resumo do dia</li>
+          <li>Movimentos do banco sem documento ou com diferença</li>
+          <li>Os objetivos de cada loja e os acessos de cada pessoa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. FASE SEGUINTE ============ -->
+<section class="section-alt" id="seguinte">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Fase seguinte</span>
+      <h2>O que ficou falado e fica para depois</h2>
+      <p class="lead">Fora desta proposta. Entra quando as três peças estiverem a funcionar e fizer sentido.</p>
+    </div>
+    <div class="seguinte bz-q4">
+      <div class="card" data-entra="sobe"><h3>Faturas contra o e-fatura</h3><p>Comparar o que está lançado no PHC com o que os fornecedores comunicaram à AT, e assinalar o que falta.</p></div>
+      <div class="card" data-entra="sobe"><h3>Avisos às lojas por WhatsApp</h3><p>Ao fim do dia, se cumpriram o objetivo do dia; à sexta, o da semana. Por cima do painel, não em vez dele.</p></div>
+      <div class="card" data-entra="sobe"><h3>Painéis internos da central</h3><p>Margens por marca, rotação de stock e comparação mais fina entre lojas.</p></div>
+      <div class="card" data-entra="sobe"><h3>A loja online</h3><p>Agentes nos anúncios e carrinhos abandonados no WhatsApp, quando o volume online o justificar, como disse o Nuno.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. INVESTIMENTO ============ -->
+<section id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Um projeto, um preço, para as três peças</h2>
+      <p class="lead">Hoje, estas três tarefas levam perto de 130 horas por mês: o tempo de uma pessoa a tempo inteiro.</p>
+    </div>
+    <div class="invest">
+      <div class="card price-card highlight total" data-entra="sobe">
+        <span class="pin">Projeto completo</span>
+        <div class="label">Implementação</div>
+        <div class="price">4.500 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>Lançamento automático de faturas no PHC</li>
+          <li>Criação de referências e verificação de descontos por marca</li>
+          <li>Reconciliação bancária com aviso das exceções</li>
+          <li>Painel de vendas para a central e para cada loja</li>
+          <li>Mapeamento das regras com a equipa</li>
+        </ul>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Pagamento em duas partes</div>
+        <div class="pag">
+          <div><span>Na adjudicação<small>arranque e mapeamento das regras</small></span><b>2.250 € <small class="iva">+ IVA</small></b></div>
+          <div><span>No início dos testes<small>o sistema a trabalhar em paralelo com a equipa</small></span><b>2.250 € <small class="iva">+ IVA</small></b></div>
+        </div>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Acompanhamento</div>
+        <div class="pag">
+          <div><span>Mensalidade</span><b>150 € <small class="iva">+ IVA /mês</small></b></div>
+        </div>
+        <ul class="price-list">
+          <li>Servidor e custos de IA</li>
+          <li>Manutenção da ligação ao PHC</li>
+          <li>Regras novas (marcas, fornecedores, lojas)</li>
+          <li>Suporte à equipa sempre que for preciso</li>
+        </ul>
+        <span class="quando">A partir do arranque</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FASES (depois do preço) ============ -->
+<section class="section-alt" id="fases">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Primeiro as regras, depois as três peças, por esta ordem</h2>
+      <p class="lead">Cerca de dois meses a contar da adjudicação. Prazos indicativos, fechados na primeira semana.</p>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semana 1</span>
+        <h3>Regras e acessos</h3>
+        <p>Reunião com o Nuno para fechar as regras das referências e as condições de desconto de cada marca. Acesso à base de dados do PHC, objetivos e acessos por loja.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 2 e 3</span>
+        <h3>Painel de vendas</h3>
+        <p>A central e as lojas com o seu painel. É o primeiro a ficar pronto e o que se sente logo no fecho do mês.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 3 a 6</span>
+        <h3>Faturas</h3>
+        <p>Primeiro em rascunho, conferido por quem hoje as lança. Depois, direto no PHC, quando as regras estiverem afinadas.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 5 a 7</span>
+        <h3>Reconciliação</h3>
+        <p>Com os extratos reais, a correr em paralelo com o financeiro até bater certo.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semana 8</span>
+        <h3>Tudo a funcionar</h3>
+        <p>As três peças autónomas no que é seguro, afinações finais e acompanhamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Bike Zone, outubro de 2026
+    <span class="disclaimer">Protótipo com dados ilustrativos: fornecedores, faturas, referências, descontos, movimentos bancários, comerciais e valores são fictícios.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/app.js?v=1"></script>
+<script src="assets/js/faturas.js?v=1"></script>
+<script src="assets/js/consola.js?v=1"></script>
+<script>
+  consolaAbas('consola');
+  caixaFaturas('fxDemo');
+  reconciliacao('rcDemo');
+  painelVendas('pvDemo');
+  fluxo('bzFluxo');
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var atual = r.getAttribute('data-theme') || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = atual === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
