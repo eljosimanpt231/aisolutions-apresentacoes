@@ -205,19 +205,6 @@
   .antes-depois { display: grid; gap: var(--s-6); margin-top: var(--s-7); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
   .antes-depois h3 { font-size: var(--fs-1); }
 
-  /* ---------- 4. Experimenta a Bia ---------- */
-  .bia {
-    margin-top: var(--s-6); display: grid; gap: var(--s-4) var(--s-6); align-items: center;
-    grid-template-columns: minmax(0, 1.3fr) auto;
-    padding: var(--s-5); border-radius: var(--r-4);
-    background: linear-gradient(120deg in oklab, color-mix(in oklab, var(--accent) 12%, var(--surface)), var(--surface));
-    box-shadow: var(--e2);
-  }
-  @media (max-width: 760px) { .bia { grid-template-columns: 1fr; } }
-  .bia h3 { font-size: var(--fs-1); }
-  .bia p { margin-top: 6px; font-size: var(--fs--1); color: var(--muted); }
-  .bia-acoes { display: flex; flex-wrap: wrap; gap: var(--s-2); }
-
   /* ============================================================
      5. Como liga: o que o comercial recebe e a ficha na Reonic
      ============================================================ */
@@ -238,6 +225,15 @@
   .notif-dados { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin-top: 10px; font-size: var(--fs--2); }
   .notif-dados dt { color: var(--mock-txt-fraco); }
   .notif-resumo { margin-top: 12px; font-size: var(--fs--2); color: var(--mock-txt); line-height: 1.5; }
+  .briefing { display: grid; gap: 8px; margin-top: 12px; }
+  .briefing > div { padding: 8px 10px 8px 12px; border-radius: var(--r-2); background: var(--mock-veu); border-left: 2px solid var(--b, var(--mock-linha)); }
+  .briefing b { display: block; font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--b); }
+  .briefing p { margin-top: 2px; font-size: var(--fs--2); color: var(--mock-txt); line-height: 1.45; }
+  .briefing .b-dor  { --b: var(--sol-texto); }
+  .briefing .b-preo { --b: var(--ambar-texto); }
+  .briefing .b-sim  { --b: var(--ok-texto); }
+  .briefing .b-nao  { --b: var(--danger); }
+  .recebe-intro { margin: -6px 0 var(--s-3); font-size: var(--fs--1); color: var(--muted); }
   .notif-acoes { display: grid; grid-template-columns: 1fr 1fr; margin-top: 12px; border-top: 1px solid var(--mock-linha); }
   .notif-acoes span { text-align: center; padding-top: 10px; font-size: var(--fs--2); font-weight: 600; color: var(--acento-texto); }
 
@@ -401,8 +397,6 @@
 .btn-primario { background: var(--brand-solido); color: var(--on-brand-solido); box-shadow: 0 10px 30px -10px hsl(var(--brand-hsl) / .7); }
 @media (hover: hover) and (pointer: fine) { .btn-primario:hover { background: var(--brand-400); } }
 .btn-secundario { color: var(--text); border-color: var(--border-strong); background: color-mix(in oklab, var(--surface) 50%, transparent); }
-.btn-ceu { background: color-mix(in oklab, var(--accent) 16%, transparent); color: var(--acento-texto); border-color: color-mix(in oklab, var(--accent) 45%, transparent); }
-@media (hover: hover) and (pointer: fine) { .btn-ceu:hover { background: color-mix(in oklab, var(--accent) 24%, transparent); } }
 .nav a.nav-cta { background: var(--brand-solido); color: var(--on-brand-solido); }
 .nav a.nav-cta[aria-current="true"] { background: var(--brand-400); color: var(--on-brand-solido); }
 .nav a[aria-current="true"] { box-shadow: inset 0 -2px 0 var(--brand); }
@@ -422,7 +416,7 @@
 
 /* ---------- Impressão ---------- */
 @media print {
-  .cr, .fluxo, .relogio-escolha, .bia-acoes, .sol-nascente { display: none !important; }
+  .cr, .fluxo, .relogio-escolha, .sol-nascente { display: none !important; }
 }
 
 /* ============================================================

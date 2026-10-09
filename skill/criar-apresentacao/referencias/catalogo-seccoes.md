@@ -56,7 +56,7 @@ Tudo portável para HTML/CSS/JS puro (sem frameworks).
 | **Timeline / cronograma** | Fases da implementação | Vertical zig-zag, horizontal com linha de progresso, ou rotulada por semana civil |
 | **Terminal de logs** | Automação de back-office a correr | Fonte mono, semáforo tipo macOS, linhas reveladas com `setTimeout` e cor semântica (info/ok/aviso/sucesso). Mais credível que chat para processos não conversacionais |
 | **Mock de documento** | O "PDF" final (orçamento/fatura) já preenchido | Fecha o loop "é isto que o cliente recebe". Rodapé "sujeito a verificação interna antes do envio" |
-| **Cartão de notificação** | O que o comercial recebe quando a lead é qualificada | Imita uma notificação de WhatsApp com os dados estruturados da lead |
+| **Cartão de notificação (briefing)** | O briefing que o comercial recebe quando a lead é qualificada | Imita uma notificação de WhatsApp com os dados estruturados da lead E, obrigatoriamente, quatro blocos de contexto: **Dores**, **Preocupações**, **Sinais positivos** (green flags) e **Sinais de alerta** (red flags). Tudo tirado da conversa simulada, para o briefing bater certo com o chat (decisão do Manuel a 09/10/2026) |
 | **Mockup de app SaaS** | Sidebar + várias vistas navegáveis, filtros, gráficos | Só quando se vende uma plataforma. Barra de "browser" falsa com semáforo reforça o realismo |
 | **Parser de linguagem natural** | "Edita o orçamento a conversar" | Regex simples que interpreta "a largura devia ser 95cm" e aplica ao estado. Ilusão de agente sem custo de LLM |
 | **Motor de regras "análise IA"** | Gera avisos por heurística (margem baixa, combinação estranha) | Lógica condicional pura, sem backend |

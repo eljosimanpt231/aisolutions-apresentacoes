@@ -43,7 +43,7 @@
       const antes = parseInt(nHoje.textContent, 10) || 0;
       conta(antes, c.h);
       qHoje.textContent = 'Pedido de ' + c.entra.toLowerCase() + '. Primeiro contacto: ' + c.hoje + '.';
-      qAg.textContent = 'Pedido de ' + c.entra.toLowerCase() + '. Resposta no mesmo minuto, no WhatsApp.';
+      qAg.textContent = 'Pedido de ' + c.entra.toLowerCase() + '. Primeiro contacto no mesmo minuto, pelo WhatsApp.';
       bHoje.style.setProperty('--w', Math.min(100, c.h / MAX * 100).toFixed(1) + '%');
       bAg.style.setProperty('--w', '0.6%');
       relogio.querySelector('[data-hoje-sr]').textContent =

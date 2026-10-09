@@ -6,8 +6,8 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="color-scheme" content="dark">
 
-  <title>E-Sol | Resposta em segundos a cada pedido de orçamento</title>
-  <meta name="description" content="Um assistente no WhatsApp, ligado à Reonic, que responde a cada pedido da E-Sol no próprio minuto e entrega ao comercial a lead já qualificada. Proposta da AI Solutions.">
+  <title>E-Sol | Contacto em segundos a cada pedido de orçamento</title>
+  <meta name="description" content="Um assistente no WhatsApp, ligado à Reonic, que contacta no próprio minuto cada pessoa que pede orçamento à E-Sol e entrega ao comercial a lead já qualificada. Proposta da AI Solutions.">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="E-Sol × AI Solutions">
@@ -88,7 +88,7 @@
           </li>
           <li>
             <time>Sábado, 15:30</time>
-            <b>O assistente responde no WhatsApp</b>
+            <b>O assistente escreve-lhe no WhatsApp</b>
             <span><span class="seg">38 segundos</span> depois, com o nome e o pedido da pessoa</span>
           </li>
           <li>
@@ -150,8 +150,8 @@
         <article class="reserva">
           <span class="i">06</span>
           <h3>E uma reserva honesta</h3>
-          <p>Disseste-o na reunião, e é a pergunta certa. Por isso o ponto 3 mostra conversas inteiras, e a
-            Bia está lá para experimentares por ti, como cliente.</p>
+          <p>Disseste-o na reunião, e é a pergunta certa. Por isso o ponto 3 mostra conversas inteiras: julga
+            tu se soam a robô.</p>
           <blockquote>Eu não gosto de falar com agentes quando quero comprar alguma coisa.</blockquote>
         </article>
       </div>
@@ -189,7 +189,7 @@
           <div class="pista-agente">
             <div class="pista-topo">
               <span class="quem">Com o assistente</span>
-              <span class="quando" data-agente-quando>Pedido de sábado, 15:30. Resposta no mesmo minuto, no WhatsApp.</span>
+              <span class="quando" data-agente-quando>Pedido de sábado, 15:30. Primeiro contacto no mesmo minuto, pelo WhatsApp.</span>
             </div>
             <div class="pista-espera">&lt; 1<small>minuto</small></div>
             <div class="pista-barra"><i data-agente-barra style="--w: 0.6%"></i></div>
@@ -244,30 +244,19 @@
         Escolhe um cenário ou deixa correr.</p>
       <div class="cr holofote" data-entra="escala" id="esolDemo" style="margin-top: var(--s-5)"></div>
       <p class="so-leitor">
-        Simulação de quatro cenários. No primeiro, um pedido de orçamento chega pelo formulário num sábado às
-        15h30; o assistente responde no mesmo minuto, confirma os dados, pergunta pelo carro elétrico e marca a
-        chamada do comercial para segunda-feira. No segundo, alguém pergunta à noite como funcionam os painéis
-        sem sol e o que acontece ao excedente; o assistente explica sem prometer números e marca uma chamada.
-        No terceiro, uma empresa com consumo alto pede orçamento; o assistente não dá valores e passa ao Tiago
-        para uma visita. No quarto, alguém exige um preço final imediato; o assistente recusa inventar um valor,
-        pede a fatura e passa ao comercial com prioridade.
+        Simulação de quatro cenários. Em todos, a pessoa preenche o formulário e é o assistente que lhe
+        escreve primeiro, no mesmo minuto. No primeiro, um pedido de sábado às 15h30: o assistente confirma os
+        dados, pergunta pelo carro elétrico e marca a chamada do comercial para segunda-feira. No segundo, um
+        pedido às 22h08: o assistente oferece-se para tirar dúvidas, explica como funcionam os painéis sem sol
+        e o que acontece ao excedente, sem prometer números, e marca uma chamada. No terceiro, o pedido é de
+        uma empresa com consumo alto: o assistente não dá valores e passa ao Tiago para uma visita. No quarto,
+        a pessoa exige um preço final imediato: o assistente recusa inventar um valor, pede a fatura e passa ao
+        comercial com prioridade.
       </p>
       <p class="doc-nota">Simulação. As pessoas são inventadas e as respostas são exemplos: em produção, o
         assistente usa a informação, os prazos e as regras da E-Sol. Se decidires mostrar um intervalo de
         pré-orçamento, o quarto cenário muda: isso decide-se contigo.</p>
 
-      <aside class="bia" data-entra="sobe">
-        <div>
-          <h3>Não acredites em nós. Experimenta.</h3>
-          <p>A Bia é a nossa assistente, construída da mesma forma. Fala com ela como um cliente que nunca ouviu
-            falar da AI Solutions: por mensagem, no canto inferior direito da nossa página, ou por voz, a ligar
-            para o +351 923 272 849.</p>
-        </div>
-        <div class="bia-acoes">
-          <a class="btn btn-ceu" href="https://aisolutions.pt/comecar" target="_blank" rel="noopener">Escrever à Bia</a>
-          <a class="btn btn-secundario" href="tel:+351923272849">Ligar à Bia</a>
-        </div>
-      </aside>
     </div>
   </section>
   <script type="application/json" id="esolDemo-config">
@@ -280,87 +269,300 @@
     "scenarios": [
       {
         "title": "Sábado, 15:30",
-        "subtitle": "Um pedido de fim de semana, tratado no minuto e entregue ao comercial para segunda.",
+        "subtitle": "Um pedido de fim de semana: o assistente escreve no minuto e entrega ao comercial um briefing completo para segunda.",
         "chat": [
-          { "sender": "system", "text": "Pedido novo no formulário do site, criado na Reonic às 15:30" },
-          { "sender": "agent", "text": "Olá, Sandra! Sou a assistente da E-Sol. Recebi o teu pedido para a moradia em Oliveira de Azeméis, com cerca de 6 kW e bateria. Posso confirmar dois detalhes para o engenheiro preparar a proposta certa?", "time": "15:30" },
-          { "sender": "client", "text": "Pode. Mas é sábado, pensava que só me respondiam na segunda!", "time": "15:33" },
-          { "sender": "agent", "text": "Respondo eu já, e o comercial liga-te com tudo preparado. Primeiro: tens carro elétrico, ou estás a pensar comprar?", "time": "15:33" },
-          { "sender": "client", "text": "Vamos comprar um para o ano.", "time": "15:36" },
-          { "sender": "agent", "text": "Então faz sentido o engenheiro deixar o carregador previsto. Para a chamada do comercial na segunda, o que te dá mais jeito: 10:00, 11:30 ou 15:00?", "time": "15:36" },
-          { "sender": "client", "text": "11:30.", "time": "15:41" },
-          { "sender": "agent", "text": "Fica marcado: segunda às 11:30. Ele já vai saber tudo o que me disseste, não vais ter de repetir nada.", "time": "15:41" }
+          {
+            "sender": "system",
+            "text": "Pedido novo no formulário do site, criado na Reonic às 15:30"
+          },
+          {
+            "sender": "agent",
+            "text": "Olá, Sandra! Sou a assistente da E-Sol. Recebi o teu pedido para a moradia em Oliveira de Azeméis, com cerca de 6 kW e bateria. Posso confirmar dois detalhes para o engenheiro preparar a proposta certa?",
+            "time": "15:30"
+          },
+          {
+            "sender": "client",
+            "text": "Pode. Mas é sábado, pensava que só me respondiam na segunda!",
+            "time": "15:33"
+          },
+          {
+            "sender": "agent",
+            "text": "Respondo eu já, e o comercial liga-te com tudo preparado. Primeiro: tens carro elétrico, ou estás a pensar comprar?",
+            "time": "15:33"
+          },
+          {
+            "sender": "client",
+            "text": "Vamos comprar um para o ano. A fatura já passa dos 150 € no inverno, com o carro ainda vai ser pior.",
+            "time": "15:36"
+          },
+          {
+            "sender": "agent",
+            "text": "Então faz sentido o engenheiro deixar o carregador previsto. Já pediste orçamento a mais alguém?",
+            "time": "15:36"
+          },
+          {
+            "sender": "client",
+            "text": "Pedi a outra empresa há uma semana e ainda ninguém me ligou. Só tenho receio que a bateria não compense.",
+            "time": "15:38"
+          },
+          {
+            "sender": "agent",
+            "text": "É uma dúvida muito comum, e o comercial mostra-te os números com e sem bateria. Para a chamada na segunda, o que te dá mais jeito: 10:00, 11:30 ou 15:00?",
+            "time": "15:38"
+          },
+          {
+            "sender": "client",
+            "text": "11:30.",
+            "time": "15:41"
+          },
+          {
+            "sender": "agent",
+            "text": "Fica marcado: segunda às 11:30. Ele já vai saber tudo o que me disseste, não vais ter de repetir nada.",
+            "time": "15:41"
+          }
         ],
         "steps": [
-          { "icon": "database", "label": "Pedido novo na Reonic, fora de horas: responde já" },
-          { "icon": "list", "label": "Lê o formulário: moradia, 6 kW, bateria, Oliveira de Azeméis" },
-          { "icon": "message", "label": "Faz a pergunta que o comercial faz hoje: carro elétrico" },
-          { "icon": "wrench", "label": "Vai comprar: nota para o engenheiro prever o carregador" },
-          { "icon": "calendar", "label": "Propõe horários livres do comercial para segunda" },
-          { "icon": "send", "label": "Atualiza a ficha na Reonic e avisa o comercial no WhatsApp" }
+          {
+            "icon": "database",
+            "label": "Pedido novo na Reonic, fora de horas: contacta já"
+          },
+          {
+            "icon": "list",
+            "label": "Lê o formulário: moradia, 6 kW, bateria, Oliveira de Azeméis"
+          },
+          {
+            "icon": "message",
+            "label": "Faz a pergunta que o comercial faz hoje: carro elétrico"
+          },
+          {
+            "icon": "alert",
+            "label": "Dor: fatura acima de 150 € no inverno, e vai subir com o carro"
+          },
+          {
+            "icon": "search",
+            "label": "Está a comparar: a outra empresa ainda não lhe ligou"
+          },
+          {
+            "icon": "shield",
+            "label": "Preocupação: se a bateria compensa. Pede números com e sem"
+          },
+          {
+            "icon": "send",
+            "label": "Marca a chamada e envia o briefing ao comercial e à Reonic"
+          }
         ]
       },
       {
         "title": "E à noite?",
-        "subtitle": "As dúvidas que hoje ocupam a primeira chamada, respondidas antes dela.",
+        "subtitle": "O assistente abre a conversa e tira as dúvidas que hoje ocupam a primeira chamada.",
         "chat": [
-          { "sender": "system", "text": "WhatsApp, quinta-feira, 22:10" },
-          { "sender": "client", "text": "Boa noite. Antes de avançar: à noite os painéis não produzem, certo? Pago a luz na mesma?", "time": "22:10" },
-          { "sender": "agent", "text": "Boa pergunta! À noite não há produção. Sem bateria, à noite consomes da rede como hoje, e a poupança vem do que gastas durante o dia. Com bateria, guardas o excedente do dia e usas à noite.", "time": "22:10" },
-          { "sender": "client", "text": "E o que sobra de dia vai para onde?", "time": "22:12" },
-          { "sender": "agent", "text": "Sem bateria, o excedente pode ser injetado na rede. As condições dependem do teu contrato de eletricidade, e o comercial explica-te as opções para o teu caso, com números.", "time": "22:12" },
-          { "sender": "client", "text": "E demora muito a instalar?", "time": "22:14" },
-          { "sender": "agent", "text": "A instalação em si leva normalmente 1 a 3 dias. Antes há o dimensionamento e, conforme a potência, o licenciamento. Queres que o comercial te ligue amanhã para veres os números da tua casa?", "time": "22:14" },
-          { "sender": "client", "text": "Sim, de manhã.", "time": "22:15" }
+          {
+            "sender": "system",
+            "text": "Pedido novo no formulário do site, criado na Reonic às 22:08 de quinta-feira"
+          },
+          {
+            "sender": "agent",
+            "text": "Boa noite, Rui! Sou a assistente da E-Sol. Recebi o teu pedido para a moradia em Ovar, com interesse em bateria. Antes de o engenheiro preparar a proposta, tens alguma dúvida que te possa esclarecer já?",
+            "time": "22:08"
+          },
+          {
+            "sender": "client",
+            "text": "Por acaso tenho. À noite os painéis não produzem, certo? Pago a luz na mesma?",
+            "time": "22:11"
+          },
+          {
+            "sender": "agent",
+            "text": "À noite não há produção, é verdade. Sem bateria, à noite consomes da rede como hoje, e a poupança vem do que gastas durante o dia. Com bateria, guardas o excedente do dia e usas à noite.",
+            "time": "22:11"
+          },
+          {
+            "sender": "client",
+            "text": "E o que sobra de dia vai para onde?",
+            "time": "22:13"
+          },
+          {
+            "sender": "agent",
+            "text": "Sem bateria, o excedente pode ser injetado na rede. As condições dependem do teu contrato de eletricidade, e o comercial explica-te as opções para o teu caso, com números.",
+            "time": "22:13"
+          },
+          {
+            "sender": "client",
+            "text": "E demora muito a instalar?",
+            "time": "22:14"
+          },
+          {
+            "sender": "agent",
+            "text": "A instalação em si leva normalmente 1 a 3 dias. Antes há o dimensionamento e, conforme a potência, o licenciamento. Queres que o comercial te ligue amanhã para veres os números da tua casa? De manhã ou à tarde?",
+            "time": "22:14"
+          },
+          {
+            "sender": "client",
+            "text": "De manhã.",
+            "time": "22:15"
+          }
         ],
         "steps": [
-          { "icon": "clock", "label": "Mensagem às 22:10: responde sem esperar pelo dia seguinte" },
-          { "icon": "book", "label": "Procura a resposta na base de conhecimento da E-Sol" },
-          { "icon": "shield", "label": "Explica o princípio, sem prometer valores de poupança" },
-          { "icon": "arrows", "label": "Injeção na rede: condições ficam para o comercial" },
-          { "icon": "wrench", "label": "Usa os prazos da E-Sol: instalação de 1 a 3 dias" },
-          { "icon": "calendar", "label": "Marca a chamada e regista as dúvidas na Reonic" }
+          {
+            "icon": "database",
+            "label": "Pedido novo às 22:08: contacta já, sem esperar pelo dia seguinte"
+          },
+          {
+            "icon": "message",
+            "label": "Abre a conversa com o pedido e oferece-se para tirar dúvidas"
+          },
+          {
+            "icon": "book",
+            "label": "Procura a resposta na base de conhecimento da E-Sol"
+          },
+          {
+            "icon": "shield",
+            "label": "Explica o princípio, sem prometer valores de poupança"
+          },
+          {
+            "icon": "arrows",
+            "label": "Injeção na rede: condições ficam para o comercial"
+          },
+          {
+            "icon": "calendar",
+            "label": "Usa os prazos da E-Sol, marca a chamada e regista as dúvidas na Reonic"
+          }
         ]
       },
       {
         "title": "Empresa, consumo alto",
         "subtitle": "Um pedido de empresa vai para quem faz as visitas, sem números às cegas.",
         "chat": [
-          { "sender": "system", "text": "Pedido pelo anúncio do Google, segunda-feira, 14:05" },
-          { "sender": "client", "text": "Boa tarde. Temos uma serralharia em São João da Madeira, pagamos cerca de 2.300 € de luz por mês e trabalhamos das 7h às 17h. Fazem para empresas?", "time": "14:05" },
-          { "sender": "agent", "text": "Boa tarde! Fazemos. Com um consumo quase todo de dia, o autoconsumo costuma encaixar muito bem. Que tipo de cobertura tem o pavilhão?", "time": "14:05" },
-          { "sender": "client", "text": "Chapa, à volta de 600 m².", "time": "14:09" },
-          { "sender": "agent", "text": "Obrigada. Num projeto desta dimensão prefiro não lhe dar um valor às cegas: depende da potência contratada e da estrutura. O ideal é uma visita. Posso pedir ao Tiago, da E-Sol, que lhe ligue para a combinar?", "time": "14:09" },
-          { "sender": "client", "text": "Pode, de preferência esta semana.", "time": "14:11" },
-          { "sender": "agent", "text": "Combinado. O Tiago liga-lhe até amanhã ao fim do dia. Já lhe passei o consumo, o horário e a cobertura.", "time": "14:11" }
+          {
+            "sender": "system",
+            "text": "Pedido de empresa no formulário do site, vindo do anúncio do Google, segunda-feira, 14:05"
+          },
+          {
+            "sender": "agent",
+            "text": "Boa tarde, Carla! Sou a assistente da E-Sol. Recebi o pedido para a vossa serralharia em São João da Madeira. Para percebermos a dimensão: quanto pagam de eletricidade por mês, e trabalham sobretudo de dia?",
+            "time": "14:05"
+          },
+          {
+            "sender": "client",
+            "text": "Cerca de 2.300 € por mês. Trabalhamos das 7h às 17h.",
+            "time": "14:09"
+          },
+          {
+            "sender": "agent",
+            "text": "Com um consumo quase todo de dia, o autoconsumo costuma encaixar muito bem. Que tipo de cobertura tem o pavilhão?",
+            "time": "14:09"
+          },
+          {
+            "sender": "client",
+            "text": "Chapa, à volta de 600 m².",
+            "time": "14:11"
+          },
+          {
+            "sender": "agent",
+            "text": "Obrigada. Num projeto desta dimensão prefiro não lhe dar um valor às cegas: depende da potência contratada e da estrutura. O ideal é uma visita. Posso pedir ao Tiago, da E-Sol, que lhe ligue para a combinar?",
+            "time": "14:11"
+          },
+          {
+            "sender": "client",
+            "text": "Pode, de preferência esta semana.",
+            "time": "14:13"
+          },
+          {
+            "sender": "agent",
+            "text": "Combinado. O Tiago liga-lhe até amanhã ao fim do dia. Já lhe passei o consumo, o horário e a cobertura.",
+            "time": "14:13"
+          }
         ],
         "steps": [
-          { "icon": "globe", "label": "Pedido de empresa vindo do Google" },
-          { "icon": "id", "label": "Empresa, não particular: muda as perguntas" },
-          { "icon": "list", "label": "Consumo alto e diurno, cobertura em chapa" },
-          { "icon": "ban", "label": "Projeto grande: não dá valores sem visita" },
-          { "icon": "user-cog", "label": "Encaminha para o Tiago, que faz as visitas a empresas" },
-          { "icon": "send", "label": "Avisa o Tiago com o resumo e marca como prioritário" }
+          {
+            "icon": "globe",
+            "label": "Pedido de empresa vindo do Google: contacta no minuto"
+          },
+          {
+            "icon": "id",
+            "label": "Empresa, não particular: muda as perguntas"
+          },
+          {
+            "icon": "list",
+            "label": "Consumo alto e diurno, cobertura em chapa"
+          },
+          {
+            "icon": "ban",
+            "label": "Projeto grande: não dá valores sem visita"
+          },
+          {
+            "icon": "user-cog",
+            "label": "Encaminha para o Tiago, que faz as visitas a empresas"
+          },
+          {
+            "icon": "send",
+            "label": "Avisa o Tiago com o resumo e marca como prioritário"
+          }
         ]
       },
       {
         "title": "Quero o preço já",
         "subtitle": "Recusa consciente: sem dimensionamento, o assistente não inventa um preço final.",
         "chat": [
-          { "sender": "system", "text": "WhatsApp, a partir do anúncio da Meta, terça-feira, 20:47" },
-          { "sender": "client", "text": "Só quero saber o preço final para 8 painéis com bateria. Se for abaixo de 6.000 € avanço já.", "time": "20:47" },
-          { "sender": "agent", "text": "Percebo, e vou ser direta contigo: o preço final depende do dimensionamento que o nosso engenheiro faz com a tua fatura e o teu telhado. Não te quero dar um número que depois não se cumpra.", "time": "20:47" },
-          { "sender": "agent", "text": "Envias-me uma foto da última fatura da luz? Com ela, o engenheiro prepara a proposta e o comercial liga-te amanhã com o valor.", "time": "20:48" },
-          { "sender": "client", "text": "Está aqui. Amanhã de manhã dá jeito.", "time": "20:52" },
-          { "sender": "agent", "text": "Recebida, obrigada! Fica tudo na tua ficha. Amanhã de manhã tens a chamada.", "time": "20:52" }
+          {
+            "sender": "system",
+            "text": "Pedido novo no formulário do site, a partir do anúncio da Meta, terça-feira, 20:45"
+          },
+          {
+            "sender": "agent",
+            "text": "Olá, Paulo! Sou a assistente da E-Sol. Recebi o teu pedido de orçamento para a moradia em Santa Maria da Feira, com bateria. Posso fazer-te duas perguntas para o engenheiro preparar a proposta?",
+            "time": "20:45"
+          },
+          {
+            "sender": "client",
+            "text": "Só quero saber o preço final para 8 painéis com bateria. Se for abaixo de 6.000 € avanço já.",
+            "time": "20:47"
+          },
+          {
+            "sender": "agent",
+            "text": "Percebo, e vou ser direta contigo: o preço final depende do dimensionamento que o nosso engenheiro faz com a tua fatura e o teu telhado. Não te quero dar um número que depois não se cumpra.",
+            "time": "20:47"
+          },
+          {
+            "sender": "agent",
+            "text": "Envias-me uma foto da última fatura da luz? Com ela, o engenheiro prepara a proposta e o comercial liga-te amanhã com o valor.",
+            "time": "20:48"
+          },
+          {
+            "sender": "client",
+            "text": "Está aqui. Amanhã de manhã dá jeito.",
+            "time": "20:52"
+          },
+          {
+            "sender": "agent",
+            "text": "Recebida, obrigada! Fica tudo na tua ficha. Amanhã de manhã tens a chamada.",
+            "time": "20:52"
+          }
         ],
         "steps": [
-          { "icon": "alert", "label": "Pedido de preço final, com condição: abaixo de 6.000 €" },
-          { "icon": "ban", "label": "Sem dimensionamento: não inventa um valor" },
-          { "icon": "id", "label": "Pede a fatura, o dado que o engenheiro precisa" },
-          { "icon": "database", "label": "Junta a fatura à ficha na Reonic" },
-          { "icon": "star", "label": "Lead quente: avança se o valor servir" },
-          { "icon": "send", "label": "Avisa o comercial com prioridade para amanhã de manhã" }
+          {
+            "icon": "send",
+            "label": "Pedido novo pela Meta: contacta no minuto"
+          },
+          {
+            "icon": "alert",
+            "label": "Pede o preço final, com condição: abaixo de 6.000 €"
+          },
+          {
+            "icon": "ban",
+            "label": "Sem dimensionamento: não inventa um valor"
+          },
+          {
+            "icon": "id",
+            "label": "Pede a fatura, o dado que o engenheiro precisa"
+          },
+          {
+            "icon": "database",
+            "label": "Junta a fatura à ficha na Reonic e marca como lead quente"
+          },
+          {
+            "icon": "send",
+            "label": "Avisa o comercial com prioridade para amanhã de manhã"
+          }
         ]
       }
     ]
@@ -376,7 +578,8 @@
 
       <div class="recebe">
         <div data-entra="sobe">
-          <h3>O que o comercial recebe</h3>
+          <h3>O briefing que o comercial recebe</h3>
+          <p class="recebe-intro">Antes de pegar no telefone, o comercial sabe o que dói, o que preocupa, o que joga a favor e o que pode correr mal.</p>
           <figure class="notif">
             <div class="notif-caixa">
               <div class="notif-topo">
@@ -395,13 +598,17 @@
                     <dt>Pedido</dt><dd>Cerca de 6 kW, com bateria</dd>
                     <dt>Carro elétrico</dt><dd>Vai comprar no próximo ano</dd>
                   </dl>
-                  <p class="notif-resumo"><b>Resumo:</b> pediu orçamento no site ao sábado, às 15:30. Respondeu em
-                    3 minutos. Interessada no carregador. Prefere chamada de manhã.</p>
+                  <div class="briefing">
+                    <div class="b-dor"><b>Dores</b><p>Fatura acima de 150&nbsp;€ no inverno. Vai subir com o carro elétrico.</p></div>
+                    <div class="b-preo"><b>Preocupações</b><p>Não sabe se a bateria compensa. Levar números com e sem bateria.</p></div>
+                    <div class="b-sim"><b>Sinais positivos</b><p>Respondeu em 3 minutos, a um sábado. Carro elétrico previsto. Escolheu ela a hora da chamada.</p></div>
+                    <div class="b-nao"><b>Sinais de alerta</b><p>Está a comparar: pediu orçamento a outra empresa há uma semana (ainda sem contacto).</p></div>
+                  </div>
                   <div class="notif-acoes" aria-hidden="true"><span>Ver na Reonic</span><span>Ligar</span></div>
                 </div>
               </div>
             </div>
-            <figcaption>O aviso no WhatsApp do comercial. Dados inventados.</figcaption>
+            <figcaption>O briefing no WhatsApp do comercial. Dados inventados; as categorias definem-se convosco.</figcaption>
           </figure>
         </div>
 
@@ -428,12 +635,13 @@
                 <dl>
                   <dt>Carro elétrico</dt><dd>Compra no próximo ano: prever carregador</dd>
                   <dt>Chamada</dt><dd>Segunda, 11:30, marcada pela cliente</dd>
-                  <dt>Dúvidas</dt><dd>Nenhuma pendente</dd>
+                  <dt>Dor principal</dt><dd>Fatura acima de 150 € no inverno</dd>
+                  <dt>Concorrência</dt><dd>Pediu a outra empresa, sem contacto</dd>
                   <dt>Conversa</dt><dd>Completa, anexada</dd>
                 </dl>
               </div>
             </div>
-            <p class="ficha-resumo"><b>Para o engenheiro:</b> dimensionar com bateria e com o carregador previsto.</p>
+            <p class="ficha-resumo"><b>Para o engenheiro:</b> dimensionar com e sem bateria, com o carregador previsto.</p>
           </div>
           <p class="doc-nota">A ligação faz-se pela API da Reonic, que confirmamos contigo na primeira semana. Os
             campos e as regras definem-se convosco.</p>
@@ -486,7 +694,7 @@
       <p class="lead">Faz sentido comparar, e preferimos que compares bem. São as perguntas que fazemos a nós
         próprios antes de pôr um assistente a falar com os clientes de alguém.</p>
       <ol class="perguntas" data-entra="sobe">
-        <li><b>Responde no próprio minuto, ao sábado e à noite?</b><span>Ou só envia uma mensagem automática e espera pelo comercial?</span></li>
+        <li><b>Escreve a quem preencheu o formulário no próprio minuto, ao sábado e à noite?</b><span>E abre uma conversa a sério, ou só envia uma mensagem automática e espera pelo comercial?</span></li>
         <li><b>Tira dúvidas técnicas com a informação da E-Sol?</b><span>Baterias, funcionamento à noite, injeção na rede, prazos e licenciamento.</span></li>
         <li><b>Escreve como uma pessoa?</b><span>Espera que o cliente acabe o raciocínio e responde ao contexto, em vez de um texto enorme a cada linha.</span></li>
         <li><b>Faz o seguimento sozinho?</b><span>A quem não respondeu, depois da chamada e depois da proposta.</span></li>
@@ -506,7 +714,7 @@
         <article>
           <h3>Faz sozinho</h3>
           <ul>
-            <li>Responde a cada pedido no próprio minuto, a qualquer hora</li>
+            <li>Escreve a quem pede orçamento no próprio minuto, a qualquer hora</li>
             <li>Confirma o formulário e faz as perguntas do comercial</li>
             <li>Tira as dúvidas frequentes com a informação da E-Sol</li>
             <li>Marca a chamada e regista tudo na Reonic</li>
@@ -625,7 +833,7 @@
         <li style="--k:3">
           <span class="quando">Semana 6</span>
           <span class="o-que">Em produção</span>
-          <p>O assistente passa a responder aos pedidos. A partir daí, podes subir os anúncios.</p>
+          <p>O assistente passa a contactar cada pedido que entra. A partir daí, podes subir os anúncios.</p>
         </li>
       </ol>
       <p class="doc-nota">Semanas indicativas, a contar da adjudicação. A aprovação do número de WhatsApp pela Meta

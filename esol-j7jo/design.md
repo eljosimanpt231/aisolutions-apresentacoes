@@ -41,7 +41,7 @@
    (Sem resumo de 30 segundos nem referência aos valores no topo: decisão do Manuel a 08/10/2026, o valor não se mostra logo)
 1. O que ouvimos a 7 de outubro: seis pontos, cinco com citação literal (nav)
 2. O relógio da lead + os números do estudo mostrado na reunião (4×, 21×, 78%) + antes e depois (nav: O relógio)
-3. chatRaciocinio com 4 cenários (sábado 15:30, "E à noite?", empresa com consumo alto passada ao Tiago, "Quero o preço já" com recusa consciente) + "Experimenta a Bia" (nav: O assistente)
+3. chatRaciocinio com 4 cenários (sábado 15:30, "E à noite?", empresa com consumo alto passada ao Tiago, "Quero o preço já" com recusa consciente) (nav: O assistente)
 4. Fluxo + o aviso que o comercial recebe + a ficha na Reonic antes e depois + seguimento (1h, 3h, 24h, pós-chamada, pós-proposta) + relatório mensal (nav: Como liga)
 5. Perguntas para a reunião do Tiago com a Reonic (sobre o assistente de WhatsApp deles)
 6. Limites + caso do setor anonimizado
@@ -65,6 +65,7 @@ O relógio: a sexta-feira às 19:05 dá 63 horas de espera contra menos de um mi
 - **Custos da Meta:** modelos fora da janela de 24 horas cobrados à parte pela Meta (o seguimento pós-proposta cai aí)
 
 ## Iterações
+- v3 (09/10): todas as conversas passam a começar pelo assistente (a pessoa preenche o formulário e é ele que escreve primeiro, regra do Manuel); secção "Experimenta a Bia" retirada a pedido do Manuel
 - v2 (08/10): secção "A proposta em 30 segundos" retirada e nota "Os valores estão no ponto 8" tirada do topo, a pedido do Manuel
 - v1: título do cabeçalho partido em 6 linhas na coluna estreita (passou para largura total, 3 linhas, com o ponto final preso ao gradiente); "38 segundos" em bloco; fecho com a foto do pôr do sol escura demais (opacidade de .5 para .82 e véu mais leve); caso do setor com fundo acastanhado (passou a glow laranja sobre azul); entrelinha dos títulos dos passos do fecho; 13 rótulos em caixa alta reduzidos a 1; a mesma sombra em 18 elementos (perguntas e fases passaram a borda)
 - Verificação: qa.mjs sem erros (2 avisos aceites: 12 tamanhos de letra e 8 raios, do deck.css partilhado) | motion.mjs --acto visto: título linha a linha, parágrafo, números e linha do tempo sobrepostos | comparar.mjs contra jmspower-w3ra: ganha em gradientes (15/13), glows (6/4), blur (12/4), imagens (4/3), tweens GSAP (32/22) e gatilhos de scroll (25/19); perde em sombras (6/8) e animações CSS em simultâneo (os 100 pontos do filtro da JMS)

@@ -49,6 +49,8 @@ Config:
 
 Regras:
 - **3 a 4 cenários**, cada um com serviços/situações REAIS da lead. Incluir sempre 1 cenário de recusa consciente ou de escalar/filtrar.
+- **É sempre o agente a entrar em contacto primeiro.** A pessoa preenche o formulário (do site ou do anúncio) e o agente escreve-lhe logo, com o nome e o pedido. Cada cenário abre com uma mensagem `system` ("Pedido novo no formulário...") seguida de uma mensagem do `agent`, nunca do `client`. Os passos do raciocínio começam por "contacta já". Mesmo cenários de dúvidas ou de preço abrem assim: o agente oferece-se, a pessoa responde. Regra do Manuel a 09/10/2026
+- **A conversa alimenta o briefing.** No cenário principal, a pessoa deve deixar escapar uma dor, uma preocupação e um sinal (por exemplo, que está a comparar com outra empresa), para o cartão de notificação ter Dores, Preocupações, Sinais positivos e Sinais de alerta coerentes com o chat
 - A conversa e os passos revelam-se intercalados (`chat[i]` depois `step[i]`). Manter o nº de passos próximo do nº de mensagens do agente para a sincronia ficar boa.
 - `sender`: `system` (aviso centrado), `agent` (bolha cinza à esquerda), `client` (bolha verde à direita). `**texto**` fica a negrito.
 - Ícones disponíveis (`icon`): phone, phone-missed, search, id, message, send, ear, calendar, wrench, list, arrows, check, book, shield, clock, bot, alert, star, user-cog, filter, ban, brain, database, globe. Desconhecido cai num ícone genérico.
