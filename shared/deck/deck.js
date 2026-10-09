@@ -65,7 +65,23 @@
     var STEP = cfg.stepMs || 1400, END = cfg.endPauseMs || 2600;
     var st = { idx: 0, prog: 0, manual: false }, timer = null, started = false;
 
-    function seq(s) { var a = [], m = Math.max(s.chat.length, s.steps.length); for (var i = 0; i < m; i++) { if (i < s.chat.length) a.push(["chat", i]); if (i < s.steps.length) a.push(["step", i]); } return a; }
+    function seq(s) {
+      var a = [], i;
+      /* Opcional: "passo": n numa mensagem acende os passos até ao n (contados de 1) logo a seguir a ela.
+         Serve conversas naturais, com mais mensagens do que passos. Sem "passo", intercala por posição. */
+      if (s.chat.some(function (m) { return m.passo != null; })) {
+        var feito = 0;
+        s.chat.forEach(function (m, k) {
+          a.push(["chat", k]);
+          if (m.passo != null) for (; feito < Math.min(m.passo, s.steps.length); feito++) a.push(["step", feito]);
+        });
+        for (; feito < s.steps.length; feito++) a.push(["step", feito]);
+        return a;
+      }
+      var m = Math.max(s.chat.length, s.steps.length);
+      for (i = 0; i < m; i++) { if (i < s.chat.length) a.push(["chat", i]); if (i < s.steps.length) a.push(["step", i]); }
+      return a;
+    }
 
     function render() {
       var s = scen[st.idx], sq = seq(s), total = s.chat.length + s.steps.length;
