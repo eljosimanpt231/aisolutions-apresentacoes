@@ -37,7 +37,7 @@
 - **Ritmo:** `faixa` e `faixa-clara` alternadas; relógio e investimento em `faixa-clara`
 
 ## Secções (por ordem)
-0. Abertura: "Entra um pedido ao sábado. A E-Sol responde em segundos." Números: 8 a 12 pedidos/mês (600 € Meta + 300 € Google), "Segunda", 1 + 1
+0. Abertura: "Entra um pedido ao sábado. A E-Sol responde em segundos." Números: 8 a 12 pedidos por dia (600 € Meta + 300 € Google por mês; corrigido no follow-up de 09/10), "Segunda", 1 + 1
    (Sem resumo de 30 segundos nem referência aos valores no topo: decisão do Manuel a 08/10/2026, o valor não se mostra logo)
 1. O que ouvimos a 7 de outubro: seis pontos, cinco com citação literal (nav)
 2. O relógio da lead + os números do estudo mostrado na reunião (4×, 21×, 78%) + antes e depois (nav: O relógio)
