@@ -27,23 +27,24 @@
   function passo(n) { $$('#fnPassos span').forEach(function (s, i) { s.classList.toggle('on', i < n); }); $('#fnEstado').textContent = n < 3 ? 'Passo ' + n + ' de 3' : 'Emails prontos'; $('#fnEstado').className = 'estado ' + (n < 3 ? 'warn' : 'ok'); }
   function desenhaProd() {
     prodEl.innerHTML = PROD.map(function (p) {
-      return '<label class="fn-it' + (p.on ? ' on' : '') + '"><input type="checkbox" data-p="' + p.id + '"' + (p.on ? ' checked' : '') + '><span><em>' + p.fam + '</em><b>' + esc(p.n) + '</b><small>' + esc(p.d) + '</small>' +
+      return '<label class="fn-it' + (p.on ? ' on' : '') + '"><input type="checkbox" data-p="' + p.id + '"' + (p.on ? ' checked' : '') + '><span><em>' + esc(p.fam) + '</em><b>' + esc(p.n) + '</b><small>' + esc(p.d) + '</small>' +
         (p.aviso ? '<span class="fn-aviso">⚠ ' + esc(p.aviso) + '</span>' : '') + '</span><i>' + p.origem + '</i></label>';
     }).join('');
   }
   function desenhaForn() {
     var ativos = PROD.filter(function (p) { return p.on; });
     $('#fnForn').innerHTML = ativos.length ? ativos.map(function (p) {
-      return '<div class="fn-g"><div class="fn-gh">' + p.fam + '<small>' + esc(p.n) + '</small></div>' + FORN[p.id].map(function (f) {
+      return '<div class="fn-g"><div class="fn-gh">' + esc(p.fam) + '<small>' + esc(p.n) + '</small></div>' + FORN[p.id].map(function (f) {
         return '<label class="fn-f"><input type="checkbox" data-fam="' + p.id + '" data-f="' + f[0] + '"' + (sel[p.id][f[0]] ? ' checked' : '') + '><b>' + esc(f[1]) + '</b><small>' + esc(f[2]) + '</small></label>';
-      }).join('') + '</div>';
-    }).join('') : '<div class="ol-empty">Escolha pelo menos um produto.</div>';
+      }).join('') + (FORN[p.id].length ? '' : '<p class="fn-semh">Sem fornecedores no histórico para esta família. Adicione um.</p>') +
+        '<div class="fn-add"><input type="text" placeholder="Novo fornecedor" data-novof="' + p.id + '"><input type="email" placeholder="email" data-novoe="' + p.id + '"><button type="button" class="btn btn-ghost" data-addf="' + p.id + '">+ Adicionar fornecedor</button></div></div>';
+    }).join('') : '<div class="ol-empty">Escolha pelo menos uma consulta.</div>';
     resumo();
   }
   function grupos() {
     var g = {};
     PROD.filter(function (p) { return p.on; }).forEach(function (p) {
-      FORN[p.id].forEach(function (f) { if (sel[p.id][f[0]]) { (g[f[0]] = g[f[0]] || { id: f[0], nome: f[1], prods: [] }).prods.push(p); } });
+      FORN[p.id].forEach(function (f) { if (sel[p.id][f[0]]) { (g[f[0]] = g[f[0]] || { id: f[0], nome: f[1], email: f[4], prods: [] }).prods.push(p); } });
     });
     return Object.keys(g).map(function (k) { return g[k]; });
   }
@@ -54,20 +55,21 @@
   }
   function corpo(g) {
     /* o texto que o Ricardo usou nos emails de 29/09 (alumínio) e 06/10 (vidro) */
-    var vidro = g.prods[0].id === 'vi';
+    var so = function (id) { return g.prods.every(function (p) { return p.id === id; }); };
     var anx = []; g.prods.forEach(function (p) { p.anx.forEach(function (a) { if (anx.indexOf(a) < 0) anx.push(a); }); });
-    return (vidro
-      ? '<p>Boa tarde,</p><p>Segue pedido de cotação para listagem em anexo:</p><ul><li>SKN 176II 8 mm TEMPERADO + cx16 + Laminado 55.1 mm</li></ul>'
-      : '<p>Bom dia,</p><p>Envio pedido de cotação para o RETAIL DA MOITA.</p>' + (g.id === 'ext' ? '<p>Por favor envie proposta juntamente com o PAF.</p>' : '')) +
+    var abre = so('vi') ? '<p>Boa tarde,</p><p>Segue pedido de cotação para listagem em anexo:</p><ul><li>SKN 176II 8 mm TEMPERADO + cx16 + Laminado 55.1 mm</li></ul>'
+      : so('al') ? '<p>Bom dia,</p><p>Envio pedido de cotação para o RETAIL DA MOITA.</p>'
+      : '<p>Bom dia,</p><p>Envio pedido de cotação para o RETAIL DA MOITA:</p><ul>' + g.prods.map(function (p) { return '<li>' + esc(p.n) + (p.qt ? ' · ' + esc(p.qt) : '') + '</li>'; }).join('') + '</ul>';
+    return abre + (g.id === 'ext' && g.prods.some(function (p) { return p.id === 'al'; }) ? '<p>Por favor envie proposta juntamente com o PAF.</p>' : '') +
       '<p>Melhores cumprimentos,<br>Ricardo Barbosa</p>' +
       (anx.length ? '<div class="anx">' + anx.map(function (a) { return '<span>' + esc(a) + '</span>'; }).join('') + '</div>' : '');
   }
   function gerar() {
     var G = grupos(); enviados = {};
     $('#fnEmails').innerHTML = G.map(function (g) {
-      var assunto = 'Pedido de cotação - Retail Moita' + (g.prods.length === 1 ? ' - ' + g.prods[0].fam.toLowerCase() : '');
-      return '<div class="email fn-mail" data-g="' + g.id + '"><div class="email-top"><span>Rascunho · ' + g.prods.map(function (p) { return p.fam.toLowerCase(); }).join(' e ') + '</span><span class="st">Por enviar</span></div>' +
-        '<div class="email-f"><span>Para: <b>' + esc(g.nome) + ' (contacto ocultado)</b></span><span>De: <b>Ricardo Barbosa · Serralharia MTS</b></span><span>Assunto: <b>' + assunto + '</b></span></div>' +
+      var assunto = 'Pedido de cotação - Retail Moita' + (g.prods.length === 1 ? ' - ' + esc(g.prods[0].fam.toLowerCase()) : '');
+      return '<div class="email fn-mail" data-g="' + g.id + '"><div class="email-top"><span>Rascunho · ' + g.prods.map(function (p) { return esc(p.fam.toLowerCase()); }).join(' e ') + '</span><span class="st">Por enviar</span></div>' +
+        '<div class="email-f"><span>Para: <b>' + esc(g.nome) + (g.email ? ' &lt;' + esc(g.email) + '&gt;' : ' (contacto ocultado)') + '</b></span><span>De: <b>Ricardo Barbosa · Serralharia MTS</b></span><span>Assunto: <b>' + assunto + '</b></span></div>' +
         '<div class="email-b">' + corpo(g) + '</div>' +
         '<div class="email-acts"><button class="btn btn-primary" type="button" data-env="' + g.id + '">Enviar</button><button class="btn btn-ghost" type="button">Editar</button><span class="enviado">✓ Enviado · lembrete se não houver resposta em 2 dias úteis</span></div></div>';
     }).join('');
@@ -78,8 +80,8 @@
     G = G || grupos();
     $('#fnResp').innerHTML = G.map(function (g) {
       var st = enviados[g.id] === 'r' ? '<span class="chip v"><i></i>Recebida · PDF lido</span>' : (enviados[g.id] ? '<span class="chip a"><i></i>Aguarda resposta</span>' : '<span class="chip"><i></i>Por enviar</span>');
-      var v = enviados[g.id] === 'r' ? VAL[g.id] + '<span class="sub ilus">ilustrativo</span>' : '·';
-      return '<tr class="cot-row" data-g="' + g.id + '"><td>' + esc(g.nome) + '</td><td>' + g.prods.map(function (p) { return p.fam; }).join(', ') + '</td><td>' + st + '</td><td class="num mono">' + v + '</td></tr>';
+      var v = enviados[g.id] === 'r' ? (VAL[g.id] || '4.380,00 €') + '<span class="sub ilus">ilustrativo</span>' : '·';
+      return '<tr class="cot-row" data-g="' + g.id + '"><td>' + esc(g.nome) + '</td><td>' + g.prods.map(function (p) { return esc(p.fam); }).join(', ') + '</td><td>' + st + '</td><td class="num mono">' + v + '</td></tr>';
     }).join('') || '<tr><td colspan="4" class="small">Ainda sem consultas.</td></tr>';
   }
   function envia(id) {
@@ -97,8 +99,32 @@
     var c = e.target.closest('input[data-f]'); if (!c) return;
     sel[c.dataset.fam][c.dataset.f] = c.checked; resumo(); passo(2); limpaEmails();
   });
-  function limpaEmails() { $('#fnEmails').innerHTML = '<div class="ol-empty">Escolha os produtos e os fornecedores e carregue em <b>Gerar os emails</b>.</div>'; $('#fnTodos').hidden = true; $('#fnSim').hidden = true; enviados = {}; resp([]); }
+  function limpaEmails() { $('#fnEmails').innerHTML = '<div class="ol-empty">Escolha o que vai para consulta e os fornecedores e carregue em <b>Gerar os emails</b>.</div>'; $('#fnTodos').hidden = true; $('#fnSim').hidden = true; enviados = {}; resp([]); }
   $('#fnGerar').addEventListener('click', gerar);
+  /* nova consulta (passo 1) e novo fornecedor (passo 2) */
+  var nNovo = 0;
+  function addFornecedor(fam) {
+    var n = $('[data-novof="' + fam + '"]'), em = $('[data-novoe="' + fam + '"]'), nome = n.value.trim();
+    if (!nome) { n.focus(); return; }
+    var id = 'f' + (++nNovo);
+    FORN[fam].push([id, nome, em.value.trim() ? 'novo · ' + em.value.trim() : 'novo · sem histórico', true, em.value.trim()]); sel[fam][id] = true;
+    desenhaForn(); passo(2); limpaEmails();
+  }
+  $('#fnForn').addEventListener('click', function (e) { var b = e.target.closest('[data-addf]'); if (b) addFornecedor(b.dataset.addf); });
+  $('#fnForn').addEventListener('keydown', function (e) { if (e.key === 'Enter' && e.target.closest('.fn-add')) { e.preventDefault(); addFornecedor(e.target.dataset.novof || e.target.dataset.novoe); } });
+  var novo = $('#fnNovo');
+  $('#fnNovoAbre').addEventListener('click', function () { novo.hidden = !novo.hidden; if (!novo.hidden) $('#fnNovoFam').focus(); });
+  $('#fnNovoOk').addEventListener('click', function () {
+    var fam = $('#fnNovoFam').value.trim(), o = $('#fnNovoDesc').value.trim(), qt = $('#fnNovoQt').value.trim();
+    if (!fam) { $('#fnNovoFam').focus(); return; } if (!o) { $('#fnNovoDesc').focus(); return; }
+    var id = 'p' + (++nNovo), anx = $$('#fnNovo input[data-anx]:checked').map(function (c) { return c.dataset.anx; });
+    PROD.push({ id: id, fam: fam, n: o, qt: qt, d: (qt ? qt + ' · ' : '') + (anx.length ? anx.length + (anx.length === 1 ? ' anexo' : ' anexos') : 'sem anexos'), anx: anx, on: true, origem: 'adicionada à mão' });
+    FORN[id] = []; sel[id] = {};
+    ['#fnNovoFam', '#fnNovoDesc', '#fnNovoQt'].forEach(function (s) { $(s).value = ''; });
+    $$('#fnNovo input[data-anx]').forEach(function (c) { c.checked = false; });
+    novo.hidden = true; desenhaProd(); desenhaForn(); passo(1); limpaEmails();
+    var f = $('[data-novof="' + id + '"]'); if (f) { f.scrollIntoView({ block: 'center', behavior: 'smooth' }); setTimeout(function () { f.focus(); }, 400); }
+  });
   $('#fnEmails').addEventListener('click', function (e) { var b = e.target.closest('[data-env]'); if (b) envia(b.dataset.env); });
   $('#fnTodos').addEventListener('click', function () { grupos().forEach(function (g) { envia(g.id); }); });
   $('#fnSim').addEventListener('click', function () {

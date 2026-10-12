@@ -311,7 +311,23 @@
           <div class="panel">
             <div class="panel-h"><b>1 · O que vai para consulta</b><span>o que o Ricardo pede em cada obra</span></div>
             <div class="fn-prod" id="fnProd"></div>
-            <p class="small" style="padding:8px 14px 12px">Alumínio e vidro são cerca de 90% das vossas consultas. Outras famílias, como o ferro, entram da mesma forma quando o pedido as tiver.</p>
+            <div class="fn-mais"><button class="btn btn-ghost" type="button" id="fnNovoAbre">+ Adicionar outra consulta</button><span class="small">Alumínio e vidro são cerca de 90% das vossas consultas. Para o resto (ferro, ferragens, chapa), acrescenta-se aqui.</span></div>
+            <div class="fn-novo" id="fnNovo" hidden>
+              <div class="fn-novo-g">
+                <label>Família<input type="text" id="fnNovoFam" list="fnFams" placeholder="ex.: Ferro"></label>
+                <label>O que pedir<input type="text" id="fnNovoDesc" placeholder="ex.: Guardas metálicas, lacadas"></label>
+                <label>Quantidade<input type="text" id="fnNovoQt" placeholder="ex.: 24 m"></label>
+              </div>
+              <datalist id="fnFams"><option value="Ferro"><option value="Ferragens"><option value="Chapa"><option value="Inox"><option value="Estores"></datalist>
+              <div class="fn-novo-anx"><span>Anexos do pedido a juntar</span>
+                <label><input type="checkbox" data-anx="2025137 - MQT_SERRALHARIA CAIX - S.xlsx"> Mapa de quantidades</label>
+                <label><input type="checkbox" data-anx="LOJAS A-H.dwg"> LOJAS A-H.dwg</label>
+                <label><input type="checkbox" data-anx="LOJAS K-L.dwg"> LOJAS K-L.dwg</label>
+                <label><input type="checkbox" data-anx="LOJAS M-N.dwg"> LOJAS M-N.dwg</label>
+                <label><input type="checkbox" data-anx="Projeto PD.pdf"> Projeto PD.pdf</label>
+              </div>
+              <div class="fn-novo-ok"><button class="btn btn-primary" type="button" id="fnNovoOk">Adicionar consulta</button></div>
+            </div>
           </div>
           <div class="panel" style="margin-top:14px">
             <div class="panel-h"><b>2 · Fornecedores</b><span>por família, com o vosso histórico</span></div>
@@ -323,7 +339,7 @@
         <div>
           <div class="panel">
             <div class="panel-h"><b>3 · Emails de pedido de cotação</b><button class="link" type="button" id="fnTodos" hidden>Enviar todos</button></div>
-            <div id="fnEmails" class="fn-emails"><div class="ol-empty">Escolha os produtos e os fornecedores e carregue em <b>Gerar os emails</b>.</div></div>
+            <div id="fnEmails" class="fn-emails"><div class="ol-empty">Escolha o que vai para consulta e os fornecedores e carregue em <b>Gerar os emails</b>.</div></div>
           </div>
           <div class="panel" style="margin-top:14px">
             <div class="panel-h"><b>Respostas</b><button class="link" type="button" id="fnSim" hidden>Simular as respostas</button></div>

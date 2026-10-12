@@ -202,3 +202,21 @@
 .lei-fim { opacity: 0.25; transition: opacity 0.5s ease; pointer-events: none; }
 .lei-fim.on { opacity: 1; pointer-events: auto; }
 @media (max-width: 1100px) { .lei { grid-template-columns: 1fr; } .lei-k { grid-template-columns: repeat(2, 1fr); } }
+.fn-mais { display: flex; align-items: center; gap: 12px; padding: 10px 14px 12px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.fn-mais .btn { padding: 7px 12px; font-size: 0.8rem; }
+.fn-mais .small { flex: 1; min-width: 200px; }
+.fn-novo { padding: 12px 14px 14px; border-top: 1px dashed hsl(var(--brand-hsl) / 0.4); background: hsl(var(--brand-hsl) / 0.03); }
+.fn-novo[hidden] { display: none; }
+.fn-novo-g { display: grid; grid-template-columns: 1fr 1.6fr 0.8fr; gap: 8px; }
+.fn-novo label, .fn-novo-anx span { font-size: 0.72rem; color: var(--muted); display: grid; gap: 4px; }
+.fn-novo input[type=text], .fn-add input { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 7px 9px; font: 500 0.8rem var(--font-body); min-width: 0; }
+.fn-novo input:focus, .fn-add input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px hsl(var(--brand-hsl) / 0.12); }
+.fn-novo-anx { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; align-items: center; }
+.fn-novo-anx span { width: 100%; }
+.fn-novo-anx label { display: flex; align-items: center; gap: 6px; font-size: 0.76rem; color: var(--text); cursor: pointer; }
+.fn-novo-anx input { accent-color: hsl(var(--brand-hsl)); }
+.fn-novo-ok { margin-top: 12px; display: flex; justify-content: flex-end; }
+.fn-add { display: grid; grid-template-columns: 1.2fr 1fr auto; gap: 6px; margin-top: 8px; }
+.fn-add .btn { padding: 6px 10px; font-size: 0.74rem; white-space: nowrap; }
+.fn-semh { font-size: 0.74rem; color: var(--warning); margin: 2px 0 4px; }
+@media (max-width: 700px) { .fn-novo-g, .fn-add { grid-template-columns: 1fr; } }
