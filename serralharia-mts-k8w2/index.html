@@ -143,7 +143,7 @@
     <a class="dup" data-v="2"><i>1</i>Ficha do pedido</a>
     <a class="dup" data-v="3"><i>2</i>Medições do desenho</a>
     <a class="dup" data-v="4"><i>3</i>Consulta a fornecedores</a>
-    <a class="dup" data-v="5"><i>4</i>Seguimento</a>
+    <a class="dup" data-v="5"><i>4</i>Ponto de situação</a>
     <div class="grp">Regras MTS</div>
     <a class="dup" data-v="6"><i>↺</i>Respostas automáticas</a>
     <a class="dup" data-v="7"><i>●</i>Clientes e semáforo</a>
@@ -296,108 +296,83 @@
     </div>
 
     <!-- 4. Consulta a fornecedores -->
-    <div class="slide" data-titulo="Consulta a fornecedores">
-      <div class="view-h"><div><span class="k">PEDIDO 3 DE 4 · FORNECEDORES</span><h2>As consultas prontas a enviar, no estilo do Ricardo</h2><p>A plataforma identifica o que é preciso cotar e a quem costumam pedir. O Ricardo revê e envia com um clique. As respostas voltam para o pedido.</p></div><span class="estado warn" id="cotEstado">2 consultas por enviar</span></div>
-      <div class="two">
+    <div class="slide" id="s-consulta" data-titulo="Consulta a fornecedores">
+      <div class="view-h"><div><span class="k">PEDIDO 3 DE 4 · FORNECEDORES</span><h2>Escolher o que se cota e a quem, e os emails saem prontos</h2><p>A plataforma lista os produtos do pedido. O Ricardo escolhe o que quer cotar e a que fornecedores pedir; os emails saem um por fornecedor, só com os produtos desse fornecedor e os anexos certos.</p></div><span class="estado warn" id="fnEstado">Passo 1 de 3</span></div>
+      <div class="fn-passos" id="fnPassos"><span class="on">1 · Produtos</span><span>2 · Fornecedores</span><span>3 · Emails</span></div>
+      <div class="two w">
         <div>
-          <div class="email" id="mailAl">
-            <div class="email-top"><span>Rascunho · alumínio</span><span class="st">Por enviar</span></div>
-            <div class="email-f"><span>Para: <b>Extrusal (contacto habitual, ocultado)</b></span><span>De: <b>Ricardo Barbosa · Serralharia MTS</b></span><span>Assunto: <b>Pedido de cotação - Retail Moita</b></span></div>
-            <div class="email-b">
-              <p>Bom dia,</p>
-              <p>Envio pedido de cotação para o RETAIL DA MOITA: caixilharia exterior sistema A080, 506,34 m² em 3 artigos (lojas A-H, K-L e M-N). Seguem em anexo o mapa de quantidades, os desenhos e o projeto de arquitetura.</p>
-              <p>Por favor envie proposta juntamente com o PAF.</p>
-              <p>Melhores cumprimentos,<br>Ricardo Barbosa</p>
-              <div class="anx"><span>MQT.xlsx</span><span>LOJAS A-H.dwg</span><span>LOJAS K-L.dwg</span><span>LOJAS M-N.dwg</span><span>Projeto PD.pdf</span></div>
-            </div>
-            <div class="email-acts"><button class="btn btn-primary" type="button" data-enviar="mailAl">Enviar</button><button class="btn btn-ghost" type="button">Editar</button><span class="enviado">✓ Enviado · lembrete se não houver resposta em 2 dias úteis</span></div>
+          <div class="panel">
+            <div class="panel-h"><b>1 · Produtos a cotar</b><span>lidos do mapa, dos desenhos e da listagem do PrefSuite</span></div>
+            <div class="fn-prod" id="fnProd"></div>
           </div>
-          <div class="email" id="mailVi" style="margin-top:14px">
-            <div class="email-top"><span>Rascunho · vidro</span><span class="st">Por enviar</span></div>
-            <div class="email-f"><span>Para: <b>Fornecedor de vidro habitual (ocultado)</b></span><span>De: <b>Ricardo Barbosa · Serralharia MTS</b></span><span>Assunto: <b>Pedido de cotação - Moita</b></span></div>
-            <div class="aviso verif"><b>Verificado antes de enviar.</b> No pedido de vidro de 06/10 seguiu "cx14". O mapa da construtora (8 + 16 + 55.1) e a listagem do PrefSuite (10 + 16 + 8) indicam caixa de 16 mm. O rascunho usa 16 mm: confirme.</div>
-            <div class="email-b">
-              <p>Boa tarde,</p>
-              <p>Segue pedido de cotação para a listagem em anexo:</p>
-              <ul><li>SKN 176II 8 mm temperado + caixa 16 + laminado 55.1 mm</li><li>69 vidros, 423,94 m², lojas A a M</li></ul>
-              <p>Melhores cumprimentos,<br>Ricardo Barbosa</p>
-              <div class="anx"><span>listagem de vidros.pdf (PrefSuite)</span></div>
-            </div>
-            <div class="email-acts"><button class="btn btn-primary" type="button" data-enviar="mailVi">Enviar</button><button class="btn btn-ghost" type="button">Editar</button><span class="enviado">✓ Enviado · lembrete se não houver resposta em 2 dias úteis</span></div>
+          <div class="panel" style="margin-top:14px">
+            <div class="panel-h"><b>2 · Fornecedores</b><span>por família, com o vosso histórico</span></div>
+            <div class="fn-forn" id="fnForn"></div>
+            <div class="fn-acao"><span class="small" id="fnResumo"></span><button class="btn btn-primary" type="button" id="fnGerar">Gerar os emails →</button></div>
           </div>
+          <p class="small" style="margin-top:8px">Histórico de consultas ilustrativo até à auditoria aos 10 meses de emails enviados. Contactos dos fornecedores ocultados.</p>
         </div>
         <div>
           <div class="panel">
-            <div class="panel-h"><b>Consultas deste pedido</b><button class="link" type="button" id="cotSim">Simular as respostas</button></div>
-            <div class="tbl-wrap" style="border:0;border-radius:0"><table class="tbl">
-              <thead><tr><th>Fornecedor</th><th>Enviado</th><th>Resposta</th><th class="num">Valor</th></tr></thead>
-              <tbody>
-                <tr class="cot-row" id="cotAl"><td>Extrusal<span class="sub">alumínio, sistema A080</span></td><td class="mono" data-env>por enviar</td><td data-resp><span class="sub">sem resposta</span></td><td class="num" data-val>·</td></tr>
-                <tr class="cot-row" id="cotVi"><td>Fornecedor de vidro<span class="sub">69 vidros, 423,94 m²</span></td><td class="mono" data-env>por enviar</td><td data-resp><span class="sub">sem resposta</span></td><td class="num" data-val>·</td></tr>
-              </tbody>
-            </table></div>
+            <div class="panel-h"><b>3 · Emails de pedido de cotação</b><button class="link" type="button" id="fnTodos" hidden>Enviar todos</button></div>
+            <div id="fnEmails" class="fn-emails"><div class="ol-empty">Escolha os produtos e os fornecedores e carregue em <b>Gerar os emails</b>.</div></div>
           </div>
-          <div class="term" id="cotTerm" style="margin-top:14px"></div>
-          <script type="application/json" id="cotTerm-config">{
-            "title": "consultas.log",
-            "intervalMs": 700,
-            "lines": [
-              { "text": "Pedido 853/2026 aberto: 3 artigos, 506,34 m²", "tone": "info" },
-              { "text": "Alumínio: sistema A080 Extrusal -> fornecedor habitual: Extrusal", "tone": "ok" },
-              { "text": "Vidro: listagem PrefSuite de 01/10 encontrada (69 vidros, 423,94 m²)", "tone": "ok" },
-              { "text": "Caixa de ar: listagem 16 mm, mapa 16 mm, último email ao fornecedor 14 mm", "tone": "warn" },
-              { "text": "Rascunhos no texto habitual do Ricardo, com os anexos certos", "tone": "info" },
-              { "text": "Prontos a enviar. Lembrete automático ao fim de 2 dias úteis sem resposta.", "tone": "success" }
-            ]
-          }</script>
-          <div class="card" style="margin-top:14px">
-            <h3 style="font-size:1rem">Cada resposta fica guardada</h3>
-            <p class="small" style="margin-top:6px">Fornecedor, data, valor, validade e o PDF da proposta, por série e por artigo. Ao fim de uns meses, é a base de preços que hoje não existe: o primeiro passo para a estimativa rápida e para o futuro departamento de compras.</p>
+          <div class="panel" style="margin-top:14px">
+            <div class="panel-h"><b>Respostas</b><button class="link" type="button" id="fnSim" hidden>Simular as respostas</button></div>
+            <div class="tbl-wrap" style="border:0;border-radius:0"><table class="tbl">
+              <thead><tr><th>Fornecedor</th><th>Produtos</th><th>Estado</th><th class="num">Valor</th></tr></thead>
+              <tbody id="fnResp"><tr><td colspan="4" class="small">Ainda sem consultas enviadas.</td></tr></tbody>
+            </table></div>
+            <p class="small" style="padding:8px 14px 12px">Sem resposta ao fim de 2 dias úteis, o lembrete ao fornecedor fica preparado. Cada preço que chega fica guardado por produto e por fornecedor.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 5. Seguimento -->
-    <div class="slide" data-titulo="Seguimento">
-      <div class="view-h"><div><span class="k">PEDIDO 4 DE 4 · SEGUIMENTO</span><h2>Do aviso de receção à adjudicação, sem perder o fio</h2><p>A proposta enviada a 09/10 foi detetada no email enviado: o PDF lido, o valor e a validade registados. A partir daqui, a plataforma segue o pedido.</p></div><span class="estado info">Aguarda adjudicação</span></div>
+    <!-- 5. Ponto de situação -->
+    <div class="slide" id="s-situacao" data-titulo="Ponto de situação">
+      <div class="view-h"><div><span class="k">PEDIDO 4 DE 4 · PONTO DE SITUAÇÃO</span><h2>Retail Park, Moita · Construtora A (Vila Verde)</h2><p>Tudo sobre este projeto e este cliente num só sítio: onde está o orçamento, o que o cliente já nos pediu e adjudicou, e todos os emails trocados.</p></div><span class="chip v" style="font-size:0.78rem;padding:6px 12px"><i></i>Cliente verde</span></div>
       <div class="estados">
         <div class="est ok"><i>✓</i>Recebido<small>28/09</small></div>
-        <div class="est ok"><i>✓</i>Aviso de receção<small>28/09</small></div>
-        <div class="est ok"><i>✓</i>Fornecedores consultados<small>29/09 e 06/10</small></div>
+        <div class="est ok"><i>✓</i>Desenhos medidos<small>28/09</small></div>
+        <div class="est ok"><i>✓</i>Fornecedores<small>29/09 e 06/10</small></div>
         <div class="est ok"><i>✓</i>Orçamento no PrefSuite<small>01/10</small></div>
         <div class="est ok"><i>✓</i>Proposta enviada<small>09/10</small></div>
-        <div class="est now"><i>6</i>Aguarda decisão<small>até 08/11</small></div>
-        <div class="est"><i>7</i>Adjudicado ou perdido<small>conta para a taxa</small></div>
+        <div class="est now"><i>6</i>Aguarda decisão<small>válida até 08/11</small></div>
+        <div class="est"><i>7</i>Adjudicado ou perdido<small></small></div>
       </div>
-      <div class="two w">
+      <div class="sit">
         <div>
           <div class="kpis">
-            <div class="kpi hl"><small>Proposta 20204048/1</small><b>139.510,66 €</b><span>+ IVA · 11 posições</span></div>
+            <div class="kpi hl"><small>Proposta 20204048/1</small><b>139.510,66 €</b><span>+ IVA · 11 posições · 40 / 30 / 30</span></div>
             <div class="kpi"><small>Do pedido à proposta</small><b>11 dias</b><span>8 dias úteis · dentro do prazo dado</span></div>
-            <div class="kpi"><small>Validade</small><b>08/11</b><span>30 dias · 40 / 30 / 30</span></div>
+            <div class="kpi"><small>Próximo passo</small><b>16/10</b><span>lembrete de seguimento ao Ricardo</span></div>
           </div>
-          <div class="email" style="margin-top:14px">
-            <div class="email-top"><span>Recebido · 07/10 às 09:26 · ligado a este pedido</span><span class="st">Insistência</span></div>
-            <div class="email-f"><span>De: <b>Construtora A · aprovisionamento (ocultado)</b></span><span>Assunto: <b>FW: Pedido de cotação - 2025137 - Retail Park Moita</b></span></div>
-            <div class="email-b"><p>Bom dia,</p><p>Quando consegue responder a este pedido?</p></div>
-            <div class="email-top" style="border-top:1px solid var(--paper-line)"><span>Resposta sugerida ao Ricardo, com o estado do pedido</span><span class="st ok">Enviada às 09:31</span></div>
-            <div class="email-b"><p>Bom dia,</p><p>Está quase pronto, só estou à espera que os fornecedores do vidro nos enviem o estudo. Até final da semana envio.</p><p>Melhores cumprimentos,<br>Ricardo Barbosa</p></div>
+          <div class="panel" style="margin-top:14px">
+            <div class="panel-h"><b>Emails trocados com este cliente</b><div class="sub-tabs" id="sitFiltro" style="margin:0"><button class="active" data-f="todos">Todos</button><button data-f="proj">Este projeto</button></div></div>
+            <ol class="sit-mails" id="sitMails"></ol>
           </div>
         </div>
         <div>
           <div class="panel">
-            <div class="panel-h"><b>Próximos passos automáticos</b><span>regras MTS, ajustáveis</span></div>
-            <div class="panel-b" style="display:grid;gap:10px;font-size:0.85rem">
-              <div class="item"><b>16/10 · Lembrete ao Ricardo</b><p>5 dias úteis depois do envio. Com rascunho de email de seguimento à construtora, para rever e enviar.</p></div>
-              <div class="item"><b>30/10 · Proposta a 9 dias de expirar</b><p>Alerta no painel da gestão, para decidir se se liga ao cliente.</p></div>
-              <div class="item"><b>Quando a construtora responder</b><p>A resposta liga-se ao pedido. "Adjudicado" ou "perdido" entra na taxa de adjudicação por cliente e atualiza o semáforo.</p></div>
+            <div class="panel-h"><b>Construtora A (Vila Verde)</b><span>histórico de 10 meses</span></div>
+            <div class="panel-b">
+              <div class="sit-k">
+                <div><b>14</b><small>pedidos em 10 meses</small></div>
+                <div><b>12</b><small>com proposta</small></div>
+                <div><b>6</b><small>adjudicados</small></div>
+                <div><b>50%</b><small>das propostas adjudicadas</small></div>
+                <div><b>376.300 €</b><small>adjudicado + IVA</small></div>
+                <div><b>6 d.u.</b><small>resposta média</small></div>
+              </div>
+              <div class="sit-cont"><span>Contactos</span><b>Aprovisionamento e preparação de obra</b><b>Direção de obra</b><small>nomes e emails ocultados nesta página</small></div>
             </div>
           </div>
-          <div class="card" style="margin-top:12px">
-            <h3 style="font-size:1rem">É daqui que nascem os números</h3>
-            <p class="small" style="margin-top:6px">Tempo de resposta, taxa de adjudicação, valor proposto e adjudicado, por cliente e por mês. As perguntas que hoje ficam sem resposta passam a ter um número.</p>
+          <div class="panel" style="margin-top:14px">
+            <div class="panel-h"><b>Orçamentos deste cliente</b><span>os mais recentes primeiro</span></div>
+            <div class="tbl-wrap" style="border:0;border-radius:0;max-height:none"><table class="tbl" id="sitOrc"></table></div>
           </div>
+          <p class="small" style="margin-top:8px">Histórico do cliente ilustrativo, com números da simulação. Só o Retail Park é real.</p>
         </div>
       </div>
     </div>
@@ -423,28 +398,6 @@
         </div>
       </div>
       <p class="small" style="margin-top:8px">O texto da falta de capacidade é o que já têm guardado: entra tal como está.</p>
-      <div class="two" style="margin-top:14px">
-        <div class="panel">
-          <div class="panel-h"><b>Registo para a auditoria de qualidade</b><button class="link" type="button">Exportar em Excel ou PDF</button></div>
-          <div class="tbl-wrap" style="border:0;border-radius:0"><table class="tbl reg">
-            <thead><tr><th>Quando</th><th>Pedido</th><th>Resposta</th><th>Quem</th></tr></thead>
-            <tbody>
-              <tr><td class="mono">28/09 12:33</td><td>Construtora A<span class="sub">Retail Park, Moita</span></td><td><span class="chip v"><i></i>Aviso de receção</span></td><td>Automático</td></tr>
-              <tr><td class="mono">12/10 08:32</td><td>Câmara Municipal (Minho)<span class="sub">Escola básica</span></td><td><span class="chip a"><i></i>Aviso de receção</span></td><td>Automático</td></tr>
-              <tr><td class="mono">12/10 09:05</td><td>Construtora F (Trofa)<span class="sub">Pavilhão industrial</span></td><td><span class="chip r"><i></i>Falta de capacidade</span></td><td>Aprovado por Vera Sousa</td></tr>
-            </tbody>
-          </table></div>
-        </div>
-        <div class="card">
-          <h3 style="font-size:1rem">No primeiro dia: os 140 em atraso</h3>
-          <ul class="list-check" style="font-size:0.88rem">
-            <li>A plataforma classifica os 140 e junta os repetidos ao pedido original</li>
-            <li>A Vera recebe uma lista por cor para aprovar, num ecrã</li>
-            <li>Os vermelhos recebem a resposta; os restantes, um novo prazo</li>
-            <li>Os verdes ficam ordenados por antiguidade, para o Ricardo</li>
-          </ul>
-        </div>
-      </div>
     </div>
 
     <!-- 7. Clientes e semáforo -->
@@ -460,29 +413,31 @@
 
     <!-- 8. Assistente -->
     <div class="slide" data-titulo="Assistente">
-      <div class="view-h"><div><span class="k">ASSISTENTE</span><h2>Perguntar à plataforma, em português</h2><p>Quatro situações reais. A última é a mais importante: o que o assistente se recusa a fazer sozinho.</p></div></div>
+      <div class="view-h"><div><span class="k">ASSISTENTE</span><h2>O resumo de cada manhã, e as perguntas do dia</h2><p>Todas as manhãs a plataforma envia o ponto de situação, sem ninguém pedir. E durante o dia responde ao que lhe perguntarem, em português.</p></div></div>
       <div class="cr" id="crDemo"></div>
       <script type="application/json" id="crDemo-config">{
         "agentName": "Orçamentos MTS",
         "agentInitials": "MT",
-        "chatStatus": "Na plataforma, com acesso à caixa de orçamentos",
+        "chatStatus": "Resumo diário às 08:30 · pergunte quando quiser",
         "stepMs": 1500,
         "endPauseMs": 3200,
         "scenarios": [
-          { "title": "Bom dia, Vera", "subtitle": "Segunda-feira de manhã, sem abrir a caixa de email.",
+          { "title": "O resumo das 08:30", "subtitle": "Todas as manhãs, sem ninguém pedir: o que entrou, o que está atrasado e o que precisa de decisão.",
             "chat": [
-              { "sender": "client", "text": "bom dia. como estamos?", "time": "08:47" },
-              { "sender": "agent", "text": "Bom dia, Vera. Desde sexta entraram **23 emails**: 9 pedidos novos, 4 insistências, 3 respostas de fornecedores e 7 outros, já arrumados.", "time": "08:47" },
-              { "sender": "agent", "text": "Atenção a **17 verdes** com mais de 5 dias úteis sem proposta. O mais antigo é da Construtora B, que já insistiu 2 vezes.", "time": "08:47", "passo": 4 },
-              { "sender": "client", "text": "e o da moita?", "time": "08:49" },
-              { "sender": "agent", "text": "Proposta 20204048/1 enviada na sexta, 09/10: **139.510,66 € + IVA**, válida até 08/11. O lembrete de seguimento ao Ricardo está marcado para 16/10.", "time": "08:49" } ],
+              { "sender": "system", "text": "Resumo diário · segunda-feira, 12/10, 08:30", "time": "08:30" },
+              { "sender": "agent", "text": "Bom dia, Vera. Desde sexta entraram **23 emails**: 9 pedidos novos, 4 insistências, 3 respostas de fornecedores e 7 outros, já arrumados.", "time": "08:30", "passo": 2 },
+              { "sender": "agent", "text": "**1 verde** por responder há mais de 5 dias úteis: a Construtora B, edifício de 24 frações, que já insistiu 2 vezes.", "time": "08:30", "passo": 4 },
+              { "sender": "agent", "text": "Fornecedores: o vidro da clínica do Gabinete C está **sem resposta há 5 dias úteis**. O lembrete ao fornecedor está pronto a enviar.", "time": "08:30", "passo": 5 },
+              { "sender": "agent", "text": "Propostas: o Retail Park da Moita (**139.510,66 € + IVA**) saiu na sexta, seguimento a 16/10. O bloco da Maia está sem resposta do cliente há 8 dias úteis.", "time": "08:30", "passo": 6 },
+              { "sender": "agent", "text": "Para aprovar hoje: **2 respostas de falta de capacidade** (Construtora F e Empresa G).", "time": "08:30" } ],
             "steps": [
               { "icon": "message", "label": "Lê a caixa de orçamentos desde sexta às 18:00" },
               { "icon": "filter", "label": "Separa por categoria: pedidos, insistências, fornecedores" },
               { "icon": "star", "label": "Cruza com o semáforo de clientes" },
               { "icon": "clock", "label": "Ordena os verdes por dias úteis sem proposta" },
-              { "icon": "search", "label": "Encontra o pedido do Retail Park" },
-              { "icon": "book", "label": "Lê a proposta enviada: valor, validade, seguimento" } ] },
+              { "icon": "search", "label": "Verifica as consultas a fornecedores sem resposta" },
+              { "icon": "book", "label": "Verifica as propostas a aguardar decisão" },
+              { "icon": "send", "label": "Envia o resumo à Vera, ao Sr. Manuel e ao Ricardo" } ] },
           { "title": "Nunca nos responderam?", "subtitle": "O caso que a Vera contou: um cliente diz que pediu e ninguém respondeu.",
             "chat": [
               { "sender": "client", "text": "a empresa X diz que nos pediu 3 orçamentos este ano e que nunca respondemos", "time": "11:02" },
@@ -496,38 +451,10 @@
               { "icon": "list", "label": "Agrupa por pedido, juntando os repetidos" },
               { "icon": "check", "label": "Verifica o que foi respondido e quando" },
               { "icon": "alert", "label": "Assinala o pedido que nunca teve resposta" },
-              { "icon": "send", "label": "Envia o resumo à Vera e oferece a resposta" } ] },
-          { "title": "O Ricardo prepara as consultas", "subtitle": "O pedido do Retail Park, do mapa às duas consultas.",
-            "chat": [
-              { "sender": "client", "text": "prepara as consultas para o retail da moita", "time": "14:10" },
-              { "sender": "agent", "text": "Pedido 853/2026 lido: caixilharia A080, e **11 vãos medidos nos desenhos** (lojas A a M), com módulos e portas.", "time": "14:10", "passo": 2 },
-              { "sender": "agent", "text": "Proponho 2 consultas: **alumínio** à Extrusal, com o mapa, os 3 DWG e o projeto; **vidro** ao fornecedor habitual, com a listagem do PrefSuite (69 vidros, 423,94 m²).", "time": "14:10", "passo": 4 },
-              { "sender": "agent", "text": "Antes de enviar: a listagem e o mapa dizem **caixa de 16 mm**. Mantenho 16?", "time": "14:10", "passo": 5 },
-              { "sender": "client", "text": "sim 16", "time": "14:12" },
-              { "sender": "agent", "text": "Rascunhos prontos, no seu texto habitual. Envia com um clique; sem resposta em 2 dias úteis, preparo o lembrete.", "time": "14:12" } ],
-            "steps": [
-              { "icon": "book", "label": "Abre o mapa de quantidades do pedido" },
-              { "icon": "list", "label": "Identifica sistema A080 e vidro 8 + 16 + 55.1" },
-              { "icon": "database", "label": "Procura os fornecedores habituais de cada família" },
-              { "icon": "search", "label": "Junta a listagem de vidros do PrefSuite" },
-              { "icon": "shield", "label": "Confere medidas e composição entre documentos" },
-              { "icon": "send", "label": "Prepara os rascunhos para o Ricardo enviar" } ] },
-          { "title": "O que não faz sozinho", "subtitle": "Recusa consciente: não responde a todos da mesma maneira, mesmo que lhe peçam.",
-            "chat": [
-              { "sender": "client", "text": "responde a todos os atrasados que nao temos capacidade", "time": "17:40" },
-              { "sender": "agent", "text": "Não faço isso a todos. Dos **64 em atraso**, **17 são verdes**, entre eles o Retail Park, cuja obra já está adjudicada à construtora.", "time": "17:40", "passo": 3 },
-              { "sender": "agent", "text": "Proponho: falta de capacidade aos **42 vermelhos**, e um novo prazo aos restantes.", "time": "17:40", "passo": 4 },
-              { "sender": "client", "text": "ok mostra-me os vermelhos", "time": "17:43" },
-              { "sender": "agent", "text": "Lista de 42 pronta para aprovar, com o histórico de cada cliente. **Nada sai sem a sua aprovação**, e fica tudo registado para a auditoria.", "time": "17:43" } ],
-            "steps": [
-              { "icon": "list", "label": "Lista os 64 pedidos em atraso" },
-              { "icon": "star", "label": "Separa-os pelo semáforo" },
-              { "icon": "ban", "label": "Recusa enviar falta de capacidade a clientes verdes" },
-              { "icon": "brain", "label": "Propõe uma resposta por cor" },
-              { "icon": "shield", "label": "Prepara a lista para aprovação, com registo" } ] }
+              { "icon": "send", "label": "Envia o resumo à Vera e oferece a resposta" } ] }
         ]
       }</script>
-      <p class="small" style="margin-top:8px">Valores e clientes ilustrativos, exceto o pedido do Retail Park.</p>
+      <p class="small" style="margin-top:8px">Valores e clientes ilustrativos, coerentes com o painel de orçamentos; o Retail Park é real.</p>
     </div>
   </div>
  </div>
@@ -654,9 +581,10 @@
 <script src="../shared/deck/deck.js"></script>
 <script src="assets/js/fachadas.js"></script>
 <script>
-  chatRaciocinio('crDemo'); fluxo('fxMTS'); terminal('cotTerm'); terminal('medTerm');
+  chatRaciocinio('crDemo'); fluxo('fxMTS'); terminal('medTerm');
 </script>
 <script src="assets/js/mts.js"></script>
 <script src="assets/js/crm.js"></script>
+<script src="assets/js/pedido.js"></script>
 </body>
 </html>

@@ -112,3 +112,52 @@
 .cc-t b { font-size: 0.72rem; }
 .cc-o { font-size: 0.7rem; }
 .fx .fx-c line { stroke-width: 0.1; }
+
+/* Consulta a fornecedores em 3 passos */
+.fn-passos { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+.fn-passos span { font-size: 0.74rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--bg-soft); color: var(--faint); border: 1px solid var(--border); }
+.fn-passos span.on { background: hsl(var(--brand-hsl) / 0.1); color: var(--brand); border-color: hsl(var(--brand-hsl) / 0.35); }
+.fn-prod { display: grid; }
+.fn-it { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; padding: 11px 14px; border-bottom: 1px solid var(--border); cursor: pointer; align-items: start; opacity: 0.62; transition: opacity 0.2s ease, background 0.2s ease; }
+.fn-it:last-child { border-bottom: 0; }
+.fn-it.on { opacity: 1; background: hsl(var(--brand-hsl) / 0.03); }
+.fn-it input, .fn-f input { width: 17px; height: 17px; accent-color: hsl(var(--brand-hsl)); margin-top: 2px; }
+.fn-it em { display: block; font-style: normal; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand); }
+.fn-it b { display: block; font-size: 0.86rem; color: var(--text); }
+.fn-it small { display: block; font-size: 0.76rem; color: var(--muted); margin-top: 2px; }
+.fn-it > i { font-style: normal; font-size: 0.64rem; color: var(--faint); white-space: nowrap; padding-top: 2px; }
+.fn-aviso { display: block; margin-top: 6px; font-size: 0.74rem; color: var(--text); background: hsl(var(--amarelo-hsl) / 0.12); border: 1px solid hsl(var(--amarelo-hsl) / 0.45); border-radius: 6px; padding: 5px 8px; }
+.fn-forn { display: grid; }
+.fn-g { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.fn-gh { font-size: 0.8rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.fn-gh small { display: block; font-weight: 400; font-size: 0.72rem; color: var(--faint); }
+.fn-f { display: grid; grid-template-columns: 22px auto 1fr; gap: 8px; align-items: center; padding: 5px 0; cursor: pointer; font-size: 0.82rem; }
+.fn-f b { color: var(--text); font-weight: 600; }
+.fn-f small { color: var(--faint); font-size: 0.72rem; text-align: right; }
+.fn-acao { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 14px; background: var(--surface-2); flex-wrap: wrap; }
+.fn-emails { display: grid; gap: 12px; padding: 12px; max-height: 760px; overflow: auto; }
+.fn-mail { box-shadow: none; }
+
+/* Ponto de situação */
+.sit { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; align-items: start; }
+.sit > * { min-width: 0; }
+.sit-mails { list-style: none; max-height: 520px; overflow: auto; }
+.sit-mails li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 9px 14px; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+.sit-mails li:last-child { border-bottom: 0; }
+.sit-mails .d { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 0.8rem; background: var(--bg-soft); color: var(--muted); }
+.sit-mails li.in .d { background: hsl(var(--accent-hsl) / 0.12); color: var(--accent); }
+.sit-mails li.out .d { background: hsl(var(--brand-hsl) / 0.12); color: var(--brand); }
+.sit-mails li.auto .d { background: hsl(var(--verde-hsl) / 0.12); color: var(--success); }
+.sit-mails li.proj { background: hsl(var(--brand-hsl) / 0.03); }
+.sit-mails b { display: block; color: var(--text); font-weight: 500; line-height: 1.4; }
+.sit-mails small { display: block; color: var(--faint); font-size: 0.7rem; margin-top: 2px; font-family: var(--font-mono); }
+.sit-k { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.sit-k div { border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+.sit-k b { display: block; font-family: var(--font-display); font-size: 1.05rem; color: var(--text); }
+.sit-k small { font-size: 0.68rem; color: var(--muted); }
+.sit-cont { margin-top: 12px; display: grid; gap: 3px; font-size: 0.8rem; }
+.sit-cont span { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.sit-cont b { color: var(--text); font-weight: 500; }
+.sit-cont small { color: var(--faint); font-size: 0.7rem; }
+@media (max-width: 1100px) { .sit { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .sit-k { grid-template-columns: 1fr 1fr; } .fn-it { grid-template-columns: 22px 1fr; } .fn-it > i { display: none; } }

@@ -203,37 +203,6 @@
     $('#s-caixa').addEventListener('slide:show', function () { if (!auto) { auto = true; setTimeout(play, 700); } });
   })();
 
-  /* ---------------- 6. Consulta a fornecedores ---------------- */
-  (function () {
-    var estado = $('#cotEstado'); if (!estado) return;
-    function atualiza() {
-      var n = $$('.email[id^="mail"]').filter(function (m) { return !m.classList.contains('sent'); }).length;
-      estado.textContent = n ? n + (n === 1 ? ' consulta por enviar' : ' consultas por enviar') : 'Consultas enviadas';
-      estado.className = 'estado ' + (n ? 'warn' : 'ok');
-    }
-    function envia(id) {
-      var m = document.getElementById(id); if (!m || m.classList.contains('sent')) return;
-      m.classList.add('sent'); $('.email-top .st', m).textContent = 'Enviado';
-      var row = document.getElementById(id === 'mailAl' ? 'cotAl' : 'cotVi');
-      $('[data-env]', row).textContent = 'hoje'; $('[data-resp]', row).innerHTML = '<span class="chip a"><i></i>Aguarda · lembrete em 2 d.u.</span>';
-      atualiza();
-    }
-    $$('[data-enviar]').forEach(function (b) { b.addEventListener('click', function () { envia(b.dataset.enviar); }); });
-    $('#cotSim').addEventListener('click', function () {
-      envia('mailAl'); envia('mailVi');
-      var R = [['cotAl', 'Recebida · PDF lido', '38.420,00 €', 'validade 30 dias'], ['cotVi', 'Recebida · PDF lido', '21.960,00 €', 'entrega 3 semanas']];
-      R.forEach(function (r, i) {
-        setTimeout(function () {
-          var row = document.getElementById(r[0]);
-          $('[data-resp]', row).innerHTML = '<span class="chip v"><i></i>' + r[1] + '</span><span class="sub">' + r[3] + '</span>';
-          $('[data-val]', row).innerHTML = r[2] + '<span class="sub ilus">ilustrativo</span>';
-          row.classList.remove('chegou'); void row.offsetWidth; row.classList.add('chegou');
-        }, 900 + i * 1300);
-      });
-      setTimeout(function () { estado.textContent = '2 respostas registadas'; estado.className = 'estado ok'; }, 900 + 2 * 1300);
-    });
-  })();
-
   /* ---------------- 7. Modo de envio ---------------- */
   $$('[data-modo]').forEach(function (g) {
     $$('button', g).forEach(function (b) { b.addEventListener('click', function () { $$('button', g).forEach(function (x) { x.classList.toggle('on', x === b); }); }); });
@@ -243,7 +212,7 @@
   (function () {
     var tb = $('#cliTab tbody'); if (!tb) return;
     var C = [
-      ['Construtora A (Vila Verde)', 'inclui o Retail Park', 14, 13, 6, '6 d.u.', 'v', 'Adjudica com regularidade'],
+      ['Construtora A (Vila Verde)', 'inclui o Retail Park', 14, 12, 6, '6 d.u.', 'v', 'Adjudica com regularidade'],
       ['Construtora B (Braga)', '', 9, 7, 4, '9 d.u.', 'v', 'Boa taxa, respostas lentas'],
       ['Gabinete de arquitetura C (Porto)', 'moradias', 6, 5, 2, '4 d.u.', 'v', 'Prescreve a MTS'],
       ['Construtora D (Guimarães)', '', 11, 8, 3, '7 d.u.', 'a', 'A acompanhar'],

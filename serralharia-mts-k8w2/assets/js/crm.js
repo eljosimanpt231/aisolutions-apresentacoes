@@ -191,7 +191,7 @@
       '<div class="g-anx">' + anx.map(function (a) { return '<span>' + esc(a) + '</span>'; }).join('') + '</div>' +
       '<ol class="g-ev">' + ev.map(function (e) { return '<li class="' + e[2] + '"><time>' + e[0] + '</time><span>' + esc(e[1]) + '</span></li>'; }).join('') + '</ol>' +
       '<div class="g-acoes"><label>Mover para <select id="gMover">' + ETAPAS.map(function (e) { return '<option value="' + e.id + '"' + (e.id === p.et ? ' selected' : '') + '>' + e.n + '</option>'; }).join('') + '</select></label>' +
-      (p.real ? '<button class="btn btn-primary" type="button" data-ir="2">Abrir a ficha completa →</button>' : '') + '</div>' +
+      (p.real ? '<button class="btn btn-primary" type="button" data-ir="5">Ver o ponto de situação →</button>' : '') + '</div>' +
       (p.real ? '' : '<p class="small" style="margin-top:10px">Pedido ilustrativo, com cliente anonimizado.</p>');
     $('#gMover').addEventListener('change', function () { mover(p.id, this.value); });
     var g = $('#crmGaveta'); g.classList.add('open'); g.setAttribute('aria-hidden', 'false');
