@@ -250,8 +250,8 @@ h2 { font-weight: 700; }
 .tr b { font-family: var(--font-display); font-weight: 700; }
 .fase { border-radius: 10px; }
 .gantt { border-radius: 12px; overflow: hidden; }
-.g-meses > div:last-child { grid-template-columns: repeat(2, 1fr); }
-.g-track { grid-template-columns: repeat(8, 1fr); }
+.g-meses > div:last-child { grid-template-columns: 4fr 4fr 2fr; }
+.g-track { grid-template-columns: repeat(10, 1fr); }
 .g-track > span:nth-child(4n) { border-right: 1px solid hsl(var(--brand-hsl) / 0.25); }
 .g-bar.e1 { background: var(--accent); } .g-bar.e2 { background: var(--brand); } .g-bar.e3 { background: var(--success); }
 .g-bar { color: hsl(0 0% 100%); }

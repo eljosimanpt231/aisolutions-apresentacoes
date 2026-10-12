@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../shared/deck/deck.css">
   <link rel="stylesheet" href="assets/css/mts.css">
   <link rel="stylesheet" href="assets/css/mts-id.css">
+  <link rel="stylesheet" href="assets/css/crm.css">
   <script src="config.js"></script>
 </head>
 <body>
@@ -54,8 +55,8 @@
         <h1 style="margin-top:12px">Cada pedido que entra, <span class="grad">classificado, respondido e seguido até à adjudicação.</span></h1>
         <p class="lead" style="margin-top:18px">
           Uma plataforma feita à medida da MTS, ligada ao vosso Outlook, que arruma a caixa de email, responde a quem tem de ter resposta,
-          prepara as consultas aos fornecedores e mostra à gestão, a qualquer hora, onde está cada orçamento.
-          O orçamento continua a ser feito no PrefSuite, por quem sabe.
+          lê os desenhos e mede os vãos, prepara as consultas aos fornecedores e mostra num painel, a qualquer hora, onde está cada orçamento.
+          O preço continua a sair do PrefSuite, por quem sabe.
         </p>
         <div class="stats">
           <div class="stat reveal"><div class="n"><span class="count" data-to="140">0</span> <small>pedidos</small></div><p>Pendentes a 7 de outubro. Dois dias antes eram 100.</p></div>
@@ -114,6 +115,7 @@
           <ol>
             <li><span><b>28/09, 12:33.</b> Classificado como pedido de orçamento, cliente verde, obra já adjudicada. Arrumado na pasta e aviso de receção enviado com prazo.</span></li>
             <li><span><b>28/09, 14:32.</b> O segundo email liga-se ao mesmo pedido. Não conta como pedido novo.</span></li>
+            <li><span><b>28/09.</b> Os 3 desenhos lidos: 11 vãos medidos entre pilares, 9 iguais ao cêntimo à proposta final do Ricardo.</span></li>
             <li><span><b>28/09.</b> As duas consultas, alumínio e vidro, ficam preparadas no estilo do Ricardo, prontas a enviar com um clique.</span></li>
             <li><span><b>01/10.</b> Alerta: a listagem de vidros existe e a consulta ao vidro ainda não saiu.</span></li>
             <li><span><b>07/10.</b> A insistência da construtora entra no histórico do pedido, com o estado à vista de quem atende.</span></li>
@@ -134,17 +136,18 @@
   <aside class="side">
     <div class="app-name"><img src="assets/img/mts-logo.svg" alt=""><div><b>Orçamentos MTS</b><small>plataforma · Microsoft 365</small></div></div>
     <div class="grp">Visão geral</div>
-    <a class="dup" data-v="0"><i>◧</i>Painel</a>
+    <a class="dup" data-v="0"><i>◧</i>Painel de orçamentos<span class="badge-n">32</span></a>
     <a class="dup" data-v="1"><i>✉</i>Caixa de entrada<span class="badge-n">140</span></a>
     <div class="grp">Pedido em curso</div>
     <div class="pedido-card"><b>Retail Park, Moita</b><span>Construtora A · recebido a 28/09</span></div>
     <a class="dup" data-v="2"><i>1</i>Ficha do pedido</a>
-    <a class="dup" data-v="3"><i>2</i>Consulta a fornecedores</a>
-    <a class="dup" data-v="4"><i>3</i>Seguimento</a>
+    <a class="dup" data-v="3"><i>2</i>Medições do desenho</a>
+    <a class="dup" data-v="4"><i>3</i>Consulta a fornecedores</a>
+    <a class="dup" data-v="5"><i>4</i>Seguimento</a>
     <div class="grp">Regras MTS</div>
-    <a class="dup" data-v="5"><i>↺</i>Respostas automáticas</a>
-    <a class="dup" data-v="6"><i>●</i>Clientes e semáforo</a>
-    <a class="dup" data-v="7"><i>✦</i>Assistente</a>
+    <a class="dup" data-v="6"><i>↺</i>Respostas automáticas</a>
+    <a class="dup" data-v="7"><i>●</i>Clientes e semáforo</a>
+    <a class="dup" data-v="8"><i>✦</i>Assistente</a>
   </aside>
   <div class="main">
     <div class="app-head">
@@ -154,46 +157,36 @@
       <div class="user"><span class="av">VS</span><div><b>Vera Sousa</b><small>Gestão</small></div></div>
     </div>
 
-    <!-- 0. Painel -->
-    <div class="slide" data-titulo="Painel">
-      <div class="view-h"><div><span class="k">PAINEL DA GESTÃO</span><h2>Bom dia, Vera. Onde está cada orçamento, em tempo real.</h2><p>Abre no browser, no computador ou no telemóvel, a qualquer hora. O mesmo painel para a Vera, o Sr. Manuel e o Ricardo.</p></div><span class="estado info">Atualizado às 10:42</span></div>
-      <div class="sim">⚠ Simulação com os números da reunião de 08/10. Os valores reais saem da auditoria aos últimos 10 meses.</div>
-      <div class="kpis k4">
-        <div class="kpi"><small>Emails de pedidos</small><b>140</b><span>14 repetidos ligados ao pedido original</span></div>
-        <div class="kpi hl"><small>Pedidos únicos</small><b>126</b><span>todos com resposta enviada</span></div>
-        <div class="kpi"><small>Verdes à espera de proposta</small><b class="ok">50</b><span>17 há mais de 5 dias úteis</span></div>
-        <div class="kpi"><small>Taxa de adjudicação</small><b>A medir</b><span>ponto de partida na auditoria</span></div>
+    <!-- 0. Painel: CRM de orçamentos -->
+    <div class="slide" id="s-painel" data-titulo="Painel de orçamentos">
+      <div class="view-h"><div><span class="k">PAINEL DE ORÇAMENTOS · CRM</span><h2>Todos os pedidos, da entrada à adjudicação</h2><p>Cada pedido é um cartão com a cor do cliente e tudo o que tem dentro: emails, anexos, medições, fornecedores e proposta. Arraste entre etapas, filtre por cor ou por cliente. No browser ou no telemóvel, para a Vera, o Sr. Manuel e o Ricardo.</p></div><span class="estado info">Atualizado às 10:42</span></div>
+      <div class="sim">⚠ Simulação: 31 pedidos ilustrativos com clientes anonimizados, mais o pedido real do Retail Park. Os números reais saem da auditoria aos últimos 10 meses.</div>
+      <div class="crm-kpis" id="crmKpis"></div>
+      <div class="crm-bar">
+        <div class="crm-cores" id="crmCores" role="group" aria-label="Filtrar por cor">
+          <button class="on" data-cor="todas">Todas</button>
+          <button data-cor="v"><i class="v"></i>Verde</button>
+          <button data-cor="a"><i class="a"></i>Amarelo</button>
+          <button data-cor="r"><i class="r"></i>Vermelho</button>
+        </div>
+        <select id="crmCliente" aria-label="Filtrar por cliente"><option value="">Todos os clientes</option></select>
+        <select id="crmResp" aria-label="Filtrar por responsável"><option value="">Todos os responsáveis</option><option value="RB">Ricardo Barbosa</option><option value="VS">Vera Sousa</option></select>
+        <label class="crm-busca">⌕<input id="crmBusca" type="search" placeholder="Procurar obra ou cliente"></label>
+        <div class="crm-vista" role="group" aria-label="Vista"><button class="on" data-vista="pipe">Pipeline</button><button data-vista="lista">Lista</button></div>
       </div>
+      <div class="crm-pipe" id="crmPipe"></div>
+      <div class="tbl-wrap crm-lista" id="crmLista" hidden><table class="tbl"><thead><tr><th>Cor</th><th>Cliente e obra</th><th>Etapa</th><th>Recebido</th><th class="num">Dias úteis</th><th class="num">Valor</th></tr></thead><tbody></tbody></table></div>
       <div class="two w" style="margin-top:16px">
         <div class="panel">
-          <div class="panel-h"><b>Os 126 pedidos pelo semáforo</b><span>classificação automática, corrigível</span></div>
-          <div class="panel-b">
-            <div class="semaf"><div class="v" style="flex:50">50 verdes</div><div class="a" style="flex:34">34 amarelos</div><div class="r" style="flex:42">42 vermelhos</div></div>
-            <div class="semaf-leg"><span><i style="background:var(--verde)"></i>Prioritários: proposta primeiro</span><span><i style="background:var(--amarelo)"></i>Concursos e consultas: prazo mais longo</span><span><i style="background:var(--vermelho)"></i>Resposta por falta de capacidade</span></div>
+          <div class="panel-h"><b>Pedidos em aberto pelo semáforo</b><span>com os filtros aplicados</span></div>
+          <div class="panel-b"><div class="semaf" id="crmSemaf"></div>
+            <div class="semaf-leg"><span><i style="background:var(--verde)"></i>Prioritários: proposta primeiro</span><span><i style="background:var(--amarelo)"></i>Concursos e novos: prazo mais longo</span><span><i style="background:var(--vermelho)"></i>Resposta por falta de capacidade</span></div>
           </div>
-          <div class="panel-h" style="border-top:1px solid var(--border)"><b>Verdes à espera, por antiguidade</b><span>clique no pedido real</span></div>
-          <div class="tbl-wrap" style="border:0;border-radius:0;max-height:none"><table class="tbl">
-            <thead><tr><th>Cliente e obra</th><th>Recebido</th><th>Estado</th></tr></thead>
-            <tbody>
-              <tr><td>Construtora B (Braga)<span class="sub">Edifício habitacional, 24 frações</span></td><td class="mono">22/09<span class="sub">2 insistências</span></td><td><span class="chip r"><i></i>Sem proposta há 13 dias úteis</span></td></tr>
-              <tr class="real" data-ir="2" style="cursor:pointer"><td>Construtora A (Vila Verde)<span class="sub">Retail Park, Moita · 506,34 m²</span></td><td class="mono">28/09<span class="sub">1 insistência</span></td><td><span class="chip b"><i></i>Proposta enviada a 09/10</span></td></tr>
-              <tr><td>Construtora D (Guimarães)<span class="sub">Pavilhão: portões e serralharia de ferro</span></td><td class="mono">01/10</td><td><span class="chip a"><i></i>À espera da Extrusal há 3 dias úteis</span></td></tr>
-              <tr><td>Gabinete de arquitetura C (Porto)<span class="sub">Moradia: caixilharia e guardas</span></td><td class="mono">02/10</td><td><span class="chip c"><i></i>Em orçamento no PrefSuite</span></td></tr>
-              <tr><td>Construtora A (Vila Verde)<span class="sub">Edifício de escritórios, Braga</span></td><td class="mono">12/10</td><td><span class="chip v"><i></i>Aviso de receção enviado</span></td></tr>
-            </tbody>
-          </table></div>
         </div>
-        <div>
-          <div class="panel">
-            <div class="panel-h"><b>Entradas e propostas por semana</b><span>últimas 10 semanas</span></div>
-            <div class="cols-wrap"><div class="cols-sem" id="colsSem"></div></div>
-            <div class="semaf-leg" style="padding:0 14px 12px"><span><i style="background:hsl(var(--brand-hsl) / 0.28)"></i>Pedidos recebidos</span><span><i style="background:var(--brand)"></i>Propostas enviadas</span></div>
-          </div>
-          <div class="kpis" style="margin-top:12px;grid-template-columns:1fr 1fr">
-            <div class="kpi"><small>Tempo até à proposta</small><b>8 d.u.</b><span>mediana dos verdes · no Retail Park foram 8</span></div>
-            <div class="kpi"><small>Propostas a aguardar decisão</small><b>23</b><span>4 a expirar este mês</span></div>
-          </div>
-          <div class="aviso" style="margin-top:12px">⚠ A Construtora B insistiu pela 2.ª vez esta manhã. O Ricardo já recebeu o alerta.</div>
+        <div class="panel">
+          <div class="panel-h"><b>Entradas e propostas por semana</b><span>últimas 10 semanas</span></div>
+          <div class="cols-wrap"><div class="cols-sem" id="colsSem"></div></div>
+          <div class="semaf-leg" style="padding:0 14px 12px"><span><i style="background:hsl(var(--brand-hsl) / 0.28)"></i>Pedidos recebidos</span><span><i style="background:var(--brand)"></i>Propostas enviadas</span></div>
         </div>
       </div>
     </div>
@@ -212,7 +205,7 @@
 
     <!-- 2. Ficha do pedido -->
     <div class="slide" data-titulo="Ficha do pedido">
-      <div class="view-h"><div><span class="k">PEDIDO 1 DE 3 · FICHA</span><h2>O pedido lido, antes de alguém o abrir</h2><p>O email e o mapa de quantidades da construtora, como chegaram a 28/09. Os desenhos DWG seguem para o PrefSuite como hoje: a plataforma não substitui o PrefSuite.</p></div><span class="chip v"><i></i>Verde · obra já adjudicada</span></div>
+      <div class="view-h"><div><span class="k">PEDIDO 1 DE 4 · FICHA</span><h2>O pedido lido, antes de alguém o abrir</h2><p>O email e o mapa de quantidades da construtora, como chegaram a 28/09. Os desenhos DWG são medidos no passo seguinte. O orçamento continua a fazer-se no PrefSuite.</p></div><span class="chip v"><i></i>Verde · obra já adjudicada</span></div>
       <div class="two w">
         <div>
           <div class="panel">
@@ -235,9 +228,10 @@
           </div>
           <div class="anexos" style="padding:10px 0 0">
             <div class="anexo"><span class="ext x">XLSX</span>2025137 - MQT_SERRALHARIA CAIX - S.xlsx<small>12 KB · lido</small></div>
-            <div class="anexo"><span class="ext">DWG</span>MOITA_arquitetura_LOJAS A-H.dwg<small>760 KB · para o PrefSuite</small></div>
-            <div class="anexo"><span class="ext">DWG</span>MOITA_desenhos_LOJAS K-L.dwg<small>1,2 MB · para o PrefSuite</small></div>
-            <div class="anexo"><span class="ext">DWG</span>MOITA_desenhos_LOJAS M-N.dwg<small>1,7 MB · para o PrefSuite</small></div>
+            <div class="anexo"><span class="ext">DWG</span>MOITA_arquitetura_LOJAS A-H.dwg<small>760 KB · medido</small></div>
+            <div class="anexo"><span class="ext">DWG</span>MOITA_desenhos_LOJAS K-L.dwg<small>1,2 MB · medido</small></div>
+            <div class="anexo"><span class="ext">DWG</span>MOITA_desenhos_LOJAS M-N.dwg<small>1,7 MB · medido</small></div>
+            <button class="btn btn-primary" type="button" data-ir="3" style="justify-self:start;margin-top:4px">Ver as medições do desenho →</button>
           </div>
         </div>
         <div>
@@ -263,9 +257,47 @@
       </div>
     </div>
 
-    <!-- 3. Consulta a fornecedores -->
+    <!-- 3. Medições do desenho -->
+    <div class="slide" id="s-medicoes" data-titulo="Medições do desenho">
+      <div class="view-h"><div><span class="k">PEDIDO 2 DE 4 · MEDIÇÕES</span><h2>Os desenhos lidos: cada vão medido, antes do PrefSuite</h2><p>Os 3 DWG que a construtora enviou, lidos pela plataforma. A fachada, os pilares, os módulos e as portas saem da geometria do desenho, em metros. O Ricardo confere e passa ao PrefSuite, já sem medir.</p></div><span class="estado ok" id="medEstado">9 de 11 iguais à vossa proposta</span></div>
+      <div class="panel">
+        <div class="panel-h"><b>Vista frontal · lojas A a H</b><span>MOITA_arquitetura_LOJAS A-H.dwg · cotas entre pilares, em metros</span></div>
+        <div class="fx" id="fxAH"></div>
+      </div>
+      <div class="two" style="margin-top:14px">
+        <div class="panel"><div class="panel-h"><b>Alçado sul · lojas K e L</b><span>MOITA_desenhos_LOJAS K-L.dwg</span></div><div class="fx sm" id="fxKL"></div></div>
+        <div class="panel"><div class="panel-h"><b>Fachada norte · loja M</b><span>MOITA_desenhos_LOJAS M-N.dwg</span></div><div class="fx sm" id="fxMN"></div></div>
+      </div>
+      <div class="two w" style="margin-top:14px">
+        <div class="tbl-wrap" style="max-height:none"><table class="tbl med">
+          <thead><tr><th>Vão</th><th class="num">Desenho</th><th>Divisão lida no desenho (m)</th><th class="num">Vossa proposta</th><th>Estado</th></tr></thead>
+          <tbody id="medTab"></tbody>
+        </table></div>
+        <div>
+          <div class="term" id="medTerm"></div>
+          <script type="application/json" id="medTerm-config">{
+            "title": "leitura-desenhos.log",
+            "intervalMs": 650,
+            "lines": [
+              { "text": "3 ficheiros DWG recebidos com o pedido 853/2026", "tone": "info" },
+              { "text": "Camadas ArchiCAD, estabilidade e levantamento separadas", "tone": "info" },
+              { "text": "Vista frontal A-H: fachada 143,00 m x 3,00 m, 7 pilares de 0,66 m", "tone": "ok" },
+              { "text": "11 vãos medidos entre pilares, módulos de 2,50 m, 1 porta de 2,00 x 2,10 por loja", "tone": "ok" },
+              { "text": "Mapa da construtora: 429 m² em bruto, inclui 4,60 m de pilares", "tone": "warn" },
+              { "text": "Lojas A e H: painel de canto no desenho (1,49 m e 1,57 m) fora da proposta", "tone": "warn" },
+              { "text": "Lista de vãos pronta para o Ricardo confirmar e passar ao PrefSuite", "tone": "success" }
+            ]
+          }</script>
+          <div class="validar" style="margin-top:12px"><p><b>2 perguntas para o Ricardo</b> antes de fechar: o painel de canto das lojas A e H ficou de fora de propósito? E a altura de 3,35 m na loja A vem de onde?</p></div>
+          <button class="btn btn-ghost" type="button" id="medCsv" style="margin-top:10px">⇩ Lista de vãos em Excel (CSV)</button>
+          <p class="small" style="margin-top:10px">O sistema, o vidro e a cor vêm do mapa de quantidades e do caderno de encargos, não do desenho. Desenhos de outros projetistas organizam-se de outra maneira: por isso o arranque inclui afinar a leitura com pedidos reais de projetistas diferentes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Consulta a fornecedores -->
     <div class="slide" data-titulo="Consulta a fornecedores">
-      <div class="view-h"><div><span class="k">PEDIDO 2 DE 3 · FORNECEDORES</span><h2>As consultas prontas a enviar, no estilo do Ricardo</h2><p>A plataforma identifica o que é preciso cotar e a quem costumam pedir. O Ricardo revê e envia com um clique. As respostas voltam para o pedido.</p></div><span class="estado warn" id="cotEstado">2 consultas por enviar</span></div>
+      <div class="view-h"><div><span class="k">PEDIDO 3 DE 4 · FORNECEDORES</span><h2>As consultas prontas a enviar, no estilo do Ricardo</h2><p>A plataforma identifica o que é preciso cotar e a quem costumam pedir. O Ricardo revê e envia com um clique. As respostas voltam para o pedido.</p></div><span class="estado warn" id="cotEstado">2 consultas por enviar</span></div>
       <div class="two">
         <div>
           <div class="email" id="mailAl">
@@ -326,9 +358,9 @@
       </div>
     </div>
 
-    <!-- 4. Seguimento -->
+    <!-- 5. Seguimento -->
     <div class="slide" data-titulo="Seguimento">
-      <div class="view-h"><div><span class="k">PEDIDO 3 DE 3 · SEGUIMENTO</span><h2>Do aviso de receção à adjudicação, sem perder o fio</h2><p>A proposta enviada a 09/10 foi detetada no email enviado: o PDF lido, o valor e a validade registados. A partir daqui, a plataforma segue o pedido.</p></div><span class="estado info">Aguarda adjudicação</span></div>
+      <div class="view-h"><div><span class="k">PEDIDO 4 DE 4 · SEGUIMENTO</span><h2>Do aviso de receção à adjudicação, sem perder o fio</h2><p>A proposta enviada a 09/10 foi detetada no email enviado: o PDF lido, o valor e a validade registados. A partir daqui, a plataforma segue o pedido.</p></div><span class="estado info">Aguarda adjudicação</span></div>
       <div class="estados">
         <div class="est ok"><i>✓</i>Recebido<small>28/09</small></div>
         <div class="est ok"><i>✓</i>Aviso de receção<small>28/09</small></div>
@@ -370,7 +402,7 @@
       </div>
     </div>
 
-    <!-- 5. Respostas automáticas -->
+    <!-- 6. Respostas automáticas -->
     <div class="slide" data-titulo="Respostas automáticas">
       <div class="view-h"><div><span class="k">REGRAS MTS · RESPOSTAS</span><h2>Os "2 segundos" que ninguém tinha, feitos sempre</h2><p>Um texto por cor, com os dados do pedido. Para cada um, a Vera escolhe: sai sozinho, ou espera pela aprovação. No arranque, os vermelhos esperam.</p></div></div>
       <div class="tpl">
@@ -415,7 +447,7 @@
       </div>
     </div>
 
-    <!-- 6. Clientes e semáforo -->
+    <!-- 7. Clientes e semáforo -->
     <div class="slide" data-titulo="Clientes e semáforo">
       <div class="view-h"><div><span class="k">REGRAS MTS · CLIENTES</span><h2>O semáforo do Ricardo, com os números de cada cliente</h2><p>A auditoria aos últimos 10 meses dá a cor de partida a cada cliente. A partir daí, cada adjudicação ou perda atualiza o histórico. A cor final é sempre vossa: clique para mudar.</p></div><span class="estado info" id="cliEstado">8 clientes · 3 verdes</span></div>
       <div class="sim">⚠ Simulação: clientes anonimizados e números ilustrativos. Os reais saem da auditoria.</div>
@@ -426,7 +458,7 @@
       <p class="small" style="margin-top:8px">"Estes já vos pediram 35 orçamentos este ano e não adjudicaram nenhum": é este tipo de linha que a auditoria encontra.</p>
     </div>
 
-    <!-- 7. Assistente -->
+    <!-- 8. Assistente -->
     <div class="slide" data-titulo="Assistente">
       <div class="view-h"><div><span class="k">ASSISTENTE</span><h2>Perguntar à plataforma, em português</h2><p>Quatro situações reais. A última é a mais importante: o que o assistente se recusa a fazer sozinho.</p></div></div>
       <div class="cr" id="crDemo"></div>
@@ -468,7 +500,7 @@
           { "title": "O Ricardo prepara as consultas", "subtitle": "O pedido do Retail Park, do mapa às duas consultas.",
             "chat": [
               { "sender": "client", "text": "prepara as consultas para o retail da moita", "time": "14:10" },
-              { "sender": "agent", "text": "Pedido 853/2026 lido: **506,34 m²** de caixilharia A080 em 3 artigos (lojas A-H, K-L e M-N).", "time": "14:10", "passo": 2 },
+              { "sender": "agent", "text": "Pedido 853/2026 lido: caixilharia A080, e **11 vãos medidos nos desenhos** (lojas A a M), com módulos e portas.", "time": "14:10", "passo": 2 },
               { "sender": "agent", "text": "Proponho 2 consultas: **alumínio** à Extrusal, com o mapa, os 3 DWG e o projeto; **vidro** ao fornecedor habitual, com a listagem do PrefSuite (69 vidros, 423,94 m²).", "time": "14:10", "passo": 4 },
               { "sender": "agent", "text": "Antes de enviar: a listagem e o mapa dizem **caixa de 16 mm**. Mantenho 16?", "time": "14:10", "passo": 5 },
               { "sender": "client", "text": "sim 16", "time": "14:12" },
@@ -518,11 +550,12 @@
         "nodes": [
           { "icon": "filter", "title": "Lê e arruma", "detail": "Cada email na pasta certa, com a cor do cliente e os repetidos ligados.", "tone": "brand" },
           { "icon": "send", "title": "Responde", "detail": "Aviso de receção com prazo, ou falta de capacidade, com registo.", "tone": "teal" },
+          { "icon": "list", "title": "Mede os desenhos", "detail": "Vãos, módulos e portas lidos dos DWG, prontos para o PrefSuite.", "tone": "teal" },
           { "icon": "search", "title": "Consulta o mercado", "detail": "Consultas preparadas aos fornecedores e respostas guardadas.", "tone": "teal" },
           { "icon": "clock", "title": "Segue o pedido", "detail": "Insistências, proposta enviada, validade e lembretes.", "tone": "teal" },
-          { "icon": "check", "title": "Painel da gestão", "detail": "Entradas, respostas, tempos e adjudicações, a qualquer hora.", "tone": "brand" }
+          { "icon": "check", "title": "Painel de orçamentos", "detail": "Cada pedido por cor e por etapa, até à adjudicação.", "tone": "brand" }
         ],
-        "note": "O que entra certo no início chega certo ao fim: do primeiro email à adjudicação."
+        "note": "O que entra certo no início chega certo ao fim: do primeiro email à adjudicação, com cada pedido visível no painel."
       }</script>
     </div>
   </div>
@@ -538,14 +571,15 @@
             <li>Lê cada email que entra e arruma-o nas pastas e categorias do Outlook</li>
             <li>Junta os repetidos e as insistências ao pedido original</li>
             <li>Envia o aviso de receção com prazo e, com aprovação, a resposta por falta de capacidade</li>
+            <li>Lê os desenhos e mede os vãos, os módulos e as portas</li>
             <li>Prepara as consultas aos fornecedores e guarda as respostas</li>
-            <li>Segue cada proposta até à adjudicação e mostra tudo no painel</li>
+            <li>Segue cada proposta até à adjudicação e mostra tudo no painel, por cor e por etapa</li>
           </ul>
         </div>
         <div class="card ps reveal">
           <h3>O que fica sempre com a MTS</h3>
           <ul class="list-check">
-            <li>O orçamento e o preço: no PrefSuite, pelo Ricardo</li>
+            <li>O preço: no PrefSuite, pelo Ricardo, com as medições já conferidas</li>
             <li>A cor de cada cliente e as regras de prazo</li>
             <li>Enviar as consultas e as propostas: nada de preços sai sem uma pessoa</li>
             <li>Os emails que o agente não sabe classificar: ficam em "Por classificar"</li>
@@ -563,12 +597,13 @@
       <div class="invest">
         <div class="preco reveal">
           <div class="lbl">Implementação, paga por entregas</div>
-          <p style="margin-top:4px">Plataforma de gestão de pedidos de orçamento feita à medida da MTS, com o agente de categorização do email.</p>
+          <p style="margin-top:4px">Plataforma de gestão de pedidos de orçamento feita à medida da MTS, com o agente de categorização do email e a leitura dos desenhos.</p>
           <div class="modulos">
             <div><b>Auditoria de 10 meses</b>volume real, repetidos, tempos, adjudicação, cor de cada cliente</div>
             <div><b>Agente de categorização</b>cada email lido e arrumado em pastas no Outlook</div>
             <div><b>Respostas automáticas</b>aviso de receção e falta de capacidade, com registo</div>
-            <div><b>Painel, fornecedores e seguimento</b>da consulta ao mercado à adjudicação</div>
+            <div><b>Leitura dos desenhos</b>vãos, módulos e portas medidos dos DWG e do mapa de quantidades</div>
+            <div><b>Painel de orçamentos (CRM)</b>pipeline por cor e por etapa, fornecedores e seguimento até à adjudicação</div>
           </div>
           <div id="invTranches" class="tranches-fortes" style="margin-top:6px"></div>
           <div class="inv-total">Total da implementação <span id="invTotal"></span></div>
@@ -579,7 +614,7 @@
           <div class="ou">ou</div>
           <div class="val m" id="invAno"></div>
           <ul class="inclui">
-            <li>Processamento de inteligência artificial de todos os emails da caixa, incluindo anexos</li>
+            <li>Processamento de inteligência artificial de todos os emails da caixa, incluindo anexos e desenhos</li>
             <li>Manutenção da plataforma e da ligação ao Microsoft 365</li>
             <li>Novas regras e ajustes a partir das vossas correções, sem custo de programadores</li>
             <li>Suporte à equipa</li>
@@ -594,12 +629,12 @@
   <div class="slide folha" data-titulo="Como arrancamos">
     <div class="container">
       <span class="eyebrow">Como arrancamos</span>
-      <h2>Oito semanas, duas entregas, com os vossos pedidos</h2>
+      <h2>Dez semanas, duas entregas, com os vossos pedidos</h2>
       <div class="gantt reveal" id="gantt"></div>
       <div class="fases">
         <div class="fase"><span class="k">SEMANAS 1 E 2</span><h3>Auditoria e regras</h3><ul><li>Acesso à caixa no Microsoft 365</li><li>10 meses de pedidos: volume, repetidos, tempos, adjudicação</li><li>Cor de partida de cada cliente, validada pela Vera</li></ul></div>
         <div class="fase"><span class="k">ATÉ À SEMANA 6 · ENTREGA 1</span><h3>Caixa arrumada e respostas</h3><ul><li>Agente de categorização e pastas</li><li>Avisos de receção e falta de capacidade</li><li>Os 140 em atraso tratados no primeiro dia</li></ul></div>
-        <div class="fase"><span class="k">ATÉ À SEMANA 8 · ENTREGA 2</span><h3>Painel, fornecedores, seguimento</h3><ul><li>Painel da gestão no browser e no telemóvel</li><li>Consultas aos fornecedores e respostas guardadas</li><li>Seguimento das propostas até à adjudicação</li></ul></div>
+        <div class="fase"><span class="k">ATÉ À SEMANA 10 · ENTREGA 2</span><h3>Desenhos, painel e seguimento</h3><ul><li>Painel de orçamentos por cor e por etapa, no browser e no telemóvel</li><li>Leitura dos desenhos: vãos, módulos e portas, afinada com pedidos de vários projetistas</li><li>Consultas aos fornecedores e seguimento até à adjudicação</li></ul></div>
       </div>
       <div class="seguinte"><b>Fase seguinte:</b> integração com o Sage; histórico de preços de compra a partir das faturas digitalizadas e das cotações recebidas; apoio ao futuro departamento de compras; e, com essa base, estimativas rápidas de orçamento antes de consultar o mercado.</div>
     </div>
@@ -613,10 +648,15 @@
   <div class="nav"><button data-prev aria-label="Anterior">‹</button><button data-next aria-label="Seguinte">›</button></div>
 </div>
 
+<aside class="crm-gaveta" id="crmGaveta" aria-hidden="true"><div class="crm-gaveta-fundo" data-fecha></div><div class="crm-gaveta-c" role="dialog" aria-label="Detalhe do pedido"><button class="crm-x" data-fecha aria-label="Fechar">✕</button><div id="crmDet"></div></div></aside>
+<div class="crm-toast" id="crmToast"></div>
+
 <script src="../shared/deck/deck.js"></script>
+<script src="assets/js/fachadas.js"></script>
 <script>
-  chatRaciocinio('crDemo'); fluxo('fxMTS'); terminal('cotTerm');
+  chatRaciocinio('crDemo'); fluxo('fxMTS'); terminal('cotTerm'); terminal('medTerm');
 </script>
 <script src="assets/js/mts.js"></script>
+<script src="assets/js/crm.js"></script>
 </body>
 </html>

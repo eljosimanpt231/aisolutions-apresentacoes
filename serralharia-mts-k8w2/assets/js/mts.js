@@ -279,17 +279,18 @@
     $('#invAno').innerHTML = eu(I.anual) + '<small>/ano + IVA</small>';
     $('#invTranches').innerHTML = I.tranches.map(function (t, i) {
       return '<div class="tr"><span class="n">' + (i + 1) + '</span><span>' + t[0] + '<small>' + t[1] + '</small></span><b>' + eu(t[2]) + '<small>+ IVA</small></b></div>'; }).join('');
-    var N = 8, sem = '<span></span>'.repeat(N);
+    var N = 10, sem = '<span></span>'.repeat(N);
     var bar = function (cls, a, b, txt) { return '<div class="g-bar ' + cls + '" style="left:calc(' + (a - 1) + ' / ' + N + ' * 100% + 3px);width:calc(' + (b - a + 1) + ' / ' + N + ' * 100% - 6px)">' + txt + '</div>'; };
-    var ms = function (s, txt) { return '<div class="g-ms' + (s > 6.5 ? ' fim' : '') + '" style="left:calc(' + s + ' / ' + N + ' * 100%)"><em>' + txt + '</em></div>'; };
+    var ms = function (s, txt) { return '<div class="g-ms' + (s > 8.5 ? ' fim' : '') + '" style="left:calc(' + s + ' / ' + N + ' * 100%)"><em>' + txt + '</em></div>'; };
     var T = I.tranches;
     $('#gantt').innerHTML =
-      '<div class="g-meses"><div>SEMANAS</div><div><b>Mês 1<small>semanas 1 a 4</small></b><b>Mês 2<small>semanas 5 a 8</small></b></div></div>' +
+      '<div class="g-meses"><div>SEMANAS</div><div><b>Mês 1<small>semanas 1 a 4</small></b><b>Mês 2<small>semanas 5 a 8</small></b><b>Mês 3<small>semanas 9 e 10</small></b></div></div>' +
       '<div class="g-row"><div class="g-lbl"><b>Arranque e auditoria</b><small>acessos, 10 meses de pedidos, cores</small></div><div class="g-track">' + sem + bar('lt', 1, 2, 'Auditoria') + '</div></div>' +
       '<div class="g-row"><div class="g-lbl"><b>Entrega 1</b><small>caixa arrumada e respostas</small></div><div class="g-track">' + sem + bar('e1', 2, 6, 'Categorização, pastas, respostas, os 140') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Entrega 2</b><small>painel, fornecedores, seguimento</small></div><div class="g-track">' + sem + bar('e2', 5, 8, 'Painel, consultas, seguimento') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Validação</b><small>com os pedidos do dia a dia</small></div><div class="g-track">' + sem + bar('e3', 7, 8, 'Afinação') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Pagamentos</b><small>ligados às entregas</small></div><div class="g-track">' + sem + ms(0.02, eu(T[0][2]) + ' + IVA') + ms(6, eu(T[1][2]) + ' + IVA') + ms(7.98, eu(T[2][2]) + ' + IVA') + '</div></div>';
+      '<div class="g-row"><div class="g-lbl"><b>Painel de orçamentos</b><small>CRM por cor e por etapa</small></div><div class="g-track">' + sem + bar('e2', 4, 7, 'Pipeline, filtros, detalhe') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Leitura dos desenhos</b><small>DWG e mapas de vários projetistas</small></div><div class="g-track">' + sem + bar('e2', 5, 9, 'Medições, consultas, seguimento') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Validação</b><small>com os pedidos do dia a dia</small></div><div class="g-track">' + sem + bar('e3', 9, 10, 'Afinação') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Pagamentos</b><small>ligados às entregas</small></div><div class="g-track">' + sem + ms(0.02, eu(T[0][2]) + ' + IVA') + ms(6, eu(T[1][2]) + ' + IVA') + ms(9.98, eu(T[2][2]) + ' + IVA') + '</div></div>';
   })();
 
   render(true);

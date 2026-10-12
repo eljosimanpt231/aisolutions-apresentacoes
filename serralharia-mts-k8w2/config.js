@@ -6,11 +6,11 @@ window.APRESENTACAO = {
   comercial: "Diogo Gonçalves",
   passwordHash: null,
   investimento: {
-    total: 10500,
+    total: 11000,
     tranches: [
       ["Adjudicação", "no arranque do projeto", 4500],
       ["Entrega 1: caixa organizada e respostas automáticas", "auditoria, categorização do email, avisos de receção e respostas por falta de capacidade", 3500],
-      ["Entrega 2: painel, fornecedores e seguimento", "painel da gestão, consultas a fornecedores e seguimento até à adjudicação", 2500]
+      ["Entrega 2: desenhos, painel e seguimento", "leitura dos desenhos, painel de orçamentos (CRM), consultas a fornecedores e seguimento até à adjudicação", 3000]
     ],
     mensal: 300,
     anual: 3000
