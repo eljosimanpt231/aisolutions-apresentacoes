@@ -1,0 +1,74 @@
+/* Estilo "lx-tecnitramo": navy TecniTramo (#233B66) e o azul elétrico
+   da gama LX como acento, aço escovado nos cartões.
+   Semáforo de prioridade: A verde, B âmbar, C cinza.
+   Modo escuro em [data-theme="dark"]: o azul-noite das fotos da gama LX. */
+:root {
+  --brand-hsl: 219 49% 27%;
+  --accent-hsl: 205 100% 42%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --ink-hsl: 222 55% 9%;
+  --ink: hsl(var(--ink-hsl));
+
+  --dot-red-hsl: 354 74% 54%;
+  --dot-yellow-hsl: 40 95% 52%;
+  --dot-green-hsl: 150 62% 40%;
+
+  --bg: hsl(216 25% 97%);
+  --bg-soft: hsl(216 26% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(216 24% 96%);
+  --border: hsl(216 18% 86%);
+
+  --text: hsl(222 40% 12%);
+  --muted: hsl(220 10% 40%);
+
+  --success-hsl: 150 62% 33%;  --success: hsl(var(--success-hsl));
+  --danger-hsl: 354 70% 46%;   --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 36 92% 40%;   --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: linear-gradient(165deg, hsl(var(--brand-hsl)) 0%, hsl(var(--ink-hsl)) 110%);
+  --grad-text: linear-gradient(110deg, hsl(219 55% 30%), hsl(205 100% 42%));
+  --grad-cta: linear-gradient(160deg, hsl(var(--ink-hsl)), hsl(219 55% 22%) 75%);
+
+  --shadow-sm: 0 1px 3px hsl(222 40% 10% / 0.07);
+  --shadow-md: 0 8px 28px hsl(222 40% 10% / 0.09);
+  --shadow-lg: 0 20px 56px hsl(222 40% 10% / 0.16);
+
+  /* consola (janela de produto, escura nos dois temas) */
+  --cs-bg: hsl(222 45% 7%);
+  --cs-panel: hsl(222 38% 10.5%);
+  --cs-line: hsl(220 28% 19%);
+  --cs-text: hsl(214 30% 93%);
+  --cs-muted: hsl(216 14% 64%);
+  --wa-hsl: 142 70% 40%;
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: 1180px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
+
+:root[data-theme="dark"] {
+  --brand-hsl: 210 80% 62%;
+  --accent-hsl: 198 100% 55%;
+  --on-brand: hsl(222 55% 7%);
+  --bg: hsl(222 50% 5%);
+  --bg-soft: hsl(222 44% 7.5%);
+  --surface: hsl(222 38% 10%);
+  --surface-2: hsl(222 32% 12.5%);
+  --border: hsl(220 28% 19%);
+  --text: hsl(214 30% 94%);
+  --muted: hsl(216 14% 66%);
+  --success-hsl: 150 60% 50%;
+  --danger-hsl: 354 80% 64%;
+  --warning-hsl: 40 95% 58%;
+  --grad-text: linear-gradient(110deg, hsl(210 90% 70%), hsl(192 100% 58%));
+  --grad-cta: linear-gradient(160deg, hsl(222 50% 9%), hsl(219 50% 18%) 75%);
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.3);
+  --shadow-md: 0 8px 28px hsl(0 0% 0% / 0.35);
+  --shadow-lg: 0 20px 56px hsl(0 0% 0% / 0.45);
+}

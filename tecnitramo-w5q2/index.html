@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>TecniTramo | Assistente de voz que qualifica</title>
+  <meta name="description" content="Proposta AI Solutions para a TecniTramo: assistente de voz em português de Portugal que atende, qualifica e entrega cada contacto já classificado.">
+  <meta property="og:title" content="TecniTramo × AI Solutions">
+  <meta property="og:description" content="Cada chamada atendida, cada contacto classificado: assistente de voz para a TecniTramo.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/tecnitramo-w5q2/assets/img/og.png">
+  <meta property="og:type" content="website">
+  <script>
+    try { var t = localStorage.getItem('ais-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/deck-slides.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-chip"><img class="logo-light" src="assets/img/logo-azul.png" alt="TecniTramo"><img class="logo-dark" src="assets/img/logo-branco.png" alt="TecniTramo"></span>
+    </div>
+    <div class="right">
+      <nav class="tabs" data-scope="deck">
+        <button class="tab active" data-tab="contexto">Contexto</button>
+        <button class="tab" data-tab="chamada">A chamada</button>
+        <button class="tab" data-tab="funciona">Como funciona</button>
+        <button class="tab" data-tab="proposta">Proposta</button>
+      </nav>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">◐</button>
+    </div>
+  </header>
+  <div class="progress"></div>
+
+  <main class="deck" id="deck">
+
+  <!-- ====================================================== -->
+  <!-- CONTEXTO                                               -->
+  <!-- ====================================================== -->
+  <section class="tab-panel active" id="contexto">
+
+    <!-- 1. Capa -->
+    <div class="slide active">
+      <div class="container">
+        <div class="cover-grid">
+          <div>
+            <span class="eyebrow"><span class="dots3"><i></i><i></i><i></i></span>TecniTramo × AI Solutions · 12 de outubro de 2026</span>
+            <h1>Cada chamada atendida.<br><span class="grad">Cada contacto classificado.</span></h1>
+            <p class="lead" style="margin-top:20px">
+              Um assistente de voz em português de Portugal que atende todas as chamadas, separa quem quer comprar já de quem quer um orçamento,
+              faz a qualificação técnica sem atrito e entrega ao Marco a lista do dia por ordem de prioridade.
+            </p>
+          </div>
+          <div class="night photo reveal">
+            <img class="night-bg" src="assets/img/foto-hero-lx.jpg" alt="">
+            <div class="clock">20:47 <small>terça-feira, ao jantar</small></div>
+            <ol>
+              <li><time>20:47</time><span>Toca o telemóvel. Número desconhecido.</span></li>
+              <li class="bad"><time>20:48</time><span><q>Quanto custa montar uma lavandaria self-service?</q></span></li>
+              <li class="bad"><time>21:09</time><span>Vinte minutos a explicar capacidades, gás, trifásica.</span></li>
+              <li><time>21:10</time><span><q>Vou pensar.</q> Não tinha espaço, nem investimento, nem data.</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="card stat-card reveal"><div class="num">~<span class="count" data-to="30">0</span> por dia</div><div class="desc">Contactos, quase todos por telefone, atendidos pelo Marco e por uma colega</div></div>
+          <div class="card stat-card reveal"><div class="num"><span class="count" data-to="40">0</span> a 60 mil €</div><div class="desc">Ticket médio de um projeto: uma chamada mal atendida pode valer isto</div></div>
+          <div class="card stat-card reveal"><div class="num">+<span class="count" data-to="12">0</span> M€</div><div class="desc">Em orçamentos dados este ano, só pelo Marco. Muitos iguais, muda só o nome</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. O que ouvimos -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que ouvimos a 7 de outubro</span>
+        <h2>Quatro pontos, por ordem de arranque</h2>
+        <div class="pains">
+          <div class="card reveal">
+            <div class="pain-num">01 · O telefone não para</div>
+            <h3 style="margin-top:8px">Trinta contactos por dia, a par de tudo o resto</h3>
+            <p class="small">Quem atende é o Marco ou a colega, quando podem. Muitas chamadas ficam por atender e algumas chegam às 20h30 ou às 21h00. Houve uma altura em que o telefone se ouvia a tocar sem estar a tocar.</p>
+            <span class="prio">Arranque: fase 1</span>
+          </div>
+          <div class="card reveal">
+            <div class="pain-num">02 · Qualificar é chato</div>
+            <h3 style="margin-top:8px">Muitos curiosos, a mesma conversa outra vez</h3>
+            <p class="small">Tipo de lavandaria, número e capacidade das máquinas, moedeiro, gás ou elétrica, água quente ou fria, trifásica ou monofásica. Feito por uma pessoa, demora e pode criar atrito com o cliente.</p>
+            <span class="prio">Arranque: fase 1</span>
+          </div>
+          <div class="card reveal">
+            <div class="pain-num">03 · Quem quer comprar já</div>
+            <h3 style="margin-top:8px">Passa logo, sem esperar</h3>
+            <p class="small">A primeira pergunta separa tudo: comprar já ou orçamento? Quem quer comprar já faz mais duas ou três perguntas e a chamada passa ao Marco. O resto chega classificado, para decidir a quem ligar primeiro.</p>
+            <span class="prio">Arranque: fase 1</span>
+          </div>
+          <div class="card reveal">
+            <div class="pain-num">04 · WhatsApp e IGEST</div>
+            <h3 style="margin-top:8px">O mesmo guião, noutros canais</h3>
+            <p class="small">O WhatsApp recebe menos contactos, e os orçamentos vivem no IGEST. Depois de a voz estar a render, o mesmo guião passa para o WhatsApp e avaliamos a ligação ao IGEST para os orçamentos.</p>
+            <span class="prio later">Mais à frente</span>
+          </div>
+        </div>
+        <p class="quote">«Pode passar todas, mas classificadas. Depois decido eu.» É esta a regra do assistente.</p>
+      </div>
+    </div>
+
+    <!-- 3. Hoje vs com o assistente -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">A mesma chamada, duas noites</span>
+        <h2>O que muda para quem liga às 20h47</h2>
+        <div class="vs">
+          <div class="card card-dont reveal">
+            <h3>Hoje</h3>
+            <ul class="tl">
+              <li><time>20:47</time><span>O Marco atende ao jantar, ou não atende e o contacto perde-se.</span></li>
+              <li><time>20:48</time><span>Vinte minutos de perguntas e explicações, sem saber se o projeto é real.</span></li>
+              <li><time>21:10</time><span><q>Vou pensar.</q> Mais um orçamento igual aos outros, só muda o nome.</span></li>
+              <li><time>?</time><span>Amanhã, os projetos bons estão misturados com os curiosos.</span></li>
+            </ul>
+          </div>
+          <div class="card card-do reveal">
+            <h3>Com o assistente de voz</h3>
+            <ul class="tl">
+              <li><time>20:47</time><span>Atende ao primeiro toque: «TecniTramo, boa noite.»</span></li>
+              <li><time>20:47</time><span>Pergunta logo: comprar já, ou orçamento?</span></li>
+              <li><time>20:49</time><span>Segue o guião: lavandaria, máquinas, instalação, investimento, prazo. Explica sem pressa o que o cliente não sabe.</span></li>
+              <li><time>8:30</time><span>O Marco abre a lista do dia: prioridade A primeiro, cada contacto com o resumo da conversa.</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="quote">O assistente não fecha negócios. Faz a triagem, para o Marco só pegar no telefone quando vale a pena.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- A CHAMADA                                              -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="chamada">
+
+    <!-- 4. O guião -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">O guião que o assistente segue</span>
+        <h2>Uma pergunta separa tudo</h2>
+        <div class="gq reveal"><span>Primeira pergunta, em todas as chamadas</span>«Está a pensar comprar já, ou quer um orçamento?»</div>
+        <div class="guiao">
+          <div class="card gbuy reveal">
+            <div class="gk">Comprar já</div>
+            <h3>Duas ou três perguntas e passa ao Marco</h3>
+            <ul class="gl">
+              <li>O que precisa e de que capacidade</li>
+              <li>Para quando, e onde</li>
+              <li>Nome e contacto</li>
+            </ul>
+            <div class="gout"><b>→ Passa a chamada</b>Se ninguém puder atender, marca urgente e o Marco liga de volta.</div>
+          </div>
+          <div class="card gquote reveal">
+            <div class="gk">Orçamento</div>
+            <h3>A qualificação completa, com calma</h3>
+            <div class="gblocks">
+              <div><b>1 · A lavandaria</b>Self-service, comercial, industrial, interna (lar, hospital, hotel). Já tem espaço? Quantos m²?</div>
+              <div><b>2 · As máquinas</b>Quantas de lavar e de secar, capacidade em kg, duplas ou não, com ou sem moedeiro.</div>
+              <div><b>3 · A instalação</b>Elétrica, gás ou vapor. Água quente ou fria. Monofásica ou trifásica.</div>
+              <div><b>4 · O projeto</b>Investimento previsto, prazo, localidade, nome e telemóvel.</div>
+            </div>
+            <div class="gout"><b>→ Classifica e entrega</b>Resumo da conversa ao Marco, na lista do dia.</div>
+          </div>
+        </div>
+        <div class="abc">
+          <div class="reveal"><i class="a">A</i><span><b>Projeto real</b>Tem espaço, investimento e data. Ligar primeiro.</span></div>
+          <div class="reveal"><i class="b">B</i><span><b>Interessado</b>Sabe o que quer, ainda sem data ou sem espaço.</span></div>
+          <div class="reveal"><i class="c">C</i><span><b>Curioso</b>Só quer saber preços. Fica registado, sem pressa.</span></div>
+        </div>
+        <p class="cs-note">As perguntas e os critérios A, B e C fecham-se com o Marco, a partir das chamadas gravadas na auditoria.</p>
+      </div>
+    </div>
+
+    <!-- 5. O que dizemos à Bia -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Ao vivo · passo 1</span>
+        <h2>Em dois minutos, a Bia passa a ser da TecniTramo</h2>
+        <p class="lead">A Bia é a nossa assistente genérica: ainda não conhece a TecniTramo. Damos-lhe o contexto e o guião em voz alta, como a um colega novo, e ela começa a atender.</p>
+        <div class="brief">
+          <div class="card bcall reveal">
+            <div class="k">Ligar à Bia</div>
+            <div class="num">923 272 849</div>
+            <p>Em alta voz, na reunião. Tudo o que a Bia sabe sobre a TecniTramo é o que lhe dissermos nos quatro passos.</p>
+            <div class="start"><b>5 · Para começar</b><q>Vamos fazer um role play: eu sou um cliente e tu atendes a linha da TecniTramo. O telefone está a tocar.</q><span>A partir daqui, falamos como um dos três clientes do slide seguinte.</span></div>
+          </div>
+          <ol class="rp-steps card reveal">
+            <li><b>Quem somos</b><q>Olá, Bia. A partir de agora és a assistente da TecniTramo. Vendemos maquinaria de lavandaria Tecnitramo: máquinas de lavar, secadores e calandras, para lavandarias self-service, comerciais e industriais, e para lares, hospitais e hotéis. Também fazemos assistência técnica.</q></li>
+            <li><b>A primeira pergunta</b><q>Quando alguém ligar, perguntas logo se quer comprar já ou se quer um orçamento. Se for para comprar já, perguntas o quê, para quando e onde, e dizes que vais passar a chamada ao Marco.</q></li>
+            <li><b>O guião do orçamento</b><q>Se for um orçamento, perguntas: que tipo de lavandaria é, se já tem espaço e quantos metros quadrados, quantas máquinas de lavar e de secar e de que capacidade, se é com moedeiro, se é elétrica, a gás ou a vapor, água quente ou fria, monofásica ou trifásica, o investimento previsto e para quando. No fim, nome, telemóvel e localidade.</q></li>
+            <li><b>As regras</b><q>Não dás preços nem prazos. Se o cliente não souber uma resposta, não insistes, fica para o técnico confirmar. Se pedir algo que não faz sentido, como uma máquina de cinquenta quilos para uma loja pequena, explicas com calma a diferença. No fim dizes que o Marco liga com o orçamento.</q></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Três clientes para testar -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Ao vivo · passo 2</span>
+        <h2>Três chamadas para pôr a Bia à prova</h2>
+        <p class="lead">Cada uma testa uma parte do guião. Escolha uma, ligue, e fale como o cliente.</p>
+        <div class="personas">
+          <div class="persona reveal">
+            <div class="k">Chamada 1 · o orçamento completo</div>
+            <h3>«Quero abrir uma self-service»</h3>
+            <p>O Rui arrendou uma loja de 60 m² em Guimarães, perto da universidade. Quer três máquinas de lavar e três de secar, com moedeiro. Tem gás, mas não sabe se a luz é trifásica. Investimento <q>à volta de 40, 45 mil</q>, abrir em fevereiro.</p>
+            <div class="expect"><b>A Bia deve</b>Fazer o guião todo, aceitar o «não sei» da trifásica sem insistir, não dar preço e fechar com «o Marco liga-lhe amanhã».</div>
+          </div>
+          <div class="persona reveal">
+            <div class="k">Chamada 2 · comprar já</div>
+            <h3>«Preciso de uma máquina esta semana»</h3>
+            <p>O José gere a lavandaria interna de um lar em Barcelos. A máquina de lavar de 23 kg avariou, o técnico disse que não compensa reparar e precisa de outra já. É elétrica, trifásica. Fala depressa e quer falar com alguém.</p>
+            <div class="expect"><b>A Bia deve</b>Perceber que é «comprar já», fazer só duas ou três perguntas e dizer que passa a chamada ao Marco, sem o obrigar ao guião todo.</div>
+          </div>
+          <div class="persona reveal">
+            <div class="k">Chamada 3 · o curioso</div>
+            <h3>«Quanto custa uma de 50 kg?»</h3>
+            <p>Liga sem se apresentar. Quer <q>uma máquina de 50 quilos</q> para uma loja de 25 m², porque a de 20 kg que tem em casa não chega. Insiste no preço e diz que o concorrente lhe deu um valor por telefone.</p>
+            <div class="expect"><b>A Bia deve</b>Explicar com calma que 50 kg industrial não é uma doméstica maior, não dar preço, tentar recolher o mínimo e classificar como curioso, com educação.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Consola: orçamento fora de horas -->
+    <div class="slide tight wide">
+      <div class="container">
+        <span class="eyebrow">O que aconteceu por trás · chamada 1</span>
+        <h2>Enquanto o cliente fala, a ficha preenche-se e a prioridade aparece</h2>
+        <div class="cs" id="csOrc"></div>
+        <p class="cs-note">Replay de uma chamada como a que acabou de fazer. Cliente, contactos e valores são ilustrativos.</p>
+      </div>
+    </div>
+    <script type="application/json" id="csOrc-config">
+    {
+      "title": "Linha TecniTramo · consola do assistente",
+      "clockStart": "20:47",
+      "number": "+351 912 ··· 488",
+      "callerLabel": "Rui",
+      "timeScale": 4.4,
+      "tone": "ok",
+      "labels": {
+        "clockNote": "fora de horas · o Marco está ao jantar",
+        "form": "Qualificação",
+        "client": "Resumo para o Marco",
+        "clientEmpty": "À espera do tipo de lavandaria…",
+        "rules": "Prioridade",
+        "levelEmpty": "por classificar",
+        "routes": "Enviado",
+        "queue": "Lista do Marco · amanhã às 8h30",
+        "agent": "Assistente"
+      },
+      "fields": [
+        { "key": "nome", "label": "Nome" },
+        { "key": "tipo", "label": "Lavandaria" },
+        { "key": "espaco", "label": "Espaço" },
+        { "key": "maquinas", "label": "Máquinas" },
+        { "key": "energia", "label": "Instalação" },
+        { "key": "invest", "label": "Investimento" },
+        { "key": "prazo", "label": "Prazo" },
+        { "key": "tlm", "label": "Telemóvel" }
+      ],
+      "rules": [
+        { "label": "Já tem espaço" },
+        { "label": "Investimento indicado" },
+        { "label": "Prazo até 6 meses" },
+        { "label": "Instalação elétrica confirmada" }
+      ],
+      "queue": [
+        { "time": "B", "who": "Ana Costa · Braga", "what": "Máquina de lavar para restaurante · sem data", "tag": "Interessado", "tone": "com" },
+        { "time": "C", "who": "Sem nome · Lisboa", "what": "Só quis saber o preço de uma lavandaria completa", "tag": "Curioso", "tone": "" }
+      ],
+      "events": [
+        [0,     "status", { "label": "a tocar", "cls": "ring" }],
+        [800,   "status", { "label": "em curso", "cls": "live" }],
+        [1200,  "say", { "who": "agent", "text": "TecniTramo, boa noite. Fala a assistente virtual. A equipa já saiu, mas posso ajudar já. Está a pensar comprar já, ou quer um orçamento?" }],
+        [4400,  "say", { "who": "caller", "text": "Boa noite. Queria um orçamento. Vou abrir uma lavandaria self-service em Guimarães." }],
+        [6300,  "field", { "key": "tipo", "value": "**Orçamento** · self-service · Guimarães" }],
+        [6800,  "say", { "who": "agent", "text": "Boa escolha. Faço-lhe umas perguntas rápidas para a equipa preparar o orçamento certo. Com quem estou a falar? E já tem o espaço?" }],
+        [9300,  "say", { "who": "caller", "text": "Rui Fernandes. Já arrendei uma loja, tem uns sessenta metros quadrados, ao pé da universidade." }],
+        [11200, "field", { "key": "nome", "value": "Rui Fernandes" }],
+        [11400, "field", { "key": "espaco", "value": "60 m² · **arrendado**" }],
+        [11600, "rule", { "i": 0, "ok": true }],
+        [11900, "lookup", { "text": "Self-service, 60 m², junto a uma universidade…" }],
+        [12200, "say", { "who": "agent", "text": "Quantas máquinas tem em mente, de lavar e de secar? E é com moedeiro?" }],
+        [14200, "say", { "who": "caller", "text": "Três de lavar e três de secar, com moedeiro. Se calhar uma maior, para edredões." }],
+        [16200, "field", { "key": "maquinas", "value": "3 lavar + 3 secar · moedeiro · 1 maior" }],
+        [16500, "clock", { "value": "20:48" }],
+        [16700, "say", { "who": "agent", "text": "Faz sentido, muitas self-service têm uma máquina maior para edredões e mantas. Os secadores, prefere a gás ou elétricos?" }],
+        [19300, "say", { "who": "caller", "text": "Não sei bem. A loja tem gás." }],
+        [20700, "field", { "key": "energia", "value": "Gás canalizado" }],
+        [20900, "say", { "who": "agent", "text": "Ótimo, fica anotado. E sabe se a eletricidade da loja é monofásica ou trifásica?" }],
+        [23000, "say", { "who": "caller", "text": "Isso não faço ideia." }],
+        [24000, "field", { "key": "energia", "value": "Gás canalizado · trifásica **por confirmar**" }],
+        [24200, "rule", { "i": 3, "ok": false }],
+        [24400, "say", { "who": "agent", "text": "Não há problema, é normal. Vem no contrato da luz, e o técnico confirma na visita. Tem um valor de investimento em mente, e para quando quer abrir?" }],
+        [27400, "say", { "who": "caller", "text": "À volta de quarenta, quarenta e cinco mil. Queria abrir em fevereiro." }],
+        [29300, "field", { "key": "invest", "value": "40 a 45 mil €" }],
+        [29500, "field", { "key": "prazo", "value": "Abrir em fevereiro" }],
+        [29700, "rule", { "i": 1, "ok": true }],
+        [29900, "rule", { "i": 2, "ok": true }],
+        [30100, "client", { "name": "RUI FERNANDES · GUIMARÃES", "sub": "Self-service, 60 m² arrendados", "rows": [["Projeto", "**40 a 45 mil €** · fevereiro"], ["A ver", "Gama LX (Coin Ready), secadores SHT a gás"]] }],
+        [30500, "severity", { "level": "Prioridade A", "cls": "ok", "text": "Projeto real: espaço, investimento e data. Falta confirmar a trifásica." }],
+        [30800, "clock", { "value": "20:50" }],
+        [31000, "say", { "who": "agent", "text": "Fica tudo registado, senhor Rui. O Marco liga-lhe amanhã de manhã com o orçamento. É para este número?" }],
+        [33600, "say", { "who": "caller", "text": "Sim, este mesmo. Obrigado." }],
+        [34600, "field", { "key": "tlm", "value": "912 ··· 488 (este número)" }],
+        [34900, "say", { "who": "agent", "text": "Obrigada eu. Boa noite, e boa sorte com a lavandaria." }],
+        [36600, "status", { "label": "terminada · 3:12", "cls": "done" }],
+        [36800, "quiet", {}],
+        [37100, "route", { "channel": "WhatsApp", "to": "Marco Guedes", "time": "20:50", "text": "**Novo contacto · Prioridade A**\nRui Fernandes · self-service em Guimarães, 60 m² arrendados\n3 lavar + 3 secar, moedeiro · gás · 40 a 45 mil € · abrir em fevereiro" }],
+        [38000, "route", { "channel": "Folha", "to": "Contactos classificados", "time": "20:50", "kind": "crm", "text": "12/10 20:47 · Rui Fernandes · 912 ··· 488 · Guimarães · Orçamento · A\nGravação e transcrição da chamada em anexo" }],
+        [38900, "queue", { "time": "A", "who": "Rui Fernandes · Guimarães", "what": "Self-service 60 m² · **40 a 45 mil € · fevereiro**", "tag": "Ligar primeiro", "tone": "ok" }]
+      ]
+    }
+    </script>
+
+    <!-- 8. Consola: comprar já -->
+    <div class="slide tight wide section-alt">
+      <div class="container">
+        <span class="eyebrow">O que aconteceu por trás · chamada 2</span>
+        <h2>Quem quer comprar já chega ao Marco em menos de dois minutos</h2>
+        <div class="cs" id="csJa"></div>
+        <p class="cs-note">Cliente, instituição e contactos são ilustrativos. O Marco recebe o resumo antes de atender, para não perguntar tudo outra vez.</p>
+      </div>
+    </div>
+    <script type="application/json" id="csJa-config">
+    {
+      "title": "Linha TecniTramo · consola do assistente",
+      "clockStart": "11:20",
+      "number": "+351 253 ··· 410",
+      "callerLabel": "José",
+      "timeScale": 4.4,
+      "tone": "ok",
+      "labels": {
+        "clockNote": "horário normal · o Marco está noutra chamada",
+        "form": "Pedido",
+        "client": "Resumo para o Marco",
+        "clientEmpty": "À espera do pedido…",
+        "rules": "Comprar já",
+        "levelEmpty": "por decidir",
+        "routes": "Enviado",
+        "queue": "Passadas ao Marco hoje",
+        "agent": "Assistente"
+      },
+      "fields": [
+        { "key": "pedido", "label": "Pedido" },
+        { "key": "nome", "label": "Nome" },
+        { "key": "tipo", "label": "Lavandaria" },
+        { "key": "equip", "label": "Equipamento" },
+        { "key": "instal", "label": "Instalação" },
+        { "key": "prazo", "label": "Prazo" }
+      ],
+      "rules": [
+        { "label": "Quer comprar já" },
+        { "label": "Equipamento identificado" },
+        { "label": "Prazo urgente" },
+        { "label": "Marco livre para atender" }
+      ],
+      "queue": [
+        { "time": "09:52", "who": "Hotel · Viana do Castelo", "what": "Dois secadores para a lavandaria do hotel", "tag": "Atendida", "tone": "" }
+      ],
+      "events": [
+        [0,     "status", { "label": "a tocar", "cls": "ring" }],
+        [800,   "status", { "label": "em curso", "cls": "live" }],
+        [1200,  "say", { "who": "agent", "text": "TecniTramo, bom dia. Fala a assistente virtual. Está a pensar comprar já, ou quer um orçamento?" }],
+        [3800,  "say", { "who": "caller", "text": "Comprar já. Sou o José, da lavandaria de um lar em Barcelos. A nossa máquina de vinte e três quilos avariou e o técnico diz que não compensa arranjar." }],
+        [6900,  "field", { "key": "pedido", "value": "**Comprar já**" }],
+        [7100,  "field", { "key": "nome", "value": "José" }],
+        [7300,  "field", { "key": "tipo", "value": "Interna · lar em Barcelos" }],
+        [7500,  "field", { "key": "equip", "value": "Máquina de lavar 23 kg · substituição" }],
+        [7700,  "rule", { "i": 0, "ok": true }],
+        [7900,  "rule", { "i": 1, "ok": true }],
+        [8200,  "say", { "who": "agent", "text": "Percebo, José. Só duas perguntas para o Marco: a máquina é elétrica ou a vapor? E para quando precisa da nova?" }],
+        [10700, "say", { "who": "caller", "text": "Elétrica, trifásica. Precisava para esta semana, temos roupa a acumular." }],
+        [12700, "field", { "key": "instal", "value": "Elétrica · trifásica" }],
+        [12900, "field", { "key": "prazo", "value": "**Esta semana**" }],
+        [13100, "rule", { "i": 2, "ok": true }],
+        [13300, "client", { "name": "JOSÉ · LAR EM BARCELOS", "sub": "Substituir já a máquina de lavar avariada", "rows": [["Máquina", "Lavar, 23 kg, elétrica trifásica"], ["Prazo", "**Esta semana**"], ["Nota", "Técnico desaconselhou reparar"]] }],
+        [13600, "severity", { "level": "Comprar já", "cls": "ok", "text": "Passar a chamada ao Marco" }],
+        [13900, "say", { "who": "agent", "text": "Obrigada, José. Vou passar já a chamada ao Marco, que trata disso consigo. Um momento." }],
+        [15800, "route", { "channel": "WhatsApp", "to": "Marco Guedes", "time": "11:21", "text": "**A passar-te uma chamada · comprar já**\nJosé · lar em Barcelos · máquina de lavar 23 kg avariada\nElétrica trifásica · precisa esta semana" }],
+        [16700, "status", { "label": "a transferir", "cls": "ring" }],
+        [17200, "lookup", { "text": "A ligar ao Marco…" }],
+        [18600, "rule", { "i": 3, "ok": true }],
+        [18800, "client", { "name": "CHAMADA PASSADA AO MARCO", "sub": "Atendeu ao segundo toque, já com o resumo", "rows": [["Pedido", "Lavar 23 kg, esta semana"], ["Com o assistente", "**1:38**"]] }],
+        [19100, "status", { "label": "transferida · 1:38", "cls": "done" }],
+        [19300, "quiet", {}],
+        [19600, "route", { "channel": "Folha", "to": "Contactos classificados", "time": "11:21", "kind": "crm", "text": "12/10 11:20 · José · lar em Barcelos · Comprar já · passada ao Marco\nGravação e transcrição da chamada em anexo" }],
+        [20400, "queue", { "time": "11:21", "who": "José · lar em Barcelos", "what": "Máquina de lavar 23 kg · **esta semana**", "tag": "Com o Marco", "tone": "ok" }]
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- COMO FUNCIONA                                          -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="funciona">
+
+    <!-- 9. Outros casos (chat + raciocínio) -->
+    <div class="slide tight">
+      <div class="container">
+        <span class="eyebrow">Quatro chamadas diferentes</span>
+        <h2>Quando a chamada não segue o guião</h2>
+        <p class="lead">O assistente sabe o que pode resolver e o que tem de passar a uma pessoa. Veja o raciocínio em cada chamada.</p>
+        <div class="cr" id="crCasos" style="margin-top:18px"></div>
+        <p class="cs-note">Nomes, horas e contactos são ilustrativos.</p>
+      </div>
+    </div>
+    <script type="application/json" id="crCasos-config">
+    {
+      "agentName": "Assistente TecniTramo",
+      "agentInitials": "TT",
+      "chatStatus": "Chamada em curso · transcrição em direto",
+      "stepMs": 1500,
+      "endPauseMs": 3200,
+      "scenarios": [
+        {
+          "title": "Uma de 50 kg",
+          "subtitle": "O cliente pede uma máquina enorme para uma loja pequena: o assistente explica sem o fazer sentir mal.",
+          "chat": [
+            { "sender": "system", "text": "Linha TecniTramo · 15:12" },
+            { "sender": "client", "text": "Quero uma máquina de 50 quilos. A de 20 que tenho em casa não chega.", "time": "15:12" },
+            { "sender": "agent", "text": "Boa pergunta para esclarecer já: uma máquina industrial de 50 kg não é uma doméstica maior. É muito maior e mais pesada, e precisa de base e instalação próprias.", "time": "15:12" },
+            { "sender": "client", "text": "A sério? Então o que é que eu preciso?", "time": "15:13" },
+            { "sender": "agent", "text": "Depende do que vai lavar e de quanta roupa por dia. Diga-me o tipo de negócio e o espaço que tem, e a equipa propõe **a capacidade certa**, que muitas vezes são duas máquinas mais pequenas.", "time": "15:13" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Pedido: 50 kg, a comparar com uma doméstica de 20 kg" },
+            { "icon": "alert", "label": "Sinal de que o cliente não conhece o equipamento industrial" },
+            { "icon": "book", "label": "Explica a diferença: a gama industrial LFA vai dos 25 aos 80 kg" },
+            { "icon": "list", "label": "Volta ao guião: tipo de negócio, roupa por dia, espaço" },
+            { "icon": "user-cog", "label": "A capacidade certa fica para a equipa propor" }
+          ]
+        },
+        {
+          "title": "Só quero o preço",
+          "subtitle": "Um curioso insiste no preço de uma lavandaria completa: o assistente não dá valores e classifica.",
+          "chat": [
+            { "sender": "system", "text": "Linha TecniTramo · 10:05" },
+            { "sender": "client", "text": "Só quero saber quanto custa uma lavandaria self-service completa. Mais nada.", "time": "10:05" },
+            { "sender": "agent", "text": "Percebo. O valor muda muito com o número de máquinas, a capacidade e a instalação, por isso não lhe quero dar um número errado.", "time": "10:05" },
+            { "sender": "client", "text": "Mas é mais ou menos quanto?", "time": "10:06" },
+            { "sender": "agent", "text": "Com três respostas rápidas, o Marco envia-lhe um orçamento a sério: já tem espaço, quantas máquinas imagina, e para quando? Se preferir, deixo só o seu contacto.", "time": "10:06" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Pedido de preço sem nenhum dado do projeto" },
+            { "icon": "ban", "label": "Não dá preços, nem «mais ou menos»" },
+            { "icon": "list", "label": "Oferece o caminho curto: três perguntas" },
+            { "icon": "database", "label": "Se o cliente recusar, regista o contacto" },
+            { "icon": "clock", "label": "Classifica como C: o Marco liga quando tiver tempo" }
+          ]
+        },
+        {
+          "title": "Máquina avariada",
+          "subtitle": "Um cliente da TecniTramo liga por uma avaria: o assistente regista e passa à assistência técnica.",
+          "chat": [
+            { "sender": "system", "text": "Linha TecniTramo · 18:40" },
+            { "sender": "client", "text": "A secadora da minha lavandaria em Famalicão deixou de aquecer. Comprei-vos as máquinas o ano passado.", "time": "18:40" },
+            { "sender": "agent", "text": "Lamento. Para a assistência ir preparada: é a gás ou elétrica? E aparece algum código de erro no ecrã?", "time": "18:40" },
+            { "sender": "client", "text": "É a gás. Aparece um erro, não sei o número.", "time": "18:41" },
+            { "sender": "agent", "text": "Fica registado como **pedido de assistência**, com o seu contacto. A equipa liga-lhe amanhã de manhã para marcar a visita. Se conseguir, envie uma foto do ecrã por WhatsApp para este número.", "time": "18:41" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Não é uma venda: é assistência a um cliente" },
+            { "icon": "id", "label": "Recolhe local, equipamento, energia e o erro" },
+            { "icon": "ban", "label": "Não diagnostica a avaria" },
+            { "icon": "send", "label": "Pede a fotografia do ecrã por WhatsApp" },
+            { "icon": "user-cog", "label": "Passa à assistência técnica, com hora para ligar" }
+          ]
+        },
+        {
+          "title": "O outro deu mais barato",
+          "subtitle": "O cliente quer negociar: o assistente não negoceia e passa ao Marco com o contexto.",
+          "chat": [
+            { "sender": "system", "text": "Linha TecniTramo · 12:30" },
+            { "sender": "client", "text": "Já tenho um orçamento vosso, mas outra empresa fez-me mais barato. Fazem-me desconto?", "time": "12:30" },
+            { "sender": "agent", "text": "Obrigada por nos dizer. Condições e descontos são sempre com o Marco, não comigo.", "time": "12:30" },
+            { "sender": "client", "text": "Então quero falar com ele.", "time": "12:31" },
+            { "sender": "agent", "text": "Neste momento está noutra chamada. Fica marcado como **prioritário**, com a indicação de que tem outra proposta, e ele liga-lhe hoje até às 15h00.", "time": "12:31" }
+          ],
+          "steps": [
+            { "icon": "ear", "label": "Negociação de um orçamento já enviado" },
+            { "icon": "shield", "label": "Preços e descontos não são decisão do assistente" },
+            { "icon": "arrows", "label": "Tenta passar a chamada ao Marco" },
+            { "icon": "list", "label": "Resumo: já tem orçamento, há proposta concorrente" },
+            { "icon": "clock", "label": "Prioritário, com hora para ligar de volta" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- 10. Fluxo -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Do toque à lista do dia</span>
+        <h2>O Marco só pega no telefone quando vale a pena</h2>
+        <p class="lead">O assistente atende no número de sempre, segue o guião da TecniTramo e entrega cada contacto onde o Marco já trabalha: no WhatsApp e numa folha de contactos classificados.</p>
+        <div class="fluxo" id="fxDemo" style="margin-top:26px"></div>
+      </div>
+    </div>
+    <script type="application/json" id="fxDemo-config">
+    {
+      "stepMs": 1800,
+      "channels": [
+        { "icon": "phone", "label": "Telefone · agora" },
+        { "icon": "send", "label": "WhatsApp · mais à frente" }
+      ],
+      "nodes": [
+        { "icon": "phone", "title": "Atende", "detail": "Todas as chamadas, várias ao mesmo tempo, à hora de almoço e depois das 19h00.", "tone": "brand" },
+        { "icon": "arrows", "title": "Separa", "detail": "Comprar já passa ao Marco. Orçamento segue o guião. Avaria vai para a assistência.", "tone": "teal" },
+        { "icon": "list", "title": "Qualifica", "detail": "Lavandaria, máquinas, instalação, investimento e prazo. Explica o que o cliente não sabe.", "tone": "teal" },
+        { "icon": "check", "title": "Classifica", "detail": "A, B ou C, com os critérios que o Marco definir.", "tone": "teal" },
+        { "icon": "database", "title": "Entrega", "detail": "WhatsApp ao Marco e folha de contactos, com a gravação e a transcrição de cada chamada.", "tone": "brand" }
+      ],
+      "note": "A ligação ao número atual (reencaminhamento quando ninguém atende ou fora de horas) confirma-se na auditoria inicial. O IGEST fica para a fase dos orçamentos."
+    }
+    </script>
+
+    <!-- 11. Regras -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Controlo</span>
+        <h2>Três regras que o assistente não quebra</h2>
+        <div class="rules3">
+          <div class="card reveal"><h3>Não dá preços</h3><p>Nem «mais ou menos». O orçamento é do Marco, que o faz com os dados certos. Descontos e condições também ficam sempre com ele.</p></div>
+          <div class="card reveal"><h3>Educa sem atrito</h3><p>Explica com paciência o que o cliente não sabe (capacidades, gás ou elétrica, trifásica) e aceita o «não sei»: fica anotado para o técnico confirmar.</p></div>
+          <div class="card reveal"><h3>Passa o que é para uma pessoa</h3><p>Quem quer comprar já, quem quer negociar, quem está desagradado. Passa a chamada ou marca prioritário, sempre com o resumo.</p></div>
+        </div>
+        <div class="people">
+          <div class="card card-do reveal">
+            <h3>O assistente faz</h3>
+            <ul class="list-check">
+              <li>Atende todas as chamadas, também fora de horas</li>
+              <li>Separa comprar já, orçamento e assistência</li>
+              <li>Segue o guião de qualificação da TecniTramo</li>
+              <li>Classifica e entrega cada contacto com o resumo</li>
+              <li>Grava e transcreve todas as chamadas que atende</li>
+            </ul>
+          </div>
+          <div class="card reveal" style="border-top:4px solid var(--brand)">
+            <h3>Fica com o Marco</h3>
+            <ul class="list-check">
+              <li>Os orçamentos, os preços e as negociações</li>
+              <li>A escolha das máquinas certas para cada projeto</li>
+              <li>A relação com o cliente, que às vezes compra daqui a dois anos</li>
+              <li>As regras, o guião e o tom: a TecniTramo define, o assistente cumpre</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- PROPOSTA                                               -->
+  <!-- ====================================================== -->
+  <section class="tab-panel" id="proposta">
+
+    <!-- 12. Gravação das chamadas -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Antes de construir · auditoria</span>
+        <h2>Duas a três semanas a gravar as chamadas do Marco</h2>
+        <p class="lead" id="gravLead">O guião do assistente sai das conversas reais. Gravamos as chamadas comerciais nos telemóveis Android da TecniTramo, tiramos as perguntas que fazem, as dúvidas dos clientes e os critérios de prioridade. Fica também como documentação para quem entrar na equipa.</p>
+        <div class="rec">
+          <div class="card reveal">
+            <div class="n">Passo 1 · hoje</div>
+            <h3>Ver o que cada telemóvel permite</h3>
+            <ul>
+              <li><b>App Telefone da Google</b> (Pixel e muitas outras marcas): Definições › Gravação de chamadas. Em Portugal desde fevereiro de 2026</li>
+              <li><b>Samsung</b>: nos modelos vendidos em Portugal a gravação nativa costuma não aparecer. Experimentamos a app Telefone da Google como app de chamadas</li>
+              <li>Uma chamada de teste em cada telemóvel, para confirmar que se ouvem os dois lados</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="n">Passo 2 · semana 1</div>
+            <h3>Gravação automática ligada</h3>
+            <ul>
+              <li>Gravar sempre os números que não estão nos contactos, e os clientes que o Marco escolher. Os contactos pessoais ficam de fora</li>
+              <li>Apagar automaticamente: <b>nunca</b>, até as gravações nos chegarem</li>
+              <li>O telemóvel avisa o outro lado de que a chamada está a ser gravada</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="n">Passo 3 · todas as semanas</div>
+            <h3>Gravações para uma pasta partilhada</h3>
+            <ul>
+              <li>As gravações ficam só no telemóvel: uma vez por semana passam para uma pasta da Drive da TecniTramo, partilhada connosco</li>
+              <li>Ouvimos, transcrevemos e tiramos o guião</li>
+              <li>No fim da auditoria, apagamos tudo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rec-foot">
+          <div class="say-card reveal"><b>No início de cada chamada gravada</b><q>Antes de começarmos, informo que esta chamada está a ser gravada para melhorarmos o nosso atendimento.</q> A lei pede que o cliente seja informado antes.</div>
+          <div class="say-card reveal"><b>Depois do arranque</b>As chamadas que o assistente atende ficam gravadas e transcritas automaticamente, sem app nenhuma. A Granola, que falámos na reunião, só grava chamadas no iPhone.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. Fases -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Passo a passo</span>
+        <h2>Por onde começamos, e o que vem depois</h2>
+        <div class="phase">
+          <div class="card now reveal">
+            <div class="n">Fase 1 · agora</div>
+            <h3>Assistente de voz que atende e qualifica</h3>
+            <ul>
+              <li>Auditoria: duas a três semanas de chamadas gravadas e o guião mapeado</li>
+              <li>Triagem comprar já, orçamento e assistência, com passagem de chamada ao Marco</li>
+              <li>Qualificação completa e classificação A, B, C</li>
+              <li>Entrega por WhatsApp e numa folha de contactos, com gravação e transcrição</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="n">Fase seguinte</div>
+            <h3>O mesmo guião no WhatsApp</h3>
+            <ul>
+              <li>Quem escreve no WhatsApp tem a mesma qualificação de quem liga</li>
+              <li>Lista do dia única, com os dois canais</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <div class="n">Mais à frente</div>
+            <h3>Orçamentos a partir do IGEST</h3>
+            <ul>
+              <li>Os orçamentos que hoje são iguais, só muda o nome, preparados a partir da qualificação</li>
+              <li>Depois de validarmos a integração do IGEST com a SIGOV</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert reveal"><span class="dot"></span><div>Nesta primeira fase o assistente sabe apenas o que a TecniTramo lhe ensinar: o guião, os tipos de equipamento e as respostas aprovadas. Não tem acesso ao IGEST, a preços nem a dados de faturação.</div></div>
+      </div>
+    </div>
+
+    <!-- 14. Investimento (o preço só aparece aqui) -->
+    <div class="slide">
+      <div class="container">
+        <span class="eyebrow">Investimento</span>
+        <h2>Assistente de voz da TecniTramo</h2>
+        <div class="inv-grid">
+          <div class="card price-card voz reveal">
+            <div class="label">Implementação</div>
+            <div class="price">7.500 €<small>+ IVA</small></div>
+            <div class="note">Pagamento único. Auditoria às chamadas, guião de qualificação, voz e tom da TecniTramo, passagem de chamada ao Marco, entrega por WhatsApp e folha de contactos, testes com a equipa e arranque acompanhado.</div>
+          </div>
+          <div class="card price-card reveal">
+            <div class="label">Mensalidade</div>
+            <div class="price">300 €<small>/ mês + IVA</small></div>
+            <div class="note">Inclui 1.500 minutos de chamadas por mês, os custos de inteligência artificial, a gravação e a transcrição, e a manutenção. Minuto acima do pacote: 0,15 € + IVA.</div>
+          </div>
+        </div>
+        <div class="terms">
+          <div><b>Pagamento faseado</b>50% na adjudicação e 50% na entrada em produção.</div>
+          <div><b>Volume</b>1.500 minutos dão para cerca de 500 chamadas de três minutos por mês. Revemos com os números reais da auditoria.</div>
+          <div><b>Fases seguintes</b>WhatsApp e orçamentos a partir do IGEST orçamentados à parte.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15. Como arrancamos -->
+    <div class="slide section-alt">
+      <div class="container">
+        <span class="eyebrow">Do sim à primeira chamada atendida</span>
+        <h2>Seis semanas, com o Marco por perto</h2>
+        <div class="weeks">
+          <div class="wk reveal"><div class="dot">1</div><div class="card"><div class="k">Semana 1</div><h3>Arranque</h3><p>Gravação ligada nos telemóveis, primeira conversa sobre o guião e os critérios A, B, C.</p><div class="pay">50% na adjudicação</div></div></div>
+          <div class="wk reveal"><div class="dot">2</div><div class="card"><div class="k">Semana 2</div><h3>Auditoria</h3><p>Ouvimos as chamadas: perguntas, dúvidas dos clientes, o que separa um projeto real de um curioso.</p></div></div>
+          <div class="wk reveal"><div class="dot">3</div><div class="card"><div class="k">Semana 3</div><h3>Guião e voz</h3><p>Guião fechado com o Marco, tom da TecniTramo, o que o assistente diz e não diz.</p></div></div>
+          <div class="wk reveal"><div class="dot">4</div><div class="card"><div class="k">Semana 4</div><h3>Testes</h3><p>O Marco e a colega ligam como clientes difíceis. Afinamos até passar.</p></div></div>
+          <div class="wk reveal"><div class="dot">5</div><div class="card"><div class="k">Semana 5</div><h3>Fora de horas</h3><p>Atende primeiro só depois das 19h00 e quando ninguém atende.</p></div></div>
+          <div class="wk go reveal"><div class="dot">6</div><div class="card"><div class="k">Semana 6</div><h3>Produção</h3><p>Todas as chamadas, acompanhadas de perto no primeiro mês.</p><div class="pay">50% na entrada em produção</div></div></div>
+        </div>
+        <p class="weeks-note">Semanas contadas a partir da adjudicação. A auditoria pode prolongar-se uma semana se houver poucas chamadas gravadas.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <div class="pager">
+    <button data-prev aria-label="Anterior">‹</button>
+    <span class="pos">1 / 3</span>
+    <button data-next aria-label="Seguinte">›</button>
+    <span class="hint">← → no teclado</span>
+  </div>
+
+  <footer class="ais-footer">
+    <div class="container">
+      Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a TecniTramo · Diogo Gonçalves
+      <span class="disclaimer">Esboço de solução. Clientes, contactos e valores dos exemplos são ilustrativos.</span>
+    </div>
+  </footer>
+
+  <script src="../shared/js/protect.js"></script>
+  <script src="../shared/deck/deck.js"></script>
+  <script src="assets/js/consola.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    consola('csOrc');
+    consola('csJa');
+    chatRaciocinio('crCasos');
+    fluxo('fxDemo');
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var r = document.documentElement;
+      var next = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('ais-theme', next); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
