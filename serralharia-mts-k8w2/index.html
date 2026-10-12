@@ -105,7 +105,6 @@
           <div class="tl-it cli reveal"><time><b>28/09</b>14:32</time><div class="tl-c"><span class="who">Construtora → MTS</span><b>Informação complementar</b>Segundo email sobre o mesmo pedido.</div></div>
           <div class="tl-it mts reveal"><time><b>29/09</b></time><div class="tl-c"><span class="who">MTS → Extrusal</span><b>Consulta do alumínio, sistema A080</b>Com o mapa, os desenhos e o projeto de arquitetura.</div></div>
           <div class="tl-it mts reveal"><time><b>01/10</b></time><div class="tl-c"><span class="who">PrefSuite</span><b>Listagem de vidros e orçamento desenhado</b>69 vidros, 423,94 m². Orçamento 20204048/1 com 11 posições, lojas A a M.</div></div>
-          <div class="gap">↓ a listagem fica pronta a 01/10; o pedido de vidro sai a 06/10</div>
           <div class="tl-it forn reveal"><time><b>06/10</b></time><div class="tl-c"><span class="who">MTS → fornecedor de vidro</span><b>Consulta do vidro, com a listagem</b>SKN 176II temperado + caixa + laminado 55.1.</div></div>
           <div class="tl-it alerta reveal"><time><b>07/10</b>09:26</time><div class="tl-c"><span class="who">Construtora → MTS</span><b>"Quando consegue responder a este pedido?"</b>Resposta da MTS cinco minutos depois: "Está quase pronto, só estou à espera que os fornecedores do vidro nos enviem o estudo."</div></div>
           <div class="tl-it fim reveal"><time><b>09/10</b></time><div class="tl-c"><span class="who">MTS → Construtora</span><b>Orçamento 20204048/1 enviado</b>11 posições, 139.510,66 € + IVA, validade de 30 dias.</div></div>
@@ -116,8 +115,8 @@
             <li><span><b>28/09, 12:33.</b> Classificado como pedido de orçamento, cliente verde, obra já adjudicada. Arrumado na pasta e aviso de receção enviado com prazo.</span></li>
             <li><span><b>28/09, 14:32.</b> O segundo email liga-se ao mesmo pedido. Não conta como pedido novo.</span></li>
             <li><span><b>28/09.</b> Os 3 desenhos lidos: 11 vãos medidos entre pilares, 9 iguais ao cêntimo à proposta final do Ricardo.</span></li>
-            <li><span><b>28/09.</b> As duas consultas, alumínio e vidro, ficam preparadas no estilo do Ricardo, prontas a enviar com um clique.</span></li>
-            <li><span><b>01/10.</b> Alerta: a listagem de vidros existe e a consulta ao vidro ainda não saiu.</span></li>
+            <li><span><b>28/09.</b> A consulta do alumínio fica preparada com o processo da obra, no texto do Ricardo, pronta a enviar com um clique.</span></li>
+            <li><span><b>06/10.</b> A consulta do vidro sai com a listagem do PrefSuite, conferida antes: caixa de 16 mm, como no mapa, e não 14.</span></li>
             <li><span><b>07/10.</b> A insistência da construtora entra no histórico do pedido, com o estado à vista de quem atende.</span></li>
             <li><span><b>09/10.</b> Proposta detetada no email enviado: valor, validade até 08/11 e lembrete de seguimento a 16/10.</span></li>
           </ol>
@@ -305,13 +304,14 @@
 
     <!-- 4. Consulta a fornecedores -->
     <div class="slide" id="s-consulta" data-titulo="Consulta a fornecedores">
-      <div class="view-h"><div><span class="k">PEDIDO 3 DE 4 · FORNECEDORES</span><h2>Escolher o que se cota e a quem, e os emails saem prontos</h2><p>A plataforma lista os produtos do pedido. O Ricardo escolhe o que quer cotar e a que fornecedores pedir; os emails saem um por fornecedor, só com os produtos desse fornecedor e os anexos certos.</p></div><span class="estado warn" id="fnEstado">Passo 1 de 3</span></div>
-      <div class="fn-passos" id="fnPassos"><span class="on">1 · Produtos</span><span>2 · Fornecedores</span><span>3 · Emails</span></div>
+      <div class="view-h"><div><span class="k">PEDIDO 3 DE 4 · FORNECEDORES</span><h2>As duas consultas de cada pedido, prontas a enviar</h2><p>Como o Ricardo faz hoje: o processo da obra ao fornecedor do sistema de alumínio, e a listagem de vidros do PrefSuite ao fornecedor de vidro. Ele escolhe a quem pedir; os emails saem com o seu texto e os anexos certos.</p></div><span class="estado warn" id="fnEstado">Passo 1 de 3</span></div>
+      <div class="fn-passos" id="fnPassos"><span class="on">1 · O que se cota</span><span>2 · Fornecedores</span><span>3 · Emails</span></div>
       <div class="two w">
         <div>
           <div class="panel">
-            <div class="panel-h"><b>1 · Produtos a cotar</b><span>lidos do mapa, dos desenhos e da listagem do PrefSuite</span></div>
+            <div class="panel-h"><b>1 · O que vai para consulta</b><span>o que o Ricardo pede em cada obra</span></div>
             <div class="fn-prod" id="fnProd"></div>
+            <p class="small" style="padding:8px 14px 12px">Alumínio e vidro são cerca de 90% das vossas consultas. Outras famílias, como o ferro, entram da mesma forma quando o pedido as tiver.</p>
           </div>
           <div class="panel" style="margin-top:14px">
             <div class="panel-h"><b>2 · Fornecedores</b><span>por família, com o vosso histórico</span></div>
@@ -485,8 +485,8 @@
         "nodes": [
           { "icon": "filter", "title": "Lê e arruma", "detail": "Cada email na pasta certa, com a cor do cliente e os repetidos ligados.", "tone": "brand" },
           { "icon": "send", "title": "Responde", "detail": "Aviso de receção com prazo, ou falta de capacidade, com registo.", "tone": "teal" },
-          { "icon": "list", "title": "Mede os desenhos", "detail": "Vãos, módulos e portas lidos dos DWG, prontos para o PrefSuite.", "tone": "teal" },
-          { "icon": "search", "title": "Consulta o mercado", "detail": "Consultas preparadas aos fornecedores e respostas guardadas.", "tone": "teal" },
+          { "icon": "list", "title": "Mede os desenhos", "detail": "Vãos, módulos e portas lidos dos DWG, para o Ricardo conferir.", "tone": "teal" },
+          { "icon": "search", "title": "Consulta o mercado", "detail": "Alumínio e vidro aos fornecedores escolhidos, respostas guardadas.", "tone": "teal" },
           { "icon": "clock", "title": "Segue o pedido", "detail": "Insistências, proposta enviada, validade e lembretes.", "tone": "teal" },
           { "icon": "check", "title": "Painel de orçamentos", "detail": "Cada pedido por cor e por etapa, até à adjudicação.", "tone": "brand" }
         ],
@@ -506,7 +506,7 @@
             <li>Lê cada email que entra e arruma-o nas pastas e categorias do Outlook</li>
             <li>Junta os repetidos e as insistências ao pedido original</li>
             <li>Envia o aviso de receção com prazo e, com aprovação, a resposta por falta de capacidade</li>
-            <li>Lê os desenhos e mede os vãos, os módulos e as portas</li>
+            <li>Lê os desenhos e mede os vãos, os módulos e as portas, para o Ricardo conferir</li>
             <li>Prepara as consultas aos fornecedores e guarda as respostas</li>
             <li>Segue cada proposta até à adjudicação e mostra tudo no painel, por cor e por etapa</li>
           </ul>
@@ -514,7 +514,7 @@
         <div class="card ps reveal">
           <h3>O que fica sempre com a MTS</h3>
           <ul class="list-check">
-            <li>O preço: no PrefSuite, pelo Ricardo, com as medições já conferidas</li>
+            <li>O preço: no PrefSuite, pelo Ricardo, que confere as medições antes de as usar</li>
             <li>A cor de cada cliente e as regras de prazo</li>
             <li>Enviar as consultas e as propostas: nada de preços sai sem uma pessoa</li>
             <li>Os emails que o agente não sabe classificar: ficam em "Por classificar"</li>

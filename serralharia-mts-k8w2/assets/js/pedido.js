@@ -11,19 +11,15 @@
 
   /* ---------------- 1. Consulta a fornecedores ---------------- */
   var PROD = [
-    { id: 'al', fam: 'Alumínio', n: 'Caixilharia exterior, sistema A080 (Extrusal)', d: '506,34 m² em 3 artigos do mapa · 11 vãos medidos nos desenhos', anx: ['MQT.xlsx', 'LOJAS A-H.dwg', 'LOJAS K-L.dwg', 'LOJAS M-N.dwg', 'Projeto PD.pdf'], on: true, origem: 'mapa e desenhos' },
-    { id: 'vi', fam: 'Vidro', n: 'Vidro duplo 8 temperado + caixa 16 + 55.1 laminado incolor', d: '69 vidros, 423,94 m² · o mapa pede SunGuard SN51HT; na vossa proposta seguiu SKN 176II', anx: ['listagem de vidros.pdf (PrefSuite)'], on: true, origem: 'listagem do PrefSuite',
-      aviso: 'No pedido de vidro de 06/10 seguiu "cx14". O mapa e a listagem indicam caixa de 16 mm: o email usa 16 mm.' },
-    { id: 'fe', fam: 'Ferragens', n: 'Ferragens de série e acessórios, lacado branco ou preto', d: '11 portas de 2 folhas (2,0 × 2,1 m), com batentes de pavimento', anx: [], on: false, origem: 'mapa e desenhos' },
-    { id: 'ch', fam: 'Chapa', n: 'Soleiras, peitoris e remates em chapa lacada', d: 'pedidos no mapa; na vossa proposta ficaram excluídos remates e pré-aros', anx: ['MQT.xlsx'], on: false, origem: 'mapa' }
+    { id: 'al', fam: 'Alumínio', n: 'Estudo e cotação do sistema A080 (Extrusal)', d: 'Segue o processo da obra, como hoje: mapa de quantidades, 3 desenhos DWG e projeto de arquitetura', anx: ['2025137 - MQT_SERRALHARIA CAIX - S.xlsx', 'LOJAS A-H.dwg', 'LOJAS K-L.dwg', 'LOJAS M-N.dwg', 'Projeto PD.pdf', 'Projeto PD.dwf'], on: true, origem: 'documentos da construtora' },
+    { id: 'vi', fam: 'Vidro', n: 'Listagem de vidros do PrefSuite', d: '69 vidros, 423,94 m² · SKN 176II 8 temperado + caixa 16 + 55.1 laminado', anx: ['listagem de vidros.pdf (PrefSuite)'], on: true, origem: 'quando a listagem sai do PrefSuite',
+      aviso: 'No pedido de vidro de 06/10 seguiu "cx14". O mapa e a listagem indicam caixa de 16 mm: o email usa 16 mm.' }
   ];
   var FORN = {
     al: [['ext', 'Extrusal', 'habitual · 38 consultas · responde em 2 d.u.', true], ['alb', 'Fornecedor de alumínio B', '6 consultas · responde em 4 d.u.', false]],
-    vi: [['via', 'Fornecedor de vidro A', 'habitual · 41 consultas · responde em 3 d.u.', true], ['vib', 'Fornecedor de vidro B', '9 consultas · responde em 5 d.u.', false], ['vic', 'Fornecedor de vidro C', '3 consultas · responde em 2 d.u.', false]],
-    fe: [['ext', 'Extrusal', 'com o sistema A080', true], ['fed', 'Distribuidor de ferragens D', '14 consultas · responde em 1 d.u.', false]],
-    ch: [['che', 'Fornecedor de chapa E', '12 consultas · responde em 2 d.u.', true]]
+    vi: [['via', 'Fornecedor de vidro A', 'habitual · 41 consultas · responde em 3 d.u.', true], ['vib', 'Fornecedor de vidro B', '9 consultas · responde em 5 d.u.', false], ['vic', 'Fornecedor de vidro C', '3 consultas · responde em 2 d.u.', false]]
   };
-  var VAL = { ext: '38.420,00 €', alb: '41.150,00 €', via: '21.960,00 €', vib: '23.480,00 €', vic: '22.310,00 €', fed: '2.940,00 €', che: '6.870,00 €' };
+  var VAL = { ext: '38.420,00 €', alb: '41.150,00 €', via: '21.960,00 €', vib: '23.480,00 €', vic: '22.310,00 €' };
   var sel = {}; Object.keys(FORN).forEach(function (k) { sel[k] = {}; FORN[k].forEach(function (f) { sel[k][f[0]] = f[3]; }); });
   var prodEl = $('#fnProd'); if (!prodEl) return;
   var enviados = {};
@@ -53,17 +49,16 @@
   }
   function resumo() {
     var G = grupos(), np = PROD.filter(function (p) { return p.on; }).length;
-    $('#fnResumo').textContent = np + (np === 1 ? ' produto' : ' produtos') + ' · ' + G.length + (G.length === 1 ? ' fornecedor · 1 email' : ' fornecedores · ' + G.length + ' emails');
+    $('#fnResumo').textContent = np + (np === 1 ? ' família' : ' famílias') + ' · ' + G.length + (G.length === 1 ? ' fornecedor · 1 email' : ' fornecedores · ' + G.length + ' emails');
     $('#fnGerar').disabled = !G.length;
   }
   function corpo(g) {
-    var vidroSo = g.prods.length === 1 && g.prods[0].id === 'vi';
+    /* o texto que o Ricardo usou nos emails de 29/09 (alumínio) e 06/10 (vidro) */
+    var vidro = g.prods[0].id === 'vi';
     var anx = []; g.prods.forEach(function (p) { p.anx.forEach(function (a) { if (anx.indexOf(a) < 0) anx.push(a); }); });
-    var linhas = g.prods.map(function (p) { return '<li><b>' + esc(p.n) + '</b><br>' + esc(p.d.split(' · ')[0]) + '</li>'; }).join('');
-    return '<p>' + (vidroSo ? 'Boa tarde,' : 'Bom dia,') + '</p>' +
-      '<p>' + (vidroSo ? 'Segue pedido de cotação para a listagem em anexo:' : 'Envio pedido de cotação para o RETAIL DA MOITA:') + '</p><ul>' + linhas + '</ul>' +
-      (anx.length && !vidroSo ? '<p>Seguem em anexo os elementos da obra.</p>' : '') +
-      (g.id === 'ext' ? '<p>Por favor envie proposta juntamente com o PAF.</p>' : '') +
+    return (vidro
+      ? '<p>Boa tarde,</p><p>Segue pedido de cotação para listagem em anexo:</p><ul><li>SKN 176II 8 mm TEMPERADO + cx16 + Laminado 55.1 mm</li></ul>'
+      : '<p>Bom dia,</p><p>Envio pedido de cotação para o RETAIL DA MOITA.</p>' + (g.id === 'ext' ? '<p>Por favor envie proposta juntamente com o PAF.</p>' : '')) +
       '<p>Melhores cumprimentos,<br>Ricardo Barbosa</p>' +
       (anx.length ? '<div class="anx">' + anx.map(function (a) { return '<span>' + esc(a) + '</span>'; }).join('') + '</div>' : '');
   }
