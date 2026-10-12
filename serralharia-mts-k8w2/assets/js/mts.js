@@ -258,8 +258,8 @@
       '<div class="g-row"><div class="g-lbl"><b>Entrega 1</b><small>caixa arrumada e respostas</small></div><div class="g-track">' + sem + bar('e1', 2, 6, 'Categorização, pastas, respostas, os 140') + '</div></div>' +
       '<div class="g-row"><div class="g-lbl"><b>Painel de orçamentos</b><small>CRM por cor e por etapa</small></div><div class="g-track">' + sem + bar('e2', 4, 7, 'Pipeline, filtros, detalhe') + '</div></div>' +
       '<div class="g-row"><div class="g-lbl"><b>Leitura dos desenhos</b><small>DWG e mapas de vários projetistas</small></div><div class="g-track">' + sem + bar('e2', 5, 9, 'Medições, consultas, seguimento') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Validação</b><small>com os pedidos do dia a dia</small></div><div class="g-track">' + sem + bar('e3', 9, 10, 'Afinação') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Pagamentos</b><small>ligados às entregas</small></div><div class="g-track">' + sem + ms(0.02, eu(T[0][2]) + ' + IVA') + ms(6, eu(T[1][2]) + ' + IVA') + ms(9.98, eu(T[2][2]) + ' + IVA') + '</div></div>';
+      '<div class="g-row"><div class="g-lbl"><b>Fase de testes</b><small>com os vossos pedidos reais</small></div><div class="g-track">' + sem + bar('e3', 9, 10, 'Testes e afinação') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Pagamentos</b><small>adjudicação e fase de testes</small></div><div class="g-track">' + sem + ms(0.02, eu(T[0][2]) + ' + IVA') + ms(8, eu(T[1][2]) + ' + IVA') + '</div></div>';
   })();
 
   render(true);

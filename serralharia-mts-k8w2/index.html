@@ -259,38 +259,46 @@
 
     <!-- 3. Medições do desenho -->
     <div class="slide" id="s-medicoes" data-titulo="Medições do desenho">
-      <div class="view-h"><div><span class="k">PEDIDO 2 DE 4 · MEDIÇÕES</span><h2>Os desenhos lidos: cada vão medido, antes do PrefSuite</h2><p>Os 3 DWG que a construtora enviou, lidos pela plataforma. A fachada, os pilares, os módulos e as portas saem da geometria do desenho, em metros. O Ricardo confere e passa ao PrefSuite, já sem medir.</p></div><span class="estado ok" id="medEstado">9 de 11 iguais à vossa proposta</span></div>
-      <div class="panel">
-        <div class="panel-h"><b>Vista frontal · lojas A a H</b><span>MOITA_arquitetura_LOJAS A-H.dwg · cotas entre pilares, em metros</span></div>
-        <div class="fx" id="fxAH"></div>
+      <div class="view-h"><div><span class="k">PEDIDO 2 DE 4 · MEDIÇÕES</span><h2>Os documentos lidos: cada vão medido, antes do PrefSuite</h2><p>O mapa de quantidades e os 3 DWG que a construtora enviou. A plataforma abre-os, separa as camadas, encontra as fachadas e mede cada vão entre pilares, em metros.</p></div><span class="estado warn" id="medEstado">Documentos por ler</span></div>
+      <div class="lei">
+        <div class="panel lei-fich">
+          <div class="panel-h"><b>Documentos do pedido 853/2026</b><span>anexos do email de 28/09</span></div>
+          <div class="lei-lista" id="leiLista">
+            <div class="lei-f" data-f="mqt"><span class="ext x">XLSX</span><div><b>2025137 - MQT_SERRALHARIA CAIX - S.xlsx</b><small>mapa de quantidades · 12 KB</small><i><em></em></i></div><span class="st">por ler</span></div>
+            <div class="lei-f" data-f="ah"><span class="ext">DWG</span><div><b>MOITA_arquitetura_LOJAS A-H.dwg</b><small>arquitetura · 760 KB</small><i><em></em></i></div><span class="st">por ler</span></div>
+            <div class="lei-f" data-f="kl"><span class="ext">DWG</span><div><b>MOITA_desenhos_LOJAS K-L.dwg</b><small>arquitetura · 1,2 MB</small><i><em></em></i></div><span class="st">por ler</span></div>
+            <div class="lei-f" data-f="mn"><span class="ext">DWG</span><div><b>MOITA_desenhos_LOJAS M-N.dwg</b><small>arquitetura · 1,7 MB</small><i><em></em></i></div><span class="st">por ler</span></div>
+          </div>
+          <div class="lei-go"><button class="btn btn-primary lei-btn" type="button" id="leiBtn">▶ Ler os documentos do pedido</button></div>
+        </div>
+        <div class="lei-dir">
+          <div class="lei-k">
+            <div><b id="kM2">0</b><small>m² no mapa de quantidades</small></div>
+            <div><b id="kVaos">0</b><small>vãos medidos nos desenhos</small></div>
+            <div><b id="kMetros">0</b><small>metros de fachada entre pilares</small></div>
+            <div class="ok"><b id="kIguais">0</b><small>iguais à vossa proposta</small></div>
+          </div>
+          <div class="lei-log" id="leiLog"><div class="info">&gt; À espera da leitura.</div></div>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:14px">
+        <div class="panel-h"><b>Vista frontal · lojas A a H</b><span>cotas entre pilares, em metros</span></div>
+        <div class="fx espera" id="fxAH"></div>
       </div>
       <div class="two" style="margin-top:14px">
-        <div class="panel"><div class="panel-h"><b>Alçado sul · lojas K e L</b><span>MOITA_desenhos_LOJAS K-L.dwg</span></div><div class="fx sm" id="fxKL"></div></div>
-        <div class="panel"><div class="panel-h"><b>Fachada norte · loja M</b><span>MOITA_desenhos_LOJAS M-N.dwg</span></div><div class="fx sm" id="fxMN"></div></div>
+        <div class="panel"><div class="panel-h"><b>Alçado sul · lojas K e L</b><span>LOJAS K-L.dwg</span></div><div class="fx sm espera" id="fxKL"></div></div>
+        <div class="panel"><div class="panel-h"><b>Fachada norte · loja M</b><span>LOJAS M-N.dwg</span></div><div class="fx sm espera" id="fxMN"></div></div>
       </div>
       <div class="two w" style="margin-top:14px">
         <div class="tbl-wrap" style="max-height:none"><table class="tbl med">
           <thead><tr><th>Vão</th><th class="num">Desenho</th><th>Divisão lida no desenho (m)</th><th class="num">Vossa proposta</th><th>Estado</th></tr></thead>
           <tbody id="medTab"></tbody>
         </table></div>
-        <div>
-          <div class="term" id="medTerm"></div>
-          <script type="application/json" id="medTerm-config">{
-            "title": "leitura-desenhos.log",
-            "intervalMs": 650,
-            "lines": [
-              { "text": "3 ficheiros DWG recebidos com o pedido 853/2026", "tone": "info" },
-              { "text": "Camadas ArchiCAD, estabilidade e levantamento separadas", "tone": "info" },
-              { "text": "Vista frontal A-H: fachada 143,00 m x 3,00 m, 7 pilares de 0,66 m", "tone": "ok" },
-              { "text": "11 vãos medidos entre pilares, módulos de 2,50 m, 1 porta de 2,00 x 2,10 por loja", "tone": "ok" },
-              { "text": "Mapa da construtora: 429 m² em bruto, inclui 4,60 m de pilares", "tone": "warn" },
-              { "text": "Lojas A e H: painel de canto no desenho (1,49 m e 1,57 m) fora da proposta", "tone": "warn" },
-              { "text": "Lista de vãos pronta para o Ricardo confirmar e passar ao PrefSuite", "tone": "success" }
-            ]
-          }</script>
-          <div class="validar" style="margin-top:12px"><p><b>2 perguntas para o Ricardo</b> antes de fechar: o painel de canto das lojas A e H ficou de fora de propósito? E a altura de 3,35 m na loja A vem de onde?</p></div>
+        <div class="lei-fim" id="leiFim">
+          <div class="validar"><p><b>2 perguntas para o Ricardo</b> antes de fechar: o painel de canto das lojas A e H ficou de fora de propósito? E a altura de 3,35 m na loja A vem de onde?</p></div>
+          <div class="aviso" style="margin-top:10px">⚠ O mapa da construtora mede a fachada A a H em bruto: 143,00 m × 3,00 m = 429 m², com 4,60 m de pilares pelo meio.</div>
           <button class="btn btn-ghost" type="button" id="medCsv" style="margin-top:10px">⇩ Lista de vãos em Excel (CSV)</button>
-          <p class="small" style="margin-top:10px">O sistema, o vidro e a cor vêm do mapa de quantidades e do caderno de encargos, não do desenho. Desenhos de outros projetistas organizam-se de outra maneira: por isso o arranque inclui afinar a leitura com pedidos reais de projetistas diferentes.</p>
+          <p class="small" style="margin-top:10px">O sistema, o vidro e a cor vêm do mapa e do caderno de encargos, não do desenho. Desenhos de outros projetistas organizam-se de outra maneira: o arranque inclui afinar a leitura com pedidos reais de projetistas diferentes.</p>
         </div>
       </div>
     </div>
@@ -520,10 +528,10 @@
   <div class="slide folha" data-titulo="Investimento">
     <div class="container">
       <span class="eyebrow">Investimento</span>
-      <h2>Pago por entregas, à medida que a plataforma fica pronta</h2>
+      <h2>Dois pagamentos: na adjudicação e na fase de testes</h2>
       <div class="invest">
         <div class="preco reveal">
-          <div class="lbl">Implementação, paga por entregas</div>
+          <div class="lbl">Implementação</div>
           <p style="margin-top:4px">Plataforma de gestão de pedidos de orçamento feita à medida da MTS, com o agente de categorização do email e a leitura dos desenhos.</p>
           <div class="modulos">
             <div><b>Auditoria de 10 meses</b>volume real, repetidos, tempos, adjudicação, cor de cada cliente</div>
@@ -581,10 +589,11 @@
 <script src="../shared/deck/deck.js"></script>
 <script src="assets/js/fachadas.js"></script>
 <script>
-  chatRaciocinio('crDemo'); fluxo('fxMTS'); terminal('medTerm');
+  chatRaciocinio('crDemo'); fluxo('fxMTS');
 </script>
 <script src="assets/js/mts.js"></script>
 <script src="assets/js/crm.js"></script>
 <script src="assets/js/pedido.js"></script>
+<script src="assets/js/leitura.js"></script>
 </body>
 </html>

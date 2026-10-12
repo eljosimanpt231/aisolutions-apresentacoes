@@ -8,9 +8,8 @@ window.APRESENTACAO = {
   investimento: {
     total: 11000,
     tranches: [
-      ["Adjudicação", "no arranque do projeto", 4500],
-      ["Entrega 1: caixa organizada e respostas automáticas", "auditoria, categorização do email, avisos de receção e respostas por falta de capacidade", 3500],
-      ["Entrega 2: desenhos, painel e seguimento", "leitura dos desenhos, painel de orçamentos (CRM), consultas a fornecedores e seguimento até à adjudicação", 3000]
+      ["Adjudicação", "no arranque do projeto", 6500],
+      ["Fase de testes", "quando a plataforma entra em testes com os vossos pedidos reais", 4500]
     ],
     mensal: 300,
     anual: 3000

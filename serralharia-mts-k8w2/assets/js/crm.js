@@ -205,35 +205,4 @@
   document.addEventListener('slide:show', fecha);
   desenha();
 
-  /* ---------------- 4. Medições do desenho ---------------- */
-  (function () {
-    var FX = window.FACHADAS || {};
-    [['fxAH', 'ah'], ['fxKL', 'kl'], ['fxMN', 'mn']].forEach(function (a) { var el = document.getElementById(a[0]); if (el && FX[a[1]]) el.innerHTML = FX[a[1]]; });
-    var M = [
-      ['Loja A', 25.96, 3.00, '2,50 + 2,47 + porta 2,06 + 2,47 + 2,50 × 5 + 2,47 + 1,49', 24.50, 3.35, 'dif', 'Painel de canto de 1,49 m e altura 3,35 m na proposta'],
-      ['Loja B', 11.09, 3.00, '3,29 + 2,47 + porta 2,06 + 3,27', 11.09, 3.00, 'ok'],
-      ['Loja C', 11.59, 3.00, '2,30 + 2,47 + porta 2,06 + 2,47 + 2,30', 11.59, 3.00, 'ok'],
-      ['Loja D', 18.51, 3.00, '3,25 + 2,50 × 2 + 2,48 + porta 2,07 + 2,47 + 3,25', 18.51, 3.00, 'ok'],
-      ['Loja E', 25.02, 3.00, '2,76 + 2,50 × 3 + 2,47 + porta 2,06 + 2,47 + 2,50 × 2 + 2,76', 25.02, 3.00, 'ok'],
-      ['Loja F', 11.35, 3.00, '2,18 + 2,47 + porta 2,06 + 2,47 + 2,17', 11.35, 3.00, 'ok'],
-      ['Loja G', 11.34, 3.00, '2,17 + 2,47 + porta 2,06 + 2,47 + 2,17', 11.34, 3.00, 'ok'],
-      ['Loja H', 23.54, 3.00, '1,57 + 2,47 + 2,50 × 2 + 2,47 + porta 2,06 + 2,47 + 2,50 × 3', 22.00, 3.00, 'dif', 'Painel de canto de 1,57 m fora da proposta'],
-      ['Loja K', 8.14, 3.00, '4 módulos de ≈ 1,5 + porta 2,0', 8.14, 3.00, 'ok'],
-      ['Loja L', 8.14, 3.00, '4 módulos de ≈ 1,5 + porta 2,0', 8.14, 3.00, 'ok'],
-      ['Loja M', 9.50, 3.00, '2,5 + porta 2,0 + 2,5 × 2', 9.50, 3.00, 'ok']
-    ];
-    var f2 = function (n) { return n.toFixed(2).replace('.', ','); };
-    var tb = $('#medTab'); if (!tb) return;
-    tb.innerHTML = M.map(function (m) {
-      return '<tr class="' + (m[6] === 'dif' ? 'dif' : '') + '"><td><b>' + m[0] + '</b></td><td class="num mono">' + f2(m[1]) + ' × ' + f2(m[2]) + '</td><td class="mono div">' + m[3] + '</td><td class="num mono">' + f2(m[4]) + ' × ' + f2(m[5]) + '</td><td>' +
-        (m[6] === 'ok' ? '<span class="chip v"><i></i>Igual</span>' : '<span class="chip a"><i></i>Confirmar</span><span class="sub">' + m[7] + '</span>') + '</td></tr>';
-    }).join('') +
-      '<tr class="tot"><td>Total</td><td class="num mono">164,18 m</td><td class="small">em vãos entre pilares (A a H: 138,40 m)</td><td class="num mono">161,18 m</td><td class="small">mapa: 143 m em bruto nas A a H</td></tr>';
-    $('#medCsv').addEventListener('click', function () {
-      var linhas = [['Vao', 'Largura desenho (m)', 'Altura desenho (m)', 'Divisao', 'Largura proposta (m)', 'Altura proposta (m)', 'Estado']].concat(M.map(function (m) { return [m[0], f2(m[1]), f2(m[2]), m[3], f2(m[4]), f2(m[5]), m[6] === 'ok' ? 'Igual' : 'Confirmar: ' + m[7]]; }));
-      var csv = '﻿' + linhas.map(function (l) { return l.map(function (c) { return '"' + String(c).replace(/"/g, '""') + '"'; }).join(';'); }).join('\r\n');
-      var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' })); a.download = 'vaos-retail-park-moita.csv';
-      document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
-    });
-  })();
 })();
