@@ -41,7 +41,7 @@
     tr.children[2].textContent = m[2];
     tr.children[4].innerHTML = m[5] === 'ok' ? '<span class="chip v"><i></i>Igual</span>' : '<span class="chip a"><i></i>Confirmar</span><span class="sub">' + m[6] + '</span>';
     k.vaos++; k.metros += m[0]; if (m[5] === 'ok') k.iguais++;
-    $('#kVaos').textContent = k.vaos; $('#kMetros').textContent = f2(k.metros); $('#kIguais').textContent = k.iguais;
+    $('#kVaos').textContent = k.vaos; $('#kIguais').textContent = k.iguais;
   }
   function log(t, tom) { var el = $('#leiLog'), d = document.createElement('div'); d.className = tom || 'info'; d.textContent = '> ' + t; el.appendChild(d); el.scrollTop = el.scrollHeight; }
   function ficheiro(f, ms, st) {
@@ -78,7 +78,8 @@
     ['fxAH', 'fxKL', 'fxMN'].forEach(function (id) { var b = document.getElementById(id); b.innerHTML = '<div class="fx-vazio">À espera da leitura do desenho</div>'; b.classList.add('espera'); });
     $$('.lei-f').forEach(function (r) { r.classList.remove('ativo', 'feito'); $('.st', r).textContent = 'por ler'; $('.st', r).className = 'st'; $('i em', r).style.width = '0'; });
     $('#leiLog').innerHTML = '<div class="info">&gt; À espera da leitura.</div>';
-    ['kM2', 'kVaos', 'kMetros', 'kIguais'].forEach(function (id) { $('#' + id).textContent = '0'; });
+    ['kM2', 'kVaos', 'kCons', 'kIguais'].forEach(function (id) { $('#' + id).textContent = '0'; });
+    var pr = $('#leiProd'); pr.classList.add('espera'); $$('[data-a], [data-c], #leiSeguir', pr).forEach(function (e) { e.classList.remove('on'); });
     tabelaVazia(); $('#leiFim').classList.remove('on');
     $('#medEstado').textContent = 'Documentos por ler'; $('#medEstado').className = 'estado warn';
   }
@@ -89,10 +90,14 @@
     var t = 0;
     /* mapa de quantidades */
     T(function () { log('A abrir o mapa de quantidades (pedido de preços nº 853/2026)'); ficheiro('mqt', 1100, '3 artigos'); }, t);
-    T(function () { log('C.1.2.2.2.1.1 · Lojas A-H, 143 m × 3 m = 429,00 m²', 'ok'); }, t += 700);
-    T(function () { log('C.2.2.2.2.1.1 · Lojas K e L, 2 × 8,14 m × 3 m = 48,84 m²', 'ok'); }, t += 350);
-    T(function () { log('C.3.2.2.2.1.1 · Lojas M e N, 9,50 m × 3 m = 28,50 m²', 'ok'); conta($('#kM2'), 0, 506.34, 900, true); }, t += 350);
-    T(function () { log('Sistema A080 da Extrusal · vidro 8 + 16 + 55.1 laminado', 'info'); }, t += 400);
+    var pr = function (sel) { var e = $(sel, $('#leiProd')); if (e) e.classList.add('on'); };
+    T(function () { $('#leiProd').classList.remove('espera'); log('C.1.2.2.2.1.1 · Lojas A-H, 143 m × 3 m = 429,00 m²', 'ok'); pr('[data-a="0"]'); }, t += 700);
+    T(function () { log('C.2.2.2.2.1.1 · Lojas K e L, 2 × 8,14 m × 3 m = 48,84 m²', 'ok'); pr('[data-a="1"]'); }, t += 350);
+    T(function () { log('C.3.2.2.2.1.1 · Lojas M e N, 9,50 m × 3 m = 28,50 m²', 'ok'); pr('[data-a="2"]'); pr('[data-a="3"]'); conta($('#kM2'), 0, 506.34, 900, true); }, t += 350);
+    T(function () { log('A ler a descrição do artigo: sistema, marca e vidro', 'info'); pr('[data-a="4"]'); }, t += 500);
+    T(function () { log('Consulta 1: alumínio, sistema A080 da Extrusal', 'ok'); pr('[data-c="0"]'); $('#kCons').textContent = '1'; }, t += 700);
+    T(function () { log('Consulta 2: vidro 8 temperado + caixa 16 + 55.1 laminado (SunGuard SN51HT)', 'ok'); pr('[data-c="1"]'); $('#kCons').textContent = '2'; }, t += 600);
+    T(function () { log('Ferragens de série e vedações: incluídas no sistema, sem consulta à parte', 'info'); pr('[data-c="2"]'); pr('#leiSeguir'); }, t += 600);
     /* A-H */
     T(function () { log('A abrir LOJAS A-H.dwg: 30.537 linhas de desenho'); ficheiro('ah', 1200, '8 vãos'); }, t += 500);
     T(function () { log('Camadas separadas: arquitetura ArchiCAD, estabilidade, levantamento'); }, t += 700);

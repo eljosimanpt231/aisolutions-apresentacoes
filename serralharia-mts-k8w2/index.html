@@ -140,7 +140,7 @@
     <div class="grp">Pedido em curso</div>
     <div class="pedido-card"><b>Retail Park, Moita</b><span>Construtora A · recebido a 28/09</span></div>
     <a class="dup" data-v="2"><i>1</i>Ficha do pedido</a>
-    <a class="dup" data-v="3"><i>2</i>Medições do desenho</a>
+    <a class="dup" data-v="3"><i>2</i>Leitura dos documentos</a>
     <a class="dup" data-v="4"><i>3</i>Consulta a fornecedores</a>
     <a class="dup" data-v="5"><i>4</i>Ponto de situação</a>
     <div class="grp">Regras MTS</div>
@@ -230,7 +230,7 @@
             <div class="anexo"><span class="ext">DWG</span>MOITA_arquitetura_LOJAS A-H.dwg<small>760 KB · medido</small></div>
             <div class="anexo"><span class="ext">DWG</span>MOITA_desenhos_LOJAS K-L.dwg<small>1,2 MB · medido</small></div>
             <div class="anexo"><span class="ext">DWG</span>MOITA_desenhos_LOJAS M-N.dwg<small>1,7 MB · medido</small></div>
-            <button class="btn btn-primary" type="button" data-ir="3" style="justify-self:start;margin-top:4px">Ver as medições do desenho →</button>
+            <button class="btn btn-primary" type="button" data-ir="3" style="justify-self:start;margin-top:4px">Ler os documentos →</button>
           </div>
         </div>
         <div>
@@ -257,8 +257,8 @@
     </div>
 
     <!-- 3. Medições do desenho -->
-    <div class="slide" id="s-medicoes" data-titulo="Medições do desenho">
-      <div class="view-h"><div><span class="k">PEDIDO 2 DE 4 · MEDIÇÕES</span><h2>Os documentos lidos: cada vão medido, antes do PrefSuite</h2><p>O mapa de quantidades e os 3 DWG que a construtora enviou. A plataforma abre-os, separa as camadas, encontra as fachadas e mede cada vão entre pilares, em metros.</p></div><span class="estado warn" id="medEstado">Documentos por ler</span></div>
+    <div class="slide" id="s-medicoes" data-titulo="Leitura dos documentos">
+      <div class="view-h"><div><span class="k">PEDIDO 2 DE 4 · LEITURA DOS DOCUMENTOS</span><h2>O que há a consultar, e as medidas de cada vão</h2><p>O mapa de quantidades e os 3 DWG que a construtora enviou. Do mapa sai o que se pede aos fornecedores; dos desenhos, as medidas de cada vão entre pilares.</p></div><span class="estado warn" id="medEstado">Documentos por ler</span></div>
       <div class="lei">
         <div class="panel lei-fich">
           <div class="panel-h"><b>Documentos do pedido 853/2026</b><span>anexos do email de 28/09</span></div>
@@ -274,12 +274,32 @@
           <div class="lei-k">
             <div><b id="kM2">0</b><small>m² no mapa de quantidades</small></div>
             <div><b id="kVaos">0</b><small>vãos medidos nos desenhos</small></div>
-            <div><b id="kMetros">0</b><small>metros de fachada entre pilares</small></div>
+            <div><b id="kCons">0</b><small>consultas a fornecedores identificadas</small></div>
             <div class="ok"><b id="kIguais">0</b><small>iguais à vossa proposta</small></div>
           </div>
           <div class="lei-log" id="leiLog"><div class="info">&gt; À espera da leitura.</div></div>
         </div>
       </div>
+      <div class="lei-sec"><span>1</span><div><b>Do mapa de quantidades: o que há a consultar</b><small>o texto de cada artigo diz o sistema, a marca e o vidro</small></div></div>
+      <div class="lei-prod espera" id="leiProd">
+        <div class="panel">
+          <div class="panel-h"><b>Artigos do mapa</b><span>pedido de preços nº 853/2026</span></div>
+          <table class="mqt lei-mqt">
+            <tr data-a="0"><td><span class="mono">C.1.2.2.2.1.1</span> Ve01.1 · Lojas A-H, 143 m × 3 m</td><td class="num">429,00 m²</td></tr>
+            <tr data-a="1"><td><span class="mono">C.2.2.2.2.1.1</span> Ve01.1 · Lojas K e L, 2 × 8,14 m × 3 m</td><td class="num">48,84 m²</td></tr>
+            <tr data-a="2"><td><span class="mono">C.3.2.2.2.1.1</span> Ve01 · Lojas M e N, 9,50 m × 3 m</td><td class="num">28,50 m²</td></tr>
+            <tr class="t" data-a="3"><td>Total, 3 artigos</td><td class="num">506,34 m²</td></tr>
+          </table>
+          <p class="lei-txt" data-a="4">"Fornecimento e colocação de caixilharia exterior do tipo <mark>A080 da Extrusal</mark>, incluindo <mark>vidro SunGuard SN51HT temperado 8+16+55.1 laminado incolor</mark>, soleiras e peitoris, ombreiras e padieiras, aros, pré-aros, fixação, <mark class="inc">ferragens de série</mark>…"</p>
+        </div>
+        <div class="lei-cons">
+          <div class="lei-c" data-c="0"><em>Consulta 1 · Alumínio</em><b>Caixilharia exterior, sistema A080</b><small>Marca no mapa: Extrusal · segue o processo da obra ao fornecedor do sistema</small></div>
+          <div class="lei-c" data-c="1"><em>Consulta 2 · Vidro</em><b>8 temperado + caixa 16 + 55.1 laminado incolor</b><small>Pedido no mapa: SunGuard SN51HT · segue com a listagem do PrefSuite</small></div>
+          <div class="lei-c inc" data-c="2"><em>Incluído no sistema, sem consulta à parte</em><b>Ferragens de série, vedações, aros e fixação</b><small>soleiras, peitoris e pré-aros: confirmar se entram (na vossa proposta, remates e pré-aros ficaram excluídos)</small></div>
+          <button class="btn btn-primary" type="button" data-ir="4" id="leiSeguir">Seguir para a consulta a fornecedores →</button>
+        </div>
+      </div>
+      <div class="lei-sec"><span>2</span><div><b>Dos desenhos: as medidas de cada vão</b><small>para apoiar o orçamento no PrefSuite e conferir o mapa</small></div></div>
       <div class="panel" style="margin-top:14px">
         <div class="panel-h"><b>Vista frontal · lojas A a H</b><span>cotas entre pilares, em metros</span></div>
         <div class="fx espera" id="fxAH"></div>
