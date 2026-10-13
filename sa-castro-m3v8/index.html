@@ -90,28 +90,8 @@
   </div>
 </section>
 
-<!-- ============ 2. RESUMO 30 SEGUNDOS ============ -->
-<section class="section-alt" id="resumo">
-  <div class="container">
-    <span class="eyebrow">Em 30 segundos</span>
-    <div class="resumo30" data-entra="sobe">
-      <p>
-        Uma <b>plataforma de orçamentação</b> ligada ao servidor onde o PHC replica preços, descontos,
-        stock e fotografias, e um <b>agente</b> que lê o email e o WhatsApp. No WhatsApp, o que bate
-        certo com a tabela sai sozinho. No email, tudo passa por aprovação. As fotografias vão sempre
-        para uma colega.
-      </p>
-      <p class="resumo30__meta">
-        <b>7.500 €</b> pela plataforma e <b>3.000 €</b> pelo agente, mais IVA, e <b>425 €</b> por mês.
-        Cerca de 12 semanas até estar a trabalhar. O próximo passo é dizerem que sim, e pedirem ao
-        vosso parceiro PHC o orçamento da API.
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ 3. O QUE OUVIMOS ============ -->
-<section id="ouvimos">
+<section class="section-alt" id="ouvimos">
   <div class="container">
     <span class="eyebrow">O que ouvimos</span>
     <h2>Quatro coisas que ficaram claras na quinta-feira</h2>
@@ -138,7 +118,7 @@
         <span class="dor-n">04</span>
         <h3>O cliente não admite enganos</h3>
         <p>Uma casa com muitos anos no mercado não pode mandar três sugestões ao calhas. Quando a
-          máquina não tem certeza, quem decide é uma pessoa da equipa.</p>
+          máquina não tem certeza, pergunta ao cliente qual é a peça, ou pede a uma colega para rever.</p>
       </article>
     </div>
     <blockquote class="citacao" data-entra="sobe">
@@ -212,7 +192,7 @@
     </p>
     <div class="atalhos">
       <a href="#plataforma" class="atalho" data-plat="orcamento"><span>1</span><b>O orçamento da obra de Arouca</b><small>4 linhas, 2 assunções escritas, aprovar e gravar no PHC</small></a>
-      <a href="#plataforma" class="atalho" data-plat="fotos"><span>2</span><b>A fotografia do puxador</b><small>O agente encontra 3 peças e deixa a escolha à colega</small></a>
+      <a href="#plataforma" class="atalho" data-plat="fotos"><span>2</span><b>A fotografia do puxador</b><small>O agente fica entre 3 peças e pede à colega para rever</small></a>
       <a href="#plataforma" class="atalho" data-plat="catalogo" data-q="mola corta-fogo 100 kg"><span>3</span><b>"mola corta-fogo 100 kg"</b><small>Pesquisa no catálogo com as palavras do cliente</small></a>
     </div>
   </div>
@@ -248,8 +228,8 @@
     <p class="lead">
       Foi a regra combinada na quinta-feira: no WhatsApp, com preços tabelados, o orçamento sai sem
       aprovação; nos casos de exceção, a equipa é avisada. À esquerda a conversa, à direita o que o
-      agente está a pensar em cada passo. O terceiro cenário é o mais importante: o agente a não
-      responder.
+      agente está a pensar em cada passo. O terceiro cenário é o das fotografias: o agente pergunta
+      antes de assumir.
     </p>
     <div class="cr" id="scDemo"></div>
     <script type="application/json" id="scDemo-config">
@@ -295,20 +275,21 @@
           ]
         },
         {
-          "title": "Fotografia: decide a colega",
-          "subtitle": "O agente encontra a peça, mas não arrisca. Era isto que o António queria.",
+          "title": "Fotografia: pergunta ao cliente",
+          "subtitle": "O agente encontra a peça e confirma com o cliente qual é. Se ficar entre três, chama uma colega.",
           "chat": [
             { "sender": "system", "text": "Fotografia recebida", "time": "10:05" },
             { "sender": "client", "text": "Boa tarde, preciso de 4 iguais a este, em bronze.", "time": "10:05" },
-            { "sender": "agent", "text": "Boa tarde! Recebido. Uma colega confirma o modelo exato e envia-lhe o orçamento daqui a pouco.", "time": "10:06" },
-            { "sender": "system", "text": "Enviado para validação interna: 3 candidatos, nada enviado ao cliente", "time": "10:06" }
+            { "sender": "agent", "text": "Boa tarde! Temos dois modelos iguais a este: o **MOD.010**, fixo, que se vende à unidade, e o **MOD.010.D**, duplo bola com quadra, que se vende ao par. Qual dos dois procura?", "time": "10:06" },
+            { "sender": "client", "text": "O duplo, é para portas interiores.", "time": "10:09" },
+            { "sender": "agent", "text": "Perfeito. Segue o orçamento: 4 pares de puxador de roseta duplo bola, Zamak Bronze (190001060141), já com o seu desconto.", "time": "10:09" }
           ],
           "steps": [
             { "icon": "search", "label": "Compara a fotografia com as fotografias do vosso servidor" },
-            { "icon": "list", "label": "Três candidatos: MOD.010, MOD.010.D e MOD.020" },
-            { "icon": "brain", "label": "O 010 e o 010.D são iguais na imagem: fixo ou duplo?" },
-            { "icon": "ban", "label": "Não envia sugestões ao cliente, por regra da casa" },
-            { "icon": "user-cog", "label": "Põe a fotografia e os 3 candidatos na fila da colega" }
+            { "icon": "brain", "label": "Dois modelos iguais na imagem: fixo ou duplo?" },
+            { "icon": "message", "label": "Pergunta ao cliente qual é, com a diferença explicada" },
+            { "icon": "database", "label": "Junta a resposta e o acabamento pedido: 190001060141" },
+            { "icon": "user-cog", "label": "Se ficasse indeciso entre três, pedia a uma colega para rever" }
           ]
         },
         {
@@ -366,7 +347,7 @@
         <p>Hoje o PHC replica as tabelas para o servidor do site, num só sentido. Conseguimos ler tudo:
           preços, descontos, stock, clientes e fotografias. Não conseguimos escrever.</p>
         <p>Para o orçamento ficar gravado no PHC com um clique, e os vendedores, o balcão e as colegas
-          verem o mesmo, é preciso uma API que o <b>vosso parceiro PHC</b> desenvolve e orça à parte.
+          verem o mesmo, é preciso uma API que o <b>vosso parceiro PHC</b> desenvolve e orçamenta à parte.
           Não é feita pela AI Solutions e não está nos valores desta página.</p>
         <p>Enquanto não existir, a plataforma funciona na mesma: gera o documento e a colega lança-o
           no PHC à mão. Por isso o pedido ao parceiro deve arrancar já na primeira semana.</p>
@@ -392,7 +373,7 @@
         <h3>Fica sempre com uma pessoa</h3>
         <ul class="list-x">
           <li>O telefone e a relação com o cliente: o António quer manter aí a parte humana</li>
-          <li>Escolher o produto a partir de uma fotografia</li>
+          <li>Rever as fotografias em que o agente fica indeciso entre três produtos</li>
           <li>Os orçamentos por email, antes de saírem: é o meio mais formal, e onde chegam as grandes quantidades</li>
           <li>Artigos sem stock ou fora do que está tabelado</li>
           <li>O "está tudo ok, siga" final das encomendas</li>
@@ -412,9 +393,9 @@
     <div class="franqueza" data-entra="sobe">
       <h3>Três coisas ditas já, para não haver surpresas</h3>
       <ol>
-        <li><b>Fotografias.</b> Não garantimos 100%. Por isso a escolha é sempre da colega. Se a
-          precisão for subindo com o uso, como o António sugeriu, aí sim conversamos sobre dar mais
-          autonomia ao agente.</li>
+        <li><b>Fotografias.</b> Não garantimos 100%. Por isso, quando há dúvida, o agente pergunta ao
+          cliente a que produto se refere, e quando fica indeciso entre três produtos pede a uma colega
+          para rever.</li>
         <li><b>O código.</b> O da plataforma de orçamentação pode passar para a Sá Castro, para irem
           fazendo ajustes e crescendo a partir dela. O dos agentes é da AI Solutions. As condições
           ficam escritas na proposta formal.</li>
@@ -546,7 +527,7 @@
       </div>
       <div class="card price-card price-card--m holofote" data-entra="sobe">
         <div class="label">Mensalidade</div>
-        <div class="price">425 € <span class="iva">+ IVA / mês</span></div>
+        <div class="price">400 € <span class="iva">+ IVA / mês</span></div>
         <div class="note">Custos de inteligência artificial do agente e da plataforma, alojamento,
           manutenção e melhorias, e membros da nossa equipa alocados à Sá Castro, com suporte direto
           por WhatsApp. Sem tickets.</div>

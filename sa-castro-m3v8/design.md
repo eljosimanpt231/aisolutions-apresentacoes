@@ -37,7 +37,7 @@
 
 ## Secções
 1. Hero: "Mais de 100 pedidos por dia. A papinha feita antes de lhes tocarem."
-2. Resumo de 30 segundos
+2. (Resumo de 30 segundos retirado a pedido do Manuel a 13/10)
 3. O que ouvimos (4 dores + citação do António)
 4. O vosso catálogo (barras reais + a regra do acabamento na referência)
 5. A plataforma (peça central, clicável): Pedidos, Orçamento, Fotografias, Catálogo, Clientes, Atividade do agente; CRM bloqueado como fase seguinte
@@ -47,7 +47,7 @@
 9. Fase seguinte: o CRM dos vendedores (não faz parte desta proposta)
 10. A conta (calculadora com os 100 pedidos dele)
 11. Caso: distribuidor B2B com PHC, anonimizado, em desenvolvimento
-12. Investimento: 7.500 € + 3.000 € + IVA, 425 €/mês + IVA
+12. Investimento: 7.500 € + 3.000 € + IVA, 400 €/mês + IVA
 13. Prazo: 12 semanas em 4 fases
 14. Fecho: "Avançamos, António?"
 
@@ -67,3 +67,4 @@ A fotografia de um puxador de roseta enviada por um cliente: o agente encontra o
 ## Iterações
 - v1 (05/10): primeira versão. Crítica dos screenshots: o hero ficava em linha e centrado (o .hero do deck.css), passou a coluna à esquerda; peças do hero em grelha 2×2 com o anel ao centro; valores sem separador de milhares (o pt-PT não agrupa 4 dígitos, formatador próprio); tabelas da ficha de cliente e do catálogo cortadas no telemóvel (passaram a linhas empilhadas); colisão da classe .b no telemóvel do CRM; contacto do fecho branco sobre claro; contraste dos componentes partilhados (acento ciano como texto) passou a --acento-texto; pesquisa "mola corta-fogo 100 kg" passou a mostrar a MOD.1159 como "não serve"
 - Verificação: qa.mjs sem erros (avisos de caixa alta e escala vêm em parte dos componentes partilhados) | motion.mjs --acto visto (4 tempos, título por linhas, contadores) | comparar.mjs contra perfometal-q7n4: ganha em animações (10 contra 6), gatilhos de scroll (29 contra 0), tweens (21 contra 7), imagens e texto em gradiente | plataforma testada a clicar em todas as vistas, desktop e 390 px, sem erros de consola nem overflow
+- v2 (13/10, pedido do Manuel): retirado o resumo de 30 segundos; "orça" passou a "orçamenta"; fotografias: o agente pergunta ao cliente a que produto se refere e só passa a uma colega quando fica indeciso entre três (cenário 3 do WhatsApp reescrito, limites e franqueza alinhados, o canhão das 10:41 passou a resolvido pelo agente com o cliente, a fila da plataforma ficou só com o puxador indeciso entre três); mensalidade de 425 € para 400 € + IVA

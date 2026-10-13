@@ -299,3 +299,4 @@
   .rc-refs td:first-child { flex-basis: 100%; }
   .ol-m .sw { margin-right: 2px; }
 }
+.app-lock { gap: 8px; } .app-lock em { font-size: .66rem !important; padding: 1px 5px !important; }

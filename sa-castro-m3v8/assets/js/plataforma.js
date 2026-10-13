@@ -147,7 +147,7 @@
       '<div class="kpi"><b>' + tot + '</b><span>pedidos esta manhã</span></div>' +
       '<div class="kpi kpi--ok"><b>' + sozinhos + '</b><span>enviados sozinhos, por WhatsApp</span></div>' +
       '<div class="kpi kpi--av"><b>' + aprovar + '</b><span>à espera de uma pessoa</span></div>' +
-      '<div class="kpi kpi--foto"><b>' + fotos + '</b><span>fotografias por validar</span></div>' +
+      '<div class="kpi kpi--foto"><b>' + fotos + '</b><span>fotografias para a colega rever</span></div>' +
     '</div>';
     h += '<div class="lista">';
     D.pedidos.forEach(function (p) {
@@ -267,16 +267,12 @@
   var FOTOS = {
     puxador: { ped: 'r4', img: 'foto-cliente-puxador.jpg', msg: 'Boa tarde, preciso de 4 iguais a este, em bronze.',
       cands: [{ p: 'p010', s: 91 }, { p: 'p010d', s: 91 }, { p: 'p020', s: 57 }],
-      agente: 'O MOD.010 e o MOD.010.D são iguais na fotografia. A diferença está no que não se vê: o fixo vende-se à unidade, o duplo ao par e traz quadra. Não envio sem uma colega escolher.',
-      acab: 'Zamak Bronze', qtd: 4 },
-    canhao: { ped: 'r7', img: 'foto-cliente-canhao.jpg', msg: 'Igual a este, de 63. Obrigado.',
-      cands: [{ p: 'p08210', s: 94 }, { p: 'p0e300', s: 38 }, { p: 'p1300', s: 12 }],
-      agente: 'Perfil oval, latão, sem rotor de segurança: é o MOD.08210. O cliente disse "de 63", que no catálogo é a referência 100008210060 (28/35).',
-      ref: '100008210060', qtd: 1 }
+      agente: 'Fiquei entre três modelos: o MOD.010 e o MOD.010.D são iguais na fotografia, e o MOD.020 é parecido. Com três candidatos, peço a uma colega para rever antes de responder ao cliente.',
+      acab: 'Zamak Bronze', qtd: 4 }
   };
   function vFotos() {
     var F = FOTOS[S.foto], pd = ped(F.ped), c = cli(pd.cli);
-    var h = cab('Fotografias por validar', 'O agente compara a fotografia do cliente com as fotografias dos produtos do vosso servidor. Quem decide é uma colega.');
+    var h = cab('Fotografias para rever', 'O agente compara a fotografia com as do vosso servidor e pergunta ao cliente qual é a peça. Quando fica indeciso entre três, pede a uma colega para rever.');
     h += '<div class="fila">';
     Object.keys(FOTOS).forEach(function (k) {
       var f = FOTOS[k], p2 = ped(f.ped), c2 = cli(p2.cli), ok = S.feito['foto-' + k];
@@ -312,10 +308,10 @@
           '<button type="button" class="b b--p" data-acao="foto-' + S.foto + '">' + ic('send') + 'Confirmar e enviar ao cliente</button></div>';
       }
     } else {
-      h += '<p class="fv-dica">' + ic('arrow') + 'Clique no produto certo. É o único passo que fica com a colega.</p>';
+      h += '<p class="fv-dica">' + ic('arrow') + 'Clique no produto certo. O orçamento segue para o cliente com a referência escolhida.</p>';
     }
     h += '</div></div>';
-    h += '<p class="v-nota">As fotografias do cliente são simuladas. Os três candidatos são fotografias reais do vosso site.</p>';
+    h += '<p class="v-nota">As fotografias do cliente são simuladas. Os três candidatos são fotografias reais do vosso site. O canhão das 10:41 o agente resolveu sozinho, a perguntar ao cliente.</p>';
     return h;
   }
 
@@ -430,9 +426,10 @@
     { text: '09:31 190001060042 x20: a caixa é de 12. Fica para confirmar', tone: 'warn' },
     { text: '09:48 Email, Construções Vale do Caima: 4 linhas, 2 com assunção escrita', tone: 'info' },
     { text: '09:48 Orçamento 2026/1845 em rascunho, à espera de aprovação', tone: 'ok' },
-    { text: '10:05 WhatsApp, Obras Pinho: fotografia. 3 candidatos, dois iguais na imagem', tone: 'warn' },
+    { text: '10:05 WhatsApp, Obras Pinho: fotografia. Indeciso entre 3 modelos, pede revisão à colega', tone: 'warn' },
     { text: '10:20 Email, Hotel Lusitânia: 10010E30018012 sem stock. Colega avisada', tone: 'warn' },
     { text: '10:35 Orçamento 2026/1846 enviado por WhatsApp (Alumínios Terras da Feira)', tone: 'success' },
+    { text: '10:41 WhatsApp, Ferragens do Vouga: fotografia de canhão. Perguntou "é este, de 63 mm?", cliente confirmou', tone: 'ok' },
     { text: '10:58 Pergunta técnica: MOD.1159 vai até 80 kg, não serve para 90. Resposta em rascunho', tone: 'ok' },
     { text: '11:06 Carpintaria Moreira: 2026/1790 aprovado pelo cliente. Proposta de adjudicação', tone: 'ok' }
   ] };
