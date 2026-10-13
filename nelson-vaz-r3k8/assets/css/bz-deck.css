@@ -1,0 +1,47 @@
+/* ============================================================
+   Acertos do deck (herdados da Bike Zone, por cima da base AFM)
+   O logótipo tem o "zone" em branco: vive sempre sobre preto,
+   como no cabeçalho do site. Títulos em Archivo Narrow, em caixa
+   normal e apertados, como o menu do site.
+   ============================================================ */
+.logo-chip { background: var(--cg-navy); border-color: var(--cg-navy); }
+.logo-chip span { color: var(--cg-on-navy-muted); }
+.logo-chip img { height: 20px; }
+.cg-top img { height: 20px; }
+
+h1, h2, h3, .stat-card .num, .price-card .price, .pag b, .rc-kpis b, .pg-kpi b, .cg-explica h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.005em; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); max-width: 18ch; line-height: 1.02; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.08; }
+.stat-card .num { font-size: 2.3rem; }
+.ouvimos blockquote { font-size: 1.04rem; }
+
+.seguinte.bz-q4 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .seguinte.bz-q4 { grid-template-columns: 1fr; } }
+
+/* a coluna do agente: leitura, artigos, condições e decisão têm de caber */
+.cg-pane .fx { --fx-h: 730px; }
+.fx-cols { grid-template-columns: 250px minmax(0, 1fr) 390px; }
+@media (max-width: 1080px) { .fx-cols { grid-template-columns: 230px minmax(0, 1fr); } }
+@media (max-width: 700px) { .fx-cols { grid-template-columns: 1fr; } }
+
+/* painel de vendas: colunas da tabela sem quebrar, ícone de informação neutro */
+@media (min-width: 761px) { .pv-lr { grid-template-columns: minmax(150px, 210px) minmax(0, 1fr) 86px 70px 62px 76px; } }
+.pv-lr .pg-v, .pv-lr-h span { white-space: nowrap; }
+@media (min-width: 761px) { .pv-mix-r { grid-template-columns: 168px minmax(0, 1fr) 76px 44px; } }
+.pv-alertas .info .pg-ic, .pg-alertas .info .pg-ic { background: var(--cg-navy); }
+
+/* ============================================================
+   Gabinete Nelson Vaz: acertos por cima da base Bike Zone/AFM
+   O gabinete não tem logótipo público: o chip leva um monograma.
+   ============================================================ */
+.nv-nome { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; color: var(--cg-on-navy); letter-spacing: -0.005em; }
+.nv-nome i { font-style: normal; display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; background: var(--cg-blue); color: var(--cg-on-navy); font-size: 0.66rem; letter-spacing: 0.02em; }
+.nv-tec { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 980px) { .nv-tec { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .nv-tec { grid-template-columns: 1fr; } }
+.nv-sel { display: inline-block; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.04em; padding: 3px 9px; border-radius: 999px; margin-bottom: 10px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--border); }
+.nv-sel.ok { color: var(--st-ok); background: hsl(var(--success-hsl) / 0.10); border-color: hsl(var(--success-hsl) / 0.3); }
+.nv-sel.val { color: var(--st-val); background: hsl(var(--warning-hsl) / 0.10); border-color: hsl(var(--warning-hsl) / 0.3); }
+@media (max-width: 520px) { .nv-nome { font-size: 0.76rem; } .logo-chip span { display: none; } }
+.nv-nome i { background: hsl(207 90% 36%); }
+.cg-explica-d { max-width: 75ch; }

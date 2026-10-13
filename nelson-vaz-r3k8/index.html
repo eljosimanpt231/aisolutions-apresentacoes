@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Nelson Vaz | O CentralGest a trabalhar sozinho</title>
+  <meta name="description" content="Proposta AI Solutions para o gabinete de contabilidade do Nelson Vaz: faturas lançadas linha a linha no CentralGest, reconciliação bancária pelo descritivo e painéis por setor para os clientes.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nelson Vaz × AI Solutions">
+  <meta property="og:description" content="Faturas separadas linha a linha, bancos conciliados pelo descritivo e um painel por cliente que se lê em três segundos.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/nelson-vaz-r3k8/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try { var t = localStorage.getItem('ais-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=1">
+  <link rel="stylesheet" href="assets/css/base.css?v=1">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/bikezone.css?v=1">
+  <link rel="stylesheet" href="assets/css/consola.css?v=1">
+  <link rel="stylesheet" href="assets/css/modulos.css?v=1">
+  <link rel="stylesheet" href="assets/css/bz-modulos.css?v=1">
+  <link rel="stylesheet" href="assets/css/bz-deck.css?v=1">
+  <script src="config.js?v=1"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <b class="nv-nome"><i>NV</i>Gabinete Nelson Vaz</b>
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#prototipo">Protótipo</a>
+    <a href="#centralgest">A API do CentralGest</a>
+    <a href="#investimento">Investimento</a>
+    <a href="#fases">Fases</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <span class="eyebrow" data-acto="1" data-entra="sobe">Gabinete Nelson Vaz × AI Solutions · sobre o CentralGest Cloud</span>
+    <h1 data-linhas>80% do tempo a lançar e a conciliar. <span class="g-brilho">Está na hora de inverter a conta.</span></h1>
+    <p class="lead" data-acto="2" data-entra="sobe">
+      As faturas dos clientes entram no CentralGest já separadas linha a linha, cada uma na sua conta.
+      Os bancos conciliam-se pelo descritivo, mesmo quando um pagamento junta várias faturas.
+      E cada cliente recebe um painel que se lê em três segundos: verde, amarelo ou vermelho.
+    </p>
+    <div class="hero-meta" data-acto="3" data-entra="sobe">
+      <span>Para <b>Nelson Vaz</b></span>
+      <span>Seguimento da reunião de <b>06/10/2026</b></span>
+      <span>Protótipo a funcionar nesta página</span>
+    </div>
+    <div class="grid-3 hero-stats" data-acto="4" data-entra="sobe">
+      <div class="card stat-card"><div class="num"><span data-conta="80">80</span>% do tempo</div><div class="desc">De quatro pessoas em lançamentos e conciliações. Sobram 20% para analisar e acompanhar os clientes.</div></div>
+      <div class="card stat-card"><div class="num">Cerca de <span data-conta="100">100</span></div><div class="desc">Empresas clientes num só sistema, e as do gabinete que se junta no próximo ano.</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="3">3</span> frentes</div><div class="desc">Faturas, bancos e painéis para os clientes, todas sobre o CentralGest Cloud.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 06/10</span>
+      <h2>Um gabinete que quer dar gestão aos clientes, preso a trabalho que o cliente não vê</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>Abres um Excelzinho, vais ver em que linha da fatura do Makro ou do Recheio tem itens diferentes. É tempo que o cliente não vê, não valoriza.</blockquote>
+        <p>Uma fatura de cash &amp; carry mistura arroz, lixívia e uma máquina de gelo. Para o food cost ficar certo, desagrega-se à mão, linha a linha, com taxas de IVA diferentes.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Bastava que a IA fosse ler o descritivo, que ele já conseguia casar.</blockquote>
+        <p>O software casa valor com valor. Um pagamento de 1.000 € a várias faturas fica por casar, e há clientes em que a reconciliação leva mais tempo do que o lançamento.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Eu dou-te um balancete e o cliente agarra no balancete e mete-o no balde do lixo.</blockquote>
+        <p>O que o cliente quer é decidir. Um velocímetro com o ponteiro no verde, no amarelo ou no vermelho, comparado com os pares do setor, diz-lhe mais do que o balanço todo.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Eles gastam 80% do seu tempo a organizar e a fazer lançamentos e conciliações.</blockquote>
+        <p>E sobram 20% para a análise e o reporting, sempre à pressa. A ideia é inverter: 20% na exceção, 80% a acompanhar o cliente.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>É fácil dizer "eu tenho API", e depois a API está limitada.</blockquote>
+        <p>A preocupação certa. Por isso a documentação da API do CentralGest Cloud foi vista antes desta reunião: está mais abaixo, frente a frente.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Se o meu cliente estiver bem, eu estou bem.</blockquote>
+        <p>A contabilidade como ferramenta de gestão, e não só para recolher o imposto e entregá-lo ao Estado.</p>
+      </div>
+    </div>
+    <p class="sintese">Nada disto pede outro programa. <b>Pede que o CentralGest trabalhe sozinho no que é repetitivo, com as regras do gabinete.</b></p>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE MUDA ============ -->
+<section id="mudanca">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que muda</span>
+      <h2>Três tarefas que deixam de ser feitas à mão</h2>
+      <p class="lead">Cada cartão abre o módulo correspondente no protótipo.</p>
+    </div>
+    <div class="muda">
+      <div class="card" data-entra="sobe">
+        <span class="n">01 · Faturas linha a linha</span>
+        <h3>Cada linha na sua conta, à primeira</h3>
+        <p class="antes">Lançada pelo fornecedor, vai tudo a compras. Depois abre-se o lançamento e um Excel ao lado, e separa-se linha a linha, com o IVA de cada uma.</p>
+        <p class="depois">O sistema lê cada linha e põe-na na conta certa: matérias-primas, limpeza, utensílios ou ativo. O que o contabilista valida uma vez fica aprendido; só pergunta o que nunca viu.</p>
+        <a href="#prototipo" data-abre="mod-faturas">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">02 · Reconciliação bancária</span>
+        <h3>Lê o descritivo, não só o valor</h3>
+        <p class="antes">O software procura um valor igual. Um pagamento que junta várias faturas, ou que as paga só em parte, fica por casar e vai-se lá à mão.</p>
+        <p class="depois">O sistema lê o descritivo e o IBAN, sabe de quem é o pagamento e abate as faturas da mais antiga para a mais recente. Ao contabilista chegam só as exceções, com o motivo.</p>
+        <a href="#prototipo" data-abre="mod-banco">Ver no protótipo →</a>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="n">03 · Painéis dos clientes</span>
+        <h3>Um velocímetro em vez de um balancete</h3>
+        <p class="antes">Balancetes e balanços que o cliente não lê. Para um gráfico, extrair do software e trabalhar os dados noutra plataforma.</p>
+        <p class="depois">Um modelo por setor, ligado ao CentralGest: food cost, pessoal, renda, ticket médio, cada um num velocímetro, comparado com os pares e explicado numa frase.</p>
+        <a href="#prototipo" data-abre="mod-paineis">Ver no protótipo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PROTÓTIPO: A CONSOLA ============ -->
+<section class="section-alt" id="prototipo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Protótipo</span>
+      <h2>Um dia de outubro no gabinete, <span class="g-brilho">com o CentralGest a trabalhar sozinho</span></h2>
+      <p class="lead">Três módulos, um por frente. Os dois primeiros correm sozinhos quando os abre; os painéis respondem ao clique.</p>
+    </div>
+
+    <div class="consola" id="consola" data-entra="escala">
+      <div class="cg-win">
+        <div class="cg-top">
+          <img src="assets/img/centralgest-branco.png" alt="CentralGest">
+          <span class="cg-emp">Gabinete Nelson Vaz <small>CentralGest Cloud · cerca de 100 empresas</small></span>
+          <span class="cg-ais"><i></i>agentes AI Solutions ligados</span>
+        </div>
+        <div class="cg-mods" role="tablist" aria-label="Módulos">
+          <button type="button" role="tab" data-mod="mod-faturas" data-titulo="Documentos dos clientes · caixa de entrada"><b>01</b>Documentos dos clientes</button>
+          <button type="button" role="tab" data-mod="mod-banco" data-titulo="Reconciliação bancária · Tasca do Arco, Lda"><b>02</b>Reconciliação bancária</button>
+          <button type="button" role="tab" data-mod="mod-paineis" data-titulo="Painéis dos clientes · setembro de 2026"><b>03</b>Painéis dos clientes</button>
+        </div>
+        <div class="cg-crumb"><span>Gabinete › <b data-crumb>Documentos dos clientes</b></span><span class="fonte">quarta-feira, 14/10/2026</span></div>
+
+        <!-- 01 -->
+        <div class="cg-pane" id="mod-faturas" role="tabpanel">
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Lê os documentos que os clientes enviam e lança-os no CentralGest, linha a linha</h3><ol><li>Lê o documento, venha por email ou da digitalizadora</li><li>Põe cada linha na conta certa, com a sua taxa de IVA</li><li>Separa o food cost do que não é comida</li><li>Lança; o que nunca viu, pergunta ao contabilista</li></ol><p class="cg-explica-d">Quatro documentos ao longo do dia, quatro desfechos. Clique num deles para o ver tratado outra vez.</p></div>
+          <div class="cg-body" style="padding:14px 0 0"><div class="fx" id="fxDemo"></div></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="cg-pane" id="mod-banco" role="tabpanel">
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Cruza o extrato com a contabilidade e lê o que o software não lê</h3><ol><li>Lê cada movimento, com o descritivo e o IBAN</li><li>Identifica o fornecedor ou o cliente pela ficha</li><li>Abate as faturas em aberto, da mais antiga para a mais recente</li><li>O que não bate vai ao contabilista, com o motivo</li></ol><p class="cg-explica-d">Um mês de um cliente. Carregue em "Conciliar outra vez" para repetir.</p></div>
+          <div class="cg-body"><div id="rcDemo"></div></div>
+        </div>
+
+        <!-- 03 -->
+        <div class="cg-pane" id="mod-paineis" role="tabpanel">
+          <div class="cg-explica"><span class="cg-explica-k">O que este módulo faz</span><h3>Um painel por cliente, com os rácios que contam no setor dele</h3><ol><li>Lê o fecho do mês no CentralGest</li><li>Junta o que não está na contabilidade, como as vendas por mesa no OneDrive</li><li>Compara cada rácio com a média do setor</li><li>Explica o resultado numa frase, em linguagem de dono</li></ol><p class="cg-explica-d">Três clientes de setores diferentes, três modelos. Abra cada um.</p></div>
+          <div class="cg-body"><div id="pcDemo"></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="cg-legenda">
+      <span>Clientes, fornecedores, faturas, NIF, movimentos, rácios e médias do setor são ilustrativos.</span>
+      <span>As contas seguem o SNC; os valores não são de nenhum cliente real.</span>
+    </p>
+  </div>
+</section>
+
+<!-- configs dos módulos -->
+<script type="application/json" id="fxDemo-config">
+{
+  "windowTitle": "Documentos dos clientes",
+  "mailbox": "documentos dos clientes",
+  "agentName": "Agente de lançamentos",
+  "regra": "plano de contas do gabinete",
+  "inboxNote": "Hoje chegaram **4** documentos de **2** clientes. Com **cerca de 100** empresas, são centenas por mês.",
+  "pauseMs": 3800,
+  "rotulos": {
+    "cliente": "Adquirente",
+    "colunas": ["Ref.", "Descrição", "Qtd.", "Preço", "IVA", "Total"],
+    "secArtigos": "Linha a linha",
+    "secCond": "Separação para o food cost",
+    "secCondSub": "base, sem IVA",
+    "condVazio": "Não se lança: o documento já existe",
+    "fases": ["a ler o documento", "a classificar as linhas", "a separar por conta"],
+    "artigos": { "nova": "Sugerida", "existe": "Aprendida", "falta": "Pergunta", "dup": "Já lançada" },
+    "estados": { "fut": "Pergunta" },
+    "replay": "Processar a caixa outra vez"
+  },
+  "docs": [
+    {
+      "mail": { "from": "Tasca do Arco, Lda", "time": "08:12", "subject": "Fatura Makro de 26/09", "clip": "PDF",
+        "body": "Bom dia, seguem as faturas de setembro. **A do Makro mistura comida, limpeza e uma máquina de gelo nova.**" },
+      "doc": { "supplier": "Makro Cash & Carry Portugal, S.A.", "addr": "Loja de Lisboa", "nif": "NIF 5•• ••• 913",
+        "title": "Fatura", "number": "FT 0417/2026/88213", "date": "26/09/2026", "client": "Tasca do Arco, Lda", "ref": "Cartão de cliente 4•••• 012",
+        "lines": [
+          ["104512", "Arroz carolino 5 kg", "6", "7,90", "6%", "47,40"],
+          ["220981", "Azeite virgem extra 5 L", "2", "38,50", "6%", "77,00"],
+          ["310077", "Bacalhau graúdo (kg)", "12", "11,90", "6%", "142,80"],
+          ["560312", "Lixívia tradicional 5 L", "4", "3,20", "23%", "12,80"],
+          ["612440", "Talheres inox, caixa de 24", "2", "18,90", "23%", "37,80"],
+          ["880145", "Máquina de gelo 25 kg/dia", "1", "389,00", "23%", "389,00"]
+        ],
+        "base": "706,80 €", "vatLabel": "IVA (6% e 23%)", "vat": "117,14 €", "total": "823,94 €" },
+      "read": [["Fornecedor", "Makro Cash & Carry", "fornecedor"], ["Documento", "FT 0417/2026/88213", "numero"], ["Data", "26/09/2026", "data"], ["Linhas", "6 linhas · 2 taxas de IVA", "l0"], ["Base", "706,80 €", "base"], ["Total", "823,94 €", "total"]],
+      "artigos": [
+        { "forn": "Arroz carolino", "bz": "312 · Matérias-primas", "desc": "Food cost · IVA 6%", "estado": "existe", "stock": "47,40 €", "linha": "l0" },
+        { "forn": "Azeite virgem extra", "bz": "312 · Matérias-primas", "desc": "Food cost · IVA 6%", "estado": "existe", "stock": "77,00 €", "linha": "l1" },
+        { "forn": "Bacalhau graúdo", "bz": "312 · Matérias-primas", "desc": "Food cost · IVA 6%", "estado": "existe", "stock": "142,80 €", "linha": "l2" },
+        { "forn": "Lixívia", "bz": "6267 · Limpeza e higiene", "desc": "Fora do food cost · IVA 23%", "estado": "existe", "stock": "12,80 €", "linha": "l3" },
+        { "forn": "Talheres inox", "bz": "6231 · Utensílios", "desc": "Desgaste rápido · IVA 23%", "estado": "existe", "stock": "37,80 €", "linha": "l4" },
+        { "forn": "Máquina de gelo", "bz": "433 · Equipamento básico", "desc": "Ativo: vai para o mapa de ativos · IVA 23%", "estado": "nova", "stock": "389,00 €", "linha": "l5" }
+      ],
+      "condicoes": [
+        { "marca": "Matérias-primas (food cost)", "valor": "267,20 €", "ok": true, "linha": "l0" },
+        { "marca": "Limpeza e higiene", "valor": "12,80 €", "ok": true, "linha": "l3" },
+        { "marca": "Utensílios", "valor": "37,80 €", "ok": true, "linha": "l4" },
+        { "marca": "Ativo fixo tangível", "valor": "389,00 €", "ok": true, "linha": "l5" }
+      ],
+      "outcome": { "kind": "val", "title": "Lançada, com uma linha para confirmar",
+        "lines": ["**6 linhas** em **4 contas**, cada uma com a sua taxa de IVA", "Food cost do mês sem lixívia nem máquina de gelo: **267,20 €**", "A máquina de gelo foi para **ativo (433)**: o contabilista confirma com um clique"] }
+    },
+    {
+      "mail": { "from": "Tasca do Arco, Lda", "time": "09:30", "subject": "Fatura Recheio de 29/09", "clip": "PDF",
+        "body": "Mais uma do Recheio. **Os mesmos artigos de todos os meses.**" },
+      "doc": { "supplier": "Recheio Cash & Carry, S.A.", "addr": "Loja de Lisboa", "nif": "NIF 5•• ••• 458",
+        "title": "Fatura", "number": "FT 2026/3/104477", "date": "29/09/2026", "client": "Tasca do Arco, Lda", "ref": "",
+        "lines": [
+          ["40021", "Batata branca 25 kg", "3", "14,50", "6%", "43,50"],
+          ["11873", "Leite UHT meio-gordo 1 L", "24", "0,79", "6%", "18,96"],
+          ["10455", "Arroz agulha 5 kg", "4", "6,95", "6%", "27,80"],
+          ["77120", "Detergente da loiça 5 L", "2", "6,40", "23%", "12,80"],
+          ["77981", "Guardanapos de papel (100)", "10", "2,15", "23%", "21,50"]
+        ],
+        "base": "124,56 €", "vatLabel": "IVA (6% e 23%)", "vat": "13,31 €", "total": "137,87 €" },
+      "read": [["Fornecedor", "Recheio Cash & Carry", "fornecedor"], ["Documento", "FT 2026/3/104477", "numero"], ["Data", "29/09/2026", "data"], ["Linhas", "5 linhas · 2 taxas de IVA", "l0"], ["Base", "124,56 €", "base"], ["Total", "137,87 €", "total"]],
+      "artigos": [
+        { "forn": "Batata branca", "bz": "312 · Matérias-primas", "desc": "Food cost · IVA 6%", "estado": "existe", "stock": "43,50 €", "linha": "l0" },
+        { "forn": "Leite UHT", "bz": "312 · Matérias-primas", "desc": "Food cost · IVA 6%", "estado": "existe", "stock": "18,96 €", "linha": "l1" },
+        { "forn": "Arroz agulha", "bz": "312 · Matérias-primas", "desc": "Food cost · IVA 6%", "estado": "existe", "stock": "27,80 €", "linha": "l2" },
+        { "forn": "Detergente da loiça", "bz": "6267 · Limpeza e higiene", "desc": "Fora do food cost · IVA 23%", "estado": "existe", "stock": "12,80 €", "linha": "l3" },
+        { "forn": "Guardanapos", "bz": "6267 · Limpeza e higiene", "desc": "Fora do food cost · IVA 23%", "estado": "existe", "stock": "21,50 €", "linha": "l4" }
+      ],
+      "condicoes": [
+        { "marca": "Matérias-primas (food cost)", "valor": "90,26 €", "ok": true, "linha": "l0" },
+        { "marca": "Limpeza e higiene", "valor": "34,30 €", "ok": true, "linha": "l3" }
+      ],
+      "outcome": { "kind": "ok", "title": "Lançada sozinha às 09:31",
+        "lines": ["As **5 linhas** já tinham sido validadas em meses anteriores", "Food cost: **+90,26 €**; limpeza e higiene: **34,30 €**", "PDF anexado ao lançamento, sem ninguém lhe tocar"] }
+    },
+    {
+      "mail": { "from": "Rui Lopes TVDE, Unipessoal", "time": "11:05", "subject": "Faturas do mês", "clip": "PDF",
+        "body": "Mando as faturas de setembro. **Uma delas é de uma loja de eletrónica.**" },
+      "doc": { "supplier": "Eletrocentro Digital, S.A.", "addr": "Loja online", "nif": "NIF 5•• ••• 207",
+        "title": "Fatura", "number": "FT EC26/55190", "date": "21/09/2026", "client": "Rui Lopes TVDE, Unipessoal Lda", "ref": "",
+        "lines": [
+          ["SP-1180", "Suporte de telemóvel para carro", "1", "24,39", "23%", "24,39"],
+          ["CH-2201", "Carregador de isqueiro USB-C", "2", "12,19", "23%", "24,38"],
+          ["PS5-SLM", "Consola PlayStation 5 Slim", "1", "406,50", "23%", "406,50"]
+        ],
+        "base": "455,27 €", "vatLabel": "IVA 23%", "vat": "104,71 €", "total": "559,98 €" },
+      "read": [["Fornecedor", "Eletrocentro Digital", "fornecedor"], ["Documento", "FT EC26/55190", "numero"], ["Data", "21/09/2026", "data"], ["Linhas", "3 linhas · IVA 23%", "l0"], ["Base", "455,27 €", "base"], ["Total", "559,98 €", "total"]],
+      "artigos": [
+        { "forn": "Suporte de telemóvel", "bz": "6231 · Utensílios", "desc": "Usado no carro · IVA 23%", "estado": "existe", "stock": "24,39 €", "linha": "l0" },
+        { "forn": "Carregador USB-C", "bz": "6231 · Utensílios", "desc": "Usado no carro · IVA 23%", "estado": "existe", "stock": "24,38 €", "linha": "l1" },
+        { "forn": "Consola PlayStation 5", "bz": "da empresa ou pessoal?", "desc": "Nunca visto neste cliente, sem relação com a atividade", "estado": "falta", "stock": "406,50 €", "linha": "l2" }
+      ],
+      "secCond": "Por conta",
+      "condicoes": [
+        { "marca": "Utensílios", "valor": "48,77 €", "ok": true, "linha": "l0" },
+        { "marca": "Consola PlayStation 5", "valor": "406,50 €", "ok": false, "marca2": "?", "nota": "Pode ser pessoal: **perguntado ao contabilista**", "linha": "l2" }
+      ],
+      "outcome": { "kind": "fut", "title": "Em rascunho: uma pergunta ao contabilista",
+        "lines": ["A consola **não tem relação com a atividade**: o sistema **não decide sozinho**", "Pergunta ao contabilista: **da empresa ou pessoal?**", "A resposta fica aprendida para as próximas faturas deste cliente"] }
+    },
+    {
+      "mail": { "from": "Digitalizadora do gabinete", "time": "14:20", "subject": "Digitalização · Tasca do Arco", "clip": "SCAN",
+        "body": "O cliente entregou as faturas em papel. **Entre elas, a do Makro que já tinha chegado por email.**" },
+      "doc": { "supplier": "Makro Cash & Carry Portugal, S.A.", "addr": "Loja de Lisboa", "nif": "NIF 5•• ••• 913",
+        "title": "Fatura", "number": "FT 0417/2026/88213", "date": "26/09/2026", "client": "Tasca do Arco, Lda", "ref": "Cartão de cliente 4•••• 012",
+        "lines": [
+          ["104512", "Arroz carolino 5 kg", "6", "7,90", "6%", "47,40"],
+          ["220981", "Azeite virgem extra 5 L", "2", "38,50", "6%", "77,00"],
+          ["310077", "Bacalhau graúdo (kg)", "12", "11,90", "6%", "142,80"],
+          ["560312", "Lixívia tradicional 5 L", "4", "3,20", "23%", "12,80"],
+          ["612440", "Talheres inox, caixa de 24", "2", "18,90", "23%", "37,80"],
+          ["880145", "Máquina de gelo 25 kg/dia", "1", "389,00", "23%", "389,00"]
+        ],
+        "base": "706,80 €", "vatLabel": "IVA (6% e 23%)", "vat": "117,14 €", "total": "823,94 €" },
+      "read": [["Fornecedor", "Makro Cash & Carry", "fornecedor"], ["Documento", "FT 0417/2026/88213", "numero"], ["Data", "26/09/2026", "data"], ["Linhas", "6 linhas · 2 taxas de IVA", "l0"], ["Base", "706,80 €", "base"], ["Total", "823,94 €", "total"]],
+      "artigos": [
+        { "forn": "FT 0417/2026/88213", "bz": "lançada às 08:13", "desc": "Mesmo fornecedor, mesmo número, mesmo valor", "estado": "dup", "stock": "", "linha": "" }
+      ],
+      "condicoes": [],
+      "outcome": { "kind": "block", "title": "Bloqueada: documento repetido",
+        "lines": ["**Não entra outra vez**: o IVA dedutível contava a dobrar", "O original entrou hoje às **08:13**, por email", "A digitalização fica associada ao lançamento original"] }
+    }
+  ]
+}
+</script>
+
+<script type="application/json" id="rcDemo-config">
+{
+  "extrato": "Tasca do Arco, Lda · conta à ordem · setembro de 2026",
+  "origem": "O extrato do banco, cruzado com a contabilidade no CentralGest",
+  "total": 58,
+  "excecoes": 3,
+  "tempo": "3 min",
+  "rotulos": {
+    "coluna": "Encontrado na contabilidade",
+    "procura": "a procurar na contabilidade…",
+    "excecoes": "para o contabilista",
+    "estados": { "ok": "Conciliado", "val": "Para validar", "fut": "Pedido em rascunho" }
+  },
+  "rows": [
+    { "data": "01/09", "desc": "TPA VENDAS 31/08", "valor": "+1.842,30", "phc": "**Vendas de 31/08** (SAF-T de faturação) · 61 talões", "estado": "ok" },
+    { "data": "02/09", "desc": "TRF SEPA PT50 0010 •••• •••• 8812 1", "valor": "-1.000,00", "phc": "**Frutas Ribeiro, Lda**, pelo IBAN da ficha: FT 412 e FT 457 liquidadas, FT 498 abatida em 268,95 €", "motivo": "As três faturas somavam **1.250,27 €**: ficam **250,27 €** em aberto na FT 498", "estado": "ok", "tag": "3 faturas abatidas" },
+    { "data": "03/09", "desc": "COMISSAO SERV TPA AGO", "valor": "-27,64", "phc": "**Comissões bancárias**, lançadas pela regra do gabinete", "estado": "ok", "tag": "Lançado e conciliado" },
+    { "data": "05/09", "desc": "DD ELETRICIDADE 0905", "valor": "-486,12", "phc": "**Eletricidade de agosto** (6241), já lançada", "estado": "ok" },
+    { "data": "08/09", "desc": "TRF RENDA SETEMBRO", "valor": "-2.400,00", "phc": "**Renda de setembro** (6261), recibo de renda eletrónico", "estado": "ok" },
+    { "data": "10/09", "desc": "PAG SEG SOCIAL REF 2026 08", "valor": "-1.913,40", "phc": "**Segurança Social de agosto**, do processamento salarial", "estado": "ok" },
+    { "data": "12/09", "desc": "TRF SEPA 0000412 JANTAR GRUPO", "valor": "+350,00", "phc": "Nenhuma fatura emitida com este valor", "motivo": "Parece o sinal de uma reserva de grupo: **pedido do documento ao cliente, em rascunho**", "estado": "fut" },
+    { "data": "15/09", "desc": "COMPRA 4413 SUPERMERCADO ONLINE", "valor": "-86,43", "phc": "Sem fatura em nome da empresa", "motivo": "Cartão da empresa numa compra de supermercado: **pode ser pessoal. Assinalado ao contabilista.**", "estado": "val" },
+    { "data": "18/09", "desc": "TPA VENDAS 17/09", "valor": "+1.288,90", "phc": "**Vendas de 17/09** (SAF-T de faturação) · 44 talões", "estado": "ok" },
+    { "data": "22/09", "desc": "DD 0067 SEGURO MULTIRRISCOS", "valor": "-64,20", "phc": "Débito direto novo, sem recibo", "motivo": "**Pedido do recibo ao cliente, em rascunho**; a regra fica criada para os meses seguintes", "estado": "fut" },
+    { "data": "25/09", "desc": "TRF SEPA PT50 0010 •••• •••• 8812 1", "valor": "-500,00", "phc": "**Frutas Ribeiro, Lda**, pelo IBAN: o resto da FT 498 (250,27 €) e 249,73 € da FT 533", "estado": "ok", "tag": "2 faturas abatidas" },
+    { "data": "30/09", "desc": "TRF RECHEIO CASH CARRY", "valor": "-137,87", "phc": "**Recheio FT 2026/3/104477**, a fatura lançada às 09:31", "estado": "ok" }
+  ],
+  "mais": "**+ 46 movimentos** conciliados da mesma maneira: vendas de TPA, pagamentos a fornecedores pelo IBAN, salários e débitos diretos já conhecidos.",
+  "nota": "Nos clientes com mais movimentos, a reconciliação leva hoje mais tempo do que o próprio lançamento. Com o sistema, o contabilista olha só para estas **3 exceções**, cada uma já com o motivo e o pedido ao cliente preparado."
+}
+</script>
+
+<script type="application/json" id="pcDemo-config">
+{
+  "periodo": "setembro de 2026 · fechado a 12/10",
+  "sessao": "Link próprio: esta empresa só vê os seus números.",
+  "tituloAlertas": "O que o painel diz ao cliente",
+  "nota": "Rácios, médias do setor e frases ilustrativos. Na versão real, os modelos de cada setor e as médias de referência definem-se com o gabinete.",
+  "clientes": [
+    {
+      "id": "tasca", "nome": "Tasca do Arco, Lda", "curto": "Tasca do Arco", "setor": "Restauração",
+      "topo": [["Vendas de setembro", "28.400 €", "CentralGest · vendas"], ["Resultado do mês", "1.704 €", "CentralGest · balancete"], ["Mesas servidas", "604", "OneDrive · vendas do POS"]],
+      "kpis": [
+        { "nome": "Food cost", "valor": 34, "un": "%", "min": 20, "max": 45, "zonas": [[20, 32, "verde"], [32, 36, "amarelo"], [36, 45, "vermelho"]], "mediaVal": 30, "media": "28 a 32%", "base": "das vendas",
+          "frase": "Acima dos pares: ou se compra caro, ou a carta está barata. **Cada ponto são cerca de 280 € por mês.**", "fonte": "CentralGest · compras 312 e vendas" },
+        { "nome": "Pessoal", "valor": 41, "un": "%", "min": 20, "max": 50, "zonas": [[20, 33, "verde"], [33, 38, "amarelo"], [38, 50, "vermelho"]], "mediaVal": 31, "media": "30 a 33%", "base": "das vendas",
+          "frase": "**O que mais pesa este mês.** Ou há horas a mais, ou falta faturação ao almoço.", "fonte": "CentralGest · gastos com pessoal" },
+        { "nome": "Renda", "valor": 8.5, "dec": 1, "un": "%", "min": 0, "max": 20, "zonas": [[0, 8, "verde"], [8, 12, "amarelo"], [12, 20, "vermelho"]], "mediaVal": 8, "media": "até 8%", "base": "das vendas",
+          "frase": "Ainda cabe. **Com o aumento previsto passa para 10,6%**: o painel avisa antes de chegar ao vermelho.", "fonte": "CentralGest · 6261 rendas" },
+        { "nome": "Ticket por mesa", "valor": 47, "un": " €", "min": 25, "max": 65, "zonas": [[25, 35, "vermelho"], [35, 42, "amarelo"], [42, 65, "verde"]], "mediaVal": 42, "media": "40 a 44 €", "base": "por mesa",
+          "frase": "Acima da média: a sala vende bem. **O problema não está nas vendas, está nos custos.**", "fonte": "OneDrive · vendas do POS" },
+        { "nome": "Margem", "valor": 6, "un": "%", "min": -10, "max": 25, "zonas": [[-10, 5, "vermelho"], [5, 10, "amarelo"], [10, 25, "verde"]], "mediaVal": 10, "media": "8 a 12%", "base": "das vendas",
+          "frase": "Ainda positiva, mas curta: **1.704 € em 28.400 €** de vendas.", "fonte": "CentralGest · balancete" }
+      ],
+      "alertas": [
+        { "tipo": "risco", "texto": "**Pessoal a 41% das vendas.** Os pares andam nos 30 a 33%. É o primeiro ponto a ver na próxima conversa com o cliente." },
+        { "tipo": "risco", "texto": "**Food cost a 34%.** Comparar os preços da carta com o custo dos pratos que mais saem." },
+        { "tipo": "info", "texto": "**Renda em 8,5% das vendas.** Com o aumento previsto, sobe para 10,6% e a margem do mês desce para perto de 4%." },
+        { "tipo": "bom", "texto": "**Ticket médio de 47 € por mesa**, acima da média do setor." }
+      ]
+    },
+    {
+      "id": "tvde", "nome": "Rui Lopes TVDE, Unipessoal Lda", "curto": "Rui Lopes TVDE", "setor": "Transporte TVDE",
+      "topo": [["Faturação de setembro", "4.860 €", "CentralGest · vendas"], ["Resultado do mês", "437 €", "CentralGest · balancete"], ["Compras pessoais no cartão", "3", "Reconciliação bancária"]],
+      "kpis": [
+        { "nome": "Comissões", "valor": 26, "un": "%", "min": 10, "max": 35, "zonas": [[10, 24, "verde"], [24, 28, "amarelo"], [28, 35, "vermelho"]], "mediaVal": 24, "media": "23 a 25%", "base": "da faturação",
+          "frase": "Ligeiramente acima: há mais viagens na plataforma com a comissão mais alta.", "fonte": "CentralGest · comissões" },
+        { "nome": "Combustível", "valor": 22, "un": "%", "min": 5, "max": 35, "zonas": [[5, 16, "verde"], [16, 21, "amarelo"], [21, 35, "vermelho"]], "mediaVal": 16, "media": "14 a 18%", "base": "da faturação",
+          "frase": "**O que mais pesa.** Com estes quilómetros, vale fazer a conta a um carro elétrico.", "fonte": "CentralGest · 6242 combustíveis" },
+        { "nome": "Custo do carro", "valor": 19, "un": "%", "min": 5, "max": 35, "zonas": [[5, 18, "verde"], [18, 24, "amarelo"], [24, 35, "vermelho"]], "mediaVal": 18, "media": "16 a 20%", "base": "renting e seguro",
+          "frase": "Dentro do esperado para um carro em renting.", "fonte": "CentralGest · alugueres e seguros" },
+        { "nome": "Margem", "valor": 9, "un": "%", "min": -10, "max": 30, "zonas": [[-10, 10, "vermelho"], [10, 18, "amarelo"], [18, 30, "verde"]], "mediaVal": 15, "media": "12 a 18%", "base": "da faturação",
+          "frase": "**437 € de resultado** em 4.860 € faturados. O combustível explica quase toda a diferença.", "fonte": "CentralGest · balancete" }
+      ],
+      "alertas": [
+        { "tipo": "risco", "texto": "**Combustível a 22% da faturação.** Os pares estão nos 14 a 18%." },
+        { "tipo": "risco", "texto": "**3 compras pessoais** pagas com o cartão da empresa este mês. Ficam fora da contabilidade e o cliente é avisado." },
+        { "tipo": "info", "texto": "**Comissões a 26%.** Ver que plataforma traz mais viagens." }
+      ]
+    },
+    {
+      "id": "obras", "nome": "Obras Atlântico, Lda", "curto": "Obras Atlântico", "setor": "Construção",
+      "topo": [["Faturação de setembro", "86.200 €", "CentralGest · vendas"], ["A receber de clientes", "142.600 €", "CentralGest · clientes em aberto"], ["Obras em curso", "6", "CentralGest · centros de custo"]],
+      "kpis": [
+        { "nome": "Margem das obras", "valor": 24, "un": "%", "min": 0, "max": 40, "zonas": [[0, 15, "vermelho"], [15, 22, "amarelo"], [22, 40, "verde"]], "mediaVal": 20, "media": "18 a 22%", "base": "da faturação",
+          "frase": "Acima dos pares: **as obras estão bem orçamentadas.**", "fonte": "CentralGest · centros de custo" },
+        { "nome": "Subempreitadas", "valor": 34, "un": "%", "min": 10, "max": 50, "zonas": [[10, 30, "verde"], [30, 38, "amarelo"], [38, 50, "vermelho"]], "mediaVal": 28, "media": "25 a 30%", "base": "da faturação",
+          "frase": "Acima da média: **duas obras dependem quase só de subempreiteiros.**", "fonte": "CentralGest · 621 subcontratos" },
+        { "nome": "Prazo de recebimento", "valor": 78, "un": " dias", "min": 0, "max": 120, "zonas": [[0, 45, "verde"], [45, 75, "amarelo"], [75, 120, "vermelho"]], "mediaVal": 60, "media": "60 dias", "base": "desde a fatura",
+          "frase": "**O problema deste cliente.** As obras dão lucro, mas o dinheiro chega tarde.", "fonte": "CentralGest · clientes em aberto" },
+        { "nome": "Pessoal", "valor": 22, "un": "%", "min": 5, "max": 45, "zonas": [[5, 28, "verde"], [28, 35, "amarelo"], [35, 45, "vermelho"]], "mediaVal": 26, "media": "24 a 28%", "base": "da faturação",
+          "frase": "Dentro da média, com a equipa própria ocupada.", "fonte": "CentralGest · gastos com pessoal" }
+      ],
+      "alertas": [
+        { "tipo": "risco", "texto": "**78 dias para receber.** A empresa ganha nas obras e perde na tesouraria: 142.600 € por receber, 38.000 € dos quais há mais de 90 dias." },
+        { "tipo": "info", "texto": "**Subempreitadas a 34%.** Ver se as duas obras com mais subempreitada mantêm a margem." },
+        { "tipo": "bom", "texto": "**Margem bruta de 24%**, acima dos pares do setor." }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ============ 5. FLUXO ============ -->
+<section id="fluxo">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como se liga</span>
+      <h2>O CentralGest continua no centro. O sistema trabalha à volta dele.</h2>
+    </div>
+    <div class="fluxo" id="nvFluxo" data-entra="sobe"></div>
+  </div>
+</section>
+<script type="application/json" id="nvFluxo-config">
+{
+  "stepMs": 1800,
+  "channels": [
+    { "icon": "message", "label": "Documentos por email" },
+    { "icon": "list", "label": "Digitalizadora e extratos" },
+    { "icon": "database", "label": "API do CentralGest Cloud" },
+    { "icon": "globe", "label": "Vendas no OneDrive" }
+  ],
+  "nodes": [
+    { "icon": "message", "title": "Chega um documento ou um extrato", "detail": "Por email, em papel digitalizado ou pelo banco.", "tone": "brand" },
+    { "icon": "search", "title": "Lê linha a linha", "detail": "Fornecedor, artigos, taxas de IVA, descritivos e IBAN.", "tone": "teal" },
+    { "icon": "book", "title": "Aplica as regras do gabinete", "detail": "O plano de contas e o que cada contabilista já validou, cliente a cliente.", "tone": "teal" },
+    { "icon": "shield", "title": "Decide", "detail": "Sabe: lança. Não sabe: pergunta ao contabilista.", "tone": "teal" },
+    { "icon": "database", "title": "Escreve no CentralGest", "detail": "Lançamentos, conciliações e os rácios que alimentam os painéis.", "tone": "brand" }
+  ],
+  "note": "A informação fica no CentralGest do gabinete. O sistema entra pela API, com um utilizador próprio e as permissões que o gabinete controla."
+}
+</script>
+
+<!-- ============ 6. A API DO CENTRALGEST ============ -->
+<section class="section-alt" id="centralgest">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Do lado técnico</span>
+      <h2>A dúvida sobre a API, vista antes desta reunião</h2>
+      <p class="lead">Ter API não chega: é preciso que ela deixe fazer o que interessa. Fomos à documentação oficial da API do CentralGest Cloud, frente a frente com cada uma das três frentes.</p>
+    </div>
+    <div class="tec nv-tec">
+      <div class="card holofote" data-entra="sobe">
+        <span class="nv-sel ok">Confirmado na documentação</span>
+        <h3>Faturas linha a linha</h3>
+        <p>A API cria lançamentos com várias linhas, cada uma com a sua conta e a sua taxa de IVA, e anexa o documento digitalizado. O próprio CentralGest já devolve as linhas lidas de cada fatura.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <span class="nv-sel val">Confirmado, com uma pergunta</span>
+        <h3>Reconciliação bancária</h3>
+        <p>A API dá o extrato com o descritivo de cada movimento e regista um pagamento contra várias faturas em aberto, com o valor abatido em cada uma. Isto vive no módulo bancário do CentralGest: falta confirmar que está no plano do gabinete. Sem ele, o extrato entra por ficheiro.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <span class="nv-sel ok">Confirmado na documentação</span>
+        <h3>Painéis dos clientes</h3>
+        <p>Balancetes por período e por conta, demonstrações financeiras, compras, vendas e valores em aberto. O ticket médio não está na contabilidade: vem das vendas que o gabinete já guarda no OneDrive.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <span class="nv-sel ok">Confirmado na documentação</span>
+        <h3>Cem empresas, um acesso</h3>
+        <p>Com um único utilizador, o sistema muda de empresa em empresa, como o contabilista faz hoje. O gabinete que se junta no próximo ano entra no mesmo sistema.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <span class="nv-sel">Se a escolha for outra</span>
+        <h3>E se o software não for o CentralGest?</h3>
+        <p>Fazemos a mesma validação antes de avançar. Para referência: pela documentação pública, a API do TOConline não permite fazer lançamentos contabilísticos, o que deixaria a parte das faturas de fora.</p>
+      </div>
+      <div class="card holofote" data-entra="sobe">
+        <span class="nv-sel">No contrato</span>
+        <h3>Validação antes de avançar</h3>
+        <p>O contrato fica condicionado à validação técnica com o acesso real do gabinete: se a API não permitir o que está previsto, não se avança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. REGRAS E LIMITES ============ -->
+<section id="regras">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Regras claras</span>
+      <h2>O que o sistema faz sozinho e o que fica sempre com o contabilista</h2>
+      <p class="lead">Começa por perguntar muito e, com cada validação, pergunta menos. Nunca decide o que é fiscal.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Sozinho</h3>
+        <ul class="list-check">
+          <li>Ler os documentos que chegam por email e pela digitalizadora</li>
+          <li>Classificar cada linha com a conta e a taxa de IVA que o contabilista já validou</li>
+          <li>Separar o food cost das restantes compras</li>
+          <li>Conciliar no banco o que bate, mesmo com pagamentos que juntam várias faturas</li>
+          <li>Atualizar o painel de cada cliente no fecho do mês</li>
+        </ul>
+      </div>
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Sempre com o contabilista</h3>
+        <ul class="list-x">
+          <li>Artigos que nunca viu, ou que podem ser ativo</li>
+          <li>Despesas que podem ser pessoais</li>
+          <li>Documentos repetidos: não entram</li>
+          <li>Movimentos sem documento: o pedido ao cliente fica em rascunho</li>
+          <li>O que cada cliente vê no painel e as médias de referência de cada setor</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. FASE SEGUINTE ============ -->
+<section class="section-alt" id="seguinte">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Fase seguinte</span>
+      <h2>O que ficou falado e fica para depois</h2>
+      <p class="lead">Fora desta proposta. Entra quando as três frentes estiverem a funcionar e fizer sentido.</p>
+    </div>
+    <div class="seguinte bz-q4">
+      <div class="card" data-entra="sobe"><h3>Pedidos dos clientes por email</h3><p>Certidão permanente, RCBE, início de atividade: o sistema lê o pedido, vai à pasta do cliente e prepara a resposta.</p></div>
+      <div class="card" data-entra="sobe"><h3>Avenças mensais automáticas</h3><p>Emitidas e enviadas todos os meses, deixando de fora quem tem três avenças em atraso ou um valor em dívida que o gabinete define.</p></div>
+      <div class="card" data-entra="sobe"><h3>Documentos em falta</h3><p>Ver no CentralGest o que falta a cada cliente e pedi-lo por email, com a frequência que o gabinete escolher.</p></div>
+      <div class="card" data-entra="sobe"><h3>Recursos humanos</h3><p>A área com mais trabalho repetitivo a seguir à contabilidade, quando a migração dos salários para o CentralGest estiver feita.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. INVESTIMENTO ============ -->
+<section id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Um projeto, um preço, para as três frentes</h2>
+      <p class="lead">Na reunião fizemos a conta: 80% do tempo de quatro pessoas são 4.000 a 5.000&nbsp;€ por mês em trabalho repetitivo. A implementação equivale a menos de dois meses desse tempo.</p>
+    </div>
+    <div class="invest">
+      <div class="card price-card highlight total" data-entra="sobe">
+        <span class="pin">Projeto completo</span>
+        <div class="label">Implementação</div>
+        <div class="price">7.500 € <small>+ IVA</small></div>
+        <ul class="price-list">
+          <li>Lançamento de faturas linha a linha, com aprendizagem</li>
+          <li>Separação do food cost e dos ativos</li>
+          <li>Reconciliação bancária pelo descritivo e pelo IBAN</li>
+          <li>Painéis por setor para os clientes</li>
+          <li>Mapeamento das regras com a equipa</li>
+        </ul>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Pagamento em duas partes</div>
+        <div class="pag">
+          <div><span>Na adjudicação<small>arranque, regras e acessos</small></span><b>4.500 € <small class="iva">+ IVA</small></b></div>
+          <div><span>No início dos testes<small>o sistema a trabalhar em paralelo com a equipa</small></span><b>3.000 € <small class="iva">+ IVA</small></b></div>
+        </div>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Acompanhamento</div>
+        <div class="pag">
+          <div><span>Mensalidade</span><b>200 € <small class="iva">+ IVA /mês</small></b></div>
+        </div>
+        <ul class="price-list">
+          <li>Servidor e custos de IA de todas as empresas</li>
+          <li>Manutenção da ligação ao CentralGest</li>
+          <li>Modelos de setor e regras novas</li>
+          <li>Suporte à equipa sempre que for preciso</li>
+        </ul>
+        <span class="quando">A partir da entrada em produção</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FASES (depois do preço) ============ -->
+<section class="section-alt" id="fases">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Primeiro as regras, depois as três frentes, por esta ordem</h2>
+      <p class="lead">Cerca de dois meses a contar da adjudicação. Começamos pelas empresas que já estiverem no CentralGest Cloud. Prazos indicativos, fechados na primeira semana.</p>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semana 1</span>
+        <h3>Regras e acessos</h3>
+        <p>O plano de contas e as regras do gabinete, o acesso à API do CentralGest Cloud, a confirmação do módulo bancário e as pastas do OneDrive.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 2 a 4</span>
+        <h3>Faturas</h3>
+        <p>Primeiro em rascunho, validado pelos contabilistas. Cada validação fica aprendida; com as regras afinadas, passa a lançar sozinho.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 3 a 6</span>
+        <h3>Reconciliação</h3>
+        <p>Com os extratos reais, a correr em paralelo com a equipa até bater certo.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semanas 5 a 7</span>
+        <h3>Painéis</h3>
+        <p>Primeiro o modelo de restauração, depois os setores com mais clientes no gabinete.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Semana 8</span>
+        <h3>Tudo a funcionar</h3>
+        <p>As três frentes autónomas no que é seguro, afinações finais e acompanhamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para o gabinete do Nelson Vaz, outubro de 2026
+    <span class="disclaimer">Protótipo com dados ilustrativos: clientes, fornecedores, faturas, NIF, movimentos bancários, rácios, médias do setor e valores são fictícios.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/app.js?v=1"></script>
+<script src="assets/js/faturas.js?v=1"></script>
+<script src="assets/js/consola.js?v=1"></script>
+<script>
+  consolaAbas('consola');
+  caixaFaturas('fxDemo');
+  reconciliacao('rcDemo');
+  painelClientes('pcDemo');
+  fluxo('nvFluxo');
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var atual = r.getAttribute('data-theme') || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = atual === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
