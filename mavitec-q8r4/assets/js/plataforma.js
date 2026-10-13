@@ -43,6 +43,11 @@
   function aplicaRegra() {
     S.linhas.forEach(function (r) { if (r.art && r.p != null && !r.manual) { r.pu = precoRegra(r.art); } });
   }
+  function proxima(depois) {
+    for (var i = 0; i < S.linhas.length; i++) { if (i > (depois == null ? -1 : depois) && !S.linhas[i].ok) return i; }
+    for (var j = 0; j < S.linhas.length; j++) { if (!S.linhas[j].ok) return j; }
+    return null;
+  }
   function desloc(km) { return km <= 30 ? 0 : km <= 80 ? 2 : km <= 150 ? 4 : 7; }
   var PAG = { '30': 0, '60': 1.5, '90': 3 };
   function totais() {
@@ -94,14 +99,14 @@
       '<span class="v-pesq">' + ic('mail') + 'cotacoes@mavitec.pt</span>');
     h += '<div class="kpis"><div class="kpi"><b>7</b><span>pedidos esta semana</span></div><div class="kpi kpi--foto"><b>' + num(tot) + '</b><span>linhas lidas</span></div>' +
       '<div class="kpi kpi--ok"><b>5</b><span>pré-orçamentos prontos</span></div><div class="kpi kpi--av"><b>1</b><span>longe: decidir</span></div></div>';
-    h += '<div class="lista">';
+    h += '<p class="dica">' + ic('arrow') + 'Comece pelo centro de saúde: é o mapa aberto nesta demonstração. O de Lisboa recusa-se com um clique.</p><div class="lista">';
     MV.PEDIDOS.forEach(function (p) {
       var st, info;
-      if (p.mapa) { st = '<span class="st st--ok">' + pctMapa + '% com preço</span>'; info = p.linhas + ' linhas · a ' + p.km + ' km · amostra aberta na demonstração'; }
+      if (p.mapa) { st = '<span class="st st--abrir">Abrir · ' + pctMapa + '% com preço</span>'; info = p.linhas + ' linhas · a ' + p.km + ' km · o mapa aberto nesta demonstração'; }
       else if (p.est === 'lendo') { st = '<span class="st st--foto">a ler o mapa</span>'; info = p.linhas + ' linhas · a ' + p.km + ' km · chegou há 4 minutos'; }
       else if (p.est === 'longe') { st = S.recusados[p.id] ? '<span class="st st--no">recusado: longe</span>' : '<span class="st st--av">' + p.km + ' km</span>'; info = p.linhas + ' linhas · fora da vossa zona habitual'; }
       else { st = '<span class="st st--ok">' + Math.round(p.pct * 100) + '% com preço</span>'; info = p.linhas + ' linhas · a ' + p.km + ' km · estimativa ' + eur(p.val, 0); }
-      h += '<button type="button" class="lp lp-ped" data-ped="' + p.id + '"><span class="lp-h">' + p.prazo + '<small>' + p.dias + ' dias</small></span><span class="cn cn--emp">' + esc(p.emp) + '</span>' +
+      h += '<button type="button" class="lp lp-ped' + (p.mapa ? ' lp--destaque' : '') + '" data-ped="' + p.id + '"><span class="lp-h">' + p.prazo + '<small>' + p.dias + ' dias</small></span><span class="cn cn--emp">' + esc(p.emp) + '</span>' +
         '<span class="lp-c"><b>' + esc(p.obra) + '</b><span>' + info + '</span></span>' + st + '<span class="lp-go">' + ic('arrow') + '</span></button>';
     });
     h += '</div>';
@@ -129,7 +134,8 @@
       'Num mapa real são cerca de 600 linhas; aqui uma amostra de ' + n + ', com o mesmo comportamento.</p></div>';
     var F = [['todas', 'Todas', n], ['rever', 'Por fechar', t.rev], ['auto', 'Automáticas', nAuto]];
     h += '<div class="mq-filtros" role="tablist">' + F.map(function (f) { return '<button type="button" class="chip' + (S.filtro === f[0] ? ' on' : '') + '" data-filtro="' + f[0] + '">' + f[1] + ' <span>' + f[2] + '</span></button>'; }).join('') +
-      (t.rev ? '<button type="button" class="chip chip--ac" data-aceitar>Aceitar as sugestões com preço</button>' : '') + '</div>';
+      (t.rev ? '<button type="button" class="chip chip--ac" data-aceitar>Aceitar as sugestões com preço</button>' : '') + '</div>' +
+      '<p class="dica">' + ic('arrow') + (t.rev ? 'Clique numa linha para ver de onde vem o preço. Em "Por fechar", escreva o preço e carregue em Enter: abre logo a seguinte.' : 'Clique numa linha para ver de onde vem o preço.') + '</p>';
     h += '<div class="mq-grid"><div class="mq">';
     var capAnt = null;
     L.forEach(function (r, i) {
@@ -290,11 +296,12 @@
         if (p.est === 'lendo') return toast('A ler as ' + p.linhas + ' linhas do mapa. Em menos de um minuto fica com pré-orçamento.');
         return toast(p.obra + ': ' + Math.round(p.linhas * p.pct) + ' de ' + p.linhas + ' linhas com preço. Na demonstração está aberto o centro de saúde.');
       }
-      if (d.filtro) { S.filtro = d.filtro; S.aberta = null; return redesenha(); }
+      if (d.filtro) { S.filtro = d.filtro; S.aberta = d.filtro === 'rever' ? proxima() : null; return redesenha(); }
       if (d.linha != null) { var i = +d.linha; S.aberta = S.aberta === i ? null : i; return redesenha(); }
       if (d.aceitar != null) {
         var n = 0; S.linhas.forEach(function (r) { if (!r.ok && r.pu != null) { r.ok = true; n++; } });
-        redesenha(); return toast(n + ' sugestões aceites. Ficam as que não têm preço: essas pedem o vosso.');
+        S.filtro = 'rever'; S.aberta = proxima(); redesenha(); focaPreco();
+        return toast(n + ' sugestões aceites. Ficam as que não têm preço: escreva-o e carregue em Enter.');
       }
       if (d.alt) {
         var pr = d.alt.split(':'), r = S.linhas[+pr[0]], c = r.cands[+pr[1]];
@@ -303,7 +310,9 @@
       if (d.ok != null) {
         var rr = S.linhas[+d.ok]; if (rr.pu == null) return; rr.ok = true;
         var g = root.querySelector('[data-guarda="' + d.ok + '"]');
-        S.aberta = null; redesenha(); return toast(g && g.checked ? 'Linha aceite e guardada na base: na próxima obra já entra automática.' : 'Linha aceite.');
+        S.aberta = proxima(+d.ok); redesenha(); if (S.aberta != null) focaPreco();
+        var falta = totais().rev;
+        return toast((g && g.checked ? 'Linha aceite e guardada na base. ' : 'Linha aceite. ') + (falta ? 'Faltam ' + falta + '.' : 'Cotação fechada: pode aprovar.'));
       }
       if (d.regra) { S.regra = d.regra; aplicaRegra(); return redesenha(); }
       if (d.xl != null) return exportaXL();
@@ -320,11 +329,22 @@
       }
       if (t.dataset.ajuste != null) { S.ajuste = +t.value; atualizaTotais(); }
     });
+    root.addEventListener('keydown', function (e) {
+      var t = e.target;
+      if (e.key === 'Enter' && t.dataset && t.dataset.pu != null) {
+        e.preventDefault(); var b = root.querySelector('[data-ok="' + t.dataset.pu + '"]'); if (b && !b.disabled) b.click();
+      }
+    });
     root.addEventListener('change', function (e) {
       var t = e.target;
       if (t.dataset.pag != null) { S.pag = t.value; atualizaTotais(); }
-      if (t.dataset.pu != null) redesenha();
     });
+  }
+  function focaPreco() {
+    if (S.aberta == null) return;
+    var inp = root.querySelector('[data-pu="' + S.aberta + '"]'); if (!inp) return;
+    try { inp.focus({ preventScroll: true }); } catch (err) { inp.focus(); }
+    var l = inp.closest('.mq-l'); if (l) { var r = l.getBoundingClientRect(); if (r.top < 80 || r.bottom > innerHeight) window.scrollBy({ top: r.top - 140, behavior: 'smooth' }); }
   }
   function atualizaTotais() {
     var box = root.querySelector('.mq-tot'); if (!box) return;
@@ -341,7 +361,7 @@
   document.addEventListener('click', function (e) {
     var a = e.target.closest('[data-plat]'); if (!a) return;
     var v = a.dataset.plat, extra = {};
-    if (v === 'mapa') { extra.filtro = a.dataset.filtro || 'todas'; extra.aberta = a.dataset.abre != null ? +a.dataset.abre : null; }
+    if (v === 'mapa') { extra.filtro = a.dataset.filtro || 'todas'; extra.aberta = extra.filtro === 'rever' ? proxima() : null; }
     ir(v, extra);
   });
 

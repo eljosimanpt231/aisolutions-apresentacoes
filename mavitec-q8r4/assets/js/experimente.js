@@ -1,5 +1,5 @@
 /* ============================================================
-   EXPERIMENTE AGORA: largar um mapa de quantidades em Excel
+   UM MAPA, LIDO AO VIVO: o mapa de exemplo lido no browser
    Corre no browser: lê a folha, encontra as colunas (designação,
    unidade, quantidade), passa cada linha pelo motor e devolve o
    mesmo Excel com os preços preenchidos. Nada sai do computador.
@@ -89,7 +89,7 @@
       idem ? [idem + ' linha' + (idem > 1 ? 's' : '') + ' "Idem" resolvida' + (idem > 1 ? 's' : '') + ' com a linha anterior', 'ok'] : ['Sem linhas "Idem"', 'dim'],
       ['A comparar com ' + MV.ART.length + ' artigos da base de preços...', 'info'],
       [n.auto + ' com preço direto, ' + n.rever + ' a rever, ' + n.novo + ' sem histórico', n.novo + n.rever ? 'warn' : 'ok'],
-      ['Feito em ' + ms + ' ms. Nada foi enviado para fora deste computador.', 'ok']
+      ['Feito em ' + ms + ' ms, neste browser.', 'ok']
     ], function () { mostra(); });
     stat.innerHTML = '';
   }
@@ -101,14 +101,14 @@
     stat.innerHTML = '<div class="exp-k"><div><b>' + N + '</b><span>linhas lidas</span></div><div class="ok"><b>' + n.auto + '</b><span>preço direto (' + Math.round(n.auto / N * 100) + '%)</span></div>' +
       '<div class="av"><b>' + n.rever + '</b><span>a rever, com sugestão</span></div><div class="no"><b>' + n.novo + '</b><span>sem histórico: pede preço</span></div>' +
       '<div class="tt"><b>' + eur(total, 0) + '</b><span>pré-orçamento das linhas com preço</span></div></div>';
-    var lim = todas ? N : Math.min(N, 12);
+    var curto = window.matchMedia && matchMedia('(max-width: 700px)').matches ? 6 : 12, lim = todas ? N : Math.min(N, curto);
     var h = '<div class="exp-t">';
     R.slice(0, lim).forEach(function (r) {
       var c = r.cls === 'auto' ? 'ok' : r.cls === 'rever' ? 'av' : 'no';
       h += '<div class="exp-r exp-r--' + c + '"><code>' + esc(r.cod) + '</code><span class="exp-d">' + esc(r.desc) + '<small>' + esc(r.motivo) + '</small></span>' +
         '<span class="exp-q">' + num(r.q) + ' ' + esc(r.un) + '</span><span class="exp-p">' + (r.p != null ? eur(r.p) : '<i>por definir</i>') + '</span></div>';
     });
-    h += '</div><div class="exp-ac">' + (N > 12 ? '<button type="button" class="b b--g" data-todas>' + (todas ? 'Mostrar só as primeiras 12' : 'Ver as ' + N + ' linhas') + '</button>' : '') +
+    h += '</div><div class="exp-ac">' + (N > curto ? '<button type="button" class="b b--g" data-todas>' + (todas ? 'Mostrar só as primeiras ' + curto : 'Ver as ' + N + ' linhas') + '</button>' : '') +
       '<button type="button" class="b b--p" data-baixar>Descarregar o Excel preenchido</button>' +
       '<span>O mesmo ficheiro, com as mesmas linhas e colunas, mais o preço unitário, o total e o estado de cada linha.</span></div>';
     out.innerHTML = h;
@@ -145,12 +145,13 @@
     fr.readAsArrayBuffer(file);
   }
 
-  drop.addEventListener('click', function () { inp.click(); });
-  drop.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); inp.click(); } });
-  inp.addEventListener('change', function () { if (inp.files[0]) abrir(inp.files[0]); });
-  ['dragenter', 'dragover'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add('sobre'); }); });
-  ['dragleave', 'drop'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.remove('sobre'); }); });
-  drop.addEventListener('drop', function (e) { var f = e.dataTransfer.files[0]; if (f) abrir(f); });
+  if (drop && inp) {
+    drop.addEventListener('click', function () { inp.click(); });
+    inp.addEventListener('change', function () { if (inp.files[0]) abrir(inp.files[0]); });
+    ['dragenter', 'dragover'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add('sobre'); }); });
+    ['dragleave', 'drop'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.remove('sobre'); }); });
+    drop.addEventListener('drop', function (e) { var f = e.dataTransfer.files[0]; if (f) abrir(f); });
+  }
   /* o exemplo já desenhado ao carregar (a página não cresce ao percorrer); o registo anima quando a secção aparece */
   correr(exemploAOA(), 'MTQ-IE-02_centro-de-saude.xlsx', true); ultimo.exemplo = true;
   /* corre o exemplo sozinho na primeira vez que a secção aparece, para a página nunca ficar vazia */

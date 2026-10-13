@@ -557,3 +557,23 @@ html.js .hero-cotas .tr { stroke-dasharray: 400; stroke-dashoffset: 400; animati
 
 .mq-vazio { display: flex; gap: 8px; align-items: center; padding: 16px 14px; font-size: .86rem; color: var(--ok-texto); }
 .mq-vazio .ic { width: 18px; height: 18px; }
+
+/* Um mapa, lido ao vivo: o ficheiro de exemplo e os passos */
+.exp-fich { display: grid; gap: 14px; align-content: start; }
+.xf { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface-2); }
+.xf-ic { width: 46px; height: 54px; border-radius: 8px; display: grid; place-items: center; background: hsl(152 60% 26%); color: var(--on-brand); font-family: var(--font-mono); font-size: .74rem; font-weight: 500; flex: 0 0 auto; }
+.xf b { display: block; font-family: var(--font-mono); font-size: .86rem; font-weight: 500; word-break: break-all; }
+.xf small { display: block; margin-top: 3px; font-size: .8rem; color: var(--muted); }
+.xf-passos { list-style: none; counter-reset: xp; display: grid; gap: 8px; margin: 0; padding: 0; }
+.xf-passos li { counter-increment: xp; display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: baseline; font-size: .9rem; line-height: 1.5; }
+.xf-passos li::before { content: counter(xp); width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-mono); font-size: .74rem; background: hsl(var(--accent-hsl) / .12); color: var(--acento-texto); }
+.exp-fich .exs { margin-top: 2px; }
+.exp-fich .b { min-height: 42px; }
+
+/* Indicações dentro da plataforma */
+.dica { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: .8rem; color: var(--acento-texto); }
+.dica .ic { width: 14px; height: 14px; flex: 0 0 auto; }
+.lp--destaque { border-color: hsl(var(--accent-hsl) / .6); box-shadow: 0 0 0 3px hsl(var(--accent-hsl) / .12); }
+@media (prefers-reduced-motion: no-preference) { .lp--destaque { animation: destaca 2.4s ease-in-out infinite; } }
+@keyframes destaca { 50% { box-shadow: 0 0 0 6px hsl(var(--accent-hsl) / .06); } }
+.st--abrir { color: var(--on-brand); background: var(--brand); border-color: var(--brand); }

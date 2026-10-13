@@ -9,7 +9,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mavitec × AI Solutions">
-  <meta property="og:description" content="Largue um mapa de quantidades e veja a cotação sair, com os preços dos vossos orçamentos.">
+  <meta property="og:description" content="Do mapa de quantidades do empreiteiro à cotação, com os preços dos vossos orçamentos. Veja um mapa a ser lido.">
   <meta property="og:image" content="https://apresentacoes.aisolutions.pt/mavitec-q8r4/assets/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -41,7 +41,7 @@
     <a href="#topo" class="nav-brand" aria-label="Mavitec, início"><img src="assets/img/logo-mavitec.png" alt="Mavitec" class="nav-logo" width="116" height="32"></a>
     <nav id="nav" aria-label="Secções">
       <a href="#problema">O problema</a>
-      <a href="#experimente">Experimente</a>
+      <a href="#experimente">Exemplo</a>
       <a href="#plataforma-sec">A plataforma</a>
       <a href="#aovivo">Ao vivo</a>
       <a href="#qualificacao">Qualificação</a>
@@ -63,7 +63,7 @@
         anteriores e devolve-vos a cotação quase feita. Vocês só reveem o que precisa de critério.
       </p>
       <div class="hero-acoes" data-acto="4" data-entra="sobe">
-        <a href="#experimente" class="btn btn-primary premivel" data-iman="0.25">Largar um mapa de quantidades</a>
+        <a href="#experimente" class="btn btn-primary premivel" data-iman="0.25">Ver um mapa a ser lido</a>
         <a href="#problema" class="btn btn-ghost">Como funciona</a>
       </div>
     </div>
@@ -172,30 +172,39 @@
   </div>
 </section>
 
-<!-- ============ 4. EXPERIMENTE AGORA ============ -->
+<!-- ============ 4. UM MAPA, LIDO AO VIVO ============ -->
 <section class="section-alt" id="experimente">
   <div class="container">
-    <span class="eyebrow">Experimente agora · ao vivo</span>
-    <h2>Largue aqui um mapa de quantidades</h2>
+    <span class="eyebrow">Um mapa, lido ao vivo</span>
+    <h2>O que acontece quando chega um mapa de quantidades</h2>
     <p class="lead">
-      Um Excel de qualquer empreiteiro, com as colunas que ele quiser. A leitura corre neste browser e
-      o ficheiro não sai do seu computador. Ou use o mapa de exemplo do centro de saúde.
+      Um mapa de exemplo de um centro de saúde, como um empreiteiro o mandaria por email. A leitura
+      corre neste browser, à sua frente: linha a linha, contra a base de preços.
     </p>
     <div class="exp" id="expMV">
       <div class="exp-top">
-        <div>
-          <div class="drop" role="button" tabindex="0" aria-label="Escolher um ficheiro Excel"><input type="file" accept=".xlsx,.xls,.ods,.csv" hidden><b>Largar aqui o Excel do mapa</b><span>ou clique para escolher · .xlsx, .xls, .ods ou .csv</span></div>
-          <div class="exs"><span>Sem ficheiro à mão:</span>
-            <button type="button" class="chip on" data-exemplo>Usar o exemplo</button>
-            <button type="button" class="chip" data-descexemplo>Descarregar o exemplo</button>
+        <div class="exp-fich">
+          <div class="xf">
+            <span class="xf-ic" aria-hidden="true">XLS</span>
+            <div><b>MTQ-IE-02_centro-de-saude.xlsx</b><small>Construtora B · 41 linhas · 11 capítulos · cotação até terça</small></div>
+          </div>
+          <ol class="xf-passos">
+            <li>Encontra o cabeçalho e as colunas, seja qual for o formato do empreiteiro</li>
+            <li>Resolve as linhas "Idem" com a linha anterior</li>
+            <li>Vai buscar o preço de cada linha aos orçamentos anteriores</li>
+            <li>Separa o que tem preço, o que é para rever e o que nunca foi orçamentado</li>
+          </ol>
+          <div class="exs">
+            <button type="button" class="b b--p" data-exemplo>Ler outra vez</button>
+            <button type="button" class="b b--g" data-descexemplo>Ver o Excel original</button>
           </div>
         </div>
-        <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>leitor-de-mapas.log</span></div><div class="term-body"><div class="tl tl--dim">À espera de um mapa de quantidades…</div></div></div>
+        <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>leitor-de-mapas.log</span></div><div class="term-body"><div class="tl tl--dim">À espera do mapa…</div></div></div>
       </div>
       <div class="exp-status"></div>
       <div class="exp-out"></div>
     </div>
-    <p class="exp-privacy">Demonstração sem servidor: o ficheiro é lido localmente, não é enviado nem guardado. A base de preços desta demonstração é ilustrativa; a vossa faz-se com os vossos orçamentos, e é aí que o preço passa a ser o vosso.</p>
+    <p class="exp-privacy">Mapa, artigos e preços ilustrativos. Com os vossos orçamentos, a mesma leitura passa a usar os vossos preços.</p>
   </div>
 </section>
 
