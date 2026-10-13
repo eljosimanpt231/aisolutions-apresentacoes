@@ -1,0 +1,389 @@
+{
+  "site": "https://mavitec.pt/",
+  "dominio": "mavitec.pt",
+  "titulo": "MAVITEC | DOMOTICA E ROBOTICA",
+  "descricao": "",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://mavitec.pt/assets/img/logo_mav_new.png",
+    "porque": [
+      "diz logo",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda"
+    ],
+    "analise": {
+      "largura": 1600,
+      "altura": 405,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            32,
+            32,
+            32
+          ],
+          "parte": 72
+        },
+        {
+          "rgb": [
+            64,
+            160,
+            64
+          ],
+          "parte": 11
+        },
+        {
+          "rgb": [
+            64,
+            64,
+            64
+          ],
+          "parte": 9
+        },
+        {
+          "rgb": [
+            96,
+            96,
+            96
+          ],
+          "parte": 3
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://mavitec.pt/assets/img/logo_mav_white_green_new.png",
+      "pontos": 11,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 1600,
+        "altura": 405,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 80
+          },
+          {
+            "rgb": [
+              64,
+              160,
+              64
+            ],
+            "parte": 11
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 2
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://mavitec.pt/assets/img/livro_reclamacoes-500x-207.png",
+      "pontos": 11,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 500,
+        "altura": 207,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              32,
+              32
+            ],
+            "parte": 96
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://mavitec.pt/laravel/public/gallery_brand//stihl-logo.svg",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "transparente ou vectorial"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 131,
+        "fundo": "colorido",
+        "fundoRgb": [
+          240,
+          128,
+          32
+        ],
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 93
+          },
+          {
+            "rgb": [
+              256,
+              160,
+              96
+            ],
+            "parte": 2
+          },
+          {
+            "rgb": [
+              256,
+              192,
+              160
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              192
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://mavitec.pt/laravel/public/gallery_brand//Ajax_Systems_logo.jpg",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 350,
+        "altura": 150,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 41
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              32
+            ],
+            "parte": 20
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 17
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://mavitec.pt/laravel/public/gallery_brand//Aron.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 163,
+        "altura": 77,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              160,
+              160
+            ],
+            "parte": 93
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://mavitec.pt/laravel/public/gallery_brand//GRowatt.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 2187,
+        "altura": 672,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              96,
+              96,
+              96
+            ],
+            "parte": 71
+          },
+          {
+            "rgb": [
+              96,
+              192,
+              32
+            ],
+            "parte": 29
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.png",
+    "src": "https://mavitec.pt/laravel/storage/app/public/banners/Banner-Paineis%20Fotovoltaicos.png"
+  },
+  "paleta": [
+    {
+      "hex": "#2dbc43",
+      "hsl": "129 61% 46%",
+      "peso": 633319,
+      "onde": [
+        "botões",
+        "texto",
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "129 61% 46%",
+    "--accent-hsl": "129 73% 60%",
+    "nota": "acento = a marca mais viva (a marca só tem uma cor forte)"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--primary",
+      "#007bff"
+    ],
+    [
+      "--secondary",
+      "#6c757d"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Source Sans Pro",
+    "corpo": "Source Sans Pro",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "info@mavitec.pt",
+      "Início",
+      "Mavitec",
+      "Serviços",
+      "Novidades",
+      "Contactos"
+    ],
+    "titulos": [
+      "Um relvado cuidado e impecável",
+      "Um relvado cuidado e impecável",
+      "Robô Corta-relva STIHL",
+      "Energia Solar Fotovoltaica",
+      "A solução completa de casa conectada",
+      "Estação de Carregamento Veículos AC VOLT- E",
+      "Instalação de Redes Informáticas",
+      "Vídeo Vigilância",
+      "O que podemos fazer por Si!",
+      "O que dizem de Nós",
+      "As últimas Novidades",
+      "Peça-nos um Orçamento",
+      "As melhores Marcas"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático."
+  ]
+}

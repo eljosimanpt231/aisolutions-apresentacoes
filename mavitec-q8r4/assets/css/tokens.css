@@ -1,0 +1,70 @@
+/* ============================================================
+   TOKENS: Mavitec (claro, a pedido do Manuel)
+   Verde do logótipo e dos botões do site, marinho dos títulos do
+   site como segunda voz. Marinho profundo para a plataforma.
+   ============================================================ */
+:root {
+  /* Marca: o verde do site (#2dbc43) escurecido para botões e texto (AA com branco) */
+  --brand-hsl: 128 60% 30%;
+  /* Acento: o verde do site tal como está, para glows, barras e pormenores */
+  --accent-hsl: 129 61% 46%;
+  /* Segunda voz: o marinho do site, para o gradiente do texto */
+  --brand2-hsl: 232 65% 28%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --marinho: hsl(var(--brand2-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(var(--brand-hsl));
+
+  /* Marinho profundo: títulos e barra lateral da plataforma */
+  --grafite-hsl: 232 50% 15%;
+  --grafite: hsl(var(--grafite-hsl));
+  --grafite-2: hsl(232 40% 21%);
+  --grafite-3: hsl(232 30% 30%);
+  --aco: hsl(228 10% 52%);
+
+  --acento-texto: hsl(128 65% 26%);
+  --marinho-texto: hsl(232 60% 32%);
+  --ok-texto: hsl(152 62% 26%);
+  --av-texto: hsl(32 90% 30%);
+  --no-texto: hsl(355 65% 40%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(220 25% 97.6%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(220 22% 98.3%);
+  --border: hsl(222 16% 88%);
+
+  --text: hsl(230 25% 12%);
+  --muted: hsl(228 9% 37%);
+
+  --success-hsl: 152 60% 36%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 48%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 95% 50%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.08), transparent 62%);
+  --grad-text: linear-gradient(115deg, hsl(var(--accent-hsl)), hsl(var(--brand2-hsl)));
+  --grad-cta: linear-gradient(170deg, hsl(220 30% 97%), hsl(var(--accent-hsl) / 0.08));
+
+  --shadow-sm: 0 1px 3px hsl(var(--grafite-hsl) / 0.08);
+  --shadow-md: 0 10px 30px hsl(var(--grafite-hsl) / 0.09);
+  --shadow-lg: 0 24px 60px hsl(var(--grafite-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --container: 1140px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
+
+/* Chat (padrão da casa) */
+:root {
+  --wa-green: hsl(165 49% 30%);
+  --wa-green-strong: hsl(145 63% 40%);
+  --wa-bg: hsl(30 24% 93%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}

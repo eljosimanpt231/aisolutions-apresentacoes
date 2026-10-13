@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Mavitec | Orçamentação de obra</title>
+  <meta name="description" content="Do mapa de quantidades do empreiteiro à cotação da Mavitec, numa manhã. Proposta AI Solutions.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mavitec × AI Solutions">
+  <meta property="og:description" content="Largue um mapa de quantidades e veja a cotação sair, com os preços dos vossos orçamentos.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/mavitec-q8r4/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="assets/fonts/outfit-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fontes.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/light.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
+  <link rel="stylesheet" href="assets/css/mavitec.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+<div class="grelha" aria-hidden="true"></div>
+
+<header class="topnav">
+  <div class="inner">
+    <a href="#topo" class="nav-brand" aria-label="Mavitec, início"><img src="assets/img/logo-mavitec.png" alt="Mavitec" class="nav-logo" width="116" height="32"></a>
+    <nav id="nav" aria-label="Secções">
+      <a href="#problema">O problema</a>
+      <a href="#experimente">Experimente</a>
+      <a href="#plataforma-sec">A plataforma</a>
+      <a href="#aovivo">Ao vivo</a>
+      <a href="#qualificacao">Qualificação</a>
+      <a href="#investimento">Investimento</a>
+    </nav>
+    <a href="#avancar" class="nav-cta btn btn-primary">Avançar</a>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container hero-grid">
+    <div class="hero-txt">
+      <span class="kicker" data-acto="1" data-entra="sobe">Mavitec × AI Solutions</span>
+      <h1 data-linhas>De uma semana<br>para uma <span class="g-brilho">manhã</span>.</h1>
+      <p class="lead" data-acto="2" data-entra="sobe">
+        O empreiteiro manda o mapa de quantidades com 600 linhas e "até à próxima terça preciso de
+        cotação". A plataforma lê o mapa, vai buscar o preço de cada linha aos vossos orçamentos
+        anteriores e devolve-vos a cotação quase feita. Vocês só reveem o que precisa de critério.
+      </p>
+      <div class="hero-acoes" data-acto="4" data-entra="sobe">
+        <a href="#experimente" class="btn btn-primary premivel" data-iman="0.25">Largar um mapa de quantidades</a>
+        <a href="#problema" class="btn btn-ghost">Como funciona</a>
+      </div>
+    </div>
+    <figure class="hero-mapa" data-acto="3" data-entra="escala">
+      <div class="hm-wrap">
+      <div class="hm">
+        <div class="hm-cab"><span>MTQ-IE-02 · Instalações elétricas e ITED</span><b>Construtora B</b></div>
+        <div class="hm-th"><span>Art.</span><span>Designação</span><span>Quant.</span><span>P. Unit.</span></div>
+        <div class="hm-l"><code>2.1</code><span>Tubo VD Ø20mm embebido em paredes e tetos</span><span>1.840 m</span><b class="hm-p ok">1,32 €</b></div>
+        <div class="hm-l"><code>2.2</code><span>Idem, Ø25mm</span><span>620 m</span><b class="hm-p ok">1,56 €</b></div>
+        <div class="hm-l"><code>3.2</code><span>Cabo XV 3x2,5mm²</span><span>3.150 m</span><b class="hm-p ok">1,92 €</b></div>
+        <div class="hm-l"><code>3.7</code><span>Cabo XV 4x50+25 mm² entre o PT e o QGBT</span><span>60 m</span><b class="hm-p no">dar preço</b></div>
+        <div class="hm-l"><code>5.1</code><span>Luminária LED de encastrar 600x600, 36W</span><span>142 un</span><b class="hm-p ok">78,78 €</b></div>
+        <div class="hm-l"><code>8.1</code><span>Detetor ótico de fumos endereçável</span><span>74 un</span><b class="hm-p av">a rever</b></div>
+      </div>
+      </div>
+      <div class="hm-chips">
+        <div class="hero-chip hero-chip--1"><span>Linhas com preço direto</span><b>32 de 41</b></div>
+        <div class="hero-chip hero-chip--2"><span>Origem de cada preço</span><b>os vossos orçamentos</b></div>
+      </div>
+      <figcaption>Um mapa de exemplo de um centro de saúde, já lido. Preços ilustrativos.</figcaption>
+    </figure>
+  </div>
+  <div class="container">
+    <div class="grid-3 hero-stats hero-stats--4" data-acto="4" data-entra="sobe">
+      <div class="card stat-card"><div class="num"><span data-conta="600">600</span></div><div class="desc">Linhas de Excel num mapa de quantidades de empreiteiro</div></div>
+      <div class="card stat-card"><div class="num">3 a 4</div><div class="desc">Dias de trabalho dedicado para fechar uma cotação dessas</div></div>
+      <div class="card stat-card"><div class="num">2 <small>em</small> 10</div><div class="desc">Obras a que conseguem responder numa semana com dez pedidos</div></div>
+      <div class="card stat-card"><div class="num">+<span data-conta="50">50</span>%</div><div class="desc">Das linhas são iguais de obra para obra: cabo, tubo, aparelhagem</div></div>
+    </div>
+    <p class="hero-meta" data-acto="4" data-entra="sobe">
+      <span>Para <b>Ivo Vieira</b></span>
+      <span>Reunião de <b>14 de outubro de 2026</b></span>
+      <span>8 minutos de leitura</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <span class="eyebrow">O que ouvimos a 7 de outubro</span>
+    <h2>O trabalho não é difícil. É repetido, e chega todo ao mesmo tempo.</h2>
+    <div class="dores">
+      <article class="dor" data-entra="sobe"><span class="dor-n">01</span><h3>Cadernos de 600 linhas</h3><p>Um orçamento de empreiteiro leva 3 a 4 dias, às vezes uma semana, a ler o caderno de encargos e a preencher o mapa linha a linha.</p></article>
+      <article class="dor" data-entra="sobe"><span class="dor-n">02</span><h3>Dez obras, resposta a duas</h3><p>Quando caem dez obras numa semana, faz-se a triagem e atacam-se as duas mais importantes. E, como o Ivo disse, se respondessem a dez, caíam-lhes três ou quatro.</p></article>
+      <article class="dor" data-entra="sobe"><span class="dor-n">03</span><h3>Prazos de concurso curtos</h3><p>"Até à próxima terça preciso de cotação para esta obra." Quem responde depressa entra com o seu preço; quem demora, fica de fora.</p></article>
+      <article class="dor" data-entra="sobe"><span class="dor-n">04</span><h3>Sem saber porque se perde</h3><p>Acima no preço, condições de pagamento, ou longe demais: hoje esse motivo não fica registado, e por isso não se aprende com ele.</p></article>
+    </div>
+    <blockquote class="citacao" data-entra="sobe">
+      <p>"Se fizesse logo uma análise aos orçamentos que já dei e me preenchesse a linha, e eu só fosse lá confirmar, em vez de 3, 4 dias ou uma semana para fechar um orçamento, fechava-o de manhã."</p>
+      <cite>Ivo Vieira, na reunião de 7 de outubro</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ 3. O PROBLEMA POR DENTRO ============ -->
+<section id="problema">
+  <div class="container">
+    <span class="eyebrow">O problema por dentro</span>
+    <h2>Cada empreiteiro escreve a mesma linha à sua maneira</h2>
+    <p class="lead">
+      É por isto que um Excel com fórmulas não chega: o artigo é o mesmo, a frase nunca é. A plataforma
+      lê a linha como um orçamentista, tira-lhe o que interessa e vai à vossa base de preços.
+    </p>
+    <div class="conv" data-entra="sobe">
+      <div class="conv-in">
+        <div class="conv-l"><small>Construtora A</small><span>Cabo do tipo XV 3G2,5 mm2</span></div>
+        <div class="conv-l"><small>Construtora B</small><span>Cabo XV 3x2,5mm²</span></div>
+        <div class="conv-l"><small>Construtora C</small><span>Canalização XV-3G2.5, em tubo ou caminho de cabos, incl. acessórios</span></div>
+      </div>
+      <svg class="conv-svg" viewBox="0 0 120 220" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 36 C60 36 60 110 120 110"/><path d="M0 110 L120 110"/><path d="M0 184 C60 184 60 110 120 110"/>
+      </svg>
+      <div class="conv-out">
+        <small>Artigo da base de preços</small>
+        <b>Cabo XV 3G2,5 mm²</b>
+        <div class="conv-k"><span>tipo XV</span><span>secção 3G2,5</span><span>metro</span></div>
+        <div class="conv-p"><span>Preço sugerido</span><b>1,92 €/m</b></div>
+        <em>último preço ganho, na cotação COT 2026/066</em>
+      </div>
+    </div>
+
+    <div class="grid-2 chaves">
+      <div class="card" data-entra="sobe">
+        <h3>O que distingue dois artigos parecidos</h3>
+        <p class="card__nota">A plataforma compara as chaves técnicas, não só as palavras. Quando uma não bate, para.</p>
+        <ul class="ch-l">
+          <li><code>secção</code><span>XV 3G2,5 não é XV 3G1,5, nem 4x50+25</span></li>
+          <li><code>diâmetro</code><span>tubo VD 20 não é VD 25, mesmo numa linha "Idem, Ø25mm"</span></li>
+          <li><code>potência</code><span>um inversor de 15 kW não leva o preço do de 10 kW</span></li>
+          <li><code>tipo</code><span>detetor endereçável não é detetor convencional</span></li>
+          <li><code>proteção</code><span>tomada IP55 não é tomada de usos gerais</span></li>
+        </ul>
+      </div>
+      <div class="card" data-entra="sobe">
+        <h3>Três tipos de linha, três cores</h3>
+        <ul class="cls-l">
+          <li class="ok"><b>Automática</b><span>O artigo já esteve nos vossos orçamentos. Entra o preço, e fica registado de onde veio.</span></li>
+          <li class="av"><b>A rever</b><span>Há um artigo parecido. A plataforma sugere e diz porque não tem a certeza.</span></li>
+          <li class="no"><b>Sem histórico</b><span>Nunca foi orçamentado. Pede o preço, não inventa, e guarda-o para a próxima obra.</span></li>
+        </ul>
+        <p class="card__nota">Na reunião falámos em cerca de 80% de linhas preenchidas. No mapa de exemplo desta página são 32 de 41, e a percentagem sobe com cada cotação que aprovarem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. EXPERIMENTE AGORA ============ -->
+<section class="section-alt" id="experimente">
+  <div class="container">
+    <span class="eyebrow">Experimente agora · ao vivo</span>
+    <h2>Largue aqui um mapa de quantidades</h2>
+    <p class="lead">
+      Um Excel de qualquer empreiteiro, com as colunas que ele quiser. A leitura corre neste browser e
+      o ficheiro não sai do seu computador. Ou use o mapa de exemplo do centro de saúde.
+    </p>
+    <div class="exp" id="expMV">
+      <div class="exp-top">
+        <div>
+          <div class="drop" role="button" tabindex="0" aria-label="Escolher um ficheiro Excel"><input type="file" accept=".xlsx,.xls,.ods,.csv" hidden><b>Largar aqui o Excel do mapa</b><span>ou clique para escolher · .xlsx, .xls, .ods ou .csv</span></div>
+          <div class="exs"><span>Sem ficheiro à mão:</span>
+            <button type="button" class="chip on" data-exemplo>Usar o exemplo</button>
+            <button type="button" class="chip" data-descexemplo>Descarregar o exemplo</button>
+          </div>
+        </div>
+        <div class="term-wrap"><div class="term-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>leitor-de-mapas.log</span></div><div class="term-body"><div class="tl tl--dim">À espera de um mapa de quantidades…</div></div></div>
+      </div>
+      <div class="exp-status"></div>
+      <div class="exp-out"></div>
+    </div>
+    <p class="exp-privacy">Demonstração sem servidor: o ficheiro é lido localmente, não é enviado nem guardado. A base de preços desta demonstração é ilustrativa; a vossa faz-se com os vossos orçamentos, e é aí que o preço passa a ser o vosso.</p>
+  </div>
+</section>
+
+<!-- ============ 5. A PLATAFORMA ============ -->
+<section id="plataforma-sec">
+  <div class="container">
+    <span class="eyebrow">A plataforma</span>
+    <h2>Onde a cotação se revê, se ajusta e segue para o empreiteiro</h2>
+    <p class="lead">Clique à vontade: tudo funciona. Três sítios por onde começar:</p>
+    <div class="atalhos">
+      <a href="#plataforma" class="atalho" data-plat="pedidos"><span>1</span><b>Os sete pedidos da semana</b><small>Todos com pré-orçamento, valor estimado, prazo e distância. Recuse o de Lisboa com um clique</small></a>
+      <a href="#plataforma" class="atalho" data-plat="mapa" data-filtro="rever"><span>2</span><b>As linhas por fechar</b><small>Abra uma, veja de onde vem o preço, dê o que falta, exporte o Excel e crie no CRM</small></a>
+      <a href="#plataforma" class="atalho" data-plat="resultados"><span>3</span><b>Porque se perde</b><small>Ganho, perdido e motivo de cada cotação, e a segunda ronda quando o empreiteiro ganha</small></a>
+    </div>
+  </div>
+  <div class="plat-wrap">
+    <div id="plataforma" class="plat" aria-label="Demonstração da plataforma de orçamentação"></div>
+  </div>
+  <div class="container">
+    <div class="grid-3 faz">
+      <div class="card" data-entra="sobe"><h3>Lê o que chega</h3><p>O email do empreiteiro com o mapa em Excel ou PDF entra sozinho. Cada linha é lida, os "Idem" resolvidos, os capítulos separados.</p></div>
+      <div class="card" data-entra="sobe"><h3>Pergunta o que não sabe</h3><p>Preço direto do que já orçamentaram, sugestão com motivo do que é parecido, pedido de preço do que é novo. Nunca estica um preço.</p></div>
+      <div class="card" data-entra="sobe"><h3>Devolve no formato dele</h3><p>O mesmo Excel que o empreiteiro mandou, com as mesmas colunas, e os preços preenchidos. A oportunidade entra no vosso CRM com um botão.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. AO VIVO ============ -->
+<section class="section-alt" id="aovivo">
+  <div class="container">
+    <span class="eyebrow">Ao vivo</span>
+    <h2>O que a plataforma faz sozinha, e quando para</h2>
+    <p class="lead">
+      À esquerda a conversa com a plataforma, à direita o que ela está a pensar em cada passo. O segundo
+      e o quarto cenários são os mais importantes: a plataforma a recusar dar um preço que não tem.
+    </p>
+    <div class="cr" id="mvDemo"></div>
+    <script type="application/json" id="mvDemo-config">
+    {
+      "agentName": "Orçamentos Mavitec",
+      "agentInitials": "MV",
+      "chatStatus": "Plataforma, ligada ao email e ao CRM",
+      "stepMs": 1450,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "O mapa do centro de saúde",
+          "subtitle": "Um mapa de 612 linhas, com cotação pedida para terça.",
+          "chat": [
+            { "sender": "system", "text": "Email da Construtora B: MTQ-IE-02 rev.1.xlsx, cotação até terça", "time": "08:41" },
+            { "sender": "agent", "text": "Li as **612 linhas**: 477 com preço direto dos vossos orçamentos, 90 com sugestão a confirmar e 45 que nunca orçamentaram.", "time": "08:42" },
+            { "sender": "client", "text": "começa pelas que faltam", "time": "09:15", "passo": 3 },
+            { "sender": "agent", "text": "A primeira: **cabo XV 4x50+25 mm²**, 60 m, do PT ao QGBT. Nunca o orçamentaram. Qual o preço por metro?", "time": "09:15" },
+            { "sender": "client", "text": "24,80", "time": "09:18" },
+            { "sender": "agent", "text": "Guardado na base. Com 60 dias de pagamento e a deslocação, a cotação vai em **186.420 €**. Exporto no Excel deles?", "time": "09:18", "passo": 5 },
+            { "sender": "client", "text": "sim e mete no crm", "time": "09:19" },
+            { "sender": "agent", "text": "Excel pronto, no formato da Construtora B. Oportunidade criada no CRM e o comercial avisado.", "time": "09:19" }
+          ],
+          "steps": [
+            { "icon": "search", "label": "Abre o Excel: 612 linhas com quantidade, 11 capítulos" },
+            { "icon": "database", "label": "Compara cada linha com a base de preços" },
+            { "icon": "list", "label": "Ordena o que falta: sem histórico primeiro" },
+            { "icon": "ban", "label": "Secção 4x50+25 sem preço: pergunta, não estima" },
+            { "icon": "book", "label": "Guarda o preço novo para as próximas obras" },
+            { "icon": "send", "label": "Excel no formato do empreiteiro e ficha no CRM" }
+          ]
+        },
+        {
+          "title": "Inversor que não está na base",
+          "subtitle": "O mapa pede uma potência que nunca orçamentaram.",
+          "chat": [
+            { "sender": "agent", "text": "A linha 9.2 pede um **inversor trifásico de 15 kW**. Na base só têm o de 10 kW, a 1.700 €. Não estico esse preço: qual é o do 15 kW?", "time": "10:02" },
+            { "sender": "client", "text": "ainda nao sei, vou pedir ao fornecedor", "time": "10:09" },
+            { "sender": "agent", "text": "Fica em aberto, marcado a vermelho. O resto da cotação está pronto; não sai para o empreiteiro sem esta linha.", "time": "10:09" },
+            { "sender": "client", "text": "1890", "time": "14:33" },
+            { "sender": "agent", "text": "Inversor de 15 kW a **1.890 €**, guardado. Cotação completa, à espera da tua aprovação.", "time": "14:33" }
+          ],
+          "steps": [
+            { "icon": "search", "label": "Encontra o artigo parecido: inversor trifásico" },
+            { "icon": "alert", "label": "Potência diferente: 15 kW contra 10 kW na base" },
+            { "icon": "ban", "label": "Não usa o preço do 10 kW" },
+            { "icon": "clock", "label": "Deixa a linha em aberto e bloqueia o envio" },
+            { "icon": "database", "label": "Guarda o 15 kW na base, com o preço dado" }
+          ]
+        },
+        {
+          "title": "Obra em Lisboa",
+          "subtitle": "Um pedido fora da zona habitual, a 330 km.",
+          "chat": [
+            { "sender": "system", "text": "Email da Construtora G: edifício de serviços em Lisboa, 640 linhas, cotação até dia 19", "time": "11:20" },
+            { "sender": "agent", "text": "Antes de gastarem tempo: esta obra fica a **330 km**, fora da vossa zona habitual. Faço a cotação com a deslocação de longe (+7%) ou registo como não interessa?", "time": "11:21" },
+            { "sender": "client", "text": "nao interessa, longe", "time": "11:40" },
+            { "sender": "agent", "text": "Registado: recusado por distância. Fica na análise de resultados, com o empreiteiro e a data.", "time": "11:40" }
+          ],
+          "steps": [
+            { "icon": "globe", "label": "Lê a localização da obra no email e no mapa" },
+            { "icon": "filter", "label": "330 km: acima do limite que definiram" },
+            { "icon": "user-cog", "label": "Pergunta antes de fazer o trabalho" },
+            { "icon": "check", "label": "Regista o motivo: longe" }
+          ]
+        },
+        {
+          "title": "O empreiteiro ganhou",
+          "subtitle": "A segunda ronda: rever a cotação com o projeto de execução.",
+          "chat": [
+            { "sender": "system", "text": "Email da Construtora B: \"Ganhámos a USF. Analisem a cotação com o projeto de execução.\"", "time": "16:05" },
+            { "sender": "agent", "text": "Abri a cotação **COT 2026/079** para a segunda ronda. No projeto de execução, 14 linhas mudaram de quantidade e 2 são novas.", "time": "16:06" },
+            { "sender": "client", "text": "recalcula", "time": "16:30" },
+            { "sender": "agent", "text": "Recalculado: **+3,1%**. As 2 linhas novas pedem preço. Nada segue para o empreiteiro sem a tua aprovação.", "time": "16:30" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Reconhece a obra: cotação COT 2026/079, em concurso" },
+            { "icon": "arrows", "label": "Compara o mapa de concurso com o de execução" },
+            { "icon": "list", "label": "Assinala as 14 quantidades alteradas e as 2 linhas novas" },
+            { "icon": "shield", "label": "Recalcula, mas não envia sem aprovação" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <p class="nota-fonte">Obras, empreiteiros, quantidades e preços ilustrativos. Com os vossos orçamentos, os preços passam a ser os vossos.</p>
+  </div>
+</section>
+
+<!-- ============ 7. LIGAÇÃO AO CRM ============ -->
+<section id="crm">
+  <div class="container">
+    <span class="eyebrow">Do email ao CRM</span>
+    <h2>O pedido entra pelo email. A cotação sai para o CRM.</h2>
+    <p class="lead">
+      Nada muda na forma como os empreiteiros vos pedem cotações. A plataforma fica entre a caixa de
+      email e o vosso CRM, e faz a parte que hoje leva dias.
+    </p>
+    <div class="fluxo" id="mvFluxo"></div>
+    <script type="application/json" id="mvFluxo-config">
+    {
+      "stepMs": 1900,
+      "channels": [
+        { "icon": "message", "label": "Email do empreiteiro" },
+        { "icon": "list", "label": "Excel ou PDF" },
+        { "icon": "database", "label": "CRM Mavitec" }
+      ],
+      "nodes": [
+        { "icon": "message", "title": "Chega o pedido", "detail": "Email com o mapa de quantidades e o prazo.", "tone": "brand" },
+        { "icon": "search", "title": "Lê o mapa", "detail": "Capítulos, linhas, unidades, Idem resolvidos.", "tone": "teal" },
+        { "icon": "database", "title": "Vai à base", "detail": "Preço dos vossos orçamentos, com a origem.", "tone": "teal" },
+        { "icon": "user-cog", "title": "Revisão vossa", "detail": "Só as linhas a rever e as sem histórico.", "tone": "teal" },
+        { "icon": "send", "title": "Excel e CRM", "detail": "O mapa dele preenchido, e a oportunidade no CRM.", "tone": "brand" }
+      ],
+      "note": "O resultado (ganho, perdido e porquê) volta à plataforma, e a base de preços aprende com cada cotação."
+    }
+    </script>
+    <div class="grid-2 crm-cards">
+      <div class="card" data-entra="sobe">
+        <h3>O vosso CRM fica como está</h3>
+        <p>O Ivo construiu um CRM à medida, com as obras, o calendário das equipas e o funil de vendas, e com API. A cotação entra lá com um botão, e o email ao comercial continua a sair do vosso CRM, como já sai hoje.</p>
+        <p class="card__nota">A forma exata da ligação confirma-se com a API do vosso CRM no arranque.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <h3>Feito para os mapas de obra pública</h3>
+        <p>Os mapas de obra pública seguem quase sempre a estrutura do ProNIC, com as instalações elétricas no capítulo 23. Cada empreiteiro arruma as colunas à sua maneira: a plataforma encontra a designação, a unidade e a quantidade, e devolve no formato original.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. QUALIFICAÇÃO ============ -->
+<section class="section-alt" id="qualificacao">
+  <div class="container">
+    <span class="eyebrow">A outra frente · agente de qualificação</span>
+    <h2>Os 20 a 25 pedidos por dia, respondidos no minuto</h2>
+    <p class="lead">
+      Os particulares chegam pelos anúncios, preenchem o formulário de 10 a 13 perguntas e hoje esperam
+      48 horas pelo primeiro contacto, enquanto pedem orçamento a outras empresas. O agente escreve-lhes
+      no WhatsApp logo a seguir ao formulário, completa o que falta e passa ao comercial só quem quer avançar.
+    </p>
+    <div class="cr" id="mvQual"></div>
+    <script type="application/json" id="mvQual-config">
+    {
+      "agentName": "Assistente Mavitec",
+      "agentInitials": "MV",
+      "chatStatus": "WhatsApp Business, online",
+      "stepMs": 1350,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "Moradia com bateria",
+          "subtitle": "Formulário de um anúncio, num domingo à tarde.",
+          "chat": [
+            { "sender": "system", "text": "Formulário novo: Paula, painéis solares, moradia", "time": "16:12" },
+            { "sender": "agent", "text": "Olá Paula, aqui é o assistente da Mavitec. Recebemos o seu pedido para painéis solares. Posso fazer-lhe duas ou três perguntas para o orçamento sair certo?", "time": "16:12" },
+            { "sender": "client", "text": "pode", "time": "16:19" },
+            { "sender": "client", "text": "a luz vem uns 140 euros no inverno", "time": "16:19" },
+            { "sender": "agent", "text": "Obrigado. O telhado é inclinado ou plano? E a instalação é monofásica ou trifásica, se souber?", "time": "16:19", "passo": 2 },
+            { "sender": "client", "text": "inclinado. trifasica acho", "time": "16:24" },
+            { "sender": "client", "text": "queria com bateria mas acho que fica caro. ja pedi a outra empresa", "time": "16:25" },
+            { "sender": "agent", "text": "Faz sentido comparar. O nosso técnico leva as contas com e sem bateria, para decidir com números. Prefere que lhe ligue amanhã de manhã ou ao fim do dia?", "time": "16:25", "passo": 4 },
+            { "sender": "client", "text": "depois das 18h que estou a trabalhar", "time": "16:31" },
+            { "sender": "agent", "text": "Combinado: amanhã a partir das 18h. Fica já com o nosso comercial.", "time": "16:31" }
+          ],
+          "steps": [
+            { "icon": "send", "label": "Contacta já, com o nome e o pedido do formulário" },
+            { "icon": "list", "label": "Recolhe o que o formulário não tem: telhado, fase" },
+            { "icon": "ear", "label": "Ouve a dor e a preocupação: fatura e preço da bateria" },
+            { "icon": "star", "label": "Sinal: está a comparar com outra empresa" },
+            { "icon": "calendar", "label": "Combina a hora da chamada que lhe dá jeito" },
+            { "icon": "database", "label": "Ficha no CRM e briefing ao comercial por WhatsApp" }
+          ]
+        },
+        {
+          "title": "Só o preço",
+          "subtitle": "Um contacto que quer um número e não dá dados.",
+          "chat": [
+            { "sender": "system", "text": "Formulário novo: Rui, painéis solares", "time": "21:40" },
+            { "sender": "agent", "text": "Olá Rui, aqui é o assistente da Mavitec. Recebemos o seu pedido para painéis solares. Para lhe dar um valor que faça sentido, quanto paga de luz por mês, mais ou menos?", "time": "21:40" },
+            { "sender": "client", "text": "so quero saber quanto custa", "time": "21:52" },
+            { "sender": "agent", "text": "Percebo. Depende sobretudo do consumo e do telhado: sem isso, qualquer número seria um palpite. Com a fatura de um mês consigo dizer-lhe já um intervalo.", "time": "21:52", "passo": 3 },
+            { "sender": "client", "text": "nao tenho aqui", "time": "22:30" },
+            { "sender": "agent", "text": "Sem problema. Volto a falar consigo amanhã, e quando tiver a fatura é só enviar uma fotografia.", "time": "22:30" }
+          ],
+          "steps": [
+            { "icon": "send", "label": "Contacta já, com o pedido do formulário" },
+            { "icon": "filter", "label": "Sem dados: ainda não está qualificado" },
+            { "icon": "ban", "label": "Não dá preço às cegas" },
+            { "icon": "clock", "label": "Follow-up automático no dia seguinte" }
+          ]
+        },
+        {
+          "title": "Pedido de empresa",
+          "subtitle": "Fora do que o agente pode orçamentar: passa a uma pessoa.",
+          "chat": [
+            { "sender": "system", "text": "Formulário novo: Nuno, carregadores para frota", "time": "09:03" },
+            { "sender": "agent", "text": "Bom dia Nuno, aqui é o assistente da Mavitec. Vi o pedido de carregadores para veículos. É para uma empresa? Quantos carros, mais ou menos?", "time": "09:03" },
+            { "sender": "client", "text": "empresa, 12 carros. tambem queremos ver painéis no armazem", "time": "09:11" },
+            { "sender": "agent", "text": "Um projeto destes tem de ser visto por um técnico, não por mim. Passo já ao Ivo com o que me disse. Qual o melhor número para lhe ligar?", "time": "09:11", "passo": 3 },
+            { "sender": "client", "text": "este mesmo", "time": "09:12" }
+          ],
+          "steps": [
+            { "icon": "send", "label": "Contacta já e confirma o tipo de pedido" },
+            { "icon": "alert", "label": "Frota e armazém: fora do que orçamenta sozinho" },
+            { "icon": "user-cog", "label": "Escala para uma pessoa, com o resumo" },
+            { "icon": "phone", "label": "Confirma o contacto para a chamada" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <div class="recebe">
+      <div data-entra="sobe">
+        <h3>O briefing que o comercial recebe</h3>
+        <p class="recebe-intro">No WhatsApp, logo que a lead fica qualificada. A ficha entra no CRM, e o CRM manda o email ao comercial como já faz.</p>
+        <figure class="notif">
+          <div class="notif-caixa">
+            <div class="notif-topo"><span class="notif-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><b>Assistente Mavitec</b><time>16:31</time></div>
+            <div class="notif-corpo"><div class="notif-bolha">
+              <p class="notif-tit">Lead qualificada. Ligar amanhã depois das 18h.</p>
+              <dl class="notif-dados"><dt>Nome</dt><dd>Paula</dd><dt>Pedido</dt><dd>Painéis solares, com bateria</dd><dt>Casa</dt><dd>Moradia, telhado inclinado, trifásica (a confirmar)</dd><dt>Fatura</dt><dd>Cerca de 140 € no inverno</dd></dl>
+              <div class="briefing">
+                <div class="b-dor"><b>Dores</b><p>Fatura de cerca de 140 € no inverno.</p></div>
+                <div class="b-preo"><b>Preocupações</b><p>Acha a bateria cara. Levar as contas com e sem bateria.</p></div>
+                <div class="b-sim"><b>Sinais positivos</b><p>Respondeu em minutos, num domingo. Escolheu a hora da chamada.</p></div>
+                <div class="b-nao"><b>Sinais de alerta</b><p>Já pediu orçamento a outra empresa.</p></div>
+              </div>
+              <div class="notif-acoes" aria-hidden="true"><span>Ver no CRM</span><span>Ligar</span></div>
+            </div></div>
+          </div>
+          <figcaption>Dados inventados. As perguntas e os critérios definem-se convosco, a partir do vosso formulário.</figcaption>
+        </figure>
+      </div>
+      <div class="qual-c" data-entra="sobe">
+        <h3>O que muda</h3>
+        <ul class="list-check">
+          <li><b>De 48 horas para o minuto.</b> O agente escreve logo a seguir ao formulário, a qualquer hora, também ao fim de semana.</li>
+          <li><b>Sem passar por si.</b> Hoje a lead dos anúncios passa pelo Ivo antes de chegar ao CRM. Passa a entrar sozinha, já com a ficha completa.</li>
+          <li><b>Só chamadas com quem quer avançar.</b> Quem só quer um número, ou não responde, fica com o follow-up automático, não com o comercial.</li>
+          <li><b>WhatsApp, Instagram e Messenger.</b> As mensagens que os anúncios geram nos três canais, no mesmo agente.</li>
+        </ul>
+        <p class="card__nota">O agente não dá preços que não estejam definidos convosco, e passa a uma pessoa tudo o que for projeto de empresa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. LIMITES ============ -->
+<section id="limites">
+  <div class="container">
+    <span class="eyebrow">O que fica com as pessoas</span>
+    <h2>A plataforma faz as contas. As decisões são vossas.</h2>
+    <div class="grid-2">
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Fica sempre com uma pessoa</h3>
+        <ul class="list-x">
+          <li>A leitura técnica do projeto e as visitas à obra</li>
+          <li>O preço de tudo o que nunca foi orçamentado</li>
+          <li>Os coeficientes de cada obra e os ajustes comerciais</li>
+          <li>A decisão de a que obras responder</li>
+          <li>Aprovar cada cotação antes de sair para o empreiteiro</li>
+        </ul>
+      </div>
+      <div class="card card-do" data-entra="sobe">
+        <h3>Como a plataforma se comporta</h3>
+        <ul class="list-check">
+          <li>Nunca estica um preço: secção, potência ou tipo diferentes, pergunta</li>
+          <li>Diz de onde vem cada preço: orçamento, obra e resultado</li>
+          <li>Marca a vermelho o que falta e não deixa enviar sem isso</li>
+          <li>Nada sai para o empreiteiro sem aprovação</li>
+          <li>Aprende com cada linha que aceitam</li>
+        </ul>
+      </div>
+    </div>
+    <div class="franqueza" data-entra="sobe">
+      <h3>Três coisas ditas já, para não haver surpresas</h3>
+      <ol>
+        <li><b>A base é tão boa quanto o histórico.</b> Precisamos das cotações antigas que tiverem, com os mapas respetivos. Quantas mais, mais linhas entram automáticas logo no primeiro dia.</li>
+        <li><b>Os 80% são o ponto de partida.</b> No primeiro mês a revisão é maior; a percentagem sobe com cada cotação que aprovarem, porque cada linha aceite fica na base.</li>
+        <li><b>Os preços desta página são ilustrativos.</b> Ainda não recebemos os orçamentos de exemplo. Com eles, a mesma demonstração passa a correr com os vossos preços.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. A CONTA ============ -->
+<section class="section-alt" id="valor">
+  <div class="container">
+    <span class="eyebrow">A conta, antes do preço</span>
+    <h2>Quantas obras a mais passam a ter resposta?</h2>
+    <p class="lead">
+      Os números de partida são os que o Ivo nos deu: dez obras numa semana, resposta a duas, e três em
+      cada dez a cair. Mexa nos valores.
+    </p>
+    <div class="calc" id="mvRoi"></div>
+    <script type="application/json" id="mvRoi-config">
+    {
+      "inputs": [
+        { "id": "obras", "label": "Pedidos de cotação por semana", "min": 4, "max": 20, "step": 1, "default": 10 },
+        { "id": "resp", "label": "A que conseguem responder hoje", "min": 1, "max": 10, "step": 1, "default": 2 },
+        { "id": "taxa", "label": "Das cotações enviadas, quantas caem", "min": 10, "max": 40, "step": 5, "default": 30, "suffix": "%" }
+      ],
+      "outputs": [
+        { "label": "Cotações a mais por mês", "expr": "(obras-resp)*4.3", "suffix": "", "decimals": 0, "highlight": true },
+        { "label": "Obras a mais por mês, à mesma taxa", "expr": "(obras-resp)*4.3*taxa/100", "suffix": "", "decimals": 1 },
+        { "label": "Cotações por mês, com a plataforma", "expr": "obras*4.3", "suffix": "", "decimals": 0 }
+      ],
+      "note": "Com a plataforma, cada cotação passa de 3 a 4 dias para cerca de meio dia de revisão: o tempo deixa de ser o que decide a que obras respondem."
+    }
+    </script>
+  </div>
+</section>
+
+<!-- ============ 11. CASOS ============ -->
+<section id="caso">
+  <div class="container">
+    <span class="eyebrow">Casos do mesmo tipo</span>
+    <h2>Já estamos a fazer isto em construção e em fotovoltaico</h2>
+    <div class="caso-grid">
+      <div class="caso" data-entra="sobe">
+        <small class="caso-t">Engenharia e construção · orçamentação</small>
+        <p>Empresa portuguesa de engenharia e construção, com mais de 500 pessoas e cerca de 4.000 orçamentos por ano, metade para ligações elétricas. Quando chegou a nós, o pedido chegava em PDF por email e era passado à mão para um Excel de 50 colunas.</p>
+        <p>O sistema lê o email, extrai os dados do PDF e abre o processo já pré-preenchido, com os custos certos para cada concelho. O técnico faz só o cálculo que depende do terreno; a proposta sai em PDF.</p>
+        <p class="caso__estado">Estado: em implementação.</p>
+      </div>
+      <div class="caso" data-entra="sobe">
+        <small class="caso-t">Fotovoltaico residencial · qualificação</small>
+        <p>Empresa de painéis solares com as leads a chegar pelos anúncios da Meta, muitas delas curiosos ou fora de zona, e leads que arrefeciam antes de serem contactadas.</p>
+        <p>O agente responde no WhatsApp no próprio momento, recolhe o consumo, o tipo de instalação e a zona, apresenta um orçamento estimativo com três opções a partir da tabela da empresa, e passa ao comercial da zona com o resumo da conversa.</p>
+        <p class="caso__estado">Estado: em produção desde julho de 2026.</p>
+      </div>
+    </div>
+    <p class="nota-fonte">Por respeito aos contratos, não identificamos os clientes.</p>
+  </div>
+</section>
+
+<!-- ============ 12. INVESTIMENTO ============ -->
+<section class="section-alt" id="investimento">
+  <div class="container">
+    <span class="eyebrow">Investimento</span>
+    <h2>Valores</h2>
+    <p class="valor-linha" data-entra="sobe">
+      Hoje, uma cotação de empreiteiro são <b>3 a 4 dias</b> de trabalho, e numa semana com dez obras
+      respondem a duas. Pela vossa conta, em cada dez cotações caem três ou quatro: <b>basta uma obra
+      a mais por ano</b>, das que hoje ficam na triagem, para a plataforma se pagar.
+    </p>
+    <div class="precos">
+      <div class="card price-card holofote" data-entra="sobe">
+        <span class="tag">Semanas 1 a 6</span>
+        <div class="label">Plataforma de orçamentação</div>
+        <div class="price">6.300 € <span class="iva">+ IVA</span></div>
+        <div class="note">Leitura dos mapas que chegam por email (Excel e PDF), base de preços feita com os vossos orçamentos, correspondência linha a linha, coeficientes por obra, Excel no formato do empreiteiro, oportunidade no CRM com um botão, registo de ganho e perda com o motivo, e testes lado a lado com cotações vossas.</div>
+      </div>
+      <div class="card price-card holofote" data-entra="sobe">
+        <span class="tag">Semanas 1 a 3</span>
+        <div class="label">Agente de qualificação</div>
+        <div class="price">2.600 € <span class="iva">+ IVA</span></div>
+        <div class="note">Contacto no minuto a seguir ao formulário, no WhatsApp, Instagram e Messenger. Perguntas com os vossos critérios, follow-up automático, ficha no CRM e briefing ao comercial por WhatsApp.</div>
+      </div>
+      <div class="card price-card price-card--m holofote" data-entra="sobe">
+        <span class="tag">Depois do arranque</span>
+        <div class="label">Mensalidade, as duas soluções</div>
+        <div class="price">250 € <span class="iva">+ IVA / mês</span></div>
+        <div class="note">Alojamento, custos de inteligência artificial, manutenção, atualização da base de preços e os ajustes com o vosso feedback, num grupo de WhatsApp connosco. Sem tickets.</div>
+      </div>
+    </div>
+    <div class="total" data-entra="sobe">
+      <span>Implementação total</span><b>8.900 € + IVA</b>
+      <small>Mais 250 € + IVA por mês, a partir do arranque. Podem começar pela plataforma e juntar o agente depois: a ordem é vossa. As mensagens de WhatsApp que a Meta cobra à parte, quando as houver, são da Meta e não nossas.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. PRAZO ============ -->
+<section id="prazo">
+  <div class="container">
+    <span class="eyebrow">Prazo</span>
+    <h2>A trabalhar antes do Natal</h2>
+    <p class="lead">Seis semanas a contar de 26 de outubro, com os feriados de dezembro descontados. Os prazos contam a partir da receção das cotações antigas.</p>
+    <ol class="fases">
+      <li data-entra="sobe"><span class="fases-s">Semana 1</span><b>Arranque</b><p>Recebemos as cotações antigas com os mapas, o acesso à caixa onde chegam os pedidos e à API do CRM.</p></li>
+      <li data-entra="sobe"><span class="fases-s">Semanas 2 a 4</span><b>Base e plataforma</b><p>A base de preços com os vossos orçamentos, a leitura dos mapas, os coeficientes e o Excel de saída.</p></li>
+      <li data-entra="sobe"><span class="fases-s">16 de novembro</span><b>Agente a trabalhar</b><p>Feito em paralelo nas primeiras três semanas: perguntas, critérios, ligação aos anúncios e ao CRM.</p></li>
+      <li data-entra="sobe"><span class="fases-s">9 de dezembro</span><b>Plataforma a trabalhar</b><p>Depois de duas semanas de testes lado a lado, com mapas novos cotados por vocês e pela plataforma.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 14. FECHO ============ -->
+<section class="cta-final" id="avancar">
+  <div class="container center">
+    <h2>Avançamos, Ivo?</h2>
+    <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmação por escrito.</p>
+    <ol class="passos-fecho">
+      <li><span class="n">1</span><b>Dizes que sim</b><p>Por WhatsApp ou por email, com as dúvidas que ainda tenhas.</p></li>
+      <li><span class="n">2</span><b>Recebes a proposta formal</b><p>O contrato, com o âmbito, os valores e os prazos desta página.</p></li>
+      <li><span class="n">3</span><b>Semana 1: as cotações antigas</b><p>As que tiverem, com os mapas. E o acesso à caixa de email dos pedidos e à API do vosso CRM.</p></li>
+    </ol>
+    <div class="fecho-acoes">
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%20Mavitec%20e%20quero%20avan%C3%A7ar." class="btn btn-primary premivel" data-iman="0.2" target="_blank" rel="noopener">Quero avançar</a>
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%20Mavitec%20e%20tenho%20uma%20pergunta%3A%20" class="btn btn-ghost" target="_blank" rel="noopener">Tenho uma pergunta</a>
+    </div>
+    <p class="fecho-contacto">
+      Manuel Condeço, AI Solutions<br>
+      <a href="tel:+351964251889">+351 964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a>
+    </p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Mavitec
+    <span class="disclaimer">Obras, empreiteiros, artigos, quantidades e preços desta página são ilustrativos. Os números do processo atual são os ditos na reunião de 7 de outubro de 2026.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="assets/js/dados.js"></script>
+<script src="assets/js/motor.js"></script>
+<script src="assets/js/experimente.js"></script>
+<script src="assets/js/plataforma.js"></script>
+<script>
+  chatRaciocinio('mvDemo');
+  chatRaciocinio('mvQual');
+  fluxo('mvFluxo');
+  calculadora('mvRoi');
+</script>
+</body>
+</html>
