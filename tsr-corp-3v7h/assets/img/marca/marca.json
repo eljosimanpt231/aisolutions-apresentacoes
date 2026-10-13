@@ -1,0 +1,40 @@
+{
+  "site": "https://tsrcorp.pt/",
+  "dominio": "tsrcorp.pt",
+  "titulo": "429 Too Many Requests",
+  "descricao": "",
+  "logotipoTexto": null,
+  "logotipo": null,
+  "alternativas": [
+    {
+      "origem": "og:image",
+      "src": "https://tsrcorp.pt/",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "erro": "não descarregou"
+    }
+  ],
+  "fotografia": null,
+  "paleta": [],
+  "tokens": null,
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "Times",
+    "corpo": "Times",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [],
+    "titulos": [
+      "429 Too Many Requests"
+    ],
+    "tratamento": "indefinido"
+  },
+  "avisos": [
+    "Nenhum logótipo com confiança suficiente. Ver logo-recorte.png e as alternativas em marca.json, ou pedir o ficheiro ao comercial. Sem logo bom: o nome da lead em texto, com a fonte display.",
+    "O site não tem cor de marca forte (só neutros). Manter a paleta do estilo escolhido e deixar a marca aparecer no logótipo e nas fotos."
+  ]
+}

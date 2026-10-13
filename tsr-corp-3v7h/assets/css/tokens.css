@@ -1,0 +1,71 @@
+/* TSR CORP investment × AI Solutions. Base deck-dark, paleta do site da TSR (tsrcorp.pt).
+   Marca = areia dos destaques do site (#f0d5a5), a cor do agente.
+   Acento = azul-petróleo do site (#0b3f4a), aclarado para se ler sobre o escuro.
+   brand2 = terracota do site (#d8613c), só em gradientes.
+   Tema escuro: o logótipo da TSR é branco sobre transparente, desenhado como uma planta técnica. */
+:root {
+  --brand-hsl: 38 72% 79%;     /* areia TSR, o agente */
+  --accent-hsl: 189 48% 56%;    /* azul-petróleo TSR, aclarado */
+  --brand2-hsl: 14 67% 60%;    /* terracota TSR */
+  --roxo-hsl: 190 74% 17%;      /* azul-petróleo TSR original, só em fundos */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --brand2: hsl(var(--brand2-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* fundo sólido sob texto branco (botões, pontos da timeline) */
+  --brand-solido: hsl(30 52% 31%);
+  --acento-texto: hsl(189 55% 68%);
+  --voz-texto: hsl(38 80% 82%);
+  --ok-texto: hsl(150 62% 62%);
+  --warn-texto: hsl(38 92% 64%);
+
+  --bg: hsl(195 32% 6%);
+  --bg-soft: hsl(195 28% 8%);
+  --surface: hsl(195 22% 11%);
+  --surface-2: hsl(195 20% 14%);
+  --border: hsl(195 16% 22%);
+
+  --text: hsl(38 30% 95%);
+  --muted: hsl(195 10% 70%);
+
+  /* painéis de produto embutidos (chat, terminal) */
+  --app-panel: hsl(195 32% 8%);
+  --app-panel-2: hsl(195 26% 12%);
+  --app-line: hsl(195 18% 22%);
+  --app-muted: hsl(195 12% 70%);
+
+  --success-hsl: 150 62% 46%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 80% 64%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(var(--brand2-hsl)) 60%, hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(195 32% 7%), hsl(var(--roxo-hsl) / 0.85) 62%, hsl(var(--brand2-hsl) / 0.22));
+  --grad-voz: linear-gradient(135deg, hsl(var(--brand-hsl) / 0.16), hsl(var(--roxo-hsl) / 0.30));
+  --grad-texto: linear-gradient(135deg, hsl(var(--accent-hsl) / 0.20), hsl(var(--brand2-hsl) / 0.10));
+
+  --shadow-sm: 0 1px 3px hsl(195 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(195 60% 2% / 0.55);
+  --shadow-lg: 0 24px 64px hsl(195 60% 2% / 0.65);
+
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-marca: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 124px);
+}
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
