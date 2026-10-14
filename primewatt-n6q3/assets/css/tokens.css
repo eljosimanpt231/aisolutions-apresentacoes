@@ -1,0 +1,173 @@
+/* ============================================================
+   TOKENS: Primewatt (fundo branco, identidade da Primewatt)
+   Fonte única de verdade visual. Os componentes NUNCA usam cores
+   directas: para mudar o look inteiro, muda-se só este ficheiro.
+
+   Marca: o azul-petróleo do site primewatt.pt (#0e2f44) para tinta,
+   botões e superfícies sólidas; o verde-energia (#29f19c) e o azul
+   eléctrico (#027cf9) do logótipo para a atmosfera e o gradiente.
+   O verde do site é claro de mais para texto em branco: como texto
+   usa-se o mesmo tom escurecido (--verde-texto).
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- 1. MARCA ----------
+     Azul-petróleo #0e2f44: matiz 236 em OKLCH. Rampa explícita. */
+  --brand-h: 236;
+
+  --brand-hsl:  203 66% 16%;      /* azul-petróleo da Primewatt */
+  --accent-hsl: 212 96% 44%;      /* azul eléctrico do logótipo: a cor do assistente */
+  --brand2-hsl: 212 96% 46%;      /* início do gradiente do texto */
+  --verde-hsl:  155 88% 50%;      /* verde-energia do site */
+  --verde-escuro-hsl: 158 84% 32%;
+  --ciano-hsl:  186 92% 34%;      /* o meio do raio do logótipo (#00c0c0, escurecido) */
+
+  --brand-50:  oklch(97.4% 0.010 var(--brand-h));
+  --brand-100: oklch(94.2% 0.020 var(--brand-h));
+  --brand-200: oklch(88.0% 0.034 var(--brand-h));
+  --brand-300: oklch(79.0% 0.050 var(--brand-h));
+  --brand-400: oklch(64.0% 0.066 var(--brand-h));
+  --brand-500: oklch(50.0% 0.072 var(--brand-h));
+  --brand-600: oklch(42.0% 0.070 var(--brand-h));
+  --brand-700: oklch(36.0% 0.064 var(--brand-h));
+  --brand-800: oklch(29.4% 0.056 var(--brand-h));
+  --brand-900: oklch(24.0% 0.048 var(--brand-h));
+  --brand-950: oklch(18.0% 0.040 var(--brand-h));
+
+  --brand:    var(--brand-800);
+  --accent:   oklch(52% 0.20 256);          /* azul eléctrico legível em branco */
+  --on-brand: oklch(99% 0.004 var(--brand-h));
+
+  --brand-solido:    var(--brand-800);
+  --on-brand-solido: oklch(99% 0.004 var(--brand-h));
+  --acento-texto:    oklch(48% 0.19 256);
+  --verde:           hsl(var(--verde-hsl));
+  --verde-texto:     oklch(47% 0.115 160);
+
+  --brand-a06: color-mix(in oklab, var(--brand) 6%,  transparent);
+  --brand-a10: color-mix(in oklab, var(--brand) 10%, transparent);
+  --brand-a16: color-mix(in oklab, var(--brand) 16%, transparent);
+  --brand-a30: color-mix(in oklab, var(--brand) 30%, transparent);
+  --brand-a45: color-mix(in oklab, var(--brand) 45%, transparent);
+  --accent-a10: color-mix(in oklab, var(--accent) 10%, transparent);
+  --accent-a20: color-mix(in oklab, var(--accent) 20%, transparent);
+  --accent-a45: color-mix(in oklab, var(--accent) 45%, transparent);
+
+  /* ---------- 2. SUPERFÍCIES E TINTA ----------
+     Branco a sério, com um resto de azul nos neutros (o fundo do site
+     da Primewatt é um azul muito claro, 203 87% 97%). */
+  --neutro-h: 230;
+  --bg:        oklch(100% 0 0);
+  --bg-soft:   oklch(97.6% 0.008 var(--neutro-h));
+  --surface:   oklch(100% 0 0);
+  --surface-2: oklch(97.8% 0.007 var(--neutro-h));
+  --surface-3: oklch(95.6% 0.010 var(--neutro-h));
+
+  --text:   oklch(23.0% 0.040 var(--brand-h));
+  --muted:  oklch(45.0% 0.026 var(--brand-h));
+  --faint:  oklch(52.0% 0.020 var(--brand-h));
+
+  --hairline: color-mix(in oklab, var(--text) 9%, transparent);
+  --border:   color-mix(in oklab, var(--text) 14%, transparent);
+  --border-strong: color-mix(in oklab, var(--text) 24%, transparent);
+  --focus: var(--accent);
+
+  /* ---------- 3. SEMÂNTICOS ----------
+     Verde = ganho/automático. Vermelho = custo/manual. Âmbar = excepção. */
+  --ok:        oklch(52% 0.13 158);
+  --ok-texto:  oklch(45% 0.11 158);
+  --ok-wash:   color-mix(in oklab, var(--ok) 12%, transparent);
+  --danger:    oklch(52% 0.19 27);
+  --danger-wash: color-mix(in oklab, var(--danger) 10%, transparent);
+  --warn:      oklch(62% 0.14 70);
+  --warn-texto: oklch(50% 0.12 62);
+  --warn-wash: color-mix(in oklab, var(--warn) 14%, transparent);
+
+  /* ---------- 4. TIPOGRAFIA ----------
+     As do site da Primewatt: Quicksand nos títulos, DM Sans no corpo. */
+  --font-display: 'Quicksand', 'DM Sans', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --fs--2: clamp(0.78rem,   0.76rem + 0.0926vw, 0.84rem);
+  --fs--1: clamp(0.9rem,    0.88rem + 0.0926vw, 0.96rem);
+  --fs-0:  clamp(1.0625rem, 1.0208rem + 0.1852vw, 1.1875rem);
+  --fs-1:  clamp(1.25rem,   1.1667rem + 0.3704vw, 1.5rem);
+  --fs-2:  clamp(1.5rem,    1.3542rem + 0.6481vw, 1.9375rem);
+  --fs-3:  clamp(1.8125rem, 1.6042rem + 0.9259vw, 2.4375rem);
+  --fs-4:  clamp(2.1875rem, 1.8958rem + 1.2963vw, 3.0625rem);
+  --fs-5:  clamp(2.625rem,  2.2292rem + 1.7593vw, 3.8125rem);
+  --fs-6:  clamp(3.125rem,  2.5833rem + 2.4074vw, 4.75rem);
+
+  --lh-hero: 1.04; --lh-h1: 1.08; --lh-h2: 1.14; --lh-h3: 1.24;
+  --lh-lead: 1.45; --lh-body: 1.60;
+
+  /* A Quicksand é redonda e aberta: tracking apertado só nos grandes */
+  --tr-hero: -0.03em; --tr-h1: -0.025em; --tr-h2: -0.02em; --tr-h3: -0.01em;
+  --tr-body: 0em; --tr-label: 0.09em;
+
+  --measure: 66ch;
+  --measure-lead: 56ch;
+
+  /* ---------- 5. ESPAÇO ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 16px; --s-4: 24px;
+  --s-5: 32px; --s-6: 48px; --s-7: 64px; --s-8: 96px;
+
+  --container: 1100px;
+  --gutter: clamp(16px, 4vw, 32px);
+
+  --pad-secao:       clamp(56px, 7vw, 96px);
+  --pad-secao-amplo: clamp(80px, 10vw, 136px);
+  --pad-secao-junto: clamp(32px, 4vw, 56px);
+
+  /* ---------- 6. FORMA ---------- */
+  --r-1: 4px; --r-2: 8px; --r-3: 12px; --r-4: 18px; --r-pill: 999px;
+
+  /* ---------- 7. ELEVAÇÃO (claro, sombra tingida de azul-petróleo) ---------- */
+  --sh: 203deg 60% 18%;
+  --e1: 0 0 0 1px var(--hairline), 0 1px 2px hsl(var(--sh) / 0.05), 0 2px 4px -2px hsl(var(--sh) / 0.05);
+  --e2: 0 0 0 1px var(--hairline), 0 1px 2px hsl(var(--sh) / 0.04), 0 4px 8px -2px hsl(var(--sh) / 0.05), 0 10px 20px -8px hsl(var(--sh) / 0.07);
+  --e3: 0 0 0 1px var(--hairline), 0 2px 4px hsl(var(--sh) / 0.04), 0 18px 36px -10px hsl(var(--sh) / 0.10), 0 36px 72px -20px hsl(var(--sh) / 0.10);
+  --shadow-lg: var(--e3);
+  --radius: 16px;
+  --grad-cta: linear-gradient(160deg in oklab, var(--bg-soft), color-mix(in oklab, var(--verde) 10%, var(--bg)));
+
+  /* ---------- 8. MOVIMENTO (dentro das maquetas: registo de produto) ---------- */
+  --t-rapido: 120ms;
+  --t-normal: 200ms;
+  --t-lento:  300ms;
+  --ease-out:   cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-suave: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* ---------- 9. MAQUETAS ----------
+     O chat é o WhatsApp claro (o que o cliente da Primewatt vê).
+     O aviso ao comercial é uma notificação escura, como no telemóvel. */
+  --wa-fundo:   oklch(93.4% 0.012 85);
+  --wa-barra:   oklch(96.2% 0.004 250);
+  --wa-in:      oklch(100% 0 0);
+  --wa-out:     oklch(95.2% 0.055 145);
+  --wa-tinta:   oklch(22% 0.02 230);
+  --wa-fraco:   oklch(46% 0.02 230);
+
+  --mock-bg:        oklch(17.5% 0.030 var(--brand-h));
+  --mock-head:      oklch(21.5% 0.034 var(--brand-h));
+  --mock-linha:     oklch(100% 0 0 / 0.10);
+  --mock-txt:       oklch(96% 0.006 var(--brand-h));
+  --mock-txt-fraco: oklch(76% 0.016 var(--brand-h));
+  --mock-bolha-in:  oklch(25.5% 0.034 var(--brand-h));
+  --mock-sombra:    oklch(20% 0.04 var(--brand-h) / 0.40);
+  --mock-veu:       oklch(100% 0 0 / 0.05);
+  --mock-ok:        oklch(84% 0.14 158);
+  --mock-ambar:     oklch(86% 0.12 80);
+  --mock-azul:      oklch(80% 0.11 245);
+  --mock-vermelho:  oklch(76% 0.13 25);
+
+  /* ---------- 10. CANAIS (cores canónicas) ---------- */
+  --wa-green: #128C7E;
+  --wa-green-dark: #075E54;
+  --wa-light: #25D366;
+
+  --grelha-passo: 64px;
+}

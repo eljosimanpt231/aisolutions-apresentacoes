@@ -1,0 +1,448 @@
+/* ============================================================
+   PRIMEWATT: a régua da obra
+   Base: arquitetura da E-Sol (mesmo setor) em fundo branco, com a
+   identidade da Primewatt. A ideia que atravessa a página: todos os
+   pedidos são contactados no minuto, e é a Primewatt que decide o
+   ritmo a que chegam à obra. Só tokens, zero cores directas.
+   ============================================================ */
+
+@layer componentes {
+
+  /* ---------- Superfícies ---------- */
+  .faixa { background: var(--bg-soft); }
+  .faixa-clara {
+    background: linear-gradient(180deg in oklab,
+      color-mix(in oklab, var(--verde) 7%, var(--bg)),
+      color-mix(in oklab, var(--accent) 3%, var(--bg)));
+    border-block: 1px solid color-mix(in oklab, var(--verde) 26%, transparent);
+  }
+
+  /* ---------- Rubrica: o número da secção em pastilha ---------- */
+  .rubrica {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 5px 14px 5px 5px; margin-bottom: var(--s-4);
+    border-radius: var(--r-pill);
+    border: 1px solid color-mix(in oklab, var(--brand) 18%, transparent);
+    background: color-mix(in oklab, var(--verde) 12%, var(--bg));
+    font-size: var(--fs--1); font-weight: 600; color: var(--brand);
+    max-width: none;
+  }
+  .rubrica span {
+    display: grid; place-items: center; min-width: 26px; height: 26px; padding-inline: 6px; border-radius: var(--r-pill);
+    background: var(--brand-solido); color: var(--on-brand-solido);
+    font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400;
+  }
+  section h2 { max-width: 24ch; font-weight: 700; }
+  section h2 + .lead { margin-top: var(--s-3); }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 700; }
+
+  /* ============================================================
+     ABERTURA: o raio da Primewatt e a linha do tempo de um pedido
+     ============================================================ */
+  .abertura {
+    position: relative; isolation: isolate; overflow: clip;
+    padding-block: var(--s-7) var(--pad-secao-amplo);
+    min-height: min(100svh, 960px);
+  }
+  /* Um arco de energia por trás do título: verde a azul, como o logótipo */
+  .energia {
+    position: absolute; z-index: -1; pointer-events: none;
+    right: -18vw; top: -22vw; width: 72vw; aspect-ratio: 1; border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 50%, transparent 54%, hsl(var(--verde-hsl) / .20) 60%, transparent 67%),
+      radial-gradient(circle at 50% 50%, transparent 66%, hsl(var(--accent-hsl) / .12) 70%, transparent 75%),
+      radial-gradient(circle at 42% 58%, hsl(var(--verde-hsl) / .16), transparent 52%);
+  }
+  .abertura::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14%; z-index: -1; pointer-events: none;
+    background: linear-gradient(0deg, var(--bg) 0%, transparent);
+  }
+
+  .abertura-grelha {
+    display: grid; gap: var(--s-6); align-items: end;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, .9fr);
+  }
+  @media (max-width: 940px) { .abertura-grelha { grid-template-columns: 1fr; } }
+
+  .marca-par { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: var(--s-6); }
+  .marca-par img { height: 34px; width: auto; }
+  .marca-par .x { color: var(--muted); font-size: var(--fs--1); }
+  .marca-par .ref {
+    margin-left: auto; font-family: var(--font-mono); font-size: var(--fs--2);
+    color: var(--muted); padding: 4px 10px; border: 1px solid var(--border); border-radius: var(--r-pill);
+    background: var(--surface);
+  }
+  @media (max-width: 640px) { .marca-par .ref { margin-left: 0; } }
+
+  .promessa { font-size: clamp(2.3rem, 1.2rem + 3.9vw, 3.8rem); line-height: var(--lh-hero); letter-spacing: var(--tr-hero); font-weight: 700; max-width: 21ch; margin-bottom: var(--s-6); color: var(--brand); }
+  .abertura .lead { margin-top: 0; color: var(--text); }
+
+  .numeros { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); margin-top: var(--s-6); max-width: 46rem; }
+  .numeros li { max-width: none; padding-top: var(--s-3); border-top: 2px solid color-mix(in oklab, var(--verde) 70%, var(--accent)); }
+  .numeros .n { display: block; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-3); line-height: 1.05; letter-spacing: -0.03em; color: var(--brand); }
+  .numeros .d { display: block; margin-top: 6px; font-size: var(--fs--1); color: var(--muted); max-width: 26ch; }
+  @media (max-width: 640px) { .numeros { grid-template-columns: 1fr; } }
+
+  .abertura-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-top: var(--s-6); }
+  .abertura-acoes .nota { font-size: var(--fs--1); color: var(--muted); }
+
+  /* A linha do tempo de um pedido, ao lado do título */
+  .linha-tempo { list-style: none; display: grid; gap: 12px; position: relative; padding-left: 22px; }
+  .linha-tempo::before {
+    content: ""; position: absolute; left: 6px; top: 14px; bottom: 14px; width: 2px;
+    background: linear-gradient(180deg, hsl(var(--accent-hsl) / .8), hsl(var(--verde-escuro-hsl) / .9));
+  }
+  .linha-tempo li {
+    position: relative; max-width: none;
+    background: color-mix(in oklab, var(--surface) 86%, transparent);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border); border-radius: var(--r-3);
+    padding: 12px 14px; box-shadow: var(--e2);
+  }
+  .linha-tempo li::before {
+    content: ""; position: absolute; left: -21px; top: 18px; width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--accent);
+  }
+  .linha-tempo li.humano::before { border-color: var(--verde-texto); background: var(--verde); box-shadow: 0 0 14px hsl(var(--verde-hsl) / .9); }
+  .linha-tempo time { display: block; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--acento-texto); }
+  .linha-tempo li.humano time { color: var(--verde-texto); }
+  .linha-tempo b { display: block; font-size: var(--fs--1); margin-top: 2px; }
+  .linha-tempo span { display: block; font-size: var(--fs--2); color: var(--muted); margin-top: 2px; }
+  .linha-tempo span.seg { display: inline; margin: 0; font-family: var(--font-mono); color: var(--ok-texto); }
+
+  .sem-quebra { white-space: nowrap; }
+
+  /* ---------- 1. O que ouvimos ---------- */
+  .ouvimos { display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+  .ouvimos article {
+    background: var(--surface); border-radius: var(--r-4); padding: var(--s-5);
+    border: 1px solid var(--border); display: flex; flex-direction: column; gap: var(--s-3);
+  }
+  .ouvimos .i { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--acento-texto); }
+  .ouvimos h3 { font-size: var(--fs-1); color: var(--brand); }
+  .ouvimos p { font-size: var(--fs--1); color: var(--muted); }
+  .ouvimos blockquote {
+    margin-top: auto; padding: 12px 14px; border-radius: var(--r-3);
+    background: color-mix(in oklab, var(--verde) 11%, var(--bg));
+    border-left: 2px solid var(--verde-texto);
+    font-size: var(--fs--1); font-style: italic; color: var(--text);
+  }
+  .ouvimos blockquote::before { content: "\201C"; }
+  .ouvimos blockquote::after { content: "\201D"; }
+  .ouvimos article.reserva { background: color-mix(in oklab, var(--warn) 7%, var(--surface)); }
+  .ouvimos article.reserva blockquote { border-left-color: var(--warn-texto); background: color-mix(in oklab, var(--warn) 12%, var(--bg)); }
+  .sintese { margin-top: var(--s-6); font-family: var(--font-display); font-size: var(--fs-2); font-weight: 700; letter-spacing: -0.02em; max-width: 30ch; color: var(--brand); }
+  .sintese em { font-style: normal; color: var(--acento-texto); }
+
+  /* ============================================================
+     2. A RÉGUA DA OBRA (elemento assinatura)
+     Oito pedidos de uma noite; o momento da obra decide a ordem.
+     ============================================================ */
+  .regua {
+    margin-top: var(--s-6); border-radius: var(--r-4); padding: clamp(18px, 3vw, 32px);
+    background: var(--surface);
+    box-shadow: var(--e3);
+  }
+  .regua-escolha { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
+  .regua-escolha .rot { font-size: var(--fs--1); color: var(--muted); margin-right: var(--s-2); }
+  .regua-escolha button {
+    min-height: 44px; padding: 8px 16px; cursor: pointer;
+    border: 1px solid var(--border-strong); border-radius: var(--r-pill);
+    background: var(--surface); color: var(--text);
+    font-family: var(--font-body); font-size: var(--fs--1); font-weight: 600;
+    transition: color var(--t-rapido) var(--ease-out), border-color var(--t-rapido) var(--ease-out), background-color var(--t-rapido) var(--ease-out);
+  }
+  .regua-escolha button[aria-pressed="true"] {
+    color: var(--on-brand-solido); background: var(--brand-solido); border-color: var(--brand-solido);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .regua-escolha button:not([aria-pressed="true"]):hover { border-color: var(--brand); }
+  }
+  .regua-medidor { margin-top: var(--s-4); display: grid; gap: 8px; max-width: 34rem; }
+  .regua-medidor .rot { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--muted); }
+  .regua-barra { position: relative; height: 12px; border-radius: var(--r-pill); background: color-mix(in oklab, var(--text) 8%, transparent); overflow: hidden; }
+  .regua-barra i {
+    position: absolute; inset: 0 auto 0 0; width: var(--w, 100%); border-radius: inherit;
+    background: linear-gradient(90deg, hsl(var(--verde-escuro-hsl)), var(--warn), var(--danger));
+    background-size: 34rem 100%;
+    transition: width 700ms var(--e-expo);
+  }
+  .regua-regra { font-size: var(--fs--1); color: var(--text); }
+  .regua-regra b { color: var(--brand); }
+
+  .regua-colunas { display: grid; gap: var(--s-4); margin-top: var(--s-5); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media (max-width: 860px) { .regua-colunas { grid-template-columns: 1fr; } }
+  .regua-col { border-radius: var(--r-3); padding: var(--s-3); background: var(--bg-soft); border-top: 3px solid var(--c, var(--border)); min-height: 120px; }
+  .regua-col[data-col="ligar"] { --c: var(--ok); }
+  .regua-col[data-col="seguir"] { --c: var(--warn); }
+  .regua-col[data-col="fora"] { --c: var(--border-strong); }
+  .regua-col h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: var(--fs-0); color: var(--brand); }
+  .regua-col h3 .q { font-family: var(--font-mono); font-size: var(--fs--1); font-weight: 400; color: var(--muted); }
+  .regua-col > p { margin-top: 2px; font-size: var(--fs--2); color: var(--muted); }
+  .regua-lista { list-style: none; display: grid; gap: 8px; margin-top: var(--s-3); }
+  .regua-lista li {
+    max-width: none; padding: 10px 12px; border-radius: var(--r-2);
+    background: var(--surface); box-shadow: var(--e1);
+    font-size: var(--fs--2); color: var(--muted);
+  }
+  .regua-lista li b { display: block; font-size: var(--fs--1); color: var(--text); }
+  .regua-lista li.mexeu { animation: regua-entra 520ms var(--e-expo); }
+  @keyframes regua-entra { from { transform: translateY(8px); opacity: .2; } }
+  @media (prefers-reduced-motion: reduce) { .regua-lista li.mexeu { animation: none; } .regua-barra i { transition: none; } }
+  .regua-fonte { margin-top: var(--s-5); font-size: var(--fs--2); color: var(--muted); max-width: 72ch; }
+  .regua-fonte b { color: var(--text); }
+
+  .estudo { display: grid; gap: var(--s-4); margin-top: var(--s-7); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+  .estudo div { padding: var(--s-4); border-radius: var(--r-3); border: 1px solid var(--border); background: var(--surface); }
+  .estudo .n { display: block; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-4); line-height: 1; letter-spacing: -0.03em; color: var(--brand); }
+  .estudo .d { display: block; margin-top: 8px; font-size: var(--fs--1); color: var(--muted); }
+  .estudo-nota { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--muted); }
+
+  .antes-depois { display: grid; gap: var(--s-6); margin-top: var(--s-7); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+  .antes-depois h3 { font-size: var(--fs-1); color: var(--brand); }
+
+  /* ============================================================
+     4. Como liga: o briefing que o comercial recebe
+     ============================================================ */
+  .recebe { display: grid; gap: var(--s-6); margin-top: var(--s-6); align-items: start; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  @media (max-width: 900px) { .recebe { grid-template-columns: 1fr; } }
+  .recebe h3 { font-size: var(--fs-1); margin-bottom: var(--s-3); color: var(--brand); }
+  .recebe figcaption { margin-top: 10px; font-size: var(--fs--2); color: var(--muted); }
+  .recebe-intro { margin: -6px 0 var(--s-3); font-size: var(--fs--1); color: var(--muted); }
+
+  .notif { margin: 0; }
+  .notif-caixa { border-radius: var(--r-4); overflow: hidden; background: var(--mock-bg); box-shadow: 0 30px 60px -24px var(--mock-sombra), 0 0 0 1px var(--mock-linha); }
+  .notif-topo { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--mock-head); color: var(--mock-txt); font-size: var(--fs--1); }
+  .notif-topo time { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs--2); color: var(--mock-txt-fraco); }
+  .notif-ic { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--wa-green); color: var(--mock-txt); }
+  .notif-ic svg { width: 15px; height: 15px; }
+  .notif-corpo { padding: 16px; }
+  .notif-bolha { background: var(--mock-bolha-in); color: var(--mock-txt); border-radius: var(--r-3); border-top-left-radius: 4px; padding: 14px 16px; }
+  .notif-tit { font-weight: 700; font-size: var(--fs--1); }
+  .notif-dados { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin-top: 10px; font-size: var(--fs--2); }
+  .notif-dados dt { color: var(--mock-txt-fraco); }
+  .briefing { display: grid; gap: 8px; margin-top: 12px; }
+  .briefing > div { padding: 8px 10px 8px 12px; border-radius: var(--r-2); background: var(--mock-veu); border-left: 2px solid var(--b, var(--mock-linha)); }
+  .briefing b { display: block; font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--b); }
+  .briefing p { margin-top: 2px; font-size: var(--fs--2); color: var(--mock-txt); line-height: 1.45; }
+  .briefing .b-dor  { --b: var(--mock-azul); }
+  .briefing .b-preo { --b: var(--mock-ambar); }
+  .briefing .b-sim  { --b: var(--mock-ok); }
+  .briefing .b-nao  { --b: var(--mock-vermelho); }
+  .notif-acoes { display: grid; grid-template-columns: 1fr 1fr; margin-top: 12px; border-top: 1px solid var(--mock-linha); }
+  .notif-acoes span { text-align: center; padding-top: 10px; font-size: var(--fs--2); font-weight: 600; color: var(--mock-azul); }
+
+  /* A lista do comercial: hoje e com o assistente */
+  .dia { display: grid; gap: var(--s-3); }
+  .dia-cartao { border-radius: var(--r-4); background: var(--surface); box-shadow: var(--e2); overflow: hidden; }
+  .dia-cartao h4 { padding: 12px 16px; font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--muted); border-bottom: 1px solid var(--hairline); }
+  .dia-cartao.depois h4 { color: var(--ok-texto); background: color-mix(in oklab, var(--verde) 8%, var(--bg)); }
+  .dia-cartao ol { list-style: none; }
+  .dia-cartao li { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 10px 16px; border-bottom: 1px solid var(--hairline); font-size: var(--fs--2); color: var(--muted); max-width: none; }
+  .dia-cartao li:last-child { border-bottom: 0; }
+  .dia-cartao li time { font-family: var(--font-mono); color: var(--faint); }
+  .dia-cartao li b { color: var(--text); font-weight: 600; }
+  .dia-cartao li .et { padding: 2px 8px; border-radius: var(--r-pill); font-size: var(--fs--2); white-space: nowrap; }
+  .et.mau { background: var(--danger-wash); color: var(--danger); }
+  .et.bom { background: var(--ok-wash); color: var(--ok-texto); }
+  .et.meh { background: var(--warn-wash); color: var(--warn-texto); }
+
+  /* O seguimento: quem não responde não fica esquecido */
+  .seguimento-t { margin-top: var(--s-7); font-size: var(--fs-2); max-width: 26ch; color: var(--brand); }
+  .seguimento { list-style: none; display: grid; gap: 0; margin-top: var(--s-5); grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; }
+  .seguimento::before { content: ""; position: absolute; left: 0; right: 0; top: 9px; height: 2px; background: linear-gradient(90deg, var(--accent), hsl(var(--verde-escuro-hsl))); opacity: .6; }
+  .seguimento li { position: relative; padding: 30px 12px 0 0; max-width: none; }
+  .seguimento li::before { content: ""; position: absolute; left: 0; top: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .seguimento li.pos::before { border-color: var(--verde-texto); }
+  .seguimento b { display: block; font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--acento-texto); }
+  .seguimento li.pos b { color: var(--verde-texto); }
+  .seguimento span { display: block; margin-top: 4px; font-size: var(--fs--2); color: var(--muted); }
+  @media (max-width: 860px) {
+    .seguimento { grid-template-columns: 1fr; gap: var(--s-3); padding-left: 28px; }
+    .seguimento::before { left: 7px; right: auto; top: 6px; bottom: 6px; width: 2px; height: auto; background: linear-gradient(180deg, var(--accent), hsl(var(--verde-escuro-hsl))); }
+    .seguimento li { padding: 0; }
+    .seguimento li::before { left: -28px; top: 3px; }
+  }
+  .relatorio { margin-top: var(--s-6); padding: var(--s-4) var(--s-5); border-radius: var(--r-3); border: 1px dashed var(--border-strong); font-size: var(--fs--1); color: var(--muted); max-width: 70ch; background: var(--surface); }
+  .relatorio b { color: var(--text); }
+
+  /* ---------- 5. Do lado da Primewatt ---------- */
+  .lado { margin-top: var(--s-6); border-radius: var(--r-4); overflow: hidden; background: var(--surface); box-shadow: var(--e2); }
+  .lado-linha { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); gap: var(--s-4); padding: var(--s-4) var(--s-5); border-bottom: 1px solid var(--hairline); }
+  .lado-linha:last-child { border-bottom: 0; }
+  @media (max-width: 720px) { .lado-linha { grid-template-columns: 1fr; gap: 6px; padding: var(--s-3) var(--s-4); } }
+  .lado-linha h3 { font-size: var(--fs-0); color: var(--brand); }
+  .lado-linha h3 small { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--ok-texto); }
+  .lado-linha h3 small.muda { color: var(--acento-texto); }
+  .lado-linha p { font-size: var(--fs--1); color: var(--muted); }
+  .lado-linha p b { color: var(--text); }
+
+  /* ---------- 6. Limites e prova ---------- */
+  .regras { display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+  .regras article { border-radius: var(--r-4); padding: var(--s-5); background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--ok); }
+  .regras article.pessoa { border-top-color: var(--warn); }
+  .regras article.nunca { border-top-color: var(--danger); }
+  .regras h3 { font-size: var(--fs-1); color: var(--brand); }
+  .regras ul { margin-top: var(--s-3); padding-left: 1.1em; display: grid; gap: 8px; font-size: var(--fs--1); color: var(--muted); }
+  .regras li::marker { color: var(--faint); }
+  .limites-fecho { margin-top: var(--s-5); font-style: italic; color: var(--muted); }
+
+  .prova {
+    margin-top: var(--s-7); display: grid; gap: var(--s-5); align-items: center;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: var(--s-6) var(--s-5); border-radius: var(--r-4);
+    background:
+      radial-gradient(ellipse 60% 90% at 4% 50%, hsl(var(--verde-hsl) / .18), transparent 70%),
+      radial-gradient(ellipse 50% 80% at 100% 0%, hsl(var(--accent-hsl) / .08), transparent 70%),
+      var(--surface);
+    box-shadow: var(--e3);
+  }
+  @media (max-width: 720px) { .prova { grid-template-columns: 1fr; } }
+  .prova-num { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-6); line-height: .9; letter-spacing: -0.04em; color: var(--brand); }
+  .prova-num small { display: block; margin-top: 10px; font-family: var(--font-body); font-size: var(--fs--1); font-weight: 500; letter-spacing: 0; color: var(--muted); max-width: 16ch; line-height: 1.35; }
+  .prova-k { font-family: var(--font-mono); font-size: var(--fs--2); text-transform: uppercase; letter-spacing: var(--tr-label); color: var(--verde-texto); }
+  .prova h3 { margin-top: 8px; font-size: var(--fs-2); color: var(--brand); }
+  .prova p { margin-top: var(--s-3); font-size: var(--fs--1); color: var(--muted); }
+  .prova p b { color: var(--text); }
+  .prova-nota { font-size: var(--fs--2) !important; color: var(--faint) !important; }
+
+  /* ---------- 7. Investimento ---------- */
+  .ancora {
+    margin-top: var(--s-5); max-width: 46ch;
+    font-family: var(--font-display); font-size: var(--fs-2); font-weight: 700; line-height: 1.25; letter-spacing: -0.02em; color: var(--brand);
+  }
+  .ancora b { color: var(--acento-texto); font-weight: 700; }
+  .fatura { width: 100%; max-width: 54rem; margin-top: var(--s-6); border-collapse: collapse; border-radius: var(--r-4); overflow: hidden; background: var(--surface); box-shadow: var(--e3); }
+  .fatura th, .fatura td { padding: 18px 22px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--hairline); }
+  .fatura thead th { font-family: var(--font-mono); font-size: var(--fs--2); font-weight: 400; color: var(--muted); background: var(--surface-2); }
+  .fatura tbody th { font-family: var(--font-display); font-size: var(--fs-1); font-weight: 700; color: var(--brand); }
+  .fatura tbody th small { display: block; margin-top: 8px; font-family: var(--font-body); font-size: var(--fs--1); font-weight: 400; color: var(--muted); line-height: 1.55; max-width: 56ch; }
+  .fatura td.num { text-align: right; white-space: nowrap; font-family: var(--font-display); font-size: var(--fs-2); font-weight: 700; color: var(--brand); }
+  .fatura td.num i { font-style: normal; font-family: var(--font-body); font-size: var(--fs--1); font-weight: 500; color: var(--muted); }
+  .fatura tfoot th, .fatura tfoot td { font-size: var(--fs--1); color: var(--muted); padding-block: 10px; border-bottom: 0; }
+  .fatura tfoot td.num { font-size: var(--fs--1); font-family: var(--font-mono); font-weight: 400; color: var(--muted); }
+  .fatura tfoot tr.total th, .fatura tfoot tr.total td { color: var(--text); font-weight: 700; padding-bottom: 18px; }
+  .fatura tfoot tr:first-child th, .fatura tfoot tr:first-child td { padding-top: 16px; }
+  @media (max-width: 560px) {
+    .fatura th, .fatura td { padding: 14px; }
+    .fatura td.num { font-size: var(--fs-1); }
+  }
+  .retorno { margin-top: var(--s-4); max-width: 62ch; font-size: var(--fs--1); color: var(--muted); }
+  .retorno b { color: var(--text); }
+
+  /* ---------- 8. Cronograma ---------- */
+  .fases { list-style: none; display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); counter-reset: f; }
+  .fases li { max-width: none; padding: var(--s-4); border-radius: var(--r-3); background: var(--surface); border: 1px solid var(--border); position: relative; overflow: hidden; }
+  .fases li::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, var(--accent), hsl(var(--verde-hsl))); opacity: calc(.35 + var(--k, 0) * .2); }
+  .fases .quando { font-family: var(--font-mono); font-size: var(--fs--2); color: var(--acento-texto); }
+  .fases .o-que { display: block; margin-top: 6px; font-family: var(--font-display); font-weight: 700; font-size: var(--fs-1); color: var(--brand); }
+  .fases p { margin-top: 8px; font-size: var(--fs--1); color: var(--muted); }
+  .doc-nota { margin-top: var(--s-4); font-size: var(--fs--2); color: var(--muted); max-width: 70ch; }
+
+  .fora { margin-top: var(--s-7); padding-top: var(--s-5); border-top: 1px solid var(--hairline); }
+  .fora h3 { font-size: var(--fs-1); color: var(--brand); }
+  .fora > p { margin-top: 6px; color: var(--muted); font-size: var(--fs--1); }
+  .fora ul { list-style: none; display: grid; gap: var(--s-3); margin-top: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+  .fora li { max-width: none; font-size: var(--fs--1); color: var(--muted); padding: var(--s-3) var(--s-4); border-radius: var(--r-3); border: 1px solid var(--border); background: var(--surface); }
+  .fora li b { display: block; color: var(--text); margin-bottom: 4px; }
+
+  /* ============================================================
+     9. FECHO: o painel de energia
+     ============================================================ */
+  .fecho { position: relative; isolation: isolate; overflow: clip; background: var(--bg); color: var(--text); }
+  .fecho::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 70% at 90% 10%, hsl(var(--verde-hsl) / .22), transparent 70%),
+      radial-gradient(ellipse 45% 60% at 0% 100%, hsl(var(--accent-hsl) / .10), transparent 70%),
+      linear-gradient(180deg, var(--bg), var(--bg-soft));
+  }
+  .fecho h2 { font-size: var(--fs-5); line-height: var(--lh-h1); letter-spacing: var(--tr-h1); max-width: 16ch; color: var(--brand); }
+  .fecho .lead { color: var(--text); }
+  .passos-fecho { list-style: none; display: grid; gap: var(--s-4); margin-top: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); max-width: 64rem; }
+  .passos-fecho li { max-width: none; padding: var(--s-4); border-radius: var(--r-3); background: color-mix(in oklab, var(--surface) 88%, transparent); backdrop-filter: blur(10px); box-shadow: var(--e2); }
+  .passos-fecho .n { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--brand-solido); color: var(--on-brand-solido); font-family: var(--font-mono); font-size: var(--fs--2); }
+  .passos-fecho b { display: block; margin-top: 12px; font-family: var(--font-display); font-size: var(--fs-1); font-weight: 700; line-height: 1.25; color: var(--brand); }
+  .passos-fecho p { margin-top: 6px; font-size: var(--fs--1); color: var(--muted); }
+  .fecho-acoes { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
+  .fecho-acoes .btn { min-height: 52px; padding-inline: 28px; font-size: var(--fs-0); }
+  .fecho-contacto { margin-top: var(--s-5); font-size: var(--fs--1); color: var(--muted); }
+  .fecho-contacto a { color: var(--text); font-weight: 600; display: inline-block; padding-block: 4px; }
+
+  /* ---------- Rodapé ---------- */
+  .rodape .container { display: grid; gap: 6px; }
+  .rodape-marca { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: var(--text); font-family: var(--font-display); font-weight: 700; }
+  .rodape-marca img { height: 24px; width: auto; }
+  .disclaimer { display: block; margin-top: 8px; font-size: var(--fs--2); color: var(--faint); max-width: 80ch; }
+}
+
+/* ============================================================
+   BOTÕES E BARRA NESTA PALETA
+   Botão sólido em azul-petróleo com tinta branca, como o "Contactos"
+   do site da Primewatt.
+   ============================================================ */
+.btn-primario { background: var(--brand-solido); color: var(--on-brand-solido); box-shadow: 0 12px 28px -12px hsl(var(--brand-hsl) / .7); }
+@media (hover: hover) and (pointer: fine) { .btn-primario:hover { background: var(--brand-700); } }
+.btn-secundario { color: var(--brand); border-color: var(--border-strong); background: var(--surface); }
+.nav { background: color-mix(in oklab, var(--bg) 88%, transparent); }
+.nav a.nav-cta { background: var(--brand-solido); color: var(--on-brand-solido); }
+.nav a.nav-cta[aria-current="true"] { background: var(--brand-700); color: var(--on-brand-solido); }
+.nav a[aria-current="true"] { box-shadow: inset 0 -2px 0 var(--verde-texto); }
+.saltar { background: var(--brand-solido); color: var(--on-brand-solido); }
+
+/* O texto em gradiente: do azul eléctrico ao verde-energia do logótipo,
+   escurecidos o suficiente para se lerem em branco. */
+.g-brilho {
+  color: var(--acento-texto);
+  background: linear-gradient(100deg in oklab, hsl(var(--brand2-hsl)) 0%, hsl(var(--ciano-hsl)) 50%, hsl(var(--verde-escuro-hsl)) 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* A atmosfera clara: verde-energia em cima à direita, azul em baixo */
+.atmosfera--claro .atmosfera__glow--1 { --glow-cor: var(--verde-hsl); --glow-op: .20; top: -20%; right: -12%; left: auto; }
+.atmosfera--claro .atmosfera__glow--2 { --glow-cor: var(--accent-hsl); --glow-op: .09; top: auto; bottom: -24%; left: -16%; }
+.atmosfera--claro .atmosfera__glow--3 { --glow-cor: var(--verde-hsl); --glow-op: .08; top: 40%; }
+
+/* ---------- Impressão ---------- */
+@media print {
+  .cr, .fluxo, .regua-escolha, .energia { display: none !important; }
+}
+
+/* ============================================================
+   AFINAÇÃO DOS COMPONENTES PARTILHADOS
+   Sem @layer de propósito: o deck.css não está em camada, e CSS sem
+   camada ganha sempre à CSS em camada.
+   ============================================================ */
+.cr-head .k, .cr-reason-head .t, .cr-step-k,
+.fluxo-node .k, .fluxo-chans .lbl, .cr-tab {
+  text-transform: none; letter-spacing: 0;
+  font-family: var(--font-mono); font-size: var(--fs--2);
+}
+.cr-tab { border-radius: var(--r-pill); font-weight: 500; min-height: 40px; }
+.cr-tab.active { color: var(--brand); }
+.cr-tabs { justify-content: flex-start; }
+.cr-shell, .fluxo-shell { border-radius: var(--r-4); background: var(--surface); box-shadow: var(--e3); }
+.cr-head h3 { font-size: var(--fs-1); font-weight: 700; color: var(--brand); }
+.cr-head p, .cr-step-l { font-size: var(--fs--1); }
+.cr-reason { border-radius: var(--r-3); min-height: 520px; }
+.cr-step { opacity: 0.55; border-radius: var(--r-3); }
+.cr-step.on { opacity: 1; background: var(--surface); }
+
+/* O chat do momento uau: o WhatsApp claro que o cliente vê */
+.cr-chat { border-radius: var(--r-3); background: var(--wa-fundo); }
+.cr-chat-head, .cr-input { background: var(--wa-barra); }
+.cr-chat-who b, .cr-chat-who strong { color: var(--wa-tinta); font-size: var(--fs--1); }
+.cr-chat-who small { color: var(--wa-fraco); }
+.cr-chat-ava { background: var(--brand-solido); color: var(--on-brand-solido); font-size: 0.64rem; letter-spacing: 0.02em; }
+.cr-row.agent .cr-bubble { background: var(--wa-in); color: var(--wa-tinta); box-shadow: 0 1px 1px hsl(var(--sh) / .10); }
+.cr-row.client .cr-bubble { background: var(--wa-out); color: var(--wa-tinta); box-shadow: 0 1px 1px hsl(var(--sh) / .10); }
+.cr-bubble { border-radius: var(--r-3); font-size: var(--fs--1); white-space: pre-line; }
+.cr-bubble .time, .cr-bubble time { color: var(--wa-fraco) !important; opacity: 1; }
+.cr-typing { background: var(--wa-in); }
+.cr-sys { background: var(--wa-in); color: var(--wa-fraco); }
+.cr-input span { background: var(--wa-in); color: var(--wa-fraco); }
+.cr-chat-who small, .cr-progress, .cr-sys, .cr-bubble time,
+.fluxo-node p, .fluxo-note { font-size: var(--fs--2); }
+.fluxo-node { border-radius: var(--r-3); padding: 18px 12px; }
+.fluxo-node .ic { border-radius: var(--r-2); }
+.fluxo-node strong { font-size: var(--fs--1); line-height: 1.3; color: var(--brand); }
