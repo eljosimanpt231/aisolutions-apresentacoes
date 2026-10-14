@@ -1,0 +1,528 @@
+{
+  "site": "https://www.lisabonastreetwear.pt/",
+  "dominio": "lisabonastreetwear.pt",
+  "titulo": "Lisabona Streetwear",
+  "descricao": "Sneakers & Streetwear Exclusivos | Produtos 100% Autênticos",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://www.lisabonastreetwear.pt/cdn/shop/files/lisabona_transparent_black.png?v=1732844802&width=150",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome",
+      "transparente ou vectorial"
+    ],
+    "analise": {
+      "largura": 150,
+      "altura": 30,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://www.lisabonastreetwear.pt/cdn/shop/files/LOGO_TRANSPARENTE_MENU_2.png?v=1732844802&width=150",
+      "pontos": 13,
+      "motivos": [
+        "diz logo",
+        "liga à página inicial",
+        "no cabeçalho",
+        "no topo",
+        "à esquerda",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 30,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.lisabonastreetwear.pt/cdn/shop/files/tpstars.png?crop=center&height=49&v=1712836823&width=200",
+      "pontos": 12,
+      "motivos": [
+        "diz logo",
+        "liga à página inicial",
+        "no cabeçalho",
+        "tem o nome",
+        "parece foto"
+      ],
+      "analise": {
+        "largura": 200,
+        "altura": 49,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              192,
+              128
+            ],
+            "parte": 81
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              192,
+              224,
+              224
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              64,
+              192,
+              160
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 74,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 66
+          },
+          {
+            "rgb": [
+              0,
+              192,
+              128
+            ],
+            "parte": 33
+          },
+          {
+            "rgb": [
+              0,
+              96,
+              32
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              0,
+              160,
+              96
+            ],
+            "parte": 0
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://cdn.shopify.com/s/files/1/0758/0588/4765/files/tpstars_3.svg?v=1742232670",
+      "pontos": 8,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "transparente ou vectorial"
+      ],
+      "analise": {
+        "largura": 2658,
+        "altura": 664,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              192,
+              128
+            ],
+            "parte": 84
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              64,
+              192,
+              160
+            ],
+            "parte": 0
+          },
+          {
+            "rgb": [
+              32,
+              192,
+              128
+            ],
+            "parte": 0
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://cdn.shopify.com/static/images/flags/pt.svg?width=40",
+      "pontos": 6,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "no topo",
+        "transparente ou vectorial",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 200,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              0,
+              0
+            ],
+            "parte": 56
+          },
+          {
+            "rgb": [
+              0,
+              96,
+              0
+            ],
+            "parte": 35
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              0
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              0
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "json-ld",
+      "src": "https://www.lisabonastreetwear.pt/cdn/shop/files/LOGO_TRANSPARENTE_MENU_2_2004x.png?v=1732844802",
+      "pontos": 5,
+      "motivos": [
+        "declarado como logo nos dados estruturados"
+      ],
+      "analise": {
+        "largura": 2004,
+        "altura": 401,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.png",
+    "src": "https://www.lisabonastreetwear.pt/cdn/shop/files/audemars_piguet_swatch.png?v=1779281894&width=1512"
+  },
+  "paleta": [],
+  "tokens": null,
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--COLOR-PRIMARY-OPPOSITE",
+      "#ffffff"
+    ],
+    [
+      "--COLOR-PRIMARY-LIGHTEN-DARKEN-ALPHA-20",
+      "rgba(26, 26, 26, 0.2)"
+    ],
+    [
+      "--COLOR-PRIMARY-LIGHTEN-DARKEN-ALPHA-30",
+      "rgba(26, 26, 26, 0.3)"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-BG",
+      "#000000"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-TEXT",
+      "#ffffff"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-TEXT-ALPHA-10",
+      "rgba(255, 255, 255, 0.1)"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-BORDER",
+      "#000000"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-HOVER",
+      "rgba(255, 255, 255, 0.5)"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-LIGHTEN-DARKEN",
+      "#1a1a1a"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-ALPHA-05",
+      "rgba(0, 0, 0, 0.05)"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-ALPHA-10",
+      "rgba(0, 0, 0, 0.1)"
+    ],
+    [
+      "--PRIMARY-BUTTONS-COLOR-ALPHA-50",
+      "rgba(0, 0, 0, 0.5)"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Inter Tight",
+    "corpo": "Inter",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700;800;900&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "Alemanha (EUR€)",
+      "Bélgica (EUR€)",
+      "Dinamarca (DKKkr.)",
+      "Espanha (EUR€)",
+      "França (EUR€)",
+      "Irlanda (EUR€)",
+      "Itália (EUR€)",
+      "Portugal (EUR€)",
+      "Suíça (EUR€)",
+      "Acessórios",
+      "Adidas",
+      "Adidas Ballerina",
+      "Adidas BW Army",
+      "Adidas Campus 00s",
+      "Adidas Gazelle Indoor",
+      "Adidas Samba",
+      "Adidas SL 72",
+      "Adidas Spezial",
+      "Adidas X Bape",
+      "Entrega 48h",
+      "Sneakers",
+      "Adidas",
+      "Samba",
+      "Spezial",
+      "XLG",
+      "Gazelle",
+      "BW Army",
+      "Campus",
+      "SL 72",
+      "Adidas X Bape",
+      "Air Jordan",
+      "Jordan 1",
+      "Jordan 3",
+      "Jordan 4",
+      "Jordan X Travis Scott",
+      "New Balance",
+      "9060",
+      "204L",
+      "2002R",
+      "550",
+      "Nike",
+      "Mind",
+      "Air Force 1",
+      "Air Max",
+      "Vomero",
+      "Dunk Low",
+      "Dunk SB",
+      "Nike X Jacquemus",
+      "Yeezy",
+      "350",
+      "700",
+      "Foam Runner",
+      "Slides",
+      "UGG",
+      "Tazz",
+      "Tasman",
+      "Lowmel",
+      "Ultra Mini Boot",
+      "Golden Goose",
+      "Maison Mihara",
+      "Numeriś",
+      "Vestuário",
+      "Marcas",
+      "Ami Paris",
+      "Corteiz",
+      "Denim Tears",
+      "Essentials",
+      "Jacquemus",
+      "Palace",
+      "Supreme",
+      "Sweatshirts",
+      "Denim Tears",
+      "Corteiz",
+      "Essentials",
+      "Jacquemus",
+      "Palace",
+      "Supreme",
+      "T-Shirts",
+      "Ami Paris",
+      "Corteiz",
+      "Essentials",
+      "Jacquemus",
+      "Supreme",
+      "Calças",
+      "Corteiz",
+      "Denim Tears",
+      "Essentials",
+      "Supreme",
+      "CALÇÕES",
+      "Corteiz",
+      "Denim Tears",
+      "Essentials",
+      "Casacos",
+      "Adidas",
+      "Denim Tears",
+      "Palace",
+      "Supreme",
+      "Perfumes",
+      "Montale",
+      "Sospiro",
+      "Xerjoff",
+      "Nishane",
+      "Clive Christian",
+      "Acessórios",
+      "Carteiras",
+      "Goyard",
+      "Relógios",
+      "Audermas Piguet X Swatch",
+      "Omega X Swatch",
+      "Casio",
+      "Laarvee",
+      "Collectibles",
+      "Labubus",
+      "Descontos Até 50%",
+      "Alemanha (EUR€)",
+      "Bélgica (EUR€)",
+      "Dinamarca (DKKkr.)",
+      "Espanha (EUR€)",
+      "França (EUR€)",
+      "Irlanda (EUR€)",
+      "Itália (EUR€)",
+      "Portugal (EUR€)",
+      "Suíça (EUR€)",
+      "Acessórios",
+      "Adidas",
+      "Adidas Ballerina",
+      "Adidas BW Army",
+      "Adidas Campus 00s",
+      "Adidas Gazelle Indoor",
+      "Adidas Samba",
+      "Adidas SL 72",
+      "Adidas Spezial",
+      "Adidas X Bape"
+    ],
+    "titulos": [
+      "Consentimento de cookies",
+      "País",
+      "País",
+      "Descontos Até 50%",
+      "Vestuário",
+      "Adidas Spezial",
+      "Adidas Samba",
+      "Adidas SL 72",
+      "Travis Scott x Air Jordan",
+      "Opiniões dos Nossos Clientes",
+      "Autenticidade Garantida",
+      "Envios Rápidos & Seguros",
+      "Trocas e Devoluções",
+      "Pague em 3x sem Juros",
+      "País"
+    ],
+    "tratamento": "indefinido"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático.",
+    "Logótipo pequeno (150px de largura): no hero fica esborratado acima de 75px CSS em ecrãs retina.",
+    "O site não tem cor de marca forte (só neutros). Manter a paleta do estilo escolhido e deixar a marca aparecer no logótipo e nas fotos."
+  ]
+}

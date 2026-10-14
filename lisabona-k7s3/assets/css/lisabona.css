@@ -1,0 +1,82 @@
+/* Lisabona: streetwear, preto e branco, areia das sneakers como marca */
+body { font-family: 'Inter', system-ui, sans-serif; }
+h1, h2, h3, .num, .price { font-family: 'Inter Tight', 'Inter', sans-serif; letter-spacing: -0.02em; }
+
+/* barra */
+.topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; gap: 18px; padding: 12px 22px; background: hsl(240 24% 5% / 0.78); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.logo-chip { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
+.logo-chip img { height: 18px; width: auto; }
+.topnav { display: flex; gap: 18px; margin-left: auto; align-items: center; }
+.topnav a { color: var(--muted); text-decoration: none; font-size: 0.86rem; padding: 8px 2px; }
+.topnav a:hover { color: var(--text); }
+.topnav .avancar { background: var(--brand); color: var(--on-brand); padding: 8px 16px; border-radius: 999px; font-weight: 600; }
+@media (max-width: 880px) { .topnav a:not(.avancar) { display: none; } }
+.hero { padding-top: 120px; }
+
+/* hero com a fotografia da loja */
+.hero-foto { margin-top: 34px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); position: relative; }
+.hero-foto img { display: block; width: 100%; height: auto; aspect-ratio: 1512 / 567; object-fit: cover; }
+.hero-foto figcaption { position: absolute; left: 18px; bottom: 14px; font-size: 0.78rem; color: hsl(0 0% 100% / 0.85); background: hsl(240 24% 5% / 0.55); padding: 6px 12px; border-radius: 999px; }
+
+/* o que ouvimos */
+.ouvido { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 34px; text-align: left; }
+.ouvido .card p { color: var(--muted); font-size: 0.95rem; margin-top: 8px; }
+.citacao { margin: 30px auto 0; max-width: 760px; font-size: 1.15rem; line-height: 1.5; color: var(--text); font-style: italic; }
+.citacao small { display: block; margin-top: 8px; font-style: normal; color: var(--muted); font-size: 0.85rem; }
+
+/* galeria de mensagens WhatsApp (no tom da Lisabona) */
+.modulo-tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 30px; }
+.modulo-tabs button { background: var(--surface); color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 10px 18px; font: inherit; font-size: 0.9rem; cursor: pointer; min-height: 44px; }
+.modulo-tabs button[aria-selected="true"] { background: var(--brand); color: var(--on-brand); border-color: var(--brand); font-weight: 600; }
+.modulo-painel { display: none; margin-top: 30px; }
+.modulo-painel.ativo { display: block; }
+.modulo-intro { max-width: 720px; margin: 0 auto 26px; color: var(--muted); text-align: center; }
+.wa-galeria { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); align-items: start; }
+.wa-tel { background: #efeae2; border-radius: 22px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-md); text-align: left; }
+.wa-topo { background: #075e54; color: #fff; display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
+.wa-topo .av { width: 34px; height: 34px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-weight: 800; color: #111; font-size: 0.78rem; border: 2px solid #111; }
+.wa-topo b { display: block; font-size: 0.92rem; }
+.wa-topo small { font-size: 0.72rem; opacity: 0.85; }
+.wa-corpo { padding: 14px 12px 16px; display: flex; flex-direction: column; gap: 8px; min-height: 120px; }
+.wa-dia { align-self: center; background: #fff; color: #54656f; font-size: 0.7rem; padding: 3px 10px; border-radius: 8px; }
+.wa-b { background: #fff; color: #111b21; border-radius: 10px; max-width: 92%; font-size: 0.86rem; line-height: 1.42; box-shadow: 0 1px 1px rgba(0,0,0,0.08); overflow: hidden; }
+.wa-b .t { padding: 8px 10px 2px; white-space: pre-line; }
+.wa-b .h { display: block; text-align: right; font-size: 0.66rem; color: #667781; padding: 0 10px 6px; }
+.wa-b img { display: block; width: 100%; max-height: 170px; object-fit: contain; background: #fff; padding: 10px 0 0; }
+.wa-b .rod { font-size: 0.7rem; color: #667781; padding: 0 10px 4px; }
+.wa-b .bt { border-top: 1px solid #e9edef; color: #027eb5; text-align: center; font-weight: 600; font-size: 0.84rem; padding: 9px 10px; }
+.wa-b.eu { align-self: flex-end; background: #d9fdd3; }
+.wa-legenda { margin-top: 10px; font-size: 0.82rem; color: var(--muted); text-align: center; }
+.wa-legenda b { color: var(--text); }
+
+/* casos */
+.casos { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 34px; text-align: left; }
+.casos .card .setor { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--acento-texto); }
+.casos .card h3 { margin-top: 8px; }
+.casos .card p { color: var(--muted); font-size: 0.93rem; margin-top: 8px; }
+.casos .card .dado { margin-top: 14px; font-family: 'Inter Tight', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text); }
+.casos .card .dado small { display: block; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); }
+.casos .card a { display: inline-block; margin-top: 12px; color: var(--acento-texto); font-size: 0.88rem; }
+
+/* investimento */
+.inv-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin-top: 30px; text-align: left; }
+.inv-item { position: relative; }
+.inv-item .tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.inv-item h3 { margin-top: 8px; font-size: 1.1rem; }
+.inv-item .valor { font-family: 'Inter Tight', sans-serif; font-size: 2rem; font-weight: 700; margin-top: 10px; }
+.inv-item p { color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
+.inv-total { margin-top: 22px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.inv-total .card { border-color: hsl(var(--brand-hsl) / 0.5); }
+.inv-total .valor { font-family: 'Inter Tight', sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--brand); margin-top: 6px; }
+.inv-nota { margin-top: 18px; color: var(--muted); font-size: 0.86rem; text-align: center; }
+
+/* conta de valor */
+.valor-linhas { max-width: 760px; margin: 26px auto 0; text-align: left; }
+.valor-linhas li { color: var(--muted); margin-top: 8px; }
+
+/* correções do QA */
+.btn-primary, .cta-final .btn-primary { background: var(--brand) !important; color: var(--on-brand) !important; }
+.unibox .ub-row.out .ub-bubble-time { color: rgba(0, 0, 0, 0.72); }
+.wa-b .h { color: #54656f; }
+.center > p, .modulo-intro { max-width: 66ch; margin-left: auto; margin-right: auto; }
+.logo-chip { min-height: 44px; }
