@@ -3,7 +3,7 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 h1, h2, h3, .num, .price { font-family: 'Inter Tight', 'Inter', sans-serif; letter-spacing: -0.02em; }
 
 /* barra */
-.topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; gap: 18px; padding: 12px 22px; background: hsl(240 24% 5% / 0.78); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; gap: 18px; padding: 12px 22px; background: hsl(0 0% 100% / 0.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .logo-chip { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
 .logo-chip img { height: 18px; width: auto; }
 .topnav { display: flex; gap: 18px; margin-left: auto; align-items: center; }
@@ -16,7 +16,7 @@ h1, h2, h3, .num, .price { font-family: 'Inter Tight', 'Inter', sans-serif; lett
 /* hero com a fotografia da loja */
 .hero-foto { margin-top: 34px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); position: relative; }
 .hero-foto img { display: block; width: 100%; height: auto; aspect-ratio: 1512 / 567; object-fit: cover; }
-.hero-foto figcaption { position: absolute; left: 18px; bottom: 14px; font-size: 0.78rem; color: hsl(0 0% 100% / 0.85); background: hsl(240 24% 5% / 0.55); padding: 6px 12px; border-radius: 999px; }
+.hero-foto figcaption { position: absolute; left: 18px; bottom: 14px; font-size: 0.78rem; color: #fff; background: hsl(240 24% 5% / 0.8); padding: 6px 12px; border-radius: 999px; }
 
 /* o que ouvimos */
 .ouvido { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 34px; text-align: left; }
@@ -76,7 +76,24 @@ h1, h2, h3, .num, .price { font-family: 'Inter Tight', 'Inter', sans-serif; lett
 
 /* correções do QA */
 .btn-primary, .cta-final .btn-primary { background: var(--brand) !important; color: var(--on-brand) !important; }
+.inv-total .valor { color: var(--text); }
 .unibox .ub-row.out .ub-bubble-time { color: rgba(0, 0, 0, 0.72); }
 .wa-b .h { color: #54656f; }
 .center > p, .modulo-intro { max-width: 66ch; margin-left: auto; margin-right: auto; }
 .logo-chip { min-height: 44px; }
+
+/* tema claro: o chat do momento uau passa a WhatsApp claro */
+.cr-chat { background: #efeae2; }
+.cr-chat-head, .cr-input { background: #f0f2f5; }
+.cr-chat-who b, .cr-chat-who strong { color: #111b21; }
+.cr-chat-who small { color: #54656f; }
+.cr-chat-ava { background: #111; color: #fff; }
+.cr-row.agent .cr-bubble { background: #fff; color: #111b21; box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+.cr-row.client .cr-bubble { background: #d9fdd3; color: #111b21; box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+.cr-bubble .time, .cr-bubble time { color: #54656f !important; }
+.cr-typing { background: #fff; }
+.cr-sys { background: #fff; color: #54656f; }
+.cr-input span { background: #fff; color: #54656f; }
+.cr-tab:hover { border-color: var(--border); }
+.cr-step.on { background: #fff; }
+.unibox .ub-user .ub-user-badge { color: #fff; }

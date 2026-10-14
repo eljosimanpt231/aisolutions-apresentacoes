@@ -7,37 +7,37 @@
    Combina com shared/deck/deck.css (polish + componentes).
    ============================================================ */
 :root {
-  --brand-hsl: 38 48% 70%;      /* areia das sneakers (bone) */
-  --accent-hsl: 168 90% 44%;     /* teal do agente, manter */
+  --brand-hsl: 240 10% 8%;      /* preto Lisabona (logótipo e botões do site) */
+  --accent-hsl: 168 85% 26%;     /* teal do agente, manter */
   --brand: hsl(var(--brand-hsl));
   --accent: hsl(var(--accent-hsl));
-  --on-brand: hsl(240 24% 6%);
+  --on-brand: hsl(0 0% 100%);
   /* fundo sólido sob texto branco: o teal a 44% só dá 1.9:1. Ao trocar
      a marca, manter este tom com luminosidade à volta de 26%. */
-  --brand-solido: hsl(38 40% 26%);
-  --acento-texto: hsl(168 80% 52%);
-  --ok-texto: hsl(150 62% 58%);
+  --brand-solido: hsl(240 10% 8%);
+  --acento-texto: hsl(168 85% 26%);
+  --ok-texto: hsl(150 62% 28%);
 
-  --bg: hsl(240 24% 5%);
-  --bg-soft: hsl(240 22% 7%);
-  --surface: hsl(240 20% 10%);
-  --surface-2: hsl(240 18% 13%);
-  --border: hsl(240 16% 20%);
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(240 10% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(240 10% 96%);
+  --border: hsl(240 8% 88%);
 
-  --text: hsl(240 20% 95%);
-  --muted: hsl(240 10% 63%);
+  --text: hsl(240 12% 8%);
+  --muted: hsl(240 6% 38%);
 
   --success-hsl: 150 65% 46%; --success: hsl(var(--success-hsl));
   --danger-hsl: 356 80% 62%;  --danger: hsl(var(--danger-hsl));
   --warning-hsl: 40 90% 55%;  --warning: hsl(var(--warning-hsl));
 
   --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
-  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(168 78% 62%));
-  --grad-cta: linear-gradient(160deg, hsl(240 24% 7%), hsl(var(--brand-hsl) / 0.32));
+  --grad-text: linear-gradient(120deg, hsl(240 10% 8%), hsl(168 85% 28%));
+  --grad-cta: linear-gradient(160deg, hsl(240 10% 97%), hsl(168 60% 92%));
 
-  --shadow-sm: 0 1px 3px hsl(240 60% 1% / 0.5);
-  --shadow-md: 0 10px 32px hsl(240 60% 1% / 0.55);
-  --shadow-lg: 0 24px 64px hsl(240 60% 1% / 0.65);
+  --shadow-sm: 0 1px 3px hsl(240 20% 10% / 0.08);
+  --shadow-md: 0 10px 32px hsl(240 20% 10% / 0.10);
+  --shadow-lg: 0 24px 64px hsl(240 20% 10% / 0.14);
 
   --radius: 16px;
   --radius-lg: 24px;

@@ -27,7 +27,7 @@
 <body>
 
 <div class="grelha" aria-hidden="true"></div>
-<div class="atmosfera" aria-hidden="true">
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
   <div class="atmosfera__glow atmosfera__glow--1"></div>
   <div class="atmosfera__glow atmosfera__glow--2"></div>
   <div class="atmosfera__glow atmosfera__glow--3"></div>
@@ -35,7 +35,7 @@
 
 <header class="topbar">
   <a class="logo-chip" href="#topo" aria-label="Início">
-    <img src="assets/img/logo-branco.png" alt="Lisabona">
+    <img src="assets/img/marca/logo.png" alt="Lisabona">
     <span>× AI Solutions</span>
   </a>
   <nav class="topnav" aria-label="Secções">
@@ -56,7 +56,7 @@
       <h1 data-linhas>Cada mensagem respondida na hora.<br><span class="g-brilho">Cada carrinho com segunda oportunidade.</span></h1>
       <p class="lead" data-acto="2" data-entra="sobe" style="margin-top:18px">
         Um agente que fala como a Lisabona, conhece o catálogo e o stock da loja, responde
-        no WhatsApp, Instagram e email a qualquer hora, e trabalha os carrinhos e as encomendas
+        no WhatsApp, Instagram e Facebook a qualquer hora, e trabalha os carrinhos e as encomendas
         para trazer mais faturação. A vossa equipa fica com o que precisa mesmo de uma pessoa.
       </p>
       <div class="grid-3" data-acto="3" data-entra="sobe" style="margin-top:38px">
@@ -329,10 +329,10 @@ Respondes com a morada completa? Assim segue hoje.</div><span class="h">09:12</s
   <section id="unibox">
     <div class="container center">
       <span class="kicker">Unibox</span>
-      <h2>Email, Instagram e WhatsApp <span class="g-brilho">numa só caixa</span></h2>
+      <h2>WhatsApp, Instagram e Facebook <span class="g-brilho">numa só caixa</span></h2>
       <p class="lead">A equipa vê tudo no mesmo sítio, sabe o que o agente já respondeu e entra só quando é preciso. Incluída no agente.</p>
       <div class="unibox-frame reveal" style="margin-top:34px; text-align:left">
-        <div class="unibox" id="lbInbox"></div>
+        <div class="unibox" id="lbInbox" style="--ub-accent:#00d4aa; --ub-accent-fg:#04130f"></div>
       </div>
     </div>
   </section>
@@ -340,11 +340,11 @@ Respondes com a morada completa? Assim segue hoje.</div><span class="h">09:12</s
   {
     "brand": "Lisabona Streetwear",
     "teamName": "Apoio Lisabona",
-    "teamEmail": "apoio@lisabona",
+    "teamEmail": "Lisabona Streetwear",
     "teamInitials": "LB",
     "agentName": "Agente Lisabona",
     "accounts": [],
-    "channels": ["email", "instagram", "facebook", "whatsapp"],
+    "channels": ["instagram", "facebook", "whatsapp"],
     "labels": {
       "encomenda": { "name": "Encomenda", "color": "#d9b77e", "priority": 0 },
       "stock": { "name": "Stock e tamanhos", "color": "#00d4aa", "priority": 1 },
@@ -374,9 +374,9 @@ Respondes com a morada completa? Assim segue hoje.</div><span class="h">09:12</s
           { "sender": "client", "text": "sim manda", "time": "15:22" }
         ],
         "attributes": [ { "key": "Carrinho", "value": "Mexico 66, 42.5" }, { "key": "Recuperado", "value": "Sim" } ] },
-      { "id": 4, "name": "Joana Pereira", "initials": "JP", "email": "joana@exemplo.pt", "channel": "email", "label": "equipa", "tab": "unassigned", "timeAgo": "3h", "unread": 1, "preview": "Recebi um tamanho diferente do que encomendei",
+      { "id": 4, "name": "joana.prr", "initials": "JP", "channel": "instagram", "label": "equipa", "tab": "unassigned", "timeAgo": "3h", "unread": 1, "preview": "Recebi um tamanho diferente do que encomendei",
         "messages": [
-          { "sender": "client", "text": "Boa tarde, recebi as sapatilhas num 39 e encomendei o 40. Como faço a troca?", "time": "11:02" },
+          { "sender": "client", "text": "boa tarde, recebi as sapatilhas num 39 e encomendei o 40. como faço a troca?", "time": "11:02" },
           { "sender": "agent", "isAI": true, "text": "Olá Joana, lamentamos o engano. Passei o teu caso à equipa, que te responde ainda hoje com os passos da troca.", "time": "11:03" },
           { "sender": "system", "text": "Conversa encaminhada para a equipa: troca por erro no envio.", "time": "11:03" }
         ],
@@ -409,8 +409,7 @@ Respondes com a morada completa? Assim segue hoje.</div><span class="h">09:12</s
     "channels": [
       { "icon": "whatsapp", "label": "WhatsApp" },
       { "icon": "message", "label": "Instagram" },
-      { "icon": "message", "label": "Facebook" },
-      { "icon": "message", "label": "Email" }
+      { "icon": "message", "label": "Facebook" }
     ],
     "nodes": [
       { "icon": "message", "title": "Chega a mensagem", "detail": "Ou um evento da loja: carrinho, encomenda, envio.", "tone": "brand" },
@@ -476,7 +475,7 @@ Respondes com a morada completa? Assim segue hoje.</div><span class="h">09:12</s
       <span class="kicker">Investimento</span>
       <h2>Por módulos, <span class="g-brilho">escolhem o que entra</span></h2>
       <div class="inv-grid">
-        <div class="card inv-item reveal"><span class="tag">Base</span><h3>Agente Lisabona + Unibox</h3><div class="valor">3.200€</div><p>Atendimento no WhatsApp, Instagram, Facebook e email, ligado à Shopify, com a caixa única para a equipa.</p></div>
+        <div class="card inv-item reveal"><span class="tag">Base</span><h3>Agente Lisabona + Unibox</h3><div class="valor">3.200€</div><p>Atendimento no WhatsApp, Instagram e Facebook, ligado à Shopify, com a caixa única para a equipa.</p></div>
         <div class="card inv-item reveal"><span class="tag">Módulo</span><h3>Upsell</h3><div class="valor">1.700€</div><p>Depois da encomenda, depois da entrega e para voltar a falar com quem já comprou.</p></div>
         <div class="card inv-item reveal"><span class="tag">Módulo</span><h3>Carrinho abandonado</h3><div class="valor">1.400€</div><p>Dois toques no WhatsApp, em conjunto com o email que já enviam.</p></div>
         <div class="card inv-item reveal"><span class="tag">Módulo</span><h3>Confirmação de moradas</h3><div class="valor">500€</div><p>Confirma a morada com o cliente quando deteta um problema, antes do envio.</p></div>
