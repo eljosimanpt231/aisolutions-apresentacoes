@@ -171,22 +171,22 @@
       },
       {
         "title": "Upsell depois da compra",
-        "subtitle": "Antes de a encomenda seguir, o agente sugere o par certo e junta-o sem novos portes.",
+        "subtitle": "Antes de a encomenda seguir, o agente sugere o par certo, com portes grátis, e junta-o à encomenda.",
         "chat": [
           { "sender": "system", "text": "Encomenda #4817 confirmada: Zip Hoodie Island Wreath", "time": "14:03" },
           { "sender": "agent", "text": "Olá Diogo! A tua encomenda **#4817** está confirmada e vai começar a ser preparada. Até seguir para envio ainda dá para juntares mais um artigo sem pagares portes outra vez. As **sweatpants Island Wreath** pretas são o par do zip hoodie que levaste, para fechares o conjunto.", "time": "14:03", "passo": 3 },
           { "sender": "client", "text": "tens em L?", "time": "14:20", "passo": 4 },
-          { "sender": "agent", "text": "Temos, sim. Junto-as à #4817 e pagas só a diferença. Preferes MB Way ou referência Multibanco?", "time": "14:20" },
-          { "sender": "client", "text": "mbway", "time": "14:21" },
-          { "sender": "agent", "text": "Enviei o pedido MB Way para o teu número. Assim que pagares, seguem as duas peças juntas.", "time": "14:21", "passo": 6 }
+          { "sender": "agent", "text": "Temos, sim. Aqui tens o link já com o L e o cupão de portes grátis: links.lisabonastreetwear.pt/wreath-l-p0rt. Pagas como preferires e seguem as duas peças juntas.", "time": "14:20", "passo": 5 },
+          { "sender": "client", "text": "feito", "time": "14:26" },
+          { "sender": "agent", "text": "Recebido, Diogo! Juntámos as sweatpants à #4817 e seguem as duas peças na mesma caixa.", "time": "14:27", "passo": 6 }
         ],
         "steps": [
           { "icon": "database", "label": "Deteta a encomenda nova" },
           { "icon": "list", "label": "Escolhe o complemento pelas regras da Lisabona" },
           { "icon": "send", "label": "Oferece antes de a encomenda seguir" },
           { "icon": "search", "label": "Confirma o L em stock" },
-          { "icon": "shield", "label": "Gera o pagamento (configurável)" },
-          { "icon": "check", "label": "Junta à encomenda original" }
+          { "icon": "send", "label": "Envia o link com cupão de portes grátis" },
+          { "icon": "check", "label": "Junta a compra à encomenda original" }
         ]
       }
     ]
