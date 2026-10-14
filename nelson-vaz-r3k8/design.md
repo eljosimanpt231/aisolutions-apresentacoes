@@ -16,7 +16,7 @@
 - fluxo (shared/deck)
 
 ## Regras do Diogo
-Sem CTA, sem casos de estudo, preço no fim e só "+ IVA", fases depois do preço. Valores decididos pelo Diogo a 13/10/2026: 7.500 € + IVA (4.500 na adjudicação + 3.000 no início dos testes) e 200 € + IVA por mês, a partir da entrada em produção. O resumo de 07/10 dizia entre 7.000 e 8.000 €.
+Sem CTA, sem casos de estudo, preço no fim e só "+ IVA", fases depois do preço. Valores decididos pelo Diogo a 13/10/2026: 6.000 € + IVA (3.500 na adjudicação + 2.500 no início dos testes; era 7.500 até 14/10) e 200 € + IVA por mês, a partir da entrada em produção. O resumo de 07/10 dizia entre 7.000 e 8.000 €.
 
 ## Verdade
 - Factos da reunião de 06/10: 8 pessoas, 4 CC, faturas Makro/Recheio desagregadas à mão para o food cost, reconciliação valor a valor, balancetes que o cliente deita fora, 80% do tempo em trabalho operacional, preocupação com a API, decisão em outubro, avenças e emails como fase seguinte.
