@@ -1,0 +1,56 @@
+/* ============================================================
+   Electrolaranjo: tema claro (fundo branco, pedido do Manuel)
+   Base: deck-dark em variante clara (como a Lisabona).
+     --brand-hsl  = navy do site e dos botões da Electrolaranjo
+     --accent-hsl = azul dos botões do site (o agente fala nesta cor)
+   ============================================================ */
+:root {
+  --brand-hsl: 248 91% 13%;      /* navy Electrolaranjo (#0b0340) */
+  --accent-hsl: 208 100% 40%;    /* azul Electrolaranjo (#006dcc) */
+  --brand2-hsl: 186 72% 40%;     /* ciano do logótipo, escurecido para ler em branco */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(248 91% 13%);
+  --acento-texto: hsl(208 100% 36%);
+  --ok-texto: hsl(150 62% 28%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(240 30% 97.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(240 30% 96%);
+  --border: hsl(240 18% 89%);
+
+  --text: hsl(248 40% 10%);
+  --muted: hsl(245 10% 38%);
+
+  --success-hsl: 150 65% 40%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 74% 52%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 40 90% 50%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.12), transparent 62%);
+  --grad-text: linear-gradient(120deg, hsl(248 91% 18%), hsl(208 100% 40%));
+  --grad-cta: linear-gradient(160deg, hsl(240 30% 97%), hsl(208 80% 93%));
+
+  --shadow-sm: 0 1px 3px hsl(248 40% 12% / 0.08);
+  --shadow-md: 0 10px 32px hsl(248 40% 12% / 0.10);
+  --shadow-lg: 0 24px 64px hsl(248 40% 12% / 0.14);
+
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 128px);
+}
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}

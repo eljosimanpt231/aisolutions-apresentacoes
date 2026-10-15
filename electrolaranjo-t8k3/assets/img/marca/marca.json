@@ -1,0 +1,465 @@
+{
+  "site": "https://electrolaranjo.com/servico/",
+  "dominio": "electrolaranjo.com",
+  "titulo": "Serviços – ElectroLaranjo – Iluminação, Material e Serviços Eléctricos – Açores",
+  "descricao": "",
+  "logotipoTexto": {
+    "texto": "SERVIÇOS",
+    "fonte": "Montserrat",
+    "peso": "600",
+    "cor": "rgb(255, 255, 255)",
+    "caixa": "uppercase",
+    "espacamento": "1px"
+  },
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://electrolaranjo.com/wp-content/uploads/2023/04/logo-horizontal-cores-claro.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 2107,
+      "altura": 494,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 69
+        },
+        {
+          "rgb": [
+            128,
+            128,
+            256
+          ],
+          "parte": 4
+        },
+        {
+          "rgb": [
+            256,
+            224,
+            64
+          ],
+          "parte": 4
+        },
+        {
+          "rgb": [
+            64,
+            224,
+            224
+          ],
+          "parte": 4
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://electrolaranjo.com/wp-content/uploads/2020/10/livro2.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 120,
+        "altura": 50,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://electrolaranjo.com/wp-content/uploads/2017/04/empresas-de-instala%C3%A7%C3%B5es-el%C3%A9tricas-848x400.jpg",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 848,
+        "altura": 400,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 15
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              160
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://electrolaranjo.com/wp-content/uploads/2017/03/1590777717151.jpg",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 626,
+        "altura": 417,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              192,
+              224
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              224
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              256,
+              0,
+              0
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              192
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://electrolaranjo.com/wp-content/uploads/2017/05/intrusao-1.jpg",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 429,
+        "altura": 291,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 34
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://electrolaranjo.com/wp-content/uploads/2021/12/paineis_02-720x420.jpg",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 720,
+        "altura": 420,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              64,
+              128
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              64,
+              96,
+              160
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              96,
+              128,
+              192
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              128,
+              160,
+              192
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://electrolaranjo.com/wp-content/uploads/Acores2030/BarraAssinaturaAcores2030UDE.png",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 9519,
+        "altura": 711,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 20
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              160
+            ],
+            "parte": 19
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              96
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 11
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://electrolaranjo.com/wp-content/uploads/2023/11/Servi%C3%A7os04.jpg"
+  },
+  "paleta": [
+    {
+      "hex": "#0b0340",
+      "hsl": "248 91% 13%",
+      "peso": 195300,
+      "onde": [
+        "botões",
+        "fundos",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#006dcc",
+      "hsl": "208 100% 40%",
+      "peso": 30971,
+      "onde": [
+        "botões"
+      ]
+    },
+    {
+      "hex": "#8080100",
+      "hsl": "240 100% 75%",
+      "peso": 4800,
+      "onde": [
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#100e040",
+      "hsl": "50 100% 63%",
+      "peso": 4800,
+      "onde": [
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#40e0e0",
+      "hsl": "180 72% 56%",
+      "peso": 4800,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "248 91% 13%",
+    "--accent-hsl": "208 100% 40%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 11%",
+  "variaveisDoTema": [
+    [
+      "--new-instead-black-color-secondary",
+      "#0f0c20"
+    ],
+    [
+      "--new-instead-black-color-secondary-rgbnum",
+      "15, 12, 32"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Montserrat",
+    "corpo": "Montserrat",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "A Empresa",
+      "Serviços",
+      "Catalogos",
+      "Energias Renovaveis",
+      "Fotovoltaicos",
+      "Bombas de Calor",
+      "Wallbox",
+      "Automatismos",
+      "Climatização",
+      "Ar Condicionado",
+      "Ventilação",
+      "Domótica",
+      "Iluminação",
+      "Técnica",
+      "Outdoor",
+      "Interior",
+      "Segurança",
+      "Controlo Acessos",
+      "Incêndio",
+      "Intrusão",
+      "Video Vigilância",
+      "Video Porteiros",
+      "Blog",
+      "Contactos",
+      "Loja"
+    ],
+    "titulos": [
+      "Arquivo: Serviços",
+      "Serviços",
+      "Instalações Electricas",
+      "AVAC – Ar Condicionados",
+      "Segurança Contra Incêndio",
+      "Manutenção Extintores",
+      "Iluminação de Emergência",
+      "Formação SCIE",
+      "Sistemas Alarmes Intrusão",
+      "Telecomunicações ITED / ITUR",
+      "Manutenção Postos de Transformação",
+      "Painéis Solares Fotovoltaicos",
+      "Termografica Instalações Eléctricas",
+      "Domótica KNX",
+      "Arquivo: Serviços"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura.",
+    "O site da lead é escuro: um deck escuro fica natural."
+  ]
+}
