@@ -1,0 +1,118 @@
+/* Novak Mediação Imobiliária: vermelho do símbolo do logótipo (--brand, #a3282a),
+   grafite do "novak" (--navy, #1e252c) e azul-ardósia como acento (--accent),
+   usado para tudo o que é "a pagar". Verde = a receber / recebido.
+   O perigo (atrasos) é laranja queimado, para não se confundir com a marca.
+   Tema claro por defeito; escuro com o botão no topo (data-theme). */
+:root {
+  --brand-hsl: 359 61% 40%;
+  --accent-hsl: 208 34% 40%;
+  --navy-hsl: 210 19% 15%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --navy: hsl(var(--navy-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --on-navy-hsl: 0 0% 100%;
+  --on-navy: hsl(var(--on-navy-hsl));
+
+  --bg: hsl(30 14% 97%);
+  --bg-soft: hsl(30 12% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(30 14% 97.5%);
+  --border: hsl(30 8% 87%);
+  --line: hsl(var(--navy-hsl) / 0.035);
+  --veil: hsl(30 14% 97% / 0.86);
+
+  --text: hsl(210 19% 13%);
+  --muted: hsl(210 9% 36%);
+  --faint: hsl(210 7% 48%);
+
+  --paper: hsl(0 0% 100%);
+  --paper-text: hsl(210 19% 13%);
+  --paper-muted: hsl(210 9% 38%);
+  --paper-line: hsl(30 8% 87%);
+
+  --success-hsl: 152 58% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 18 82% 44%;   --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 38%;  --warning: hsl(var(--warning-hsl));
+  /* estados das frações e dos lançamentos */
+  --verde-hsl: 152 52% 38%;   --verde: hsl(var(--verde-hsl));
+  --amarelo-hsl: 42 92% 48%;  --amarelo: hsl(var(--amarelo-hsl));
+  --vermelho-hsl: 18 82% 50%; --vermelho: hsl(var(--vermelho-hsl));
+  --receber-hsl: var(--success-hsl);
+  --pagar-hsl: var(--accent-hsl);
+
+  --grad-text: linear-gradient(100deg, hsl(var(--brand-hsl)), hsl(var(--brand-hsl) / 0.78) 60%, hsl(var(--navy-hsl)) 120%);
+  --grad-assin: linear-gradient(90deg, hsl(var(--brand-hsl)), hsl(var(--brand-hsl)) 30%, hsl(var(--navy-hsl)) 70%, hsl(var(--accent-hsl)));
+  --glass: linear-gradient(135deg, hsl(var(--brand-hsl) / 0.06), hsl(var(--navy-hsl) / 0.03) 45%, hsl(var(--accent-hsl) / 0.08));
+
+  --shadow-sm: 0 1px 2px hsl(var(--navy-hsl) / 0.07);
+  --shadow-md: 0 8px 24px hsl(var(--navy-hsl) / 0.09);
+  --shadow-lg: 0 22px 54px hsl(var(--navy-hsl) / 0.15);
+
+  --radius: 10px;
+  --radius-lg: 14px;
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --container: 1200px;
+  --section-pad: clamp(64px, 9vw, 120px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-hsl: 359 72% 62%;
+    --accent-hsl: 206 52% 64%;
+    --bg: hsl(210 22% 7%);
+    --bg-soft: hsl(210 18% 11%);
+    --surface: hsl(210 18% 10.5%);
+    --surface-2: hsl(210 16% 13%);
+    --border: hsl(210 12% 21%);
+    --line: hsl(0 0% 100% / 0.025);
+    --veil: hsl(210 22% 7% / 0.86);
+    --text: hsl(30 14% 94%);
+    --muted: hsl(30 6% 71%);
+    --faint: hsl(30 4% 58%);
+    --paper: hsl(210 16% 12%);
+    --paper-text: hsl(30 14% 94%);
+    --paper-muted: hsl(30 6% 71%);
+    --paper-line: hsl(210 12% 22%);
+    --success-hsl: 152 52% 52%;
+    --danger-hsl: 18 88% 62%;
+    --warning-hsl: 40 92% 58%;
+    --verde-hsl: 152 48% 46%;
+    --amarelo-hsl: 44 92% 56%;
+    --vermelho-hsl: 18 86% 60%;
+    --on-brand: hsl(210 22% 7%);
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 8px 24px hsl(0 0% 0% / 0.35);
+    --shadow-lg: 0 22px 54px hsl(0 0% 0% / 0.45);
+  }
+}
+:root[data-theme="dark"] {
+  --brand-hsl: 359 72% 62%;
+  --accent-hsl: 206 52% 64%;
+  --bg: hsl(210 22% 7%);
+  --bg-soft: hsl(210 18% 11%);
+  --surface: hsl(210 18% 10.5%);
+  --surface-2: hsl(210 16% 13%);
+  --border: hsl(210 12% 21%);
+  --line: hsl(0 0% 100% / 0.025);
+  --veil: hsl(210 22% 7% / 0.86);
+  --text: hsl(30 14% 94%);
+  --muted: hsl(30 6% 71%);
+  --faint: hsl(30 4% 58%);
+  --paper: hsl(210 16% 12%);
+  --paper-text: hsl(30 14% 94%);
+  --paper-muted: hsl(30 6% 71%);
+  --paper-line: hsl(210 12% 22%);
+  --success-hsl: 152 52% 52%;
+  --danger-hsl: 18 88% 62%;
+  --warning-hsl: 40 92% 58%;
+  --verde-hsl: 152 48% 46%;
+  --amarelo-hsl: 44 92% 56%;
+  --vermelho-hsl: 18 86% 60%;
+  --on-brand: hsl(210 22% 7%);
+  --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.3);
+  --shadow-md: 0 8px 24px hsl(0 0% 0% / 0.35);
+  --shadow-lg: 0 22px 54px hsl(0 0% 0% / 0.45);
+}
