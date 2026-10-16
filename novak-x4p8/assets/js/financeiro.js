@@ -60,12 +60,8 @@
   function avisa() { mudou.forEach(function (fn) { fn(); }); }
 
   /* ---------------- 2. Movimentos ---------------- */
-  var EMP = [
-    { id: 'E', n: 'Metro292 · Bloco E', real: true },
-    { id: 'L', n: 'Living I' },
-    { id: 'V', n: 'Velaris' },
-    { id: 'M', n: 'Metro292 · outros blocos' }
-  ];
+  var EMP = [{ id: 'E', n: 'Metro292 · Bloco E', real: true }];
+  var POR_IMPORTAR = ['Living I', 'Velaris', 'Matriz', 'São Vicente'];
   function movBlocoE() {
     var out = [], k = 0;
     FR.forEach(function (f) {
@@ -88,30 +84,16 @@
     });
     return out;
   }
-  function movIlustr() {
-    var out = [], i;
-    for (i = 0; i < 8; i++) out.push({ k: INI + i, e: 'L', t: 'CPCV (sinal e início da obra)', n: 1, r: 215000 * 0.03, p: 215000 * 0.03 * 0.3 });
-    out.push({ k: ym(2028, 10), e: 'L', t: 'Escritura', n: 9, r: 9 * 215000 * 0.01, p: 9 * 215000 * 0.01 * 0.3 });
-    out.push({ k: ym(2027, 3), e: 'V', t: 'CPCV (sinal e início da obra)', n: 1, r: 265000 * 0.03, p: 265000 * 0.03 * 0.35 });
-    out.push({ k: ym(2027, 7), e: 'V', t: 'Escritura', n: 2, r: 2 * 265000 * 0.01, p: 2 * 265000 * 0.01 * 0.35 });
-    for (i = 0; i < 12; i++) out.push({ k: INI + i, e: 'M', t: 'CPCV', n: 2, r: 2 * 152000 * 0.01, p: 2 * 152000 * 0.01 * 0.35 });
-    out.push({ k: ym(2027, 6), e: 'M', t: 'Início da obra', n: 8, r: 8 * 152000 * 0.02, p: 8 * 152000 * 0.02 * 0.35 });
-    out.push({ k: ym(2029, 3), e: 'M', t: 'Escritura', n: 39, r: 39 * 152000 * 0.01, p: 39 * 152000 * 0.01 * 0.35 });
-    return out;
-  }
-  function movimentos(filtro) {
-    var all = movBlocoE().concat(movIlustr());
-    return filtro && filtro !== 'T' ? all.filter(function (m) { return m.e === filtro; }) : all;
-  }
+  function movimentos() { return movBlocoE(); }
 
   /* ---------------- 3. Previsão ---------------- */
   (function () {
     var fEl = $('#pvFiltro'); if (!fEl) return;
-    var filtro = 'T', hor = '12';
-    fEl.innerHTML = '<button data-f="T" class="on">Todos</button>' + EMP.map(function (e) { return '<button data-f="' + e.id + '">' + e.n + '</button>'; }).join('');
-    fEl.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; filtro = b.dataset.f; $$('button', fEl).forEach(function (x) { x.classList.toggle('on', x === b); }); desenha(); });
+    var filtro = 'E', hor = 'all';
+    fEl.innerHTML = EMP.map(function (e) { return '<button data-f="' + e.id + '" class="on">' + e.n + '</button>'; }).join('') + POR_IMPORTAR.map(function (n) { return '<button type="button" disabled title="Entra quando importarmos a folha">' + n + ' <small>por importar</small></button>'; }).join('');
+    fEl.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b || b.disabled) return; filtro = b.dataset.f; $$('button', fEl).forEach(function (x) { x.classList.toggle('on', x === b); }); desenha(); });
     $('#pvHor').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; hor = b.dataset.h; $$('#pvHor button').forEach(function (x) { x.classList.toggle('on', x === b); }); desenha(); });
-    function fim() { return hor === '12' ? INI + 11 : hor === '2028' ? ym(2028, 12) : Math.max(ym(2029, 6), D.escr + 2); }
+    function fim() { return hor === '12' ? INI + 11 : hor === '2027' ? ym(2027, 12) : D.escr + 3; }
     function desenha() {
       var F = fim(), mv = movimentos(filtro).filter(function (m) { return m.k >= INI && m.k <= F; });
       var meses = []; for (var k = INI; k <= F; k++) meses.push({ k: k, r: {}, p: 0, rt: 0 });
@@ -320,12 +302,12 @@
       linhaM('CPCV', eu2(c.c[0]), stC, f.sinal && !f.pre.cpcv ? 'ok' : '') + linhaM('Início da obra', eu2(c.c[1]), stI, f.ini && !f.pre.ini ? 'ok' : '') + linhaM('Escritura', eu2(c.c[2]), stE) +
       (nov(f) ? '<h4>Partilha</h4><p class="fi-nota">Venda Novak: sem partilha.</p>' :
         '<h4>Partilha · ' + f.parc + '</h4>' +
-        linhaM('CPCV · ¼', eu2(c.p[0]), !f.sinal ? 'Com o CPCV' : f.pre.cpcv ? 'Pré-lançamento · a pagar' : f.pC ? 'Paga' : 'Sem fatura do parceiro', f.pC ? 'ok' : f.sinal && !f.pre.cpcv ? 'dev' : '') +
-        linhaM('Início · ½', eu2(c.p[1]), !f.ini ? 'Com o início' : f.pre.ini ? 'Pré-lançamento · a pagar' : f.pI ? 'Paga' : 'Sem fatura do parceiro', f.pI ? 'ok' : f.ini && !f.pre.ini ? 'dev' : '') +
+        linhaM('CPCV · ¼', eu2(c.p[0]), !f.sinal ? 'Com o CPCV' : f.pre.cpcv ? 'Pré-lançamento · a pagar' : f.pC ? 'Fatura do parceiro registada' : 'Sem fatura do parceiro', f.pC ? 'ok' : f.sinal && !f.pre.cpcv ? 'dev' : '') +
+        linhaM('Início · ½', eu2(c.p[1]), !f.ini ? 'Com o início' : f.pre.ini ? 'Pré-lançamento · a pagar' : f.pI ? 'Fatura do parceiro registada' : 'Sem fatura do parceiro', f.pI ? 'ok' : f.ini && !f.pre.ini ? 'dev' : '') +
         linhaM('Escritura · ¼', eu2(c.p[2]), stE)) +
       '<h4>Comissão interna · ' + Math.round(R.int * 100) + '% do que fica</h4>' +
-      linhaM('CPCV · ¼', eu2(c.h[0]), !f.sinal ? 'Com o CPCV' : f.pre.cpcv ? 'Pré-lançamento · a pagar' : f.hC ? 'Paga' : 'Por pagar', f.hC ? 'ok' : f.sinal && !f.pre.cpcv ? 'dev' : '') +
-      linhaM('Início · ½', eu2(c.h[1]), !f.ini ? 'Com o início' : f.pre.ini ? 'Pré-lançamento · a pagar' : f.hI ? 'Paga' : 'Por pagar', f.hI ? 'ok' : f.ini && !f.pre.ini ? 'dev' : '') +
+      linhaM('CPCV · ¼', eu2(c.h[0]), !f.sinal ? 'Com o CPCV' : f.pre.cpcv ? 'Pré-lançamento · a pagar' : f.hC ? 'Registada no ficheiro' : 'Sem registo', f.hC ? 'ok' : f.sinal && !f.pre.cpcv ? 'dev' : '') +
+      linhaM('Início · ½', eu2(c.h[1]), !f.ini ? 'Com o início' : f.pre.ini ? 'Pré-lançamento · a pagar' : f.hI ? 'Registada no ficheiro' : 'Sem registo', f.hI ? 'ok' : f.ini && !f.pre.ini ? 'dev' : '') +
       linhaM('Escritura · ¼', eu2(c.h[2]), stE) +
       '<p class="fi-nota">Valores sem IVA, calculados sobre o PVP do ficheiro. Faturas e datas do separador Comissões.</p>';
     g.classList.add('open'); g.setAttribute('aria-hidden', 'false');

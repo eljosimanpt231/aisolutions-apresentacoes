@@ -58,7 +58,7 @@
         <p class="lead" style="margin-top:18px">
           As folhas de cada bloco passam a uma só plataforma, com as regras de comissão que já usam, e a previsão de recebimentos e pagamentos
           aparece por bloco, por empreendimento ou de tudo junto. Quando a obra atrasa, muda-se a data e a previsão acompanha.
-          E os números de WhatsApp, o Instagram e o Facebook passam a ser uma só caixa, onde o Paulo distribui cada contacto à equipa.
+          E os números de WhatsApp, o Instagram e o Facebook passam a ser uma só caixa, com cada contacto entregue ao comercial pelas regras do Paulo.
         </p>
         <div class="stats">
           <div class="stat reveal"><div class="n"><span class="count" data-to="124">0</span> <small>frações</small></div><p>Só no Bloco E do Metro292, numa folha com 3 separadores ligados entre si.</p></div>
@@ -137,7 +137,8 @@
     <a class="dup" data-v="2"><i>▦</i>Frações<span class="badge-n">124</span></a>
     <a class="dup" data-v="3"><i>⇄</i>A receber e a pagar</a>
     <div class="grp">Contactos</div>
-    <a class="dup" data-v="4"><i>◉</i>Caixa unificada<span class="badge-n">6</span></a>
+    <a class="dup" data-v="4"><i>◉</i>Caixa unificada<span class="badge-n">5</span></a>
+    <a class="dup" data-v="5"><i>⇢</i>Regras de distribuição</a>
   </aside>
   <div class="main">
     <div class="app-head">
@@ -149,11 +150,11 @@
 
     <!-- 0. Previsão -->
     <div class="slide" id="s-prev" data-titulo="Previsão">
-      <div class="view-h"><div><span class="k">PREVISÃO · RECEBIMENTOS E PAGAMENTOS</span><h2>O que vão receber e pagar, mês a mês</h2><p>Todas as comissões a receber das promotoras e todas as partilhas e comissões internas a pagar, por bloco, por empreendimento ou de tudo junto. Passe o rato sobre um mês para ver de onde vem cada euro.</p></div><span class="estado info">Atualizado a 16/10 às 09:12</span></div>
-      <div class="sim">⚠ Simulação: o Bloco E usa as vossas 124 frações e as regras do ficheiro, com o PVP como valor de venda. Living I, Velaris e os outros blocos do Metro292 têm números ilustrativos, só para mostrar a vista de conjunto.</div>
+      <div class="view-h"><div><span class="k">PREVISÃO · RECEBIMENTOS E PAGAMENTOS</span><h2>O que vão receber e pagar, mês a mês</h2><p>As comissões a receber da promotora e as partilhas e comissões internas a pagar, por bloco, por empreendimento ou de tudo junto. Passe o rato sobre um mês para ver o detalhe.</p></div><span class="estado info">Atualizado a 16/10 às 09:12</span></div>
+      <div class="sim">⚠ Só o Bloco E, com as vossas 124 frações e as regras do ficheiro (PVP como valor de venda, porque essa coluna veio vazia). Os outros empreendimentos entram quando importarmos as folhas deles.</div>
       <div class="pv-bar">
         <div class="seg" id="pvFiltro"></div>
-        <div class="seg" id="pvHor"><button data-h="12" class="on">12 meses</button><button data-h="2028">Até dez 2028</button><button data-h="all">Tudo</button></div>
+        <div class="seg" id="pvHor"><button data-h="12">12 meses</button><button data-h="2027">Até dez 2027</button><button data-h="all" class="on">Até à escritura</button></div>
       </div>
       <div class="kpis k4" id="pvKpis"></div>
       <div class="panel" style="margin-top:14px">
@@ -209,8 +210,8 @@
 
     <!-- 4. Caixa unificada -->
     <div class="slide" id="s-cx" data-titulo="Caixa unificada">
-      <div class="view-h"><div><span class="k">CONTACTOS · CAIXA UNIFICADA</span><h2>Os 7 a 10 WhatsApp, o Instagram e o Facebook numa só caixa</h2><p>Uma aplicação em vez de cinco. O Paulo vê todas as conversas e atribui cada uma ao comercial com um clique; o que chega ao número de cada comercial fica com ele. Cada comercial vê as suas.</p></div><span class="estado ok">API oficial da Meta</span></div>
-      <div class="sim">⚠ Contactos fictícios e comerciais com nomes ilustrativos.</div>
+      <div class="view-h"><div><span class="k">CONTACTOS · CAIXA UNIFICADA</span><h2>Os 7 a 10 WhatsApp, o Instagram e o Facebook numa só caixa</h2><p>Uma aplicação em vez de cinco. Cada contacto que chega é entregue ao comercial pelas regras que o Paulo definir; o que não cabe em nenhuma regra fica com o Paulo para atribuir. Cada comercial vê as suas conversas.</p></div><span class="estado ok">Plataforma feita com a Meta</span></div>
+      <div class="sim">⚠ Contactos fictícios. As regras são exemplos: as reais são as que o Paulo nos der.</div>
       <div class="unibox" id="nvInbox" style="--ub-accent:#c0393b; --ub-accent-fg:#fff"></div>
       <script type="application/json" id="nvInbox-config">{
  "brand": "Novak",
@@ -225,11 +226,10 @@
   "all": "Todas"
  },
  "accounts": [
-  "Geral (Paulo)",
-  "Carlos",
-  "Inês",
-  "Rui",
-  "Sofia"
+  "Paulo Costa",
+  "Comercial A",
+  "Comercial B",
+  "Comercial C"
  ],
  "channels": [
   "whatsapp",
@@ -242,25 +242,20 @@
    "color": "#c0393b",
    "priority": 0
   },
-  "living": {
-   "name": "Living I",
+  "povoa": {
+   "name": "Póvoa de Varzim",
    "color": "#3f6e94",
    "priority": 1
   },
-  "velaris": {
-   "name": "Velaris",
+  "porto": {
+   "name": "Porto",
    "color": "#7a5ea8",
    "priority": 2
   },
-  "matriz": {
-   "name": "Matriz",
-   "color": "#2f8f6b",
+  "semregra": {
+   "name": "Sem regra",
+   "color": "#8a8f96",
    "priority": 3
-  },
-  "comprador": {
-   "name": "Comprador",
-   "color": "#c98a12",
-   "priority": 4
   }
  },
  "conversations": [
@@ -269,10 +264,10 @@
    "name": "Marta Ribeiro",
    "initials": "MR",
    "phone": "+351 91x xxx 214",
-   "account": "Geral (Paulo)",
+   "account": "Comercial A",
    "channel": "whatsapp",
    "label": "metro",
-   "tab": "unassigned",
+   "tab": "mine",
    "timeAgo": "4m",
    "unread": 1,
    "preview": "Ainda há T0 no Metro292? Qual o preço?",
@@ -281,110 +276,77 @@
      "sender": "client",
      "text": "Boa noite, vi o anúncio do Metro292. Ainda há T0? Qual o preço?",
      "time": "21:47"
-    }
-   ],
-   "attributes": [
-    {
-     "key": "Número",
-     "value": "WhatsApp geral"
-    },
-    {
-     "key": "Empreendimento",
-     "value": "Metro292"
-    }
-   ],
-   "notes": [
-    "Por atribuir: o Paulo escolhe o comercial."
-   ]
-  },
-  {
-   "id": 2,
-   "name": "Hugo Santos",
-   "initials": "HS",
-   "phone": "+351 91x xxx 007",
-   "account": "Geral (Paulo)",
-   "channel": "whatsapp",
-   "label": "metro",
-   "tab": "mine",
-   "timeAgo": "40m",
-   "unread": 0,
-   "preview": "Combinado, ligo-lhe amanhã às 10h.",
-   "messages": [
-    {
-     "sender": "client",
-     "text": "Tem apartamentos perto do metro em Vila do Conde?",
-     "time": "18:40"
     },
     {
      "sender": "system",
-     "text": "Paulo Costa atribuiu a conversa ao Carlos",
-     "time": "18:52"
-    },
-    {
-     "sender": "agent",
-     "text": "Boa tarde, Hugo! Sou o Carlos, da Novak. Temos o Metro292, junto à linha do metro. Posso ligar-lhe amanhã às 10h para lhe mostrar as frações disponíveis?",
-     "time": "18:55"
-    },
-    {
-     "sender": "client",
-     "text": "Pode, obrigado.",
-     "time": "19:02"
+     "text": "Regra \"Metro292\": atribuído ao Comercial A · aviso enviado",
+     "time": "21:47"
     }
    ],
    "attributes": [
     {
-     "key": "Atribuído a",
-     "value": "Carlos"
+     "key": "Chegou a",
+     "value": "WhatsApp do Paulo"
     },
     {
-     "key": "Empreendimento",
-     "value": "Metro292"
+     "key": "Regra",
+     "value": "Empreendimento Metro292"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": 2,
+   "name": "joao.pereira.pt",
+   "initials": "JP",
+   "account": "Comercial B",
+   "channel": "instagram",
+   "label": "povoa",
+   "tab": "mine",
+   "timeAgo": "18m",
+   "unread": 0,
+   "preview": "Combinado, até amanhã.",
+   "messages": [
+    {
+     "sender": "client",
+     "text": "Olá! Têm apartamentos na Póvoa de Varzim?",
+     "time": "10:12"
+    },
+    {
+     "sender": "system",
+     "text": "Regra \"Póvoa de Varzim\": atribuído ao Comercial B · aviso enviado",
+     "time": "10:12"
+    },
+    {
+     "sender": "agent",
+     "text": "Olá João! Temos, sim. Posso ligar-lhe amanhã de manhã para lhe mostrar as opções?",
+     "time": "10:31"
+    },
+    {
+     "sender": "client",
+     "text": "Combinado, até amanhã.",
+     "time": "10:40"
+    }
+   ],
+   "attributes": [
+    {
+     "key": "Chegou a",
+     "value": "Instagram Novak"
+    },
+    {
+     "key": "Regra",
+     "value": "Localização Póvoa de Varzim"
     }
    ],
    "notes": []
   },
   {
    "id": 3,
-   "name": "joao.pereira.pt",
-   "initials": "JP",
-   "account": "Inês",
-   "channel": "instagram",
-   "label": "living",
-   "tab": "mine",
-   "timeAgo": "18m",
-   "unread": 1,
-   "preview": "Ainda há T2 no Living I?",
-   "messages": [
-    {
-     "sender": "client",
-     "text": "Olá! Ainda há T2 no Living I?",
-     "time": "10:12"
-    },
-    {
-     "sender": "system",
-     "text": "Paulo Costa atribuiu a conversa à Inês",
-     "time": "10:20"
-    }
-   ],
-   "attributes": [
-    {
-     "key": "Atribuído a",
-     "value": "Inês"
-    },
-    {
-     "key": "Empreendimento",
-     "value": "Living I"
-    }
-   ],
-   "notes": []
-  },
-  {
-   "id": 4,
    "name": "Ricardo Lopes",
    "initials": "RL",
-   "account": "Rui",
+   "account": "Comercial C",
    "channel": "facebook",
-   "label": "velaris",
+   "label": "porto",
    "tab": "mine",
    "timeAgo": "3h",
    "unread": 0,
@@ -392,17 +354,17 @@
    "messages": [
     {
      "sender": "client",
-     "text": "Boa tarde, gostava de saber mais sobre o Velaris.",
+     "text": "Boa tarde, procuro um T1 no Porto.",
      "time": "15:02"
     },
     {
      "sender": "system",
-     "text": "Paulo Costa atribuiu a conversa ao Rui",
-     "time": "15:10"
+     "text": "Regra \"Porto\": atribuído ao Comercial C · aviso enviado",
+     "time": "15:02"
     },
     {
      "sender": "agent",
-     "text": "Boa tarde, Ricardo! Sou o Rui, da Novak. Ligo-lhe ainda hoje com as frações disponíveis do Velaris.",
+     "text": "Boa tarde, Ricardo! Ligo-lhe ainda hoje com as opções que temos no Porto.",
      "time": "15:14"
     },
     {
@@ -413,86 +375,94 @@
    ],
    "attributes": [
     {
-     "key": "Atribuído a",
-     "value": "Rui"
+     "key": "Chegou a",
+     "value": "Página do Facebook"
     },
     {
-     "key": "Origem",
-     "value": "Página do Facebook"
+     "key": "Regra",
+     "value": "Localização Porto"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": 4,
+   "name": "Sílvia Rocha",
+   "initials": "SR",
+   "phone": "+351 92x xxx 118",
+   "account": "Paulo Costa",
+   "channel": "whatsapp",
+   "label": "semregra",
+   "tab": "unassigned",
+   "timeAgo": "1h",
+   "unread": 1,
+   "preview": "Boa tarde, queria mais informações.",
+   "messages": [
+    {
+     "sender": "client",
+     "text": "Boa tarde, queria mais informações.",
+     "time": "14:20"
+    },
+    {
+     "sender": "system",
+     "text": "Nenhuma regra se aplica: fica com o Paulo para atribuir",
+     "time": "14:20"
+    }
+   ],
+   "attributes": [
+    {
+     "key": "Chegou a",
+     "value": "WhatsApp do Paulo"
+    },
+    {
+     "key": "Regra",
+     "value": "Nenhuma"
     }
    ],
    "notes": []
   },
   {
    "id": 5,
-   "name": "Sílvia Rocha",
-   "initials": "SR",
-   "phone": "+351 92x xxx 118",
-   "account": "Inês",
+   "name": "Hugo Santos",
+   "initials": "HS",
+   "phone": "+351 91x xxx 007",
+   "account": "Comercial A",
    "channel": "whatsapp",
-   "label": "matriz",
+   "label": "metro",
    "tab": "mine",
-   "timeAgo": "5h",
+   "timeAgo": "1d",
    "unread": 0,
-   "preview": "Pode ser na sexta de manhã.",
+   "preview": "Pode ligar amanhã às 10h.",
    "messages": [
     {
      "sender": "client",
-     "text": "Olá Inês, consegue mostrar-me as plantas do Matriz?",
-     "time": "11:20"
+     "text": "Tenho interesse no Metro292, em Vila do Conde.",
+     "time": "18:40"
+    },
+    {
+     "sender": "system",
+     "text": "Regra \"Metro292\": atribuído ao Comercial A · aviso enviado",
+     "time": "18:40"
     },
     {
      "sender": "agent",
-     "text": "Olá Sílvia! Claro. Pode ser numa visita ao escritório na Póvoa?",
-     "time": "11:31"
+     "text": "Boa tarde, Hugo! Quando posso ligar-lhe para lhe mostrar as frações disponíveis?",
+     "time": "18:55"
     },
     {
      "sender": "client",
-     "text": "Pode ser na sexta de manhã.",
-     "time": "11:40"
+     "text": "Pode ligar amanhã às 10h.",
+     "time": "19:02"
     }
    ],
    "attributes": [
     {
-     "key": "Número",
-     "value": "WhatsApp da Inês"
+     "key": "Chegou a",
+     "value": "WhatsApp do Paulo"
     },
     {
-     "key": "Empreendimento",
-     "value": "Matriz"
-    }
-   ],
-   "notes": [
-    "Chegou ao número da Inês: ficou com ela."
-   ]
-  },
-  {
-   "id": 6,
-   "name": "Cláudia Mendes",
-   "initials": "CM",
-   "phone": "+351 96x xxx 532",
-   "account": "Geral (Paulo)",
-   "channel": "whatsapp",
-   "label": "comprador",
-   "tab": "unassigned",
-   "timeAgo": "2h",
-   "unread": 1,
-   "preview": "Quando tenho de pagar a próxima prestação?",
-   "messages": [
-    {
-     "sender": "client",
-     "text": "Olá, comprei uma fração no Metro292. Quando tenho de pagar a próxima prestação?",
-     "time": "08:50"
-    }
-   ],
-   "attributes": [
-    {
-     "key": "Tipo",
-     "value": "Compradora"
-    },
-    {
-     "key": "Empreendimento",
-     "value": "Metro292"
+     "key": "Regra",
+     "value": "Empreendimento Metro292"
     }
    ],
    "notes": []
@@ -501,6 +471,23 @@
 }</script>
     </div>
 
+
+    <!-- 5. Regras de distribuição -->
+    <div class="slide" id="s-dist" data-titulo="Regras de distribuição">
+      <div class="view-h"><div><span class="k">CONTACTOS · REGRAS DE DISTRIBUIÇÃO</span><h2>As regras que hoje estão na cabeça do Paulo</h2><p>Por empreendimento, por localização ou por preço. Quando um contacto bate numa regra, o comercial recebe logo uma mensagem com o nome, o número e o que a pessoa escreveu, para entrar em contacto.</p></div><span class="estado ok">Sem respostas automáticas</span></div>
+      <div class="two w">
+        <div class="panel"><div class="panel-h"><b>Regras</b><span>exemplos, por ordem</span></div>
+          <table class="tbl" id="dsRegras"><thead><tr><th>Se</th><th>Valor</th><th>Vai para</th></tr></thead><tbody></tbody></table>
+          <p class="small" style="padding:10px 14px">Sem regra que se aplique, o contacto fica com o Paulo, que o atribui com um clique.</p>
+        </div>
+        <div class="panel"><div class="panel-h"><b>O que o comercial recebe</b><span>no WhatsApp dele</span></div>
+          <div class="panel-b"><div class="aviso-wa">
+            <div class="aw-h"><span class="aw-av">N</span><div><b>Novak · contactos</b><small>agora</small></div></div>
+            <div class="aw-b"><b>Novo contacto · Metro292</b><span>Marta Ribeiro · +351 91x xxx 214</span><span>WhatsApp, 21:47</span><q>Boa noite, vi o anúncio do Metro292. Ainda há T0? Qual o preço?</q><em>Entra em contacto.</em></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
   </div>
  </div>
 </section>
@@ -524,9 +511,9 @@
           { "icon": "check", "title": "Regista pagamentos", "detail": "A equipa marca o pagamento feito, como hoje na folha.", "tone": "teal" },
           { "icon": "book", "title": "Aplica as regras", "detail": "1% · 2% · 1%, partilha e comissão interna, com as exceções.", "tone": "teal" },
           { "icon": "calendar", "title": "Prevê o calendário", "detail": "Mês a mês, com as datas da obra que o Paulo ajusta.", "tone": "teal" },
-          { "icon": "message", "title": "Caixa unificada", "detail": "Os números e as páginas numa só caixa, por comercial.", "tone": "brand" }
+          { "icon": "message", "title": "Caixa unificada", "detail": "Os números e as páginas numa só caixa, distribuídos pelas regras do Paulo.", "tone": "brand" }
         ],
-        "note": "O X-IMO tem API. Se der acesso às frações e às vendas, as novas vendas entram sozinhas; se não, entram pela folha, como hoje. Validamos na primeira semana."
+        "note": "Se a API do X-IMO o permitir, a plataforma atualiza-se sempre que o X-IMO muda; se não, carrega-se o ficheiro e a previsão faz-se na mesma."
       }</script>
     </div>
   </div>
@@ -544,7 +531,7 @@
             <li>Gera o pré-lançamento quando se marca um pagamento feito</li>
             <li>Mostra a previsão de recebimentos e pagamentos, mês a mês, por bloco, por empreendimento ou de tudo</li>
             <li>Deixa ajustar as datas previstas da obra, bloco a bloco</li>
-            <li>Junta os números de WhatsApp, o Instagram e o Facebook numa só caixa, com atribuição por comercial</li>
+            <li>Junta os números de WhatsApp, o Instagram e o Facebook numa só caixa, e entrega cada contacto ao comercial pelas regras que o Paulo definir</li>
           </ul>
         </div>
         <div class="card ps reveal">
@@ -553,6 +540,7 @@
             <li>Registar os pagamentos feitos, quando a construtora os confirma</li>
             <li>Emitir as faturas: o pré-lançamento só passa a fatura quando a Novak a emite</li>
             <li>As datas previstas das obras</li>
+            <li>As regras de distribuição: quem fica com cada empreendimento, zona ou preço</li>
             <li>Responder aos contactos: quem fala com os clientes é a equipa</li>
           </ul>
         </div>
@@ -563,7 +551,7 @@
   <div class="slide folha" data-titulo="Investimento">
     <div class="container">
       <span class="eyebrow">Investimento</span>
-      <h2>Dentro do que falámos a 2 de outubro</h2>
+      <h2>O que falámos a 2 de outubro</h2>
       <div class="invest">
         <div class="preco reveal">
           <div class="lbl">Implementação</div>
@@ -572,35 +560,30 @@
             <div><b>Frações e regras</b>as folhas dos blocos em curso importadas, com as vossas regras</div>
             <div><b>Previsão financeira</b>mês a mês, por bloco, por empreendimento ou de tudo, com as datas da obra</div>
             <div><b>Contas a receber e a pagar</b>promotoras, parceiros e comissão interna</div>
-            <div><b>Caixa unificada</b>WhatsApp, Instagram e Facebook numa só caixa, por comercial</div>
+            <div><b>Caixa unificada e distribuição</b>WhatsApp, Instagram e Facebook numa só caixa, com as regras de distribuição</div>
           </div>
-          <div id="invTranches" class="tranches-fortes" style="margin-top:6px"></div>
           <div class="inv-total">Total da implementação <span id="invTotal"></span></div>
         </div>
         <div class="preco reveal">
-          <div class="lbl">Mensalidade, a partir da entrada em produção</div>
+          <div class="lbl">Mensalidade</div>
           <div class="val m" id="invMes"></div>
           <ul class="inclui">
-            <li>Alojamento da plataforma e da caixa unificada</li>
-            <li>Manutenção e correções</li>
-            <li>Ajustes às regras quando mudarem, e novos blocos</li>
-            <li>Suporte à equipa</li>
+            <li>Garantir que está tudo a funcionar</li>
+            <li>As correções que forem precisas</li>
           </ul>
         </div>
       </div>
-      <p class="fora">Fora deste valor: <b>as mensagens de WhatsApp que a Novak inicia</b> (modelos aprovados pela Meta) têm o custo da Meta, faturado pela Meta; responder a quem vos escreve não tem esse custo.</p>
     </div>
   </div>
 
-  <div class="slide folha" data-titulo="Como arrancamos">
+  <div class="slide folha" data-titulo="Próximos passos">
     <div class="container">
-      <span class="eyebrow">Como arrancamos</span>
-      <h2>Seis semanas, com os vossos blocos</h2>
-      <div class="gantt reveal" id="gantt"></div>
+      <span class="eyebrow">Próximos passos</span>
+      <h2>O que falta para fechar a proposta</h2>
       <div class="fases">
-        <div class="fase"><span class="k">SEMANA 1</span><h3>Folhas e regras</h3><ul><li>As folhas dos blocos em curso</li><li>Regras de cada promotora e parceiro, e a pergunta da coluna R</li><li>Validação da API do X-IMO</li></ul></div>
-        <div class="fase"><span class="k">SEMANAS 2 A 4</span><h3>Plataforma financeira</h3><ul><li>Frações, pagamentos e pré-lançamentos</li><li>Previsão com as datas da obra</li><li>Contas a receber e a pagar</li></ul></div>
-        <div class="fase"><span class="k">SEMANAS 4 A 6</span><h3>Caixa unificada e testes</h3><ul><li>Os números de WhatsApp, o Instagram e o Facebook ligados</li><li>Testes com os vossos dados</li><li>Formação da equipa</li></ul></div>
+        <div class="fase"><span class="k">DA VOSSA PARTE</span><h3>A lista do que querem ver</h3><ul><li>O que o Paulo quer ver na plataforma, com calma, por email</li><li>O que representa a coluna R da Tabela</li><li>As regras de distribuição: quem fica com cada empreendimento, zona ou preço</li></ul></div>
+        <div class="fase"><span class="k">EM CONJUNTO</span><h3>Segunda reunião</h3><ul><li>Vemos este protótipo juntos</li><li>O que é possível e o que não é</li><li>Afinamos o que falta</li></ul></div>
+        <div class="fase"><span class="k">DA NOSSA PARTE</span><h3>Proposta fechada</h3><ul><li>O valor final fecha-se com a lista de requisitos</li><li>Dentro do que falámos: à volta de 5.000 € + IVA</li></ul></div>
       </div>
     </div>
   </div>
@@ -608,7 +591,7 @@
 </main>
 
 <div class="carimbo" aria-label="Navegação">
-  <div class="meta"><small>Pág.</small><b id="folhaN">01 / 12</b></div>
+  <div class="meta"><small>Pág.</small><b id="folhaN">01 / 13</b></div>
   <div class="meta"><small>Secção</small><b id="folhaT">Capa</b></div>
   <div class="nav"><button data-prev aria-label="Anterior">‹</button><button data-next aria-label="Seguinte">›</button></div>
 </div>

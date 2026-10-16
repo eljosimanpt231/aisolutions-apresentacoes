@@ -203,3 +203,20 @@ select { font: 500 0.8rem var(--font-body); color: var(--text); background: var(
 /* Marcar pagamento feito (ficha da fração) */
 .fi-pagar { margin-left: 8px; font: 600 0.7rem var(--font-body); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--brand); background: var(--brand); color: var(--on-brand); cursor: pointer; white-space: nowrap; }
 .fi-pagar:hover { filter: brightness(1.08); }
+.seg button:disabled { opacity: 0.55; cursor: not-allowed; }
+.seg button small { font-size: 0.62rem; font-weight: 500; color: var(--faint); margin-left: 3px; }
+
+/* Aviso ao comercial (regras de distribuição) */
+.aviso-wa { max-width: 380px; margin: 4px auto; border: 1px solid var(--border); border-radius: 14px; background: var(--surface-2); box-shadow: var(--shadow-md); overflow: hidden; }
+.aw-h { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.aw-h b { display: block; font-size: 0.84rem; } .aw-h small { font-size: 0.7rem; color: var(--faint); }
+.aw-av { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--brand); color: var(--on-brand); font: 700 0.8rem var(--font-display); }
+.aw-b { padding: 12px 14px; display: grid; gap: 3px; font-size: 0.82rem; color: var(--muted); }
+.aw-b b { color: var(--text); font-size: 0.9rem; }
+.aw-b q { display: block; margin: 6px 0; padding: 8px 10px; border-left: 3px solid var(--brand); background: var(--surface); color: var(--text); quotes: none; }
+.aw-b em { font-style: normal; font-weight: 600; color: var(--brand); }
+#dsRegras select { padding: 5px 8px; font-size: 0.78rem; }
+.preco .val.m small:first-child { margin-right: 4px; }
+.inv-total { align-items: baseline; }
+.inv-total span { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--brand); }
+.inv-total span small { font-size: 0.8rem; color: var(--muted); margin-left: 4px; }

@@ -4,7 +4,8 @@
    2. Navegação por separadores e páginas
    3. Contadores
    4. Aviso (toast)
-   5. Investimento e cronograma
+   5. Regras de distribuição
+   6. Investimento
    ============================================================ */
 (function () {
   'use strict';
@@ -92,6 +93,8 @@
   }
   document.addEventListener('slide:show', function (e) { $$('.count', e.target).forEach(countUp); });
 
+
+
   function toast(t) {
     var el = $('#crmToast'); if (!el) return;
     el.textContent = t; el.classList.add('on');
@@ -99,24 +102,23 @@
   }
   window.nvToast = toast;
 
-  /* ---------------- 5. Investimento e cronograma ---------------- */
+  /* ---------------- 5. Regras de distribuição ---------------- */
+  (function () {
+    var tb = $('#dsRegras tbody'); if (!tb) return;
+    var PESSOAS = ['Paulo Costa', 'Comercial A', 'Comercial B', 'Comercial C'];
+    var R = [['Preço', 'acima de 1.000.000 €', 'Paulo Costa'], ['Empreendimento', 'Metro292', 'Comercial A'], ['Localização', 'Póvoa de Varzim', 'Comercial B'], ['Localização', 'Porto', 'Comercial C']];
+    tb.innerHTML = R.map(function (r, i) {
+      return '<tr><td><b>' + r[0] + '</b></td><td>' + r[1] + '</td><td><select data-i="' + i + '" aria-label="Responsável">' +
+        PESSOAS.map(function (p) { return '<option' + (p === r[2] ? ' selected' : '') + '>' + p + '</option>'; }).join('') + '</select></td></tr>';
+    }).join('');
+    tb.addEventListener('change', function (e) { var s = e.target.closest('select'); if (s) toast('A partir do próximo contacto, "' + R[+s.dataset.i][1] + '" vai para ' + s.value + '.'); });
+  })();
+
+  /* ---------------- 6. Investimento ---------------- */
   (function () {
     var I = window.APRESENTACAO.investimento;
     $('#invTotal').innerHTML = eu(I.total) + '<small>+ IVA</small>';
-    $('#invMes').innerHTML = eu(I.mensal) + '<small>/mês + IVA</small>';
-    $('#invTranches').innerHTML = I.tranches.map(function (t, i) {
-      return '<div class="tr"><span class="n">' + (i + 1) + '</span><span>' + t[0] + '<small>' + t[1] + '</small></span><b>' + eu(t[2]) + '<small>+ IVA</small></b></div>'; }).join('');
-    var N = 6, sem = '<span></span>'.repeat(N);
-    var bar = function (cls, a, b, txt) { return '<div class="g-bar ' + cls + '" style="left:calc(' + (a - 1) + ' / ' + N + ' * 100% + 3px);width:calc(' + (b - a + 1) + ' / ' + N + ' * 100% - 6px)">' + txt + '</div>'; };
-    var ms = function (s, txt) { return '<div class="g-ms' + (s > 4.5 ? ' fim' : '') + '" style="left:calc(' + s + ' / ' + N + ' * 100%)"><em>' + txt + '</em></div>'; };
-    var T = I.tranches;
-    $('#gantt').innerHTML =
-      '<div class="g-meses"><div>SEMANAS</div><div><b>Semanas 1 a 3<small>dados e plataforma</small></b><b>Semanas 4 a 6<small>caixa, testes e entrega</small></b></div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Folhas e regras</b><small>blocos em curso, X-IMO</small></div><div class="g-track">' + sem + bar('lt', 1, 1, 'Arranque') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Plataforma financeira</b><small>frações, previsão, contas</small></div><div class="g-track">' + sem + bar('e1', 2, 4, 'Frações, pagamentos, previsão, contas') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Caixa unificada</b><small>WhatsApp, Instagram, Facebook</small></div><div class="g-track">' + sem + bar('e2', 4, 5, 'Números e páginas ligados') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Fase de testes</b><small>com os vossos dados</small></div><div class="g-track">' + sem + bar('e3', 5, 6, 'Testes e formação') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Pagamentos</b><small>adjudicação e fase de testes</small></div><div class="g-track">' + sem + ms(0.02, eu(T[0][2]) + ' + IVA') + ms(4, eu(T[1][2]) + ' + IVA') + '</div></div>';
+    $('#invMes').innerHTML = '<small>até </small>' + eu(I.mensal) + '<small>/mês + IVA</small>';
   })();
 
   render(true);

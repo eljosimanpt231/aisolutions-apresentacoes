@@ -5,7 +5,7 @@
 - **Site:** novak.pt (corre sobre o X-IMO) | **Tipo de demo:** C (plataforma à medida) | **Objetivo:** apresentação enviada por email depois da discovery de 02/10/2026, do resumo de 06/10 e do Excel enviado pelo Paulo a 07/10 ("Tabela Metro292 Bloco E.xlsx")
 
 ## Direção
-- **Formato:** deck por separadores (Contexto, Plataforma, Proposta), 12 páginas, teclado ← →; a Plataforma é a própria aplicação "Novak · Financeiro" (barra lateral grafite, cabeçalho com o Paulo)
+- **Formato:** deck por separadores (Contexto, Plataforma, Proposta), 13 páginas, teclado ← →; a Plataforma é a própria aplicação "Novak · Financeiro" (barra lateral grafite, cabeçalho com o Paulo)
 - **Arquitetura herdada:** Serralharia MTS (separadores, app com barra lateral, gaveta, gantt, investimento)
 - **3 adjetivos:** sóbria, imobiliária, rigorosa
 - **Elemento assinatura:** o símbolo do logótipo (duas casas que formam o N) no canto das folhas e na barra da app; a fachada do Bloco E (124 quadrados, um por fração) na capa e na vista de frações
@@ -37,3 +37,4 @@
 ## Iterações
 - v1 (15/10/2026): primeira versão completa; 2 passagens de screenshots (desktop claro e escuro, mobile). Corrigido: eixo do gráfico deformado (SVG passa a usar a largura real), rótulos do calendário sobrepostos, botão Repetir visível, classe `.ct` em conflito, estado da partilha em pré-lançamento na ficha
 - v2 (16/10/2026, correção do Diogo: "é um projeto de 5k, não de 50k"): âmbito reduzido ao que foi falado na reunião. Saíram a leitura de comprovativos, o assistente (chat+raciocínio), as regras de comissão editáveis, as regras de distribuição automáticas e a escala de plantão, e a menção ao TOConline. A caixa unificada fica só com atribuição pelo Paulo (ou pelo número do comercial), sem respostas automáticas. Entrou o "Marcar pago" na ficha da fração. Cronograma de 8 para 6 semanas. 16 para 12 páginas.
+- v3 (16/10/2026, pedido do Diogo: "100% com base no que se falou na reunião e no meu email"): previsão só com o Bloco E real (os outros empreendimentos aparecem "por importar", sem números inventados); distribuição de contactos por regras de empreendimento, localização e preço, com aviso ao comercial (como na reunião), sem respostas automáticas; investimento só com "5.000 € + IVA" e "até 100 €/mês + IVA" (sem tranches nem custos da Meta, que não foram falados); cronograma substituído por "Próximos passos" (lista de requisitos, segunda reunião, proposta fechada); "Paga" passa a "Fatura do parceiro registada" (o ficheiro não diz se foi pago). 13 páginas.
