@@ -32,9 +32,10 @@
 ## Regras do Diogo aplicadas
 - Sem CTA, sem casos de estudo, preço só no fim e com "+ IVA", fases depois do investimento
 - Sem assistentes virtuais e sem leitura automática de documentos: não foram falados na reunião (correção do Diogo a 16/10)
-- Investimento: 5.000 € + IVA (3.000 na adjudicação + 2.000 na fase de testes) e 100 €/mês + IVA, dentro do que foi dito na discovery e no resumo de 06/10 ("à volta de 5.000 €", "até 100 €")
+- Investimento: 6.000 € + IVA e 100 €/mês + IVA (decisão do Diogo a 16/10; o resumo de 06/10 dizia "à volta de 5.000 €" e "até 100 €")
 
 ## Iterações
 - v1 (15/10/2026): primeira versão completa; 2 passagens de screenshots (desktop claro e escuro, mobile). Corrigido: eixo do gráfico deformado (SVG passa a usar a largura real), rótulos do calendário sobrepostos, botão Repetir visível, classe `.ct` em conflito, estado da partilha em pré-lançamento na ficha
 - v2 (16/10/2026, correção do Diogo: "é um projeto de 5k, não de 50k"): âmbito reduzido ao que foi falado na reunião. Saíram a leitura de comprovativos, o assistente (chat+raciocínio), as regras de comissão editáveis, as regras de distribuição automáticas e a escala de plantão, e a menção ao TOConline. A caixa unificada fica só com atribuição pelo Paulo (ou pelo número do comercial), sem respostas automáticas. Entrou o "Marcar pago" na ficha da fração. Cronograma de 8 para 6 semanas. 16 para 12 páginas.
 - v3 (16/10/2026, pedido do Diogo: "100% com base no que se falou na reunião e no meu email"): previsão só com o Bloco E real (os outros empreendimentos aparecem "por importar", sem números inventados); distribuição de contactos por regras de empreendimento, localização e preço, com aviso ao comercial (como na reunião), sem respostas automáticas; investimento só com "5.000 € + IVA" e "até 100 €/mês + IVA" (sem tranches nem custos da Meta, que não foram falados); cronograma substituído por "Próximos passos" (lista de requisitos, segunda reunião, proposta fechada); "Paga" passa a "Fatura do parceiro registada" (o ficheiro não diz se foi pago). 13 páginas.
+- v4 (16/10/2026): investimento passa a 6.000 € + IVA e 100 €/mês + IVA (sem "até"), decisão do Diogo.

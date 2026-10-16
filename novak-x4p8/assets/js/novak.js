@@ -118,7 +118,7 @@
   (function () {
     var I = window.APRESENTACAO.investimento;
     $('#invTotal').innerHTML = eu(I.total) + '<small>+ IVA</small>';
-    $('#invMes').innerHTML = '<small>até </small>' + eu(I.mensal) + '<small>/mês + IVA</small>';
+    $('#invMes').innerHTML = eu(I.mensal) + '<small>/mês + IVA</small>';
   })();
 
   render(true);
