@@ -7,9 +7,7 @@
    3. Previsão (painel)
    4. Calendário da obra
    5. Fachada do bloco e ficha da fração
-   6. Comprovativos
-   7. A receber e a pagar
-   8. Regras de comissão
+   6. A receber e a pagar
    ============================================================ */
 (function () {
   'use strict';
@@ -80,13 +78,13 @@
       } else {
         var dev = (!nov(f) && !f.pC ? c.p[0] : 0) + (!f.hC ? c.h[0] : 0);
         if (dev > 0.5) out.push({ k: INI, e: 'E', t: 'Partilhas e interna já devidas (CPCV)', f: f.id, r: 0, p: dev });
-        if (!f.ini || f.pre.ini) out.push({ k: INI, e: 'E', t: f.pre.ini ? 'Início da obra (pré-lançamento)' : 'Início da obra (comprovativo em falta)', f: f.id, r: c.c[1], p: c.p[1] + c.h[1] });
+        if (!f.ini || f.pre.ini) out.push({ k: INI, e: 'E', t: f.pre.ini ? 'Início da obra (pré-lançamento)' : 'Início da obra (por pagar pelo comprador)', f: f.id, r: c.c[1], p: c.p[1] + c.h[1] });
         else {
           var dev2 = (!nov(f) && !f.pI ? c.p[1] : 0) + (!f.hI ? c.h[1] : 0);
           if (dev2 > 0.5) out.push({ k: INI, e: 'E', t: 'Partilhas e interna já devidas (início)', f: f.id, r: 0, p: dev2 });
         }
       }
-      out.push({ k: D.escr, e: 'E', t: 'Escritura', f: f.id, r: c.c[2], p: c.p[2] + c.h[2] });
+      out.push({ k: f.pre.escr ? INI : D.escr, e: 'E', t: f.pre.escr ? 'Escritura (pré-lançamento)' : 'Escritura', f: f.id, r: c.c[2], p: c.p[2] + c.h[2] });
     });
     return out;
   }
@@ -232,7 +230,7 @@
         '<div class="cl"><span>Estrutura de betão · 15%<small>' + mLong(D.betao) + '</small></span><b>' + eu(t.comp.b) + '</b></div>' +
         '<div class="cl"><span>Caixilharia · 10%<small>' + mLong(D.caix) + '</small></span><b>' + eu(t.comp.c) + '</b></div>' +
         '<div class="cl"><span>Escritura · 50% ou o que falta<small>' + mLong(D.escr) + '</small></span><b>' + eu(t.comp.e) + '</b></div>' +
-        '<p class="small" style="margin-top:8px">Os comprovativos que vão chegar em cada fase. Betão e caixilharia não geram comissão, mas mostram que a obra avança.</p>';
+        '<p class="small" style="margin-top:8px">Betão e caixilharia não geram comissão para a Novak, mas ficam registados na fração.</p>';
     }
     function aplica(qual) {
       if (qual) D[qual] = +rg[qual].value;
@@ -301,14 +299,16 @@
   function abreFicha(id) {
     var f = FR.filter(function (x) { return x.id === id; })[0], c = contas(f), g = $('#crmGaveta');
     var stC = f.pre.cpcv ? 'Pré-lançamento · a faturar' : f.sinal ? 'Recebido · ' + f.ftC + ' · ' + dataPT(f.dC) : 'Com o CPCV · por agendar';
-    var stI = f.pre.ini ? 'Pré-lançamento · a faturar' : f.ini ? 'Recebido · ' + f.ftI + ' · ' + dataPT(f.dI) : f.sinal ? 'Comprovativo em falta' : 'Com o CPCV';
-    var stE = 'Previsto · ' + mLbl(D.escr);
-    var plano = [['Sinal (CPCV)', 0.10, f.sinal], ['Início da obra', 0.15, f.ini], ['Estrutura de betão', PROPRIO[f.id] ? 0 : 0.15, false, D.betao], ['Caixilharia', 0.10, false, D.caix], ['Escritura', PROPRIO[f.id] ? null : 0.5, false, D.escr]];
+    var stI = f.pre.ini ? 'Pré-lançamento · a faturar' : f.ini ? 'Recebido · ' + f.ftI + ' · ' + dataPT(f.dI) : f.sinal ? 'Por pagar pelo comprador' : 'Com o CPCV';
+    var stE = f.pre.escr ? 'Pré-lançamento · a faturar' : 'Previsto · ' + mLbl(D.escr);
+    var plano = [['Sinal (CPCV)', 0.10, f.sinal, 0, 'sinal'], ['Início da obra', 0.15, f.ini, 0, 'ini'], ['Estrutura de betão', PROPRIO[f.id] ? 0 : 0.15, !!f.pb, D.betao, 'pb'], ['Caixilharia', 0.10, !!f.pc, D.caix, 'pc'], ['Escritura', PROPRIO[f.id] ? null : 0.5, !!f.esc, D.escr, 'esc']];
+    var prox = plano.filter(function (p) { return p[1] !== 0 && !p[2]; })[0];
     var pago = 0;
     var planoH = plano.map(function (p) {
       if (p[1] === 0) return '';
       var v = p[1] == null ? f.V - (0.10 + 0.15 + 0.10) * f.V : f.V * p[1]; if (p[2]) pago += v;
-      return '<li class="' + (p[2] ? 'ok' : 'pend') + '"><time>' + (p[2] ? 'pago' : p[3] ? mLbl(p[3]) : 'por pagar') + '</time><b>' + p[0] + (p[1] == null ? ' · o que falta' : ' · ' + Math.round(p[1] * 100) + '%') + '</b><span>' + eu(v) + '</span></li>';
+      return '<li class="' + (p[2] ? 'ok' : 'pend') + '"><time>' + (p[2] ? 'pago' : p[3] ? mLbl(p[3]) : 'por pagar') + '</time><b>' + p[0] + (p[1] == null ? ' · o que falta' : ' · ' + Math.round(p[1] * 100) + '%') + '</b><span>' + eu(v) + '</span>' +
+        (p === prox ? '<button type="button" class="fi-pagar" data-pagar="' + p[4] + '" data-f="' + f.id + '">Marcar pago</button>' : '') + '</li>';
     }).join('');
     $('#crmDet').innerHTML =
       '<div class="g-h"><span class="chip ' + (estado(f) === 'ok' ? 'v' : estado(f) === 'ini' ? 'a' : 'b') + '"><i></i>' + ({ ok: 'CPCV e início recebidos', ini: 'Início da obra por receber', res: 'Reserva' })[estado(f)] + '</span>' +
@@ -330,87 +330,24 @@
       '<p class="fi-nota">Valores sem IVA, calculados sobre o PVP do ficheiro. Faturas e datas do separador Comissões.</p>';
     g.classList.add('open'); g.setAttribute('aria-hidden', 'false');
   }
+  /* Marcar um pagamento feito: como a coluna "pagamento feito" da Tabela.
+     Sinal, início e escritura geram o pré-lançamento da comissão; betão e caixilharia ficam só registados. */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-pagar]'); if (!b) return;
+    var f = FR.filter(function (x) { return x.id === b.dataset.f; })[0], c = contas(f), q = b.dataset.pagar, msg;
+    if (q === 'sinal') { f.sinal = true; f.pre.cpcv = true; msg = [c.c[0], c.p[0], c.h[0]]; }
+    else if (q === 'ini') { f.ini = true; f.pre.ini = true; msg = [c.c[1], c.p[1], c.h[1]]; }
+    else if (q === 'esc') { f.esc = true; f.pre.escr = true; msg = [c.c[2], c.p[2], c.h[2]]; }
+    else f[q] = true;
+    avisa(); abreFicha(f.id);
+    if (window.nvToast) window.nvToast(msg ? 'Pré-lançamento: ' + eu2(msg[0]) + ' a faturar à promotora' + (msg[1] ? ', ' + eu2(msg[1]) + ' de partilha a ' + f.parc : '') + '.' : 'Pagamento registado. Esta fase não gera comissão.');
+  });
   document.addEventListener('click', function (e) { if (e.target.closest('[data-fecha]')) { var g = $('#crmGaveta'); g.classList.remove('open'); g.setAttribute('aria-hidden', 'true'); } });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { var g = $('#crmGaveta'); g.classList.remove('open'); g.setAttribute('aria-hidden', 'true'); } });
   mudou.push(desenhaFachadas);
   desenhaFachadas();
 
-  /* ---------------- 6. Comprovativos ---------------- */
-  (function () {
-    var lista = $('#cpLista'); if (!lista) return;
-    var get = function (id) { return FR.filter(function (x) { return x.id === id; })[0]; };
-    var CP = [
-      { de: 'Promotora · Metro292', h: '09:14', as: 'Comprovativo sinal PAPC586', anx: ['TRF_13800.pdf'] },
-      { de: 'Promotora · Metro292', h: '09:22', as: 'Transferências fração E 2R', anx: ['TRF_13600.pdf', 'TRF_6800.pdf'] },
-      { de: 'Promotora · Metro292', h: '10:05', as: 'Comprovativo de transferência', anx: ['comprovativo.pdf'] }
-    ];
-    function desenhaLista(st) {
-      lista.innerHTML = CP.map(function (c, i) {
-        return '<div class="cp-it ' + (st[i] || '') + '"><div class="top"><b>' + c.de + '</b><time>' + c.h + '</time></div><div class="as">' + c.as + '</div><div class="anx">' + c.anx.map(function (a) { return '<span>' + a + '</span>'; }).join('') + '</div></div>';
-      }).join('');
-    }
-    var st = {}; desenhaLista(st);
-    var log = $('#cpLog'), preB = $('#cpPreB'), pre = $('#cpPre'), bLer = $('#cpLer'), bRes = $('#cpReset');
-    var timers = [];
-    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
-    function card(i, titulo) { var d = document.createElement('div'); d.className = 'cp-card'; d.innerHTML = '<div class="cp-h"><span class="ext">PDF</span><b>' + titulo + '</b></div><ol></ol>'; log.appendChild(d); return d; }
-    function passo(d, cls, txt) { var li = document.createElement('li'); li.className = cls; li.innerHTML = txt; $('ol', d).appendChild(li); log.scrollTop = log.scrollHeight; }
-    function lanca(f, mom, ent, v) { pre.hidden = false; preB.insertAdjacentHTML('beforeend', '<tr class="novo"><td>E. ' + f + '</td><td>' + mom + '</td><td>' + ent + '</td><td class="num mono">' + eu2(v) + '</td><td><span class="chip a"><i></i>Pré-lançamento</span></td></tr>'); }
-    function play() {
-      bLer.disabled = true; log.innerHTML = ''; preB.innerHTML = ''; pre.hidden = true;
-      var f1 = get('3.S'), c1 = contas(f1), f2 = get('2.R'), c2 = contas(f2);
-      var t = 300, d1, d2, d3;
-      later(function () { st = { 0: 'sel' }; desenhaLista(st); d1 = card(0, 'TRF_13800.pdf'); passo(d1, 'ok', 'Transferência de <b>13.800,00 €</b>, descritivo "SINAL PAPC586"'); }, t += 200);
-      later(function () { passo(d1, 'ok', 'PAPC586 é a <b>E. 3.S</b> (T0, 2.º andar, poente), reserva da Agência D'); }, t += 900);
-      later(function () { passo(d1, 'ok', '13.800 € = 10% de ' + eu(f1.V) + ': é o <b>sinal</b>. CPCV assinado'); }, t += 900);
-      later(function () {
-        passo(d1, 'warn', 'O início da obra já passou: falta o comprovativo dos 15% (<b>' + eu(f1.V * 0.15) + '</b>). Fica a aguardar.');
-        f1.sinal = true; f1.pre.cpcv = true; f1.dC = null; f1.ftC = null;
-        lanca('3.S', 'CPCV · 1%', 'A receber · promotora', c1.c[0]); lanca('3.S', 'CPCV · partilha ¼', 'A pagar · Agência D', c1.p[0]); lanca('3.S', 'CPCV · interna ¼', 'A pagar · comissão interna', c1.h[0]);
-        st = { 0: 'feito' }; desenhaLista(st); avisa();
-      }, t += 1000);
-      later(function () { st[1] = 'sel'; desenhaLista(st); d2 = card(1, 'TRF_13600.pdf + TRF_6800.pdf'); passo(d2, 'ok', 'Duas transferências: 13.600,00 € + 6.800,00 € = <b>20.400,00 €</b>, descritivo "E 2R"'); }, t += 1100);
-      later(function () { passo(d2, 'ok', '<b>E. 2.R</b> (Consultor A): 15% de ' + eu(f2.V) + ' = 20.400 €. É o <b>início da obra</b>'); }, t += 1000);
-      later(function () {
-        passo(d2, 'ok', 'Como na E. 1.Q e na E. 2.P: o mesmo pagamento em várias transferências. Somado e conferido.');
-        f2.ini = true; f2.pre.ini = true;
-        lanca('2.R', 'Início · 2%', 'A receber · promotora', c2.c[1]); lanca('2.R', 'Início · partilha ½', 'A pagar · Consultor A', c2.p[1]); lanca('2.R', 'Início · interna ½', 'A pagar · comissão interna', c2.h[1]);
-        st[1] = 'feito'; desenhaLista(st); avisa();
-      }, t += 1000);
-      later(function () { st[2] = 'sel'; desenhaLista(st); d3 = card(2, 'comprovativo.pdf'); passo(d3, 'ok', 'Transferência de <b>13.500,00 €</b>, descritivo "SINAL METRO292 BL E", sem código de fração'); }, t += 1100);
-      later(function () { passo(d3, 'bad', 'Nenhuma reserva tem 10% = 13.500 €. As mais próximas: <b>E. 2.J</b> (13.400 €) e <b>E. 3.G</b> (13.300 €)'); }, t += 1000);
-      later(function () {
-        passo(d3, 'warn', '<b>Por confirmar: nada foi lançado.</b> Pergunta enviada ao Paulo:');
-        var q = document.createElement('div'); q.className = 'cp-q';
-        q.innerHTML = '<p>"Chegou um sinal de 13.500 € sem referência. É de que fração?"</p><div><button type="button" data-r="2.J">E. 2.J</button><button type="button" data-r="3.G">E. 3.G</button><button type="button" data-r="x">Outra, ver depois</button></div>';
-        d3.appendChild(q); log.scrollTop = log.scrollHeight;
-        q.addEventListener('click', function (e) {
-          var b = e.target.closest('button'); if (!b) return;
-          if (b.dataset.r === 'x') { q.innerHTML = '<p class="ok">Fica em "Por confirmar" na caixa de comprovativos, com lembrete amanhã.</p>'; }
-          else {
-            var f = get(b.dataset.r), c = contas(f);
-            f.sinal = true; f.pre.cpcv = true;
-            q.innerHTML = '<p class="ok">Registado na <b>E. ' + f.id + '</b>, com nota: "sinal de 13.500 €, mais ' + eu(13500 - f.V * 0.1) + ' do que os 10%".</p>';
-            lanca(f.id, 'CPCV · 1%', 'A receber · promotora', c.c[0]); lanca(f.id, 'CPCV · partilha ¼', 'A pagar · Agência D', c.p[0]); lanca(f.id, 'CPCV · interna ¼', 'A pagar · comissão interna', c.h[0]);
-            avisa();
-          }
-          st[2] = 'feito'; desenhaLista(st); $('#cpEstado').textContent = 'Tudo lido';
-        });
-        st[2] = 'pend'; desenhaLista(st);
-        $('#cpEstado').textContent = '1 por confirmar'; bRes.hidden = false;
-      }, t += 1000);
-    }
-    function reset() {
-      timers.forEach(clearTimeout); timers = [];
-      var novo = carrega(); FR.forEach(function (f, i) { Object.assign(f, novo[i]); });
-      st = {}; desenhaLista(st); log.innerHTML = '<div class="cp-vazio">Os comprovativos ainda não foram lidos.</div>'; preB.innerHTML = ''; pre.hidden = true;
-      bLer.disabled = false; bRes.hidden = true; $('#cpEstado').textContent = '3 por ler'; avisa();
-    }
-    bLer.addEventListener('click', play);
-    bRes.addEventListener('click', reset);
-  })();
-
-  /* ---------------- 7. A receber e a pagar ---------------- */
+  /* ---------------- 6. A receber e a pagar ---------------- */
   (function () {
     if (!$('#ctRec')) return;
     function desenha() {
@@ -456,28 +393,4 @@
     desenha();
   })();
 
-  /* ---------------- 8. Regras de comissão ---------------- */
-  (function () {
-    var tot = $('#rgTot'); if (!tot) return;
-    var m1 = $('#rgM1'), m2 = $('#rgM2'), m3 = $('#rgM3'), pa = $('#rgPart'), it = $('#rgInt');
-    function ex() {
-      var fs = [FR.filter(function (f) { return f.id === '3.S'; })[0], FR.filter(function (f) { return f.id === '1.D'; })[0]];
-      $('#rgEx').innerHTML = fs.map(function (f) {
-        var c = contas(f);
-        return '<div class="panel rg-c"><div class="panel-h"><b>E. ' + f.id + ' · ' + eu(f.V) + '</b><span>' + (nov(f) ? 'venda Novak' : 'venda ' + f.parc) + '</span></div><table class="tbl"><thead><tr><th></th><th class="num">CPCV</th><th class="num">Início</th><th class="num">Escritura</th><th class="num">Total</th></tr></thead><tbody>' +
-          '<tr><td>Recebe da promotora</td>' + c.c.map(function (v) { return '<td class="num mono rec">' + eu2(v) + '</td>'; }).join('') + '<td class="num mono rec"><b>' + eu2(c.G) + '</b></td></tr>' +
-          '<tr><td>Paga ao parceiro</td>' + c.p.map(function (v) { return '<td class="num mono pag">' + (v ? eu2(v) : '') + '</td>'; }).join('') + '<td class="num mono pag"><b>' + (c.I ? eu2(c.I) : 'sem partilha') + '</b></td></tr>' +
-          '<tr><td>Comissão interna</td>' + c.h.map(function (v) { return '<td class="num mono pag">' + eu2(v) + '</td>'; }).join('') + '<td class="num mono pag"><b>' + eu2(c.H) + '</b></td></tr>' +
-          '<tr class="tot"><td>Fica na Novak</td><td></td><td></td><td></td><td class="num mono"><b>' + eu2(c.liq) + '</b></td></tr></tbody></table></div>';
-      }).join('');
-    }
-    function le() {
-      var a = Math.max(0, Math.min(100, +m1.value || 0)), b = Math.max(0, Math.min(100 - a, +m2.value || 0));
-      m2.value = b; m3.textContent = 100 - a - b;
-      R.tot = (+tot.value || 0) / 100; R.m = [a / 100, b / 100, (100 - a - b) / 100]; R.part = Math.min(R.tot * 100, +pa.value || 0) / 100; R.int = (+it.value || 0) / 100;
-      ex(); avisa();
-    }
-    [tot, m1, m2, pa, it].forEach(function (i) { i.addEventListener('input', le); });
-    ex();
-  })();
 })();

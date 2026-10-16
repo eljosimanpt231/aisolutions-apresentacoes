@@ -164,69 +164,9 @@ select { font: 500 0.8rem var(--font-body); color: var(--text); background: var(
 .ano-leg span { display: inline-flex; gap: 4px; align-items: center; }
 .ano-leg i { width: 9px; height: 9px; border-radius: 2px; }
 
-/* ---------- Comprovativos ---------- */
-.cp { display: grid; grid-template-columns: 320px 1fr; gap: 16px; align-items: start; }
-.cp-it { padding: 11px 14px; border-bottom: 1px solid var(--border); font-size: 0.8rem; position: relative; transition: background 0.2s; }
-.cp-it::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: transparent; }
-.cp-it .top { display: flex; justify-content: space-between; }
-.cp-it .top b { font-weight: 600; } .cp-it .top time { font-family: var(--font-mono); font-size: 0.7rem; color: var(--faint); }
-.cp-it .as { color: var(--muted); margin: 2px 0 6px; }
-.cp-it .anx { display: flex; flex-wrap: wrap; gap: 4px; }
-.cp-it .anx span { font: 500 0.64rem var(--font-mono); padding: 2px 6px; border: 1px solid var(--border); border-radius: 4px; color: var(--muted); }
-.cp-it.sel { background: hsl(var(--brand-hsl) / 0.05); } .cp-it.sel::before { background: var(--brand); }
-.cp-it.feito::before { background: var(--verde); } .cp-it.feito .as::after { content: " · lido"; color: var(--success); font-weight: 600; }
-.cp-it.pend::before { background: var(--amarelo); } .cp-it.pend .as::after { content: " · por confirmar"; color: var(--warning); font-weight: 600; }
-.cp-go { display: flex; gap: 8px; padding: 12px 14px; flex-wrap: wrap; }
-.cp-go .btn { font-size: 0.8rem; padding: 9px 14px; }
-.cp-dir { display: grid; gap: 14px; }
-.cp-log { display: grid; gap: 10px; max-height: 470px; overflow: auto; }
-.cp-vazio { border: 1px dashed var(--border); border-radius: 10px; padding: 34px; text-align: center; color: var(--faint); font-size: 0.84rem; background: var(--surface); }
-.cp-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; box-shadow: var(--shadow-sm); animation: deck-float-in 0.35s ease; }
-.cp-h { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.82rem; }
-.cp-h .ext { font: 700 0.58rem var(--font-mono); padding: 3px 5px; border-radius: 3px; background: hsl(var(--danger-hsl) / 0.12); color: var(--danger); }
-.cp-card ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
-.cp-card li { font-size: 0.8rem; color: var(--muted); padding-left: 22px; position: relative; line-height: 1.45; animation: deck-float-in 0.3s ease; }
-.cp-card li b { color: var(--text); }
-.cp-card li::before { position: absolute; left: 0; top: 0; width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; font-size: 0.6rem; font-weight: 700; }
-.cp-card li.ok::before { content: "✓"; background: hsl(var(--success-hsl) / 0.14); color: var(--success); }
-.cp-card li.warn::before { content: "!"; background: hsl(var(--warning-hsl) / 0.16); color: var(--warning); }
-.cp-card li.bad::before { content: "✕"; background: hsl(var(--danger-hsl) / 0.14); color: var(--danger); }
-.cp-q { margin-top: 10px; padding: 10px 12px; border-radius: 8px; background: hsl(var(--amarelo-hsl) / 0.1); border: 1px dashed hsl(var(--warning-hsl) / 0.45); font-size: 0.8rem; }
-.cp-q p { margin-bottom: 8px; } .cp-q p.ok { margin: 0; color: var(--success); }
-.cp-q div { display: flex; gap: 6px; flex-wrap: wrap; }
-.cp-q button { font: 600 0.76rem var(--font-body); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
-.cp-q button:hover { border-color: var(--brand); color: var(--brand); }
-
 /* ---------- Contas ---------- */
 .tbl.cnt td:first-child { white-space: nowrap; }
 .tbl.cnt td.dev { font-weight: 600; }
-
-/* ---------- Regras ---------- */
-.rg { display: grid; grid-template-columns: 340px 1fr; gap: 16px; align-items: start; }
-.rg-form { display: grid; gap: 4px; padding: 6px 14px 12px; }
-.rg-form label { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; color: var(--muted); }
-.rg-form label:last-child { border-bottom: 0; }
-.rg-form label span { display: inline-flex; align-items: center; gap: 6px; color: var(--text); font-size: 0.78rem; white-space: nowrap; }
-.rg-form input { width: 62px; font: 600 0.86rem var(--font-mono); color: var(--brand); background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 5px 6px; text-align: right; }
-.rg-form b { font-family: var(--font-mono); color: var(--brand); display: inline-block; width: 62px; text-align: right; padding-right: 7px; }
-.rg-ex { display: grid; gap: 12px; }
-.rg-c .tbl td, .rg-c .tbl th { padding: 7px 10px; }
-.rg-exc { list-style: none; margin: 0; padding: 6px 14px 10px; display: grid; gap: 0; }
-.rg-exc li { font-size: 0.8rem; color: var(--muted); padding: 7px 0; border-bottom: 1px solid var(--border); }
-.rg-exc li:last-child { border-bottom: 0; }
-.rg-exc b { color: var(--text); margin-right: 6px; }
-
-/* ---------- Distribuição ---------- */
-.ds-exc { margin: 0; padding: 8px 16px 12px 34px; display: grid; gap: 2px; }
-.ds-exc li { font-size: 0.8rem; color: var(--muted); padding: 6px 0; }
-.ds-exc li b { display: block; color: var(--text); font-size: 0.84rem; }
-#dsEmp select { padding: 5px 8px; font-size: 0.78rem; }
-.plantao { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-.plantao button { display: grid; gap: 2px; padding: 10px 6px; text-align: center; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-2); color: var(--text); cursor: pointer; font-family: var(--font-body); }
-.plantao button:hover { border-color: var(--brand); }
-.plantao small { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); }
-.plantao b { font-family: var(--font-display); font-size: 0.95rem; }
-.plantao span { font-size: 0.64rem; color: var(--muted); }
 
 /* ---------- Ficha da fração (gaveta) ---------- */
 .fi-plano li time { min-width: 56px; }
@@ -243,7 +183,7 @@ select { font: 500 0.8rem var(--font-body); color: var(--text); background: var(
 
 /* ---------- Responsivo ---------- */
 @media (max-width: 1100px) {
-  .ficheiro, .cp, .rg, .cal-res { grid-template-columns: 1fr; }
+  .ficheiro, .cal-res { grid-template-columns: 1fr; }
   .cal-ctl { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
@@ -251,7 +191,6 @@ select { font: 500 0.8rem var(--font-body); color: var(--text); background: var(
   .fa-lbl { width: 34px; font-size: 0.56rem; }
   .mini .fa-fr { grid-template-columns: repeat(25, 1fr); }
   .cal-ctl { grid-template-columns: 1fr; }
-  .plantao { grid-template-columns: repeat(4, 1fr); }
   .obra { padding: 54px 14px 64px; overflow-x: auto; }
   .ob-track { min-width: 620px; }
   .kpis.k4 { grid-template-columns: 1fr 1fr; }
@@ -260,3 +199,7 @@ select { font: 500 0.8rem var(--font-body); color: var(--text); background: var(
 }
 
 @media (max-width: 760px) { .folha::after { display: none; } }
+
+/* Marcar pagamento feito (ficha da fração) */
+.fi-pagar { margin-left: 8px; font: 600 0.7rem var(--font-body); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--brand); background: var(--brand); color: var(--on-brand); cursor: pointer; white-space: nowrap; }
+.fi-pagar:hover { filter: brightness(1.08); }

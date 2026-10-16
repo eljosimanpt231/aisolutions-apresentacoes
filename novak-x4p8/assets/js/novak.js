@@ -3,7 +3,7 @@
    1. Tema claro / escuro
    2. Navegação por separadores e páginas
    3. Contadores
-   4. Regras de distribuição e escala de plantão
+   4. Aviso (toast)
    5. Investimento e cronograma
    ============================================================ */
 (function () {
@@ -92,42 +92,6 @@
   }
   document.addEventListener('slide:show', function (e) { $$('.count', e.target).forEach(countUp); });
 
-  /* ---------------- 4. Distribuição e plantão ---------------- */
-  (function () {
-    var tb = $('#dsEmp tbody'); if (!tb) return;
-    var PESSOAS = ['Carlos', 'Inês', 'Rui', 'Sofia', 'Paulo Costa'];
-    var EMP = [
-      ['Metro292', 'Vila do Conde', 'Carlos', 41],
-      ['Living I', 'Póvoa de Varzim', 'Inês', 23],
-      ['Matriz', 'Póvoa de Varzim', 'Inês', 9],
-      ['Velaris', 'Porto', 'Rui', 14],
-      ['São Vicente', 'Maia', 'Sofia', 6]
-    ];
-    tb.innerHTML = EMP.map(function (e, i) {
-      return '<tr><td><b>' + e[0] + '</b></td><td>' + e[1] + '</td><td><select data-i="' + i + '" aria-label="Responsável por ' + e[0] + '">' +
-        PESSOAS.map(function (p) { return '<option' + (p === e[2] ? ' selected' : '') + '>' + p + '</option>'; }).join('') +
-        '</select></td><td class="num mono">' + e[3] + ' contactos</td></tr>';
-    }).join('');
-    tb.addEventListener('change', function (e) {
-      var s = e.target.closest('select'); if (!s) return;
-      toast('A partir da próxima mensagem, o ' + EMP[+s.dataset.i][0] + ' vai para ' + s.value + '.');
-    });
-    var DIAS = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
-    var esc = ['Carlos', 'Inês', 'Rui', 'Sofia', 'Carlos', 'Inês', 'Rui'];
-    var pl = $('#plantao');
-    function desenha() {
-      pl.innerHTML = DIAS.map(function (d, i) {
-        return '<button type="button" data-d="' + i + '"><small>' + d + '</small><b>' + esc[i] + '</b><span>' + (i < 5 ? '19:00 a 09:00' : 'dia inteiro') + '</span></button>';
-      }).join('');
-    }
-    pl.addEventListener('click', function (e) {
-      var b = e.target.closest('button'); if (!b) return;
-      var i = +b.dataset.d, p = PESSOAS.slice(0, 4);
-      esc[i] = p[(p.indexOf(esc[i]) + 1) % p.length]; desenha();
-    });
-    desenha();
-  })();
-
   function toast(t) {
     var el = $('#crmToast'); if (!el) return;
     el.textContent = t; el.classList.add('on');
@@ -142,17 +106,17 @@
     $('#invMes').innerHTML = eu(I.mensal) + '<small>/mês + IVA</small>';
     $('#invTranches').innerHTML = I.tranches.map(function (t, i) {
       return '<div class="tr"><span class="n">' + (i + 1) + '</span><span>' + t[0] + '<small>' + t[1] + '</small></span><b>' + eu(t[2]) + '<small>+ IVA</small></b></div>'; }).join('');
-    var N = 8, sem = '<span></span>'.repeat(N);
+    var N = 6, sem = '<span></span>'.repeat(N);
     var bar = function (cls, a, b, txt) { return '<div class="g-bar ' + cls + '" style="left:calc(' + (a - 1) + ' / ' + N + ' * 100% + 3px);width:calc(' + (b - a + 1) + ' / ' + N + ' * 100% - 6px)">' + txt + '</div>'; };
-    var ms = function (s, txt) { return '<div class="g-ms' + (s > 6.5 ? ' fim' : '') + '" style="left:calc(' + s + ' / ' + N + ' * 100%)"><em>' + txt + '</em></div>'; };
+    var ms = function (s, txt) { return '<div class="g-ms' + (s > 4.5 ? ' fim' : '') + '" style="left:calc(' + s + ' / ' + N + ' * 100%)"><em>' + txt + '</em></div>'; };
     var T = I.tranches;
     $('#gantt').innerHTML =
-      '<div class="g-meses"><div>SEMANAS</div><div><b>Mês 1<small>semanas 1 a 4</small></b><b>Mês 2<small>semanas 5 a 8</small></b></div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Dados e regras</b><small>X-IMO, folhas dos blocos, regras</small></div><div class="g-track">' + sem + bar('lt', 1, 2, 'Arranque') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Entrega 1</b><small>plataforma financeira</small></div><div class="g-track">' + sem + bar('e1', 2, 5, 'Frações, previsão, contas, comprovativos') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Entrega 2</b><small>caixa unificada e distribuição</small></div><div class="g-track">' + sem + bar('e2', 4, 7, 'API da Meta, assistente, regras') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Fase de testes</b><small>com os vossos blocos e contactos</small></div><div class="g-track">' + sem + bar('e3', 7, 8, 'Testes e formação') + '</div></div>' +
-      '<div class="g-row"><div class="g-lbl"><b>Pagamentos</b><small>adjudicação e fase de testes</small></div><div class="g-track">' + sem + ms(0.02, eu(T[0][2]) + ' + IVA') + ms(6, eu(T[1][2]) + ' + IVA') + '</div></div>';
+      '<div class="g-meses"><div>SEMANAS</div><div><b>Semanas 1 a 3<small>dados e plataforma</small></b><b>Semanas 4 a 6<small>caixa, testes e entrega</small></b></div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Folhas e regras</b><small>blocos em curso, X-IMO</small></div><div class="g-track">' + sem + bar('lt', 1, 1, 'Arranque') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Plataforma financeira</b><small>frações, previsão, contas</small></div><div class="g-track">' + sem + bar('e1', 2, 4, 'Frações, pagamentos, previsão, contas') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Caixa unificada</b><small>WhatsApp, Instagram, Facebook</small></div><div class="g-track">' + sem + bar('e2', 4, 5, 'Números e páginas ligados') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Fase de testes</b><small>com os vossos dados</small></div><div class="g-track">' + sem + bar('e3', 5, 6, 'Testes e formação') + '</div></div>' +
+      '<div class="g-row"><div class="g-lbl"><b>Pagamentos</b><small>adjudicação e fase de testes</small></div><div class="g-track">' + sem + ms(0.02, eu(T[0][2]) + ' + IVA') + ms(4, eu(T[1][2]) + ' + IVA') + '</div></div>';
   })();
 
   render(true);
