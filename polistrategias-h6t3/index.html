@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Polistratégias | Clientes, visitas e faturação</title>
+  <meta name="description" content="Protótipo AI Solutions para a Polistratégias e a Preslaboral: uma plataforma com todos os clientes por NIF, o plano de visitas com alertas, os documentos de cada cliente e a faturação à vista.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Polistratégias × AI Solutions">
+  <meta property="og:description" content="Clientes, visitas e faturação num só sítio. Sem voltar ao Excel.">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/polistrategias-h6t3/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <script>
+    try {
+      var t = localStorage.getItem('ais-theme-polis');
+      if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      document.documentElement.setAttribute('data-theme', t || 'light');
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+  </script>
+  <link rel="icon" href="assets/img/polis-p.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/polis.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
+  <link rel="stylesheet" href="assets/css/gestao.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div class="grelha" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img src="assets/img/polis-p.png" alt="Polistratégias">
+    <b>Polistratégias</b>
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#pedido">O vosso pedido</a>
+    <a href="#plataforma">A plataforma</a>
+    <a href="#limites">O que muda</a>
+    <a href="#seguinte">Fase seguinte</a>
+    <a href="#investimento">Investimento</a>
+    <a href="#arranque">Arranque</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-acto="1" data-entra="sobe">Polistratégias e Preslaboral × AI Solutions</span>
+        <h1 data-linhas>Clientes, visitas e faturação num só sítio. Sem voltar <span class="g-capacete">ao Excel</span>.</h1>
+        <p class="lead" data-acto="2" data-entra="sobe">
+          Uma plataforma só vossa: todos os clientes pesquisados pelo NIF, cada estabelecimento com os seus serviços
+          e as suas visitas, os relatórios e documentos na pasta de cada cliente, e a faturação à vista: o que foi feito
+          e ainda não foi faturado, o que está em dívida. Nas duas empresas, sem ninguém ter de se lembrar.
+        </p>
+        <div class="hero-meta" data-acto="3" data-entra="sobe">
+          <span>Para o <b>Bruno Rodrigues</b> e a equipa</span>
+          <span>Seguimento da reunião de <b>09/10/2026</b></span>
+          <span>Setúbal e Amora</span>
+        </div>
+      </div>
+      <div class="campo" data-acto="4" data-entra="escala">
+        <div class="campo-foto"><img src="assets/img/hero.jpg" alt="Técnico de segurança com capacete a preencher uma lista de verificação numa obra"></div>
+        <div class="relcard" aria-label="Exemplo de um serviço realizado e por faturar">
+          <div class="pg-top"><span>HACCP · 2.ª visita</span><span>21/10</span></div>
+          <div class="pg-nome">Restaurante em Setúbal</div>
+          <div class="pg-linhas">
+            <div><small>Visita</small><b>realizada</b></div>
+            <div><small>Relatório</small><b>na pasta</b></div>
+            <div><small>Fatura</small><b>por registar</b></div>
+          </div>
+          <div class="pg-ok"><span>Realizado e por faturar</span><b>120 € + IVA</b></div>
+          <div class="pg-why">A plataforma mostra o que já foi feito e ainda não foi faturado. Ninguém tem de se lembrar.</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-3 hero-stats" data-acto="5" data-entra="sobe">
+      <div class="card stat-card"><div class="num"><span data-conta="6">6</span> estados</div><div class="desc">Por agendar, agendado, realizado, pendente, adiado e cancelado, em cada visita</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="11">11</span> serviços</div><div class="desc">Da Segurança no Trabalho ao HACCP, à obra e à Medicina, geridos por estabelecimento</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="1">1</span> NIF</div><div class="desc">Uma ficha por cliente, com todos os estabelecimentos, sem registos duplicados</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="2">2</span> empresas</div><div class="desc">Documentos e faturação separados por empresa: Polistratégias e Preslaboral</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 09/10</span>
+      <h2>A visita é a parte rápida. O que pesa é o que vem depois.</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>Eu preciso de fazer uma avaliação de riscos e se calhar demoro um dia inteiro a fazer essa avaliação de riscos e a colocar a informação.</blockquote>
+        <p>O tempo dos técnicos vai para o backoffice, não para os clientes.</p>
+        <span class="quem">Bruno Rodrigues</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Muitas vezes saímos dele, vamos para a folha de Excel, para uma folha de Word para despachar.</blockquote>
+        <p>O programa atual é pesado e tem falhas na área da segurança. Paga-se todos os anos e, mesmo assim, volta-se ao Excel.</p>
+        <span class="quem">Bruno Rodrigues</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Um café é sempre um café. Pode mudar o espaço físico, mas é sempre um café.</blockquote>
+        <p>Os riscos repetem-se por atividade. Os relatórios-tipo já existem: indústria, clínica, construção, restauração.</p>
+        <span class="quem">Bruno Rodrigues</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Aquele relatório tem que ir evoluindo de ano para ano, mas os riscos vão ser os mesmos.</blockquote>
+        <p>Só mudam quando o cliente muda de instalações ou de atividade. O resto é copiar e atualizar.</p>
+        <span class="quem">Bruno Rodrigues</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Quando se emite um relatório tem que sair na imagem da Polistratégias. Quando se emite uma ficha de aptidão, tem que sair na imagem da Preslaboral.</blockquote>
+        <p>Duas sociedades, uma acreditada pela ACT, outra pela DGS. A mesma plataforma, a contabilidade separada.</p>
+        <span class="quem">Bruno Rodrigues</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>A identificação e pesquisa dos clientes deverá ser efetuada prioritariamente através do NIF, de forma a evitar a criação de registos duplicados.</blockquote>
+        <p>Do email de 13/10, com a lista do que a base de dados tem de ter.</p>
+        <span class="quem">Patrícia Gomes</span>
+      </div>
+    </div>
+    <p class="sintese">Muitas vezes recusam trabalho por falta de mãos. <b>O que falta não são técnicos. É tempo fora do backoffice.</b></p>
+  </div>
+</section>
+
+<!-- ============ 3. O VOSSO PEDIDO ============ -->
+<section id="pedido">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">A reunião e o email da Patrícia</span>
+      <h2>Primeiro organizar. Depois automatizar.</h2>
+      <p class="lead">No email de 13/10, a Patrícia mandou a lista do que o programa de gestão tem de ter. A 1.ª fase é essa plataforma, com a faturação incluída para verem tudo num sítio, mas sem ligação ao Sage: as faturas continuam a ser emitidas lá. A ligação ao Sage, as cobranças automáticas e a IA a preparar os relatórios, de que o Bruno falou na reunião, ficam para a fase seguinte.</p>
+    </div>
+    <div class="versus pedido">
+      <div class="card card-do" data-entra="sobe">
+        <h3>1.ª fase <small>esta proposta</small></h3>
+        <ul class="list-check">
+          <li><b>Ficha única por cliente</b>, pesquisa pelo NIF, sem duplicados</li>
+          <li>Os campos pedidos: n.º de contrato, estado, NIF, CAE Rev. 3 e Rev. 4, n.º de trabalhadores, tipo de atividade, grau de risco, moradas, contactos, responsável</li>
+          <li><b>Vários estabelecimentos por cliente</b>, cada um com os seus serviços</li>
+          <li>Por serviço: periodicidade, n.º de visitas, condições, valor, técnico, parceiro que executa, parceria que angariou, comercial</li>
+          <li><b>Datas previstas, agendadas e realizadas</b> de cada visita, com os estados: por agendar, agendado, realizado, pendente, adiado, cancelado</li>
+          <li><b>Alertas</b>: contratos a terminar, renovações pendentes, serviços contratados por iniciar, visitas em atraso</li>
+          <li><b>Documentos na pasta de cada cliente</b>: relatórios, fichas de aptidão, planos e atas, com a data de envio ao cliente</li>
+          <li><b>Faturação à vista, por empresa</b>: faturas, proformas, faturas-recibo e notas de crédito por serviço, estado dos pagamentos, valores em dívida e serviços realizados por faturar</li>
+          <li>Histórico de cobranças e contactos com cada cliente</li>
+        </ul>
+      </div>
+      <div class="card card-later" data-entra="sobe">
+        <h3>Fase seguinte <small>orçamento à parte</small></h3>
+        <ul class="list-later">
+          <li><b>Relatórios preparados pela IA</b> a partir das fotografias e das notas do técnico</li>
+          <li><b>Ligação ao Sage</b>: as faturas entram sozinhas, sem as registar à mão</li>
+          <li>Cobranças automáticas por email e mensagem</li>
+          <li>Reconciliação bancária: de quem é cada pagamento</li>
+          <li>Atendimento telefónico e pedidos de orçamento com um agente de voz</li>
+          <li>Apoio ao projeto de arquitetura: PDM e legislação por zona</li>
+        </ul>
+        <p class="later-nota">A ligação ao Sage e a IA assentam nos clientes, serviços e documentos da 1.ª fase. Nada se refaz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. A PLATAFORMA ============ -->
+<section class="section-alt" id="plataforma">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O protótipo · experimente</span>
+      <h2>Uma manhã de segunda-feira na Polistratégias</h2>
+      <p class="lead">Clientes, visitas, documentos e faturação, numa plataforma só vossa. Os modelos são os que nos enviaram; os clientes e os valores são inventados.</p>
+    </div>
+    <div class="experimente">
+      <span>Em <b>Clientes</b>, procure pelo NIF</span>
+      <span>Em <b>Faturação</b>, registe o que está por faturar</span>
+      <span>Em <b>Documentos</b>, veja o que falta enviar</span>
+    </div>
+
+    <div class="am" id="polis" data-entra="sobe">
+      <div class="am-bar">
+        <div class="am-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="am-url">gestao.polistrategias.pt</span>
+      </div>
+      <div class="am-body">
+        <aside class="am-side">
+          <div class="am-brand"><img src="assets/img/polis-p.png" alt="P"><span><b>Gestão SST</b><small>Polistratégias · Preslaboral</small></span></div>
+          <div class="am-navs"></div>
+          <div class="am-user"><span class="am-av">BR</span><span><b>Bruno Rodrigues</b><small>Direção técnica</small></span></div>
+        </aside>
+        <main class="am-main"></main>
+      </div>
+    </div>
+    <p class="aviso-dados">Modelos, campos e serviços reais da Polistratégias. Clientes, NIF, moradas, documentos e valores são ilustrativos: os reais vêm da vossa base de clientes.</p>
+  </div>
+</section>
+
+<!-- ============ 5. LIMITES ============ -->
+<section id="limites">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que muda</span>
+      <h2>A plataforma organiza. O resto continua como está.</h2>
+      <p class="lead">Não se troca a forma de trabalhar: os relatórios continuam nos vossos modelos e as faturas no Sage. O que muda é estar tudo num sítio, à vista de quem precisa.</p>
+    </div>
+    <div class="limites">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Faz sozinha</h3>
+        <ul class="list-check">
+          <li>Um cliente por NIF, sem fichas duplicadas</li>
+          <li>Calcula as visitas a partir da periodicidade de cada serviço</li>
+          <li>Avisa das visitas em atraso, dos contratos a terminar, dos serviços por iniciar e das faturas vencidas</li>
+          <li>Guarda os documentos na pasta de cada cliente, com a data de envio</li>
+          <li>Mostra o que foi realizado e ainda não foi faturado</li>
+        </ul>
+      </div>
+      <div class="card card-later" data-entra="sobe">
+        <h3>Continua como hoje</h3>
+        <ul class="list-later">
+          <li>Os relatórios, feitos nos vossos modelos em Word e Excel</li>
+          <li>As faturas, emitidas no Sage</li>
+          <li>A avaliação técnica e a assinatura de cada relatório</li>
+          <li>Os atos médicos e a ficha de aptidão, com o médico</li>
+        </ul>
+      </div>
+    </div>
+    <p class="limites-frase">Primeiro arrumar a casa. A automação vem a seguir, em cima disto.</p>
+  </div>
+</section>
+
+<!-- ============ 6. FASE SEGUINTE ============ -->
+<section class="section-alt" id="seguinte">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Fase seguinte</span>
+      <h2>O que ficou falado e não entra agora</h2>
+      <p class="lead">Não faz parte desta proposta. Fica escrito para não se perder, e para avançar quando fizer sentido, com ou sem fundos.</p>
+    </div>
+    <div class="lados">
+      <div class="card" data-entra="sobe"><span class="tag">Gestão financeira</span><h3>Ligação ao Sage e cobranças</h3><p>As faturas passam a entrar sozinhas a partir do Sage, sem as registar à mão, e as cobranças saem por email e mensagem. Inclui a reconciliação bancária: de quem é cada pagamento.</p></div>
+      <div class="card destaque" data-entra="sobe"><span class="tag">Inteligência artificial</span><h3>Relatórios a partir das fotografias</h3><p>O técnico tira as fotografias e a IA propõe cada situação já escrita com as vossas frases. Assenta nos modelos e nos documentos que ficam arrumados na 1.ª fase.</p></div>
+      <div class="card" data-entra="sobe"><span class="tag">Atendimento</span><h3>Agente de voz</h3><p>Atender o telefone e recolher pedidos de orçamento que hoje ficam sem resposta por falta de tempo.</p></div>
+      <div class="card" data-entra="sobe"><span class="tag">Polis Arquitetos</span><h3>Projeto de arquitetura</h3><p>Cruzar PDM e legislação por zona para apoiar o desenvolvimento do projeto.</p></div>
+      <div class="card" data-entra="sobe"><span class="tag">Infraestrutura</span><h3>Servidor e alojamento</h3><p>Sair do computador que hoje faz de servidor. Com um parceiro nosso, e um tema que costuma ser elegível para fundos.</p></div>
+      <div class="card pendente" data-entra="sobe"><span class="tag">Fundos</span><h3>PRR e outros avisos</h3><p>Neste momento não há avisos abertos. Quando abrirem, vemos juntos o enquadramento destas fases.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. INVESTIMENTO ============ -->
+<section id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>Um valor para construir, uma mensalidade baixa para manter</h2>
+    </div>
+    <div class="invest">
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Implementação · 1.ª fase</div>
+        <div class="price">6.500 € <small>+ IVA</small></div>
+        <ul class="list-check price-list">
+          <li>Plataforma à medida da Polistratégias e da Preslaboral</li>
+          <li>Base de clientes por NIF, estabelecimentos e serviços</li>
+          <li>Plano de visitas e alertas</li>
+          <li>Documentos na pasta de cada cliente</li>
+          <li>Faturação e cobranças à vista, por empresa</li>
+          <li>Importação dos clientes que já têm</li>
+          <li>Formação da equipa</li>
+        </ul>
+        <span class="quando">Pagamento faseado: 4.000 € + IVA no arranque, 2.500 € + IVA na entrada em testes</span>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Mensalidade</div>
+        <div class="price">150 € <small>+ IVA / mês</small></div>
+        <ul class="list-check price-list">
+          <li>Alojamento da plataforma e dos documentos</li>
+          <li>Manutenção e atualizações</li>
+          <li>Suporte à equipa, num grupo de WhatsApp</li>
+          <li>Ajustes quando muda um modelo ou uma regra</li>
+          <li>Sem custo por utilizador</li>
+        </ul>
+        <span class="quando">Só começa com a plataforma em produção</span>
+      </div>
+    </div>
+    <p class="invest-nota"><b>O mesmo valor</b> para dois técnicos ou para a equipa toda, nas duas empresas.</p>
+  </div>
+</section>
+
+<!-- ============ 8. ARRANQUE ============ -->
+<section class="section-alt" id="arranque">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Quatro fases até a equipa trabalhar na plataforma</h2>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 1</span>
+        <h3>Levantamento</h3>
+        <p>Os modelos que nos enviaram, a lista de clientes que têm hoje, as regras de visitas por serviço e quem usa o quê.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 2</span>
+        <h3>Construção</h3>
+        <p>Clientes, estabelecimentos e serviços; o plano de visitas e os alertas; a importação dos clientes.</p>
+      </div>
+      <div class="fase" data-entra="sobe">
+        <span class="quando">Fase 3</span>
+        <h3>Documentos e faturação</h3>
+        <p>As pastas dos clientes e as faturas em aberto, testadas com a equipa no dia a dia.</p>
+      </div>
+      <div class="fase alvo" data-entra="sobe">
+        <span class="quando">Fase 4</span>
+        <h3>Em produção</h3>
+        <p>A equipa trabalha na plataforma. O Excel e o Word ficam para o que quiserem.</p>
+      </div>
+    </div>
+    <p class="arranque-nota">Para começar só precisamos de uma coisa: <b>a lista de clientes que têm hoje</b>, exportada do programa atual ou em Excel.</p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Polistratégias e a Preslaboral, outubro de 2026
+    <span class="disclaimer">Protótipo construído sobre os modelos, os campos e os serviços enviados pela Polistratégias. Clientes, NIF, moradas e avaliações são ilustrativos e não correspondem a clientes reais.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/gestao.js"></script>
+<script>
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var next = (r.getAttribute('data-theme') || 'light') === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme-polis', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
