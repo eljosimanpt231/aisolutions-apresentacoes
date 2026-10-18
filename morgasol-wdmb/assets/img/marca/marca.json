@@ -1,0 +1,401 @@
+{
+  "site": "https://www.morgasol.pt/",
+  "dominio": "morgasol.pt",
+  "titulo": "Home",
+  "descricao": "",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://irp.cdn-website.com/f41842d9/dms3rep/multi/opt/White+on+Transparent-159w.png",
+    "porque": [
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda"
+    ],
+    "analise": {
+      "largura": 160,
+      "altura": 124,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/c779f29f-2d0f-4864-91c5-bcd18e9aaf02/workflows/a737c638-25eb-483e-8e2f-c42e9919eae6.webp",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 1536,
+        "altura": 1024,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              160
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              128
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/c779f29f-2d0f-4864-91c5-bcd18e9aaf02/workflows/ef66f6c6-574a-477a-bc8e-0ccd3beb72f1.webp",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 1536,
+        "altura": 1024,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              224,
+              256
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              96,
+              128,
+              160
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              160,
+              192,
+              224
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              256
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/c779f29f-2d0f-4864-91c5-bcd18e9aaf02/workflows/7872385f-0c58-4c31-82ff-254d3e35fc4a.webp",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 1536,
+        "altura": 1024,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              160,
+              128,
+              96
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              128,
+              96,
+              64
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/c779f29f-2d0f-4864-91c5-bcd18e9aaf02/workflows/69ee1aab-5b33-465d-a4cb-8dfc52fd1ccc.webp",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 1536,
+        "altura": 1024,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              256
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              192,
+              224,
+              256
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              192,
+              224,
+              224
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/c779f29f-2d0f-4864-91c5-bcd18e9aaf02/workflows/a9653e4c-e91a-4e87-be68-a55eb2df8111.webp",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 1536,
+        "altura": 1024,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              96,
+              160
+            ],
+            "parte": 19
+          },
+          {
+            "rgb": [
+              32,
+              96,
+              160
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/c779f29f-2d0f-4864-91c5-bcd18e9aaf02/workflows/ddaf71ec-3769-41b6-84dc-184cca73a670.webp",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 1536,
+        "altura": 1024,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              160
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.png",
+    "src": "https://lirp.cdn-website.com/f41842d9/dms3rep/multi/opt/pexels-photo-356049-14c2bc48-2562h.png"
+  },
+  "paleta": [
+    {
+      "hex": "#efb92a",
+      "hsl": "44 86% 55%",
+      "peso": 256000,
+      "onde": [
+        "botões",
+        "texto"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "44 86% 55%",
+    "--accent-hsl": "44 95% 62%",
+    "nota": "acento = a marca mais viva (a marca só tem uma cor forte)"
+  },
+  "fundoDoSite": "0 0% 93%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "Poppins",
+    "corpo": "Poppins",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "O que fazemos",
+      "Os nossos produtos",
+      "Kits",
+      "Simulador",
+      "O que fazemos",
+      "Os nossos produtos",
+      "Kits",
+      "Simulador"
+    ],
+    "titulos": [
+      "Como usar energia solar excedente em casa",
+      "Guia de manutenção preventiva solar em casa",
+      "Manutenção de sistema fotovoltaico residencial",
+      "Guia de continuidade energética para casa",
+      "Como planear autoconsumo numa moradia sem erros",
+      "Produção solar para consumo noturno em casa",
+      "Quando compensa instalar bateria doméstica?",
+      "Como configurar prioridades da bateria em casa",
+      "Guia de independência energética doméstica",
+      "Como avaliar telhado fotovoltaico em casa",
+      "Avaliação de sistemas antiapagão residenciais",
+      "Autoconsumo solar vs venda excedente: qual compensa?",
+      "Melhores práticas para autoconsumo eficiente",
+      "Custos ocultos em projetos solares e como evitá-los",
+      "7 benefícios de energia solar residencial",
+      "Como monitorizar consumo elétrico solar em casa",
+      "Tarifas elétricas: como pagar menos em casa",
+      "7 formas de aumentar a autonomia doméstica"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura.",
+    "Logótipo pequeno (160px de largura): no hero fica esborratado acima de 80px CSS em ecrãs retina."
+  ]
+}
