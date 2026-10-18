@@ -1,0 +1,509 @@
+{
+  "site": "https://momentussenior.com/",
+  "dominio": "momentussenior.com",
+  "titulo": "Momentus Senior - Momentus Senior",
+  "descricao": "Começar uma nova etapa da sua vida ou da vida de um familiar seu numa residênciasénior é uma decisão importante, mas não tem que ser necessariamente",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://momentussenior.com/wp-content/uploads/2021/03/Grupo-88@2x.png",
+    "porque": [
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 594,
+      "altura": 54,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "média",
+      "coresTinta": [
+        {
+          "rgb": [
+            96,
+            160,
+            160
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://momentussenior.com/wp-content/uploads/2021/04/Grupo-879.svg",
+      "pontos": 2,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome",
+        "transparente ou vectorial",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 53,
+        "altura": 53,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              160,
+              160,
+              96
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://momentussenior.com/img/AVILA_18.png",
+      "pontos": 2,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 319,
+        "altura": 217,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              192,
+              224,
+              224
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "parte": 3
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              224
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://momentussenior.com/wp-content/uploads/2024/03/selocascais.png",
+      "pontos": 1,
+      "motivos": [
+        "no cabeçalho",
+        "no topo",
+        "tem o nome",
+        "parece selo de terceiros"
+      ],
+      "analise": {
+        "largura": 317,
+        "altura": 316,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              160,
+              160,
+              96
+            ],
+            "parte": 88
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              128
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://momentussenior.com/img/SAO-MIGUEL_09.png",
+      "pontos": 1,
+      "motivos": [
+        "no cabeçalho",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 320,
+        "altura": 217,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              192
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              160
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://momentussenior.com/img/Cascais.png",
+      "pontos": 1,
+      "motivos": [
+        "no cabeçalho",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 319,
+        "altura": 217,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              192,
+              224
+            ],
+            "parte": 11
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              256
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              256
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              160,
+              192,
+              256
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://momentussenior.com/img/Estoril.png",
+      "pontos": 1,
+      "motivos": [
+        "no cabeçalho",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 320,
+        "altura": 217,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              160
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.png",
+    "src": "https://momentussenior.com/wp-content/uploads/2024/03/Mask-Group-1-2.png"
+  },
+  "paleta": [
+    {
+      "hex": "#a69367",
+      "hsl": "42 26% 53%",
+      "peso": 273411,
+      "onde": [
+        "botões",
+        "fundos",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#0b143d",
+      "hsl": "229 69% 14%",
+      "peso": 240548,
+      "onde": [
+        "fundos",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#60a0a0",
+      "hsl": "180 25% 50%",
+      "peso": 238420,
+      "onde": [
+        "fundos",
+        "texto",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#1a7efb",
+      "hsl": "213 97% 54%",
+      "peso": 90000,
+      "onde": [
+        "variáveis do tema"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "42 26% 53%",
+    "--accent-hsl": "229 69% 14%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--fluentform-primary",
+      "#1a7efb"
+    ],
+    [
+      "--fluentform-secondary",
+      "#606266"
+    ],
+    [
+      "--swiper-theme-color",
+      "#007aff"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Montserrat",
+    "corpo": "Montserrat",
+    "google": [
+      "https://fonts.googleapis.com/css?family=Cabin:400,400i,700,700i,500,500i%7CPlayfair+Display:400,400i,700,700i&subset=latin,latin-ext&display=auto",
+      "https://fonts.googleapis.com/css?family=Roboto:900%2C400%7CMontserrat:600%2C900&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "UMA NOVA ETAPA",
+      "Por onde começar?",
+      "Chegou o momento?",
+      "Que tipos de cuidados?",
+      "O que é importante falar?",
+      "SERVIÇOS E APOIO",
+      "Apoio Especializado",
+      "Actividades Momentus",
+      "Serviços Momentus",
+      "RESIDÊNCIAS MOMENTUS",
+      "Ávila",
+      "São Miguel",
+      "Cascais",
+      "Estoril",
+      "VIDA MOMENTUS",
+      "O nosso dia a dia",
+      "Tipos de Estadia",
+      "Conversas Momentus",
+      "SABER MAIS",
+      "Marcar Visita",
+      "Contacte-nos",
+      "Trabalhe Connosco",
+      "UMA NOVA ETAPA",
+      "Por onde começar?",
+      "Chegou o momento?",
+      "Que tipos de cuidados?",
+      "O que é importante falar?",
+      "SERVIÇOS E APOIO",
+      "Apoio Especializado",
+      "Actividades Momentus",
+      "Serviços Momentus",
+      "RESIDÊNCIAS MOMENTUS",
+      "Ávila",
+      "São Miguel",
+      "Cascais",
+      "Estoril",
+      "VIDA MOMENTUS",
+      "O nosso dia a dia",
+      "Tipos de Estadia",
+      "Conversas Momentus",
+      "SABER MAIS",
+      "Marcar Visita",
+      "Contacte-nos",
+      "Trabalhe Connosco",
+      "UMA NOVA ETAPA",
+      "Por onde começar?",
+      "Chegou o momento?",
+      "Que tipos de cuidados?",
+      "O que é importante falar?",
+      "SERVIÇOS E APOIO",
+      "Apoio Especializado",
+      "Actividades Momentus",
+      "Serviços Momentus",
+      "RESIDÊNCIAS MOMENTUS",
+      "Ávila",
+      "São Miguel",
+      "Cascais",
+      "Estoril",
+      "VIDA MOMENTUS",
+      "O nosso dia a dia",
+      "Tipos de Estadia",
+      "Conversas Momentus",
+      "SABER MAIS",
+      "Marcar Visita",
+      "Contacte-nos",
+      "Trabalhe Connosco",
+      "UMA NOVA ETAPA",
+      "Por onde começar?",
+      "Chegou o momento?",
+      "Que tipos de cuidados?",
+      "O que é importante falar?",
+      "SERVIÇOS E APOIO",
+      "Apoio Especializado",
+      "Actividades Momentus",
+      "Serviços Momentus",
+      "RESIDÊNCIAS MOMENTUS",
+      "Ávila",
+      "São Miguel",
+      "Cascais",
+      "Estoril",
+      "VIDA MOMENTUS",
+      "O nosso dia a dia",
+      "Tipos de Estadia",
+      "Conversas Momentus",
+      "SABER MAIS",
+      "Marcar Visita",
+      "Contacte-nos",
+      "Trabalhe Connosco"
+    ],
+    "titulos": [
+      "UMA NOVA ETAPA",
+      "Chegou o momento?",
+      "Por onde começar",
+      "Que tipo de cuidados",
+      "O que é importante",
+      "Viver em comunidade",
+      "SERVIÇOS E APOIO",
+      "Que vida vou ter?",
+      "Actividades",
+      "Cabeleireiro",
+      "Refeições",
+      "Fisioterapia",
+      "Casa Nova",
+      "Sala de Culto",
+      "QUESTIONÁRIO",
+      "Que tipo de cuidados?",
+      "PREENCHA O FORMULÁRIO",
+      "Contacte-nos para mais informação"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": []
+}
