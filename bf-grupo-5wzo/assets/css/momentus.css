@@ -354,6 +354,101 @@
     .comp-cab span:last-child { display: none; }
   }
 
+  /* ---------- Configurador do investimento ---------- */
+  .cfg { margin-top: var(--s-6); display: grid; gap: var(--s-5); align-items: start;
+         grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+  @media (max-width: 960px) { .cfg { grid-template-columns: 1fr; } }
+  .cfg-lista { display: grid; gap: 10px; }
+  .cfg-linha {
+    position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px var(--s-3); align-items: center;
+    padding: 16px 18px; border-radius: 12px 12px 12px 3px; background: var(--surface); box-shadow: var(--e1);
+    border-left: 3px solid var(--border-strong); cursor: pointer;
+    transition: border-color var(--t-normal) var(--ease-out), background-color var(--t-normal) var(--ease-out), box-shadow var(--t-normal) var(--ease-out);
+  }
+  .cfg-linha.on { border-left-color: var(--brand-700); box-shadow: var(--e2); }
+  .cfg-linha--base { border-left-color: var(--navy); background: var(--brand-a06); cursor: default; }
+  .cfg-linha input { position: absolute; opacity: 0; pointer-events: none; }
+  .cfg-sw { width: 42px; height: 24px; border-radius: 999px; background: var(--surface-3); position: relative; flex: none;
+            transition: background-color var(--t-normal) var(--ease-out); box-shadow: inset 0 0 0 1px var(--border); }
+  .cfg-sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%;
+                   background: var(--surface); box-shadow: var(--e2); transition: transform var(--t-normal) var(--ease-out); }
+  .cfg-linha.on .cfg-sw { background: var(--brand-700); }
+  .cfg-linha.on .cfg-sw::after { transform: translateX(18px); }
+  .cfg-linha--base .cfg-sw { background: var(--navy); }
+  .cfg-linha input:focus-visible + .cfg-sw { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .cfg-nome b { display: block; font-size: var(--fs-0); color: var(--navy); }
+  .cfg-nome small { display: block; margin-top: 2px; font-size: var(--fs--2); color: var(--muted); line-height: 1.45; }
+  .cfg-nome .cfg-tag { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; font-size: var(--fs--2);
+                       font-weight: 600; background: var(--cobre-a20); color: var(--cobre-texto); vertical-align: 2px; }
+  .cfg-val { text-align: right; white-space: nowrap; }
+  .cfg-val b { display: block; font-family: var(--font-display); font-size: var(--fs-1); font-weight: 700; color: var(--navy); }
+  .cfg-val small { font-size: var(--fs--2); color: var(--muted); }
+  .cfg-linha:not(.on):not(.cfg-linha--base) .cfg-val b { color: var(--faint); }
+  @media (max-width: 560px) {
+    .cfg-linha { grid-template-columns: auto minmax(0, 1fr); }
+    .cfg-val { grid-column: 2; text-align: left; }
+    .cfg-val b { display: inline; margin-right: 8px; }
+  }
+  @media (hover: hover) and (pointer: fine) { .cfg-linha:not(.cfg-linha--base):hover { box-shadow: var(--e2); } }
+
+  .cfg-total {
+    position: sticky; top: 76px; padding: var(--s-5); border-radius: var(--r-4); box-shadow: var(--e3);
+    background: radial-gradient(80% 60% at 100% 0%, var(--cobre-a10), transparent 70%), var(--surface);
+    border-top: 4px solid var(--navy);
+  }
+  @media (max-width: 960px) { .cfg-total { position: static; } }
+  .cfg-total .pc-k { margin-top: var(--s-3); }
+  .cfg-total .pc-k:first-child { margin-top: 0; }
+  .cfg-total .pc-v { font-size: var(--fs-4); }
+  .cfg-atalhos { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--s-4); padding-top: var(--s-3); border-top: 1px solid var(--hairline); }
+  .cfg-atalhos button {
+    min-height: 40px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface);
+    font: 600 var(--fs--2) var(--font-body); color: var(--navy); cursor: pointer;
+  }
+  .cfg-atalhos button[aria-pressed="true"] { background: var(--navy); color: var(--on-brand); border-color: var(--navy); }
+  .cfg-resumo { margin-top: var(--s-3); font-size: var(--fs--2); color: var(--muted); min-height: 3em; }
+  .inclui { margin-top: var(--s-6); display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+  .inclui h3 { font-size: var(--fs-0); font-family: var(--font-body); font-weight: 600; color: var(--navy); }
+  .inclui ul { list-style: none; margin-top: var(--s-3); display: grid; gap: var(--s-2); }
+  .inclui li { position: relative; padding-left: 26px; font-size: var(--fs--1); }
+  .inclui li::before {
+    content: ""; position: absolute; left: 0; top: .28em; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--ok-wash) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23117a52' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 10px no-repeat;
+  }
+
+  .cfg-notas { list-style: none; margin-top: var(--s-4); display: grid; gap: var(--s-2); }
+  .cfg-notas li { position: relative; padding-left: var(--s-3); font-size: var(--fs--1); color: var(--muted); max-width: 64ch; }
+  .cfg-notas li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--cobre); }
+  .cfg-notas b { color: var(--text); }
+  .cfg-val b { font-weight: 600; }
+
+  /* ---------- O agente de texto ---------- */
+  .texto-faz { display: grid; gap: var(--s-4); margin-top: var(--s-6);
+               grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+  .texto-faz article { background: var(--surface); border-radius: var(--r-3); padding: var(--s-4); box-shadow: var(--e1); }
+  .tf-ic { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+           background: var(--brand-a10); color: var(--brand-800); }
+  .tf-ic svg { width: 19px; height: 19px; }
+  .texto-faz h3 { margin-top: var(--s-3); font-size: var(--fs-1); color: var(--navy); }
+  .texto-faz p { margin-top: var(--s-2); font-size: var(--fs--1); color: var(--muted); }
+  .notif-ic--wa { border-radius: 50%; background: var(--wa-green); }
+
+  .plataforma { margin-top: var(--s-7); }
+  .plataforma-txt h3 { font-size: var(--fs-2); color: var(--navy); max-width: 30ch; }
+  .plataforma-txt p { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); max-width: 70ch; }
+  .plataforma-txt b { color: var(--text); }
+  .unibox-moldura { margin-top: var(--s-5); }
+  .unibox-legenda { margin-top: var(--s-2); font-size: var(--fs--2); color: var(--faint); }
+
+  .inclui { margin-top: var(--s-6); display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+  .inclui h3 { font-size: var(--fs-0); font-family: var(--font-body); font-weight: 600; color: var(--navy); }
+  .inclui ul { list-style: none; margin-top: var(--s-3); display: grid; gap: var(--s-2); }
+  .inclui li { position: relative; padding-left: 26px; font-size: var(--fs--1); }
+  .inclui li::before {
+    content: ""; position: absolute; left: 0; top: .28em; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--ok-wash) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23117a52' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 10px no-repeat;
+  }
+
   /* ---------- Prazo ---------- */
   .fases { list-style: none; display: grid; gap: var(--s-4); margin-top: var(--s-6);
            grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
@@ -508,3 +603,16 @@
 
 /* alvo de toque dos cursores da calculadora: a pista fina, a área de toque com 24px */
 .calc-range { height: 24px; background: linear-gradient(hsl(var(--accent-hsl) / 0.22), hsl(var(--accent-hsl) / 0.22)) center / 100% 6px no-repeat; }
+
+/* Unibox: a hora nas bolhas enviadas lê-se mal sobre o acento claro (fora de camada, como o deck) */
+.unibox .ub-row.out .ub-bubble-time { color: rgba(0, 0, 0, 0.72); }
+.unibox .ub-user .ub-user-badge { background: var(--navy) !important; color: var(--on-brand); }
+.cfg-val b { font-variant-numeric: lining-nums proportional-nums; }
+@media print { .unibox { display: none !important; } }
+@media (prefers-reduced-motion: no-preference) {
+  .cfg-total .pc-v.muda { animation: total-muda 520ms cubic-bezier(.23,1,.32,1); }
+  @keyframes total-muda { 0% { transform: translateY(6px); opacity: .35; } 100% { transform: none; opacity: 1; } }
+}
+
+/* o total não acompanha o scroll: sobrepunha-se ao bloco seguinte */
+.cfg-total { position: static !important; }
