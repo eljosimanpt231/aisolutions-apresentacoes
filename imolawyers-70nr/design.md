@@ -29,8 +29,9 @@
 ## Valores (decisão do Manuel a 19/10/2026)
 - Módulo comercial 3.100 € + módulo financeiro 2.500 € = 5.600 € de implementação, + IVA.
 - Mensalidade 250 €/mês para os dois, + IVA.
-- Entrada 2.000 € na assinatura. Os 3.600 € restantes em 6 prestações de 600 €, somadas à mensalidade
-  (850 €/mês nos meses 1 a 6), a contar da entrada em produção. Depois, 250 €/mês.
+- Entrada 2.000 € na assinatura. Os 3.600 € restantes em 8 prestações de 450 €, somadas à mensalidade
+  (700 €/mês nos meses 1 a 8), a contar da entrada em produção. Depois, 250 €/mês. (8 meses: decisão do
+  Manuel a 19/10, para caber nos 600 a 700 €/mês que a Marlise disse poder pagar; antes eram 6 x 850 €.)
 - Recomendações: 500 € de desconto por cada sociedade recomendada que feche connosco (onde abate: por confirmar).
 - Na discovery foram ditos 3.000 a 4.000 € + 2.500 a 3.000 € + 250 a 300 €/mês; a Marlise disse que podia pagar
   600 a 700 €/mês "ou até um bocadinho mais", e que o total e a entrada pesam.

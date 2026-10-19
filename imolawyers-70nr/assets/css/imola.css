@@ -725,7 +725,7 @@
            background: radial-gradient(70% 80% at 0% 0%, var(--brand-a06), transparent 70%), var(--surface); }
   .plano h3 { font-size: var(--fs-2); color: var(--navy); max-width: 32ch; }
   .plano > p { margin-top: var(--s-2); font-size: var(--fs--1); color: var(--muted); max-width: 66ch; }
-  .meses { display: grid; grid-template-columns: 1.3fr repeat(6, minmax(0, 1fr)) 1.3fr; gap: 6px; margin-top: var(--s-5);
+  .meses { display: grid; grid-template-columns: 1.3fr repeat(8, minmax(0, 1fr)) 1.3fr; gap: 6px; margin-top: var(--s-5);
            align-items: end; height: 220px; }
   .mes { display: grid; grid-template-rows: auto 1fr auto; height: 100%; gap: 6px; text-align: center; min-width: 0; }
   .mes .v { font-family: var(--font-display); font-weight: 600; font-size: var(--fs--1); color: var(--navy); font-variant-numeric: lining-nums; white-space: nowrap; }
@@ -786,6 +786,7 @@
   .mes:nth-child(4) .col { transition-delay: 180ms; } .mes:nth-child(5) .col { transition-delay: 240ms; }
   .mes:nth-child(6) .col { transition-delay: 300ms; } .mes:nth-child(7) .col { transition-delay: 360ms; }
   .mes:nth-child(8) .col { transition-delay: 420ms; }
+  .mes:nth-child(9) .col { transition-delay: 480ms; } .mes:nth-child(10) .col { transition-delay: 540ms; }
   .js .plano:not(.entrou) .mes .col { transform: scaleY(0); }
 }
 
