@@ -622,31 +622,6 @@
         </article>
       </div>
 
-      <div class="calc-bloco">
-        <div data-entra="sobe">
-          <h3>Chegam os 1.750 minutos?</h3>
-          <p>Com chamadas de 4 a 5 minutos, chegam para cerca de 17 chamadas por dia útil. Mexam nos números: a
-            mensalidade só sobe se passarem os 1.750 minutos, e apenas pelo que passar.</p>
-          <p>Como o volume acompanha as vagas, haverá meses abaixo e meses acima. A fatura usa os minutos reais de
-            cada mês.</p>
-        </div>
-        <div class="calc" id="msCalc" data-entra="sobe"></div>
-      </div>
-      <script type="application/json" id="msCalc-config">
-      {
-        "inputs": [
-          { "id": "chamadas", "label": "Chamadas por dia", "min": 5, "max": 40, "default": 15 },
-          { "id": "minutos", "label": "Duração média", "min": 2, "max": 8, "default": 5, "suffix": " min" },
-          { "id": "dias", "label": "Dias com chamadas por mês", "min": 15, "max": 30, "default": 22 }
-        ],
-        "outputs": [
-          { "label": "Minutos por mês", "expr": "chamadas*minutos*dias", "suffix": " min", "decimals": 0 },
-          { "label": "Folga no pacote", "expr": "Math.max(0, 1750 - chamadas*minutos*dias)", "suffix": " min", "decimals": 0 },
-          { "label": "Mensalidade nesse mês", "expr": "350 + Math.max(0, chamadas*minutos*dias - 1750)*0.15", "suffix": " € + IVA", "decimals": 0, "highlight": true }
-        ],
-        "note": "Estimativa. Conta só as chamadas atendidas; as que não atendem duram segundos."
-      }
-      </script>
 
       <aside class="meta-custo" data-entra="sobe">
         <h3>E o custo das chamadas em si?</h3>
@@ -771,7 +746,6 @@
 <script>
   chatRaciocinio('msDemo');
   fluxo('msFluxo');
-  calculadora('msCalc');
 </script>
 </body>
 </html>

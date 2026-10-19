@@ -47,5 +47,6 @@
 - v1: ficha do GoHighLevel com a coluna da esquerda vazia (o "ouvir a Bia" passou para lá), onda da gravação grossa,
   calculadora apertada em coluna (passou a largura total), etiqueta da visita partida em duas linhas, cursores com
   alvo de toque de 6px (24px).
+- v2 (19/10): removida a secção "Chegam os 1.750 minutos?" e a calculadora, a pedido do Manuel.
 - Verificação: qa.mjs sem erros | motion.mjs --acto e --alvo #msDemo vistos | comparar.mjs contra contrato-seguro-txzd:
   ganha em gradientes (27/23), animações CSS (13/11), tweens GSAP (35/28) e imagens; perde em svg (sem Unibox).
