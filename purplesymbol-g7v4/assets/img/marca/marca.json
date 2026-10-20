@@ -1,0 +1,348 @@
+{
+  "site": "https://www.experiencebypurple.com/",
+  "dominio": "experiencebypurple.com",
+  "titulo": "EXPERIENCE BY PURPLE",
+  "descricao": "PURPLE Gin & Vodka ®\nDrink a Moment...",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://images.jumpseller.com/store/exp1/store/logo/logotipo_purple.png?0",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 2552,
+      "altura": 1741,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            128,
+            64,
+            160
+          ],
+          "parte": 100
+        },
+        {
+          "rgb": [
+            128,
+            96,
+            160
+          ],
+          "parte": 0
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://jumpseller.s3.eu-west-1.amazonaws.com/store/exp1/assets/untitled_1.png",
+      "pontos": 5,
+      "motivos": [
+        "no topo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 256,
+        "altura": 33,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://image.ibb.co/jmxAeq/noun-Idea-227816.png",
+      "pontos": 3,
+      "motivos": [
+        "no topo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 598,
+        "altura": 598,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://jumpseller.s3.eu-west-1.amazonaws.com/store/exp1/assets/eic_iso.png",
+      "pontos": 2,
+      "motivos": [],
+      "analise": {
+        "largura": 1355,
+        "altura": 957,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 61
+          },
+          {
+            "rgb": [
+              224,
+              64,
+              96
+            ],
+            "parte": 18
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              160
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://assets.jumpseller.com/store/exp1/themes/131688/options/4891429/capa.JPG?1554195462",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 1024,
+        "altura": 1024,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              32
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://assets.jumpseller.com/store/exp1/themes/131688/options/4891432/IMG_0294re-min.jpg?1526900152",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 567,
+        "altura": 567,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              32
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              32
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://cdnx.jumpseller.com/exp1/image/3549282/resize/265/265?1583745344",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 265,
+        "altura": 265,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 41
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              64
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              96,
+              64,
+              96
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              96
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://assets.jumpseller.com/store/exp1/themes/131688/options/4891416/Purple%20Gin%26Vodka07.jpg?1687994098"
+  },
+  "paleta": [
+    {
+      "hex": "#8040a0",
+      "hsl": "280 43% 44%",
+      "peso": 120000,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "280 43% 44%",
+    "--accent-hsl": "280 55% 58%",
+    "nota": "acento = a marca mais viva (a marca só tem uma cor forte)"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "Montserrat",
+    "corpo": "Montserrat",
+    "google": [
+      "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700",
+      "https://fonts.googleapis.com/css?family=Roboto+Condensed%7CMontserrat%7CMontserrat"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "A empresa",
+      "Vodkas",
+      "Gins",
+      "Mix sem Álcool",
+      "Catálogos",
+      "Cocktails",
+      "Eventos",
+      "Contactos",
+      "PROJETOS PT2030-PRR"
+    ],
+    "titulos": [
+      "perfect ...",
+      "Purple @ Serrambi Movimento ‘19",
+      "Purple @ Reveillon 2018 Sheraton",
+      "Purple @ R10 Camarote dos Sonhos",
+      "Purple @ Revista Mensch Outubro 2018",
+      "Produtos Destacados",
+      "Produtos Recentes",
+      "Instagram"
+    ],
+    "tratamento": "tu"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático."
+  ]
+}

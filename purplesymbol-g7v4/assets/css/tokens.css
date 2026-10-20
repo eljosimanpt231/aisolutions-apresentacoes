@@ -1,0 +1,132 @@
+/* ============================================================
+   TOKENS: PurpleSymbol (PURPLE Gin & Vodka), Santo Tirso.
+   Marca: o roxo do logótipo (#8040a0). Acento: o laranja da
+   fotografia do site, que marca sempre o que a plataforma
+   calcula sozinha (necessidades, mínimos, sugestões).
+   Tipografia: Fraunces (títulos), Manrope (corpo),
+   JetBrains Mono (EAN, litros, teor, quantidades).
+   Segue prefers-color-scheme, com botão claro/escuro.
+   ============================================================ */
+
+:root {
+  --brand-hsl: 280 43% 44%;
+  --accent-hsl: 26 92% 54%;
+  --brand2-hsl: 300 45% 46%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --marca-texto: hsl(280 48% 36%);
+  --acento-texto: hsl(22 88% 36%);
+  --ok-texto: hsl(145 62% 26%);
+  --brand-solido: hsl(280 45% 38%);
+
+  --bg: hsl(280 20% 97.5%);
+  --bg-soft: hsl(280 16% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(280 18% 95.5%);
+  --border: hsl(280 12% 86%);
+
+  --text: hsl(282 30% 10%);
+  --muted: hsl(282 8% 35%);
+
+  --success-hsl: 145 62% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 72% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 34 92% 40%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.10), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(280 14% 93%), hsl(var(--brand-hsl) / 0.10));
+
+  --shadow-sm: 0 1px 3px hsl(282 30% 10% / 0.08);
+  --shadow-md: 0 8px 28px hsl(282 30% 10% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(282 30% 10% / 0.16);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.18);
+
+  /* A noite da fotografia: o hero é sempre escuro */
+  --noite: hsl(282 30% 5%);
+  --noite-2: hsl(282 24% 9%);
+  --noite-text: hsl(280 20% 96%);
+  --noite-muted: hsl(280 10% 74%);
+  --noite-line: hsl(280 14% 22%);
+
+  /* A plataforma: clara nos dois temas, barra lateral beringela */
+  --app-bg: hsl(280 18% 97.5%);
+  --app-panel: hsl(0 0% 100%);
+  --app-panel-2: hsl(280 16% 95.5%);
+  --app-line: hsl(280 10% 88%);
+  --app-text: hsl(282 30% 10%);
+  --app-muted: hsl(282 8% 37%);
+  --app-side: hsl(282 38% 14%);
+  --app-side-2: hsl(282 28% 21%);
+  --app-side-text: hsl(280 20% 94%);
+  --app-side-muted: hsl(280 10% 72%);
+  --app-brand: hsl(280 45% 38%);
+  --app-brand-hsl: 280 45% 38%;
+  --app-sug: hsl(22 88% 36%);
+  --app-sug-hsl: 26 92% 52%;
+  --app-ok: hsl(145 60% 26%);   --app-ok-hsl: 145 55% 38%;
+  --app-warn: hsl(32 90% 30%);  --app-warn-hsl: 38 92% 48%;
+  --app-bad: hsl(356 72% 40%);  --app-bad-hsl: 356 72% 48%;
+  --app-info: hsl(205 70% 32%); --app-info-hsl: 205 70% 44%;
+  --app-sombra: 0 10px 28px hsl(282 30% 10% / 0.14);
+  --app-liq: hsl(280 45% 52%);
+  --app-liq-hsl: 280 45% 52%;
+
+  /* O papel (orçamento, encomenda ao fornecedor) */
+  --paper: hsl(0 0% 100%);
+  --paper-ink: hsl(282 30% 10%);
+  --paper-muted: hsl(282 8% 40%);
+  --paper-line: hsl(280 10% 86%);
+  --paper-head: hsl(280 30% 95%);
+
+  /* O email (caixa de correio) */
+  --mail-bg: hsl(0 0% 100%);
+  --mail-line: hsl(220 10% 88%);
+
+  --bar: hsl(280 45% 46%);
+  --veu: hsl(282 40% 4% / 0.62);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --container: 1200px;
+  --section-pad: clamp(72px, 10vw, 120px);
+  --grelha-passo: 64px;
+}
+
+:root[data-theme="dark"] {
+  --brand-hsl: 280 55% 64%;
+  --accent-hsl: 28 95% 60%;
+  --brand2-hsl: 300 60% 70%;
+  --marca-texto: hsl(280 60% 76%);
+  --acento-texto: hsl(30 95% 64%);
+  --ok-texto: hsl(145 55% 60%);
+  --brand-solido: hsl(280 45% 44%);
+
+  --bg: hsl(282 26% 5.5%);
+  --bg-soft: hsl(282 20% 8%);
+  --surface: hsl(282 16% 10%);
+  --surface-2: hsl(282 14% 13%);
+  --border: hsl(282 10% 20%);
+
+  --text: hsl(280 15% 95%);
+  --muted: hsl(280 7% 70%);
+
+  --success-hsl: 145 55% 50%;
+  --danger-hsl: 356 80% 64%;
+  --warning-hsl: 38 92% 58%;
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.18), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(280 55% 70%), hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(282 20% 9%), hsl(var(--brand-hsl) / 0.2));
+  --shadow-sm: 0 1px 3px hsl(282 40% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(282 40% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(282 40% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.25);
+
+  --app-bg: hsl(280 12% 96%);
+}
