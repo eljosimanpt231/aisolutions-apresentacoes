@@ -304,7 +304,7 @@
         "subtitle": "Deixou o contacto pelo QR code. Sai com a chamada da Beatriz marcada.",
         "chat": [
           { "sender": "system", "text": "Formulário da palestra, sexta 18:42: Rui Tavares. «Comprei um T2 em planta e a escritura está sempre a ser adiada»", "passo": 1 },
-          { "sender": "agent", "text": "Boa tarde, Rui. Sou o assistente virtual da Imolawyers. Obrigado por ter deixado o contacto na palestra de hoje. Posso ajudar a marcar uma conversa com a nossa equipa?", "time": "18:43", "passo": 2 },
+          { "sender": "agent", "text": "Boa tarde, Rui. Daqui é da Imolawyers. Obrigado por ter deixado o contacto na palestra de hoje. Posso ajudar a marcar uma conversa com a nossa equipa?", "time": "18:43", "passo": 2 },
           { "sender": "client", "text": "boa tarde", "time": "19:20" },
           { "sender": "client", "text": "sim pode ser. é um contrato promessa de 2024, a construtora ja adiou a escritura 3 vezes", "time": "19:21", "passo": 3 },
           { "sender": "agent", "text": "Percebo, Rui. Para a equipa preparar a conversa, consegue enviar-me o **contrato-promessa** por aqui? Uma foto ou o PDF serve.", "time": "19:21" },
@@ -317,7 +317,7 @@
         ],
         "steps": [
           { "icon": "message", "label": "Formulário da palestra: escreve em minutos" },
-          { "icon": "bot", "label": "Apresenta-se como assistente virtual da Imolawyers" },
+          { "icon": "bot", "label": "Escreve em nome da Imolawyers, com o pedido dele" },
           { "icon": "search", "label": "Assunto: contrato-promessa, escritura adiada" },
           { "icon": "calendar", "label": "Pede o documento e propõe horas livres da Beatriz" },
           { "icon": "clock", "label": "Marca a chamada e agenda o lembrete do contrato" },
@@ -352,7 +352,7 @@
         "subtitle": "Uma pergunta jurídica. O agente não responde: marca quem responde.",
         "chat": [
           { "sender": "system", "text": "Formulário do site, 21:14: Ana Correia. «Quero desistir da compra de uma casa»", "passo": 1 },
-          { "sender": "agent", "text": "Boa noite, Ana. Sou o assistente virtual da Imolawyers. Recebemos o seu pedido sobre a compra da casa. Posso ajudar a marcar uma conversa com a equipa?", "time": "21:15" },
+          { "sender": "agent", "text": "Boa noite, Ana. Daqui é da Imolawyers. Recebemos o seu pedido sobre a compra da casa. Posso ajudar a marcar uma conversa com a equipa?", "time": "21:15" },
           { "sender": "client", "text": "boa noite", "time": "21:30" },
           { "sender": "client", "text": "eu assinei o cpcv e paguei sinal", "time": "21:30", "passo": 2 },
           { "sender": "client", "text": "se desistir agora perco o sinal todo?", "time": "21:31", "passo": 3 },
@@ -376,7 +376,7 @@
         "subtitle": "Quatro dias sem resposta. Quando o cliente quer negociar, passa à Marlise.",
         "chat": [
           { "sender": "system", "text": "ClickUp: proposta enviada a Pedro Lima há 4 dias. Sem resposta.", "passo": 1 },
-          { "sender": "agent", "text": "Bom dia, Pedro. Sou o assistente virtual da Imolawyers. Na segunda enviámos-lhe a proposta para o acompanhamento da compra do armazém. Ficou alguma dúvida?", "time": "10:00", "passo": 2 },
+          { "sender": "agent", "text": "Bom dia, Pedro. Daqui é da Imolawyers. Na segunda enviámos-lhe a proposta para o acompanhamento da compra do armazém. Ficou alguma dúvida?", "time": "10:00", "passo": 2 },
           { "sender": "client", "text": "ola", "time": "12:47" },
           { "sender": "client", "text": "estou a ver com outro escritorio tambem. os honorarios dao para ajustar?", "time": "12:48", "passo": 3 },
           { "sender": "agent", "text": "Obrigado pela franqueza, Pedro. Os honorários são tratados pela **Marlise Guerreiro**: peço-lhe que lhe ligue hoje. Qual é a melhor hora?", "time": "12:48", "passo": 4 },
@@ -496,9 +496,8 @@
       <div class="tres-regras" data-entra="sobe">
         <article>
           <span class="tr-n">1</span>
-          <h3>Diz que é um assistente</h3>
-          <p>Apresenta-se como o assistente virtual da Imolawyers, como a lei europeia exige desde agosto, e passa a
-            uma pessoa sempre que lho pedem.</p>
+          <h3>Passa a uma pessoa quando é preciso</h3>
+          <p>Sempre que a lead pede para falar com alguém, ou a conversa sai das regras que definirem, passa à equipa com o contexto todo.</p>
         </article>
         <article>
           <span class="tr-n">2</span>
@@ -539,7 +538,6 @@
           <ul>
             <li>Dar uma opinião jurídica</li>
             <li>Prometer um resultado ou um prazo</li>
-            <li>Esconder que é um assistente virtual</li>
             <li>Ligar: só escreve, como pediram</li>
           </ul>
         </article>
