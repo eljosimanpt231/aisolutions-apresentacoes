@@ -283,11 +283,10 @@ section { position: relative; }
 .cr-tab.active { color: var(--marca-texto); }
 .cr-chat-ava { background: hsl(var(--brand-hsl) / 0.14); color: var(--marca-texto); font-size: 0.64rem; }
 .cr-chat-who small { color: var(--muted); }
-.unibox { --ub-accent: hsl(323 90% 68%) !important; --ub-accent-fg: hsl(323 60% 8%) !important; --ub-accent-weak: hsl(323 90% 68% / 0.12); --ub-accent-weak2: hsl(323 90% 68% / 0.2); }
-.unibox .ub-subbtn.is-cur { background: hsl(323 90% 68% / 0.14); }
 .aviso-ilustr, .aviso-dados { max-width: 72ch; margin-left: auto; margin-right: auto; }
 .nowrap { white-space: nowrap; }
 .unibox .ub-user-badge { background: hsl(323 100% 34%) !important; color: hsl(0 0% 100%); }
-.unibox .ub-bubble-time { opacity: 1 !important; color: inherit; }
+.unibox--claro .ub-brand-name { color: hsl(323 100% 32%); }
 .fluxo-note { max-width: 66ch; margin-left: auto; margin-right: auto; }
-.unibox .ub-row.out .ub-bubble-time { color: hsl(323 60% 10%) !important; }
+
+.cr-head p { max-width: 70ch; }

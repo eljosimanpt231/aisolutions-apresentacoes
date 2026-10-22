@@ -83,6 +83,30 @@
       return a;
     }
 
+
+    function ini(n) { return String(n || "").split(/\s+/).map(function (w) { return w.charAt(0); }).join("").slice(0, 2).toUpperCase(); }
+    function postHTML(P, chat, rc) {
+      var fb = P.rede === "facebook", h = '<div class="cr-post' + (fb ? " cr-post--fb" : "") + '">';
+      var conta = '<span class="cr-post-ava">' + (P.avatar ? '<img src="' + esc(P.avatar) + '" alt="">' : esc(ini(P.conta))) + "</span>";
+      h += '<div class="cr-post-h">' + conta + '<div><b>' + esc(P.conta) + "</b><small>" + esc(P.meta || (fb ? "Patrocinado" : "Patrocinado")) + "</small></div><i>···</i></div>";
+      if (fb && P.legenda) h += '<p class="cr-post-leg">' + rich(P.legenda) + "</p>";
+      h += '<div class="cr-post-img"' + (P.fundo ? ' style="background:' + esc(P.fundo) + '"' : "") + '>' + (P.imagem ? '<img src="' + esc(P.imagem) + '" alt="">' : "") + (P.selo ? '<span class="cr-post-selo">' + esc(P.selo) + "</span>" : "") + "</div>";
+      if (fb) h += '<div class="cr-post-reac"><span>👍❤️ ' + esc(P.gostos || "") + '</span><span>' + esc(P.ncomentarios || "") + " comentários</span></div>" + '<div class="cr-post-acts fb"><span>Gosto</span><span>Comentar</span><span>Partilhar</span></div>';
+      else {
+        h += '<div class="cr-post-acts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></div>';
+        h += '<div class="cr-post-likes">' + esc(P.gostos || "") + " gostos</div>";
+        if (P.legenda) h += '<p class="cr-post-leg"><b>' + esc(P.conta) + "</b> " + rich(P.legenda) + "</p>";
+      }
+      h += '<div class="cr-coms">';
+      (P.antes || []).forEach(function (c) { h += comHTML(c, false, false, fb); });
+      chat.forEach(function (m, i) { if (i > rc || m.onde !== "post") return; h += comHTML({ autor: m.sender === "agent" ? P.conta : (m.autor || P.autor || "Cliente"), texto: m.text, tempo: m.time }, m.sender === "agent", i === rc, fb); });
+      h += "</div></div>";
+      return h;
+    }
+    function comHTML(c, autor, nova, fb) {
+      return '<div class="cr-com' + (autor ? " cr-com--autor" : "") + (nova ? " cr-nova" : "") + '"><span class="cr-com-ava">' + esc(ini(c.autor)) + '</span><div><div class="cr-com-txt"><b>' + esc(c.autor) + "</b>" + (autor && !fb ? ' <em>Autor</em>' : "") + " " + rich(c.texto) + '</div><small>' + esc(c.tempo || "") + (fb ? " · Gosto · Responder" : " · Responder") + "</small></div></div>";
+    }
+
     function render() {
       var s = scen[st.idx], sq = seq(s), total = s.chat.length + s.steps.length;
       var rc = -1, rs = -1;
@@ -93,17 +117,28 @@
       h += '<div class="cr-shell"><div class="cr-head"><div><div class="k">Cenário ' + (st.idx + 1) + '</div><h3>' + esc(s.title) + "</h3><p>" + esc(s.subtitle || "") + '</p></div><div class="cr-progress">' + Math.min(st.prog, sq.length) + " / " + total + "</div></div>";
       h += '<div class="cr-cols">';
       // chat
-      h += '<div class="cr-chat"><div class="cr-chat-head"><div class="cr-chat-ava">' + esc(cfg.agentInitials || "AI") + '</div><div class="cr-chat-who"><b>' + esc(s.agentName || cfg.agentName || "Agente") + "</b><small>" + esc(s.chatStatus || cfg.chatStatus || "WhatsApp Business, online") + '</small></div></div><div class="cr-msgs" id="' + id + '-msgs">';
-      s.chat.forEach(function (m, i) {
-        if (i > rc) return;
-        if (m.sender === "system") { h += '<div class="cr-sys' + (i === rc ? " cr-nova" : "") + '">' + esc(m.text) + "</div>"; return; }
-        var agent = m.sender === "agent";
-        h += '<div class="cr-row ' + (agent ? "agent" : "client") + (i === rc ? " cr-nova" : "") + '"><div class="cr-bubble">' + rich(m.text) + (m.time ? "<time>" + esc(m.time) + "</time>" : "") + "</div></div>";
-      });
-      if (rc < s.chat.length - 1) h += '<div class="cr-typing"><i></i><i></i><i></i></div>';
-      /* barra de escrita: sem ela, o espaço por cima da conversa lia-se
-         como uma caixa vazia e não como o ecrã de uma conversa */
-      h += '</div><div class="cr-input" aria-hidden="true"><span>Mensagem</span></div></div>';
+      /* Cenário que começa num comentário: "post" no cenário desenha o post da rede (instagram ou facebook)
+         e as mensagens com "onde": "post" aparecem como comentários e respostas públicas. A primeira
+         mensagem sem "onde" abre a conversa privada. Acrescentado a 22/10/2026. */
+      var P = s.post, dm0 = -1;
+      if (P) { for (var q = 0; q < s.chat.length; q++) { if (s.chat[q].onde !== "post") { dm0 = q; break; } } if (dm0 < 0) dm0 = s.chat.length; }
+      var noPost = P && rc < dm0;
+      var canal = s.canal || (P ? (P.rede === "facebook" ? "messenger" : P.rede) : "");
+      h += '<div class="cr-chat' + (noPost ? " cr-chat--post" : canal ? " cr-chat--" + canal : "") + '">';
+      if (noPost) h += postHTML(P, s.chat, rc);
+      else {
+        h += '<div class="cr-chat-head"><div class="cr-chat-ava">' + esc(cfg.agentInitials || "AI") + '</div><div class="cr-chat-who"><b>' + esc(s.agentName || cfg.agentName || "Agente") + "</b><small>" + esc(s.chatStatus || cfg.chatStatus || "WhatsApp Business, online") + '</small></div></div><div class="cr-msgs" id="' + id + '-msgs">';
+        if (P) h += '<div class="cr-origem">' + icon("message") + '<span>Veio do comentário no post: <b>«' + esc(P.comentario || (s.chat[0] && s.chat[0].text) || "") + '»</b></span></div>';
+        s.chat.forEach(function (m, i) {
+          if (i > rc || (P && i < dm0)) return;
+          if (m.sender === "system") { h += '<div class="cr-sys' + (i === rc ? " cr-nova" : "") + '">' + esc(m.text) + "</div>"; return; }
+          var agent = m.sender === "agent";
+          h += '<div class="cr-row ' + (agent ? "agent" : "client") + (i === rc ? " cr-nova" : "") + '"><div class="cr-bubble">' + rich(m.text) + (m.time ? "<time>" + esc(m.time) + "</time>" : "") + "</div></div>";
+        });
+        if (rc < s.chat.length - 1) h += '<div class="cr-typing"><i></i><i></i><i></i></div>';
+        h += '</div><div class="cr-input" aria-hidden="true"><span>Mensagem</span></div>';
+      }
+      h += '</div>';
       // reasoning
       h += '<div class="cr-reason"><div class="cr-reason-head"><span style="color:var(--accent)">' + icon("bot") + '</span><span class="t">Raciocínio do agente</span></div><ol class="cr-steps">';
       s.steps.forEach(function (p, i) {

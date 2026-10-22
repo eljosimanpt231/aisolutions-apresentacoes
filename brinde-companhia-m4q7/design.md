@@ -40,3 +40,12 @@ Sem CTA (só o contacto no fim), sem casos de estudo, preço só no investimento
 - Escalões UV do bloco: os da ficha (<500, <1000, <2500, <5000, >5000 mm²)
 - Inventados (repo público): outras encomendas, conversas, preços dos cenários, contadores, nomes das máquinas
 - Não entram valores do orçamento da Brinde & Companhia à AI Solutions
+
+## Revisão de 22/10/2026 (pedido do Diogo)
+- Cenários que começam num comentário mostram o post a sério (Instagram e Facebook), o comentário e a resposta pública, e só depois a conversa privada no aspeto de cada canal. Feito no componente partilhado (`post`, `canal` nos cenários do chatRaciocinio), para servir às próximas apresentações
+- Unibox em fundo branco (`unibox--claro`, variante acrescentada ao componente partilhado)
+- Estúdio de maquetes refeito para não ser fixo: começa vazio; catálogo de 10 artigos e 24 cores com fotografias, descrições e medidas do site brinde-companhia.pt e das fichas do orçamento (escala de cada fotografia = caixa da fotografia ÷ medida); o Camden e o power bank ficaram de fora por não terem medidas no site
+- Logótipos carregados pelo utilizador: o seletor abre na pasta da Drive enviada no email de 27/08 (os 9 SVG reais, link para a pasta real) ou no computador (arrastar). Cada ficheiro é lido: fundo branco passa a transparência, margens cortadas, fundo de cor sólida detetado (com "Retirar o fundo"), cores, gradiente, linha mais fina (percentil 0,8 das corridas mínimas), resolução
+- "Montar as maquetes" escolhe a versão de logótipo por artigo (cabe na área, linha mínima, contraste, uma cor para técnicas a uma cor) e regista o porquê
+- Arrastar a arte, rodar o desenho em qualquer ângulo, área da ficha editável, tinta e cor da linha, vista 3D (three.js 0.169 alojado em assets/vendor) nos artigos rígidos com o material da técnica; caneca mágica revela a impressão
+- Exporta a maquete em PNG e o ficheiro 1:1 em SVG (vetor original embebido, uma cor a preto nas técnicas a uma cor)

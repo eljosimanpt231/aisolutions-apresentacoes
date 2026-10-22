@@ -210,3 +210,60 @@
 .term-line.warn { color: #fcd34d; }
 .term-line.success { color: #34d399; font-weight: 600; }
 .term-cursor { display: inline-block; width: 8px; height: 15px; background: var(--accent); vertical-align: text-bottom; animation: cr-blink 1s steps(2) infinite; }
+
+/* ---------- Chat: cenário que começa num post (Instagram ou Facebook) ----------
+   O post é desenhado como na rede, em claro, como num telemóvel. Acrescentado a 22/10/2026. */
+.cr-chat--post { background: #fff !important; color: #111; }
+.cr-post { display: flex; flex-direction: column; height: 100%; min-height: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; color: #111; background: #fff; }
+.cr-post-h { display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+.cr-post-h b { display: block; font-size: 13px; font-weight: 600; }
+.cr-post-h small { display: block; font-size: 11px; color: #555; }
+.cr-post-h i { margin-left: auto; font-style: normal; color: #444; letter-spacing: 1px; }
+.cr-post-ava { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; overflow: hidden; background: #fff; border: 2px solid transparent; background-image: linear-gradient(#fff, #fff), linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); background-origin: border-box; background-clip: padding-box, border-box; font-size: 11px; font-weight: 700; }
+.cr-post-ava img { width: 86%; height: auto; }
+.cr-post-img { position: relative; flex: 1 1 auto; min-height: 150px; background: #fff; overflow: hidden; }
+.cr-post-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.cr-post-selo { position: absolute; left: 10px; bottom: 10px; background: rgba(0,0,0,0.72); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 9px; border-radius: 6px; }
+.cr-post-acts { display: flex; gap: 14px; padding: 9px 12px 4px; color: #111; }
+.cr-post-acts svg { width: 21px; height: 21px; }
+.cr-post-likes { padding: 0 12px; font-weight: 600; font-size: 12.5px; }
+.cr-post-leg { padding: 3px 12px 6px; font-size: 12.5px; line-height: 1.4; color: #111; }
+.cr-coms { flex: 0 0 auto; max-height: 58%; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 9px; padding: 8px 12px 12px; border-top: 1px solid #efefef; }
+.cr-com { display: flex; gap: 8px; align-items: flex-start; }
+.cr-com-ava { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-size: 9.5px; font-weight: 700; background: #e8e3f3; color: #4a3b73; }
+.cr-com-txt { font-size: 12.5px; line-height: 1.4; color: #111; }
+.cr-com-txt b { font-weight: 600; }
+.cr-com-txt em { font-style: normal; font-size: 10px; font-weight: 600; color: #737373; }
+.cr-com small { display: block; margin-top: 2px; font-size: 11px; color: #737373; }
+.cr-com--autor { margin-left: 30px; }
+.cr-com--autor .cr-com-ava { background: hsl(var(--brand-hsl) / 0.14); color: hsl(var(--brand-hsl)); }
+.cr-coms > .cr-nova { animation: deck-float-in 0.45s ease both; }
+/* Facebook */
+.cr-post--fb .cr-post-ava { background-image: none; border: 1px solid #ddd; }
+.cr-post--fb .cr-post-leg { padding: 0 12px 8px; }
+.cr-post-reac { display: flex; justify-content: space-between; padding: 7px 12px; font-size: 12px; color: #65676b; }
+.cr-post-acts.fb { justify-content: space-around; border-top: 1px solid #e4e6eb; border-bottom: 1px solid #e4e6eb; padding: 6px 12px; font-size: 12.5px; font-weight: 600; color: #65676b; }
+.cr-post--fb .cr-coms { border-top: 0; }
+.cr-post--fb .cr-com-txt { background: #f0f2f5; border-radius: 16px; padding: 7px 11px; }
+.cr-post--fb .cr-com-txt b { display: block; font-size: 12px; }
+.cr-post--fb .cr-com small { padding-left: 11px; font-weight: 600; }
+/* A ponte para o privado */
+.cr-origem { align-self: stretch; display: flex; gap: 8px; align-items: center; padding: 8px 11px; border-radius: 10px; font-size: 0.72rem; color: var(--muted); background: hsl(var(--brand-hsl) / 0.08); border: 1px dashed hsl(var(--brand-hsl) / 0.3); }
+.cr-origem svg { width: 14px; height: 14px; flex-shrink: 0; }
+.cr-origem b { color: var(--text); font-weight: 600; }
+
+/* Conversa privada com o aspeto do canal (opt-in por "canal" no cenário, ou herdado do post) */
+.cr-chat--instagram, .cr-chat--messenger { background: #fff !important; }
+.cr-chat--instagram .cr-chat-head, .cr-chat--messenger .cr-chat-head, .cr-chat--instagram .cr-input, .cr-chat--messenger .cr-input { background: #fff !important; border-color: #efefef; }
+.cr-chat--instagram .cr-chat-who b, .cr-chat--messenger .cr-chat-who b { color: #111 !important; }
+.cr-chat--instagram .cr-chat-who small, .cr-chat--messenger .cr-chat-who small { color: #65676b !important; }
+.cr-chat--instagram .cr-row.agent .cr-bubble, .cr-chat--instagram .cr-typing { background: #efefef !important; color: #111 !important; box-shadow: none !important; border-radius: 18px; }
+.cr-chat--instagram .cr-row.client .cr-bubble { background: linear-gradient(135deg, #7b3fe4, #3797f0) !important; color: #fff !important; box-shadow: none !important; border-radius: 18px; }
+.cr-chat--messenger .cr-row.agent .cr-bubble, .cr-chat--messenger .cr-typing { background: #f0f0f0 !important; color: #050505 !important; box-shadow: none !important; border-radius: 18px; }
+.cr-chat--messenger .cr-row.client .cr-bubble { background: #0a7cff !important; color: #fff !important; box-shadow: none !important; border-radius: 18px; }
+.cr-chat--instagram .cr-row.client .cr-bubble time, .cr-chat--messenger .cr-row.client .cr-bubble time { color: rgba(255,255,255,0.85) !important; opacity: 1; }
+.cr-chat--instagram .cr-row.agent .cr-bubble time, .cr-chat--messenger .cr-row.agent .cr-bubble time { color: #65676b !important; opacity: 1; }
+.cr-chat--instagram .cr-sys, .cr-chat--messenger .cr-sys { background: #f5f5f5 !important; color: #444 !important; font-style: normal; }
+.cr-chat--instagram .cr-input span, .cr-chat--messenger .cr-input span { background: #f0f0f0 !important; color: #65676b !important; }
+.cr-chat--instagram .cr-origem, .cr-chat--messenger .cr-origem { color: #444; }
+.cr-chat--instagram .cr-origem b, .cr-chat--messenger .cr-origem b { color: #111; }

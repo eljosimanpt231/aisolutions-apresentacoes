@@ -107,7 +107,7 @@
         <div class="mh-palco" id="mqHero"></div>
         <div class="mh-dados">
           <div><small>Técnica</small><b>Laser</b></div>
-          <div><small>Medida</small><b>40 × 9 mm</b></div>
+          <div><small>Medida</small><b>35 × 8 mm</b></div>
           <div><small>Quantidade</small><b>40 un.</b></div>
         </div>
         <div class="mh-ok"><span>Maquete pronta a aprovar</span><span>3 artigos · 3 maquetes</span></div>
@@ -213,117 +213,428 @@
 
     <div class="cr" id="bcDemo" data-entra="sobe"></div>
     <script type="application/json" id="bcDemo-config">
+{
+ "agentName": "Brinde & Companhia",
+ "agentInitials": "B&C",
+ "chatStatus": "Instagram · mensagem privada",
+ "stepMs": 1350,
+ "endPauseMs": 2800,
+ "scenarios": [
+  {
+   "title": "Comentário no Instagram",
+   "subtitle": "Alguém pergunta o preço no post das garrafas. O agente responde no post e segue em privado até ao PDF.",
+   "chatStatus": "Instagram · mensagem privada",
+   "post": {
+    "rede": "instagram",
+    "conta": "Brinde & Companhia",
+    "avatar": "assets/img/simbolo-bc.png",
+    "meta": "Patrocinado",
+    "imagem": "assets/img/cat/sivas-verde.jpg",
+    "selo": "Garrafa térmica Sivas 500 ml",
+    "gostos": "1.284",
+    "legenda": "Garrafas térmicas em inox reciclado, com a sua marca gravada a laser. Peça já o seu orçamento.",
+    "comentario": "quanto custa? 🙏",
+    "autor": "rita.marques",
+    "antes": [
+     {
+      "autor": "joao.ferraz",
+      "texto": "Ficam mesmo bem em verde 👌",
+      "tempo": "3 h"
+     },
+     {
+      "autor": "ana_lopes",
+      "texto": "@marta.c para o evento de dezembro?",
+      "tempo": "2 h"
+     }
+    ]
+   },
+   "chat": [
     {
-      "agentName": "Brinde & Companhia",
-      "agentInitials": "B&C",
-      "chatStatus": "Instagram · mensagem privada",
-      "stepMs": 1350,
-      "endPauseMs": 2800,
-      "scenarios": [
-        {
-          "title": "Comentário no Instagram",
-          "subtitle": "Alguém pergunta o preço no post das garrafas. Sai com o orçamento em PDF.",
-          "chatStatus": "Instagram · mensagem privada",
-          "chat": [
-            { "sender": "system", "text": "Comentário novo no post das garrafas térmicas: «quanto custa?»", "time": "21:14" },
-            { "sender": "system", "text": "Resposta pública no post: «Olá Rita! Enviámos-lhe os detalhes por mensagem privada.»", "time": "21:14", "passo": 2 },
-            { "sender": "agent", "text": "Olá Rita! Vi o seu comentário nas garrafas térmicas. Para lhe dar o preço certo: quantas precisa?", "time": "21:14" },
-            { "sender": "client", "text": "ola", "time": "21:19" },
-            { "sender": "client", "text": "umas 50, é para a equipa do ginasio", "time": "21:19" },
-            { "sender": "agent", "text": "Perfeito. Querem o logótipo gravado a laser no corpo, ou impresso a cores?", "time": "21:19" },
-            { "sender": "client", "text": "o laser fica bem no preto?", "time": "21:23" },
-            { "sender": "agent", "text": "Fica muito elegante: a gravação mostra o inox, num tom prateado. Tem o logótipo em ficheiro?", "time": "21:23" },
-            { "sender": "client", "text": "tenho em png serve?", "time": "21:26" },
-            { "sender": "agent", "text": "Serve para orçamentar. **50 garrafas Sivas 500 ml pretas, logótipo a laser: 7,90 € por unidade + IVA**, gravação incluída. Envio-lhe já o orçamento em PDF. Qual é o seu email?", "time": "21:26", "passo": 4 },
-            { "sender": "client", "text": "rita.ginasio@gmail.com", "time": "21:31" },
-            { "sender": "agent", "text": "Enviado. Amanhã de manhã um comercial nosso confirma consigo o prazo: 6 a 8 dias úteis depois de aprovar a maquete.", "time": "21:31" }
-          ],
-          "steps": [
-            { "icon": "search", "label": "Deteta um comentário com pergunta de preço" },
-            { "icon": "message", "label": "Responde no post e abre a conversa em privado" },
-            { "icon": "list", "label": "Pergunta o que falta: quantidade, técnica, logótipo" },
-            { "icon": "database", "label": "Consulta a tabela de preços em Excel, escalão de 50" },
-            { "icon": "send", "label": "Gera o orçamento em PDF e envia por email" },
-            { "icon": "user-cog", "label": "Regista o pedido e passa-o ao comercial, com o resumo" }
-          ]
-        },
-        {
-          "title": "Best of Gift, em francês",
-          "subtitle": "Um contacto de França a partir de um anúncio. O agente responde na língua dele.",
-          "chatStatus": "WhatsApp · Best of Gift",
-          "chat": [
-            { "sender": "system", "text": "Contacto novo pelo anúncio «Gourdes personnalisées», França", "time": "10:02" },
-            { "sender": "agent", "text": "Bonjour ! Merci pour votre intérêt pour nos gourdes personnalisées. C'est pour combien de pièces ?", "time": "10:02", "passo": 2 },
-            { "sender": "client", "text": "bonjour", "time": "10:05" },
-            { "sender": "client", "text": "200 gourdes pour un salon en mars, avec notre logo en couleur", "time": "10:05" },
-            { "sender": "agent", "text": "Parfait. Pour un logo en couleur, je vous propose la gourde Sivas 500 ml en impression numérique. Vous avez le logo en fichier ?", "time": "10:06", "passo": 3 },
-            { "sender": "client", "text": "oui en pdf", "time": "10:09" },
-            { "sender": "agent", "text": "Très bien. **200 gourdes Sivas, logo en couleur : 8,40 € HT l'unité.** La livraison en France est chiffrée à part. Je vous envoie le devis en PDF ?", "time": "10:10", "passo": 5 },
-            { "sender": "client", "text": "oui merci. et le délai ?", "time": "10:12" },
-            { "sender": "agent", "text": "6 à 8 jours ouvrés après validation de la maquette, plus le transport. Un commercial vous contacte pour le confirmer.", "time": "10:12" }
-          ],
-          "steps": [
-            { "icon": "globe", "label": "Reconhece o idioma e responde em francês" },
-            { "icon": "list", "label": "Pergunta a quantidade e a técnica" },
-            { "icon": "book", "label": "Escolhe no catálogo o artigo e a técnica para um logo a cores" },
-            { "icon": "database", "label": "Consulta a tabela de preços, escalão de 200" },
-            { "icon": "shield", "label": "Fora de Portugal continental: o transporte é cotado à parte" },
-            { "icon": "send", "label": "Envia o devis em PDF, em francês" },
-            { "icon": "user-cog", "label": "Passa ao comercial da Best of Gift, com o resumo em português" }
-          ]
-        },
-        {
-          "title": "Facebook: duas opções",
-          "subtitle": "Quer canetas baratas para uma feira. O agente mostra mais do que uma solução.",
-          "chatStatus": "Messenger · Brinde & Companhia",
-          "chat": [
-            { "sender": "system", "text": "Pedido novo pelo botão «Pedir orçamento» do post das esferográficas", "time": "14:40" },
-            { "sender": "agent", "text": "Boa tarde! Obrigado pelo pedido. De quantas esferográficas precisa, e para quando?", "time": "14:40" },
-            { "sender": "client", "text": "boas", "time": "14:52" },
-            { "sender": "client", "text": "500 para uma feira dia 20 de novembro", "time": "14:52" },
-            { "sender": "client", "text": "o mais barato possivel", "time": "14:53", "passo": 1 },
-            { "sender": "agent", "text": "Tenho duas opções: a Noris em alumínio, com o logo gravado a laser, ou uma esferográfica de plástico com impressão a 1 cor, mais económica. Envio as duas?", "time": "14:53", "passo": 2 },
-            { "sender": "client", "text": "sim", "time": "14:58" },
-            { "sender": "client", "text": "o logo é este. e por baixo o site", "time": "14:58" },
-            { "sender": "system", "text": "Imagem recebida: logótipo · texto «www.climafrio.pt»", "time": "14:58", "passo": 3 },
-            { "sender": "agent", "text": "Recebido. Para 500 unidades: **Noris, laser: 0,95 € + IVA** · **plástico, 1 cor: 0,42 € + IVA**. Segue o PDF com as duas.", "time": "14:59", "passo": 4 },
-            { "sender": "client", "text": "e chega a tempo?", "time": "15:03" },
-            { "sender": "agent", "text": "Chega, se aprovar a maquete até dia 9 de novembro: fica pronta a 19, véspera da feira. Vou passar já o seu pedido a um comercial, para garantir a data.", "time": "15:03" }
-          ],
-          "steps": [
-            { "icon": "calendar", "label": "Identifica a quantidade e a data da feira" },
-            { "icon": "book", "label": "Mostra duas alternativas do catálogo" },
-            { "icon": "id", "label": "Guarda o logótipo e o texto no pedido, para a maquete" },
-            { "icon": "database", "label": "Calcula as duas opções na tabela de preços" },
-            { "icon": "clock", "label": "Confirma o prazo: 8 dias úteis antes da feira" },
-            { "icon": "user-cog", "label": "Passa ao comercial com o prazo assinalado" }
-          ]
-        },
-        {
-          "title": "Encomenda grande: passa ao comercial",
-          "subtitle": "Volume e desconto: o agente não dá preço. Prepara o terreno para o comercial.",
-          "chatStatus": "WhatsApp · Brinde & Companhia",
-          "chat": [
-            { "sender": "system", "text": "Contacto novo pelo WhatsApp do perfil de Instagram", "time": "16:21" },
-            { "sender": "agent", "text": "Boa tarde! Sou o assistente da Brinde & Companhia. Em que posso ajudar?", "time": "16:21" },
-            { "sender": "client", "text": "boa tarde", "time": "16:24" },
-            { "sender": "client", "text": "somos uma cadeia de supermercados, precisamos de 8000 sacos e 3000 tshirts para o verão", "time": "16:24" },
-            { "sender": "client", "text": "que desconto conseguem fazer?", "time": "16:25", "passo": 2 },
-            { "sender": "agent", "text": "Para quantidades desta dimensão, o preço é negociado diretamente com um comercial, para conseguirmos a melhor condição. Posso pedir três dados para ele já falar consigo preparado?", "time": "16:25" },
-            { "sender": "client", "text": "pode", "time": "16:27" },
-            { "sender": "client", "text": "sacos de algodão com logo a 2 cores, tshirts brancas com logo à frente. precisamos até maio", "time": "16:29", "passo": 3 },
-            { "sender": "agent", "text": "Obrigado. Fica tudo registado e um comercial contacta-o ainda hoje. Prefere chamada ou email?", "time": "16:29" },
-            { "sender": "client", "text": "chamada", "time": "16:31" }
-          ],
-          "steps": [
-            { "icon": "filter", "label": "Deteta volume acima do limite do orçamento automático" },
-            { "icon": "ban", "label": "Não dá preço nem desconto: a negociação é do comercial" },
-            { "icon": "list", "label": "Recolhe artigos, quantidades, técnica e prazo" },
-            { "icon": "alert", "label": "Marca como prioritário e entrega ao comercial, com o resumo" }
-          ]
-        }
-      ]
+     "sender": "client",
+     "onde": "post",
+     "text": "quanto custa? 🙏",
+     "time": "agora",
+     "passo": 1
+    },
+    {
+     "sender": "agent",
+     "onde": "post",
+     "text": "Olá Rita! Enviámos-lhe os detalhes por mensagem privada 😊",
+     "time": "agora",
+     "passo": 2
+    },
+    {
+     "sender": "agent",
+     "text": "Olá Rita! Vi o seu comentário nas garrafas térmicas. Para lhe dar o preço certo: quantas precisa?",
+     "time": "21:14"
+    },
+    {
+     "sender": "client",
+     "text": "ola",
+     "time": "21:19"
+    },
+    {
+     "sender": "client",
+     "text": "umas 50, é para a equipa do ginasio",
+     "time": "21:19"
+    },
+    {
+     "sender": "agent",
+     "text": "Perfeito. Querem o logótipo gravado a laser no corpo, ou impresso a cores?",
+     "time": "21:19",
+     "passo": 3
+    },
+    {
+     "sender": "client",
+     "text": "o laser fica bem no preto?",
+     "time": "21:23"
+    },
+    {
+     "sender": "agent",
+     "text": "Fica muito elegante: a gravação mostra o inox, num tom prateado. Tem o logótipo em ficheiro?",
+     "time": "21:23"
+    },
+    {
+     "sender": "client",
+     "text": "tenho em png serve?",
+     "time": "21:26"
+    },
+    {
+     "sender": "agent",
+     "text": "Serve para orçamentar. **50 garrafas Sivas 500 ml pretas, logótipo a laser: 7,90 € por unidade + IVA**, gravação incluída. Envio-lhe já o orçamento em PDF. Qual é o seu email?",
+     "time": "21:26",
+     "passo": 4
+    },
+    {
+     "sender": "client",
+     "text": "rita.ginasio@gmail.com",
+     "time": "21:31"
+    },
+    {
+     "sender": "agent",
+     "text": "Enviado. Amanhã de manhã um comercial nosso confirma consigo o prazo: 6 a 8 dias úteis depois de aprovar a maquete.",
+     "time": "21:31"
     }
+   ],
+   "steps": [
+    {
+     "icon": "search",
+     "label": "Deteta um comentário com pergunta de preço"
+    },
+    {
+     "icon": "message",
+     "label": "Responde no post e abre a conversa em privado"
+    },
+    {
+     "icon": "list",
+     "label": "Pergunta o que falta: quantidade, técnica, logótipo"
+    },
+    {
+     "icon": "database",
+     "label": "Consulta a tabela de preços em Excel, escalão de 50"
+    },
+    {
+     "icon": "send",
+     "label": "Gera o orçamento em PDF e envia por email"
+    },
+    {
+     "icon": "user-cog",
+     "label": "Regista o pedido e passa-o ao comercial, com o resumo"
+    }
+   ]
+  },
+  {
+   "title": "Best of Gift, em francês",
+   "subtitle": "Um contacto de França a partir de um anúncio. O agente responde na língua dele.",
+   "chatStatus": "WhatsApp · Best of Gift",
+   "chat": [
+    {
+     "sender": "system",
+     "text": "Contacto novo pelo anúncio «Gourdes personnalisées», França",
+     "time": "10:02"
+    },
+    {
+     "sender": "agent",
+     "text": "Bonjour ! Merci pour votre intérêt pour nos gourdes personnalisées. C'est pour combien de pièces ?",
+     "time": "10:02",
+     "passo": 2
+    },
+    {
+     "sender": "client",
+     "text": "bonjour",
+     "time": "10:05"
+    },
+    {
+     "sender": "client",
+     "text": "200 gourdes pour un salon en mars, avec notre logo en couleur",
+     "time": "10:05"
+    },
+    {
+     "sender": "agent",
+     "text": "Parfait. Pour un logo en couleur, je vous propose la gourde Sivas 500 ml en impression numérique. Vous avez le logo en fichier ?",
+     "time": "10:06",
+     "passo": 3
+    },
+    {
+     "sender": "client",
+     "text": "oui en pdf",
+     "time": "10:09"
+    },
+    {
+     "sender": "agent",
+     "text": "Très bien. **200 gourdes Sivas, logo en couleur : 8,40 € HT l'unité.** La livraison en France est chiffrée à part. Je vous envoie le devis en PDF ?",
+     "time": "10:10",
+     "passo": 5
+    },
+    {
+     "sender": "client",
+     "text": "oui merci. et le délai ?",
+     "time": "10:12"
+    },
+    {
+     "sender": "agent",
+     "text": "6 à 8 jours ouvrés après validation de la maquette, plus le transport. Un commercial vous contacte pour le confirmer.",
+     "time": "10:12"
+    }
+   ],
+   "steps": [
+    {
+     "icon": "globe",
+     "label": "Reconhece o idioma e responde em francês"
+    },
+    {
+     "icon": "list",
+     "label": "Pergunta a quantidade e a técnica"
+    },
+    {
+     "icon": "book",
+     "label": "Escolhe no catálogo o artigo e a técnica para um logo a cores"
+    },
+    {
+     "icon": "database",
+     "label": "Consulta a tabela de preços, escalão de 200"
+    },
+    {
+     "icon": "shield",
+     "label": "Fora de Portugal continental: o transporte é cotado à parte"
+    },
+    {
+     "icon": "send",
+     "label": "Envia o devis em PDF, em francês"
+    },
+    {
+     "icon": "user-cog",
+     "label": "Passa ao comercial da Best of Gift, com o resumo em português"
+    }
+   ]
+  },
+  {
+   "title": "Facebook: duas opções",
+   "subtitle": "Um comentário a pedir preço para 500. Em privado, o agente mostra mais do que uma solução.",
+   "chatStatus": "Messenger · Brinde & Companhia",
+   "post": {
+    "rede": "facebook",
+    "conta": "Brinde & Companhia",
+    "avatar": "assets/img/simbolo-bc.png",
+    "meta": "Patrocinado · 🌐",
+    "imagem": "assets/img/cat/noris-vermelho.jpg",
+    "selo": "Esferográfica Noris, 7 cores",
+    "gostos": "312",
+    "ncomentarios": "48",
+    "legenda": "Esferográficas para feiras e eventos, com o seu logótipo gravado a laser. Prontas em poucos dias.",
+    "comentario": "preço para 500?",
+    "autor": "Rui Fonseca",
+    "antes": [
+     {
+      "autor": "Carla Mendes",
+      "texto": "Já trabalhámos convosco, recomendo!",
+      "tempo": "5 h"
+     }
+    ]
+   },
+   "chat": [
+    {
+     "sender": "client",
+     "onde": "post",
+     "text": "preço para 500?",
+     "time": "14 min",
+     "passo": 1
+    },
+    {
+     "sender": "agent",
+     "onde": "post",
+     "text": "Olá Rui! Enviámos-lhe mensagem privada com as opções e os preços.",
+     "time": "13 min"
+    },
+    {
+     "sender": "agent",
+     "text": "Olá Rui! Obrigado pelo comentário. As 500 esferográficas são para quando?",
+     "time": "14:40"
+    },
+    {
+     "sender": "client",
+     "text": "boas",
+     "time": "14:52"
+    },
+    {
+     "sender": "client",
+     "text": "para uma feira dia 20 de novembro",
+     "time": "14:52"
+    },
+    {
+     "sender": "client",
+     "text": "o mais barato possivel",
+     "time": "14:53"
+    },
+    {
+     "sender": "agent",
+     "text": "Tenho duas opções: a Noris em alumínio, com o logo gravado a laser, ou uma esferográfica de plástico com impressão a 1 cor, mais económica. Envio as duas?",
+     "time": "14:53",
+     "passo": 2
+    },
+    {
+     "sender": "client",
+     "text": "sim",
+     "time": "14:58"
+    },
+    {
+     "sender": "client",
+     "text": "o logo é este. e por baixo o site",
+     "time": "14:58"
+    },
+    {
+     "sender": "system",
+     "text": "Imagem recebida: logótipo · texto «www.climafrio.pt»",
+     "time": "14:58",
+     "passo": 3
+    },
+    {
+     "sender": "agent",
+     "text": "Recebido. Para 500 unidades: **Noris, laser: 0,95 € + IVA** · **plástico, 1 cor: 0,42 € + IVA**. Segue o PDF com as duas.",
+     "time": "14:59",
+     "passo": 4
+    },
+    {
+     "sender": "client",
+     "text": "e chega a tempo?",
+     "time": "15:03"
+    },
+    {
+     "sender": "agent",
+     "text": "Chega, se aprovar a maquete até dia 9 de novembro: fica pronta a 19, véspera da feira. Vou passar já o seu pedido a um comercial, para garantir a data.",
+     "time": "15:03"
+    }
+   ],
+   "steps": [
+    {
+     "icon": "search",
+     "label": "Deteta um comentário com pedido de preço"
+    },
+    {
+     "icon": "calendar",
+     "label": "Identifica a quantidade e a data da feira"
+    },
+    {
+     "icon": "book",
+     "label": "Mostra duas alternativas do catálogo"
+    },
+    {
+     "icon": "id",
+     "label": "Guarda o logótipo e o texto no pedido, para a maquete"
+    },
+    {
+     "icon": "database",
+     "label": "Calcula as duas opções na tabela de preços"
+    },
+    {
+     "icon": "clock",
+     "label": "Confirma o prazo: 8 dias úteis antes da feira"
+    },
+    {
+     "icon": "user-cog",
+     "label": "Passa ao comercial com o prazo assinalado"
+    }
+   ]
+  },
+  {
+   "title": "Encomenda grande: passa ao comercial",
+   "subtitle": "Volume e desconto: o agente não dá preço. Prepara o terreno para o comercial.",
+   "chatStatus": "WhatsApp · Brinde & Companhia",
+   "chat": [
+    {
+     "sender": "system",
+     "text": "Contacto novo pelo WhatsApp do perfil de Instagram",
+     "time": "16:21"
+    },
+    {
+     "sender": "agent",
+     "text": "Boa tarde! Sou o assistente da Brinde & Companhia. Em que posso ajudar?",
+     "time": "16:21"
+    },
+    {
+     "sender": "client",
+     "text": "boa tarde",
+     "time": "16:24"
+    },
+    {
+     "sender": "client",
+     "text": "somos uma cadeia de supermercados, precisamos de 8000 sacos e 3000 tshirts para o verão",
+     "time": "16:24"
+    },
+    {
+     "sender": "client",
+     "text": "que desconto conseguem fazer?",
+     "time": "16:25",
+     "passo": 2
+    },
+    {
+     "sender": "agent",
+     "text": "Para quantidades desta dimensão, o preço é negociado diretamente com um comercial, para conseguirmos a melhor condição. Posso pedir três dados para ele já falar consigo preparado?",
+     "time": "16:25"
+    },
+    {
+     "sender": "client",
+     "text": "pode",
+     "time": "16:27"
+    },
+    {
+     "sender": "client",
+     "text": "sacos de algodão com logo a 2 cores, tshirts brancas com logo à frente. precisamos até maio",
+     "time": "16:29",
+     "passo": 3
+    },
+    {
+     "sender": "agent",
+     "text": "Obrigado. Fica tudo registado e um comercial contacta-o ainda hoje. Prefere chamada ou email?",
+     "time": "16:29"
+    },
+    {
+     "sender": "client",
+     "text": "chamada",
+     "time": "16:31"
+    }
+   ],
+   "steps": [
+    {
+     "icon": "filter",
+     "label": "Deteta volume acima do limite do orçamento automático"
+    },
+    {
+     "icon": "ban",
+     "label": "Não dá preço nem desconto: a negociação é do comercial"
+    },
+    {
+     "icon": "list",
+     "label": "Recolhe artigos, quantidades, técnica e prazo"
+    },
+    {
+     "icon": "alert",
+     "label": "Marca como prioritário e entrega ao comercial, com o resumo"
+    }
+   ]
+  }
+ ]
+}
     </script>
     <p class="aviso-ilustr">Preços, nomes e contactos ilustrativos. O agente usa sempre a vossa tabela real.</p>
 
@@ -332,7 +643,7 @@
       <p>Em vez de abrir o WhatsApp, o Instagram e o Facebook de cada marca, a equipa vê tudo aqui: o que o agente resolveu, e o que está à espera de um comercial.</p>
     </div>
     <div class="ub-moldura" data-entra="sobe">
-      <div class="unibox" id="bcInbox" ></div>
+      <div class="unibox unibox--claro" id="bcInbox" style="--ub-accent:#c5007b; --ub-accent-fg:#ffffff; --ub-accent-weak:rgba(197,0,123,0.08); --ub-accent-weak2:rgba(197,0,123,0.14)"></div>
     </div>
     <script type="application/json" id="bcInbox-config">
     {
@@ -345,11 +656,11 @@
       "accounts": ["Brinde & Companhia", "Top Brinde", "Best of Gift"],
       "channels": ["whatsapp", "instagram", "facebook"],
       "labels": {
-        "comercial": { "name": "Para o comercial", "color": "#f472b6", "priority": 0 },
-        "orcamento": { "name": "Orçamento enviado", "color": "#4ade80", "priority": 1 },
-        "logo": { "name": "Logótipo recebido", "color": "#facc15", "priority": 2 },
-        "internacional": { "name": "França e Espanha", "color": "#60a5fa", "priority": 3 },
-        "duvida": { "name": "Dúvida respondida", "color": "#94a3b8", "priority": 4 }
+        "comercial": { "name": "Para o comercial", "color": "#9d0062", "priority": 0 },
+        "orcamento": { "name": "Orçamento enviado", "color": "#166534", "priority": 1 },
+        "logo": { "name": "Logótipo recebido", "color": "#854d0e", "priority": 2 },
+        "internacional": { "name": "França e Espanha", "color": "#1e40af", "priority": 3 },
+        "duvida": { "name": "Dúvida respondida", "color": "#475569", "priority": 4 }
       },
       "conversations": [
         {
@@ -440,13 +751,14 @@
   <div class="container wide">
     <div class="sec-head">
       <span class="eyebrow">Solução 2 · A plataforma de maquetes · experimente</span>
-      <h2>O nosso pedido de hoje, maquetado à frente de quem o vai produzir</h2>
-      <p class="lead">Às 08:00 o Josias pediu-vos 40 blocos Citynote, 40 esferográficas Noris e 20 garrafas Sivas, com o logo da AI Solutions. Os artigos, as referências e as áreas de gravação são os das vossas fichas. Gere as maquetes e experimente os logos.</p>
+      <h2>Escolha os artigos. Carregue os logótipos. A plataforma monta as maquetes.</h2>
+      <p class="lead">Um catálogo com os artigos, as cores e as medidas do vosso site e das fichas que nos enviaram. Os logótipos vêm da pasta da Drive que mandámos no pedido de agosto, ou de qualquer ficheiro do computador. Cada ficheiro é lido ao entrar: cores, fundo, linha mais fina. Com isso a plataforma escolhe a versão certa para cada artigo e verifica-a contra a área da ficha e a técnica.</p>
     </div>
     <div class="experimente">
-      <span>Carregue em <b>Gerar as 3 maquetes</b></span>
-      <span>Na <b>garrafa</b>, veja o que a ficha diz dos 9 cm</span>
-      <span>Troque o <b>logótipo</b>, ou carregue o vosso</span>
+      <span><b>Escolha artigos</b> no catálogo (ou o pedido do Josias de hoje)</span>
+      <span><b>Carregue os logótipos</b>: abre a pasta da Drive</span>
+      <span>Carregue em <b>Montar as maquetes</b></span>
+      <span>Arraste e <b>rode o desenho</b>, abra a <b>vista 3D</b></span>
       <span><b>Envie</b> ao cliente e aprove no email</span>
     </div>
 
@@ -464,7 +776,7 @@
         <main class="am-main"></main>
       </div>
     </div>
-    <p class="aviso-dados">Reais: os artigos, as referências, as cores, as quantidades e as técnicas do orçamento 202610-32163 e do pedido de 22/10, as áreas de gravação das fichas Citynote e Sivas, e as fotografias do vosso orçamento. Ilustrativos: as outras encomendas, os contadores e os nomes das máquinas.</p>
+    <p class="aviso-dados">Reais: os artigos, as referências, as cores, as descrições e as medidas (do vosso site e das fichas do orçamento 202610-32163), as áreas de gravação das fichas Citynote e Sivas, as fotografias e os logótipos da pasta da Drive. A escala de cada fotografia sai da medida do artigo. Ilustrativos: as outras encomendas, os contadores, os nomes das máquinas e os mínimos de linha por técnica.</p>
   </div>
 </section>
 
@@ -641,8 +953,7 @@
 <script src="../shared/deck/deck.js"></script>
 <script src="../shared/unibox/unibox.js"></script>
 <script>chatRaciocinio('bcDemo'); fluxo('bcFluxo'); unibox('bcInbox');</script>
-<script src="assets/js/logos.js"></script>
-<script src="assets/js/dados.js"></script>
+<script src="assets/js/catalogo.js"></script>
 <script src="assets/js/app.js"></script>
 <script>
   document.getElementById('themeBtn').addEventListener('click', function () {

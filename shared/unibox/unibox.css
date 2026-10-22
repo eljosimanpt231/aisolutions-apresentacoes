@@ -288,3 +288,29 @@
    JS continua a poder posicionar a conversa com scrollTop.
    ============================================================ */
 .ub-nav, .ub-items, .ub-thread, .ub-panel-body { overflow-y: hidden; }
+
+/* ============================================================
+   Variante clara (opt-in): <div class="unibox unibox--claro">
+   Fundo branco, como uma caixa de entrada de trabalho de dia.
+   Acrescentada a 22/10/2026 (Brinde & Companhia).
+   ============================================================ */
+.unibox.unibox--claro {
+  --ub-bg: #ffffff;
+  --ub-s1: #f7f7f9;
+  --ub-s2: #f2f2f5;
+  --ub-s3: #e9e9ee;
+  --ub-border: rgba(15, 15, 30, 0.09);
+  --ub-border-strong: rgba(15, 15, 30, 0.16);
+  --ub-text: #16161d;
+  --ub-soft: rgba(22, 22, 29, 0.86);
+  --ub-muted: rgba(22, 22, 29, 0.62);
+  --ub-fill: rgba(15, 15, 30, 0.05);
+  border: 1px solid rgba(15, 15, 30, 0.1);
+  box-shadow: 0 18px 50px rgba(20, 10, 30, 0.12);
+}
+.unibox--claro .ub-aside { background: #fafafc; }
+.unibox--claro .ub-item:hover { background: rgba(15, 15, 30, 0.03); }
+.unibox--claro .ub-item.is-sel { background: var(--ub-accent-weak); }
+.unibox--claro .ub-subbtn.is-cur { background: var(--ub-accent-weak); }
+.unibox--claro .ub-row.out .ub-bubble-time { color: rgba(255, 255, 255, 0.96); }
+.unibox--claro .ub-panel, .unibox--claro [class*="ub-contact"] { box-shadow: -20px 0 40px rgba(20, 10, 30, 0.12); }
