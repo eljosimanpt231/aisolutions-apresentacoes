@@ -1,0 +1,756 @@
+{
+  "site": "https://www.brinde-companhia.pt/",
+  "dominio": "brinde-companhia.pt",
+  "titulo": "Brinde & Companhia - Brindes Personalizados",
+  "descricao": "Brindes Publicitários - Impressão, Maquetização e Marketing Promocional",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://www.brinde-companhia.pt/img/menu-top/logo-brindes-lg.png?id=2398723",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome",
+      "parece ícone"
+    ],
+    "analise": {
+      "largura": 172,
+      "altura": 44,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            32,
+            32,
+            32
+          ],
+          "parte": 98
+        },
+        {
+          "rgb": [
+            224,
+            0,
+            96
+          ],
+          "parte": 2
+        },
+        {
+          "rgb": [
+            0,
+            32,
+            32
+          ],
+          "parte": 0
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://www.brinde-companhia.pt/img/temp/allbest.png",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 394,
+        "altura": 127,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.brinde-companhia.pt/img/footer-payments/payments.png",
+      "pontos": 4,
+      "motivos": [
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 356,
+        "altura": 31,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 64
+          },
+          {
+            "rgb": [
+              256,
+              0,
+              0
+            ],
+            "parte": 3
+          },
+          {
+            "rgb": [
+              256,
+              160,
+              32
+            ],
+            "parte": 2
+          },
+          {
+            "rgb": [
+              256,
+              0,
+              32
+            ],
+            "parte": 2
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 2,
+      "motivos": [],
+      "analise": {
+        "largura": 188,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.brinde-companhia.pt/img/delivery-types/small-delivery-flash.png",
+      "pontos": -2,
+      "motivos": [
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 70,
+        "altura": 36,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              64,
+              32
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.brinde-companhia.pt/img/menu-top/falar-com-comercial-small.png",
+      "pontos": -4,
+      "motivos": [
+        "no cabeçalho",
+        "no topo",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 47,
+        "altura": 45,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              0,
+              96
+            ],
+            "parte": 55
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 25
+          },
+          {
+            "rgb": [
+              224,
+              96,
+              160
+            ],
+            "parte": 3
+          },
+          {
+            "rgb": [
+              256,
+              192,
+              224
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.brinde-companhia.pt/img/menu-top/carrinho.png",
+      "pontos": -4,
+      "motivos": [
+        "no cabeçalho",
+        "no topo",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 35,
+        "altura": 35,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 71
+          },
+          {
+            "rgb": [
+              256,
+              32,
+              128
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              64,
+              128
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              224,
+              32,
+              128
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.webp",
+    "src": "https://www.brinde-companhia.pt/img/temp/bannerfabricamospersonalizamos.webp"
+  },
+  "paleta": [
+    {
+      "hex": "#c5007b",
+      "hsl": "323 100% 39%",
+      "peso": 884764,
+      "onde": [
+        "botões",
+        "fundos",
+        "texto",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#fae03c",
+      "hsl": "52 95% 61%",
+      "peso": 60000,
+      "onde": [
+        "botões"
+      ]
+    },
+    {
+      "hex": "#e74c3c",
+      "hsl": "6 78% 57%",
+      "peso": 30000,
+      "onde": [
+        "botões"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "323 100% 39%",
+    "--accent-hsl": "52 95% 61%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 98%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "Montserrat",
+    "corpo": "Montserrat",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "info@brinde-companhia.pt",
+      "madeira@brinde-companhia.pt",
+      "(+351) 252 860 330",
+      "(+351) 291 654 941",
+      "PRODUTOS",
+      "T-shirts Personalizadas",
+      "Tops e Singletes",
+      "Polos personalizados",
+      "Sweatshirts personalizadas",
+      "Bonés Personalizados",
+      "Chapéus Personalizados",
+      "Equipamentos de Desporto",
+      "Aventais personalizados",
+      "Camisas personalizadas",
+      "Coletes personalizados",
+      "Casacos personalizados",
+      "Impermeaveis personalizados",
+      "Cachecóis e Golas",
+      "Gorros e Luvas",
+      "Polares",
+      "Mantas personalizadas",
+      "Interior",
+      "Batas personalizadas",
+      "Calças personalizadas",
+      "Fatos",
+      "Jardineiras personalizadas",
+      "Lenços",
+      "Toalhas personalizadas",
+      "Acessórios",
+      "Calçado",
+      "Ecológicos",
+      "Jalecas personalizadas",
+      "Sublimação",
+      "Fardas Personalizadas",
+      "Memórias USB personalizadas",
+      "Power Banks personalizados",
+      "Carregadores personalizados",
+      "Auscultadores personalizados",
+      "Colunas personalizadas",
+      "3D, Câmaras e Lentes",
+      "Relógios e Estações Digitais",
+      "Acessórios Automóvel",
+      "Acessórios Computador",
+      "Acessórios Telemóveis e Tablets",
+      "Acessórios Viagem",
+      "Lasers e Luz",
+      "Ecológicos",
+      "Calculadoras",
+      "Pilhas",
+      "Sacos personalizados",
+      "Mochilas personalizadas",
+      "Bolsas personalizadas",
+      "Porta documentos personalizados",
+      "Bolsas Térmicas personalizadas",
+      "Sacos Desporto personalizados",
+      "Trolleys de viagem",
+      "Viagem",
+      "Sacos e bolsas ecológicas",
+      "Mochilas personalizadas para empresas",
+      "Canetas personalizadas",
+      "Materiais de Escritório",
+      "Rollers personalizados",
+      "Lápis personalizados",
+      "Lapiseiras personalizadas",
+      "Marcadores",
+      "Conjuntos de escrita personalizados",
+      "Blocos de notas personalizados",
+      "Etiquetas Adesivas",
+      "Estojos de escrita personalizados",
+      "Porta-Cartões",
+      "Pastas",
+      "Agendas personalizadas",
+      "Acessórios Computador",
+      "Acessórios Escritório",
+      "Ecológicos",
+      "Canetas Parker personalizadas",
+      "Bolsas Praia",
+      "Acessórios Praia",
+      "Insufláveis",
+      "Óculos",
+      "Leques",
+      "Jogos Praia",
+      "Toalhas",
+      "Guarda-Sóis",
+      "Pára-Vento",
+      "Chinelos",
+      "Ecológicos",
+      "Verão",
+      "Esferográficas",
+      "Lápis",
+      "Colorir",
+      "Estojos",
+      "Acessórios Escola",
+      "Mochilas",
+      "Jogos",
+      "Bonecos",
+      "Utilitários Criança",
+      "Acessórios Animais",
+      "Ecológicos",
+      "Brindes para Regresso às aulas",
+      "Beleza",
+      "Cosmética",
+      "Higiene",
+      "Farmácia",
+      "Anti-Stress",
+      "Acessórios Calçado",
+      "Acessórios Moda",
+      "Ecológicos",
+      "Garrafas publicitárias",
+      "Canecas Personalizadas",
+      "Copos Personalizados",
+      "Descapsuladores publicitários",
+      "Saca-Rolhas e Canivetes publicitários",
+      "Porta-Garrafas publicitárias",
+      "Acessórios Vinho",
+      "Acessórios Bar",
+      "Acessórios Cozinha",
+      "Acessórios Mesa",
+      "Decoração",
+      "Ecológicos",
+      "Cabazes",
+      "Caixas Vinho",
+      "Canecas personalizadas baratas",
+      "Identificadores publicitários",
+      "Pastas porta documentos",
+      "Pins e Crachás",
+      "Pulseiras",
+      "Acessórios Festa",
+      "Bandeiras Personalizadas",
+      "Troféus Personalizados",
+      "Medalhas Personalizadas",
+      "Doces Personalizados",
+      "Ecológicos",
+      "Brindes para eventos",
+      "Garrafas personalizadas",
+      "Acessórios Desporto",
+      "Acessórios Viagem",
+      "Acessórios Malas",
+      "Necessaire personalizados",
+      "Higiene",
+      "Jogos didáticos",
+      "Lazer",
+      "Ecológicos",
+      "Lanyards publicitárias",
+      "Porta-Chaves personalizados",
+      "Porta-Moedas personzalizados",
+      "Carteiras personalizadas",
+      "Porta-Cartões personalizados",
+      "Isqueiros personalizados",
+      "Acessórios Tabaco",
+      "Cinzeiros personalizados",
+      "Ecológicos",
+      "Ferramentas",
+      "Lanternas",
+      "Navalhas e canivetes",
+      "Acessórios Automóvel",
+      "Ecológicos",
+      "Têxtil publicitário",
+      "Brindes de Inverno",
+      "Brindes de Natal",
+      "Guarda-Chuvas personalizados",
+      "Impermeáveis e Ponchos",
+      "Acessórios Térmicos",
+      "Ecológicos",
+      "Markas",
+      "Exclusivo",
+      "Sublimação",
+      "Design",
+      "Ecológicos",
+      "Happy Days",
+      "Limited Edition",
+      "Novidades",
+      "Tintas DTF",
+      "Batas personalizadas",
+      "Aventais personalizados",
+      "T-shirts Personalizadas",
+      "Polos personalizados",
+      "Camisas personalizadas",
+      "Coletes personalizados",
+      "Casacos personalizados",
+      "Jardineiras personalizadas",
+      "Calças personalizadas",
+      "Impermeaveis personalizados",
+      "Fatos",
+      "Calçado",
+      "Fardas Personalizadas",
+      "Têxtil",
+      "TECNOLOGIA",
+      "SACOS",
+      "GARRAFAS",
+      "LANYARDS",
+      "BLOCOS",
+      "CANETAS",
+      "TROFÉUS",
+      "CANECAS",
+      "BLOGUE",
+      "MENU",
+      "INÍCIO",
+      "NEWS",
+      "FALE",
+      "BLOGUE",
+      "0",
+      "Têxtil",
+      "T-shirts Personalizadas",
+      "Tops e Singletes",
+      "Polos personalizados",
+      "Sweatshirts personalizadas",
+      "Bonés Personalizados",
+      "Chapéus Personalizados",
+      "Equipamentos de Desporto",
+      "Aventais personalizados",
+      "Camisas personalizadas",
+      "Coletes personalizados",
+      "Casacos personalizados",
+      "Impermeaveis personalizados",
+      "Cachecóis e Golas",
+      "Gorros e Luvas",
+      "Polares",
+      "Mantas personalizadas",
+      "Interior",
+      "Batas personalizadas",
+      "Calças personalizadas",
+      "Fatos",
+      "Jardineiras personalizadas",
+      "Lenços",
+      "Toalhas personalizadas",
+      "Acessórios",
+      "Calçado",
+      "Ecológicos",
+      "Jalecas personalizadas",
+      "Sublimação",
+      "Fardas Personalizadas",
+      "Tecnologia e usb",
+      "Memórias USB personalizadas",
+      "Power Banks personalizados",
+      "Carregadores personalizados",
+      "Auscultadores personalizados",
+      "Colunas personalizadas",
+      "3D, Câmaras e Lentes",
+      "Relógios e Estações Digitais",
+      "Acessórios Automóvel",
+      "Acessórios Computador",
+      "Acessórios Telemóveis e Tablets",
+      "Acessórios Viagem",
+      "Lasers e Luz",
+      "Ecológicos",
+      "Calculadoras",
+      "Pilhas",
+      "Sacos e mochilas",
+      "Sacos personalizados",
+      "Mochilas personalizadas",
+      "Bolsas personalizadas",
+      "Porta documentos personalizados",
+      "Bolsas Térmicas personalizadas",
+      "Sacos Desporto personalizados",
+      "Trolleys de viagem",
+      "Viagem",
+      "Sacos e bolsas ecológicas",
+      "Mochilas personalizadas para empresas",
+      "Escrita e escritório",
+      "Canetas personalizadas",
+      "Materiais de Escritório",
+      "Rollers personalizados",
+      "Lápis personalizados",
+      "Lapiseiras personalizadas",
+      "Marcadores",
+      "Conjuntos de escrita personalizados",
+      "Blocos de notas personalizados",
+      "Etiquetas Adesivas",
+      "Estojos de escrita personalizados",
+      "Porta-Cartões",
+      "Pastas",
+      "Agendas personalizadas",
+      "Acessórios Computador",
+      "Acessórios Escritório",
+      "Ecológicos",
+      "Canetas Parker personalizadas",
+      "Verão e praia",
+      "Bolsas Praia",
+      "Acessórios Praia",
+      "Insufláveis",
+      "Óculos",
+      "Leques",
+      "Jogos Praia",
+      "Toalhas",
+      "Guarda-Sóis",
+      "Pára-Vento",
+      "Chinelos",
+      "Ecológicos",
+      "Verão",
+      "Infantil e pets",
+      "Esferográficas",
+      "Lápis",
+      "Colorir",
+      "Estojos",
+      "Acessórios Escola",
+      "Mochilas",
+      "Jogos",
+      "Bonecos",
+      "Utilitários Criança",
+      "Acessórios Animais",
+      "Ecológicos",
+      "Brindes para Regresso às aulas",
+      "Beleza e saúde",
+      "Beleza",
+      "Cosmética",
+      "Higiene",
+      "Farmácia",
+      "Anti-Stress",
+      "Acessórios Calçado",
+      "Acessórios Moda",
+      "Ecológicos",
+      "Casa e vinho",
+      "Garrafas publicitárias",
+      "Canecas Personalizadas",
+      "Copos Personalizados",
+      "Descapsuladores publicitários",
+      "Saca-Rolhas e Canivetes publicitários",
+      "Porta-Garrafas publicitárias",
+      "Acessórios Vinho",
+      "Acessórios Bar",
+      "Acessórios Cozinha",
+      "Acessórios Mesa",
+      "Decoração",
+      "Ecológicos",
+      "Cabazes",
+      "Caixas Vinho",
+      "Canecas personalizadas baratas",
+      "Eventos",
+      "Identificadores publicitários",
+      "Pastas porta documentos",
+      "Pins e Crachás",
+      "Pulseiras",
+      "Acessórios Festa",
+      "Bandeiras Personalizadas",
+      "Troféus Personalizados",
+      "Medalhas Personalizadas",
+      "Doces Personalizados",
+      "Ecológicos",
+      "Brindes para eventos",
+      "Lazer e viajar",
+      "Garrafas personalizadas",
+      "Acessórios Desporto",
+      "Acessórios Viagem",
+      "Acessórios Malas",
+      "Necessaire personalizados",
+      "Higiene",
+      "Jogos didáticos",
+      "Lazer",
+      "Ecológicos",
+      "Chaveiros e isqueiros",
+      "Lanyards publicitárias",
+      "Porta-Chaves personalizados",
+      "Porta-Moedas personzalizados",
+      "Carteiras personalizadas",
+      "Porta-Cartões personalizados",
+      "Isqueiros personalizados",
+      "Acessórios Tabaco",
+      "Cinzeiros personalizados",
+      "Ecológicos",
+      "Ferramentas e auto",
+      "Ferramentas",
+      "Lanternas",
+      "Navalhas e canivetes",
+      "Acessórios Automóvel",
+      "Ecológicos",
+      "Inverno e natal",
+      "Têxtil publicitário",
+      "Brindes de Inverno",
+      "Brindes de Natal",
+      "Guarda-Chuvas personalizados",
+      "Impermeáveis e Ponchos",
+      "Acessórios Térmicos",
+      "Ecológicos",
+      "Markas e exclusivo",
+      "Markas",
+      "Exclusivo",
+      "Sublimação",
+      "Design",
+      "Ecológicos",
+      "Happy Days",
+      "Limited Edition",
+      "Novidades",
+      "Tintas DTF",
+      "Fardas & Companhia",
+      "Batas personalizadas",
+      "Aventais personalizados",
+      "T-shirts Personalizadas",
+      "Polos personalizados",
+      "Camisas personalizadas",
+      "Coletes personalizados",
+      "Casacos personalizados",
+      "Jardineiras personalizadas",
+      "Calças personalizadas",
+      "Impermeaveis personalizados",
+      "Fatos",
+      "Calçado",
+      "Fardas Personalizadas"
+    ],
+    "titulos": [
+      "Brindes personalizados para empresas",
+      "FABRICAMOS PERSONALIZAMOS ENTREGAMOS",
+      "PRODUÇÃO PRÓPRIA COM AS MELHORES TÉCNICAS DE PERSONALIZAÇÃO",
+      "ESPECIALISTAS EM SUBLIMAÇÃO TÊXTIL PARA EMPRESAS",
+      "A SUA EMPRESA À VISTA, MESMO EM DIAS DE CHUVA",
+      "NÃO É UM BRINDE, É O UNIFORME QUE A SUA EMPRESA USA TODOS OS DIAS",
+      "MOCHILAS PERSONALIZADASMAIS VENDIDAS",
+      "MATERIAIS DEESCRITÓRIO",
+      "FARDASPERSONALIZADAS",
+      "A SUA EMPRESA MERECE MAIS DO QUE UM BRINDE GENÉRICO.",
+      "CONHEÇA OSNOSSOS ARTIGOSFABRICO PRÓPRIO",
+      "ARTIGOEM DESTAQUE",
+      "Nossas Últimas novidades",
+      "Pasta A4 Fecho Bolsos Supor... Stock: 237",
+      "Mini Guarda-Chuva Proteção ... Stock: 4785",
+      "COPO TÉRMICO A VÁCUO DE PAR...",
+      "Mochila Poliéster Computado...",
+      "Auriculares Bluetooth Recar... Stock: 400"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático.",
+    "Logótipo pequeno (172px de largura): no hero fica esborratado acima de 86px CSS em ecrãs retina."
+  ]
+}

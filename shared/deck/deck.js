@@ -93,7 +93,7 @@
       h += '<div class="cr-shell"><div class="cr-head"><div><div class="k">Cenário ' + (st.idx + 1) + '</div><h3>' + esc(s.title) + "</h3><p>" + esc(s.subtitle || "") + '</p></div><div class="cr-progress">' + Math.min(st.prog, sq.length) + " / " + total + "</div></div>";
       h += '<div class="cr-cols">';
       // chat
-      h += '<div class="cr-chat"><div class="cr-chat-head"><div class="cr-chat-ava">' + esc(cfg.agentInitials || "AI") + '</div><div class="cr-chat-who"><b>' + esc(cfg.agentName || "Agente") + "</b><small>" + esc(cfg.chatStatus || "WhatsApp Business, online") + '</small></div></div><div class="cr-msgs" id="' + id + '-msgs">';
+      h += '<div class="cr-chat"><div class="cr-chat-head"><div class="cr-chat-ava">' + esc(cfg.agentInitials || "AI") + '</div><div class="cr-chat-who"><b>' + esc(s.agentName || cfg.agentName || "Agente") + "</b><small>" + esc(s.chatStatus || cfg.chatStatus || "WhatsApp Business, online") + '</small></div></div><div class="cr-msgs" id="' + id + '-msgs">';
       s.chat.forEach(function (m, i) {
         if (i > rc) return;
         if (m.sender === "system") { h += '<div class="cr-sys' + (i === rc ? " cr-nova" : "") + '">' + esc(m.text) + "</div>"; return; }

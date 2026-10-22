@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Brinde & Companhia | Agente multicanal e maquetes automáticas</title>
+  <meta name="description" content="Protótipo AI Solutions para a Brinde & Companhia: um agente que responde no Instagram, no Facebook e no WhatsApp com o preço da vossa tabela, e uma plataforma que monta as maquetes de cada encomenda.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brinde & Companhia × AI Solutions">
+  <meta property="og:description" content="O orçamento no momento. A maquete sem esperar.">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/brinde-companhia-m4q7/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try {
+      var t = localStorage.getItem('ais-theme-bc');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+  </script>
+  <link rel="icon" href="assets/img/logo-bc.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/unibox/unibox.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/brinde.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
+  <link rel="stylesheet" href="assets/css/estudio.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<!-- As tintas da maquete: o prateado do laser e a linha do bordado -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="mqPrata" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="hsl(210 6% 93%)"/>
+      <stop offset="0.45" stop-color="hsl(210 5% 74%)"/>
+      <stop offset="0.55" stop-color="hsl(210 5% 66%)"/>
+      <stop offset="1" stop-color="hsl(210 6% 86%)"/>
+    </linearGradient>
+    <filter id="mqLinha" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.6 0.25" numOctaves="1" seed="4" result="ruido"/>
+      <feColorMatrix in="ruido" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.9 1.1" result="fio"/>
+      <feComposite in="SourceGraphic" in2="fio" operator="in"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img src="assets/img/logo-bc.png" alt="Brinde & Companhia">
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#agente">O agente</a>
+    <a href="#maquetes">As maquetes</a>
+    <a href="#ligacoes">Ligações</a>
+    <a href="#limites">Quem decide</a>
+    <a href="#investimento">Investimento</a>
+    <a href="#arranque">Arranque</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="hero-foto" aria-hidden="true"><img src="assets/img/hero.jpg" alt="" data-paralaxe="6"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-acto="1" data-entra="sobe">Brinde &amp; Companhia × AI Solutions</span>
+        <h1 data-linhas>O orçamento <span class="nowrap"><span class="g-brilho">no momento</span>.</span> A maquete sem esperar.</h1>
+        <p class="lead" data-acto="2" data-entra="sobe">
+          Um agente que responde a quem pergunta o preço num post ou por mensagem, no Instagram, no Facebook e no WhatsApp,
+          com a vossa tabela. E uma plataforma que monta a maquete de cada artigo da encomenda, envia-a para aprovação e
+          prepara o ficheiro para a máquina. Para a mesma equipa de design dar resposta a muito mais volume.
+        </p>
+        <div class="hero-meta" data-acto="3" data-entra="sobe">
+          <span>Para o <b>Manuel Gaiteiro</b></span>
+          <span>Seguimento da reunião de <b>19/10/2026</b></span>
+          <span>Brinde &amp; Companhia · Top Brinde · Best of Gift</span>
+        </div>
+      </div>
+      <div class="mq-hero" data-acto="4" data-entra="escala" aria-label="Maquete do pedido de hoje">
+        <div class="mh-top"><span>Encomenda 202610-32163 · hoje, 08:00</span><span>AI Solutions</span></div>
+        <div class="mh-nome">Esferográfica Noris, logo gravado a laser no corpo</div>
+        <div class="mh-palco" id="mqHero"></div>
+        <div class="mh-dados">
+          <div><small>Técnica</small><b>Laser</b></div>
+          <div><small>Medida</small><b>40 × 9 mm</b></div>
+          <div><small>Quantidade</small><b>40 un.</b></div>
+        </div>
+        <div class="mh-ok"><span>Maquete pronta a aprovar</span><span>3 artigos · 3 maquetes</span></div>
+      </div>
+    </div>
+    <div class="hero-stats" data-acto="5" data-entra="sobe">
+      <div class="stat"><div class="num"><span data-conta="35">35</span> mil</div><div class="desc">Artigos personalizáveis no catálogo: roupa, brindes, malas</div></div>
+      <div class="stat"><div class="num"><span data-conta="30">30</span> min</div><div class="desc">O que já respondem hoje por email. Nas redes, o cliente quer no momento</div></div>
+      <div class="stat"><div class="num"><span data-conta="12">12</span> designers</div><div class="desc">A juntar produto, logótipo e texto, maquete a maquete</div></div>
+      <div class="stat"><div class="num"><span data-conta="3">3</span> canais</div><div class="desc">WhatsApp, Instagram e Facebook, todos num só ecrã</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 19/10</span>
+      <h2>O processo está bem montado. Faltam duas peças.</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>O cliente cada vez mais quer as coisas no momento. Tudo tratado no momento.</blockquote>
+        <p>Quem pergunta o preço num post e não tem resposta vai procurar a outro lado. Os dados dos anúncios mostram uma percentagem elevada de orçamentos perdidos por aqui.</p>
+        <span class="quem">Manuel Gaiteiro</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Tivemos o WhatsApp online uma semana e tivemos de sair. O cliente mandava tudo por ali, o logo, o texto, tudo.</blockquote>
+        <p>Sem resposta automática, o canal que o cliente prefere tira capacidade à equipa em vez de a dar.</p>
+        <span class="quem">Manuel Gaiteiro</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Se o cliente disser as quantidades e o tipo de impressão, o agente faz logo o orçamento e envia-lhe.</blockquote>
+        <p>A tabela de preços já está em Excel, organizada. É dela que o agente tira o valor.</p>
+        <span class="quem">Manuel Gaiteiro</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Os designers pegam na caneta, no texto e no logo, colocam à medida e mandam a maquete para o cliente aprovar.</blockquote>
+        <p>Depois de aprovada, o trabalho vai para a máquina certa, no formato que ela pede. O operador só põe as peças.</p>
+        <span class="quem">Manuel Gaiteiro</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>O cliente pode comprar cinco produtos diferentes. E tem de haver maquetes para os cinco.</blockquote>
+        <p>Cada artigo tem a sua técnica, a sua área de gravação e a sua medida. Hoje é tudo montado à mão.</p>
+        <span class="quem">Manuel Gaiteiro</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Em vez de colocar mais pessoas, vamos evoluir para outros mercados.</blockquote>
+        <p>A Best of Gift a abrir França e Espanha, com a mesma equipa de design a sustentar o volume.</p>
+        <span class="quem">Manuel Gaiteiro</span>
+      </div>
+    </div>
+    <p class="sintese">O email já tem resposta em 30 minutos. <b>Falta o momento: o comentário que fica sem resposta, e a maquete que espera pelo designer.</b></p>
+  </div>
+</section>
+
+<!-- ============ 3. AS DUAS PEÇAS ============ -->
+<section id="muda">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que vamos construir</span>
+      <h2>Duas soluções, uma para cada ponta da encomenda</h2>
+      <p class="lead">O agente trabalha antes da venda, nas redes sociais e no WhatsApp. A plataforma de maquetes trabalha depois, quando a encomenda está fechada.</p>
+    </div>
+    <div class="duas">
+      <div class="card" data-entra="sobe">
+        <span class="num-sol">1 · Antes da venda</span>
+        <h3>Agente multicanal</h3>
+        <p>Responde ao comentário no post e continua em privado. Pergunta o que falta, dá o preço da vossa tabela e envia o orçamento em PDF. Depois passa o pedido ao comercial, como hoje acontece com o email.</p>
+        <div class="versus-mini">
+          <div class="vm-hoje"><b>Hoje</b><ul><li>Comentários a perguntar o preço ficam por responder</li><li>WhatsApp desligado: o volume era ingerível</li><li>O cliente vai procurar a outro lado</li></ul></div>
+          <div class="vm-novo"><b>Com o agente</b><ul><li>Resposta no momento, a qualquer hora</li><li>Em português, francês e espanhol</li><li>Pedido completo entregue ao comercial</li></ul></div>
+        </div>
+      </div>
+      <div class="card" data-entra="sobe">
+        <span class="num-sol">2 · Depois da venda</span>
+        <h3>Automação das maquetes</h3>
+        <p>A partir dos artigos comprados e do logótipo ou texto do cliente, gera a maquete de cada artigo, envia-a por email para aprovação e, aprovada, prepara o ficheiro no formato de cada máquina.</p>
+        <div class="versus-mini">
+          <div class="vm-hoje"><b>Hoje</b><ul><li>Uma maquete montada à mão por artigo</li><li>Medidas e áreas verificadas de cabeça</li><li>Ficheiro preparado de novo para a máquina</li></ul></div>
+          <div class="vm-novo"><b>Com a plataforma</b><ul><li>As maquetes da encomenda em segundos</li><li>Área, tinta e linhas verificadas sozinhas</li><li>Ao operador fica só a montagem</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. O AGENTE ============ -->
+<section class="section-alt" id="agente">
+  <div class="container wide">
+    <div class="sec-head">
+      <span class="eyebrow">Solução 1 · O agente multicanal</span>
+      <h2>Do “quanto custa?” no post ao orçamento em PDF</h2>
+      <p class="lead">Quatro situações que chegam todos os dias às vossas páginas. À esquerda, a conversa. À direita, o que o agente está a pensar em cada passo.</p>
+    </div>
+    <div class="agente-intro">
+      <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><b>Comentário e privado</b><p>Responde no post e continua a conversa em mensagem privada.</p></div>
+      <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11h6M9 15h4"/><path d="M6 3h9l4 4v14H6z"/></svg></span><b>Pergunta o que falta</b><p>Artigo, quantidade, tipo de impressão, logótipo ou texto. Uma pergunta de cada vez.</p></div>
+      <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3z"/><path d="M3 10h18M9 5v14"/></svg></span><b>Preço da vossa tabela</b><p>O Excel de preços que já têm, com os escalões. Envia o PDF ao cliente.</p></div>
+      <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><path d="M17 11l2 2 4-4"/></svg></span><b>Passa ao comercial</b><p>Com o pedido completo e o resumo da conversa. A negociação continua vossa.</p></div>
+    </div>
+
+    <div class="cr" id="bcDemo" data-entra="sobe"></div>
+    <script type="application/json" id="bcDemo-config">
+    {
+      "agentName": "Brinde & Companhia",
+      "agentInitials": "B&C",
+      "chatStatus": "Instagram · mensagem privada",
+      "stepMs": 1350,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "Comentário no Instagram",
+          "subtitle": "Alguém pergunta o preço no post das garrafas. Sai com o orçamento em PDF.",
+          "chatStatus": "Instagram · mensagem privada",
+          "chat": [
+            { "sender": "system", "text": "Comentário novo no post das garrafas térmicas: «quanto custa?»", "time": "21:14" },
+            { "sender": "system", "text": "Resposta pública no post: «Olá Rita! Enviámos-lhe os detalhes por mensagem privada.»", "time": "21:14", "passo": 2 },
+            { "sender": "agent", "text": "Olá Rita! Vi o seu comentário nas garrafas térmicas. Para lhe dar o preço certo: quantas precisa?", "time": "21:14" },
+            { "sender": "client", "text": "ola", "time": "21:19" },
+            { "sender": "client", "text": "umas 50, é para a equipa do ginasio", "time": "21:19" },
+            { "sender": "agent", "text": "Perfeito. Querem o logótipo gravado a laser no corpo, ou impresso a cores?", "time": "21:19" },
+            { "sender": "client", "text": "o laser fica bem no preto?", "time": "21:23" },
+            { "sender": "agent", "text": "Fica muito elegante: a gravação mostra o inox, num tom prateado. Tem o logótipo em ficheiro?", "time": "21:23" },
+            { "sender": "client", "text": "tenho em png serve?", "time": "21:26" },
+            { "sender": "agent", "text": "Serve para orçamentar. **50 garrafas Sivas 500 ml pretas, logótipo a laser: 7,90 € por unidade + IVA**, gravação incluída. Envio-lhe já o orçamento em PDF. Qual é o seu email?", "time": "21:26", "passo": 4 },
+            { "sender": "client", "text": "rita.ginasio@gmail.com", "time": "21:31" },
+            { "sender": "agent", "text": "Enviado. Amanhã de manhã um comercial nosso confirma consigo o prazo: 6 a 8 dias úteis depois de aprovar a maquete.", "time": "21:31" }
+          ],
+          "steps": [
+            { "icon": "search", "label": "Deteta um comentário com pergunta de preço" },
+            { "icon": "message", "label": "Responde no post e abre a conversa em privado" },
+            { "icon": "list", "label": "Pergunta o que falta: quantidade, técnica, logótipo" },
+            { "icon": "database", "label": "Consulta a tabela de preços em Excel, escalão de 50" },
+            { "icon": "send", "label": "Gera o orçamento em PDF e envia por email" },
+            { "icon": "user-cog", "label": "Regista o pedido e passa-o ao comercial, com o resumo" }
+          ]
+        },
+        {
+          "title": "Best of Gift, em francês",
+          "subtitle": "Um contacto de França a partir de um anúncio. O agente responde na língua dele.",
+          "chatStatus": "WhatsApp · Best of Gift",
+          "chat": [
+            { "sender": "system", "text": "Contacto novo pelo anúncio «Gourdes personnalisées», França", "time": "10:02" },
+            { "sender": "agent", "text": "Bonjour ! Merci pour votre intérêt pour nos gourdes personnalisées. C'est pour combien de pièces ?", "time": "10:02", "passo": 2 },
+            { "sender": "client", "text": "bonjour", "time": "10:05" },
+            { "sender": "client", "text": "200 gourdes pour un salon en mars, avec notre logo en couleur", "time": "10:05" },
+            { "sender": "agent", "text": "Parfait. Pour un logo en couleur, je vous propose la gourde Sivas 500 ml en impression numérique. Vous avez le logo en fichier ?", "time": "10:06", "passo": 3 },
+            { "sender": "client", "text": "oui en pdf", "time": "10:09" },
+            { "sender": "agent", "text": "Très bien. **200 gourdes Sivas, logo en couleur : 8,40 € HT l'unité.** La livraison en France est chiffrée à part. Je vous envoie le devis en PDF ?", "time": "10:10", "passo": 5 },
+            { "sender": "client", "text": "oui merci. et le délai ?", "time": "10:12" },
+            { "sender": "agent", "text": "6 à 8 jours ouvrés après validation de la maquette, plus le transport. Un commercial vous contacte pour le confirmer.", "time": "10:12" }
+          ],
+          "steps": [
+            { "icon": "globe", "label": "Reconhece o idioma e responde em francês" },
+            { "icon": "list", "label": "Pergunta a quantidade e a técnica" },
+            { "icon": "book", "label": "Escolhe no catálogo o artigo e a técnica para um logo a cores" },
+            { "icon": "database", "label": "Consulta a tabela de preços, escalão de 200" },
+            { "icon": "shield", "label": "Fora de Portugal continental: o transporte é cotado à parte" },
+            { "icon": "send", "label": "Envia o devis em PDF, em francês" },
+            { "icon": "user-cog", "label": "Passa ao comercial da Best of Gift, com o resumo em português" }
+          ]
+        },
+        {
+          "title": "Facebook: duas opções",
+          "subtitle": "Quer canetas baratas para uma feira. O agente mostra mais do que uma solução.",
+          "chatStatus": "Messenger · Brinde & Companhia",
+          "chat": [
+            { "sender": "system", "text": "Pedido novo pelo botão «Pedir orçamento» do post das esferográficas", "time": "14:40" },
+            { "sender": "agent", "text": "Boa tarde! Obrigado pelo pedido. De quantas esferográficas precisa, e para quando?", "time": "14:40" },
+            { "sender": "client", "text": "boas", "time": "14:52" },
+            { "sender": "client", "text": "500 para uma feira dia 20 de novembro", "time": "14:52" },
+            { "sender": "client", "text": "o mais barato possivel", "time": "14:53", "passo": 1 },
+            { "sender": "agent", "text": "Tenho duas opções: a Noris em alumínio, com o logo gravado a laser, ou uma esferográfica de plástico com impressão a 1 cor, mais económica. Envio as duas?", "time": "14:53", "passo": 2 },
+            { "sender": "client", "text": "sim", "time": "14:58" },
+            { "sender": "client", "text": "o logo é este. e por baixo o site", "time": "14:58" },
+            { "sender": "system", "text": "Imagem recebida: logótipo · texto «www.climafrio.pt»", "time": "14:58", "passo": 3 },
+            { "sender": "agent", "text": "Recebido. Para 500 unidades: **Noris, laser: 0,95 € + IVA** · **plástico, 1 cor: 0,42 € + IVA**. Segue o PDF com as duas.", "time": "14:59", "passo": 4 },
+            { "sender": "client", "text": "e chega a tempo?", "time": "15:03" },
+            { "sender": "agent", "text": "Chega, se aprovar a maquete até dia 9 de novembro: fica pronta a 19, véspera da feira. Vou passar já o seu pedido a um comercial, para garantir a data.", "time": "15:03" }
+          ],
+          "steps": [
+            { "icon": "calendar", "label": "Identifica a quantidade e a data da feira" },
+            { "icon": "book", "label": "Mostra duas alternativas do catálogo" },
+            { "icon": "id", "label": "Guarda o logótipo e o texto no pedido, para a maquete" },
+            { "icon": "database", "label": "Calcula as duas opções na tabela de preços" },
+            { "icon": "clock", "label": "Confirma o prazo: 8 dias úteis antes da feira" },
+            { "icon": "user-cog", "label": "Passa ao comercial com o prazo assinalado" }
+          ]
+        },
+        {
+          "title": "Encomenda grande: passa ao comercial",
+          "subtitle": "Volume e desconto: o agente não dá preço. Prepara o terreno para o comercial.",
+          "chatStatus": "WhatsApp · Brinde & Companhia",
+          "chat": [
+            { "sender": "system", "text": "Contacto novo pelo WhatsApp do perfil de Instagram", "time": "16:21" },
+            { "sender": "agent", "text": "Boa tarde! Sou o assistente da Brinde & Companhia. Em que posso ajudar?", "time": "16:21" },
+            { "sender": "client", "text": "boa tarde", "time": "16:24" },
+            { "sender": "client", "text": "somos uma cadeia de supermercados, precisamos de 8000 sacos e 3000 tshirts para o verão", "time": "16:24" },
+            { "sender": "client", "text": "que desconto conseguem fazer?", "time": "16:25", "passo": 2 },
+            { "sender": "agent", "text": "Para quantidades desta dimensão, o preço é negociado diretamente com um comercial, para conseguirmos a melhor condição. Posso pedir três dados para ele já falar consigo preparado?", "time": "16:25" },
+            { "sender": "client", "text": "pode", "time": "16:27" },
+            { "sender": "client", "text": "sacos de algodão com logo a 2 cores, tshirts brancas com logo à frente. precisamos até maio", "time": "16:29", "passo": 3 },
+            { "sender": "agent", "text": "Obrigado. Fica tudo registado e um comercial contacta-o ainda hoje. Prefere chamada ou email?", "time": "16:29" },
+            { "sender": "client", "text": "chamada", "time": "16:31" }
+          ],
+          "steps": [
+            { "icon": "filter", "label": "Deteta volume acima do limite do orçamento automático" },
+            { "icon": "ban", "label": "Não dá preço nem desconto: a negociação é do comercial" },
+            { "icon": "list", "label": "Recolhe artigos, quantidades, técnica e prazo" },
+            { "icon": "alert", "label": "Marca como prioritário e entrega ao comercial, com o resumo" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <p class="aviso-ilustr">Preços, nomes e contactos ilustrativos. O agente usa sempre a vossa tabela real.</p>
+
+    <div class="sub-head">
+      <h3>As conversas das três redes, num só ecrã</h3>
+      <p>Em vez de abrir o WhatsApp, o Instagram e o Facebook de cada marca, a equipa vê tudo aqui: o que o agente resolveu, e o que está à espera de um comercial.</p>
+    </div>
+    <div class="ub-moldura" data-entra="sobe">
+      <div class="unibox" id="bcInbox" ></div>
+    </div>
+    <script type="application/json" id="bcInbox-config">
+    {
+      "brand": "Brinde & Companhia",
+      "teamName": "Equipa comercial",
+      "teamEmail": "info@brinde-companhia.pt",
+      "teamInitials": "BC",
+      "agentName": "Agente B&C",
+      "systemName": "CRM",
+      "accounts": ["Brinde & Companhia", "Top Brinde", "Best of Gift"],
+      "channels": ["whatsapp", "instagram", "facebook"],
+      "labels": {
+        "comercial": { "name": "Para o comercial", "color": "#f472b6", "priority": 0 },
+        "orcamento": { "name": "Orçamento enviado", "color": "#4ade80", "priority": 1 },
+        "logo": { "name": "Logótipo recebido", "color": "#facc15", "priority": 2 },
+        "internacional": { "name": "França e Espanha", "color": "#60a5fa", "priority": 3 },
+        "duvida": { "name": "Dúvida respondida", "color": "#94a3b8", "priority": 4 }
+      },
+      "conversations": [
+        {
+          "id": 1, "name": "Supermercados Litoral", "initials": "SL", "phone": "+351 912 *** 418", "account": "Brinde & Companhia", "channel": "whatsapp", "label": "comercial", "tab": "mine", "timeAgo": "4m", "unread": 1,
+          "preview": "8.000 sacos e 3.000 t-shirts até maio",
+          "messages": [
+            { "sender": "client", "text": "somos uma cadeia de supermercados, precisamos de 8000 sacos e 3000 tshirts para o verão. que desconto conseguem fazer?", "time": "16:24" },
+            { "sender": "agent", "isAI": true, "text": "Para quantidades desta dimensão, o preço é negociado diretamente com um comercial. Posso pedir três dados para ele já falar consigo preparado?", "time": "16:25" },
+            { "sender": "client", "text": "sacos de algodão com logo a 2 cores, tshirts brancas com logo à frente. precisamos até maio", "time": "16:29" },
+            { "sender": "system", "text": "Encaminhado para a equipa comercial: volume acima do limite do orçamento automático. Prefere chamada.", "time": "16:31" }
+          ],
+          "attributes": [ { "key": "Artigos", "value": "Sacos de algodão, t-shirts" }, { "key": "Quantidade", "value": "8.000 + 3.000" }, { "key": "Prazo", "value": "Maio" } ],
+          "notes": ["Pediu desconto de volume. Ligar ainda hoje."]
+        },
+        {
+          "id": 2, "name": "Rita Marques", "initials": "RM", "account": "Brinde & Companhia", "channel": "instagram", "label": "orcamento", "tab": "unassigned", "timeAgo": "12m",
+          "preview": "Orçamento enviado: 50 garrafas Sivas, laser",
+          "messages": [
+            { "sender": "system", "text": "Comentário no post das garrafas térmicas: «quanto custa?». Respondido no post.", "time": "21:14" },
+            { "sender": "client", "text": "umas 50, é para a equipa do ginasio", "time": "21:19" },
+            { "sender": "agent", "isAI": true, "text": "**50 garrafas Sivas 500 ml pretas, logótipo a laser: 7,90 € por unidade + IVA**, gravação incluída. Envio-lhe já o orçamento em PDF.", "time": "21:26" },
+            { "sender": "system", "text": "Orçamento em PDF enviado para rita.ginasio@gmail.com. Pedido registado.", "time": "21:31" }
+          ],
+          "attributes": [ { "key": "Artigo", "value": "Garrafa Sivas 500 ml" }, { "key": "Técnica", "value": "Laser" }, { "key": "Quantidade", "value": "50" } ],
+          "notes": ["Logótipo em PNG: pedir vetor na aprovação."]
+        },
+        {
+          "id": 3, "name": "Atelier Lumière", "initials": "AL", "account": "Best of Gift", "channel": "whatsapp", "label": "internacional", "tab": "unassigned", "timeAgo": "38m",
+          "preview": "Devis envoyé : 200 gourdes, logo en couleur",
+          "messages": [
+            { "sender": "client", "text": "200 gourdes pour un salon en mars, avec notre logo en couleur", "time": "10:05" },
+            { "sender": "agent", "isAI": true, "text": "**200 gourdes Sivas, logo en couleur : 8,40 € HT l'unité.** La livraison en France est chiffrée à part.", "time": "10:10" },
+            { "sender": "system", "text": "Devis em PDF enviado em francês. Resumo em português para o comercial da Best of Gift.", "time": "10:12" }
+          ],
+          "attributes": [ { "key": "País", "value": "França" }, { "key": "Idioma", "value": "Francês" }, { "key": "Transporte", "value": "A cotar" } ],
+          "notes": ["Cotar o transporte para França."]
+        },
+        {
+          "id": 4, "name": "Clima Frio, Lda", "initials": "CF", "account": "Brinde & Companhia", "channel": "facebook", "label": "logo", "tab": "mine", "timeAgo": "1h", "unread": 1,
+          "preview": "500 esferográficas para a feira de 20/11",
+          "messages": [
+            { "sender": "client", "text": "500 para uma feira dia 20 de novembro. o mais barato possivel", "time": "14:52" },
+            { "sender": "agent", "isAI": true, "text": "Para 500 unidades: **Noris, laser: 0,95 € + IVA** · **plástico, 1 cor: 0,42 € + IVA**. Segue o PDF com as duas.", "time": "14:59" },
+            { "sender": "system", "text": "Prazo apertado: maquete aprovada até 9/11 para entregar a 19/11. Passado ao comercial.", "time": "15:03" }
+          ],
+          "attributes": [ { "key": "Data da feira", "value": "20/11" }, { "key": "Aprovar até", "value": "9/11" } ],
+          "notes": ["Logótipo e texto já guardados no pedido."]
+        },
+        {
+          "id": 5, "name": "Escola Básica da Ribeira", "initials": "ER", "account": "Top Brinde", "channel": "facebook", "label": "duvida", "tab": "unassigned", "timeAgo": "2h",
+          "preview": "Qual é a quantidade mínima para canecas?",
+          "messages": [
+            { "sender": "client", "text": "boa tarde qual é a quantidade minima para canecas personalizadas?", "time": "13:10" },
+            { "sender": "agent", "isAI": true, "text": "Boa tarde! Depende da caneca e da técnica. Diga-me quantas precisa e se é com logótipo ou com fotografia, que lhe digo já o preço.", "time": "13:10" }
+          ],
+          "attributes": [ { "key": "Artigo", "value": "Canecas" } ]
+        },
+        {
+          "id": 6, "name": "Hotel Vale do Sol", "initials": "HV", "account": "Brinde & Companhia", "channel": "instagram", "label": "orcamento", "tab": "unassigned", "timeAgo": "3h",
+          "preview": "Orçamento enviado: 120 polos bordados",
+          "messages": [
+            { "sender": "client", "text": "polos para o staff, 120, com o logo bordado no peito", "time": "11:02" },
+            { "sender": "agent", "isAI": true, "text": "O polo piqué PORA210 em 100% algodão é o mais pedido para bordar. Quer em que cor?", "time": "11:02" },
+            { "sender": "client", "text": "azul marinho", "time": "11:07" },
+            { "sender": "system", "text": "Orçamento em PDF enviado. Pedido registado para o comercial.", "time": "11:09" }
+          ],
+          "attributes": [ { "key": "Artigo", "value": "Polo PORA210" }, { "key": "Técnica", "value": "Bordado" } ]
+        },
+        {
+          "id": 7, "name": "Regalos Sanz", "initials": "RS", "account": "Best of Gift", "channel": "instagram", "label": "internacional", "tab": "unassigned", "timeAgo": "5h",
+          "preview": "Presupuesto enviado: 300 cuadernos A5",
+          "messages": [
+            { "sender": "client", "text": "hola, cuánto cuestan 300 libretas A5 con nuestro logo?", "time": "09:12" },
+            { "sender": "agent", "isAI": true, "text": "¡Hola! La libreta Citynote A5 con el logo en impresión UV. ¿Lo quieren a una tinta o a todo color?", "time": "09:12" },
+            { "sender": "system", "text": "Presupuesto en PDF enviado en español. Resumo para o comercial.", "time": "09:20" }
+          ],
+          "attributes": [ { "key": "País", "value": "Espanha" }, { "key": "Idioma", "value": "Espanhol" } ]
+        }
+      ]
+    }
+    </script>
+    <p class="aviso-ilustr">Conversas inventadas, para mostrar o ecrã. O arranque faz-se numa marca e alarga-se às restantes depois de validado.</p>
+  </div>
+</section>
+
+<!-- ============ 5. AS MAQUETES (a plataforma) ============ -->
+<section id="maquetes">
+  <div class="container wide">
+    <div class="sec-head">
+      <span class="eyebrow">Solução 2 · A plataforma de maquetes · experimente</span>
+      <h2>O nosso pedido de hoje, maquetado à frente de quem o vai produzir</h2>
+      <p class="lead">Às 08:00 o Josias pediu-vos 40 blocos Citynote, 40 esferográficas Noris e 20 garrafas Sivas, com o logo da AI Solutions. Os artigos, as referências e as áreas de gravação são os das vossas fichas. Gere as maquetes e experimente os logos.</p>
+    </div>
+    <div class="experimente">
+      <span>Carregue em <b>Gerar as 3 maquetes</b></span>
+      <span>Na <b>garrafa</b>, veja o que a ficha diz dos 9 cm</span>
+      <span>Troque o <b>logótipo</b>, ou carregue o vosso</span>
+      <span><b>Envie</b> ao cliente e aprove no email</span>
+    </div>
+
+    <div class="am" id="plataforma-bc" data-entra="sobe">
+      <div class="am-bar">
+        <div class="am-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="am-url">maquetes.brinde-companhia.pt · estúdio de maquetes</span>
+      </div>
+      <div class="am-body">
+        <aside class="am-side">
+          <div class="am-brand"><img src="assets/img/logo-bc.png" alt="Brinde &amp; Companhia"><span><b>Maquetes</b></span></div>
+          <div class="am-navs"></div>
+          <div class="am-user"><span class="am-av">DS</span><span><b>Equipa de design</b><small>12 designers</small></span></div>
+        </aside>
+        <main class="am-main"></main>
+      </div>
+    </div>
+    <p class="aviso-dados">Reais: os artigos, as referências, as cores, as quantidades e as técnicas do orçamento 202610-32163 e do pedido de 22/10, as áreas de gravação das fichas Citynote e Sivas, e as fotografias do vosso orçamento. Ilustrativos: as outras encomendas, os contadores e os nomes das máquinas.</p>
+  </div>
+</section>
+
+<!-- ============ 6. LIGAÇÕES ============ -->
+<section class="ligacoes section-alt" id="ligacoes">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como se liga ao que já usam</span>
+      <h2>O CRM da Valor Visual fica. O agente entrega-lhe o pedido.</h2>
+    </div>
+    <div class="fluxo" id="bcFluxo"></div>
+    <script type="application/json" id="bcFluxo-config">
+    {
+      "stepMs": 1900,
+      "channels": [
+        { "icon": "message", "label": "Instagram" },
+        { "icon": "message", "label": "Facebook" },
+        { "icon": "phone", "label": "WhatsApp" }
+      ],
+      "nodes": [
+        { "icon": "message", "title": "Pergunta no post", "detail": "Ou mensagem privada, em PT, FR ou ES.", "tone": "brand" },
+        { "icon": "list", "title": "O agente completa o pedido", "detail": "Artigo, quantidade, impressão, logótipo.", "tone": "teal" },
+        { "icon": "database", "title": "Tabela de preços", "detail": "O vosso Excel, com os escalões.", "tone": "teal" },
+        { "icon": "send", "title": "Orçamento em PDF", "detail": "Enviado ao cliente no momento.", "tone": "teal" },
+        { "icon": "user-cog", "title": "Pedido no CRM", "detail": "Para o comercial, como hoje com o email.", "tone": "brand" }
+      ],
+      "note": "Do lado das maquetes: encomenda fechada, maquete por artigo, email de aprovação, ficheiro para a máquina."
+    }
+    </script>
+    <div class="ligas">
+      <div class="card" data-entra="sobe"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3z"/><path d="M3 10h18M9 5v14"/></svg></span>Tabela de preços em Excel</h3><p>A que já têm, organizada por artigo e técnica. O agente lê-a para dar o valor no momento, e atualiza-se quando vocês a atualizam.</p></div>
+      <div class="card" data-entra="sobe"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>CRM da Valor Visual</h3><p>Não tem API aberta: é um ponto a validar. O caminho seguro é o que já funciona, o email que entra direto no CRM com o artigo e a referência. O agente entrega o pedido por aí.</p></div>
+      <div class="card" data-entra="sobe"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l5 3V9l5 3V6l6 4v10z"/></svg></span>Máquinas de impressão</h3><p>Cada máquina recebe o ficheiro no formato que pede (PDF, JPEG, CorelDRAW ou Photoshop), à escala 1:1. Os nomes e os formatos configuram-se convosco.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. QUEM DECIDE ============ -->
+<section id="limites">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Quem decide</span>
+      <h2>O sistema prepara. O preço negociado e a aprovação continuam vossos.</h2>
+    </div>
+    <div class="limites">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Faz sozinho</h3>
+        <ul class="list-check">
+          <li>Responde a comentários e mensagens em português, francês e espanhol</li>
+          <li>Pergunta o que falta e sugere alternativas do catálogo</li>
+          <li>Dá o preço da vossa tabela nos escalões normais e envia o PDF</li>
+          <li>Monta a maquete de cada artigo da encomenda</li>
+          <li>Verifica a área de gravação, a tinta e a espessura das linhas</li>
+          <li>Envia a maquete por email e, aprovada, prepara o ficheiro da máquina</li>
+        </ul>
+      </div>
+      <div class="card card-later" data-entra="sobe">
+        <h3>Fica convosco <small>sempre</small></h3>
+        <ul class="list-later">
+          <li><b>Negociar</b> preços e descontos: encomendas grandes passam sempre ao comercial</li>
+          <li><b>Confirmar o stock</b> com o fornecedor, que é partilhado e muda em tempo real</li>
+          <li><b>Rever</b> as maquetes que saem com aviso, antes de irem ao cliente</li>
+          <li><b>Montar</b> as peças na máquina: é trabalho do operador</li>
+          <li>Quando não tem a certeza, <b>pergunta</b> em vez de adivinhar</li>
+        </ul>
+      </div>
+    </div>
+    <p class="limites-frase">Nunca erra em silêncio: o que não bate certo vai para a equipa, com a razão escrita.</p>
+  </div>
+</section>
+
+<!-- ============ 8. FASE SEGUINTE ============ -->
+<section class="section-alt" id="seguinte">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Mais à frente</span>
+      <h2>O que ficou falado e não entra agora</h2>
+      <p class="lead">Fica escrito para não se perder. Assenta no agente e na plataforma desta fase, por isso nada se refaz.</p>
+    </div>
+    <div class="lados">
+      <div class="card" data-entra="sobe"><span class="tag">Alargar</span><h3>As restantes marcas</h3><p>Arranca numa marca (a Best of Gift em francês e espanhol, ou uma marca portuguesa) e passa às outras depois de validado. Orçamentado à parte.</p></div>
+      <div class="card" data-entra="sobe"><span class="tag">Valor Visual</span><h3>Ligação direta ao CRM</h3><p>Se a Valor Visual abrir uma porta de integração, o pedido passa a entrar sem email no meio.</p></div>
+      <div class="card destaque" data-entra="sobe"><span class="tag">A visão do Manuel</span><h3>O agente vendedor e o agente maquetista</h3><p>Ligar as duas pontas: do pedido no post à maquete aprovada, com a equipa a entrar só onde acrescenta.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. INVESTIMENTO ============ -->
+<section id="investimento">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Investimento</span>
+      <h2>As duas soluções, como falámos a 19/10</h2>
+    </div>
+    <div class="conta" data-entra="sobe">
+      <p>A conta que fizemos na reunião: com a mesma equipa a dar resposta a muito mais maquetes, <b>cada lugar de design que não é preciso acrescentar vale 1.500 a 2.000 € por mês</b>.</p>
+      <small>A ideia não é mandar ninguém embora. É a Best of Gift chegar a França e Espanha sem a equipa crescer ao mesmo ritmo.</small>
+    </div>
+    <div class="invest">
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Agente multicanal</div>
+        <div class="price"><span class="v">6.000 €</span> <small>+ IVA</small></div>
+        <ul class="list-check price-list">
+          <li>WhatsApp, Instagram e Facebook de uma marca</li>
+          <li>Resposta a comentários e em privado</li>
+          <li>Português, francês e espanhol</li>
+          <li>Preço da tabela em Excel e orçamento em PDF</li>
+          <li>Pedido entregue ao comercial</li>
+          <li>As conversas num só ecrã</li>
+        </ul>
+      </div>
+      <div class="card price-card" data-entra="sobe">
+        <div class="label">Automação das maquetes</div>
+        <div class="price"><span class="v">9.000 €</span> <small>+ IVA</small></div>
+        <ul class="list-check price-list">
+          <li>Maquete de cada artigo da encomenda</li>
+          <li>Áreas de gravação e técnicas por artigo</li>
+          <li>Verificação de área, tinta e linhas</li>
+          <li>Email de aprovação ao cliente</li>
+          <li>Ficheiro no formato de cada máquina</li>
+          <li>Plataforma para a equipa de design</li>
+        </ul>
+      </div>
+      <div class="card price-card junto" data-entra="sobe">
+        <span class="tagj">As duas soluções</span>
+        <div class="label">Implementação total</div>
+        <div class="price"><span class="v">15.000 €</span> <small>+ IVA</small></div>
+        <ul class="list-check price-list">
+          <li>O agente e a plataforma de maquetes</li>
+          <li>Configuração com a vossa tabela, catálogo e máquinas</li>
+          <li>Testes com pedidos e encomendas reais</li>
+          <li>Formação da equipa comercial e de design</li>
+        </ul>
+      </div>
+    </div>
+    <div class="invest-2">
+      <div class="card" data-entra="sobe"><div class="price">400 € <small>+ IVA por mês</small></div><div><h3>Manutenção</h3><p>A inteligência artificial, a infraestrutura, o suporte e os ajustes às regras e à tabela, depois do arranque.</p></div></div>
+      <div class="card" data-entra="sobe"><div class="price">à parte</div><div><h3>Outras marcas</h3><p>Alargar o agente à Top Brinde, à Best of Gift ou às restantes, depois de validado na primeira, orçamenta-se à parte.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. ARRANQUE ============ -->
+<section class="section-alt" id="arranque">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Quatro fases, numa marca primeiro</h2>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe"><span class="quando">Fase 1</span><h3>Levantamento</h3><p>A tabela de preços em Excel, o catálogo da primeira marca, os acessos ao WhatsApp, Instagram e Facebook, algumas maquetes já aprovadas e os formatos de cada máquina.</p></div>
+      <div class="fase" data-entra="sobe"><span class="quando">Fase 2</span><h3>O agente a aprender</h3><p>Lê as conversas reais sem responder, para aprender as perguntas que se repetem. Depois responde, com a equipa a acompanhar.</p></div>
+      <div class="fase" data-entra="sobe"><span class="quando">Fase 3</span><h3>Maquetes lado a lado</h3><p>A plataforma faz as maquetes das encomendas reais ao lado dos designers, até sair igual ao que vocês aprovariam.</p></div>
+      <div class="fase alvo" data-entra="sobe"><span class="quando">Fase 4</span><h3>Em produção</h3><p>Uma marca a trabalhar com o agente e as maquetes. A seguir, as restantes.</p></div>
+    </div>
+    <p class="arranque-nota">Para começar só precisamos de duas coisas: <b>a tabela de preços em Excel</b> e <b>dez maquetes já aprovadas</b>, de técnicas diferentes.</p>
+    <p class="contacto-fim">Diogo Gonçalves, AI Solutions · <a href="tel:+351964581992">964 581 992</a> · <a href="mailto:diogo.goncalves@aisolutions.pt">diogo.goncalves@aisolutions.pt</a></p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Brinde &amp; Companhia, outubro de 2026
+    <span class="disclaimer">Protótipo construído sobre a reunião de 19/10/2026, o orçamento 202610-32163, as fichas técnicas dos artigos e o pedido de 22/10/2026. Conversas, clientes, preços e as restantes encomendas são ilustrativos.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="../shared/unibox/unibox.js"></script>
+<script>chatRaciocinio('bcDemo'); fluxo('bcFluxo'); unibox('bcInbox');</script>
+<script src="assets/js/logos.js"></script>
+<script src="assets/js/dados.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var next = (r.getAttribute('data-theme') || 'light') === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme-bc', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
