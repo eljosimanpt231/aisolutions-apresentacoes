@@ -1,0 +1,270 @@
+{
+  "site": "https://pneusdpedrov.com/",
+  "dominio": "pneusdpedrov.com",
+  "titulo": "Pneus e Manutenção Automóvel - Pneus D.Pedro V",
+  "descricao": "A Pneus D.Pedro V é uma empresa especializada em Pneus e Manutenção Automóvel com mais de 2 décadas de experiência, pertencendo à reputada rede EUROMASTER",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://pneusdpedrov.com/wp-content/uploads/2018/08/LOGOTIPO-PNEUS-D-PEDRO-V-2.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 600,
+      "altura": 250,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            0,
+            64,
+            160
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20180%2046'%3E%3C/svg%3E",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "liga à página inicial",
+        "no cabeçalho"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 77,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "vazia",
+        "coresTinta": []
+      }
+    },
+    {
+      "origem": "img",
+      "src": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2070%2029'%3E%3C/svg%3E",
+      "pontos": 6,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 124,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "vazia",
+        "coresTinta": []
+      }
+    },
+    {
+      "origem": "fundo",
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "pontos": 1,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "no topo",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 1,
+        "altura": 1,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "vazia",
+        "coresTinta": []
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 1,
+      "motivos": [
+        "liga à página inicial",
+        "no cabeçalho",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 70,
+        "altura": 81,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "ícone",
+      "src": "https://pneusdpedrov.com/wp-content/uploads/2018/08/cropped-sports-car-192x192.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 192,
+        "altura": 192,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              64,
+              160
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://pneusdpedrov.com/wp-content/plugins/revslider/public/assets/assets/dummy.png",
+      "pontos": -1,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome",
+        "parece foto"
+      ],
+      "analise": {
+        "largura": 1,
+        "altura": 1,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "vazia",
+        "coresTinta": []
+      }
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#253993",
+      "hsl": "229 60% 36%",
+      "peso": 341453,
+      "onde": [
+        "botões",
+        "texto",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#3897f0",
+      "hsl": "209 86% 58%",
+      "peso": 94800,
+      "onde": [
+        "botões",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#6e9d43",
+      "hsl": "91 40% 44%",
+      "peso": 79486,
+      "onde": [
+        "botões"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "229 60% 36%",
+    "--accent-hsl": "91 40% 44%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "Lato",
+    "corpo": "Lato",
+    "google": [
+      "https://fonts.googleapis.com/css?family=Lato%3Anormal%2C300%2Cbold%2Citalic%7CRoboto%3A100%2C400&subset=latin&display=swap",
+      "https://fonts.googleapis.com/"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "Menu",
+      "Back",
+      "Home",
+      "Sobre Nós",
+      "Back",
+      "Sobre Nós",
+      "História",
+      "Equipa",
+      "Pneus",
+      "Back",
+      "Pneus",
+      "Ligeiros",
+      "Pesados",
+      "Agrícolas",
+      "Industrial e Empilhadores",
+      "Serviços Mecânica",
+      "Revisão Automóvel",
+      "Contactos",
+      "Faça já a sua marcação →",
+      "Onde estamos →",
+      "Open/Close Menu",
+      "Skip to content",
+      "Home",
+      "Sobre Nós",
+      "História",
+      "Equipa",
+      "Pneus",
+      "Ligeiros",
+      "Pesados",
+      "Agrícolas",
+      "Industrial e Empilhadores",
+      "Serviços Mecânica",
+      "Revisão Automóvel",
+      "Contactos"
+    ],
+    "titulos": [
+      "Menu",
+      "Sobre Nós",
+      "Pneus",
+      "+351 969 672 064 – Chamada para Rede Móvel Nacional",
+      "Porque somos a oficina certa para si?",
+      "Com uma vasta oferta em serviços",
+      "Ótimo serviço com trabalhadores de excelência",
+      "Melhor oficina de Portugal",
+      "Um Serviço excelente!",
+      "Seriedade e profissionalismo",
+      "O que fazemos",
+      "Pneus",
+      "Serviços Mecânica",
+      "Manutenção Automóvel",
+      "SERVIÇO GRATUITO – ENTREGA E RECOLHA DE VIATURAS AO DOMICÍLIO",
+      "Pedido de Orçamento"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático."
+  ]
+}
