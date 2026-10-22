@@ -354,6 +354,11 @@
     .comp-cab span:last-child { display: none; }
   }
 
+  /* Porque é que o minuto acima do pacote é mais barato */
+  .minutos { margin-top: var(--s-6); }
+  .minutos > h3 { font-size: var(--fs-2); color: var(--navy); max-width: 32ch; }
+  .minutos .vosso { margin-top: var(--s-4); }
+
   /* ---------- Configurador do investimento ---------- */
   .cfg { margin-top: var(--s-6); display: grid; gap: var(--s-5); align-items: start;
          grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }

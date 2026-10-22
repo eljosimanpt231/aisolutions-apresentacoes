@@ -40,4 +40,5 @@
 ## Iterações
 - v1 (22/10): contador do 4.623 sem separador de milhares (passou a texto fixo), logótipo pequeno (52px), conta de valor encurtada, duas palavras em gradiente a mais
 - v2 (22/10): mensalidade 1.100 € com 5.500 minutos a 0,20 €, a pedido do Manuel
+- v3 (22/10): justificação do preço do minuto (0,20 € inclui a manutenção; acima do pacote 0,15 € porque a manutenção já está paga na base), a pedido do Manuel
 - Verificação: qa.mjs sem erros | motion.mjs --acto e --alvo #pdpDemo vistos | comparar.mjs contra bf-grupo-5wzo: iguala nas animações CSS (12/12), fica abaixo em svg e tweens por ter só o agente de voz (a BF tinha o de texto e a Unibox)
