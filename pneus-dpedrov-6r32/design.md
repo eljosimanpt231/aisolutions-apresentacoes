@@ -26,8 +26,8 @@
 - Barlow Semi Condensed 600/700 (display) + Barlow 400/600 (corpo) + JetBrains Mono (rótulos)
 
 ## Valores (decisão do Manuel a 22/10/2026)
-- Implementação 5.900 € + IVA. Mensalidade 800 € + IVA com 4.000 minutos; minuto acima 0,15 € + IVA
-- NUNCA mostrar a conta interna dos minutos (0,20 €/min)
+- Implementação 5.900 € + IVA. Mensalidade 1.100 € + IVA com 5.500 minutos a 0,20 €/min (conta mostrada na página, a pedido do Manuel); minuto acima 0,15 € + IVA
+- v1 tinha 800 € com 4.000 minutos (Manuel, 22/10 de manhã); mudou para 5.500 minutos depois de ver o volume real (~7.000 chamadas/mês)
 - Condições de pagamento: remetidas para a proposta formal (não há régua no cérebro)
 - O resumo de 21/10 dizia 5.000 a 7.000 € e 800 € com 4.050 minutos
 
@@ -39,4 +39,5 @@
 
 ## Iterações
 - v1 (22/10): contador do 4.623 sem separador de milhares (passou a texto fixo), logótipo pequeno (52px), conta de valor encurtada, duas palavras em gradiente a mais
+- v2 (22/10): mensalidade 1.100 € com 5.500 minutos a 0,20 €, a pedido do Manuel
 - Verificação: qa.mjs sem erros | motion.mjs --acto e --alvo #pdpDemo vistos | comparar.mjs contra bf-grupo-5wzo: iguala nas animações CSS (12/12), fica abaixo em svg e tweens por ter só o agente de voz (a BF tinha o de texto e a Unibox)
