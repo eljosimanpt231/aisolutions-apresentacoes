@@ -1,0 +1,105 @@
+/* ============================================================
+   TOKENS: ENAT Energias, delegação de Aveiro.
+   Marca: o verde do logótipo e dos botões do site (#5fac00 e
+   #208040) e o laranja do sol do logótipo, que marca sempre o que
+   o agente faz sozinho.
+   Tipografia: Josefin Sans (a do site, nos títulos), Source Sans 3
+   (corpo), IBM Plex Mono (horas, endereços de email, valores).
+   Claro por defeito, com botão claro/escuro (regra do Diogo).
+   ============================================================ */
+
+:root {
+  --brand-hsl: 140 60% 31%;
+  --accent-hsl: 87 100% 34%;
+  --brand2-hsl: 34 100% 50%;
+  --sol-hsl: 34 100% 52%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --sol: hsl(var(--sol-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(140 62% 26%);
+  --marca-texto: hsl(140 62% 24%);
+  --acento-texto: hsl(140 62% 24%);
+  --sol-texto: hsl(28 92% 32%);
+  --ok-texto: hsl(140 62% 24%);
+
+  --bg: hsl(90 20% 97.5%);
+  --bg-soft: hsl(95 18% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(95 16% 95.5%);
+  --border: hsl(100 10% 85%);
+
+  --text: hsl(150 25% 10%);
+  --muted: hsl(150 7% 33%);
+
+  --success-hsl: 140 62% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 70% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 32 92% 40%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.10), transparent 62%);
+  --grad-text: linear-gradient(105deg, hsl(140 62% 30%), hsl(87 100% 32%) 55%, hsl(30 100% 46%));
+  --grad-cta: linear-gradient(160deg, hsl(140 40% 14%), hsl(140 60% 22%));
+
+  --shadow-sm: 0 1px 3px hsl(150 30% 10% / 0.08);
+  --shadow-md: 0 8px 28px hsl(150 30% 10% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(150 30% 10% / 0.16);
+  --shadow-glow: 0 0 40px hsl(var(--accent-hsl) / 0.16);
+
+  /* O cliente de email (claro nos dois temas, como o Outlook ou o Gmail) */
+  --mail-bg: hsl(0 0% 100%);
+  --mail-bg-2: hsl(100 14% 96.5%);
+  --mail-line: hsl(100 8% 87%);
+  --mail-text: hsl(150 25% 10%);
+  --mail-muted: hsl(150 6% 36%);
+  --mail-side: hsl(145 45% 12%);
+  --mail-side-text: hsl(100 20% 92%);
+  --mail-side-muted: hsl(100 8% 70%);
+  --mail-ok: hsl(140 62% 26%);   --mail-ok-hsl: 140 55% 38%;
+  --mail-draft: hsl(28 92% 30%); --mail-draft-hsl: 34 100% 52%;
+  --mail-out: hsl(95 45% 96%);
+
+  --veu: hsl(150 40% 4% / 0.58);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Josefin Sans', 'Source Sans 3', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --container: 1200px;
+  --section-pad: clamp(72px, 10vw, 120px);
+  --grelha-passo: 64px;
+}
+
+:root[data-theme="dark"] {
+  --brand-hsl: 140 50% 44%;
+  --accent-hsl: 87 80% 48%;
+  --sol-hsl: 34 100% 58%;
+  --brand-solido: hsl(140 62% 30%);
+  --marca-texto: hsl(95 70% 62%);
+  --acento-texto: hsl(95 70% 62%);
+  --sol-texto: hsl(34 100% 64%);
+  --ok-texto: hsl(140 55% 62%);
+
+  --bg: hsl(150 24% 6%);
+  --bg-soft: hsl(150 18% 8.5%);
+  --surface: hsl(150 14% 11%);
+  --surface-2: hsl(150 12% 14%);
+  --border: hsl(150 9% 21%);
+
+  --text: hsl(90 15% 94%);
+  --muted: hsl(90 6% 70%);
+
+  --success-hsl: 140 55% 50%;
+  --danger-hsl: 356 80% 66%;
+  --warning-hsl: 36 95% 60%;
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.18), transparent 62%);
+  --grad-text: linear-gradient(105deg, hsl(140 55% 52%), hsl(87 85% 52%) 55%, hsl(34 100% 60%));
+  --grad-cta: linear-gradient(160deg, hsl(150 22% 9%), hsl(140 45% 16%));
+  --shadow-sm: 0 1px 3px hsl(150 40% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(150 40% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(150 40% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--accent-hsl) / 0.22);
+}

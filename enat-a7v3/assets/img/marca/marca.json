@@ -1,0 +1,376 @@
+{
+  "site": "https://www.enat.pt/paginainicial",
+  "dominio": "enat.pt",
+  "titulo": "ENAT",
+  "descricao": "",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://www.enat.pt/img/logotipo.png",
+    "porque": [
+      "diz logo",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 328,
+      "altura": 117,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 54
+        },
+        {
+          "rgb": [
+            32,
+            128,
+            64
+          ],
+          "parte": 22
+        },
+        {
+          "rgb": [
+            256,
+            160,
+            32
+          ],
+          "parte": 3
+        },
+        {
+          "rgb": [
+            256,
+            160,
+            0
+          ],
+          "parte": 3
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://www.enat.pt/img/logoRodape.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 208,
+        "altura": 69,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              128,
+              64
+            ],
+            "parte": 26
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 19
+          },
+          {
+            "rgb": [
+              64,
+              96,
+              64
+            ],
+            "parte": 11
+          },
+          {
+            "rgb": [
+              256,
+              160,
+              0
+            ],
+            "parte": 8
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.enat.pt/img/logoYoutube.png",
+      "pontos": 2,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 158,
+        "altura": 60,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              224,
+              0,
+              0
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              192,
+              0,
+              0
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 8
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.enat.pt/admin/imgSiteAdmin/imagensLoja/g7w1e67137.jpg",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 168,
+        "altura": 188,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 42
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 23
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 8
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.enat.pt/admin/imgSiteAdmin/imagensLoja/474k23f136.jpg",
+      "pontos": 0,
+      "motivos": [],
+      "analise": {
+        "largura": 160,
+        "altura": 188,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 39
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 27
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 17
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              160
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.enat.pt/admin/imgSiteAdmin/imagensLoja/713x761135.png",
+      "pontos": 0,
+      "motivos": [],
+      "analise": {
+        "largura": 188,
+        "altura": 188,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              0,
+              96,
+              160
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              160,
+              192,
+              192
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              160
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "og:image",
+      "src": "https://www.enat.pt/paginainicial",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "erro": "não descarregou"
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://www.enat.pt/admin/imgSiteAdmin/imagensAlbuns/6o0653g51.jpg"
+  },
+  "paleta": [
+    {
+      "hex": "#5fac00",
+      "hsl": "87 100% 34%",
+      "peso": 102640,
+      "onde": [
+        "botões"
+      ]
+    },
+    {
+      "hex": "#208040",
+      "hsl": "140 60% 31%",
+      "peso": 26400,
+      "onde": [
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#100a020",
+      "hsl": "34 100% 56%",
+      "peso": 7200,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "87 100% 34%",
+    "--accent-hsl": "140 60% 31%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": null,
+    "corpo": "josefin_sansregular",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [],
+    "titulos": [],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura."
+  ]
+}
