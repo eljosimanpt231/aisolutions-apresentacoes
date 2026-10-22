@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="../shared/deck/deck.css">
-  <link rel="stylesheet" href="../shared/unibox/unibox.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
   <link rel="stylesheet" href="../shared/motion/atmosfera.css">
   <link rel="stylesheet" href="assets/css/pagina.css">
   <script src="config.js"></script>
@@ -50,8 +50,8 @@
     <nav class="topo-nav" aria-label="Secções">
       <a href="#ouvimos">O que ouvimos</a>
       <a href="#pedidos">Os pedidos</a>
-      <a href="#demo">Demonstração</a>
-      <a href="#caixas">As 4 caixas</a>
+      <a href="#plataforma">A plataforma</a>
+      <a href="#fluxo">Como funciona</a>
       <a href="#seguinte">Fase seguinte</a>
       <a href="#investimento">Investimento</a>
       <a href="#arranque">Arranque</a>
@@ -240,117 +240,272 @@
     </div>
   </section>
 
-  <!-- ============ 5. DEMONSTRAÇÃO ============ -->
-  <section id="demo">
+  <!-- ============ 5. A PLATAFORMA DE EMAIL ============ -->
+  <section id="plataforma">
     <div class="container">
       <span class="eyebrow">Demonstração</span>
-      <h2>Os agentes a trabalhar, email a email</h2>
-      <p class="lead">À esquerda, os emails como chegam e saem das vossas caixas. À direita, o que o agente está a fazer em cada momento. Quatro pedidos do vosso tipo, incluindo um que o agente não orçamenta.</p>
-      <div class="cr cx" id="enDemo" data-entra="sobe" style="margin-top:30px"></div>
-      <script type="application/json" id="enDemo-config">
+      <h2>As quatro caixas numa só plataforma de email</h2>
+      <p class="lead">Todos os emails da delegação num só sítio: o que entrou em cada caixa, a quem foi atribuído, o que o agente já respondeu e as respostas que estão à espera de validação. Em cada cliente, toda a comunicação e todos os orçamentos dados. Experimente: abra os emails, valide uma resposta, veja a ficha do cliente.</p>
+      <div class="pl-exemplos" data-entra="sobe">
+        <span>Os quatro exemplos:</span>
+        <button class="on" data-plataforma="enPlat" data-t="marta">1. Ar condicionado, enviado no próprio dia</button>
+        <button data-plataforma="enPlat" data-t="paulo">2. Cliente antigo, vai para quem o conhece</button>
+        <button data-plataforma="enPlat" data-t="lar">3. Obra: o agente não orçamenta</button>
+        <button data-plataforma="enPlat" data-t="hugo">4. Fotovoltaico com uma dúvida, em rascunho</button>
+      </div>
+      <div class="pl" id="enPlat" data-entra="sobe"></div>
+      <script type="application/json" id="enPlat-config">
 {
-  "stepMs": 1500,
-  "endPauseMs": 3200,
-  "scenarios": [
+  "caixas": [
+    { "id": "geral", "nome": "Caixa geral" },
+    { "id": "rui", "nome": "Rui" },
+    { "id": "sofia", "nome": "Sofia" },
+    { "id": "tiago", "nome": "Tiago" }
+  ],
+  "produtos": {
+    "ac": { "n": "Ar condicionado", "c": "#5fac00" },
+    "fv": { "n": "Fotovoltaico", "c": "#f29a1f" },
+    "aqs": { "n": "Águas quentes", "c": "#2f8fcf" },
+    "ve": { "n": "Carregador VE", "c": "#7a5fd6" },
+    "obra": { "n": "Obra / projeto", "c": "#c9453f" }
+  },
+  "threads": [
     {
-      "title": "Ar condicionado: das perguntas às três opções",
-      "subtitle": "Um pedido simples na caixa geral, respondido no próprio dia.",
-      "caixa": "aveiro@enat.pt · Caixa geral",
-      "items": [
-        { "kind": "in", "de": "Marta Pinho", "para": "aveiro@enat.pt", "assunto": "Orçamento ar condicionado", "time": "09:12",
-          "texto": "Bom dia, gostava de um orçamento para ar condicionado em casa. Obrigada" },
-        { "kind": "out", "estado": "enviado", "de": "ENAT Aveiro", "para": "Marta Pinho", "assunto": "Re: Orçamento ar condicionado", "time": "09:13", "passo": 3,
-          "texto": "Bom dia, Marta. Obrigado pelo contacto. Para lhe enviarmos já valores: em que localidade é a instalação, quantas divisões quer climatizar e se a casa já tem **pré-instalação**?" },
-        { "kind": "in", "de": "Marta Pinho", "para": "aveiro@enat.pt", "assunto": "Re: Orçamento ar condicionado", "time": "11:47", "passo": 5,
-          "texto": "Moradia em Ílhavo. 3 quartos e a sala, os quartos uns 12m2 e a sala 30. Tem pré instalação, foi feita com a casa" },
-        { "kind": "out", "estado": "enviado", "de": "Rui · ENAT Aveiro", "para": "Marta Pinho", "assunto": "Ar condicionado em Ílhavo: três opções", "time": "11:52", "passo": 7,
-          "texto": "Bom dia, Marta. Com a pré-instalação que já tem, ficam aqui três opções com a instalação incluída. O valor final confirma-se na visita.",
-          "opcoes": [ { "n": "Essencial", "d": "multisplit, gama de entrada", "p": "4.300 €" }, { "n": "Conforto", "d": "mais silencioso, A+++", "p": "5.150 €" }, { "n": "Premium", "d": "Wi-Fi e filtragem", "p": "6.400 €" } ] },
-        { "kind": "sys", "texto": "Caso simples: enviado da caixa do Rui, com cópia para ele", "time": "11:52" }
+      "id": "marta", "entrada": "geral", "caixa": "rui", "atribuido": "Rui", "estado": "enviado", "produto": "ac", "hora": "11:52", "novo": true,
+      "assunto": "Orçamento ar condicionado",
+      "resumo": "Três opções enviadas no próprio dia, com a pré-instalação que já tem",
+      "cliente": {
+        "nome": "Marta Pinho", "email": "marta.pinho@exemplo.pt", "tel": "+351 912 448 301", "local": "Ílhavo, moradia", "desde": "Hoje, cliente novo", "tipo": "Particular, pedido pela caixa geral",
+        "orcamentos": [ { "data": "22/10, 11:52", "desc": "Multisplit, 3 quartos e sala: 3 opções", "valor": "4.300 a 6.400 €", "estado": "Enviado", "cor": "ok" } ],
+        "historico": [
+          { "tipo": "email", "data": "22/10, 09:12", "texto": "Pedido de orçamento entra na **caixa geral**" },
+          { "tipo": "agente", "data": "22/10, 09:12", "texto": "Agente classifica: ar condicionado, pedido simples" },
+          { "tipo": "email", "data": "22/10, 09:13", "texto": "Agente pede localidade, divisões e pré-instalação" },
+          { "tipo": "email", "data": "22/10, 11:47", "texto": "Marta responde: moradia em Ílhavo, 3 quartos e sala, tem pré-instalação" },
+          { "tipo": "agente", "data": "22/10, 11:48", "texto": "Ílhavo é zona do **Rui**: pedido atribuído" },
+          { "tipo": "orcamento", "data": "22/10, 11:52", "texto": "Três opções enviadas da caixa do Rui" },
+          { "tipo": "visita", "data": "Por marcar", "texto": "O Rui liga para marcar a visita" }
+        ]
+      },
+      "mensagens": [
+        { "tipo": "in", "de": "Marta Pinho", "email": "marta.pinho@exemplo.pt", "para": "aveiro@enat.pt", "data": "Hoje, 09:12",
+          "corpo": "Bom dia,\nGostava de um orçamento para ar condicionado em casa.\nObrigada\nMarta" },
+        { "tipo": "agente", "envio": "automaticamente (pedido simples)", "de": "ENAT Aveiro", "para": "Marta Pinho", "data": "Hoje, 09:13",
+          "corpo": "Bom dia, Marta.\nObrigado pelo contacto. Para lhe enviarmos já valores, só precisamos de três coisas:\n**1.** Em que localidade é a instalação?\n**2.** Quantas divisões quer climatizar, e a área aproximada de cada uma?\n**3.** A casa já tem **pré-instalação** de ar condicionado?",
+          "assina": "Equipa comercial" },
+        { "tipo": "in", "de": "Marta Pinho", "email": "marta.pinho@exemplo.pt", "para": "aveiro@enat.pt", "data": "Hoje, 11:47",
+          "corpo": "Moradia em Ílhavo. 3 quartos e a sala, os quartos uns 12m2 e a sala 30. Tem pré instalação, foi feita com a casa" },
+        { "tipo": "agente", "envio": "automaticamente da caixa do Rui (pedido simples)", "de": "Rui · ENAT Aveiro", "para": "Marta Pinho", "data": "Hoje, 11:52",
+          "corpo": "Bom dia, Marta.\nCom a pré-instalação que já tem, ficam aqui três opções para os três quartos e a sala, com a instalação incluída:",
+          "opcoes": [ { "n": "Essencial", "d": "Multisplit, 4 unidades, gama de entrada", "p": "4.300 €" }, { "n": "Conforto", "d": "Mais silencioso, classe A+++", "p": "5.150 €" }, { "n": "Premium", "d": "Controlo por Wi-Fi e filtragem do ar", "p": "6.400 €" } ],
+          "fecho": "O valor final confirma-se na visita. Ligo-lhe hoje para a marcarmos.",
+          "assina": "Rui" }
       ],
-      "steps": [
-        { "icon": "message", "label": "Email novo na caixa geral: pedido de ar condicionado" },
-        { "icon": "filter", "label": "Classifica: pedido simples, instalação de um equipamento" },
-        { "icon": "send", "label": "Responde já e pede só o que falta" },
-        { "icon": "globe", "label": "Localidade: Ílhavo, zona do Rui" },
-        { "icon": "user-cog", "label": "Atribui o pedido ao Rui" },
-        { "icon": "book", "label": "Com a pré-instalação feita, a vossa tabela chega para dar valores" },
-        { "icon": "check", "label": "Três opções com instalação, enviadas da caixa do Rui" }
+      "raciocinio": [
+        "Email novo na **caixa geral**: pedido de ar condicionado de um particular",
+        "Pedido simples (um equipamento, sem obra): pode responder sozinho",
+        "Faltam dados para orçamentar: pede só esses três, de uma vez",
+        "Ílhavo é zona do **Rui**: atribui-lhe o pedido",
+        "Com pré-instalação, a tabela de instalação chega: monta três opções",
+        "Envia da caixa do Rui, com cópia para ele, e regista na ficha"
       ]
     },
     {
-      "title": "Cliente antigo na caixa geral: vai para quem o conhece",
-      "subtitle": "A distribuição que hoje passa pelo André, feita com as mesmas regras.",
-      "caixa": "aveiro@enat.pt · Caixa geral",
-      "items": [
-        { "kind": "in", "de": "Paulo Teixeira", "para": "aveiro@enat.pt", "assunto": "Carregador carro", "time": "14:20",
-          "texto": "Boa tarde. Foram vocês que me montaram os painéis em 2024. Comprei agora um carro elétrico e queria um carregador na garagem. Cumprimentos, Paulo Teixeira, Oliveira de Azeméis" },
-        { "kind": "sys", "texto": "Cliente encontrado na vossa lista: painéis em 2024, acompanhado pelo Tiago", "time": "14:20", "passo": 3 },
-        { "kind": "out", "estado": "enviado", "de": "Tiago · ENAT Aveiro", "para": "Paulo Teixeira", "assunto": "Re: Carregador carro", "time": "14:21", "passo": 5,
-          "texto": "Boa tarde, Paulo. Que bom voltar a falar consigo. Para o carregador preciso de duas coisas: a **potência contratada** (está na fatura) e a distância do quadro elétrico ao lugar do carro. Como já tem painéis, o carregador pode usar a energia que eles produzem." },
-        { "kind": "in", "de": "Paulo Teixeira", "para": "Tiago · ENAT Aveiro", "assunto": "Re: Carregador carro", "time": "18:05", "passo": 6,
-          "texto": "6,9 kVA. O quadro fica na garagem, a 5 metros" },
-        { "kind": "sys", "texto": "Três opções prontas na caixa do Tiago: wallbox simples, com gestão de carga, e integrada com os painéis", "time": "18:06" }
+      "id": "paulo", "entrada": "geral", "caixa": "tiago", "atribuido": "Tiago", "estado": "validar", "produto": "ve", "hora": "18:06", "novo": true,
+      "assunto": "Carregador carro",
+      "resumo": "Cliente desde 2024: rascunho com três opções à espera do Tiago",
+      "cliente": {
+        "nome": "Paulo Teixeira", "email": "pteixeira@exemplo.pt", "tel": "+351 936 102 775", "local": "Oliveira de Azeméis, moradia", "desde": "Março de 2024", "tipo": "Cliente, painéis instalados em 2024", "emails": 11,
+        "orcamentos": [
+          { "data": "12/03/2024", "desc": "Fotovoltaico 4,5 kWp, autoconsumo", "valor": "6.200 €", "estado": "Aceite", "cor": "ok" }
+        ],
+        "historico": [
+          { "tipo": "email", "data": "26/02/2024", "texto": "Pedido de painéis solares, acompanhado pelo **Tiago**" },
+          { "tipo": "orcamento", "data": "12/03/2024", "texto": "Orçamento fotovoltaico 4,5 kWp enviado" },
+          { "tipo": "visita", "data": "19/03/2024", "texto": "Visita técnica do Tiago" },
+          { "tipo": "instalacao", "data": "07/05/2024", "texto": "Instalação concluída" },
+          { "tipo": "email", "data": "22/10, 14:20", "texto": "Pedido de carregador entra na **caixa geral**" },
+          { "tipo": "agente", "data": "22/10, 14:20", "texto": "Agente reconhece o cliente: atribui ao **Tiago**, fora da zona, pela relação" },
+          { "tipo": "email", "data": "22/10, 18:05", "texto": "Paulo envia a potência contratada e a distância ao quadro" },
+          { "tipo": "agente", "data": "22/10, 18:06", "texto": "Rascunho com três opções na caixa do Tiago" }
+        ]
+      },
+      "mensagens": [
+        { "tipo": "in", "de": "Paulo Teixeira", "email": "pteixeira@exemplo.pt", "para": "aveiro@enat.pt", "data": "Hoje, 14:20",
+          "corpo": "Boa tarde.\nForam vocês que me montaram os painéis em 2024. Comprei agora um carro elétrico e queria um carregador na garagem.\nCumprimentos,\nPaulo Teixeira, Oliveira de Azeméis" },
+        { "tipo": "nota", "corpo": "Cliente encontrado na lista de clientes: painéis instalados em maio de 2024, acompanhado pelo **Tiago**. Atribuído ao Tiago, apesar de Oliveira de Azeméis não ser a zona dele, porque já conhece o cliente." },
+        { "tipo": "agente", "envio": "automaticamente da caixa do Tiago", "de": "Tiago · ENAT Aveiro", "para": "Paulo Teixeira", "data": "Hoje, 14:21",
+          "corpo": "Boa tarde, Paulo.\nQue bom voltar a falar consigo. Para o carregador preciso de duas coisas:\n**1.** A potência contratada (está na fatura da luz).\n**2.** A distância do quadro elétrico ao lugar do carro.",
+          "assina": "Tiago" },
+        { "tipo": "in", "de": "Paulo Teixeira", "email": "pteixeira@exemplo.pt", "para": "Tiago · ENAT Aveiro", "data": "Hoje, 18:05",
+          "corpo": "6,9 kVA. O quadro fica na garagem, a 5 metros" }
       ],
-      "steps": [
-        { "icon": "message", "label": "Email novo na caixa geral: carregador de veículo elétrico" },
-        { "icon": "search", "label": "Procura o cliente na lista de clientes da ENAT" },
-        { "icon": "id", "label": "Já é cliente: painéis em 2024, com o Tiago" },
-        { "icon": "user-cog", "label": "Vai para o Tiago, mesmo fora da zona: a relação conta primeiro" },
-        { "icon": "send", "label": "Responde em nome do Tiago e pede os dados técnicos" },
-        { "icon": "book", "label": "Junta a ligação aos painéis que ele já tem" },
-        { "icon": "check", "label": "Prepara as opções na caixa do Tiago" }
+      "sugestao": {
+        "assunto": "Re: Carregador carro: três opções",
+        "preparo": [ "A ler a resposta: 6,9 kVA, quadro a 5 metros", "A abrir a ficha: painéis de 4,5 kWp instalados em 2024", "A montar as opções com a vossa tabela de instalação" ],
+        "corpo": "Boa tarde, Paulo.\nObrigado pelos dados. Com 6,9 kVA e o quadro a 5 metros, ficam aqui três opções com a instalação incluída:",
+        "opcoes": [ { "n": "Simples", "d": "Carregador de 7,4 kW", "p": "890 €" }, { "n": "Inteligente", "d": "Com gestão de carga, não deixa saltar o quadro", "p": "1.190 €" }, { "n": "Solar", "d": "Carrega com a energia que os seus painéis produzem", "p": "1.490 €" } ],
+        "fecho": "Como já tem os painéis, a opção Solar aproveita a energia que eles produzem durante o dia. O valor final confirma-se na visita. Posso ligar-lhe amanhã para a marcarmos?",
+        "orcamento": "Carregador VE: 3 opções", "valorOrc": "890 a 1.490 €"
+      },
+      "raciocinio": [
+        "Email novo na **caixa geral**: carregador para carro elétrico",
+        "Procura o remetente na lista de clientes: **já é cliente**, painéis em 2024",
+        "Quem o acompanhou foi o **Tiago**: a relação conta antes da zona",
+        "Responde em nome do Tiago e pede os dois dados que faltam",
+        "Junta a ficha: tem painéis, por isso propõe também a opção solar",
+        "Monta as três opções e **deixa em rascunho**: o Tiago conhece o cliente e decide"
       ]
     },
     {
-      "title": "Obra de remodelação: o agente não orçamenta",
-      "subtitle": "O que é projeto passa a uma pessoa, com o resumo feito.",
-      "caixa": "aveiro@enat.pt · Caixa geral",
-      "items": [
-        { "kind": "in", "de": "Lar Santa Joana", "para": "aveiro@enat.pt", "assunto": "Pedido de orçamento, remodelação", "time": "10:03",
-          "texto": "Bom dia. Vamos remodelar o lar (40 quartos) a partir do próximo ano e queremos climatização e águas quentes com bomba de calor, e talvez fotovoltaico. Conseguem dar-nos um preço?" },
-        { "kind": "out", "estado": "enviado", "de": "ENAT Aveiro", "para": "Lar Santa Joana", "assunto": "Re: Pedido de orçamento, remodelação", "time": "10:04", "passo": 4,
-          "texto": "Bom dia. Obrigado pelo contacto. Uma obra destas é estudada pela nossa equipa técnica, e **não lhe vamos dar um valor que não seja certo**. Um responsável da ENAT contacta-a ainda esta semana para marcar uma visita." },
-        { "kind": "sys", "texto": "Encaminhado para o André: obra de 40 quartos, climatização, AQS e fotovoltaico, início previsto em 2027", "time": "10:04", "passo": 6 }
+      "id": "lar", "entrada": "geral", "caixa": "geral", "atribuido": "André", "estado": "pessoa", "produto": "obra", "hora": "10:04", "novo": true,
+      "assunto": "Pedido de orçamento, remodelação",
+      "resumo": "Obra de 40 quartos: o agente não orçamenta, passa ao André",
+      "cliente": {
+        "nome": "Lar Santa Joana", "email": "direcao@exemplo.pt", "tel": "+351 234 000 118", "local": "Aveiro", "desde": "Hoje, contacto novo", "tipo": "Instituição, obra de remodelação",
+        "orcamentos": [],
+        "historico": [
+          { "tipo": "email", "data": "22/10, 10:03", "texto": "Pedido de obra entra na **caixa geral**" },
+          { "tipo": "agente", "data": "22/10, 10:04", "texto": "Agente classifica: obra com várias soluções, não é pedido simples" },
+          { "tipo": "email", "data": "22/10, 10:04", "texto": "Resposta de receção enviada, sem valores" },
+          { "tipo": "nota", "data": "22/10, 10:04", "texto": "Resumo enviado ao **André**" },
+          { "tipo": "visita", "data": "Por marcar", "texto": "Visita técnica a combinar pela equipa" }
+        ]
+      },
+      "mensagens": [
+        { "tipo": "in", "de": "Lar Santa Joana", "email": "direcao@exemplo.pt", "para": "aveiro@enat.pt", "data": "Hoje, 10:03",
+          "corpo": "Bom dia.\nVamos remodelar o lar (40 quartos) a partir do próximo ano e queremos climatização e águas quentes com bomba de calor, e talvez fotovoltaico.\nConseguem dar-nos um preço?\nA Direção" },
+        { "tipo": "agente", "envio": "automaticamente (resposta de receção, sem valores)", "de": "ENAT Aveiro", "para": "Lar Santa Joana", "data": "Hoje, 10:04",
+          "corpo": "Bom dia.\nObrigado pelo contacto. Uma obra destas é estudada pela nossa equipa técnica, e **não lhe vamos dar um valor que não seja certo**.\nUm responsável da ENAT contacta-vos ainda esta semana para marcar uma visita.",
+          "assina": "Equipa comercial" },
+        { "tipo": "nota", "corpo": "**Para o André.** Obra de remodelação, 40 quartos, Aveiro. Pede climatização, águas quentes com bomba de calor e talvez fotovoltaico. Início previsto em 2027. Respondi só a confirmar a receção, sem valores. Sugestão: marcar visita técnica." }
       ],
-      "steps": [
-        { "icon": "message", "label": "Email novo na caixa geral" },
-        { "icon": "filter", "label": "Classifica: obra com várias soluções, não é um pedido simples" },
-        { "icon": "ban", "label": "Não dá valores nem opções" },
-        { "icon": "send", "label": "Agradece e diz que um responsável vai ligar" },
-        { "icon": "list", "label": "Resume o pedido: dimensão, soluções, prazo" },
-        { "icon": "user-cog", "label": "Passa ao André, como os projetos de hoje" }
+      "raciocinio": [
+        "Email novo na **caixa geral**",
+        "Classifica: **obra** com várias soluções e dimensionamento técnico",
+        "Não é um pedido simples: **não dá valores nem opções**",
+        "Responde só a confirmar a receção, para o cliente não ficar à espera",
+        "Resume o pedido (dimensão, soluções, prazo) e passa-o ao **André**"
       ]
     },
     {
-      "title": "Fotovoltaico com uma dúvida: fica em rascunho",
-      "subtitle": "Quando há uma exceção, o agente prepara e o comercial decide.",
-      "caixa": "Caixa da Sofia, comercial",
-      "items": [
-        { "kind": "in", "de": "Hugo Martins", "para": "Sofia · ENAT Aveiro", "assunto": "paineis", "time": "21:40",
-          "texto": "ola queria paineis solares com bateria, pago uns 140€ de luz. moradia em agueda" },
-        { "kind": "out", "estado": "enviado", "de": "Sofia · ENAT Aveiro", "para": "Hugo Martins", "assunto": "Re: paineis", "time": "21:41", "passo": 2,
-          "texto": "Boa noite, Hugo. Obrigado pelo contacto. Para preparar as opções: a ligação é **monofásica ou trifásica**, e de que é o telhado?" },
-        { "kind": "in", "de": "Hugo Martins", "para": "Sofia · ENAT Aveiro", "assunto": "Re: paineis", "time": "08:15", "passo": 3,
-          "texto": "trifasica acho eu. o telhado é de fibrocimento" },
-        { "kind": "out", "estado": "rascunho", "de": "Sofia · ENAT Aveiro", "para": "Hugo Martins", "assunto": "Painéis com bateria em Águeda: três opções", "time": "08:16", "passo": 5,
-          "texto": "Bom dia, Hugo. Ficam aqui três opções com bateria e a instalação incluída. O valor final confirma-se na visita.",
-          "opcoes": [ { "n": "Essencial", "d": "bateria de 5 kWh", "p": "6.900 €" }, { "n": "Equilíbrio", "d": "bateria de 10 kWh", "p": "8.600 €" }, { "n": "Autonomia", "d": "bateria de 15 kWh", "p": "10.200 €" } ] },
-        { "kind": "sys", "texto": "Rascunho na caixa da Sofia, com aviso: telhado de fibrocimento, confirmar antes de enviar", "time": "08:16" }
+      "id": "hugo", "entrada": "sofia", "caixa": "sofia", "atribuido": "Sofia", "estado": "validar", "produto": "fv", "hora": "08:16", "novo": true,
+      "assunto": "paineis",
+      "resumo": "Rascunho com aviso: telhado de fibrocimento, confirmar antes de enviar",
+      "cliente": {
+        "nome": "Hugo Martins", "email": "hugo.m@exemplo.pt", "tel": "+351 918 330 512", "local": "Águeda, moradia", "desde": "Ontem, cliente novo", "tipo": "Particular, escreveu direto à Sofia",
+        "orcamentos": [],
+        "historico": [
+          { "tipo": "email", "data": "21/10, 21:40", "texto": "Pedido de painéis com bateria entra na **caixa da Sofia**, fora de horas" },
+          { "tipo": "email", "data": "21/10, 21:41", "texto": "Agente pede a ligação e o tipo de telhado" },
+          { "tipo": "email", "data": "22/10, 08:15", "texto": "Hugo responde: trifásica, telhado de fibrocimento" },
+          { "tipo": "agente", "data": "22/10, 08:16", "texto": "Exceção encontrada: rascunho com aviso para a **Sofia**" }
+        ]
+      },
+      "mensagens": [
+        { "tipo": "in", "de": "Hugo Martins", "email": "hugo.m@exemplo.pt", "para": "Sofia · ENAT Aveiro", "data": "Ontem, 21:40",
+          "corpo": "ola queria paineis solares com bateria, pago uns 140€ de luz. moradia em agueda" },
+        { "tipo": "agente", "envio": "automaticamente da caixa da Sofia", "de": "Sofia · ENAT Aveiro", "para": "Hugo Martins", "data": "Ontem, 21:41",
+          "corpo": "Boa noite, Hugo.\nObrigado pelo contacto. Para preparar as opções preciso de saber duas coisas:\n**1.** A ligação é monofásica ou trifásica?\n**2.** De que é o telhado (telha, chapa, fibrocimento)?",
+          "assina": "Sofia" },
+        { "tipo": "in", "de": "Hugo Martins", "email": "hugo.m@exemplo.pt", "para": "Sofia · ENAT Aveiro", "data": "Hoje, 08:15",
+          "corpo": "trifasica acho eu. o telhado é de fibrocimento" }
       ],
-      "steps": [
-        { "icon": "message", "label": "Email novo na caixa da Sofia, fora de horas" },
-        { "icon": "send", "label": "Responde e pede a ligação e o telhado" },
-        { "icon": "alert", "label": "Telhado de fibrocimento: exceção da vossa lista" },
-        { "icon": "book", "label": "Monta na mesma as três opções com a vossa tabela" },
-        { "icon": "shield", "label": "Não envia: deixa em rascunho, com o aviso por cima" },
-        { "icon": "user-cog", "label": "A Sofia valida, ajusta e envia" }
+      "sugestao": {
+        "assunto": "Re: paineis: três opções com bateria",
+        "aviso": "**Telhado de fibrocimento**: está na lista de exceções. Confirmar se a instalação é possível antes de enviar valores.",
+        "preparo": [ "A ler a resposta: trifásica, telhado de fibrocimento", "A consultar as exceções: fibrocimento pede confirmação", "A montar as três opções com a vossa tabela" ],
+        "corpo": "Bom dia, Hugo.\nObrigado. Para uma fatura de cerca de 140 € por mês, ficam aqui três opções com bateria e a instalação incluída:",
+        "opcoes": [ { "n": "Essencial", "d": "3 kWp e bateria de 5 kWh", "p": "6.900 €" }, { "n": "Equilíbrio", "d": "4 kWp e bateria de 10 kWh", "p": "8.600 €" }, { "n": "Autonomia", "d": "5 kWp e bateria de 15 kWh", "p": "10.200 €" } ],
+        "fecho": "O valor final confirma-se na visita técnica, onde vemos também o estado da cobertura.",
+        "orcamento": "Fotovoltaico com bateria: 3 opções", "valorOrc": "6.900 a 10.200 €"
+      },
+      "raciocinio": [
+        "Email novo na **caixa da Sofia**, às 21:40",
+        "Pedido simples de fotovoltaico: responde já e pede a ligação e o telhado",
+        "Resposta de manhã: **fibrocimento** está na vossa lista de exceções",
+        "Monta na mesma as três opções, para a Sofia não começar do zero",
+        "**Não envia**: deixa em rascunho, com o aviso por cima, para a Sofia decidir"
       ]
+    },
+    {
+      "id": "carla", "entrada": "geral", "caixa": "rui", "atribuido": "Rui", "estado": "cliente", "produto": "aqs", "hora": "Ontem",
+      "assunto": "Bomba de calor para águas quentes",
+      "resumo": "Duas opções enviadas ontem, à espera da resposta da Carla",
+      "cliente": {
+        "nome": "Carla Neves", "email": "carla.neves@exemplo.pt", "tel": "+351 965 220 841", "local": "Aveiro, moradia", "desde": "Ontem, cliente novo", "tipo": "Particular, pedido pela caixa geral",
+        "orcamentos": [ { "data": "21/10, 16:10", "desc": "Bomba de calor AQS: 2 opções", "valor": "2.950 a 3.400 €", "estado": "Enviado", "cor": "ok" } ],
+        "historico": [
+          { "tipo": "email", "data": "21/10, 15:30", "texto": "Pedido entra na **caixa geral**, atribuído ao **Rui** (Aveiro)" },
+          { "tipo": "email", "data": "21/10, 15:31", "texto": "Agente pergunta quantas pessoas e onde fica o equipamento" },
+          { "tipo": "orcamento", "data": "21/10, 16:10", "texto": "Duas opções enviadas da caixa do Rui" },
+          { "tipo": "agente", "data": "Amanhã, 10:00", "texto": "Se não houver resposta, o Rui recebe um lembrete para ligar" }
+        ]
+      },
+      "mensagens": [
+        { "tipo": "in", "de": "Carla Neves", "email": "carla.neves@exemplo.pt", "para": "aveiro@enat.pt", "data": "Ontem, 15:30",
+          "corpo": "Boa tarde, queria trocar o esquentador por uma bomba de calor. Moradia em Aveiro." },
+        { "tipo": "agente", "envio": "automaticamente da caixa do Rui", "de": "Rui · ENAT Aveiro", "para": "Carla Neves", "data": "Ontem, 15:31",
+          "corpo": "Boa tarde, Carla.\nQuantas pessoas vivem na casa, e onde ficaria o equipamento (garagem, arrumos, exterior)?", "assina": "Rui" },
+        { "tipo": "in", "de": "Carla Neves", "email": "carla.neves@exemplo.pt", "para": "Rui · ENAT Aveiro", "data": "Ontem, 16:02",
+          "corpo": "Somos 4 em casa, o esquentador tem 15 anos. Há espaço na garagem." },
+        { "tipo": "agente", "envio": "automaticamente da caixa do Rui (pedido simples)", "de": "Rui · ENAT Aveiro", "para": "Carla Neves", "data": "Ontem, 16:10",
+          "corpo": "Carla, para quatro pessoas ficam aqui duas opções, com a remoção do esquentador e a instalação incluídas:",
+          "opcoes": [ { "n": "200 litros", "d": "Bomba de calor monobloco", "p": "2.950 €" }, { "n": "270 litros", "d": "Mais folga para banhos seguidos", "p": "3.400 €" } ],
+          "fecho": "O valor final confirma-se na visita.", "assina": "Rui" }
+      ],
+      "raciocinio": [ "Pedido simples de águas quentes, zona de Aveiro: **Rui**", "Pede o número de pessoas e o espaço", "Duas opções pela vossa tabela, enviadas da caixa do Rui", "Sem resposta em 24 horas: lembrete ao Rui para ligar" ]
+    },
+    {
+      "id": "moliceiro", "entrada": "geral", "caixa": "geral", "atribuido": "Rui", "estado": "pessoa", "produto": "ac", "hora": "Ontem",
+      "assunto": "Ar condicionado para a sala do restaurante",
+      "resumo": "Pede desconto para fechar esta semana: fica com o Rui",
+      "cliente": {
+        "nome": "Restaurante O Moliceiro", "email": "geral@exemplo.pt", "tel": "+351 234 000 452", "local": "Aveiro, restaurante", "desde": "Ontem, contacto novo", "tipo": "Empresa",
+        "orcamentos": [],
+        "historico": [
+          { "tipo": "email", "data": "21/10, 12:10", "texto": "Pedido entra na **caixa geral**" },
+          { "tipo": "agente", "data": "21/10, 12:11", "texto": "Pede desconto: o agente não negoceia, passa ao **Rui**" }
+        ]
+      },
+      "mensagens": [
+        { "tipo": "in", "de": "Restaurante O Moliceiro", "email": "geral@exemplo.pt", "para": "aveiro@enat.pt", "data": "Ontem, 12:10",
+          "corpo": "Boa tarde. Precisamos de ar condicionado na sala do restaurante, uns 80m2. Se fecharmos esta semana fazem desconto?" },
+        { "tipo": "agente", "envio": "automaticamente", "de": "ENAT Aveiro", "para": "Restaurante O Moliceiro", "data": "Ontem, 12:11",
+          "corpo": "Boa tarde. Obrigado pelo contacto. Condições e descontos são sempre tratados por um comercial: o Rui liga-vos hoje para combinar uma visita à sala.", "assina": "Equipa comercial" },
+        { "tipo": "nota", "corpo": "**Para o Rui.** Restaurante, sala de cerca de 80 m², quer fechar esta semana e pede desconto. Sem valores dados." }
+      ],
+      "raciocinio": [ "Empresa, sala de 80 m²: pedido de ar condicionado", "Pede **desconto**: o agente não negoceia", "Responde sem valores e passa ao **Rui**, com o resumo" ]
+    },
+    {
+      "id": "joana", "entrada": "sofia", "caixa": "sofia", "atribuido": "Sofia", "estado": "pessoa", "produto": "ac", "hora": "20/10",
+      "assunto": "Re: Ar condicionado quarto e sala",
+      "resumo": "Aceitou as opções e pede uma chamada para marcar a visita",
+      "cliente": {
+        "nome": "Joana Ribeiro", "email": "joana.r@exemplo.pt", "tel": "+351 927 400 118", "local": "Oliveira do Bairro, apartamento", "desde": "20/10/2026", "tipo": "Particular",
+        "orcamentos": [ { "data": "20/10, 10:20", "desc": "Split quarto e sala: 2 opções", "valor": "2.300 a 2.850 €", "estado": "Visita a marcar", "cor": "sol" } ],
+        "historico": [
+          { "tipo": "email", "data": "20/10, 09:58", "texto": "Pedido entra na **caixa da Sofia**" },
+          { "tipo": "orcamento", "data": "20/10, 10:20", "texto": "Duas opções enviadas" },
+          { "tipo": "email", "data": "20/10, 13:45", "texto": "Joana pede uma chamada para marcar a visita" },
+          { "tipo": "visita", "data": "Por marcar", "texto": "A **Sofia** liga de manhã" }
+        ]
+      },
+      "mensagens": [
+        { "tipo": "agente", "envio": "automaticamente da caixa da Sofia", "de": "Sofia · ENAT Aveiro", "para": "Joana Ribeiro", "data": "20/10, 10:20",
+          "corpo": "Bom dia, Joana. Ficam aqui duas opções para o quarto e a sala, com a instalação incluída:",
+          "opcoes": [ { "n": "Duplo split", "d": "Duas unidades independentes", "p": "2.300 €" }, { "n": "Multisplit", "d": "Uma unidade exterior para as duas", "p": "2.850 €" } ],
+          "fecho": "O valor final confirma-se na visita.", "assina": "Sofia" },
+        { "tipo": "in", "de": "Joana Ribeiro", "email": "joana.r@exemplo.pt", "para": "Sofia · ENAT Aveiro", "data": "20/10, 13:45",
+          "corpo": "Obrigada, prefiro o multisplit. Ligue-me amanhã de manhã para combinarmos a visita." },
+        { "tipo": "nota", "corpo": "**Para a Sofia.** A cliente escolheu o multisplit e quer marcar a visita: ligar de manhã." }
+      ],
+      "raciocinio": [ "A cliente escolheu uma opção: o negócio está perto", "Marcar visita é com a Sofia: passa-lhe com a nota" ]
     }
   ]
 }
       </script>
-      <p class="demo-note">Emails, nomes e valores ilustrativos. Em produção, o agente usa a vossa tabela de preços de instalação e as perguntas que saírem da auditoria. O que segue logo e o que fica em rascunho decidem vocês.</p>
+      <p class="demo-note">Emails, nomes, histórico e valores são ilustrativos. Em produção, os agentes usam a vossa tabela de preços de instalação, as perguntas que saírem da auditoria e as regras de distribuição que nos derem. O que segue sozinho e o que fica em rascunho decidem vocês.</p>
     </div>
   </section>
 
@@ -377,102 +532,6 @@
     { "icon": "send", "title": "Envia ou deixa em rascunho", "detail": "Os simples seguem; as dúvidas esperam pelo comercial.", "tone": "brand" }
   ],
   "note": "Os emails continuam nas vossas caixas, com o nome de cada comercial. Os agentes ficam instalados nos vossos servidores."
-}
-      </script>
-    </div>
-  </section>
-
-  <!-- ============ 7. AS QUATRO CAIXAS ============ -->
-  <section id="caixas">
-    <div class="container">
-      <span class="eyebrow">As quatro caixas, à vista</span>
-      <h2>Quem tem o quê, sem perguntar a ninguém</h2>
-      <p class="lead">Cada pedido com o comercial a quem foi atribuído, o produto e o estado: respondido pelo agente, em rascunho, ou à espera de uma pessoa. Experimente: as conversas abrem-se ao clicar.</p>
-      <p class="unibox-note">Pedidos de exemplo, com nomes fictícios. Em produção, os vossos comerciais.</p>
-      <div class="unibox" id="enInbox" data-entra="sobe" style="--ub-accent:#5fac00; --ub-accent-fg:#0d1f12"></div>
-      <script type="application/json" id="enInbox-config">
-{
-  "brand": "ENAT Aveiro",
-  "teamName": "Delegação de Aveiro",
-  "teamEmail": "aveiro@enat.pt",
-  "teamInitials": "EA",
-  "agentName": "Agente ENAT",
-  "accounts": ["Caixa geral", "Rui", "Sofia", "Tiago"],
-  "channels": ["email"],
-  "labels": {
-    "ac": { "name": "Ar condicionado", "color": "#8fd14f", "priority": 0 },
-    "fv": { "name": "Fotovoltaico", "color": "#ffb347", "priority": 1 },
-    "aqs": { "name": "Águas quentes", "color": "#7cc6f2", "priority": 2 },
-    "ve": { "name": "Carregador VE", "color": "#b9a6ff", "priority": 3 },
-    "obra": { "name": "Obra / projeto", "color": "#f0a3a3", "priority": 4 }
-  },
-  "conversations": [
-    { "id": 1, "name": "Marta Pinho", "initials": "MP", "email": "marta.pinho@exemplo.pt", "account": "Rui", "channel": "email", "label": "ac", "tab": "mine", "timeAgo": "8m", "unread": 1,
-      "preview": "Ar condicionado em Ílhavo: três opções",
-      "messages": [
-        { "sender": "client", "text": "Bom dia, gostava de um orçamento para ar condicionado em casa.", "time": "09:12" },
-        { "sender": "agent", "isAI": true, "text": "Bom dia, Marta. Em que localidade é a instalação, quantas divisões e se já tem **pré-instalação**?", "time": "09:13" },
-        { "sender": "client", "text": "Moradia em Ílhavo. 3 quartos e a sala. Tem pré instalação.", "time": "11:47" },
-        { "sender": "agent", "isAI": true, "text": "Três opções com instalação incluída: **Essencial, Conforto e Premium**. O valor final confirma-se na visita.", "time": "11:52" }
-      ],
-      "attributes": [ { "key": "Zona", "value": "Ílhavo" }, { "key": "Divisões", "value": "3 quartos e sala" }, { "key": "Pré-instalação", "value": "Sim" }, { "key": "Estado", "value": "Opções enviadas" } ],
-      "notes": ["Marcar visita: ligar à Marta."] },
-    { "id": 2, "name": "Hugo Martins", "initials": "HM", "email": "hugo.m@exemplo.pt", "account": "Sofia", "channel": "email", "label": "fv", "tab": "mine", "timeAgo": "25m", "unread": 1,
-      "preview": "Rascunho: telhado de fibrocimento, confirmar",
-      "messages": [
-        { "sender": "client", "text": "ola queria paineis solares com bateria, pago uns 140€ de luz. moradia em agueda", "time": "21:40" },
-        { "sender": "agent", "isAI": true, "text": "A ligação é **monofásica ou trifásica**, e de que é o telhado?", "time": "21:41" },
-        { "sender": "client", "text": "trifasica acho eu. o telhado é de fibrocimento", "time": "08:15" },
-        { "sender": "system", "text": "Rascunho com três opções à espera da Sofia: telhado de fibrocimento.", "time": "08:16" }
-      ],
-      "attributes": [ { "key": "Zona", "value": "Águeda" }, { "key": "Fatura", "value": "Cerca de 140 €/mês" }, { "key": "Ligação", "value": "Trifásica, a confirmar" }, { "key": "Estado", "value": "Rascunho para validar" } ],
-      "notes": ["Exceção: cobertura em fibrocimento."] },
-    { "id": 3, "name": "Lar Santa Joana", "initials": "SJ", "email": "direcao@exemplo.pt", "account": "Caixa geral", "channel": "email", "label": "obra", "tab": "unassigned", "timeAgo": "1h", "unread": 2,
-      "preview": "Remodelação de 40 quartos: para o André",
-      "messages": [
-        { "sender": "client", "text": "Vamos remodelar o lar (40 quartos) e queremos climatização, águas quentes e talvez fotovoltaico.", "time": "10:03" },
-        { "sender": "agent", "isAI": true, "text": "Uma obra destas é estudada pela nossa equipa técnica. **Não lhe vamos dar um valor que não seja certo.**", "time": "10:04" },
-        { "sender": "system", "text": "Encaminhado para o André, com o resumo do pedido.", "time": "10:04" }
-      ],
-      "attributes": [ { "key": "Tipo", "value": "Obra" }, { "key": "Dimensão", "value": "40 quartos" }, { "key": "Início", "value": "2027" } ],
-      "notes": ["Projeto: fica com a equipa."] },
-    { "id": 4, "name": "Paulo Teixeira", "initials": "PT", "email": "pteixeira@exemplo.pt", "account": "Tiago", "channel": "email", "label": "ve", "tab": "mine", "timeAgo": "2h", "unread": 0,
-      "preview": "6,9 kVA. O quadro fica na garagem",
-      "messages": [
-        { "sender": "client", "text": "Foram vocês que me montaram os painéis em 2024. Queria um carregador na garagem.", "time": "14:20" },
-        { "sender": "system", "text": "Cliente desde 2024: atribuído ao Tiago.", "time": "14:20" },
-        { "sender": "agent", "isAI": true, "text": "Que bom voltar a falar consigo. Qual é a **potência contratada** e a distância do quadro ao carro?", "time": "14:21" },
-        { "sender": "client", "text": "6,9 kVA. O quadro fica na garagem, a 5 metros", "time": "18:05" }
-      ],
-      "attributes": [ { "key": "Cliente desde", "value": "2024, painéis" }, { "key": "Potência", "value": "6,9 kVA" }, { "key": "Estado", "value": "Opções em preparação" } ],
-      "notes": ["Pode carregar com a energia dos painéis."] },
-    { "id": 5, "name": "Carla Neves", "initials": "CN", "email": "carla.neves@exemplo.pt", "account": "Rui", "channel": "email", "label": "aqs", "tab": "mine", "timeAgo": "3h", "unread": 0,
-      "preview": "Somos 4 em casa, o esquentador tem 15 anos",
-      "messages": [
-        { "sender": "client", "text": "Queria trocar o esquentador por uma bomba de calor. Moradia em Aveiro.", "time": "15:30" },
-        { "sender": "agent", "isAI": true, "text": "Quantas pessoas vivem na casa, e onde ficaria o equipamento?", "time": "15:31" },
-        { "sender": "client", "text": "Somos 4 em casa, o esquentador tem 15 anos. Há espaço na garagem.", "time": "16:02" }
-      ],
-      "attributes": [ { "key": "Zona", "value": "Aveiro" }, { "key": "Pessoas", "value": "4" }, { "key": "Espaço", "value": "Garagem" } ],
-      "notes": [] },
-    { "id": 6, "name": "Restaurante O Moliceiro", "initials": "OM", "email": "geral@exemplo.pt", "account": "Caixa geral", "channel": "email", "label": "ac", "tab": "unassigned", "timeAgo": "5h", "unread": 1,
-      "preview": "Pedem desconto para fechar esta semana",
-      "messages": [
-        { "sender": "client", "text": "Precisamos de ar condicionado na sala. Se fecharmos esta semana fazem desconto?", "time": "12:10" },
-        { "sender": "agent", "isAI": true, "text": "Condições e descontos são sempre tratados por um comercial. Passo já o seu pedido.", "time": "12:11" },
-        { "sender": "system", "text": "Pedido de desconto: à espera de um comercial.", "time": "12:11" }
-      ],
-      "attributes": [ { "key": "Tipo", "value": "Empresa" }, { "key": "Pede", "value": "Desconto" } ],
-      "notes": ["O agente não negoceia."] },
-    { "id": 7, "name": "Joana Ribeiro", "initials": "JR", "email": "joana.r@exemplo.pt", "account": "Sofia", "channel": "email", "label": "ac", "tab": "mine", "timeAgo": "1d", "unread": 0,
-      "preview": "Obrigada, ligue-me amanhã de manhã",
-      "messages": [
-        { "sender": "agent", "isAI": true, "text": "Duas opções para o quarto e a sala, com instalação. O valor final confirma-se na visita.", "time": "10:20" },
-        { "sender": "client", "text": "Obrigada, ligue-me amanhã de manhã para combinar a visita.", "time": "13:45" }
-      ],
-      "attributes": [ { "key": "Zona", "value": "Oliveira do Bairro" }, { "key": "Estado", "value": "Visita a marcar" } ],
-      "notes": [] }
-  ]
 }
       </script>
     </div>
@@ -600,14 +659,12 @@
 <script src="../shared/motion/lib/CustomEase.min.js"></script>
 <script src="../shared/motion/motion.js"></script>
 <script src="../shared/deck/deck.js"></script>
-<script src="../shared/unibox/unibox.js"></script>
 <script src="../shared/js/protect.js"></script>
 <script src="assets/js/app.js"></script>
-<script src="assets/js/caixa.js"></script>
+<script src="assets/js/plataforma.js"></script>
 <script>
-  caixaRaciocinio('enDemo');
+  plataforma('enPlat');
   fluxo('enFluxo');
-  unibox('enInbox');
   document.getElementById('themeBtn').addEventListener('click', function () {
     var r = document.documentElement;
     var next = (r.getAttribute('data-theme') || 'light') === 'dark' ? 'light' : 'dark';

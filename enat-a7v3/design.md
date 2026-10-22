@@ -19,8 +19,8 @@
 2. O que ouvimos: 6 citações da transcrição
 3. Faixa-síntese | 4. Hoje vs com os agentes
 5. Pedidos simples (AC, AQS, carregador VE, fotovoltaico) vs obras + auditoria aos emails desde janeiro
-6. Demo email + raciocínio (`assets/js/caixa.js`, variante de email do chatRaciocinio, regra do Diogo: email no formato de email): AC com pré-instalação enviado; cliente antigo para o Tiago; obra de lar recusada e passada ao André; fotovoltaico em fibrocimento fica em rascunho
-7. Fluxo | 8. Unibox com as 4 caixas como contas | 9. Limites + nota do servidor de clientes em transição
+6. A plataforma de email (`assets/js/plataforma.js` + `assets/css/plataforma.css`, v2 a pedido do Diogo a 22/10: "agregador de emails, layout de email e não de chat"): barra lateral com todas as caixas, cada caixa, estados e produtos; lista; leitura em formato de email com a resposta sugerida (editável, validar e enviar, descartar, "porque esta resposta") e a ficha do cliente (dados, orçamentos dados, toda a comunicação). Atalhos para os 4 exemplos: AC enviado no próprio dia (Marta); cliente antigo para o Tiago (Paulo); obra recusada e passada ao André (Lar); fotovoltaico em fibrocimento em rascunho (Hugo). Mais 3 emails de enchimento. Sem scroll interno (prendia a roda do rato no qa.mjs)
+7. Fluxo | 8. Limites + nota do servidor de clientes em transição (sai a Unibox e a demo em bolhas)
 10. Fase seguinte: 8 delegações e painel em tempo real (falado aos 18:36)
 11. Investimento (conta antes do preço) | 12. Como arrancamos (fases, sem semanas) + contacto do Diogo
 

@@ -1,0 +1,243 @@
+/* ============================================================
+   A plataforma de email da ENAT Aveiro (maqueta de produto).
+   Registo de produto dentro da maqueta: transições de 150 a 250ms.
+   Clara nos dois temas, como um cliente de email real; as cores
+   vêm dos tokens --mail-* do tokens.css.
+   ============================================================ */
+
+.pl-exemplos { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; }
+.pl-exemplos > span { font-size: 0.86rem; color: var(--muted); margin-right: 4px; }
+.pl-exemplos button {
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  padding: 9px 15px; border-radius: 999px; font: 600 0.86rem var(--font-body); cursor: pointer;
+  transition: border-color .2s, background .2s, color .2s;
+}
+.pl-exemplos button:hover { border-color: hsl(var(--brand-hsl) / 0.6); }
+.pl-exemplos button.on { background: var(--brand-solido); border-color: var(--brand-solido); color: var(--on-brand); }
+
+.pl { margin-top: 22px; }
+.pl-janela {
+  border-radius: 18px; overflow: hidden; border: 1px solid var(--mail-line);
+  background: var(--mail-bg); color: var(--mail-text);
+  box-shadow: var(--shadow-lg), 0 0 0 6px hsl(var(--accent-hsl) / 0.08);
+  font-family: var(--font-body);
+}
+.pl-barra { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: var(--mail-bg-2); border-bottom: 1px solid var(--mail-line); }
+.pl-barra i { width: 11px; height: 11px; border-radius: 50%; background: hsl(0 70% 62%); }
+.pl-barra i:nth-child(2) { background: hsl(42 90% 55%); } .pl-barra i:nth-child(3) { background: hsl(130 50% 48%); }
+.pl-barra span { margin-left: 10px; font-size: 0.78rem; color: var(--mail-muted); }
+.pl svg { width: 16px; height: 16px; flex: 0 0 auto; }
+
+.pl-app { display: grid; grid-template-columns: 228px 340px minmax(0, 1fr); height: 740px; }
+.pl-app > * { min-height: 0; }
+
+/* ---------- barra lateral ---------- */
+.pl-side { background: var(--mail-side); color: var(--mail-side-text); padding: 14px 10px; display: flex; flex-direction: column; gap: 4px; overflow-y: auto; }
+.pl-conta { display: flex; align-items: center; gap: 10px; padding: 4px 8px 14px; border-bottom: 1px solid hsl(0 0% 100% / 0.1); margin-bottom: 6px; }
+.pl-conta-av { width: 34px; height: 34px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; background: hsl(87 100% 34%); color: hsl(150 45% 8%); }
+.pl-conta b { display: block; font-size: 0.92rem; }
+.pl-conta small { display: block; font-size: 0.74rem; color: var(--mail-side-muted); }
+.pl-grupo { display: grid; gap: 2px; margin-top: 6px; }
+.pl-grupo-t { font-size: 0.68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--mail-side-muted); padding: 8px 10px 4px; }
+.pl-nav {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; cursor: pointer;
+  background: transparent; border: 0; color: inherit; padding: 8px 10px; border-radius: 9px; font: 500 0.88rem var(--font-body);
+  transition: background .15s;
+}
+.pl-nav:hover { background: hsl(0 0% 100% / 0.06); }
+.pl-nav.on { background: hsl(87 100% 34% / 0.22); color: hsl(0 0% 100%); }
+.pl-nav-ic { color: var(--mail-side-muted); display: inline-flex; }
+.pl-nav.on .pl-nav-ic { color: hsl(90 80% 62%); }
+.pl-nav-n { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pl-badge { font-size: 0.72rem; font-weight: 700; padding: 1px 7px; border-radius: 99px; background: hsl(34 100% 52%); color: hsl(150 45% 8%); }
+.pl-cor { width: 10px; height: 10px; border-radius: 3px; background: var(--c); margin: 0 3px; flex: 0 0 auto; }
+.pl-agente { margin-top: auto; padding: 12px 10px 4px; font-size: 0.76rem; color: var(--mail-side-muted); display: flex; align-items: center; gap: 8px; }
+.pl-pulso { width: 8px; height: 8px; border-radius: 50%; background: hsl(90 80% 52%); box-shadow: 0 0 0 4px hsl(90 80% 52% / 0.2); animation: cr-pulse 1.6s infinite; }
+
+/* ---------- lista ---------- */
+.pl-lista { border-right: 1px solid var(--mail-line); display: flex; flex-direction: column; background: var(--mail-bg); }
+.pl-lista-cab { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 16px 8px; }
+.pl-lista-cab b { font-size: 1rem; }
+.pl-lista-cab span { font-size: 0.76rem; color: var(--mail-muted); }
+.pl-procura { margin: 0 12px 10px; display: flex; align-items: center; gap: 8px; padding: 8px 11px; border-radius: 9px; background: var(--mail-bg-2); border: 1px solid var(--mail-line); font-size: 0.8rem; color: var(--mail-muted); }
+.pl-itens { overflow-y: auto; flex: 1; }
+.pl-item {
+  display: flex; gap: 11px; width: 100%; text-align: left; cursor: pointer; border: 0; background: transparent; color: inherit;
+  padding: 12px 14px; border-top: 1px solid var(--mail-line); border-left: 3px solid transparent; font-family: var(--font-body);
+  transition: background .15s;
+}
+.pl-item:hover { background: var(--mail-bg-2); }
+.pl-item.on { background: hsl(95 45% 95%); border-left-color: hsl(140 62% 30%); }
+.pl-item.novo .pl-item-l1 b, .pl-item.novo .pl-item-as { font-weight: 700; }
+.pl-item.novo .pl-av { box-shadow: 0 0 0 2px var(--mail-bg), 0 0 0 4px hsl(34 100% 52%); }
+.pl-av {
+  width: 34px; height: 34px; flex: 0 0 auto; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.74rem; font-weight: 700; background: hsl(100 10% 89%); color: hsl(150 20% 25%);
+}
+.pl-av.enat { background: hsl(140 62% 26%); color: hsl(0 0% 100%); }
+.pl-av.grande { width: 52px; height: 52px; font-size: 1rem; }
+.pl-item-c { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.pl-item-l1 { display: flex; justify-content: space-between; gap: 8px; font-size: 0.88rem; }
+.pl-item-l1 b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pl-item-l1 time { font-size: 0.74rem; color: var(--mail-muted); flex: 0 0 auto; font-family: var(--font-mono); }
+.pl-item-as { font-size: 0.84rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pl-item-sn { font-size: 0.8rem; color: var(--mail-muted); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pl-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+.pl-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: var(--mail-bg-2); color: hsl(150 15% 28%); border: 1px solid var(--mail-line); }
+.pl-tag i { width: 7px; height: 7px; border-radius: 50%; background: var(--c); }
+.pl-tag--validar { background: hsl(36 100% 92%); color: hsl(28 92% 28%); border-color: hsl(34 100% 70%); }
+.pl-tag--enviado { background: hsl(140 50% 92%); color: hsl(140 62% 22%); border-color: hsl(140 40% 75%); }
+.pl-tag--pessoa { background: hsl(356 70% 95%); color: hsl(356 60% 36%); border-color: hsl(356 60% 82%); }
+.pl-tag--cliente { background: hsl(205 60% 94%); color: hsl(205 70% 28%); border-color: hsl(205 50% 80%); }
+.pl-vazio { padding: 16px; font-size: 0.86rem; color: var(--mail-muted); }
+
+/* ---------- leitura ---------- */
+.pl-ler { display: flex; flex-direction: column; position: relative; background: var(--mail-bg); }
+.pl-ler-cab { display: flex; align-items: flex-start; gap: 12px; padding: 14px 20px 10px; }
+.pl-ler-tit { flex: 1; min-width: 0; }
+.pl-ler-tit h4 { font-family: var(--font-body); font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
+.pl-ler-ferr { display: flex; gap: 6px; color: var(--mail-muted); }
+.pl-ler-ferr span { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--mail-line); display: inline-flex; align-items: center; justify-content: center; }
+.pl-voltar { display: none; }
+.pl-abas { display: flex; gap: 4px; padding: 0 20px; border-bottom: 1px solid var(--mail-line); }
+.pl-abas button {
+  display: inline-flex; align-items: center; gap: 7px; border: 0; background: transparent; cursor: pointer; color: var(--mail-muted);
+  padding: 10px 12px; font: 600 0.86rem var(--font-body); border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.pl-abas button.on { color: hsl(140 62% 24%); border-bottom-color: hsl(140 62% 30%); }
+.pl-ler-corpo { flex: 1; overflow-y: auto; padding: 16px 20px 26px; display: grid; gap: 12px; align-content: start; }
+
+.pl-mail { border: 1px solid var(--mail-line); border-radius: 12px; padding: 14px 16px; background: var(--mail-bg); }
+.pl-mail.out { background: var(--mail-out); border-color: hsl(100 25% 84%); }
+.pl-mail header { display: flex; align-items: flex-start; gap: 10px; }
+.pl-mail-quem { flex: 1; min-width: 0; font-size: 0.88rem; line-height: 1.35; }
+.pl-mail-quem span { color: var(--mail-muted); font-size: 0.8rem; }
+.pl-mail-quem small { display: block; font-size: 0.78rem; color: var(--mail-muted); }
+.pl-mail header time { font-size: 0.76rem; color: var(--mail-muted); font-family: var(--font-mono); white-space: nowrap; }
+.pl-selo { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 0.72rem; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: hsl(140 50% 90%); color: hsl(140 62% 22%); }
+.pl-selo svg { width: 13px; height: 13px; }
+.pl-mail-corpo, .pl-sug-corpo { margin-top: 10px; font-size: 0.9rem; line-height: 1.55; color: hsl(150 15% 16%); }
+.pl-mail-corpo p + p, .pl-sug-corpo p + p { margin-top: 6px; }
+.pl-assina { margin-top: 10px !important; color: var(--mail-muted); font-size: 0.84rem; }
+.pl-anexo { margin-top: 10px; display: inline-flex; gap: 6px; align-items: center; font-size: 0.8rem; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--mail-line); }
+
+.pl-op { width: 100%; margin-top: 10px; border-collapse: collapse; font-size: 0.84rem; }
+.pl-op th { text-align: left; font-size: 0.72rem; font-weight: 700; color: var(--mail-muted); padding: 6px 10px; background: var(--mail-bg-2); border-bottom: 1px solid var(--mail-line); }
+.pl-op td { padding: 8px 10px; border-bottom: 1px solid var(--mail-line); vertical-align: top; }
+.pl-op td:last-child, .pl-op th:last-child { text-align: right; white-space: nowrap; font-family: var(--font-mono); }
+.pl-op tr.meio td { background: hsl(36 100% 95%); }
+
+.pl-nota { display: flex; gap: 10px; padding: 12px 14px; border-radius: 12px; background: hsl(48 100% 94%); border: 1px solid hsl(44 80% 78%); font-size: 0.86rem; line-height: 1.5; color: hsl(36 60% 20%); }
+.pl-nota b { display: block; font-size: 0.74rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
+.pl-nota svg { margin-top: 2px; color: hsl(34 90% 40%); }
+
+/* resposta sugerida */
+.pl-sug { border: 2px solid hsl(34 100% 52%); border-radius: 14px; padding: 14px 16px; background: hsl(40 100% 98.5%); box-shadow: 0 10px 30px hsl(34 100% 40% / 0.12); }
+.pl-sug-cab { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; color: hsl(28 92% 30%); }
+.pl-sug-cab b { font-size: 0.92rem; }
+.pl-sug-cab span { font-size: 0.78rem; color: var(--mail-muted); }
+.pl-aviso { margin-top: 10px; display: flex; gap: 8px; align-items: flex-start; padding: 9px 12px; border-radius: 10px; background: hsl(36 100% 90%); color: hsl(26 80% 24%); font-size: 0.84rem; line-height: 1.45; }
+.pl-sug-campos { margin-top: 10px; display: grid; border-top: 1px solid var(--mail-line); }
+.pl-sug-campos div { display: flex; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--mail-line); font-size: 0.84rem; }
+.pl-sug-campos span { width: 62px; flex: 0 0 auto; color: var(--mail-muted); }
+.pl-sug-corpo { border-radius: 8px; padding: 4px 6px; margin-left: -6px; margin-right: -6px; outline: none; }
+.pl-sug-corpo:focus, .pl-sug-corpo.a-editar { background: hsl(0 0% 100%); box-shadow: inset 0 0 0 1px hsl(34 100% 60%); }
+.pl-sug-acoes { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.pl-btn {
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer; padding: 8px 13px; border-radius: 9px;
+  border: 1px solid var(--mail-line); background: hsl(0 0% 100%); color: hsl(150 20% 18%); font: 600 0.84rem var(--font-body);
+  transition: background .15s, border-color .15s;
+}
+.pl-btn:hover { border-color: hsl(140 40% 60%); }
+.pl-btn--env { background: hsl(140 62% 26%); border-color: hsl(140 62% 26%); color: hsl(0 0% 100%); }
+.pl-btn--env:hover { background: hsl(140 62% 22%); }
+.pl-btn--x { color: hsl(356 55% 38%); }
+.pl-btn--r { margin-left: auto; color: hsl(28 92% 30%); }
+.pl-btn--r svg:last-child { transition: transform .2s; }
+.pl-btn--r.on svg:last-child { transform: rotate(180deg); }
+.pl-rac { list-style: none; margin-top: 12px; display: grid; gap: 6px; padding: 12px; border-radius: 12px; background: linear-gradient(150deg, hsl(145 40% 15%), hsl(150 45% 9%)); color: hsl(100 25% 94%); }
+.pl-rac li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.84rem; line-height: 1.45; padding: 4px 2px; animation: deck-float-in .3s ease both; }
+.pl-rac li:nth-child(2) { animation-delay: .06s } .pl-rac li:nth-child(3) { animation-delay: .12s } .pl-rac li:nth-child(4) { animation-delay: .18s } .pl-rac li:nth-child(5) { animation-delay: .24s } .pl-rac li:nth-child(6) { animation-delay: .3s }
+.pl-rac li .pl-rac-n { flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.72rem; background: hsl(34 100% 52% / 0.2); color: hsl(34 100% 70%); }
+.pl-rac strong { color: hsl(34 100% 70%); }
+.pl-rac-solo { display: grid; }
+.pl-rac-solo .pl-btn--r { margin-left: 0; justify-self: start; }
+
+.pl-sug--prep { border-style: dashed; }
+.pl-prep { list-style: none; margin-top: 10px; display: grid; gap: 8px; }
+.pl-prep li { font-size: 0.86rem; color: var(--mail-muted); padding-left: 24px; position: relative; opacity: .45; transition: opacity .2s; }
+.pl-prep li::before { content: ""; position: absolute; left: 2px; top: .3em; width: 12px; height: 12px; border-radius: 50%; border: 2px solid hsl(34 100% 52%); }
+.pl-prep li.agora { opacity: 1; color: hsl(150 20% 18%); }
+.pl-prep li.agora::before { border-right-color: transparent; animation: pl-gira .7s linear infinite; }
+.pl-prep li.feito { opacity: 1; }
+.pl-prep li.feito::before { background: hsl(140 62% 30%); border-color: hsl(140 62% 30%); }
+@keyframes pl-gira { to { transform: rotate(360deg); } }
+
+.pl-toast { position: absolute; left: 20px; right: 20px; bottom: 14px; display: flex; gap: 8px; align-items: center; padding: 10px 14px; border-radius: 10px; background: hsl(140 62% 22%); color: hsl(0 0% 100%); font-size: 0.86rem; box-shadow: 0 10px 28px hsl(150 40% 10% / 0.3); animation: deck-float-in .3s ease both; }
+
+/* ficha do cliente */
+.pl-ficha { display: grid; gap: 14px; }
+.pl-ficha-topo { display: flex; align-items: center; gap: 12px; }
+.pl-ficha-topo b { display: block; font-size: 1.1rem; }
+.pl-ficha-topo small { display: block; font-size: 0.82rem; color: var(--mail-muted); }
+.pl-dados { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.pl-dados div { padding: 9px 11px; border-radius: 10px; background: var(--mail-bg-2); border: 1px solid var(--mail-line); min-width: 0; }
+.pl-dados dt { font-size: 0.72rem; color: var(--mail-muted); }
+.pl-dados dd { font-size: 0.86rem; font-weight: 600; overflow-wrap: anywhere; }
+.pl-ficha-t { display: flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 0.92rem; font-weight: 700; margin-top: 4px; color: hsl(140 62% 22%); }
+.pl-orc { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.pl-orc th { text-align: left; font-size: 0.72rem; color: var(--mail-muted); padding: 6px 8px; border-bottom: 1px solid var(--mail-line); }
+.pl-orc td { padding: 8px; border-bottom: 1px solid var(--mail-line); }
+.pl-orc td:nth-child(3) { font-family: var(--font-mono); white-space: nowrap; }
+.pl-est { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+.pl-est--ok { background: hsl(140 50% 90%); color: hsl(140 62% 22%); }
+.pl-est--sol { background: hsl(36 100% 90%); color: hsl(28 92% 28%); }
+.pl-est--neutro { background: var(--mail-bg-2); color: var(--mail-muted); }
+.pl-hist { list-style: none; display: grid; gap: 0; position: relative; }
+.pl-hist::before { content: ""; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px; background: var(--mail-line); }
+.pl-hist li { display: flex; gap: 12px; padding: 6px 0; position: relative; }
+.pl-hist-ic { width: 32px; height: 32px; flex: 0 0 auto; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--mail-bg); border: 1px solid var(--mail-line); color: var(--mail-muted); z-index: 1; }
+.pl-hist--orcamento .pl-hist-ic { color: hsl(140 62% 26%); border-color: hsl(140 40% 70%); background: hsl(140 50% 95%); }
+.pl-hist--agente .pl-hist-ic { color: hsl(28 92% 32%); border-color: hsl(34 100% 70%); background: hsl(36 100% 96%); }
+.pl-hist--visita .pl-hist-ic, .pl-hist--instalacao .pl-hist-ic { color: hsl(205 70% 30%); border-color: hsl(205 50% 78%); background: hsl(205 60% 96%); }
+.pl-hist time { display: block; font-size: 0.72rem; color: var(--mail-muted); font-family: var(--font-mono); }
+.pl-hist p { font-size: 0.86rem; line-height: 1.4; }
+
+/* ---------- telemóvel e tablet ---------- */
+@media (max-width: 1100px) { .pl-app { grid-template-columns: 200px 290px minmax(0, 1fr); } }
+@media (max-width: 900px) {
+  .pl-app { grid-template-columns: 1fr; height: auto; }
+  .pl-side { flex-direction: row; overflow-x: auto; overflow-y: hidden; padding: 10px; gap: 6px; }
+  .pl-conta, .pl-grupo-t, .pl-agente { display: none; }
+  .pl-grupo { display: flex; gap: 6px; margin: 0; }
+  .pl-nav { width: auto; white-space: nowrap; background: hsl(0 0% 100% / 0.06); padding: 8px 12px; }
+  .pl-nav-n { overflow: visible; }
+  .pl-itens { max-height: 520px; }
+  .pl-lista { border-right: 0; }
+  .movel-lista .pl-ler { display: none; }
+  .movel-ler .pl-lista { display: none; }
+  .pl-ler-corpo { max-height: 640px; }
+  .pl-voltar { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--mail-line); background: var(--mail-bg); color: inherit; border-radius: 8px; padding: 6px 10px 6px 6px; font: 600 0.8rem var(--font-body); cursor: pointer; flex: 0 0 auto; }
+  .pl-ler-cab { flex-wrap: wrap; padding: 12px 14px 8px; }
+  .pl-ler-tit { flex-basis: 100%; order: 2; }
+  .pl-ler-ferr { margin-left: auto; }
+  .pl-abas { padding: 0 10px; }
+  .pl-ler-corpo { padding: 12px 12px 22px; }
+  .pl-dados { grid-template-columns: 1fr 1fr; }
+  .pl-btn--r { margin-left: 0; }
+  .pl-toast { position: static; margin: 0 12px 12px; }
+}
+@media (max-width: 420px) { .pl-op td:nth-child(2) { font-size: 0.78rem; } .pl-dados { grid-template-columns: 1fr; } }
+
+/* Sem scroll interno no painel de leitura nem na lista: uma caixa com
+   overflow-y prende a roda do rato e a página parece encravada (qa.mjs).
+   A janela cresce com o email aberto; a barra lateral acompanha. */
+.pl-app { height: auto; min-height: 700px; }
+.pl-itens, .pl-ler-corpo { overflow: visible; max-height: none; }
+.pl-side { overflow: visible; }
+.pl-toast { position: static; margin: 0 20px 16px; }
+@media (max-width: 900px) { .pl-side { overflow-x: auto; overflow-y: hidden; } .pl-itens, .pl-ler-corpo { max-height: none; } }
+/* lista e leitura são <section>: não herdar o padding das secções da página */
+.pl section, .pl-lista, .pl-ler { padding: 0; }
+.pl-op th:last-child { font-family: var(--font-body); }
+@media (max-width: 520px) { .pl-op th:last-child { white-space: normal; } .pl-op th, .pl-op td { padding-left: 6px; padding-right: 6px; } }
