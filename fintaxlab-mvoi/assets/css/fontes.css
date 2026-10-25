@@ -1,0 +1,12 @@
+/* Fontes da FintaxLab, auto-alojadas (copiadas da fintaxlab-ccml).
+   A DM Serif Display só existe a 400: declarada com o intervalo 400 a 700 para o browser
+   usar sempre este desenho em vez de sintetizar um negrito falso nos títulos. */
+@font-face { font-family: 'DM Serif Display'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('../fonts/dm-serif-display-400-latin.woff2') format('woff2'); }
+@font-face { font-family: 'DM Serif Display'; font-style: italic; font-weight: 400 700; font-display: swap;
+  src: url('../fonts/dm-serif-display-400i-latin.woff2') format('woff2'); }
+/* A DM Sans é variável: o mesmo ficheiro serve todos os pesos. */
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('../fonts/dm-sans-400-latin.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url('../fonts/ibm-plex-mono-400-latin.woff2') format('woff2'); }
