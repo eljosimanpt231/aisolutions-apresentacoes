@@ -80,4 +80,12 @@ sozinhos, com as horas sugeridas pelo histórico; muda um extra e o preço muda;
 mensagem que a cliente recebe, com a maquete, a medida e o preço juntos, como ele gosta.
 
 ## Iterações
-- v1: ver relatório da sessão
+- v1: contraste (salto para o conteúdo, membro IA, etiqueta verde), cadeias "A · B", rótulo em caixa alta, tamanhos
+  e raios fora da escala
+- v2: foto do atelier esticada pela paralaxe, miniatura da mensagem esticada (atributo height), selo IA a tapar o nome
+  do cartão, histórico de horas no telemóvel, título do cabeçalho um degrau abaixo, leitura automática da maquete a
+  disparar tarde em ecrãs altos (passou a gatilho a meio do ecrã), "com transporte" dinâmico
+- Verificação: qa.mjs sem erros (3 avisos, ao nível da mobilidade-rodoviaria-i0c3) | motion.mjs --acto, --alvo
+  #ksQuadro e #ksDemo vistos | comparar.mjs contra mobilidade-rodoviaria-i0c3: ganha em glows radiais (12/10), blur,
+  sombras, imagens (8/1), animações CSS (14/11), tweens GSAP (41/37) e gatilhos (30/27); empata em gradientes e texto em
+  gradiente; perde em svg (46/72)
