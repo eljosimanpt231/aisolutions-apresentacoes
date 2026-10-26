@@ -144,19 +144,105 @@
     ['T-26-1047', 'v', 'Moldes, Oliveira de Azeméis', 'Molas de carga extra forte', '930,00 €', 'Vend. 10', 5, 'motivo: prazo']
   ];
   var fCor = '', fVend = '';
+  var ESTADOS_MSG = ['Voltou a Novo', 'Em análise: atribuído ao backoffice', 'À espera de fornecedor: pedido de preço e prazo enviado', 'Proposta enviada: seguimento marcado a 5 dias úteis', 'Adjudicado: o backoffice é avisado para lançar a encomenda no PHC', 'Perdido: o motivo é pedido ao comercial e fica na ficha do cliente'];
   function pintaPipe() {
     var vis = CARDS.filter(function (c) { return (!fCor || c[1] === fCor) && (!fVend || c[5] === fVend); });
     $('#pipe').innerHTML = COLS.map(function (col, ci) {
       var cs = vis.filter(function (c) { return c[6] === ci; });
-      return '<div class="col"><div class="col-h">' + col + '<span>' + cs.length + '</span></div>' + cs.map(function (c, k) {
+      return '<div class="col" data-col="' + ci + '"><div class="col-h">' + col + '<span>' + cs.length + '</span></div>' + cs.map(function (c, k) {
         var real = c[9] !== undefined && c[0] !== 'T-26-1203';
-        return '<div class="card-t' + (c[9] !== undefined ? ' real' : '') + '" style="--c:' + cor[c[1]] + ';animation-delay:' + (k * 40) + 'ms"' + (c[9] !== undefined ? ' data-ir="' + c[9] + '" title="Abrir"' : '') + '><div class="tk"><span>' + c[0] + '</span>' + (real ? '<span class="tag-real">real</span>' : '<span>' + c[5] + '</span>') + '</div><b>' + c[3] + '</b><div class="cl">' + c[2] + '</div><div class="ft"><span class="' + (c[8] ? 'late' : '') + '">' + c[7] + '</span><span class="val">' + c[4] + '</span></div></div>';
-      }).join('') + '</div>';
+        return '<div class="card-t' + (real ? ' real' : '') + '" draggable="true" tabindex="0" data-tk="' + c[0] + '" style="--c:' + cor[c[1]] + ';animation-delay:' + (k * 40) + 'ms" title="Arraste para mudar de etapa · clique para ver o histórico"><div class="tk"><span>' + c[0] + '</span>' + (real ? '<span class="tag-real">real</span>' : '<span>' + c[5] + '</span>') + '</div><b>' + c[3] + '</b><div class="cl">' + c[2] + '</div><div class="ft"><span class="' + (c[8] ? 'late' : '') + '">' + c[7] + '</span><span class="val">' + c[4] + '</span></div><span class="card-mail">✉ ' + historico(c).length + '</span></div>';
+      }).join('') + '<div class="col-drop">Largar aqui</div></div>';
     }).join('');
-    $('#crmN').textContent = vis.length + ' de ' + CARDS.length + ' tickets nesta vista';
+    $('#crmN').textContent = vis.length + ' de ' + CARDS.length + ' tickets nesta vista · arraste os cartões entre etapas';
   }
-  $$('#fCor button').forEach(function (b) { b.addEventListener('click', function () { $$('#fCor button').forEach(function (x) { x.classList.toggle('on', x === b); }); fCor = b.dataset.cor; pintaPipe(); }); });
-  $('#fVend').addEventListener('change', function () { fVend = this.value; pintaPipe(); });
+  function cardDe(tk) { for (var i = 0; i < CARDS.length; i++) if (CARDS[i][0] === tk) return CARDS[i]; }
+  function moverCard(tk, col) {
+    var c = cardDe(tk); if (!c || c[6] === col) return;
+    c[6] = col; c[8] = 0;
+    c[7] = ['agora', 'atribuído agora', 'pedido ao fornecedor', 'segue em 5 d.u.', 'adjudicado hoje', 'motivo por indicar'][col];
+    pintaPipe(); toast(c[0] + ' · ' + ESTADOS_MSG[col] + '. Registado no ticket.');
+    if ($('#gaveta').classList.contains('on') && $('#gaveta').dataset.tk === tk) abreGaveta(tk);
+  }
+  /* Arrastar e largar (rato) */
+  var aArrastar = null;
+  $('#pipe').addEventListener('dragstart', function (e) { var c = e.target.closest('.card-t'); if (!c) return; aArrastar = c.dataset.tk; c.classList.add('drag'); e.dataTransfer.effectAllowed = 'move'; try { e.dataTransfer.setData('text/plain', aArrastar); } catch (x) {} });
+  $('#pipe').addEventListener('dragend', function () { aArrastar = null; $$('#pipe .drag').forEach(function (x) { x.classList.remove('drag'); }); $$('#pipe .col').forEach(function (x) { x.classList.remove('over'); }); });
+  $('#pipe').addEventListener('dragover', function (e) { var col = e.target.closest('.col'); if (!col || !aArrastar) return; e.preventDefault(); $$('#pipe .col').forEach(function (x) { x.classList.toggle('over', x === col); }); });
+  $('#pipe').addEventListener('drop', function (e) { var col = e.target.closest('.col'); if (!col || !aArrastar) return; e.preventDefault(); moverCard(aArrastar, +col.dataset.col); });
+  /* Clique ou Enter: abre o histórico */
+  $('#pipe').addEventListener('click', function (e) { var c = e.target.closest('.card-t'); if (c) abreGaveta(c.dataset.tk); });
+  $('#pipe').addEventListener('keydown', function (e) { var c = e.target.closest('.card-t'); if (c && e.key === 'Enter') abreGaveta(c.dataset.tk); });
+
+  /* Histórico de emails por ticket e por cliente */
+  var DIA0 = new Date(2026, 9, 22);
+  function dataDe(tk, extra) {
+    var n = +tk.split('-')[2], d = new Date(DIA0.getTime() - Math.round((1187 - n) * 0.232) * 864e5 + (extra || 0) * 864e5);
+    if (d > new Date(2026, 9, 26)) d = new Date(2026, 9, 26);
+    while (d.getDay() === 0 || d.getDay() === 6) d = new Date(d.getTime() - 864e5);
+    return String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0');
+  }
+  function propDe(tk) { return Math.round(71609 - (1187 - +tk.split('-')[2]) * 2.34); }
+  var HIST = {
+    'T-26-1187': [
+      ['in', '22/10 07:52', 'Pedido de cotação, molde 6602', 'Segue a lista de material do molde 6602, com referências HASCO. Precisamos na primeira semana de novembro.', 'Lista_material_molde_6602.pdf'],
+      ['auto', '22/10 07:53', 'RE: Pedido de cotação, molde 6602 [T-26-1187]', 'Obrigado pelo vosso pedido. Já está registado com o número T-26-1187. Contamos enviar a proposta ainda hoje.'],
+      ['out', '22/10 15:41', 'Proposta 71609, molde 6602 [T-26-1187]', 'Junto enviamos a nossa proposta 71609: extractores DIN / ISO 6751, 356,50 € + IVA, válida até 31/10. Prazo de entrega sujeito a confirmação de fornecedor.', 'Proposta 71609.pdf'],
+      ['plan', '29/10', 'Seguimento automático', 'Sai na quinta se o cliente não responder antes.']
+    ],
+    'T-26-1188': [
+      ['in', '22/10 08:05', 'Limpeza de soldaduras', 'Temos muitas manchas nas soldaduras em inox e perdemos muito tempo a limpar à mão. Que máquinas têm para isto?'],
+      ['out', '22/10 08:31', 'RE: Limpeza de soldaduras [T-26-1188]', 'Para lhe propormos a máquina certa: que peças soldam, quantas por dia, limpeza ou também passivação, e se querem uma demonstração.'],
+      ['in', '22/10 11:12', 'RE: Limpeza de soldaduras [T-26-1188]', 'Estruturas e algumas peças pequenas, umas 40 por dia. Queremos limpar e passivar. A demonstração sim, na semana que vem.'],
+      ['out', '22/10', 'Proposta 71599, Bio-Circle GreenoX [T-26-1188]', 'GreenoX Micro e Macro, com os líquidos de limpeza e passivação. Desconto especial na 1.ª compra. 6.591,60 € + IVA, válida até 31/10. Poderemos agendar demonstração dia 29/30.', 'Proposta 71599.pdf'],
+      ['plan', 'hoje', 'Alerta', 'Demonstração por marcar. Validade no sábado, 31/10.']
+    ],
+    'T-26-1032': [
+      ['sys', '16/09 17:02', 'Relatório de visita (áudio do João Paulo)', 'Mesa Siegmund 22 extensível 2400 x 1200, pés de 700, altura 850, Set 2.1, 5% na mesa e no set.'],
+      ['out', '16/09 17:31', 'Proposta 71246, Mesa Siegmund 22 [T-26-1032]', 'Mesa 22 EXT. 8.7 com Set 2.1, embalagem e portes. 7.799,05 € + IVA, válida até 25/09.', 'Proposta 71246.pdf'],
+      ['auto', '23/09', 'Alerta de seguimento ao Vend. 12', 'A proposta vence a 25/09 e o cliente ainda não respondeu.'],
+      ['out', '08/10', 'Proposta 71246 revista [T-26-1032]', 'Segue a nossa proposta revista.', 'Proposta 71246.pdf'],
+      ['in', '09/10', 'Encomenda da mesa Siegmund 22', 'Confirmamos a encomenda conforme a vossa proposta 71246.'],
+      ['out', '09/10 15:17', 'Encomenda 184378 [T-26-1032]', 'Confirmamos a receção da vossa encomenda 184378. Combinamos convosco o dia da entrega.'],
+      ['out', '15/10', 'Fatura FT 9/248980 e guia GT BO26/8937', 'Junto enviamos a fatura e a guia de transporte. Entrega prevista para amanhã.', 'FT 9-248980.pdf'],
+      ['sys', '16/10', 'Entregue em Fafe', 'Data efetiva de entrega registada pela guia.']
+    ]
+  };
+  function historico(c) {
+    if (HIST[c[0]]) return HIST[c[0]];
+    var tk = c[0], h = [], d = dataDe(tk), pn = propDe(tk);
+    h.push(['in', d + ' 09:' + String(10 + (+tk.split('-')[2] % 47)).padStart(2, '0'), 'Pedido: ' + c[3], 'Pedido do cliente recebido em comercial@ e classificado como Propostas.']);
+    h.push(['auto', d, 'RE: ' + c[3] + ' [' + tk + ']', 'Confirmação automática com o número do ticket e a previsão de resposta.']);
+    if (c[6] === 2) h.push(['out', dataDe(tk, 1), 'Pedido de preço e prazo ao fornecedor', 'Enviado pelas Compras. A plataforma avisa quando o fornecedor responder.']);
+    if (c[6] >= 3) h.push(['out', dataDe(tk, 1), 'Proposta ' + pn + ' [' + tk + ']', 'Proposta enviada ao cliente' + (c[4] ? ': ' + c[4] + ' + IVA' : '') + '.', 'Proposta ' + pn + '.pdf']);
+    if (/sem resposta/.test(c[7])) { h.push(['auto', dataDe(tk, 6), 'Seguimento automático da proposta ' + pn, 'Sem resposta do cliente.']); h.push(['plan', 'hoje', 'Alerta', 'Ligar ao cliente: ' + c[7] + '.']); }
+    if (c[6] === 4) h.push(['in', dataDe(tk, 4), 'Adjudicação da proposta ' + pn, 'O cliente adjudicou. Encomenda lançada no PHC.']);
+    if (c[6] === 5 && /motivo/.test(c[7])) h.push(['in', dataDe(tk, 6), 'Resposta ao seguimento', 'Motivo indicado pelo cliente: ' + c[7].replace('motivo: ', '') + '.']);
+    return h;
+  }
+  var ICO = { in: '↙', out: '↗', auto: '⟳', sys: '●', plan: '◷' };
+  var DIR = { in: 'Recebido do cliente', out: 'Enviado ao cliente', auto: 'Automático', sys: 'Registo', plan: 'Agendado' };
+  function abreGaveta(tk) {
+    var c = cardDe(tk), g = $('#gaveta'), outros = CARDS.filter(function (x) { return x[2] === c[2] && x[0] !== tk; });
+    var real = c[9] !== undefined;
+    g.dataset.tk = tk;
+    $('#gvCorpo').innerHTML = '<div class="gv-h"><span class="gv-dot" style="background:' + cor[c[1]] + '"></span><div><small>' + tk + ' · ' + c[5] + (real && tk !== 'T-26-1203' ? ' · ticket real' : '') + '</small><b>' + c[3] + '</b><span>' + c[2] + '</span></div></div>' +
+      '<label class="gv-mov">Etapa <select id="gvEtapa">' + COLS.map(function (x, i) { return '<option value="' + i + '"' + (i === c[6] ? ' selected' : '') + '>' + x + '</option>'; }).join('') + '</select></label>' +
+      '<div class="gv-k">Emails deste pedido</div><ol class="gv-fio">' + historico(c).map(function (m) {
+        return '<li class="' + m[0] + '"><span class="gv-i" title="' + DIR[m[0]] + '">' + ICO[m[0]] + '</span><div><div class="gv-t"><b>' + m[2] + '</b><time>' + m[1] + '</time></div><p>' + m[3] + '</p>' + (m[4] ? '<span class="gv-anx">📎 ' + m[4] + '</span>' : '') + '</div></li>';
+      }).join('') + '</ol>' +
+      (outros.length ? '<div class="gv-k">Outros pedidos deste cliente</div><ul class="gv-outros">' + outros.map(function (o) { return '<li data-tk="' + o[0] + '"><span class="gv-dot" style="background:' + cor[o[1]] + '"></span><div><b>' + o[3] + '</b><small>' + o[0] + ' · ' + COLS[o[6]] + (o[4] ? ' · ' + o[4] : '') + '</small></div></li>'; }).join('') + '</ul>' : '') +
+      (real ? '<button class="btn btn-primary gv-ir" type="button" data-ir="' + c[9] + '">Abrir o ticket completo →</button>' : '') +
+      '<p class="ol-nota">' + (real && tk !== 'T-26-1203' ? 'Datas e documentos das propostas reais; o texto dos emails é ilustrativo.' : 'Histórico ilustrativo.') + ' Na plataforma, todos os emails com o cliente ficam ligados ao ticket e à ficha dele.</p>';
+    $('#gvEtapa').addEventListener('change', function () { moverCard(tk, +this.value); });
+    $$('.gv-outros li', g).forEach(function (li) { li.addEventListener('click', function () { abreGaveta(li.dataset.tk); }); });
+    g.classList.add('on'); g.setAttribute('aria-hidden', 'false'); $('#gvVeu').classList.add('on');
+  }
+  function fechaGaveta() { $('#gaveta').classList.remove('on'); $('#gaveta').setAttribute('aria-hidden', 'true'); $('#gvVeu').classList.remove('on'); }
+  $('#gvFecha').addEventListener('click', fechaGaveta);
+  $('#gvVeu').addEventListener('click', fechaGaveta);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechaGaveta(); });
+  document.addEventListener('click', function (e) { if (e.target.closest('.gv-ir')) fechaGaveta(); });
   pintaPipe();
 
   /* ---------------- 4. Caixa de entrada ---------------- */
