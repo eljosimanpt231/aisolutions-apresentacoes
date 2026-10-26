@@ -3,7 +3,7 @@
 ## Contexto
 - **Lead:** SUTAFER, Representações, Lda. (Oliveira de Azeméis e Marinha Grande), 34 anos, representação exclusiva de marcas europeias (Siegmund, Destaco, Bio-Circle, Sutasorb, normalizados para moldes) | **Decisores:** João Paulo Chibante (gerente comercial), Andreia Silva (Compras & Unidade de Vendas, qualidade)
 - **Site:** sutafer.com | **Tipo:** C, plataforma à medida | **Objetivo:** follow-up de 26/10/2026 às 15h, mostrar o protótipo em cima dos documentos reais
-- **Investimento (email de 15/10):** 10.000 € + IVA de implementação, 300 € + IVA/mês de avença (IA + pessoa alocada no grupo de WhatsApp)
+- **Investimento:** 11.700 € + IVA de implementação (decisão do Diogo a 26/10; o email de 15/10 estimava cerca de 10.000 €), 300 € + IVA/mês de avença (IA + pessoa alocada no grupo de WhatsApp)
 
 ## Registo
 Espectáculo nas partes Contexto e Proposta (entradas coreografadas, contadores, barras). Produto dentro da Plataforma (transições curtas, aspecto de ferramenta).
