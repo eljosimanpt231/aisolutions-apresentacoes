@@ -9,7 +9,7 @@
 Espectáculo nas partes Contexto e Proposta (entradas coreografadas, contadores, barras). Produto dentro da Plataforma (transições curtas, aspecto de ferramenta).
 
 ## Direção
-- **Formato:** deck por separadores (Contexto 3, Plataforma 8, Proposta 5 = 16 posições), teclado ← →. A Plataforma é a própria aplicação: barra lateral grafite, cabeçalho com a Andreia Silva
+- **Formato:** deck por separadores (Contexto 3, Plataforma 7, Proposta 5 = 15 posições; "Pedido sem referências" retirado a 26/10 a pedido do Diogo), teclado ← →. A Plataforma é a própria aplicação: barra lateral grafite, cabeçalho com a Andreia Silva
 - **3 adjetivos:** industrial, preciso, organizado
 - **Elemento assinatura:** a faixa preta do topo do site ("Especialistas em soluções para indústria de moldes, estampagem e automação.") e o tracejado diagonal dos painéis do site; documentos recriados com o desenho das propostas do PHC; paginador com as colunas "Ref." e "Designação" das vossas propostas
 - **Momento uau:** o cruzamento HASCO → E50.120.0400 / E50.120.1000 que dá, ao cêntimo, a proposta real 71609 (509,28 / 152,78 / 356,50 €); a caixa de entrada da manhã de 22/10 classificada ao vivo; a fila "ordem de chegada" vs "ordem da plataforma"
