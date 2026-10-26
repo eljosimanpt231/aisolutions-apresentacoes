@@ -1,0 +1,325 @@
+{
+  "site": "https://kamistudio.pt/",
+  "dominio": "kamistudio.pt",
+  "titulo": "Inicio - Kami Studio | Néon LED criativo para marcas e espaços profissionais",
+  "descricao": "",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://kamistudio.pt/wp-content/uploads/2026/01/LOGO-KAMI-STUDIO.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 891,
+      "altura": 212,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            0,
+            128,
+            192
+          ],
+          "parte": 89
+        },
+        {
+          "rgb": [
+            256,
+            96,
+            64
+          ],
+          "parte": 11
+        },
+        {
+          "rgb": [
+            32,
+            128,
+            160
+          ],
+          "parte": 0
+        },
+        {
+          "rgb": [
+            224,
+            96,
+            96
+          ],
+          "parte": 0
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 17,
+      "motivos": [
+        "diz logo",
+        "liga à página inicial",
+        "no cabeçalho",
+        "no topo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 13,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "no topo",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 12,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "no topo"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 12,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "no topo"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 12,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "no topo"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 11,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://kamistudio.pt/wp-content/uploads/2026/01/neon-slider-img2.jpg"
+  },
+  "paleta": [
+    {
+      "hex": "#ff6648",
+      "hsl": "10 100% 64%",
+      "peso": 240700,
+      "onde": [
+        "botões",
+        "texto",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#0080c0",
+      "hsl": "200 100% 38%",
+      "peso": 151800,
+      "onde": [
+        "variáveis do tema",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#0f2f44",
+      "hsl": "204 64% 16%",
+      "peso": 132000,
+      "onde": [
+        "botões",
+        "texto"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "10 100% 64%",
+    "--accent-hsl": "200 100% 38%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 96%",
+  "variaveisDoTema": [
+    [
+      "--swiper-theme-color",
+      "#007aff"
+    ],
+    [
+      "--qode-main-color",
+      "#000"
+    ],
+    [
+      "--sb-text-secondary",
+      "var(--sb-fg-muted)"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Heebo",
+    "corpo": "Nunito",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "Início",
+      "Sobre nós",
+      "Projetos à medida",
+      "K. Builder",
+      "Contactos",
+      "(0)",
+      "(0)",
+      "Início",
+      "Sobre nós",
+      "Projetos à medida",
+      "K. Builder",
+      "Contactos"
+    ],
+    "titulos": [
+      "Por trás de cada projeto, há uma história. A tua!",
+      "Neon Good Vibes",
+      "Scooter Clássica",
+      "Por trás de cada projeto, há uma história. A tua!",
+      "Scooter Clássica",
+      "Neon Good Vibes",
+      "Kami Builder",
+      "Projetos à Medida",
+      "Kami Studio",
+      "Descobre o que fazemos",
+      "Kami Builder desenha o teu néon personalizado.",
+      "Novidades",
+      "kami.neon.studio"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático."
+  ]
+}
