@@ -35,8 +35,8 @@
 ## Valores (decisão do Manuel a 26/10/2026)
 - Agente de texto: implementação 4.300 € + IVA. Mensalidade 300 € com uma escola, 320 € com duas, +20 € por escola
   seguinte: 400 € + IVA com as seis (leitura de "quando forem duas escolas, 320", a confirmar com o Manuel)
-- Agente de voz (opcional): implementação 5.700 € + IVA; 300 € + IVA por mês com 1.500 minutos; minuto acima 0,15 € + IVA
-- Assumido e a confirmar: a implementação de 4.300 € cobre o piloto e o alargamento às seis escolas; os 1.500
+- Agente de voz (opcional): implementação 5.700 € + IVA; 350 € + IVA por mês com 1.750 minutos (350 / 0,20 €, conta não mostrada na página); minuto acima 0,15 € + IVA. v1 tinha 300 € com 1.500 minutos
+- Assumido e a confirmar: a implementação de 4.300 € cobre o piloto e o alargamento às seis escolas; os 1.750
   minutos são partilhados pelas escolas; valores + IVA (o Hugo perguntou se eram com IVA a 22/10 e a resposta
   ficou ambígua na transcrição; o resumo de 23/10 não falou de IVA)
 - O resumo de 23/10 tinha 3.500 a 5.000 € e 300 a 500 € (base 350 € + 25 €/escola), voz a partir de 5.000 €
@@ -52,6 +52,7 @@
   ambos casos públicos, sem valores financeiros. Confidencialidade: o Hugo levantou a concorrência entre escolas
 
 ## Iterações
+- v2 (26/10, pedido do Manuel): agente de voz passa a 350 € por mês com 1.750 minutos
 - v1 (26/10): título do cabeçalho em 6 linhas com a Syne (desceu um degrau), "~20" a sair como "·20", âncora do valor
   longa de mais, contraste da etiqueta "opcional" (4,26:1), e uma frase da Unibox com um requisito legal não
   confirmado (carta B para a C), trocada pela idade
