@@ -390,10 +390,6 @@
   function barras() { $$('#barMot i').forEach(function (i) { i.style.width = i.dataset.w + '%'; }); }
   document.addEventListener('slide:show', function (e) { if (e.target.id === 's-seg') { $$('#barMot i').forEach(function (i) { i.style.width = '0'; }); setTimeout(barras, 60); } });
   if (!mover) barras();
-  $$('#motivos button').forEach(function (b) { b.addEventListener('click', function () {
-    $$('#motivos button').forEach(function (x) { x.classList.toggle('on', x === b); });
-    $('#motR').innerHTML = '✓ Registado no ticket T-26-1187: <b>' + b.textContent + '</b>. ' + (b.textContent === 'Vamos adjudicar' ? 'O Vend. 10 é avisado.' : b.textContent === 'Ainda em análise' ? 'Novo seguimento marcado antes da validade.' : 'Entra no gráfico dos motivos e na ficha do cliente.');
-  }); });
 
   /* Relatório de visita: o registo preenche-se ao entrar na vista */
   function visita() { var r = $('#regVis'); if (!r || !mover) return; r.classList.remove('anda'); void r.offsetWidth; r.classList.add('anda'); }
