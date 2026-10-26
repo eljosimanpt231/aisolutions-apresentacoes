@@ -1,0 +1,476 @@
+{
+  "site": "https://crescer.org/",
+  "dominio": "crescer.org",
+  "titulo": "CRESCER | Associação de intervenção comunitária",
+  "descricao": "",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://crescer.org/wp-content/uploads/2017/10/logo-crescer-principal-com-simbolo-e-margem-200px.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 200,
+      "altura": 160,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            0,
+            32,
+            160
+          ],
+          "parte": 62
+        },
+        {
+          "rgb": [
+            128,
+            224,
+            224
+          ],
+          "parte": 8
+        },
+        {
+          "rgb": [
+            256,
+            224,
+            0
+          ],
+          "parte": 7
+        },
+        {
+          "rgb": [
+            224,
+            32,
+            160
+          ],
+          "parte": 7
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://crescer.org/wp-content/uploads/2016/11/E-Um-Mito-sem-abrigo-01.jpg",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 2000,
+        "altura": 1339,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 19
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              96
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://crescer.org/wp-content/uploads/2024/06/Untitled-design-22.png",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 2000,
+        "altura": 1339,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              96,
+              64,
+              128
+            ],
+            "parte": 54
+          },
+          {
+            "rgb": [
+              96,
+              64,
+              160
+            ],
+            "parte": 28
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              160
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://crescer.org/wp-content/uploads/2021/05/reach-uArtboard-6-100.jpg",
+      "pontos": 6,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 461,
+        "altura": 287,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              192,
+              224
+            ],
+            "parte": 77
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 18
+          },
+          {
+            "rgb": [
+              96,
+              192,
+              224
+            ],
+            "parte": 2
+          },
+          {
+            "rgb": [
+              192,
+              224,
+              224
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://crescer.org/wp-content/uploads/2016/10/E-uma-Casa-silhueta-01.jpg",
+      "pontos": 5,
+      "motivos": [
+        "no cabeçalho",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 2000,
+        "altura": 1339,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 39
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              192
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              32
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              32
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://crescer.org/wp-content/uploads/2016/10/ancora-espaco-1-1.jpg",
+      "pontos": 5,
+      "motivos": [
+        "no cabeçalho",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 2000,
+        "altura": 1339,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              96,
+              96,
+              96
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://crescer.org/wp-content/uploads/2021/01/refuin-site.png",
+      "pontos": 5,
+      "motivos": [
+        "no cabeçalho",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 2000,
+        "altura": 1339,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              128,
+              0
+            ],
+            "parte": 39
+          },
+          {
+            "rgb": [
+              192,
+              224,
+              192
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              128,
+              192,
+              128
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              160,
+              192,
+              160
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://crescer.org/wp-content/uploads/2021/07/1567x663_c_logo.jpg"
+  },
+  "paleta": [
+    {
+      "hex": "#0020a0",
+      "hsl": "228 100% 31%",
+      "peso": 129400,
+      "onde": [
+        "texto",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#80e0e0",
+      "hsl": "180 61% 69%",
+      "peso": 9600,
+      "onde": [
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#100e000",
+      "hsl": "53 100% 50%",
+      "peso": 8400,
+      "onde": [
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#e020a0",
+      "hsl": "320 76% 50%",
+      "peso": 8400,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "228 100% 31%",
+    "--accent-hsl": "180 61% 69%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "proxima-nova",
+    "corpo": "proxima-nova",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/css?family=Bitter:regular,italic,700|PT+Serif:regular,italic,700,700italic&subset=cyrillic,cyrillic-ext,latin,latin-ext,vietnamese&display=swap",
+      "https://fonts.googleapis.com/css?family=Bitter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic|PT+Serif:regular,italic,700,700italic&subset=cyrillic,cyrillic-ext,latin,latin-ext,vietnamese&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "A Associação",
+      "Projetos",
+      "Como estar envolvido",
+      "Embaixadores",
+      "Empresas",
+      "Entre em Ação",
+      "Voluntariado",
+      "Apoie-nos",
+      "Notícias",
+      "Contactos",
+      "A Associação",
+      "Projetos",
+      "Como estar envolvido",
+      "Embaixadores",
+      "Empresas",
+      "Entre em Ação",
+      "Voluntariado",
+      "Apoie-nos",
+      "Notícias",
+      "Contactos",
+      "Português",
+      "English"
+    ],
+    "titulos": [
+      "Os Nossos Projetos",
+      "Vídeos",
+      "A CRESCER em Números",
+      "Seringas distribuídas",
+      "Preservativos distribuídos",
+      "Pessoas contactadas em situação de sem-abrigo",
+      "Consumidores substâncias psicoativas contactados",
+      "Encaminhamentos Sociais",
+      "Encaminhamentos de Saúde",
+      "Pessoas que integraram o projeto É UMA CASA, Lisboa Housing First",
+      "Pessoas que integraram o projeto É UMA VIDA",
+      "\"Vocês vêm onde ninguém mais vem.\"",
+      "“Ajudam a diminuir as doenças e as pessoas que estão na rua. E isso é muito importante.”",
+      "\"Antes só tinha o passeio da rua, agora tenho uma chave de casa\"",
+      "\"É uma organização comunitária e ajudar as pessoas de uma forma boa e agradeço os seus esforços com a gente. Obrigada\"",
+      "Prémios",
+      "Financiamento Público",
+      "Os Nossos Parceiros Financiadores & Institucionais"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático.",
+    "Logótipo pequeno (200px de largura): no hero fica esborratado acima de 100px CSS em ecrãs retina."
+  ]
+}

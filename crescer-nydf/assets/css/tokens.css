@@ -1,0 +1,141 @@
+/* ============================================================
+   TOKENS: Associação CRESCER (Lisboa).
+   Marca: o azul do logótipo (#0020a0). Acento: o ciano do
+   símbolo, que marca sempre o que os assistentes fazem sozinhos.
+   Assinatura: as quatro cores do símbolo (azul, ciano, amarelo,
+   magenta) numa fita fina.
+   Tipografia: Outfit (títulos), Figtree (corpo, próxima da
+   Proxima Nova do site), JetBrains Mono (NIF, valores, datas).
+   Segue prefers-color-scheme, com botão claro/escuro.
+   ============================================================ */
+
+:root {
+  --brand-hsl: 228 100% 31%;
+  --accent-hsl: 184 62% 46%;
+  --brand2-hsl: 320 76% 50%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --marca-texto: hsl(228 100% 34%);
+  --acento-texto: hsl(186 80% 25%);
+  --ok-texto: hsl(145 62% 26%);
+  --brand-solido: hsl(228 100% 34%);
+
+  --c-azul: hsl(228 100% 40%);
+  --c-ciano: hsl(180 61% 62%);
+  --c-amarelo: hsl(50 100% 50%);
+  --c-magenta: hsl(320 76% 50%);
+
+  --bg: hsl(225 30% 97.5%);
+  --bg-soft: hsl(225 26% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(225 28% 95.5%);
+  --border: hsl(225 18% 86%);
+
+  --text: hsl(228 45% 11%);
+  --muted: hsl(228 12% 35%);
+
+  --success-hsl: 145 62% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 72% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 34 92% 40%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.10), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(var(--brand-hsl)), hsl(var(--brand2-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(225 20% 93%), hsl(var(--brand-hsl) / 0.10));
+
+  --shadow-sm: 0 1px 3px hsl(228 45% 11% / 0.08);
+  --shadow-md: 0 8px 28px hsl(228 45% 11% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(228 45% 11% / 0.16);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.16);
+
+  /* A noite: o hero é sempre escuro, como o cabeçalho do site */
+  --noite: hsl(228 62% 6%);
+  --noite-2: hsl(228 50% 10%);
+  --noite-text: hsl(220 40% 97%);
+  --noite-muted: hsl(220 22% 76%);
+  --noite-line: hsl(228 30% 22%);
+
+  /* O back-office: claro nos dois temas, barra lateral azul-noite */
+  --app-bg: hsl(225 30% 97.5%);
+  --app-panel: hsl(0 0% 100%);
+  --app-panel-2: hsl(225 28% 95.5%);
+  --app-line: hsl(225 16% 88%);
+  --app-text: hsl(228 45% 11%);
+  --app-muted: hsl(228 12% 37%);
+  --app-side: hsl(228 70% 14%);
+  --app-side-2: hsl(228 50% 21%);
+  --app-side-text: hsl(220 40% 95%);
+  --app-side-muted: hsl(220 22% 74%);
+  --app-brand: hsl(228 100% 34%);
+  --app-brand-hsl: 228 100% 34%;
+  --app-sug: hsl(186 80% 25%);
+  --app-sug-hsl: 184 62% 42%;
+  --app-ok: hsl(145 60% 26%);   --app-ok-hsl: 145 55% 38%;
+  --app-warn: hsl(32 90% 30%);  --app-warn-hsl: 38 92% 48%;
+  --app-bad: hsl(356 72% 40%);  --app-bad-hsl: 356 72% 48%;
+  --app-info: hsl(205 70% 32%); --app-info-hsl: 205 70% 44%;
+  --app-mag: hsl(320 70% 38%);  --app-mag-hsl: 320 76% 50%;
+  --app-sombra: 0 10px 28px hsl(228 45% 11% / 0.14);
+
+  /* O papel (fatura, orçamento) e a folha de Excel */
+  --paper: hsl(0 0% 100%);
+  --paper-ink: hsl(228 30% 12%);
+  --paper-muted: hsl(228 8% 40%);
+  --paper-line: hsl(225 10% 86%);
+  --paper-head: hsl(225 30% 95%);
+  --xl-head: hsl(140 30% 94%);
+  --xl-line: hsl(140 8% 84%);
+  --xl-sel: hsl(140 45% 34%);
+  --xl-sel-hsl: 140 45% 34%;
+
+  /* O email (caixa de correio) */
+  --mail-bg: hsl(0 0% 100%);
+  --mail-line: hsl(220 10% 88%);
+
+  --bar: hsl(228 85% 46%);
+  --veu: hsl(228 60% 4% / 0.62);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Figtree', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --container: 1200px;
+  --section-pad: clamp(72px, 10vw, 120px);
+  --grelha-passo: 64px;
+}
+
+:root[data-theme="dark"] {
+  --brand-hsl: 226 95% 68%;
+  --accent-hsl: 182 65% 58%;
+  --brand2-hsl: 320 80% 70%;
+  --marca-texto: hsl(226 95% 78%);
+  --acento-texto: hsl(182 65% 62%);
+  --ok-texto: hsl(145 55% 60%);
+  --brand-solido: hsl(228 85% 46%);
+
+  --bg: hsl(228 50% 5.5%);
+  --bg-soft: hsl(228 40% 8%);
+  --surface: hsl(228 34% 10%);
+  --surface-2: hsl(228 30% 13%);
+  --border: hsl(228 24% 20%);
+
+  --text: hsl(220 30% 95%);
+  --muted: hsl(220 14% 70%);
+
+  --success-hsl: 145 55% 50%;
+  --danger-hsl: 356 80% 64%;
+  --warning-hsl: 38 92% 58%;
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.18), transparent 62%);
+  --grad-text: linear-gradient(110deg, hsl(182 65% 62%), hsl(320 80% 72%));
+  --grad-cta: linear-gradient(160deg, hsl(228 40% 9%), hsl(var(--brand-hsl) / 0.2));
+  --shadow-sm: 0 1px 3px hsl(228 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(228 60% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(228 60% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.25);
+
+  --app-bg: hsl(225 20% 96%);
+}

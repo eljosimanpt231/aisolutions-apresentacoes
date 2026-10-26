@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>CRESCER | Faturas e orçamentos de catering</title>
+  <meta name="description" content="Protótipo AI Solutions para a Associação CRESCER: as faturas do papel ao TOConline e ao banco, e os pedidos de catering do email ao orçamento em PDF.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CRESCER × AI Solutions">
+  <meta property="og:description" content="Do papel ao TOConline. Do email ao orçamento.">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/crescer-nydf/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    try {
+      var t = localStorage.getItem('ais-theme-crescer');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+    (function () { var o = Number.prototype.toLocaleString; Number.prototype.toLocaleString = function (l, p) { return o.call(this, (l === 'pt-PT' || l === 'pt') ? 'de-DE' : l, p); }; })();
+  </script>
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/crescer.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<header class="topbar">
+  <a class="logo-chip" href="#topo" aria-label="Início">
+    <img src="assets/img/logo.png" alt="CRESCER">
+    <span>× AI Solutions</span>
+  </a>
+  <nav class="topnav" aria-label="Secções">
+    <a href="#ouvimos">O que ouvimos</a>
+    <a href="#demo">A demonstração</a>
+    <a href="#ligacoes">Ligações</a>
+    <a href="#limites">Quem decide</a>
+    <a href="#arranque">Arranque</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
+    <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+  <i class="fita" aria-hidden="true"></i>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="hero-foto" aria-hidden="true"><img src="assets/img/hero.jpg" alt="" data-paralaxe="6"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-acto="1" data-entra="sobe">CRESCER × AI Solutions</span>
+        <h1 data-linhas>Do papel ao TOConline. Do email ao <span class="g-brilho">orçamento</span>.</h1>
+        <p class="lead" data-acto="2" data-entra="sobe">
+          Dois assistentes para a área de restauração da CRESCER. Um recebe as faturas, por email ou numa fotografia
+          enviada para um grupo de WhatsApp, guarda-as na Drive e confere-as com o TOConline e com o banco. O outro lê os
+          pedidos de catering e prepara o orçamento no vosso template, só com o que o cliente pediu.
+          As faturas certas entram sozinhas no TOConline; os orçamentos esperam pelo vosso sim.
+        </p>
+        <div class="hero-meta" data-acto="3" data-entra="sobe">
+          <span>Para o <b>Américo Nave</b> e a <b>Mafalda Simões</b></span>
+          <span>Seguimento da reunião de <b>19/10/2026</b></span>
+          <span>Lisboa</span>
+        </div>
+      </div>
+      <div class="wa-card" data-acto="4" data-entra="escala" aria-label="Exemplo: uma fatura enviada para o grupo de WhatsApp">
+        <div class="wa-card-h">
+          <span class="wa-card-av">FC</span>
+          <span><b>Faturas CRESCER</b><small>Grupo · 12 participantes</small></span>
+          <em>09:14</em>
+        </div>
+        <div class="wa-card-body">
+          <div class="wa-card-msg eu">
+            <small>Rita · É UMA MESA</small>
+            <span class="foto-fatura mini" data-foto="hort"></span>
+            <p>fatura dos legumes de hoje</p>
+          </div>
+          <div class="wa-card-msg ag">
+            <small>Agente de faturas</small>
+            <p><b>✅ Lançada no TOConline</b><br>Hortícola Vale Verde · FT 2026/1043<br>186,40 € (IVA 10,55 €) · FC 2026/1201</p>
+          </div>
+        </div>
+        <div class="wa-card-f"><span>Guardada na Drive</span><span>Lançada no TOConline</span></div>
+      </div>
+    </div>
+    <div class="hero-stats" data-acto="5" data-entra="sobe">
+      <div class="stat"><div class="num"><span data-conta="2">2</span> pessoas</div><div class="desc">Com parte do dia ocupada a lançar e a conciliar faturas à mão</div></div>
+      <div class="stat"><div class="num">40 a <span data-conta="50">50</span></div><div class="desc">Pedidos de catering por semana, nas semanas mais cheias</div></div>
+      <div class="stat"><div class="num">3 a <span data-conta="4">4</span> pessoas</div><div class="desc">A fazer orçamentos no template em Excel, linha a linha</div></div>
+      <div class="stat"><div class="num"><span data-conta="4">4</span> âmbitos</div><div class="desc">O catering externo e as três empresas onde a CRESCER já trabalha</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">O que ouvimos a 19/10</span>
+      <h2>O trabalho está todo feito. Só que é feito duas vezes.</h2>
+    </div>
+    <div class="ouvimos">
+      <div class="card" data-entra="sobe">
+        <blockquote>Temos de fazer reconciliação bancária manual, ver todas as faturas em papel, fazer essa reconciliação com o banco e guardar tudo em dossiês.</blockquote>
+        <p>As faturas chegam primeiro à sede e são lançadas à mão no TOConline.</p>
+        <span class="quem">Américo Nave</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Nós ainda guardamos tudo em dossiês. Mesmo as que vêm por email, nós imprimimos.</blockquote>
+        <p>O papel é o arquivo, e é também o que se tem de procurar quando algo não bate certo.</p>
+        <span class="quem">Américo Nave</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Este método e este modelo começa a ser um bocadinho arcaico.</blockquote>
+        <p>Hoje há pelo menos duas pessoas com parte do dia nisto, e fazem muito mais do que isto.</p>
+        <span class="quem">Américo Nave</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Onde eu perco mais tempo é a criar o orçamento no nosso template, em Excel, onde temos todos os artigos.</blockquote>
+        <p>Passar para outra pestana e eliminar, linha a linha, o que o cliente não pediu, até se poder gerar o PDF.</p>
+        <span class="quem">Fábio</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Há pelo menos três a quatro pessoas que têm de fazer orçamentos de catering.</blockquote>
+        <p>Com ajustes ao staff conforme o número de pessoas, e pedidos personalizados pelo meio.</p>
+        <span class="quem">Américo Nave</span>
+      </div>
+      <div class="card" data-entra="sobe">
+        <blockquote>Se funcionar para um lado, pode funcionar para todos.</blockquote>
+        <p>O catering externo e as três empresas recebem pedidos com o mesmo template, cada um com as suas regras.</p>
+        <span class="quem">Américo Nave</span>
+      </div>
+    </div>
+    <p class="sintese">A informação já existe: está no email, na fotografia, no extrato. <b>O tempo vai-se a copiá-la de um sítio para o outro.</b></p>
+  </div>
+</section>
+
+<!-- ============ 4. A DEMONSTRAÇÃO ============ -->
+<section id="demo">
+  <div class="container wide">
+    <div class="sec-head">
+      <span class="eyebrow">A demonstração · parte 1</span>
+      <h2>O grupo de WhatsApp das faturas</h2>
+      <p class="lead">Quem está no restaurante, na cozinha do É UMA MESA ou num evento de catering não precisa de mudar nada: tira a fotografia e envia. O agente lê a fatura e, se estiver certa, lança-a no TOConline. No grupo escreve só o resultado: lançada, ou o erro que encontrou (sem IVA, ilegível, duplicada).</p>
+    </div>
+    <div class="wg" id="grupoDemo">
+      <div class="wg-chat">
+        <div class="wg-head"><span class="wg-av">FC</span><span><b>Faturas CRESCER</b><small>Rita, Carlos, Joana e mais 9 · Agente de faturas</small></span><button type="button" class="wg-rep" id="grupoRep" aria-label="Repetir">Repetir</button></div>
+        <div class="wg-msgs" id="grupoMsgs" tabindex="0" aria-label="Mensagens do grupo (pode fazer scroll)"></div>
+        <div class="wg-input" aria-hidden="true"><span>Mensagem</span></div>
+      </div>
+      <div class="wg-reg">
+        <div class="wg-reg-h"><b>O que ficou lançado hoje</b><small>No TOConline, com o original na Drive</small></div>
+        <div class="wg-cont"><span class="ok"><b id="gOk">0</b> lançadas</span><span class="erro"><b id="gErro">0</b> com erro</span><span class="dup"><b id="gDup">0</b> duplicada</span></div>
+        <ul class="wg-lista" id="grupoLista"></ul>
+        <p class="wg-nota">O agente não conversa: lança no TOConline as faturas certas e escreve no grupo o resultado. Uma fatura com erro nunca é lançada: fica para a equipa resolver.</p>
+      </div>
+    </div>
+    <p class="aviso-dados">Fornecedores, pessoas, NIF e valores inventados, só para ilustrar.</p>
+
+    <div class="sec-head sec-head-2">
+      <span class="eyebrow">A demonstração · parte 2 · experimente</span>
+      <h2>O back-office: onde a equipa valida em vez de copiar</h2>
+      <p class="lead">Foi a «plataforma onde temos lá tudo» de que falámos: o que entrou, o que está no TOConline, o que está no banco, e os pedidos de catering à espera. Os botões funcionam.</p>
+    </div>
+    <div class="experimente">
+      <span>Em <b>Faturas</b>, veja as lançadas e as que deram erro</span>
+      <span>Em <b>Conciliação</b>, veja o que não bate certo</span>
+      <span>Em <b>Pedidos de catering</b>, prepare o orçamento da Marta</span>
+      <span>Em <b>Template</b>, veja as regras dos quatro âmbitos</span>
+    </div>
+
+    <div class="am" id="plataforma-cr" data-entra="sobe">
+      <div class="am-bar">
+        <div class="am-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="am-url">backoffice.crescer · faturas e catering</span>
+        <div class="am-perfil" role="group" aria-label="Ver como">
+          <span>Ver como</span>
+          <button type="button" data-perfil="mafalda" class="on">Mafalda · financeiro</button>
+          <button type="button" data-perfil="fabio">Fábio · catering</button>
+        </div>
+      </div>
+      <div class="am-body">
+        <aside class="am-side">
+          <div class="am-brand"><img src="assets/img/logo.png" alt="CRESCER"><span><b>Back-office</b><small>Área de restauração</small></span></div>
+          <div class="am-navs"></div>
+          <div class="am-user"><span class="am-av" id="crAv">MS</span><span><b id="crNome">Mafalda Simões</b><small id="crPapel">Direção financeira</small></span></div>
+        </aside>
+        <main class="am-main"></main>
+      </div>
+    </div>
+    <p class="aviso-dados">Clientes, fornecedores, artigos, preços e regras dos âmbitos: inventados. Os reais vêm do vosso template em Excel, do TOConline e dos pedidos que nos enviarem.</p>
+  </div>
+</section>
+
+<!-- ============ 5. LIGAÇÕES ============ -->
+<section class="ligacoes section-alt" id="ligacoes">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como se liga ao que já usam</span>
+      <h2>O TOConline, o banco e o Excel ficam. Passam a falar uns com os outros.</h2>
+    </div>
+    <div class="fluxos">
+      <div>
+        <h3 class="fluxo-t"><i class="pt pt-azul"></i>Faturas</h3>
+        <div class="fluxo" id="fxFaturas"></div>
+        <script type="application/json" id="fxFaturas-config">
+        {
+          "stepMs": 1900,
+          "channels": [
+            { "icon": "message", "label": "Email" },
+            { "icon": "whatsapp", "label": "Grupo de WhatsApp" },
+            { "icon": "database", "label": "TOConline" },
+            { "icon": "book", "label": "Extrato bancário" }
+          ],
+          "nodes": [
+            { "icon": "message", "title": "Chega a fatura", "detail": "Por email, ou fotografada para o grupo.", "tone": "brand" },
+            { "icon": "book", "title": "Fica na Drive", "detail": "Por mês, com o nome do fornecedor.", "tone": "teal" },
+            { "icon": "search", "title": "Confere no TOConline", "detail": "Fornecedor, NIF, IVA e duplicados.", "tone": "teal" },
+            { "icon": "check", "title": "Lança as certas", "detail": "As que têm erro ficam para a equipa.", "tone": "teal" },
+            { "icon": "arrows", "title": "Concilia com o banco", "detail": "Ao fim do dia, com alertas do que não bate.", "tone": "brand" }
+          ]
+        }
+        </script>
+      </div>
+      <div>
+        <h3 class="fluxo-t"><i class="pt pt-mag"></i>Orçamentos de catering</h3>
+        <div class="fluxo" id="fxOrc"></div>
+        <script type="application/json" id="fxOrc-config">
+        {
+          "stepMs": 2100,
+          "channels": [
+            { "icon": "message", "label": "Email de catering" },
+            { "icon": "list", "label": "Template em Excel" },
+            { "icon": "book", "label": "PDF do orçamento" }
+          ],
+          "nodes": [
+            { "icon": "message", "title": "Chega o pedido", "detail": "Por email, de qualquer um dos quatro âmbitos.", "tone": "brand" },
+            { "icon": "brain", "title": "Lê o que foi pedido", "detail": "Pessoas, data, local e artigos.", "tone": "teal" },
+            { "icon": "list", "title": "Preenche o template", "detail": "Só as linhas pedidas, com as regras do âmbito.", "tone": "teal" },
+            { "icon": "user-cog", "title": "A equipa valida", "detail": "Staff e pedidos especiais.", "tone": "teal" },
+            { "icon": "send", "title": "Segue o PDF", "detail": "Em rascunho de resposta, pronto a enviar.", "tone": "brand" }
+          ]
+        }
+        </script>
+      </div>
+    </div>
+    <div class="ligas">
+      <div class="card" data-entra="sobe"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6"/></svg></span>TOConline</h3><p>Continua a ser a contabilidade. As faturas certas entram como documentos de compra do fornecedor, pela ligação oficial (API) do TOConline.</p></div>
+      <div class="card" data-entra="sobe"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>Email e WhatsApp</h3><p>As faturas e os pedidos de catering continuam a chegar onde chegam hoje. Para o papel, basta um grupo de WhatsApp, por exemplo «Faturas CRESCER».</p></div>
+      <div class="card" data-entra="sobe"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3z"/><path d="M3 10h18M8 15h2M13 15h4"/></svg></span>Template em Excel</h3><p>O vosso template, com todos os artigos, continua a ser a base. O assistente preenche-o só com o que foi pedido e gera o PDF.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. QUEM DECIDE ============ -->
+<section id="limites">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Quem decide</span>
+      <h2>Os assistentes preparam. A equipa valida.</h2>
+    </div>
+    <div class="limites">
+      <div class="card card-do" data-entra="sobe">
+        <h3>Fazem sozinhos</h3>
+        <ul class="list-check">
+          <li>Lêem as faturas do email e as fotografias do grupo</li>
+          <li>Guardam os originais na Drive, arrumados por mês</li>
+          <li>Conferem cada fatura e apanham os duplicados</li>
+          <li>Lançam no TOConline as faturas que estão certas</li>
+          <li>Cruzam o extrato bancário e assinalam as diferenças</li>
+          <li>Lêem os pedidos de catering e preenchem o template</li>
+          <li>Geram o PDF e deixam a resposta em rascunho</li>
+        </ul>
+      </div>
+      <div class="card card-later" data-entra="sobe">
+        <h3>Fica convosco <small>sempre</small></h3>
+        <ul class="list-later">
+          <li><b>Resolver</b> as faturas com erro (sem IVA, ilegíveis, cortadas)</li>
+          <li><b>Rever</b> os fornecedores novos criados pelo agente</li>
+          <li><b>Decidir</b> as diferenças da conciliação</li>
+          <li><b>Confirmar</b> o staff e os pedidos especiais de cada orçamento</li>
+          <li><b>Enviar</b> o orçamento ao cliente, e responder no Ariba</li>
+          <li>Quando não consegue ler, ou falta o IVA, <b>assinala o erro</b> em vez de adivinhar</li>
+        </ul>
+      </div>
+    </div>
+    <p class="limites-frase">Uma fatura com erro nunca entra no TOConline. E nenhum orçamento sai sem uma pessoa da CRESCER dizer que sim.</p>
+  </div>
+</section>
+
+<!-- ============ 7. PARA A MAFALDA ============ -->
+<section class="section-alt" id="toconline">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Para a Mafalda</span>
+      <h2>O TOConline em pormenor</h2>
+      <p class="lead">As perguntas que o Américo antecipou: como as coisas funcionam do lado da contabilidade.</p>
+    </div>
+    <div class="faq">
+      <details class="card" open>
+        <summary>Como é que a fatura entra no TOConline?</summary>
+        <p>Como documento de compra do fornecedor, pela API oficial do TOConline, com os campos lidos da fatura: fornecedor (pelo NIF), número, data, vencimento, base e IVA por taxa, e total. Quando está tudo certo, entra sozinha. Quando falta alguma coisa (IVA, NIF, total legível), fica de fora e o erro é escrito no grupo.</p>
+      </details>
+      <details class="card">
+        <summary>E se a fatura já lá estiver?</summary>
+        <p>O assistente procura primeiro: mesmo NIF, mesmo número, mesmo valor. Se já está lançada, não lança outra vez e marca-a como «já no TOConline». É o caso da fatura que chega por email e depois em papel.</p>
+      </details>
+      <details class="card">
+        <summary>E um fornecedor que ainda não existe?</summary>
+        <p>É criado no TOConline com o que vem na fatura (nome, NIF, morada) e fica assinalado como «fornecedor novo», para a equipa rever.</p>
+      </details>
+      <details class="card">
+        <summary>Como chega o extrato bancário?</summary>
+        <p>Pelo ficheiro que o homebanking exporta, todos os dias ou quando quiserem. O formato do vosso banco confirma-se na primeira semana. A conciliação corre ao fim do dia e deixa à equipa só o que não bate certo.</p>
+      </details>
+      <details class="card">
+        <summary>E os projetos e as rubricas?</summary>
+        <p>Com cerca de 30 projetos, a forma de imputar cada despesa é das primeiras coisas a acertar convosco e com o TOConline, no arranque. A regra pode vir do fornecedor ou do local, e quando não for óbvia a fatura fica para a equipa escolher.</p>
+      </details>
+      <details class="card">
+        <summary>Onde ficam os originais e quem tem acesso?</summary>
+        <p>Na vossa Drive, numa pasta por mês, com o nome do fornecedor e o número no nome do ficheiro. Os assistentes só têm acesso às caixas de email, ao grupo e às pastas combinadas. Os fornecedores de IA que usamos não treinam os seus modelos com os vossos documentos.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. PARECIDOS ============ -->
+<section id="casos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Processos parecidos</span>
+      <h2>Os dois projetos de que falámos no email de 22/10</h2>
+      <p class="lead">São da restauração, como a vossa área comercial, e estão a ser feitos agora. Dizemos em que ponto está cada um.</p>
+    </div>
+    <div class="casos">
+      <div class="card caso" data-entra="sobe">
+        <span class="estado dev">Em desenvolvimento</span>
+        <h3>Uma rede de restaurantes de sushi e poke</h3>
+        <p>Cerca de 600 faturas de fornecedores por mês, conferidas à mão, e uma conciliação bancária que levava dois a três dias no fecho do mês. Cada fatura passa a ser lida quando chega e cruzada com o programa de faturação, e o extrato é cruzado com esses registos. Para a equipa ficam só as exceções.</p>
+        <span class="igual">Igual ao vosso: <b>faturas e conciliação</b></span>
+      </div>
+      <div class="card caso" data-entra="sobe">
+        <span class="estado teste">Em testes</span>
+        <h3>Uma empresa de catering e eventos para empresas</h3>
+        <p>Quase todos os pedidos chegam por email, e cada orçamento era feito à mão. O assistente lê cada pedido, separa os pedidos de orçamento do resto, gera o PDF a partir do template da empresa e deixa a resposta pronta para a pessoa rever e enviar.</p>
+        <span class="igual">Igual ao vosso: <b>orçamentos de catering</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. ARRANQUE ============ -->
+<section class="section-alt" id="arranque">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Como arrancamos</span>
+      <h2>Cerca de três meses, com as duas frentes em paralelo</h2>
+    </div>
+    <div class="fases">
+      <div class="fase" data-entra="sobe"><span class="quando">Primeiras semanas</span><h3>Levantamento</h3><p>O template em Excel, alguns pedidos reais de cada âmbito, o formato do extrato do banco, os acessos ao email e ao TOConline, e o grupo de WhatsApp criado.</p></div>
+      <div class="fase" data-entra="sobe"><span class="quando">Mês 1 a 2</span><h3>Construção</h3><p>O assistente de faturas e o de orçamentos, com as regras dos quatro âmbitos e a imputação aos projetos acertada com a Mafalda.</p></div>
+      <div class="fase" data-entra="sobe"><span class="quando">Mês 2 a 3</span><h3>Testes lado a lado</h3><p>Com faturas e pedidos reais, ao lado do processo de hoje, até os números baterem certo. Os testes estão incluídos.</p></div>
+      <div class="fase alvo" data-entra="sobe"><span class="quando">Mês 3</span><h3>Em produção</h3><p>Os dossiês deixam de ser o arquivo de trabalho, e o Fábio passa a validar orçamentos em vez de os montar.</p></div>
+    </div>
+    <p class="arranque-nota">Para começar só precisamos de duas coisas: <b>um pedido de orçamento de catering real</b> (e, se possível, o RFQ do Ariba correspondente) e o template em Excel.</p>
+    <p class="contacto">Diogo Gonçalves · <a href="tel:+351964581992">964 581 992</a> · <a href="mailto:diogo.goncalves@aisolutions.pt">diogo.goncalves@aisolutions.pt</a></p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Associação CRESCER, outubro de 2026
+    <span class="disclaimer">Protótipo construído sobre a reunião de 19/10/2026 e o email de 22/10/2026. Fornecedores, clientes, pessoas, artigos, preços, NIF e documentos são ilustrativos.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/fotos.js"></script>
+<script>fluxo('fxFaturas'); fluxo('fxOrc');</script>
+<script src="assets/js/grupo.js"></script>
+<script src="assets/js/dados.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var r = document.documentElement;
+    var next = (r.getAttribute('data-theme') || 'light') === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('ais-theme-crescer', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
