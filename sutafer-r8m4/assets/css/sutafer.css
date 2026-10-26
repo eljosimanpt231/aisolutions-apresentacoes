@@ -556,3 +556,20 @@ html.js .reg-vis.anda .ficha .r { animation: entra .45s var(--e) both; }
 html.js .reg-vis.anda .ficha .r:nth-child(2) { animation-delay: .35s; } html.js .reg-vis.anda .ficha .r:nth-child(3) { animation-delay: .7s; }
 html.js .reg-vis.anda .ficha .r:nth-child(4) { animation-delay: 1.05s; } html.js .reg-vis.anda .ficha .r:nth-child(5) { animation-delay: 1.4s; }
 @media (max-width: 980px) { .visita { grid-template-columns: 1fr; } }
+
+/* Cruzamento: registo de atividade */
+.xlog { margin: 0 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-2); overflow: hidden; }
+.xbar { height: 3px; background: var(--border); }
+.xbar i { display: block; height: 100%; width: 0; background: var(--brand); transition: width .6s var(--e); }
+.xlog ol { list-style: none; margin: 0; padding: 8px 12px; display: grid; gap: 5px; font-size: .78rem; font-family: var(--font-mono); }
+.xlog li { display: flex; align-items: flex-start; gap: 8px; color: var(--muted); line-height: 1.4; animation: entra .3s var(--e) both; }
+.xlog li.run { color: var(--text); }
+.xlog li b { color: var(--text); font-weight: 600; }
+.xck { width: 16px; height: 16px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: .62rem; font-weight: 700; background: hsl(var(--success-hsl) / 0.18); color: var(--ok-texto); margin-top: 1px; }
+.xlog li.a .xck { background: hsl(var(--amarelo-hsl) / 0.25); color: var(--warning); }
+.xlog li.r .xck { background: hsl(var(--vermelho-hsl) / 0.15); color: var(--danger); }
+.xspin { width: 13px; height: 13px; flex: none; border-radius: 50%; border: 2px solid hsl(var(--brand-hsl) / 0.25); border-top-color: var(--brand); display: inline-block; vertical-align: -2px; margin: 1px 6px 0 1px; animation: gira .8s linear infinite; }
+.xlog li .xspin { margin: 2px 1px 0 2px; }
+@keyframes gira { to { transform: rotate(360deg); } }
+.xref tr.busca td { background: hsl(var(--brand-hsl) / 0.05); }
+.xref tr.busca td.ds, .xref tr.busca .mut { color: var(--muted); font-size: .78rem; }

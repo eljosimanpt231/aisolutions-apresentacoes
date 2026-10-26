@@ -248,15 +248,19 @@
     { c: 'HASCO Z40/12x400', q: 16, r: 'E50.120.0400', d: 'A004 EXTRACTOR DIN / ISO 6751 · 12,00x0400', pu: 8.58, ds: 30 },
     { c: 'HASCO Z40/12x1000', q: 20, r: 'E50.120.1000', d: 'A004 EXTRACTOR DIN / ISO 6751 · 12,00x1000', pu: 18.60, ds: 30 }
   ];
-  var tb = $('#xref6602 tbody');
-  function pinta6602(feito) {
+  var tb = $('#xref6602 tbody'), est6602 = [];
+  var SPIN = '<span class="xspin" aria-hidden="true"></span>';
+  function pinta6602() {
     tb.innerHTML = L6602.map(function (l, i) {
-      return '<tr class="' + (feito > i ? 'go' : 'wait') + '"><td class="rc">' + l.c + '</td><td class="num">' + l.q + '</td><td class="rs">' + (feito > i ? l.r : '·····') + '</td><td class="ds">' + (feito > i ? l.d + '<small>stock 0 · previsão 04/11, sujeita a fornecedor</small>' : 'por cruzar') + '</td><td class="fo">' + (feito > i ? '<span class="fo-tag v">Organi</span>' : '') + '</td></tr>';
+      var e = est6602[i] || 'wait', ach = e === 'achou' || e === 'ok';
+      var ds = e === 'busca' ? SPIN + 'a procurar na tabela de equivalências...' : e === 'achou' ? l.d + '<small>' + SPIN + 'a validar no PHC...</small>' : e === 'ok' ? l.d + '<small>stock 0 · previsão 04/11, sujeita a fornecedor</small>' : 'por cruzar';
+      var fo = e === 'achou' ? '<span class="fo-tag a">encontrada</span>' : e === 'ok' ? '<span class="fo-tag v">validada</span>' : '';
+      return '<tr class="' + (e === 'ok' ? 'go' : e === 'wait' ? 'wait' : 'busca') + '"><td class="rc">' + l.c + '</td><td class="num">' + l.q + '</td><td class="rs">' + (ach ? l.r : '·····') + '</td><td class="ds">' + ds + '</td><td class="fo">' + fo + '</td></tr>';
     }).join('');
   }
   function linhasPHC(n) {
     var tbody = $('#phcLinhas'), il = 0, dc = 0;
-    if (!n) { tbody.innerHTML = '<tr class="vazio"><td colspan="7">As linhas aparecem quando as referências forem cruzadas.</td></tr>'; }
+    if (!n) { tbody.innerHTML = '<tr class="vazio"><td colspan="7">As linhas aparecem quando as referências forem validadas.</td></tr>'; }
     else {
       tbody.innerHTML = L6602.slice(0, n).map(function (l) {
         var b = l.q * l.pu, t = Math.round(b * (1 - l.ds / 100) * 100) / 100; il += b; dc += b - t;
@@ -265,12 +269,38 @@
     }
     $('#tIl').textContent = fmt(il); $('#tDc').textContent = fmt(dc); $('#tLq').textContent = fmt(il - dc) + ' €';
   }
-  pinta6602(0);
+  /* Registo de atividade: cada passo aparece "a fazer" e passa a feito, ao ritmo de quem está a trabalhar */
+  function correr(id, passos, fim) {
+    var box = $('#' + id), ol = $('ol', box), bar = $('.xbar i', box), k = 0, timers = [];
+    box.hidden = false; ol.innerHTML = ''; bar.style.width = '0';
+    (function seg() {
+      if (k >= passos.length) { bar.style.width = '100%'; if (fim) fim(); return; }
+      var ps = passos[k], li = document.createElement('li');
+      if (ps.antes) ps.antes();
+      li.className = 'run'; li.innerHTML = SPIN + '<span>' + ps.t + '</span>'; ol.appendChild(li);
+      bar.style.width = (k / passos.length * 100) + '%';
+      setTimeout(function () {
+        li.className = 'ok ' + (ps.c || ''); li.innerHTML = '<span class="xck">' + (ps.c === 'a' ? '!' : ps.c === 'r' ? '?' : '✓') + '</span><span>' + ps.d + '</span>';
+        if (ps.depois) ps.depois(); k++; seg();
+      }, mover ? (ps.ms || 1100) : 0);
+    })();
+  }
+  pinta6602();
   $('#xrefPlay').addEventListener('click', function () {
-    var b = this; b.disabled = true; pinta6602(0); linhasPHC(0); $('#phcAcao').hidden = true; $('#phcN').textContent = 'rascunho';
-    var p = mover ? 1100 : 0;
-    $('#xrefSt').textContent = 'A ler o PDF e a procurar na tabela de equivalências...';
-    [1, 2].forEach(function (k) { setTimeout(function () { pinta6602(k); linhasPHC(k); $('#xrefSt').textContent = k + ' de 2 linhas cruzadas'; if (k === 2) { $('#phcAcao').hidden = false; $('#xrefSt').textContent = '2 de 2 cruzadas · condições do cliente (T.CL. A, 30%) lidas no PHC'; b.disabled = false; } }, k * p + 200); });
+    var b = this; b.disabled = true; est6602 = []; pinta6602(); linhasPHC(0); $('#phcAcao').hidden = true; $('#phcN').textContent = 'rascunho';
+    $('#xrefSt').textContent = 'A trabalhar...';
+    var P = [
+      { t: 'A abrir Lista_material_molde_6602.pdf...', d: 'PDF lido: <b>2 linhas</b>, referências HASCO', ms: 1300 },
+      { t: 'A identificar o cliente no PHC...', d: 'Cliente de moldes, Oliveira de Azeméis · <b>T.CL. A</b> · 90 dias s/ desc.', ms: 1200 }
+    ];
+    L6602.forEach(function (l, i) {
+      P.push({ t: 'A procurar <b>' + l.c + '</b> na tabela de equivalências do Organi...', d: 'Referência encontrada: <b>' + l.c + ' → ' + l.r + '</b>', ms: 1500, antes: function () { est6602[i] = 'busca'; pinta6602(); }, depois: function () { est6602[i] = 'achou'; pinta6602(); } });
+      P.push({ t: 'A validar <b>' + l.r + '</b> no PHC: artigo, preço e stock...', d: l.r + ' validada · ' + fmt(l.pu) + ' € · stock 0', ms: 1300, depois: function () { est6602[i] = 'ok'; pinta6602(); } });
+    });
+    P.push({ t: 'A aplicar as condições do cliente...', d: 'Desconto de <b>30%</b> nas 2 linhas, como no histórico do cliente', ms: 1100 });
+    P.push({ t: 'A calcular a previsão de entrega pelo ciclo de aprovisionamento...', d: 'Previsão <b>04/11</b>, sujeita a confirmação de fornecedor', c: 'a', ms: 1300 });
+    P.push({ t: 'A montar o rascunho da proposta...', d: 'Rascunho pronto: <b>356,50 € + IVA</b>, à espera de validação', ms: 1200, depois: function () { linhasPHC(2); } });
+    correr('xlog6602', P, function () { $('#phcAcao').hidden = false; $('#xrefSt').textContent = '2 de 2 referências encontradas e validadas'; b.disabled = false; });
   });
   $('#phcValidar').addEventListener('click', function () { $('#phcN').textContent = '71609'; toast('Simulação: proposta 71609 criada no PHC e enviada ao cliente. Seguimento marcado para 29/10.'); });
 
@@ -282,17 +312,30 @@
     { c: 'Mola carga forte 32 x 76', q: 16, p: 'Molas de arame retangular, carga forte · 3 possíveis', e: 'r', s: 'pergunta' },
     { c: 'Anel de centragem Ø100', q: 2, p: 'Anéis de centragem · 5 modelos no catálogo', e: 'r', s: 'pergunta' }
   ];
-  function pinta7180(n) {
+  var est7180 = [];
+  function pinta7180() {
     $('#xref7180 tbody').innerHTML = L7180.map(function (l, i) {
-      var f = n > i; return '<tr class="' + (f ? 'go' + (l.e === 'a' ? ' am' : l.e === 'r' ? ' rd' : '') : 'wait') + '"><td class="rc">' + l.c + '</td><td class="num">' + l.q + '</td><td class="rs">' + (f ? l.p : '·····') + '</td><td>' + (f ? '<span class="fo-tag ' + l.e + '">' + l.s + '</span>' : '') + '</td></tr>';
+      var e = est7180[i] || 'wait';
+      if (e === 'busca') return '<tr class="busca"><td class="rc">' + l.c + '</td><td class="num">' + l.q + '</td><td class="rs">' + SPIN + '<span class="mut">a procurar...</span></td><td></td></tr>';
+      var f = e === 'ok'; return '<tr class="' + (f ? 'go' + (l.e === 'a' ? ' am' : l.e === 'r' ? ' rd' : '') : 'wait') + '"><td class="rc">' + l.c + '</td><td class="num">' + l.q + '</td><td class="rs">' + (f ? l.p : '·····') + '</td><td>' + (f ? '<span class="fo-tag ' + l.e + '">' + l.s + '</span>' : '') + '</td></tr>';
     }).join('');
-    var c = { v: 0, a: 0, r: 0 }; L7180.slice(0, n).forEach(function (l) { c[l.e]++; });
+    var c = { v: 0, a: 0, r: 0 }; L7180.forEach(function (l, i) { if (est7180[i] === 'ok') c[l.e]++; });
     $('#rx1').textContent = c.v; $('#rx2').textContent = c.a; $('#rx3').textContent = c.r;
   }
-  pinta7180(0);
+  pinta7180();
+  var FIM7180 = {
+    v: function (l) { return 'Encontrada no Organi: <b>' + l.c + ' → ' + l.p.split(' · ')[0] + '</b> · validada no PHC'; },
+    a: function () { return 'Sem equivalência no Organi. Correspondência pela descrição: <b>E50.100.0500</b>, a confirmar'; },
+    r: function (l) { return 'Várias referências possíveis (' + l.p.split(' · ')[1] + '): fica para uma pessoa, com pergunta ao cliente'; }
+  };
   $('#xref7180Play').addEventListener('click', function () {
-    var b = this; b.disabled = true; pinta7180(0); var p = mover ? 650 : 0;
-    L7180.forEach(function (l, i) { setTimeout(function () { pinta7180(i + 1); $('#xref7180St').textContent = (i + 1) + ' de 6 linhas'; if (i === 5) { b.disabled = false; $('#xref7180St').textContent = '3 cruzadas · 1 a confirmar · 2 perguntas ao cliente'; } }, (i + 1) * p + 150); });
+    var b = this; b.disabled = true; est7180 = []; pinta7180(); $('#xref7180St').textContent = 'A trabalhar...';
+    var P = [{ t: 'A abrir RFQ_molde_7180.pdf...', d: 'PDF lido: <b>6 linhas</b> · 3 HASCO, 1 só com descrição, 2 genéricas', ms: 1300 }];
+    L7180.forEach(function (l, i) {
+      P.push({ t: 'A procurar <b>' + l.c + '</b>...', d: FIM7180[l.e](l), c: l.e === 'v' ? '' : l.e, ms: l.e === 'v' ? 1100 : 1500, antes: function () { est7180[i] = 'busca'; pinta7180(); }, depois: function () { est7180[i] = 'ok'; pinta7180(); } });
+    });
+    P.push({ t: 'A preparar o email com as perguntas...', d: 'Rascunho do email pronto: 2 perguntas ao cliente', ms: 1100 });
+    correr('xlog7180', P, function () { b.disabled = false; $('#xref7180St').textContent = '3 encontradas · 1 a confirmar · 2 perguntas ao cliente'; });
   });
   $$('[data-ref]').forEach(function (b) { b.addEventListener('click', function () { $$('[data-ref]').forEach(function (x) { x.classList.toggle('on', x === b); }); $('#refs6602').hidden = b.dataset.ref !== '6602'; $('#refs7180').hidden = b.dataset.ref !== '7180'; }); });
 
