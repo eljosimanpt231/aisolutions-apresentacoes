@@ -793,6 +793,35 @@
   .mod-tag--opc { background: var(--surface-3); color: var(--muted); }
   .mod ul + .mod-tag { margin-top: var(--s-3); transform: none; }
 
+  /* ---------- As três fases de pagamento ---------- */
+  .tr-tit { font-size: var(--fs-1); color: var(--navy); }
+  .tranches { list-style: none; margin-top: var(--s-3); display: grid; gap: 10px; counter-reset: none; }
+  .tranches li {
+    display: grid; grid-template-columns: 4.2rem minmax(0, 1fr) auto; align-items: center; gap: var(--s-3);
+    padding: var(--s-3) var(--s-4); border-radius: var(--r-3); background: var(--surface); box-shadow: var(--e1);
+    border-left: 3px solid var(--cobre); max-width: none;
+  }
+  .tranches li + li { border-left-style: dashed; }
+  .t-pct { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-2); color: var(--cobre-texto); line-height: 1; }
+  .t-txt b { display: block; font-weight: 600; color: var(--navy); }
+  .t-txt small { display: block; margin-top: 2px; font-size: var(--fs--1); color: var(--muted); line-height: 1.45; }
+  .t-val { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1); color: var(--navy); white-space: nowrap; }
+  @media (max-width: 560px) {
+    .tranches li { grid-template-columns: auto minmax(0, 1fr); }
+    .t-val { grid-column: 2; }
+  }
+  .cfg-total .pc-k + .pc-v { margin-top: 4px; }
+  .cfg-total .cfg-resumo + .pc-k { margin-top: var(--s-4); padding-top: var(--s-4); border-top: 1px solid var(--hairline); }
+
+  /* ---------- Não é um piloto automático ---------- */
+  .nao-auto {
+    margin-top: var(--s-6); padding: var(--s-4) var(--s-5); border-radius: var(--r-3); max-width: 60rem;
+    background: linear-gradient(90deg in oklab, var(--verde-a10), var(--surface) 55%); border-left: 3px solid var(--verde);
+    box-shadow: var(--e1);
+  }
+  .nao-auto h3 { font-size: var(--fs-1); color: var(--navy); }
+  .nao-auto p { margin-top: var(--s-2); font-size: var(--fs--1); color: var(--muted); max-width: 72ch; }
+
   /* A conta de valor: a frase à esquerda, a citação do Pedro à direita */
   .valor .objetivo { margin-top: 0; }
 }

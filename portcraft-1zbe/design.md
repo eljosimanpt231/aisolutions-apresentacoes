@@ -46,15 +46,21 @@
 
 ## Secções
 Cabeçalho · 1 O que ouvimos (6 citações + funil) · 2 Como funciona (percurso + perfil de marca) · 3 O agente
-(4 cenários + aviso ao Pedro + Bia) · 4 Os módulos (4 + o que fica de fora) · 5 Ligação (fluxo, email oficial
+(4 cenários + aviso ao Pedro + Bia) · 4 O sistema (4 peças, canais testados, não é piloto automático, o que fica de fora) · 5 Ligação (fluxo, email oficial
 protegido, LinkedIn com cuidado) · 6 Limites (3 regras, faz/passa/nunca, prova) · 7 Investimento (conta de valor,
-configurador, inclui) · 8 Prazo · 9 Fecho
+pacote único em 3 fases, inclui) · 8 Prazo · 9 Fecho
 
-## Valores (proposta do assistente a 26/10/2026, para o Manuel validar; fora das réguas: validar com Diogo/Josias)
-- Pedido do Manuel: desenvolvimento por módulos entre 15.000 e 30.000 €
-- M1 Prospeção por email 8.500 € + 450 €/mês · M2 Agente que qualifica e marca 5.500 € + 200 €/mês ·
-  M3 Mensagens diretas 4.500 € + 150 €/mês · M4 Painel comercial (opcional) 4.500 € + 100 €/mês
-- Por defeito no configurador: M1 a M3, 18.500 € + 800 €/mês. Completo 23.000 € + 900 €/mês. Só o M1, 8.500 € + 450 €/mês
+## Valores (v2, 26/10/2026, depois do feedback do Josias por WhatsApp às 21:27)
+- O Josias: nada de módulos opcionais nem mensalidades por partes; um investimento total com tudo, painel incluído
+  (sem métricas não se otimiza), pagamento faseado pela construção da infraestrutura; canais não fixos à partida
+  (testar e reforçar o que der reuniões); prazo pode ser mais curto; os primeiros meses pedem mais trabalho humano,
+  por isso mensalidade maior no início ou incluída no pacote com o valor a subir (decisão deixada ao Manuel)
+- Decisão aplicada pelo assistente: pacote 26.500 € + IVA = sistema completo 23.000 € (os quatro blocos da v1) +
+  3 meses de acompanhamento intensivo (~1.200 €/mês), arredondado. Pagamento 35/35/30: assinatura 9.275 €,
+  primeira campanha 9.275 €, sistema completo 7.950 €. Mensalidade única 900 €/mês + IVA a partir do 4.º mês
+- Prazo: cerca de 4 meses até ao sistema completo, primeira campanha nas semanas 3 a 6 (interpretação do "pode ser
+  mais curto" do Josias, a confirmar com ele)
+- v1 (substituída): M1 8.500 + 450, M2 5.500 + 200, M3 4.500 + 150, M4 opcional 4.500 + 100, configurador
 - Referência do Pedro na reunião: orçamentos de "1000 e tal euros por mês", 10 a 15 mil por ano (não está na página)
 - Custos de terceiros (domínios, caixas, ferramenta de envio, Apollo) pagos pela PortCraft, valores na proposta formal
 
@@ -71,3 +77,4 @@ configurador, inclui) · 8 Prazo · 9 Fecho
 ## Iterações
 - v1 (26/10): hero com o lead mais curto, destaque em itálico cognac (a atmosfera.css punha verde), «50 por mês» um degrau abaixo, módulos em 4 colunas
 - Verificação: qa.mjs sem erros (avisos: Poppins é a letra da marca) | motion.mjs --acto e --alvo #pcDemo vistos, passos sincronizados | comparar.mjs contra mobilidade-rodoviaria-i0c3: empata em animações, blur e texto em gradiente, abaixo em svg (sem Unibox nem voz), acima em imagens
+- v2 (26/10): feedback do Josias. Secção 4 passa a "O sistema" (sem módulos opcionais, canais testados, bloco "Não é um piloto automático"); investimento único de 26.500 € em três fases com 3 meses de acompanhamento incluídos e mensalidade de 900 € a partir do 4.º mês; prazo de cerca de 4 meses; configurador e modulos.js retirados; citação do investimento trocada por «É o que nós queremos.»
