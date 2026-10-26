@@ -532,3 +532,27 @@ html.js .vago-p.on { animation: sobe .5s var(--e) both; }
   .xref td, .xref th { padding: 7px 6px; }
 }
 .phc { overflow-x: auto; } .phc-l { min-width: 520px; } .phc.mini .phc-l { min-width: 480px; }
+
+/* Relatório de visita: só a mensagem e o registo */
+.visita { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 18px; align-items: start; margin-bottom: 26px; }
+.vis-k { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--acento-texto); font-weight: 700; margin-bottom: 8px; min-height: 30px; }
+.vis-mais { margin: 6px 0 10px; }
+.vis-rep { padding: 5px 10px; font-size: .74rem; letter-spacing: 0; text-transform: none; }
+.wa-mini { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-md); background: var(--wa-bg); }
+.wa-mini-h { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--wa-green); color: hsl(0 0% 100%); }
+.wa-mini-h .av { background: hsl(0 0% 100% / 0.2); }
+.wa-mini-h b { display: block; font-size: .9rem; } .wa-mini-h small { font-size: .7rem; opacity: .85; }
+.wa-mini-b { padding: 28px 14px 18px; display: grid; justify-items: end; gap: 8px; min-height: 230px; align-content: end; }
+.wa-audio { display: flex; align-items: center; gap: 10px; background: var(--wa-out); color: var(--wa-text); padding: 10px 12px 18px; border-radius: 10px 10px 2px 10px; position: relative; box-shadow: 0 1px 1px hsl(0 0% 0% / 0.12); width: min(330px, 100%); }
+.wa-audio .play { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--wa-green); color: hsl(0 0% 100%); font-size: .7rem; flex: none; }
+.wa-audio .onda { display: flex; align-items: center; gap: 2px; flex: 1; height: 26px; }
+.wa-audio .onda i { flex: 1; background: hsl(165 30% 40% / 0.55); border-radius: 2px; height: 30%; }
+.wa-audio .onda i:nth-child(3n) { height: 70%; } .wa-audio .onda i:nth-child(4n+1) { height: 100%; } .wa-audio .onda i:nth-child(5n+2) { height: 50%; }
+.wa-audio .dur { font-size: .72rem; color: hsl(200 8% 35%); }
+.wa-audio time { position: absolute; right: 10px; bottom: 3px; font-size: .64rem; color: hsl(200 8% 40%); }
+.wa-transc { width: min(330px, 100%); font-size: .82rem; line-height: 1.45; color: var(--wa-text); background: hsl(0 0% 100% / 0.75); border-radius: 8px; padding: 8px 10px; font-style: italic; }
+.wa-transc span { display: block; font-style: normal; font-family: var(--font-mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: hsl(165 49% 28%); margin-bottom: 3px; }
+html.js .reg-vis.anda .ficha .r { animation: entra .45s var(--e) both; }
+html.js .reg-vis.anda .ficha .r:nth-child(2) { animation-delay: .35s; } html.js .reg-vis.anda .ficha .r:nth-child(3) { animation-delay: .7s; }
+html.js .reg-vis.anda .ficha .r:nth-child(4) { animation-delay: 1.05s; } html.js .reg-vis.anda .ficha .r:nth-child(5) { animation-delay: 1.4s; }
+@media (max-width: 980px) { .visita { grid-template-columns: 1fr; } }

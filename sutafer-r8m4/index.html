@@ -384,6 +384,34 @@
     <!-- 6. Assistente -->
     <div class="slide" id="s-assist" data-titulo="Assistente WhatsApp">
       <div class="view-h"><div><span class="k">COMERCIAIS · ASSISTENTE NO WHATSAPP</span><h2>Sair do cliente, mandar um áudio, e o relatório está feito</h2><p>Os cinco comerciais falam com o assistente no WhatsApp: relatórios de visita por áudio, histórico do cliente antes de entrar, e os seguimentos do dia. O que for compromisso com o cliente passa sempre por uma pessoa.</p></div><span class="estado ok">WhatsApp · ligado ao PHC</span></div>
+      <div class="visita">
+        <div class="vis-in">
+          <div class="vis-k">A mensagem</div>
+          <div class="wa-mini">
+            <div class="wa-mini-h"><span class="av">AS</span><div><b>Assistente Sutafer</b><small>WhatsApp · assistente interno</small></div></div>
+            <div class="wa-mini-b">
+              <div class="wa-audio"><span class="play">▶</span><span class="onda" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="dur">0:58</span><time>16/09 17:02 ✓✓</time></div>
+              <div class="wa-transc"><span>Transcrição</span>estive agora na metalomecânica de Fafe. vão avançar com a mesa Siegmund 22, a extensível de 2400 por 1200, pés de 700, altura de trabalho 850. levam também o set 2.1. pagamento 30% na adjudicação. portes da Alemanha. dá-lhes 5% na mesa e no set</div>
+            </div>
+          </div>
+          <p class="ol-nota">O João Paulo sai do cliente e manda um áudio. Não há mais nada a fazer do lado dele.</p>
+        </div>
+        <div class="vis-out">
+          <div class="vis-k">O registo <button class="btn btn-ghost vis-rep" type="button" id="visRep">↻ Repetir</button></div>
+          <div class="panel reg-vis" id="regVis">
+            <div class="panel-h"><b>Relatório de visita · gravado na ficha do cliente</b><span>16/09/2026 17:02</span></div>
+            <div class="ficha">
+              <div class="r"><span>Cliente</span><div>Metalomecânica, Fafe<span class="sub">T.CL. E no PHC · identificado pelo nome e pela localidade</span></div></div>
+              <div class="r"><span>Comercial</span><div>João Paulo Chibante<span class="sub">Visita comercial · registo por áudio</span></div></div>
+              <div class="r"><span>Interesse</span><div>Siegmund Mesa 22 EXT. 8.7, 2400 x 1200, pé 700<span class="sub">Altura de trabalho 850 mm · Set 2.1 para a mesa 22</span></div></div>
+              <div class="r"><span>Condições</span><div>5% na mesa e no set · 30% na adjudicação<span class="sub">Portes da Alemanha para o cliente</span></div></div>
+              <div class="r hl"><span>Ações criadas</span><div><b>Ticket T-26-1032</b> com o rascunho da proposta para o backoffice<span class="sub">Seguimento marcado para 23/09, antes da validade · resumo enviado à Andreia</span></div></div>
+            </div>
+          </div>
+          <p class="ol-nota">Deu origem à proposta 71246, a dos vossos documentos. O backoffice valida o rascunho antes de sair.</p>
+        </div>
+      </div>
+      <div class="vis-k vis-mais">Outras utilizações do assistente</div>
       <div class="cr" id="assist"></div>
       <script type="application/json" id="assist-config">
       {
@@ -393,29 +421,6 @@
         "stepMs": 1500,
         "endPauseMs": 3200,
         "scenarios": [
-          {
-            "title": "Relatório de visita por áudio",
-            "subtitle": "O João Paulo sai de um cliente em Fafe e manda um áudio. É a origem da proposta 71246.",
-            "chat": [
-              { "sender": "system", "text": "Áudio de João Paulo · 0:58", "time": "16/09 17:02" },
-              { "sender": "client", "text": "🎤 estive agora na metalomecanica de fafe. vao avançar com a mesa siegmund 22, a extensivel de 2400 por 1200, pes de 700, altura de trabalho 850. levam tambem o set 2.1. pagamento 30% na adjudicacao. portes da alemanha. da-lhes 5% na mesa e no set", "time": "17:02", "passo": 3 },
-              { "sender": "agent", "text": "Registei a visita na ficha do cliente. Preparo a proposta com a **Mesa 22 EXT. 8.7 2400x1200 + pé 700**, altura 850, o **Set 2.1** e a embalagem, 5% na mesa e no set.", "time": "17:03", "passo": 4 },
-              { "sender": "agent", "text": "Os portes XBS-Log da Alemanha levam desconto?", "time": "17:03" },
-              { "sender": "client", "text": "50%", "time": "17:09", "passo": 5 },
-              { "sender": "agent", "text": "Feito. Rascunho no ticket **T-26-1032** para o backoffice validar. Seguimento marcado para 23/09, antes da validade.", "time": "17:09", "passo": 6 },
-              { "sender": "client", "text": "ok manda tambem à andreia", "time": "17:10" },
-              { "sender": "agent", "text": "Enviado à Andreia com o resumo da visita. ✅", "time": "17:10", "passo": 7 }
-            ],
-            "steps": [
-              { "icon": "ear", "label": "Transcreve o áudio" },
-              { "icon": "id", "label": "Identifica o cliente no PHC (Fafe, T.CL. E)" },
-              { "icon": "book", "label": "Grava o relatório da visita na ficha" },
-              { "icon": "list", "label": "Monta as linhas com o catálogo Siegmund" },
-              { "icon": "search", "label": "Pergunta só o que falta: o desconto dos portes" },
-              { "icon": "send", "label": "Abre o ticket e o rascunho para o backoffice" },
-              { "icon": "calendar", "label": "Marca o seguimento antes da validade e avisa a Andreia" }
-            ]
-          },
           {
             "title": "Antes de entrar no cliente",
             "subtitle": "O histórico de dois anos e meio num minuto, no parque de estacionamento.",
@@ -460,7 +465,7 @@
         ]
       }
       </script>
-      <p class="ol-nota">Conversas simuladas. Os dados do primeiro cenário são os da proposta 71246; os dos outros dois são ilustrativos.</p>
+      <p class="ol-nota">Áudio e conversas simulados. O relatório de visita usa os dados da proposta 71246; os dois cenários de conversa são ilustrativos.</p>
     </div>
   </div>
  </div>

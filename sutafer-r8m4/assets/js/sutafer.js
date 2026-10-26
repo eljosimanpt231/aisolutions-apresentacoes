@@ -352,6 +352,11 @@
     $('#motR').innerHTML = '✓ Registado no ticket T-26-1187: <b>' + b.textContent + '</b>. ' + (b.textContent === 'Vamos adjudicar' ? 'O Vend. 10 é avisado.' : b.textContent === 'Ainda em análise' ? 'Novo seguimento marcado antes da validade.' : 'Entra no gráfico dos motivos e na ficha do cliente.');
   }); });
 
+  /* Relatório de visita: o registo preenche-se ao entrar na vista */
+  function visita() { var r = $('#regVis'); if (!r || !mover) return; r.classList.remove('anda'); void r.offsetWidth; r.classList.add('anda'); }
+  document.addEventListener('slide:show', function (e) { if (e.target.id === 's-assist') visita(); });
+  if ($('#visRep')) $('#visRep').addEventListener('click', visita);
+
   /* ---------------- 9. Componentes partilhados ---------------- */
   if (window.chatRaciocinio) chatRaciocinio('assist');
   if (window.fluxo) fluxo('fluxoSut');
