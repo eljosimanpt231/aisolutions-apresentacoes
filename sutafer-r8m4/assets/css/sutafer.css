@@ -636,3 +636,15 @@ html.js .reg-vis.anda .ficha .r:nth-child(4) { animation-delay: 1.05s; } html.js
 .gv-outros b { display: block; font-size: .82rem; } .gv-outros small { font-size: .7rem; color: var(--faint); font-family: var(--font-mono); }
 .gv-ir { margin-top: 16px; }
 .toast { z-index: 90; }
+
+/* Pagamento em fases */
+.pag { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; max-width: 900px; }
+.pag-h { grid-column: 1 / -1; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--acento-texto); font-weight: 700; }
+.pag-f { display: flex; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+.pag-p { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--acento-texto); line-height: 1; min-width: 58px; }
+.pag-f b { display: block; font-family: var(--font-display); font-size: 1.35rem; line-height: 1.1; }
+.pag-f b small { font-size: .8rem; color: var(--muted); font-weight: 600; }
+.pag-f span:not(.pag-p) { font-size: .8rem; color: var(--muted); }
+.cr-pag { display: inline-block; margin-top: 10px; font-style: normal; font-family: var(--font-mono); font-size: .68rem; font-weight: 700; color: var(--acento-texto); background: hsl(var(--brand-hsl) / 0.1); border-radius: 4px; padding: 2px 7px; }
+.cr-pag-t { margin: 6px 0 0; }
+@media (max-width: 640px) { .pag { grid-template-columns: 1fr; } }
