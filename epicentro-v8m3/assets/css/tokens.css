@@ -1,0 +1,148 @@
+/* Epicentro: azul do logótipo e dos botões do site (#0077a8, 198 100% 33%)
+   como marca, navy do site (#21334b) como "grafite" da barra lateral, e a faixa
+   do topo do site (#364f6d) como faixa. Elemento de assinatura: a grelha
+   isométrica do cubo do logótipo.
+   Estados da encomenda em verde / amarelo / vermelho, como num semáforo.
+   Tema claro por defeito; escuro com o botão no topo (data-theme). */
+:root {
+  --brand-hsl: 198 100% 33%;
+  --accent-hsl: 192 78% 44%;
+  --brand2-hsl: 214 39% 30%;
+  --graf-hsl: 214 39% 17%;
+  --faixa-hsl: 213 34% 32%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --graf: hsl(var(--graf-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(198 100% 30%);
+  --acento-texto: hsl(198 100% 29%);
+  --ok-texto: hsl(146 70% 26%);
+
+  --bg: hsl(206 22% 96.5%);
+  --bg-soft: hsl(206 18% 93.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(206 24% 97.5%);
+  --border: hsl(208 16% 86%);
+  --line: hsl(var(--brand-hsl) / 0.05);
+  --veil: hsl(206 22% 96.5% / 0.88);
+
+  --text: hsl(214 39% 13%);
+  --muted: hsl(214 14% 34%);
+  --faint: hsl(214 10% 38%);
+
+  --paper: hsl(0 0% 100%);
+  --paper-text: hsl(214 39% 13%);
+  --paper-muted: hsl(214 10% 36%);
+  --paper-line: hsl(208 14% 84%);
+  --phc-head: hsl(214 39% 24%);
+
+  --success-hsl: 146 64% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 70% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 32 94% 32%;  --warning: hsl(var(--warning-hsl));
+  --verde-hsl: 146 64% 36%;   --verde: hsl(var(--verde-hsl));
+  --amarelo-hsl: 44 96% 46%;  --amarelo: hsl(var(--amarelo-hsl));
+  --vermelho-hsl: 356 74% 50%; --vermelho: hsl(var(--vermelho-hsl));
+  --azul-hsl: 198 100% 33%;   --azul: hsl(var(--azul-hsl));
+  --roxo-hsl: 262 44% 50%;    --roxo: hsl(var(--roxo-hsl));
+  --laranja-hsl: 24 88% 46%;  --laranja: hsl(var(--laranja-hsl));
+
+  --grad-text: linear-gradient(100deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)) 85%);
+  --grad-cta: linear-gradient(160deg, hsl(var(--graf-hsl)), hsl(var(--brand-hsl) / 0.6));
+  --hatch: repeating-linear-gradient(30deg, hsl(var(--brand-hsl) / 0.10) 0 1.5px, transparent 1.5px 12px), repeating-linear-gradient(150deg, hsl(var(--brand-hsl) / 0.10) 0 1.5px, transparent 1.5px 12px);
+  --hatch-forte: repeating-linear-gradient(30deg, hsl(0 0% 100% / 0.12) 0 1.5px, transparent 1.5px 12px), repeating-linear-gradient(150deg, hsl(0 0% 100% / 0.12) 0 1.5px, transparent 1.5px 12px);
+
+  --shadow-sm: 0 1px 2px hsl(var(--graf-hsl) / 0.08);
+  --shadow-md: 0 8px 24px hsl(var(--graf-hsl) / 0.09);
+  --shadow-lg: 0 22px 54px hsl(var(--graf-hsl) / 0.16);
+  --shadow-glow: 0 0 36px hsl(var(--brand-hsl) / 0.25);
+
+  --radius: 8px;
+  --radius-lg: 12px;
+  --font-display: 'Figtree', system-ui, sans-serif;
+  --font-body: 'Figtree', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --container: 1200px;
+  --section-pad: clamp(64px, 9vw, 120px);
+
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-hsl: 198 88% 52%;
+    --accent-hsl: 190 80% 60%;
+    --graf-hsl: 214 40% 11%;
+    --faixa-hsl: 214 38% 20%;
+    --brand-solido: hsl(198 100% 31%);
+    --acento-texto: hsl(196 90% 66%);
+    --ok-texto: hsl(146 60% 60%);
+    --bg: hsl(214 32% 7%);
+    --bg-soft: hsl(214 28% 10%);
+    --surface: hsl(214 28% 10.5%);
+    --surface-2: hsl(214 26% 13%);
+    --border: hsl(214 20% 21%);
+    --line: hsl(var(--brand-hsl) / 0.06);
+    --veil: hsl(214 32% 7% / 0.88);
+    --text: hsl(206 30% 94%);
+    --muted: hsl(208 14% 72%);
+    --faint: hsl(208 10% 62%);
+    --paper: hsl(214 26% 12.5%);
+    --paper-text: hsl(206 30% 94%);
+    --paper-muted: hsl(208 14% 72%);
+    --paper-line: hsl(214 20% 23%);
+    --phc-head: hsl(214 40% 22%);
+    --success-hsl: 146 58% 52%;
+    --danger-hsl: 356 80% 66%;
+    --warning-hsl: 38 92% 58%;
+    --verde-hsl: 146 58% 48%;
+    --amarelo-hsl: 46 96% 56%;
+    --vermelho-hsl: 356 80% 62%;
+    --azul-hsl: 198 88% 58%;
+    --roxo-hsl: 262 70% 74%;
+    --laranja-hsl: 26 90% 60%;
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.5);
+    --shadow-md: 0 10px 30px hsl(0 0% 0% / 0.5);
+    --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.6);
+  }
+}
+:root[data-theme="dark"] {
+  --brand-hsl: 198 88% 52%;
+  --accent-hsl: 190 80% 60%;
+  --graf-hsl: 214 40% 11%;
+  --faixa-hsl: 214 38% 20%;
+  --brand-solido: hsl(198 100% 31%);
+  --acento-texto: hsl(196 90% 66%);
+  --ok-texto: hsl(146 60% 60%);
+  --bg: hsl(214 32% 7%);
+  --bg-soft: hsl(214 28% 10%);
+  --surface: hsl(214 28% 10.5%);
+  --surface-2: hsl(214 26% 13%);
+  --border: hsl(214 20% 21%);
+  --line: hsl(var(--brand-hsl) / 0.06);
+  --veil: hsl(214 32% 7% / 0.88);
+  --text: hsl(206 30% 94%);
+  --muted: hsl(208 14% 72%);
+  --faint: hsl(208 10% 62%);
+  --paper: hsl(214 26% 12.5%);
+  --paper-text: hsl(206 30% 94%);
+  --paper-muted: hsl(208 14% 72%);
+  --paper-line: hsl(214 20% 23%);
+  --phc-head: hsl(214 40% 22%);
+  --success-hsl: 146 58% 52%;
+  --danger-hsl: 356 80% 66%;
+  --warning-hsl: 38 92% 58%;
+  --verde-hsl: 146 58% 48%;
+  --amarelo-hsl: 46 96% 56%;
+  --vermelho-hsl: 356 80% 62%;
+  --azul-hsl: 198 88% 58%;
+  --roxo-hsl: 262 70% 74%;
+  --laranja-hsl: 26 90% 60%;
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.5);
+  --shadow-md: 0 10px 30px hsl(0 0% 0% / 0.5);
+  --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.6);
+}

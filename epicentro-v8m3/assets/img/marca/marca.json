@@ -1,0 +1,567 @@
+{
+  "site": "https://grupoepicentro.com/",
+  "dominio": "grupoepicentro.com",
+  "titulo": "Home - Epicentro",
+  "descricao": "Somos especialistas em Pavimentos Industriais com provas dadas em diversos setores de atividade. Escolha-nos para garantir soluções isentas de problemas.",
+  "logotipoTexto": {
+    "texto": "Epicentro",
+    "fonte": "Figtree",
+    "peso": "400",
+    "cor": "rgb(33, 51, 75)",
+    "caixa": "none",
+    "espacamento": "normal"
+  },
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://grupoepicentro.com/uploads/2025/10/logo-epicentro.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 400,
+      "altura": 105,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            0,
+            128,
+            160
+          ],
+          "parte": 61
+        },
+        {
+          "rgb": [
+            64,
+            96,
+            128
+          ],
+          "parte": 33
+        },
+        {
+          "rgb": [
+            192,
+            192,
+            192
+          ],
+          "parte": 5
+        },
+        {
+          "rgb": [
+            64,
+            64,
+            128
+          ],
+          "parte": 0
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://grupoepicentro.com/uploads/2025/10/home-marca-mapei.jpg",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 210,
+        "altura": 70,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              96,
+              192
+            ],
+            "parte": 77
+          },
+          {
+            "rgb": [
+              128,
+              160,
+              224
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              160,
+              192,
+              224
+            ],
+            "parte": 3
+          },
+          {
+            "rgb": [
+              64,
+              128,
+              192
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://grupoepicentro.com/uploads/2025/10/home-marca-seciltek.jpg",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 210,
+        "altura": 70,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 30
+          },
+          {
+            "rgb": [
+              224,
+              64,
+              32
+            ],
+            "parte": 17
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 15
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://grupoepicentro.com/uploads/2025/10/home-marca-weber.jpg",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 210,
+        "altura": 70,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 60
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              0
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 5
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 4
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://grupoepicentro.com/uploads/2024/10/metodo-de-pagamento-logos.jpg",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 504,
+        "altura": 71,
+        "fundo": "colorido",
+        "fundoRgb": [
+          224,
+          240,
+          240
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 25
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              128
+            ],
+            "parte": 21
+          },
+          {
+            "rgb": [
+              32,
+              160,
+              224
+            ],
+            "parte": 17
+          },
+          {
+            "rgb": [
+              32,
+              96,
+              192
+            ],
+            "parte": 10
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://grupoepicentro.com/uploads/2025/10/Epicentro-Atrigos-Beneficios-Polimento-Betao-Header.webp",
+      "pontos": 3,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome",
+        "grande demais, parece banner"
+      ],
+      "analise": {
+        "largura": 1920,
+        "altura": 1350,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              192,
+              160,
+              128
+            ],
+            "parte": 21
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              160
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              160
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://grupoepicentro.com/uploads/2025/10/Epicentro-Atrigos-Ciclo-de-Vida-sistemas-ETICS-Header.webp",
+      "pontos": 2,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "tem o nome",
+        "grande demais, parece banner"
+      ],
+      "analise": {
+        "largura": 1920,
+        "altura": 1350,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 16
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 16
+          },
+          {
+            "rgb": [
+              64,
+              96,
+              96
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              96
+            ],
+            "parte": 9
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.webp",
+    "src": "https://grupoepicentro.com/uploads/2026/10/home-header-slide-servico-pavimento-industriais-epoxi.webp"
+  },
+  "paleta": [
+    {
+      "hex": "#0077a8",
+      "hsl": "198 100% 33%",
+      "peso": 906961,
+      "onde": [
+        "botões",
+        "texto",
+        "variáveis do tema",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#21334b",
+      "hsl": "214 39% 21%",
+      "peso": 505262,
+      "onde": [
+        "botões",
+        "fundos",
+        "texto",
+        "variáveis do tema",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#db1215",
+      "hsl": "359 85% 46%",
+      "peso": 45000,
+      "onde": [
+        "variáveis do tema"
+      ]
+    },
+    {
+      "hex": "#404080",
+      "hsl": "240 33% 38%",
+      "peso": 0,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "198 100% 33%",
+    "--accent-hsl": "359 85% 46%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--cc-btn-primary-bg",
+      "#2d4156"
+    ],
+    [
+      "--cc-btn-primary-text",
+      "var(--cc-bg)"
+    ],
+    [
+      "--cc-btn-primary-hover-bg",
+      "#1d2e38"
+    ],
+    [
+      "--cc-btn-primary-hover-text",
+      "var(--cc-btn-primary-text)"
+    ],
+    [
+      "--cc-btn-secondary-bg",
+      "#eaeff2"
+    ],
+    [
+      "--cc-btn-secondary-text",
+      "var(--cc-text)"
+    ],
+    [
+      "--cc-btn-secondary-hover-bg",
+      "#d8e0e6"
+    ],
+    [
+      "--cc-btn-secondary-hover-text",
+      "var(--cc-btn-secondary-text)"
+    ],
+    [
+      "--swiper-theme-color",
+      "#007aff"
+    ],
+    [
+      "--em-font__main",
+      "\"Albert Sans\", Arial, sans-serif"
+    ],
+    [
+      "--em-color__primary",
+      "#db1215"
+    ],
+    [
+      "--em-text-color-on-primary",
+      "#fff"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Figtree",
+    "corpo": "Figtree",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "Pavimentos Industriais",
+      "Materiais de Construção",
+      "Epicentro",
+      "Pavimentos Industriais",
+      "Reparação de Juntas de Dilatação",
+      "Marcação de Pavimentos",
+      "Preparação Técnica de Pavimentos",
+      "Revestimento de Resina Epóxi",
+      "Betão Polido",
+      "Materiais de Construção",
+      "Aplicações",
+      "Portefólio",
+      "Contactos",
+      "Pesquisar",
+      "Login",
+      "0 Lista de desejos",
+      "0 Carrinho",
+      "Pesquisar",
+      "0 Carrinho",
+      "Epicentro",
+      "Pavimentos Industriais",
+      "Aplicações",
+      "Portefólio",
+      "Materiais de Construção",
+      "Notícias",
+      "Contactos",
+      "Política de Privacidade",
+      "Termos e Condições",
+      "Livro de Reclamações",
+      "Pavimentos Industriais",
+      "Reparação de Juntas de Dilatação",
+      "Marcação de Pavimentos",
+      "Preparação Técnica de Pavimentos",
+      "Revestimento de Resina Epóxi",
+      "Betão Polido",
+      "Materiais de Construção",
+      "Aplicações",
+      "Portefólio",
+      "Contactos"
+    ],
+    "titulos": [
+      "Epicentro",
+      "Resina epóxi para resultados duradouros.",
+      "Os materiais certos para cada projeto.",
+      "O pavimento ideal para cada projeto começa aqui.",
+      "Transformeo seu projeto",
+      "Produtos Selecionados",
+      "Manta acústica 20 mm – 15 m2",
+      "Manta acústica 10 mm – 15 m2",
+      "CAIXILHO UNICO 90 GESSO 800×2000 mm",
+      "ISOL. SPACE REFLEX PRO – 15 M2",
+      "ISOL. SPACE REFLEX PRO – 60 M2",
+      "ULTRABOND SUPER GRIP – 310ML",
+      "CAIXILHO UNICO 70 GESSO 750×2000 mm",
+      "MAPELASTIC SMART – COMPONENTE A+B – 30 kgs",
+      "Estamos consigo desde 1987",
+      "O futuro da sua obra começa aqui",
+      "Os Nossos Serviços",
+      "Revestimento de Resina Epóxi"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático."
+  ]
+}

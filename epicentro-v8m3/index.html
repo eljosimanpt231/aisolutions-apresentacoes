@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Epicentro | Pedidos e encomendas</title>
+  <meta name="description" content="Proposta AI Solutions para a Epicentro: uma plataforma própria para as lojas das Caldas da Rainha, Torres Vedras e Ameal, com os quatro canais de encomenda num só sítio.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Epicentro × AI Solutions | Pedidos e encomendas">
+  <meta property="og:description" content="Três lojas, quatro canais. Cada encomenda à vista de toda a equipa.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/epicentro-v8m3/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () { try { var t = localStorage.getItem('epicentro-tema'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/epicentro.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div class="faixa-topo"><span>Caldas da Rainha <i>|</i> Torres Vedras <i>|</i> Ameal</span><span class="faixa-r">Epicentro × AI Solutions</span></div>
+<header class="topbar">
+  <div class="brand">
+    <img class="logo cla" src="assets/img/epicentro-logo.png" alt="Grupo Epicentro">
+    <span class="sep"></span>
+    <div class="brand-t"><b>Pedidos e encomendas</b><small>Plataforma Epicentro · protótipo</small></div>
+  </div>
+  <nav class="tabs" aria-label="Partes da apresentação">
+    <button class="tab active" data-tab="contexto">Contexto</button>
+    <button class="tab" data-tab="plataforma">Plataforma</button>
+    <button class="tab" data-tab="proposta">Proposta</button>
+  </nav>
+  <div class="top-r"><button class="tema" id="tema" type="button" aria-label="Mudar entre tema claro e escuro">☾</button></div>
+</header>
+<div class="progress"><i></i></div>
+
+<main class="deck" id="deck">
+
+<!-- =================================================================== -->
+<!-- CONTEXTO                                                             -->
+<!-- =================================================================== -->
+<section class="tab-panel active" id="contexto">
+
+  <!-- 1. Capa -->
+  <div class="slide capa active" data-titulo="Capa">
+    <div class="container capa-grid">
+      <div class="capa-txt">
+        <span class="kicker anim">Epicentro × AI Solutions · 27 de outubro de 2026</span>
+        <h1 class="anim">Três lojas, quatro canais.<br><span class="grad">Cada encomenda à vista de toda a equipa.</span></h1>
+        <p class="lead anim">
+          Uma plataforma feita à medida da Epicentro, no computador e no telemóvel. Junta o balcão, o telefone, o email e a loja online
+          num só sítio, liga cada pedido ao cliente e acompanha cada encomenda do orçamento à entrega.
+          Quando um colega está de férias, qualquer outro sabe responder ao cliente.
+        </p>
+        <div class="stats anim">
+          <div class="stat"><div class="n">≈ <span class="count" data-to="700">700</span></div><p>Orçamentos este ano só na loja das Caldas, com volumes parecidos em Torres Vedras e no Ameal.</p></div>
+          <div class="stat"><div class="n"><span class="count" data-to="10">10</span> <small>pessoas</small></div><p>A tratar balcão, telefone, email e orçamentos no Primavera, nas três lojas.</p></div>
+          <div class="stat"><div class="n">10 <small>em</small> 10</div><p>A prioridade que o Filipe deu a resolver isto, a 21 de outubro.</p></div>
+        </div>
+        <div class="meta anim"><span>Para <b>Filipe Lino · gerência da Epicentro</b></span><span>Seguimento da reunião de <b>21/10/2026</b></span></div>
+      </div>
+      <div class="funil canais anim" aria-label="Por onde entram hoje as encomendas e onde ficam registadas">
+        <div class="funil-cap"><span>HOJE · POR ONDE ENTRAM AS ENCOMENDAS</span><b>onde ficam</b></div>
+        <div class="can-row"><span class="can-i">⌂</span><div><b>Balcão</b><small>a maioria das encomendas</small></div><em>no Primavera, se houver orçamento</em></div>
+        <div class="can-row"><span class="can-i">✆</span><div><b>Telefone</b><small>muitas vezes sem orçamento</small></div><em class="r">na cabeça de quem atendeu</em></div>
+        <div class="can-row"><span class="can-i">✉</span><div><b>Email</b><small>pedidos e confirmações</small></div><em class="a">na caixa de quem leu</em></div>
+        <div class="can-row"><span class="can-i">◫</span><div><b>Loja online</b><small>começou há pouco</small></div><em class="a">na loja online</em></div>
+        <p class="funil-nota">"Eu sei que isso está encomendado, mas não sei mais nada, porque foi tratado tudo só com aquela pessoa." <span>O que se ouve ao balcão, contado pelo Filipe a 21/10</span></p>
+        <p class="funil-q">Quatro sítios diferentes. <b>Nenhum</b> diz em que ponto está a encomenda.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. O que ouvimos -->
+  <div class="slide" data-titulo="O que ouvimos">
+    <div class="container">
+      <span class="kicker anim">O que ouvimos a 21/10</span>
+      <h2 class="anim">Seis frases que explicam o problema</h2>
+      <p class="lead anim">Ditas pelo Filipe na reunião. Cada uma tem uma vista na plataforma que vão ver a seguir.</p>
+      <div class="dores">
+        <div class="dor anim"><span class="dor-n">01</span><q>É tudo tratado com aquele funcionário.</q><p>Quando quem tratou a encomenda está de férias ou ausente, o cliente pergunta por ela e ninguém sabe responder. Há encomendas que levam três e quatro semanas a chegar.</p><button class="dor-ir" data-ir="1">Encomendas →</button></div>
+        <div class="dor anim"><span class="dor-n">02</span><q>Não há uma lista que toda a gente saiba.</q><p>Não há visão por cliente: o que já comprou, que orçamentos tem em aberto, o que foi adjudicado. Funciona muito à base da experiência.</p><button class="dor-ir" data-ir="4">Ficha do cliente →</button></div>
+        <div class="dor anim"><span class="dor-n">03</span><q>A pessoa liga, diz o que quer, a gente diz o valor.</q><p>Muitos pedidos por telefone nem chegam a gerar orçamento. E o mesmo projeto passa por três ou quatro versões, com material retirado e acrescentado.</p><button class="dor-ir" data-ir="0">Pedidos →</button></div>
+        <div class="dor anim"><span class="dor-n">04</span><q>Neste momento é difícil de perceber esta situação.</q><p>Quantos orçamentos saíram em cada loja, quantos foram adjudicados, o ticket médio: hoje só indo um a um ao Primavera.</p><button class="dor-ir" data-ir="6">Painel da gerência →</button></div>
+        <div class="dor anim"><span class="dor-n">05</span><q>Por muito que eu tenha lutado, ainda não está correto.</q><p>O stock do Primavera não bate certo há anos, apesar das contagens e dos acertos. Para ter uma lista fiável, tira-se um Excel e confere-se à mão.</p><button class="dor-ir" data-ir="5">Stock e compras →</button></div>
+        <div class="dor anim"><span class="dor-n">06</span><q>Normalmente não passa pelo Primavera, é feito por email.</q><p>As encomendas a fornecedores fazem-se por email ou nas plataformas deles. A fatura entra no Primavera depois, e a ligação à encomenda do cliente fica na memória de alguém.</p><button class="dor-ir" data-ir="2">Encomenda em curso →</button></div>
+      </div>
+      <p class="fecho-it anim">Hoje a operação está controlada. Mas à custa da experiência e da presença do Filipe.</p>
+    </div>
+  </div>
+
+  <!-- 3. O vosso catálogo -->
+  <div class="slide" data-titulo="O vosso catálogo">
+    <div class="container">
+      <span class="kicker anim">O protótipo foi montado com o vosso catálogo</span>
+      <h2 class="anim">245 artigos da loja online, com as vossas marcas e medidas</h2>
+      <p class="lead anim">Os orçamentos, o stock e as encomendas que vão ver a seguir usam artigos e preços reais de grupoepicentro.com. Os clientes, as quantidades e os colegas são simulados.</p>
+      <div class="docs-grid">
+        <div class="cat-grid anim">
+          <div class="cat-f"><span class="doc-t">Gesso cartonado</span><b>Placas, perfilaria, massas</b><p>Knauf Standard, Impregnada, Corta-fogo, Diamant · Gypsotech · Pro-Gyp · montantes, canais, Omega · Knauf Unik, Uniflott · lã mineral Volcalis</p><em>122 artigos</em></div>
+          <div class="cat-f"><span class="doc-t">Revestimento de fachadas</span><b>ETICS, primários e tintas</b><p>Sto (Stolit, StoLevell, StoColor) · Transcol Revtherm · painéis Rocterm · malhas, buchas, perfis de arranque</p><em>69 artigos</em></div>
+          <div class="cat-f"><span class="doc-t">Argamassas</span><b>Gesso, colas e reparação</b><p>Sival · Pragma, H40 · Planitop, Mapegrout · Secil e Transcol · Ultraplan</p><em>28 artigos</em></div>
+          <div class="cat-f"><span class="doc-t">Isolamentos, químicos, madeiras</span><b>XPS, Mapei, OSB</b><p>Danopren · Mapeflex, MapePUR, Ultrabond · placas OSB3 · membranas</p><em>26 artigos</em></div>
+          <div class="cat-f s wide"><span class="doc-t">Pavimentos industriais</span><b>Serviço, não artigo</b><p>Resina epóxi, betão polido, juntas de dilatação: obra com visita técnica</p></div>
+        </div>
+        <div class="lido anim">
+          <div class="lido-h">O que lemos nele</div>
+          <ol>
+            <li><b>O mesmo artigo existe em várias medidas.</b> A placa Knauf Standard 12,5 tem cinco comprimentos, de 2000 a 3000 mm. Quando o cliente não diz qual, o orçamento automático pergunta em vez de adivinhar.</li>
+            <li><b>Os preços da loja são com IVA.</b> Nos orçamentos desta demonstração aparecem sem IVA. Na plataforma, cada cliente profissional tem a sua tabela.</li>
+            <li><b>Há artigos de fornecedores diferentes no mesmo orçamento.</b> Placas Knauf, argamassas Sto e colas Mapei numa só obra. As encomendas a fornecedores agrupam-se por fornecedor.</li>
+            <li><b>Pavimentos industriais são obra, não balcão.</b> Esses orçamentos ficam sempre com a equipa. A plataforma regista-os e acompanha-os, não os calcula.</li>
+            <li><b>Os 2 ou 3 orçamentos que ficaram de nos enviar</b> servem para afinar a demonstração com casos vossos, linha a linha.</li>
+          </ol>
+          <p class="nota">Catálogo lido a 26/10/2026. Nomes de clientes e de colegas nesta página são fictícios.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- PLATAFORMA                                                           -->
+<!-- =================================================================== -->
+<section class="tab-panel" id="plataforma">
+ <div class="app">
+  <aside class="side">
+    <div class="app-name"><img class="cla" src="assets/img/epicentro-logo.png" alt=""></div>
+    <div class="app-sub">Pedidos e encomendas · 3 lojas</div>
+    <div class="grp">Visão geral</div>
+    <a class="nv" data-v="0"><i>⇣</i>Pedidos<span class="badge-n">11</span></a>
+    <a class="nv" data-v="1"><i>◧</i>Encomendas<span class="badge-n">37</span></a>
+    <div class="grp">Encomenda em curso</div>
+    <div class="pedido-card"><b>E-26-0418 · tetos e divisórias</b><span>Empreiteiro, Óbidos · Caldas</span></div>
+    <a class="nv" data-v="2"><i>1</i>Do orçamento à entrega</a>
+    <a class="nv" data-v="3"><i>2</i>Orçamento automático</a>
+    <div class="grp">Clientes e stock</div>
+    <a class="nv" data-v="4"><i>●</i>Ficha do cliente</a>
+    <a class="nv" data-v="5"><i>▤</i>Stock e compras</a>
+    <div class="grp">Gerência</div>
+    <a class="nv" data-v="6"><i>▥</i>Painel da gerência</a>
+  </aside>
+  <div class="main">
+    <div class="app-head">
+      <div class="crumbs">Epicentro › <b id="crumb">Pedidos</b></div>
+      <div class="search">⌕ Procurar cliente, telefone, encomenda, artigo</div>
+      <div class="bell" title="Alertas">🔔<em>3</em></div>
+      <div class="user"><span class="av">CM</span><div><b>Carla</b><small>Balcão · Caldas da Rainha</small></div></div>
+    </div>
+
+    <!-- 0. Pedidos -->
+    <div class="slide" id="s-pedidos" data-titulo="Pedidos">
+      <div class="view-h"><div><span class="k">PEDIDOS · OS QUATRO CANAIS NUM SÓ SÍTIO</span><h2>Balcão, telefone, email e loja online, na mesma lista</h2><p>Cada pedido fica ligado ao cliente e à loja, com quem o recebeu e o que aconteceu a seguir. O telefone também: regista-se em vinte segundos, sem fazer orçamento. Uma terça-feira de manhã, a de hoje, ao vivo:</p></div><span class="estado" id="cxEstado">Pronto a simular</span></div>
+      <div class="ol">
+        <div class="ol-bar"><span class="dots"><i></i><i></i><i></i></span><b>Pedidos</b><span class="ol-cx">Caldas · Torres Vedras · Ameal</span><button class="btn btn-primary" type="button" id="cxPlay">▶ Simular a manhã de 27/10</button><button class="btn btn-ghost" type="button" id="cxReset">Repor</button></div>
+        <div class="ol-fold" id="cxPastas"></div>
+        <div class="ol-list" id="cxLista"><div class="ol-empty">Lista vazia desde segunda às 19:00.<br>Carregue em <b>Simular</b> para ver a manhã de terça-feira.</div></div>
+        <div class="ol-det" id="cxDet"><div class="ol-empty">Clique num pedido para ver de onde veio, a que cliente ficou ligado e o que aconteceu a seguir.</div></div>
+      </div>
+      <p class="ol-nota">Simulação: clientes, colegas e pedidos fictícios; artigos e medidas do vosso catálogo. Os emails são lidos sozinhos; o balcão e o telefone são registados pelo colega, num formulário curto, no computador ou no telemóvel.</p>
+    </div>
+
+    <!-- 1. Encomendas -->
+    <div class="slide" id="s-encomendas" data-titulo="Encomendas">
+      <div class="view-h"><div><span class="k">ENCOMENDAS · TODAS AS LOJAS</span><h2>Em que ponto está cada encomenda, e quem a tratou</h2><p>Cada encomenda passa pelas etapas que o Filipe descreveu: orçamento, aceite, paga (total ou em parte), encomendada ao fornecedor, material na loja, cliente avisado. Arraste os cartões entre etapas e clique num cartão para ver o histórico.</p></div><span class="estado info">Atualizado às 10:42</span></div>
+      <div class="sim">Simulação com clientes e colegas fictícios. Artigos do vosso catálogo; valores sem IVA, ilustrativos.</div>
+      <div class="ferias">
+        <div class="fer-in">
+          <span class="fer-k">O telefone toca no balcão das Caldas · 10:12</span>
+          <p class="fer-q">"Bom dia, é o Carlos, de Óbidos. A encomenda das placas que fiz com o Rui, já chegou?"</p>
+          <p class="fer-n">O Rui está de férias até dia 2. A Carla nunca viu esta encomenda.</p>
+          <button class="btn btn-primary" type="button" id="ferBusca">⌕ Procurar pelo número 912 ··· 418</button>
+        </div>
+        <div class="fer-out" id="ferOut" aria-live="polite">
+          <div class="ol-empty">Antes: "vou ver com o colega e ligo-lhe de volta".<br>Agora: carregue em <b>Procurar</b>.</div>
+        </div>
+      </div>
+      <div class="kpis" id="kpis"></div>
+      <div class="crm-bar">
+        <div class="seg" id="fLoja" role="group" aria-label="Filtrar por loja"><button class="on" data-l="">Todas as lojas</button><button data-l="Caldas">Caldas</button><button data-l="Torres Vedras">Torres Vedras</button><button data-l="Ameal">Ameal</button></div>
+        <select id="fResp" aria-label="Filtrar por colega"><option value="">Todos os colegas</option><option>Rui</option><option>Carla</option><option>Sónia</option><option>Paulo</option><option>Hugo</option><option>Inês</option></select>
+        <span class="crm-n" id="crmN"></span>
+      </div>
+      <div class="pipe" id="pipe"></div>
+    </div>
+
+    <!-- 2. Encomenda em curso -->
+    <div class="slide" id="s-encomenda" data-titulo="Do orçamento à entrega">
+      <div class="view-h"><div><span class="k">ENCOMENDA E-26-0418 · EMPREITEIRO, ÓBIDOS</span><h2>Tetos e divisórias de uma moradia, do balcão à entrega</h2><p>Três versões do orçamento, metade paga, placas impregnadas encomendadas ao fornecedor. Tudo no mesmo sítio, com hora e autor. Quem pegar nela amanhã sabe o mesmo que o Rui.</p></div><span class="chip a" id="encChip"><i></i>À espera de fornecedor</span></div>
+      <div class="etp" id="etp" aria-label="Etapas da encomenda"></div>
+      <div class="two w">
+        <div>
+          <div class="panel">
+            <div class="panel-h"><b>Versões do orçamento</b><span class="seg" role="group" aria-label="Escolher versão" id="verSeg"><button data-v="0">v1 · 13/10</button><button data-v="1">v2 · 15/10</button><button class="on" data-v="2">v3 · 19/10</button></span></div>
+            <div id="verCorpo"></div>
+          </div>
+          <div class="panel" style="margin-top:14px">
+            <div class="panel-h"><b>Pagamentos</b><span>valores com IVA</span></div>
+            <div class="pags" id="pags"></div>
+          </div>
+        </div>
+        <div>
+          <div class="panel">
+            <div class="panel-h"><b>Encomenda ao fornecedor</b><span>pedido por email a 20/10 às 11:05</span></div>
+            <div class="ficha">
+              <div class="r"><span>Artigo</span><div>Placa Knauf Impregnada 12,5 BA 2500×1200 mm · 24 un.<span class="sub">Sem stock nas três lojas no dia da adjudicação · reservadas para esta encomenda</span></div></div>
+              <div class="r"><span>Fornecedor</span><div>Fornecedor de gesso cartonado<span class="sub">Email preparado pela plataforma e enviado pelo Rui · confirmação recebida a 21/10</span></div></div>
+              <div class="r hl"><span>Chegada</span><div><b id="encCheg">Prevista para quarta, 28/10</b><span class="sub" id="encChegSub">Quando o material der entrada na loja das Caldas, o cliente é avisado sozinho.</span></div></div>
+            </div>
+            <div class="xref-go"><button class="btn btn-primary" type="button" id="encChegou">✓ Material chegou à loja</button><span class="mut" id="encChegouSt">simula a entrada de quarta-feira</span></div>
+          </div>
+          <div class="aviso" id="encAviso" hidden>
+            <div class="wa-mini">
+              <div class="wa-mini-h"><span class="av">E</span><div><b>Epicentro · Caldas da Rainha</b><small>WhatsApp · enviado automaticamente</small></div></div>
+              <div class="wa-mini-b"><div class="wa-msg">Bom dia, Sr. Carlos. O material da encomenda <b>E-26-0418</b> já está na nossa loja das Caldas da Rainha. Fica pronto a levantar a partir de hoje, ou combinamos a entrega na obra. Falta liquidar <b>1.143,57 €</b>. Obrigado, Epicentro.<time>28/10 08:47 ✓✓</time></div></div>
+            </div>
+            <p class="ol-nota">Seguiu também por email, com a mesma informação. Fica registado na encomenda.</p>
+          </div>
+          <div class="panel" style="margin-top:14px">
+            <div class="panel-h"><b>Registo da encomenda</b><span>quem, quando, o quê</span></div>
+            <ul class="reg" id="regEnc">
+              <li><time>13/10 09:20</time><span>Pedido ao <b>balcão das Caldas</b> · Rui · plantas da moradia em papel</span></li>
+              <li><time>13/10 16:02</time><span>Orçamento <b>v1</b> enviado por email e WhatsApp · 1.824,26 €</span></li>
+              <li><time>15/10 10:31</time><span>Cliente ligou: placas impregnadas na cozinha e WC · <b>v2</b> · 1.941,86 €</span></li>
+              <li><time>19/10 17:45</time><span>Medição na obra: menos placas e montantes · <b>v3</b> · 1.859,46 €</span></li>
+              <li class="h"><time>20/10 09:12</time><span>Cliente aceitou a v3 por WhatsApp · <b>50% pago</b> por transferência</span></li>
+              <li><time>20/10 11:05</time><span>24 placas impregnadas pedidas ao fornecedor</span></li>
+              <li><time>21/10 14:40</time><span>Fornecedor confirmou: chegada a 28/10</span></li>
+              <li class="h"><time>27/10 10:12</time><span>Cliente ligou a perguntar · <b>Carla</b> respondeu na hora (Rui de férias)</span></li>
+              <li class="f" id="regFut"><time>28/10</time><span>Entrada do material e aviso ao cliente</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Orçamento automático -->
+    <div class="slide" id="s-orcamento" data-titulo="Orçamento automático">
+      <div class="view-h"><div><span class="k">PEDIDOS DIRETOS · ORÇAMENTO AUTOMÁTICO</span><h2>O cliente diz o artigo e a quantidade. O orçamento faz-se sozinho</h2><p>A plataforma lê o pedido, encontra cada artigo no catálogo, vê o stock nas três lojas e monta o orçamento com a tabela do cliente. Um colega confirma com um clique e sai por email e por WhatsApp.</p></div><span class="estado ok">Email · WhatsApp</span></div>
+      <div class="refs">
+        <div class="panel">
+          <div class="panel-h"><b>Email recebido · 27/10 às 08:41</b><span>Empreiteiro, Bombarral</span></div>
+          <div class="pedido-mail">
+            <p>Bom dia,</p>
+            <p>Preciso de orçamento para uma obra no Bombarral:</p>
+            <p class="mono">40 placas knauf normais 12,5 de 2,5 m<br>30 montantes 48 de 3 m<br>20 canais 48<br>2 cx parafuso 25<br>6 sacos unik 1h<br>2 rolos fita papel grande</p>
+            <p>Levanto nas Caldas na quinta. Obrigado, Nuno</p>
+          </div>
+          <table class="tbl xref" id="xrefOrc">
+            <thead><tr><th>Escrito pelo cliente</th><th class="num">Qtd.</th><th>Artigo do catálogo</th><th>Stock</th></tr></thead>
+            <tbody></tbody>
+          </table>
+          <div class="xlog" id="xlogOrc" hidden><div class="xbar"><i></i></div><ol></ol></div>
+          <div class="xref-go"><button class="btn btn-primary" type="button" id="orcPlay">▶ Ler o pedido e montar o orçamento</button><span id="orcSt" class="mut">6 linhas por ler</span></div>
+        </div>
+        <div class="phc orc" aria-label="Orçamento">
+          <div class="phc-top">
+            <img class="cla" src="assets/img/epicentro-logo.png" alt="Grupo Epicentro">
+            <div class="phc-n"><span>Orçamento Nº</span><b id="orcN">rascunho</b><small>Data: 27.10.2026</small></div>
+          </div>
+          <div class="phc-cab">
+            <div><span>Cliente</span><b>Empreiteiro, Bombarral</b></div><div><span>Loja</span><b>Caldas da Rainha</b></div>
+            <div><span>Entrega</span><b>Levantamento 29/10</b></div><div><span>Tabela</span><b>Profissional</b></div>
+          </div>
+          <table class="phc-l">
+            <thead><tr><th>Artigo</th><th class="num">Qtd.</th><th class="num">P. Unit.</th><th class="num">Total</th></tr></thead>
+            <tbody id="orcLinhas"><tr class="vazio"><td colspan="4">As linhas aparecem quando o pedido for lido.</td></tr></tbody>
+          </table>
+          <div class="phc-tot">
+            <div><span>Total s/ IVA</span><b id="oIl">0,00 €</b></div>
+            <div><span>IVA 23%</span><b id="oIva">0,00 €</b></div>
+            <div class="g"><span>Total</span><b id="oTot">0,00 €</b></div>
+          </div>
+          <div class="phc-rod"><span>VALIDADE: <b>15 dias</b></span><span>Preços da loja online, sem IVA. Sujeito a confirmação de stock no levantamento.</span></div>
+          <div class="phc-acao" id="orcAcao" hidden>
+            <span class="igual">✓ 6 de 6 linhas encontradas · 1 transferência entre lojas</span>
+            <button class="btn btn-primary" type="button" id="orcEnviar">Confirmar e enviar</button>
+          </div>
+        </div>
+      </div>
+      <div class="vis-k vis-mais">E quando o pedido chega pelo WhatsApp</div>
+      <div class="cr" id="assist"></div>
+      <script type="application/json" id="assist-config">
+      {
+        "agentName": "Epicentro · Caldas",
+        "agentInitials": "E",
+        "chatStatus": "WhatsApp da loja",
+        "stepMs": 1500,
+        "endPauseMs": 3200,
+        "scenarios": [
+          {
+            "title": "Pedido direto",
+            "subtitle": "Artigo e quantidade ditos pelo cliente: o orçamento sai em minutos, confirmado por um colega.",
+            "chat": [
+              { "sender": "system", "text": "Mensagem nova no WhatsApp da loja das Caldas", "time": "11:03" },
+              { "sender": "client", "text": "boa tarde", "time": "11:03" },
+              { "sender": "client", "text": "precisava de 10 sacos de gesso estuque sival dos 30kg e 5 de acabamento sival 25", "time": "11:04", "passo": 2 },
+              { "sender": "agent", "text": "Boa tarde, Sr. Jorge. Temos tudo em stock nas Caldas. Vai levantar ou é para entrega?", "time": "11:04", "passo": 3 },
+              { "sender": "client", "text": "levanto amanha de manha", "time": "11:09" },
+              { "sender": "agent", "text": "Fica reservado para amanhã. O orçamento segue já em PDF, também por email: **10 Gesso de Estuque Sival 30 kg e 5 Sival Acabamento 25 kg**.", "time": "11:11", "passo": 5 },
+              { "sender": "client", "text": "ok obg", "time": "11:12" }
+            ],
+            "steps": [
+              { "icon": "id", "label": "Reconhece o número: cliente das Caldas desde 2019" },
+              { "icon": "search", "label": "Encontra os dois artigos no catálogo" },
+              { "icon": "database", "label": "Vê o stock nas três lojas" },
+              { "icon": "user-cog", "label": "Monta o orçamento e a Carla confirma" },
+              { "icon": "send", "label": "Envia o PDF e reserva o material" }
+            ]
+          },
+          {
+            "title": "Pedido técnico",
+            "subtitle": "Quando o cliente pede conselho, não adivinha: passa a um colega com o pedido já arrumado.",
+            "chat": [
+              { "sender": "system", "text": "Mensagem nova no WhatsApp da loja do Ameal", "time": "15:20" },
+              { "sender": "client", "text": "ola queria fazer um teto falso numa cozinha com uns 20m2", "time": "15:20" },
+              { "sender": "client", "text": "o que preciso e quanto fica mais ou menos?", "time": "15:21", "passo": 2 },
+              { "sender": "agent", "text": "Boa tarde. Para lhe dar um valor certo, o Hugo vai preparar a lista consigo. Duas perguntas rápidas: qual é o pé-direito da cozinha?", "time": "15:21", "passo": 3 },
+              { "sender": "client", "text": "2,70 acho eu", "time": "15:26" },
+              { "sender": "agent", "text": "Obrigado. E vai levar focos embutidos no teto?", "time": "15:26" },
+              { "sender": "client", "text": "sim uns 6", "time": "15:30", "passo": 4 },
+              { "sender": "agent", "text": "Perfeito. O Hugo liga-lhe ainda hoje, até às 17h, com o orçamento.", "time": "15:31", "passo": 5 }
+            ],
+            "steps": [
+              { "icon": "brain", "label": "Percebe que é um pedido de conselho, não de artigos" },
+              { "icon": "ban", "label": "Não calcula quantidades sozinho" },
+              { "icon": "list", "label": "Faz só as perguntas que o colega vai precisar" },
+              { "icon": "user-cog", "label": "Passa ao Hugo: cozinha 20 m², pé-direito 2,70, 6 focos" },
+              { "icon": "clock", "label": "Marca o prazo de resposta e avisa se passar" }
+            ]
+          },
+          {
+            "title": "Aceite e pago em parte",
+            "subtitle": "O sim do cliente muda a encomenda de etapa, e o que falta encomendar fica pronto.",
+            "chat": [
+              { "sender": "system", "text": "Resposta ao orçamento 26/0391 · Construtora, Alcobaça", "time": "09:48" },
+              { "sender": "client", "text": "bom dia pode avançar com o orçamento", "time": "09:48" },
+              { "sender": "client", "text": "faço transferencia de metade hoje", "time": "09:49", "passo": 2 },
+              { "sender": "agent", "text": "Bom dia. Obrigado, fica registado. Quando fizer a transferência, pode enviar o comprovativo por aqui?", "time": "09:49", "passo": 3 },
+              { "sender": "client", "text": "📎 comprovativo.pdf", "time": "12:31" },
+              { "sender": "agent", "text": "Recebido. O StoLevell Uni chega na próxima semana e avisamos assim que estiver na loja.", "time": "12:32", "passo": 5 }
+            ],
+            "steps": [
+              { "icon": "check", "label": "Liga a mensagem ao orçamento 26/0391" },
+              { "icon": "arrows", "label": "Passa a encomenda para Aceite" },
+              { "icon": "book", "label": "Guarda o comprovativo: 50% pago" },
+              { "icon": "database", "label": "Vê o que falta em stock: 18 sacos StoLevell Uni" },
+              { "icon": "send", "label": "Prepara a encomenda ao fornecedor para o Paulo enviar" }
+            ]
+          }
+        ]
+      }
+      </script>
+      <p class="ol-nota">Simulação: clientes e conversas fictícios. Nos primeiros meses, cada orçamento é confirmado por um colega antes de sair; o que for compromisso de prazo ou de preço especial fica sempre com a equipa.</p>
+    </div>
+
+    <!-- 4. Ficha do cliente -->
+    <div class="slide" id="s-clientes" data-titulo="Ficha do cliente">
+      <div class="view-h"><div><span class="k">CLIENTES · UMA FICHA POR CLIENTE</span><h2>O que já comprou, o que tem em aberto e o que costuma levar</h2><p>Em qualquer loja, ao balcão ou ao telefone. Quem pede muitos orçamentos e adjudica pouco, quem compra muito e há meses não aparece, e o que sugerir antes de o cliente sair.</p></div><span class="estado info">Histórico do Primavera</span></div>
+      <div class="sim">Simulação: clientes e números fictícios. Os números reais saem do histórico do Primavera na semana 1.</div>
+      <div class="sem-top">
+        <div class="seg" id="sSeg" role="group" aria-label="Filtrar clientes"><button class="on" data-s="">Todos</button><button data-s="v">Mais valiosos</button><button data-s="r">Pedem e não adjudicam</button><button data-s="p">Parados há 6 meses</button></div>
+      </div>
+      <div class="two w sem-two">
+        <div class="tbl-wrap"><table class="tbl clientes" id="tCli"><thead><tr><th></th><th>Cliente</th><th>Loja</th><th class="num">Orç. 12 m</th><th class="num">Adjud.</th><th class="num">Taxa</th><th class="num">Comprado 12 m</th><th>Último</th></tr></thead><tbody></tbody></table></div>
+        <div class="panel cli-det" id="cliDet"></div>
+      </div>
+    </div>
+
+    <!-- 5. Stock e compras -->
+    <div class="slide" id="s-stock" data-titulo="Stock e compras">
+      <div class="view-h"><div><span class="k">STOCK E COMPRAS · COM AS VOSSAS REGRAS</span><h2>Stock por loja em que se pode confiar, e encomendas a fornecedores prontas</h2><p>O stock conta o que entra, o que sai e o que está reservado para encomendas de clientes. As contagens fazem-se pelo telemóvel, e cada acerto fica com motivo. Abaixo do mínimo, a encomenda ao fornecedor aparece pronta.</p></div><span class="estado warn">5 artigos a tratar</span></div>
+      <div class="sim">Simulação: quantidades, mínimos e fornecedores fictícios. Artigos do vosso catálogo. As regras (mínimos por loja, transferências, fornecedor de cada marca) definem-se convosco.</div>
+      <div class="seg stk-seg" id="stkSeg" role="group" aria-label="Filtrar artigos"><button class="on" data-f="">Todos</button><button data-f="t">A tratar</button></div>
+      <div class="tbl-wrap"><table class="tbl stock" id="tStock"><thead><tr><th>Artigo</th><th class="num">Caldas</th><th class="num">Torres V.</th><th class="num">Ameal</th><th class="num">Reservado</th><th class="num">Mínimo</th><th>Estado</th></tr></thead><tbody></tbody></table></div>
+      <div class="two w" style="margin-top:16px">
+        <div class="panel">
+          <div class="panel-h"><b>Encomendas a fornecedores sugeridas</b><span>agrupadas por fornecedor</span></div>
+          <div class="forn" id="forn"></div>
+        </div>
+        <div>
+          <div class="email" id="fornMail">
+            <div class="email-top"><span>Rascunho · espera confirmação</span><span class="st warn">Não enviado</span></div>
+            <div class="email-f"><span>Para: <b>Fornecedor de gesso cartonado</b></span><span>De: <b>Epicentro · compras</b></span><span>Assunto: <b>Encomenda Epicentro 27/10 · entrega Caldas da Rainha</b></span></div>
+            <div class="email-b">
+              <p>Bom dia,</p>
+              <p>Pedimos o fornecimento de:</p>
+              <ul><li><b>60</b> Placa Knauf Impregnada 12,5 BA 2500×1200 mm</li><li><b>40</b> Knauf Unik 1h, saco de 20 kg</li></ul>
+              <p>Entrega na loja das Caldas da Rainha. Agradecemos confirmação do prazo.</p>
+              <p>Com os melhores cumprimentos,<br>Epicentro</p>
+            </div>
+          </div>
+          <p class="ol-nota">Quando o fornecedor confirma, o prazo fica na encomenda e as encomendas de clientes que esperam por este material ficam a saber a data. Para quem trabalha numa plataforma própria, sai a lista pronta a copiar e o pedido fica registado.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Painel da gerência -->
+    <div class="slide" id="s-gerencia" data-titulo="Painel da gerência">
+      <div class="view-h"><div><span class="k">GERÊNCIA · TERÇA-FEIRA, 27 DE OUTUBRO</span><h2>Chegar de manhã e saber como está cada loja</h2><p>Orçamentos por loja, quantos foram adjudicados, o ticket médio e o ticket mais comum (que são coisas diferentes), e os clientes que mais valem. Sem ir um a um ao Primavera.</p></div><span class="seg" id="gPer" role="group" aria-label="Período"><button class="on" data-p="m">Outubro</button><button data-p="a">Últimos 12 meses</button></span></div>
+      <div class="sim">Ilustrativo: os números reais saem do histórico do Primavera na semana 1.</div>
+      <div class="kpis" id="gKpis"></div>
+      <div class="two w">
+        <div class="panel">
+          <div class="panel-h"><b>Por loja</b><span>orçamentos e adjudicados</span></div>
+          <div class="lojas" id="gLojas"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><b>Quanto vale um orçamento</b><span id="gHistN">por escalão de valor</span></div>
+          <div class="hist" id="gHist"></div>
+          <p class="ol-nota" style="padding:0 14px 12px">O ticket médio é puxado pelas obras grandes. O mais comum diz o que a equipa faz todos os dias.</p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:16px">
+        <div class="panel-h"><b>Clientes que mais valem</b><span>comprado nos últimos 12 meses</span></div>
+        <div class="top-cli" id="gTop"></div>
+      </div>
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- PROPOSTA                                                             -->
+<!-- =================================================================== -->
+<section class="tab-panel" id="proposta">
+
+  <!-- 1. Âmbito -->
+  <div class="slide" data-titulo="O que construímos">
+    <div class="container">
+      <span class="kicker anim">O que construímos</span>
+      <h2 class="anim">Uma plataforma própria da Epicentro, nas três lojas</h2>
+      <p class="lead anim">Os blocos do resumo de 24/10. Não é um programa da AI Solutions que a Epicentro passa a usar: é software feito à medida da Epicentro, no computador e no telemóvel, sem limite de utilizadores nem de balcões.</p>
+      <div class="ambito">
+        <div class="amb anim"><span class="amb-n">1</span><h3>Os quatro canais num só sítio</h3><p>Balcão, telefone, email e loja online na mesma lista. Os emails e a loja online entram sozinhos; o balcão e o telefone registam-se em segundos, mesmo quando não há orçamento.</p><button class="amb-ir" data-ir="0">Pedidos</button></div>
+        <div class="amb anim"><span class="amb-n">2</span><h3>Ficha do cliente</h3><p>Cada pedido ligado ao cliente, com o histórico de orçamentos e encomendas, o que tem em aberto e o que costuma levar, para qualquer colega saber em que ponto está.</p><button class="amb-ir" data-ir="4">Ficha do cliente</button></div>
+        <div class="amb anim"><span class="amb-n">3</span><h3>Encomendas do orçamento à entrega</h3><p>Versões do orçamento, aceite, pago (total ou em parte), encomendado ao fornecedor, material chegado, cliente avisado por WhatsApp e email. Com hora e autor.</p><button class="amb-ir" data-ir="2">Do orçamento à entrega</button></div>
+        <div class="amb anim"><span class="amb-n">4</span><h3>Orçamentos automáticos</h3><p>Pedidos diretos, quando o cliente diz o artigo e a quantidade, viram orçamento sozinhos e saem por email e por WhatsApp depois de um colega confirmar.</p><button class="amb-ir" data-ir="3">Orçamento automático</button></div>
+        <div class="amb anim"><span class="amb-n">5</span><h3>Stock e encomendas a fornecedores</h3><p>Stock por loja com as vossas regras, reservas para encomendas de clientes, contagens pelo telemóvel e encomendas a fornecedores preparadas a partir da plataforma.</p><button class="amb-ir" data-ir="5">Stock e compras</button></div>
+        <div class="amb amb-f anim"><h3>Painel para a gerência</h3><p>Orçamentos por loja, taxa de adjudicação, ticket médio e mais comum, clientes mais valiosos e os que pedem e não adjudicam.</p><button class="amb-ir" data-ir="6">Painel da gerência</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Como funciona -->
+  <div class="slide" data-titulo="Como funciona">
+    <div class="container">
+      <span class="kicker anim">Como funciona</span>
+      <h2 class="anim">Do pedido à entrega, com a equipa a decidir</h2>
+      <div class="fluxo anim" id="fluxoEpi"></div>
+      <script type="application/json" id="fluxoEpi-config">
+      {
+        "stepMs": 1800,
+        "channels": [
+          { "icon": "user-cog", "label": "Balcão" },
+          { "icon": "phone", "label": "Telefone" },
+          { "icon": "message", "label": "Email" },
+          { "icon": "globe", "label": "Loja online" },
+          { "icon": "whatsapp", "label": "WhatsApp" }
+        ],
+        "nodes": [
+          { "icon": "message", "title": "Pedido registado", "detail": "Venha de onde vier, na mesma lista.", "tone": "brand" },
+          { "icon": "id", "title": "Ligado ao cliente", "detail": "Histórico, tabela de preços, o que tem em aberto.", "tone": "teal" },
+          { "icon": "list", "title": "Orçamento", "detail": "Automático nos pedidos diretos, da equipa nos técnicos.", "tone": "teal" },
+          { "icon": "database", "title": "Stock e fornecedor", "detail": "Reserva o que há, encomenda o que falta.", "tone": "teal" },
+          { "icon": "check", "title": "Cliente avisado", "detail": "Material na loja, entrega ou levantamento.", "tone": "brand" }
+        ],
+        "note": "A faturação continua num programa certificado. A plataforma trabalha à volta dele."
+      }
+      </script>
+      <div class="limites">
+        <div class="lim anim"><h3>O que a plataforma faz sozinha</h3><ul class="list-check"><li>Ler os emails e as encomendas da loja online</li><li>Ligar cada pedido ao cliente certo</li><li>Montar orçamentos de pedidos diretos</li><li>Reservar stock e preparar encomendas a fornecedores</li><li>Avisar o cliente quando o material chega</li></ul></div>
+        <div class="lim n anim"><h3>O que fica sempre com a equipa</h3><ul class="list-x"><li>Confirmar cada orçamento antes de sair</li><li>Orçamentos técnicos e obras de pavimentos</li><li>Preços especiais e descontos</li><li>Prazos que dependem do fornecedor</li><li>Enviar as encomendas a fornecedores</li></ul></div>
+      </div>
+      <p class="fecho-it anim">O que não sabe, não adivinha: marca, e passa a uma pessoa.</p>
+    </div>
+  </div>
+
+  <!-- 3. Faturação por trás -->
+  <div class="slide" data-titulo="A faturação por trás">
+    <div class="container">
+      <span class="kicker anim">Um ponto a fechar convosco</span>
+      <h2 class="anim">O que fica por trás: o Primavera, ou um programa mais económico</h2>
+      <p class="lead anim">A plataforma é a mesma nos dois casos. Muda onde se emitem as faturas e onde vive o stock.</p>
+      <div class="opcoes">
+        <div class="opc anim">
+          <span class="inv-k">Opção A</span>
+          <h3>Manter o Primavera</h3>
+          <ul class="list-check"><li>A faturação e as compras continuam como hoje</li><li>A plataforma lê clientes, artigos, preços e documentos do Primavera</li><li>Ninguém muda de programa para faturar</li></ul>
+          <p class="opc-n">A licença do Primavera mantém-se, e o stock passa a ser acompanhado na plataforma, ao lado do Primavera.</p>
+        </div>
+        <div class="opc anim">
+          <span class="inv-k">Opção B</span>
+          <h3>Passar a faturação para o Moloni</h3>
+          <ul class="list-check"><li>Programa de faturação certificado e mais económico</li><li>Ligado à plataforma: a fatura sai da encomenda</li><li>O stock vive na plataforma, com as vossas regras, de raiz</li></ul>
+          <p class="opc-n">Pede uma data de mudança e a passagem dos clientes e artigos. Com calma, num início de mês.</p>
+        </div>
+      </div>
+      <p class="fecho-it anim">Decide-se convosco antes da proposta formal. A plataforma não depende desta escolha.</p>
+    </div>
+  </div>
+
+  <!-- 4. Investimento -->
+  <div class="slide" data-titulo="Investimento">
+    <div class="container">
+      <span class="kicker anim">Investimento</span>
+      <h2 class="anim">Perto de 4.000 € por mês a escapar, pelas contas de 21/10</h2>
+      <div class="conta anim">
+        <div class="conta-n"><b>≈ 50.000 €</b><span>por ano, entre encomendas que se perdem e orçamentos que ficam por converter. O Filipe concordou com a conta.</span></div>
+        <div class="conta-n"><b>2 a 3</b><span>encomendas a mais por mês, com o orçamento típico de 1.000 a 2.000 €, chegam para a fazer.</span></div>
+        <p class="conta-p">A implementação equivale a dois meses e meio disso.</p>
+      </div>
+      <div class="inv">
+        <div class="inv-c anim">
+          <span class="inv-k">Implementação</span>
+          <div class="inv-v">10.000 € <small>+ IVA</small></div>
+          <ul class="list-check"><li>Mapear o processo nas três lojas</li><li>Os cinco blocos e o painel da gerência</li><li>Ligação ao Primavera (ou ao Moloni), ao email, à loja online e ao WhatsApp</li><li>Ajustes com a equipa até estar a funcionar</li><li>Feito à medida da Epicentro</li></ul>
+        </div>
+        <div class="inv-c anim">
+          <span class="inv-k">Avença</span>
+          <div class="inv-v">200 € <small>+ IVA / mês</small></div>
+          <ul class="list-check"><li>Ou 2.000 € + IVA por ano</li><li>Todos os custos de inteligência artificial</li><li>Sem limite de utilizadores nem de balcões</li><li>Dúvidas, correções e ajustes às regras</li><li>Começa quando a plataforma entra em uso</li></ul>
+        </div>
+      </div>
+      <div class="pag anim">
+        <div class="pag-h">Implementação paga em duas fases</div>
+        <div class="pag-f"><span class="pag-p">50%</span><div><b>5.000 € <small>+ IVA</small></b><span>Na adjudicação</span></div></div>
+        <div class="pag-f"><span class="pag-p">50%</span><div><b>5.000 € <small>+ IVA</small></b><span>No início dos testes nas lojas · semana 7</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Como arrancamos -->
+  <div class="slide" data-titulo="Como arrancamos">
+    <div class="container">
+      <span class="kicker anim">Como arrancamos</span>
+      <h2 class="anim">Nove semanas, em uso nas três lojas a 22 de janeiro</h2>
+      <p class="lead anim">Contando com o arranque a 9 de novembro. Cada bloco é testado pela equipa antes do seguinte.</p>
+      <div class="crono">
+        <div class="cr-f anim"><span class="sem">Semana 1<small>9 a 13/11</small></span><b>Arranque</b><em class="cr-pag cr-pag-t">Adjudicação · 50%</em><p>Visita às lojas, acesso ao Primavera, estados das encomendas, regras de stock, e a escolha entre Primavera e Moloni.</p></div>
+        <div class="cr-f anim"><span class="sem">Semanas 2 e 3<small>16 a 27/11</small></span><b>Pedidos e clientes</b><p>Os quatro canais na mesma lista e a ficha de cliente, com o histórico do Primavera.</p></div>
+        <div class="cr-f anim"><span class="sem">Semanas 4 e 5<small>30/11 a 11/12</small></span><b>Encomendas e orçamentos</b><p>Etapas da encomenda, avisos ao cliente e orçamentos automáticos com o vosso catálogo.</p></div>
+        <div class="cr-f anim"><span class="sem">Semana 6<small>14 a 18/12</small></span><b>Stock, compras e painel</b><p>Stock por loja, encomendas a fornecedores e o painel da gerência.</p></div>
+        <div class="cr-f anim"><span class="sem">Semanas 7 e 8<small>4 a 15/01</small></span><b>Testes nas lojas</b><p>A equipa a trabalhar na plataforma com pedidos reais, nas três lojas.</p><em class="cr-pag">2.º pagamento · 50%</em></div>
+        <div class="cr-f ok anim"><span class="sem">Semana 9<small>18 a 22/01</small></span><b>Em uso diário</b><p>Últimos ajustes. Começa a avença.</p></div>
+      </div>
+      <p class="crono-nota anim">De 21/12 a 1/1 não há entregas. Feriados de 1 e 8 de dezembro já contados. Calendário a confirmar na proposta formal.</p>
+      <div class="contacto anim"><span>Diogo Gonçalves · AI Solutions</span><a href="tel:+351964581992">964 581 992</a><a href="mailto:diogo.goncalves@aisolutions.pt">diogo.goncalves@aisolutions.pt</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="gv-veu" id="gvVeu"></div>
+<aside class="gaveta" id="gaveta" aria-hidden="true" aria-label="Histórico da encomenda"><button class="gv-x" id="gvFecha" type="button" aria-label="Fechar">✕</button><div id="gvCorpo"></div></aside>
+
+<nav class="folha" aria-label="Navegação">
+  <div class="folha-ref"><span>N.º</span><b id="folhaN">01 / 15</b></div>
+  <div class="folha-des"><span>SECÇÃO</span><b id="folhaT">Capa</b></div>
+  <div class="folha-bt"><button type="button" data-prev aria-label="Anterior">‹</button><button type="button" data-next aria-label="Seguinte">›</button></div>
+</nav>
+
+<footer class="ais-foot">Epicentro × AI Solutions · protótipo de 27/10/2026 · simulações assinaladas na página</footer>
+
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/epicentro.js"></script>
+</body>
+</html>
