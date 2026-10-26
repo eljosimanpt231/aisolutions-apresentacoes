@@ -1,0 +1,428 @@
+{
+  "site": "https://www.sutafer.com/",
+  "dominio": "sutafer.com",
+  "titulo": "Sutafer",
+  "descricao": "Especialistas em soluções para indústria de moldes, estampagem e automação",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.svg",
+    "origem": "img",
+    "src": "https://www.sutafer.com/cachedassets/logotipo-sutafer-verde-com-outline-branco.svg",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no topo",
+      "à esquerda",
+      "tem o nome",
+      "transparente ou vectorial"
+    ],
+    "analise": {
+      "largura": 2012,
+      "altura": 646,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 60
+        },
+        {
+          "rgb": [
+            0,
+            96,
+            64
+          ],
+          "parte": 35
+        },
+        {
+          "rgb": [
+            64,
+            160,
+            128
+          ],
+          "parte": 1
+        },
+        {
+          "rgb": [
+            192,
+            224,
+            192
+          ],
+          "parte": 1
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://www.sutafer.com/filestore/unbrako-5034b5e6.webp",
+      "pontos": 13,
+      "motivos": [
+        "diz logo",
+        "liga à página inicial",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              96,
+              0
+            ],
+            "parte": 47
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 30
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              224
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.sutafer.com/filestore/jdt-78f40104.webp",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              128,
+              128
+            ],
+            "parte": 78
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 22
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              160
+            ],
+            "parte": 0
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.sutafer.com/filestore/destaco-f545e270.webp",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 68
+          },
+          {
+            "rgb": [
+              192,
+              32,
+              32
+            ],
+            "parte": 32
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.sutafer.com/filestore/bio-circle-8ebef218.webp",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              192,
+              96
+            ],
+            "parte": 82
+          },
+          {
+            "rgb": [
+              0,
+              160,
+              96
+            ],
+            "parte": 18
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.sutafer.com/filestore/hs-90b41ca9.webp",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              64,
+              96
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.sutafer.com/filestore/hidrostock-88c1f461.webp",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              32,
+              128
+            ],
+            "parte": 52
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              128
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              96
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              0,
+              64,
+              128
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#076c40",
+      "hsl": "154 88% 23%",
+      "peso": 237625,
+      "onde": [
+        "botões",
+        "fundos",
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "154 88% 23%",
+    "--accent-hsl": "154 95% 37%",
+    "nota": "acento = a marca mais viva (a marca só tem uma cor forte)"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "Roboto",
+    "corpo": "Roboto",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "Área reservada",
+      "Empresa ▼",
+      "Quem Somos",
+      "Contactos",
+      "Política de Privacidade",
+      "Qualidade",
+      "Condições Gerais de Venda",
+      "Princípios",
+      "PME Líder 25",
+      "Siegmund ▼",
+      "Mesas de Soldadura",
+      "Workstation",
+      "Mesas Elevatórias",
+      "Destaco ▼",
+      "Grampos Manuais Verticais",
+      "Grampos Manuais Horizontais",
+      "Grampos Manuais de Veio/Axiais",
+      "Grampos Manuais de Fecho",
+      "Grampos Manuais de Fixação",
+      "Grampos de Atuação Pneumática",
+      "Grampos Pneumáticos",
+      "Outras soluções",
+      "Bio-Circle ▼",
+      "Produtos de Limpeza",
+      "Equipamentos de Limpeza Manual",
+      "Equipamentos de Limpeza Automática",
+      "Sutasorb ▼",
+      "Absorventes Universais",
+      "Absorventes para Óleos",
+      "Outras Soluções ▼",
+      "Veios Lineares",
+      "Bronze Alumínio",
+      "Fitas/Chapas calibradas",
+      "Downloads",
+      "Produtos ▼",
+      "AUTOMAÇÃO E FIXAÇÃO",
+      "CUNHOS E CORTANTES",
+      "FABRICO DE MOLDES",
+      "SISTEMAS DE ELEVAÇÃO",
+      "Empresa ▼",
+      "Quem Somos",
+      "Contactos",
+      "Política de Privacidade",
+      "Qualidade",
+      "Condições Gerais de Venda",
+      "Princípios",
+      "PME Líder 25",
+      "Siegmund ▼",
+      "Mesas de Soldadura",
+      "Workstation",
+      "Mesas Elevatórias",
+      "Destaco ▼",
+      "Grampos Manuais Verticais",
+      "Grampos Manuais Horizontais",
+      "Grampos Manuais de Veio/Axiais",
+      "Grampos Manuais de Fecho",
+      "Grampos Manuais de Fixação",
+      "Grampos de Atuação Pneumática",
+      "Grampos Pneumáticos",
+      "Outras soluções",
+      "Bio-Circle ▼",
+      "Produtos de Limpeza",
+      "Equipamentos de Limpeza Manual",
+      "Equipamentos de Limpeza Automática",
+      "Sutasorb ▼",
+      "Absorventes Universais",
+      "Absorventes para Óleos",
+      "Outras Soluções ▼",
+      "Veios Lineares",
+      "Bronze Alumínio",
+      "Fitas/Chapas calibradas",
+      "Downloads"
+    ],
+    "titulos": [
+      "AUTOMAÇÃO E FIXAÇÃO",
+      "CUNHOS E CORTANTES",
+      "FABRICO DE MOLDES",
+      "SISTEMAS DE ELEVAÇÃO",
+      "Elementos de elevação",
+      "Mesas de soldadura de elevada precisão",
+      "Quem Somos",
+      "Empresa",
+      "Links úteis",
+      "Pesquisar",
+      "CAVILHAS",
+      "LIMITADORES",
+      "PARAFUSOS",
+      "PERNOS",
+      "VEIOS",
+      "CAVILHAS",
+      "LIMITADORES",
+      "MOLAS"
+    ],
+    "tratamento": "indefinido"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura."
+  ]
+}
