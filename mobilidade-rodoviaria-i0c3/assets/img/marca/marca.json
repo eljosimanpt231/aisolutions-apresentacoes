@@ -1,0 +1,312 @@
+{
+  "site": "https://www.mobilidaderodoviaria.com/",
+  "dominio": "mobilidaderodoviaria.com",
+  "titulo": "Mobilidade Rodoviária | Escolas de Condução",
+  "descricao": "Mobilidade Rodoviária, Grupo de Escolas de Condução, traz-te os serviços topo de gama de condução à Margem Sul",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://static.wixstatic.com/media/8ed1a7_f45d360337684065bf728f8c872c5c05~mv2.png/v1/fill/w_135,h_40,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logotipo_Grupo%20MR_Escolas%20C.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda"
+    ],
+    "analise": {
+      "largura": 135,
+      "altura": 40,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            32,
+            32,
+            32
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://static.wixstatic.com/media/8ed1a7_f45d360337684065bf728f8c872c5c05~mv2.png/v1/fill/w_225,h_67,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logotipo_Grupo%20MR_Escolas%20C.png",
+      "pontos": 12,
+      "motivos": [
+        "diz logo",
+        "liga à página inicial",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 225,
+        "altura": 67,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 3,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              224,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 2,
+      "motivos": [],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              224,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 2,
+      "motivos": [],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              224,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 2,
+      "motivos": [],
+      "analise": {
+        "largura": 150,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              224,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "ícone",
+      "src": "https://static.wixstatic.com/media/8ed1a7_f45d360337684065bf728f8c872c5c05%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/8ed1a7_f45d360337684065bf728f8c872c5c05%7Emv2.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 192,
+        "altura": 192,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://static.wixstatic.com/media/11062b_84ae29be727642b595e2287873937270~mv2.jpg/v1/fill/w_828,h_1038,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_84ae29be727642b595e2287873937270~mv2.jpg"
+  },
+  "paleta": [
+    {
+      "hex": "#2e3e58",
+      "hsl": "217 31% 26%",
+      "peso": 151320,
+      "onde": [
+        "botões"
+      ]
+    },
+    {
+      "hex": "#4aa485",
+      "hsl": "159 38% 47%",
+      "peso": 4800,
+      "onde": [
+        "fundos"
+      ]
+    },
+    {
+      "hex": "#116dff",
+      "hsl": "217 100% 53%",
+      "peso": 4000,
+      "onde": [
+        "botões"
+      ]
+    },
+    {
+      "hex": "#fd6023",
+      "hsl": "17 98% 56%",
+      "peso": 4000,
+      "onde": [
+        "botões"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "217 31% 26%",
+    "--accent-hsl": "159 38% 47%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--wst-button-color-fill-primary",
+      "rgb(var(--color_48))"
+    ],
+    [
+      "--wst-button-color-border-primary",
+      "rgb(var(--color_49))"
+    ],
+    [
+      "--wst-button-color-text-primary",
+      "rgb(var(--color_50))"
+    ],
+    [
+      "--wst-button-color-fill-primary-hover",
+      "rgb(var(--color_51))"
+    ],
+    [
+      "--wst-button-color-border-primary-hover",
+      "rgb(var(--color_52))"
+    ],
+    [
+      "--wst-button-color-text-primary-hover",
+      "rgb(var(--color_53))"
+    ],
+    [
+      "--wst-button-color-fill-primary-disabled",
+      "rgb(var(--color_54))"
+    ],
+    [
+      "--wst-button-color-border-primary-disabled",
+      "rgb(var(--color_55))"
+    ],
+    [
+      "--wst-button-color-text-primary-disabled",
+      "rgb(var(--color_56))"
+    ],
+    [
+      "--wst-button-color-fill-secondary",
+      "rgb(var(--color_57))"
+    ],
+    [
+      "--wst-button-color-border-secondary",
+      "rgb(var(--color_58))"
+    ],
+    [
+      "--wst-button-color-text-secondary",
+      "rgb(var(--color_59))"
+    ]
+  ],
+  "fontes": {
+    "titulos": "syne",
+    "corpo": "syne",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "PRÉ-INSCRIÇÃO",
+      "Home",
+      "Pré-Inscrição",
+      "Sobre",
+      "Serviços",
+      "Escolas",
+      "FAQ",
+      "Contacto"
+    ],
+    "titulos": [
+      "Juntos, Somos o Teu Bilhete Para a Estrada",
+      "Sobre Nós",
+      "Os Nossos Serviços",
+      "Cartas de Condução",
+      "Renovação e Troca de Carta na Hora",
+      "Aulas de Treino",
+      "Formações",
+      "O Que Dizem os Nossos Alunos",
+      "Porque escolher-nos?",
+      "Pronto para enfrentar a estrada?"
+    ],
+    "tratamento": "tu"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático.",
+    "Logótipo pequeno (135px de largura): no hero fica esborratado acima de 68px CSS em ecrãs retina."
+  ]
+}
