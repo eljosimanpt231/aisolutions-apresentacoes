@@ -89,7 +89,7 @@
       <h2 class="anim">Seis frases que explicam o problema</h2>
       <p class="lead anim">Ditas pelo João Paulo na reunião. Cada uma tem uma vista na plataforma que vão ver a seguir.</p>
       <div class="dores">
-        <div class="dor anim"><span class="dor-n">01</span><q>Uma trabalheira desgraçada a arquivar e-mails.</q><p>Office 365 com caixas partilhadas. Os emails são classificados à mão por cores (propostas, encomendas, armazém, contabilidade) e a Andreia confere. Trata-se por ordem de chegada.</p><button class="dor-ir" data-ir="1">Caixa de entrada →</button></div>
+        <div class="dor anim"><span class="dor-n">01</span><q>Uma trabalheira desgraçada a arquivar e-mails.</q><p>Office 365 com caixas partilhadas. Os emails são classificados à mão por cores (propostas, encomendas, armazém, contabilidade) e a Andreia confere. Trata-se por ordem de chegada.</p><button class="dor-ir" data-ir="0">Caixa de entrada →</button></div>
         <div class="dor anim"><span class="dor-n">02</span><q>Nunca sabemos em que ponto está, como foi tratada, por quem, em que tempo.</q><p>Não há tempos definidos para tratar cada assunto, nem aviso quando ninguém pegou nele. A certificação pede esse registo.</p><button class="dor-ir" data-ir="2">Ticket do pedido →</button></div>
         <div class="dor anim"><span class="dor-n">03</span><q>É muito importante saber a quem é que devo propor e a quem não devo.</q><p>Há quem peça pela décima vez e nunca adjudique, e a equipa só se lembra se tiver memória. Os clientes já têm classe no PHC, mas o email não sabe disso.</p><button class="dor-ir" data-ir="5">Semáforo →</button></div>
         <div class="dor anim"><span class="dor-n">04</span><q>Falta aquilo que não está nessa base de dados, que é sempre mais.</q><p>O Organi casa em 30 segundos as referências que conhece (HASCO e concorrentes). O resto é manual. E há pedidos sem referência nenhuma: "preciso de mesas de soldadura".</p><button class="dor-ir" data-ir="3">Referências →</button></div>
@@ -140,8 +140,8 @@
     <div class="app-name"><img class="cla" src="assets/img/sutafer-logo.svg" alt=""></div>
     <div class="app-sub">Pedidos e propostas · Office 365 + PHC</div>
     <div class="grp">Visão geral</div>
-    <a class="nv" data-v="0"><i>◧</i>Painel<span class="badge-n">63</span></a>
-    <a class="nv" data-v="1"><i>✉</i>Caixa de entrada<span class="badge-n">12</span></a>
+    <a class="nv" data-v="0"><i>✉</i>Caixa de entrada<span class="badge-n">12</span></a>
+    <a class="nv" data-v="1"><i>◧</i>Painel<span class="badge-n">63</span></a>
     <div class="grp">Pedido em curso</div>
     <div class="pedido-card"><b>Molde 6602 · extractores</b><span>Cliente T.CL. A · 22/10 às 07:52</span></div>
     <a class="nv" data-v="2"><i>1</i>Ticket do pedido</a>
@@ -162,7 +162,19 @@
       <div class="user"><span class="av">AS</span><div><b>Andreia Silva</b><small>Compras & Unidade de Vendas</small></div></div>
     </div>
 
-    <!-- 0. Painel -->
+    <!-- 0. Caixa de entrada -->
+    <div class="slide" id="s-caixa" data-titulo="Caixa de entrada">
+      <div class="view-h"><div><span class="k">TRIAGEM AUTOMÁTICA · OFFICE 365</span><h2>Cada email lido, com a cor certa, ticket aberto e resposta ao cliente</h2><p>Nas vossas caixas partilhadas e com as vossas cores. Nada é apagado, só arrumado. Uma quinta-feira de manhã, a de 22/10, ao vivo:</p></div><span class="estado" id="cxEstado">Pronto a simular</span></div>
+      <div class="ol">
+        <div class="ol-bar"><span class="dots"><i></i><i></i><i></i></span><b>Outlook</b><span class="ol-cx">comercial@ · compras@ · Sutafer</span><button class="btn btn-primary" type="button" id="cxPlay">▶ Simular a manhã de 22/10</button><button class="btn btn-ghost" type="button" id="cxReset">Repor</button></div>
+        <div class="ol-fold" id="cxPastas"></div>
+        <div class="ol-list" id="cxLista"><div class="ol-empty">Caixa vazia desde quarta às 19:00.<br>Carregue em <b>Simular</b> para ver a manhã de quinta-feira.</div></div>
+        <div class="ol-det" id="cxDet"><div class="ol-empty">Clique num email para ver porque ficou com aquela cor e o que aconteceu a seguir.</div></div>
+      </div>
+      <p class="ol-nota">Cada decisão fica registada e corrige-se com um clique; a correção passa a regra. Quando o agente não tem a certeza, o email fica "Por classificar" e espera por uma pessoa. A Andreia deixa de conferir tudo e passa a conferir só isso. Remetentes anonimizados.</p>
+    </div>
+
+    <!-- 1. Painel -->
     <div class="slide" id="s-painel" data-titulo="Painel">
       <div class="view-h"><div><span class="k">PAINEL · TODOS OS PEDIDOS</span><h2>Onde está cada pedido, quem o tem e há quanto tempo</h2><p>Cada pedido é um ticket com a cor do cliente, o comercial, o prazo e tudo o que tem dentro. Filtre por cor ou por vendedor. No browser ou no telemóvel.</p></div><span class="estado info">Atualizado às 10:42</span></div>
       <div class="sim">Simulação com clientes anonimizados. Os tickets das propostas 71609, 71599 e 71246 são os dos vossos documentos.</div>
@@ -185,18 +197,6 @@
         <span class="crm-n" id="crmN"></span>
       </div>
       <div class="pipe" id="pipe"></div>
-    </div>
-
-    <!-- 1. Caixa de entrada -->
-    <div class="slide" id="s-caixa" data-titulo="Caixa de entrada">
-      <div class="view-h"><div><span class="k">TRIAGEM AUTOMÁTICA · OFFICE 365</span><h2>Cada email lido, com a cor certa, ticket aberto e resposta ao cliente</h2><p>Nas vossas caixas partilhadas e com as vossas cores. Nada é apagado, só arrumado. Uma quinta-feira de manhã, a de 22/10, ao vivo:</p></div><span class="estado" id="cxEstado">Pronto a simular</span></div>
-      <div class="ol">
-        <div class="ol-bar"><span class="dots"><i></i><i></i><i></i></span><b>Outlook</b><span class="ol-cx">comercial@ · compras@ · Sutafer</span><button class="btn btn-primary" type="button" id="cxPlay">▶ Simular a manhã de 22/10</button><button class="btn btn-ghost" type="button" id="cxReset">Repor</button></div>
-        <div class="ol-fold" id="cxPastas"></div>
-        <div class="ol-list" id="cxLista"><div class="ol-empty">Caixa vazia desde quarta às 19:00.<br>Carregue em <b>Simular</b> para ver a manhã de quinta-feira.</div></div>
-        <div class="ol-det" id="cxDet"><div class="ol-empty">Clique num email para ver porque ficou com aquela cor e o que aconteceu a seguir.</div></div>
-      </div>
-      <p class="ol-nota">Cada decisão fica registada e corrige-se com um clique; a correção passa a regra. Quando o agente não tem a certeza, o email fica "Por classificar" e espera por uma pessoa. A Andreia deixa de conferir tudo e passa a conferir só isso. Remetentes anonimizados.</p>
     </div>
 
     <!-- 2. Ticket -->
@@ -568,12 +568,12 @@
       <h2 class="anim">Uma plataforma própria da Sutafer, ligada ao PHC</h2>
       <p class="lead anim">Os cinco blocos do email de 15/10. Não é um software da AI Solutions que a Sutafer passa a usar: é software feito à medida da Sutafer, à volta do PHC que já têm.</p>
       <div class="ambito">
-        <div class="amb anim"><span class="amb-n">1</span><h3>Triagem automática dos emails</h3><p>Lê as caixas partilhadas do Office 365, aplica as vossas cores por departamento, responde ao cliente com o número do ticket e arquiva tudo no sítio certo. Prazos por tipo de assunto, e aviso quando ninguém pegou.</p><button class="amb-ir" data-ir="1">Caixa de entrada · Ticket</button></div>
+        <div class="amb anim"><span class="amb-n">1</span><h3>Triagem automática dos emails</h3><p>Lê as caixas partilhadas do Office 365, aplica as vossas cores por departamento, responde ao cliente com o número do ticket e arquiva tudo no sítio certo. Prazos por tipo de assunto, e aviso quando ninguém pegou.</p><button class="amb-ir" data-ir="0">Caixa de entrada · Ticket</button></div>
         <div class="amb anim"><span class="amb-n">2</span><h3>Semáforo de clientes</h3><p>Verde, amarelo e vermelho a partir do histórico do PHC (classe, pagamentos, volume) e do que passa a medir-se: pedidos, adjudicações e resposta ao seguimento. Define a ordem da fila.</p><button class="amb-ir" data-ir="5">Semáforo · Painel</button></div>
         <div class="amb anim"><span class="amb-n">3</span><h3>Cruzamento de referências e rascunho</h3><p>Referências de outras marcas passadas para as vossas, com a tabela do Organi e o PHC. Rascunho da proposta com as condições do cliente, pronto a validar. Perguntas automáticas quando o pedido é vago.</p><button class="amb-ir" data-ir="3">Referências · Pedido sem referências</button></div>
         <div class="amb anim"><span class="amb-n">4</span><h3>Seguimento das propostas</h3><p>Alertas antes da validade, seguimento automático, motivo da decisão do cliente com um clique e o negócio inteiro num ticket: proposta, encomenda, fatura, guia.</p><button class="amb-ir" data-ir="6">Seguimento</button></div>
         <div class="amb anim"><span class="amb-n">5</span><h3>Assistente no WhatsApp para os comerciais</h3><p>Relatórios de visita por áudio, gravados no PHC e com a ação seguinte já criada. Histórico do cliente a pedido. Resumo diário dos seguimentos.</p><button class="amb-ir" data-ir="7">Assistente WhatsApp</button></div>
-        <div class="amb amb-f anim"><h3>Painel para a gestão</h3><p>Pedidos por etapa, por cor e por vendedor; tempo de resposta, que hoje não se consegue medir; propostas a vencer.</p><button class="amb-ir" data-ir="0">Painel</button></div>
+        <div class="amb amb-f anim"><h3>Painel para a gestão</h3><p>Pedidos por etapa, por cor e por vendedor; tempo de resposta, que hoje não se consegue medir; propostas a vencer.</p><button class="amb-ir" data-ir="1">Painel</button></div>
       </div>
     </div>
   </div>
