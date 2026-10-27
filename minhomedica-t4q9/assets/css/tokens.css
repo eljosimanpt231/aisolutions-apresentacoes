@@ -1,0 +1,142 @@
+/* Minhomédica: azul do logótipo (#204080, 220 60% 31%) como marca, o azul
+   claro do "V" do logótipo como acento, e o preto da faixa do topo da loja
+   online como "grafite". Setor de saúde: claro, limpo, sem ruído (o José
+   disse-o da aplicação: tudo o que está a mais faz o cliente perder-se).
+   Tema claro por defeito; escuro com o botão no topo (data-theme). */
+:root {
+  --brand-hsl: 220 60% 31%;
+  --accent-hsl: 203 78% 46%;
+  --brand2-hsl: 212 70% 40%;
+  --graf-hsl: 222 30% 11%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --graf: hsl(var(--graf-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(220 60% 33%);
+  --acento-texto: hsl(214 64% 36%);
+  --ok-texto: hsl(152 66% 25%);
+
+  --bg: hsl(214 30% 97%);
+  --bg-soft: hsl(214 24% 94%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(214 30% 97.5%);
+  --border: hsl(214 20% 87%);
+  --line: hsl(var(--brand-hsl) / 0.045);
+  --veil: hsl(214 30% 97% / 0.88);
+
+  --text: hsl(222 32% 12%);
+  --muted: hsl(220 12% 34%);
+  --faint: hsl(220 9% 39%);
+
+  --paper: hsl(0 0% 100%);
+  --paper-text: hsl(222 32% 12%);
+  --paper-muted: hsl(220 9% 37%);
+  --paper-line: hsl(214 16% 85%);
+  --erp-head: hsl(220 52% 30%);
+
+  --success-hsl: 152 62% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 70% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 32 94% 35%;  --warning: hsl(var(--warning-hsl));
+  --verde-hsl: 152 58% 38%;   --verde: hsl(var(--verde-hsl));
+  --amarelo-hsl: 42 96% 47%;  --amarelo: hsl(var(--amarelo-hsl));
+  --vermelho-hsl: 356 74% 50%; --vermelho: hsl(var(--vermelho-hsl));
+  --azul-hsl: 203 78% 44%;    --azul: hsl(var(--azul-hsl));
+  --roxo-hsl: 268 48% 50%;    --roxo: hsl(var(--roxo-hsl));
+  --cinza-hsl: 220 8% 56%;    --cinza: hsl(var(--cinza-hsl));
+
+  --grad-text: linear-gradient(100deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)) 90%);
+  --grad-cta: linear-gradient(160deg, hsl(var(--graf-hsl)), hsl(var(--brand-hsl) / 0.6));
+  --hatch: repeating-linear-gradient(135deg, hsl(var(--brand-hsl) / 0.08) 0 2px, transparent 2px 9px);
+  --hatch-forte: repeating-linear-gradient(135deg, hsl(0 0% 100% / 0.12) 0 2px, transparent 2px 9px);
+
+  --shadow-sm: 0 1px 2px hsl(var(--graf-hsl) / 0.08);
+  --shadow-md: 0 8px 24px hsl(var(--brand-hsl) / 0.09);
+  --shadow-lg: 0 22px 54px hsl(var(--brand-hsl) / 0.16);
+  --shadow-glow: 0 0 36px hsl(var(--accent-hsl) / 0.25);
+
+  --radius: 10px;
+  --radius-lg: 14px;
+  --font-display: 'Lexend', 'Lato', system-ui, sans-serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --container: 1200px;
+  --section-pad: clamp(64px, 9vw, 120px);
+
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-hsl: 214 72% 64%;
+    --accent-hsl: 200 82% 62%;
+    --brand-solido: hsl(220 58% 40%);
+    --acento-texto: hsl(208 82% 74%);
+    --ok-texto: hsl(152 56% 60%);
+    --bg: hsl(222 30% 7%);
+    --bg-soft: hsl(222 26% 10%);
+    --surface: hsl(222 24% 11%);
+    --surface-2: hsl(222 22% 13.5%);
+    --border: hsl(220 16% 21%);
+    --line: hsl(var(--brand-hsl) / 0.05);
+    --veil: hsl(222 30% 7% / 0.88);
+    --text: hsl(214 30% 94%);
+    --muted: hsl(214 12% 72%);
+    --faint: hsl(214 10% 62%);
+    --paper: hsl(222 22% 13%);
+    --paper-text: hsl(214 30% 94%);
+    --paper-muted: hsl(214 12% 70%);
+    --paper-line: hsl(220 16% 23%);
+    --erp-head: hsl(220 50% 30%);
+    --success-hsl: 152 52% 50%;
+    --danger-hsl: 356 80% 66%;
+    --warning-hsl: 38 92% 58%;
+    --verde-hsl: 152 52% 46%;
+    --amarelo-hsl: 44 96% 56%;
+    --vermelho-hsl: 356 80% 62%;
+    --azul-hsl: 203 82% 64%;
+    --roxo-hsl: 268 70% 74%;
+    --cinza-hsl: 220 8% 62%;
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.5);
+    --shadow-md: 0 10px 30px hsl(0 0% 0% / 0.5);
+    --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.6);
+  }
+}
+:root[data-theme="dark"] {
+  --brand-hsl: 214 72% 64%;
+  --accent-hsl: 200 82% 62%;
+  --brand-solido: hsl(220 58% 40%);
+  --acento-texto: hsl(208 82% 74%);
+  --ok-texto: hsl(152 56% 60%);
+  --bg: hsl(222 30% 7%);
+  --bg-soft: hsl(222 26% 10%);
+  --surface: hsl(222 24% 11%);
+  --surface-2: hsl(222 22% 13.5%);
+  --border: hsl(220 16% 21%);
+  --line: hsl(var(--brand-hsl) / 0.05);
+  --veil: hsl(222 30% 7% / 0.88);
+  --text: hsl(214 30% 94%);
+  --muted: hsl(214 12% 72%);
+  --faint: hsl(214 10% 62%);
+  --paper: hsl(222 22% 13%);
+  --paper-text: hsl(214 30% 94%);
+  --paper-muted: hsl(214 12% 70%);
+  --paper-line: hsl(220 16% 23%);
+  --erp-head: hsl(220 50% 30%);
+  --success-hsl: 152 52% 50%;
+  --danger-hsl: 356 80% 66%;
+  --warning-hsl: 38 92% 58%;
+  --verde-hsl: 152 52% 46%;
+  --amarelo-hsl: 44 96% 56%;
+  --vermelho-hsl: 356 80% 62%;
+  --azul-hsl: 203 82% 64%;
+  --roxo-hsl: 268 70% 74%;
+  --cinza-hsl: 220 8% 62%;
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.5);
+  --shadow-md: 0 10px 30px hsl(0 0% 0% / 0.5);
+  --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.6);
+}

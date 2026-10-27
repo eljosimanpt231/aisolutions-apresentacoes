@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Minhomédica | Orçamentos e email</title>
+  <meta name="description" content="Proposta AI Solutions para a Minhomédica: agentes ligados ao email e ao Eticadata que deixam os orçamentos em rascunho, pedem ao cliente o que falta e arrumam a caixa de entrada.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Minhomédica × AI Solutions | Orçamentos e email">
+  <meta property="og:description" content="100 pedidos por semana. O orçamento em rascunho, para vocês só aprovarem.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/minhomedica-t4q9/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () { try { var t = localStorage.getItem('minhomedica-tema'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/minhomedica.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div class="faixa-topo"><span>Equipamento médico e hospitalar · entregas em 48h úteis (Portugal Continental)</span><span class="faixa-r">Minhomédica × AI Solutions</span></div>
+<header class="topbar">
+  <div class="brand">
+    <img class="logo cla" src="assets/img/minhomedica-logo.jpg" alt="Minhomédica">
+    <span class="sep"></span>
+    <div class="brand-t"><b>Orçamentos e email</b><small>Agentes Minhomédica · protótipo</small></div>
+  </div>
+  <nav class="tabs" aria-label="Partes da apresentação">
+    <button class="tab active" data-tab="contexto">Contexto</button>
+    <button class="tab" data-tab="demo">Demonstração</button>
+    <button class="tab" data-tab="proposta">Proposta</button>
+  </nav>
+  <div class="top-r"><button class="tema" id="tema" type="button" aria-label="Mudar entre tema claro e escuro">☾</button></div>
+</header>
+<div class="progress"><i></i></div>
+
+<main class="deck" id="deck">
+
+<!-- =================================================================== -->
+<!-- CONTEXTO                                                             -->
+<!-- =================================================================== -->
+<section class="tab-panel active" id="contexto">
+
+  <!-- 1. Capa -->
+  <div class="slide capa active" data-titulo="Capa">
+    <div class="container capa-grid">
+      <div class="capa-txt">
+        <span class="kicker anim">Minhomédica × AI Solutions · 28 de outubro de 2026</span>
+        <h1 class="anim">100 pedidos por semana.<br><span class="grad">O orçamento já em rascunho, para só aprovarem.</span></h1>
+        <p class="lead anim">
+          Agentes de inteligência artificial ligados ao vosso email e ao Eticadata. Leem cada pedido, reconhecem os produtos,
+          veem o stock e o desconto do cliente e deixam o orçamento pronto a validar. Pedem ao cliente o que falta antes de
+          o pedido vos chegar às mãos, e arrumam o resto da caixa.
+        </p>
+        <div class="stats anim">
+          <div class="stat"><div class="n"><span class="count" data-to="100">100</span></div><p>Pedidos por semana, entre orçamentos e encomendas, quase todos por email.</p></div>
+          <div class="stat"><div class="n">2</div><p>Pessoas com grande parte do dia nisto. Uma delas é sócia da empresa.</p></div>
+          <div class="stat"><div class="n n-s">300 <small>a</small> 350 €</div><p>O orçamento mais comum. Vão dos 50 aos 4.000 €, com várias linhas.</p></div>
+        </div>
+        <div class="meta anim"><span>Para <b>José Teófilo · Domingos Correia</b></span><span>Seguimento da reunião de <b>16/10/2026</b></span></div>
+      </div>
+      <div class="caminho anim" aria-label="O caminho de um pedido de orçamento hoje">
+        <div class="funil-cap"><span>UM PEDIDO, HOJE · COMO FOI DESCRITO</span><b>à mão</b></div>
+        <ol class="cam">
+          <li><i>1</i><div><b>Chega o email</b><span>Lido um a um, por ordem de chegada</span></div></li>
+          <li><i>2</i><div><b>Eticadata</b><span>Que artigo é, se há stock, que desconto tem o cliente</span></div></li>
+          <li><i>3</i><div><b>Falta informação?</b><span>Email ao cliente, esperar, perguntar outra vez</span></div></li>
+          <li><i>4</i><div><b>Fornecedor, se for preciso</b><span>"Na área médica, hoje têm, amanhã não têm"</span></div></li>
+          <li><i>5</i><div><b>Rascunho</b><span>A colega prepara, o José revê e corrige</span></div></li>
+          <li class="lista"><i>!</i><div><b>Os complicados ficam numa lista</b><span>E as respostas acabam por atrasar</span></div></li>
+        </ol>
+        <p class="funil-nota">"Onde a maior parte dos nossos recursos são gastos é precisamente na orçamentação." <span>José Teófilo, 16/10</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. O que ouvimos -->
+  <div class="slide" data-titulo="O que ouvimos">
+    <div class="container">
+      <span class="kicker anim">O que ouvimos a 16/10</span>
+      <h2 class="anim">Seis frases que explicam o problema</h2>
+      <p class="lead anim">Ditas pelo José na reunião. Cada uma tem um ecrã na demonstração que vão ver a seguir.</p>
+      <div class="dores">
+        <div class="dor anim"><span class="dor-n">01</span><q>Pegamos nesses emails um a um, vamos ao ERP elaborar o orçamento.</q><p>Ver se os produtos existem, se há stock, ajustar o que não houver. Os rápidos fazem-se logo; os outros vão para uma lista.</p><button class="dor-ir" data-ir="2">Orçamento em rascunho →</button></div>
+        <div class="dor anim"><span class="dor-n">02</span><q>Vou andando a fazer perguntas até ter os dados para pedir o orçamento.</q><p>Os motores LINAK: sem as fotografias do motor, da etiqueta, do comando frente e verso e dos encaixes, o fabricante não orçamenta.</p><button class="dor-ir" data-ir="3">Pedido incompleto →</button></div>
+        <div class="dor anim"><span class="dor-n">03</span><q>Desde que cheguem à fase de rascunho, a gente depois trata deles.</q><p>A colega faz o rascunho, o José analisa e corrige uma coisa ou outra. A maior parte já está feita.</p><button class="dor-ir" data-ir="1">Para aprovar →</button></div>
+        <div class="dor anim"><span class="dor-n">04</span><q>Utilizar os agentes para distribuir os mails aqui internamente.</q><p>Contabilidade, financeiro, vendas: emails que só precisam de seguir para o sítio certo e ficar arquivados. Sem irem parar ao sítio errado.</p><button class="dor-ir" data-ir="0">Caixa de entrada →</button></div>
+        <div class="dor anim"><span class="dor-n">05</span><q>Tentamos que eles passem para um portal, onde muitos deles não vão querer.</q><p>Há clientes que nunca vão sair do email. As farmácias, por exemplo, dão muito trabalho à vossa comercial.</p><button class="dor-ir" data-ir="4">Escolha no portal →</button></div>
+        <div class="dor anim"><span class="dor-n">06</span><q>Tudo o que tiver a mais nas plataformas é para o cliente se perder.</q><p>A aplicação funciona, mas tem menus que não interessam e não liga ao Outlook. Hoje só um cliente a usa.</p><button class="dor-ir" data-irp="proposta:2">Fase seguinte →</button></div>
+      </div>
+      <p class="fecho-it anim">O problema não é falta de pedidos. É o tempo de quem gere a empresa a ler cada um.</p>
+    </div>
+  </div>
+
+  <!-- 3. Hoje vs com os agentes -->
+  <div class="slide" data-titulo="Hoje e com os agentes">
+    <div class="container">
+      <span class="kicker anim">O mesmo pedido, de duas maneiras</span>
+      <h2 class="anim">O trabalho repetitivo passa para os agentes. A decisão fica convosco.</h2>
+      <div class="contraste">
+        <div class="ct hoje anim">
+          <div class="ct-h"><span>Hoje</span><b>Tudo passa pela caixa do José</b></div>
+          <ul>
+            <li>Cada email é lido à mão, um a um, quando há tempo</li>
+            <li>Artigo, stock e desconto procurados no Eticadata, linha a linha</li>
+            <li>A informação em falta pede-se email a email, e espera-se</li>
+            <li>Os emails da contabilidade, do financeiro e das vendas encaminham-se à mão</li>
+            <li>Os pedidos complicados ficam numa lista e a resposta atrasa</li>
+          </ul>
+        </div>
+        <div class="ct com anim">
+          <div class="ct-h"><span>Com os agentes</span><b>Chega-vos o rascunho, não o email</b></div>
+          <ul>
+            <li>Cada email é lido quando chega, também ao sábado e às 3 da manhã</li>
+            <li>O orçamento fica em rascunho no Eticadata, com stock e desconto do cliente</li>
+            <li>O que falta é pedido ao cliente antes de o pedido vos chegar às mãos</li>
+            <li>O resto da caixa segue para o departamento certo e fica arquivado</li>
+            <li>Na caixa do José fica só o que precisa mesmo de uma ação dele</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fecho-it anim">Os agentes fazem o trabalho repetitivo. Vocês validam, corrigem e enviam.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- DEMONSTRAÇÃO                                                         -->
+<!-- =================================================================== -->
+<section class="tab-panel" id="demo">
+ <div class="app">
+  <aside class="side">
+    <div class="app-name"><img src="assets/img/minhomedica-logo.jpg" alt=""></div>
+    <div class="app-sub">Agentes · Outlook + Eticadata</div>
+    <div class="grp">Caixa de email</div>
+    <a class="nv" data-v="0"><i>✉</i>Caixa de entrada<span class="badge-n">13</span></a>
+    <div class="grp">Orçamentos</div>
+    <a class="nv" data-v="1"><i>✓</i>Para aprovar<span class="badge-n" id="badgeAprovar">4</span></a>
+    <a class="nv" data-v="2"><i>1</i>Orçamento em rascunho</a>
+    <div class="grp">Quando falta informação</div>
+    <a class="nv" data-v="3"><i>2</i>Pedido incompleto</a>
+    <a class="nv" data-v="4"><i>3</i>Escolha no portal</a>
+  </aside>
+  <div class="main">
+    <div class="app-head">
+      <div class="crumbs">Agentes › <b id="crumb">Caixa de entrada</b></div>
+      <div class="search">⌕ Procurar cliente, artigo, orçamento</div>
+      <div class="user"><span class="av">JT</span><div><b>José Teófilo</b><small>Sócio-gerente</small></div></div>
+    </div>
+
+    <!-- 0. Caixa de entrada -->
+    <div class="slide" id="s-caixa" data-titulo="Caixa de entrada">
+      <div class="view-h"><div><span class="k">TRIAGEM DA CAIXA · OUTLOOK</span><h2>Cada email lido, encaminhado e arquivado. Na caixa do José, só o que é dele.</h2><p>O que chegou entre sexta às 19:00 e segunda às 9:20. Os pedidos de orçamento vão para os agentes; o resto segue para a contabilidade, o financeiro ou as vendas e fica arquivado. Nada é apagado.</p></div><span class="estado" id="cxEstado">Pronto a simular</span></div>
+      <div class="ol">
+        <div class="ol-bar"><span class="dots"><i></i><i></i><i></i></span><b>Outlook</b><span class="ol-cx">Caixa do José Teófilo · Minhomédica</span><span class="cx-conta" aria-live="polite">Na caixa do José: <b id="cxJose">0</b></span><button class="btn btn-primary" type="button" id="cxPlay">▶ Simular o fim de semana</button><button class="btn btn-ghost" type="button" id="cxReset">Repor</button></div>
+        <div class="ol-fold" id="cxPastas"></div>
+        <div class="ol-list" id="cxLista"><div class="ol-empty">Sexta-feira, 19:00. A caixa está arrumada.<br>Carregue em <b>Simular</b> para ver o que chega até segunda de manhã.</div></div>
+        <div class="ol-det" id="cxDet"><div class="ol-empty">Clique num email para ver para onde foi, porquê, e o que aconteceu a seguir.</div></div>
+      </div>
+      <p class="ol-nota">As regras de encaminhamento são as vossas (quem recebe o quê) e corrigem-se com um clique; a correção passa a regra. Quando o agente não tem a certeza, o email fica na caixa do José e não sai resposta nenhuma. Remetentes anonimizados.</p>
+    </div>
+
+    <!-- 1. Para aprovar -->
+    <div class="slide" id="s-aprovar" data-titulo="Para aprovar">
+      <div class="view-h"><div><span class="k">ORÇAMENTOS · PARA APROVAR</span><h2>Segunda de manhã, o trabalho do fim de semana já está em rascunho</h2><p>O que antes era uma caixa cheia passa a ser uma lista de rascunhos. O José ou a colega abrem, corrigem uma coisa ou outra, e aprovam. Nada sai para o cliente sem esse clique.</p></div><span class="estado info">Segunda-feira, 26/10 · 09:25</span></div>
+      <div class="sim">Simulação com clientes anonimizados. Os artigos e os preços de referência são os da vossa loja online.</div>
+      <div class="kpis kpis-4" id="kpis"></div>
+      <div class="tbl-wrap">
+        <table class="tbl aprov" id="tAprov">
+          <thead><tr><th>Chegou</th><th>Cliente</th><th>Pedido</th><th>Estado</th><th class="num">Valor</th><th></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="ol-nota">Os valores são sem IVA, com o desconto de cada cliente. Os rascunhos ficam no Eticadata como qualquer outro orçamento: quem quiser trabalhar lá continua a poder.</p>
+    </div>
+
+    <!-- 2. Orçamento em rascunho -->
+    <div class="slide" id="s-orc" data-titulo="Orçamento em rascunho">
+      <div class="view-h"><div><span class="k">PEDIDO DE ORÇAMENTO · LAR DE IDOSOS, BRAGA</span><h2>Do email ao orçamento no Eticadata, como o pedido foi escrito</h2><p>O cliente escreveu como escreve sempre: sem códigos, com "prontosan grande" e "500 compressas". O agente reconhece os vossos artigos, vê o stock e o desconto do cliente e monta o rascunho.</p></div><span class="chip v"><i></i>Cliente habitual · desconto 5%</span></div>
+      <div class="refs">
+        <div>
+          <div class="email">
+            <div class="email-top"><span>Recebido · segunda, 26/10 às 07:58</span><span class="st">Orçamentos</span></div>
+            <div class="email-f"><span>De: <b>Lar de idosos, Braga (contacto ocultado)</b></span><span>Assunto: <b>Orçamento material</b></span></div>
+            <div class="email-b">
+              <p>Bom dia,</p>
+              <p>Precisávamos de orçamento para:<br>
+              luvas nitrilo azuis tamanho M, 10 caixas<br>
+              500 compressas esterilizadas 10x10<br>
+              6 frascos de prontosan grande<br>
+              askina silnet 7,5 x 10, 2 caixas<br>
+              fraldas abena slip M3, 4 pacotes</p>
+              <p>Obrigada</p>
+            </div>
+          </div>
+          <div class="xref-go"><button class="btn btn-primary" type="button" id="orcPlay">▶ Preparar o orçamento</button><span id="orcSt" class="mut">5 linhas por reconhecer</span></div>
+          <div class="xlog" id="xlogOrc" hidden><div class="xbar"><i></i></div><ol></ol></div>
+        </div>
+        <div class="erp" id="erpDoc" aria-label="Rascunho do orçamento">
+          <div class="erp-top">
+            <img class="cla" src="assets/img/minhomedica-logo.jpg" alt="Minhomédica">
+            <div class="erp-n"><span>Orçamento</span><b id="erpN">rascunho</b><small>Data: 26.10.2026</small></div>
+          </div>
+          <div class="erp-cab">
+            <div><span>Cliente</span><b>Lar de idosos, Braga</b></div><div><span>V/Pedido</span><b>email de 26/10</b></div>
+            <div><span>Desconto cliente</span><b>5%</b></div><div><span>Estado</span><b>Rascunho</b></div><div><span>Vendedor</span><b>J. Teófilo</b></div>
+          </div>
+          <table class="erp-l">
+            <thead><tr><th>Artigo</th><th class="num">Qtd.</th><th class="num">Preço</th><th class="num">Desc.</th><th class="num">Total</th><th>Disponibilidade</th></tr></thead>
+            <tbody id="erpLinhas"><tr class="vazio"><td colspan="6">As linhas aparecem à medida que os artigos são reconhecidos.</td></tr></tbody>
+          </table>
+          <div class="erp-tot">
+            <div><span>Total ilíquido</span><b id="tIl">0,00</b></div>
+            <div><span>Desconto do cliente</span><b id="tDc">0,00</b></div>
+            <div class="g"><span>Total (sem IVA)</span><b id="tLq">0,00 €</b></div>
+          </div>
+          <div class="erp-rod"><span>Entrega em <b>48h úteis</b> do que há em stock; o resto com o prazo do fornecedor.</span><span>Rascunho criado pelo agente. Não enviado.</span></div>
+          <div class="erp-acao" id="erpAcao" hidden>
+            <span class="igual">✓ Pronto a validar. Pode alterar quantidades, preços ou artigos antes de enviar.</span>
+            <button class="btn btn-primary" type="button" id="erpValidar">Aprovar e enviar ao cliente</button>
+          </div>
+        </div>
+      </div>
+      <p class="ol-nota">Valores ilustrativos: artigos e preços de referência da vossa loja online, stock simulado. O agente usa os preços, o stock e o desconto de cada cliente que estão no Eticadata.</p>
+    </div>
+
+    <!-- 3. Pedido incompleto (LINAK) -->
+    <div class="slide" id="s-linak" data-titulo="Pedido incompleto">
+      <div class="view-h"><div><span class="k">QUANDO FALTA INFORMAÇÃO · MOTOR LINAK</span><h2>As fotografias que o fabricante pede, pedidas pelo agente ao sábado</h2><p>O exemplo que o José deu na reunião. O agente conhece a regra (sem as fotografias, não há orçamento), pede-as logo, confere o que chega e volta a pedir só o que falta. Quando chega à vossa mão, o pedido está completo.</p></div><span class="estado ok" id="linakEstado">Fotografias: 0 de 5</span></div>
+      <div class="passos" id="linakPassos" role="group" aria-label="Passos do pedido">
+        <button class="on" data-p="1" type="button"><i>1</i>O pedido</button>
+        <button data-p="2" type="button"><i>2</i>O agente pede as fotografias</button>
+        <button data-p="3" type="button"><i>3</i>Faltavam duas</button>
+        <button data-p="4" type="button"><i>4</i>Pronto para o José</button>
+      </div>
+
+      <div class="vago-p on" data-p="1">
+        <div class="email">
+          <div class="email-top"><span>Recebido · sábado, 24/10 às 10:12</span><span class="st">Orçamentos</span></div>
+          <div class="email-f"><span>De: <b>Unidade de cuidados continuados, Barcelos (contacto ocultado)</b></span><span>Assunto: <b>Motor da cama do quarto 12</b></span></div>
+          <div class="email-b"><p>bom dia</p><p>a cama do quarto 12 deixou de subir, acho que é o motor. é linak. podem mandar orçamento?</p><p>obrigado</p></div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><b>O que o agente leu</b><span>sábado, 10:13</span></div>
+          <ul class="porque">
+            <li>Pedido de orçamento para um <b>motor LINAK</b> de uma cama elétrica</li>
+            <li>Regra da Minhomédica para LINAK: o fabricante só orçamenta com <b>as fotografias do motor, da etiqueta, do comando (frente e verso) e dos encaixes</b></li>
+            <li>O email não traz nenhuma fotografia</li>
+            <li>Não há nada para orçamentar ainda: <b>pedir já</b>, sem esperar por segunda-feira</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vago-p" data-p="2">
+        <div class="email">
+          <div class="email-top"><span>Enviado pelo agente · sábado, 24/10 às 10:14</span><span class="st ok">Resposta automática</span></div>
+          <div class="email-f"><span>Para: <b>Unidade de cuidados continuados, Barcelos</b></span><span>De: <b>Minhomédica</b></span><span>Assunto: <b>RE: Motor da cama do quarto 12</b></span></div>
+          <div class="email-b">
+            <p>Bom dia,</p>
+            <p>Obrigado pelo pedido. Para o fabricante nos dar o orçamento do motor, precisamos destas fotografias:</p>
+            <ul><li>o motor</li><li>a etiqueta do motor, com os dados legíveis</li><li>o comando, frente e verso</li><li>os encaixes do comando no motor</li></ul>
+            <p>Basta responder a este email com as fotografias tiradas no telemóvel.</p>
+            <p>Com os melhores cumprimentos,<br>Minhomédica</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><b>Fotografias</b><span>a aguardar o cliente</span></div>
+          <div class="fotos" id="fotos2"></div>
+          <p class="ol-nota" style="padding:0 14px 12px">O texto do pedido é vosso e define-se uma vez. Serve para qualquer marca ou equipamento com uma regra destas.</p>
+        </div>
+      </div>
+
+      <div class="vago-p" data-p="3">
+        <div>
+          <div class="email">
+            <div class="email-top"><span>Recebido · sábado, 24/10 às 16:40</span><span class="st">3 anexos</span></div>
+            <div class="email-f"><span>De: <b>Unidade de cuidados continuados, Barcelos</b></span><span>Assunto: <b>RE: Motor da cama do quarto 12</b></span></div>
+            <div class="email-b"><p>vao as fotos</p><div class="anx-l"><span>📎 IMG_2231.jpg</span><span>📎 IMG_2232.jpg</span><span>📎 IMG_2233.jpg</span></div></div>
+          </div>
+          <div class="email" style="margin-top:12px">
+            <div class="email-top"><span>Enviado pelo agente · sábado, 24/10 às 16:42</span><span class="st ok">Resposta automática</span></div>
+            <div class="email-f"><span>Assunto: <b>RE: Motor da cama do quarto 12</b></span></div>
+            <div class="email-b"><p>Obrigado, recebemos as fotografias do motor, da etiqueta e da frente do comando.</p><p>Faltam só duas: <b>o verso do comando</b> e <b>os encaixes do comando no motor</b>. Com estas, seguimos para o fabricante.</p></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><b>Fotografias</b><span>conferidas pelo agente</span></div>
+          <div class="fotos" id="fotos3"></div>
+        </div>
+      </div>
+
+      <div class="vago-p" data-p="4">
+        <div class="panel">
+          <div class="panel-h"><b>Pedido completo · para o José decidir</b><span>completo no domingo, 25/10 às 19:20</span></div>
+          <div class="fotos" id="fotos4"></div>
+          <div class="ficha">
+            <div class="r"><span>Cliente</span><div>Unidade de cuidados continuados, Barcelos<span class="sub">Cliente no Eticadata · contacto ocultado</span></div></div>
+            <div class="r"><span>Motor</span><div>LINAK LA31<span class="sub">Lido na etiqueta (fotografia 2)</span></div></div>
+            <div class="r"><span>Comando</span><div>LINAK HB23002-00<span class="sub">Lido no verso do comando (fotografia 4)</span></div></div>
+            <div class="r"><span>No vosso catálogo</span><div>Comando Linak p/ cama elétrica HB23002-00<span class="sub">Sem stock · prazo de entrega de 30 dias · há um comando compatível em alternativa</span></div></div>
+            <div class="r hl"><span>Pronto</span><div><b>Pedido ao fabricante em rascunho, com as 5 fotografias</b><span class="sub">O José decide se segue assim, ou se orçamenta já o comando</span></div></div>
+          </div>
+        </div>
+        <div class="email">
+          <div class="email-top"><span>Rascunho · espera pelo José</span><span class="st warn">Não enviado</span></div>
+          <div class="email-f"><span>Para: <b>Fabricante LINAK (contacto ocultado)</b></span><span>Assunto: <b>Pedido de orçamento: motor LA31, cama elétrica</b></span></div>
+          <div class="email-b">
+            <p>Bom dia,</p>
+            <p>Pedimos orçamento e prazo para o motor de uma cama elétrica de um cliente nosso.</p>
+            <ul><li>Motor: LINAK LA31 (etiqueta em anexo)</li><li>Comando: LINAK HB23002-00 (frente e verso em anexo)</li><li>Fotografias do motor e dos encaixes do comando em anexo</li></ul>
+            <p>Com os melhores cumprimentos,<br>José Teófilo · Minhomédica</p>
+            <div class="anx-l"><span>📎 5 fotografias</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="ol-nota">Simulação: fotografias representadas por ícones, modelos do motor e do comando ilustrativos. O comando HB23002-00 e o prazo de 30 dias são os da vossa loja online.</p>
+    </div>
+
+    <!-- 4. Escolha no portal -->
+    <div class="slide" id="s-portal" data-titulo="Escolha no portal">
+      <div class="view-h"><div><span class="k">QUANDO HÁ DÚVIDA ENTRE PRODUTOS · LINK PARA O PORTAL</span><h2>Duas linhas certas, uma com três hipóteses. O cliente escolhe num clique.</h2><p>Quando o agente não sabe qual dos vossos artigos é o certo, não adivinha. Envia ao cliente um link para o portal, já com a conta dele aberta e só as opções possíveis. É também uma forma de os clientes do email começarem a usar o portal.</p></div><span class="estado" id="ptEstado">À espera do cliente</span></div>
+      <div class="refs pt-grid">
+        <div>
+          <div class="email">
+            <div class="email-top"><span>Recebido · segunda, 26/10 às 08:41</span><span class="st">Orçamentos</span></div>
+            <div class="email-f"><span>De: <b>Clínica de fisioterapia, Viana do Castelo</b></span><span>Assunto: <b>orçamento</b></span></div>
+            <div class="email-b"><p>bom dia. queria orçamento para 10 rolos de papel para o ecg, 2 caixas de rolos de marquesa de 60 e 6 geis frios biofrost. obg</p></div>
+          </div>
+          <div class="email" style="margin-top:12px">
+            <div class="email-top"><span>Enviado pelo agente · 08:43</span><span class="st ok">Resposta automática</span></div>
+            <div class="email-f"><span>Assunto: <b>RE: orçamento</b></span></div>
+            <div class="email-b">
+              <p>Bom dia,</p>
+              <p>Já estamos a preparar o seu orçamento. O papel de marquesa e o gel Biofrost estão confirmados.</p>
+              <p>O papel de ECG depende do eletrocardiógrafo. Para não haver enganos, escolha aqui o seu:</p>
+              <p><span class="link-pt">Escolher o papel no portal Minhomédica →</span></p>
+              <p>Com os melhores cumprimentos,<br>Minhomédica</p>
+            </div>
+          </div>
+        </div>
+        <div class="portal" id="portal">
+          <div class="pt-bar"><span class="dots"><i></i><i></i><i></i></span><span class="pt-url">portal.minhomedica.pt/pedido/26-1041</span></div>
+          <div class="pt-head"><img src="assets/img/minhomedica-logo.jpg" alt="Minhomédica"><div class="pt-conta"><small>Conta</small><b>Clínica de fisioterapia, Viana</b></div></div>
+          <div class="pt-body">
+            <div class="pt-k">O seu pedido de 26/10</div>
+            <div class="pt-ok"><span class="xck">✓</span>Papel Marquesa Renovagreen 1F 60cm x 110m · cx 6 <em>2 cx</em></div>
+            <div class="pt-ok"><span class="xck">✓</span>Gel Frio Biofrost Relief, tubo 100 g <em>6 un.</em></div>
+            <div class="pt-q">
+              <b>Papel de ECG, 10 rolos: qual é o seu eletrocardiógrafo?</b>
+              <div class="pt-ops" id="ptOps">
+                <button type="button" data-o="0"><span class="pt-img" aria-hidden="true"></span><b>Contec</b><small>Papel 110 mm x 20 m</small><em>3,54 €</em></button>
+                <button type="button" data-o="1"><span class="pt-img" aria-hidden="true"></span><b>Nihon Kohden Cardiofax S</b><small>Papel 110 x 140 mm, 150 folhas</small><em>2,06 €</em></button>
+                <button type="button" data-o="2"><span class="pt-img" aria-hidden="true"></span><b>Cardioline Delta 60</b><small>Papel 210 mm x 30 m</small><em>5,19 €</em></button>
+              </div>
+            </div>
+            <div class="pt-fim" id="ptFim" hidden></div>
+          </div>
+        </div>
+      </div>
+      <p class="ol-nota">Este ecrã mostra só o passo da escolha, ligado à conta do cliente: sem menus, sem escolher a conta. Melhorar o resto da aplicação fica para a fase seguinte. Artigos e preços de referência da vossa loja online.</p>
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- PROPOSTA                                                             -->
+<!-- =================================================================== -->
+<section class="tab-panel" id="proposta">
+
+  <!-- 1. Âmbito -->
+  <div class="slide" data-titulo="O que construímos">
+    <div class="container">
+      <span class="kicker anim">O que construímos · primeira fase</span>
+      <h2 class="anim">Agentes ligados ao vosso email e ao Eticadata</h2>
+      <p class="lead anim">Os três blocos do email de 17/10. Ficam a trabalhar dentro do que já usam: o Outlook e o Eticadata.</p>
+      <div class="ambito">
+        <div class="amb anim"><span class="amb-n">1</span><h3>Orçamentação automática</h3><p>Lê cada pedido de orçamento, reconhece os produtos que comercializam, verifica o stock e o desconto daquele cliente e deixa o orçamento em rascunho no Eticadata para a vossa equipa aprovar.</p><button class="amb-ir" data-ir="2">Orçamento em rascunho · Para aprovar</button></div>
+        <div class="amb anim"><span class="amb-n">2</span><h3>Pedir o que falta</h3><p>Quando falta informação, pede-a ao cliente antes de o pedido vos chegar às mãos, como as fotografias dos motores LINAK. Quando há dúvida entre produtos, envia um link para o portal.</p><button class="amb-ir" data-ir="3">Pedido incompleto · Escolha no portal</button></div>
+        <div class="amb anim"><span class="amb-n">3</span><h3>Triagem da caixa de email</h3><p>Classifica cada mensagem, encaminha para a contabilidade, o financeiro ou as vendas e arquiva. Na caixa do José fica só o que precisa de uma ação dele.</p><button class="amb-ir" data-ir="0">Caixa de entrada</button></div>
+      </div>
+      <div class="decide anim"><b>A decisão final fica sempre do vosso lado.</b><span>Os agentes fazem o trabalho repetitivo; vocês validam, corrigem e enviam.</span></div>
+    </div>
+  </div>
+
+  <!-- 2. Como funciona + limites -->
+  <div class="slide" data-titulo="Como funciona">
+    <div class="container">
+      <span class="kicker anim">Como funciona</span>
+      <h2 class="anim">Do email ao rascunho no Eticadata, com uma pessoa a aprovar</h2>
+      <div class="fluxo anim" id="fluxoMm"></div>
+      <script type="application/json" id="fluxoMm-config">
+      {
+        "stepMs": 1800,
+        "channels": [
+          { "icon": "message", "label": "Email (Outlook)" },
+          { "icon": "globe", "label": "Portal de clientes" }
+        ],
+        "nodes": [
+          { "icon": "message", "title": "Email recebido", "detail": "Na caixa de sempre, a qualquer hora.", "tone": "brand" },
+          { "icon": "filter", "title": "Classifica", "detail": "Orçamento, encomenda ou para outro departamento.", "tone": "teal" },
+          { "icon": "database", "title": "Eticadata", "detail": "Artigos, stock, desconto do cliente.", "tone": "teal" },
+          { "icon": "list", "title": "Rascunho ou pergunta", "detail": "Orçamento pronto, ou pedido do que falta.", "tone": "teal" },
+          { "icon": "check", "title": "Aprovado e enviado", "detail": "O José ou a colega validam.", "tone": "brand" }
+        ],
+        "note": "O Eticadata continua a ser o sistema. Os agentes trabalham à volta dele."
+      }
+      </script>
+      <div class="limites">
+        <div class="lim anim"><h3>O que os agentes fazem sozinhos</h3><ul class="list-check"><li>Ler e classificar cada email que chega</li><li>Reconhecer os artigos, ver stock e desconto</li><li>Preparar o orçamento em rascunho</li><li>Pedir ao cliente a informação em falta</li><li>Encaminhar e arquivar o que é de outros departamentos</li></ul></div>
+        <div class="lim n anim"><h3>O que fica sempre convosco</h3><ul class="list-x"><li>Aprovar e enviar cada orçamento</li><li>Preços e descontos fora das condições do cliente</li><li>Negociar com fornecedores e confirmar prazos</li><li>Escolher o artigo quando há dúvida e o cliente não responde</li><li>Os emails que o agente não sabe classificar</li></ul></div>
+      </div>
+      <p class="fecho-it anim">Nunca erra em silêncio: o que não sabe, deixa na caixa do José.</p>
+    </div>
+  </div>
+
+  <!-- 3. Fase seguinte -->
+  <div class="slide" data-titulo="Fase seguinte">
+    <div class="container">
+      <span class="kicker anim">Falado a 16/10, fora desta proposta</span>
+      <h2 class="anim">O que fica para a fase seguinte</h2>
+      <p class="lead anim">"Primeiro constrói-se a casa, depois acrescentam-se as janelas." Fica registado para não se perder, e faz-se em cima do que esta fase deixar construído.</p>
+      <div class="fase fase-2">
+        <div class="fs anim">
+          <h3>A aplicação</h3>
+          <p>Com a orçamentação a funcionar, avaliamo-la com calma: o que está bem feito e o que está a mais, para decidir se compensa corrigi-la ou refazê-la só com os botões de que precisam.</p>
+          <ul class="fs-l"><li>Tirar o painel com gráficos e a agenda</li><li>Na encomenda, a conta do cliente já escolhida</li><li>Ligação ao Outlook</li><li>Pronta para os clientes B2B quando saírem do site, em janeiro</li></ul>
+        </div>
+        <div class="fs anim">
+          <h3>Novos agentes</h3>
+          <p>Por exemplo, para as encomendas a fornecedores, a partir do mapa de faltas que hoje sai do Eticadata uma vez por semana. Aproveitam o que já estiver construído.</p>
+          <div class="fs-v"><b>≈ 1/3</b><span>do valor da primeira fase, por agente novo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Investimento -->
+  <div class="slide" data-titulo="Investimento">
+    <div class="container">
+      <span class="kicker anim">Investimento</span>
+      <h2 class="anim">O tempo de um sócio de volta, todas as semanas</h2>
+      <p class="conta anim">Hoje, <b>100 pedidos por semana</b> passam pelas mãos de <b>duas pessoas</b>, e uma delas é sócia da empresa. É esse tempo que esta fase devolve.</p>
+      <div class="inv">
+        <div class="inv-c anim">
+          <span class="inv-k">Primeira fase · implementação</span>
+          <div class="inv-v">9.500 € <small>+ IVA</small></div>
+          <ul class="list-check"><li>Orçamentação automática no Eticadata</li><li>Pedido da informação em falta e link para o portal</li><li>Triagem da caixa de email</li><li>Testes com pedidos reais antes de entrar em produção</li><li>Pagamento único</li></ul>
+        </div>
+        <div class="inv-c anim">
+          <span class="inv-k">Manutenção · avença mensal</span>
+          <div class="inv-v">200 € <small>+ IVA / mês</small></div>
+          <ul class="list-check"><li>Dúvidas, correções e ajustes às regras</li><li>Os agentes acompanhados no dia a dia</li><li>Começa quando os agentes entram em produção</li></ul>
+        </div>
+      </div>
+      <p class="crono-nota anim">Agentes novos, numa fase seguinte, na ordem de um terço do valor da primeira fase.</p>
+    </div>
+  </div>
+
+  <!-- 5. Como arrancamos -->
+  <div class="slide" data-titulo="Como arrancamos">
+    <div class="container">
+      <span class="kicker anim">Como arrancamos</span>
+      <h2 class="anim">Primeiro a caixa, depois os orçamentos, sempre com pedidos reais</h2>
+      <p class="lead anim">Cada bloco é testado pela vossa equipa antes do seguinte. Durante os testes, nada sai para o cliente sem passar por vocês.</p>
+      <div class="crono crono-4">
+        <div class="cr-f anim"><span class="sem">Arranque</span><b>Acessos e regras</b><p>Acesso ao email e ao Eticadata. Quem recebe o quê, os descontos por cliente e as regras como a das fotografias LINAK.</p></div>
+        <div class="cr-f anim"><span class="sem">Primeiro bloco</span><b>Triagem da caixa</b><p>Os emails passam a ser encaminhados e arquivados. O José confere em paralelo nos primeiros dias.</p></div>
+        <div class="cr-f anim"><span class="sem">Segundo bloco</span><b>Orçamentos em rascunho</b><p>Rascunhos feitos lado a lado com os da colega, até baterem certo. Depois, os pedidos incompletos e o link para o portal.</p></div>
+        <div class="cr-f ok anim"><span class="sem">Entrega</span><b>Em produção</b><p>Os agentes a trabalhar no dia a dia. Começa a manutenção.</p></div>
+      </div>
+      <p class="crono-nota anim">Calendário e pagamentos na proposta formal.</p>
+      <div class="contacto anim"><span>Diogo Gonçalves · AI Solutions</span><a href="tel:+351964581992">964 581 992</a><a href="mailto:diogo.goncalves@aisolutions.pt">diogo.goncalves@aisolutions.pt</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<nav class="folha" aria-label="Navegação">
+  <div class="folha-ref"><span>PÁG.</span><b id="folhaN">01 / 13</b></div>
+  <div class="folha-des"><span>SECÇÃO</span><b id="folhaT">Capa</b></div>
+  <div class="folha-bt"><button type="button" data-prev aria-label="Anterior">‹</button><button type="button" data-next aria-label="Seguinte">›</button></div>
+</nav>
+
+<footer class="ais-foot">Minhomédica × AI Solutions · protótipo de 28/10/2026 · simulações assinaladas na página</footer>
+
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/minhomedica.js"></script>
+</body>
+</html>
