@@ -48,3 +48,9 @@
 ## Verificação
 - qa.mjs sem erros | motion.mjs --acto visto | comparar.mjs contra mobilidade-rodoviaria-i0c3: mais tweens GSAP,
   mais texto em gradiente e mais imagens; ligeiramente abaixo em sombras e svg
+
+## Iterações
+- v2 (27/10, depois do follow-up): implementação 3.800 € (3.600 € + 200 € pela mensagem de WhatsApp automática às
+  chamadas não atendidas, pedida na reunião); prazos da reunião (2 semanas de auditoria, 2 de construção, 2 de
+  testes); custo da Meta como o Manuel o explicou (API oficial, 5 a 10 € por mês ao volume deles); lista de
+  contactos pessoais excluídos; aviso prévio de 30 dias
