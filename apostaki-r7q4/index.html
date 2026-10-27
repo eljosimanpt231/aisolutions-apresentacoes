@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Apostaki | O controlo do dia, sem Excel</title>
+  <meta name="description" content="Proposta AI Solutions para a Apostaki: faturas pelo WhatsApp, conciliação bancária, visitas, comissões e o resumo do dia às 19h, por cima do PHC e da vossa aplicação.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Apostaki × AI Solutions | O controlo do dia, sem Excel">
+  <meta property="og:description" content="800 pontos de venda, três lojas. As faturas, o banco, as visitas e as comissões a apurarem-se sozinhos.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/apostaki-r7q4/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>
+    document.documentElement.classList.add('js');
+    (function () { try { var t = localStorage.getItem('apostaki-tema'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/apostaki.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="marca">Apostaki</span>
+    <span class="sep"></span>
+    <div class="brand-t"><b>O dia sem Excel</b><small>Plataforma Apostaki · protótipo</small></div>
+  </div>
+  <nav class="tabs" aria-label="Partes da apresentação">
+    <button class="tab active" data-tab="contexto">Contexto</button>
+    <button class="tab" data-tab="plataforma">Plataforma</button>
+    <button class="tab" data-tab="proposta">Proposta</button>
+  </nav>
+  <div class="top-r"><button class="tema" id="tema" type="button" aria-label="Mudar entre tema claro e escuro">☾</button></div>
+</header>
+<div class="progress"><i></i></div>
+
+<main class="deck" id="deck">
+
+<!-- =================================================================== -->
+<!-- CONTEXTO                                                             -->
+<!-- =================================================================== -->
+<section class="tab-panel active" id="contexto">
+
+  <!-- 1. Capa -->
+  <div class="slide capa active" data-titulo="Capa">
+    <div class="container capa-grid">
+      <div class="capa-txt">
+        <span class="kicker anim">Apostaki × AI Solutions · 28 de outubro de 2026</span>
+        <h1 class="anim">800 pontos de venda, três lojas novas.<br><span class="grad">O controlo do dia, sem Excel.</span></h1>
+        <p class="lead anim">Uma camada por cima do PHC e da vossa aplicação. As faturas entram com uma fotografia no WhatsApp, o banco confere-se sozinho, as visitas e as comissões apuram-se sem folhas de cálculo, e às 19h chega o resumo do dia.</p>
+        <div class="stats">
+          <div class="stat anim"><div class="n"><span class="count" data-to="800">800</span></div><p>Estabelecimentos servidos por 8 comerciais, cerca de 100 cada, em rotas fixas por dia da semana.</p></div>
+          <div class="stat anim"><div class="n"><span class="count" data-to="90">90</span><small>%</small></div><p>Dos movimentos ainda em numerário, conferidos em Excel no escritório.</p></div>
+          <div class="stat anim"><div class="n"><span class="count" data-to="50">50</span><small>+</small></div><p>Chamadas por dia de comerciais e contabilistas, a passar pelo escritório.</p></div>
+        </div>
+        <div class="meta anim"><span>Para <b>Eduardo Soares</b> e <b>Patrícia</b></span><span>Seguimento da reunião de <b>21/10/2026</b></span></div>
+      </div>
+      <div class="bilhete anim" aria-label="Para onde vai hoje o dia do escritório">
+        <div class="bil-top"><span>Hoje · para onde vai o dia do escritório</span><b>N.º 0021 · 10</b></div>
+        <ul class="bil-l">
+          <li><span class="h">até às 14h</span><div><b>Conferir caixas e depósitos</b><small>a Patrícia, em Excel, a ver se os depósitos entraram</small></div></li>
+          <li><span class="h">7h às 12h</span><div><b>Contar o numerário das rotas</b><small>um administrativo, antes de ir ao banco</small></div></li>
+          <li><span class="h">à mão</span><div><b>Lançar as faturas das lojas</b><small>Braga, Coimbra, Faro e Barcelos, uma a uma no PHC</small></div></li>
+          <li><span class="h">50+ / dia</span><div><b>Atender o telefone</b><small>prémios, clientes novos, documentação</small></div></li>
+          <li><span class="h">no dia seguinte</span><div><b>Saber que visitas falharam</b><small>rota a rota, no telemóvel ou no Excel</small></div></li>
+        </ul>
+        <div class="raspa" id="raspa">
+          <div class="raspa-por-baixo"><span>Somando tudo, pelas contas de 21/10</span><b>≈ 1 pessoa a tempo inteiro</b></div>
+          <canvas class="raspa-pel" id="raspaPel" aria-hidden="true"></canvas>
+          <button class="raspa-bt" id="raspaBt" type="button">Raspar</button>
+        </div>
+        <p class="bil-q">"Passámos para uma estrutura de 32 e eu já me vejo à nora. Sem estas ferramentas não consigo."<span>Eduardo Soares, 21/10</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. O que ouvimos -->
+  <div class="slide" data-titulo="O que ouvimos">
+    <div class="container">
+      <span class="kicker anim">O que ouvimos a 21/10</span>
+      <h2 class="anim">O negócio cresceu para 32 pessoas. O controlo ficou no Excel.</h2>
+      <p class="lead anim">O Eduardo mostrou-nos a aplicação, os recibos das rotas e o relatório que prepara à mão para o chefe de vendas. Foi daqui que partimos.</p>
+      <div class="dores">
+        <div class="dor anim"><span class="dor-n">01 · faturas</span><q>As faturas das lojas lançadas à mão</q><p>Braga, Coimbra, Faro e Barcelos mandam faturas, e alguém as digitaliza e lança uma a uma no PHC.</p><button class="dor-ir" data-ir="1" type="button">Ver na plataforma →</button></div>
+        <div class="dor anim"><span class="dor-n">02 · banco</span><q>A Patrícia até às 14h nas caixas</q><p>Com 90% dos movimentos em numerário, conferir caixas e depósitos em Excel leva a manhã inteira.</p><button class="dor-ir" data-ir="2" type="button">Ver na plataforma →</button></div>
+        <div class="dor anim"><span class="dor-n">03 · telefone</span><q>Mais de 50 chamadas por dia</q><p>Comerciais e contabilistas a ligar sobre prémios, o estado dos clientes novos e documentação.</p><button class="dor-ir" data-ir="3" type="button">Ver na plataforma →</button></div>
+        <div class="dor anim"><span class="dor-n">04 · visitas</span><q>A visita que falha passa para a semana seguinte</q><p>Sabe-se no dia seguinte, rota a rota. E em cada cliente ficam 1.000 a 2.000 € de jogo à consignação.</p><button class="dor-ir" data-ir="4" type="button">Ver na plataforma →</button></div>
+        <div class="dor anim"><span class="dor-n">05 · comissões</span><q>Comissões e acertos apurados à mão</q><p>O fim do mês no Excel, e os acertos de prémios contados à mão pelo comercial e lançados à mão no PHC.</p><button class="dor-ir" data-ir="5" type="button">Ver na plataforma →</button></div>
+        <div class="dor anim"><span class="dor-n">06 · lojas</span><q>Fecha a loja de Faro e não se sabe o que vendeu</q><p>Sem as vendas e a faturação de cada loja em tempo real, espera-se pelos papéis do dia seguinte.</p><button class="dor-ir" data-ir="6" type="button">Ver na plataforma →</button></div>
+      </div>
+      <p class="fecho-it anim">Os dados já existem, no PHC e na vossa aplicação. Falta tirá-los de lá sem ninguém ter de os ir buscar.</p>
+    </div>
+  </div>
+
+  <!-- 3. Um dia com a plataforma -->
+  <div class="slide" data-titulo="Um dia com a plataforma">
+    <div class="container">
+      <span class="kicker anim">Uma terça-feira normal</span>
+      <h2 class="anim">O mesmo dia, com a plataforma a trabalhar por trás</h2>
+      <p class="lead anim">Ninguém muda de programa. O PHC e a aplicação ficam como estão; a plataforma lê-os, cruza-os e avisa.</p>
+      <ol class="dia">
+        <li class="anim"><span class="dia-h">09:00</span><div class="dia-c"><b>Faturas da véspera</b><p class="hoje">Hoje: digitalizadas e lançadas à mão.</p><p class="com">Fotografadas nas lojas para o grupo do WhatsApp, já arquivadas e lançadas no PHC.</p></div><button class="dia-ir" data-ir="1" type="button">Faturas →</button></li>
+        <li class="anim"><span class="dia-h">10:00</span><div class="dia-c"><b>Banco</b><p class="hoje">Hoje: caixas e depósitos conferidos até às 14h.</p><p class="com">O extrato já foi cruzado com os recibos e os fechos de caixa. Fica só o que não bate.</p></div><button class="dia-ir" data-ir="2" type="button">Conciliação →</button></li>
+        <li class="anim"><span class="dia-h">o dia todo</span><div class="dia-c"><b>Telefone</b><p class="hoje">Hoje: mais de 50 chamadas para o escritório.</p><p class="com">Comerciais e contabilistas perguntam ao assistente. Ao escritório chega o que precisa de uma pessoa.</p></div><button class="dia-ir" data-ir="3" type="button">Assistente →</button></li>
+        <li class="anim"><span class="dia-h">17:00</span><div class="dia-c"><b>Visitas</b><p class="hoje">Hoje: sabe-se amanhã, se houver tempo.</p><p class="com">A visita falhada aparece no painel no próprio dia, e o coordenador reagenda-a.</p></div><button class="dia-ir" data-ir="4" type="button">Visitas →</button></li>
+        <li class="anim"><span class="dia-h">19:00</span><div class="dia-c"><b>Fecho das lojas</b><p class="hoje">Hoje: espera-se pelos papéis.</p><p class="com">O resumo do dia chega ao WhatsApp do Eduardo: lojas, caixas, rotas e alertas.</p></div><button class="dia-ir" data-ir="6" type="button">Relatório →</button></li>
+        <li class="anim"><span class="dia-h">dia 31</span><div class="dia-c"><b>Comissões</b><p class="hoje">Hoje: tirar o Excel e apurar à mão.</p><p class="com">Calculadas com as vossas regras, incluindo a dos 90% das visitas.</p></div><button class="dia-ir" data-ir="5" type="button">Comissões →</button></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- PLATAFORMA                                                           -->
+<!-- =================================================================== -->
+<section class="tab-panel" id="plataforma">
+ <div class="app">
+  <aside class="side">
+    <div class="app-name"><span class="marca">Apostaki</span><small>Gestão</small></div>
+    <div class="app-sub">PHC · aplicação de rotas · banco</div>
+    <div class="grp">Hoje</div>
+    <a class="nv" data-v="0"><i>◎</i>Painel do dia</a>
+    <div class="grp">Escritório</div>
+    <a class="nv" data-v="1"><i>⎙</i>Faturas<span class="badge-n">2</span></a>
+    <a class="nv" data-v="2"><i>⇄</i>Conciliação<span class="badge-n">3</span></a>
+    <a class="nv" data-v="3"><i>✆</i>Assistente</a>
+    <div class="grp">Rua</div>
+    <a class="nv" data-v="4"><i>⌖</i>Visitas e rotas<span class="badge-n">19</span></a>
+    <a class="nv" data-v="5"><i>%</i>Comissões</a>
+    <div class="grp">Fecho do dia</div>
+    <a class="nv" data-v="6"><i>☾</i>Relatório das 19h</a>
+    <div class="side-lojas">
+      <span><i style="background:var(--braga)"></i>Braga</span>
+      <span><i style="background:var(--coimbra)"></i>Coimbra</span>
+      <span><i style="background:var(--faro)"></i>Faro</span>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="app-head">
+      <div class="crumbs">Apostaki › <b id="crumb">Painel do dia</b></div>
+      <div class="search">⌕ Procurar cliente, rota, fatura, recibo</div>
+      <div class="bell" title="Alertas">🔔<em>4</em></div>
+      <div class="user"><span class="av">P</span><div><b>Patrícia</b><small>Administração · Braga</small></div></div>
+    </div>
+
+    <!-- 0. Painel do dia -->
+    <div class="slide" id="s-painel" data-titulo="Painel do dia">
+      <div class="view-h"><div><span class="k">PAINEL · TERÇA-FEIRA, 27 DE OUTUBRO · 19:05</span><h2>As três lojas e as oito rotas, no mesmo ecrã</h2><p>Vendas e faturação por loja, o que saiu para as rotas e o que se cobrou, o cumprimento das visitas e o que pede atenção. Com os dados do PHC e da vossa aplicação, sem ninguém tirar um Excel.</p></div><span class="estado ok">● Atualizado às 19:05</span></div>
+      <p class="sim">Simulação: os números e os nomes são ilustrativos. Os reais saem do PHC e da aplicação na semana 1.</p>
+      <div class="kpis" id="pKpis"></div>
+      <div class="two w">
+        <div class="panel">
+          <div class="panel-h"><b>Lojas · vendas ao balcão</b><span>hoje, comparado com a média das terças</span></div>
+          <div class="lojas" id="pLojas"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><b>Pede atenção</b><span id="pAlN">4 alertas</span></div>
+          <ul class="alertas" id="pAlertas"></ul>
+        </div>
+      </div>
+      <div class="panel rotas-mini">
+        <div class="panel-h"><b>Rotas · hoje</b><span>visitas feitas e cobrado, por rota</span></div>
+        <div class="rm" id="pRotas"></div>
+      </div>
+    </div>
+
+    <!-- 1. Faturas -->
+    <div class="slide" id="s-faturas" data-titulo="Faturas pelo WhatsApp">
+      <div class="view-h"><div><span class="k">FATURAS · GRUPO DO WHATSAPP DAS LOJAS</span><h2>Uma fotografia no grupo, e a fatura está arquivada e no PHC</h2><p>A equipa de cada loja fotografa a fatura e envia-a para o grupo. O assistente lê-a, verifica se já foi lançada, arquiva-a na pasta da loja e lança-a no PHC. Serve também para os acertos de prémios dos comerciais.</p></div><span class="estado info">Escolha um cenário</span></div>
+      <p class="sim">Simulação: faturas, fornecedores e valores inventados. O assistente usa os vossos fornecedores e as vossas contas do PHC.</p>
+      <div class="cr" id="fat"></div>
+      <script type="application/json" id="fat-config">
+      {
+        "agentName": "Faturas Apostaki",
+        "agentInitials": "A",
+        "chatStatus": "Grupo · 14 participantes",
+        "stepMs": 1450,
+        "endPauseMs": 3400,
+        "scenarios": [
+          {
+            "title": "Fatura da loja de Coimbra",
+            "subtitle": "A Inês fotografa a fatura ao balcão. Antes do fim do minuto está arquivada e lançada.",
+            "chat": [
+              { "sender": "system", "text": "Terça, 27/10 · Grupo «Faturas Apostaki»", "time": "09:12" },
+              { "sender": "client", "text": "**Inês · Coimbra** 📷 Fotografia", "time": "09:12" },
+              { "sender": "client", "text": "**Inês · Coimbra** material de escritorio da loja", "time": "09:12", "passo": 2 },
+              { "sender": "agent", "text": "Recebida, Inês. **Papelaria Mondego, FT 2026/1843**, 86,40 € + IVA, de 26/10. Ainda não estava lançada.", "time": "09:13", "passo": 4 },
+              { "sender": "agent", "text": "Arquivada em **Coimbra › Outubro** e lançada no PHC como compra da loja de Coimbra. ✓", "time": "09:13", "passo": 6 },
+              { "sender": "client", "text": "**Inês · Coimbra** 👍", "time": "09:14" }
+            ],
+            "steps": [
+              { "icon": "message", "label": "Recebe a fotografia no grupo e vê de que loja vem" },
+              { "icon": "search", "label": "Lê fornecedor, NIF, número, data, valores e IVA" },
+              { "icon": "shield", "label": "Confirma que não está lançada (duplicados)" },
+              { "icon": "check", "label": "Valores batem com o total da fatura" },
+              { "icon": "book", "label": "Arquiva na pasta da loja de Coimbra, mês de outubro" },
+              { "icon": "database", "label": "Lança no PHC e responde no grupo" }
+            ]
+          },
+          {
+            "title": "Acerto de prémios na rota",
+            "subtitle": "O comercial fotografa o recibo do acerto. A conta é refeita e o acerto entra no PHC sem ninguém o lançar à mão.",
+            "chat": [
+              { "sender": "system", "text": "Terça, 27/10 · Grupo «Faturas Apostaki»", "time": "15:41" },
+              { "sender": "client", "text": "**Hélder · Rota 3** 📷 Fotografia", "time": "15:41" },
+              { "sender": "client", "text": "**Hélder · Rota 3** acerto do cafe avenida barcelos", "time": "15:41", "passo": 2 },
+              { "sender": "agent", "text": "Café Avenida, Barcelos. Saída de **700,00 €**, comissão do ponto de venda **35,00 €**, prémios pagos **343,00 €**. A receber: **322,00 €**.", "time": "15:42", "passo": 3 },
+              { "sender": "agent", "text": "Bate certo com os 322,00 € em numerário do recibo R3-1027-014. Acerto lançado no PHC. ✓", "time": "15:42", "passo": 5 },
+              { "sender": "client", "text": "**Hélder · Rota 3** ok", "time": "15:43" }
+            ],
+            "steps": [
+              { "icon": "id", "label": "Reconhece o comercial e a rota (Hélder, rota 3)" },
+              { "icon": "search", "label": "Lê o recibo: saída, comissão, prémios pagos, recebido" },
+              { "icon": "list", "label": "Refaz a conta: 700 − 35 − 343 = 322" },
+              { "icon": "arrows", "label": "Cruza com o recibo da rota na aplicação" },
+              { "icon": "database", "label": "Lança o acerto no PHC" }
+            ]
+          },
+          {
+            "title": "A fatura que já entrou",
+            "subtitle": "Quando a mesma fatura chega duas vezes, não a lança outra vez: diz porquê e pergunta.",
+            "chat": [
+              { "sender": "system", "text": "Terça, 27/10 · Grupo «Faturas Apostaki»", "time": "11:27" },
+              { "sender": "client", "text": "**Rita · Faro** 📷 Fotografia", "time": "11:27", "passo": 2 },
+              { "sender": "agent", "text": "Rita, esta fatura (**FT A/512, 212,90 €**) já foi lançada a 22/10, enviada pela Joana. Não a lanço outra vez.", "time": "11:28", "passo": 4 },
+              { "sender": "agent", "text": "Se for uma fatura diferente, mande-me uma fotografia com o número bem visível.", "time": "11:28" },
+              { "sender": "client", "text": "**Rita · Faro** ah ja tinha ido sim, obrigada", "time": "11:31", "passo": 5 }
+            ],
+            "steps": [
+              { "icon": "search", "label": "Lê a fatura da loja de Faro" },
+              { "icon": "database", "label": "Procura o número e o fornecedor no que já foi lançado" },
+              { "icon": "alert", "label": "Encontra o mesmo documento, de 22/10" },
+              { "icon": "ban", "label": "Não lança em duplicado" },
+              { "icon": "message", "label": "Explica e fica à espera de confirmação" }
+            ]
+          }
+        ]
+      }
+      </script>
+      <div class="fat-arq">
+        <div class="panel">
+          <div class="panel-h"><b>Arquivo de hoje</b><span id="fatN"></span></div>
+          <div class="tbl-wrap"><table class="tbl" id="tFat"><thead><tr><th>Hora</th><th>Loja</th><th>Documento</th><th class="num">Valor s/ IVA</th><th>PHC</th></tr></thead><tbody></tbody></table></div>
+        </div>
+        <p class="ol-nota">Lançar no PHC depende de o parceiro PHC ter (ou abrir) esse acesso. Somos nós a tratar disso com eles. Enquanto não houver, o assistente arquiva e prepara a fatura para lançar com um clique.</p>
+      </div>
+    </div>
+
+    <!-- 2. Conciliação -->
+    <div class="slide" id="s-conc" data-titulo="Conciliação bancária">
+      <div class="view-h"><div><span class="k">CONCILIAÇÃO · EXTRATO DE TERÇA, 27/10</span><h2>O banco cruzado com os recibos e os fechos de caixa</h2><p>Cada movimento do extrato é ligado ao que devia ter entrado: os recibos das rotas na vossa aplicação e os fechos de caixa das lojas. A Patrícia deixa de conferir tudo e passa a ver só o que não bate.</p></div><span class="estado" id="concEst">43 movimentos por cruzar</span></div>
+      <p class="sim">Simulação: movimentos, clientes e valores ilustrativos.</p>
+      <div class="conc-bar">
+        <button class="btn btn-primary" type="button" id="concPlay">⇄ Cruzar o extrato de hoje</button>
+        <div class="conc-res" id="concRes" aria-live="polite"><span><b id="cOk">0</b> certos</span><span class="w"><b id="cVer">0</b> para ver</span></div>
+      </div>
+      <div class="panel">
+        <div class="tbl-wrap"><table class="tbl conc" id="tConc"><thead><tr><th>Extrato do banco</th><th class="num">Valor</th><th class="mid"></th><th>O que devia ter entrado</th><th class="num">Valor</th><th>Estado</th></tr></thead><tbody></tbody></table></div>
+        <div class="conc-rod" id="concRod">E mais 34 movimentos (depósitos e transferências das rotas) que batem certo.</div>
+      </div>
+      <p class="ol-nota">Quanto mais passar para MB Way, TPA e débito direto, menos numerário há para contar, e a conciliação apanha esses pagamentos da mesma forma.</p>
+    </div>
+
+    <!-- 3. Assistente -->
+    <div class="slide" id="s-assist" data-titulo="Assistente">
+      <div class="view-h"><div><span class="k">ASSISTENTE · O WHATSAPP DO ESCRITÓRIO</span><h2>As perguntas de todos os dias, respondidas sem pegar no telefone</h2><p>Ligado à vossa base de dados: responde aos comerciais e aos contabilistas sobre clientes, rotas e documentos. O que precisa de uma pessoa passa ao escritório, já explicado.</p></div><span class="estado info">Escolha um cenário</span></div>
+      <p class="sim">Simulação: nomes, clientes e conversas inventados.</p>
+      <div class="cr" id="assist"></div>
+      <script type="application/json" id="assist-config">
+      {
+        "agentName": "Assistente Apostaki",
+        "agentInitials": "A",
+        "chatStatus": "WhatsApp do escritório",
+        "stepMs": 1450,
+        "endPauseMs": 3400,
+        "scenarios": [
+          {
+            "title": "O cliente novo já está pronto?",
+            "subtitle": "O comercial que abre clientes deixa de ligar para saber em que ponto está a ficha.",
+            "chat": [
+              { "sender": "client", "text": "boa tarde", "time": "14:02" },
+              { "sender": "client", "text": "a tabacaria rosa em fafe ja ficou pronta?", "time": "14:02", "passo": 2 },
+              { "sender": "agent", "text": "Boa tarde, Marco. Ainda não: a ficha da **Tabacaria Rosa, Fafe** foi criada ontem às 16:20 e está no escritório para aprovação.", "time": "14:02", "passo": 3 },
+              { "sender": "agent", "text": "Aviso-o aqui assim que ficar pronta.", "time": "14:03", "passo": 4 },
+              { "sender": "client", "text": "ok obg", "time": "14:04" },
+              { "sender": "agent", "text": "Marco, a Tabacaria Rosa ficou pronta. Entra na rota 2, à quarta-feira.", "time": "16:47" }
+            ],
+            "steps": [
+              { "icon": "id", "label": "Reconhece o número: Marco, abertura de clientes" },
+              { "icon": "search", "label": "Encontra o cliente pelo nome e pela localidade" },
+              { "icon": "database", "label": "Vê o estado da ficha e desde quando" },
+              { "icon": "clock", "label": "Fica de avisar quando o estado mudar" }
+            ]
+          },
+          {
+            "title": "Qual é o dia da visita?",
+            "subtitle": "O vendedor novo pergunta pelo cliente de Macedo de Cavaleiros. A resposta vem das coordenadas, não da memória de alguém.",
+            "chat": [
+              { "sender": "client", "text": "este senhor de macedo de cavaleiros papelaria central", "time": "10:15" },
+              { "sender": "client", "text": "qual e o dia da visita?", "time": "10:15", "passo": 2 },
+              { "sender": "agent", "text": "É à **quinta-feira**, Tiago, na rota 5.", "time": "10:15", "passo": 4 },
+              { "sender": "agent", "text": "Fica a 900 m da Tabacaria do Largo, que já visita nesse dia. Já está na sua lista de quinta.", "time": "10:16", "passo": 5 },
+              { "sender": "client", "text": "boa", "time": "10:17" }
+            ],
+            "steps": [
+              { "icon": "id", "label": "Reconhece o vendedor e a rota (Tiago, rota 5)" },
+              { "icon": "search", "label": "Encontra a Papelaria Central pela morada" },
+              { "icon": "globe", "label": "Vê pelas coordenadas que clientes estão perto" },
+              { "icon": "calendar", "label": "Encontra o dia da rota que passa ali" },
+              { "icon": "check", "label": "Põe o cliente na lista desse dia" }
+            ]
+          },
+          {
+            "title": "A contabilista pede faturas",
+            "subtitle": "Os documentos seguem, mas só para o email que está na ficha do cliente.",
+            "chat": [
+              { "sender": "client", "text": "Boa tarde, sou a contabilista do Café Avenida em Barcelos.", "time": "11:40" },
+              { "sender": "client", "text": "Precisava das faturas de setembro.", "time": "11:40", "passo": 2 },
+              { "sender": "agent", "text": "Boa tarde. Encontrei **4 faturas de setembro** do Café Avenida.", "time": "11:41", "passo": 3 },
+              { "sender": "agent", "text": "Por segurança, seguem para o email da ficha do cliente (**c••••@sapo.pt**). Se precisar delas noutro email, o escritório confirma primeiro com o cliente.", "time": "11:41", "passo": 4 },
+              { "sender": "client", "text": "Pode ser para esse, obrigada.", "time": "11:44", "passo": 5 }
+            ],
+            "steps": [
+              { "icon": "message", "label": "Percebe o pedido: documentação de um cliente" },
+              { "icon": "search", "label": "Confirma o cliente e o período (setembro)" },
+              { "icon": "database", "label": "Encontra as faturas no PHC" },
+              { "icon": "shield", "label": "Só envia para o email da ficha, nunca para outro" },
+              { "icon": "send", "label": "Envia os PDF e regista o pedido" }
+            ]
+          },
+          {
+            "title": "Uma raspadinha com prémio",
+            "subtitle": "Prémios não são com o assistente. Não adivinha: passa ao escritório com tudo explicado.",
+            "chat": [
+              { "sender": "client", "text": "ola tenho aqui um cliente com uma raspadinha que diz que tem premio", "time": "17:22" },
+              { "sender": "client", "text": "mas o terminal nao aceita", "time": "17:22", "passo": 2 },
+              { "sender": "agent", "text": "Isso não consigo confirmar daqui: os prémios ficam sempre com a equipa.", "time": "17:23", "passo": 3 },
+              { "sender": "agent", "text": "Já passei ao escritório com a sua mensagem e a sua localização na rota 1. Ligam-lhe ainda hoje.", "time": "17:23", "passo": 4 },
+              { "sender": "client", "text": "ok", "time": "17:25" }
+            ],
+            "steps": [
+              { "icon": "ear", "label": "Percebe que é uma questão de prémio" },
+              { "icon": "ban", "label": "Não valida prémios: fica sempre com a equipa" },
+              { "icon": "user-cog", "label": "Passa ao escritório com a mensagem e o cliente" },
+              { "icon": "phone", "label": "Diz a quem perguntou o que acontece a seguir" }
+            ]
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <!-- 4. Visitas e rotas -->
+    <div class="slide" id="s-visitas" data-titulo="Visitas e rotas">
+      <div class="view-h"><div><span class="k">VISITAS · SEMANA DE 19 A 23/10</span><h2>Quem cumpriu o plano de visitas, e que clientes estão em risco</h2><p>O relatório que o Eduardo prepara para o chefe de vendas, feito sozinho com os dados da aplicação e do Cartrack. A linha é a vossa regra: 90% das visitas.</p></div><div class="seg" id="vSem" role="group" aria-label="Período"><button class="on" data-p="s">Semana passada</button><button data-p="h">Hoje</button></div></div>
+      <p class="sim">Simulação: vendedores e clientes inventados. A rota 3 repete o relatório que nos mostrou a 21/10 (107 previstos, 89 visitados, 83%).</p>
+      <div class="vis-grid">
+        <div class="panel">
+          <div class="panel-h"><b>Cumprimento por rota</b><span>clique numa rota</span></div>
+          <div class="barras" id="vBarras"></div>
+        </div>
+        <div class="panel vis-det" id="vDet"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><b>Clientes em risco · últimos 30 dias</b><span>vermelho: 2 ou mais visitas falhadas · amarelo: 1 (regra configurável)</span></div>
+        <div class="tbl-wrap"><table class="tbl" id="tRisco"><thead><tr><th></th><th>Cliente</th><th>Rota</th><th class="num">Visitas previstas</th><th class="num">Falhadas</th><th class="num">Jogo à consignação</th><th></th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- 5. Comissões -->
+    <div class="slide" id="s-comissoes" data-titulo="Comissões">
+      <div class="view-h"><div><span class="k">COMISSÕES · OUTUBRO, ATÉ DIA 27</span><h2>As comissões do mês, com a regra das visitas aplicada</h2><p>A percentagem sobre o cobrado e as visitas cumpridas vêm da aplicação. A regra é vossa: quem fica abaixo do mínimo de visitas é assinalado. Mexa no mínimo e veja quem passa.</p></div><button class="btn btn-ghost" type="button" id="comExp">⇩ Exportar para o processamento</button></div>
+      <p class="sim">Simulação: vendedores, valores e a percentagem de 1% são ilustrativos. Entram as vossas regras na semana 1.</p>
+      <div class="regra">
+        <label for="comMin">Mínimo de visitas cumpridas no mês</label>
+        <input type="range" id="comMin" min="80" max="100" step="1" value="90">
+        <b id="comMinV">90%</b>
+        <span class="regra-n" id="comAbaixo"></span>
+      </div>
+      <div class="panel">
+        <div class="tbl-wrap"><table class="tbl com" id="tCom"><thead><tr><th>Rota</th><th>Vendedor</th><th class="num">Cobrado</th><th class="num">Comissão</th><th class="num">Visitas</th><th>Regra</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+      </div>
+    </div>
+
+    <!-- 6. Relatório das 19h -->
+    <div class="slide" id="s-relatorio" data-titulo="Relatório das 19h">
+      <div class="view-h"><div><span class="k">FECHO DO DIA · TERÇA-FEIRA, 27/10 · 19:05</span><h2>As lojas fecham às 19h. Às 19h05 o resumo está no WhatsApp</h2><p>O que se vendeu em cada loja, as divergências de caixa por funcionária, as rotas e os alertas de desempenho comercial. Os do mês acumulam para o processamento dos salários.</p></div></div>
+      <p class="sim">Simulação: valores e nomes ilustrativos.</p>
+      <div class="rel-grid">
+        <div class="tel" aria-label="Mensagem de WhatsApp com o resumo do dia">
+          <div class="tel-h"><span class="tel-av">A</span><div><b>Apostaki · Resumo</b><small>para Eduardo Soares</small></div></div>
+          <div class="tel-b">
+            <div class="tel-dia">Hoje</div>
+            <div class="tel-m" id="relMsg">
+              <b>Fecho de terça, 27/10</b><br><br>
+              <b>Lojas</b><br>
+              • Braga: 9.840 € ao balcão · caixa certa<br>
+              • Coimbra: 6.215 € · caixa <span class="pos">+5,00 €</span> (Inês)<br>
+              • Faro: 5.870 € · caixa <span class="neg">−15,00 €</span> (Rita)<br><br>
+              <b>Rotas</b><br>
+              • 141 de 160 visitas (88%)<br>
+              • Cobrado: 64.150 €, 88% em numerário<br>
+              • ⚠ Rota 3 (Hélder) abaixo dos 90% há três dias seguidos<br>
+              • ★ Rota 6 (Vítor) a 100% há duas semanas<br>
+              • 3 clientes em risco, no painel<br><br>
+              <b>Escritório</b><br>
+              • 23 faturas no PHC, 2 a rever<br>
+              • Banco: 40 movimentos certos, 3 para ver<br>
+              • Assistente: 37 perguntas respondidas, 4 passadas ao escritório
+              <time>19:05</time>
+            </div>
+          </div>
+        </div>
+        <div class="rel-dir">
+          <div class="panel">
+            <div class="panel-h"><b>Divergências de caixa · outubro</b><span>por funcionária, para o processamento</span></div>
+            <div class="tbl-wrap"><table class="tbl" id="tDiv"><thead><tr><th>Funcionária</th><th>Loja</th><th class="num">Dias com diferença</th><th class="num">Saldo do mês</th></tr></thead><tbody></tbody></table></div>
+          </div>
+          <div class="panel rel-n">
+            <div class="panel-h"><b>O que vai no relatório</b><span>escolhido convosco</span></div>
+            <ul class="list-check">
+              <li>Vendas ao balcão e fecho de caixa de cada loja</li>
+              <li>Divergências por funcionária, positivas ou negativas</li>
+              <li>Visitas, cobrado e peso do numerário</li>
+              <li>Alertas: rotas abaixo da regra, rotas em destaque, clientes em risco</li>
+              <li>Faturas, banco e assistente: o que ficou para ver</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- PROPOSTA                                                             -->
+<!-- =================================================================== -->
+<section class="tab-panel" id="proposta">
+
+  <!-- 1. O que construímos -->
+  <div class="slide" data-titulo="O que construímos">
+    <div class="container">
+      <span class="kicker anim">O que construímos</span>
+      <h2 class="anim">Seis peças, por cima do PHC e da vossa aplicação</h2>
+      <p class="lead anim">As que ficaram no resumo de 23/10. Ninguém muda de programa: o PHC continua a ser o programa de faturação e de contabilidade, e a aplicação das rotas continua a ser usada na rua.</p>
+      <div class="ambito">
+        <div class="amb anim"><span class="amb-n">1</span><h3>Faturas pelo WhatsApp</h3><p>A equipa fotografa a fatura para um grupo; o assistente arquiva-a na pasta da loja e lança-a no PHC. Também os acertos de prémios.</p><button class="amb-ir" data-ir="1" type="button">Faturas</button></div>
+        <div class="amb anim"><span class="amb-n">2</span><h3>Conciliação bancária</h3><p>O extrato do banco cruzado com os recibos das rotas e os fechos de caixa. Fica só o que não bate.</p><button class="amb-ir" data-ir="2" type="button">Conciliação bancária</button></div>
+        <div class="amb anim"><span class="amb-n">3</span><h3>Assistente virtual</h3><p>Ligado à vossa base de dados, responde a comerciais e contabilistas sem passar pelo escritório.</p><button class="amb-ir" data-ir="3" type="button">Assistente</button></div>
+        <div class="amb anim"><span class="amb-n">4</span><h3>Painel de administração</h3><p>Vendas e faturação por loja, cumprimento de visitas, eficiência de percursos e clientes em risco.</p><button class="amb-ir" data-ir="4" type="button">Visitas e rotas</button></div>
+        <div class="amb anim"><span class="amb-n">5</span><h3>Cálculo das comissões</h3><p>A partir das regras que já usam, incluindo a das visitas, pronto a exportar no fim do mês.</p><button class="amb-ir" data-ir="5" type="button">Comissões</button></div>
+        <div class="amb esc anim"><span class="amb-n">6</span><h3>Relatório diário no WhatsApp</h3><p>Ao fecho das lojas: o dia, as divergências de caixa por funcionária e os alertas comerciais.</p><button class="amb-ir" data-ir="6" type="button">Relatório das 19h</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Como se liga -->
+  <div class="slide" data-titulo="Como se liga">
+    <div class="container">
+      <span class="kicker anim">Como se liga</span>
+      <h2 class="anim">Lê o que já existe. Não substitui nada.</h2>
+      <div class="fluxo anim" id="fluxoApo"></div>
+      <script type="application/json" id="fluxoApo-config">
+      {
+        "stepMs": 1800,
+        "channels": [
+          { "icon": "whatsapp", "label": "WhatsApp" },
+          { "icon": "database", "label": "PHC" },
+          { "icon": "globe", "label": "Aplicação das rotas" },
+          { "icon": "list", "label": "Extratos do banco" },
+          { "icon": "arrows", "label": "Cartrack" }
+        ],
+        "nodes": [
+          { "icon": "message", "title": "Chega a informação", "detail": "Fotografias, perguntas, recibos, extratos.", "tone": "brand" },
+          { "icon": "search", "title": "É lida e verificada", "detail": "Duplicados, contas, o cliente certo.", "tone": "teal" },
+          { "icon": "database", "title": "Entra onde deve", "detail": "No PHC e no arquivo de cada loja.", "tone": "teal" },
+          { "icon": "filter", "title": "Cruza e aplica as regras", "detail": "Banco, visitas, comissões, caixas.", "tone": "teal" },
+          { "icon": "check", "title": "Avisa quem decide", "detail": "Painel, alertas e o resumo das 19h.", "tone": "brand" }
+        ],
+        "note": "O que não sabe, não adivinha: assinala, e passa a uma pessoa."
+      }
+      </script>
+      <div class="limites">
+        <div class="lim anim"><h3>O que faz sozinha</h3><ul class="list-check"><li>Ler, arquivar e lançar faturas e acertos</li><li>Cruzar o banco com recibos e caixas</li><li>Responder sobre clientes, rotas e documentos</li><li>Apurar visitas, comissões e divergências</li><li>Enviar o resumo do dia e os alertas</li></ul></div>
+        <div class="lim n anim"><h3>O que fica sempre com a equipa</h3><ul class="list-x"><li>Os movimentos do banco que não batem</li><li>Prémios e questões com a Santa Casa</li><li>Decidir penalizações e acertos de salário</li><li>Aprovar clientes novos</li><li>Falar com quem não pagou</li></ul></div>
+      </div>
+      <div class="phc-nota anim"><b>O parceiro PHC.</b> Não fazemos desenvolvimentos dentro do PHC. Somos nós a falar com o parceiro (o atual ou o novo) para saber que acessos existem e quanto custa abrir os que faltarem, como o de lançar faturas. O assistente e o painel com os dados da aplicação não esperam por isso.</div>
+    </div>
+  </div>
+
+  <!-- 3. Para avaliar a seguir -->
+  <div class="slide" data-titulo="Para avaliar a seguir">
+    <div class="container">
+      <span class="kicker anim">Ficou em cima da mesa</span>
+      <h2 class="anim">Para avaliar a seguir</h2>
+      <p class="lead anim">Falámos disto a 21/10. Não faz parte desta proposta, e entra na mesma base quando fizer sentido.</p>
+      <div class="opcoes">
+        <div class="opc anim">
+          <span class="inv-k">Registo de ponto</span>
+          <h3>Pelo WhatsApp, com a localização</h3>
+          <ul class="list-check"><li>Às 9h cada pessoa recebe uma mensagem e partilha a localização</li><li>A entrada fica registada sozinha, por loja</li><li>Junta-se às divergências de caixa no fim do mês</li></ul>
+        </div>
+        <div class="opc anim">
+          <span class="inv-k">Custos da frota</span>
+          <h3>Via Verde, Prio e afins</h3>
+          <ul class="list-check"><li>Portagens e combustível de cada carro</li><li>Ao lado dos quilómetros do Cartrack e das visitas da rota</li><li>Custo por rota e por visita, no painel</li></ul>
+        </div>
+      </div>
+      <p class="fecho-it anim">E uma loja nova, em Lisboa ou noutro sítio, entra como mais uma loja no painel.</p>
+    </div>
+  </div>
+
+  <!-- 4. Investimento -->
+  <div class="slide" data-titulo="Investimento">
+    <div class="container">
+      <span class="kicker anim">Investimento</span>
+      <h2 class="anim">Cerca de uma pessoa a tempo inteiro, todos os dias</h2>
+      <div class="conta anim">
+        <div class="conta-n"><b>≈ 25.000 €</b><span>por ano: o que vale o tempo de uma pessoa a tempo inteiro, com impostos e segurança social. A conta de 21/10.</span></div>
+        <div class="conta-n"><b>≈ 2.000 €</b><span>por ano, cada uma: as licenças que lhe propuseram só para faturas (com limite) e só para bancos.</span></div>
+        <p class="conta-p">Aqui, a avença cobre as seis peças.</p>
+      </div>
+      <div class="inv">
+        <div class="inv-c anim">
+          <span class="inv-k">Implementação</span>
+          <div class="inv-v">10.000 € <small>+ IVA</small></div>
+          <ul class="list-check"><li>As seis peças do resumo de 23/10</li><li>Ligação ao PHC, à aplicação das rotas, ao banco e ao WhatsApp</li><li>As vossas regras de visitas, comissões e caixas</li><li>Contacto com o parceiro PHC tratado por nós</li><li>Ajustes com a equipa até estar a funcionar</li></ul>
+        </div>
+        <div class="inv-c anim">
+          <span class="inv-k">Avença</span>
+          <div class="inv-v">200 € <small>+ IVA / mês</small></div>
+          <ul class="list-check"><li>Tokens de inteligência artificial (faturas, conversas, relatórios)</li><li>Alojamento</li><li>Suporte, correções e melhorias</li><li>Novos desenvolvimentos orçamentados à parte</li><li>Começa quando a plataforma entra em uso</li></ul>
+        </div>
+      </div>
+      <div class="pag anim">
+        <div class="pag-h">Implementação paga em duas fases</div>
+        <div class="pag-f"><span class="pag-p">50%</span><div><b>5.000 € <small>+ IVA</small></b><span>Na adjudicação</span></div></div>
+        <div class="pag-f"><span class="pag-p">50%</span><div><b>5.000 € <small>+ IVA</small></b><span>No início dos testes · semana 7</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Como arrancamos -->
+  <div class="slide" data-titulo="Como arrancamos">
+    <div class="container">
+      <span class="kicker anim">Como arrancamos</span>
+      <h2 class="anim">Primeiras peças em uso em novembro, tudo a 22 de janeiro</h2>
+      <p class="lead anim">Contando com o arranque a 9 de novembro. O assistente e o painel começam primeiro, porque não dependem do parceiro PHC.</p>
+      <div class="crono">
+        <div class="cr-f anim"><span class="sem">Semana 1<small>9 a 13/11</small></span><b>Arranque</b><em class="cr-pag cr-pag-t">Adjudicação · 50%</em><p>Acesso à aplicação e aos extratos, as vossas regras de visitas, comissões e caixas, e o pedido ao parceiro PHC.</p></div>
+        <div class="cr-f anim"><span class="sem">Semanas 2 e 3<small>16 a 27/11</small></span><b>Assistente e painel</b><p>O assistente a responder aos comerciais, e o painel com rotas, visitas e clientes em risco.</p></div>
+        <div class="cr-f anim"><span class="sem">Semanas 4 e 5<small>30/11 a 11/12</small></span><b>Faturas e banco</b><p>O grupo das faturas nas três lojas e a conciliação bancária.</p></div>
+        <div class="cr-f anim"><span class="sem">Semana 6<small>14 a 18/12</small></span><b>Relatório e comissões</b><p>O resumo das 19h, as divergências por funcionária e o cálculo das comissões.</p></div>
+        <div class="cr-f anim"><span class="sem">Semanas 7 e 8<small>4 a 15/01</small></span><b>Testes</b><p>O escritório e as lojas a trabalhar com dias reais, com o fecho de dezembro.</p><em class="cr-pag">2.º pagamento · 50%</em></div>
+        <div class="cr-f ok anim"><span class="sem">Semana 9<small>18 a 22/01</small></span><b>Em uso diário</b><p>Últimos ajustes. Começa a avença.</p></div>
+      </div>
+      <p class="crono-nota anim">De 21/12 a 1/1 não há entregas. Feriados de 1 e 8 de dezembro já contados. Calendário a confirmar na proposta formal.</p>
+      <div class="contacto anim"><span>Diogo Gonçalves · AI Solutions</span><a href="tel:+351964581992">964 581 992</a><a href="mailto:diogo.goncalves@aisolutions.pt">diogo.goncalves@aisolutions.pt</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<nav class="folha" aria-label="Navegação">
+  <div class="folha-ref"><span>N.º</span><b id="folhaN">01 / 15</b></div>
+  <div class="folha-des"><span>SECÇÃO</span><b id="folhaT">Capa</b></div>
+  <div class="folha-bt"><button type="button" data-prev aria-label="Anterior">‹</button><button type="button" data-next aria-label="Seguinte">›</button></div>
+</nav>
+
+<footer class="ais-foot">Apostaki × AI Solutions · protótipo de 28/10/2026 · simulações assinaladas na página</footer>
+
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/apostaki.js"></script>
+</body>
+</html>

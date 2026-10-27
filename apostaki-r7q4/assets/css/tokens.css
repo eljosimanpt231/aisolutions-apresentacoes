@@ -1,0 +1,146 @@
+/* Apostaki: o site não tem cor de marca, por isso a paleta vem do nicho.
+   Verde-mesa como marca, dourado do prémio como acento, e a barra lateral
+   num verde quase preto. Assinatura: o papel do bilhete (picotagem, série).
+   Tema claro por defeito; escuro com o botão no topo (data-theme). */
+:root {
+  --brand-hsl: 160 64% 24%;
+  --accent-hsl: 41 88% 46%;
+  --brand2-hsl: 168 55% 30%;
+  --graf-hsl: 162 42% 11%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --graf: hsl(var(--graf-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(160 64% 22%);
+  --acento-texto: hsl(160 70% 22%);
+  --ouro-texto: hsl(36 90% 28%);
+  --ok-texto: hsl(146 70% 24%);
+
+  --bg: hsl(45 28% 96.5%);
+  --bg-soft: hsl(45 22% 93%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(48 30% 97.5%);
+  --border: hsl(44 16% 85%);
+  --line: hsl(var(--brand-hsl) / 0.05);
+  --veil: hsl(45 28% 96.5% / 0.88);
+
+  --text: hsl(165 30% 10%);
+  --muted: hsl(165 10% 31%);
+  --faint: hsl(165 8% 36%);
+
+  --paper: hsl(46 50% 98.5%);
+  --paper-text: hsl(165 30% 10%);
+  --paper-muted: hsl(165 8% 36%);
+  --paper-line: hsl(44 18% 82%);
+
+  --success-hsl: 146 64% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 70% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 32 94% 32%;  --warning: hsl(var(--warning-hsl));
+  --verde-hsl: 146 60% 36%;   --verde: hsl(var(--verde-hsl));
+  --amarelo-hsl: 42 96% 46%;  --amarelo: hsl(var(--amarelo-hsl));
+  --vermelho-hsl: 356 74% 50%; --vermelho: hsl(var(--vermelho-hsl));
+  --braga-hsl: 160 64% 28%;   --braga: hsl(var(--braga-hsl));
+  --coimbra-hsl: 196 70% 34%; --coimbra: hsl(var(--coimbra-hsl));
+  --faro-hsl: 22 86% 48%;     --faro: hsl(var(--faro-hsl));
+
+  --grad-text: linear-gradient(100deg, hsl(var(--brand-hsl)), hsl(var(--brand2-hsl)) 55%, hsl(36 80% 38%));
+  --foil: linear-gradient(115deg, hsl(42 70% 62%), hsl(46 90% 84%) 22%, hsl(38 60% 56%) 40%, hsl(48 95% 88%) 58%, hsl(36 66% 52%) 78%, hsl(44 84% 76%));
+  --picote: radial-gradient(circle at 0 50%, transparent 7px, #000 7.5px);
+
+  --shadow-sm: 0 1px 2px hsl(var(--graf-hsl) / 0.08);
+  --shadow-md: 0 8px 24px hsl(var(--graf-hsl) / 0.09);
+  --shadow-lg: 0 22px 54px hsl(var(--graf-hsl) / 0.16);
+  --shadow-glow: 0 0 36px hsl(var(--brand-hsl) / 0.25);
+
+  --radius: 9px;
+  --radius-lg: 14px;
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, Menlo, monospace;
+  --container: 1200px;
+  --section-pad: clamp(64px, 9vw, 120px);
+
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-hsl: 158 56% 46%;
+    --accent-hsl: 42 92% 58%;
+    --brand2-hsl: 168 50% 52%;
+    --graf-hsl: 162 40% 7%;
+    --brand-solido: hsl(160 64% 26%);
+    --acento-texto: hsl(156 60% 62%);
+    --ouro-texto: hsl(43 92% 64%);
+    --ok-texto: hsl(146 60% 60%);
+    --bg: hsl(162 26% 6%);
+    --bg-soft: hsl(162 22% 9%);
+    --surface: hsl(162 20% 9.5%);
+    --surface-2: hsl(162 18% 12%);
+    --border: hsl(162 14% 20%);
+    --line: hsl(var(--brand-hsl) / 0.06);
+    --veil: hsl(162 26% 6% / 0.88);
+    --text: hsl(48 30% 94%);
+    --muted: hsl(150 10% 72%);
+    --faint: hsl(150 8% 62%);
+    --paper: hsl(162 18% 12%);
+    --paper-text: hsl(48 30% 94%);
+    --paper-muted: hsl(150 10% 70%);
+    --paper-line: hsl(162 14% 22%);
+    --success-hsl: 146 58% 52%;
+    --danger-hsl: 356 80% 66%;
+    --warning-hsl: 38 92% 58%;
+    --verde-hsl: 146 58% 48%;
+    --amarelo-hsl: 46 96% 56%;
+    --vermelho-hsl: 356 80% 62%;
+    --braga-hsl: 158 56% 46%;
+    --coimbra-hsl: 196 70% 56%;
+    --faro-hsl: 24 90% 60%;
+    --grad-text: linear-gradient(100deg, hsl(var(--brand-hsl)), hsl(var(--brand2-hsl)) 50%, hsl(var(--accent-hsl)));
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.5);
+    --shadow-md: 0 10px 30px hsl(0 0% 0% / 0.5);
+    --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.6);
+  }
+}
+:root[data-theme="dark"] {
+  --brand-hsl: 158 56% 46%;
+  --accent-hsl: 42 92% 58%;
+  --brand2-hsl: 168 50% 52%;
+  --graf-hsl: 162 40% 7%;
+  --brand-solido: hsl(160 64% 26%);
+  --acento-texto: hsl(156 60% 62%);
+  --ouro-texto: hsl(43 92% 64%);
+  --ok-texto: hsl(146 60% 60%);
+  --bg: hsl(162 26% 6%);
+  --bg-soft: hsl(162 22% 9%);
+  --surface: hsl(162 20% 9.5%);
+  --surface-2: hsl(162 18% 12%);
+  --border: hsl(162 14% 20%);
+  --line: hsl(var(--brand-hsl) / 0.06);
+  --veil: hsl(162 26% 6% / 0.88);
+  --text: hsl(48 30% 94%);
+  --muted: hsl(150 10% 72%);
+  --faint: hsl(150 8% 62%);
+  --paper: hsl(162 18% 12%);
+  --paper-text: hsl(48 30% 94%);
+  --paper-muted: hsl(150 10% 70%);
+  --paper-line: hsl(162 14% 22%);
+  --success-hsl: 146 58% 52%;
+  --danger-hsl: 356 80% 66%;
+  --warning-hsl: 38 92% 58%;
+  --verde-hsl: 146 58% 48%;
+  --amarelo-hsl: 46 96% 56%;
+  --vermelho-hsl: 356 80% 62%;
+  --braga-hsl: 158 56% 46%;
+  --coimbra-hsl: 196 70% 56%;
+  --faro-hsl: 24 90% 60%;
+  --grad-text: linear-gradient(100deg, hsl(var(--brand-hsl)), hsl(var(--brand2-hsl)) 50%, hsl(var(--accent-hsl)));
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.5);
+  --shadow-md: 0 10px 30px hsl(0 0% 0% / 0.5);
+  --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.6);
+}
