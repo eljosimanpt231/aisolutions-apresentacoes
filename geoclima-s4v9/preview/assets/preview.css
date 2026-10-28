@@ -1,0 +1,157 @@
+/* ============================================================
+   Maqueta da loja nova da Geoclima.
+   Clara, na marca deles (verde #97c65c, navy #242e45, Inter).
+   Catálogo, preços e fotografias reais, lidos de geoclima.pt.
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+:root {
+  --verde: #97c65c; --verde-esc: #4d7225; --verde-claro: #eef6e4;
+  --navy: #242e45; --tinta: #242e45; --tinta-2: #5a6475; --tinta-3: #6b7484;
+  --fundo: #ffffff; --fundo-2: #f6f8f3; --linha: #e4e9dd;
+  --r: 14px; --r-p: 10px;
+  --s1: .5rem; --s2: .85rem; --s3: 1.25rem; --s4: 2rem; --s5: 3rem; --s6: 4.5rem;
+  --sombra: 0 1px 2px rgba(36,46,69,.05), 0 8px 24px -12px rgba(36,46,69,.14);
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--fundo); color: var(--tinta);
+  font: 400 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.env { width: min(1240px, 100% - 2.5rem); margin-inline: auto; }
+
+/* ---------- faixa de maqueta ---------- */
+.aviso {
+  background: var(--navy); color: #fff; font-size: .82rem; letter-spacing: .01em;
+  padding: .6rem 0;
+}
+.aviso .env { display: flex; gap: var(--s3); align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.aviso b { color: var(--verde); }
+.aviso a { color: #fff; text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
+
+/* ---------- cabeçalho ---------- */
+.topo { background: var(--verde); position: sticky; top: 0; z-index: 20; box-shadow: 0 2px 10px rgba(36,46,69,.08); }
+.topo .env { display: flex; align-items: center; gap: var(--s4); min-height: 76px; }
+.topo-logo img { height: 34px; width: auto; }
+.topo-logo { background: var(--navy); padding: .45rem .7rem; border-radius: 10px; display: inline-flex; }
+.menu { display: flex; gap: var(--s3); flex: 1; flex-wrap: wrap; }
+.menu a { color: var(--navy); text-decoration: none; font-weight: 500; font-size: .95rem; padding: .5rem 0; }
+.menu a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.menu a[aria-current] { font-weight: 700; }
+.carr {
+  display: inline-flex; align-items: center; gap: .5rem; background: #fff; color: var(--navy);
+  border: 0; cursor: pointer; font: inherit; font-weight: 700; font-size: .92rem;
+  padding: .6rem 1rem; min-height: 44px; border-radius: 99px; box-shadow: var(--sombra);
+}
+.carr span { background: var(--navy); color: #fff; border-radius: 99px; min-width: 1.5rem; padding: 0 .35rem; text-align: center; }
+.carr.pulsa { animation: pulsa .5s ease; }
+@keyframes pulsa { 0%{transform:scale(1)} 40%{transform:scale(1.14)} 100%{transform:scale(1)} }
+
+/* ---------- cabeçalho da loja ---------- */
+.loja-topo { background: var(--fundo-2); border-bottom: 1px solid var(--linha); padding: var(--s5) 0 var(--s4); }
+.migalhas { font-size: .85rem; color: var(--tinta-3); margin: 0 0 var(--s2); }
+.loja-topo h1 { margin: 0 0 var(--s2); font-size: clamp(1.9rem, 4vw, 2.8rem); letter-spacing: -.02em; line-height: 1.1; }
+.loja-topo p { margin: 0; color: var(--tinta-2); max-width: 62ch; }
+
+/* ---------- ferramentas ---------- */
+.ferramentas { display: flex; gap: var(--s2); flex-wrap: wrap; margin-top: var(--s4); }
+.busca { position: relative; flex: 1 1 20rem; }
+.busca input {
+  width: 100%; font: inherit; padding: .85rem 1rem .85rem 2.9rem; min-height: 52px;
+  border: 1px solid var(--linha); border-radius: 99px; background: #fff; color: var(--tinta);
+}
+.busca svg { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--tinta-3); }
+.busca input:focus, select:focus { outline: 2px solid var(--verde-esc); outline-offset: 1px; }
+.ordem { font: inherit; padding: .85rem 1rem; min-height: 52px; border: 1px solid var(--linha); border-radius: 99px; background: #fff; color: var(--tinta); }
+
+.cats { display: flex; gap: .45rem; flex-wrap: wrap; margin-top: var(--s3); }
+.cat {
+  appearance: none; cursor: pointer; font: inherit; font-size: .9rem; font-weight: 600;
+  padding: .55rem .95rem; min-height: 44px; border-radius: 99px; color: var(--tinta-2);
+  border: 1px solid var(--linha); background: #fff;
+}
+.cat small { margin-left: .4rem; color: var(--tinta-3); font-weight: 400; }
+.cat:hover { border-color: var(--verde); color: var(--navy); }
+.cat.on { background: var(--verde); border-color: var(--verde-esc); color: var(--navy); }
+.cat.on small { color: var(--navy); opacity: .85; }
+
+/* ---------- grelha ---------- */
+.conta { margin: var(--s4) 0 var(--s3); color: var(--tinta-2); font-size: .92rem; }
+.grelha { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: var(--s3); padding-bottom: var(--s6); }
+.card {
+  display: flex; flex-direction: column; gap: .6rem; padding: var(--s2);
+  background: #fff; border: 1px solid var(--linha); border-radius: var(--r);
+  transition: box-shadow .2s, transform .2s, border-color .2s;
+}
+.card:hover { box-shadow: var(--sombra); transform: translateY(-2px); border-color: #d3ddc6; }
+.card-foto { aspect-ratio: 1; border-radius: var(--r-p); background: var(--fundo-2); overflow: hidden; display: grid; place-items: center; }
+.card-foto img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.card-cat { font-size: .78rem; font-weight: 700; letter-spacing: .02em; color: var(--verde-esc); }
+.card h2 { margin: 0; font-size: 1rem; font-weight: 600; line-height: 1.35; }
+.card-desc { margin: 0; font-size: .85rem; color: var(--tinta-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-stock { font-size: .82rem; color: var(--verde-esc); font-weight: 600; display: flex; align-items: center; gap: .35rem; }
+.card-stock i { width: 7px; height: 7px; border-radius: 50%; background: var(--verde); }
+.card-fundo { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: auto; padding-top: .3rem; }
+.preco { font-size: 1.22rem; font-weight: 700; color: var(--navy); white-space: nowrap; }
+.preco small { font-size: .74rem; font-weight: 400; color: var(--tinta-2); }
+.qt { display: inline-flex; align-items: center; border: 1px solid var(--linha); border-radius: var(--r-p); background: #fff; }
+.qt button { appearance: none; border: 0; background: none; cursor: pointer; color: var(--tinta-2); font: inherit; font-size: 1.1rem; width: 36px; height: 40px; }
+.qt button:hover { color: var(--verde-esc); }
+.qt b { min-width: 1.6rem; text-align: center; font-size: .95rem; }
+.add {
+  appearance: none; cursor: pointer; font: inherit; font-weight: 600; font-size: .92rem;
+  padding: .7rem; min-height: 46px; border-radius: var(--r-p);
+  border: 1px solid var(--verde-esc); background: var(--verde); color: var(--navy); width: 100%;
+  transition: background .2s;
+}
+.add:hover { background: var(--verde-esc); border-color: var(--verde-esc); color: #fff; }
+.add.feito { background: var(--navy); border-color: var(--navy); }
+.vazio { grid-column: 1/-1; padding: var(--s5) 0; color: var(--tinta-2); text-align: center; }
+.vazio button { appearance: none; border: 0; background: none; cursor: pointer; color: var(--verde-esc); font: inherit; font-weight: 600; text-decoration: underline; min-height: 44px; }
+
+/* ---------- ajuda a escolher ---------- */
+.ajuda { background: var(--verde-claro); border: 1px solid #dcebc9; border-radius: var(--r); padding: var(--s4); margin: var(--s4) 0 0; }
+.ajuda h2 { margin: 0 0 .4rem; font-size: 1.3rem; }
+.ajuda p { margin: 0 0 var(--s3); color: var(--tinta-2); max-width: 60ch; }
+.ajuda-ops { display: flex; flex-wrap: wrap; gap: .5rem; }
+.ajuda-op { appearance: none; cursor: pointer; font: inherit; font-weight: 600; font-size: .92rem; padding: .7rem 1.1rem; min-height: 46px; border-radius: 99px; border: 1px solid var(--verde-esc); background: #fff; color: var(--navy); }
+.ajuda-op:hover { background: var(--verde); color: var(--navy); border-color: var(--verde-esc); }
+.ajuda-res { margin: var(--s3) 0 0; padding: var(--s3); background: #fff; border-radius: var(--r-p); border: 1px solid #dcebc9; }
+.ajuda-res b { display: block; font-size: 1.05rem; margin-bottom: .2rem; }
+.ajuda-res span { color: var(--verde-esc); font-weight: 700; }
+
+/* ---------- rodapé ---------- */
+.fundo { background: var(--navy); color: #fff; padding: var(--s5) 0; margin-top: var(--s5); }
+.fundo .env { display: flex; gap: var(--s4); justify-content: space-between; flex-wrap: wrap; align-items: center; }
+.fundo p { margin: 0; color: rgba(255,255,255,.72); font-size: .92rem; }
+.fundo a.voltar {
+  display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: 0 1.3rem;
+  background: var(--verde); color: var(--navy); border-radius: 99px; text-decoration: none; font-weight: 700;
+}
+@media (max-width: 640px) {
+  .topo .env { min-height: 64px; gap: var(--s2); }
+  .menu { display: none; }
+  .grelha { grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr)); }
+  .card-desc { display: none; }
+}
+
+
+/* ---------- foco visível (teclado) ---------- */
+:where(a, button, input, select):focus-visible {
+  outline: 3px solid var(--navy); outline-offset: 2px; border-radius: 6px;
+}
+.topo :where(a, button):focus-visible { outline-color: var(--navy); }
+
+/* ---------- fecho ---------- */
+.fecho { background: var(--verde-claro); border-top: 1px solid #dcebc9; padding: var(--s5) 0; margin-top: var(--s5); }
+.fecho h2 { margin: 0 0 var(--s2); font-size: clamp(1.4rem, 3vw, 2rem); }
+.fecho p { margin: 0 0 var(--s3); color: var(--tinta-2); max-width: 60ch; }
+.fecho-acs { display: flex; gap: var(--s2); flex-wrap: wrap; }
+.fecho-btn {
+  display: inline-flex; align-items: center; min-height: 52px; padding: 0 1.5rem;
+  border-radius: 99px; text-decoration: none; font-weight: 700;
+  background: var(--navy); color: #fff;
+}
+.fecho-btn.sec { background: #fff; color: var(--navy); border: 1px solid var(--linha); }

@@ -306,3 +306,56 @@
   .mq-fundo { flex-direction: column; align-items: flex-start; gap: .5rem; }
   .mq-qt { align-self: stretch; justify-content: space-between; }
 }
+
+/* ============================================================
+   CONVITE PARA A PREVIEW
+   ============================================================ */
+.convite {
+  margin-top: var(--s-5); padding: var(--s-5);
+  display: flex; gap: var(--s-5); align-items: center; justify-content: space-between; flex-wrap: wrap;
+  border-radius: var(--r-3, 18px);
+  border: 1px solid color-mix(in oklab, var(--brand-500) 38%, transparent);
+  background:
+    radial-gradient(120% 160% at 100% 0%, color-mix(in oklab, var(--brand-500) 16%, transparent), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+  box-shadow: 0 26px 64px -34px rgba(0,0,0,.85);
+}
+.convite-txt { flex: 1 1 28rem; }
+.convite-txt h3 { margin: 0 0 var(--s-2); font-size: clamp(1.2rem, 2.4vw, 1.6rem); }
+.convite-txt p { margin: 0; color: var(--tinta-2); max-width: 58ch; }
+.convite-btn { flex: 0 0 auto; font-size: 1.02rem; padding-inline: 1.7rem; }
+@media (max-width: 760px) { .convite { padding: var(--s-4); } .convite-btn { width: 100%; justify-content: center; } }
+
+/* ============================================================
+   LIMITES: três cartões legíveis, não um bloco preto
+   ============================================================ */
+#limites .regras {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--s-4); margin-top: var(--s-5);
+}
+#limites .regras article {
+  padding: var(--s-4) var(--s-4) var(--s-5);
+  border-radius: var(--r-3, 18px);
+  border: 1px solid rgba(255,255,255,.14);
+  border-top: 3px solid var(--borda-topo, var(--brand-500));
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.018));
+  box-shadow: 0 18px 46px -30px rgba(0,0,0,.8);
+}
+#limites .r-faz      { --borda-topo: var(--brand-500); }
+#limites .r-pergunta { --borda-topo: hsl(var(--accent-hsl)); }
+#limites .r-nunca    { --borda-topo: #e8836f; }
+#limites .regras h3 {
+  margin: 0 0 var(--s-3); padding-bottom: var(--s-2);
+  font-size: 1.18rem; border-bottom: 1px solid rgba(255,255,255,.1);
+}
+#limites .regras ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3); }
+#limites .regras li {
+  position: relative; padding-left: 1.5rem; line-height: 1.6;
+  color: var(--tinta-2); font-size: var(--t-corpo, .95rem);
+}
+#limites .regras li::before {
+  content: ''; position: absolute; left: 0; top: .62em;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--borda-topo, var(--brand-500));
+}
+#limites .r-nunca li { text-decoration: none; }
+#limites .r-nunca li::before { border-radius: 1px; height: 2px; width: 10px; top: .78em; }

@@ -302,27 +302,25 @@
       <p class="rubrica"><span>5</span> A loja nova</p>
       <h2>Arquitetura, nas suas palavras. Veja as duas lado a lado.</h2>
 
-      <div class="comparador" id="gcComparador">
-        <div class="comp-abas" role="tablist" aria-label="Comparar a loja">
-          <button class="comp-aba" type="button" role="tab" data-vista="hoje" aria-selected="false">A loja hoje</button>
-          <button class="comp-aba on" type="button" role="tab" data-vista="nova" aria-selected="true">Como poderia ser</button>
-        </div>
+      <div class="comparador">
+        <img class="comp-shot" src="assets/img/antes-desktop.jpg" alt="A lista de produtos de geoclima.pt como está hoje" width="1440" height="1000" loading="lazy">
+        <p class="comp-legenda">A vossa lista de produtos, tal como está, a 28 de outubro de 2026. Não é feia: as
+          fotografias são boas e os preços estão claros. O que não tem é <b>pesquisa</b>, <b>filtros por
+          categoria</b>, <b>quantidade</b> e <b>comprar a partir da grelha</b>. Quem quer dois adaptadores
+          tem de abrir duas fichas, e quem procura "22 kW" percorre os 29 produtos com os olhos.</p>
+      </div>
 
-        <div class="comp-painel" data-painel="hoje" hidden>
-          <img class="comp-shot" src="assets/img/antes-desktop.jpg" alt="A lista de produtos de geoclima.pt como está hoje" width="1440" height="1000" loading="lazy">
-          <p class="comp-legenda">A vossa lista de produtos, tal como está, capturada a 28 de outubro de 2026.
-            Não é feia: as fotografias são boas e os preços estão claros. O que não tem é
-            <b>pesquisa</b>, <b>filtros por categoria</b>, <b>quantidade</b> e <b>comprar a partir da
-            grelha</b>. Quem quer dois adaptadores tem de abrir duas fichas, e quem procura "22 kW"
-            tem de percorrer os 29 produtos com os olhos.</p>
+      <div class="convite" data-entra="sobe">
+        <div class="convite-txt">
+          <h3>Montámos a loja nova, com o vosso catálogo</h3>
+          <p>Os 29 produtos, os vossos preços e as vossas fotografias, numa loja com pesquisa, categorias,
+            quantidade e carrinho. Abra e experimente: procure "22 kW", filtre por adaptadores, meta dois
+            no carrinho.</p>
         </div>
-
-        <div class="comp-painel" data-painel="nova">
-          <div class="maqueta holofote" id="gcMaqueta" data-entra="escala"></div>
-          <p class="comp-legenda">Maqueta a funcionar, com os <b>vossos 29 produtos</b>, os vossos preços e as vossas
-            fotografias, lidos de geoclima.pt. Escreva na pesquisa, carregue numa categoria, mude a ordem, ajuste a
-            quantidade e ponha no carrinho. É a estrutura que muda, não o catálogo.</p>
-        </div>
+        <a class="btn btn-primario premivel convite-btn" data-iman="0.2" href="preview/" target="_blank" rel="noopener">
+          Ver a loja como poderia ficar
+        </a>
+      </div>
       </div>
 
       <div class="pontos" data-entra="sobe">
@@ -387,7 +385,7 @@
   </section>
 
   <!-- ============ 6. LIMITES ============ -->
-  <section class="faixa" id="limites" data-nav="Limites">
+  <section class="faixa-clara" id="limites" data-nav="Limites">
     <div class="container">
       <p class="rubrica"><span>6</span> Limites, antes de falarmos de dinheiro</p>
       <h2>O que fazemos, o que depende de vocês, e o que não vamos fazer.</h2>
@@ -424,18 +422,6 @@
         </article>
       </div>
 
-      <aside class="prova" data-entra="sobe">
-        <h3>Onde é que já fizemos isto, e onde não</h3>
-        <p>Construímos plataformas web à medida, de backend a interface, para empresas portuguesas:
-          uma suite de propostas comerciais, uma plataforma de processos de ligação à rede elétrica,
-          uma gestão integrada de condomínios, um CRM de eventos. A lojas online ligamo-nos há anos,
-          a ler catálogo, stock, carrinho e encomendas.</p>
-        <p><b>Uma loja reconstruída de ponta a ponta seria a primeira.</b> Dizemo-lo antes de a Paula
-          perguntar, porque é por isso que esta proposta é por fases, com a Geoclima a ver e a aprovar
-          cada uma, e com os alvos de velocidade escritos e medidos em vez de prometidos. Se uma fase
-          não ficar como esperava, para ali.</p>
-        <p class="prova-nota">Por respeito aos contratos, não identificamos os clientes.</p>
-      </aside>
     </div>
   </section>
 
@@ -516,12 +502,6 @@
     Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a Geoclima,
     28 de outubro de 2026.<br>
     Manuel Condeço, manuel.condeco@aisolutions.pt
-    <span class="disclaimer">
-      Todas as medições desta página foram feitas em geoclima.pt a 28 de outubro de 2026, com o
-      Chromium, em computador (1440 px) e em telemóvel simulado (390 px, rede 3G, processador a um
-      quarto da velocidade). Os alvos da tabela do ponto 4 são compromissos a verificar da mesma
-      forma, não resultados já obtidos. Os preços citados são os da vossa loja.
-    </span>
   </div>
 </footer>
 
@@ -534,7 +514,6 @@
 <script src="../shared/js/protect.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="../shared/deck/deck.js"></script>
-<script src="assets/js/catalogo.js"></script>
 <script src="assets/js/loja.js"></script>
 <script>
   grafico('gcGrafico', {
@@ -552,8 +531,6 @@
   });
   corrida('gcCorrida');
   escolhaCarregador('gcEscolha');
-  maqueta('gcMaqueta');
-  alternador('gcComparador');
 </script>
 </body>
 </html>

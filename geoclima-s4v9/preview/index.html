@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>Geoclima | Loja online, como poderia ser</title>
+<meta name="description" content="Maqueta da loja online da Geoclima, com o catálogo, os preços e as fotografias reais. Preparada pela AI Solutions.">
+<meta property="og:title" content="Geoclima | Loja online, como poderia ser">
+<meta property="og:description" content="Maqueta com o catálogo real: pesquisa, categorias, quantidade e carrinho.">
+<meta property="og:image" content="https://apresentacoes.aisolutions.pt/geoclima-s4v9/assets/img/og.png">
+<meta property="og:locale" content="pt_PT">
+<link rel="icon" href="../assets/img/logo.svg">
+<link rel="stylesheet" href="assets/preview.css">
+</head>
+<body>
+
+<div class="aviso">
+  <div class="env">
+    <span><b>Maqueta.</b> Não é a loja da Geoclima: é uma proposta de como poderia ficar. Os produtos, preços e fotografias são os reais, lidos de geoclima.pt a 28 de outubro de 2026.</span>
+    <a href="../">Voltar ao diagnóstico</a>
+  </div>
+</div>
+
+<header class="topo">
+  <div class="env">
+    <span class="topo-logo"><img src="../assets/img/logo.svg" alt="Geoclima" width="170" height="34"></span>
+    <nav class="menu" aria-label="Principal">
+      <a href="#">Painéis fotovoltaicos</a>
+      <a href="#">Carregadores</a>
+      <a href="#">Climatização</a>
+      <a href="#" aria-current="page">Loja online</a>
+      <a href="#">Contactos</a>
+    </nav>
+    <button class="carr" type="button" id="btnCarr">Carrinho <span id="nCarr">0</span></button>
+  </div>
+</header>
+
+<section class="loja-topo">
+  <div class="env">
+    <p class="migalhas">Início &rsaquo; Loja online</p>
+    <h1>Loja online</h1>
+    <p>Carregadores, adaptadores e kits solares, prontos a enviar. Entrega até 2 dias úteis.</p>
+
+    <div class="ferramentas">
+      <label class="busca">
+        <span class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Pesquisar na loja</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="busca" placeholder="Pesquisar: carregador, 22 kW, adaptador Schuko...">
+      </label>
+      <select class="ordem" id="ordem" aria-label="Ordenar produtos">
+        <option value="nome">Ordenar: nome</option>
+        <option value="baixo">Preço: do mais barato</option>
+        <option value="alto">Preço: do mais caro</option>
+      </select>
+    </div>
+
+    <div class="cats" id="cats"></div>
+  </div>
+</section>
+
+<main class="env">
+  <section class="ajuda" id="ajuda">
+    <h2>Não sabe qual precisa?</h2>
+    <p>Entre 7,4 kW e 22 kW, entre ficha Tipo 2 e tomada Schuko, entre CEE trifásico e monofásico. Diga só onde vai carregar.</p>
+    <div class="ajuda-ops">
+      <button class="ajuda-op" type="button" data-aj="casa">Em casa, instalado na parede</button>
+      <button class="ajuda-op" type="button" data-aj="levar">Quero levar comigo</button>
+      <button class="ajuda-op" type="button" data-aj="empresa">Numa empresa</button>
+    </div>
+    <div id="ajudaRes"></div>
+  </section>
+
+  <p class="conta" id="conta"></p>
+  <div class="grelha" id="grelha"></div>
+</main>
+
+<section class="fecho">
+  <div class="env">
+    <h2>É assim que a loja pode ficar.</h2>
+    <p>Esta maqueta tem o catálogo que já está online. A loja a sério leva o catálogo completo, com a
+      vossa equipa a publicar produtos sem depender de ninguém.</p>
+    <div class="fecho-acs">
+      <a class="fecho-btn" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20maqueta%20da%20loja%20da%20Geoclima%20e%20quero%20avan%C3%A7ar." target="_blank" rel="noopener">Quero avançar</a>
+      <a class="fecho-btn sec" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20maqueta%20da%20loja%20da%20Geoclima%20e%20tenho%20uma%20pergunta%3A%20" target="_blank" rel="noopener">Tenho uma pergunta</a>
+      <a class="fecho-btn sec" href="../">Voltar ao diagnóstico</a>
+    </div>
+  </div>
+</section>
+
+<footer class="fundo">
+  <div class="env">
+    <p>Maqueta preparada pela <strong>AI Solutions</strong> para a Geoclima.<br>Manuel Condeço, 964 251 889</p>
+    <a class="voltar" href="../">Voltar ao diagnóstico</a>
+  </div>
+</footer>
+
+<script src="../assets/js/catalogo.js"></script>
+<script src="assets/preview.js"></script>
+</body>
+</html>
