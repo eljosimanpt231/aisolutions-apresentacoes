@@ -359,3 +359,22 @@
 }
 #limites .r-nunca li { text-decoration: none; }
 #limites .r-nunca li::before { border-radius: 1px; height: 2px; width: 10px; top: .78em; }
+
+/* ---------- botões fora do fecho ----------
+   O .btn-primario do deck de origem só está definido dentro de .fecho, por
+   isso o convite para a preview saía como texto verde em vez de botão. */
+.btn-primario {
+  background: var(--brand-400); color: #10210a; font-weight: 700;
+  box-shadow: 0 14px 30px -14px color-mix(in oklab, var(--brand-500) 70%, transparent);
+}
+.btn-primario:hover { background: var(--brand-300); transform: translateY(-2px); }
+.btn-secundario { background: transparent; color: var(--tinta-1); border-color: rgba(255,255,255,.26); }
+.btn-secundario:hover { border-color: var(--brand-400); color: var(--brand-300); }
+
+/* ---------- quatro pontos não cabem em quatro colunas ----------
+   Com o ponto dos preços dos kits, a linha passou a ter quatro artigos e
+   rebentava o contentor. Em ecrã largo fica 2x2. */
+@media (min-width: 861px) {
+  #loja-nova .pontos:not(.duas-cols) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+#loja-nova .pontos article { min-width: 0; }
