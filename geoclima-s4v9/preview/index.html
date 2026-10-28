@@ -12,75 +12,142 @@
 <meta property="og:image" content="https://apresentacoes.aisolutions.pt/geoclima-s4v9/assets/img/og.png">
 <meta property="og:locale" content="pt_PT">
 <link rel="icon" href="../assets/img/logo.svg">
+<link rel="preload" href="../assets/fonts/literata-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fontes.css">
 <link rel="stylesheet" href="assets/preview.css">
 </head>
 <body>
 
 <div class="aviso">
   <div class="env">
-    <span><b>Maqueta.</b> Não é a loja da Geoclima: é uma proposta de como poderia ficar. Os produtos, preços e fotografias são os reais, lidos de geoclima.pt a 28 de outubro de 2026.</span>
+    <span><b>Maqueta.</b> Não é a loja da Geoclima: é uma proposta de como poderia ficar. Produtos, preços e fotografias são os reais, de geoclima.pt a 28/10/2026.</span>
     <a href="../">Voltar ao diagnóstico</a>
   </div>
 </div>
 
 <header class="topo">
   <div class="env">
-    <span class="topo-logo"><img src="../assets/img/logo.svg" alt="Geoclima" width="170" height="34"></span>
+    <span class="topo-logo"><img src="../assets/img/logo.svg" alt="Geoclima" width="150" height="30"></span>
     <nav class="menu" aria-label="Principal">
       <a href="#">Painéis fotovoltaicos</a>
       <a href="#">Carregadores</a>
+      <a href="#">Baterias</a>
       <a href="#">Climatização</a>
-      <a href="#" aria-current="page">Loja online</a>
+      <a href="#loja" aria-current="page">Loja online</a>
       <a href="#">Contactos</a>
     </nav>
     <button class="carr" type="button" id="btnCarr">Carrinho <span id="nCarr">0</span></button>
   </div>
 </header>
 
-<section class="loja-topo">
+<section class="heroi">
+  <div class="heroi-foto"><img src="assets/fotos/hero.webp" alt="" width="1920" height="1080" fetchpriority="high"></div>
   <div class="env">
-    <p class="migalhas">Início &rsaquo; Loja online</p>
-    <h1>Loja online</h1>
-    <p>Carregadores, adaptadores e kits solares, prontos a enviar. Entrega até 2 dias úteis.</p>
-
-    <div class="ferramentas">
+    <span class="heroi-eti"><i></i>Loja online</span>
+    <h1>Carregue o carro<br>com o sol que já<br><em>está no telhado.</em></h1>
+    <p>Carregadores, adaptadores e kits solares da Geoclima, prontos a enviar. Entrega até 2 dias úteis em Portugal continental.</p>
+    <div class="heroi-busca">
       <label class="busca">
-        <span class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Pesquisar na loja</span>
+        <span class="so-leitor">Pesquisar na loja</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-        <input type="search" id="busca" placeholder="Pesquisar: carregador, 22 kW, adaptador Schuko...">
+        <input type="search" id="busca" placeholder="Procure: 22 kW, Schuko, adaptador V2L...">
       </label>
-      <select class="ordem" id="ordem" aria-label="Ordenar produtos">
-        <option value="nome">Ordenar: nome</option>
-        <option value="baixo">Preço: do mais barato</option>
-        <option value="alto">Preço: do mais caro</option>
-      </select>
     </div>
-
-    <div class="cats" id="cats"></div>
+    <div class="heroi-nums">
+      <div><b>29</b><span>produtos em stock</span></div>
+      <div><b>2 dias</b><span>entrega útil</span></div>
+      <div><b>Norte a Sul</b><span>instalação própria</span></div>
+    </div>
   </div>
 </section>
 
-<main class="env">
-  <section class="ajuda" id="ajuda">
-    <h2>Não sabe qual precisa?</h2>
-    <p>Entre 7,4 kW e 22 kW, entre ficha Tipo 2 e tomada Schuko, entre CEE trifásico e monofásico. Diga só onde vai carregar.</p>
-    <div class="ajuda-ops">
-      <button class="ajuda-op" type="button" data-aj="casa">Em casa, instalado na parede</button>
-      <button class="ajuda-op" type="button" data-aj="levar">Quero levar comigo</button>
-      <button class="ajuda-op" type="button" data-aj="empresa">Numa empresa</button>
+<section class="conf">
+  <div class="env">
+    <ul>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="15" height="11" rx="2"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><span><b>Entrega até 2 dias úteis</b><small>Portugal continental</small></span></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Instalação pela Geoclima</b><small>Equipa própria, de Norte a Sul</small></span></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span><b>Apoio técnico</b><small>Dúvidas antes e depois da compra</small></span></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><span><b>Pagamento seguro</b><small>Multibanco, MB Way e cartão</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec env">
+  <div class="sec-cab">
+    <div>
+      <h2>Por onde quer começar?</h2>
+      <p>Cinco famílias, do carregador de parede ao kit didático. A loja de hoje mostra os 29 produtos todos de seguida, sem separação.</p>
     </div>
-    <div id="ajudaRes"></div>
-  </section>
+    <a class="sec-link" href="#loja">Ver tudo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="mosaico" id="mosaico"></div>
+</section>
+
+<section class="sec env" id="loja">
+  <div class="sec-cab">
+    <div>
+      <h2>Todos os produtos</h2>
+      <p>Procure pelo que precisa, filtre pela família, escolha a quantidade e leve mais do que um de uma vez.</p>
+    </div>
+  </div>
+
+  <div class="ferramentas">
+    <label class="busca">
+      <span class="so-leitor">Pesquisar na loja</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="busca2" placeholder="Procure: 22 kW, Schuko, adaptador V2L...">
+    </label>
+    <select class="ordem" id="ordem" aria-label="Ordenar produtos">
+      <option value="nome">Ordenar: nome</option>
+      <option value="baixo">Preço: do mais barato</option>
+      <option value="alto">Preço: do mais caro</option>
+    </select>
+  </div>
+  <div class="cats" id="cats"></div>
 
   <p class="conta" id="conta"></p>
   <div class="grelha" id="grelha"></div>
-</main>
+</section>
+
+<section class="sec env">
+  <div class="ajuda">
+    <div class="ajuda-grid">
+      <div>
+        <h2>Não sabe qual precisa?</h2>
+        <p>Entre 7,4 kW e 22 kW, entre ficha Tipo 2 e tomada Schuko, entre CEE trifásico de 32 A e monofásico. Diga só onde vai carregar e nós mostramos o que serve.</p>
+        <div class="ajuda-ops">
+          <button class="ajuda-op" type="button" data-aj="casa">Em casa, na parede</button>
+          <button class="ajuda-op" type="button" data-aj="levar">Quero levar comigo</button>
+          <button class="ajuda-op" type="button" data-aj="empresa">Numa empresa</button>
+        </div>
+      </div>
+      <div class="ajuda-res" id="ajudaRes"><p class="ajuda-vazio">Escolha uma das três e aparece aqui o que lhe serve, com o preço.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="editorial">
+  <div class="sec env">
+    <div class="ed-grid">
+      <div class="ed-foto"><img src="assets/fotos/instalacao.webp" alt="Instalação de painéis fotovoltaicos pela equipa da Geoclima" width="1920" height="1080" loading="lazy"></div>
+      <div>
+        <h2>O carregador é o fim da história, não o princípio.</h2>
+        <p>Quem compra um carregador costuma estar a pensar no painel, na bateria ou no quadro elétrico. A loja não tem de terminar a conversa na caixa: pode encaminhar para a equipa que trata do resto.</p>
+        <ul class="ed-lista">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Quem procura autoconsumo chega ao comercial, em vez de levar um adaptador de 39,90 €</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Cada ficha de produto liga ao serviço de instalação da Geoclima</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Pedidos de orçamento entram na vossa ferramenta, que já existe e funciona</span></li>
+        </ul>
+        <a class="btn-nv" href="#loja">Voltar à loja <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="fecho">
   <div class="env">
     <h2>É assim que a loja pode ficar.</h2>
-    <p>Esta maqueta tem o catálogo que já está online. A loja a sério leva o catálogo completo, com a
-      vossa equipa a publicar produtos sem depender de ninguém.</p>
+    <p>Esta maqueta usa o catálogo que já está online. A loja a sério leva o catálogo completo, com a vossa equipa a publicar produtos sem depender de ninguém.</p>
     <div class="fecho-acs">
       <a class="fecho-btn" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20maqueta%20da%20loja%20da%20Geoclima%20e%20quero%20avan%C3%A7ar." target="_blank" rel="noopener">Quero avançar</a>
       <a class="fecho-btn sec" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20maqueta%20da%20loja%20da%20Geoclima%20e%20tenho%20uma%20pergunta%3A%20" target="_blank" rel="noopener">Tenho uma pergunta</a>
@@ -91,8 +158,22 @@
 
 <footer class="fundo">
   <div class="env">
-    <p>Maqueta preparada pela <strong>AI Solutions</strong> para a Geoclima.<br>Manuel Condeço, 964 251 889</p>
-    <a class="voltar" href="../">Voltar ao diagnóstico</a>
+    <div>
+      <span class="fundo-logo"><img src="../assets/img/logo.svg" alt="Geoclima" width="130" height="26"></span>
+      <p style="margin:0">Soluções de energia e mobilidade elétrica.<br>Maqueta preparada pela <strong style="color:#fff">AI Solutions</strong>.</p>
+    </div>
+    <div>
+      <h4>Loja</h4>
+      <ul id="fundoCats"></ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li>Manuel Condeço, AI Solutions</li>
+        <li><a href="tel:+351964251889">964 251 889</a></li>
+        <li><a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
 
