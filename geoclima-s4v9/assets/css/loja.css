@@ -378,3 +378,25 @@
   #loja-nova .pontos:not(.duas-cols) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 #loja-nova .pontos article { min-width: 0; }
+
+/* ============================================================
+   FECHO
+   O .cta-final do starter pinta-se com --grad-cta, que com o verde claro
+   da Geoclima saía num verde berrante com o texto a desaparecer lá dentro.
+   Aqui fica escuro como o resto do deck, com o verde só no brilho.
+   ============================================================ */
+.cta-final {
+  background:
+    radial-gradient(120% 120% at 50% 0%, color-mix(in oklab, var(--brand-500) 22%, transparent), transparent 64%),
+    linear-gradient(180deg, #0d140a, #080b06);
+  color: var(--tinta-1);
+  border-top: 1px solid color-mix(in oklab, var(--brand-500) 30%, transparent);
+}
+.cta-final h2 { color: var(--tinta-1); }
+.passos-fecho li { border-top-color: rgba(255,255,255,.18); }
+.passos-fecho .n { color: var(--brand-300); opacity: 1; font-weight: 600; }
+.passos-fecho b { color: var(--tinta-1); }
+.passos-fecho p { color: var(--tinta-2); }
+.cta-final .fecho-contacto { color: var(--tinta-2); }
+.cta-final .fecho-contacto a { color: var(--brand-300); }
+.cta-final .btn-secundario { color: var(--tinta-1); border-color: rgba(255,255,255,.34); }
