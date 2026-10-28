@@ -298,3 +298,11 @@
   .mq-corpo { padding: var(--s-3); }
   .mq-url { font-size: var(--t-mono,.74rem); }
 }
+
+/* O preço não se parte entre o número e o símbolo. No telemóvel, se não
+   couber ao lado do seletor de quantidade, passa para cima dele. */
+.mq-preco { white-space: nowrap; }
+@media (max-width: 520px) {
+  .mq-fundo { flex-direction: column; align-items: flex-start; gap: .5rem; }
+  .mq-qt { align-self: stretch; justify-content: space-between; }
+}
