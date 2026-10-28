@@ -1,7 +1,7 @@
 /* ============================================================
    GRÁFICO DE LINHAS EM SVG, DESENHADO AO ENTRAR NO ECRÃ
 
-   grafico('id', { titulo, series: [{ nome, cor, aviso, pontos:[{r,v}] }], nota })
+   grafico('id', { titulo, series: [{ nome, cor, aviso, pontos:[{r,v}] }], nota, unidade })
 
    Porquê à mão e não uma biblioteca: são 4 kB em vez de 80, os traços
    usam os tokens da apresentação, e o desenho progressivo do traço é o
@@ -13,6 +13,11 @@
 function grafico(id, cfg) {
   const raiz = document.getElementById(id);
   if (!raiz || !cfg || !cfg.series || !cfg.series.length) return;
+
+  /* Unidade dos valores. Omissa = ' €', que era o que estava escrito à mão
+     aqui dentro e o que todos os decks anteriores esperam. Passa-se
+     unidade: 's' (ou '' para nenhuma) quando o gráfico não é de dinheiro. */
+  const un = cfg.unidade === undefined ? ' €' : (cfg.unidade ? ' ' + cfg.unidade : '');
 
   const menos = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const NS = 'http://www.w3.org/2000/svg';
@@ -40,7 +45,7 @@ function grafico(id, cfg) {
   marcas.forEach(v => {
     svg.appendChild(el('line', { x1: L, x2: W - R, y1: y(v), y2: y(v), class: 'gr-grelha' }));
     const t = el('text', { x: L - 10, y: y(v) + 4, class: 'gr-eixo', 'text-anchor': 'end' });
-    t.textContent = v.toLocaleString('pt-PT') + ' €';
+    t.textContent = v.toLocaleString('pt-PT') + un;
     svg.appendChild(t);
   });
   refs.forEach((r, i) => {
@@ -65,14 +70,14 @@ function grafico(id, cfg) {
 
     pts.forEach(p => {
       const c = el('circle', { cx: p.x, cy: p.y, r: 4.5, class: `gr-ponto gr-${s.cor || 'brand'}` });
-      const tt = el('title'); tt.textContent = `${s.nome}: ${p.v.toLocaleString('pt-PT')} €`;
+      const tt = el('title'); tt.textContent = `${s.nome}: ${p.v.toLocaleString('pt-PT')}${un}`;
       c.appendChild(tt); svg.appendChild(c);
     });
 
     /* rótulo no último ponto, que é onde o olho acaba */
     const ult = pts[pts.length - 1];
     const rot = el('text', { x: ult.x + 8, y: ult.y + 4, class: `gr-rot gr-${s.cor || 'brand'}` });
-    rot.textContent = ult.v.toLocaleString('pt-PT') + ' €';
+    rot.textContent = ult.v.toLocaleString('pt-PT') + un;
     svg.appendChild(rot);
   });
 

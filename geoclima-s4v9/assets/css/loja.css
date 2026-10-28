@@ -1,0 +1,229 @@
+/* Escala local: tres degraus, para os tamanhos nao serem escritos a mao. */
+:root { --t-mono: .74rem; --t-peq: .85rem; --t-corpo: .95rem; --t-sub: 1.1rem; --r-1: 8px; }
+
+/* ============================================================
+   Geoclima: componentes próprios desta apresentação.
+   Assentam nos tokens do noturno-vivo e no deck.css partilhado.
+   ============================================================ */
+
+.texto-largo { max-width: 62ch; color: var(--tinta-2); margin-top: var(--s-3); }
+.nota-justa { border-left: 2px solid var(--brand-a40, var(--brand-500)); padding-left: var(--s-3); font-style: italic; }
+
+/* ---------- resposta direta à pergunta dela ---------- */
+.resposta {
+  margin-top: var(--s-6); padding: var(--s-5);
+  border: 1px solid var(--linha-forte, rgba(255,255,255,.14));
+  border-left: 3px solid var(--brand-500);
+  border-radius: var(--r-2, 14px);
+  background: color-mix(in oklab, var(--brand-500) 7%, transparent);
+}
+.resposta-eti {
+  font: 600 var(--t-mono, .74rem)/1 var(--mono, 'IBM Plex Mono', monospace);
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--brand-300); margin: 0 0 var(--s-2);
+}
+.resposta h3 { margin: 0 0 var(--s-3); font-size: clamp(1.25rem, 2.4vw, 1.7rem); }
+.resposta p { margin: 0; color: var(--tinta-2); max-width: 66ch; }
+
+/* ---------- caixa "o que está bem" ---------- */
+.justo {
+  margin-top: var(--s-6); padding: var(--s-4) var(--s-5);
+  border: 1px dashed rgba(255,255,255,.18); border-radius: var(--r-2, 14px);
+}
+.justo p { margin: 0; color: var(--tinta-2); max-width: 72ch; }
+
+/* ---------- tabelas (peso do tema, alvos) ---------- */
+.peso, .alvos {
+  width: 100%; border-collapse: collapse; margin-top: var(--s-5);
+  font-size: var(--t-corpo, .95rem);
+}
+.peso th, .peso td, .alvos th, .alvos td {
+  text-align: left; padding: var(--s-3) var(--s-3);
+  border-bottom: 1px solid rgba(255,255,255,.10); vertical-align: top;
+}
+.peso thead th, .alvos thead th {
+  font: 600 var(--t-mono, .74rem)/1.2 var(--mono, 'IBM Plex Mono', monospace);
+  letter-spacing: .02em; color: var(--tinta-3);
+  border-bottom-color: rgba(255,255,255,.2);
+}
+.peso td.num, .peso th.num, .alvos td.num, .alvos th.num {
+  text-align: right; font-family: var(--mono, 'IBM Plex Mono', monospace);
+  white-space: nowrap;
+}
+.peso code, .causa code, .texto-largo code {
+  font-family: var(--mono, 'IBM Plex Mono', monospace); font-size: .9em;
+  background: rgba(255,255,255,.07); padding: .1em .4em; border-radius: var(--r-1, 8px);
+}
+.peso tbody th[scope="row"] { font-weight: 400; }
+.peso tr.vazio td, .peso tr.vazio th { color: var(--aviso, #f0b429); }
+.peso tfoot tr.total th, .peso tfoot tr.total td {
+  border-top: 2px solid rgba(255,255,255,.26); border-bottom: none;
+  font-weight: 600; padding-top: var(--s-3);
+}
+.alvos td.mal { color: var(--mau, #f98080); font-weight: 600; }
+.alvos td.bem { color: var(--bom, #86d16b); font-weight: 600; }
+.alvos tbody th[scope="row"] { font-weight: 600; max-width: 22ch; }
+
+/* ---------- lista de bibliotecas não usadas ---------- */
+.lista-nao { list-style: none; padding: 0; margin: var(--s-3) 0 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.lista-nao li {
+  font: 400 var(--t-mono, .74rem)/1 var(--mono, 'IBM Plex Mono', monospace);
+  padding: .34rem .6rem; border-radius: 99px;
+  border: 1px solid rgba(249,128,128,.34); color: #f3a3a3;
+  text-decoration: line-through; text-decoration-color: rgba(243,163,163,.6);
+}
+
+/* ---------- a corrida de carregamento (momento uau) ---------- */
+.corrida {
+  margin-top: var(--s-6); padding: var(--s-5);
+  border: 1px solid rgba(255,255,255,.14); border-radius: var(--r-3, 18px);
+  background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+  box-shadow: 0 24px 60px -30px rgba(0,0,0,.8);
+}
+.corrida-cab { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; justify-content: space-between; margin-bottom: var(--s-5); }
+.corrida-eti { font: 600 var(--t-peq, .85rem)/1.3 var(--mono, 'IBM Plex Mono', monospace); color: var(--tinta-3); }
+.corrida-nota { margin: var(--s-4) 0 0; font-size: var(--t-peq, .85rem); color: var(--tinta-3); max-width: 70ch; }
+
+.pista { display: grid; grid-template-columns: 11rem 1fr 5.2rem; gap: var(--s-3); align-items: center; padding: var(--s-3) 0; }
+.pista + .pista { border-top: 1px solid rgba(255,255,255,.08); }
+.pista-nome { font-weight: 600; }
+.pista-nome small { display: block; font-weight: 400; font-size: var(--t-peq, .85rem); color: var(--tinta-3); }
+.pista-barra { position: relative; height: 14px; border-radius: 99px; background: rgba(255,255,255,.07); overflow: visible; }
+.pista-fill { position: absolute; inset: 0 auto 0 0; width: 0; border-radius: 99px; }
+.pista[data-pista="antes"] .pista-fill { background: linear-gradient(90deg, #d97757, #f98080); }
+.pista[data-pista="depois"] .pista-fill { background: linear-gradient(90deg, var(--brand-600), var(--brand-400)); }
+.pista-marca {
+  position: absolute; top: 20px; left: 0; transform: translateX(-50%);
+  font: 400 var(--t-mono, .74rem)/1 var(--mono, 'IBM Plex Mono', monospace);
+  color: var(--tinta-3); white-space: nowrap; opacity: 0; transition: opacity .3s;
+}
+.pista-marca.vis { opacity: 1; }
+.pista-relogio { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pista[data-pista="antes"].feito .pista-relogio { color: #f98080; }
+.pista[data-pista="depois"].feito .pista-relogio { color: var(--brand-400); }
+
+/* ---------- escolha guiada do carregador ---------- */
+.escolha-bloco { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-6); align-items: start; margin-top: var(--s-7, 4rem); }
+.escolha-texto h3 { margin-top: 0; }
+.escolha-texto p { color: var(--tinta-2); }
+.escolha-wid {
+  padding: var(--s-5); border: 1px solid rgba(255,255,255,.14); border-radius: var(--r-3, 18px);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.012));
+  box-shadow: 0 24px 60px -34px rgba(0,0,0,.8); min-height: 20rem;
+}
+.esc-passo { font: 600 var(--t-mono, .74rem)/1 var(--mono, 'IBM Plex Mono', monospace); color: var(--brand-300); }
+.esc-perg { margin: var(--s-2) 0 var(--s-4); font-size: var(--t-sub, 1.1rem); font-weight: 600; }
+.esc-ops { display: grid; gap: .55rem; }
+.esc-op {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  padding: .75rem .9rem; border-radius: var(--r-2, 14px);
+  border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04);
+  color: var(--tinta-1); font: inherit; min-height: 44px;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+.esc-op:hover, .esc-op:focus-visible { border-color: var(--brand-500); background: color-mix(in oklab, var(--brand-500) 12%, transparent); transform: translateX(3px); }
+.esc-op small { display: block; color: var(--tinta-3); font-size: var(--t-peq, .85rem); margin-top: .15rem; }
+.esc-res { display: grid; gap: var(--s-3); }
+.esc-res-eti { font: 600 var(--t-mono, .74rem)/1 var(--mono, 'IBM Plex Mono', monospace); color: var(--brand-300); }
+.esc-res h4 { margin: 0; font-size: var(--t-sub, 1.1rem); }
+.esc-res-preco { font-family: var(--mono, 'IBM Plex Mono', monospace); font-size: 1.5rem; font-weight: 600; color: var(--brand-400); }
+.esc-res p { margin: 0; color: var(--tinta-2); font-size: var(--t-corpo, .95rem); }
+.esc-voltar {
+  margin-top: var(--s-2); background: none; border: none; cursor: pointer;
+  color: var(--tinta-3); font: inherit; font-size: var(--t-peq, .85rem); text-decoration: underline;
+  padding: .5rem 0; min-height: 44px;
+}
+.esc-voltar:hover { color: var(--tinta-1); }
+
+.duas-cols { grid-template-columns: 1fr 1fr !important; }
+
+@media (max-width: 860px) {
+  .escolha-bloco { grid-template-columns: 1fr; }
+  .duas-cols { grid-template-columns: 1fr !important; }
+  .pista { grid-template-columns: 1fr 4.6rem; grid-template-areas: "nome relogio" "barra barra"; row-gap: var(--s-2); }
+  .pista-nome { grid-area: nome; }
+  .pista-relogio { grid-area: relogio; }
+  .pista-barra { grid-area: barra; }
+  .peso, .alvos { font-size: var(--t-peq, .85rem); }
+  .peso th, .peso td, .alvos th, .alvos td { padding: var(--s-2); }
+  .alvos tbody th[scope="row"] { max-width: none; }
+}
+
+/* ---------- tabelas com rolagem própria no telemóvel ----------
+   O QA apanhou a tabela de alvos a empurrar a página para 446px num ecrã
+   de 390px. A tabela rola dentro da sua caixa; o corpo da página nunca rola
+   na horizontal. */
+.tabela-rol { overflow-x: auto; margin-top: var(--s-5); -webkit-overflow-scrolling: touch; }
+.tabela-rol > table { margin-top: 0; min-width: 34rem; }
+
+/* ---------- medida: notas longas presas em ch ---------- */
+.doc-nota, .corrida-nota, .gr-nota { max-width: 68ch; }
+.disclaimer { max-width: 78ch; }
+
+/* ---------- logótipo ----------
+   O da Geoclima é SVG claro com fundo transparente, pensado para fundo
+   escuro: ao contrário do JPEG do deck de origem, NÃO leva pastilha clara,
+   que lhe comia a palavra "Geo" em branco sobre branco. */
+.doc-logo-caixa { display: inline-flex; }
+.doc-logo-caixa .doc-logo { height: 40px; width: auto; }
+
+/* ---------- gradiente do título ----------
+   O .g-brilho partilhado passa pelo --brand2-hsl a meio, que aqui é o navy
+   do logótipo a 26% de luminosidade: apagava a palavra do meio. Aqui vai
+   âmbar para verde da marca e de volta. */
+.promessa-fecho.g-brilho {
+  background: linear-gradient(100deg in oklab,
+              hsl(var(--accent-hsl)) 0%,
+              hsl(var(--brand-hsl)) 52%,
+              hsl(var(--accent-hsl) / .9) 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+
+/* ---------- respiração do cabeçalho ---------- */
+.cabecalho .lead { margin-bottom: var(--s-6); }
+.cabecalho .numeros { margin-bottom: var(--s-5); }
+.cabecalho .doc-nota { margin-top: var(--s-4); }
+.miudo { font-size: var(--t-peq, .85rem); color: var(--tinta-3); margin-top: var(--s-3); }
+
+/* ---------- só para leitores de ecrã ----------
+   A classe .so-leitor é usada nas legendas das tabelas em vários decks do
+   repo mas nunca chegou a ser definida, por isso as legendas apareciam
+   centradas por cima das tabelas. Fica aqui a definição canónica. */
+.so-leitor {
+  position: absolute !important; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+/* ---------- atalho de salto ----------
+   O .saltar existe no HTML de todos os decks do repo mas nunca teve estilo,
+   por isso aparecia como um link solto no canto superior esquerdo de cada
+   apresentação. Esconde-se fora do ecrã e só aparece com foco de teclado. */
+.saltar {
+  position: absolute; left: -9999px; top: 0; z-index: 999;
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: 0 var(--s-4); border-radius: 0 0 var(--r-2, 14px) 0;
+  background: var(--brand-500); color: #10210a; font-weight: 600;
+  text-decoration: none;
+}
+.saltar:focus, .saltar:focus-visible { left: 0; }
+
+/* ---------- sinal de que a tabela rola ----------
+   No telemóvel a tabela de alvos rola dentro da sua caixa. Sem pista visual
+   ninguém descobre a coluna do mecanismo. */
+.tabela-rol { position: relative; }
+@media (max-width: 860px) {
+  .tabela-rol::after {
+    content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 2.5rem;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, var(--fundo, #0b0f08) 85%);
+  }
+  .tabela-rol > table { min-width: 42rem; }
+}
+.tabela-dica { font-size: var(--t-peq, .85rem); color: var(--tinta-3); margin: var(--s-2) 0 0; }
+@media (min-width: 861px) { .tabela-dica { display: none; } }
+
+/* ---------- respiração à volta da escolha guiada ----------
+   No telemóvel a caixa da escolha encostava ao bloco seguinte. */
+.escolha-bloco { margin-bottom: var(--s-7, 4rem); }
+@media (max-width: 860px) { .escolha-bloco { margin-bottom: var(--s-6, 3rem); } }

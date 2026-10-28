@@ -1,0 +1,441 @@
+{
+  "site": "https://geoclima.pt/pt",
+  "dominio": "geoclima.pt",
+  "titulo": "Geoclima - Soluções de Energia e Mobilidade Elétrica",
+  "descricao": "A Geoclima oferece as melhores soluções de energia solar, eólica e geotérmica. Conheça a nossa oferta de painéis fotovoltaicos e de mobilidade elétrica.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.svg",
+    "origem": "img",
+    "src": "https://geoclima.pt/images/logo/geoclima.svg",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome",
+      "transparente ou vectorial"
+    ],
+    "analise": {
+      "largura": 300,
+      "altura": 61,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            160,
+            192,
+            96
+          ],
+          "parte": 59
+        },
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 41
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://geoclima.pt/images/logo/geoclimaWhite.svg",
+      "pontos": 16,
+      "motivos": [
+        "diz logo",
+        "liga à página inicial",
+        "à esquerda",
+        "tem o nome",
+        "transparente ou vectorial"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 61,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "json-ld",
+      "src": "https://geoclima.pt/images/upload/cbe441757cb6ddae14ccc63724e08338.png",
+      "pontos": 5,
+      "motivos": [
+        "declarado como logo nos dados estruturados"
+      ],
+      "analise": {
+        "largura": 500,
+        "altura": 70,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              160,
+              192,
+              96
+            ],
+            "parte": 59
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 41
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://geoclima.pt/images/upload/carregadortrifasico22-kwfichatipo2veboxt2-001.webp",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 832,
+        "altura": 770,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              224
+            ],
+            "parte": 28
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://geoclima.pt/images/upload/5413a306fd4e073d485b53655c324e2f.webp",
+      "pontos": 1,
+      "motivos": [
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 476,
+        "altura": 476,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              96,
+              96,
+              96
+            ],
+            "parte": 27
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 24
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 24
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "ícone",
+      "src": "https://geoclima.pt/images/upload/0b3f62769f670f7259f9c86ec98f2c81.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 510,
+        "altura": 510,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              160,
+              192,
+              96
+            ],
+            "parte": 62
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 37
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              192
+            ],
+            "parte": 0
+          },
+          {
+            "rgb": [
+              192,
+              224,
+              128
+            ],
+            "parte": 0
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://geoclima.pt/images/upload/6ba15a032e0be8f0647273de9af2c55d.webp",
+      "pontos": 0,
+      "motivos": [],
+      "analise": {
+        "largura": 500,
+        "altura": 500,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 35
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 19
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 15
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              160
+            ],
+            "parte": 8
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.webp",
+    "src": "https://geoclima.pt/images/upload/1956f01fa2efc2e2994d3b28fe55394b.webp"
+  },
+  "paleta": [
+    {
+      "hex": "#97c65c",
+      "hsl": "87 48% 57%",
+      "peso": 506203,
+      "onde": [
+        "botões",
+        "fundos",
+        "texto",
+        "variáveis do tema",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#242e45",
+      "hsl": "222 31% 21%",
+      "peso": 348500,
+      "onde": [
+        "botões",
+        "fundos",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#007aff",
+      "hsl": "211 100% 50%",
+      "peso": 45000,
+      "onde": [
+        "variáveis do tema"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "87 48% 57%",
+    "--accent-hsl": "222 31% 21%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--swiper-theme-color",
+      "#007aff"
+    ],
+    [
+      "--primary-font",
+      "\"Inter\", sans-serif"
+    ],
+    [
+      "--primary",
+      "#97c65c"
+    ],
+    [
+      "--secondary-color",
+      ""
+    ],
+    [
+      "--bg-primary-color-bg-cookie-criativatek-theme",
+      "var(--main-color)"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Inter",
+    "corpo": "Inter",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "Português",
+      "Inglês",
+      "Francês",
+      "Espanhol",
+      "Alemão",
+      "Auditoria energética",
+      "Painéis fotovoltaicos",
+      "Autoconsumo residencial",
+      "Autoconsumo empresarial",
+      "Manutenção e limpeza",
+      "Tempestades",
+      "Baterias",
+      "Tesla",
+      "Autoconsumo residencial",
+      "Autoconsumo empresarial",
+      "Baterias recondicionadas",
+      "Carregadores",
+      "Carregadores para empresas",
+      "Carregadores domésticos",
+      "Mobilidade elétrica",
+      "Climatização",
+      "Outros serviços",
+      "Eletricidade",
+      "Reparações Eletrónicas",
+      "Videovigilância / Alarmes",
+      "Autocaravanas / Offgrid",
+      "Casos de Sucesso",
+      "Contactos",
+      "Loja online",
+      "Português",
+      "Inglês",
+      "Francês",
+      "Espanhol",
+      "Alemão",
+      "0",
+      "MENU"
+    ],
+    "titulos": [
+      "Soluções",
+      "Menu",
+      "Soluções",
+      "Menu",
+      "Limpeza robotizada e manual para aumentar a eficiência dos seus painéis",
+      "Apoio à Eficiência Energética na Agricultura",
+      "Transforme o sol em poupança todos os meses",
+      "Mobilidade elétrica mais eficiente começa aqui",
+      "Sabia que a Geoclima é Instalador Certificado Tesla?",
+      "O futuro do autoconsumo passa por aqui",
+      "Produtos em destaque",
+      "Saiba quais são os nossos serviços",
+      "Nós ligamos",
+      "Projetos Empresariais",
+      "Últimas notícias",
+      "O que dizem os nossos clientes",
+      "500+",
+      "Detalhes"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura."
+  ]
+}
