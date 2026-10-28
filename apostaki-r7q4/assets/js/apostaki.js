@@ -6,8 +6,7 @@
    4. Painel do dia
    5. Faturas: arquivo de hoje
    6. Conciliação bancária
-   7. Visitas e rotas
-   8. Comissões (regra das visitas ao vivo)
+   7 e 8. Visitas, rotas, fichas e comissões (rua.js)
    9. Relatório: divergências do mês
    10. Componentes partilhados (chat + raciocínio, fluxo)
    Todos os números são ilustrativos, salvo os do Eduardo a 21/10
@@ -66,7 +65,7 @@
     if (d > 0 && pi < panels.length - 1) { current = panels[pi + 1].id; pos[current] = 0; return render(); }
     if (d < 0 && pi > 0) { current = panels[pi - 1].id; pos[current] = slidesOf(current).length - 1; return render(); }
   }
-  window.irPara = function (tab, n) { current = tab; pos[tab] = n || 0; render(); };
+  window.irPara = function (tab, n) { if (window.gavetaFecha) window.gavetaFecha(); current = tab; pos[tab] = n || 0; render(); };
   document.addEventListener('click', function (e) {
     var b = e.target.closest('[data-ir]'); if (b) { e.preventDefault(); window.irPara('plataforma', +b.dataset.ir); return; }
     var a = e.target.closest('.side a.nv'); if (a) { e.preventDefault(); window.irPara('plataforma', +a.dataset.v); }
@@ -76,6 +75,7 @@
   $('[data-next]').addEventListener('click', function () { go(1); });
   document.addEventListener('keydown', function (e) {
     if (['INPUT', 'TEXTAREA', 'SELECT'].indexOf(document.activeElement.tagName) >= 0) return;
+    if (window.gavetaAberta && window.gavetaAberta()) return;
     if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); go(1); }
     if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
   });
@@ -179,7 +179,7 @@
     var C = 2 * Math.PI * 22;
     $('#pRotas').innerHTML = ROTAS.map(function (r) {
       var p = r.hoje / 20, cor = p >= 0.9 ? 'var(--brand)' : p >= 0.8 ? 'var(--amarelo)' : 'var(--vermelho)';
-      return '<div class="rm-c" data-ir="4" title="Ver visitas"><span>Rota ' + r.r + '</span><b>' + r.v + '</b>' +
+      return '<div class="rm-c" data-vend="' + r.r + '" data-tab="rot" title="Ficha do ' + r.v + '"><span>Rota ' + r.r + '</span><b>' + r.v + '</b>' +
         '<div class="an"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="22" fill="none" stroke="var(--border)" stroke-width="6"/><circle cx="27" cy="27" r="22" fill="none" stroke="' + cor + '" stroke-width="6" stroke-linecap="round" stroke-dasharray="' + (C * p) + ' ' + C + '"/></svg><em>' + r.hoje + '/20</em></div>' +
         '<small>' + mil(r.cob) + ' €</small></div>';
     }).join('');
@@ -235,77 +235,7 @@
   });
   pintaConc(0);
 
-  /* ---------------- 7. Visitas e rotas ---------------- */
-  var FALHAS = {
-    3: [['Quiosque da Estação', 'Barcelos', 'quinta, 29/10', 'fica a 1,2 km da Papelaria Avenida'], ['Tabacaria Nova', 'Esposende', 'quinta, 29/10', 'na volta por Esposende'], ['Café Ribeira', 'Barcelos', 'sexta, 30/10', 'fica a 600 m do Snack Rio'], ['Papelaria Escola', 'Barcelinhos', 'quinta, 29/10', 'fica a 900 m do Café Avenida'], ['Bar Jardim', 'Esposende', 'sexta, 30/10', 'na volta por Esposende']],
-    5: [['Café Ponte', 'Mirandela', 'quinta, 29/10', 'fica a 1,5 km do Quiosque Central'], ['Snack-bar Rotunda', 'Macedo de Cavaleiros', 'quinta, 29/10', 'fica a 900 m da Papelaria Central'], ['Tabacaria do Largo', 'Bragança', 'sexta, 30/10', 'na rota de sexta'], ['Papelaria Sé', 'Bragança', 'sexta, 30/10', 'na rota de sexta']]
-  };
-  var COORD = function (r) { return r <= 4 ? 'Fernando' : 'Luís'; };
-  var selRota = 3, modo = 's';
-  function pintaBarras() {
-    $('#vBarras').innerHTML = ROTAS.map(function (r, i) {
-      var p = modo === 's' ? pct(r.s[1], r.s[0]) : pct(r.hoje, 20);
-      return '<div class="barra-l' + (r.r === selRota ? ' sel' : '') + '" data-r="' + r.r + '" role="button" tabindex="0"><span>Rota ' + r.r + ' · ' + r.v + '<small>' + r.z + '</small></span><div class="barra"><i class="' + (p >= 90 ? 'v' : 'r') + '" style="--w:' + p + '%;--i:' + i + '"></i><em style="--m:90%"></em></div><b>' + p + '%</b></div>';
-    }).join('') + '<div class="barras-leg"><span><i></i>a vossa regra: 90%</span><span>' + (modo === 's' ? 'semana de 19 a 23/10' : 'hoje, 20 visitas por rota') + '</span></div>';
-  }
-  function pintaDet() {
-    var r = ROTAS.filter(function (x) { return x.r === selRota; })[0];
-    var s = modo === 's' ? r.s : [20, r.hoje, 0, 20 - r.hoje], p = pct(s[1], s[0]);
-    var h = '<div class="vd-h"><span>Rota ' + r.r + ' · ' + r.z + ' · coordenador ' + COORD(r.r) + '</span><b>' + r.v + ' · ' + p + '%</b><small>' + (modo === 's' ? 'semana de 19 a 23/10' : 'hoje, terça-feira') + (p < 90 ? ' · abaixo da regra dos 90%' : ' · cumpre a regra') + '</small></div>';
-    h += '<div class="vd-n"><div><span>Previstos</span><b>' + s[0] + '</b></div><div><span>Visitados</span><b>' + s[1] + '</b></div><div><span>Justificados</span><b>' + s[2] + '</b></div><div><span>Incumprimentos</span><b>' + s[3] + '</b></div></div>';
-    h += '<div class="vd-km">Eficiência do percurso (Cartrack): <b>' + r.km + '%</b> dos quilómetros planeados</div>';
-    var fl = FALHAS[r.r];
-    if (modo === 'h' && fl && r.hoje < 20) {
-      h += '<ul class="vd-l">' + fl.slice(0, 20 - r.hoje).map(function (f, i) { return '<li data-k="' + i + '"><div><b>' + f[0] + '</b> · ' + f[1] + '<small>sugestão: ' + f[2] + ', ' + f[3] + '</small></div><button type="button" data-reag="' + i + '">Reagendar</button></li>'; }).join('') + '</ul>';
-      h += '<div class="vd-f"><button class="btn btn-primary" type="button" id="reagTodas">Reagendar as ' + Math.min(fl.length, 20 - r.hoje) + ' visitas</button><span class="mut">o coordenador ' + COORD(r.r) + ' recebe o aviso</span></div>';
-    } else if (modo === 'h' && r.hoje < 20) {
-      h += '<div class="vd-vazio">' + (20 - r.hoje) + ' visitas por fazer hoje. Às 19h, as que ficarem por fazer aparecem aqui para reagendar.</div>';
-    } else if (modo === 'h') {
-      h += '<div class="vd-vazio">Todas as visitas de hoje feitas.</div>';
-    } else {
-      h += '<div class="vd-vazio">Mude para <b>Hoje</b> para ver as visitas falhadas e reagendá-las no próprio dia.</div>';
-    }
-    $('#vDet').innerHTML = h;
-  }
-  function reag(li) { if (!li) return; var b = $('button', li); if (b.disabled) return; li.classList.add('feito'); b.disabled = true; b.textContent = '✓ ' + $('small', li).textContent.replace('sugestão: ', '').split(',')[0]; }
-  $('#vDet').addEventListener('click', function (e) {
-    var b = e.target.closest('[data-reag]'); if (b) { reag(b.closest('li')); return; }
-    if (e.target.closest('#reagTodas')) { $$('#vDet .vd-l li').forEach(reag); e.target.closest('#reagTodas').disabled = true; toast('Visitas reagendadas. O coordenador ' + COORD(selRota) + ' foi avisado.'); }
-  });
-  $('#vBarras').addEventListener('click', function (e) { var l = e.target.closest('.barra-l'); if (!l) return; selRota = +l.dataset.r; pintaBarras(); pintaDet(); });
-  $('#vBarras').addEventListener('keydown', function (e) { if (e.key !== 'Enter' && e.key !== ' ') return; var l = e.target.closest('.barra-l'); if (!l) return; e.preventDefault(); selRota = +l.dataset.r; pintaBarras(); pintaDet(); });
-  $$('#vSem button').forEach(function (b) { b.addEventListener('click', function () { $$('#vSem button').forEach(function (x) { x.classList.toggle('on', x === b); }); modo = b.dataset.p; pintaBarras(); pintaDet(); }); });
-  pintaBarras(); pintaDet();
-  var RISCO = [
-    ['r', 'Quiosque da Estação', 'Barcelos', 3, 5, 3, 1850],
-    ['r', 'Café Ponte', 'Mirandela', 5, 4, 2, 1200],
-    ['r', 'Papelaria Lusitana', 'Vila Real', 4, 4, 2, 960],
-    ['a', 'Tabacaria Nova', 'Esposende', 3, 5, 1, 1400],
-    ['a', 'Snack-bar Rotunda', 'Macedo de Cavaleiros', 5, 4, 1, 720]
-  ];
-  $('#tRisco tbody').innerHTML = RISCO.map(function (c) {
-    return '<tr><td><span class="dot ' + c[0] + '"></span></td><td><b>' + c[1] + '</b><small>' + c[2] + '</small></td><td>Rota ' + c[3] + '</td><td class="num">' + c[4] + '</td><td class="num">' + c[5] + '</td><td class="num">' + mil(c[6]) + ' €</td><td><span class="pill ' + c[0] + '">' + (c[0] === 'r' ? 'avisar o chefe de vendas' : 'acompanhar') + '</span></td></tr>';
-  }).join('');
-
-  /* ---------------- 8. Comissões ---------------- */
-  var COM = [
-    [1, 'Nuno', 198400, 96], [2, 'Rui', 176900, 93], [3, 'Hélder', 184300, 85], [4, 'Paulo', 152600, 91],
-    [5, 'Tiago', 141200, 81], [6, 'Vítor', 205700, 99], [7, 'Bruno', 171800, 92], [8, 'Carlos', 189500, 89]
-  ];
-  var TAXA = 0.01;
-  function pintaCom() {
-    var min = +$('#comMin').value, abaixo = 0, tc = 0, tcom = 0;
-    $('#comMinV').textContent = min + '%';
-    $('#tCom tbody').innerHTML = COM.map(function (c) {
-      var ok = c[3] >= min; if (!ok) abaixo++; tc += c[2]; tcom += c[2] * TAXA;
-      return '<tr class="' + (ok ? '' : 'abaixo') + '"><td>Rota ' + c[0] + '</td><td><b>' + c[1] + '</b></td><td class="num">' + mil(c[2]) + ' €</td><td class="num">' + eur(c[2] * TAXA) + '</td><td class="num"><span class="mini-b' + (ok ? '' : ' r') + '"><i style="--w:' + c[3] + '%"></i></span>' + c[3] + '%</td><td>' + (ok ? '<span class="pill v">✓ cumpre</span>' : '<span class="pill r">abaixo de ' + min + '%</span>') + '</td></tr>';
-    }).join('');
-    $('#tCom tfoot').innerHTML = '<tr><td colspan="2">Total · 8 rotas</td><td class="num">' + mil(tc) + ' €</td><td class="num">' + eur(tcom) + '</td><td></td><td></td></tr>';
-    $('#comAbaixo').innerHTML = abaixo ? '<b>' + abaixo + (abaixo === 1 ? ' vendedor' : ' vendedores') + '</b> abaixo da regra este mês' : 'Todos cumprem a regra este mês';
-  }
-  $('#comMin').addEventListener('input', pintaCom);
-  $('#comExp').addEventListener('click', function () { toast('Ficheiro de outubro pronto para o processamento dos salários.'); });
-  pintaCom();
+  /* ---------------- 7 e 8. Visitas, rotas, fichas e comissões: em rua.js ---------------- */
 
   /* ---------------- 9. Relatório: divergências do mês ---------------- */
   var DIV = [

@@ -361,33 +361,42 @@
 
     <!-- 4. Visitas e rotas -->
     <div class="slide" id="s-visitas" data-titulo="Visitas e rotas">
-      <div class="view-h"><div><span class="k">VISITAS · SEMANA DE 19 A 23/10</span><h2>Quem cumpriu o plano de visitas, e que clientes estão em risco</h2><p>O relatório que o Eduardo prepara para o chefe de vendas, feito sozinho com os dados da aplicação e do Cartrack. A linha é a vossa regra: 90% das visitas.</p></div><div class="seg" id="vSem" role="group" aria-label="Período"><button class="on" data-p="s">Semana passada</button><button data-p="h">Hoje</button></div></div>
-      <p class="sim">Simulação: vendedores e clientes inventados. A rota 3 repete o relatório que nos mostrou a 21/10 (107 previstos, 89 visitados, 83%).</p>
+      <div class="view-h"><div><span class="k">VISITAS E ROTAS · OUTUBRO, ATÉ DIA 27</span><h2>Cada vendedor e cada cliente, com as visitas feitas, falhadas e por fazer</h2><p>O relatório que o Eduardo prepara à mão para o chefe de vendas, feito sozinho com os dados da aplicação e do Cartrack. Clique num vendedor para ver as rotas, os indicadores e as comissões dele. Clique num cliente para ver as visitas.</p></div><span class="estado info">Clique num vendedor</span></div>
+      <p class="sim">Simulação: vendedores, clientes e visitas inventados. A rota 3 repete o relatório que nos mostrou a 21/10 (107 previstos, 89 visitados, 83%).</p>
+      <div class="panel">
+        <div class="panel-h"><b>Equipa · semáforo de outubro</b><span><i class="sem v"></i><i class="sem a"></i><i class="sem r"></i> comparado com a média da equipa · ▲▼ comparado com os três meses anteriores do próprio</span></div>
+        <div class="tbl-wrap"><table class="tbl equipa" id="tEquipa"><thead><tr><th>Vendedor</th><th class="num">Visitas</th><th class="num">Percurso</th><th class="num">Cobrado / visita</th><th class="num">Numerário</th><th class="num">Em risco</th><th class="num">Falhadas</th><th></th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+      </div>
       <div class="vis-grid">
         <div class="panel">
-          <div class="panel-h"><b>Cumprimento por rota</b><span>clique numa rota</span></div>
+          <div class="panel-h"><b>Cumprimento por rota</b><div class="seg" id="vSem" role="group" aria-label="Período"><button class="on" data-p="s" type="button">Semana passada</button><button data-p="h" type="button">Hoje</button></div></div>
           <div class="barras" id="vBarras"></div>
         </div>
         <div class="panel vis-det" id="vDet"></div>
       </div>
       <div class="panel">
-        <div class="panel-h"><b>Clientes em risco · últimos 30 dias</b><span>vermelho: 2 ou mais visitas falhadas · amarelo: 1 (regra configurável)</span></div>
-        <div class="tbl-wrap"><table class="tbl" id="tRisco"><thead><tr><th></th><th>Cliente</th><th>Rota</th><th class="num">Visitas previstas</th><th class="num">Falhadas</th><th class="num">Jogo à consignação</th><th></th></tr></thead><tbody></tbody></table></div>
+        <div class="panel-h"><b>Clientes em risco · últimos 30 dias</b><span>vermelho: 2 ou mais visitas falhadas · amarelo: 1 falhada com mais de 1.000 € à consignação (regras configuráveis)</span></div>
+        <div class="tbl-wrap"><table class="tbl clic" id="tRisco"><thead><tr><th></th><th>Cliente</th><th>Rota</th><th class="num">Visitas previstas</th><th class="num">Falhadas</th><th class="num">Jogo à consignação</th><th>Próxima</th><th></th></tr></thead><tbody></tbody></table></div>
       </div>
     </div>
 
     <!-- 5. Comissões -->
     <div class="slide" id="s-comissoes" data-titulo="Comissões">
-      <div class="view-h"><div><span class="k">COMISSÕES · OUTUBRO, ATÉ DIA 27</span><h2>As comissões do mês, com a regra das visitas aplicada</h2><p>A percentagem sobre o cobrado e as visitas cumpridas vêm da aplicação. A regra é vossa: quem fica abaixo do mínimo de visitas é assinalado. Mexa no mínimo e veja quem passa.</p></div><button class="btn btn-ghost" type="button" id="comExp">⇩ Exportar para o processamento</button></div>
-      <p class="sim">Simulação: vendedores, valores e a percentagem de 1% são ilustrativos. Entram as vossas regras na semana 1.</p>
-      <div class="regra">
-        <label for="comMin">Mínimo de visitas cumpridas no mês</label>
-        <input type="range" id="comMin" min="80" max="100" step="1" value="90">
-        <b id="comMinV">90%</b>
-        <span class="regra-n" id="comAbaixo"></span>
+      <div class="view-h"><div><span class="k">COMISSÕES · OUTUBRO, ATÉ DIA 27</span><h2>As comissões do mês, calculadas com as vossas regras</h2><p>O cobrado e as visitas vêm da aplicação. As regras são vossas e mudam-se aqui: mexa na percentagem, no mínimo de visitas, no prémio ou na penalização, e o mês recalcula. Clique num vendedor para ver o histórico dele.</p></div><button class="btn btn-ghost" type="button" id="comExp">⇩ Exportar para o processamento</button></div>
+      <p class="sim">Simulação: vendedores e valores inventados; a percentagem, o prémio e a penalização são exemplos. Entram as vossas regras na semana 1.</p>
+      <div class="regras">
+        <div class="rg"><label for="cTaxa">Comissão sobre o cobrado</label><input type="range" id="cTaxa" min="0.5" max="2" step="0.1" value="1"><b id="cTaxaV">1,0%</b></div>
+        <div class="rg"><label for="comMin">Mínimo de visitas cumpridas</label><input type="range" id="comMin" min="80" max="100" step="1" value="90"><b id="comMinV">90%</b></div>
+        <div class="rg"><label for="cPremio">Prémio de cumprimento</label><input type="range" id="cPremio" min="0" max="300" step="25" value="150"><b id="cPremioV">150 €</b></div>
+        <div class="rg"><label>Abaixo do mínimo</label><div class="seg" id="cPen" role="group" aria-label="Penalização"><button type="button" data-p="0">Só assinala</button><button type="button" data-p="10" class="on">−10%</button><button type="button" data-p="20">−20%</button></div></div>
+      </div>
+      <div class="kpis k5" id="cKpis"></div>
+      <div class="panel">
+        <div class="tbl-wrap"><table class="tbl com clic" id="tCom"><thead><tr><th>Rota</th><th>Vendedor</th><th class="num">Cobrado</th><th class="num">Comissão</th><th class="num">Prémio</th><th class="num">Penalização</th><th class="num">A pagar</th><th class="num">Visitas</th><th class="num">Setembro</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
       </div>
       <div class="panel">
-        <div class="tbl-wrap"><table class="tbl com" id="tCom"><thead><tr><th>Rota</th><th>Vendedor</th><th class="num">Cobrado</th><th class="num">Comissão</th><th class="num">Visitas</th><th>Regra</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+        <div class="panel-h"><b>Antes de fechar outubro</b><span>faltam 4 dias</span></div>
+        <ul class="fecho-l" id="cFecho"></ul>
       </div>
     </div>
 
@@ -411,7 +420,7 @@
               • Cobrado: 64.150 €, 88% em numerário<br>
               • ⚠ Rota 3 (Hélder) abaixo dos 90% há três dias seguidos<br>
               • ★ Rota 6 (Vítor) a 100% há duas semanas<br>
-              • 3 clientes em risco, no painel<br><br>
+              • <span id="relRisco">3</span> clientes em risco, no painel<br><br>
               <b>Escritório</b><br>
               • 23 faturas no PHC, 2 a rever<br>
               • Banco: 40 movimentos certos, 3 para ver<br>
@@ -458,8 +467,8 @@
         <div class="amb anim"><span class="amb-n">1</span><h3>Faturas pelo WhatsApp</h3><p>A equipa fotografa a fatura para um grupo; o assistente arquiva-a na pasta da loja e lança-a no PHC. Também os acertos de prémios.</p><button class="amb-ir" data-ir="1" type="button">Faturas</button></div>
         <div class="amb anim"><span class="amb-n">2</span><h3>Conciliação bancária</h3><p>O extrato do banco cruzado com os recibos das rotas e os fechos de caixa. Fica só o que não bate.</p><button class="amb-ir" data-ir="2" type="button">Conciliação bancária</button></div>
         <div class="amb anim"><span class="amb-n">3</span><h3>Assistente virtual</h3><p>Ligado à vossa base de dados, responde a comerciais e contabilistas sem passar pelo escritório.</p><button class="amb-ir" data-ir="3" type="button">Assistente</button></div>
-        <div class="amb anim"><span class="amb-n">4</span><h3>Painel de administração</h3><p>Vendas e faturação por loja, cumprimento de visitas, eficiência de percursos e clientes em risco.</p><button class="amb-ir" data-ir="4" type="button">Visitas e rotas</button></div>
-        <div class="amb anim"><span class="amb-n">5</span><h3>Cálculo das comissões</h3><p>A partir das regras que já usam, incluindo a das visitas, pronto a exportar no fim do mês.</p><button class="amb-ir" data-ir="5" type="button">Comissões</button></div>
+        <div class="amb anim"><span class="amb-n">4</span><h3>Painel de administração</h3><p>Vendas por loja, e a ficha de cada vendedor e de cada cliente: visitas passadas e futuras, percursos e um semáforo face à equipa e ao próprio.</p><button class="amb-ir" data-ir="4" type="button">Visitas e rotas</button></div>
+        <div class="amb anim"><span class="amb-n">5</span><h3>Cálculo das comissões</h3><p>A percentagem, o mínimo de visitas, prémios e penalizações com as vossas regras, o histórico de cada um e o ficheiro pronto no fim do mês.</p><button class="amb-ir" data-ir="5" type="button">Comissões</button></div>
         <div class="amb esc anim"><span class="amb-n">6</span><h3>Relatório diário no WhatsApp</h3><p>Ao fecho das lojas: o dia, as divergências de caixa por funcionária e os alertas comerciais.</p><button class="amb-ir" data-ir="6" type="button">Relatório das 19h</button></div>
       </div>
     </div>
@@ -534,8 +543,8 @@
       <div class="inv">
         <div class="inv-c anim">
           <span class="inv-k">Implementação</span>
-          <div class="inv-v">10.000 € <small>+ IVA</small></div>
-          <ul class="list-check"><li>As seis peças do resumo de 23/10</li><li>Ligação ao PHC, à aplicação das rotas, ao banco e ao WhatsApp</li><li>As vossas regras de visitas, comissões e caixas</li><li>Contacto com o parceiro PHC tratado por nós</li><li>Ajustes com a equipa até estar a funcionar</li></ul>
+          <div class="inv-v">13.500 € <small>+ IVA</small></div>
+          <ul class="list-check"><li>As seis peças do resumo de 23/10</li><li>Fichas de cada vendedor e de cada cliente, com histórico, visitas futuras e semáforo</li><li>Comissões com as vossas regras, prémios e penalizações</li><li>Ligação ao PHC, à aplicação das rotas, ao banco e ao WhatsApp</li><li>Contacto com o parceiro PHC tratado por nós</li><li>Ajustes com a equipa até estar a funcionar</li></ul>
         </div>
         <div class="inv-c anim">
           <span class="inv-k">Avença</span>
@@ -545,8 +554,8 @@
       </div>
       <div class="pag anim">
         <div class="pag-h">Implementação paga em duas fases</div>
-        <div class="pag-f"><span class="pag-p">50%</span><div><b>5.000 € <small>+ IVA</small></b><span>Na adjudicação</span></div></div>
-        <div class="pag-f"><span class="pag-p">50%</span><div><b>5.000 € <small>+ IVA</small></b><span>No início dos testes · semana 7</span></div></div>
+        <div class="pag-f"><span class="pag-p">50%</span><div><b>6.750 € <small>+ IVA</small></b><span>Na adjudicação</span></div></div>
+        <div class="pag-f"><span class="pag-p">50%</span><div><b>6.750 € <small>+ IVA</small></b><span>No início dos testes · semana 7</span></div></div>
       </div>
     </div>
   </div>
@@ -559,7 +568,7 @@
       <p class="lead anim">Contando com o arranque a 9 de novembro. O assistente e o painel começam primeiro, porque não dependem do parceiro PHC.</p>
       <div class="crono">
         <div class="cr-f anim"><span class="sem">Semana 1<small>9 a 13/11</small></span><b>Arranque</b><em class="cr-pag cr-pag-t">Adjudicação · 50%</em><p>Acesso à aplicação e aos extratos, as vossas regras de visitas, comissões e caixas, e o pedido ao parceiro PHC.</p></div>
-        <div class="cr-f anim"><span class="sem">Semanas 2 e 3<small>16 a 27/11</small></span><b>Assistente e painel</b><p>O assistente a responder aos comerciais, e o painel com rotas, visitas e clientes em risco.</p></div>
+        <div class="cr-f anim"><span class="sem">Semanas 2 e 3<small>16 a 27/11</small></span><b>Assistente e painel</b><p>O assistente a responder aos comerciais, e o painel com as fichas de vendedores e clientes.</p></div>
         <div class="cr-f anim"><span class="sem">Semanas 4 e 5<small>30/11 a 11/12</small></span><b>Faturas e banco</b><p>O grupo das faturas nas três lojas e a conciliação bancária.</p></div>
         <div class="cr-f anim"><span class="sem">Semana 6<small>14 a 18/12</small></span><b>Relatório e comissões</b><p>O resumo das 19h, as divergências por funcionária e o cálculo das comissões.</p></div>
         <div class="cr-f anim"><span class="sem">Semanas 7 e 8<small>4 a 15/01</small></span><b>Testes</b><p>O escritório e as lojas a trabalhar com dias reais, com o fecho de dezembro.</p><em class="cr-pag">2.º pagamento · 50%</em></div>
@@ -572,6 +581,12 @@
 </section>
 </main>
 
+<div class="gv-veu" id="gvVeu"></div>
+<aside class="gaveta" id="gaveta" aria-hidden="true" aria-label="Ficha">
+  <div class="gv-top"><button class="gv-volta" id="gvVolta" type="button" hidden>‹</button><span id="gvK">Ficha</span><button class="gv-x" id="gvFecha" type="button" aria-label="Fechar">✕</button></div>
+  <div id="gvCorpo"></div>
+</aside>
+
 <nav class="folha" aria-label="Navegação">
   <div class="folha-ref"><span>N.º</span><b id="folhaN">01 / 15</b></div>
   <div class="folha-des"><span>SECÇÃO</span><b id="folhaT">Capa</b></div>
@@ -582,5 +597,6 @@
 
 <script src="../shared/deck/deck.js"></script>
 <script src="assets/js/apostaki.js"></script>
+<script src="assets/js/rua.js"></script>
 </body>
 </html>
