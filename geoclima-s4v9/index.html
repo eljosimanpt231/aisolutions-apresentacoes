@@ -300,7 +300,30 @@
   <section id="loja-nova" data-nav="A loja nova">
     <div class="container">
       <p class="rubrica"><span>5</span> A loja nova</p>
-      <h2>Arquitetura, nas suas palavras. O caminho de quem chega até quem compra.</h2>
+      <h2>Arquitetura, nas suas palavras. Veja as duas lado a lado.</h2>
+
+      <div class="comparador" id="gcComparador">
+        <div class="comp-abas" role="tablist" aria-label="Comparar a loja">
+          <button class="comp-aba" type="button" role="tab" data-vista="hoje" aria-selected="false">A loja hoje</button>
+          <button class="comp-aba on" type="button" role="tab" data-vista="nova" aria-selected="true">Como poderia ser</button>
+        </div>
+
+        <div class="comp-painel" data-painel="hoje" hidden>
+          <img class="comp-shot" src="assets/img/antes-desktop.jpg" alt="A lista de produtos de geoclima.pt como está hoje" width="1440" height="1000" loading="lazy">
+          <p class="comp-legenda">A vossa lista de produtos, tal como está, capturada a 28 de outubro de 2026.
+            Não é feia: as fotografias são boas e os preços estão claros. O que não tem é
+            <b>pesquisa</b>, <b>filtros por categoria</b>, <b>quantidade</b> e <b>comprar a partir da
+            grelha</b>. Quem quer dois adaptadores tem de abrir duas fichas, e quem procura "22 kW"
+            tem de percorrer os 29 produtos com os olhos.</p>
+        </div>
+
+        <div class="comp-painel" data-painel="nova">
+          <div class="maqueta holofote" id="gcMaqueta" data-entra="escala"></div>
+          <p class="comp-legenda">Maqueta a funcionar, com os <b>vossos 29 produtos</b>, os vossos preços e as vossas
+            fotografias, lidos de geoclima.pt. Escreva na pesquisa, carregue numa categoria, mude a ordem, ajuste a
+            quantidade e ponha no carrinho. É a estrutura que muda, não o catálogo.</p>
+        </div>
+      </div>
 
       <div class="pontos" data-entra="sobe">
         <article>
@@ -314,6 +337,14 @@
           <p>A loja atual não tem pesquisa, não deixa escolher quantidades, e não tem área de cliente.
             Quem comprou não consegue ver o que comprou, e isso volta tudo ao telefone e ao email da
             vossa equipa. As três coisas entram.</p>
+        </article>
+        <article>
+          <h3>Preços que se contradizem entre si</h3>
+          <p>Na loja de hoje o Kit 4, de 1500 W, custa <b>889 €</b>, e o Kit 6, de 3500 W, custa
+            <b>179 €</b>. Mais do dobro da potência por um quinto do preço. Pode ser liquidação de
+            stock, mas quem chega à loja sem saber isso fica sem perceber o que está a comprar. Vale
+            a pena confirmarem, e a loja nova mostra potência e preço na mesma linha para estas
+            coisas saltarem à vista.</p>
         </article>
         <article>
           <h3>Comprar a partir da lista</h3>
@@ -415,8 +446,8 @@
       <h2>O que custa e o que inclui.</h2>
 
       <p class="ancora" data-entra="sobe">Na vossa loja, um carregador portátil de 7 kW são
-        <b class="num">245 €</b> e um de 22 kW são <b class="num">700 €</b>. A reconstrução paga-se
-        com <b class="num">dez</b> carregadores de 22 kW, ou vinte e sete dos de 245 €. A Paula quer
+        <b class="num">258 €</b> e um de 22 kW são <b class="num">700 €</b>. A reconstrução paga-se
+        com <b class="num">dez</b> carregadores de 22 kW, ou vinte e cinco dos de 258 €. A Paula quer
         duplicar as vendas online: é esta a ordem de grandeza da conta.</p>
 
       <table class="fatura" data-entra="escala">
@@ -503,6 +534,7 @@
 <script src="../shared/js/protect.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="../shared/deck/deck.js"></script>
+<script src="assets/js/catalogo.js"></script>
 <script src="assets/js/loja.js"></script>
 <script>
   grafico('gcGrafico', {
@@ -520,6 +552,8 @@
   });
   corrida('gcCorrida');
   escolhaCarregador('gcEscolha');
+  maqueta('gcMaqueta');
+  alternador('gcComparador');
 </script>
 </body>
 </html>
