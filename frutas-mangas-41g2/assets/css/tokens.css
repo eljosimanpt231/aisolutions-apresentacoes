@@ -1,0 +1,229 @@
+/* ============================================================
+   TOKENS: FRUTAS MANGAS (fonte única de verdade visual)
+   Os componentes NUNCA usam cores directas: para mudar o look da
+   apresentação inteira, muda-se só este ficheiro.
+
+   Marca: o site (grupo-mangas.com) está vazio, sem logótipo nem cor
+   (scripts/marca.mjs, 29/10/2026). A paleta vem do nicho, como manda a
+   skill quando a marca não dá cor: a manga madura (laranja-amarelo) é a
+   marca, o verde-folha é a tinta dos títulos, e o tomate é a segunda voz
+   (só luz e meio do gradiente). Fundo branco, a pedido do Manuel.
+   ============================================================ */
+
+:root {
+
+  /* ---------- 1. MARCA ---------- */
+  --brand-l: 76%;
+  --brand-c: 0.165;
+  --brand-h: 66;
+
+  /* A atmosfera (shared/motion/atmosfera.css) trabalha em HSL. Em modo
+     claro os glows usam o --accent-hsl: a manga. */
+  --brand-hsl:  140 45% 32%;    /* verde-folha */
+  --accent-hsl: 38 96% 56%;     /* manga madura */
+  --brand2-hsl: 8 80% 58%;      /* tomate, só no meio do gradiente */
+
+  --tinta:   oklch(29% 0.060 152);    /* verde-folha escuro: títulos e barra */
+  --tinta-2: oklch(36% 0.072 150);
+  --folha:        oklch(56% 0.130 146);   /* verde-folha vivo: etiquetas, fluxo */
+  --folha-texto:  oklch(45% 0.110 148);
+  --tomate:       oklch(64% 0.200 32);    /* tomate: só luz, nunca texto */
+  --tomate-texto: oklch(50% 0.180 30);
+  --casca:        oklch(95% 0.050 92);    /* a casca clara da manga, fundo de etiquetas */
+
+  --brand-50:  oklch(97.6% calc(var(--brand-c) * 0.12) calc(var(--brand-h) + 6));
+  --brand-100: oklch(95.0% calc(var(--brand-c) * 0.24) calc(var(--brand-h) + 5));
+  --brand-200: oklch(90.0% calc(var(--brand-c) * 0.42) calc(var(--brand-h) + 4));
+  --brand-300: oklch(84.5% calc(var(--brand-c) * 0.66) calc(var(--brand-h) + 2));
+  --brand-400: oklch(80.0% calc(var(--brand-c) * 0.88) var(--brand-h));
+  --brand-500: oklch(var(--brand-l) var(--brand-c) var(--brand-h));
+  --brand-600: oklch(66.0% calc(var(--brand-c) * 0.98) calc(var(--brand-h) - 6));
+  --brand-700: oklch(57.0% calc(var(--brand-c) * 0.94) calc(var(--brand-h) - 10));
+  --brand-800: oklch(48.0% calc(var(--brand-c) * 0.84) calc(var(--brand-h) - 13));
+  --brand-900: oklch(40.0% calc(var(--brand-c) * 0.66) calc(var(--brand-h) - 15));
+
+  --brand:    var(--brand-500);
+  --accent:   var(--brand-500);
+  --on-brand: oklch(99% 0.004 var(--brand-h));
+
+  --brand-a06: color-mix(in oklab, var(--brand) 6%,  transparent);
+  --brand-a10: color-mix(in oklab, var(--brand) 12%, transparent);
+  --brand-a16: color-mix(in oklab, var(--brand) 18%, transparent);
+  --brand-a30: color-mix(in oklab, var(--brand) 32%, transparent);
+  --brand-a45: color-mix(in oklab, var(--brand) 48%, transparent);
+  --folha-a10: color-mix(in oklab, var(--folha) 11%, transparent);
+  --folha-a20: color-mix(in oklab, var(--folha) 22%, transparent);
+  --tomate-a20: color-mix(in oklab, var(--tomate) 20%, transparent);
+  --tomate-a40: color-mix(in oklab, var(--tomate) 40%, transparent);
+  --accent-a10: var(--brand-a10);
+  --accent-a20: color-mix(in oklab, var(--accent) 20%, transparent);
+  --accent-a45: var(--brand-a45);
+
+  /* ---------- 2. SUPERFÍCIES E TINTA ----------
+     Neutros com um resto de verde, na direcção da tinta. */
+  --bg:        oklch(99.5% 0.003 110);
+  --bg-soft:   oklch(97.6% 0.008 110);
+  --surface:   oklch(100%  0.002 110);
+  --surface-2: oklch(98.2% 0.006 110);
+  --surface-3: oklch(95.4% 0.010 110);
+
+  --text:   oklch(25.0% 0.035 150);
+  --muted:  oklch(44.0% 0.025 150);
+  --faint:  oklch(47.0% 0.020 150);
+
+  --hairline: color-mix(in oklab, var(--text) 9%, transparent);
+  --border:   color-mix(in oklab, var(--text) 13%, transparent);
+  --border-strong: color-mix(in oklab, var(--text) 22%, transparent);
+  --focus: var(--folha-texto);
+
+  /* ---------- 3. SEMÂNTICOS ---------- */
+  --ok:        oklch(58% 0.14 158);
+  --ok-wash:   color-mix(in oklab, var(--ok) 12%, transparent);
+  --ok-texto:  oklch(44% 0.11 158);
+  --ok-claro:  oklch(85% 0.11 158);
+  --warn-claro: oklch(88% 0.12 88);
+  --danger:    oklch(55% 0.20 27);
+  --danger-wash: color-mix(in oklab, var(--danger) 11%, transparent);
+  --danger-texto: oklch(47% 0.17 27);
+  --warn:      oklch(74% 0.15 75);
+  --warn-wash: color-mix(in oklab, var(--warn) 14%, transparent);
+  --warn-texto: oklch(47% 0.11 70);
+
+  /* ---------- 4. TIPOGRAFIA ----------
+     Fraunces nos títulos (o quadro de giz da praça, com corpo), Figtree no
+     corpo (limpa e próxima) e mono nos códigos de artigo do Primavera. */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body:    'Figtree', system-ui, sans-serif;
+  --font-marca:   'Fraunces', 'Georgia', serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --fs--2: clamp(0.75rem,   0.7292rem + 0.0926vw, 0.8125rem);
+  --fs--1: clamp(0.875rem,  0.8542rem + 0.0926vw, 0.9375rem);
+  --fs-0:  clamp(1.0625rem, 1.0208rem + 0.1852vw, 1.1875rem);
+  --fs-1:  clamp(1.25rem,   1.1667rem + 0.3704vw, 1.5rem);
+  --fs-2:  clamp(1.5rem,    1.3542rem + 0.6481vw, 1.9375rem);
+  --fs-3:  clamp(1.8125rem, 1.6042rem + 0.9259vw, 2.4375rem);
+  --fs-4:  clamp(2.1875rem, 1.8958rem + 1.2963vw, 3.0625rem);
+  --fs-5:  clamp(2.625rem,  2.2292rem + 1.7593vw, 3.8125rem);
+  --fs-6:  clamp(3.125rem,  2.5833rem + 2.4074vw, 4.75rem);
+
+  --lh-hero: 1.0; --lh-h1: 1.05; --lh-h2: 1.12; --lh-h3: 1.22;
+  --lh-lead: 1.45; --lh-body: 1.60;
+
+  --tr-hero: -0.025em; --tr-h1: -0.022em; --tr-h2: -0.018em; --tr-h3: -0.01em;
+  --tr-body: 0em; --tr-label: 0.09em;
+
+  --measure: 66ch;
+  --measure-lead: 56ch;
+
+  /* ---------- 5. ESPAÇO ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 16px; --s-4: 24px;
+  --s-5: 32px; --s-6: 48px; --s-7: 64px; --s-8: 96px;
+
+  --container: 1140px;
+  --gutter: clamp(16px, 4vw, 32px);
+
+  --pad-secao:       clamp(56px, 7vw, 96px);
+  --pad-secao-amplo: clamp(80px, 10vw, 136px);
+  --pad-secao-junto: clamp(32px, 4vw, 56px);
+
+  /* ---------- 6. FORMA ---------- */
+  --r-1: 4px; --r-2: 8px; --r-3: 12px; --r-4: 18px; --r-pill: 999px;
+
+  /* ---------- 7. ELEVAÇÃO (claro) ---------- */
+  --sh: 150deg 40% 14%;
+  --e1: 0 0 0 1px var(--hairline),
+        0 1px 2px      hsl(var(--sh) / 0.05),
+        0 2px 4px -2px hsl(var(--sh) / 0.05);
+  --e2: 0 0 0 1px var(--hairline),
+        0 1px 2px       hsl(var(--sh) / 0.04),
+        0 2px 4px       hsl(var(--sh) / 0.04),
+        0 4px 8px  -2px hsl(var(--sh) / 0.04),
+        0 8px 16px -6px hsl(var(--sh) / 0.05);
+  --e3: 0 0 0 1px var(--hairline),
+        0 1px 2px         hsl(var(--sh) / 0.03),
+        0 2px 4px         hsl(var(--sh) / 0.03),
+        0 4px 8px         hsl(var(--sh) / 0.03),
+        0 8px 16px   -4px hsl(var(--sh) / 0.04),
+        0 16px 32px  -8px hsl(var(--sh) / 0.05),
+        0 32px 64px -16px hsl(var(--sh) / 0.07);
+  /* a luz quente por baixo de um painel: sol da manhã, não sombra */
+  --luz-manga:  0 0 0 1px var(--brand-a30), 0 18px 50px -18px color-mix(in oklab, var(--brand-500) 60%, transparent);
+  --luz-tomate: 0 0 0 1px var(--tomate-a40), 0 18px 50px -18px color-mix(in oklab, var(--tomate) 42%, transparent);
+  --luz-folha:  0 0 0 1px var(--folha-a20), 0 18px 50px -18px color-mix(in oklab, var(--folha) 45%, transparent);
+
+  /* ---------- 8. MOVIMENTO (dentro das maquetas: registo de produto) ---------- */
+  --t-rapido: 120ms;
+  --t-normal: 200ms;
+  --t-lento:  300ms;
+  --ease-out:   cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-suave: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* ---------- 9. MAQUETAS ESCURAS (o armazém às 4 da manhã) ---------- */
+  --mock-bg:        oklch(21% 0.030 152);
+  --mock-head:      oklch(25% 0.036 152);
+  --mock-linha:     oklch(100% 0 0 / 0.10);
+  --mock-txt:       oklch(96% 0.006 110);
+  --mock-txt-fraco: oklch(79% 0.018 130);
+  --mock-veu:       oklch(100% 0 0 / 0.04);
+  --mock-veu-2:     oklch(100% 0 0 / 0.07);
+  --mock-sombra:    oklch(15% 0.03 152 / 0.40);
+  --mock-r:         var(--r-4);
+
+  /* ---------- 10. CANAIS E PAPEL ---------- */
+  --wa-green: #0E7065;
+  --wa-green-dark: #075E54;
+  --wa-light: #25D366;
+  --wa-blue: #34B7F1;
+  --wa-bolha-in:   oklch(100% 0 0);
+  --wa-bolha:      oklch(95% 0.05 150);
+  --wa-bolha-txt:  oklch(22% 0.03 160);
+  --wa-bolha-meta: oklch(42% 0.06 160);
+  --wa-fundo:      oklch(94% 0.016 85);
+  /* O quadro da noite: verde de caixa de fruta, colunas quase pretas */
+  --qt-fundo-1: oklch(40% 0.070 150);
+  --qt-fundo-2: oklch(31% 0.055 165);
+  --qt-col:     oklch(17% 0.014 152);
+  --qt-card:    oklch(25% 0.018 152);
+  --qt-txt:     oklch(96% 0.006 110);
+  --qt-txt-2:   oklch(79% 0.016 130);
+  /* A folha de encomenda em papel, como a que os distribuidores já usam */
+  --papel:      oklch(98.4% 0.014 92);
+  --papel-linha: oklch(86% 0.03 230 / 0.55);
+  --papel-margem: oklch(70% 0.14 25 / 0.55);
+
+  /* ---------- 11. PONTE PARA O STARTER E O DECK ---------- */
+  --success-hsl: 152 60% 40%; --success: var(--ok);
+  --danger-hsl: 8 72% 52%;
+  --acento-texto: oklch(50% 0.130 56);      /* a manga quando é texto: passa AA em branco */
+  --brand-solido: oklch(49% 0.140 54);      /* manga escura por baixo de texto branco */
+  --on-brand-solido: oklch(99% 0.004 66);
+  --grad-text: linear-gradient(110deg, var(--acento-texto), var(--tomate-texto) 70%);
+  --grad-cta: linear-gradient(160deg, var(--tinta), var(--tinta-2));
+  --radius: 14px;
+  --section-pad: clamp(72px, 10vw, 128px);
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.06);
+  --shadow-md: 0 8px 24px -8px oklch(0% 0 0 / 0.14);
+  --shadow-lg: 0 16px 40px -12px oklch(0% 0 0 / 0.20);
+
+  --grelha-passo: 56px;
+}
+
+/* A demo (chat + raciocínio) é uma janela escura dentro da página branca:
+   o armazém às 4 da manhã. As bolhas do componente têm cor escura fixa. */
+.cr {
+  --bg:        oklch(21.5% 0.030 152);
+  --bg-soft:   oklch(24.0% 0.034 152);
+  --surface:   oklch(26.5% 0.036 152);
+  --surface-2: oklch(29.5% 0.038 152);
+  --text:   oklch(96.0% 0.006 110);
+  --muted:  oklch(81.0% 0.018 130);
+  --faint:  oklch(74.0% 0.018 130);
+  --hairline: oklch(100% 0 0 / 0.08);
+  --border:   oklch(100% 0 0 / 0.13);
+  --brand:  oklch(80% 0.15 66);
+  --brand-hsl: 38 96% 62%;
+  --accent: oklch(78% 0.15 150);
+  --accent-hsl: 140 50% 62%;
+  --acento-texto: oklch(84% 0.13 70);
+}

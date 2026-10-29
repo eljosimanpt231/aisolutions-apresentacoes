@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+
+  <title>Frutas Mangas | Cada encomenda entra uma vez</title>
+  <meta name="description" content="Um agente de inteligência artificial no WhatsApp do escritório da Frutas Mangas que lê as encomendas como os clientes as escrevem, encontra os artigos no Primavera e avisa o distribuidor da rota, para nenhuma encomenda ser preparada duas vezes nem ficar esquecida. Proposta da AI Solutions.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Frutas Mangas × AI Solutions">
+  <meta property="og:description" content="300 encomendas por dia, quase todas no WhatsApp. Cada uma entra uma vez, chega à rota certa, e às 4h a folha está certa.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/frutas-mangas-41g2/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/simbolo.svg" type="image/svg+xml">
+
+  <link rel="preload" href="assets/fonts/fraunces-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fontes.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/mangas.css">
+  <script src="config.js"></script>
+</head>
+<body class="grao">
+
+<a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+<div class="grelha" aria-hidden="true"></div>
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+
+<nav class="nav" aria-label="Secções da proposta">
+  <div class="container"><ul></ul></div>
+</nav>
+
+<main id="conteudo">
+
+  <!-- ============ CABEÇALHO ============ -->
+  <section class="cabeca" id="topo">
+    <div class="container">
+      <div class="cabeca-topo" data-acto="1" data-entra="sobe">
+        <span class="cabeca-marca"><span class="marca-texto"><img src="assets/img/simbolo.svg" width="34" height="34" alt="">Frutas Mangas</span><i>× AI Solutions</i></span>
+        <span class="cabeca-ref">Proposta <b>AI/2026-FM</b></span>
+      </div>
+
+      <dl class="cabeca-meta" data-acto="2" data-entra="sobe">
+        <div><dt>Para</dt><dd>Carmen, German e Miguel, Frutas Mangas</dd></div>
+        <div><dt>Assunto</dt><dd>Agente de IA para as encomendas por WhatsApp</dd></div>
+        <div><dt>Reuniões</dt><dd>26 e 30 de outubro de 2026</dd></div>
+        <div><dt>Preparado por</dt><dd>Manuel Condeço, AI Solutions</dd></div>
+      </dl>
+
+      <div class="cabeca-corpo">
+        <div class="cabeca-texto">
+          <h1 class="promessa" data-linhas>
+            Cada encomenda entra uma vez. Nem duas, nem
+            <span class="g-brilho">nenhuma.</span>
+          </h1>
+          <p class="lead" data-acto="3" data-entra="sobe">
+            Um agente de inteligência artificial no WhatsApp do escritório lê cada encomenda como os vossos clientes a
+            escrevem, pergunta o que falta, encontra os artigos no Primavera e, quando o cliente é de uma rota, avisa logo
+            o distribuidor. Às 4 da manhã, cada folha está certa.
+          </p>
+        </div>
+
+        <figure class="enc-hero" data-acto="4" data-entra="escala" data-inclina="3"
+                aria-label="Uma mensagem de WhatsApp de um restaurante com quatro artigos sem códigos, e ao lado a mesma encomenda lida pelo agente: artigos do Primavera, a laranja confirmada como de sumo, e o aviso ao distribuidor da rota de Beja.">
+          <div class="eh-wa holofote">
+            <div class="eh-topo">
+              <span class="eh-av" aria-hidden="true">OL</span>
+              <span><b>Restaurante O Lagar</b><small>WhatsApp do escritório</small></span>
+            </div>
+            <div class="eh-conversa">
+              <p class="eh-msg">boa noite<time>21:42</time></p>
+              <p class="eh-msg">p amanha<br>2 cx laranja<br>5kg cebola roxa<br>1 cx alface<br>3 molhos coentros<time>21:43</time></p>
+            </div>
+          </div>
+          <div class="eh-cartao">
+            <span class="eh-k">Lido pelo agente</span>
+            <ol class="eh-linhas">
+              <li><code>FR-LAR-SUM</code><span>Laranja de sumo</span><b>2 cx</b><i class="eh-p">perguntou: sumo</i></li>
+              <li><code>HO-CEB-ROX</code><span>Cebola roxa</span><b>5 kg</b></li>
+              <li><code>HO-ALF-ICE</code><span>Alface</span><b>1 cx</b></li>
+              <li><code>AR-COE-MOL</code><span>Coentros</span><b>3 mç</b></li>
+            </ol>
+            <span class="eh-rota"><i aria-hidden="true"></i>Cliente da rota de Beja. Distribuidor avisado.</span>
+          </div>
+          <figcaption class="quadro-nota">Exemplo. Os códigos de artigo são inventados; os vossos vêm do Primavera.</figcaption>
+        </figure>
+      </div>
+
+      <div class="rota" aria-hidden="true">
+        <svg viewBox="0 0 1140 90" preserveAspectRatio="none">
+          <path class="rota-sombra" pathLength="1" d="M0 45 C 150 45 190 26 285 30 S 450 62 570 52 S 760 28 855 36 S 1040 48 1140 44"/>
+          <path class="rota-estrada" pathLength="1" d="M0 45 C 150 45 190 26 285 30 S 450 62 570 52 S 760 28 855 36 S 1040 48 1140 44"/>
+          <path class="rota-carrinha" pathLength="1" d="M0 45 C 150 45 190 26 285 30 S 450 62 570 52 S 760 28 855 36 S 1040 48 1140 44"/>
+        </svg>
+        <ol class="rota-paragens">
+          <li class="p-1"><b>04:00</b>Armazém</li>
+          <li class="p-2"><b>Lisboa</b>20 encomendas</li>
+          <li class="p-3"><b>Beja</b>20 encomendas</li>
+          <li class="p-4"><b>Elvas</b>20 encomendas</li>
+          <li class="p-5"><b>07:00</b>Tudo na rua</li>
+        </ol>
+      </div>
+
+      <ul class="numeros" data-acto="5" data-entra="sobe">
+        <li>
+          <span class="n"><span class="num" data-conta="300">300</span> <small>por dia</small></span>
+          <span class="d">Encomendas, contando com os distribuidores. Primeiro pelo WhatsApp, depois email, depois chamada</span>
+        </li>
+        <li>
+          <span class="n">1 + 6 <small>portas</small></span>
+          <span class="d">O escritório e seis distribuidores, cada um com o seu WhatsApp e as suas 20 encomendas por dia</span>
+        </li>
+        <li>
+          <span class="n">4h às 7h</span>
+          <span class="d">Preparar, pesar, verificar a qualidade e pôr os carros todos na rua. Sem tempo para enganos</span>
+        </li>
+      </ul>
+
+      <p class="cabeca-nota" data-acto="5" data-entra="sobe">7 minutos de leitura.</p>
+    </div>
+  </section>
+
+  <!-- ============ 1. O QUE OUVIMOS ============ -->
+  <section id="ouvimos" data-nav="O que ouvimos">
+    <div class="container">
+      <p class="rubrica"><span>1</span> O que ouvimos a 26 de outubro</p>
+      <h2 data-linhas>Encomendas não faltam. O que falha é saber quem já tratou de cada uma.</h2>
+
+      <div class="pontos" data-entra="sobe">
+        <article>
+          <span class="p-i">01</span>
+          <h3>Quase tudo pelo WhatsApp</h3>
+          <p>Cerca de 300 encomendas por dia, de restaurantes e mercearias que preferem escrever como sempre escreveram.
+            Depois vem o email e, por fim, a chamada.</p>
+          <blockquote>WhatsApp, email, chamada. Esta é a ordem.</blockquote>
+        </article>
+        <article>
+          <span class="p-i">02</span>
+          <h3>A mesma encomenda em dois sítios</h3>
+          <p>O cliente manda ao escritório e ao distribuidor da rota. O escritório lança as suas, o distribuidor chega com
+            as dele, e ninguém sabe que é a mesma.</p>
+          <blockquote>No final existem duas encomendas preparadas, e só no momento de faturar é que se deteta.</blockquote>
+        </article>
+        <article>
+          <span class="p-i">03</span>
+          <h3>Ou em nenhum</h3>
+          <p>O pior caso: cada lado acha que o outro trata dela. A encomenda não sai, e o cliente não volta.</p>
+          <blockquote>Nem eu nem o distribuidor a fizemos, e perdemos um cliente por isso.</blockquote>
+        </article>
+        <article>
+          <span class="p-i">04</span>
+          <h3>Tudo passa a papel</h3>
+          <p>Do WhatsApp para a folha de encomenda de cada distribuidor, e só na fatura é que entra no Primavera. Avisar o
+            outro lado, encomenda a encomenda, não dá.</p>
+          <blockquote>Nós passamos as encomendas a papel. No sistema, a encomenda não entra.</blockquote>
+        </article>
+        <article>
+          <span class="p-i">05</span>
+          <h3>Pedidos sem código</h3>
+          <p>«Laranja», quando há duas. Listas escritas à pressa, às vezes uma fotografia mal tirada. Cada pedido tem de ser
+            interpretado antes de ir para a folha.</p>
+          <blockquote>Às vezes diz laranja e pronto.</blockquote>
+        </article>
+        <article class="forca">
+          <span class="p-i">06</span>
+          <h3>E uma força a manter</h3>
+          <p>Os vossos clientes não têm de aprender nada. Continuam a escrever no WhatsApp, à hora que lhes dá jeito, e o
+            distribuidor continua a ser quem acompanha a rota. A proposta trabalha por trás disso.</p>
+          <blockquote>Queríamos algo que diminuísse os erros, mas que também ajudasse os clientes.</blockquote>
+        </article>
+      </div>
+
+      <div class="producao" data-entra="sobe">
+        <p class="sintese">A pergunta que ficou da reunião: <em>«devia haver uma regra, mas como é que criamos essa
+          regra?»</em></p>
+        <p class="sintese-resp">Esta proposta é essa regra. Cada encomenda que entra no escritório é cruzada com o
+          Primavera; se o cliente é de uma rota, o distribuidor sabe nesse minuto e confirma. Se ninguém confirmar, alguém
+          do escritório é avisado antes das 4h.</p>
+      </div>
+      <p class="doc-nota">Citações da reunião de 26 de outubro de 2026, com pequenos acertos de oralidade.</p>
+    </div>
+  </section>
+
+  <!-- ============ 2. A NOITE DAS ENCOMENDAS ============ -->
+  <section class="faixa-clara" id="noite" data-nav="A noite das encomendas">
+    <div class="container">
+      <p class="rubrica"><span>2</span> O percurso de uma encomenda</p>
+      <h2 data-linhas>Das 19h às 4h, a mesma encomenda <span class="g-brilho">uma só vez.</span></h2>
+      <p class="lead">Segue o Café Central, um cliente da rota de Elvas que manda a encomenda ao escritório e ao
+        distribuidor, como acontece todos os dias. Carrega em «Seguinte», ou deixa correr.</p>
+
+      <div class="quadro-trello" id="fmQuadro" data-entra="escala">
+        <div class="qt-topo">
+          <b>Encomendas para quinta, 5 de novembro</b>
+          <span class="qt-membros" aria-hidden="true"><i>MC</i><i>D</i><i class="ag">IA</i></span>
+        </div>
+        <div class="qt-cols" tabindex="0" aria-label="Encomendas por escritório e por rota">
+          <div class="qt-col">
+            <h4>Escritório <span>Miguel e Diogo</span></h4>
+            <div class="qt-card qt-card--seguido" data-em="1 2"><b>Café Central</b><small class="qt-tag">WhatsApp do escritório, 19:40</small><span class="qt-estado" data-de="2">Cliente da rota de Elvas</span></div>
+            <div class="qt-card"><b>Mercearia Flor</b><small class="qt-tag">WhatsApp, 18:12</small></div>
+            <div class="qt-card"><b>Pastelaria Sol</b><small class="qt-tag">Email, 20:05</small></div>
+            <div class="qt-card qt-card--organizado" data-de="4"><b>48 encomendas lidas</b><small class="qt-tag">Artigos com código, prontas para preparar</small></div>
+            <div class="qt-mais">+ 45 encomendas</div>
+          </div>
+          <div class="qt-col">
+            <h4>Rota de Lisboa <span>20</span></h4>
+            <div class="qt-card"><b>Tasca do Largo</b><small class="qt-tag">WhatsApp do distribuidor</small></div>
+            <div class="qt-card"><b>Hotel Ribeira</b><small class="qt-tag">WhatsApp do distribuidor</small></div>
+            <div class="qt-mais">+ 18 encomendas</div>
+          </div>
+          <div class="qt-col">
+            <h4>Rota de Beja <span>21</span></h4>
+            <div class="qt-card"><b>Restaurante O Lagar</b><small class="qt-tag">Escritório, aviso confirmado</small></div>
+            <div class="qt-card"><b>Mini-mercado Alves</b><small class="qt-tag">WhatsApp do distribuidor</small></div>
+            <div class="qt-mais">+ 19 encomendas</div>
+          </div>
+          <div class="qt-col">
+            <h4>Rota de Elvas <span id="fmElvas">19</span></h4>
+            <div class="qt-card qt-card--seguido qt-card--dup" data-em="1 2"><b>Café Central</b><small class="qt-tag">WhatsApp do distribuidor, 19:38</small></div>
+            <div class="qt-card qt-card--seguido qt-card--fim" data-em="3 4 5"><b>Café Central</b><small class="qt-tag">Confirmada pelo distribuidor</small><span class="qt-estado qt-estado--ok">Só nesta folha</span></div>
+            <div class="qt-card"><b>Snack-bar Avenida</b><small class="qt-tag">WhatsApp do distribuidor</small></div>
+            <div class="qt-mais">+ 17 encomendas</div>
+          </div>
+          <div class="qt-col">
+            <h4>Preparação <span>04:00</span></h4>
+            <div class="qt-card qt-card--seguido" data-em="5"><b>Folhas prontas</b><small class="qt-tag">Uma por rota e a do escritório</small><span class="qt-estado qt-estado--ok">0 em duplicado</span></div>
+            <div class="qt-card qt-card--espera" data-ate="4"><b>À espera das folhas</b><small class="qt-tag">Abre às 4 da manhã</small></div>
+          </div>
+        </div>
+
+        <div class="qt-passos" aria-live="polite" data-entra="sobe">
+          <ol class="qt-lista">
+            <li data-passo="1"><span class="qt-h"><time>19:40</time> A encomenda entra duas vezes</span>
+              <p class="hoje"><b>Hoje</b>O Café Central manda ao distribuidor às 19:38 e ao escritório às 19:40. Cada um fica
+                com a sua, sem saber da outra.</p>
+              <p class="agente"><b>Com o agente</b>Lê a encomenda no WhatsApp do escritório e procura o cliente no
+                Primavera.</p></li>
+            <li data-passo="2"><span class="qt-h"><time>19:41</time> O Primavera diz: rota de Elvas</span>
+              <p class="hoje"><b>Hoje</b>Alguém tinha de se lembrar de reencaminhar ao distribuidor, encomenda a encomenda.</p>
+              <p class="agente"><b>Com o agente</b>Vê que o Café Central está atribuído ao distribuidor de Elvas e manda-lhe
+                logo a encomenda, a perguntar se já a tem.</p></li>
+            <li data-passo="3"><span class="qt-h"><time>19:52</time> O distribuidor confirma</span>
+              <p class="hoje"><b>Hoje</b>Ou se preparam as duas, ou cada um espera pelo outro e não se prepara nenhuma.</p>
+              <p class="agente"><b>Com o agente</b>«Já tinha.» A encomenda fica só na folha da rota de Elvas e sai da do
+                escritório. Se ele não responder, o escritório é avisado antes das 4h.</p></li>
+            <li data-passo="4"><span class="qt-h"><time>22:30</time> O escritório, organizado</span>
+              <p class="hoje"><b>Hoje</b>Passar cada mensagem para papel, ao fim do dia, a adivinhar o que é «laranja».</p>
+              <p class="agente"><b>Com o agente</b>As encomendas do escritório já estão lidas, com os artigos do Primavera e
+                as dúvidas perguntadas aos clientes.</p></li>
+            <li data-passo="5"><span class="qt-h"><time>04:00</time> As folhas estão prontas</span>
+              <p class="hoje"><b>Hoje</b>O duplicado só aparece na fatura, depois de a fruta estar pesada e no carro.</p>
+              <p class="agente"><b>Com o agente</b>Uma folha por rota e a do escritório, pela ordem que definirem. Nenhuma
+                encomenda duas vezes, nenhuma esquecida.</p></li>
+          </ol>
+          <div class="qt-controlos">
+            <button type="button" class="qt-ant" aria-label="Passo anterior">Anterior</button>
+            <span class="qt-pos">Passo <b>5</b> de 5</span>
+            <button type="button" class="qt-seg">Seguinte</button>
+          </div>
+          <p class="qt-depois">Daí para a frente, como hoje: a preparação, a pesagem, a qualidade e a fatura no Primavera
+            ficam convosco.</p>
+        </div>
+      </div>
+      <p class="doc-nota">Os clientes, as horas e as contagens por rota são exemplos. O escritório, as rotas e os volumes
+        seguem o que nos contaram.</p>
+
+      <div class="recebe">
+        <div data-entra="sobe">
+          <h3>A folha que chega às 4h</h3>
+          <p class="recebe-intro">Já trabalham com uma folha de encomenda por distribuidor, pela ordem que vocês definem.
+            O agente entrega essa mesma folha pronta: cada encomenda com os artigos certos, de onde veio e se o distribuidor
+            confirmou.</p>
+          <ul class="lista lista-sim">
+            <li>Nenhuma encomenda em duas folhas</li>
+            <li>As que ficaram por confirmar aparecem marcadas, não escondidas</li>
+            <li>O formato e a ordem são os vossos, não os nossos</li>
+          </ul>
+        </div>
+        <figure class="folha" data-entra="sobe">
+          <div class="folha-papel">
+            <div class="folha-topo">
+              <b>Folha de encomendas</b>
+              <span>Rota de Elvas, quinta, 5 de novembro</span>
+            </div>
+            <table class="folha-tab">
+              <caption class="so-leitor">Folha de encomendas da rota de Elvas, exemplo</caption>
+              <thead><tr><th scope="col">Cliente</th><th scope="col">Artigos</th><th scope="col">Estado</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Café Central</th><td>4 cx tomate, 2 cx pimento, 10 kg batata</td><td><span class="fs fs-ok">Confirmada</span></td></tr>
+                <tr><th scope="row">Snack-bar Avenida</th><td>2 cx laranja de sumo, 1 cx limão</td><td><span class="fs fs-ok">Do distribuidor</span></td></tr>
+                <tr><th scope="row">Restaurante Muralha</th><td>3 cx alface, 5 kg cebola, 2 mç salsa</td><td><span class="fs fs-ok">Confirmada</span></td></tr>
+                <tr><th scope="row">Mercearia Paz</th><td>1 cx banana, 1 cx maçã e uma linha por ler</td><td><span class="fs fs-espera">Por confirmar</span></td></tr>
+              </tbody>
+            </table>
+            <p class="folha-pe">19 encomendas, nenhuma em duplicado. 1 por confirmar, já com o escritório.</p>
+          </div>
+          <figcaption>Exemplo, com clientes inventados. O formato é o da vossa folha.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. O AGENTE A TRABALHAR ============ -->
+  <section class="secao-ampla" id="agente" data-nav="O agente">
+    <div class="container">
+      <p class="rubrica"><span>3</span> O agente a trabalhar</p>
+      <h2 data-linhas>Quatro noites como as vossas. Numa delas, o agente passa a palavra ao Miguel.</h2>
+      <p class="lead">À esquerda, a conversa. À direita, o que o agente verificou e decidiu a cada passo. Escolhe um
+        cenário ou deixa correr.</p>
+
+      <div class="cr holofote" data-entra="escala" id="fmDemo"></div>
+      <p class="so-leitor">
+        Simulação de quatro situações. Na primeira, o Restaurante O Lagar pede laranja, cebola roxa, alface e coentros sem
+        códigos: o agente reconhece o número, pergunta se a laranja é de sumo ou de mesa e regista a encomenda com os artigos
+        do Primavera. Na segunda, o agente avisa o distribuidor da rota de Elvas de uma encomenda do Café Central que entrou
+        no escritório; o distribuidor diz que já a tinha e a encomenda fica só na folha dele. Na terceira, escreve a
+        cozinheira de um número desconhecido: o agente pergunta de que restaurante é, confirma qual dos dois parecidos e
+        associa a encomenda. Na quarta, chega a fotografia de uma lista escrita à mão com duas linhas ilegíveis: o agente não
+        adivinha e passa a encomenda ao Miguel.
+      </p>
+      <p class="doc-nota">Conversas, clientes, nomes e horas inventados. O agente usa os vossos artigos, clientes e rotas,
+        tal como estão no Primavera.</p>
+
+      <aside class="ouvir" data-entra="sobe">
+        <span class="ouvir-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg></span>
+        <div class="ouvir-txt">
+          <b>Isto lê-se aqui. Experimentem-no a sério.</b>
+          <p>Na página que vos enviei, a Bia, a nossa agente, está no canto inferior direito. É a mesma tecnologia, que aqui
+            levaria os vossos artigos, clientes e rotas.</p>
+        </div>
+        <a class="ouvir-num" href="https://aisolutions.pt/comecar" target="_blank" rel="noopener" data-iman="0.2">aisolutions.pt/comecar</a>
+      </aside>
+    </div>
+  </section>
+  <script type="application/json" id="fmDemo-config">
+  {
+    "agentName": "Frutas Mangas",
+    "agentInitials": "FM",
+    "chatStatus": "WhatsApp do escritório",
+    "stepMs": 1450,
+    "endPauseMs": 3200,
+    "scenarios": [
+      {
+        "title": "Encomenda sem códigos",
+        "subtitle": "Um restaurante escreve às 21:42, como sempre. Às 21:51 está tudo no Primavera.",
+        "chat": [
+          { "sender": "system", "text": "Mensagem nova no WhatsApp do escritório. 21:42", "passo": 1 },
+          { "sender": "client", "text": "boa noite", "time": "21:42" },
+          { "sender": "client", "text": "p amanha 2 cx laranja 5kg cebola roxa 1 cx alface 3 molhos coentros", "time": "21:43", "passo": 2 },
+          { "sender": "agent", "text": "Boa noite! Fica registado para amanhã: 5 kg de cebola roxa, 1 caixa de alface e 3 molhos de coentros. A laranja é de **sumo** ou de **mesa**?", "time": "21:43", "passo": 3 },
+          { "sender": "client", "text": "sumo", "time": "21:51" },
+          { "sender": "client", "text": "como sempre", "time": "21:51", "passo": 4 },
+          { "sender": "agent", "text": "Perfeito: 2 caixas de laranja de sumo. A sua encomenda está completa para amanhã de manhã.", "time": "21:51", "passo": 5 },
+          { "sender": "system", "text": "Encomenda registada com os artigos do Primavera. Cliente da rota de Beja: distribuidor avisado.", "passo": 6 }
+        ],
+        "steps": [
+          { "icon": "id", "label": "Reconhece o número: Restaurante O Lagar, no Primavera" },
+          { "icon": "search", "label": "Lê quatro artigos, sem códigos" },
+          { "icon": "alert", "label": "«Laranja»: há dois artigos. Pergunta, não adivinha" },
+          { "icon": "book", "label": "Sumo, como nas últimas encomendas dele" },
+          { "icon": "database", "label": "Associa os quatro artigos aos códigos do Primavera" },
+          { "icon": "send", "label": "Cliente da rota de Beja: avisa o distribuidor" }
+        ]
+      },
+      {
+        "title": "Mandou aos dois",
+        "subtitle": "O Café Central escreveu ao escritório e ao distribuidor. A encomenda fica numa folha só.",
+        "chatStatus": "WhatsApp, distribuidor da rota de Elvas",
+        "chat": [
+          { "sender": "system", "text": "Encomenda do Café Central no escritório às 19:40. No Primavera: cliente da rota de Elvas.", "passo": 2 },
+          { "sender": "agent", "text": "Boa noite! Entrou no escritório uma encomenda do **Café Central** para amanhã: 4 cx de tomate, 2 cx de pimento e 10 kg de batata. Também ta mandaram a ti?", "time": "19:41", "passo": 3 },
+          { "sender": "client", "text": "sim ja tinha", "time": "19:52" },
+          { "sender": "client", "text": "mandou me a mesma as 19h", "time": "19:52", "passo": 4 },
+          { "sender": "agent", "text": "Obrigado! Fica só na tua folha e sai da do escritório, para não se preparar duas vezes.", "time": "19:52", "passo": 5 },
+          { "sender": "system", "text": "Duplicado evitado: a encomenda do Café Central fica só na folha da rota de Elvas.", "passo": 6 }
+        ],
+        "steps": [
+          { "icon": "message", "label": "Encomenda no WhatsApp do escritório" },
+          { "icon": "search", "label": "Procura o cliente no Primavera: rota de Elvas" },
+          { "icon": "send", "label": "Manda a encomenda ao distribuidor da rota e pergunta" },
+          { "icon": "check", "label": "«Já tinha»: é a mesma encomenda" },
+          { "icon": "filter", "label": "Tira-a da lista do escritório" },
+          { "icon": "clock", "label": "Sem resposta até à hora combinada, avisaria o escritório" }
+        ]
+      },
+      {
+        "title": "Número desconhecido",
+        "subtitle": "Hoje escreve a cozinheira, amanhã a portaria. O agente descobre de que cliente é.",
+        "chat": [
+          { "sender": "system", "text": "Mensagem nova de um número que não está no Primavera. 18:55", "passo": 1 },
+          { "sender": "client", "text": "boa tarde e a cozinheira", "time": "18:55" },
+          { "sender": "client", "text": "mandem 3kg tomate e 1 cx limao pf", "time": "18:56", "passo": 2 },
+          { "sender": "agent", "text": "Boa tarde! Ainda não tenho este número associado a nenhum cliente. É de que restaurante?", "time": "18:56", "passo": 3 },
+          { "sender": "client", "text": "do lagar", "time": "19:03" },
+          { "sender": "agent", "text": "Obrigado! É o **Restaurante O Lagar**, em Beja?", "time": "19:03", "passo": 4 },
+          { "sender": "client", "text": "sim esse", "time": "19:05" },
+          { "sender": "agent", "text": "Fica registado para amanhã: 3 kg de tomate e 1 caixa de limão para o Restaurante O Lagar. Da próxima vez já reconheço este número.", "time": "19:05", "passo": 5 },
+          { "sender": "system", "text": "Encomenda associada ao Restaurante O Lagar. Número guardado para as próximas vezes.", "passo": 6 }
+        ],
+        "steps": [
+          { "icon": "id", "label": "Número que não está em nenhum cliente" },
+          { "icon": "list", "label": "Lê a encomenda: tomate e limão" },
+          { "icon": "user-cog", "label": "Pergunta de que cliente é" },
+          { "icon": "search", "label": "«Lagar»: dois clientes parecidos. Confirma qual" },
+          { "icon": "database", "label": "Regista a encomenda no cliente certo" },
+          { "icon": "check", "label": "Guarda o número para a próxima" }
+        ]
+      },
+      {
+        "title": "Uma lista à mão",
+        "subtitle": "Uma fotografia com duas linhas que não se leem. O agente não adivinha: passa ao Miguel.",
+        "chat": [
+          { "sender": "system", "text": "Mensagem nova no WhatsApp do escritório. 20:30", "passo": 1 },
+          { "sender": "client", "text": "[fotografia de uma lista escrita à mão]", "time": "20:30" },
+          { "sender": "client", "text": "e isto p amanha", "time": "20:30", "passo": 2 },
+          { "sender": "agent", "text": "Boa noite! Consegui ler 2 cx de laranja de mesa, 3 kg de cenoura e 1 cx de alface. Há duas linhas que não consigo ler com segurança.", "time": "20:31", "passo": 3 },
+          { "sender": "agent", "text": "Para não lhe mandar nada errado, o Miguel, do escritório, confirma consigo essas duas ainda hoje. Pode ser?", "time": "20:31", "passo": 4 },
+          { "sender": "client", "text": "ok obg", "time": "20:40" },
+          { "sender": "system", "text": "Passada ao Miguel: fotografia, 3 linhas lidas, 2 por confirmar. Fica marcada na folha até ele confirmar.", "passo": 6 }
+        ],
+        "steps": [
+          { "icon": "message", "label": "Fotografia de uma lista escrita à mão" },
+          { "icon": "search", "label": "Lê o que consegue ler com segurança" },
+          { "icon": "ban", "label": "Duas linhas ilegíveis: não adivinha" },
+          { "icon": "user-cog", "label": "Passa ao Miguel, com o que já leu" },
+          { "icon": "alert", "label": "Marca a encomenda: por confirmar" },
+          { "icon": "list", "label": "Na folha, marcada, até o Miguel fechar" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ 4. A ENCOMENDA LIDA ============ -->
+  <section class="faixa" id="leitura" data-nav="A encomenda lida">
+    <div class="container">
+      <p class="rubrica"><span>4</span> Da mensagem ao Primavera</p>
+      <h2 data-linhas>A mensagem chega como o cliente a escreve. Sai com os <span class="g-brilho">artigos certos.</span></h2>
+      <p class="lead">O mais difícil não é ler a mensagem: é saber que «laranja», para aquele cliente, é a de sumo, e que
+        a cozinheira que escreve de um número novo é do Lagar. Experimenta: escolhe quem escreve e responde pelo
+        cliente.</p>
+
+      <div class="leit" id="fmLeit" data-entra="sobe">
+        <div class="leit-esq">
+          <div class="leit-quem" role="group" aria-label="Quem escreve">
+            <button type="button" aria-pressed="true" data-quem="conhecido">Número conhecido</button>
+            <button type="button" aria-pressed="false" data-quem="novo">A cozinheira, de um número novo</button>
+          </div>
+          <div class="leit-wa">
+            <div class="leit-wa-topo"><span class="eh-av" aria-hidden="true" data-av>OL</span><span><b data-nome>Restaurante O Lagar</b><small data-num>+351 9•• ••• 214, no Primavera</small></span></div>
+            <div class="leit-wa-corpo">
+              <p class="eh-msg" data-msg-novo hidden>boa noite e a cozinheira do lagar<time>21:40</time></p>
+              <p class="eh-msg">p amanha<br>2 cx laranja<br>5kg cebola roxa<br>1 cx alface<br>3 molhos coentros<time>21:43</time></p>
+            </div>
+          </div>
+          <button type="button" class="oo-ler">Ler a encomenda outra vez</button>
+        </div>
+
+        <div class="leit-dir holofote" aria-live="polite">
+          <div class="leit-topo">
+            <span class="orc-k">Encomenda lida</span>
+            <b>Para quinta, 5 de novembro</b>
+          </div>
+          <dl class="leit-cliente">
+            <div><dt>Cliente</dt><dd data-cli>Restaurante O Lagar</dd></div>
+            <div><dt>Como</dt><dd data-como>Pelo número de telefone, no Primavera</dd></div>
+            <div><dt>Rota</dt><dd>Beja, distribuidor avisado às 21:52</dd></div>
+          </dl>
+          <ol class="leit-linhas">
+            <li data-l="1"><span class="ll-orig">2 cx laranja</span><span class="ll-art"><code data-cod>FR-LAR-SUM</code><span data-art>Laranja de sumo</span></span><b>2 cx</b>
+              <span class="ll-duvida">
+                <span class="ll-perg">Há duas laranjas. Perguntou ao cliente:</span>
+                <span class="ll-chips" role="group" aria-label="Resposta do cliente">
+                  <button type="button" aria-pressed="true" data-lar="sumo">Sumo</button>
+                  <button type="button" aria-pressed="false" data-lar="mesa">De mesa</button>
+                </span>
+              </span></li>
+            <li data-l="2"><span class="ll-orig">5kg cebola roxa</span><span class="ll-art"><code>HO-CEB-ROX</code><span>Cebola roxa</span></span><b>5 kg</b></li>
+            <li data-l="3"><span class="ll-orig">1 cx alface</span><span class="ll-art"><code>HO-ALF-ICE</code><span>Alface iceberg</span></span><b>1 cx</b></li>
+            <li data-l="4"><span class="ll-orig">3 molhos coentros</span><span class="ll-art"><code>AR-COE-MOL</code><span>Coentros, molho</span></span><b>3 mç</b></li>
+          </ol>
+          <p class="leit-ok"><i aria-hidden="true"></i><span data-fim>4 artigos, 1 dúvida resolvida com o cliente. Pronta para a folha de Beja.</span></p>
+        </div>
+      </div>
+      <p class="doc-nota" id="fmLeitNota">Exemplo. Os códigos de artigo e os clientes são inventados. Na implementação, o
+        agente usa a vossa lista de artigos, os vossos clientes e a rota de cada um, tal como estão no Primavera, e aprende
+        com as encomendas anteriores de cada cliente.</p>
+
+      <div class="ligacao">
+        <h3 data-entra="sobe">Por cima do que já usam, sem mudar a forma de trabalhar</h3>
+        <div class="fluxo" id="fmFluxo" data-entra="sobe"></div>
+      </div>
+    </div>
+  </section>
+  <script type="application/json" id="fmFluxo-config">
+  {
+    "stepMs": 1800,
+    "channels": [
+      { "icon": "whatsapp", "label": "WhatsApp do escritório" },
+      { "icon": "message", "label": "Email" }
+    ],
+    "nodes": [
+      { "icon": "message", "title": "Encomenda recebida", "detail": "Como o cliente a escreve, a qualquer hora.", "tone": "brand" },
+      { "icon": "id", "title": "Identifica o cliente", "detail": "Pelo número ou pelo nome, no Primavera.", "tone": "teal" },
+      { "icon": "list", "title": "Lê os artigos", "detail": "Com os códigos do Primavera. Pergunta o que é ambíguo.", "tone": "teal" },
+      { "icon": "send", "title": "Avisa a rota", "detail": "Se o cliente é de um distribuidor, ele confirma.", "tone": "teal" },
+      { "icon": "check", "title": "Folha pronta às 4h", "detail": "Uma por rota e a do escritório, sem duplicados.", "tone": "brand" }
+    ],
+    "note": "O Primavera, as rotas, as folhas e os distribuidores ficam como estão. O agente trabalha por cima do que já usam."
+  }
+  </script>
+
+  <!-- ============ 5. LIMITES E PROVA ============ -->
+  <section id="limites" data-nav="Limites">
+    <div class="container">
+      <p class="rubrica"><span>5</span> Limites</p>
+      <h2 data-linhas>O que o agente faz sozinho, e o que fica sempre convosco.</h2>
+      <p class="lead">Trinta anos de clientes de confiança não se arriscam numa encomenda mal lida. Preferimos dizer já o
+        que o agente não faz do que prometer o que não se cumpre.</p>
+
+      <div class="tres-regras" data-entra="sobe">
+        <article>
+          <span class="tr-n">1</span>
+          <h3>Não adivinha</h3>
+          <p>Um artigo ambíguo, uma linha que não se lê, um cliente que não reconhece: pergunta. Nunca põe na folha o que não
+            tem a certeza.</p>
+        </article>
+        <article>
+          <span class="tr-n">2</span>
+          <h3>Não deixa nada a meio</h3>
+          <p>Se o distribuidor não confirmar, ou uma encomenda ficar por fechar, o escritório é avisado antes das 4h. Nada fica
+            à espera de que outro trate.</p>
+        </article>
+        <article>
+          <span class="tr-n">3</span>
+          <h3>Passa a palavra quando é preciso</h3>
+          <p>Reclamações, preços, condições, clientes novos e quem pede para falar com alguém vão para o escritório, já
+            resumidos.</p>
+        </article>
+      </div>
+
+      <div class="regras" data-entra="sobe">
+        <article class="faz">
+          <h3>Faz sozinho</h3>
+          <ul>
+            <li>Ler as encomendas no WhatsApp do escritório, a qualquer hora</li>
+            <li>Identificar o cliente, pelo número ou pelo nome</li>
+            <li>Associar os artigos aos códigos do Primavera</li>
+            <li>Perguntar ao cliente o que é ambíguo</li>
+            <li>Avisar o distribuidor da rota e registar a resposta</li>
+            <li>Preparar a folha de cada rota e a do escritório</li>
+          </ul>
+        </article>
+        <article class="pergunta">
+          <h3>Passa ao escritório</h3>
+          <ul>
+            <li>Listas à mão com linhas que não se leem</li>
+            <li>Encomendas que o distribuidor não confirmou</li>
+            <li>Clientes novos e pedidos de preço</li>
+            <li>Reclamações e trocas</li>
+          </ul>
+        </article>
+        <article class="nunca">
+          <h3>Nunca faz</h3>
+          <ul>
+            <li>Pôr na folha um artigo que não confirmou</li>
+            <li>Dar preços ou condições que não estão definidos</li>
+            <li>Mexer nas fichas de clientes ou nas rotas do Primavera</li>
+            <li>Faturar: a fatura continua a ser vossa</li>
+          </ul>
+        </article>
+      </div>
+      <p class="limites-fecho" data-entra="sobe">Preferimos dizer isto agora do que prometer o que não se cumpre.</p>
+
+      <aside class="prova" data-entra="sobe">
+        <div class="prova-num"><span class="num" data-conta="695">695</span><small>clientes de uma distribuidora, pela primeira vez todos à vista num só sítio</small></div>
+        <div>
+          <p class="prova-k">O mesmo problema, noutra distribuidora</p>
+          <h3>Luxflor: cada comercial com o seu WhatsApp, e a gestão sem ver nada.</h3>
+          <p>A Luxflor distribui flores a profissionais com três comerciais, cada um com o seu número e a sua carteira. Quando
+            um faltava, os pedidos ficavam parados no telemóvel dele. Juntámos as conversas todas num só sítio, com cada
+            comercial a manter a relação com os seus clientes. É o mesmo princípio dos vossos distribuidores: cada um continua
+            com a sua rota, mas deixa de ser uma ilha.</p>
+          <a class="prova-link" href="https://aisolutions.pt/case-studies/luxflor-centralization" target="_blank" rel="noopener">Ler o caso da Luxflor, no nosso site</a>
+        </div>
+      </aside>
+
+      <details class="detalhe" data-entra="sobe">
+        <summary>O que falámos e fica de fora, ou para depois</summary>
+        <ul>
+          <li>As encomendas que chegam ao WhatsApp pessoal de cada distribuidor continuam com ele. Se quiserem, podem
+            reencaminhá-las para o número do escritório e entram na mesma folha; não é preciso para a regra dos duplicados
+            funcionar.</li>
+          <li>As fotografias de listas escritas à mão: o agente lê o que conseguir ler com segurança e passa o resto ao
+            escritório. Uma leitura completa de listas manuscritas não faz parte desta proposta.</li>
+          <li>As encomendas por chamada continuam como hoje. Um agente de voz é outra conversa.</li>
+          <li>A fatura continua a sair do Primavera pelas vossas mãos.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 6. INVESTIMENTO ============ -->
+  <section class="faixa-clara" id="investimento" data-nav="Investimento">
+    <div class="container">
+      <p class="rubrica"><span>6</span> Investimento</p>
+      <h2 data-linhas>Primeiro a conta. Depois o preço.</h2>
+
+      <div class="valor">
+        <div data-entra="sobe">
+          <p class="ancora">Cerca de 50 encomendas por noite no escritório, cada uma passada à mão para papel, e todos os dias
+            o risco de uma ficar em duas folhas, ou em nenhuma. <b>Quanto custa isto por mês?</b> Mexe nos pressupostos: são os
+            vossos números que contam.</p>
+          <blockquote class="objetivo"><p>Já aconteceu: nem eu nem o distribuidor a fizemos, e perdemos um cliente por
+            isso.</p>
+            <cite>Na reunião de 26 de outubro.</cite></blockquote>
+        </div>
+        <div class="calc" id="fmConta" data-entra="sobe"></div>
+      </div>
+      <script type="application/json" id="fmConta-config">
+      {
+        "inputs": [
+          { "id": "enc", "label": "Encomendas no escritório, por dia", "min": 20, "max": 150, "default": 50 },
+          { "id": "min", "label": "Minutos para passar cada uma a papel", "min": 1, "max": 5, "default": 2, "suffix": " min" },
+          { "id": "dias", "label": "Dias de trabalho por mês", "min": 20, "max": 26, "default": 24 },
+          { "id": "falhas", "label": "Encomendas em duplicado ou esquecidas, por semana", "min": 0, "max": 20, "default": 5 }
+        ],
+        "outputs": [
+          { "label": "Horas por mês a passar encomendas a papel", "expr": "enc*min*dias/60", "suffix": " h", "decimals": 0, "highlight": true },
+          { "label": "Encomendas em risco por mês", "expr": "falhas*4.3", "suffix": "", "decimals": 0 }
+        ],
+        "note": "Estimativa. As 50 encomendas por noite no escritório são as que nos disseram; os minutos e as falhas por semana são pressupostos nossos, para ajustarem. Uma encomenda esquecida já vos custou um cliente."
+      }
+      </script>
+
+      <table class="fatura" data-entra="escala">
+        <caption class="so-leitor">Valores da proposta</caption>
+        <thead>
+          <tr><th scope="col">Descrição</th><th scope="col" class="num">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              Implementação do agente Frutas Mangas
+              <small>A ligação ao Primavera (artigos, clientes e rotas), o agente no WhatsApp do escritório e no email, a
+                leitura das encomendas com perguntas ao cliente, a identificação pelo número ou pelo nome, o aviso e a
+                confirmação dos distribuidores, a folha de cada rota e o registo das encomendas no Primavera, e os testes
+                convosco até estarem satisfeitos. Pagamento único, em dois blocos de entrega.</small>
+              <span class="tranches"><span>50% na adjudicação: 3.250 €</span><span>25% na entrega do bloco 1: 1.625 €</span><span>25% na entrega final: 1.625 €</span></span>
+            </th>
+            <td class="num">6.500&nbsp;€</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Mensalidade
+              <small>Os custos de inteligência artificial e o alojamento, a manutenção e os ajustes ao agente quando mudam
+                artigos, clientes ou rotas, e uma pessoa da nossa equipa que conhece a Frutas Mangas.</small>
+            </th>
+            <td class="num">300&nbsp;€ <i>/ mês</i></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><th scope="row">Implementação sem IVA</th><td class="num">6.500,00&nbsp;€</td></tr>
+          <tr><th scope="row">IVA 23%</th><td class="num">1.495,00&nbsp;€</td></tr>
+          <tr class="total"><th scope="row">Total da implementação</th><td class="num">7.995,00&nbsp;€</td></tr>
+        </tfoot>
+      </table>
+      <p class="retorno" data-entra="sobe">A mensalidade com IVA fica em <b>369,00&nbsp;€</b> por mês, e só começa quando o
+        agente entra em produção. Valores sem IVA em destaque.</p>
+
+      <div class="inclui" data-entra="sobe">
+        <div>
+          <h3>A implementação inclui</h3>
+          <ul>
+            <li>A ligação à API do Primavera, com o vosso parceiro Primavera</li>
+            <li>O agente no WhatsApp do escritório e no email</li>
+            <li>A leitura das encomendas com os vossos artigos e as perguntas ao cliente</li>
+            <li>A regra dos distribuidores: aviso, confirmação e alerta ao escritório</li>
+            <li>A folha de cada rota, no formato e na ordem que usam</li>
+            <li>Testes convosco, primeiro no escritório e numa rota, até estarem satisfeitos</li>
+          </ul>
+        </div>
+        <div>
+          <h3>A mensalidade inclui</h3>
+          <ul>
+            <li>Os custos de inteligência artificial e o alojamento</li>
+            <li>Manutenção, alterações e melhorias ao agente</li>
+            <li>Acompanhamento: uma pessoa da nossa equipa que conhece a Frutas Mangas</li>
+            <li>Suporte por WhatsApp, sem tickets</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="meta-custo" data-entra="sobe">
+        <h3>E o custo das mensagens em si?</h3>
+        <p>No WhatsApp, a Meta cobra à parte as mensagens que a empresa inicia fora das 24 horas a seguir à última mensagem
+          da outra pessoa, ao preço da tabela dela, igual para toda a gente. Esse custo é da Meta, não é nosso, e pode
+          aplicar-se a alguns avisos aos distribuidores. Quando é o cliente a escrever, como nas vossas encomendas, a
+          resposta não tem esse custo.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ 7. PRAZO ============ -->
+  <section id="prazo" data-nav="Prazo">
+    <div class="container">
+      <p class="rubrica"><span>7</span> Prazo</p>
+      <h2 data-linhas>Oito semanas, em dois blocos. O primeiro já resolve os duplicados.</h2>
+      <ol class="fases" data-entra="sobe">
+        <li>
+          <span class="quando">Semanas 1 e 2</span>
+          <span class="o-que">Ligação ao Primavera</span>
+          <p>Com o vosso parceiro Primavera: acesso à API, artigos, clientes e a rota de cada um. Juntamos as encomendas
+            reais de uma semana para afinar a leitura.</p>
+          <span class="pag">50% na adjudicação</span>
+        </li>
+        <li>
+          <span class="quando">Semanas 3 a 5</span>
+          <span class="o-que">Bloco 1: encomendas e rotas</span>
+          <p>O agente no WhatsApp do escritório: lê, pergunta o que falta, identifica o cliente, avisa o distribuidor e
+            prepara as folhas.</p>
+        </li>
+        <li>
+          <span class="quando">Semana 6</span>
+          <span class="o-que">Testes convosco</span>
+          <p>Primeiro no escritório e numa rota. O Miguel e o Diogo fazem de cliente, mandam «laranja» e listas impossíveis,
+            e dizem o que querem diferente.</p>
+          <span class="pag">25% na entrega do bloco 1</span>
+        </li>
+        <li>
+          <span class="quando">Semanas 7 e 8</span>
+          <span class="o-que">Bloco 2: Primavera e email</span>
+          <p>As encomendas passam a ficar registadas no Primavera, e o email entra como segundo canal.</p>
+          <span class="pag">25% na entrega final</span>
+        </li>
+        <li>
+          <span class="quando">Depois</span>
+          <span class="o-que">Em produção</span>
+          <p>Todas as rotas. A mensalidade começa aqui, com o acompanhamento e as melhorias.</p>
+        </li>
+      </ol>
+      <p class="doc-nota">A data de arranque fecha-se na adjudicação. Se quiserem evitar mexer no processo na época mais
+        carregada do ano, combinamos convosco quando entra em produção. O ritmo das semanas 1 e 2 depende sobretudo do acesso
+        à API, que é dado pelo vosso parceiro Primavera.</p>
+    </div>
+  </section>
+
+  <!-- ============ 8. FECHO ============ -->
+  <section class="fecho secao-ampla" id="fecho" data-nav="Avançar" data-nav-cta>
+    <div class="container">
+      <div class="fecho-topo">
+        <div>
+          <p class="rubrica"><span>8</span> Próximos passos</p>
+          <h2 data-entra="sobe">Avançamos, <span class="g-brilho">Carmen?</span></h2>
+          <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmarem por escrito.</p>
+        </div>
+        <figure class="fecho-cartao" data-entra="escala" data-inclina="4" aria-label="Exemplo de uma manhã com o agente: às 4 da manhã, 7 folhas prontas e nenhuma encomenda em duplicado.">
+          <span class="fc-hora">04:00</span>
+          <b>As folhas estão prontas.</b>
+          <ul>
+            <li><span>Folhas</span><b>7</b></li>
+            <li><span>Em duplicado</span><b class="fc-ok">0</b></li>
+            <li><span>Esquecidas</span><b class="fc-ok">0</b></li>
+            <li><span>Por confirmar, com o escritório</span><b>1</b></li>
+          </ul>
+          <small>Uma manhã de exemplo.</small>
+        </figure>
+      </div>
+      <ol class="passos-fecho" data-entra="sobe">
+        <li>
+          <span class="n">1</span>
+          <b>O vosso sim</b>
+          <p>Por WhatsApp ou por email, com as dúvidas que ainda tenham. Respondemos a todas.</p>
+        </li>
+        <li>
+          <span class="n">2</span>
+          <b>A proposta formal</b>
+          <p>O âmbito, os valores e as condições desta página, para assinarem. A adjudicação é de 50%.</p>
+        </li>
+        <li>
+          <span class="n">3</span>
+          <b>Semana 1: os acessos</b>
+          <p>O contacto do vosso parceiro Primavera para o acesso à API, o WhatsApp do escritório e um exemplo da folha de
+            encomenda que os distribuidores usam.</p>
+        </li>
+      </ol>
+      <div class="fecho-acoes" data-entra="sobe">
+        <a class="btn btn-primario premivel" data-iman="0.2" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20proposta%20da%20Frutas%20Mangas%20e%20quero%20avan%C3%A7ar." target="_blank" rel="noopener">Quero avançar</a>
+        <a class="btn btn-secundario" href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20proposta%20da%20Frutas%20Mangas%20e%20tenho%20uma%20pergunta%3A%20" target="_blank" rel="noopener">Tenho uma pergunta</a>
+      </div>
+      <p class="fecho-contacto">Manuel Condeço, AI Solutions<br>
+        <a href="tel:+351964251889">964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <span class="rodape-marca"><img src="assets/img/simbolo.svg" alt="" width="24" height="24">Frutas Mangas × AI Solutions</span>
+    Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a Frutas Mangas, 30 de outubro de 2026.<br>
+    Manuel Condeço, manuel.condeco@aisolutions.pt
+    <span class="disclaimer">
+      As conversas, os clientes, os códigos de artigo, as horas e as contagens por rota dos exemplos são inventados. Os
+      volumes, as rotas e as citações vêm da reunião de 26 de outubro de 2026.
+    </span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/mangas.js"></script>
+<script>
+  chatRaciocinio('fmDemo');
+  fluxo('fmFluxo');
+  calculadora('fmConta');
+</script>
+</body>
+</html>
