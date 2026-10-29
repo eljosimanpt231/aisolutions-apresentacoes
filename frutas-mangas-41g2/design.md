@@ -9,7 +9,7 @@
 - **Fontes:** transcrição Yappr + Gemini de 26/10 (`trabalho/clientes/frutas-mangas/transcricao-2026-10-26.md`; o
   Yappr só gravou o microfone do Manuel, o lado do cliente vem todo do Gemini, rotulado "German Mangas" mas falado pela
   Carmen e pelo Miguel), email de resumo de 26/10, email de nutrição de 28/10 (caso Luxflor)
-- **Investimento:** 6.500 € + IVA (50/25/25: 3.250 / 1.625 / 1.625) e 300 € + IVA/mês. Recomendação a partir dos
+- **Investimento:** 6.500 € + IVA (50/50: 3.250 na adjudicação, 3.250 ao entrar em testes; pedido do Manuel a 29/10) e 300 € + IVA/mês. Recomendação a partir dos
   comparáveis do cérebro (pedido do Manuel: nunca abaixo de 5.000 €, mensalidade entre 250 € e 350 €)
 
 ## Registo
