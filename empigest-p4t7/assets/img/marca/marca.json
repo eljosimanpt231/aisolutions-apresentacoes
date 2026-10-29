@@ -1,0 +1,470 @@
+{
+  "site": "https://aprolis.pt/",
+  "dominio": "empigest.com",
+  "titulo": "Aprolis Empigest: Soluções para Logística",
+  "descricao": "A Aprolis Empigest oferece soluções completas para Logística: aluguer, venda e manutenção de equipamentos de movimentação de cargas.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://aprolis.pt/wp-content/uploads/2026/02/Aprolis-empigest-blanco-scaled.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 2560,
+      "altura": 687,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 100
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://aprolis.pt/wp-content/uploads/2025/06/cropped-006-1-scaled.png",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 2560,
+        "altura": 694,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              96
+            ],
+            "parte": 48
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 36
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              256
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              128
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aprolis.pt/wp-content/uploads/2025/05/logo-crown.webp",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 183,
+        "altura": 69,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              128,
+              128
+            ],
+            "parte": 96
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              96
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              128
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              160
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aprolis.pt/wp-content/uploads/2025/05/logo-mpm.webp",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 150,
+        "altura": 58,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              0
+            ],
+            "parte": 37
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 32
+          },
+          {
+            "rgb": [
+              224,
+              32,
+              32
+            ],
+            "parte": 11
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aprolis.pt/wp-content/uploads/2025/06/Combilift-Web-Logo_sm.png",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 399,
+        "altura": 110,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              96,
+              64
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aprolis.pt/wp-content/uploads/2025/09/logo-carer.png",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 220,
+        "altura": 75,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              96,
+              96,
+              128
+            ],
+            "parte": 93
+          },
+          {
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "parte": 4
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              96
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              96
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://aprolis.pt/wp-content/uploads/2025/06/PALOMAT_Logo-scaled.png",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 2560,
+        "altura": 853,
+        "fundo": "colorido",
+        "fundoRgb": [
+          256,
+          208,
+          0
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 89
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              0
+            ],
+            "parte": 2
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              32
+            ],
+            "parte": 2
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              0
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#254f97",
+      "hsl": "218 61% 37%",
+      "peso": 686135,
+      "onde": [
+        "botões",
+        "variáveis do tema"
+      ]
+    },
+    {
+      "hex": "#089ad2",
+      "hsl": "197 93% 43%",
+      "peso": 245186,
+      "onde": [
+        "botões",
+        "fundos"
+      ]
+    },
+    {
+      "hex": "#9ec5fe",
+      "hsl": "216 98% 81%",
+      "peso": 45000,
+      "onde": [
+        "variáveis do tema"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "218 61% 37%",
+    "--accent-hsl": "218 73% 51%",
+    "nota": "acento = a marca mais viva (a marca só tem uma cor forte)"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--loba-primary",
+      "#0d6efd"
+    ],
+    [
+      "--loba-secondary",
+      "#6c757d"
+    ],
+    [
+      "--loba-primary-rgb",
+      "13, 110, 253"
+    ],
+    [
+      "--loba-secondary-rgb",
+      "108, 117, 125"
+    ],
+    [
+      "--loba-primary-text-emphasis",
+      "rgb(5.2, 44, 101.2)"
+    ],
+    [
+      "--loba-secondary-text-emphasis",
+      "rgb(43.2, 46.8, 50)"
+    ],
+    [
+      "--loba-primary-bg-subtle",
+      "rgb(206.6, 226, 254.6)"
+    ],
+    [
+      "--loba-secondary-bg-subtle",
+      "rgb(225.6, 227.4, 229)"
+    ],
+    [
+      "--loba-primary-border-subtle",
+      "rgb(158.2, 197, 254.2)"
+    ],
+    [
+      "--loba-secondary-border-subtle",
+      "rgb(196.2, 199.8, 203)"
+    ],
+    [
+      "--loba-secondary-color",
+      "rgba(33, 37, 41, .75)"
+    ],
+    [
+      "--loba-secondary-color-rgb",
+      "33, 37, 41"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Open Sans",
+    "corpo": "Open Sans",
+    "google": [
+      "https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap",
+      "https://fonts.googleapis.com/css?family=Roboto+Slab:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "Catálogo Catálogo",
+      "Outras Marcas",
+      "Empilhadores Elétricos",
+      "Empilhadores de Combustão",
+      "Porta-paletes Elétricos",
+      "Empilhadores VNA",
+      "Tratores de Reboque",
+      "Empilhadores Retráteis",
+      "Preparadores de Pedidos",
+      "Stackers",
+      "Porta Paletes Manual",
+      "Soluções Soluções",
+      "Aluguer de Longa Duração",
+      "Aluguer de Curta Duração",
+      "Gestão de Frota",
+      "Baterias de Lítio",
+      "Recondicionados",
+      "Automatização",
+      "Serviços Serviços",
+      "Manutenção",
+      "Inspeção de Segurança",
+      "Formação de Operadores",
+      "Peças",
+      "Matriculação de Máquinas Indústriais",
+      "Quem Somos Quem Somos",
+      "Notícias Notícias",
+      "Recrutamento Recrutamento",
+      "Contactos Contactos",
+      "Contactar"
+    ],
+    "titulos": [
+      "Catálogo",
+      "Soluções",
+      "Serviços",
+      "Quem Somos",
+      "Notícias",
+      "Recrutamento",
+      "Contactos",
+      "A Empigest evolui para Aprolis",
+      "Na Aprolis Empigest movimentamos cargas. Impulsionamos negócios.",
+      "Os nossos produtos",
+      "As nossas soluções",
+      "Aluguer de longa duração",
+      "Aluguer de curta duração",
+      "Gestão de Frota",
+      "Recondicionados",
+      "Automatização",
+      "Conheça os nossos serviços",
+      "01 Manutenção"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura."
+  ]
+}
