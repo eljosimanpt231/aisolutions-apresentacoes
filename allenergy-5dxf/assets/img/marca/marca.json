@@ -1,0 +1,347 @@
+{
+  "site": "https://allenergy.pt/",
+  "dominio": "allenergy.pt",
+  "titulo": "energia empresas - Energy Allsale",
+  "descricao": "Disponibilizamos soluções completas e chave na mão de fornecimento de energia elétrica, gás e fornecimento e instalação de sistemas de painéis solares fotovoltaicos com ou sem acumulação de energia.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://allenergy.pt/wp-content/uploads/2023/06/logo_allenergy_white.png",
+    "porque": [
+      "diz logo",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 1600,
+      "altura": 410,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 75
+        },
+        {
+          "rgb": [
+            32,
+            128,
+            128
+          ],
+          "parte": 25
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://allenergy.pt/wp-content/uploads/2024/01/livrodereclamacoes.png.webp",
+      "pontos": 8,
+      "motivos": [
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 2880,
+        "altura": 1190,
+        "fundo": "colorido",
+        "fundoRgb": [
+          0,
+          0,
+          0
+        ],
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 91
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 2
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 2
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://allenergy.pt/wp-content/uploads/2025/09/footer-5001-pt-br.png.webp",
+      "pontos": 7,
+      "motivos": [
+        "no cabeçalho",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 300,
+        "altura": 80,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              160,
+              224
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              224,
+              256,
+              256
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              96
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "json-ld",
+      "src": "http://allenergy.pt/wp-content/uploads/2023/05/logo_allsale_verdewhite.png",
+      "pontos": 5,
+      "motivos": [
+        "declarado como logo nos dados estruturados"
+      ],
+      "analise": {
+        "largura": 1600,
+        "altura": 556,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 69
+          },
+          {
+            "rgb": [
+              0,
+              128,
+              128
+            ],
+            "parte": 31
+          }
+        ]
+      }
+    },
+    {
+      "origem": "ícone",
+      "src": "https://allenergy.pt/wp-content/uploads/2023/05/cropped-id_allsale_energy-192x192.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 192,
+        "altura": 192,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              128,
+              128
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "og:image",
+      "src": "http://allenergy.pt/wp-content/uploads/2023/05/Allsale-energy-consulting-economia-verde-sustentavel.jpg",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "analise": {
+        "largura": 1600,
+        "altura": 727,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              160
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              128
+            ],
+            "parte": 7
+          },
+          {
+            "rgb": [
+              160,
+              160,
+              96
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              160
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#007f7f",
+      "hsl": "180 100% 25%",
+      "peso": 167871,
+      "onde": [
+        "botões",
+        "texto",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#007aff",
+      "hsl": "211 100% 50%",
+      "peso": 45000,
+      "onde": [
+        "variáveis do tema"
+      ]
+    },
+    {
+      "hex": "#25d366",
+      "hsl": "142 70% 49%",
+      "peso": 30000,
+      "onde": [
+        "botões"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "180 100% 25%",
+    "--accent-hsl": "211 100% 50%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--swiper-theme-color",
+      "#007aff"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Poppins",
+    "corpo": "Poppins",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap",
+      "https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "energia empresas",
+      "energia solar fotovoltaica",
+      "contactos",
+      "energia empresas",
+      "energia solar fotovoltaica",
+      "contactos",
+      "fale connosco$"
+    ],
+    "titulos": [
+      "Poupe na electricidade e gás!",
+      "Produza energia renovável na sua empresa",
+      "A mesma energia e menor custo",
+      "Alterar o comercializador de energia",
+      "Estudo e simulação e sem compromisso",
+      "Redução até 80% da fatura de energia",
+      "Soluções completas \"chave na mão\"",
+      "Garantia de maior acompanhamento",
+      "Qual a solução para a sua empresa",
+      "mais económica de eletricidade? de gás? de painéis solares?",
+      "Redução até 40% na fatura da luz",
+      "Redução até 80% na fatura da luz",
+      "Fornecimento de energia elétrica e gás com as tarifas e planos mais económicos para uma poupança imediata;",
+      "Parcerias com empresas de fornecimento de energia elétrica e gás de qualidade reconhecida;",
+      "Instalação e fornecimento de painéis solares Fotovoltaicos para produção de energia renovável e poupança garantida;",
+      "Apenas trabalhamos com empresas instaladoras de painéis solares certificadas para fundo ambiental;",
+      "Fornecimento de energia elétrica e gás com as tarifas e planos mais económicos para uma poupança imediata;",
+      "Parcerias com empresas de fornecimento de energia elétrica e gás de qualidade reconhecida;"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura."
+  ]
+}

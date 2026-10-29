@@ -1,0 +1,74 @@
+/* Allenergy: fundo branco, a pedido do Manuel (29/10/2026). Simples de ler
+   e de apresentar: a profundidade vem dos painéis de produto escuros
+   embutidos (aviso ao comercial, conversa), da fotografia de uma instalação
+   real da Allenergy, e de glows muito leves em teal e sol.
+
+   Cores tiradas de allenergy.pt (scripts/marca.mjs):
+   - teal do logótipo e dos botões: #007f7f = hsl(180 100% 25%)
+   - o "+ verdes" do logótipo puxa o gradiente para o verde
+   O âmbar-sol é só acento (glows, losango de decisão, pontos); quando tem
+   de ser texto usa --sol-texto. */
+:root {
+  --brand-hsl: 180 100% 25%;      /* teal Allenergy */
+  --accent-hsl: 38 92% 52%;       /* sol */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  --acento-texto: hsl(180 100% 23%);
+  --brand-solido: hsl(180 100% 24%);
+  --brand-escuro: hsl(186 70% 16%);
+  --ok-texto: hsl(152 58% 26%);
+  --sol-texto: hsl(32 90% 31%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(180 22% 97.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(180 18% 96%);
+  --border: hsl(184 16% 87%);
+
+  --text: hsl(192 40% 11%);
+  --muted: hsl(192 12% 36%);
+
+  /* painéis de produto (tinta teal-noite) */
+  --painel: hsl(190 48% 10%);
+  --painel-2: hsl(188 40% 15%);
+  --painel-borda: hsl(184 32% 26%);
+  --painel-texto: hsl(180 30% 96%);
+  --painel-muted: hsl(184 16% 74%);
+
+  --success-hsl: 152 52% 34%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 4 68% 48%;    --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 92% 46%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: none;
+  --grad-text: linear-gradient(110deg, hsl(180 100% 25%) 0%, hsl(168 78% 30%) 45%, hsl(146 62% 36%) 100%);
+  --grad-cta: linear-gradient(160deg, hsl(190 48% 11%), hsl(184 70% 19%));
+
+  --shadow-sm: 0 1px 2px hsl(190 40% 20% / 0.06);
+  --shadow-md: 0 10px 28px hsl(190 50% 20% / 0.08), 0 0 0 1px hsl(184 30% 40% / 0.04);
+  --shadow-lg: 0 26px 64px hsl(190 56% 16% / 0.15), 0 0 0 1px hsl(184 30% 40% / 0.05);
+  --shadow-glow: 0 0 48px hsl(var(--brand-hsl) / 0.30);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Lexend', 'Figtree', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+  --container: 1160px;
+  --section-pad: clamp(72px, 9vw, 120px);
+}
+
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
+
+h1, h2, h3 { font-family: var(--font-display); }
+h1 { font-weight: 700; letter-spacing: -0.035em; line-height: 1.08; font-size: clamp(2.3rem, 5.2vw, 4rem); }
+h2 { font-weight: 700; letter-spacing: -0.03em; line-height: 1.14; }
+h3 { font-weight: 600; letter-spacing: -0.015em; }
+body { font-family: var(--font-body); }
