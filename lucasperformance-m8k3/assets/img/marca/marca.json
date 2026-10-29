@@ -1,0 +1,461 @@
+{
+  "site": "https://lucasperformance.pt/",
+  "dominio": "lucasperformance.pt",
+  "titulo": "LucasPerformance | Oficina BMW Motorrad e Capacetes",
+  "descricao": "Oficina independente BMW Motorrad em Mem Martins, Sintra. Capacetes Arai, Shoei e ARMIS com aconselhamento em loja e compre online.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://lucasperformance.pt/wp-content/uploads/2026/10/Unknown-4.png",
+    "porque": [
+      "diz logo",
+      "no cabeçalho",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 1536,
+      "altura": 1024,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            0,
+            64,
+            160
+          ],
+          "parte": 100
+        },
+        {
+          "rgb": [
+            0,
+            64,
+            128
+          ],
+          "parte": 0
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://lucasperformance.pt/wp-content/uploads/2026/10/Unknown-5.png",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 1536,
+        "altura": 1024,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              32,
+              96
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://websitedemos.net/car-repair-09/wp-content/uploads/sites/1646/2021/03/system-inside.png",
+      "pontos": 9,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda"
+      ],
+      "analise": {
+        "largura": 96,
+        "altura": 96,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              64,
+              160
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://lucasperformance.pt/wp-content/uploads/2026/09/cropped-C235F625-98EC-4AD5-8199-CD01A208BE68-200x182.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "liga à página inicial",
+        "no cabeçalho",
+        "no topo",
+        "à esquerda",
+        "tem o nome",
+        "é o favicon"
+      ],
+      "analise": {
+        "largura": 200,
+        "altura": 182,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 35
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              256,
+              0,
+              0
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://websitedemos.net/car-repair-09/wp-content/uploads/sites/1646/2021/03/rotor.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho"
+      ],
+      "analise": {
+        "largura": 96,
+        "altura": 96,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              64,
+              160
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://websitedemos.net/car-repair-09/wp-content/uploads/sites/1646/2021/03/shocks.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho"
+      ],
+      "analise": {
+        "largura": 96,
+        "altura": 96,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              64,
+              160
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://websitedemos.net/car-repair-09/wp-content/uploads/sites/1646/2021/03/ac-repairs.png",
+      "pontos": 8,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho"
+      ],
+      "analise": {
+        "largura": 96,
+        "altura": 96,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              64,
+              160
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.png",
+    "src": "https://novo.lucasperformance.pt/wp-content/uploads/2026/09/Unknown.png"
+  },
+  "paleta": [
+    {
+      "hex": "#c8102e",
+      "hsl": "350 85% 42%",
+      "peso": 385883,
+      "onde": [
+        "botões",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#253993",
+      "hsl": "229 60% 36%",
+      "peso": 317500,
+      "onde": [
+        "fundos",
+        "texto",
+        "variáveis do tema",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#ffdd00",
+      "hsl": "52 100% 50%",
+      "peso": 160000,
+      "onde": [
+        "texto",
+        "variáveis do tema"
+      ]
+    },
+    {
+      "hex": "#004080",
+      "hsl": "210 100% 25%",
+      "peso": 0,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "350 85% 42%",
+    "--accent-hsl": "229 60% 36%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "240 20% 98%",
+  "variaveisDoTema": [
+    [
+      "--ast-global-color-primary",
+      "var(--ast-global-color-5)"
+    ],
+    [
+      "--ast-global-color-secondary",
+      "var(--ast-global-color-4)"
+    ],
+    [
+      "--ast-global-color-alternate-background",
+      "var(--ast-global-color-7)"
+    ],
+    [
+      "--ast-global-color-subtle-background",
+      "var(--ast-global-color-6)"
+    ],
+    [
+      "--ast-global-color-0",
+      "#253993"
+    ],
+    [
+      "--ast-global-color-1",
+      "#ffdd00"
+    ],
+    [
+      "--ast-global-color-2",
+      "#1a1a1a"
+    ],
+    [
+      "--ast-global-color-3",
+      "#808285"
+    ],
+    [
+      "--ast-global-color-4",
+      "#f9f9fb"
+    ],
+    [
+      "--ast-global-color-5",
+      "#ffffff"
+    ],
+    [
+      "--ast-global-color-6",
+      "#ffdd00"
+    ],
+    [
+      "--ast-global-color-7",
+      "#1a1a1a"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Roboto",
+    "corpo": "Open Sans",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/css?family=Open+Sans:400|Roboto:700&display=swap&ver=4.14.0"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "Início",
+      "Capacetes Premium",
+      "ARAI",
+      "EDIÇÕES ESPECIAIS",
+      "RX-7V EVO",
+      "FIM Racing 2",
+      "SZ-R Evo",
+      "Tour-X5",
+      "Horizon",
+      "MX-V Evo",
+      "Quantic",
+      "Viseiras e Acessórios",
+      "PINLOCK",
+      "VISEIRAS",
+      "INTERIORES",
+      "SPOILERS",
+      "NARIGUEIRAS",
+      "TAMPAS",
+      "PARAFUSOS",
+      "SACOS TRANSPORTE",
+      "Intercom. para Arai",
+      "SHOEI",
+      "EDIÇÕES LIMITADAS",
+      "NEOTEC 3",
+      "X-SPR PRO",
+      "X-SPR PRO 02",
+      "GT-AIR 3",
+      "NXR2",
+      "VFX-WR 06",
+      "GLAMSTER 06",
+      "J.O2",
+      "J-CRUISE 3",
+      "Viseiras e Acessórios",
+      "VISEIRAS SHOEI",
+      "PINLOCK P/ SHOEI",
+      "NARIGUEIRAS SHOEI",
+      "CHIN CURTAIN",
+      "SACOS TRANSPORTE",
+      "INTERIORES SHOEI",
+      "Intercom. para SHOEI",
+      "ARMIS",
+      "Últimas Oportunidades",
+      "Coleção Privada Rui Lucas",
+      "CHIGEE Portugal",
+      "A Oficina",
+      "A Equipa",
+      "Contactos",
+      "Continue Shopping",
+      "Início",
+      "Capacetes Premium",
+      "ARAI",
+      "EDIÇÕES ESPECIAIS",
+      "RX-7V EVO",
+      "FIM Racing 2",
+      "SZ-R Evo",
+      "Tour-X5",
+      "Horizon",
+      "MX-V Evo",
+      "Quantic",
+      "Viseiras e Acessórios",
+      "PINLOCK",
+      "VISEIRAS",
+      "INTERIORES",
+      "SPOILERS",
+      "NARIGUEIRAS",
+      "TAMPAS",
+      "PARAFUSOS",
+      "SACOS TRANSPORTE",
+      "Intercom. para Arai",
+      "SHOEI",
+      "EDIÇÕES LIMITADAS",
+      "NEOTEC 3",
+      "X-SPR PRO",
+      "X-SPR PRO 02",
+      "GT-AIR 3",
+      "NXR2",
+      "VFX-WR 06",
+      "GLAMSTER 06",
+      "J.O2",
+      "J-CRUISE 3",
+      "Viseiras e Acessórios",
+      "VISEIRAS SHOEI",
+      "PINLOCK P/ SHOEI",
+      "NARIGUEIRAS SHOEI",
+      "CHIN CURTAIN",
+      "SACOS TRANSPORTE",
+      "INTERIORES SHOEI",
+      "Intercom. para SHOEI",
+      "ARMIS",
+      "Últimas Oportunidades",
+      "Coleção Privada Rui Lucas",
+      "CHIGEE Portugal",
+      "A Oficina",
+      "A Equipa",
+      "Contactos",
+      "A Oficina",
+      "A Equipa",
+      "Contactos",
+      "Pedir Marcação"
+    ],
+    "titulos": [
+      "Oficina especializada BMW Motorrad e Capacetes Premium",
+      "Encontre o seu próximo Capacete",
+      "Mais de 1,5M€ de Capacetes Premium vendidos",
+      "ARAI",
+      "SHOEI",
+      "ARMIS",
+      "Os nossos Serviços",
+      "Porquê escolher a LucasPerformance?",
+      "210 968 399",
+      "967 977 720",
+      "Contactos",
+      "Links Rápidos"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático."
+  ]
+}

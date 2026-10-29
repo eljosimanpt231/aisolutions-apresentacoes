@@ -1,0 +1,61 @@
+/* LucasPerformance × AI Solutions. Base deck-dark, paleta do emblema LP e do site.
+   Marca = vermelho do site (#c8102e) subido para se ler no escuro.
+   Acento = azul do aro do emblema LP: a cor do agente de voz.
+   Tema escuro: o emblema LP é escuro com aro vermelho, branco e azul. */
+:root {
+  --brand-hsl: 352 84% 54%;      /* vermelho LP */
+  --accent-hsl: 216 92% 62%;     /* azul LP, o agente */
+  --brand2-hsl: 6 92% 66%;       /* vermelho mais quente, só no gradiente */
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --brand2: hsl(var(--brand2-hsl));
+  --on-brand: hsl(0 0% 100%);
+
+  /* fundo sólido sob texto branco: o #c8102e dos botões do site, 5,9:1 */
+  --brand-solido: hsl(350 85% 42%);
+  --acento-texto: hsl(214 96% 74%);
+  --marca-texto: hsl(354 92% 70%);
+  --ok-texto: hsl(150 62% 60%);
+  --warn-texto: hsl(40 92% 64%);
+
+  --bg: hsl(225 22% 5%);
+  --bg-soft: hsl(225 20% 7.5%);
+  --surface: hsl(225 18% 10%);
+  --surface-2: hsl(225 16% 13.5%);
+  --border: hsl(225 14% 20%);
+
+  --text: hsl(220 20% 95%);
+  --muted: hsl(222 10% 68%);
+
+  --success-hsl: 150 62% 46%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 352 84% 60%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 40 92% 56%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.16), transparent 62%);
+  --grad-text: linear-gradient(105deg, hsl(var(--brand2-hsl)), hsl(var(--brand-hsl)) 55%, hsl(var(--accent-hsl)));
+  --grad-cta: linear-gradient(160deg, hsl(225 22% 7%), hsl(var(--brand-hsl) / 0.30) 62%, hsl(var(--accent-hsl) / 0.22));
+
+  --shadow-sm: 0 1px 3px hsl(225 60% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(225 60% 2% / 0.55);
+  --shadow-lg: 0 24px 64px hsl(225 60% 2% / 0.65);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.35);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Saira Semi Condensed', 'Archivo', system-ui, sans-serif;
+  --font-body: 'Archivo', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --container: 1140px;
+  --section-pad: clamp(72px, 10vw, 124px);
+}
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
