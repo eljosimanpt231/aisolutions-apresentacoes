@@ -745,3 +745,28 @@ html.js .reg-vis.anda .ficha .r:nth-child(4) { animation-delay: 1.05s; } html.js
 .olm-b ul { margin: 6px 0 6px 18px; display: grid; gap: 3px; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .olm { --ol-azul: hsl(208 80% 62%); } }
 :root[data-theme="dark"] .olm { --ol-azul: hsl(208 80% 62%); }
+
+/* ---------- Email ao cliente: janela de composição do Outlook ---------- */
+.olc { --ol-azul: hsl(208 85% 40%); margin: auto; max-height: calc(100vh - 32px); width: min(680px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--paper-line); border-radius: 8px; background: var(--paper); color: var(--paper-text); box-shadow: var(--shadow-lg); font-family: 'Segoe UI', var(--font-body); overflow: hidden; }
+.olc::backdrop { background: hsl(var(--graf-hsl) / .55); backdrop-filter: blur(2px); }
+.olc[open] { animation: sobe .25s var(--e) both; }
+.olc-bar { display: flex; align-items: center; gap: 10px; padding: 9px 12px; background: var(--ol-azul); color: hsl(0 0% 100%); }
+.olc-bar b { font-size: .86rem; font-weight: 600; }
+.olc-bar span { font-size: .74rem; opacity: .85; margin-right: auto; }
+.olc-x { background: none; border: 0; color: inherit; font-size: .9rem; cursor: pointer; padding: 2px 6px; border-radius: 4px; }
+.olc-x:hover { background: hsl(0 0% 100% / .18); }
+.olc-tools { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--paper-line); flex-wrap: wrap; }
+.olc-send { background: var(--ol-azul); color: hsl(0 0% 100%); border: 0; border-radius: 4px; padding: 7px 16px; font: inherit; font-size: .84rem; font-weight: 600; cursor: pointer; }
+.olc-send:hover { filter: brightness(1.1); }
+.olc-send:focus-visible, .olc-desc:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.olc-desc { background: none; border: 1px solid var(--paper-line); color: var(--paper-text); border-radius: 4px; padding: 6px 12px; font: inherit; font-size: .82rem; cursor: pointer; }
+.olc-nota { font-size: .72rem; color: var(--paper-muted); margin-left: auto; }
+.olc-f { display: grid; grid-template-columns: 70px minmax(0, 1fr); align-items: center; gap: 8px; padding: 8px 14px; border-bottom: 1px solid var(--paper-line); font-size: .84rem; }
+.olc-l { color: var(--paper-muted); font-size: .78rem; }
+.olc-pill { justify-self: start; background: hsl(208 85% 40% / .1); border-radius: 4px; padding: 1px 8px; font-size: .8rem; }
+.olc-b { padding: 14px; min-height: 190px; font-size: .88rem; line-height: 1.6; outline: none; }
+.olc-b:focus { box-shadow: inset 0 0 0 2px hsl(var(--accent-hsl) / .35); }
+.olc-b p + p { margin-top: 10px; }
+.btn.at-tec { background: var(--verde); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .olc-bar, :root:not([data-theme="light"]) .olc-send { background: hsl(208 75% 38%); } }
+:root[data-theme="dark"] .olc-bar, :root[data-theme="dark"] .olc-send { background: hsl(208 75% 38%); }

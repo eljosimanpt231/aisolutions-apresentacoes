@@ -277,7 +277,7 @@
         <div class="at-go"><span id="atResumo">Ricardo S. · a partir das 14:00 · 1 h 30</span><button class="btn btn-primary" type="button" id="atConfirma">Confirmar serviço, técnico e hora</button></div>
       </div>
       <div class="email at-email" id="atEmail" hidden>
-        <div class="email-top"><span>Enviado automaticamente ao cliente · <b id="atHora">09:21</b></span><span class="st ok">● ENTREGUE</span></div>
+        <div class="email-top"><span>Enviado ao cliente · <b id="atHora">09:21</b></span><span class="st ok">● ENTREGUE</span></div>
         <div class="email-f"><span>Para: <b>joana@cliente-da214.pt</b></span><span>Assunto: <b>PV-26-04812 · técnico marcado para hoje às 14:00</b></span></div>
         <div class="email-b"><p>Bom dia, Joana,</p><p>O seu pedido PV-26-04812 (Crown RC 5500, série 6A2914387) já tem técnico: o <b>Ricardo S.</b> passa hoje, <b>sexta-feira, às 14:00</b>, no portão 3. Se alguma coisa mudar até lá, avisamos por aqui.</p><p>Obrigado,<br>Pós-venda Aprolis Empigest</p></div>
       </div>
@@ -510,6 +510,15 @@
 </nav>
 
 <footer class="ais-foot">Aprolis Empigest × AI Solutions · protótipo de 30/10/2026 · simulações assinaladas na página</footer>
+
+<dialog class="olc" id="atDlg" aria-labelledby="atDlgT">
+  <div class="olc-bar"><b id="atDlgT">Nova mensagem</b><span>Outlook · posvenda@</span><button type="button" class="olc-x" data-fechar aria-label="Fechar">✕</button></div>
+  <div class="olc-tools"><button type="button" class="olc-send" id="atEnviar">➤ Enviar</button><button type="button" class="olc-desc" data-fechar>Descartar</button><span class="olc-nota">Preparado pela plataforma ao confirmar. Pode editar antes de enviar.</span></div>
+  <div class="olc-f"><span class="olc-l">De</span><span>Pós-venda Aprolis Empigest</span></div>
+  <div class="olc-f"><span class="olc-l">Para</span><span class="olc-pill">Joana · Armazém &lt;joana@cliente-da214.pt&gt;</span></div>
+  <div class="olc-f"><span class="olc-l">Assunto</span><b id="atDlgAs"></b></div>
+  <div class="olc-b" id="atDlgB" contenteditable="true" spellcheck="false" aria-label="Corpo do email"></div>
+</dialog>
 
 <script src="../shared/deck/deck.js"></script>
 <script src="assets/js/dados.js"></script>

@@ -268,15 +268,33 @@
     return '<li class="tec' + (i === 0 ? ' sel' : '') + '" data-i="' + i + '" tabindex="0" role="button"><div class="tec-h"><span class="av">' + t.n.split(' ').map(function (p) { return p[0]; }).join('') + '</span><div><b>' + t.n + '</b><small>' + t.z + ' · livre ' + t.livre + '</small></div><span class="sc"><b>' + t.sc + '</b><small>/100</small></span></div>' +
       '<div class="sc-bar"><i style="width:' + t.sc + '%"></i></div><ul class="crit">' + t.crit.map(function (c) { return '<li class="' + c[0] + '">' + c[1] + '</li>'; }).join('') + '</ul></li>';
   }).join('');
+  var atTec = D.TECNICOS[0], atFase = 'confirmar';
   $('#tecs').addEventListener('click', function (e) {
     var li = e.target.closest('.tec'); if (!li) return;
     $$('.tec', $('#tecs')).forEach(function (x) { x.classList.toggle('sel', x === li); });
-    var t = D.TECNICOS[+li.dataset.i]; $('#atResumo').textContent = t.n + ' · a partir das ' + t.livre + ' · 1 h 30';
+    var t = D.TECNICOS[+li.dataset.i]; if (atFase === 'confirmar') { atTec = t; $('#atResumo').textContent = t.n + ' · a partir das ' + t.livre + ' · 1 h 30'; }
   });
+  /* Confirmar abre o email ao cliente; depois de enviado, o botão passa a "Avisar técnico" */
+  var atDlg = $('#atDlg');
+  function atAssunto() { return 'PV-26-04812 · técnico marcado para hoje às ' + atTec.livre; }
   $('#atConfirma').addEventListener('click', function () {
-    var b = this; b.disabled = true; b.textContent = 'Confirmado ✓';
-    $('#atEstado').innerHTML = '<i class="v"></i>Confirmado · 14:00';
-    var em = $('#atEmail'); em.hidden = false; em.classList.add('entra');
+    if (atFase === 'tecnico') { window.irPara('plataforma', 4); return; }
+    $('#atDlgAs').textContent = atAssunto();
+    $('#atDlgB').innerHTML = '<p>Bom dia, Joana,</p><p>O seu pedido PV-26-04812 (Crown RC 5500, série 6A2914387) já tem técnico: o <b>' + esc(atTec.n) + '</b> passa hoje, <b>sexta-feira, às ' + atTec.livre + '</b>, no portão 3. Se alguma coisa mudar até lá, avisamos por aqui.</p><p>Obrigado,<br>Pós-venda Aprolis Empigest</p>';
+    if (atDlg.showModal) atDlg.showModal(); else atDlg.setAttribute('open', '');
+    setTimeout(function () { $('#atEnviar').focus(); }, 50);
+  });
+  $$('[data-fechar]', atDlg).forEach(function (b) { b.addEventListener('click', function () { atDlg.close(); }); });
+  atDlg.addEventListener('click', function (e) { if (e.target === atDlg) atDlg.close(); });
+  $('#atEnviar').addEventListener('click', function () {
+    atDlg.close(); atFase = 'tecnico';
+    var em = $('#atEmail');
+    $('.email-b', em).innerHTML = $('#atDlgB').innerHTML;
+    $('.email-f span:nth-child(2) b', em).textContent = atAssunto();
+    em.hidden = false; em.classList.remove('entra'); void em.offsetWidth; em.classList.add('entra');
+    $('#atEstado').innerHTML = '<i class="v"></i>Confirmado · ' + atTec.livre + ' · cliente avisado';
+    $('#atResumo').textContent = 'Email enviado à Joana · ' + atTec.n + ' às ' + atTec.livre;
+    var b = $('#atConfirma'); b.textContent = 'Avisar técnico ›'; b.classList.add('at-tec');
     toast('Email enviado à Joana com o técnico e a hora');
   });
 
