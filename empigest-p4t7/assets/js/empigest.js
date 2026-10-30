@@ -117,9 +117,14 @@
       '<div class="det-as">' + esc(e.as) + '</div>' +
       '<div class="det-c">' + esc(e.corpo) + '</div>' +
       (e.anx.length ? '<div class="det-anx">' + e.anx.map(function (a) { return '<span>📎 ' + a + '</span>'; }).join('') + '</div>' : '') +
-      '<div class="det-k">Porque foi para ' + esc(f.n) + '</div><ul class="porque">' + e.why.map(function (w) { return '<li>' + w + '</li>'; }).join('') + '</ul>' +
+      (e.normal ? '' : '<div class="det-k">Porque foi para ' + esc(f.n) + '</div><ul class="porque">' + e.why.map(function (w) { return '<li>' + w + '</li>'; }).join('') + '</ul>') +
       '<div class="acao' + (e.hum ? ' hum' : '') + '">' + esc(e.acao) + '</div>' +
       (r ? '<div class="det-k">Resposta que saiu às ' + hr + (e.tk ? ' · ' + e.tk : '') + '</div><div class="email mini-email"><div class="email-b">' + r + '</div></div>' : '');
+  }
+  function resumoCaixa() {
+    var av = 0, tks = {}, rs = 0;
+    D.EMAILS.forEach(function (e) { if (e.normal) return; if (e.tipo === 'Avaria') av++; if (e.tk) tks[e.tk] = 1; if (e.resp) rs++; });
+    return D.EMAILS.length + ' emails · ' + av + ' avarias · ' + Object.keys(tks).length + ' tickets · ' + rs + ' respostas';
   }
   function repor() {
     cxTimers.forEach(clearTimeout); cxTimers = []; cont = {}; feitos = [];
@@ -139,11 +144,14 @@
         cxLista.insertBefore(d, cxLista.firstChild);
         later(function () {
           var f = corPasta(e.pasta);
-          $('.cat', d).style.background = f.c;
-          $('.tags', d).innerHTML = (e.tk ? '<span class="tg tkt">' + e.tk + '</span>' : '') + '<span class="tg" style="border-color:' + f.c + '">' + f.n + '</span>' + e.tags.map(function (t) { return '<span class="tg ' + t[0] + '">' + t[1] + '</span>'; }).join('');
+          if (e.normal) $('.tags', d).innerHTML = '';
+          else {
+            $('.cat', d).style.background = f.c;
+            $('.tags', d).innerHTML = (e.tk ? '<span class="tg tkt">' + e.tk + '</span>' : '') + '<span class="tg" style="border-color:' + f.c + '">' + f.n + '</span>' + e.tags.map(function (t) { return '<span class="tg ' + t[0] + '">' + t[1] + '</span>'; }).join('');
+          }
           cont[e.pasta] = (cont[e.pasta] || 0) + 1; pintaPastas(e.pasta); feitos.push(i);
           if (e.real) { d.classList.add('real'); }
-          if (i === D.EMAILS.length - 1) { $('#cxEstado').textContent = '9 emails · 7 tickets · 7 respostas'; $('#cxEstado').className = 'estado ok'; $('#cxPlay').disabled = false; detalhe(1); }
+          if (i === D.EMAILS.length - 1) { $('#cxEstado').textContent = resumoCaixa(); $('#cxEstado').className = 'estado ok'; $('#cxPlay').disabled = false; detalhe(1); }
         }, 700, cxTimers);
       }, 300 + i * 900, cxTimers);
     });

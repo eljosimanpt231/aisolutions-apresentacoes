@@ -99,25 +99,6 @@
     </div>
   </div>
 
-  <!-- 3. O percurso de um PAT -->
-  <div class="slide" data-titulo="O percurso de um PAT">
-    <div class="container">
-      <span class="kicker anim">O percurso de um PAT, de A a Z</span>
-      <h2 class="anim">Hoje e com a plataforma, passo a passo</h2>
-      <p class="lead anim">O que o Sérgio e o Miguel descreveram, ao lado do que muda. Os passos a cinzento são os que hoje não deixam rasto em sistema nenhum.</p>
-      <div class="az">
-        <div class="az-h anim"><span></span><b>Hoje</b><b class="c">Com a plataforma</b></div>
-        <div class="az-r anim"><span class="az-n">1</span><p class="sombra">O email chega ao pós-venda geral. Ninguém responde.</p><p class="c">Ticket aberto e resposta ao cliente no primeiro minuto, a pedir a série e o erro.</p></div>
-        <div class="az-r anim"><span class="az-n">2</span><p class="sombra">Cinco coordenadores vão à caixa procurar os seus.</p><p class="c">O pedido cai na caixa do coordenador certo, pelo domínio do email. O que não se reconhece fica em "Por atribuir".</p></div>
-        <div class="az-r anim"><span class="az-n">3</span><p class="sombra">A escolha do técnico vive em Excel, cadernos e agendas.</p><p class="c">Técnico sugerido pela vossa matriz (habitual, zona, tipo de avaria, disponibilidade) e duração estimada pelo histórico.</p></div>
-        <div class="az-r anim"><span class="az-n">4</span><p class="sombra">O técnico recebe o serviço por WhatsApp ou telefone. O cliente não sabe de nada.</p><p class="c">Um clique: o técnico recebe máquina, série, erro, manual e histórico; o cliente recebe quem vai e quando.</p></div>
-        <div class="az-r anim"><span class="az-n">5</span><p>O técnico chega, vê a série e abre o PAT no PHC.</p><p class="c">Igual, mas já com tudo preenchido. A ferramenta que usam no local mantém-se.</p></div>
-        <div class="az-r anim"><span class="az-n">6</span><p class="sombra">Dúvida técnica: manual no SharePoint, base de respostas, e por fim uma das quatro pessoas do apoio.</p><p class="c">Pergunta ao assistente, por texto ou por voz, que responde com a página do manual. O apoio técnico fica para o que é novo.</p></div>
-        <div class="az-r anim falta"><span class="az-n">7</span><p>Orçamento de reparação.</p><p class="c">Por mapear. Vamos perguntar-vos como funciona hoje.</p></div>
-        <div class="az-r anim"><span class="az-n">8</span><p>Fecho do PAT no telemóvel, assinatura do cliente, relatório.</p><p class="c">Fechar o PAT fecha o ticket e deixa a fatura pré-preenchida no PHC, com o número do PAT.</p></div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- =================================================================== -->
@@ -153,14 +134,14 @@
 
     <!-- 0. Caixa de pós-venda -->
     <div class="slide" id="s-caixa" data-titulo="Caixa de pós-venda">
-      <div class="view-h"><div><span class="k">1 · ENTRADA · posvenda@ e caixas dos coordenadores</span><h2>Cada email com ticket, resposta ao cliente e dono, no primeiro minuto</h2><p>Uma manhã normal, acelerada. Os emails continuam a chegar ao Outlook como hoje; a plataforma lê cada um, abre o ticket, responde ao cliente e entrega-o ao coordenador certo.</p></div><span class="estado" id="cxEstado">Pronto a simular</span></div>
+      <div class="view-h"><div><span class="k">1 · ENTRADA · posvenda@ e caixas dos coordenadores</span><h2>Cada avaria com ticket, resposta ao cliente e dono, no primeiro minuto</h2><p>Uma manhã normal, acelerada. Os emails continuam a chegar ao Outlook como hoje; a plataforma lê cada um e só mexe nos de avaria: abre o ticket, responde ao cliente e entrega-o ao coordenador certo. O resto fica na caixa de entrada, como hoje.</p></div><span class="estado" id="cxEstado">Pronto a simular</span></div>
       <div class="ol">
         <div class="ol-bar"><span class="dots"><i></i><i></i><i></i></span><b>Outlook</b><span class="ol-cx">posvenda@ · Aprolis Empigest</span><button class="btn btn-primary" type="button" id="cxPlay">▶ Simular a manhã</button><button class="btn btn-ghost" type="button" id="cxReset">Repor</button></div>
         <div class="ol-fold" id="cxPastas"></div>
         <div class="ol-list" id="cxLista"><div class="ol-empty">Caixa vazia desde ontem às 19:00.<br>Carregue em <b>Simular a manhã</b>.</div></div>
         <div class="ol-det" id="cxDet"><div class="ol-empty">Clique num email para ver o ticket, a resposta que saiu e a quem foi entregue.</div></div>
       </div>
-      <p class="ol-nota">Nada é apagado: os emails ficam no Outlook, arrumados. Quando a plataforma não tem a certeza, o pedido fica em "Por atribuir" e espera por uma pessoa. Clientes anonimizados; os textos dos emails são exemplos.</p>
+      <p class="ol-nota">Nada é apagado: os emails ficam no Outlook. Os que não são avarias (revisões, peças, propostas, faturas) não são tocados. Quando a plataforma não tem a certeza, o pedido fica em "Por atribuir" e espera por uma pessoa. Clientes anonimizados; os textos dos emails são exemplos.</p>
     </div>
 
     <!-- 1. Bia liga ao cliente -->
