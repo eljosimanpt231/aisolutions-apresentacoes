@@ -108,6 +108,17 @@
     if (e.resp) return '<p>Bom dia,</p><p>Recebemos o seu pedido e abrimos o processo <b>' + e.tk + '</b>. A coordenação já está a tratar e entra em contacto consigo assim que possível.</p><p>Pós-venda Aprolis Empigest</p>';
     return '';
   }
+  function outlook(e, r, hr) {
+    var nome = e.de;
+    return '<div class="olm">' +
+      '<div class="olm-as">RE: ' + esc(e.as) + (e.tk ? ' <span>[' + e.tk + ']</span>' : '') + '</div>' +
+      '<div class="olm-h"><span class="olm-av">PV</span>' +
+        '<div class="olm-de"><b>Pós-venda Aprolis Empigest</b><span>Para: ' + esc(nome) + '</span></div>' +
+        '<div class="olm-ac"><span class="olm-bt" title="Responder">↩</span><span class="olm-bt" title="Responder a todos">↩↩</span><span class="olm-bt" title="Reencaminhar">↪</span><span class="olm-bt" title="Mais ações">⋯</span><time>sex 30/10/2026 ' + hr + '</time></div>' +
+      '</div>' +
+      '<div class="olm-b">' + r + '</div>' +
+    '</div>';
+  }
   function detalhe(i) {
     var e = D.EMAILS[i], f = corPasta(e.pasta);
     $$('.em', cxLista).forEach(function (x) { x.classList.toggle('sel', +x.dataset.i === i); });
@@ -119,7 +130,7 @@
       (e.anx.length ? '<div class="det-anx">' + e.anx.map(function (a) { return '<span>📎 ' + a + '</span>'; }).join('') + '</div>' : '') +
       (e.normal ? '' : '<div class="det-k">Porque foi para ' + esc(f.n) + '</div><ul class="porque">' + e.why.map(function (w) { return '<li>' + w + '</li>'; }).join('') + '</ul>') +
       '<div class="acao' + (e.hum ? ' hum' : '') + '">' + esc(e.acao) + '</div>' +
-      (r ? '<div class="det-k">Resposta que saiu às ' + hr + (e.tk ? ' · ' + e.tk : '') + '</div><div class="email mini-email"><div class="email-b">' + r + '</div></div>' : '');
+      (r ? '<div class="det-k">Resposta que saiu às ' + hr + (e.tk ? ' · ' + e.tk : '') + '</div>' + outlook(e, r, hr) : '');
   }
   function resumoCaixa() {
     var av = 0, tks = {}, rs = 0;

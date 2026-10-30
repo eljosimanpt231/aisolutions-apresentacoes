@@ -727,3 +727,21 @@ html.js .reg-vis.anda .ficha .r:nth-child(4) { animation-delay: 1.05s; } html.js
   .hx { grid-template-columns: 1fr; }
   .hx-kp { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ---------- Resposta automática com o aspeto do Outlook ---------- */
+.olm { --ol-azul: hsl(208 85% 40%); background: var(--paper); color: var(--paper-text); border: 1px solid var(--paper-line); border-radius: 6px; box-shadow: var(--shadow-sm); font-family: 'Segoe UI', var(--font-body); overflow: hidden; }
+.olm-as { padding: 12px 14px 8px; font-size: .98rem; font-weight: 600; line-height: 1.3; }
+.olm-as span { color: var(--paper-muted); font-weight: 400; }
+.olm-h { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 4px 14px 10px; border-bottom: 1px solid var(--paper-line); }
+.olm-av { width: 34px; height: 34px; border-radius: 50%; background: hsl(208 85% 40%); color: hsl(0 0% 100%); display: grid; place-items: center; font-size: .74rem; font-weight: 600; }
+.olm-de { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.olm-de b { font-size: .84rem; font-weight: 600; }
+.olm-de span { font-size: .74rem; color: var(--paper-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.olm-ac { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 2px; max-width: 150px; }
+.olm-bt { width: 24px; height: 22px; display: grid; place-items: center; border-radius: 4px; color: var(--ol-azul); font-size: .78rem; letter-spacing: -2px; }
+.olm-ac time { flex-basis: 100%; text-align: right; font-size: .7rem; color: var(--paper-muted); margin-top: 2px; }
+.olm-b { padding: 12px 14px 14px; font-size: .8rem; line-height: 1.55; }
+.olm-b p + p { margin-top: 8px; }
+.olm-b ul { margin: 6px 0 6px 18px; display: grid; gap: 3px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .olm { --ol-azul: hsl(208 80% 62%); } }
+:root[data-theme="dark"] .olm { --ol-azul: hsl(208 80% 62%); }
