@@ -110,6 +110,56 @@ window.EMP = (function () {
     ['26/09820', '29/04/2026', 'Pneu traseiro', '0 h 45']
   ];
 
+
+  /* Histórico por cliente, máquina e técnico (simulação; coerente com o PV-26-04812) */
+  var HX = {
+    clientes: [
+      { id: 'da214', n: 'Distribuição alimentar · Azambuja', z: 'Lisboa e Vale do Tejo · Carla M.', ct: 'Aluguer longa duração · 5 máquinas Crown' },
+      { id: 'lc032', n: 'Logística · Carregado', z: 'Lisboa e Vale do Tejo · Carla M.', ct: 'Contrato de manutenção · 2 retráteis' },
+      { id: 'fo051', n: 'Frio Oeste · Torres Vedras', z: 'Lisboa e Vale do Tejo · Carla M.', ct: 'Assistência avulsa · 1 plataforma' },
+      { id: 'ic118', n: 'Indústria cerâmica · Leiria', z: 'Centro · Sónia F.', ct: 'Contrato de manutenção · 2 porta-paletes' }
+    ],
+    maquinas: [
+      { id: '6A2914387', m: 'Crown RC 5500', cl: 'da214', h: '6.412 h', ano: 2021 },
+      { id: '6A2914512', m: 'Crown RC 5500', cl: 'da214', h: '7.105 h', ano: 2021 },
+      { id: '1A7700318', m: 'Crown WP 3200', cl: 'da214', h: '3.240 h', ano: 2022 },
+      { id: '6A2914601', m: 'Crown RC 5500', cl: 'da214', h: '1.208 h', ano: 2025 },
+      { id: '1A7700342', m: 'Crown WP 3200', cl: 'da214', h: '960 h', ano: 2025 },
+      { id: '1A8821045', m: 'Crown RR 5700', cl: 'lc032', h: '4.530 h', ano: 2022 },
+      { id: '1A8821046', m: 'Crown RR 5700', cl: 'lc032', h: '4.488 h', ano: 2022 },
+      { id: '9F4410276', m: 'Plataforma elevatória', cl: 'fo051', h: '1.870 h', ano: 2020 },
+      { id: '1A6620154', m: 'Crown WP 3200', cl: 'ic118', h: '2.915 h', ano: 2023 },
+      { id: '1A6620188', m: 'Crown WP 3200', cl: 'ic118', h: '2.402 h', ano: 2023 }
+    ],
+    tecnicos: [
+      { id: 'Ricardo S.', z: 'Azambuja · Cartaxo', esp: 'Elétricas Crown, nível avançado' },
+      { id: 'André P.', z: 'Vila Franca · Alverca', esp: 'Elétricas Crown, plataformas' },
+      { id: 'Tiago L.', z: 'Santarém', esp: 'Diesel e gás; elétricas nível base' },
+      { id: 'Bruno C.', z: 'Leiria · Marinha Grande', esp: 'Porta-paletes e retráteis' }
+    ],
+    /* [PAT, data, máquina, técnico, intervenção, duração em minutos, resultado: ok | volta | aberto] */
+    pats: [
+      ['PV-26-04812', '30/10/2026', '6A2914387', 'Ricardo S.', 'Código 311 no visor · máquina parada', 0, 'aberto'],
+      ['26/16388', '09/09/2026', '9F4410276', 'André P.', 'Alarme de inclinação', 75, 'ok'],
+      ['26/16107', '02/09/2026', '6A2914387', 'Ricardo S.', 'Revisão 6.000 h', 125, 'ok'],
+      ['26/15902', '28/08/2026', '1A6620154', 'Bruno C.', 'Revisão anual', 90, 'ok'],
+      ['26/15530', '21/08/2026', '6A2914512', 'Ricardo S.', 'Bateria não carrega', 100, 'ok'],
+      ['26/14920', '05/08/2026', '1A6620188', 'Bruno C.', 'Pega do timão partida', 40, 'ok'],
+      ['26/14003', '23/07/2026', '1A8821046', 'André P.', 'Revisão 4.500 h', 120, 'ok'],
+      ['26/14002', '23/07/2026', '1A8821045', 'André P.', 'Revisão 4.500 h', 130, 'ok'],
+      ['26/14411', '18/07/2026', '6A2914387', 'Ricardo S.', 'Código no visor, tração', 70, 'ok'],
+      ['26/13155', '02/07/2026', '1A7700318', 'Ricardo S.', 'Fuga hidráulica, peça montada', 50, 'ok'],
+      ['26/13102', '30/06/2026', '1A7700318', 'Ricardo S.', 'Fuga hidráulica, sem a peça', 85, 'volta'],
+      ['26/12530', '19/06/2026', '9F4410276', 'Tiago L.', 'Revisão', 105, 'ok'],
+      ['26/12077', '11/06/2026', '1A6620154', 'Bruno C.', 'Rodas de carga', 55, 'ok'],
+      ['26/11874', '03/06/2026', '6A2914512', 'Ricardo S.', 'Revisão 5.000 h', 115, 'ok'],
+      ['26/10988', '20/05/2026', '1A8821046', 'Tiago L.', 'Código no visor, elevação', 95, 'volta'],
+      ['26/10240', '12/05/2026', '1A7700318', 'André P.', 'Rodas de carga', 65, 'ok'],
+      ['26/09820', '29/04/2026', '6A2914387', 'André P.', 'Pneu traseiro', 45, 'ok'],
+      ['26/08017', '08/04/2026', '6A2914512', 'Ricardo S.', 'Código no visor, travão', 80, 'ok']
+    ]
+  };
+
   var KPIS = {
     s: [
       ['Até à 1.ª resposta', '1 min', 'hoje: sem registo', 'ok'],
@@ -150,5 +200,5 @@ window.EMP = (function () {
     ['26/10', 215, 1.0], ['27/10', 198, 0.8], ['28/10', 207, 0.9], ['29/10', 192, 0.8], ['30/10', 201, 0.8]
   ];
 
-  return { MANUAL: MANUAL, COORDS: COORDS, EMAILS: EMAILS, PASTAS: PASTAS, TICKETS: TICKETS, ALERTAS: ALERTAS, TECNICOS: TECNICOS, DURACAO: DURACAO, AGENDA: AGENDA, HIST: HIST, KPIS: KPIS, ETAPAS: ETAPAS, PORCOORD: PORCOORD, GRAF: GRAF };
+  return { MANUAL: MANUAL, COORDS: COORDS, EMAILS: EMAILS, PASTAS: PASTAS, TICKETS: TICKETS, ALERTAS: ALERTAS, TECNICOS: TECNICOS, DURACAO: DURACAO, AGENDA: AGENDA, HIST: HIST, KPIS: KPIS, ETAPAS: ETAPAS, PORCOORD: PORCOORD, GRAF: GRAF, HX: HX };
 })();

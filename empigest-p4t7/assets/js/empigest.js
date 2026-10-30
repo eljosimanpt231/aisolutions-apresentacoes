@@ -5,7 +5,7 @@
    3. Caixa de pós-venda: a manhã simulada
    4. Bia liga ao cliente (replay da chamada)
    5. Caixas por coordenador
-   6. Atribuir técnico, duração, agenda, email ao cliente
+   6. Atribuir técnico, duração, email ao cliente
    7. Enviar ao técnico
    8. Portal do técnico (assistente sobre o manual)
    9. Fecho do PAT
@@ -262,19 +262,9 @@
     $$('.tec', $('#tecs')).forEach(function (x) { x.classList.toggle('sel', x === li); });
     var t = D.TECNICOS[+li.dataset.i]; $('#atResumo').textContent = t.n + ' · a partir das ' + t.livre + ' · 1 h 30';
   });
-  function pintaAgenda() {
-    var h0 = 8, h1 = 18, w = function (a) { return ((a - h0) / (h1 - h0) * 100) + '%'; };
-    var horas = ''; for (var h = h0; h <= h1; h += 2) horas += '<span style="left:' + w(h) + '">' + String(h).padStart(2, '0') + ':00</span>';
-    $('#agenda').innerHTML = '<div class="ag-r ag-hh"><b></b><div class="ag-l">' + horas + '</div></div>' + D.AGENDA.map(function (a) {
-      return '<div class="ag-r"><b>' + a.n + '</b><div class="ag-l">' + a.b.map(function (b) { return '<i class="' + (b[3] || '') + '" style="left:' + w(b[0]) + ';width:calc(' + w(b[1]) + ' - ' + w(b[0]) + ')" title="' + esc(b[2]) + '"><span>' + esc(b[2]) + '</span></i>'; }).join('') +
-        (a.sug ? '<i class="sug" style="left:' + w(a.sug[0]) + ';width:calc(' + w(a.sug[1]) + ' - ' + w(a.sug[0]) + ')"><span>PV-26-04812 · sugerido</span></i>' : '') + '</div></div>';
-    }).join('');
-  }
-  pintaAgenda();
   $('#atConfirma').addEventListener('click', function () {
     var b = this; b.disabled = true; b.textContent = 'Confirmado ✓';
-    $('#atEstado').innerHTML = '<i class="v"></i>Agendado · 14:00';
-    var s = $('#agenda .sug'); if (s) { s.classList.add('fix'); $('span', s).textContent = 'PV-26-04812 · confirmado'; }
+    $('#atEstado').innerHTML = '<i class="v"></i>Confirmado · 14:00';
     var em = $('#atEmail'); em.hidden = false; em.classList.add('entra');
     toast('Email enviado à Joana com o técnico e a hora');
   });
@@ -353,7 +343,7 @@
   var maxE = D.ETAPAS.reduce(function (m, e) { return Math.max(m, e[1]); }, 0);
   function fmtH(h) { if (h < 0.1) return Math.round(h * 60) + ' min'; var hh = Math.floor(h), mm = Math.round((h - hh) * 60); return hh + ' h ' + String(mm).padStart(2, '0'); }
   $('#funilT').innerHTML = D.ETAPAS.map(function (e, i) { return '<div class="ft-r"><span>' + e[0] + '</span><div class="ft-b"><i class="' + e[2] + '" style="--w:' + Math.max(2, e[1] / maxE * 100) + '%;--i:' + i + '"></i></div><b>' + fmtH(e[1]) + '</b></div>'; }).join('') +
-    '<p class="ft-n">O que hoje é "silêncio" passa a ser minutos. O maior bloco é a deslocação, e é aí que a duração estimada e a agenda ajudam a planear.</p>';
+    '<p class="ft-n">O que hoje é "silêncio" passa a ser minutos. O maior bloco é a deslocação, e é aí que a duração estimada ajuda a planear.</p>';
   var maxC = D.PORCOORD.reduce(function (m, c) { return Math.max(m, c[1]); }, 0);
   $('#porCoord').innerHTML = D.PORCOORD.map(function (c) { return '<div class="pc-r"><span>' + c[0] + '</span><div class="pc-b"><i style="width:' + (c[1] / maxC * 100) + '%"></i></div><b>' + c[1] + ' min</b><em>' + c[2] + ' abertos</em></div>'; }).join('');
   (function grafico() {
@@ -373,4 +363,76 @@
   })();
 
   render(true);
+
+  /* ---------------- Histórico por cliente, máquina e técnico ---------------- */
+  (function historico() {
+    var X = D.HX, modo = 'cli', sel = { cli: 'da214', maq: '6A2914387', tec: 'Ricardo S.' };
+    var cli = function (id) { return X.clientes.filter(function (c) { return c.id === id; })[0]; };
+    var maq = function (id) { return X.maquinas.filter(function (m) { return m.id === id; })[0]; };
+    var hm = function (min) { return Math.floor(min / 60) + ' h ' + String(min % 60).padStart(2, '0'); };
+    function patsDe(m, id) {
+      return X.pats.filter(function (p) { var mq = maq(p[2]); return m === 'cli' ? mq.cl === id : m === 'maq' ? p[2] === id : p[3] === id; });
+    }
+    function mediana(a) { if (!a.length) return 0; a = a.slice().sort(function (x, y) { return x - y; }); var k = Math.floor(a.length / 2); return a.length % 2 ? a[k] : Math.round((a[k - 1] + a[k]) / 2); }
+    function maisFrequente(a) { var c = {}, b = null; a.forEach(function (x) { c[x] = (c[x] || 0) + 1; if (!b || c[x] > c[b]) b = x; }); return b ? [b, c[b]] : ['—', 0]; }
+    function itens() {
+      if (modo === 'cli') return X.clientes.map(function (c) { return [c.id, c.n, c.ct]; });
+      if (modo === 'maq') return X.maquinas.map(function (m) { return [m.id, m.m + ' · ' + m.id, cli(m.cl).n]; });
+      return X.tecnicos.map(function (t) { return [t.id, t.id, t.z]; });
+    }
+    function pintaLista() {
+      $('#hxLista').innerHTML = itens().map(function (it) {
+        var n = patsDe(modo, it[0]).filter(function (p) { return p[6] !== 'aberto'; }).length;
+        return '<button type="button" class="hx-it' + (it[0] === sel[modo] ? ' on' : '') + '" data-id="' + esc(it[0]) + '"><span><b>' + esc(it[1]) + '</b><small>' + esc(it[2]) + '</small></span><em>' + n + ' PAT</em></button>';
+      }).join('');
+    }
+    function pintaDet() {
+      var id = sel[modo], ps = patsDe(modo, id), feitos = ps.filter(function (p) { return p[6] !== 'aberto'; });
+      var aberto = ps.filter(function (p) { return p[6] === 'aberto'; })[0];
+      var med = mediana(feitos.map(function (p) { return p[5]; }));
+      var prim = feitos.length ? Math.round(feitos.filter(function (p) { return p[6] === 'ok'; }).length / feitos.length * 100) : 0;
+      var cab, kp, col;
+      if (modo === 'cli') {
+        var c = cli(id), mqs = X.maquinas.filter(function (m) { return m.cl === id; }), ft = maisFrequente(feitos.map(function (p) { return p[3]; }));
+        cab = '<b>' + esc(c.n) + '</b><span>' + esc(c.z) + ' · ' + esc(c.ct) + '</span><div class="hx-chips">' + mqs.map(function (m) { return '<button type="button" class="hx-ln" data-maq="' + m.id + '">' + esc(m.m) + ' · ' + m.id + '</button>'; }).join('') + '</div>';
+        kp = [['Intervenções em 2026', feitos.length], ['Duração mediana', hm(med)], ['Resolvido à 1.ª visita', prim + '%'], ['Técnico mais habitual', ft[0] + ' · ' + ft[1] + ' de ' + feitos.length]];
+        col = 'maq';
+      } else if (modo === 'maq') {
+        var m = maq(id), ft2 = maisFrequente(feitos.map(function (p) { return p[4].split(',')[0]; }));
+        cab = '<b>' + esc(m.m) + ' · <span class="mono">' + m.id + '</span></b><span>' + esc(cli(m.cl).n) + ' · ' + m.h + ' · desde ' + m.ano + '</span><div class="hx-chips"><button type="button" class="hx-ln" data-cli="' + m.cl + '">Ver o cliente ›</button></div>';
+        kp = [['Intervenções em 2026', feitos.length], ['Duração mediana', feitos.length ? hm(med) : '—'], ['Resolvido à 1.ª visita', feitos.length ? prim + '%' : '—'], ['Motivo mais frequente', feitos.length ? ft2[0] : 'sem intervenções']];
+        col = 'tec';
+      } else {
+        var t = X.tecnicos.filter(function (x) { return x.id === id; })[0], ncl = {};
+        feitos.forEach(function (p) { ncl[maq(p[2]).cl] = 1; });
+        cab = '<b>' + esc(t.id) + '</b><span>' + esc(t.z) + ' · ' + esc(t.esp) + '</span>';
+        kp = [['Intervenções em 2026', feitos.length], ['Duração mediana', hm(med)], ['Resolvido à 1.ª visita', prim + '%'], ['Clientes diferentes', Object.keys(ncl).length]];
+        col = 'maq';
+      }
+      var cabCol = modo === 'maq' ? 'Técnico' : 'Máquina', cabCol2 = modo === 'tec' ? 'Cliente' : '';
+      var linhas = ps.map(function (p) {
+        var mq = maq(p[2]);
+        var c1 = col === 'tec' ? '<button type="button" class="hx-ln" data-tec="' + esc(p[3]) + '">' + esc(p[3]) + '</button>'
+          : '<button type="button" class="hx-ln" data-maq="' + p[2] + '">' + esc(mq.m.replace('Crown ', '')) + ' · ' + p[2] + '</button>' + (modo === 'tec' ? '<small>' + esc(cli(mq.cl).n) + '</small>' : '');
+        var res = p[6] === 'aberto' ? '<span class="tg a">em aberto</span>' : p[6] === 'volta' ? '<span class="tg r">2.ª visita</span>' : '<span class="tg v">resolvido</span>';
+        var tecCel = modo !== 'maq' ? '<span class="hx-tc">' + (p[6] === 'aberto' ? esc(p[3]) + ' (sugerido)' : esc(p[3])) + '</span>' : '';
+        return '<div class="hx-r' + (p[6] === 'aberto' ? ' ab' : '') + '"><span class="mono">' + p[0] + '</span><span class="mono">' + p[1].slice(0, 5) + '</span><span class="hx-c1">' + c1 + '</span><span>' + esc(p[4]) + (modo !== 'maq' ? '<small>' + tecCel + '</small>' : '') + '</span><span class="mono">' + (p[5] ? hm(p[5]) : '—') + '</span><span>' + res + '</span></div>';
+      }).join('');
+      $('#hxDet').innerHTML = '<div class="panel hx-cab">' + cab + '</div>' +
+        '<div class="hx-kp">' + kp.map(function (k) { return '<div><span>' + k[0] + '</span><b>' + esc(String(k[1])) + '</b></div>'; }).join('') + '</div>' +
+        '<div class="panel hx-tab"><div class="hx-r hx-h"><span>PAT</span><span>Data</span><span>' + cabCol + '</span><span>Intervenção</span><span>Duração</span><span>Resultado</span></div>' + (linhas || '<p class="hx-vazio">Sem intervenções registadas.</p>') + '</div>';
+    }
+    function mostra(m, id) {
+      modo = m; if (id) sel[m] = id;
+      $$('#hxSeg button').forEach(function (b) { b.classList.toggle('on', b.dataset.hx === modo); });
+      pintaLista(); pintaDet();
+    }
+    $('#hxSeg').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) mostra(b.dataset.hx); });
+    $('#hxLista').addEventListener('click', function (e) { var b = e.target.closest('.hx-it'); if (b) mostra(modo, b.dataset.id); });
+    $('#hxDet').addEventListener('click', function (e) {
+      var b = e.target.closest('.hx-ln'); if (!b) return;
+      if (b.dataset.maq) mostra('maq', b.dataset.maq); else if (b.dataset.tec) mostra('tec', b.dataset.tec); else if (b.dataset.cli) mostra('cli', b.dataset.cli);
+    });
+    mostra('cli');
+  })();
 })();
