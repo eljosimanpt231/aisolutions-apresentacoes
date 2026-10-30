@@ -770,3 +770,7 @@ html.js .reg-vis.anda .ficha .r:nth-child(4) { animation-delay: 1.05s; } html.js
 .btn.at-tec { background: var(--verde); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .olc-bar, :root:not([data-theme="light"]) .olc-send { background: hsl(208 75% 38%); } }
 :root[data-theme="dark"] .olc-bar, :root[data-theme="dark"] .olc-send { background: hsl(208 75% 38%); }
+.inv-k2 { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+.inv-prazo { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 18px; padding: 12px 14px; border-radius: var(--radius); background: hsl(var(--brand-hsl) / .07); border: 1px solid hsl(var(--brand-hsl) / .2); }
+.inv-prazo b { font-family: var(--font-display); font-size: 1.5rem; color: var(--text); }
+.inv-prazo span { font-size: .88rem; color: var(--muted); }
