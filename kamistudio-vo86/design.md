@@ -89,3 +89,12 @@ mensagem que a cliente recebe, com a maquete, a medida e o preço juntos, como e
   #ksQuadro e #ksDemo vistos | comparar.mjs contra mobilidade-rodoviaria-i0c3: ganha em glows radiais (12/10), blur,
   sombras, imagens (8/1), animações CSS (14/11), tweens GSAP (41/37) e gatilhos (30/27); empata em gradientes e texto em
   gradiente; perde em svg (46/72)
+- v3 (30/10/2026, follow-up): pedidos do Renato na reunião de 30/10. Secção 4 nova, «A preview» (`#ksPreview`): néon
+  desenhado no browser (fontes Neonderthaw e Tilt Neon, auto-alojadas), texto, letra, cor, desenho e parede
+  editáveis, cotas aproximadas, marca de água, sequência «a gerar» e resposta da cliente; barras dos desenhos pagos
+  (80 a 100 hoje, perto de 30 com a preview). Secção 6 nova, «A plataforma» (`#ksPlat`): app viva com painel
+  (KPIs por mês/trimestre/semestre/ano, gráfico, funil, «precisam de ti», canais e tipos), quadro com arrastar,
+  lista com filtros e ordenação, ficha do pedido com preview, maquete, conta, histórico e ações; dois pedidos
+  novos entram sozinhos. Tudo inventado e dito na página. Investimento separado em 4.300 + 300 + 1.000 = 5.600 € +
+  IVA (50/50), mensalidade 270 € com 100 previews e 1 € por preview a mais (modelo por aprovar pelo Manuel).
+  Ficheiros: `assets/css/kami-v2.css`, `assets/js/kami-v2.js`. «O agente» saiu da barra (7 entradas).

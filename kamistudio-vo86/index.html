@@ -7,7 +7,7 @@
   <meta name="color-scheme" content="light">
 
   <title>KAMI STUDIO | O pedido chega completo, o orçamento sai com a maquete</title>
-  <meta name="description" content="Um agente de inteligência artificial da KAMI STUDIO que responde na hora no Instagram, no WhatsApp e no email, recolhe tudo o que é preciso para orçamentar, cria o cartão no Trello e, quando a maquete chega, prepara o orçamento com as regras do vosso Excel. Proposta da AI Solutions para o Renato Mota.">
+  <meta name="description" content="Um agente de inteligência artificial da KAMI STUDIO que responde na hora no Instagram, no WhatsApp e no email, recolhe tudo o que é preciso para orçamentar, cria o cartão no Trello, mostra ao cliente uma preview da peça e, quando a maquete chega, prepara o orçamento com as regras do vosso Excel, numa plataforma de orçamentação própria. Proposta da AI Solutions para o Renato Mota.">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="KAMI STUDIO × AI Solutions">
@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="../shared/deck/deck.css">
   <link rel="stylesheet" href="../shared/motion/atmosfera.css">
   <link rel="stylesheet" href="assets/css/kami.css">
+  <link rel="stylesheet" href="assets/css/kami-v2.css">
   <script src="config.js"></script>
 </head>
 <body class="grao">
@@ -56,7 +57,7 @@
       <dl class="cabeca-meta" data-acto="2" data-entra="sobe">
         <div><dt>Para</dt><dd>Renato Mota, KAMI STUDIO</dd></div>
         <div><dt>Assunto</dt><dd>Agente de IA para os pedidos e os orçamentos de néon</dd></div>
-        <div><dt>Reuniões</dt><dd>26 e 28 de outubro de 2026</dd></div>
+        <div><dt>Reuniões</dt><dd>26 e 30 de outubro de 2026</dd></div>
         <div><dt>Preparado por</dt><dd>Manuel Condeço, AI Solutions</dd></div>
       </dl>
 
@@ -68,8 +69,9 @@
           </h1>
           <p class="lead" data-acto="3" data-entra="sobe">
             Um agente de inteligência artificial da KAMI responde na hora no Instagram, no WhatsApp e no email, recolhe
-            à primeira a imagem, as medidas, as cores e o espaço, e abre o cartão no Trello. Quando a maquete chega, lê o
-            tamanho e os metros de tubo e prepara o orçamento com as regras do vosso Excel.
+            à primeira a imagem, as medidas, as cores e o espaço, abre o cartão no Trello e mostra ao cliente uma preview da
+            peça. Quando a maquete chega, lê o tamanho e os metros de tubo e prepara o orçamento com as regras do vosso
+            Excel, para aprovares na vossa plataforma.
           </p>
         </div>
 
@@ -121,7 +123,7 @@
         </li>
       </ul>
 
-      <p class="cabeca-nota" data-acto="5" data-entra="sobe">7 minutos de leitura.</p>
+      <p class="cabeca-nota" data-acto="5" data-entra="sobe">9 minutos de leitura.</p>
     </div>
   </section>
 
@@ -244,9 +246,9 @@
             <li data-passo="2"><span class="qt-h"><time>22:56</time> Tudo à primeira</span>
               <p class="hoje"><b>Hoje</b>Falta a medida. Depois a cor. Depois «afinal só tenho 60». Dias de mensagens.</p>
               <p class="agente"><b>Com o agente</b>Uma pergunta de cada vez: medida, cores, interior ou exterior, foto da parede. O cartão fica completo.</p></li>
-            <li data-passo="3"><span class="qt-h"><time>08:30</time> Para o designer</span>
-              <p class="hoje"><b>Hoje</b>Alguém junta a imagem e as medidas e passa ao designer.</p>
-              <p class="agente"><b>Com o agente</b>O cartão está em draw (.cdr) com o logótipo e as medidas certas. O designer vetoriza e faz a maquete, como hoje.</p></li>
+            <li data-passo="3"><span class="qt-h"><time>23:04</time> A preview, e só depois o designer</span>
+              <p class="hoje"><b>Hoje</b>Alguém junta a imagem e as medidas e passa ao designer. É um desenho pago, avance a cliente ou não.</p>
+              <p class="agente"><b>Com o agente</b>A Marta recebe logo uma preview do néon na parede, com a marca de água. Gosta, e só então o cartão passa a draw (.cdr) e o designer faz a maquete, como hoje.</p></li>
             <li data-passo="4"><span class="qt-h"><time>11:10</time> A maquete chega</span>
               <p class="hoje"><b>Hoje</b>Abrir a maquete, passar o tamanho e os metros de tubo para o Excel, estimar as horas, fazer a conta.</p>
               <p class="agente"><b>Com o agente</b>Lê a ficha da maquete na pasta partilhada, aplica as regras do Excel e prepara o orçamento. Falta o teu OK.</p></li>
@@ -259,7 +261,7 @@
             <span class="qt-pos">Passo <b>5</b> de 5</span>
             <button type="button" class="qt-seg">Seguinte</button>
           </div>
-          <p class="qt-depois">Daí para a frente, como hoje: o segundo contacto, a adjudicação, a fatura e a CNC ficam convosco.</p>
+          <p class="qt-depois">Daí para a frente, como hoje: o segundo contacto, a adjudicação, a fatura e a CNC ficam convosco. E tudo fica registado na plataforma de orçamentação.</p>
         </div>
       </div>
       <p class="doc-nota">Colunas e contagens do vosso quadro a 26 de outubro. Os cartões, os nomes e as horas são exemplos.</p>
@@ -305,7 +307,7 @@
   </section>
 
   <!-- ============ 3. O AGENTE A TRABALHAR ============ -->
-  <section class="secao-ampla" id="agente" data-nav="O agente">
+  <section class="secao-ampla" id="agente">
     <div class="container">
       <p class="rubrica"><span>3</span> O agente a trabalhar</p>
       <h2 data-linhas>Quatro pedidos como os vossos. Num deles, o agente passa-te a palavra.</h2>
@@ -361,7 +363,7 @@
           { "sender": "client", "text": "e mais ou menos quanto fica? estou a ver mais sitios", "time": "22:57" },
           { "sender": "agent", "text": "Uma peça deste tamanho costuma ficar **entre 200 € e 300 €**. O valor certo vai com a maquete, para veres como fica na tua parede. Mandas-me uma foto da parede?", "time": "22:57", "passo": 5 },
           { "sender": "client", "text": "[fotografia da parede]", "time": "23:02" },
-          { "sender": "system", "text": "Cartão no Trello, coluna inquiry: logótipo, 80 cm, rosa e branco, interior, foto da parede.", "passo": 6 }
+          { "sender": "system", "text": "Cartão no Trello, coluna inquiry: logótipo, 80 cm, rosa e branco, interior, foto da parede. A seguir: a preview para a Marta.", "passo": 6 }
         ],
         "steps": [
           { "icon": "send", "label": "Pedido no site: contacta já, no WhatsApp" },
@@ -442,10 +444,134 @@
   }
   </script>
 
-  <!-- ============ 4. DA MAQUETE AO ORÇAMENTO ============ -->
-  <section class="faixa" id="orcamento" data-nav="O orçamento">
+  <!-- ============ 4. A PREVIEW ============ -->
+  <section class="faixa secao-ampla" id="preview" data-nav="A preview">
     <div class="container">
-      <p class="rubrica"><span>4</span> Da maquete ao orçamento</p>
+      <p class="rubrica"><span>4</span> A preview, antes do designer</p>
+      <h2 data-linhas>O cliente vê o néon na parede antes de pagares <span class="g-brilho">um desenho.</span></h2>
+      <p class="lead">Hoje pedes ao designer 80 a 100 desenhos por mês, e avançam cerca de 30. Com o pedido completo, o
+        agente gera logo uma preview da peça, no vosso fundo e com a vossa marca de água, e manda-a ao cliente. Só o que o
+        cliente aprova segue para o designer. Experimenta: muda o texto, a letra, a cor e a parede.</p>
+
+      <div class="estudio" id="ksPreview" data-entra="sobe">
+        <div class="es-pedido">
+          <div class="es-ped-topo">
+            <span class="es-ped-k">Pedido completo, no cartão</span>
+            <b>Marta Lopes, salão</b>
+            <ul class="es-ped-dados">
+              <li><span>Canal</span>WhatsApp</li>
+              <li><span>Medida</span>80 cm de largura</li>
+              <li><span>Onde</span>Interior, receção</li>
+              <li><span>Anexo</span>logotipo-salao.png</li>
+            </ul>
+          </div>
+
+          <div class="es-controlos">
+            <label class="es-campo"><span>Texto da peça</span>
+              <input type="text" id="ksPvTexto" value="bloom" maxlength="16" autocomplete="off" spellcheck="false"></label>
+
+            <div class="es-grupo"><span class="es-rot" id="ksPvRotLetra">Letra</span>
+              <div class="es-opcoes" role="group" aria-labelledby="ksPvRotLetra">
+                <button type="button" data-letra="manuscrita" aria-pressed="true">Manuscrita</button>
+                <button type="button" data-letra="direita" aria-pressed="false">Direita</button>
+              </div>
+            </div>
+
+            <div class="es-grupo"><span class="es-rot" id="ksPvRotCor">Cor do tubo</span>
+              <div class="es-cores" role="group" aria-labelledby="ksPvRotCor">
+                <button type="button" data-cor="rosa" aria-pressed="true" aria-label="Rosa"></button>
+                <button type="button" data-cor="quente" aria-pressed="false" aria-label="Branco quente"></button>
+                <button type="button" data-cor="gelo" aria-pressed="false" aria-label="Azul gelo"></button>
+                <button type="button" data-cor="coral" aria-pressed="false" aria-label="Coral"></button>
+                <button type="button" data-cor="verde" aria-pressed="false" aria-label="Verde"></button>
+                <button type="button" data-cor="roxo" aria-pressed="false" aria-label="Roxo"></button>
+              </div>
+            </div>
+
+            <div class="es-grupo"><span class="es-rot" id="ksPvRotIc">Desenho</span>
+              <div class="es-opcoes" role="group" aria-labelledby="ksPvRotIc">
+                <button type="button" data-icone="flor" aria-pressed="true">Flor</button>
+                <button type="button" data-icone="coracao" aria-pressed="false">Coração</button>
+                <button type="button" data-icone="raio" aria-pressed="false">Raio</button>
+                <button type="button" data-icone="nenhum" aria-pressed="false">Só texto</button>
+              </div>
+            </div>
+
+            <div class="es-grupo"><span class="es-rot" id="ksPvRotFundo">Parede</span>
+              <div class="es-opcoes" role="group" aria-labelledby="ksPvRotFundo">
+                <button type="button" data-fundo="parede" aria-pressed="true">Parede normal</button>
+                <button type="button" data-fundo="tijolo" aria-pressed="false">Tijolo</button>
+                <button type="button" data-fundo="jardim" aria-pressed="false">Jardim vertical</button>
+                <button type="button" data-fundo="betao" aria-pressed="false">Betão</button>
+              </div>
+            </div>
+
+            <label class="es-medidas"><input type="checkbox" id="ksPvMedidas" checked> Mostrar as medidas aproximadas</label>
+          </div>
+        </div>
+
+        <div class="es-palco">
+          <div class="es-parede" data-fundo="parede" role="img" aria-label="Preview de um néon com a palavra bloom e uma flor, em rosa, numa parede neutra, com a marca de água da KAMI Neon Studio e 80 centímetros de largura.">
+            <div class="es-luz" aria-hidden="true"></div>
+            <div class="es-placa" aria-hidden="true">
+              <svg class="es-icone" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d=""/></svg>
+              <span class="es-texto">bloom</span>
+            </div>
+            <div class="es-cota es-cota-l" aria-hidden="true"><span>80 cm</span></div>
+            <div class="es-cota es-cota-a" aria-hidden="true"><span>34 cm</span></div>
+            <div class="es-marca" aria-hidden="true"></div>
+            <span class="es-assina" aria-hidden="true">KAMI NEON STUDIO · preview ilustrativa</span>
+            <div class="es-gerar" aria-hidden="true">
+              <ol>
+                <li>A ler o logótipo e o pedido</li>
+                <li>A escolher o tubo e as cores</li>
+                <li>A montar a peça na parede</li>
+                <li>A pôr a marca de água da KAMI</li>
+              </ol>
+              <span class="es-barra"><i></i></span>
+            </div>
+          </div>
+
+          <div class="es-msg" aria-live="polite">
+            <div class="es-msg-topo"><span class="om-ic" aria-hidden="true"></span><b>WhatsApp, para a Marta</b><time>23:04</time></div>
+            <p class="es-bolha">Assim fica o teu néon na parede da receção, com uns <b class="es-msg-l">80 cm</b> de largura. É uma
+              preview: a maquete final, com as medidas certas e o preço, segue a seguir. Gostas, ou mudamos alguma coisa?</p>
+            <div class="es-respostas">
+              <button type="button" class="es-sim">Gosto, avançar</button>
+              <button type="button" class="es-outra">Outra cor</button>
+            </div>
+            <p class="es-estado" hidden>Preview aprovada. O cartão passa a <b>draw (.cdr)</b> e só agora o designer desenha esta peça.</p>
+          </div>
+        </div>
+      </div>
+      <p class="doc-nota">Simulação desenhada nesta página, com um pedido inventado. Na implementação, a preview é gerada
+        por inteligência artificial a partir do logótipo que o cliente envia, com o vosso fundo e a vossa marca de água, como
+        a que o designer já vos faz hoje. É sempre uma imagem ilustrativa: as medidas, os metros de tubo e o preço finais
+        saem da maquete do designer.</p>
+
+      <div class="desenhos" data-entra="sobe">
+        <div class="ds-txt">
+          <h3>Desenhos pagos por mês</h3>
+          <p>Cada pedido que hoje vai para o designer é um desenho pago, avance o cliente ou não. Com a preview, o cliente
+            decide primeiro e o designer desenha depois.</p>
+          <blockquote>Se eu só lhe pedir os que realmente preciso para avançar para a produção, já é diferente.</blockquote>
+          <cite>Renato Mota, na reunião de 30 de outubro.</cite>
+        </div>
+        <div class="ds-barras">
+          <div class="ds-l"><span>Pedidos que chegam por mês</span><span class="ds-b"><i style="--v:90%"></i></span><b>80 a 100</b></div>
+          <div class="ds-l ds-hoje"><span>Hoje: desenhos pedidos ao designer</span><span class="ds-b"><i style="--v:90%"></i></span><b>80 a 100</b></div>
+          <div class="ds-l ds-com"><span>Com a preview: só os que o cliente aprova</span><span class="ds-b"><i style="--v:34%"></i></span><b>perto de 30</b></div>
+          <p class="ds-nota">Os números são os da reunião: 80 a 100 desenhos por mês para cerca de 30 peças produzidas.
+            Quantos clientes aprovam a preview e depois não avançam, mede-se nos primeiros meses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. DA MAQUETE AO ORÇAMENTO ============ -->
+  <section id="orcamento" data-nav="O orçamento">
+    <div class="container">
+      <p class="rubrica"><span>5</span> Da maquete ao orçamento</p>
       <h2 data-linhas>A maquete entra na pasta. O orçamento sai com os <span class="g-brilho">três campos</span> já preenchidos.</h2>
       <p class="lead">No Excel do Elton só se preenchem três coisas: o tamanho da peça, os metros de fita e tubo, e as horas
         de produção. As duas primeiras já vêm escritas na ficha de cada maquete. A terceira, o agente vai buscá-la ao
@@ -556,17 +682,64 @@
       { "icon": "message", "title": "Pedido recebido", "detail": "Em qualquer canal, a qualquer hora.", "tone": "brand" },
       { "icon": "list", "title": "Recolhe o que falta", "detail": "Imagem, medidas, cores, interior ou exterior, espaço.", "tone": "teal" },
       { "icon": "database", "title": "Cartão no Trello", "detail": "Na coluna certa, com tudo lá dentro.", "tone": "teal" },
+      { "icon": "sparkle", "title": "Preview ao cliente", "detail": "O néon na parede, com a marca de água. Só o aprovado vai ao designer.", "tone": "brand" },
       { "icon": "search", "title": "Lê a maquete", "detail": "Tamanho e metros de tubo, na pasta partilhada.", "tone": "teal" },
-      { "icon": "check", "title": "Orçamento para o teu OK", "detail": "Com as regras do Excel, e a maquete junta.", "tone": "brand" }
+      { "icon": "check", "title": "Orçamento para o teu OK", "detail": "Na plataforma, com as regras do Excel e a maquete junta.", "tone": "brand" }
     ],
-    "note": "O Trello, o Excel do Elton, o designer e as maquetes no Sintra ficam como estão. O agente trabalha por cima do que já usam."
+    "note": "O Trello, o Excel do Elton e o designer ficam como estão. O agente trabalha por cima do que já usam, e a plataforma junta tudo num sítio."
   }
   </script>
 
-  <!-- ============ 5. LIMITES E PROVA ============ -->
+  <!-- ============ 6. A PLATAFORMA DE ORÇAMENTAÇÃO ============ -->
+  <section class="faixa secao-ampla" id="plataforma" data-nav="A plataforma">
+    <div class="container">
+      <p class="rubrica"><span>6</span> A plataforma de orçamentação</p>
+      <h2 data-linhas>Todos os pedidos, todos os orçamentos e a fase de cada um. <span class="g-brilho">Num só sítio.</span></h2>
+      <p class="lead">O agente põe lá cada pedido que entra, por qualquer canal, e cada orçamento que prepara. Tu vês o mês
+        de relance, aprovas os orçamentos, sabes quem está à espera de resposta e comparas com o trimestre ou o semestre
+        anterior. Mexe à vontade: muda o período, abre um pedido, aprova um orçamento, arrasta um cartão.</p>
+
+      <div class="plat" id="ksPlat" data-entra="escala">
+        <div class="pl-janela">
+          <div class="pl-barra" aria-hidden="true"><i></i><i></i><i></i><span>plataforma KAMI · orçamentos</span></div>
+          <div class="pl-app">
+            <p class="pl-sem-js">A plataforma mostra os pedidos em quadro e em lista, a ficha de cada pedido com a preview, a
+              maquete, a conta e o histórico, e os números por mês, trimestre, semestre e ano.</p>
+          </div>
+        </div>
+      </div>
+      <p class="doc-nota">Demonstração com pedidos, clientes e valores inventados. O desenho final, as fases e os
+        indicadores definem-se convosco na implementação.</p>
+
+      <div class="plat-tres" data-entra="sobe">
+        <article>
+          <span class="pt-n">01</span>
+          <h3>Em que fase está cada pedido</h3>
+          <p>Do pedido novo à adjudicação, num quadro e numa lista com pesquisa. Quem está à espera do teu OK e quem não
+            responde há cinco dias aparece logo no painel.</p>
+        </article>
+        <article>
+          <span class="pt-n">02</span>
+          <h3>A ficha de cada pedido</h3>
+          <p>A conversa resumida, a preview, a maquete, a medida, os metros de tubo, a conta com os extras e o desconto, e
+            o histórico de tudo o que aconteceu. Aprovas ali, e o agente envia.</p>
+        </article>
+        <article>
+          <span class="pt-n">03</span>
+          <h3>Os números do negócio</h3>
+          <p>Pedidos, orçamentos, taxa de adjudicação, valor orçamentado e adjudicado, canais e tipos de peça, por mês,
+            trimestre, semestre e ano. Exporta-se para Excel quando quiseres.</p>
+        </article>
+      </div>
+      <p class="plat-nota" data-entra="sobe">O Trello continua a ser o quadro da produção, e a faturação continua no vosso
+        programa. A plataforma é o sítio onde se vê, de uma vez, tudo o que está a ser orçamentado e quanto vale.</p>
+    </div>
+  </section>
+
+  <!-- ============ 7. LIMITES E PROVA ============ -->
   <section id="limites">
     <div class="container">
-      <p class="rubrica"><span>5</span> Limites</p>
+      <p class="rubrica"><span>7</span> Limites</p>
       <h2 data-linhas>O que o agente faz sozinho, e o que fica sempre contigo.</h2>
       <p class="lead">A KAMI vive de peças únicas e de clientes que voltam e recomendam. Preferimos dizer já o que o
         agente não faz do que prometer o que não se cumpre.</p>
@@ -601,6 +774,7 @@
             <li>Recolher imagem, medidas, cores e espaço</li>
             <li>Separar curiosos de pedidos com intenção de compra</li>
             <li>Abrir o cartão no Trello, na coluna certa</li>
+            <li>Gerar a preview da peça e enviá-la ao cliente</li>
             <li>Ler a ficha da maquete e preparar o orçamento</li>
           </ul>
         </article>
@@ -619,7 +793,7 @@
             <li>Enviar um orçamento que não aprovaste</li>
             <li>Garantir uma data de entrega que não confirmaste</li>
             <li>Mexer nas fórmulas do Excel</li>
-            <li>Mandar a maquete sem a marca de água</li>
+            <li>Mandar uma preview ou uma maquete sem a marca de água</li>
           </ul>
         </article>
       </div>
@@ -651,7 +825,7 @@
             site estiver testado e a ser promovido, e não faz parte desta proposta.</li>
           <li>Passar as folhas da produção para o Excel continua a ser vosso. Quanto mais registos houver, melhor a sugestão
             de horas; até lá, a hora estimada por ti mantém-se.</li>
-          <li>As maquetes continuam a ser feitas pelo designer, no Sintra. O agente não as faz: lê-as.</li>
+          <li>A maquete final, com o vetor e o ficheiro para a CNC, continua a ser do designer. O agente faz a preview para o cliente decidir, e depois lê a maquete.</li>
         </ul>
       </details>
     </div>
@@ -660,7 +834,7 @@
   <!-- ============ 6. INVESTIMENTO ============ -->
   <section class="faixa-clara" id="investimento" data-nav="Investimento">
     <div class="container">
-      <p class="rubrica"><span>6</span> Investimento</p>
+      <p class="rubrica"><span>8</span> Investimento</p>
       <h2 data-linhas>Primeiro a conta das horas. Depois o preço.</h2>
 
       <div class="valor">
@@ -700,28 +874,58 @@
               Implementação do agente KAMI
               <small>Auditoria da vossa comunicação, o agente no Instagram, no WhatsApp e no email, a recolha de tudo o que
                 é preciso para orçamentar, a ligação ao Trello, a leitura das maquetes na pasta partilhada, as regras do
-                vosso Excel e o histórico de horas, e os testes convosco até estarem satisfeitos. Pagamento único.</small>
-              <span class="tranches"><span>50% na adjudicação: 2.150 €</span><span>50% quando entra em testes: 2.150 €</span></span>
+                vosso Excel e o histórico de horas, e os testes convosco até estarem satisfeitos.</small>
             </th>
             <td class="num">4.300&nbsp;€</td>
           </tr>
           <tr>
             <th scope="row">
+              Preview da peça com IA <span class="fat-novo">Novo, de 30/10</span>
+              <small>A preview do néon na parede, gerada logo a seguir ao pedido, com o vosso fundo e a vossa marca de água,
+                enviada ao cliente antes de o pedido seguir para o designer.</small>
+            </th>
+            <td class="num">300&nbsp;€</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Plataforma de orçamentação <span class="fat-novo">Novo, de 30/10</span>
+              <small>Todos os pedidos e orçamentos num só sítio, com a fase de cada um, a ficha de cada pedido, a aprovação
+                dos orçamentos e os números por mês, trimestre, semestre e ano.</small>
+            </th>
+            <td class="num">1.000&nbsp;€</td>
+          </tr>
+          <tr class="fat-mensal">
+            <th scope="row">
               Mensalidade
               <small>Manutenção, melhorias e acompanhamento da solução: os custos de inteligência artificial e o alojamento,
-                os ajustes ao agente quando mudam as regras ou os preços, e uma pessoa da nossa equipa que conhece a KAMI.</small>
+                incluindo a plataforma, os ajustes ao agente quando mudam as regras ou os preços, e uma pessoa da nossa equipa
+                que conhece a KAMI. Inclui <b>100 previews por mês</b>; acima disso, cada preview custa 1&nbsp;€.</small>
             </th>
-            <td class="num">220&nbsp;€ <i>/ mês</i></td>
+            <td class="num">270&nbsp;€ <i>/ mês</i></td>
           </tr>
         </tbody>
         <tfoot>
-          <tr><th scope="row">Implementação sem IVA</th><td class="num">4.300,00&nbsp;€</td></tr>
-          <tr><th scope="row">IVA 23%</th><td class="num">989,00&nbsp;€</td></tr>
-          <tr class="total"><th scope="row">Total da implementação</th><td class="num">5.289,00&nbsp;€</td></tr>
+          <tr><th scope="row">Implementação sem IVA</th><td class="num">5.600,00&nbsp;€</td></tr>
+          <tr><th scope="row">IVA 23%</th><td class="num">1.288,00&nbsp;€</td></tr>
+          <tr class="total"><th scope="row">Total da implementação</th><td class="num">6.888,00&nbsp;€</td></tr>
         </tfoot>
       </table>
-      <p class="retorno" data-entra="sobe">A mensalidade com IVA fica em <b>270,60&nbsp;€</b> por mês, e só começa quando o agente entra em
-        produção. Valores sem IVA em destaque.</p>
+      <div class="pagamento" data-entra="sobe">
+        <span class="tranches"><span>50% na adjudicação: 2.800 € + IVA</span><span>50% quando entra em testes: 2.800 € + IVA</span></span>
+        <p class="retorno">A mensalidade com IVA fica em <b>332,10&nbsp;€</b> por mês, e só começa quando o agente entra em
+          produção. Valores sem IVA em destaque.</p>
+      </div>
+
+      <aside class="previews-conta" data-entra="sobe">
+        <div class="pc-num"><span class="num">100</span><small>previews por mês incluídas</small></div>
+        <div>
+          <h3>Porque é que as previews têm um número?</h3>
+          <p>Gerar uma imagem custa muito mais em inteligência artificial do que responder a uma mensagem. As 100 por mês
+            cobrem os vossos 80 a 100 pedidos, já com as novas versões que o cliente pedir; as tentativas do agente até a
+            imagem sair certa ficam por nossa conta. Num mês em que passem das 100, cada preview a mais custa
+            <b>1&nbsp;€&nbsp;+&nbsp;IVA</b>, e vês o número na fatura do mês seguinte.</p>
+        </div>
+      </aside>
 
       <div class="inclui" data-entra="sobe">
         <div>
@@ -730,15 +934,18 @@
             <li>Duas semanas de auditoria: volumes, dias de mais pedidos, tempos de resposta e temas</li>
             <li>O agente, com o tom da KAMI e as respostas da vossa nota</li>
             <li>A ligação ao Trello e à pasta onde o designer deixa as maquetes</li>
+            <li>A preview, com o vosso fundo e a vossa marca de água</li>
             <li>As regras do Excel do Elton, sem lhe mexer</li>
+            <li>A plataforma de orçamentação, com acesso para a equipa</li>
             <li>Testes convosco, até estarem satisfeitos</li>
           </ul>
         </div>
         <div>
           <h3>A mensalidade inclui</h3>
           <ul>
-            <li>Os custos de inteligência artificial e o alojamento</li>
-            <li>Manutenção, alterações e melhorias ao agente</li>
+            <li>Os custos de inteligência artificial e o alojamento, também o da plataforma</li>
+            <li>100 previews por mês</li>
+            <li>Manutenção, alterações e melhorias ao agente e à plataforma</li>
             <li>Acompanhamento: uma pessoa da nossa equipa que conhece a KAMI</li>
             <li>Suporte por WhatsApp, sem tickets</li>
           </ul>
@@ -757,7 +964,7 @@
   <!-- ============ 7. PRAZO ============ -->
   <section id="prazo" data-nav="Prazo">
     <div class="container">
-      <p class="rubrica"><span>7</span> Prazo</p>
+      <p class="rubrica"><span>9</span> Prazo</p>
       <h2 data-linhas>Mês e meio a dois meses. A tempo de começarem o ano com o site a ser promovido.</h2>
       <ol class="fases" data-entra="sobe">
         <li>
@@ -770,8 +977,8 @@
         <li>
           <span class="quando">Semanas 3 e 4</span>
           <span class="o-que">Desenvolvimento</span>
-          <p>Do nosso lado, com o que a auditoria mostrou: o agente, a ligação ao Trello e à pasta das maquetes, e as regras
-            do Excel.</p>
+          <p>Do nosso lado, com o que a auditoria mostrou: o agente, a ligação ao Trello e à pasta das maquetes, a preview,
+            as regras do Excel e a plataforma de orçamentação.</p>
         </li>
         <li>
           <span class="quando">Semanas 5 e 6</span>
@@ -797,7 +1004,7 @@
     <div class="container">
       <div class="fecho-topo">
         <div>
-          <p class="rubrica"><span>8</span> Próximos passos</p>
+          <p class="rubrica"><span>10</span> Próximos passos</p>
           <h2 data-entra="sobe">Avançamos, <span class="g-brilho">Renato?</span></h2>
           <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmares por escrito.</p>
         </div>
@@ -819,8 +1026,8 @@
         <li>
           <span class="n">3</span>
           <b>Semana 1: os acessos</b>
-          <p>O email info@, o Instagram e o WhatsApp, um convite para o Trello, a pasta das maquetes e uma cópia do Excel
-            do Elton.</p>
+          <p>O email info@, o Instagram e o WhatsApp, um convite para o Trello, a pasta das maquetes, uma cópia do Excel
+            do Elton, e o fundo e a marca de água das vossas maquetes.</p>
         </li>
       </ol>
       <div class="fecho-acoes" data-entra="sobe">
@@ -836,11 +1043,11 @@
 <footer class="rodape">
   <div class="container">
     <span class="rodape-marca"><img src="assets/img/logo-kami.png" alt="" width="101" height="24">KAMI STUDIO × AI Solutions</span>
-    Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a KAMI STUDIO, 26 de outubro de 2026.<br>
+    Preparado pela <a href="https://aisolutions.pt">AI Solutions</a> para a KAMI STUDIO, 30 de outubro de 2026.<br>
     Manuel Condeço, manuel.condeco@aisolutions.pt
     <span class="disclaimer">
-      As conversas, os nomes, os cartões, as horas do histórico e os valores dos exemplos são inventados. Os números do
-      cabeçalho e as citações vêm da reunião de 26 de outubro de 2026; as colunas e as contagens do quadro, do Trello que o
+      As conversas, os nomes, os cartões, as horas do histórico, a preview, os dados da plataforma e os valores dos exemplos
+      são inventados. Os números do cabeçalho e as citações vêm das reuniões de 26 e 30 de outubro de 2026; as colunas e as contagens do quadro, do Trello que o
       Renato nos mostrou. A maquete I LOVE OUREM, as fotografias e o logótipo são da KAMI STUDIO.
     </span>
   </div>
@@ -855,6 +1062,7 @@
 <script src="assets/js/app.js"></script>
 <script src="../shared/deck/deck.js"></script>
 <script src="assets/js/kami.js"></script>
+<script src="assets/js/kami-v2.js"></script>
 <script>
   chatRaciocinio('ksDemo');
   fluxo('ksFluxo');
