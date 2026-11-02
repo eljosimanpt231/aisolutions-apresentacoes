@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Wow Parts | O software da Wow Parts</title>
+  <meta name="description" content="O software de gestão da Wow Parts: encomendas, picking com scanner, stock das duas lojas e faturas de fornecedores lançadas sozinhas, com a faturação certificada pela Moloni. Proposta AI Solutions.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wow Parts × AI Solutions">
+  <meta property="og:description" content="O material chega às 8h, as carrinhas saem às 9h. Um software feito à medida da Wow Parts para essa hora.">
+  <meta property="og:image" content="https://apresentacoes.aisolutions.pt/wow-parts-r7d4/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="assets/fonts/barlow-semi-condensed-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fontes.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="../shared/deck/deck.css">
+  <link rel="stylesheet" href="assets/css/light.css">
+  <link rel="stylesheet" href="../shared/motion/atmosfera.css">
+  <link rel="stylesheet" href="assets/css/wowparts.css">
+  <link rel="stylesheet" href="assets/css/plataforma.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+<div class="atmosfera atmosfera--claro" aria-hidden="true">
+  <div class="atmosfera__glow atmosfera__glow--1"></div>
+  <div class="atmosfera__glow atmosfera__glow--2"></div>
+  <div class="atmosfera__glow atmosfera__glow--3"></div>
+</div>
+<div class="grelha" aria-hidden="true"></div>
+
+<header class="topnav">
+  <div class="inner">
+    <a href="#topo" class="nav-brand" aria-label="Wow Parts, início"><span class="marca-txt">Wow<b>Parts</b></span></a>
+    <nav id="nav" aria-label="Secções">
+      <a href="#plataforma-sec">A plataforma</a>
+      <a href="#dia">A manhã</a>
+      <a href="#whatsapp">WhatsApp</a>
+      <a href="#faturas">Faturas</a>
+      <a href="#ligacoes">Ligações</a>
+      <a href="#investimento">Investimento</a>
+      <a href="#prazo">Prazo</a>
+    </nav>
+    <a href="#avancar" class="nav-cta btn btn-primary">Avançar</a>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="topo">
+  <div class="container hero-grid">
+    <div class="hero-txt">
+      <span class="kicker" data-acto="1" data-entra="sobe">Wow Parts × AI Solutions</span>
+      <h1 data-linhas>O material chega às 8h. As carrinhas saem às 9h. Um software <span class="g-brilho">à vossa medida</span> para essa hora.</h1>
+      <p class="lead" data-acto="2" data-entra="sobe">
+        A 20 de outubro, o David mostrou-nos o software que usa hoje e disse o que queria: encomendas
+        que não se escrevem duas vezes, os scanners a trabalhar, as faturas dos fornecedores lançadas a
+        tempo, e margem para acrescentar o que fizer falta. Esta página mostra esse software a
+        funcionar, com a faturação certificada a sair pela Moloni.
+      </p>
+      <div class="hero-acoes" data-acto="4" data-entra="sobe">
+        <a href="#plataforma-sec" class="btn btn-primary premivel" data-iman="0.25">Abrir a plataforma</a>
+        <a href="#dia" class="btn btn-ghost">Ver a manhã das 8h às 9h</a>
+      </div>
+    </div>
+    <div class="hero-doc" data-acto="3" data-entra="escala" aria-hidden="true">
+      <div class="gs">
+        <div class="gs-cab"><div><b>GS 2026/4127</b><small>Carrinha 1 · Lagos e Aljezur · sai às 09:00</small></div><span class="placa"><span>AQ-41-PL</span></span></div>
+        <ul class="gs-linhas">
+          <li><span>Pastilhas de travão, frente<code>PTF-2207 · TRW · stock de Lagos</code></span><span class="gs-ok">Picado</span></li>
+          <li><span>Spray limpa-travões<code>SP-TRV-500 · juntado às 08:21</code></span><span class="gs-ok">Picado</span></li>
+          <li><span>Discos de travão, frente<code>DTF-1180 · Brembo · do fornecedor</code></span><span class="gs-av">Chega amanhã</span></li>
+        </ul>
+        <div class="gs-barra"><i></i></div>
+        <div class="gs-rodape"><span>2 de 3 linhas picadas</span><span>Fatura pela Moloni</span></div>
+      </div>
+      <div class="chips">
+        <span class="chip-doc"><i>PDF</i><span>FT A/18842 · 23 linhas <em>lançada</em></span></span>
+        <span class="chip-doc"><i>PDF</i><span>Óleo 5W30 <em class="gs-av">+18%</em></span></span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="grid-3 hero-stats hero-stats--4" data-acto="3" data-entra="sobe">
+      <div class="card stat-card"><div class="num">80 a <span data-conta="90">90</span>%</div><div class="desc">Das encomendas das duas lojas chegam por WhatsApp</div></div>
+      <div class="card stat-card"><div class="num">100 a <span data-conta="150">150</span></div><div class="desc">Faturas de fornecedores por dia, quase todas em PDF por email</div></div>
+      <div class="card stat-card"><div class="num">40 a <span data-conta="60">60</span> mil</div><div class="desc">Referências em stock, com equivalências entre marcas</div></div>
+      <div class="card stat-card"><div class="num"><span data-conta="300">300</span> km</div><div class="desc">Por dia, em três carrinhas, para as oficinas do Alentejo e do Algarve</div></div>
+    </div>
+    <p class="hero-meta" data-acto="4" data-entra="sobe">
+      <span>Para <b>David Gonçalinho</b></span>
+      <span>Reunião de <b>3 de novembro de 2026</b></span>
+      <span>7 minutos de leitura</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE OUVIMOS ============ -->
+<section class="section-alt" id="ouvimos">
+  <div class="container">
+    <span class="eyebrow">O que ouvimos</span>
+    <h2>Quatro coisas que ficaram claras a 20 de outubro</h2>
+    <div class="dores">
+      <article class="card dor" data-entra="sobe">
+        <span class="dor-n">01</span>
+        <h3>Um minuto para abrir uma referência</h3>
+        <p>O software corre por Parallels num servidor do fornecedor. É lento, vai abaixo, e há manhãs
+          de uma hora, uma hora e meia à espera de assistência, com as carrinhas paradas à porta.</p>
+      </article>
+      <article class="card dor" data-entra="sobe">
+        <span class="dor-n">02</span>
+        <h3>A faturar em negativo</h3>
+        <p>O material dos fornecedores chega às 8h e sai às 9h. Entre 100 e 150 faturas por dia não
+          cabem nessa hora, por isso vende-se antes de dar entrada, e o stock deixa de bater certo.</p>
+      </article>
+      <article class="card dor" data-entra="sobe">
+        <span class="dor-n">03</span>
+        <h3>Tudo escrito duas vezes</h3>
+        <p>Nota de encomenda do cliente, nota de encomenda do fornecedor, o Ctrl+Q para associar cada
+          linha. As encomendas não reservam stock, e os scanners e as impressoras que comprou continuam
+          sem uso.</p>
+      </article>
+      <article class="card dor" data-entra="sobe">
+        <span class="dor-n">04</span>
+        <h3>Refém dos prazos de outros</h3>
+        <p>Mais de 10.000 € investidos no software atual, funcionalidades prometidas que não chegam, e um
+          mês sem programa de faturação quando o fornecedor sofreu um ataque informático.</p>
+      </article>
+    </div>
+    <blockquote class="citacao" data-entra="sobe">
+      <p>"Se me cingir a um software pré-definido, nunca vou ter margem para acrescentar o que quer que
+        seja."</p>
+      <cite>David Gonçalinho, 20 de outubro de 2026</cite>
+    </blockquote>
+    <p class="fecho-it">O problema não é faltar funcionalidades. É o software não andar à velocidade da manhã da Wow Parts.</p>
+  </div>
+</section>
+
+<!-- ============ 3. A MANHÃ, DAS 8H ÀS 9H ============ -->
+<section id="dia">
+  <div class="container">
+    <span class="eyebrow">A manhã, das 8h às 9h</span>
+    <h2>Uma hora para tudo, todos os dias</h2>
+    <p class="lead">
+      É nesta hora que a Wow Parts ganha ou perde o dia. O material entra, as faturas chegam por email,
+      os pedidos continuam a cair no WhatsApp, e as três carrinhas têm de sair com tudo picado e faturado.
+    </p>
+    <div class="relogio" data-entra="sobe">
+      <h3>As faturas dos fornecedores, contra o relógio</h3>
+      <p>120 faturas por dia, a 3 minutos cada (os minutos são uma estimativa nossa), são 6 horas de
+        trabalho para caber numa hora.</p>
+      <div class="rel-faixa" aria-hidden="true">
+        <div class="rel-eixo"></div>
+        <div class="rel-trab" style="width: 100%"></div>
+        <div class="rel-hora" style="left: 2%"><b>08:00</b>chega o material</div>
+        <div class="rel-hora rel-hora--fim" style="left: 17%"><b>09:00</b>saem as carrinhas</div>
+        <div class="rel-hora" style="left: 96%"><b>14:00</b>última fatura</div>
+      </div>
+      <div class="rel-legenda">
+        <div class="rl-no"><b>6 horas</b>de lançamento à mão, para o que sai numa</div>
+        <div><b>2 pessoas</b>hoje dedicadas a dar entrada às faturas</div>
+        <div class="rl-ok"><b>Só as diferenças</b>com a plataforma: o resto lança-se sozinho, à medida que chega</div>
+      </div>
+      <p class="card__nota">"Ter numa hora a dar cem faturas é completamente impossível a um ser humano." David Gonçalinho, 13 de outubro de 2026.</p>
+    </div>
+
+    <div class="fluxo" id="wpFluxo"></div>
+    <script type="application/json" id="wpFluxo-config">
+    {
+      "stepMs": 1900,
+      "channels": [
+        { "icon": "whatsapp", "label": "WhatsApp" },
+        { "icon": "phone", "label": "Call center" },
+        { "icon": "message", "label": "Email dos fornecedores" }
+      ],
+      "nodes": [
+        { "icon": "message", "title": "Pedido da oficina", "detail": "A Tips for You identifica as peças pela matrícula.", "tone": "brand" },
+        { "icon": "list", "title": "Uma só encomenda", "detail": "Reserva o stock; o que falta vai ao fornecedor que a equipa escolher.", "tone": "teal" },
+        { "icon": "check", "title": "Picking com scanner", "detail": "Cada leitura confere a referência contra a guia.", "tone": "teal" },
+        { "icon": "database", "title": "Fatura do fornecedor", "detail": "Lida do PDF e conferida com o que se encomendou e picou.", "tone": "teal" },
+        { "icon": "send", "title": "Fatura e guia pela Moloni", "detail": "Certificadas pela AT. A carrinha sai.", "tone": "brand" }
+      ],
+      "note": "Cada passo escreve no mesmo sítio. Nada se volta a escrever à mão."
+    }
+    </script>
+  </div>
+</section>
+
+<!-- ============ 4. A PLATAFORMA (peça central) ============ -->
+<section class="section-alt" id="plataforma-sec">
+  <div class="container">
+    <span class="eyebrow">A plataforma</span>
+    <h2>Terça-feira, 08:45, na Wow Parts</h2>
+    <p class="lead">
+      É assim que o software se vê a meio da manhã. Clique à vontade: as vistas funcionam. Três sítios
+      por onde começar:
+    </p>
+    <div class="atalhos">
+      <a href="#plataforma" class="atalho" data-plat="faturas" data-fat="f2"><span>1</span><b>A fatura do óleo que subiu 18%</b><small>Antes de se vender ao preço antigo</small></a>
+      <a href="#plataforma" class="atalho" data-plat="picking"><span>2</span><b>Picar a carrinha 1</b><small>Com o scanner, e uma leitura errada pelo meio</small></a>
+      <a href="#plataforma" class="atalho" data-plat="stock" data-q="AQ-41-PL"><span>3</span><b>Procurar pela matrícula</b><small>As peças do Clio AQ-41-PL e as equivalentes</small></a>
+    </div>
+  </div>
+  <div class="plat-wrap">
+    <div id="plataforma" class="plat" aria-label="Demonstração do software de gestão da Wow Parts"></div>
+  </div>
+  <div class="container">
+    <div class="grid-3 faz">
+      <div class="card" data-entra="sobe">
+        <h3>Uma encomenda, uma vez</h3>
+        <p>A nota do cliente e a do fornecedor nascem juntas. O stock fica reservado no momento, e um
+          pedido que chega depois junta-se à guia que ainda não saiu.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <h3>O stock das duas lojas</h3>
+        <p>Lagos e Boavista dos Pinheiros na mesma vista, com as equivalências entre marcas e as peças
+          que cada matrícula já levou. As transferências entram na rota da carrinha.</p>
+      </div>
+      <div class="card" data-entra="sobe">
+        <h3>Feito para crescer</h3>
+        <p>É software vosso. Uma rota nova, um campo que falta, um relatório: pede-se no grupo de
+          WhatsApp com a nossa equipa, sem esperar dias por um ticket.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. WHATSAPP AO VIVO ============ -->
+<section id="whatsapp">
+  <div class="container">
+    <span class="eyebrow">WhatsApp ao vivo</span>
+    <h2>Do WhatsApp à carrinha, sem voltar a escrever nada</h2>
+    <p class="lead">
+      À esquerda, a conversa no vosso WhatsApp, com a Tips for You a identificar as peças pela
+      matrícula. À direita, o que a plataforma faz com cada mensagem. O último cenário é o que a
+      plataforma não decide sozinha.
+    </p>
+    <div class="cr" id="wpDemo"></div>
+    <script type="application/json" id="wpDemo-config">
+    {
+      "agentName": "Wow Parts",
+      "agentInitials": "WP",
+      "chatStatus": "WhatsApp Business, online",
+      "stepMs": 1450,
+      "endPauseMs": 2800,
+      "scenarios": [
+        {
+          "title": "Pastilhas e discos",
+          "subtitle": "Uma peça em stock, outra do fornecedor. Uma só encomenda.",
+          "chat": [
+            { "sender": "client", "text": "bom dia", "time": "07:41" },
+            { "sender": "client", "text": "AQ-41-PL", "time": "07:41" },
+            { "sender": "client", "text": "pastilhas e discos frente se der para hoje", "time": "07:42", "passo": 1 },
+            { "sender": "agent", "text": "Bom dia! Clio IV 1.5 dCi: pastilhas **TRW** e discos **Brembo**, frente. As pastilhas seguem na carrinha das 9h. Os discos vêm do fornecedor, já lhe confirmo a hora.", "time": "07:43", "passo": 3 },
+            { "sender": "client", "text": "ok obg", "time": "07:44" },
+            { "sender": "system", "text": "Fornecedor dos discos escolhido pela equipa", "time": "07:50", "passo": 5 },
+            { "sender": "agent", "text": "Os discos chegam amanhã às 8h e seguem logo na carrinha das 9h.", "time": "07:51", "passo": 6 }
+          ],
+          "steps": [
+            { "icon": "id", "label": "Recebe da Tips for You as duas referências da matrícula" },
+            { "icon": "database", "label": "Pastilhas PTF-2207: há em Lagos, reserva já" },
+            { "icon": "alert", "label": "Discos DTF-1180: sem stock nas duas lojas" },
+            { "icon": "user-cog", "label": "Pede à equipa para escolher o fornecedor" },
+            { "icon": "list", "label": "Nota do cliente e nota do fornecedor, de uma vez" },
+            { "icon": "check", "label": "A guia GS 2026/4127 entra no scanner da carrinha 1" }
+          ]
+        },
+        {
+          "title": "O pedido que vem depois",
+          "subtitle": "Uma mensagem solta junta-se à guia que ainda não saiu.",
+          "chat": [
+            { "sender": "client", "text": "e mete tb um spray de travoes", "time": "08:21", "passo": 2 },
+            { "sender": "agent", "text": "Feito, vai junto com as pastilhas na carrinha das 9h.", "time": "08:21", "passo": 4 },
+            { "sender": "client", "text": "👍", "time": "08:22" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Mensagem solta, 39 minutos depois da primeira" },
+            { "icon": "search", "label": "Encomenda aberta do mesmo cliente: GS 2026/4127" },
+            { "icon": "clock", "label": "A carrinha 1 ainda não saiu" },
+            { "icon": "check", "label": "Junta o spray à mesma guia, sem abrir outra encomenda" }
+          ]
+        },
+        {
+          "title": "O preço subiu",
+          "subtitle": "A fatura das 08:03 trouxe um custo novo. Não se vende ao preço antigo.",
+          "chat": [
+            { "sender": "client", "text": "quanto fica o oleo 5w30 5L", "time": "10:12", "passo": 1 },
+            { "sender": "system", "text": "Fatura das 08:03: custo do 5W30 subiu 18%", "time": "10:12", "passo": 3 },
+            { "sender": "agent", "text": "Bom dia! Já lhe confirmo o preço do 5W30, é só um momento.", "time": "10:13" },
+            { "sender": "system", "text": "Preço de venda revisto pela equipa", "time": "10:16", "passo": 4 },
+            { "sender": "agent", "text": "Fica a **42,90 €** o bidão de 5 L. Quer que junte à encomenda de amanhã?", "time": "10:17", "passo": 5 },
+            { "sender": "client", "text": "sim junta 2", "time": "10:19" }
+          ],
+          "steps": [
+            { "icon": "message", "label": "Pergunta de preço: OL-5W30-5" },
+            { "icon": "database", "label": "Custo novo na fatura da Ibéria Auto Componentes: 25,25 €" },
+            { "icon": "shield", "label": "Não responde com o preço de ontem" },
+            { "icon": "user-cog", "label": "Avisa a equipa para rever a margem" },
+            { "icon": "send", "label": "Responde com o preço revisto e junta à encomenda" }
+          ]
+        },
+        {
+          "title": "Duas peças possíveis",
+          "subtitle": "A matrícula dá duas versões. A plataforma não escolhe sozinha.",
+          "chat": [
+            { "sender": "client", "text": "kit embraiagem para o 208 92-XT-15", "time": "11:05", "passo": 2 },
+            { "sender": "agent", "text": "Boa tarde! Para esta matrícula há duas caixas de velocidades, com kits diferentes. Consegue enviar-me uma foto do livrete?", "time": "11:06", "passo": 3 },
+            { "sender": "client", "text": "agora nao tenho aqui", "time": "11:09" },
+            { "sender": "agent", "text": "Sem problema. Um colega liga-lhe ainda esta manhã para confirmar e sai na carrinha seguinte.", "time": "11:10", "passo": 5 }
+          ],
+          "steps": [
+            { "icon": "search", "label": "A matrícula 92-XT-15 dá duas versões da caixa" },
+            { "icon": "brain", "label": "Dois kits de embraiagem diferentes" },
+            { "icon": "ban", "label": "Não cria encomenda com uma peça que pode estar errada" },
+            { "icon": "message", "label": "Pede o que distingue as duas: o livrete" },
+            { "icon": "user-cog", "label": "Sem livrete, passa a um colega com o pedido já lido" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <p class="nota-fonte">Clientes, matrículas, referências internas e preços ilustrativos. As respostas são as do vosso WhatsApp (equipa e assistente da Tips for You); o raciocínio à direita é o da plataforma.</p>
+  </div>
+</section>
+
+<!-- ============ 6. FATURAS DE FORNECEDORES ============ -->
+<section class="section-alt" id="faturas">
+  <div class="container">
+    <span class="eyebrow">Faturas de fornecedores</span>
+    <h2>Lançadas à medida que chegam. Só as diferenças vão a uma pessoa.</h2>
+    <p class="lead">
+      Os fornecedores já mandam quase tudo em PDF por email. A plataforma lê cada fatura quando chega,
+      confere-a com o que foi encomendado e picado, atualiza o stock e o preço de custo, e lança. Foi o
+      que o David descreveu: "uma pré-compra que seja só validação".
+    </p>
+    <div class="term" id="wpTermFat"></div>
+    <script type="application/json" id="wpTermFat-config">
+    {
+      "title": "faturas.wowparts.log",
+      "intervalMs": 620,
+      "lines": [
+        { "text": "08:02 Email: FT A/18842, Distribuidora Sul Peças, PDF com 23 linhas", "tone": "info" },
+        { "text": "08:02 23 de 23 linhas batem com a encomenda e com o picado. Lançada", "tone": "success" },
+        { "text": "08:03 FT 2026/30117, Ibéria Auto Componentes: óleo 5W30 a 25,25 € (antes 21,40 €)", "tone": "warn" },
+        { "text": "08:05 FT 04/2291, Lubrificantes do Barlavento: 4 linhas. Lançada", "tone": "success" },
+        { "text": "08:06 FT A/18843: 4 pastilhas faturadas, 3 picadas. Para uma pessoa ver", "tone": "warn" },
+        { "text": "08:07 Referência nova do fornecedor: proposta de correspondência com PTF-2207", "tone": "warn" },
+        { "text": "08:11 FT A/18842 recebida outra vez: duplicada, não entra", "tone": "warn" },
+        { "text": "08:40 118 faturas lidas, 114 lançadas sem ninguém tocar, 4 com diferenças", "tone": "success" }
+      ]
+    }
+    </script>
+    <div class="grid-2 lig-cards">
+      <div class="card card-ok" data-entra="sobe">
+        <h3>Lança sozinha</h3>
+        <ul class="list-check">
+          <li>Faturas em que todas as linhas batem com a encomenda ao fornecedor e com o que foi picado</li>
+          <li>Atualiza o stock das duas lojas e o preço de custo de cada artigo</li>
+          <li>Aprende as referências de cada fornecedor: uma correspondência confirmada uma vez fica para sempre</li>
+        </ul>
+      </div>
+      <div class="card card-av" data-entra="sobe">
+        <h3>Vai para uma pessoa, com o motivo</h3>
+        <ul class="list-check">
+          <li>Um custo que subiu (o mercado anda a subir 15% a 20% de um dia para o outro)</li>
+          <li>Quantidade faturada diferente da picada</li>
+          <li>Referência do fornecedor que ainda não conhece</li>
+          <li>A mesma fatura recebida duas vezes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. LIGAÇÕES ============ -->
+<section id="ligacoes">
+  <div class="container">
+    <span class="eyebrow">Ligações</span>
+    <h2>O que se liga a quê, com franqueza</h2>
+    <p class="lead">
+      A operação e a logística correm na plataforma da Wow Parts. A faturação sai pela Moloni, que
+      cumpre a lei. À volta, as ligações que fazem o resto funcionar sozinho.
+    </p>
+    <div class="lig-cards">
+      <div class="card card-br" data-entra="sobe">
+        <h3>Moloni: a faturação certificada</h3>
+        <p>Faturas, faturas-recibo, notas de crédito e guias de transporte saem pela Moloni, certificada
+          pela AT, que trata também da comunicação. É o que usamos na AI Solutions. A faturação
+          certificada integra-se, não se substitui: a subscrição é paga diretamente à Moloni.</p>
+      </div>
+      <div class="card card-av" data-entra="sobe">
+        <h3>Tips for You: a identificação das peças</h3>
+        <p>A Tips for You identifica as peças pela matrícula. A plataforma recebe esse resultado e cria
+          a encomenda, para não se copiar nada à mão. Ficou do nosso lado analisar a ligação com eles:
+          até lá, a referência entra com um colar.</p>
+        <span class="tag-q">A confirmar com a Tips for You</span>
+      </div>
+      <div class="card card-av" data-entra="sobe">
+        <h3>Fornecedores e Ali Data</h3>
+        <p>Os fornecedores não deixam ligar as bases de dados deles, para não se compararem preços, por
+          isso a escolha do fornecedor fica com a equipa. Com a mudança do vosso fornecedor principal
+          para a Ali Data, vemos que ligação essa mudança permite.</p>
+        <span class="tag-q">Depois da vossa reunião com a Ali Data</span>
+      </div>
+      <div class="card card-br" data-entra="sobe">
+        <h3>Os dados do software atual</h3>
+        <p>Clientes, contas correntes, artigos, equivalências e o histórico das matrículas passam para
+          a plataforma. Precisamos de uma exportação desses dados na primeira semana, e o software atual
+          continua a trabalhar até ao dia da mudança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. CONTINUIDADE ============ -->
+<section class="section-alt" id="continuidade">
+  <div class="container">
+    <span class="eyebrow">Se alguma coisa falhar</span>
+    <h2>Nunca mais um mês sem faturar</h2>
+    <div class="cont-grid">
+      <div class="cont-memo" data-entra="sobe">
+        <h3>O que o David contou</h3>
+        <span class="grande">1 mês</span>
+        <p>sem programa de faturação, depois de um ataque informático ao fornecedor do software, e com
+          tudo dependente de um só técnico. Uma impressora avariada em Odemira chega para atrasar uma
+          carrinha.</p>
+      </div>
+      <div data-entra="sobe">
+        <ul class="list-check">
+          <li><b>A faturação está na Moloni</b>, na cloud, fora da loja, do servidor do software e do nosso.</li>
+          <li><b>A plataforma é alojada na cloud</b>, não num servidor dentro da loja. O plano de cópias de segurança e de recuperação fica escrito na proposta formal.</li>
+          <li><b>Abre-se no browser e no telemóvel</b>, sem Parallels: a guia de separação e a fatura veem-se em qualquer posto.</li>
+          <li><b>Suporte num grupo de WhatsApp</b> com a nossa equipa. Diz-se o que não está bem, e corrige-se.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. LIMITES ============ -->
+<section id="limites">
+  <div class="container">
+    <span class="eyebrow">O que fica com as pessoas</span>
+    <h2>A plataforma faz o que se repete. As decisões são vossas.</h2>
+    <div class="grid-2">
+      <div class="card card-dont" data-entra="sobe">
+        <h3>Fica sempre com uma pessoa</h3>
+        <ul class="list-x">
+          <li>Escolher o fornecedor de cada peça que não há em stock</li>
+          <li>Confirmar a peça quando a matrícula dá duas versões</li>
+          <li>Aceitar um custo novo de um fornecedor, ou reclamar</li>
+          <li>Ligar uma referência nova de um fornecedor pela primeira vez</li>
+          <li>Vender a crédito a uma oficina com valores vencidos</li>
+        </ul>
+      </div>
+      <div class="card card-do" data-entra="sobe">
+        <h3>Como a plataforma se comporta</h3>
+        <ul class="list-check">
+          <li>Nunca lança uma fatura com diferenças sem uma pessoa a ver</li>
+          <li>Não emite documentos fiscais fora da Moloni</li>
+          <li>Avisa antes de se vender a um preço que já não cobre o custo</li>
+          <li>Escreve o motivo de cada exceção</li>
+          <li>Fica tudo no registo de atividade</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FASE SEGUINTE: VOZ ============ -->
+<section class="section-alt" id="voz">
+  <div class="container">
+    <span class="eyebrow">Fase seguinte</span>
+    <h2>O telefone do balcão de Lagos</h2>
+    <div class="voz-grid">
+      <div data-entra="sobe">
+        <p class="lead">
+          No fim da reunião, o David falou das reclamações: dias com cinco ou seis clientes ao balcão, o
+          telefone reencaminhado para o call center, e o cliente a ligar, ligar, ligar. Um agente de voz
+          atende sempre, percebe o que a oficina precisa e passa o pedido à equipa já escrito.
+        </p>
+        <p class="card__nota">Não faz parte desta proposta nem dos valores desta página. A plataforma fica pronta para o receber, e pode experimentar já um agente de voz nosso na página aisolutions.pt/comecar.</p>
+        <p class="card__nota">Também para depois: a loja online para as oficinas pesquisarem e encomendarem sozinhas, ligada ao mesmo stock.</p>
+      </div>
+      <div class="chamada" data-entra="escala" aria-label="Esboço de uma chamada atendida pelo agente de voz">
+        <div class="chamada-cab"><b>Chamada no balcão de Lagos</b><span>atendida às 08:52 · 1 min 40 s</span></div>
+        <div class="onda" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="chamada-it"><b>Mecânica Alvor</b> · Seat Leon AZ-13-GK</div>
+        <div class="chamada-it">Quer uma bateria para hoje. Perguntei se tem start-stop: não tem.</div>
+        <div class="chamada-it">Pedido passado ao call center por WhatsApp, 08:54.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. A CONTA ============ -->
+<section id="valor">
+  <div class="container">
+    <span class="eyebrow">A conta, antes do preço</span>
+    <h2>Quantas horas por dia voltam para a equipa?</h2>
+    <p class="lead">
+      As 100 a 150 faturas por dia são vossas. Os minutos por fatura e a parte que se lança sozinha são
+      estimativas nossas: mexa nos valores.
+    </p>
+    <div class="calc" id="wpRoi"></div>
+    <script type="application/json" id="wpRoi-config">
+    {
+      "inputs": [
+        { "id": "faturas", "label": "Faturas de fornecedores por dia", "min": 60, "max": 200, "step": 5, "default": 120 },
+        { "id": "minutos", "label": "Minutos por fatura, hoje", "min": 1, "max": 6, "step": 0.5, "default": 3, "suffix": " min" },
+        { "id": "pct", "label": "Lançadas sem diferenças", "min": 60, "max": 98, "step": 1, "default": 90, "suffix": "%" }
+      ],
+      "outputs": [
+        { "label": "Horas de lançamento devolvidas, por dia", "expr": "faturas*pct/100*minutos/60", "suffix": " h", "decimals": 1, "highlight": true },
+        { "label": "Por mês, em 22 dias úteis", "expr": "faturas*pct/100*minutos/60*22", "suffix": " h", "decimals": 0 },
+        { "label": "Faturas que ficam para uma pessoa ver, por dia", "expr": "faturas*(100-pct)/100", "suffix": "", "decimals": 0 }
+      ],
+      "note": "Horas que hoje se gastam a dar entrada e que deixam de empurrar a faturação para depois de as carrinhas saírem."
+    }
+    </script>
+  </div>
+</section>
+
+<!-- ============ 12. CASOS ============ -->
+<section class="section-alt" id="caso">
+  <div class="container">
+    <span class="eyebrow">Projetos do mesmo tipo</span>
+    <h2>O que já estamos a construir, noutras empresas</h2>
+    <div class="caso-grid">
+      <div class="caso" data-entra="sobe">
+        <h3>Faturas de fornecedores, direto para o ERP</h3>
+        <p>
+          Uma rede de seis restaurantes com centenas de faturas de fornecedores por mês, validadas à mão
+          entre o email, as pastas partilhadas e o ERP. Estamos a construir o processamento automático
+          das faturas para o ERP, com a comparação entre o preço faturado e o preço acordado e um alerta
+          sempre que não batem certo.
+        </p>
+        <p class="caso__estado">Estado: em desenvolvimento.</p>
+      </div>
+      <div class="caso caso--b" data-entra="sobe">
+        <h3>Um distribuidor com stock e ERP</h3>
+        <p>
+          Um distribuidor português B2B, com vendedores externos e o ERP como fonte de verdade. A
+          plataforma consulta o stock e os preços, prepara a proposta a partir do pedido que chega por
+          email, e o vendedor só valida.
+        </p>
+        <p class="caso__estado">Estado: em implementação, por fases. Por respeito aos contratos, não identificamos os clientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. INVESTIMENTO ============ -->
+<section id="investimento">
+  <div class="container">
+    <span class="eyebrow">Investimento</span>
+    <h2>Três módulos, pagos à medida que entram</h2>
+    <p class="valor-linha" data-entra="sobe">
+      Com 120 faturas por dia a 3 minutos cada, são <b>6 horas</b> de lançamento para caber numa hora.
+      Se 9 em cada 10 se lançarem sozinhas, a equipa fica só com as diferenças e a Wow Parts deixa de
+      faturar em negativo.
+    </p>
+    <div class="precos precos--4">
+      <div class="card price-card holofote" data-entra="sobe">
+        <span class="mod-n">Módulo 1</span>
+        <div class="label">Base de gestão e faturação</div>
+        <div class="price">9.500 € <span class="iva">+ IVA</span></div>
+        <ul>
+          <li>Artigos e stock das duas lojas, com equivalências</li>
+          <li>Clientes, matrículas e contas correntes</li>
+          <li>Faturas e guias de transporte pela Moloni</li>
+          <li>Migração dos dados do software atual</li>
+        </ul>
+      </div>
+      <div class="card price-card holofote" data-entra="sobe">
+        <span class="mod-n">Módulo 2</span>
+        <div class="label">Encomendas e picking</div>
+        <div class="price">7.000 € <span class="iva">+ IVA</span></div>
+        <ul>
+          <li>Encomenda única, a partir da Tips for You</li>
+          <li>Nota ao fornecedor gerada da mesma encomenda</li>
+          <li>Reserva automática de stock e transferências entre lojas</li>
+          <li>Picking com os vossos scanners e as rotas das três carrinhas</li>
+        </ul>
+      </div>
+      <div class="card price-card holofote" data-entra="sobe">
+        <span class="mod-n">Módulo 3</span>
+        <div class="label">Faturas de fornecedores</div>
+        <div class="price">5.500 € <span class="iva">+ IVA</span></div>
+        <ul>
+          <li>Leitura dos PDF que chegam por email</li>
+          <li>Conferência com a encomenda e com o picado</li>
+          <li>Alertas de custo, quantidade, artigo novo e duplicadas</li>
+          <li>Correspondências aprendidas por fornecedor</li>
+        </ul>
+      </div>
+      <div class="card price-card price-card--m holofote" data-entra="sobe">
+        <span class="mod-n">Avença</span>
+        <div class="label">Mensalidade, com tudo a funcionar</div>
+        <div class="price">450 € <span class="iva">+ IVA / mês</span></div>
+        <div class="degraus">
+          <div><span>Com o módulo 1 em produção</span><b>250 €</b></div>
+          <div><span>Com o módulo 2</span><b>350 €</b></div>
+          <div><span>Com o módulo 3</span><b>450 €</b></div>
+        </div>
+        <div class="note">Alojamento, custos de inteligência artificial, manutenção, alterações e a nossa
+          equipa no grupo de WhatsApp da Wow Parts. Sem tickets.</div>
+      </div>
+    </div>
+    <div class="total" data-entra="sobe">
+      <span>Implementação total</span><b>22.000 € + IVA</b>
+      <small>Cada módulo paga-se em duas partes: metade no arranque do módulo, metade na entrega. Não incluído: a subscrição da Moloni (paga à Moloni), eventuais custos da Tips for You pela ligação, o atendimento por voz e a loja online para oficinas.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14. PRAZO ============ -->
+<section class="section-alt" id="prazo">
+  <div class="container">
+    <span class="eyebrow">Prazo</span>
+    <h2>Seis meses, por módulos: tudo a funcionar em abril de 2027</h2>
+    <p class="lead">Cada módulo leva cerca de dois meses e entra em produção antes de começar o seguinte. Os prazos contam a partir da exportação de dados.</p>
+    <ol class="fases fases--3">
+      <li data-entra="sobe"><span class="fases-s">Semanas 1 e 2</span><b>Arranque</b><p>Exportação de dados do software atual, faturas de exemplo dos principais fornecedores, conta na Moloni e a conversa com a Tips for You.</p></li>
+      <li data-entra="sobe"><span class="fases-s">Novembro a janeiro</span><b>Módulo 1</b><p>Base de gestão e faturação. No fim, a migração, e o software atual deixa de ser preciso.</p></li>
+      <li data-entra="sobe"><span class="fases-s">Janeiro a março</span><b>Módulo 2</b><p>Encomendas, picking com os scanners e as rotas das carrinhas.</p></li>
+      <li data-entra="sobe"><span class="fases-s">Março e abril</span><b>Módulo 3</b><p>Faturas de fornecedores: primeiro só a ler e a propor, depois a lançar sozinha quando estiverem satisfeitos.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 15. FECHO ============ -->
+<section class="cta-final" id="avancar">
+  <div class="container center">
+    <h2>Avançamos, David?</h2>
+    <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmação por escrito.</p>
+    <ol class="passos-fecho">
+      <li><span class="n">1</span><b>Diz que sim</b><p>Por WhatsApp, que é por onde fala connosco, com as dúvidas que ainda tenha.</p></li>
+      <li><span class="n">2</span><b>Recebe a proposta formal</b><p>O contrato, com os módulos, os valores e as condições desta página.</p></li>
+      <li><span class="n">3</span><b>Semana 1: os dados</b><p>A exportação do software atual e algumas faturas de fornecedores, para o módulo 1 arrancar.</p></li>
+    </ol>
+    <div class="fecho-acoes">
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%20Wow%20Parts%20e%20quero%20avan%C3%A7ar." class="btn btn-primary premivel" data-iman="0.2" target="_blank" rel="noopener">Quero avançar</a>
+      <a href="https://wa.me/351964251889?text=Ol%C3%A1%20Manuel%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%20Wow%20Parts%20e%20tenho%20uma%20pergunta%3A%20" class="btn btn-ghost" target="_blank" rel="noopener">Tenho uma pergunta</a>
+    </div>
+    <p class="fecho-contacto">
+      Manuel Condeço, AI Solutions<br>
+      <a href="tel:+351964251889">+351 964 251 889</a> ou <a href="mailto:manuel.condeco@aisolutions.pt">manuel.condeco@aisolutions.pt</a>
+    </p>
+  </div>
+</section>
+
+<footer class="ais-footer">
+  <div class="container">
+    Preparado por <a href="https://aisolutions.pt">AI Solutions</a> para a Wow Parts
+    <span class="disclaimer">Números da operação (encomendas por WhatsApp, faturas por dia, referências, carrinhas e quilómetros) ditos pelo David Gonçalinho a 13 e 20 de outubro de 2026. Clientes, matrículas, fornecedores, referências internas, faturas e preços da demonstração são ilustrativos.</span>
+  </div>
+</footer>
+
+<script src="../shared/motion/lib/gsap.min.js"></script>
+<script src="../shared/motion/lib/ScrollTrigger.min.js"></script>
+<script src="../shared/motion/lib/SplitText.min.js"></script>
+<script src="../shared/motion/lib/CustomEase.min.js"></script>
+<script src="../shared/motion/motion.js"></script>
+<script src="../shared/js/protect.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="../shared/deck/deck.js"></script>
+<script src="assets/js/plataforma.js"></script>
+<script>
+  chatRaciocinio('wpDemo');
+  fluxo('wpFluxo');
+  terminal('wpTermFat');
+  calculadora('wpRoi');
+</script>
+</body>
+</html>

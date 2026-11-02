@@ -1,0 +1,74 @@
+/* ============================================================
+   TOKENS: Wow Parts (claro, a pedido do Manuel)
+   Sem site nem logótipo da lead: paleta do nicho das peças auto.
+   Laranja de sinal (o das luzes de aviso e das caixas de peças)
+   sobre grafite de oficina.
+   ============================================================ */
+:root {
+  /* Marca: laranja queimado, sólido para botões e texto (AA com branco) */
+  --brand-hsl: 18 88% 40%;
+  /* Acento: o laranja vivo, para glows, barras e pormenores */
+  --accent-hsl: 26 96% 52%;
+  /* Terceira voz, para o gradiente do texto */
+  --brand2-hsl: 6 78% 44%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(var(--brand-hsl));
+
+  /* Grafite de oficina: títulos, barra lateral da plataforma */
+  --grafite-hsl: 220 14% 16%;
+  --grafite: hsl(var(--grafite-hsl));
+  --grafite-2: hsl(220 12% 22%);
+  --grafite-3: hsl(220 10% 29%);
+  --aco: hsl(220 6% 52%);
+
+  --acento-texto: hsl(17 86% 33%);
+  --ok-texto: hsl(152 62% 28%);
+  --av-texto: hsl(32 90% 31%);
+  --no-texto: hsl(355 65% 42%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(30 30% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(30 25% 98%);
+  --border: hsl(25 14% 88%);
+
+  --text: hsl(220 22% 13%);
+  --muted: hsl(220 9% 40%);
+
+  --success-hsl: 152 60% 38%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 50%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 95% 52%;  --warning: hsl(var(--warning-hsl));
+
+  /* Matrícula: a placa portuguesa (banda azul da UE, caracteres pretos) */
+  --placa-azul: hsl(222 90% 34%);
+  --placa-fundo: hsl(0 0% 100%);
+  --placa-amarelo: hsl(50 100% 55%);
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.10), transparent 62%);
+  --grad-text: linear-gradient(120deg, hsl(var(--accent-hsl)), hsl(var(--brand2-hsl)));
+  --grad-cta: linear-gradient(170deg, hsl(30 40% 97%), hsl(var(--accent-hsl) / 0.10));
+
+  --shadow-sm: 0 1px 3px hsl(var(--grafite-hsl) / 0.08);
+  --shadow-md: 0 10px 30px hsl(var(--grafite-hsl) / 0.09);
+  --shadow-lg: 0 24px 60px hsl(var(--grafite-hsl) / 0.16);
+
+  --radius: 12px;
+  --radius-lg: 20px;
+  --font-display: 'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --container: 1140px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
+
+/* Chat (padrão da casa) */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 92%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
