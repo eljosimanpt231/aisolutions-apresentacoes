@@ -1,0 +1,444 @@
+{
+  "site": "https://www.biomex.pt/pt/",
+  "dominio": "biomex.pt",
+  "titulo": "Limpeza e Tratamento de Sofás, Alcatifas, Estofos, Tapetes e Cortinados » Biomex®",
+  "descricao": "Empresa de limpeza de sofás, alcatifas, estofos, tapetes e cortinados ao domicílio em Portugal. Impermeabilização, remoção de odores e proteção anti-nódoas.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.svg",
+    "origem": "img",
+    "src": "https://www.biomex.pt/imgs/elem/logo.svg",
+    "porque": [
+      "diz logo",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome",
+      "transparente ou vectorial"
+    ],
+    "analise": {
+      "largura": 238,
+      "altura": 150,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "clara",
+      "coresTinta": [
+        {
+          "rgb": [
+            128,
+            192,
+            224
+          ],
+          "parte": 33
+        },
+        {
+          "rgb": [
+            0,
+            160,
+            128
+          ],
+          "parte": 32
+        },
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 29
+        },
+        {
+          "rgb": [
+            160,
+            224,
+            224
+          ],
+          "parte": 1
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://www.biomex.pt/imgs/elem/logo2.svg",
+      "pontos": 12,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "tem o nome",
+        "transparente ou vectorial"
+      ],
+      "analise": {
+        "largura": 249,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              192,
+              224
+            ],
+            "parte": 41
+          },
+          {
+            "rgb": [
+              0,
+              160,
+              128
+            ],
+            "parte": 40
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 15
+          },
+          {
+            "rgb": [
+              160,
+              224,
+              224
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.biomex.pt/imgs/elem/telefonista.png",
+      "pontos": 4,
+      "motivos": [
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 1050,
+        "altura": 702,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 34
+          },
+          {
+            "rgb": [
+              0,
+              160,
+              128
+            ],
+            "parte": 19
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              128
+            ],
+            "parte": 3
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.biomex.pt/whatsapp.png",
+      "pontos": 3,
+      "motivos": [
+        "diz logo",
+        "tem o nome",
+        "parece ícone"
+      ],
+      "analise": {
+        "largura": 480,
+        "altura": 480,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              192,
+              128
+            ],
+            "parte": 84
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              32,
+              160,
+              128
+            ],
+            "parte": 1
+          },
+          {
+            "rgb": [
+              192,
+              224,
+              224
+            ],
+            "parte": 0
+          }
+        ]
+      }
+    },
+    {
+      "origem": "svg",
+      "src": "(SVG em linha)",
+      "pontos": 2,
+      "motivos": [],
+      "analise": {
+        "largura": 238,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              128,
+              192,
+              224
+            ],
+            "parte": 33
+          },
+          {
+            "rgb": [
+              0,
+              160,
+              128
+            ],
+            "parte": 32
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 29
+          },
+          {
+            "rgb": [
+              160,
+              224,
+              224
+            ],
+            "parte": 1
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.biomex.pt/imgs/homepage/fill.gif",
+      "pontos": 0,
+      "motivos": [
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 130,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "vazia",
+        "coresTinta": []
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.biomex.pt/imgs/servicos/fill3.gif",
+      "pontos": -2,
+      "motivos": [
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 963,
+        "altura": 420,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "vazia",
+        "coresTinta": []
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://www.biomex.pt/imgs/banners/031450_1_5159_banner-site-desktop-PT.jpg"
+  },
+  "paleta": [
+    {
+      "hex": "#00b085",
+      "hsl": "165 100% 35%",
+      "peso": 1072032,
+      "onde": [
+        "botões",
+        "fundos",
+        "texto",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#80c0e0",
+      "hsl": "200 61% 69%",
+      "peso": 39600,
+      "onde": [
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#a0e0e0",
+      "hsl": "180 51% 75%",
+      "peso": 1200,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "165 100% 35%",
+    "--accent-hsl": "200 61% 69%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "Gotham",
+    "corpo": "Gotham",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "Ligue já (+351) 219 616 534",
+      "Quem Somos",
+      "Limpeza Profunda",
+      "Impermeabilização",
+      "Tratamentos",
+      "Remoção de Odores",
+      "Contactos",
+      "Blog",
+      "Estofos e Sofás em Tecido",
+      "Estofos e Sofás em Pele",
+      "Camas",
+      "Cadeiras",
+      "Poltronas",
+      "Alcatifas",
+      "Tapetes",
+      "Cortinados e Estores",
+      "Colchões",
+      "Sofás",
+      "Ver todos",
+      "Tecidos",
+      "Pele",
+      "Sofás",
+      "Cadeiras",
+      "Colchões",
+      "Ver todos",
+      "Anti-Ácaro",
+      "Anti-Bacteriano",
+      "Anti-Pulga",
+      "Anti-Fogo",
+      "Ver todos",
+      "Remoção de Odores",
+      "Ver todos",
+      "Ver produtos",
+      "Ir para o carrinho de compras - 0,00€",
+      "(+351) 219 616 534",
+      "info@biomex.pt",
+      "Português",
+      "Inglês",
+      "Español",
+      "Limpeza Profunda",
+      "Estofos e Sofás em Tecido",
+      "Estofos e Sofás em Pele",
+      "Camas",
+      "Cadeiras",
+      "Poltronas",
+      "Alcatifas",
+      "Tapetes",
+      "Cortinados e Estores",
+      "Colchões",
+      "Sofás",
+      "Ver todos",
+      "Impermeabilização",
+      "Tecidos",
+      "Pele",
+      "Sofás",
+      "Cadeiras",
+      "Colchões",
+      "Ver todos",
+      "Tratamentos",
+      "Anti-Ácaro",
+      "Anti-Bacteriano",
+      "Anti-Pulga",
+      "Anti-Fogo",
+      "Ver todos",
+      "Remoção de Odores",
+      "Quem Somos",
+      "Contactos",
+      "Blog",
+      "Pagamentos",
+      "Recrutamento",
+      "Perguntas Frequentes",
+      "Política de Privacidade",
+      "Política de Cookies",
+      "Termos e condições",
+      "RAL e RLL"
+    ],
+    "titulos": [
+      "Carrinho de compras",
+      "Dê uma nova vida aos seus espaços",
+      "Dê uma nova vida aos seus espaços",
+      "Não mude de sofá, FAÇA UMA LIMPEZA",
+      "Não mude de sofá, FAÇA UMA LIMPEZA",
+      "Limpeza, proteção e reparação",
+      "Limpeza, proteção e reparação",
+      "Dos seus sofás, cadeiras, e todo o tipo de mobiliário estofado",
+      "Dos seus sofás, cadeiras, e todo o tipo de mobiliário estofado",
+      "Impermeabilize hoje",
+      "Impermeabilize hoje",
+      "Proteja para sempre",
+      "Proteja para sempre",
+      "Como remover as manchas mais difíceis?",
+      "Como remover as manchas mais difíceis?",
+      "Utilização de fórmulas hipoalergénicas, não nocivas e biodegradáveis",
+      "Utilização de fórmulas hipoalergénicas, não nocivas e biodegradáveis",
+      "Seja um embaixador Biomex"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": [
+    "Logótipo claro e transparente: pensado para fundo escuro. Em fundo claro precisa de pastilha escura."
+  ]
+}
