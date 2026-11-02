@@ -1,0 +1,476 @@
+{
+  "site": "https://www.depilconcept.pt/",
+  "dominio": "depilconcept.pt",
+  "titulo": "Início - DepilConcept",
+  "descricao": "Especialistas em depilação permanente. Mais de 45 clínicas em todo o país. Única com certificado de garantia. Métodos IPL e Laser Diodo. Avaliação gratuita.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://www.depilconcept.pt/wp-content/uploads/2026/01/DClogotipocores.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 666,
+      "altura": 323,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "média",
+      "coresTinta": [
+        {
+          "rgb": [
+            0,
+            160,
+            192
+          ],
+          "parte": 73
+        },
+        {
+          "rgb": [
+            128,
+            96,
+            96
+          ],
+          "parte": 27
+        },
+        {
+          "rgb": [
+            128,
+            128,
+            96
+          ],
+          "parte": 0
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://cdn-cookieyes.com/assets/images/revisit.svg",
+      "pontos": 11,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda",
+        "transparente ou vectorial"
+      ],
+      "analise": {
+        "largura": 36,
+        "altura": 36,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.depilconcept.pt/wp-content/uploads/2016/07/depil_site_material_quadrado.png",
+      "pontos": 11,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 376,
+        "altura": 376,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 23
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              160
+            ],
+            "parte": 16
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              192
+            ],
+            "parte": 11
+          },
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 9
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.depilconcept.pt/wp-content/uploads/2016/07/cera-2.png",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 375,
+        "altura": 375,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              256,
+              256,
+              256
+            ],
+            "parte": 34
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              160
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              128
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              256,
+              192,
+              192
+            ],
+            "parte": 8
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.depilconcept.pt/wp-content/uploads/2016/07/linha2.png",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 375,
+        "altura": 375,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 26
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              128
+            ],
+            "parte": 15
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              128
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              160
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.depilconcept.pt/wp-content/uploads/2016/07/depil_site_material1-1.png",
+      "pontos": 10,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "tem o nome"
+      ],
+      "analise": {
+        "largura": 373,
+        "altura": 373,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "clara",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 50
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              96
+            ],
+            "parte": 11
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              128
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              256
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.depilconcept.pt/wp-content/uploads/2024/03/Banner_FotoDepilacao_ELA.jpg",
+      "pontos": 7,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "à esquerda",
+        "tem o nome",
+        "parece foto"
+      ],
+      "analise": {
+        "largura": 1000,
+        "altura": 375,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 33
+          },
+          {
+            "rgb": [
+              192,
+              192,
+              192
+            ],
+            "parte": 22
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              96
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              128
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#43a9c7",
+      "hsl": "194 54% 52%",
+      "peso": 435155,
+      "onde": [
+        "botões",
+        "texto",
+        "variáveis do tema",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#f4524d",
+      "hsl": "2 88% 63%",
+      "peso": 90000,
+      "onde": [
+        "botões"
+      ]
+    },
+    {
+      "hex": "#1a73e8",
+      "hsl": "214 82% 51%",
+      "peso": 90000,
+      "onde": [
+        "variáveis do tema"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "194 54% 52%",
+    "--accent-hsl": "2 88% 63%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--wpex-accent",
+      "#1a73e8"
+    ],
+    [
+      "--wpex-accent-alt",
+      "#1464cc"
+    ],
+    [
+      "--wpex-on-accent",
+      "var(--wpex-white)"
+    ],
+    [
+      "--wpex-on-accent-alt",
+      "var(--wpex-white)"
+    ],
+    [
+      "--wpex-border-main",
+      "var(--wpex-surface-3)"
+    ],
+    [
+      "--wpex-primary-sidebar-width",
+      "min(300px, 30%)"
+    ],
+    [
+      "--wpex-primary-bottom-space",
+      "40px"
+    ],
+    [
+      "--wpex-primary-sidebar-width",
+      "26%"
+    ],
+    [
+      "--wpex-main-nav-link-line-height",
+      "normal"
+    ],
+    [
+      "--wpex-accent",
+      "#43a9c7"
+    ],
+    [
+      "--wpex-accent-alt",
+      "#43a9c7"
+    ],
+    [
+      "--wpex-border-main",
+      "#d3d3d3"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Coda",
+    "corpo": "system-ui",
+    "google": [
+      "https://fonts.googleapis.com/css?family=Open+Sans:italic00,200,300,400,500,600,700,800,900,italic100,italic200,italic300,italic400,italic500,italic600,italic700,italic800,italic900%7CCoda%7CRoboto:400&subset=latin&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "Início",
+      "Sobre Nós",
+      "A DepilConcept",
+      "Trabalhe Connosco",
+      "Acesso Franchisados/Gerentes",
+      "Laser e Fotodepilação",
+      "Para Ela",
+      "Laser Díodo",
+      "Luz Pulsada Mulher",
+      "Laser Ultrawave",
+      "Para Ele",
+      "Laser Díodo",
+      "Luz Pulsada Homem",
+      "Laser Ultrawave",
+      "Outros Tratamentos",
+      "Fototerapias Rosto",
+      "Fototerapias Corpo",
+      "Depilação com Cera",
+      "Depilação com Linha",
+      "Permanente e Pintura de Pestanas",
+      "Produtos",
+      "Linha de Corpo",
+      "Linha de Rosto",
+      "Notícias",
+      "Contactos",
+      "Clínicas",
+      "Protocolos c\\ Empresas",
+      "Search",
+      "Open mobile menuClose mobile menu"
+    ],
+    "titulos": [
+      "FOTODEPILAÇÃO",
+      "PARA ELA",
+      "PARA ELE",
+      "OUTROS TRATAMENTOS",
+      "NOTÍCIAS"
+    ],
+    "tratamento": "tu"
+  },
+  "avisos": []
+}
