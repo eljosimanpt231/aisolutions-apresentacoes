@@ -49,6 +49,15 @@
 - Nenhum valor de outros clientes; o caso Isabel Pedroso entra pelo caso público, com uma métrica não financeira
 - Valores da concorrência (ditos pelo Nuno) ficam fora da página
 
+## Atualização depois do follow-up (2/11/2026)
+- Técnicos sem zonas fixas (o Nuno corrigiu): a marcação usa a proximidade ao serviço anterior do técnico nesse dia
+- Entraram: chamadas de confirmação, anulações com reaproveitamento da vaga, lista de pedidos para uma pessoa,
+  recontactos combinados, campanhas à base de clientes do Artsoft, assinatura do cliente no tablet, parceiros com os
+  seus serviços e os códigos de agente e vendedor, agendas de Portugal e de Espanha, utilizadores sem limite
+- Fora (fase seguinte): faturação no local; gestão da produção no armazém; app e marcação online
+- Calculadora com os números da reunião: 10 perdidas por dia, 45%, 95 €, 22 dias (cerca de 9.400 €)
+- Pagamento 50% na assinatura e 50% no início dos testes; decisão na reunião de 26/11 às 14:00
+
 ## Pontos a validar
 - O que a API do Artsoft permite (criar clientes, criar e fechar ordens de trabalho), com o parceiro Artsoft
 - Mensalidade de alojamento da plataforma: não definida, não aparece

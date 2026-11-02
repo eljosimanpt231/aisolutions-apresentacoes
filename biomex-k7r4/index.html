@@ -90,7 +90,7 @@
             <span class="eh-k">Marcado pelo agente</span>
             <ol class="eh-linhas">
               <li><code>Serviço</code><span>Sofá 3 lugares + tapete</span><b>2h</b></li>
-              <li><code>Zona</code><span>2775 Carcavelos, Cascais</span><b>Oeste</b></li>
+              <li><code>Local</code><span>2775 Carcavelos</span><b>Perto</b></li>
               <li><code>Técnico</code><span>Rui, quinta 5/11</span><b>10:00</b></li>
               <li><code>Artsoft</code><span>Cliente e ordem de trabalho</span><b>OT 0457</b></li>
             </ol>
@@ -108,7 +108,7 @@
         </svg>
         <ol class="rota-paragens">
           <li class="p-1"><b>21:14</b>Chamada</li>
-          <li class="p-2"><b>Agenda</b>Técnico da zona</li>
+          <li class="p-2"><b>Agenda</b>Técnico mais perto</li>
           <li class="p-3"><b>Artsoft</b>Ordem de trabalho</li>
           <li class="p-4"><b>Tablet</b>Do técnico</li>
           <li class="p-5"><b>Concluído</b>No local</li>
@@ -225,11 +225,11 @@
           <div class="ag-scroll" tabindex="0" aria-label="Agenda de quinta por técnico">
             <div class="ag">
               <div class="ag-h ag-h--vazio"></div>
-              <div class="ag-h"><b>Rui</b><small>Oeste · Cascais, Oeiras</small></div>
-              <div class="ag-h"><b>Paulo</b><small>Lisboa · centro</small></div>
-              <div class="ag-h"><b>Tiago</b><small>Lisboa · norte</small></div>
-              <div class="ag-h"><b>Hugo</b><small>Setúbal · Almada</small></div>
-              <div class="ag-h"><b>André</b><small>Centro · Coimbra</small></div>
+              <div class="ag-h"><b>Rui</b><small>Neste dia: Cascais, Oeiras</small></div>
+              <div class="ag-h"><b>Paulo</b><small>Neste dia: Lisboa</small></div>
+              <div class="ag-h"><b>Tiago</b><small>Neste dia: Lisboa</small></div>
+              <div class="ag-h"><b>Hugo</b><small>Neste dia: Almada, Setúbal</small></div>
+              <div class="ag-h"><b>André</b><small>Neste dia: Coimbra</small></div>
 
               <span class="ag-hora" style="grid-row:2">09:00</span>
               <span class="ag-hora" style="grid-row:4">10:00</span>
@@ -342,11 +342,12 @@
               <p class="hoje"><b>Hoje</b>O telefone já não atende, ou está em espera. A cliente desliga e liga a outra empresa.</p>
               <p class="agente"><b>Com a plataforma</b>O agente de voz atende, percebe o serviço (sofá de 3 lugares e um tapete)
                 e pede o código postal.</p></li>
-            <li data-passo="2" data-tab="agenda"><span class="qt-h"><time>21:16</time> A vaga certa, na zona certa</span>
+            <li data-passo="2" data-tab="agenda"><span class="qt-h"><time>21:16</time> A vaga certa, no técnico mais perto</span>
               <p class="hoje"><b>Hoje</b>Alguém procura no Outlook quando há um carro em Carcavelos e quanto tempo dura o
                 serviço.</p>
-              <p class="agente"><b>Com a plataforma</b>O agente vê a agenda do técnico da zona pelo código postal e pela
-                duração, respeita as regras de deslocação, e propõe quinta às 10:00. A cliente aceita.</p></li>
+              <p class="agente"><b>Com a plataforma</b>Os técnicos não têm zonas fixas: o agente procura quem já tem um
+                serviço perto nesse dia, ou um dia livre, pela duração e pelas regras de deslocação. O Rui está em Cascais na
+                quinta: propõe quinta às 10:00, e a cliente aceita.</p></li>
             <li data-passo="3" data-tab="ot"><span class="qt-h"><time>21:17</time> No Artsoft, sem ninguém escrever</span>
               <p class="hoje"><b>Hoje</b>No dia seguinte, alguém cria o cliente e a ordem de trabalho no Artsoft, à mão.</p>
               <p class="agente"><b>Com a plataforma</b>O cliente e a ordem de trabalho ficam criados no Artsoft, o serviço
@@ -358,16 +359,17 @@
                 mudar no escritório aparece logo.</p></li>
             <li data-passo="5" data-tab="tecnico"><span class="qt-h"><time>11:52</time> Concluído em casa da cliente</span>
               <p class="hoje"><b>Hoje</b>A ordem de trabalho fecha-se quando o papel chega ao escritório.</p>
-              <p class="agente"><b>Com a plataforma</b>O Rui conclui no tablet. O escritório sabe nesse minuto, a ordem de
-                trabalho fecha no Artsoft e os documentos seguem.</p></li>
+              <p class="agente"><b>Com a plataforma</b>O Rui vê a ordem de trabalho e o que tem de levar, a cliente assina
+                no tablet e o Rui conclui. O escritório sabe nesse minuto e a ordem de trabalho é atualizada no Artsoft.</p></li>
             <li data-passo="6" data-tab="agenda"><span class="qt-h"><time>Empresas</time> 600 m² de alcatifa</span>
               <p class="hoje"><b>Hoje</b>Juntar três técnicos e desbloquear a agenda de cada um, no Outlook.</p>
               <p class="agente"><b>Com a plataforma</b>Os trabalhos de empresa continuam com o vosso comercial: a equipa
                 bloqueia a manhã do Paulo, do Tiago e do Hugo num só passo, e os agentes já não marcam por cima.</p></li>
             <li data-passo="7" data-tab="parceiros"><span class="qt-h"><time>Parceiros</time> Um pedido da Casa Linho</span>
               <p class="hoje"><b>Hoje</b>O parceiro manda o contacto, e a equipa liga ao cliente, uma, duas, três vezes.</p>
-              <p class="agente"><b>Com a plataforma</b>O parceiro põe o pedido na área dele. O agente de voz liga ao cliente
-                até marcar, e o parceiro acompanha o estado sem telefonar. O serviço fica associado a ele.</p></li>
+              <p class="agente"><b>Com a plataforma</b>O parceiro põe o pedido na área dele e vê todos os que já enviou. O
+                agente de voz liga ao cliente até marcar, respeitando a data de entrega do sofá, e o serviço fica com os
+                códigos de agente e de vendedor do Artsoft, para as comissões.</p></li>
           </ol>
           <div class="qt-controlos">
             <button type="button" class="qt-ant" aria-label="Passo anterior">Anterior</button>
@@ -376,29 +378,31 @@
           </div>
         </div>
       </div>
-      <p class="doc-nota">Os clientes, os técnicos, as zonas, o parceiro e os números de ordem de trabalho são exemplos. A
+      <p class="doc-nota">Os clientes, os técnicos, os locais, o parceiro e os números de ordem de trabalho são exemplos. A
         agenda, as regras de deslocação e os campos seguem o que nos contaram, e afinam-se convosco.</p>
 
       <div class="recebe">
         <div data-entra="sobe">
           <h3>Feita à medida da Biomex, não uma aplicação de prateleira</h3>
           <p class="recebe-intro">Pediu uma agenda com o aspeto a que a equipa está habituada, como a do Outlook, e que
-            tudo o resto fosse por trás. É isso que construímos, a partir da forma como trabalham hoje.</p>
+            tudo o resto fosse por trás. É isso que construímos, com o que nos disse nas duas reuniões.</p>
           <ul class="lista lista-sim">
             <li>Agentes e equipa marcam no mesmo calendário, sem sobreposições</li>
-            <li>Técnicos por zona, códigos postais, duração de cada serviço e regras de deslocação</li>
+            <li>Duração de cada serviço, proximidade ao serviço anterior do técnico e regras de deslocação</li>
             <li>Trabalhos de empresa: bloqueio manual e vários técnicos no mesmo serviço</li>
             <li>Cliente e ordem de trabalho no Artsoft, pela API</li>
-            <li>Tablet do técnico: agenda do dia e conclusão do serviço no local</li>
-            <li>Área de parceiros: decoradores, arquitetos e lojas pedem e acompanham</li>
-            <li>Pronta para Espanha: país, zonas e técnicos de cada lado</li>
+            <li>Tablet do técnico: agenda do dia, ordem de trabalho, assinatura do cliente e conclusão no local</li>
+            <li>Confirmações e anulações: o agente liga a confirmar e tenta preencher as vagas que ficam</li>
+            <li>Uma lista dos pedidos que precisam de uma pessoa, com o nível de urgência</li>
+            <li>Área de parceiros: pedem, acompanham todos os seus serviços e ficam com os códigos para as comissões</li>
+            <li>Portugal e Espanha: uma agenda para cada país, utilizadores sem limite e sem licenças por utilizador</li>
           </ul>
         </div>
         <aside class="plat-artsoft" data-entra="sobe">
           <span class="ot-k">Sobre o Artsoft</span>
           <h3>A ligação faz-se pelas APIs que já existem.</h3>
           <p>Hoje o Artsoft já fala com o programa de faturação e com os stocks da aviação. Na primeira fase confirmamos com
-            o vosso parceiro Artsoft o que a API deixa fazer: criar clientes, criar e fechar ordens de trabalho. É a primeira
+            o vosso parceiro Artsoft o que a API deixa fazer: criar clientes, criar e fechar ordens de trabalho, guardar a assinatura do cliente. É a primeira
             coisa que validamos, antes de qualquer desenvolvimento.</p>
           <p>E se um dia fizer sentido deixar o Artsoft, a plataforma fica: muda-se a ligação, não a forma de trabalhar.</p>
         </aside>
@@ -417,14 +421,14 @@
       <div class="cr holofote" data-entra="escala" id="bxDemo"></div>
       <p class="so-leitor">
         Simulação de quatro situações. Na primeira, uma cliente liga às 21:14 para limpar um sofá e um tapete: o agente de
-        voz pede o código postal, encontra uma vaga com o técnico da zona e marca, com o cliente e a ordem de trabalho
+        voz pede o código postal, encontra uma vaga com o técnico que está mais perto e marca, com o cliente e a ordem de trabalho
         criados no Artsoft. Na segunda, alguém pergunta pelo Facebook quanto custa limpar um sofá: o agente de texto pede o
         número de lugares, o tecido e uma fotografia, dá o valor da tabela e marca. Na terceira, o agente de voz liga a uma
         cliente de um parceiro, que não pode no primeiro dia proposto, e marca outro. Na quarta, uma empresa pede a limpeza
         de 1.000 metros quadrados de alcatifa: o agente não marca, recolhe os dados e passa ao comercial.
       </p>
       <p class="doc-nota">Conversas, clientes, nomes e horas inventados. Os agentes usam a vossa tabela de preços, os
-        tempos de cada serviço, as zonas dos técnicos e a agenda da plataforma.</p>
+        tempos de cada serviço, as regras de deslocação e a agenda da plataforma.</p>
 
       <aside class="ouvir" data-entra="sobe">
         <span class="ouvir-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
@@ -462,7 +466,7 @@
         "steps": [
           { "icon": "phone", "label": "Atende fora de horas, sem fila de espera" },
           { "icon": "list", "label": "Serviço: sofá de 3 lugares em tecido e tapete" },
-          { "icon": "globe", "label": "Código postal 2775: zona do Rui" },
+          { "icon": "globe", "label": "Código postal 2775: o Rui está em Cascais na quinta" },
           { "icon": "clock", "label": "Duração da tabela: 2 horas. Procura vagas na agenda" },
           { "icon": "calendar", "label": "Marca quinta às 10:00 na plataforma" },
           { "icon": "database", "label": "Cria o cliente e a ordem de trabalho no Artsoft" }
@@ -490,7 +494,7 @@
           { "icon": "search", "label": "Faz as perguntas que a receção faria" },
           { "icon": "check", "label": "Lugares, tecido e fotografia: serviço identificado" },
           { "icon": "book", "label": "Dá o valor da vossa tabela, sem inventar" },
-          { "icon": "calendar", "label": "Propõe vagas do técnico da zona do Porto" },
+          { "icon": "calendar", "label": "Propõe vagas de um técnico perto, no Porto" },
           { "icon": "database", "label": "Marca e regista no Artsoft" }
         ]
       },
@@ -557,6 +561,7 @@
           <ul class="lista lista-sim">
             <li>Atende as chamadas a qualquer hora, várias ao mesmo tempo</li>
             <li>Liga aos clientes dos parceiros e volta a ligar quando não atendem</li>
+            <li>Liga a confirmar marcações e a quem pediu para ser contactado mais tarde</li>
             <li>Dá os preços da tabela e marca na plataforma</li>
             <li>Passa a uma pessoa quem o pede, ou o que não deve resolver sozinho</li>
           </ul>
@@ -587,11 +592,11 @@
     "nodes": [
       { "icon": "ear", "title": "Atende", "detail": "Voz ou texto, a qualquer hora, sem espera.", "tone": "brand" },
       { "icon": "search", "title": "Qualifica", "detail": "Serviço, tamanho, tecido, código postal.", "tone": "teal" },
-      { "icon": "calendar", "title": "Marca", "detail": "Técnico da zona, duração da tabela.", "tone": "teal" },
+      { "icon": "calendar", "title": "Marca", "detail": "Técnico mais perto, duração da tabela.", "tone": "teal" },
       { "icon": "database", "title": "Artsoft", "detail": "Cliente e ordem de trabalho, pela API.", "tone": "teal" },
       { "icon": "wrench", "title": "Técnico", "detail": "No tablet. Conclui no local.", "tone": "brand" }
     ],
-    "note": "O Artsoft e o programa de faturação ficam como estão. Os trabalhos de empresa continuam com o vosso comercial."
+    "note": "O programa de faturação fica como está, nesta fase. Os trabalhos de empresa continuam com o vosso comercial."
   }
   </script>
 
@@ -627,10 +632,12 @@
           <ul>
             <li>Atender chamadas e mensagens, a qualquer hora</li>
             <li>Dar os preços e os tempos da tabela</li>
-            <li>Marcar no técnico da zona, pela duração do serviço</li>
+            <li>Marcar no técnico mais perto, pela duração do serviço</li>
             <li>Criar o cliente e a ordem de trabalho no Artsoft</li>
             <li>Ligar aos clientes dos parceiros até marcar</li>
-            <li>Enviar a confirmação ao cliente</li>
+            <li>Enviar a confirmação ao cliente e ligar a confirmar</li>
+            <li>Tentar preencher as vagas das anulações</li>
+            <li>Campanhas à vossa base de clientes do Artsoft, por chamada ou WhatsApp</li>
           </ul>
         </article>
         <article class="pergunta">
@@ -669,11 +676,11 @@
       <details class="detalhe" data-entra="sobe">
         <summary>O que falámos e fica de fora, ou para depois</summary>
         <ul>
-          <li>A área da aviação (as peças com etiqueta e o registo de cada tarefa) é outro projeto, que podemos ver à parte.</li>
-          <li>A fatura continua a sair como hoje, do Artsoft para o vosso programa de faturação. Automatizar a fatura ao
-            fechar a ordem de trabalho é possível numa segunda fase.</li>
-          <li>A reativação da vossa base de clientes por WhatsApp é possível com a API oficial da Meta, com o custo das
-            mensagens à parte (ver o investimento).</li>
+          <li>A gestão da produção no armazém (tapetes a lavar e a secar, capas da aviação, etiquetas e registo do operador)
+            é outro projeto, que podemos ver à parte.</li>
+          <li>A fatura continua a sair como hoje. Emitir a fatura no local, com o NIF do cliente no tablet, é uma fase
+            seguinte: primeiro analisamos a viabilidade com o vosso parceiro Artsoft, como combinámos.</li>
+          <li>A aplicação para clientes e a marcação online no site ficam para mais à frente.</li>
           <li>Trocar o Artsoft por um sistema à medida é outra conversa. A plataforma fica preparada para isso.</li>
         </ul>
       </details>
@@ -688,9 +695,9 @@
 
       <div class="valor">
         <div data-entra="sobe">
-          <p class="ancora">Cada chamada perdida é um serviço de 70 ou 80 euros que vai para outra empresa, e cada vaga por
-            preencher é um técnico que amanhã não fatura. <b>Quanto custa isto por mês?</b> Mexa nos pressupostos: são os
-            vossos números que contam.</p>
+          <p class="ancora">Cada chamada perdida pode ser um serviço de 90 ou 100 euros que vai para outra empresa, e cada
+            vaga por preencher é um técnico que amanhã não fatura. <b>Na reunião de 2 de novembro, a conta deu cerca de
+            9.400&nbsp;€ por mês.</b> Mexa nos pressupostos: são os vossos números que contam.</p>
           <blockquote class="objetivo"><p>A gente só fatura quando faz o serviço.</p>
             <cite>Na reunião de 29 de outubro.</cite></blockquote>
         </div>
@@ -700,15 +707,15 @@
       {
         "inputs": [
           { "id": "perd", "label": "Chamadas perdidas por dia", "min": 2, "max": 40, "default": 10 },
-          { "id": "conv", "label": "Das perdidas, quantas seriam serviço", "min": 10, "max": 80, "default": 40, "suffix": "%" },
-          { "id": "valor", "label": "Valor médio de um serviço", "min": 50, "max": 150, "default": 75, "suffix": " €" },
+          { "id": "conv", "label": "Das perdidas, quantas seriam serviço", "min": 10, "max": 80, "default": 45, "suffix": "%" },
+          { "id": "valor", "label": "Valor médio de um serviço", "min": 50, "max": 150, "default": 95, "suffix": " €" },
           { "id": "dias", "label": "Dias de atendimento por mês", "min": 20, "max": 26, "default": 22 }
         ],
         "outputs": [
           { "label": "Serviços que ficam por marcar, por mês", "expr": "perd*conv/100*dias", "suffix": "", "decimals": 0 },
           { "label": "Faturação que fica na mesa, por mês", "expr": "perd*conv/100*dias*valor", "suffix": " €", "decimals": 0, "highlight": true }
         ],
-        "note": "Estimativa. Os 70 a 80 euros por serviço foram ditos na reunião; as chamadas perdidas por dia e a conversão são pressupostos nossos, para ajustar com os dados da central telefónica."
+        "note": "Os números da reunião de 2 de novembro: entre 6 e 10 chamadas perdidas por dia (a sua estimativa; usámos 10), 45% de fecho e 95 euros por serviço. A central telefónica dá o número exato."
       }
       </script>
 
@@ -721,17 +728,19 @@
           <tr>
             <th scope="row">
               Plataforma de agendamentos à medida
-              <small>A agenda única para equipa e agentes, com técnicos por zona, códigos postais, durações e regras de
-                deslocação; os trabalhos de empresa com bloqueio e vários técnicos; a ligação ao Artsoft (clientes e ordens de
-                trabalho); o tablet do técnico com a conclusão no local; a área de parceiros; preparada para Espanha.</small>
+              <small>A agenda única para equipa e agentes, com as durações, a proximidade e as regras de
+                deslocação; as confirmações, as anulações e a lista de pedidos para uma pessoa; os trabalhos de empresa com bloqueio e vários técnicos; a ligação ao Artsoft (clientes e ordens de
+                trabalho); o tablet do técnico com a assinatura e a conclusão no local; a área de parceiros, com os códigos para as
+                comissões; as agendas de Portugal e de Espanha.</small>
             </th>
             <td class="num">11.000&nbsp;€</td>
           </tr>
           <tr>
             <th scope="row">
               Agente de voz
-              <small>Chamadas recebidas e chamadas para os clientes dos parceiros, com a vossa tabela de preços, as durações
-                e a marcação na plataforma. Treinado com as vossas chamadas reais.</small>
+              <small>Chamadas recebidas e feitas: aos clientes dos parceiros, a confirmar marcações, a quem pediu para ser
+                contactado mais tarde e as campanhas à vossa base de clientes, com a vossa tabela e a marcação na plataforma.
+                Treinado com as vossas chamadas reais.</small>
             </th>
             <td class="num">6.700&nbsp;€</td>
           </tr>
@@ -768,8 +777,9 @@
           </tr>
           <tr>
             <th scope="row">
-              Agente de texto
-              <small>Os custos de inteligência artificial das conversas, a manutenção e os ajustes.</small>
+              Agente de texto e plataforma
+              <small>Todas as mensagens, os custos de inteligência artificial das conversas, a manutenção e os ajustes, e a
+                manutenção da plataforma de agendamentos.</small>
             </th>
             <td class="num">350&nbsp;€ <i>/ mês</i></td>
           </tr>
@@ -778,7 +788,8 @@
           <tr class="total"><th scope="row">Total mensal sem IVA</th><td class="num">1.950,00&nbsp;€</td></tr>
         </tfoot>
       </table>
-      <p class="retorno" data-entra="sobe">Com IVA, as mensalidades ficam em <b>2.398,50&nbsp;€</b> por mês e só começam
+      <p class="retorno" data-entra="sobe">A implementação paga-se em duas partes: metade na assinatura e metade no início
+        dos testes. Com IVA, as mensalidades ficam em <b>2.398,50&nbsp;€</b> por mês e só começam
         quando os agentes entram em produção. Valores sem IVA em destaque. Exemplo do pacote: com 9.000 minutos num mês,
         os 1.000 minutos a mais ficam em 150&nbsp;€.</p>
 
@@ -789,7 +800,7 @@
             <li>Duas semanas nos vossos canais e nas vossas chamadas, para os agentes falarem como a Biomex</li>
             <li>A ligação ao Artsoft, com o vosso parceiro Artsoft</li>
             <li>A plataforma de agendamentos, o tablet do técnico e a área de parceiros</li>
-            <li>Os dois agentes, com a vossa tabela, os tempos e as zonas</li>
+            <li>Os dois agentes, com a vossa tabela, os tempos e as regras de marcação</li>
             <li>Testes com a vossa equipa a fazer de cliente, até estarem satisfeitos</li>
           </ul>
         </div>
@@ -797,16 +808,18 @@
           <h3>As mensalidades incluem</h3>
           <ul>
             <li>Os custos de inteligência artificial e de telefone dos agentes</li>
-            <li>Manutenção, ajustes e melhorias quando muda a tabela, os serviços ou as zonas</li>
+            <li>Manutenção, ajustes e melhorias quando muda a tabela, os serviços ou as regras</li>
+            <li>Utilizadores sem limite, sem licenças por utilizador</li>
             <li>Uma pessoa da nossa equipa que conhece a Biomex</li>
             <li>Do vosso lado, só o feedback nas primeiras semanas</li>
+            <li>Se o volume crescer muito, por exemplo com Espanha, revemos a mensalidade convosco</li>
           </ul>
         </div>
       </div>
 
       <aside class="meta-custo" data-entra="sobe">
         <h3>E as mensagens de marketing no WhatsApp?</h3>
-        <p>Se quiserem reativar a vossa base de clientes antigos pelo WhatsApp oficial, cada mensagem de marketing custa
+        <p>Nas campanhas à vossa base de clientes antigos pelo WhatsApp oficial, cada mensagem de marketing custa
           cerca de 0,05&nbsp;€, cobrados diretamente pela Meta na vossa conta. Esse custo é da Meta, não é nosso. Quando é o
           cliente a escrever, a resposta não tem esse custo.</p>
       </aside>
@@ -828,7 +841,7 @@
         <li>
           <span class="quando">Bloco 1</span>
           <span class="o-que">Plataforma e agente de texto</span>
-          <p>A agenda com técnicos, zonas e durações, ligada ao Artsoft, e o agente de texto a marcar nela.</p>
+          <p>A agenda com técnicos, durações e regras de deslocação, ligada ao Artsoft, e o agente de texto a marcar nela.</p>
         </li>
         <li>
           <span class="quando">Bloco 2</span>
@@ -843,11 +856,11 @@
         <li>
           <span class="quando">Depois</span>
           <span class="o-que">Em produção, e Espanha</span>
-          <p>Portugal primeiro. Espanha entra com as zonas e os técnicos de lá, na mesma plataforma.</p>
+          <p>Portugal primeiro. Espanha entra com os técnicos, o WhatsApp e o email de lá, na mesma plataforma.</p>
         </li>
       </ol>
-      <p class="doc-nota">O calendário fecha-se na adjudicação, a pensar em ter tudo a funcionar antes do próximo verão,
-        como nos disse. O ritmo das semanas 1 e 2 depende sobretudo do acesso à API do Artsoft.</p>
+      <p class="doc-nota">Prazo estimado de dois a três meses a contar do arranque e dos acessos, a pensar em ter tudo a
+        funcionar antes do próximo verão. O ritmo das semanas 1 e 2 depende sobretudo do acesso à API do Artsoft.</p>
     </div>
   </section>
 
@@ -858,7 +871,7 @@
         <div>
           <p class="rubrica"><span>8</span> Próximos passos</p>
           <h2 data-entra="sobe">Avançamos, <span class="g-brilho">Nuno?</span></h2>
-          <p class="lead">Três passos até à primeira semana de trabalho. Nada arranca sem confirmar por escrito.</p>
+          <p class="lead">Três passos até à primeira semana de trabalho. A decisão é sua, e qualquer uma está bem.</p>
         </div>
         <figure class="fecho-cartao" data-entra="escala" data-inclina="4" aria-label="Exemplo de um dia com a plataforma: chamadas atendidas, serviços marcados pelos agentes e os 17 técnicos com agenda para amanhã.">
           <span class="fc-hora">19:00</span>
@@ -875,13 +888,15 @@
       <ol class="passos-fecho" data-entra="sobe">
         <li>
           <span class="n">1</span>
-          <b>O seu sim</b>
-          <p>Por WhatsApp ou por email, com as dúvidas que ainda tenha. Respondemos a todas.</p>
+          <b>Até 26 de novembro: testar e comparar</b>
+          <p>Experimentar os nossos agentes ao telefone e por mensagem, falar com o parceiro Artsoft sobre a API e a
+            assinatura no tablet, e confirmar com o operador quantas chamadas a central atende ao mesmo tempo. As dúvidas
+            que surgirem, por WhatsApp ou por email.</p>
         </li>
         <li>
           <span class="n">2</span>
-          <b>A proposta formal</b>
-          <p>O âmbito, os valores e as condições desta página, para assinar.</p>
+          <b>26 de novembro, 14:00: a decisão</b>
+          <p>A proposta que lhe enviámos por email tem o âmbito, os valores e as condições desta página, para assinar.</p>
         </li>
         <li>
           <span class="n">3</span>
