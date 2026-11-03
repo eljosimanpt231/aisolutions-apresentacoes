@@ -1,0 +1,419 @@
+{
+  "site": "https://www.vaseguros.com/",
+  "dominio": "vaseguros.com",
+  "titulo": "VA Seguros - Nº1 Allianz",
+  "descricao": "Proteção total para o que mais importa. Seguros automóvel, saúde, vida e habitação com as melhores coberturas.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://www.vaseguros.com/assets/logo-full-KOijMhL4.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 1217,
+      "altura": 244,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "média",
+      "coresTinta": [
+        {
+          "rgb": [
+            256,
+            256,
+            256
+          ],
+          "parte": 47
+        },
+        {
+          "rgb": [
+            192,
+            32,
+            32
+          ],
+          "parte": 30
+        },
+        {
+          "rgb": [
+            64,
+            128,
+            192
+          ],
+          "parte": 23
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "https://www.vaseguros.com/assets/allianz-BxukQ8-8.png",
+      "pontos": 4,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "parece foto"
+      ],
+      "analise": {
+        "largura": 2560,
+        "altura": 1147,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.vaseguros.com/assets/generali-CZldXxx2.png",
+      "pontos": 4,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "parece foto"
+      ],
+      "analise": {
+        "largura": 2560,
+        "altura": 1147,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.vaseguros.com/assets/ageas-5q3B7COn.jpg",
+      "pontos": 4,
+      "motivos": [
+        "diz logo",
+        "à esquerda",
+        "parece foto"
+      ],
+      "analise": {
+        "largura": 2560,
+        "altura": 1147,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 39
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              96
+            ],
+            "parte": 12
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 9
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.vaseguros.com/assets/zurich-Cyb-e1pg.png",
+      "pontos": 3,
+      "motivos": [
+        "diz logo",
+        "parece foto"
+      ],
+      "analise": {
+        "largura": 2560,
+        "altura": 1147,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "parte": 100
+          }
+        ]
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.vaseguros.com/assets/metlife-b9wfWC9V.png",
+      "pontos": 3,
+      "motivos": [
+        "diz logo",
+        "parece foto"
+      ],
+      "analise": {
+        "largura": 2560,
+        "altura": 1147,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 52
+          },
+          {
+            "rgb": [
+              0,
+              160,
+              224
+            ],
+            "parte": 18
+          },
+          {
+            "rgb": [
+              160,
+              192,
+              64
+            ],
+            "parte": 17
+          },
+          {
+            "rgb": [
+              0,
+              96,
+              160
+            ],
+            "parte": 9
+          }
+        ]
+      }
+    },
+    {
+      "origem": "ícone",
+      "src": "https://www.vaseguros.com/icon.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 32,
+        "altura": 32,
+        "fundo": "branco",
+        "fundoRgb": [
+          255,
+          255,
+          255
+        ],
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              224,
+              0,
+              0
+            ],
+            "parte": 24
+          },
+          {
+            "rgb": [
+              224,
+              32,
+              32
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 6
+          },
+          {
+            "rgb": [
+              96,
+              128,
+              160
+            ],
+            "parte": 6
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": {
+    "ficheiro": "foto-hero.jpg",
+    "src": "https://www.vaseguros.com/assets/hero-bg-qC9eTKag.jpg"
+  },
+  "paleta": [
+    {
+      "hex": "#163969",
+      "hsl": "215 65% 25%",
+      "peso": 105000,
+      "onde": [
+        "fundos",
+        "texto"
+      ]
+    },
+    {
+      "hex": "#c02020",
+      "hsl": "0 71% 44%",
+      "peso": 36000,
+      "onde": [
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#4080c0",
+      "hsl": "210 50% 50%",
+      "peso": 27600,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "215 65% 25%",
+    "--accent-hsl": "0 71% 44%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [
+    [
+      "--primary",
+      "266 4% 20.8%"
+    ],
+    [
+      "--primary-foreground",
+      "248 .3% 98.4%"
+    ],
+    [
+      "--secondary",
+      "248 .7% 96.8%"
+    ],
+    [
+      "--secondary-foreground",
+      "266 4% 20.8%"
+    ],
+    [
+      "--accent",
+      "248 .7% 96.8%"
+    ],
+    [
+      "--accent-foreground",
+      "266 4% 20.8%"
+    ],
+    [
+      "--gradient-accent",
+      "linear-gradient(135deg, hsl(355 75% 48%) 0%, hsl(355 65% 55%) 100%)"
+    ],
+    [
+      "--shadow-accent",
+      "0 4px 20px hsl(355 75% 48% / .35)"
+    ],
+    [
+      "--sidebar-primary",
+      "266 4% 20.8%"
+    ],
+    [
+      "--sidebar-primary-foreground",
+      "248 .3% 98.4%"
+    ],
+    [
+      "--sidebar-accent",
+      "248 .7% 96.8%"
+    ],
+    [
+      "--sidebar-accent-foreground",
+      "266 4% 20.8%"
+    ]
+  ],
+  "fontes": {
+    "titulos": "Plus Jakarta Sans",
+    "corpo": "Plus Jakarta Sans",
+    "google": []
+  },
+  "vocabulario": {
+    "menu": [
+      "Serviços",
+      "Simulador",
+      "Testemunhos",
+      "FAQ",
+      "Documentos",
+      "Contactos",
+      "232 469 824",
+      "Pedir Simulação"
+    ],
+    "titulos": [
+      "Proteger o que é importante para si",
+      "Soluções de seguros à sua medida",
+      "Seguro Automóvel",
+      "Seguro de Saúde",
+      "Seguro de Vida",
+      "Seguro de Habitação",
+      "Nossos Parceiros",
+      "Peça a sua simulação",
+      "Tipo de Seguro",
+      "O que dizem os nossos clientes",
+      "Tem alguma dúvida?",
+      "Como escolher o melhor seguro?",
+      "Quanto tempo demora a ativação do seguro?",
+      "Posso cancelar o meu seguro a qualquer momento?",
+      "Como proceder em caso de sinistro?",
+      "Os meus dados pessoais estão protegidos?",
+      "Existem descontos para famílias ou empresas?",
+      "Documentos Importantes"
+    ],
+    "tratamento": "você/formal"
+  },
+  "avisos": []
+}
