@@ -152,7 +152,17 @@
       return h;
     }
 
-    function render() { root.innerHTML = sidebar() + list() + view() + (st.panel ? panel() : ""); }
+    function render() {
+      root.innerHTML = sidebar() + list() + view() + (st.panel ? panel() : "");
+      /* como no canónico: a conversa abre na última mensagem */
+      var th = root.querySelector(".ub-thread"); if (th) th.scrollTop = th.scrollHeight;
+    }
+
+    /* Scroll interno só depois do primeiro clique (ver o fim do unibox.css):
+       percorrer a página por cima da caixa nunca prende a roda do rato. */
+    root.addEventListener("pointerdown", function () { root.classList.add("ub-ativa"); });
+    root.addEventListener("mouseleave", function () { root.classList.remove("ub-ativa"); });
+    document.addEventListener("pointerdown", function (e) { if (!root.contains(e.target)) root.classList.remove("ub-ativa"); });
 
     root.addEventListener("click", function (e) {
       var el = e.target.closest("[data-act]"); if (!el || !root.contains(el)) return;

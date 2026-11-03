@@ -72,3 +72,16 @@
 - O Primavera não tem integração nossa em produção (cérebro, `11-dossiers-softwares-prateleira.md`): o acesso à API
   confirma-se com o parceiro Primavera deles. Validar com o Josias antes de fechar
 - Custo Meta dos avisos aos distribuidores fora da janela de 24h: à parte, dito na página
+
+## Iteração de 03/11/2026 (depois do follow-up)
+- Logística corrigida pela Carmen: compras de Lisboa até às 22h, armazéns de Setúbal e Beja, central em Évora, 6 rotas da
+  zona de Évora (Montemor, Moura, Elvas, Alcácer...). A rota do cabeçalho, o quadro e os exemplos passaram a Montemor,
+  Moura e Elvas
+- Secção nova "4. A caixa da equipa": Unibox (incluída na proposta, decisão do Manuel), 7 conversas, painel do contacto
+  com atributos e 6 notas. Prazo saiu da barra (7 entradas + Avançar)
+- Laranja: o agente vê as últimas faturas (é o que a Carmen faz de manhã) e confirma com o cliente
+- Investimento: 5.850 € (2 × 2.925 €) e 270 €/mês até 12/11, depois 6.500 € e 300 €; mensagens de WhatsApp incluídas
+  na mensalidade (dito pelo Manuel na reunião); calculadora com 70 encomendas/dia × 5 min (140 h/mês)
+- Prazo: 2 semanas de auditoria, 2 de desenvolvimento, testes a partir da semana 5
+- Correção partilhada na mesma data: shared/unibox tinha o scroll interno cortado (overflow-y: hidden desde a 33c70ef);
+  passa a ter scroll depois do primeiro clique dentro da caixa

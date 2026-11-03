@@ -289,6 +289,23 @@
    ============================================================ */
 .ub-nav, .ub-items, .ub-thread, .ub-panel-body { overflow-y: hidden; }
 
+/* ...mas a maqueta tem de funcionar como o produto (03/11/2026, Manuel: "não dá
+   para dar scroll nas notas do cliente"). A partir do primeiro clique dentro da
+   Unibox, a lista, a conversa, o menu e o painel do contacto ganham scroll, como
+   no componente canónico; ao sair com o rato (ou tocar fora, no telemóvel) volta
+   a ser a página a mandar. Quem só percorre a apresentação nunca fica preso. */
+.unibox.ub-ativa .ub-nav,
+.unibox.ub-ativa .ub-items,
+.unibox.ub-ativa .ub-thread,
+.unibox.ub-ativa .ub-panel-body { overflow-y: auto; scrollbar-width: thin; }
+.unibox::after {
+  content: "Clique para explorar"; position: absolute; left: 50%; bottom: 14px; z-index: 30;
+  transform: translateX(-50%); padding: 4px 10px; border-radius: 999px;
+  font-size: 11px; font-weight: 500; background: rgba(0, 0, 0, 0.72); color: #fff;
+  opacity: 0; transition: opacity 0.2s; pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) { .unibox:not(.ub-ativa):hover::after { opacity: 1; } }
+
 /* ============================================================
    Variante clara (opt-in): <div class="unibox unibox--claro">
    Fundo branco, como uma caixa de entrada de trabalho de dia.

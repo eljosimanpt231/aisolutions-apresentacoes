@@ -102,7 +102,7 @@
       conhecido: { nome: 'Restaurante O Lagar', num: '+351 9•• ••• 214, no Primavera', av: 'OL',
                    como: 'Pelo número de telefone, no Primavera', novo: false },
       novo:      { nome: '+351 9•• ••• 587', num: 'Número que não está no Primavera', av: '?',
-                   como: 'Pelo nome: «do lagar». Confirmou com a cozinheira: O Lagar, em Beja', novo: true }
+                   como: 'Pelo nome: «do lagar». Confirmou com a cozinheira: O Lagar, em Moura', novo: true }
     };
     const LAR = {
       sumo: { cod: 'FR-LAR-SUM', art: 'Laranja de sumo' },
@@ -112,8 +112,8 @@
     function textoFim() {
       const q = quem.find(b => b.getAttribute('aria-pressed') === 'true').dataset.quem;
       fim.textContent = q === 'novo'
-        ? '4 artigos, 1 dúvida resolvida e um número novo guardado. Pronta para a folha de Beja.'
-        : '4 artigos, 1 dúvida resolvida com o cliente. Pronta para a folha de Beja.';
+        ? '4 artigos, 1 dúvida resolvida e um número novo guardado. Pronta para a folha de Moura.'
+        : '4 artigos, 1 dúvida resolvida com o cliente. Pronta para a folha de Moura.';
     }
 
     function escolheQuem(k) {

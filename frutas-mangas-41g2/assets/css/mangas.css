@@ -660,3 +660,16 @@ code { font-family: var(--font-mono); }
   .leit-linhas li.lido { animation: cartao-entra 420ms cubic-bezier(.22,1,.36,1) both; }
   .leit-cliente dd.muda { animation: cartao-entra 420ms cubic-bezier(.22,1,.36,1) both; }
 }
+
+/* ---------- 4. A caixa da equipa (Unibox, incluída na proposta) ---------- */
+#caixa .unibox { margin-top: var(--s-6); box-shadow: var(--luz-manga), var(--e3); }
+.caixa-pontos { margin-top: var(--s-5); display: grid; gap: var(--s-2) var(--s-5);
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); }
+
+/* ---------- Investimento: o valor sem desconto, riscado por baixo ---------- */
+.fatura td.num .antes {
+  display: block; margin-top: 4px; font: 400 var(--fs--1) var(--font-mono); color: var(--faint);
+  text-decoration: line-through; text-decoration-color: var(--tomate-texto);
+}
+#fmInbox { font-family: var(--font-body); }
+#fmInbox .ub-row.out .ub-bubble-time { color: rgba(29, 20, 5, 0.78); }
