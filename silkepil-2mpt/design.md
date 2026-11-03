@@ -7,8 +7,9 @@
   3/11/2026 às 12:00, proposta comercial
 - **Fontes:** transcrição Gemini da discovery de 28/10 (`trabalho/tmp/silkepil-gemini.txt`, sem Yappr), email de resumo de
   28/10, email de nutrição agendado para 30/10, página oferta.depilconcept.pt/azeitao (ofertas, avaliação gratuita, morada)
-- **Investimento (decidido pelo Manuel a 2/11):** implementação 3.400 € + IVA, mensalidade 220 € + IVA, sem fidelização,
-  as duas clínicas (referência dada na reunião: 3.000 a 4.000 € e 200 a 250 €/mês)
+- **Investimento (follow-up de 3/11):** agente 3.400 € + reativação 600 € com desconto de 300 € até 13/11 = 3.700 € + IVA
+  (4.000 € + IVA depois de 13/11); mensalidade 220 € + IVA, duas clínicas, sem fidelização. Mensagens da reativação: custo
+  Meta dito pelo Manuel (0,05 € por conversa iniciada, 0,01 € por mensagem seguinte)
 - **Âmbito (decidido pelo Manuel a 2/11):** qualificação, conversa até à marcação, marcação da avaliação gratuita E
   confirmação/remarcação/lembrete até à avaliação (as faltas foram a 2.ª prioridade do Rui). Acompanhamento em lote e
   reativação da base de 5,5 anos aparecem em "Depois disto", sem preço
@@ -62,8 +63,20 @@
 - Valores das propostas concorrentes que o Rui referiu ficam fora
 
 ## Pontos a validar
-- Nome/localização da 2.ª clínica (a página diz "2.ª clínica")
-- Qual das clínicas tem 200 leads/mês e qual tem 33% vs 60% de marcação (a página não as emparelha)
-- Taxa de faltas real (o Rui disse "num é 50 e no outro é inferior a 50", ambíguo): a calculadora usa 50% como pressuposto
+- Qual clínica tem 46% e qual tem 33% de conversão, e o ticket de cada uma (não emparelhados)
+- Custo das mensagens Meta da reativação (valores ditos na reunião, a confirmar com o Josias)
 - Tratamento das leads por tu (o do site DepilConcept) ou por você: a página diz que é o que a clínica escolher
 - O vídeo de testemunho: existe? Se não, a segunda tentativa leva outra peça
+
+## Atualização de 3/11/2026 (depois do follow-up, transcrição Yappr em trabalho/clientes/silkepil/transcricao-2026-11-03.md)
+- Números certos: Azeitão ~90 leads/mês, marcação ~50% (61% no trimestre), comparência ~65%; Rio Tinto ~180 (218 no
+  trimestre com 90 de um festival), marcação 33%, comparência ~55%; conversão 46% e 33%; ticket 450 € e 550 €; avaliações
+  a 6,3 dias em média; hoje só uma mensagem na véspera
+- Âmbito: reativação dos últimos meses entra; a consultora liga sempre a confirmar (preferência do Rui); o agente marca a
+  chamada e avisa a hora quando a lead prefere telefone (5.º cenário); nunca preços antes da avaliação (política da marca);
+  nutrição entre marcação e avaliação; mensagem pós-avaliação
+- Secção nova 4 «A gestão das leads»: janela clara com Hoje, Leads (fases por cores, tentativas, próxima ação, interesse,
+  origem, filtro por clínica), Ficha da lead (histórico linha a linha, procedimento, próxima ação, resumo do agente) e O mês
+  (funil real por clínica). Responde ao «o que faria disto um 10» e ao Notion recusado (estrutura protegida). Feita sem os
+  prints da folha de Azeitão, a pedido do Manuel
+- «Tudo ligado» saiu da barra (7 entradas + Avançar)

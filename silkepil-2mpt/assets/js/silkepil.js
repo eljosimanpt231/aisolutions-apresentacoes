@@ -91,3 +91,29 @@
     }
   })();
 })();
+
+/* ============================================================
+   A GESTÃO DAS LEADS: separadores, filtro por clínica e o botão
+   «Abrir ficha». Sem JS, o separador Hoje fica à vista e os
+   outros estão escritos no HTML.
+   ============================================================ */
+(function () {
+  'use strict';
+  const root = document.getElementById('seLeads');
+  if (!root) return;
+  const tabs = [...root.querySelectorAll('[data-gl-tab]')];
+  const panes = [...root.querySelectorAll('[data-gl-pane]')];
+  function abre(t) {
+    tabs.forEach(b => b.setAttribute('aria-selected', String(b.dataset.glTab === t)));
+    panes.forEach(p => { p.hidden = p.dataset.glPane !== t; p.classList.add('mexeu'); });
+  }
+  tabs.forEach(b => b.addEventListener('click', () => abre(b.dataset.glTab)));
+  root.querySelectorAll('[data-gl-abrir]').forEach(b => b.addEventListener('click', () => abre('ficha')));
+  const filtros = [...root.querySelectorAll('[data-gl-filtro]')];
+  const linhas = [...root.querySelectorAll('.gl-tab tbody tr')];
+  filtros.forEach(b => b.addEventListener('click', () => {
+    const f = b.dataset.glFiltro;
+    filtros.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    linhas.forEach(tr => { tr.hidden = f !== 'todas' && tr.dataset.clinica !== f; });
+  }));
+})();
