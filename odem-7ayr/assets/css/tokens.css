@@ -1,0 +1,70 @@
+/* ============================================================
+   TOKENS: Odem (claro, a pedido do Manuel)
+   O vermelho e o verde das duas riscas do logótipo, sobre branco,
+   com o cinzento de betão como tinta.
+   ============================================================ */
+:root {
+  /* Marca: o vermelho do logótipo (#c02020). Passa AA com texto branco (5,9:1) */
+  --brand-hsl: 0 71% 44%;
+  /* Acento: o verde da segunda risca (#20a040), para glows, estados e pormenores */
+  --accent-hsl: 135 67% 38%;
+  /* Terceira voz, para o gradiente do texto (vermelho mais quente) */
+  --brand2-hsl: 12 82% 48%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(var(--brand-hsl));
+
+  /* Betão: a tinta dos títulos e a barra lateral da plataforma */
+  --grafite-hsl: 215 14% 16%;
+  --grafite: hsl(var(--grafite-hsl));
+  --grafite-2: hsl(215 12% 22%);
+  --grafite-3: hsl(215 10% 29%);
+  --aco: hsl(215 8% 52%);
+
+  /* Texto em cor: o vermelho um pouco mais fechado, para fundos claros */
+  --acento-texto: hsl(0 70% 38%);
+  --verde-texto: hsl(135 62% 25%);
+  --ok-texto: hsl(140 60% 24%);
+  --av-texto: hsl(32 90% 30%);
+  --no-texto: hsl(350 70% 38%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(210 16% 97%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(210 14% 98%);
+  --border: hsl(214 14% 88%);
+
+  --text: hsl(215 22% 13%);
+  --muted: hsl(215 9% 38%);
+
+  --success-hsl: 135 58% 38%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 350 72% 48%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 95% 52%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.08), transparent 62%);
+  --grad-text: linear-gradient(115deg, hsl(var(--brand-hsl)), hsl(var(--brand2-hsl)) 55%, hsl(var(--brand-hsl)));
+  --grad-cta: linear-gradient(170deg, hsl(210 20% 98%), hsl(var(--brand-hsl) / 0.06));
+
+  --shadow-sm: 0 1px 3px hsl(var(--grafite-hsl) / 0.08);
+  --shadow-md: 0 10px 30px hsl(var(--grafite-hsl) / 0.09);
+  --shadow-lg: 0 24px 60px hsl(var(--grafite-hsl) / 0.16);
+
+  --radius: 12px;
+  --radius-lg: 18px;
+  --font-display: 'Cabin', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --container: 1140px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
+
+/* Chat (padrão da casa) */
+:root {
+  --wa-green: hsl(165 49% 30%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 92%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}
