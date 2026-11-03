@@ -93,7 +93,7 @@
         '<div class="app-bar"><i></i><i></i><i></i><span class="app-url">orcamentos.odem.pt</span><span class="app-demo">demonstração</span></div>' +
         '<div class="app-body">' +
           '<aside class="app-side">' +
-            '<div class="app-marca"><span class="app-logo"><img src="assets/img/marca/logo.png" alt="Odem" width="88" height="17"></span><small>Orçamentos</small></div>' +
+            '<div class="app-marca"><span class="app-logo"><img src="assets/img/logo-odem.png" alt="Odem" width="88" height="17"></span><small>Orçamentos</small></div>' +
             '<nav class="app-nav" aria-label="Plataforma"></nav>' +
             '<button class="app-nav-it app-lock" data-lock type="button">' + ic('lock') + '<span>Prescrição</span><em>fase 2</em></button>' +
             '<div class="app-agente"><span class="dot-live"></span><span>Agentes ativos<small>formulários, email e WhatsApp</small></span></div>' +
@@ -365,7 +365,7 @@
   }
   function documento(p, K) {
     var c = K.c, h = '<div class="pdf" aria-label="Pré-visualização do orçamento"><div class="pdf-folha">' +
-      '<div class="pdf-cab"><img src="assets/img/marca/logo.png" alt="Odem" width="150" height="29"><div><b>Orçamento ' + esc(p.orc) + '</b><span>4 de novembro de 2026 · válido 15 dias</span></div></div>' +
+      '<div class="pdf-cab"><img src="assets/img/logo-odem.png" alt="Odem" width="150" height="29"><div><b>Orçamento ' + esc(p.orc) + '</b><span>4 de novembro de 2026 · válido 15 dias</span></div></div>' +
       '<div class="pdf-cli"><span>Cliente</span><b>' + esc(c.nome) + '</b><small>' + esc(c.pessoa) + ' · ' + esc(c.local) + '</small></div>' +
       '<table class="pdf-t"><thead><tr><th>Referência</th><th>Descrição</th><th>Qtd.</th><th>Preço</th><th>Total</th></tr></thead><tbody>';
     linhasDe(p).forEach(function (l) {
