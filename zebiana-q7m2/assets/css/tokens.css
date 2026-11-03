@@ -1,0 +1,73 @@
+/* ============================================================
+   TOKENS: Zebiana (claro, a pedido do Manuel: "fundo em branco")
+   Cores do logótipo "ZEBIANA mobiliário": o azul (#729ad3) e o
+   ardósia arroxeado das letras (#606080 / #404060). A madeira da
+   fotografia do site (nogueira) é a segunda voz: mobiliário.
+   ============================================================ */
+:root {
+  /* Marca: o azul do logótipo escurecido para botões e texto (AA com branco) */
+  --brand-hsl: 216 52% 40%;
+  /* Acento: o azul tal como está no logótipo, para glows, barras e pormenores */
+  --accent-hsl: 215 64% 62%;
+  /* Segunda voz: nogueira, para o gradiente do texto e as peças */
+  --brand2-hsl: 28 42% 42%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --madeira: hsl(var(--brand2-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(var(--brand-hsl));
+
+  /* O ardósia das letras do logótipo, levado a tinta */
+  --grafite-hsl: 248 20% 22%;
+  --grafite: hsl(var(--grafite-hsl));
+  --grafite-2: hsl(248 16% 28%);
+  --grafite-3: hsl(248 12% 36%);
+  --aco: hsl(240 8% 56%);
+
+  --acento-texto: hsl(216 58% 35%);
+  --madeira-texto: hsl(28 55% 29%);
+  --ok-texto: hsl(152 62% 26%);
+  --av-texto: hsl(32 90% 30%);
+  --no-texto: hsl(355 65% 40%);
+  --ok: hsl(152 55% 38%);
+  --warn: hsl(32 90% 46%);
+
+  --bg: hsl(0 0% 100%);
+  --bg-soft: hsl(220 30% 97.6%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(220 26% 98.3%);
+  --border: hsl(225 16% 88%);
+
+  --text: hsl(248 18% 13%);
+  --muted: hsl(240 7% 37%);
+
+  --success-hsl: 152 60% 36%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 355 72% 48%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 38 95% 50%;  --warning: hsl(var(--warning-hsl));
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--accent-hsl) / 0.09), transparent 62%);
+  --grad-text: linear-gradient(115deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)) 55%, hsl(var(--brand2-hsl)));
+  --grad-cta: linear-gradient(170deg, hsl(220 34% 97%), hsl(var(--accent-hsl) / 0.10));
+
+  --shadow-sm: 0 1px 3px hsl(var(--grafite-hsl) / 0.08);
+  --shadow-md: 0 10px 30px hsl(var(--grafite-hsl) / 0.09);
+  --shadow-lg: 0 24px 60px hsl(var(--grafite-hsl) / 0.16);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --container: 1140px;
+  --section-pad: clamp(64px, 9vw, 116px);
+}
+
+/* Chat (padrão da casa) */
+:root {
+  --wa-green: hsl(165 49% 30%);
+  --wa-green-strong: hsl(145 63% 40%);
+  --wa-bg: hsl(220 24% 94%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}

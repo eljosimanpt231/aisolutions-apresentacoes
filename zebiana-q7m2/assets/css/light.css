@@ -1,0 +1,133 @@
+/* ============================================================
+   Adaptação dos componentes partilhados ao tema claro.
+   Só tokens (var(--...)), nenhuma cor direta.
+   Os widgets que imitam produtos reais (terminal, caixa de
+   entrada) ficam escuros de propósito: é assim que se parecem
+   com o produto verdadeiro dentro de uma página branca.
+   ============================================================ */
+
+/* ---------- Fundo ---------- */
+.bg-grid {
+  background-image:
+    linear-gradient(hsl(var(--brand-hsl) / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--brand-hsl) / 0.06) 1px, transparent 1px);
+}
+.glow-1 { background: hsl(var(--brand-hsl) / 0.10); }
+.glow-2 { background: hsl(var(--accent-hsl) / 0.07); }
+
+/* ---------- Navegação ---------- */
+.topnav {
+  position: sticky; top: 0; z-index: 40;
+  background: hsl(0 0% 100% / 0.88);
+  backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.topnav .inner {
+  max-width: var(--container); margin: 0 auto; padding: 10px 24px;
+  display: flex; align-items: center; gap: 18px;
+}
+.topnav .nav-brand { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
+.topnav .nav-brand b { color: var(--brand); }
+.topnav nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.topnav nav::-webkit-scrollbar { display: none; }
+.topnav a {
+  padding: 7px 12px; border-radius: 999px; white-space: nowrap;
+  font-size: 0.82rem; font-weight: 600; color: var(--muted);
+  border: 1px solid transparent; transition: all .2s ease;
+}
+.topnav a:hover { color: var(--text); background: var(--surface-2); }
+.topnav a.on { color: var(--brand); background: hsl(var(--brand-hsl) / 0.10); border-color: hsl(var(--brand-hsl) / 0.28); }
+.topnav .nav-cta { margin-left: auto; }
+@media (max-width: 860px) { .topnav .nav-brand, .topnav .nav-cta { display: none; } }
+
+/* ---------- Cartões e tiles ---------- */
+.card { box-shadow: var(--shadow-sm); }
+.ftile { background: hsl(var(--brand-hsl) / 0.10); border-color: hsl(var(--brand-hsl) / 0.22); }
+.diff { border-color: hsl(var(--brand-hsl) / 0.28); }
+
+/* ---------- Chat + raciocínio ---------- */
+.cr-shell { background: var(--surface); box-shadow: var(--shadow-md); }
+.cr-tab { background: var(--surface); box-shadow: var(--shadow-sm); }
+.cr-tab:hover { color: var(--text); border-color: hsl(var(--brand-hsl) / 0.4); }
+.cr-chat { background: var(--wa-bg); }
+.cr-chat-head { background: var(--wa-in); }
+.cr-chat-who b { color: var(--wa-text); }
+.cr-chat-ava { background: hsl(var(--accent-hsl) / 0.12); }
+.cr-sys { background: hsl(var(--brand-hsl) / 0.08); color: var(--muted); }
+.cr-row.agent .cr-bubble { background: var(--wa-in); color: var(--wa-text); box-shadow: var(--shadow-sm); }
+.cr-row.client .cr-bubble { background: var(--wa-out); color: var(--wa-text); box-shadow: var(--shadow-sm); }
+.cr-typing { background: var(--wa-in); box-shadow: var(--shadow-sm); }
+.cr-reason { background: linear-gradient(to bottom right, hsl(var(--accent-hsl) / 0.06), transparent); }
+.cr-step.on { background: hsl(var(--accent-hsl) / 0.07); border-color: hsl(var(--accent-hsl) / 0.28); }
+
+/* ---------- Fluxo ---------- */
+.fluxo-shell { background: var(--surface); box-shadow: var(--shadow-md); }
+.fluxo-chan { background: var(--surface-2); }
+.fluxo-node { background: var(--surface); }
+.fluxo-node.on.brand { box-shadow: 0 14px 34px -16px hsl(var(--brand-hsl) / 0.9); }
+.fluxo-node.on.teal { box-shadow: 0 14px 34px -16px hsl(var(--accent-hsl) / 0.9); }
+.fluxo-arrow { background: var(--surface); }
+
+/* ---------- Calculadora ---------- */
+.calc-inputs, .calc-out { box-shadow: var(--shadow-sm); }
+
+/* ============================================================
+   Peças próprias desta apresentação
+   ============================================================ */
+
+/* Documentos ilustrativos (referência de pagamento e fatura) */
+.docs { display: grid; gap: 22px; }
+@media (min-width: 880px) { .docs { grid-template-columns: 1fr 1fr; align-items: start; } }
+.doc {
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--surface); box-shadow: var(--shadow-md); overflow: hidden;
+}
+.doc-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 20px; background: var(--surface-2); border-bottom: 1px solid var(--border);
+}
+.doc-head .t { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
+.doc-head .tag {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--brand); background: hsl(var(--brand-hsl) / 0.10);
+  border: 1px solid hsl(var(--brand-hsl) / 0.28); border-radius: 999px; padding: 4px 10px;
+}
+.doc-body { padding: 20px; }
+.doc-row { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px dashed var(--border); font-size: 0.92rem; }
+.doc-row:last-child { border-bottom: 0; }
+.doc-row .k { color: var(--muted); }
+.doc-row .v { font-weight: 600; text-align: right; }
+.doc-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding-top: 14px; border-top: 2px solid var(--border); }
+.doc-total .k { font-size: 0.86rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.doc-total .v { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--brand); }
+.doc-foot { padding: 12px 20px; background: var(--surface-2); border-top: 1px solid var(--border); font-size: 0.78rem; font-style: italic; color: var(--muted); }
+.doc-mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: .04em; }
+
+/* Bolha de WhatsApp isolada (a mensagem que o aluno recebe) */
+.wabubble {
+  max-width: 340px; margin-top: 16px; padding: 12px 14px;
+  border-radius: 14px; border-bottom-left-radius: 4px;
+  background: var(--wa-in); color: var(--wa-text);
+  border: 1px solid var(--border); box-shadow: var(--shadow-sm); font-size: 0.9rem; line-height: 1.5;
+}
+.wabubble time { display: block; text-align: right; font-size: 0.66rem; opacity: .55; margin-top: 4px; }
+
+/* Casos de sucesso */
+.caso { display: flex; flex-direction: column; gap: 10px; }
+.caso .metric { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; color: var(--brand); }
+.caso .src { font-size: 0.8rem; color: var(--muted); }
+.caso .src a { color: var(--accent); text-decoration: underline; }
+
+/* Faixa de fecho */
+.cta-final { background: var(--grad-cta); border-top: 1px solid var(--border); }
+
+/* ---------- Correções de contraste e de âncoras ---------- */
+html { scroll-padding-top: 84px; }
+section { scroll-margin-top: 84px; }
+.topnav a.btn-primary { color: var(--on-brand); border-color: transparent; }
+.topnav a.btn-primary:hover { color: var(--on-brand); background: var(--brand); }
+/* No fecho o fundo é claro: texto escuro e botão azul cheio */
+.cta-final { color: var(--text); }
+.cta-final h2 { color: var(--text); }
+.cta-final .lead { color: var(--muted); }
+.cta-final .btn-primary { background: var(--brand); color: var(--on-brand); }
