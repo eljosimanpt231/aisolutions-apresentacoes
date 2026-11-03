@@ -155,19 +155,38 @@
       <h3>As faturas dos fornecedores, contra o relógio</h3>
       <p>120 faturas por dia, a 3 minutos cada (os minutos são uma estimativa nossa), são 6 horas de
         trabalho para caber numa hora.</p>
-      <div class="rel-faixa" aria-hidden="true">
-        <div class="rel-eixo"></div>
-        <div class="rel-trab" style="width: 100%"></div>
-        <div class="rel-hora" style="left: 2%"><b>08:00</b>chega o material</div>
-        <div class="rel-hora rel-hora--fim" style="left: 17%"><b>09:00</b>saem as carrinhas</div>
-        <div class="rel-hora" style="left: 96%"><b>14:00</b>última fatura</div>
+      <div class="tl" role="img" aria-label="Linha do tempo das 8h às 14h. À mão, as 120 faturas ocupam 6 horas e passam muito das 9h, quando as carrinhas saem. Com a plataforma, ficam 12 faturas com diferenças, cerca de 36 minutos, antes das 9h.">
+        <div class="tl-eixo">
+          <span class="tl-h tl-h--ini" style="--x:0">08:00</span>
+          <span class="tl-h tl-h--sai" style="--x:16.667">09:00</span>
+          <span class="tl-h" style="--x:33.333">10:00</span>
+          <span class="tl-h tl-h--opt" style="--x:50">11:00</span>
+          <span class="tl-h" style="--x:66.667">12:00</span>
+          <span class="tl-h tl-h--opt" style="--x:83.333">13:00</span>
+          <span class="tl-h tl-h--fim" style="--x:100">14:00</span>
+        </div>
+        <div class="tl-linha">
+          <div class="tl-rot"><b>Hoje, à mão</b><small>120 faturas × 3 min</small></div>
+          <div class="tl-pista">
+            <div class="tl-bar tl-bar--no" style="--de:0; --ate:100"><span>6 horas de lançamento</span></div>
+          </div>
+          <p class="tl-m">A parte cheia é o que cabe até às 9h, quando saem as carrinhas.</p>
+        </div>
+        <div class="tl-linha">
+          <div class="tl-rot"><b>Com a plataforma</b><small>108 lançam-se sozinhas</small></div>
+          <div class="tl-pista">
+            <div class="tl-bar tl-bar--ok" style="--de:0; --ate:10"></div>
+            <span class="tl-nota" style="--x:10">12 com diferenças, cerca de 36 min, <b>antes das 9h</b></span>
+          </div>
+        </div>
+        <div class="tl-saida"><span>As carrinhas saem às 9h</span></div>
       </div>
       <div class="rel-legenda">
-        <div class="rl-no"><b>6 horas</b>de lançamento à mão, para o que sai numa</div>
+        <div class="rl-no"><b>6 horas</b>de lançamento à mão, para uma janela de uma hora</div>
         <div><b>2 pessoas</b>hoje dedicadas a dar entrada às faturas</div>
         <div class="rl-ok"><b>Só as diferenças</b>com a plataforma: o resto lança-se sozinho, à medida que chega</div>
       </div>
-      <p class="card__nota">"Ter numa hora a dar cem faturas é completamente impossível a um ser humano." David Gonçalinho, 13 de outubro de 2026.</p>
+      <blockquote class="rel-cit"><p>"Ter numa hora a dar cem faturas é completamente impossível a um ser humano."</p><cite>David Gonçalinho, 13 de outubro de 2026</cite></blockquote>
     </div>
 
     <div class="fluxo" id="wpFluxo"></div>
