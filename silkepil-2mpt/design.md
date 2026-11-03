@@ -75,8 +75,10 @@
 - Âmbito: reativação dos últimos meses entra; a consultora liga sempre a confirmar (preferência do Rui); o agente marca a
   chamada e avisa a hora quando a lead prefere telefone (5.º cenário); nunca preços antes da avaliação (política da marca);
   nutrição entre marcação e avaliação; mensagem pós-avaliação
-- Secção nova 4 «A gestão das leads»: janela clara com Hoje, Leads (fases por cores, tentativas, próxima ação, interesse,
-  origem, filtro por clínica), Ficha da lead (histórico linha a linha, procedimento, próxima ação, resumo do agente) e O mês
-  (funil real por clínica). Responde ao «o que faria disto um 10» e ao Notion recusado (estrutura protegida). Feita sem os
-  prints da folha de Azeitão, a pedido do Manuel
+- Secção 4 «O acompanhamento das leads» (refeita a pedido do Manuel, 3/11): NÃO é uma plataforma, é uma infraestrutura
+  dentro do Google Sheets. Maqueta com o aspeto do Sheets (menus, barra de fórmulas, letras/números, chips de lista,
+  caixas de verificação, intervalos protegidos, gráfico embutido, separadores em baixo: Leads, Histórico, Hoje, Mês) e o
+  fluxo em 4 passos: a lead da Meta entra automaticamente numa linha, o agente atualiza a fase, a consultora escolhe o
+  resultado da chamada numa lista, depois da avaliação há nova atualização (compareceu/faltou). Cores do Sheets em
+  tokens (secção 12). Feita sem os prints da folha de Azeitão
 - «Tudo ligado» saiu da barra (7 entradas + Avançar)

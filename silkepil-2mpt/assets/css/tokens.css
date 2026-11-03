@@ -206,6 +206,29 @@
   --shadow-lg: 0 16px 40px -12px oklch(0% 0 0 / 0.20);
 
   --grelha-passo: 56px;
+
+  /* ---------- 12. GOOGLE SHEETS (a maqueta tem de parecer o Sheets) ---------- */
+  --font-sheet: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --gs-verde:   #188038;
+  --gs-verde-2: #34a853;
+  --gs-azul:    #1a73e8;
+  --gs-fundo:   #f9fbfd;
+  --gs-barra:   #edf2fa;
+  --gs-grelha:  #e1e3e1;
+  --gs-cab:     #f8f9fa;
+  --gs-cab-txt: #5f6368;
+  --gs-txt:     #202124;
+  --gs-sel:     #e8f0fe;
+  /* as cores dos menus de lista (chips) do Sheets */
+  --chip-vermelho: #ffcfc9; --chip-vermelho-t: #b10202;
+  --chip-amarelo:  #ffe5a0; --chip-amarelo-t:  #473821;
+  --chip-azul:     #bfe1f6; --chip-azul-t:     #0a53a8;
+  --chip-verde:    #d4edbc; --chip-verde-t:    #11734b;
+  --chip-verde-e:  #11734b; --chip-verde-e-t:  #ffffff;
+  --chip-cinza:    #e6e6e6; --chip-cinza-t:    #3d3d3d;
+  --chip-roxo:     #e6cff2; --chip-roxo-t:     #5a3286;
+  --linha-vermelho: #fdeeec;
+  --linha-verde:    #eef7e8;
 }
 
 /* A demo (chat + raciocínio) é uma janela escura dentro da página branca:

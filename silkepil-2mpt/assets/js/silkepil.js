@@ -93,27 +93,43 @@
 })();
 
 /* ============================================================
-   A GESTÃO DAS LEADS: separadores, filtro por clínica e o botão
-   «Abrir ficha». Sem JS, o separador Hoje fica à vista e os
-   outros estão escritos no HTML.
+   O ACOMPANHAMENTO DAS LEADS (Google Sheet): separadores em baixo,
+   e a célula carregada mostra-se na barra de fórmulas, como no Sheets.
+   Sem JS, o separador Leads está à vista e os outros estão no HTML.
    ============================================================ */
 (function () {
   'use strict';
-  const root = document.getElementById('seLeads');
+  const root = document.getElementById('seSheet');
   if (!root) return;
-  const tabs = [...root.querySelectorAll('[data-gl-tab]')];
-  const panes = [...root.querySelectorAll('[data-gl-pane]')];
+  const tabs = [...root.querySelectorAll('[data-gs-tab]')];
+  const folhas = [...root.querySelectorAll('[data-gs-folha]')];
+  const ref = root.querySelector('[data-gs-ref]');
+  const conteudo = root.querySelector('[data-gs-conteudo]');
+  const letra = i => String.fromCharCode(64 + i);
+
   function abre(t) {
-    tabs.forEach(b => b.setAttribute('aria-selected', String(b.dataset.glTab === t)));
-    panes.forEach(p => { p.hidden = p.dataset.glPane !== t; p.classList.add('mexeu'); });
+    tabs.forEach(b => b.setAttribute('aria-selected', String(b.dataset.gsTab === t)));
+    folhas.forEach(f => { f.hidden = f.dataset.gsFolha !== t; f.classList.add('mexeu'); });
   }
-  tabs.forEach(b => b.addEventListener('click', () => abre(b.dataset.glTab)));
-  root.querySelectorAll('[data-gl-abrir]').forEach(b => b.addEventListener('click', () => abre('ficha')));
-  const filtros = [...root.querySelectorAll('[data-gl-filtro]')];
-  const linhas = [...root.querySelectorAll('.gl-tab tbody tr')];
-  filtros.forEach(b => b.addEventListener('click', () => {
-    const f = b.dataset.glFiltro;
-    filtros.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-    linhas.forEach(tr => { tr.hidden = f !== 'todas' && tr.dataset.clinica !== f; });
-  }));
+  tabs.forEach(b => b.addEventListener('click', () => abre(b.dataset.gsTab)));
+
+  root.addEventListener('click', e => {
+    const td = e.target.closest('.gs-grelha td');
+    if (!td || !root.contains(td)) return;
+    root.querySelectorAll('.gs-sel').forEach(x => x.classList.remove('gs-sel'));
+    td.classList.add('gs-sel');
+    const tr = td.parentElement;
+    const linha = tr.querySelector('th') ? tr.querySelector('th').textContent.trim() : '';
+    const col = [...tr.children].indexOf(td);
+    if (ref) ref.textContent = letra(col) + linha;
+    if (conteudo) conteudo.textContent = td.textContent.replace(/\s+/g, ' ').trim();
+  });
+
+  /* a linha nova acende quando a sheet entra no ecrã: a lead acabou de chegar da Meta */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { root.classList.add('vivo'); io.disconnect(); } });
+    }, { threshold: 0.3 });
+    io.observe(root);
+  }
 })();
