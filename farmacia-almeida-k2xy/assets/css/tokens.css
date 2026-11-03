@@ -1,0 +1,241 @@
+/* ============================================================
+   TOKENS: FARMÁCIA ALMEIDA (fonte única de verdade visual)
+   Os componentes NUNCA usam cores directas: para mudar o look da
+   apresentação inteira, muda-se só este ficheiro.
+
+   Marca (scripts/marca.mjs, 03/11/2026, farmacialmeida.com): logótipo
+   em azul eléctrico sobre branco, "Campo de Ourique" por baixo. O azul é
+   a marca; o azul-noite das cortinas das fotografias da Neighbourhood
+   Collection é a tinta dos títulos e o fundo das maquetas; o pêssego do
+   rótulo do Resvés é a segunda voz (só luz e fim do gradiente).
+   Página branca, como o site.
+   ============================================================ */
+
+:root {
+
+  /* ---------- 1. MARCA ---------- */
+  --brand-l: 56%;
+  --brand-c: 0.230;
+  --brand-h: 262;
+
+  /* A atmosfera (shared/motion/atmosfera.css) trabalha em HSL. Em modo
+     claro os glows usam o --accent-hsl: o azul eléctrico. */
+  --brand-hsl:  228 62% 30%;    /* azul-noite */
+  --accent-hsl: 218 100% 56%;   /* azul eléctrico do logótipo */
+  --brand2-hsl: 22 88% 74%;     /* pêssego do rótulo do Resvés */
+
+  --tinta:   oklch(25% 0.080 266);    /* azul-noite: títulos e barra */
+  --tinta-2: oklch(33% 0.110 265);
+  --cobalto:        oklch(52% 0.210 262);   /* azul de etiqueta e código */
+  --cobalto-texto:  oklch(46% 0.200 262);
+  --pessego:        oklch(80% 0.100 48);    /* pêssego: só luz, nunca texto */
+  --pessego-texto:  oklch(50% 0.120 42);
+  --casca:          oklch(96% 0.020 70);
+
+  --brand-50:  oklch(97.6% calc(var(--brand-c) * 0.10) var(--brand-h));
+  --brand-100: oklch(95.0% calc(var(--brand-c) * 0.20) var(--brand-h));
+  --brand-200: oklch(90.0% calc(var(--brand-c) * 0.36) var(--brand-h));
+  --brand-300: oklch(83.0% calc(var(--brand-c) * 0.56) var(--brand-h));
+  --brand-400: oklch(72.0% calc(var(--brand-c) * 0.78) var(--brand-h));
+  --brand-500: oklch(var(--brand-l) var(--brand-c) var(--brand-h));
+  --brand-600: oklch(50.0% calc(var(--brand-c) * 0.98) var(--brand-h));
+  --brand-700: oklch(44.0% calc(var(--brand-c) * 0.92) calc(var(--brand-h) + 1));
+  --brand-800: oklch(37.0% calc(var(--brand-c) * 0.80) calc(var(--brand-h) + 2));
+  --brand-900: oklch(30.0% calc(var(--brand-c) * 0.62) calc(var(--brand-h) + 3));
+
+  --brand:    var(--brand-500);
+  --accent:   var(--brand-500);
+  --on-brand: oklch(99% 0.004 var(--brand-h));
+
+  --brand-a06: color-mix(in oklab, var(--brand) 6%,  transparent);
+  --brand-a10: color-mix(in oklab, var(--brand) 10%, transparent);
+  --brand-a16: color-mix(in oklab, var(--brand) 16%, transparent);
+  --brand-a30: color-mix(in oklab, var(--brand) 30%, transparent);
+  --brand-a45: color-mix(in oklab, var(--brand) 42%, transparent);
+  --cobalto-a10: color-mix(in oklab, var(--cobalto) 10%, transparent);
+  --cobalto-a20: color-mix(in oklab, var(--cobalto) 20%, transparent);
+  --pessego-a20: color-mix(in oklab, var(--pessego) 26%, transparent);
+  --pessego-a40: color-mix(in oklab, var(--pessego) 46%, transparent);
+  --accent-a10: var(--brand-a10);
+  --accent-a20: color-mix(in oklab, var(--accent) 20%, transparent);
+  --accent-a45: var(--brand-a45);
+
+  /* ---------- 2. SUPERFÍCIES E TINTA ----------
+     Neutros com um resto de azul, na direcção da tinta. */
+  --bg:        oklch(99.5% 0.003 260);
+  --bg-soft:   oklch(97.5% 0.008 260);
+  --surface:   oklch(100%  0.002 260);
+  --surface-2: oklch(97.9% 0.007 260);
+  --surface-3: oklch(95.2% 0.012 260);
+
+  --text:   oklch(24.0% 0.040 265);
+  --muted:  oklch(43.0% 0.030 262);
+  --faint:  oklch(47.0% 0.024 262);
+
+  --hairline: color-mix(in oklab, var(--text) 9%, transparent);
+  --border:   color-mix(in oklab, var(--text) 13%, transparent);
+  --border-strong: color-mix(in oklab, var(--text) 22%, transparent);
+  --focus: var(--cobalto-texto);
+
+  /* ---------- 3. SEMÂNTICOS ---------- */
+  --ok:        oklch(60% 0.14 158);
+  --ok-wash:   color-mix(in oklab, var(--ok) 12%, transparent);
+  --ok-texto:  oklch(44% 0.11 158);
+  --ok-claro:  oklch(85% 0.11 158);
+  --warn-claro: oklch(88% 0.12 88);
+  --danger:    oklch(56% 0.20 27);
+  --danger-wash: color-mix(in oklab, var(--danger) 11%, transparent);
+  --danger-texto: oklch(47% 0.17 27);
+  --warn:      oklch(74% 0.15 75);
+  --warn-wash: color-mix(in oklab, var(--warn) 15%, transparent);
+  --warn-texto: oklch(47% 0.11 70);
+
+  /* ---------- 4. TIPOGRAFIA ----------
+     Space Grotesk nos títulos (as letras quadradas do logótipo, com um
+     resto de quirk), Montserrat no corpo (a letra do site) e mono nos
+     preços, referências e horas. */
+  --font-display: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --font-body:    'Montserrat', system-ui, sans-serif;
+  --font-marca:   'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --fs--2: clamp(0.75rem,   0.7292rem + 0.0926vw, 0.8125rem);
+  --fs--1: clamp(0.875rem,  0.8542rem + 0.0926vw, 0.9375rem);
+  --fs-0:  clamp(1.0rem,    0.9583rem + 0.1852vw, 1.125rem);
+  --fs-1:  clamp(1.25rem,   1.1667rem + 0.3704vw, 1.5rem);
+  --fs-2:  clamp(1.5rem,    1.3542rem + 0.6481vw, 1.9375rem);
+  --fs-3:  clamp(1.8125rem, 1.6042rem + 0.9259vw, 2.4375rem);
+  --fs-4:  clamp(2.1875rem, 1.8958rem + 1.2963vw, 3.0625rem);
+  --fs-5:  clamp(2.625rem,  2.2292rem + 1.7593vw, 3.8125rem);
+  --fs-6:  clamp(3.125rem,  2.5833rem + 2.4074vw, 4.75rem);
+
+  --lh-hero: 1.0; --lh-h1: 1.05; --lh-h2: 1.12; --lh-h3: 1.22;
+  --lh-lead: 1.5; --lh-body: 1.65;
+
+  --tr-hero: -0.03em; --tr-h1: -0.026em; --tr-h2: -0.02em; --tr-h3: -0.01em;
+  --tr-body: 0em; --tr-label: 0.09em;
+
+  --measure: 66ch;
+  --measure-lead: 56ch;
+
+  /* ---------- 5. ESPAÇO ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 16px; --s-4: 24px;
+  --s-5: 32px; --s-6: 48px; --s-7: 64px; --s-8: 96px;
+
+  --container: 1140px;
+  --gutter: clamp(16px, 4vw, 32px);
+
+  --pad-secao:       clamp(56px, 7vw, 96px);
+  --pad-secao-amplo: clamp(80px, 10vw, 136px);
+  --pad-secao-junto: clamp(32px, 4vw, 56px);
+
+  /* ---------- 6. FORMA ---------- */
+  --r-1: 4px; --r-2: 8px; --r-3: 12px; --r-4: 18px; --r-pill: 999px;
+
+  /* ---------- 7. ELEVAÇÃO (claro) ---------- */
+  --sh: 262deg 50% 18%;
+  --e1: 0 0 0 1px var(--hairline),
+        0 1px 2px      hsl(var(--sh) / 0.05),
+        0 2px 4px -2px hsl(var(--sh) / 0.05);
+  --e2: 0 0 0 1px var(--hairline),
+        0 1px 2px       hsl(var(--sh) / 0.04),
+        0 2px 4px       hsl(var(--sh) / 0.04),
+        0 4px 8px  -2px hsl(var(--sh) / 0.04),
+        0 8px 16px -6px hsl(var(--sh) / 0.05);
+  --e3: 0 0 0 1px var(--hairline),
+        0 1px 2px         hsl(var(--sh) / 0.03),
+        0 2px 4px         hsl(var(--sh) / 0.03),
+        0 4px 8px         hsl(var(--sh) / 0.03),
+        0 8px 16px   -4px hsl(var(--sh) / 0.04),
+        0 16px 32px  -8px hsl(var(--sh) / 0.05),
+        0 32px 64px -16px hsl(var(--sh) / 0.08);
+  /* a luz azul por baixo de um painel: o néon da montra, não sombra */
+  --luz-marca:   0 0 0 1px var(--brand-a30), 0 18px 50px -18px color-mix(in oklab, var(--brand-500) 55%, transparent);
+  --luz-pessego: 0 0 0 1px var(--pessego-a40), 0 18px 50px -18px color-mix(in oklab, var(--pessego) 60%, transparent);
+  --luz-2:       0 0 0 1px var(--cobalto-a20), 0 18px 50px -18px color-mix(in oklab, var(--cobalto) 40%, transparent);
+
+  /* ---------- 8. MOVIMENTO (dentro das maquetas: registo de produto) ---------- */
+  --t-rapido: 120ms;
+  --t-normal: 200ms;
+  --t-lento:  300ms;
+  --ease-out:   cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-suave: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* ---------- 9. MAQUETAS ESCURAS (a cortina azul das fotografias) ---------- */
+  --mock-bg:        oklch(22% 0.070 266);
+  --mock-head:      oklch(26% 0.080 266);
+  --mock-linha:     oklch(100% 0 0 / 0.11);
+  --mock-txt:       oklch(97% 0.006 260);
+  --mock-txt-fraco: oklch(80% 0.030 262);
+  --mock-veu:       oklch(100% 0 0 / 0.05);
+  --mock-veu-2:     oklch(100% 0 0 / 0.08);
+  --mock-sombra:    oklch(15% 0.06 266 / 0.40);
+  --mock-r:         var(--r-4);
+
+  /* ---------- 10. CANAIS ---------- */
+  --wa-green: #0E7065;
+  --wa-green-dark: #075E54;
+  --wa-light: #25D366;
+  --wa-blue: #34B7F1;
+  --wa-bolha-in:   oklch(100% 0 0);
+  --wa-bolha:      oklch(95% 0.05 150);
+  --wa-bolha-txt:  oklch(22% 0.03 160);
+  --wa-bolha-meta: oklch(42% 0.06 160);
+  --wa-fundo:      oklch(94% 0.016 85);
+  /* O Reel: a fotografia em cortina azul, com o texto por cima */
+  --ig-veu:   oklch(14% 0.05 266 / 0.78);
+  --ig-txt:   oklch(99% 0 0);
+  --ig-txt-2: oklch(90% 0.02 262);
+  --ig-grad:  linear-gradient(45deg, oklch(80% 0.17 80), oklch(62% 0.24 20), oklch(55% 0.25 330));
+  /* A cortina azul das fotografias da coleção, e o frasco do Resvés */
+  --cortina-escura: oklch(27% 0.150 265);
+  --cortina-meio:   oklch(38% 0.200 264);
+  --cortina-clara:  oklch(50% 0.230 262);
+  --vidro:          oklch(97% 0.010 230 / 0.55);
+  --vidro-aresta:   oklch(100% 0 0 / 0.75);
+  --tampa:          oklch(98% 0.004 90);
+  --rotulo:         oklch(78% 0.095 45);
+  --rotulo-tinta:   oklch(99% 0.01 60);
+  /* O percurso de uma venda: a cortina azul, colunas quase pretas */
+  --qt-fundo-1: oklch(42% 0.190 264);
+  --qt-fundo-2: oklch(28% 0.130 266);
+  --qt-col:     oklch(17% 0.045 266);
+  --qt-card:    oklch(24% 0.055 266);
+  --qt-txt:     oklch(97% 0.006 260);
+  --qt-txt-2:   oklch(81% 0.030 262);
+
+  /* ---------- 11. PONTE PARA O STARTER E O DECK ---------- */
+  --success-hsl: 152 60% 40%; --success: var(--ok);
+  --danger-hsl: 8 72% 52%;
+  --acento-texto: oklch(48% 0.215 262);     /* o azul quando é texto: passa AA em branco */
+  --brand-solido: oklch(47% 0.220 263);     /* azul por baixo de texto branco */
+  --on-brand-solido: oklch(99% 0.004 262);
+  --grad-text: linear-gradient(105deg, var(--acento-texto) 10%, oklch(50% 0.20 252) 55%, oklch(49% 0.15 228) 100%);
+  --grad-cta: linear-gradient(160deg, var(--tinta), var(--tinta-2));
+  --radius: 14px;
+  --section-pad: clamp(72px, 10vw, 128px);
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.06);
+  --shadow-md: 0 8px 24px -8px oklch(0% 0 0 / 0.14);
+  --shadow-lg: 0 16px 40px -12px oklch(0% 0 0 / 0.20);
+
+  --grelha-passo: 56px;
+}
+
+/* A demo (chat + raciocínio) é uma janela escura dentro da página branca:
+   a cortina azul. As bolhas do componente têm cor escura fixa. */
+.cr {
+  --bg:        oklch(22.0% 0.070 266);
+  --bg-soft:   oklch(24.5% 0.076 266);
+  --surface:   oklch(27.0% 0.080 266);
+  --surface-2: oklch(30.0% 0.084 266);
+  --text:   oklch(97.0% 0.006 260);
+  --muted:  oklch(82.0% 0.030 262);
+  --faint:  oklch(75.0% 0.030 262);
+  --hairline: oklch(100% 0 0 / 0.08);
+  --border:   oklch(100% 0 0 / 0.13);
+  --brand:  oklch(72% 0.17 258);
+  --brand-hsl: 218 100% 68%;
+  --accent: oklch(80% 0.11 220);
+  --accent-hsl: 200 80% 66%;
+  --acento-texto: oklch(82% 0.12 255);
+}
