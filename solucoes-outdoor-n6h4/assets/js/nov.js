@@ -192,7 +192,7 @@
       </tbody></table>`);
 
     set('sep', `<div><span>Desenvolvimento</span><b>${eur(devP + devR3)}</b><i>Necessidades propostas e integração da rubrica 3. Pago por entrega.</i></div>
-      <div><span>Subscrição até 28/10/2027</span><b>${eur(subP)}</b><i>${eur(mesP)} por mês com tudo em produção. Manutenção, suporte e melhoria contínua. Alojamento e consumos de IA ficam do vosso lado.</i></div>
+      <div><span>Subscrição até 28/10/2027</span><b>${eur(subP)}</b><i>${eur(mesP)} por mês com tudo em produção. Manutenção, suporte e melhoria contínua, com o alojamento e os consumos de IA incluídos.</i></div>
       <div><span>Consultoria e formação</span><b>${eur(cons)}</b><i>Diagnóstico, desenho funcional e formação das equipas.</i></div>`);
 
     set('totApoio', `<div><span>Proposta, cenário ${c}</span><b>${eur(total)}</b></div><div class="arr">&minus;</div>
@@ -202,10 +202,10 @@
     const livre = (APROVADO[2] + APROVADO[3] + APROVADO[4]) - total;
     set('invNotas', c === 'A'
       ? `<div class="card"><h3>Margem na rubrica 4</h3><p class="small">Ficam ${eur(margem4)} dos 81.000&nbsp;€. Os opcionais somam ${eur(opcT)}: escolhe-se na reunião quais entram.</p></div>
-         <div class="card"><h3>Depois de 28/10/2027</h3><p class="small">A subscrição continua a ${eur(mesP)} por mês, já fora do projeto. Pode parar ou reduzir-se a qualquer momento: o código e o alojamento já são vossos.</p></div>
+         <div class="card"><h3>Depois de 28/10/2027</h3><p class="small">A subscrição pode continuar a ${eur(mesP)} por mês, já fora do projeto. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>
          <div class="card"><h3>O que fica de fora</h3><p class="small">Equipamentos (10.000&nbsp;€) e validação dos pedidos de pagamento (2.000&nbsp;€) ficam convosco, como em setembro.</p></div>`
       : `<div class="card"><h3>O que sobra para o ERP</h3><p class="small">Das rubricas 2, 3 e 4 ficam ${eur(livre)} para o fornecedor do Odoo e para os opcionais que escolherem (${eur(opcT)} no total).</p></div>
-         <div class="card"><h3>Depois de 28/10/2027</h3><p class="small">A subscrição continua a ${eur(mesP)} por mês, já fora do projeto. Pode parar ou reduzir-se a qualquer momento: o código e o alojamento já são vossos.</p></div>
+         <div class="card"><h3>Depois de 28/10/2027</h3><p class="small">A subscrição pode continuar a ${eur(mesP)} por mês, já fora do projeto. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>
          <div class="card"><h3>O que fica de fora</h3><p class="small">Licenças, implementação e migração do Odoo, o CRM e as automações sobre o Sage, como pediram para este cenário.</p></div>`);
   }
   function set(id, html) { const el = document.getElementById(id); if (el) el.innerHTML = html; }
