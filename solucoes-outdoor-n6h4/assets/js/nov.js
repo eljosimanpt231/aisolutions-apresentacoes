@@ -141,27 +141,32 @@
     return { prop, opc };
   };
 
-  /* ---------- Necessidades ---------- */
-  function cardNec(n, c) {
-    const s = n[c] || n;
-    const dep = (n.dep && n.dep[c]) || n.dep;
-    return `<article class="nec">
-      <div class="nec-h"><span class="nec-cod">${n.cod}</span><h4>${n.nome}</h4><span class="pos ${s.pos}">${POS_TXT[s.pos]}</span></div>
-      ${n.pedido ? `<p class="nec-pedido">Pedido: ${n.pedido}</p>` : ''}
-      <p class="nec-just">${s.just}</p>
-      <dl><div><dt>Entregável</dt><dd>${n.ent}</dd></div><div><dt>Critério de aceitação</dt><dd>${n.crit}</dd></div></dl>
-      <div class="nec-pe"><span>${FASE_TXT[s.fase]}</span><span class="${dep[0]}">${dep[1]}</span></div>
-    </article>`;
+  /* ---------- Âmbito: os dois cenários lado a lado, sem preços ---------- */
+  const AMB_TXT = { propomos: 'Incluído', opcional: 'Opcional', base: 'Incluído' };
+  const pill = (pos, txt) => `<span class="pos ${pos}">${txt || AMB_TXT[pos]}</span>`;
+  function linhaAmb(cod, nome, a, b, fase, corpo) {
+    return `<details class="amb-l"><summary>
+        <span class="amb-n"><span class="nec-cod">${cod}</span>${nome}</span>
+        <span class="amb-c" data-c="A">${a}</span><span class="amb-c" data-c="B">${b}</span>
+        <span class="amb-f">${fase ? 'Fase ' + fase : 'Diagnóstico'}</span></summary>
+      <div class="amb-d">${corpo}</div></details>`;
   }
-  function renderNec(c) {
-    const el = document.getElementById('necLista');
+  const corpoNec = (n, notaB) => `<dl><div><dt>Entregável</dt><dd>${n.ent}</dd></div><div><dt>Critério de aceitação</dt><dd>${n.crit}</dd></div>${notaB ? `<div><dt>No cenário B</dt><dd>${notaB}</dd></div>` : ''}</dl>`;
+  function renderAmb() {
+    const el = document.getElementById('ambLista');
     if (!el) return;
-    const g = (k) => NEC.filter(n => n.g === k).map(n => cardNec(n, c)).join('');
-    el.innerHTML =
-      `<div class="nec-grupo"><h3>A base do cenário ${c}</h3><div class="necs">${cardNec(BASE[c], c)}</div></div>` +
-      `<div class="nec-grupo"><h3>Produtividade</h3><div class="necs">${g('p')}</div></div>` +
-      `<div class="nec-grupo"><h3>Negócio</h3><div class="necs">${g('n')}</div></div>` +
-      `<div class="nec-grupo"><h3>Fora da vossa lista, como opcionais</h3><div class="necs">${OPC.map(o => cardNec(o, c)).join('')}</div></div>`;
+    const head = `<div class="amb-h"><span>Necessidade</span><span>Cenário A</span><span>Cenário B</span><span>Em produção</span></div>`;
+    const grupo = (t) => `<div class="amb-g">${t}</div>`;
+    const base =
+      linhaAmb('A0', BASE.A.nome, pill('base'), pill('fora', 'Fica no Odoo'), 1, corpoNec(BASE.A, 'O CRM é o do Odoo, do outro fornecedor.')) +
+      linhaAmb('I', 'Ligação ao sistema de gestão', pill('base', 'Sage, Factorial, Shopify'), pill('base', 'Odoo e Shopify'), 1,
+        corpoNec({ ent: 'Cenário A: ligação ao Sage (API ou migração da faturação para Moloni ou InvoiceXpress), ao Factorial e ao Shopify. Cenário B: leituras e escritas dos módulos de IA na API do Odoo.', crit: BASE.B.crit }));
+    const nec = (g) => NEC.filter(n => n.g === g).map(n => {
+      const nota = (n.A.pos !== n.B.pos || n.cod === 'P3') ? n.B.just : '';
+      return linhaAmb(n.cod, n.nome, pill(n.A.pos), pill(n.B.pos), n.A.fase, corpoNec(n, nota));
+    }).join('');
+    const opc = OPC.map(o => linhaAmb(o.cod, o.nome, pill('opcional'), pill('opcional'), o.fase, corpoNec(o))).join('');
+    el.innerHTML = head + grupo('Base') + base + grupo('Produtividade') + nec('p') + grupo('Negócio') + nec('n') + grupo('Fora da vossa lista') + opc;
   }
 
   /* ---------- Investimento ---------- */
@@ -182,13 +187,13 @@
     const apoio = Math.round(total * 0.75);
     const margem4 = APROVADO[4] - r4;
 
-    set('invTab', `<table class="inv"><thead><tr><th>Rubrica 4: necessidades</th><th class="n">Desenvolvimento</th><th class="n">Subscrição mensal</th><th class="n">Meses no projeto</th><th class="n">Total até 28/10/2027</th></tr></thead>
+    set('invTab', `<table class="inv"><thead><tr><th>Rubrica 4 (81.000&nbsp;€ aprovados): necessidades</th><th class="n">Desenvolvimento</th><th class="n">Subscrição mensal</th><th class="n">Meses no projeto</th><th class="n">Total até 28/10/2027</th></tr></thead>
       <tbody><tr class="grp"><td colspan="5">Propomos</td></tr>${prop.map(l => row(l)).join('')}
       <tr class="grp"><td colspan="5">Opcionais, com preço separado</td></tr>${opc.map(l => row(l, 'opc')).join('')}</tbody>
       <tfoot><tr><td><b>Propostas, cenário ${c}</b><span>Sem os opcionais</span></td><td class="n"><b>${eur(devP)}</b></td><td class="n"><b>${eur(mesP)}</b></td><td class="n"></td><td class="n"><b>${eur(r4)}</b></td></tr></tfoot></table>`);
 
     set('rubTab', `<table class="inv"><thead><tr><th>Rubricas 2 e 3: consultoria, formação e integração</th><th>Natureza</th><th class="n">Valor</th></tr></thead><tbody>
-      ${rub.map(r => `<tr><td><b>${r.nome}</b><span>Rubrica ${r.r}. ${r.det}</span></td><td>${r.tipo === 'cons' ? 'Consultoria e formação' : 'Desenvolvimento'}</td><td class="n">${eur(r.v)}</td></tr>`).join('')}
+      ${rub.map(r => `<tr><td><b>${r.nome}</b><span>Rubrica ${r.r} (${eur(APROVADO[r.r])} aprovados). ${r.det}</span></td><td>${r.tipo === 'cons' ? 'Consultoria e formação' : 'Desenvolvimento'}</td><td class="n">${eur(r.v)}</td></tr>`).join('')}
       </tbody></table>`);
 
     set('sep', `<div><span>Desenvolvimento</span><b>${eur(devP + devR3)}</b><i>Necessidades propostas e integração da rubrica 3. Pago por entrega.</i></div>
@@ -217,9 +222,9 @@
       b.classList.toggle('on', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    renderNec(c);
     renderInv(c);
   }
   document.querySelectorAll('.cen-switch button').forEach(b => b.addEventListener('click', () => escolher(b.dataset.cen)));
+  renderAmb();
   escolher('A');
 })();
