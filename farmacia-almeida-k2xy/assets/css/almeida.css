@@ -734,3 +734,11 @@ code { font-family: var(--font-mono); }
   .qt-pos { order: -1; width: 100%; }
   .qt-controlos button { padding: 8px 16px; }
 }
+
+/* ---------- 5. O acesso ao Sifarma: os dois caminhos ---------- */
+.sifarma { margin-top: var(--s-7); padding: var(--s-5); border-radius: var(--r-4); box-shadow: var(--e2);
+           background: radial-gradient(60% 80% at 100% 0%, var(--brand-a10), transparent 70%), var(--surface); }
+.sifarma > h3 { font-size: var(--fs-2); color: var(--tinta); max-width: 30ch; }
+.sifarma-intro { margin-top: var(--s-2); color: var(--muted); font-size: var(--fs--1); max-width: 72ch; }
+.sifarma .inclui { margin-top: var(--s-4); }
+.sifarma .inclui > div:first-child h3 { color: var(--acento-texto); }

@@ -7,7 +7,7 @@
 
    Os clientes, os números e as referências são INVENTADOS e estão ditos
    na página: o repositório é público. Na implementação, o preço e o
-   stock vêm do Shopify da Farmácia Almeida.
+   stock vêm do Sifarma da Farmácia Almeida.
    ============================================================ */
 (function () {
   'use strict';
@@ -107,7 +107,7 @@
     };
     const ENT = {
       levantar: { ent: 'Levantamento na farmácia, amanhã', msg: 'levanto ai amanha', portes: false },
-      envio:    { ent: 'Envio para casa, com os portes do vosso Shopify', msg: 'pode mandar p casa? campo de ourique', portes: true }
+      envio:    { ent: 'Envio para casa, com os portes da farmácia', msg: 'pode mandar p casa? campo de ourique', portes: true }
     };
 
     function atual(lista, chave) { return lista.find(b => b.getAttribute('aria-pressed') === 'true').dataset[chave]; }
@@ -115,7 +115,7 @@
     function textoFim() {
       const m = atual(metodo, 'met'), e = atual(entrega, 'ent');
       fim.textContent = 'Paga ' + (m === 'mbway' ? 'por MB WAY' : 'por Multibanco') +
-        '. Fatura no Shopify, como nas vendas à distância. ' +
+        ' e registada no Sifarma. ' +
         (e === 'envio' ? 'A equipa prepara o envio.' : 'A equipa separa para amanhã.');
     }
 

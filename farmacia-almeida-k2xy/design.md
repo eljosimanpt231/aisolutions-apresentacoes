@@ -68,3 +68,16 @@
 - Como mantêm hoje o stock do site certo face ao Sifarma (à mão chega para os produtos dos reels)
 - Venda à distância: medicamentos sujeitos a receita ficam de fora; registo da farmácia no Infarmed para venda à
   distância de MNSRM, por confirmar
+
+## Iteração de 04/11/2026 (depois do follow-up)
+- O stock das 6 a 7 mil referências está no Sifarma (Glintt) e não se liga ao Shopify: o agente passa a ler o PVP e o
+  stock do Sifarma e a registar lá a venda. Acesso à API pedido à Glintt pelo Pedro, sem resposta; decisão caso a caso,
+  pode levar 2 a 3 meses. Plano B dito na reunião: exportação diária a cada 24h para uma pasta partilhada (o Pedro acha
+  viável); automação do ecrã do Sifarma recusada pelo Manuel
+- Bloco novo em 5: "O acesso ao Sifarma", com os dois caminhos. Cenário 3 da demo e conversa 3 da Unibox passam de
+  "fora do Shopify" a "sem stock". systemName da Unibox: Sifarma
+- Calculadora com os números do Pedro: 40 mensagens por dia, 3 min, 24 dias, 10 pessoas por semana (48 h por mês)
+- Investimento igual (3.600 € e 240 €/mês, "enquadrado" com as outras duas propostas, disse o Pedro); ajuste se o
+  Sifarma trouxer mais complexidade; suporte com resposta normalmente em 2 h, urgente no dia, o resto em 1 a 2 dias úteis
+- Chamadas (8 a 10 por dia, menos de 1 minuto): fora da proposta, em aberto se pesar na decisão (a 1.ª concorrente inclui)
+- Decisão marcada para quinta, 12/11, às 11:30
