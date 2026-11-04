@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <script>
     document.documentElement.classList.add('js');
-    (function () { try { var t = localStorage.getItem('empigest-en-tema'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
+    (function () { var t = 'light'; try { t = localStorage.getItem('empigest-en-tema') || 'light'; } catch (e) {} document.documentElement.setAttribute('data-theme', t); })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
