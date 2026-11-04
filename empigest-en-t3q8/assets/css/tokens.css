@@ -1,0 +1,146 @@
+/* Aprolis Empigest: azul-marinho do site aprolis.pt (#254f97, 218 61% 37%) como marca,
+   o ciano dos botões (#089ad2, 197 93% 43%) como acento, e o quase-preto azulado
+   do cabeçalho do site como "grafite" da barra lateral.
+   Amarelo de segurança (o das máquinas e das faixas de armazém) só em alertas.
+   Tema claro por defeito; escuro com o botão no topo (data-theme). */
+:root {
+  --brand-hsl: 218 61% 37%;
+  --accent-hsl: 197 93% 43%;
+  --brand2-hsl: 205 80% 40%;
+  --graf-hsl: 222 42% 10%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --graf: hsl(var(--graf-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --brand-solido: hsl(218 61% 37%);
+  --acento-texto: hsl(205 90% 30%);
+  --ok-texto: hsl(146 70% 26%);
+
+  --bg: hsl(216 30% 96.5%);
+  --bg-soft: hsl(216 24% 93.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(216 30% 97.6%);
+  --border: hsl(216 18% 86%);
+  --line: hsl(var(--brand-hsl) / 0.05);
+  --veil: hsl(216 30% 96.5% / 0.88);
+
+  --text: hsl(222 30% 11%);
+  --muted: hsl(220 12% 34%);
+  --faint: hsl(220 9% 39%);
+
+  --paper: hsl(0 0% 100%);
+  --paper-text: hsl(222 30% 11%);
+  --paper-muted: hsl(220 9% 37%);
+  --paper-line: hsl(216 14% 84%);
+  --phc-head: hsl(218 45% 26%);
+
+  --success-hsl: 146 64% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 70% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 34 94% 36%;  --warning: hsl(var(--warning-hsl));
+  --verde-hsl: 146 64% 36%;   --verde: hsl(var(--verde-hsl));
+  --amarelo-hsl: 44 96% 48%;  --amarelo: hsl(var(--amarelo-hsl));
+  --vermelho-hsl: 356 74% 50%; --vermelho: hsl(var(--vermelho-hsl));
+  --azul-hsl: 205 85% 42%;    --azul: hsl(var(--azul-hsl));
+  --roxo-hsl: 262 48% 50%;    --roxo: hsl(var(--roxo-hsl));
+
+  --grad-text: linear-gradient(100deg, hsl(var(--brand-hsl)), hsl(var(--accent-hsl)) 90%);
+  --grad-cta: linear-gradient(160deg, hsl(var(--graf-hsl)), hsl(var(--brand-hsl) / 0.6));
+  --hatch: repeating-linear-gradient(135deg, hsl(var(--brand-hsl) / 0.10) 0 2px, transparent 2px 9px);
+  --hatch-forte: repeating-linear-gradient(135deg, hsl(0 0% 100% / 0.12) 0 2px, transparent 2px 9px);
+  --seguranca: repeating-linear-gradient(135deg, hsl(44 96% 52%) 0 10px, hsl(222 42% 10%) 10px 20px);
+
+  --shadow-sm: 0 1px 2px hsl(var(--graf-hsl) / 0.08);
+  --shadow-md: 0 8px 24px hsl(var(--graf-hsl) / 0.09);
+  --shadow-lg: 0 22px 54px hsl(var(--graf-hsl) / 0.16);
+  --shadow-glow: 0 0 36px hsl(var(--accent-hsl) / 0.25);
+
+  --radius: 8px;
+  --radius-lg: 12px;
+  --font-display: 'Archivo', 'Open Sans', system-ui, sans-serif;
+  --font-body: 'Open Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --container: 1200px;
+  --section-pad: clamp(64px, 9vw, 120px);
+
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+
+  --cs-bg: hsl(222 42% 9%);
+  --cs-panel: hsl(222 36% 13%);
+  --cs-line: hsl(220 28% 22%);
+  --cs-text: hsl(215 30% 93%);
+  --cs-muted: hsl(215 16% 66%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-hsl: 214 78% 66%;
+    --accent-hsl: 197 90% 58%;
+    --brand-solido: hsl(218 61% 42%);
+    --acento-texto: hsl(197 85% 66%);
+    --ok-texto: hsl(146 60% 60%);
+    --bg: hsl(222 32% 6.5%);
+    --bg-soft: hsl(222 28% 9.5%);
+    --surface: hsl(222 28% 10.5%);
+    --surface-2: hsl(222 26% 13%);
+    --border: hsl(220 20% 21%);
+    --line: hsl(var(--brand-hsl) / 0.06);
+    --veil: hsl(222 32% 6.5% / 0.88);
+    --text: hsl(215 30% 94%);
+    --muted: hsl(215 14% 72%);
+    --faint: hsl(215 12% 62%);
+    --paper: hsl(222 26% 12%);
+    --paper-text: hsl(215 30% 94%);
+    --paper-muted: hsl(215 14% 72%);
+    --paper-line: hsl(220 20% 23%);
+    --phc-head: hsl(218 50% 30%);
+    --success-hsl: 146 58% 52%;
+    --danger-hsl: 356 80% 66%;
+    --warning-hsl: 38 92% 58%;
+    --verde-hsl: 146 58% 48%;
+    --amarelo-hsl: 46 96% 56%;
+    --vermelho-hsl: 356 80% 62%;
+    --azul-hsl: 205 85% 64%;
+    --roxo-hsl: 262 70% 74%;
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.5);
+    --shadow-md: 0 10px 30px hsl(0 0% 0% / 0.5);
+    --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.6);
+  }
+}
+:root[data-theme="dark"] {
+  --brand-hsl: 214 78% 66%;
+  --accent-hsl: 197 90% 58%;
+  --brand-solido: hsl(218 61% 42%);
+  --acento-texto: hsl(197 85% 66%);
+  --ok-texto: hsl(146 60% 60%);
+  --bg: hsl(222 32% 6.5%);
+  --bg-soft: hsl(222 28% 9.5%);
+  --surface: hsl(222 28% 10.5%);
+  --surface-2: hsl(222 26% 13%);
+  --border: hsl(220 20% 21%);
+  --line: hsl(var(--brand-hsl) / 0.06);
+  --veil: hsl(222 32% 6.5% / 0.88);
+  --text: hsl(215 30% 94%);
+  --muted: hsl(215 14% 72%);
+  --faint: hsl(215 12% 62%);
+  --paper: hsl(222 26% 12%);
+  --paper-text: hsl(215 30% 94%);
+  --paper-muted: hsl(215 14% 72%);
+  --paper-line: hsl(220 20% 23%);
+  --phc-head: hsl(218 50% 30%);
+  --success-hsl: 146 58% 52%;
+  --danger-hsl: 356 80% 66%;
+  --warning-hsl: 38 92% 58%;
+  --verde-hsl: 146 58% 48%;
+  --amarelo-hsl: 46 96% 56%;
+  --vermelho-hsl: 356 80% 62%;
+  --azul-hsl: 205 85% 64%;
+  --roxo-hsl: 262 70% 74%;
+  --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.5);
+  --shadow-md: 0 10px 30px hsl(0 0% 0% / 0.5);
+  --shadow-lg: 0 24px 60px hsl(0 0% 0% / 0.6);
+}
