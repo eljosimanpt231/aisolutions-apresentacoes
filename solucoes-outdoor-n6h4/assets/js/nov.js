@@ -132,16 +132,19 @@
   const APROVADO = { 2: 19500, 3: 13000, 4: 81000 };
 
   const eur = (v) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
-  const linhas = (c) => {
-    const base = BASE[c];
-    const necs = NEC.map(n => Object.assign({ cod: n.cod, nome: n.nome }, n[c]));
-    const prop = [base].concat(necs.filter(n => n.pos === 'propomos'));
-    const opc = necs.filter(n => n.pos === 'opcional').concat(OPC);
-    return { prop, opc };
-  };
+  /* Soluções escolhidas: começa na nossa recomendação; a mesma escolha vale para os dois cenários. */
+  const itens = (c) => NEC.map(n => Object.assign({ cod: n.cod, nome: n.nome, g: n.g }, n[c])).concat(OPC.map(o => Object.assign({ g: 'o' }, o)));
+  const recomendadas = () => new Set(itens('A').filter(i => i.pos === 'propomos').map(i => i.cod));
+  let escolha = recomendadas();
+  let atual = 'A';
+  const DEP = [
+    { de: 'P2', para: 'N4', txt: 'A loja (N4) usa a previsão de stock da P2. Sem a P2, a previsão de ruturas tem de ser feita à parte.' },
+    { de: 'P5', para: 'N3', txt: 'Vendas e campanhas (N3) partilha os dados de custos e margens da P5. Feitas em conjunto custam menos.' },
+    { de: 'P3', para: 'P6', txt: 'Sem o planeamento de inspeções (P3), as visitas da aplicação de campo (P6) marcam-se à mão.' }
+  ];
 
   /* ---------- Âmbito: os dois cenários lado a lado, sem preços ---------- */
-  const AMB_TXT = { propomos: 'Incluído', opcional: 'Opcional', base: 'Incluído' };
+  const AMB_TXT = { propomos: 'Recomendamos', opcional: 'Opcional', base: 'Base' };
   const pill = (pos, txt) => `<span class="pos ${pos}">${txt || AMB_TXT[pos]}</span>`;
   function linhaAmb(cod, nome, a, b, fase, corpo) {
     return `<details class="amb-l"><summary>
@@ -168,61 +171,120 @@
     el.innerHTML = head + grupo('Base') + base + grupo('Produtividade') + nec('p') + grupo('Negócio') + nec('n') + grupo('Fora da vossa lista') + opc;
   }
 
-  /* ---------- Investimento ----------
+  /* ---------- Investimento: configurador ----------
      Desenvolvimento, consultoria e formação; a manutenção mensal começa com as soluções concluídas. */
-  function renderInv(c) {
-    const { prop, opc } = linhas(c);
-    const row = (l, cls) => `<tr class="${cls || ''}"><td><b>${l.cod}. ${l.nome}</b><span>${FASE_TXT[l.fase]}</span></td>
-      <td class="n">${l.dev ? eur(l.dev) : '<span>n.a.</span>'}</td><td class="n">${l.mes ? eur(l.mes) : '<span>n.a.</span>'}</td></tr>`;
-    const devP = prop.reduce((s, l) => s + l.dev, 0);
-    const mesP = prop.reduce((s, l) => s + l.mes, 0);
-    const opcT = opc.reduce((s, l) => s + l.dev, 0);
-    const rub = RUB[c];
-    const cons = rub.filter(r => r.tipo === 'cons').reduce((s, r) => s + r.v, 0);
-    const devR3 = rub.filter(r => r.tipo === 'dev').reduce((s, r) => s + r.v, 0);
-    const total = devP + cons + devR3;
+  const POS_INV = { propomos: 'Recomendamos', opcional: 'Opcional', base: 'Base do cenário' };
+  function calc(c) {
+    const sel = itens(c).filter(i => escolha.has(i.cod));
+    const base = BASE[c];
+    const dev4 = base.dev + sel.reduce((t, l) => t + l.dev, 0);
+    const mes = base.mes + sel.reduce((t, l) => t + l.mes, 0);
+    const cons = RUB[c].filter(r => r.tipo === 'cons').reduce((t, r) => t + r.v, 0);
+    const devR3 = RUB[c].filter(r => r.tipo === 'dev').reduce((t, r) => t + r.v, 0);
+    const total = dev4 + cons + devR3;
     const apoio = Math.round(total * 0.75);
-    const margem4 = APROVADO[4] - devP;
-
-    set('invTab', `<table class="inv"><thead><tr><th>Rubrica 4 (81.000&nbsp;€ aprovados): necessidades</th><th class="n">Desenvolvimento</th><th class="n">Manutenção mensal, após conclusão</th></tr></thead>
-      <tbody><tr class="grp"><td colspan="3">Propomos</td></tr>${prop.map(l => row(l)).join('')}
-      <tr class="grp"><td colspan="3">Opcionais, com preço separado</td></tr>${opc.map(l => row(l, 'opc')).join('')}</tbody>
-      <tfoot><tr><td><b>Propostas, cenário ${c}</b><span>Sem os opcionais</span></td><td class="n"><b>${eur(devP)}</b></td><td class="n"><b>${eur(mesP)}</b></td></tr></tfoot></table>`);
+    return { dev4, mes, cons, devR3, total, apoio, liq: total - apoio };
+  }
+  function renderInv(c) {
+    const v = calc(c);
+    const base = BASE[c];
+    const row = (i) => {
+      const on = escolha.has(i.cod);
+      const id = 'cfg-' + i.cod;
+      return `<label class="cfg-r${on ? ' on' : ''}" for="${id}">
+        <input type="checkbox" id="${id}" data-cod="${i.cod}"${on ? ' checked' : ''}><span class="cfg-sw" aria-hidden="true"></span>
+        <span class="cfg-n"><b>${i.cod}</b> ${i.nome}<small>${FASE_TXT[i.fase]}</small></span>
+        <span class="cfg-p"><span class="pos ${i.pos}">${POS_INV[i.pos]}</span></span>
+        <span class="n">${eur(i.dev)}</span><span class="n">${i.mes ? eur(i.mes) : '<span class="muted">n.a.</span>'}</span></label>`;
+    };
+    const grupo = (t, g) => `<div class="cfg-g">${t}</div>` + itens(c).filter(i => i.g === g).map(row).join('');
+    const pct = Math.min(100, Math.round(v.dev4 / APROVADO[4] * 100));
+    const passa = v.dev4 - APROVADO[4];
+    const avisos = DEP.filter(d => escolha.has(d.para) && !escolha.has(d.de)).map(d => `<li>${d.txt}</li>`).join('');
+    const mudou = [...escolha].sort().join() !== [...recomendadas()].sort().join();
+    set('invTab', `<div class="cfg">
+      <div class="cfg-h"><span>Solução</span><span>A nossa posição</span><span class="n">Desenvolvimento</span><span class="n">Manutenção mensal</span></div>
+      <div class="cfg-g">Base do cenário ${c}</div>
+      <div class="cfg-r base on"><span class="cfg-lock">Base</span><span class="cfg-n"><b>${base.cod}</b> ${base.nome}<small>${FASE_TXT[base.fase]}</small></span>
+        <span class="cfg-p"><span class="pos base">${POS_INV.base}</span></span><span class="n">${base.dev ? eur(base.dev) : '<span class="muted">rubrica 3</span>'}</span><span class="n">${eur(base.mes)}</span></div>
+      ${grupo('Produtividade', 'p')}${grupo('Negócio', 'n')}${grupo('Fora da vossa lista', 'o')}
+      <div class="cfg-f">
+        <div class="cfg-tot"><span>Soluções escolhidas, cenário ${c}</span><b>${eur(v.dev4)}</b><b>${eur(v.mes)}/mês</b></div>
+        <div class="cfg-bar" role="img" aria-label="Rubrica 4: ${eur(v.dev4)} de 81.000 euros"><span style="width:${pct}%" class="${passa > 0 ? 'over' : ''}"></span></div>
+        <p class="cfg-r4">${passa > 0 ? `Passa o valor aprovado da rubrica 4 em <b>${eur(passa)}</b>: essa parte não tem apoio.` : `Rubrica 4: ${eur(v.dev4)} de 81.000&nbsp;€. Ficam ${eur(-passa)} por usar.`}</p>
+        ${avisos ? `<ul class="cfg-av">${avisos}</ul>` : ''}
+        ${mudou ? '<button type="button" class="btn btn-ghost cfg-reset" id="cfgReset">Repor a nossa recomendação</button>' : ''}
+      </div></div>`);
 
     set('rubTab', `<table class="inv"><thead><tr><th>Rubricas 2 e 3: consultoria, formação e integração</th><th>Natureza</th><th class="n">Valor</th></tr></thead><tbody>
-      ${rub.map(r => `<tr><td><b>${r.nome}</b><span>Rubrica ${r.r} (${eur(APROVADO[r.r])} aprovados). ${r.det}</span></td><td>${r.tipo === 'cons' ? 'Consultoria e formação' : 'Desenvolvimento'}</td><td class="n">${eur(r.v)}</td></tr>`).join('')}
+      ${RUB[c].map(r => `<tr><td><b>${r.nome}</b><span>Rubrica ${r.r} (${eur(APROVADO[r.r])} aprovados). ${r.det}</span></td><td>${r.tipo === 'cons' ? 'Consultoria e formação' : 'Desenvolvimento'}</td><td class="n">${eur(r.v)}</td></tr>`).join('')}
       </tbody></table>`);
 
-    set('sep', `<div><span>Desenvolvimento</span><b>${eur(devP + devR3)}</b><i>Necessidades propostas e integração da rubrica 3. Pago por entrega.</i></div>
-      <div><span>Consultoria e formação</span><b>${eur(cons)}</b><i>Diagnóstico, desenho funcional e formação das equipas.</i></div>
-      <div><span>Manutenção mensal</span><b>${eur(mesP)}/mês</b><i>Começa quando as soluções estiverem concluídas: manutenção, suporte e melhoria contínua, com todos os custos de IA e de alojamento.</i></div>`);
+    set('sep', `<div><span>Desenvolvimento</span><b>${eur(v.dev4 + v.devR3)}</b><i>Soluções escolhidas e integração da rubrica 3. Pago por entrega.</i></div>
+      <div><span>Consultoria e formação</span><b>${eur(v.cons)}</b><i>Diagnóstico, desenho funcional e formação das equipas.</i></div>
+      <div><span>Manutenção mensal</span><b>${eur(v.mes)}/mês</b><i>Começa quando as soluções estiverem concluídas: manutenção, suporte e melhoria contínua, com todos os custos de IA e de alojamento.</i></div>`);
 
-    set('totApoio', `<div><span>Proposta, cenário ${c}</span><b>${eur(total)}</b></div><div class="arr">&minus;</div>
-      <div><span>Comparticipação PRR a 75%</span><b class="green">${eur(apoio)}</b></div><div class="arr">=</div>
-      <div class="net"><span>Esforço líquido da Soluções Outdoor</span><b>${eur(total - apoio)}</b></div>`);
+    set('totApoio', `<div><span>Proposta, cenário ${c}</span><b>${eur(v.total)}</b></div><div class="arr">&minus;</div>
+      <div><span>Comparticipação PRR a 75%</span><b class="green">${eur(v.apoio)}</b></div><div class="arr">=</div>
+      <div class="net"><span>Esforço líquido da Soluções Outdoor</span><b>${eur(v.liq)}</b></div>`);
 
-    const livre = (APROVADO[2] + APROVADO[3] + APROVADO[4]) - total;
-    const depois = `<div class="card"><h3>Manutenção</h3><p class="small">A manutenção de ${eur(mesP)} por mês começa quando as soluções estiverem concluídas e cobre todos os custos de IA e de alojamento. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>`;
+    const livre = (APROVADO[2] + APROVADO[3] + APROVADO[4]) - v.total;
+    const depois = `<div class="card"><h3>Manutenção</h3><p class="small">A manutenção de ${eur(v.mes)} por mês começa quando as soluções estiverem concluídas e cobre todos os custos de IA e de alojamento. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>`;
     set('invNotas', c === 'A'
-      ? `<div class="card"><h3>Margem na rubrica 4</h3><p class="small">Ficam ${eur(margem4)} dos 81.000&nbsp;€. Os opcionais somam ${eur(opcT)} de desenvolvimento: escolhe-se na reunião quais entram.</p></div>
+      ? `<div class="card"><h3>Espaço na candidatura</h3><p class="small">Com estas soluções, ficam ${eur(Math.max(0, -passa))} por usar na rubrica 4.</p></div>
          ${depois}
          <div class="card"><h3>O que fica de fora</h3><p class="small">Equipamentos (10.000&nbsp;€) e validação dos pedidos de pagamento (2.000&nbsp;€) ficam convosco, como em setembro.</p></div>`
-      : `<div class="card"><h3>O que sobra para o ERP</h3><p class="small">Das rubricas 2, 3 e 4 ficam ${eur(livre)} para o fornecedor do Odoo e para os opcionais que escolherem (${eur(opcT)} de desenvolvimento no total).</p></div>
+      : `<div class="card"><h3>O que sobra para o ERP</h3><p class="small">Das rubricas 2, 3 e 4 ficam ${eur(livre)} para o fornecedor do Odoo.</p></div>
          ${depois}
          <div class="card"><h3>O que fica de fora</h3><p class="small">Licenças, implementação e migração do Odoo, o CRM e as automações sobre o Sage, como pediram para este cenário.</p></div>`);
   }
   function set(id, html) { const el = document.getElementById(id); if (el) el.innerHTML = html; }
 
+  /* ---------- Resumo A contra B, no topo do investimento ---------- */
+  function renderCmp(sel) {
+    const card = (c, t, sub) => {
+      const v = calc(c);
+      return `<button type="button" class="cmp-c${c === sel ? ' on' : ''}" data-cen="${c}" aria-pressed="${c === sel}">
+        <span class="cmp-k">Cenário ${c}</span><span class="cmp-t">${t}</span><span class="cmp-s">${sub}</span>
+        <span class="cmp-l"><i>Proposta</i><b>${eur(v.total)}</b></span>
+        <span class="cmp-l"><i>Apoio PRR, 75%</i><b class="green">${eur(v.apoio)}</b></span>
+        <span class="cmp-l big"><i>Vocês investem</i><b>${eur(v.liq)}</b></span>
+        <span class="cmp-l"><i>Manutenção, com as soluções concluídas</i><b>${eur(v.mes)}/mês</b></span>
+      </button>`;
+    };
+    set('invCmp', card('A', 'Com o nosso CRM', 'O CRM e as soluções escolhidas, ligados ao Sage') +
+                  card('B', 'Só a IA, sobre o Odoo', 'As mesmas soluções, ligadas ao Odoo'));
+    const d = calc('A').total - calc('B').total;
+    const n = escolha.size, rec = recomendadas().size;
+    set('invDif', `Com as ${n} soluções escolhidas${n === rec && [...escolha].every(x => recomendadas().has(x)) ? ' (a nossa recomendação)' : ''}, o cenário A custa mais ${eur(d)}: sobretudo o CRM (18.000&nbsp;€), que só existe no A, e a integração com o Sage. Ligue ou desligue soluções na lista abaixo e os dois cenários atualizam.`);
+    document.querySelectorAll('#invCmp .cmp-c').forEach(b => b.addEventListener('click', () => escolher(b.dataset.cen)));
+  }
+
   /* ---------- Seletor ---------- */
   function escolher(c) {
+    atual = c;
     document.querySelectorAll('.cen-switch button').forEach(b => {
       const on = b.dataset.cen === c;
       b.classList.toggle('on', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     renderInv(c);
+    renderCmp(c);
   }
   document.querySelectorAll('.cen-switch button').forEach(b => b.addEventListener('click', () => escolher(b.dataset.cen)));
+  const tab = document.getElementById('invTab');
+  if (tab) {
+    tab.addEventListener('change', (e) => {
+      const cod = e.target && e.target.dataset && e.target.dataset.cod;
+      if (!cod) return;
+      if (e.target.checked) escolha.add(cod); else escolha.delete(cod);
+      escolher(atual);
+      const el = document.getElementById('cfg-' + cod); if (el) el.focus();
+    });
+    tab.addEventListener('click', (e) => {
+      if (e.target && e.target.id === 'cfgReset') { escolha = recomendadas(); escolher(atual); }
+    });
+  }
   renderAmb();
   escolher('A');
 })();
