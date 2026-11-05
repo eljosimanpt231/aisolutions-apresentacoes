@@ -291,7 +291,7 @@
   {
    "letra": "A",
    "title": "Pedido simples",
-   "subtitle": "Preços por unidade e por metro, com as condições do cliente, as campanhas e o stock. O comercial cria o orçamento no PHC com um toque e recebe o PDF.",
+   "subtitle": "Preços por unidade e por metro, com as condições do cliente, as campanhas e o stock. O comercial aprova com um toque e recebe o orçamento final, com o PDF para enviar ao cliente.",
    "preview": "Assistente: orçamento criado no PHC",
    "chat": [
     {
@@ -311,7 +311,7 @@
      "hora": "09:13",
      "passo": 6,
      "cartao": {
-      "titulo": "Preços para Climatérmica Lda",
+      "titulo": "Proposta de orçamento: Climatérmica Lda",
       "sub": "Tabela profissional com a campanha de cobre de novembro. Valores ilustrativos, + IVA.",
       "factos": [
        [
@@ -381,9 +381,9 @@
       ],
       "acoes": [
        {
-        "t": "Criar orçamento no PHC",
+        "t": "Aprovar",
         "p": true,
-        "r": "Criado no PHC: **C - Orçamento nº 2026/1844**, Climatérmica Lda."
+        "r": "Aprovado."
        },
        {
         "t": "Falar com o orçamentista",
@@ -401,42 +401,38 @@
      "de": "bot",
      "hora": "09:15",
      "passo": 7,
+     "texto": "Aqui está o orçamento final, já criado no PHC.",
+     "anexo": {
+      "nome": "Orcamento_2026-1844.pdf",
+      "tam": "PDF, 182 KB"
+     },
      "cartao": {
-      "titulo": "Orçamento criado no PHC",
+      "titulo": "C - Orçamento nº 2026/1844",
       "factos": [
-       [
-        "Documento",
-        "C - Orçamento nº 2026/1844"
-       ],
        [
         "Cliente",
         "Climatérmica Lda"
        ],
        [
-        "Validação",
-        "Não precisa: condições normais"
+        "Estado",
+        "Emitido no PHC"
        ]
       ],
       "estado": {
-       "t": "Emitido pelo comercial",
+       "t": "Pronto a enviar ao cliente",
        "tom": "ok"
       },
       "acoes": [
        {
-        "t": "Enviar ao cliente",
+        "t": "Descarregar PDF",
         "p": true,
-        "r": "Enviado à Climatérmica Lda por email, 09:16."
+        "r": "PDF descarregado."
+       },
+       {
+        "t": "Enviar ao cliente",
+        "r": "Enviado à Climatérmica Lda por email, com o PDF."
        }
       ]
-     }
-    },
-    {
-     "de": "bot",
-     "hora": "09:15",
-     "texto": "PDF do orçamento:",
-     "anexo": {
-      "nome": "Orcamento_2026-1844_Climatermica.pdf",
-      "tam": "PDF, 182 KB"
      }
     }
    ],
@@ -467,7 +463,7 @@
     },
     {
      "icon": "file",
-     "label": "Condições normais: o comercial cria no PHC com um toque e recebe o PDF"
+     "label": "O comercial aprova; o assistente cria no PHC e envia o orçamento final com o PDF"
     }
    ]
   },
@@ -659,81 +655,43 @@
     {
      "de": "bot",
      "hora": "17:21",
+     "passo": 9,
+     "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.",
+     "anexo": {
+      "nome": "Orcamento_2026-1851.pdf",
+      "tam": "PDF, 182 KB"
+     },
      "cartao": {
-      "titulo": "Validado pelo orçamentista",
-      "sub": "@Comercial Zona 2, já pode criar o orçamento",
+      "titulo": "C - Orçamento nº 2026/1851",
       "factos": [
        [
         "Cliente",
         "Instalações R. Sousa"
        ],
        [
-        "Validado",
-        "Orçamentação, 17:21"
+        "Estado",
+        "Emitido no PHC"
        ]
       ],
       "estado": {
-       "t": "Validado",
+       "t": "Pronto a enviar ao cliente",
        "tom": "ok"
       },
       "acoes": [
        {
-        "t": "Criar orçamento no PHC",
+        "t": "Descarregar PDF",
         "p": true,
-        "r": "Criado no PHC: **C - Orçamento nº 2026/1851**, Instalações R. Sousa."
+        "r": "PDF descarregado."
        },
        {
-        "t": "Falar com o orçamentista",
-        "r": "Pedido passado ao orçamentista, com a conversa toda."
-       }
-      ]
-     }
-    },
-    {
-     "de": "clique",
-     "alvo": 10,
-     "acao": 0
-    },
-    {
-     "de": "bot",
-     "hora": "17:22",
-     "passo": 9,
-     "cartao": {
-      "titulo": "Orçamento criado no PHC",
-      "factos": [
-       [
-        "Documento",
-        "C - Orçamento nº 2026/1851"
-       ],
-       [
-        "Cliente",
-        "Instalações R. Sousa"
-       ]
-      ],
-      "estado": {
-       "t": "Validado e emitido",
-       "tom": "ok"
-      },
-      "acoes": [
-       {
         "t": "Enviar ao cliente",
-        "p": true,
-        "r": "Enviado à Instalações R. Sousa por email, 17:23."
+        "r": "Enviado à Instalações R. Sousa por email, com o PDF."
        },
        {
         "t": "Fazer a proposta do instalador",
         "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."
        }
       ]
-     }
-    },
-    {
-     "de": "bot",
-     "hora": "17:22",
-     "texto": "PDF do orçamento:",
-     "anexo": {
-      "nome": "Orcamento_2026-1851_RSousa.pdf",
-      "tam": "PDF, 214 KB"
      }
     }
    ],
@@ -772,7 +730,7 @@
     },
     {
      "icon": "file",
-     "label": "O comercial cria no PHC e recebe o PDF"
+     "label": "O comercial recebe o orçamento final, com o PDF"
     }
    ]
   },
