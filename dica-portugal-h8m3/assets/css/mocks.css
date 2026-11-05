@@ -293,3 +293,6 @@
 .cr-chat--whatsapp .cr-sys { background: hsl(48 80% 92%) !important; color: hsl(30 40% 22%) !important; font-style: normal; }
 .cr-chat--whatsapp .cr-input { background: hsl(40 15% 94%) !important; border-color: transparent !important; }
 .cr-chat--whatsapp .cr-input span { background: #fff !important; color: hsl(200 8% 40%) !important; }
+
+.ac-pill.off { opacity: 0.45; }
+.ac-res--clique { animation: deck-float-in 0.45s ease both; }

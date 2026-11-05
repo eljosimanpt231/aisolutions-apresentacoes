@@ -49,7 +49,8 @@
   window.dicaRich = rich;
 
   /* ---------- cartão adaptável ---------- */
-  function cartao(c, chave, feitos) {
+  function cartao(c, chave, feitos, auto) {
+    auto = auto || {};
     var h = '<div class="ac">';
     h += '<div class="ac-h">' + (c.icone ? '<img src="' + esc(c.icone) + '" alt="">' : "") + "<div><b>" + esc(c.titulo) + "</b>" + (c.sub ? "<small>" + esc(c.sub) + "</small>" : "") + "</div></div>";
     if (c.factos) { h += '<dl class="ac-f">'; c.factos.forEach(function (f) { h += "<dt>" + esc(f[0]) + "</dt><dd>" + rich(f[1]) + "</dd>"; }); h += "</dl>"; }
@@ -74,13 +75,15 @@
     (c.notas || []).forEach(function (n) { h += '<p class="ac-n ac-n--' + esc(n.tom || "info") + '">' + rich(n.texto) + "</p>"; });
     if (c.escolhas) {
       h += '<div class="ac-esc">';
-      c.escolhas.forEach(function (e, j) { h += '<button type="button" class="ac-pill' + (c.escolhida === j ? " sel" : "") + '" data-pill="1">' + esc(e) + "</button>"; });
+      var escolhida = auto.escolha != null ? auto.escolha : c.escolhida;
+      c.escolhas.forEach(function (e, j) { h += '<button type="button" class="ac-pill' + (escolhida === j ? " sel" : auto.escolha != null ? " off" : "") + '" data-pill="1">' + esc(e) + "</button>"; });
       h += "</div>";
     }
     if (c.estado) h += '<div class="ac-estado ac-estado--' + esc(c.estado.tom || "info") + '">' + esc(c.estado.t) + "</div>";
     if (c.acoes) {
       var f = feitos[chave];
       if (f != null) h += '<div class="ac-res">' + ic("check") + "<span>" + rich(c.acoes[f].r) + "</span></div>";
+      else if (auto.acao != null) h += '<div class="ac-res ac-res--clique">' + ic("check") + "<span>" + esc(auto.quem) + " carregou em <b>" + esc(c.acoes[auto.acao].t) + "</b></span></div>";
       else {
         h += '<div class="ac-a">';
         c.acoes.forEach(function (a, j) { h += '<button type="button" class="ac-b' + (a.p ? " ac-b--p" : "") + '" data-acao="' + chave + "|" + j + '">' + esc(a.t) + "</button>"; });
@@ -91,7 +94,8 @@
   }
   window.dicaCartao = cartao;
 
-  function msgHTML(m, i, nova, cfg, chave, feitos) {
+  function msgHTML(m, i, nova, cfg, chave, feitos, auto) {
+    if (m.de === "clique") return "";
     var cls = nova ? " tm-nova" : "";
     if (m.de === "sys") return '<div class="tm-sys' + cls + '">' + esc(m.texto) + "</div>";
     var eu = m.de === "com";
@@ -104,7 +108,7 @@
     if (m.texto) corpo += rich(m.texto);
     if (m.img === "vmc") corpo += '<svg class="tm-foto" viewBox="0 0 300 220" role="img" aria-label="Esboço da planta desenhado à mão"><use href="#esbocoVMC"/></svg>';
     if (m.anexo) corpo += '<div class="tm-anexo"><i>PDF</i><div><b>' + esc(m.anexo.nome) + "</b><small>" + esc(m.anexo.tam || "") + "</small></div></div>";
-    if (m.cartao) corpo += cartao(m.cartao, chave, feitos);
+    if (m.cartao) corpo += cartao(m.cartao, chave, feitos, auto && auto[chave]);
     var soCartao = m.cartao && !m.texto;
     h += '<div class="tm-bub"' + (soCartao ? ' style="padding:6px"' : "") + ">" + corpo + "</div>";
     if (m.reacao) h += '<span class="tm-react">' + esc(m.reacao) + "</span>";
@@ -160,7 +164,9 @@
       h += "</aside>";
       h += '<div class="tm-main"><div class="tm-head"><span class="tm-gav"><b>Z2</b></span><b>' + esc(cfg.canal || "ZONA 2 | Orçamentos") + '</b><span class="tm-tabs"><span class="on">Conversa</span><span>Ficheiros</span><span>Fotografias</span></span><span class="tm-reunir">Reunir</span><span class="tm-pess">7</span></div>';
       h += '<div class="tm-msgs" id="' + id + '-msgs">';
-      s.chat.forEach(function (m, i) { if (i > rc) return; h += msgHTML(m, i, i === rc, cfg, st.idx + "-" + i, feitos); });
+      var auto = {};
+      s.chat.forEach(function (m, i) { if (i <= rc && m.de === "clique") auto[st.idx + "-" + m.alvo] = { acao: m.acao, escolha: m.escolha, quem: m.quem || cfg.eu }; });
+      s.chat.forEach(function (m, i) { if (i > rc) return; h += msgHTML(m, i, i === rc, cfg, st.idx + "-" + i, feitos, auto); });
       var prox = s.chat[rc + 1];
       if (prox && prox.de === "bot") h += '<div class="tm-typing"><i></i><i></i><i></i><span>' + esc(cfg.bot) + " está a escrever</span></div>";
       h += '</div><div class="tm-compose" aria-hidden="true"><span>Escreva uma mensagem</span>' + ic("smile") + ic("clip") + ic("send") + "</div></div></div></div>";
