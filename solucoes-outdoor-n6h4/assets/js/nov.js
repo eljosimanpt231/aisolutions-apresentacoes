@@ -185,7 +185,7 @@
     const apoio = Math.round(total * 0.75);
     const margem4 = APROVADO[4] - devP;
 
-    set('invTab', `<table class="inv"><thead><tr><th>Rubrica 4 (81.000&nbsp;€ aprovados): necessidades</th><th class="n">Desenvolvimento, no projeto</th><th class="n">Manutenção mensal, depois do projeto</th></tr></thead>
+    set('invTab', `<table class="inv"><thead><tr><th>Rubrica 4 (81.000&nbsp;€ aprovados): necessidades</th><th class="n">Desenvolvimento</th><th class="n">Manutenção mensal, após conclusão</th></tr></thead>
       <tbody><tr class="grp"><td colspan="3">Propomos</td></tr>${prop.map(l => row(l)).join('')}
       <tr class="grp"><td colspan="3">Opcionais, com preço separado</td></tr>${opc.map(l => row(l, 'opc')).join('')}</tbody>
       <tfoot><tr><td><b>Propostas, cenário ${c}</b><span>Sem os opcionais</span></td><td class="n"><b>${eur(devP)}</b></td><td class="n"><b>${eur(mesP)}</b></td></tr></tfoot></table>`);
@@ -196,14 +196,14 @@
 
     set('sep', `<div><span>Desenvolvimento</span><b>${eur(devP + devR3)}</b><i>Necessidades propostas e integração da rubrica 3. Pago por entrega.</i></div>
       <div><span>Consultoria e formação</span><b>${eur(cons)}</b><i>Diagnóstico, desenho funcional e formação das equipas.</i></div>
-      <div><span>Manutenção, depois do projeto</span><b>${eur(mesP)}/mês</b><i>Fora do projeto e das rubricas. Começa depois da conclusão: manutenção, suporte e melhoria contínua, e cobre todos os custos de IA e de alojamento.</i></div>`);
+      <div><span>Manutenção mensal</span><b>${eur(mesP)}/mês</b><i>Começa quando as soluções estiverem concluídas: manutenção, suporte e melhoria contínua, com todos os custos de IA e de alojamento.</i></div>`);
 
     set('totApoio', `<div><span>Proposta, cenário ${c}</span><b>${eur(total)}</b></div><div class="arr">&minus;</div>
       <div><span>Comparticipação PRR a 75%</span><b class="green">${eur(apoio)}</b></div><div class="arr">=</div>
       <div class="net"><span>Esforço líquido da Soluções Outdoor</span><b>${eur(total - apoio)}</b></div>`);
 
     const livre = (APROVADO[2] + APROVADO[3] + APROVADO[4]) - total;
-    const depois = `<div class="card"><h3>Depois do projeto</h3><p class="small">A manutenção de ${eur(mesP)} por mês começa depois da conclusão, fora da candidatura, e cobre todos os custos de IA e de alojamento. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>`;
+    const depois = `<div class="card"><h3>Manutenção</h3><p class="small">A manutenção de ${eur(mesP)} por mês começa quando as soluções estiverem concluídas e cobre todos os custos de IA e de alojamento. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>`;
     set('invNotas', c === 'A'
       ? `<div class="card"><h3>Margem na rubrica 4</h3><p class="small">Ficam ${eur(margem4)} dos 81.000&nbsp;€. Os opcionais somam ${eur(opcT)} de desenvolvimento: escolhe-se na reunião quais entram.</p></div>
          ${depois}
