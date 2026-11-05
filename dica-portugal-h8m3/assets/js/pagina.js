@@ -53,7 +53,7 @@
   var form = document.getElementById("instForm");
   if (form) {
     var LINHAS = [
-      { d: "Bomba de calor ar-água 15 kW, monobloco R290, 230 V", s: "Fairland", v: 4150 },
+      { d: "Bomba de calor ar-água 15 kW, monobloco R290, 230 V", s: "Fairland", v: 3900 },
       { d: "Depósito de inércia 100 L", s: "", v: 420 },
       { d: "Cronotermóstato para a bomba de calor", s: "", v: 85 },
       { d: "Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", s: "", v: 980 },
