@@ -28,7 +28,7 @@
     { cod: 'P1', g: 'p', nome: 'Faturas de fornecedor e stocks',
       pedido: 'Leitura automática de faturas de fornecedor, classificação de artigos e despesas, e atualização de stocks.',
       A: { pos: 'propomos', dev: 3500, mes: 60, fase: 1, just: 'Já estava no âmbito de setembro. Tira trabalho de escritório todos os dias e alimenta a previsão de stock.' },
-      B: { pos: 'opcional', dev: 2500, mes: 40, fase: 1, just: 'O Odoo tem digitalização de faturas própria, paga à parte. Vale a pena experimentá-la primeiro; propomos a classificação de artigos e as regras de stock só se não chegar.' },
+      B: { pos: 'propomos', dev: 2500, mes: 40, fase: 1, just: 'Versão mais leve: o Odoo lê as faturas com a digitalização própria, e nós acrescentamos a classificação de artigos e despesas e as regras de stock da Soluções Outdoor.' },
       ent: 'Faturas lidas da caixa de email ou de uma pasta, artigos e despesas classificados, stock atualizado e uma fila de revisão para o que não bate certo.',
       crit: 'Teste com 50 faturas reais dos principais fornecedores: artigos, quantidades e valores certos em pelo menos 90%, e nenhuma referência desconhecida lançada sem revisão.',
       dep: { A: ['dep', 'Depende do Sage para escrever o stock'], B: ['dep', 'Depende do Odoo para escrever o stock'] } },
@@ -56,7 +56,7 @@
     { cod: 'P5', g: 'p', nome: 'Custos, margens e rentabilidade',
       pedido: 'Análise de custos, margens e rentabilidade, com previsões para apoio à decisão.',
       A: { pos: 'propomos', dev: 4000, mes: 60, fase: 3, just: 'Nova. Assenta nos mesmos dados das obras e do Sage, por isso faz-se junto com a análise de vendas (N3).' },
-      B: { pos: 'opcional', dev: 2500, mes: 40, fase: 3, just: 'O Odoo já traz relatórios de margem. Propomos só a camada de previsão, por linha de negócio e por obra, se a quiserem.' },
+      B: { pos: 'propomos', dev: 2500, mes: 40, fase: 3, just: 'Versão mais leve: os relatórios de margem vêm do Odoo, e nós acrescentamos a previsão por linha de negócio e por obra.' },
       ent: 'Painel de custos, margens e rentabilidade por linha de negócio, por obra e por cliente, com previsão a 3 e a 6 meses.',
       crit: 'Os valores do painel batem certo com o fecho de um mês escolhido por vocês, com as diferenças explicadas linha a linha.',
       dep: { A: ['dep', 'Depende dos custos no Sage'], B: ['dep', 'Depende dos custos no Odoo'] } },
@@ -124,9 +124,9 @@
       { r: 3, tipo: 'dev', nome: 'Arquitetura de dados e integrações', det: 'Ligação ao Sage (API ou migração para Moloni ou InvoiceXpress), Factorial e Shopify', v: 13000 }
     ],
     B: [
-      { r: 2, tipo: 'cons', nome: 'Diagnóstico das necessidades de IA e desenho funcional', det: 'Só a parte de IA; o diagnóstico do ERP é do fornecedor', v: 8000 },
-      { r: 2, tipo: 'cons', nome: 'Formação das equipas nos módulos de IA', det: 'Escritório, técnicos, inspetores e formadores, por fase', v: 3000 },
-      { r: 3, tipo: 'dev', nome: 'Integração por API com o Odoo', det: 'Leituras e escritas dos módulos de IA no Odoo e leitura do Shopify', v: 6500 }
+      { r: 2, tipo: 'cons', nome: 'Diagnóstico das necessidades de IA e desenho funcional', det: 'As quatro linhas e os módulos de IA; o mapeamento do ERP é do fornecedor do Odoo', v: 11000 },
+      { r: 2, tipo: 'cons', nome: 'Formação das equipas nos módulos de IA', det: 'Escritório, técnicos, inspetores e formadores, por fase; a formação no Odoo é do fornecedor', v: 4000 },
+      { r: 3, tipo: 'dev', nome: 'Integração por API com o Odoo', det: 'A nossa parte: ligar os módulos de IA à API do Odoo e ler o Shopify. O lado do Odoo (acessos, campos e ligação ao Shopify) é do fornecedor do ERP', v: 6500 }
     ]
   };
   const APROVADO = { 2: 19500, 3: 13000, 4: 81000 };
@@ -161,7 +161,7 @@
       linhaAmb('I', 'Ligação ao sistema de gestão', pill('base', 'Sage, Factorial, Shopify'), pill('base', 'Odoo e Shopify'), 1,
         corpoNec({ ent: 'Cenário A: ligação ao Sage (API ou migração da faturação para Moloni ou InvoiceXpress), ao Factorial e ao Shopify. Cenário B: leituras e escritas dos módulos de IA na API do Odoo.', crit: BASE.B.crit }));
     const nec = (g) => NEC.filter(n => n.g === g).map(n => {
-      const nota = (n.A.pos !== n.B.pos || n.cod === 'P3') ? n.B.just : '';
+      const nota = (n.A.pos !== n.B.pos || ['P1', 'P3', 'P5'].includes(n.cod)) ? n.B.just : '';
       return linhaAmb(n.cod, n.nome, pill(n.A.pos), pill(n.B.pos), n.A.fase, corpoNec(n, nota));
     }).join('');
     const opc = OPC.map(o => linhaAmb(o.cod, o.nome, pill('opcional'), pill('opcional'), o.fase, corpoNec(o))).join('');
@@ -169,8 +169,7 @@
   }
 
   /* ---------- Investimento ----------
-     A manutenção mensal fica FORA do projeto (decisão de 05/11/2026): começa depois da conclusão
-     e não entra nas rubricas. Dentro do projeto só há desenvolvimento, consultoria e formação. */
+     Desenvolvimento, consultoria e formação; a manutenção mensal começa com as soluções concluídas. */
   function renderInv(c) {
     const { prop, opc } = linhas(c);
     const row = (l, cls) => `<tr class="${cls || ''}"><td><b>${l.cod}. ${l.nome}</b><span>${FASE_TXT[l.fase]}</span></td>
