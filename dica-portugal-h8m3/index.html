@@ -103,7 +103,6 @@
     <a href="#instalador">Instalador</a>
     <a href="#integracao">Integração</a>
     <a href="#maisclima">MaisClima</a>
-    <a href="#investimento">Investimento</a>
     <a href="#arranque">Arranque</a>
   </nav>
   <button class="theme-btn" id="themeBtn" type="button" aria-label="Mudar entre claro e escuro">
@@ -220,14 +219,14 @@
       </article>
       <article class="card ponto holofote" data-entra="sobe">
         <span class="n">Ponto 7</span>
-        <h3>MaisClima e instaladores fora de horas</h3>
-        <p>Dúvidas da loja à noite e ao fim de semana. O apoio a instaladores fora de horas vem a seguir.</p>
+        <h3>MaisClima: loja online e redes</h3>
+        <p>Dúvidas da loja à noite e ao fim de semana, comentários nos anúncios, carrinhos abandonados e vendas depois da compra.</p>
         <div class="tags"><span class="tag tag--hoje">Mostramos hoje</span><span class="tag tag--fase">Em paralelo</span></div>
       </article>
       <article class="card ponto holofote" data-entra="sobe">
         <span class="n">Ponto 8</span>
-        <h3>Fases, prazos e investimento</h3>
-        <p>Prioridades, fases e o investimento global, no fim desta página. O detalhe vai na proposta.</p>
+        <h3>Fases e prazos</h3>
+        <p>Prioridades e fases, no fim desta página. Prazos e valores de cada fase vão na proposta.</p>
         <div class="tags"><span class="tag tag--hoje">No fim da página</span></div>
       </article>
     </div>
@@ -346,10 +345,18 @@
         { "tom": "aviso", "texto": "Potência e depósito de inércia **a confirmar pela orçamentação**: é um pedido técnico." },
         { "tom": "ok", "texto": "Sem bomba de aquecimento: o cliente já tem recuperador hidro (dito às 17:05)." }
       ],
-      "estado": { "t": "Enviado à orçamentação para validação", "tom": "val" },
+      "estado": { "t": "À espera da orçamentação, neste grupo", "tom": "val" } } },
+    { "de": "bot", "hora": "17:06", "texto": "**@Orçamentação**, pedido técnico para validar: Instalações R. Sousa. Está tudo no cartão acima." },
+    { "de": "orc", "nome": "Orçamentação", "ini": "OR", "hora": "17:21", "texto": "Validado. 15 kW está bem para os 75 elementos.", "passo": 8 },
+    { "de": "bot", "hora": "17:21", "passo": 9, "cartao": {
+      "titulo": "Validado: C - Orçamento nº 2026/1851",
+      "sub": "@Comercial Zona 2, está pronto a enviar",
+      "factos": [["Cliente", "Instalações R. Sousa"], ["Validado por", "Orçamentação, 17:21"], ["PHC", "Criado em Dossiers Internos"]],
+      "estado": { "t": "Validado e criado no PHC", "tom": "ok" },
       "acoes": [
-        { "t": "Acrescentar nota", "r": "Nota acrescentada ao pedido. A orçamentação vê-a antes de validar." },
-        { "t": "Ver pré-orçamento", "p": true, "r": "Pré-orçamento aberto (mais abaixo, em «A orçamentação valida no Teams»)." }
+        { "t": "Enviar ao cliente", "p": true, "r": "Enviado à Instalações R. Sousa por email, com o PDF, 17:22." },
+        { "t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)." },
+        { "t": "Mandar-me o PDF", "r": "PDF enviado nesta conversa." }
       ] } }
    ],
    "steps": [
@@ -359,7 +366,8 @@
     { "icon": "brain", "label": "Recuperador a água: não junta bomba de aquecimento" },
     { "icon": "book", "label": "Aplica a regra de dimensionamento da orçamentação, escrita na auditoria" },
     { "icon": "wrench", "label": "Junta o kit de instalação padrão da bomba de calor" },
-    { "icon": "user-cog", "label": "Pedido técnico: segue para validação da orçamentação" }
+    { "icon": "user-cog", "label": "Pedido técnico: chama a orçamentação no próprio grupo" },
+    { "icon": "check", "label": "Validado: cria no PHC e devolve ao comercial na mesma conversa" }
    ]
   },
   {
@@ -481,20 +489,27 @@
   <div class="container wide">
     <div class="sec-head">
       <span class="eyebrow">Validação e permissões</span>
-      <h2>A orçamentação valida no Teams, e o orçamento nasce no PHC</h2>
-      <p class="lead">O pedido técnico do cenário B chega à orçamentação já preparado: as linhas, as notas e o que o assistente assumiu, com a razão. Um toque aprova e cria o documento. Experimentem os botões.</p>
+      <h2>A orçamentação valida no mesmo chat, e o comercial recebe logo</h2>
+      <p class="lead">O pedido técnico fica no grupo da zona. O assistente chama a orçamentação ali mesmo, ela valida com um toque, o orçamento nasce no PHC e volta ao comercial na mesma conversa. Experimentem os botões.</p>
     </div>
     <div class="valida">
       <div class="tm-mini" id="valCard" data-entra="sobe">
-        <div class="tm-head"><span class="tm-gav"><b>AO</b></span><b>Assistente de Orçamentos</b><span class="tm-pess">Chat da Orçamentação</span></div>
-        <div class="tm-msgs">
+        <div class="tm-head"><span class="tm-gav"><b>Z2</b></span><b>ZONA 2 | Orçamentos</b><span class="tm-pess">Conversa do grupo</span></div>
+        <div class="tm-msgs" id="valMsgs">
+          <div class="tm-msg">
+            <span class="ava p">C2</span>
+            <div>
+              <div class="tm-meta"><b>Comercial Zona 2</b><span>16:40</span></div>
+              <div class="tm-bub">Orçamento Instalações R. Sousa: bomba de calor para 75 elementos, depósito, crono, acumulador 200 L e material para instalação</div>
+            </div>
+          </div>
           <div class="tm-msg">
             <span class="ava"><img src="assets/img/dica-simbolo.png" alt=""></span>
             <div>
               <div class="tm-meta"><b>Assistente de Orçamentos</b><span class="app">Aplicação</span><span>17:06</span></div>
               <div class="tm-bub" style="padding:6px">
                 <div class="ac">
-                  <div class="ac-h"><div><b>Validação técnica pedida: Instalações R. Sousa</b><small>Comercial Zona 2, grupo ZONA 2 | Orçamentos, hoje às 16:40</small></div></div>
+                  <div class="ac-h"><div><b>@Orçamentação, validação pedida: Instalações R. Sousa</b><small>Pedido do Comercial Zona 2, neste grupo</small></div></div>
                   <dl class="ac-f">
                     <dt>Condições</dt><dd>Tabela profissional, conta sem bloqueios</dd>
                     <dt>Total</dt><dd>5.799,30 € + IVA (ilustrativo)</dd>
@@ -507,9 +522,9 @@
                   <div class="ac-a" id="valAcoes">
                     <button type="button" class="ac-b ac-b--p" data-val="aprovar">Aprovar e criar no PHC</button>
                     <button type="button" class="ac-b" data-val="corrigir">Corrigir</button>
-                    <button type="button" class="ac-b" data-val="info">Pedir info ao comercial</button>
+                    <button type="button" class="ac-b" data-val="info">Perguntar ao comercial</button>
                   </div>
-                  <div class="ac-res" id="valRes" hidden></div>
+                  <p class="ac-so" id="valSo">Estes botões só respondem a quem valida.</p>
                 </div>
               </div>
             </div>
@@ -579,7 +594,7 @@
     <div class="sec-head">
       <span class="eyebrow">Ponto 4, o mais importante</span>
       <h2>Na visita, o instalador sai com a proposta para o cliente dele</h2>
-      <p class="lead">O comercial abre o orçamento Dica, o instalador põe a margem dele, a mão de obra e os trabalhos extra, e a proposta sai com a marca do instalador, pronta a mostrar ao cliente final. Mexam nos valores.</p>
+      <p class="lead">O instalador parte do orçamento Dica, acrescenta produtos do catálogo, põe a margem dele, a mão de obra e os trabalhos extra, e recebe a proposta no WhatsApp, com a marca dele, pronta a reencaminhar ao cliente final. Mexam nos valores.</p>
     </div>
     <div class="inst">
       <form class="card inst-form" id="instForm" onsubmit="return false" data-entra="sobe">
@@ -597,14 +612,13 @@
         </div>
         <div class="campo">
           <span class="lbl">Do orçamento Dica nº 2026/1851 <b>preço ao instalador</b></span>
-          <ul class="inst-linhas">
-            <li><span>Bomba de calor 15 kW</span><span>3.900,00 €</span></li>
-            <li><span>Depósito de inércia 100 L</span><span>420,00 €</span></li>
-            <li><span>Cronotermóstato</span><span>85,00 €</span></li>
-            <li><span>Acumulador AQS 200 L</span><span>980,00 €</span></li>
-            <li><span>Kit de instalação (9 artigos)</span><span>414,30 €</span></li>
-            <li class="tot"><span>Total Dica</span><span>5.799,30 € + IVA</span></li>
-          </ul>
+          <ul class="inst-linhas" id="instLinhas"></ul>
+          <div class="inst-add">
+            <label for="inProd" class="sr-only">Acrescentar um produto do catálogo Dica</label>
+            <select id="inProd"></select>
+            <button type="button" class="btn btn-ghost" id="btAdd">Acrescentar</button>
+          </div>
+          <small class="inst-dica">Os produtos vêm do catálogo Dica, já ao preço deste instalador.</small>
         </div>
         <div class="campo">
           <label for="inMargem">Margem do instalador <b id="vMargem">25%</b></label>
@@ -641,10 +655,21 @@
           <p class="pp-cond">Instalação feita pela equipa do instalador. Prazo a combinar após adjudicação. Valores ilustrativos.</p>
         </div>
         <div class="inst-acoes">
-          <button type="button" class="btn btn-ghost" id="btPartilhar">Partilhar com o cliente</button>
+          <button type="button" class="btn btn-ghost" id="btPartilhar">Enviar por WhatsApp</button>
           <button type="button" class="btn btn-primary" id="btConverter">Converter em encomenda Dica</button>
         </div>
-        <div class="conv" id="partilha" hidden><b>Proposta enviada ao cliente final</b> em PDF, por email ou WhatsApp, com a marca do instalador. A Dica não aparece, nem os preços de compra.</div>
+        <div class="wa-tel inst-wa" id="instWa" hidden>
+          <div class="wt-cab"><img src="assets/img/dica-simbolo.png" alt=""><div><b>Dica Portugal</b><small>Conta comercial</small></div></div>
+          <div class="wt-corpo">
+            <span class="wt-dia">HOJE</span>
+            <div class="wt-m in">Olá! A proposta para <b id="waCli">Família Ferreira</b> está pronta, com a marca <b id="waInst">Instalações R. Sousa</b>.
+              <div class="wt-doc"><i>PDF</i><div><b>Proposta_P-2026-118.pdf</b><small>2 páginas · Total <span id="waTot">0,00 €</span></small></div></div>
+              É só reencaminhar ao cliente. A Dica não aparece, nem os preços de compra.<time>17:48</time>
+            </div>
+            <div class="wt-m out">top, ja reencaminhei 👍<time>17:50</time></div>
+            <div class="wt-m in">Se o cliente aceitar, responda <b>«adjudicado»</b> e eu converto em encomenda Dica.<time>17:50</time></div>
+          </div>
+        </div>
         <div class="conv" id="conv" hidden><b>Encomenda criada no PHC, para validação</b>
           <ul>
             <li>Cliente: <span id="convInst">Instalações R. Sousa</span></li>
@@ -691,7 +716,7 @@
       <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3zM7 15h4M14 15h3"/></svg></span><b>Cartões com botões</b><p>Escolhas, campos e botões dentro do chat: criar no PHC, enviar ao cliente, pedir validação.</p></div>
       <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.3-7M9 12l2.2 2.2L21 5"/></svg></span><b>O estado à vista</b><p>Recebido, em análise, validado, número do PHC. O cartão atualiza e ninguém precisa de perguntar.</p></div>
       <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3zM3 16l5-5 4 4 3-3 6 6"/></svg></span><b>Fotos e plantas no chat</b><p>Como hoje: tira-se a fotografia ao esboço e manda-se. O assistente lê.</p></div>
-      <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 7v5l3 2"/></svg></span><b>Fora de horas</b><p>Um pedido às 22h fica preparado para a orçamentação validar de manhã.</p></div>
+      <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 7v5l3 2"/></svg></span><b>Pedidos à noite</b><p>Um pedido às 22h fica preparado para a orçamentação validar de manhã.</p></div>
       <div class="card" data-entra="sobe"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.3 7.5 8 10 4.7-2.5 8-5.5 8-10V6zM9 12l2 2 4-4"/></svg></span><b>Dentro do vosso Microsoft 365</b><p>As conversas ficam no vosso Teams, com as permissões que já têm.</p></div>
     </div>
     <div class="requisito"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20zM12 10v4M12 17h.01"/></svg><span><b>O que precisamos do vosso lado:</b> que o administrador do Microsoft 365 da Dica autorize a aplicação do assistente no Teams. É um passo de configuração, feito uma vez, no arranque.</span></div>
@@ -723,6 +748,8 @@
  "scenarios": [
   {
    "title": "Dúvida antes de comprar",
+   "canal": "whatsapp",
+   "chatStatus": "online",
    "subtitle": "Domingo à noite, uma cliente hesita numa salamandra. O assistente responde com a página e a ficha do produto, e marca a chamada para segunda.",
    "chat": [
     { "sender": "system", "text": "Domingo, 21:42. Mensagem pelo botão de WhatsApp da loja", "time": "21:42" },
@@ -816,26 +843,6 @@
     { "icon": "database", "label": "Vai buscar a ficha técnica à pasta da Drive" },
     { "icon": "check", "label": "Envia o PDF na conversa" }
    ]
-  },
-  {
-   "title": "Instalador fora de horas",
-   "subtitle": "Sábado à noite, um instalador pede preços de revenda. O assistente não dá condições de conta: passa ao comercial da zona com o pedido completo.",
-   "chat": [
-    { "sender": "system", "text": "Sábado, 23:10. Mensagem no WhatsApp da MaisClima", "time": "23:10" },
-    { "sender": "client", "text": "boa noite sou instalador", "time": "23:10" },
-    { "sender": "client", "text": "preciso de preço para 3 bombas de calor etop 300 para uma obra. tenho conta na dica", "time": "23:11", "passo": 1 },
-    { "sender": "agent", "text": "Boa noite! Preços de profissional e condições de conta são tratados pela equipa comercial da Dica Portugal. Diga-me o nome da empresa e passo o pedido já.", "time": "23:11", "passo": 3 },
-    { "sender": "client", "text": "Termolar Instalações", "time": "23:13" },
-    { "sender": "agent", "text": "Obrigado. Pedido registado: **3 Ecotermal ETOP 300 L**, para obra. O comercial da sua zona responde-lhe na segunda de manhã.", "time": "23:13", "passo": 4 },
-    { "sender": "system", "text": "Passado ao comercial da zona, com o pedido e a conversa. Resposta na segunda.", "time": "23:13", "passo": 5 }
-   ],
-   "steps": [
-    { "icon": "filter", "label": "Percebe que é um profissional, não um cliente final" },
-    { "icon": "ban", "label": "Não dá preços de revenda nem condições de conta" },
-    { "icon": "id", "label": "Pede a empresa para encontrar a conta" },
-    { "icon": "user-cog", "label": "Passa ao comercial da zona com o pedido completo" },
-    { "icon": "shield", "label": "Diz quando vai ter resposta" }
-   ]
   }
  ]
 }
@@ -897,13 +904,6 @@
      { "sender": "agent", "isAI": true, "text": "Envio-lhe já a ficha técnica com as medidas todas.", "time": "19:37" }
     ],
     "attributes": [ { "key": "Produto", "value": "Artom Slim Trifacetus F150" } ], "notes": [] },
-  { "id": 4, "name": "Termolar Instalações", "initials": "TI", "phone": "+351 912 000 402", "channel": "whatsapp", "label": "profissionais", "tab": "unassigned", "timeAgo": "1h", "unread": 2, "preview": "preciso de preço para 3 bombas de calor",
-    "messages": [
-     { "sender": "client", "text": "boa noite sou instalador. preciso de preço para 3 bombas de calor etop 300 para uma obra", "time": "23:11" },
-     { "sender": "agent", "isAI": true, "text": "Preços de profissional e condições de conta são tratados pela equipa comercial. Pedido registado: **3 ETOP 300 L**.", "time": "23:13" },
-     { "sender": "system", "text": "Passado ao comercial da zona. Resposta na segunda.", "time": "23:13" }
-    ],
-    "attributes": [ { "key": "Tipo", "value": "Instalador com conta Dica" } ], "notes": ["Pedido para obra, 3 unidades."] },
   { "id": 5, "name": "Paula Ribeiro", "initials": "PR", "phone": "+351 912 000 381", "channel": "whatsapp", "label": "carrinho", "tab": "mine", "timeAgo": "2h", "unread": 0, "preview": "ok vou acabar agora obrigada",
     "messages": [
      { "sender": "agent", "isAI": true, "text": "Olá Paula, daqui é a MaisClima. Ficou a meio a encomenda da **Salamandra Kalor Air Perfecta Lara 12**. Ficou com alguma dúvida?", "time": "22:14" },
@@ -1038,9 +1038,9 @@
     <div class="sec-head">
       <span class="eyebrow">A conta</span>
       <h2>Quando pedir um orçamento passa a ser uma mensagem</h2>
-      <p class="lead">Os comerciais deixam de filtrar o que pedem e a loja deixa de perder quem sai a meio. Os valores por defeito são redondos: ajustem aos vossos números.</p>
+      <p class="lead">Os comerciais deixam de filtrar o que pedem. Os valores por defeito são redondos: ajustem aos vossos números.</p>
     </div>
-    <div class="valor-grid">
+    <div class="valor-grid" style="grid-template-columns:minmax(0,1fr); max-width:760px; margin-inline:auto">
       <div class="valor-bloco" data-entra="sobe">
         <h3><img src="assets/img/logo-dica.png" alt="Dica Portugal">Orçamentação</h3>
         <div class="calc" id="calcOrc"></div>
@@ -1061,64 +1061,7 @@
 }
         </script>
       </div>
-      <div class="valor-bloco" data-entra="sobe">
-        <h3><img src="assets/img/logo-maisclima.png" alt="MaisClima">Carrinhos recuperados</h3>
-        <div class="calc" id="calcMc"></div>
-        <script type="application/json" id="calcMc-config">
-{
- "inputs": [
-  { "id": "carrinhos", "label": "Carrinhos abandonados por mês", "min": 5, "max": 150, "default": 30 },
-  { "id": "rec", "label": "% recuperados por WhatsApp", "min": 2, "max": 25, "default": 10, "suffix": "%" },
-  { "id": "ticket", "label": "Valor médio do carrinho (€)", "min": 50, "max": 3000, "step": 50, "default": 900 }
- ],
- "outputs": [
-  { "label": "Vendas recuperadas por mês (carrinhos × % × valor)", "expr": "carrinhos*rec/100*ticket/1000", "suffix": " mil €", "decimals": 1, "highlight": true },
-  { "label": "Encomendas recuperadas por mês", "expr": "carrinhos*rec/100", "decimals": 1 }
- ],
- "note": "Estimativa ilustrativa. Ajustem aos vossos números."
-}
-        </script>
-      </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ 11. INVESTIMENTO ============ -->
-<section id="investimento">
-  <div class="container">
-    <div class="sec-head">
-      <span class="eyebrow">Investimento</span>
-      <h2>O âmbito cresceu. Conseguimos fazer tudo.</h2>
-      <p class="lead">Na primeira reunião falámos da orçamentação. Depois juntámos a MaisClima, e a 4 de novembro chegaram novos âmbitos. Este é o valor global estimado; o detalhe por fase vai na proposta.</p>
-    </div>
-    <div class="percurso" data-entra="sobe">
-      <div class="perc"><i></i><small>28/10</small><b>Orçamentação</b><p>Cerca de 10.000 € + IVA, como falámos na primeira reunião</p></div>
-      <div class="perc"><i></i><small>30/10</small><b>MaisClima</b><p>Assistentes, comentários, carrinhos e vendas cruzadas</p></div>
-      <div class="perc"><i></i><small>4/11</small><b>Os 8 pontos</b><p>Proposta do instalador, fichas de cliente, permissões</p></div>
-      <div class="perc"><i></i><small>Hoje</small><b>Tudo junto</b><p>Por fases, com prioridades definidas convosco</p></div>
-    </div>
-    <div class="precos">
-      <div class="card preco preco--principal" data-entra="sobe">
-        <span class="label">Investimento global estimado</span>
-        <div class="valor"><span class="pre">cerca de</span><span>20.000 €</span> <small>+ IVA</small></div>
-        <p class="note">Orçamentação no Teams ligada ao PHC, análise técnica, proposta do instalador e conversão em encomenda, fichas de cliente, permissões e MaisClima. O detalhe por fase vai na proposta.</p>
-      </div>
-      <div class="card preco" data-entra="sobe">
-        <span class="label">MaisClima, por mês</span>
-        <div class="valor"><span class="pre">entre</span><span>200 € e 300 €</span> <small>+ IVA</small></div>
-        <ul class="price-list">
-          <li>Atendimento no WhatsApp, Instagram e Facebook</li>
-          <li>Respostas a comentários</li>
-          <li>Carrinhos abandonados e vendas cruzadas</li>
-        </ul>
-      </div>
-      <div class="card preco preco--aberto" data-entra="sobe">
-        <span class="label">Orçamentação, por mês</span>
-        <div class="valor" style="font-size:1.5rem">A definir na proposta</div>
-        <p class="note">Depende do que a auditoria mostrar: volume de pedidos e ligações ao PHC.</p>
-      </div>
-    </div>
-    <p class="sintese">Cada fase com o seu valor e o seu prazo, <b>na proposta que vamos enviar.</b></p>
   </div>
 </section>
 
@@ -1136,7 +1079,6 @@
       <div class="card fase" data-entra="sobe"><div class="quando">Fase 2<b>Análise técnica</b></div><div><h3>Perguntas, plantas, kits e níveis de autorização</h3><p>Perguntas por tipo de instalação, leitura de plantas e esboços, kits de acessórios, exclusões e os níveis de autorização acordados.</p></div></div>
       <div class="card fase" data-entra="sobe"><div class="quando">Fase 3<b>Instalador</b></div><div><h3>Proposta do instalador, encomenda e fichas de cliente</h3><p>A proposta para o cliente final com a marca do instalador, a conversão em encomenda Dica e a criação e alteração de fichas de cliente no PHC.</p></div></div>
       <div class="card fase fase--paralelo" data-entra="sobe"><div class="quando">Em paralelo<b>MaisClima</b></div><div><h3>Assistentes, comentários, carrinhos e vendas cruzadas</h3><p>WhatsApp, Instagram e Facebook, respostas a comentários, recuperação de carrinhos e mensagens depois da compra.</p></div></div>
-      <div class="card fase fase--depois" data-entra="sobe"><div class="quando">Depois<b>Fora de horas</b></div><div><h3>Apoio a instaladores fora de horas</h3><p>Que informação os instaladores podem consultar e que operações podem fazer, definido convosco.</p></div></div>
     </div>
     <div class="proximo" data-entra="sobe">
       <small>Próximo passo</small>
@@ -1165,6 +1107,6 @@
 <script src="../shared/unibox/unibox.js"></script>
 <script src="assets/js/teams.js"></script>
 <script src="assets/js/pagina.js"></script>
-<script>teamsDemo('tmDemo'); chatRaciocinio('mcDemo'); fluxo('dcFluxo'); unibox('mcInbox'); calculadora('calcOrc'); calculadora('calcMc');</script>
+<script>teamsDemo('tmDemo'); chatRaciocinio('mcDemo'); fluxo('dcFluxo'); unibox('mcInbox'); calculadora('calcOrc');</script>
 </body>
 </html>

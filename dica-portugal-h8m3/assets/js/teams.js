@@ -140,6 +140,8 @@
     ];
 
     function render() {
+      /* guarda a posição do scroll da conversa: quem subiu para ler não é puxado para baixo */
+      var antes = document.getElementById(id + "-msgs"), topo = antes ? antes.scrollTop : 0;
       var s = scen[st.idx], sq = seq(s), total = sq.length;
       var rc = -1, rs = -1;
       for (var i = 0; i < Math.min(st.prog, sq.length); i++) { if (sq[i][0] === "chat") rc = sq[i][1]; else rs = sq[i][1]; }
@@ -170,7 +172,15 @@
       });
       h += "</ol></div></div></div>";
       root.innerHTML = h;
-      var mv = document.getElementById(id + "-msgs"); if (mv) mv.scrollTop = mv.scrollHeight;
+      var mv = document.getElementById(id + "-msgs");
+      if (mv) {
+        mv.scrollTop = st.preso ? topo : mv.scrollHeight;
+        mv.addEventListener("scroll", function () {
+          var noFim = mv.scrollHeight - mv.scrollTop - mv.clientHeight < 24;
+          st.preso = !noFim;
+          if (!noFim) st.manual = true;
+        }, { passive: true });
+      }
     }
 
     /* Fora do ecrã, a demo não reconstrói a janela do Teams a cada passo:
@@ -178,7 +188,7 @@
     var visivel = true;
     function tick(primeiro) {
       if (timer) clearTimeout(timer);
-      if (!visivel) { timer = setTimeout(function () { tick(primeiro); }, 500); return; }
+      if (!visivel || st.preso) { timer = setTimeout(function () { tick(primeiro); }, 500); return; }
       var len = seq(scen[st.idx]).length;
       if (st.prog < len) timer = setTimeout(function () { st.prog++; render(); tick(); }, primeiro ? 350 : STEP);
       else if (!st.manual) timer = setTimeout(function () { st.idx = (st.idx + 1) % scen.length; st.prog = 0; render(); tick(true); }, END);
@@ -186,11 +196,11 @@
 
     root.addEventListener("click", function (e) {
       var t = e.target.closest(".cr-tab");
-      if (t) { st.manual = true; st.idx = +t.getAttribute("data-i"); st.prog = 0; render(); tick(true); return; }
+      if (t) { st.manual = true; st.preso = false; st.idx = +t.getAttribute("data-i"); st.prog = 0; render(); tick(true); return; }
       var a = e.target.closest("[data-acao]");
       if (a) {
         var p = a.getAttribute("data-acao").split("|");
-        feitos[p[0]] = +p[1]; st.manual = true; render(); return;
+        feitos[p[0]] = +p[1]; st.manual = true; var pr = st.preso; st.preso = true; render(); st.preso = pr; return;
       }
       var pill = e.target.closest("[data-pill]");
       if (pill) { pill.parentNode.querySelectorAll(".ac-pill").forEach(function (b) { b.classList.remove("sel"); }); pill.classList.add("sel"); }

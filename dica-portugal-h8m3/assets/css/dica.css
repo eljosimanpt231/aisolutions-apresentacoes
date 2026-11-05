@@ -329,3 +329,15 @@ section { position: relative; }
 @media (max-width: 1099px) { #tmDemo .cr-head { min-height: 170px; } #tmDemo .cr-reason { min-height: 830px; } }
 @media (max-width: 999px) { #mcDemo .cr-head { min-height: 170px; } #mcDemo .cr-reason { min-height: 664px; } }
 @media (max-width: 420px) { #tmDemo .cr-head, #mcDemo .cr-head { min-height: 175px; } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.inst-add { display: flex; gap: 8px; margin-top: 8px; }
+.inst-add select { flex: 1; min-width: 0; min-height: 44px; }
+.inst-add .btn { flex-shrink: 0; min-height: 44px; padding-inline: 16px; }
+.inst-dica { font-size: 0.74rem; color: var(--muted); }
+.inst-linhas li.novo { background: hsl(var(--success-hsl) / 0.10); }
+.inst-x { margin-left: 8px; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface-2); color: var(--muted); cursor: pointer; font-size: 0.9rem; line-height: 1; }
+.inst-x:hover { color: var(--text); }
+@media (max-width: 1060px) { .inst { grid-template-columns: minmax(0, 1fr); } }
+.inst-form, .inst-dir { min-width: 0; }
+.inst-add select { width: 100%; max-width: 100%; text-overflow: ellipsis; }

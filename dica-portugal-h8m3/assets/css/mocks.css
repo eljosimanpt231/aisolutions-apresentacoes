@@ -46,7 +46,7 @@
 .tm-tabs span.on { color: var(--tm-texto); font-weight: 700; box-shadow: inset 0 -2px 0 var(--tm-roxo); padding-bottom: 4px; }
 .tm-reunir { margin-left: auto; font-size: 0.74rem; padding: 5px 10px; border-radius: 6px; border: 1px solid var(--tm-linha); color: var(--tm-texto); white-space: nowrap; }
 .tm-pess { font-size: 0.74rem; color: var(--tm-cinza); white-space: nowrap; }
-.tm-msgs { flex: 1 1 0; min-height: 0; overflow: hidden; padding: 16px 18px 10px; display: flex; flex-direction: column; gap: 14px; justify-content: flex-end; }
+.tm-msgs { flex: 1 1 0; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 16px 18px 10px; display: flex; flex-direction: column; gap: 14px; scrollbar-width: thin; }
 .tm-msgs > :first-child { margin-top: auto; }
 .tm-compose { margin: 0 16px 14px; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--tm-linha); background: var(--tm-bolha); display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--tm-cinza); box-shadow: inset 0 -2px 0 var(--tm-roxo); }
 .tm-compose span { flex: 1; }
@@ -269,3 +269,27 @@
 .enc-top b { color: hsl(130 60% 26%); }
 .enc .mc-prod { margin-top: 10px; }
 @media (max-width: 1300px) { .tm-reunir { display: none; } }
+
+/* validação no chat do grupo */
+.tm-mini .tm-msgs { overflow: visible; }
+.ac-so { margin: 6px 2px 0; font-size: 0.68rem; color: var(--tm-cinza); }
+.ac-so[hidden], .ac-a[hidden], .ac-b[hidden] { display: none; }
+/* documento no WhatsApp */
+.wt-doc { display: flex; gap: 9px; align-items: center; margin: 7px 0; padding: 8px; border-radius: 6px; background: hsl(150 20% 96%); border: 1px solid hsl(150 10% 88%); }
+.wt-doc i { width: 30px; height: 36px; border-radius: 3px; background: hsl(0 72% 46%); color: #fff; display: grid; place-items: center; font-style: normal; font-size: 0.56rem; font-weight: 800; flex-shrink: 0; }
+.wt-doc b { display: block; font-size: 0.76rem; }
+.wt-doc small { display: block; font-size: 0.68rem; color: hsl(200 8% 34%); }
+.inst-wa { min-height: 0; flex: none; }
+.inst-wa[hidden] { display: none; }
+/* conversa da MaisClima com cara de WhatsApp */
+.cr-chat--whatsapp { background: var(--wa-bg) !important; border-color: hsl(220 10% 16%) !important; border-width: 6px !important; border-radius: 22px !important; }
+.cr-chat--whatsapp .cr-chat-head { background: var(--wa-green) !important; border-color: transparent !important; }
+.cr-chat--whatsapp .cr-chat-who b { color: #fff !important; }
+.cr-chat--whatsapp .cr-chat-who small { color: rgba(255,255,255,0.85) !important; }
+.cr-chat--whatsapp .cr-chat-ava { background: #fff !important; color: var(--wa-green) !important; }
+.cr-chat--whatsapp .cr-row.agent .cr-bubble, .cr-chat--whatsapp .cr-typing { background: var(--wa-in) !important; color: var(--wa-text) !important; border-radius: 8px; border-top-left-radius: 2px; box-shadow: 0 1px 1px hsl(0 0% 0% / 0.12) !important; }
+.cr-chat--whatsapp .cr-row.client .cr-bubble { background: var(--wa-out) !important; color: var(--wa-text) !important; border-radius: 8px; border-top-right-radius: 2px; box-shadow: 0 1px 1px hsl(0 0% 0% / 0.12) !important; }
+.cr-chat--whatsapp .cr-bubble time { color: hsl(200 8% 36%) !important; opacity: 1; }
+.cr-chat--whatsapp .cr-sys { background: hsl(48 80% 92%) !important; color: hsl(30 40% 22%) !important; font-style: normal; }
+.cr-chat--whatsapp .cr-input { background: hsl(40 15% 94%) !important; border-color: transparent !important; }
+.cr-chat--whatsapp .cr-input span { background: #fff !important; color: hsl(200 8% 40%) !important; }
