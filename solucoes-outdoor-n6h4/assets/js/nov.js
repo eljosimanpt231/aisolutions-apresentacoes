@@ -2,7 +2,7 @@
    REVISÃO DE NOVEMBRO
    Uma só fonte de dados para as necessidades e para o investimento.
    O seletor de cenário (A ou B) muda as duas secções ao mesmo tempo.
-   Meses de subscrição dentro do projeto (fim a 28/10/2027):
+   Fases em produção (fim do projeto a 28/10/2027):
    Fase 1 em produção em abril (7 meses), Fase 2 em junho (5), Fase 3 em agosto (3).
    ============================================================ */
 (function () {
@@ -132,7 +132,6 @@
   const APROVADO = { 2: 19500, 3: 13000, 4: 81000 };
 
   const eur = (v) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
-  const totalLinha = (l) => l.dev + l.mes * (MESES[l.fase] || 0);
   const linhas = (c) => {
     const base = BASE[c];
     const necs = NEC.map(n => Object.assign({ cod: n.cod, nome: n.nome }, n[c]));
@@ -169,48 +168,48 @@
     el.innerHTML = head + grupo('Base') + base + grupo('Produtividade') + nec('p') + grupo('Negócio') + nec('n') + grupo('Fora da vossa lista') + opc;
   }
 
-  /* ---------- Investimento ---------- */
+  /* ---------- Investimento ----------
+     A manutenção mensal fica FORA do projeto (decisão de 05/11/2026): começa depois da conclusão
+     e não entra nas rubricas. Dentro do projeto só há desenvolvimento, consultoria e formação. */
   function renderInv(c) {
     const { prop, opc } = linhas(c);
     const row = (l, cls) => `<tr class="${cls || ''}"><td><b>${l.cod}. ${l.nome}</b><span>${FASE_TXT[l.fase]}</span></td>
-      <td class="n">${l.dev ? eur(l.dev) : '<span>n.a.</span>'}</td><td class="n">${l.mes ? eur(l.mes) : '<span>n.a.</span>'}</td>
-      <td class="n">${l.mes ? MESES[l.fase] : '<span>n.a.</span>'}</td><td class="n">${eur(totalLinha(l))}</td></tr>`;
+      <td class="n">${l.dev ? eur(l.dev) : '<span>n.a.</span>'}</td><td class="n">${l.mes ? eur(l.mes) : '<span>n.a.</span>'}</td></tr>`;
     const devP = prop.reduce((s, l) => s + l.dev, 0);
     const mesP = prop.reduce((s, l) => s + l.mes, 0);
-    const subP = prop.reduce((s, l) => s + l.mes * MESES[l.fase], 0);
-    const r4 = devP + subP;
-    const opcT = opc.reduce((s, l) => s + totalLinha(l), 0);
+    const opcT = opc.reduce((s, l) => s + l.dev, 0);
     const rub = RUB[c];
     const cons = rub.filter(r => r.tipo === 'cons').reduce((s, r) => s + r.v, 0);
     const devR3 = rub.filter(r => r.tipo === 'dev').reduce((s, r) => s + r.v, 0);
-    const total = r4 + cons + devR3;
+    const total = devP + cons + devR3;
     const apoio = Math.round(total * 0.75);
-    const margem4 = APROVADO[4] - r4;
+    const margem4 = APROVADO[4] - devP;
 
-    set('invTab', `<table class="inv"><thead><tr><th>Rubrica 4 (81.000&nbsp;€ aprovados): necessidades</th><th class="n">Desenvolvimento</th><th class="n">Subscrição mensal</th><th class="n">Meses no projeto</th><th class="n">Total até 28/10/2027</th></tr></thead>
-      <tbody><tr class="grp"><td colspan="5">Propomos</td></tr>${prop.map(l => row(l)).join('')}
-      <tr class="grp"><td colspan="5">Opcionais, com preço separado</td></tr>${opc.map(l => row(l, 'opc')).join('')}</tbody>
-      <tfoot><tr><td><b>Propostas, cenário ${c}</b><span>Sem os opcionais</span></td><td class="n"><b>${eur(devP)}</b></td><td class="n"><b>${eur(mesP)}</b></td><td class="n"></td><td class="n"><b>${eur(r4)}</b></td></tr></tfoot></table>`);
+    set('invTab', `<table class="inv"><thead><tr><th>Rubrica 4 (81.000&nbsp;€ aprovados): necessidades</th><th class="n">Desenvolvimento, no projeto</th><th class="n">Manutenção mensal, depois do projeto</th></tr></thead>
+      <tbody><tr class="grp"><td colspan="3">Propomos</td></tr>${prop.map(l => row(l)).join('')}
+      <tr class="grp"><td colspan="3">Opcionais, com preço separado</td></tr>${opc.map(l => row(l, 'opc')).join('')}</tbody>
+      <tfoot><tr><td><b>Propostas, cenário ${c}</b><span>Sem os opcionais</span></td><td class="n"><b>${eur(devP)}</b></td><td class="n"><b>${eur(mesP)}</b></td></tr></tfoot></table>`);
 
     set('rubTab', `<table class="inv"><thead><tr><th>Rubricas 2 e 3: consultoria, formação e integração</th><th>Natureza</th><th class="n">Valor</th></tr></thead><tbody>
       ${rub.map(r => `<tr><td><b>${r.nome}</b><span>Rubrica ${r.r} (${eur(APROVADO[r.r])} aprovados). ${r.det}</span></td><td>${r.tipo === 'cons' ? 'Consultoria e formação' : 'Desenvolvimento'}</td><td class="n">${eur(r.v)}</td></tr>`).join('')}
       </tbody></table>`);
 
     set('sep', `<div><span>Desenvolvimento</span><b>${eur(devP + devR3)}</b><i>Necessidades propostas e integração da rubrica 3. Pago por entrega.</i></div>
-      <div><span>Subscrição até 28/10/2027</span><b>${eur(subP)}</b><i>${eur(mesP)} por mês com tudo em produção. Manutenção, suporte e melhoria contínua, com o alojamento e os consumos de IA incluídos.</i></div>
-      <div><span>Consultoria e formação</span><b>${eur(cons)}</b><i>Diagnóstico, desenho funcional e formação das equipas.</i></div>`);
+      <div><span>Consultoria e formação</span><b>${eur(cons)}</b><i>Diagnóstico, desenho funcional e formação das equipas.</i></div>
+      <div><span>Manutenção, depois do projeto</span><b>${eur(mesP)}/mês</b><i>Fora do projeto e das rubricas. Começa depois da conclusão: manutenção, suporte e melhoria contínua, e cobre todos os custos de IA e de alojamento.</i></div>`);
 
     set('totApoio', `<div><span>Proposta, cenário ${c}</span><b>${eur(total)}</b></div><div class="arr">&minus;</div>
       <div><span>Comparticipação PRR a 75%</span><b class="green">${eur(apoio)}</b></div><div class="arr">=</div>
       <div class="net"><span>Esforço líquido da Soluções Outdoor</span><b>${eur(total - apoio)}</b></div>`);
 
     const livre = (APROVADO[2] + APROVADO[3] + APROVADO[4]) - total;
+    const depois = `<div class="card"><h3>Depois do projeto</h3><p class="small">A manutenção de ${eur(mesP)} por mês começa depois da conclusão, fora da candidatura, e cobre todos os custos de IA e de alojamento. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>`;
     set('invNotas', c === 'A'
-      ? `<div class="card"><h3>Margem na rubrica 4</h3><p class="small">Ficam ${eur(margem4)} dos 81.000&nbsp;€. Os opcionais somam ${eur(opcT)}: escolhe-se na reunião quais entram.</p></div>
-         <div class="card"><h3>Depois de 28/10/2027</h3><p class="small">A subscrição pode continuar a ${eur(mesP)} por mês, já fora do projeto. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>
+      ? `<div class="card"><h3>Margem na rubrica 4</h3><p class="small">Ficam ${eur(margem4)} dos 81.000&nbsp;€. Os opcionais somam ${eur(opcT)} de desenvolvimento: escolhe-se na reunião quais entram.</p></div>
+         ${depois}
          <div class="card"><h3>O que fica de fora</h3><p class="small">Equipamentos (10.000&nbsp;€) e validação dos pedidos de pagamento (2.000&nbsp;€) ficam convosco, como em setembro.</p></div>`
-      : `<div class="card"><h3>O que sobra para o ERP</h3><p class="small">Das rubricas 2, 3 e 4 ficam ${eur(livre)} para o fornecedor do Odoo e para os opcionais que escolherem (${eur(opcT)} no total).</p></div>
-         <div class="card"><h3>Depois de 28/10/2027</h3><p class="small">A subscrição pode continuar a ${eur(mesP)} por mês, já fora do projeto. Quando a solução estiver estável, a infraestrutura e os consumos passam para o vosso lado e fica a manutenção à hora, quando a pedirem. O código já é vosso.</p></div>
+      : `<div class="card"><h3>O que sobra para o ERP</h3><p class="small">Das rubricas 2, 3 e 4 ficam ${eur(livre)} para o fornecedor do Odoo e para os opcionais que escolherem (${eur(opcT)} de desenvolvimento no total).</p></div>
+         ${depois}
          <div class="card"><h3>O que fica de fora</h3><p class="small">Licenças, implementação e migração do Odoo, o CRM e as automações sobre o Sage, como pediram para este cenário.</p></div>`);
   }
   function set(id, html) { const el = document.getElementById(id); if (el) el.innerHTML = html; }
