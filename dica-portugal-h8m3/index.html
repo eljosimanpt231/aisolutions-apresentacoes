@@ -279,769 +279,7 @@
 
     <div class="cr" id="tmDemo" data-entra="sobe"></div>
     <script type="application/json" id="tmDemo-config">
-{
- "bot": "Assistente de Orçamentos",
- "botIcone": "assets/img/dica-simbolo.png",
- "eu": "Comercial Zona 2",
- "euIni": "C2",
- "canal": "ZONA 2 | Orçamentos",
- "stepMs": 1500,
- "endPauseMs": 3600,
- "scenarios": [
-  {
-   "letra": "A",
-   "title": "Pedido simples",
-   "subtitle": "Preços por unidade e por metro, com as condições do cliente, as campanhas e o stock. O comercial aprova com um toque e recebe o orçamento final, com o PDF para enviar ao cliente.",
-   "preview": "Assistente: orçamento criado no PHC",
-   "chat": [
-    {
-     "de": "com",
-     "hora": "09:12",
-     "texto": "Orçamento Climatérmica Lda\n\nTubo cobre vara 15\nTubo cobre vara 18\nTubo cobre vara 22\nTubo cobre vara 28\nPurgadores automáticos\nVálvulas manuais\n\nDá-me o preço por UN e por MT sff",
-     "passo": 1
-    },
-    {
-     "de": "bot",
-     "hora": "09:12",
-     "texto": "Recebido. **Climatérmica Lda**, cliente 3108. Vou buscar as condições dela.",
-     "passo": 3
-    },
-    {
-     "de": "bot",
-     "hora": "09:13",
-     "passo": 6,
-     "cartao": {
-      "titulo": "Proposta de orçamento: Climatérmica Lda",
-      "sub": "Tabela profissional com a campanha de cobre de novembro. Valores ilustrativos, + IVA.",
-      "factos": [
-       [
-        "Conta",
-        "Sem bloqueios"
-       ],
-       [
-        "Campanha",
-        "Cobre em vara, novembro"
-       ]
-      ],
-      "tabela": {
-       "cab": [
-        "Artigo",
-        "Preço UN",
-        "Preço MT",
-        "Stock"
-       ],
-       "num": [
-        1,
-        2
-       ],
-       "linhas": [
-        [
-         "Tubo cobre 15 mm, vara 5 m",
-         "21,40 €",
-         "4,28 €",
-         "ok:Lousada 140"
-        ],
-        [
-         "Tubo cobre 18 mm, vara 5 m",
-         "26,90 €",
-         "5,38 €",
-         "ok:Lousada 95"
-        ],
-        [
-         "Tubo cobre 22 mm, vara 5 m",
-         "34,60 €",
-         "6,92 €",
-         "ok:Lousada 60"
-        ],
-        [
-         "Tubo cobre 28 mm, vara 5 m",
-         "48,10 €",
-         "9,62 €",
-         "prev:12 un., +40 a 12/11"
-        ],
-        [
-         "Purgador automático 1/2\"",
-         "6,20 €",
-         "",
-         "ok:Lousada 300"
-        ],
-        [
-         "Válvula manual 1/2\" (par)",
-         "9,80 €",
-         "",
-         "ok:Lousada 80"
-        ]
-       ]
-      },
-      "notas": [
-       {
-        "tom": "info",
-        "texto": "Purgadores e válvulas: **1/2\"**, a medida que este cliente mais pediu nos últimos 6 meses."
-       }
-      ],
-      "acoes": [
-       {
-        "t": "Aprovar",
-        "p": true,
-        "r": "Aprovado."
-       },
-       {
-        "t": "Falar com o orçamentista",
-        "r": "Pedido passado ao orçamentista, com a conversa toda."
-       }
-      ]
-     }
-    },
-    {
-     "de": "clique",
-     "alvo": 2,
-     "acao": 0
-    },
-    {
-     "de": "bot",
-     "hora": "09:15",
-     "passo": 7,
-     "texto": "Aqui está o orçamento final, já criado no PHC.",
-     "anexo": {
-      "nome": "Orcamento_2026-1844.pdf",
-      "tam": "PDF, 182 KB"
-     },
-     "cartao": {
-      "titulo": "C - Orçamento nº 2026/1844",
-      "factos": [
-       [
-        "Cliente",
-        "Climatérmica Lda"
-       ],
-       [
-        "Estado",
-        "Emitido no PHC"
-       ]
-      ],
-      "estado": {
-       "t": "Pronto a enviar ao cliente",
-       "tom": "ok"
-      },
-      "acoes": [
-       {
-        "t": "Descarregar PDF",
-        "p": true,
-        "r": "PDF descarregado."
-       },
-       {
-        "t": "Enviar ao cliente",
-        "r": "Enviado à Climatérmica Lda por email, com o PDF."
-       }
-      ]
-     }
-    }
-   ],
-   "steps": [
-    {
-     "icon": "list",
-     "label": "Lê o pedido: 6 artigos, preço por unidade e por metro"
-    },
-    {
-     "icon": "id",
-     "label": "Identifica o cliente no PHC: tabela profissional, conta sem bloqueios"
-    },
-    {
-     "icon": "star",
-     "label": "Aplica a campanha de cobre em vigor"
-    },
-    {
-     "icon": "database",
-     "label": "Stock por armazém e data prevista do que falta"
-    },
-    {
-     "icon": "search",
-     "label": "Histórico do cliente: as medidas que costuma pedir"
-    },
-    {
-     "icon": "send",
-     "label": "Devolve o cartão, com o que assumiu à vista"
-    },
-    {
-     "icon": "file",
-     "label": "O comercial aprova; o assistente cria no PHC e envia o orçamento final com o PDF"
-    }
-   ]
-  },
-  {
-   "letra": "B",
-   "title": "Pedido técnico",
-   "subtitle": "Uma bomba de calor para 75 elementos e «material para instalação». O assistente pergunta só o que falta, o comercial responde com botões, e o orçamentista valida no mesmo chat.",
-   "preview": "Assistente: orçamento criado no PHC",
-   "chat": [
-    {
-     "de": "com",
-     "hora": "16:40",
-     "texto": "Orçamento\nInstalações R. Sousa\n\n01UN- Bomba de calor Fairland para 75 elementos de radiador\n01UN- Depósito de inércia\n01UN- Crono para bomba de inércia\n01UN- Acumulador de 200lts inox com kit elétrico e 1 serpentina\n\nAcessórios/material para instalação",
-     "passo": 1
-    },
-    {
-     "de": "bot",
-     "hora": "16:40",
-     "passo": 3,
-     "cartao": {
-      "titulo": "Para escolher a bomba de calor faltam 2 dados",
-      "sub": "Pergunta 1 de 2",
-      "factos": [
-       [
-        "Cliente",
-        "Instalações R. Sousa"
-       ]
-      ],
-      "notas": [
-       {
-        "tom": "info",
-        "texto": "A alimentação na casa é monofásica ou trifásica?"
-       }
-      ],
-      "escolhas": [
-       "Monofásica",
-       "Trifásica",
-       "Não sei"
-      ]
-     }
-    },
-    {
-     "de": "clique",
-     "alvo": 1,
-     "escolha": 0
-    },
-    {
-     "de": "bot",
-     "hora": "16:52",
-     "cartao": {
-      "titulo": "Obrigado. Última pergunta",
-      "sub": "Pergunta 2 de 2",
-      "notas": [
-       {
-        "tom": "info",
-        "texto": "Já existe outra fonte de calor ligada aos radiadores?"
-       }
-      ],
-      "escolhas": [
-       "Não",
-       "Caldeira",
-       "Recuperador a água"
-      ]
-     }
-    },
-    {
-     "de": "clique",
-     "alvo": 3,
-     "escolha": 2,
-     "passo": 4
-    },
-    {
-     "de": "bot",
-     "hora": "16:53",
-     "texto": "Então não junto bomba de aquecimento: o recuperador a água já tem a sua. Proponho **15 kW monofásica**.",
-     "passo": 5
-    },
-    {
-     "de": "bot",
-     "passo": 6,
-     "cartao": {
-      "titulo": "Pré-orçamento: Instalações R. Sousa",
-      "sub": "Pedido técnico",
-      "tabela": {
-       "cab": [
-        "Artigo",
-        "Qtd."
-       ],
-       "num": [
-        1
-       ],
-       "linhas": [
-        [
-         "Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V",
-         "1"
-        ],
-        [
-         "Depósito de inércia",
-         "1"
-        ],
-        [
-         "Cronotermóstato para a bomba de calor",
-         "1"
-        ],
-        [
-         "Acumulador AQS 200 L inox, kit elétrico e 1 serpentina",
-         "1"
-        ],
-        [
-         "Kit de instalação da bomba de calor",
-         "1"
-        ]
-       ]
-      },
-      "kitTitulo": "Kit de instalação padrão (9 artigos)",
-      "kit": [
-       "Filtro magnético",
-       "Suportes antivibráticos",
-       "Vaso de expansão",
-       "Grupo de enchimento",
-       "Purgadores",
-       "Termomanómetro",
-       "Válvulas de retenção",
-       "Anticongelante",
-       "Bomba circuladora"
-      ],
-      "notas": [
-       {
-        "tom": "aviso",
-        "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista** antes de criar."
-       },
-       {
-        "tom": "ok",
-        "texto": "Sem bomba de aquecimento: o cliente já tem recuperador a água."
-       }
-      ],
-      "acoes": [
-       {
-        "t": "Pedir validação ao orçamentista",
-        "p": true,
-        "r": "Enviado ao orçamentista para validar."
-       },
-       {
-        "t": "Acrescentar nota",
-        "r": "Nota acrescentada. O orçamentista vê-a antes de validar."
-       }
-      ]
-     },
-     "hora": "17:06"
-    },
-    {
-     "de": "clique",
-     "alvo": 6,
-     "acao": 0,
-     "passo": 7
-    },
-    {
-     "de": "bot",
-     "hora": "16:54",
-     "cartao": {
-      "titulo": "@Orçamentação, validação pedida: Instalações R. Sousa",
-      "sub": "Pedido do Comercial Zona 2, neste grupo. Só o orçamentista pode aprovar ou editar",
-      "notas": [
-       {
-        "tom": "info",
-        "texto": "**O que assumi:** 15 kW monofásica, pelos 75 elementos e pela regra de dimensionamento. Sem bomba de aquecimento: há recuperador a água."
-       }
-      ],
-      "acoes": [
-       {
-        "t": "Aprovar",
-        "p": true,
-        "r": "Aprovado."
-       },
-       {
-        "t": "Editar",
-        "r": "Aberto para edição: o orçamentista muda linhas ou quantidades e o assistente atualiza o pré-orçamento."
-       }
-      ]
-     }
-    },
-    {
-     "de": "clique",
-     "alvo": 8,
-     "acao": 0,
-     "quem": "Orçamentação",
-     "passo": 8
-    },
-    {
-     "de": "bot",
-     "hora": "17:21",
-     "passo": 9,
-     "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.",
-     "anexo": {
-      "nome": "Orcamento_2026-1851.pdf",
-      "tam": "PDF, 182 KB"
-     },
-     "cartao": {
-      "titulo": "C - Orçamento nº 2026/1851",
-      "factos": [
-       [
-        "Cliente",
-        "Instalações R. Sousa"
-       ],
-       [
-        "Estado",
-        "Emitido no PHC"
-       ]
-      ],
-      "estado": {
-       "t": "Pronto a enviar ao cliente",
-       "tom": "ok"
-      },
-      "acoes": [
-       {
-        "t": "Descarregar PDF",
-        "p": true,
-        "r": "PDF descarregado."
-       },
-       {
-        "t": "Enviar ao cliente",
-        "r": "Enviado à Instalações R. Sousa por email, com o PDF."
-       },
-       {
-        "t": "Fazer a proposta do instalador",
-        "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."
-       }
-      ]
-     }
-    }
-   ],
-   "steps": [
-    {
-     "icon": "list",
-     "label": "Lê o pedido: bomba de calor para 75 elementos, depósito, crono, acumulador e «material para instalação»"
-    },
-    {
-     "icon": "id",
-     "label": "Identifica o cliente: Instalações R. Sousa"
-    },
-    {
-     "icon": "alert",
-     "label": "Faltam dados para escolher a potência: alimentação e outra fonte de calor"
-    },
-    {
-     "icon": "brain",
-     "label": "Recuperador a água: não junta bomba de aquecimento"
-    },
-    {
-     "icon": "book",
-     "label": "Aplica a regra de dimensionamento da orçamentação, escrita na auditoria"
-    },
-    {
-     "icon": "wrench",
-     "label": "Junta o kit de instalação padrão da bomba de calor"
-    },
-    {
-     "icon": "user-cog",
-     "label": "Pedido técnico: o comercial pede validação com um toque"
-    },
-    {
-     "icon": "check",
-     "label": "O orçamentista aprova no próprio chat"
-    },
-    {
-     "icon": "file",
-     "label": "O comercial recebe o orçamento final, com o PDF"
-    }
-   ]
-  },
-  {
-   "letra": "C",
-   "title": "Exclusões respeitadas",
-   "subtitle": "«Kit de instalação, mas sem o depósito de inércia». O kit sai sem ele, e o assistente avisa a nota técnica sem decidir pelo comercial.",
-   "preview": "Assistente: em validação técnica",
-   "chat": [
-    {
-     "de": "com",
-     "hora": "11:20",
-     "texto": "Orçamento TermoNorte\nBomba de calor 15 kW\nKit material de instalação\nmas sem o depósito de inércia",
-     "passo": 1
-    },
-    {
-     "de": "bot",
-     "hora": "11:20",
-     "texto": "Feito, **sem depósito de inércia**. Deixei uma nota técnica para a orçamentação.",
-     "passo": 4
-    },
-    {
-     "de": "bot",
-     "hora": "11:21",
-     "passo": 6,
-     "cartao": {
-      "titulo": "Pré-orçamento: TermoNorte Unipessoal",
-      "sub": "Com uma exclusão pedida pelo comercial",
-      "tabela": {
-       "cab": [
-        "Artigo",
-        "Qtd.",
-        "Estado"
-       ],
-       "num": [
-        1
-       ],
-       "riscar": [
-        2
-       ],
-       "linhas": [
-        [
-         "Bomba de calor ar-água 15 kW, monobloco R290",
-         "1",
-         "Incluído"
-        ],
-        [
-         "Kit de instalação da bomba de calor",
-         "1",
-         "Incluído"
-        ],
-        [
-         "Depósito de inércia",
-         "1",
-         "Retirado a pedido"
-        ]
-       ]
-      },
-      "notas": [
-       {
-        "tom": "aviso",
-        "texto": "Nota técnica: sem depósito de inércia, confirmar o **volume mínimo de água** da instalação indicado na ficha do fabricante. Não alterei mais nada no kit."
-       }
-      ],
-      "acoes": [
-       {
-        "t": "Pedir validação ao orçamentista",
-        "p": true,
-        "r": "Enviado ao orçamentista para validar."
-       },
-       {
-        "t": "Acrescentar nota",
-        "r": "Nota acrescentada. O orçamentista vê-a antes de validar."
-       }
-      ]
-     }
-    },
-    {
-     "de": "clique",
-     "alvo": 2,
-     "acao": 0,
-     "passo": 7
-    },
-    {
-     "de": "bot",
-     "hora": "11:22",
-     "texto": "Enviado ao orçamentista, com a nota técnica. Aviso-te aqui quando estiver validado, e aí crias o orçamento com um toque."
-    }
-   ],
-   "steps": [
-    {
-     "icon": "list",
-     "label": "Lê o pedido e a exclusão: «sem o depósito de inércia»"
-    },
-    {
-     "icon": "id",
-     "label": "Identifica o cliente e as condições"
-    },
-    {
-     "icon": "wrench",
-     "label": "Monta o kit padrão da bomba de calor"
-    },
-    {
-     "icon": "ban",
-     "label": "Retira o depósito de inércia, e só isso"
-    },
-    {
-     "icon": "alert",
-     "label": "Sinaliza a nota técnica, sem assumir pelo comercial"
-    },
-    {
-     "icon": "user-cog",
-     "label": "Envia para validação técnica"
-    },
-    {
-     "icon": "bell",
-     "label": "Avisa o comercial quando estiver validado"
-    }
-   ]
-  },
-  {
-   "letra": "D",
-   "title": "Planta à mão (VMC)",
-   "subtitle": "«Orçamento VMC» e uma fotografia de um esboço. O assistente lê as divisões, pergunta o pé-direito e mostra a conta.",
-   "preview": "Assistente: em validação técnica",
-   "chat": [
-    {
-     "de": "com",
-     "hora": "15:02",
-     "texto": "Casa Viva Climatização, orçamento VMC",
-     "img": "vmc",
-     "passo": 1
-    },
-    {
-     "de": "bot",
-     "hora": "15:03",
-     "texto": "Li a planta: rés do chão com **sala de 70 m²**, cozinha de 14 m² e WC de 5 m²; 1.º andar com quartos de **18, 16, 20 e 16 m²** e WC de 6 m². São 165 m².",
-     "passo": 2
-    },
-    {
-     "de": "bot",
-     "hora": "15:03",
-     "passo": 3,
-     "cartao": {
-      "titulo": "Falta o pé-direito",
-      "notas": [
-       {
-        "tom": "info",
-        "texto": "Qual é o pé-direito da casa?"
-       }
-      ],
-      "escolhas": [
-       "2,50 m",
-       "2,70 m",
-       "3,00 m",
-       "Outro"
-      ]
-     }
-    },
-    {
-     "de": "clique",
-     "alvo": 2,
-     "escolha": 1
-    },
-    {
-     "de": "bot",
-     "hora": "15:04",
-     "passo": 4,
-     "cartao": {
-      "titulo": "Caudal de ventilação",
-      "sub": "Regra genérica, a validar convosco",
-      "factos": [
-       [
-        "Área",
-        "165 m²"
-       ],
-       [
-        "Pé-direito",
-        "2,70 m"
-       ],
-       [
-        "Volume",
-        "445,5 m³"
-       ],
-       [
-        "Renovações",
-        "0,5 por hora (a validar)"
-       ],
-       [
-        "Caudal",
-        "**cerca de 223 m³/h**"
-       ]
-      ],
-      "notas": [
-       {
-        "tom": "info",
-        "texto": "Insuflação nos quartos e na sala, extração na cozinha e nos WC."
-       }
-      ]
-     }
-    },
-    {
-     "de": "bot",
-     "hora": "15:05",
-     "passo": 6,
-     "cartao": {
-      "titulo": "Pré-orçamento VMC: Casa Viva Climatização",
-      "sub": "Pedido técnico, segue para validação",
-      "tabela": {
-       "cab": [
-        "Artigo",
-        "Qtd."
-       ],
-       "num": [
-        1
-       ],
-       "linhas": [
-        [
-         "VMC de duplo fluxo com recuperação de calor, até 300 m³/h",
-         "1"
-        ],
-        [
-         "Tubo flexível isolado Ø75 mm, rolo 50 m",
-         "3"
-        ],
-        [
-         "Plenum de distribuição",
-         "2"
-        ],
-        [
-         "Bocas de insuflação",
-         "5"
-        ],
-        [
-         "Bocas de extração",
-         "3"
-        ],
-        [
-         "Conduta isolada Ø160 mm",
-         "2"
-        ],
-        [
-         "Difusor de fachada",
-         "2"
-        ]
-       ]
-      },
-      "notas": [
-       {
-        "tom": "aviso",
-        "texto": "Caudal, máquina e quantidades **a validar pela orçamentação**."
-       }
-      ],
-      "acoes": [
-       {
-        "t": "Pedir validação ao orçamentista",
-        "p": true,
-        "r": "Enviado ao orçamentista para validar."
-       },
-       {
-        "t": "Acrescentar nota",
-        "r": "Nota acrescentada. O orçamentista vê-a antes de validar."
-       }
-      ]
-     }
-    },
-    {
-     "de": "clique",
-     "alvo": 5,
-     "acao": 0,
-     "passo": 7
-    },
-    {
-     "de": "bot",
-     "hora": "15:22",
-     "texto": "Enviado ao orçamentista para validar o caudal e a máquina. Aviso-te aqui quando estiver pronto."
-    }
-   ],
-   "steps": [
-    {
-     "icon": "image",
-     "label": "Recebe a mensagem e a fotografia da planta"
-    },
-    {
-     "icon": "search",
-     "label": "Lê as divisões e as áreas escritas à mão"
-    },
-    {
-     "icon": "alert",
-     "label": "Falta o pé-direito: pergunta com botões"
-    },
-    {
-     "icon": "brain",
-     "label": "Volume × renovações por hora (regra a validar convosco)"
-    },
-    {
-     "icon": "list",
-     "label": "Escolhe a máquina pela gama de caudal e lista os componentes"
-    },
-    {
-     "icon": "database",
-     "label": "Confirma stock e prazos no PHC"
-    },
-    {
-     "icon": "user-cog",
-     "label": "Técnico: vai para validação da orçamentação"
-    }
-   ]
-  }
- ]
-}
+{"bot": "Assistente de Orçamentos", "botIcone": "assets/img/dica-simbolo.png", "eu": "Comercial Zona 2", "euIni": "C2", "canal": "ZONA 2 | Orçamentos", "stepMs": 1500, "endPauseMs": 3600, "scenarios": [{"letra": "A", "title": "Pedido simples", "subtitle": "Experimente: aprove, fale com o orçamentista ou troque a medida. O orçamento final só chega depois da sua escolha.", "preview": "Assistente: orçamento criado no PHC", "chat": [{"de": "com", "hora": "09:12", "texto": "Orçamento Climatérmica Lda\n\nTubo cobre vara 15\nTubo cobre vara 18\nTubo cobre vara 22\nTubo cobre vara 28\nPurgadores automáticos\nVálvulas manuais\n\nDá-me o preço por UN e por MT sff", "passo": 1}, {"de": "bot", "hora": "09:12", "texto": "Recebido. **Climatérmica Lda**, cliente 3108. Vou buscar as condições dela.", "passo": 3}, {"de": "bot", "hora": "09:13", "cartao": {"titulo": "Proposta de orçamento: Climatérmica Lda", "sub": "Tabela profissional com a campanha de cobre de novembro. Valores ilustrativos, + IVA.", "factos": [["Conta", "Sem bloqueios"], ["Campanha", "Cobre em vara, novembro"]], "tabela": {"cab": ["Artigo", "Preço UN", "Preço MT", "Stock"], "num": [1, 2], "linhas": [["Tubo cobre 15 mm, vara 5 m", "21,40 €", "4,28 €", "ok:Lousada 140"], ["Tubo cobre 18 mm, vara 5 m", "26,90 €", "5,38 €", "ok:Lousada 95"], ["Tubo cobre 22 mm, vara 5 m", "34,60 €", "6,92 €", "ok:Lousada 60"], ["Tubo cobre 28 mm, vara 5 m", "48,10 €", "9,62 €", "prev:12 un., +40 a 12/11"], ["Purgador automático 1/2\"", "6,20 €", "", "ok:Lousada 300"], ["Válvula manual 1/2\" (par)", "9,80 €", "", "ok:Lousada 80"]]}, "notas": [{"tom": "info", "texto": "Purgadores e válvulas: **1/2\"**, a medida que este cliente mais pediu nos últimos 6 meses."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "bot", "hora": "09:13", "texto": "Aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1844.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1844", "factos": [["Cliente", "Climatérmica Lda"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Climatérmica Lda por email, com o PDF."}]}, "passo": 7}]}, {"t": "Falar com o orçamentista", "seguir": [{"de": "bot", "hora": "09:15", "texto": "Passei ao orçamentista, com a conversa toda. Ele responde aqui."}, {"de": "orc", "hora": "09:23", "texto": "Para a Climatérmica faço mais 3% no cobre, é cliente de volume."}, {"de": "bot", "hora": "09:24", "cartao": {"titulo": "Proposta revista: Climatérmica Lda", "sub": "Com mais 3% no cobre, autorizado pelo orçamentista. Valores ilustrativos, + IVA.", "factos": [["Conta", "Sem bloqueios"], ["Campanha", "Cobre em vara, novembro"]], "tabela": {"cab": ["Artigo", "Preço UN", "Preço MT", "Stock"], "num": [1, 2], "linhas": [["Tubo cobre 15 mm, vara 5 m", "20,76 €", "4,15 €", "ok:Lousada 140"], ["Tubo cobre 18 mm, vara 5 m", "26,09 €", "5,22 €", "ok:Lousada 95"], ["Tubo cobre 22 mm, vara 5 m", "33,56 €", "6,71 €", "ok:Lousada 60"], ["Tubo cobre 28 mm, vara 5 m", "46,66 €", "9,33 €", "prev:12 un., +40 a 12/11"], ["Purgador automático 1/2\"", "6,20 €", "", "ok:Lousada 300"], ["Válvula manual 1/2\" (par)", "9,80 €", "", "ok:Lousada 80"]]}, "notas": [{"tom": "ok", "texto": "Desconto extra de **3% no cobre**, autorizado pela Orçamentação às 09:24."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "bot", "hora": "09:25", "texto": "Aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1844.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1844", "factos": [["Cliente", "Climatérmica Lda"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Climatérmica Lda por email, com o PDF."}]}, "passo": 7}]}, {"t": "Falar com o orçamentista", "r": "O orçamentista foi avisado e responde aqui."}]}}]}, {"t": "Trocar a medida", "seguir": [{"de": "bot", "hora": "09:15", "cartao": {"titulo": "Que medida para os purgadores e as válvulas?", "escolhas": [{"t": "1/2\"", "seguir": [{"de": "bot", "hora": "09:16", "cartao": {"titulo": "Proposta atualizada: purgadores e válvulas de 1/2\"", "sub": "Tabela profissional com a campanha de cobre de novembro. Valores ilustrativos, + IVA.", "factos": [["Conta", "Sem bloqueios"], ["Campanha", "Cobre em vara, novembro"]], "tabela": {"cab": ["Artigo", "Preço UN", "Preço MT", "Stock"], "num": [1, 2], "linhas": [["Tubo cobre 15 mm, vara 5 m", "21,40 €", "4,28 €", "ok:Lousada 140"], ["Tubo cobre 18 mm, vara 5 m", "26,90 €", "5,38 €", "ok:Lousada 95"], ["Tubo cobre 22 mm, vara 5 m", "34,60 €", "6,92 €", "ok:Lousada 60"], ["Tubo cobre 28 mm, vara 5 m", "48,10 €", "9,62 €", "prev:12 un., +40 a 12/11"], ["Purgador automático 1/2\"", "6,20 €", "", "ok:Lousada 120"], ["Válvula manual 1/2\" (par)", "9,80 €", "", "ok:Lousada 60"]]}, "notas": [{"tom": "ok", "texto": "Medida trocada para **1/2\"**."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "bot", "hora": "09:16", "texto": "Aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1844.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1844", "factos": [["Cliente", "Climatérmica Lda"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Climatérmica Lda por email, com o PDF."}]}, "passo": 7}]}, {"t": "Falar com o orçamentista", "seguir": [{"de": "bot", "hora": "09:15", "texto": "Passei ao orçamentista, com a conversa toda. Ele responde aqui."}, {"de": "orc", "hora": "09:23", "texto": "Para a Climatérmica faço mais 3% no cobre, é cliente de volume."}, {"de": "bot", "hora": "09:24", "cartao": {"titulo": "Proposta revista: Climatérmica Lda", "sub": "Com mais 3% no cobre, autorizado pelo orçamentista. Valores ilustrativos, + IVA.", "factos": [["Conta", "Sem bloqueios"], ["Campanha", "Cobre em vara, novembro"]], "tabela": {"cab": ["Artigo", "Preço UN", "Preço MT", "Stock"], "num": [1, 2], "linhas": [["Tubo cobre 15 mm, vara 5 m", "20,76 €", "4,15 €", "ok:Lousada 140"], ["Tubo cobre 18 mm, vara 5 m", "26,09 €", "5,22 €", "ok:Lousada 95"], ["Tubo cobre 22 mm, vara 5 m", "33,56 €", "6,71 €", "ok:Lousada 60"], ["Tubo cobre 28 mm, vara 5 m", "46,66 €", "9,33 €", "prev:12 un., +40 a 12/11"], ["Purgador automático 1/2\"", "6,20 €", "", "ok:Lousada 300"], ["Válvula manual 1/2\" (par)", "9,80 €", "", "ok:Lousada 80"]]}, "notas": [{"tom": "ok", "texto": "Desconto extra de **3% no cobre**, autorizado pela Orçamentação às 09:24."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "bot", "hora": "09:25", "texto": "Aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1844.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1844", "factos": [["Cliente", "Climatérmica Lda"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Climatérmica Lda por email, com o PDF."}]}, "passo": 7}]}, {"t": "Falar com o orçamentista", "r": "O orçamentista foi avisado e responde aqui."}]}}]}]}}]}, {"t": "3/4\"", "seguir": [{"de": "bot", "hora": "09:16", "cartao": {"titulo": "Proposta atualizada: purgadores e válvulas de 3/4\"", "sub": "Tabela profissional com a campanha de cobre de novembro. Valores ilustrativos, + IVA.", "factos": [["Conta", "Sem bloqueios"], ["Campanha", "Cobre em vara, novembro"]], "tabela": {"cab": ["Artigo", "Preço UN", "Preço MT", "Stock"], "num": [1, 2], "linhas": [["Tubo cobre 15 mm, vara 5 m", "21,40 €", "4,28 €", "ok:Lousada 140"], ["Tubo cobre 18 mm, vara 5 m", "26,90 €", "5,38 €", "ok:Lousada 95"], ["Tubo cobre 22 mm, vara 5 m", "34,60 €", "6,92 €", "ok:Lousada 60"], ["Tubo cobre 28 mm, vara 5 m", "48,10 €", "9,62 €", "prev:12 un., +40 a 12/11"], ["Purgador automático 3/4\"", "8,90 €", "", "ok:Lousada 120"], ["Válvula manual 3/4\" (par)", "13,60 €", "", "ok:Lousada 60"]]}, "notas": [{"tom": "ok", "texto": "Medida trocada para **3/4\"**."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "bot", "hora": "09:16", "texto": "Aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1844.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1844", "factos": [["Cliente", "Climatérmica Lda"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Climatérmica Lda por email, com o PDF."}]}, "passo": 7}]}, {"t": "Falar com o orçamentista", "seguir": [{"de": "bot", "hora": "09:15", "texto": "Passei ao orçamentista, com a conversa toda. Ele responde aqui."}, {"de": "orc", "hora": "09:23", "texto": "Para a Climatérmica faço mais 3% no cobre, é cliente de volume."}, {"de": "bot", "hora": "09:24", "cartao": {"titulo": "Proposta revista: Climatérmica Lda", "sub": "Com mais 3% no cobre, autorizado pelo orçamentista. Valores ilustrativos, + IVA.", "factos": [["Conta", "Sem bloqueios"], ["Campanha", "Cobre em vara, novembro"]], "tabela": {"cab": ["Artigo", "Preço UN", "Preço MT", "Stock"], "num": [1, 2], "linhas": [["Tubo cobre 15 mm, vara 5 m", "20,76 €", "4,15 €", "ok:Lousada 140"], ["Tubo cobre 18 mm, vara 5 m", "26,09 €", "5,22 €", "ok:Lousada 95"], ["Tubo cobre 22 mm, vara 5 m", "33,56 €", "6,71 €", "ok:Lousada 60"], ["Tubo cobre 28 mm, vara 5 m", "46,66 €", "9,33 €", "prev:12 un., +40 a 12/11"], ["Purgador automático 1/2\"", "6,20 €", "", "ok:Lousada 300"], ["Válvula manual 1/2\" (par)", "9,80 €", "", "ok:Lousada 80"]]}, "notas": [{"tom": "ok", "texto": "Desconto extra de **3% no cobre**, autorizado pela Orçamentação às 09:24."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "bot", "hora": "09:25", "texto": "Aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1844.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1844", "factos": [["Cliente", "Climatérmica Lda"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Climatérmica Lda por email, com o PDF."}]}, "passo": 7}]}, {"t": "Falar com o orçamentista", "r": "O orçamentista foi avisado e responde aqui."}]}}]}]}}]}, {"t": "1\"", "seguir": [{"de": "bot", "hora": "09:16", "cartao": {"titulo": "Proposta atualizada: purgadores e válvulas de 1\"", "sub": "Tabela profissional com a campanha de cobre de novembro. Valores ilustrativos, + IVA.", "factos": [["Conta", "Sem bloqueios"], ["Campanha", "Cobre em vara, novembro"]], "tabela": {"cab": ["Artigo", "Preço UN", "Preço MT", "Stock"], "num": [1, 2], "linhas": [["Tubo cobre 15 mm, vara 5 m", "21,40 €", "4,28 €", "ok:Lousada 140"], ["Tubo cobre 18 mm, vara 5 m", "26,90 €", "5,38 €", "ok:Lousada 95"], ["Tubo cobre 22 mm, vara 5 m", "34,60 €", "6,92 €", "ok:Lousada 60"], ["Tubo cobre 28 mm, vara 5 m", "48,10 €", "9,62 €", "prev:12 un., +40 a 12/11"], ["Purgador automático 1\"", "12,40 €", "", "ok:Lousada 120"], ["Válvula manual 1\" (par)", "19,80 €", "", "ok:Lousada 60"]]}, "notas": [{"tom": "ok", "texto": "Medida trocada para **1\"**."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "bot", "hora": "09:16", "texto": "Aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1844.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1844", "factos": [["Cliente", "Climatérmica Lda"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Climatérmica Lda por email, com o PDF."}]}, "passo": 7}]}, {"t": "Falar com o orçamentista", "seguir": [{"de": "bot", "hora": "09:15", "texto": "Passei ao orçamentista, com a conversa toda. Ele responde aqui."}, {"de": "orc", "hora": "09:23", "texto": "Para a Climatérmica faço mais 3% no cobre, é cliente de volume."}, {"de": "bot", "hora": "09:24", "cartao": {"titulo": "Proposta revista: Climatérmica Lda", "sub": "Com mais 3% no cobre, autorizado pelo orçamentista. Valores ilustrativos, + IVA.", "factos": [["Conta", "Sem bloqueios"], ["Campanha", "Cobre em vara, novembro"]], "tabela": {"cab": ["Artigo", "Preço UN", "Preço MT", "Stock"], "num": [1, 2], "linhas": [["Tubo cobre 15 mm, vara 5 m", "20,76 €", "4,15 €", "ok:Lousada 140"], ["Tubo cobre 18 mm, vara 5 m", "26,09 €", "5,22 €", "ok:Lousada 95"], ["Tubo cobre 22 mm, vara 5 m", "33,56 €", "6,71 €", "ok:Lousada 60"], ["Tubo cobre 28 mm, vara 5 m", "46,66 €", "9,33 €", "prev:12 un., +40 a 12/11"], ["Purgador automático 1/2\"", "6,20 €", "", "ok:Lousada 300"], ["Válvula manual 1/2\" (par)", "9,80 €", "", "ok:Lousada 80"]]}, "notas": [{"tom": "ok", "texto": "Desconto extra de **3% no cobre**, autorizado pela Orçamentação às 09:24."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "bot", "hora": "09:25", "texto": "Aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1844.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1844", "factos": [["Cliente", "Climatérmica Lda"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Climatérmica Lda por email, com o PDF."}]}, "passo": 7}]}, {"t": "Falar com o orçamentista", "r": "O orçamentista foi avisado e responde aqui."}]}}]}]}}]}]}}]}]}, "passo": 6}], "steps": [{"icon": "list", "label": "Lê o pedido: 6 artigos, preço por unidade e por metro"}, {"icon": "id", "label": "Identifica o cliente no PHC: tabela profissional, conta sem bloqueios"}, {"icon": "star", "label": "Aplica a campanha de cobre em vigor"}, {"icon": "database", "label": "Stock por armazém e data prevista do que falta"}, {"icon": "search", "label": "Histórico do cliente: as medidas que costuma pedir"}, {"icon": "send", "label": "Devolve o cartão, com o que assumiu à vista"}, {"icon": "file", "label": "Com a decisão do comercial, cria no PHC e envia o orçamento final com o PDF"}]}, {"letra": "B", "title": "Pedido técnico", "subtitle": "Experimente: responda às perguntas com os botões. A fonte de calor muda o material, e o orçamentista aprova ou edita no mesmo chat.", "preview": "Assistente: orçamento criado no PHC", "chat": [{"de": "com", "hora": "16:40", "texto": "Orçamento\nInstalações R. Sousa\n\n01UN- Bomba de calor Fairland para 75 elementos de radiador\n01UN- Depósito de inércia\n01UN- Crono para bomba de inércia\n01UN- Acumulador de 200lts inox com kit elétrico e 1 serpentina\n\nAcessórios/material para instalação", "passo": 1}, {"de": "bot", "hora": "16:40", "passo": 3, "cartao": {"titulo": "Para escolher a bomba de calor faltam 2 dados", "sub": "Pergunta 1 de 2", "factos": [["Cliente", "Instalações R. Sousa"]], "notas": [{"tom": "info", "texto": "A alimentação na casa é monofásica ou trifásica?"}], "escolhas": [{"t": "Monofásica", "seguir": [{"de": "bot", "hora": "16:52", "passo": 4, "cartao": {"titulo": "Obrigado. Última pergunta", "sub": "Pergunta 2 de 2", "notas": [{"tom": "info", "texto": "Já existe outra fonte de calor ligada aos radiadores?"}], "escolhas": [{"t": "Não", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Sem outra fonte de calor. Proponho **15 kW monofásica**, com bomba circuladora."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, monofásica", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Bomba circuladora de aquecimento", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Sem outra fonte de calor: junto **bomba circuladora** do circuito de aquecimento."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Bomba circuladora de aquecimento", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação monofásica. Sem outra fonte de calor: junto **bomba circuladora** do circuito de aquecimento."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}, {"t": "Caldeira", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Com caldeira, a bomba de calor trabalha em conjunto. Proponho **15 kW monofásica** e uma válvula de 3 vias."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, monofásica", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Válvula de 3 vias motorizada", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Com caldeira: junto **válvula de 3 vias motorizada** para trabalharem em conjunto."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Válvula de 3 vias motorizada", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação monofásica. Com caldeira: junto **válvula de 3 vias motorizada** para trabalharem em conjunto."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}, {"t": "Recuperador a água", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Então não junto bomba de aquecimento: o recuperador já tem a sua. Proponho **15 kW monofásica**."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, monofásica", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Sem bomba de aquecimento: o cliente já tem recuperador a água."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação monofásica. Sem bomba de aquecimento: o cliente já tem recuperador a água."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}]}}]}, {"t": "Trifásica", "seguir": [{"de": "bot", "hora": "16:52", "passo": 4, "cartao": {"titulo": "Obrigado. Última pergunta", "sub": "Pergunta 2 de 2", "notas": [{"tom": "info", "texto": "Já existe outra fonte de calor ligada aos radiadores?"}], "escolhas": [{"t": "Não", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Sem outra fonte de calor. Proponho **15 kW trifásica**, com bomba circuladora."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, trifásica", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 400 V trifásica", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Bomba circuladora de aquecimento", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Sem outra fonte de calor: junto **bomba circuladora** do circuito de aquecimento."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 400 V trifásica", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Bomba circuladora de aquecimento", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação trifásica. Sem outra fonte de calor: junto **bomba circuladora** do circuito de aquecimento."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}, {"t": "Caldeira", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Com caldeira, a bomba de calor trabalha em conjunto. Proponho **15 kW trifásica** e uma válvula de 3 vias."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, trifásica", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 400 V trifásica", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Válvula de 3 vias motorizada", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Com caldeira: junto **válvula de 3 vias motorizada** para trabalharem em conjunto."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 400 V trifásica", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Válvula de 3 vias motorizada", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação trifásica. Com caldeira: junto **válvula de 3 vias motorizada** para trabalharem em conjunto."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}, {"t": "Recuperador a água", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Então não junto bomba de aquecimento: o recuperador já tem a sua. Proponho **15 kW trifásica**."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, trifásica", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 400 V trifásica", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Sem bomba de aquecimento: o cliente já tem recuperador a água."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 400 V trifásica", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação trifásica. Sem bomba de aquecimento: o cliente já tem recuperador a água."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}]}}]}, {"t": "Não sei", "seguir": [{"de": "bot", "hora": "16:51", "texto": "Sem problema. Assumo **monofásica**, a mais comum em moradias, e deixo nota para confirmar."}, {"de": "bot", "hora": "16:52", "passo": 4, "cartao": {"titulo": "Obrigado. Última pergunta", "sub": "Pergunta 2 de 2", "notas": [{"tom": "info", "texto": "Já existe outra fonte de calor ligada aos radiadores?"}], "escolhas": [{"t": "Não", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Sem outra fonte de calor. Proponho **15 kW monofásica**, com bomba circuladora."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, monofásica, a confirmar", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Bomba circuladora de aquecimento", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Sem outra fonte de calor: junto **bomba circuladora** do circuito de aquecimento."}, {"tom": "info", "texto": "Alimentação **monofásica assumida**, a confirmar com o cliente."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Bomba circuladora de aquecimento", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação monofásica, a confirmar. Sem outra fonte de calor: junto **bomba circuladora** do circuito de aquecimento."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}, {"t": "Caldeira", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Com caldeira, a bomba de calor trabalha em conjunto. Proponho **15 kW monofásica** e uma válvula de 3 vias."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, monofásica, a confirmar", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Válvula de 3 vias motorizada", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Com caldeira: junto **válvula de 3 vias motorizada** para trabalharem em conjunto."}, {"tom": "info", "texto": "Alimentação **monofásica assumida**, a confirmar com o cliente."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"], ["Válvula de 3 vias motorizada", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação monofásica, a confirmar. Com caldeira: junto **válvula de 3 vias motorizada** para trabalharem em conjunto."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}, {"t": "Recuperador a água", "seguir": [{"de": "bot", "hora": "16:53", "passo": 5, "texto": "Então não junto bomba de aquecimento: o recuperador já tem a sua. Proponho **15 kW monofásica**."}, {"de": "bot", "hora": "17:06", "passo": 6, "cartao": {"titulo": "Pré-orçamento: Instalações R. Sousa", "sub": "Pedido técnico, monofásica, a confirmar", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "kitTitulo": "Kit de instalação padrão (9 artigos)", "kit": ["Filtro magnético", "Suportes antivibráticos", "Vaso de expansão", "Grupo de enchimento", "Purgadores", "Termomanómetro", "Válvulas de retenção", "Anticongelante", "Bomba circuladora"], "notas": [{"tom": "aviso", "texto": "Pedido técnico: potência e depósito de inércia **validados pelo orçamentista**."}, {"tom": "ok", "texto": "Sem bomba de aquecimento: o cliente já tem recuperador a água."}, {"tom": "info", "texto": "Alimentação **monofásica assumida**, a confirmar com o cliente."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "17:07", "passo": 7, "cartao": {"titulo": "@Orçamentação, validação pedida: Instalações R. Sousa", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água Fairland 15 kW, monobloco R290, 230 V", "1"], ["Depósito de inércia", "1"], ["Cronotermóstato para a bomba de calor", "1"], ["Acumulador AQS 200 L inox, kit elétrico e 1 serpentina", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** 15 kW pelos 75 elementos e pela regra de dimensionamento; alimentação monofásica, a confirmar. Sem bomba de aquecimento: o cliente já tem recuperador a água."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Troquei o depósito de inércia para o de 50 L, chega para esta instalação."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (depósito de inércia de 50 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1851.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1851", "factos": [["Cliente", "Instalações R. Sousa"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Instalações R. Sousa por email, com o PDF."}, {"t": "Fazer a proposta do instalador", "r": "Aberta a proposta para o cliente final (mais abaixo, em «Instalador»)."}]}, "passo": 9}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}]}}]}]}}], "steps": [{"icon": "list", "label": "Lê o pedido: bomba de calor para 75 elementos, depósito, crono, acumulador e «material para instalação»"}, {"icon": "id", "label": "Identifica o cliente: Instalações R. Sousa"}, {"icon": "alert", "label": "Faltam dados para escolher a potência: alimentação e outra fonte de calor"}, {"icon": "brain", "label": "Ajusta o material à fonte de calor que já existe"}, {"icon": "book", "label": "Aplica a regra de dimensionamento da orçamentação, escrita na auditoria"}, {"icon": "wrench", "label": "Junta o kit de instalação padrão da bomba de calor"}, {"icon": "user-cog", "label": "Pedido técnico: o comercial pede validação ao orçamentista"}, {"icon": "check", "label": "O orçamentista aprova ou edita no próprio chat"}, {"icon": "file", "label": "O comercial recebe o orçamento final, com o PDF"}]}, {"letra": "C", "title": "Exclusões respeitadas", "subtitle": "«Kit de instalação, mas sem o depósito de inércia». O kit sai sem ele, e o assistente avisa a nota técnica sem decidir pelo comercial.", "preview": "Assistente: em validação técnica", "chat": [{"de": "com", "hora": "11:20", "texto": "Orçamento TermoNorte\nBomba de calor 15 kW\nKit material de instalação\nmas sem o depósito de inércia", "passo": 1}, {"de": "bot", "hora": "11:20", "texto": "Feito, **sem depósito de inércia**. Deixei uma nota técnica para a orçamentação.", "passo": 4}, {"de": "bot", "hora": "11:21", "passo": 6, "cartao": {"titulo": "Pré-orçamento: TermoNorte Unipessoal", "sub": "Com uma exclusão pedida pelo comercial", "tabela": {"cab": ["Artigo", "Qtd.", "Estado"], "num": [1], "riscar": [2], "linhas": [["Bomba de calor ar-água 15 kW, monobloco R290", "1", "Incluído"], ["Kit de instalação da bomba de calor", "1", "Incluído"], ["Depósito de inércia", "1", "Retirado a pedido"]]}, "notas": [{"tom": "aviso", "texto": "Nota técnica: sem depósito de inércia, confirmar o **volume mínimo de água** da instalação indicado na ficha do fabricante. Não alterei mais nada no kit."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "11:22", "passo": 6, "cartao": {"titulo": "@Orçamentação, validação pedida: TermoNorte Unipessoal", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água 15 kW, monobloco R290", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** kit sem depósito de inércia, a pedido do comercial."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1852.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1852", "factos": [["Cliente", "TermoNorte Unipessoal"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à TermoNorte Unipessoal por email, com o PDF."}]}, "passo": 7}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Mantive sem depósito, mas acrescentei um vaso de expansão de 24 L."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (vaso de expansão de 24 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1852.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1852", "factos": [["Cliente", "TermoNorte Unipessoal"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à TermoNorte Unipessoal por email, com o PDF."}]}, "passo": 7}]}]}}]}, {"t": "Acrescentar nota", "seguir": [{"de": "bot", "hora": "11:21", "cartao": {"titulo": "Que nota junto ao pedido?", "escolhas": [{"t": "O cliente já tem depósito de 100 L", "seguir": [{"de": "bot", "hora": "11:22", "texto": "Anotado: **depósito existente de 100 L**."}, {"de": "bot", "hora": "11:22", "passo": 6, "cartao": {"titulo": "@Orçamentação, validação pedida: TermoNorte Unipessoal", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água 15 kW, monobloco R290", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** kit sem depósito de inércia, a pedido do comercial. O cliente já tem um depósito de 100 L."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1852.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1852", "factos": [["Cliente", "TermoNorte Unipessoal"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à TermoNorte Unipessoal por email, com o PDF."}]}, "passo": 7}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Mantive sem depósito, mas acrescentei um vaso de expansão de 24 L."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (vaso de expansão de 24 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1852.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1852", "factos": [["Cliente", "TermoNorte Unipessoal"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à TermoNorte Unipessoal por email, com o PDF."}]}, "passo": 7}]}]}}]}, {"t": "Instalação no exterior", "seguir": [{"de": "bot", "hora": "11:22", "texto": "Anotado: **instalação no exterior**. O orçamentista vê antes de validar."}, {"de": "bot", "hora": "11:22", "passo": 6, "cartao": {"titulo": "@Orçamentação, validação pedida: TermoNorte Unipessoal", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["Bomba de calor ar-água 15 kW, monobloco R290", "1"], ["Kit de instalação da bomba de calor", "1"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** kit sem depósito de inércia, a pedido do comercial. Instalação no exterior."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1852.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1852", "factos": [["Cliente", "TermoNorte Unipessoal"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à TermoNorte Unipessoal por email, com o PDF."}]}, "passo": 7}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Mantive sem depósito, mas acrescentei um vaso de expansão de 24 L."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (vaso de expansão de 24 L). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1852.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1852", "factos": [["Cliente", "TermoNorte Unipessoal"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à TermoNorte Unipessoal por email, com o PDF."}]}, "passo": 7}]}]}}]}]}}]}]}}], "steps": [{"icon": "list", "label": "Lê o pedido e a exclusão: «sem o depósito de inércia»"}, {"icon": "id", "label": "Identifica o cliente e as condições"}, {"icon": "wrench", "label": "Monta o kit padrão da bomba de calor"}, {"icon": "ban", "label": "Retira o depósito de inércia, e só isso"}, {"icon": "alert", "label": "Sinaliza a nota técnica, sem assumir pelo comercial"}, {"icon": "user-cog", "label": "Pede validação ao orçamentista, com as notas"}, {"icon": "file", "label": "Volta ao comercial com o orçamento final"}]}, {"letra": "D", "title": "Planta à mão (VMC)", "subtitle": "«Orçamento VMC» e uma fotografia de um esboço. O assistente lê as divisões e pergunta o pé-direito: escolha e veja a conta mudar.", "preview": "Assistente: em validação técnica", "chat": [{"de": "com", "hora": "15:02", "texto": "Casa Viva Climatização, orçamento VMC", "img": "vmc", "passo": 1}, {"de": "bot", "hora": "15:03", "texto": "Li a planta: rés do chão com **sala de 70 m²**, cozinha de 14 m² e WC de 5 m²; 1.º andar com quartos de **18, 16, 20 e 16 m²** e WC de 6 m². São 165 m².", "passo": 2}, {"de": "bot", "hora": "15:03", "passo": 3, "cartao": {"titulo": "Falta o pé-direito", "notas": [{"tom": "info", "texto": "Qual é o pé-direito da casa?"}], "escolhas": [{"t": "2,50 m", "seguir": [{"de": "bot", "hora": "15:04", "passo": 4, "cartao": {"titulo": "Caudal de ventilação", "sub": "Regra genérica, a validar convosco", "factos": [["Área", "165 m²"], ["Pé-direito", "2,50 m"], ["Volume", "412,5 m³"], ["Renovações", "0,5 por hora (a validar)"], ["Caudal", "**cerca de 206 m³/h**"]], "notas": [{"tom": "info", "texto": "Insuflação nos quartos e na sala, extração na cozinha e nos WC."}]}}, {"de": "bot", "hora": "15:05", "passo": 6, "cartao": {"titulo": "Pré-orçamento VMC: Casa Viva Climatização", "sub": "Pedido técnico, segue para validação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["VMC de duplo fluxo com recuperação de calor, até 300 m³/h", "1"], ["Tubo flexível isolado Ø75 mm, rolo 50 m", "3"], ["Plenum de distribuição", "2"], ["Bocas de insuflação", "5"], ["Bocas de extração", "3"], ["Conduta isolada Ø160 mm", "2"], ["Difusor de fachada", "2"]]}, "notas": [{"tom": "aviso", "texto": "Caudal, máquina e quantidades **a validar pela orçamentação**."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "15:06", "passo": 6, "cartao": {"titulo": "@Orçamentação, validação pedida: Casa Viva Climatização", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["VMC de duplo fluxo com recuperação de calor, até 300 m³/h", "1"], ["Tubo flexível isolado Ø75 mm, rolo 50 m", "3"], ["Plenum de distribuição", "2"], ["Bocas de insuflação", "5"], ["Bocas de extração", "3"], ["Conduta isolada Ø160 mm", "2"], ["Difusor de fachada", "2"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** caudal de cerca de 206 m³/h (165 m², pé-direito 2,50 m, 0,5 renovações por hora)."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1853.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1853", "factos": [["Cliente", "Casa Viva Climatização"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Casa Viva Climatização por email, com o PDF."}]}, "passo": 7}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Põe 6 bocas de insuflação em vez de 5: a sala de 70 m² leva duas."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (6 bocas de insuflação). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1853.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1853", "factos": [["Cliente", "Casa Viva Climatização"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Casa Viva Climatização por email, com o PDF."}]}, "passo": 7}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}, {"t": "2,70 m", "seguir": [{"de": "bot", "hora": "15:04", "passo": 4, "cartao": {"titulo": "Caudal de ventilação", "sub": "Regra genérica, a validar convosco", "factos": [["Área", "165 m²"], ["Pé-direito", "2,70 m"], ["Volume", "445,5 m³"], ["Renovações", "0,5 por hora (a validar)"], ["Caudal", "**cerca de 223 m³/h**"]], "notas": [{"tom": "info", "texto": "Insuflação nos quartos e na sala, extração na cozinha e nos WC."}]}}, {"de": "bot", "hora": "15:05", "passo": 6, "cartao": {"titulo": "Pré-orçamento VMC: Casa Viva Climatização", "sub": "Pedido técnico, segue para validação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["VMC de duplo fluxo com recuperação de calor, até 300 m³/h", "1"], ["Tubo flexível isolado Ø75 mm, rolo 50 m", "3"], ["Plenum de distribuição", "2"], ["Bocas de insuflação", "5"], ["Bocas de extração", "3"], ["Conduta isolada Ø160 mm", "2"], ["Difusor de fachada", "2"]]}, "notas": [{"tom": "aviso", "texto": "Caudal, máquina e quantidades **a validar pela orçamentação**."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "15:06", "passo": 6, "cartao": {"titulo": "@Orçamentação, validação pedida: Casa Viva Climatização", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["VMC de duplo fluxo com recuperação de calor, até 300 m³/h", "1"], ["Tubo flexível isolado Ø75 mm, rolo 50 m", "3"], ["Plenum de distribuição", "2"], ["Bocas de insuflação", "5"], ["Bocas de extração", "3"], ["Conduta isolada Ø160 mm", "2"], ["Difusor de fachada", "2"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** caudal de cerca de 223 m³/h (165 m², pé-direito 2,70 m, 0,5 renovações por hora)."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1853.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1853", "factos": [["Cliente", "Casa Viva Climatização"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Casa Viva Climatização por email, com o PDF."}]}, "passo": 7}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Põe 6 bocas de insuflação em vez de 5: a sala de 70 m² leva duas."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (6 bocas de insuflação). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1853.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1853", "factos": [["Cliente", "Casa Viva Climatização"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Casa Viva Climatização por email, com o PDF."}]}, "passo": 7}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}, {"t": "3,00 m", "seguir": [{"de": "bot", "hora": "15:04", "passo": 4, "cartao": {"titulo": "Caudal de ventilação", "sub": "Regra genérica, a validar convosco", "factos": [["Área", "165 m²"], ["Pé-direito", "3,00 m"], ["Volume", "495 m³"], ["Renovações", "0,5 por hora (a validar)"], ["Caudal", "**cerca de 248 m³/h**"]], "notas": [{"tom": "info", "texto": "Insuflação nos quartos e na sala, extração na cozinha e nos WC."}]}}, {"de": "bot", "hora": "15:05", "passo": 6, "cartao": {"titulo": "Pré-orçamento VMC: Casa Viva Climatização", "sub": "Pedido técnico, segue para validação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["VMC de duplo fluxo com recuperação de calor, até 300 m³/h", "1"], ["Tubo flexível isolado Ø75 mm, rolo 50 m", "3"], ["Plenum de distribuição", "2"], ["Bocas de insuflação", "5"], ["Bocas de extração", "3"], ["Conduta isolada Ø160 mm", "2"], ["Difusor de fachada", "2"]]}, "notas": [{"tom": "aviso", "texto": "Caudal, máquina e quantidades **a validar pela orçamentação**."}], "acoes": [{"t": "Pedir validação ao orçamentista", "p": true, "seguir": [{"de": "bot", "hora": "15:06", "passo": 6, "cartao": {"titulo": "@Orçamentação, validação pedida: Casa Viva Climatização", "sub": "Pedido do Comercial Zona 2, neste grupo", "quem": "Orçamentação", "tabela": {"cab": ["Artigo", "Qtd."], "num": [1], "linhas": [["VMC de duplo fluxo com recuperação de calor, até 300 m³/h", "1"], ["Tubo flexível isolado Ø75 mm, rolo 50 m", "3"], ["Plenum de distribuição", "2"], ["Bocas de insuflação", "5"], ["Bocas de extração", "3"], ["Conduta isolada Ø160 mm", "2"], ["Difusor de fachada", "2"]]}, "notas": [{"tom": "info", "texto": "**O que assumi:** caudal de cerca de 248 m³/h (165 m², pé-direito 3,00 m, 0,5 renovações por hora)."}], "acoes": [{"t": "Aprovar", "p": true, "seguir": [{"de": "orc", "hora": "17:21", "texto": "Validado 👍"}, {"de": "bot", "hora": "17:21", "texto": "Validado pelo orçamentista. **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1853.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1853", "factos": [["Cliente", "Casa Viva Climatização"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Casa Viva Climatização por email, com o PDF."}]}, "passo": 7}]}, {"t": "Editar", "seguir": [{"de": "orc", "hora": "17:25", "texto": "Põe 6 bocas de insuflação em vez de 5: a sala de 70 m² leva duas."}, {"de": "bot", "hora": "17:26", "texto": "Editado e validado pelo orçamentista (6 bocas de insuflação). **@Comercial Zona 2**, aqui está o orçamento final, já criado no PHC.", "anexo": {"nome": "Orcamento_2026-1853.pdf", "tam": "PDF, 182 KB"}, "cartao": {"titulo": "C - Orçamento nº 2026/1853", "factos": [["Cliente", "Casa Viva Climatização"], ["Estado", "Emitido no PHC"]], "estado": {"t": "Pronto a enviar ao cliente", "tom": "ok"}, "acoes": [{"t": "Descarregar PDF", "p": true, "r": "PDF descarregado."}, {"t": "Enviar ao cliente", "r": "Enviado à Casa Viva Climatização por email, com o PDF."}]}, "passo": 7}]}]}}]}, {"t": "Acrescentar nota", "r": "Nota acrescentada ao pedido."}]}}]}]}}], "steps": [{"icon": "image", "label": "Recebe a mensagem e a fotografia da planta"}, {"icon": "search", "label": "Lê as divisões e as áreas escritas à mão"}, {"icon": "alert", "label": "Falta o pé-direito: pergunta com botões"}, {"icon": "brain", "label": "Volume × renovações por hora (regra a validar convosco)"}, {"icon": "list", "label": "Escolhe a máquina pela gama de caudal e lista os componentes"}, {"icon": "database", "label": "Confirma stock e prazos no PHC"}, {"icon": "user-cog", "label": "Técnico: vai para validação da orçamentação"}]}]}
     </script>
     <p class="aviso-dados">Exemplos baseados nos pedidos que nos enviaram, com nomes e valores alterados. Valores ilustrativos.</p>
   </div>
@@ -1053,7 +291,7 @@
     <div class="sec-head">
       <span class="eyebrow">Validação e permissões</span>
       <h2>A orçamentação valida no mesmo chat, e o comercial recebe logo</h2>
-      <p class="lead">O pedido técnico fica no grupo da zona. O assistente chama a orçamentação ali mesmo, ela valida com um toque, o orçamento nasce no PHC e volta ao comercial na mesma conversa. Experimentem os botões.</p>
+      <p class="lead">O orçamento chega ao orçamentista no grupo da zona. Pode aprová-lo logo, ou carregar em Editar, mudar quantidades, tirar ou acrescentar produtos, e só depois validar. O PHC ao lado acompanha, e o comercial recebe o orçamento final na mesma conversa. Experimentem.</p>
     </div>
     <div class="valida">
       <div class="tm-mini" id="valCard" data-entra="sobe">
@@ -1071,23 +309,29 @@
             <div>
               <div class="tm-meta"><b>Assistente de Orçamentos</b><span class="app">Aplicação</span><span>17:06</span></div>
               <div class="tm-bub" style="padding:6px">
-                <div class="ac">
-                  <div class="ac-h"><div><b>@Orçamentação, validação pedida: Instalações R. Sousa</b><small>Pedido do Comercial Zona 2, neste grupo</small></div></div>
-                  <dl class="ac-f">
-                    <dt>Condições</dt><dd>Tabela profissional, conta sem bloqueios</dd>
-                    <dt>Total</dt><dd>5.799,30 € + IVA (ilustrativo)</dd>
-                  </dl>
-                  <p class="ac-n ac-n--info"><b>O que assumi e porquê</b><br>
-                    15 kW monofásica: 75 elementos e alimentação monofásica (dito às 16:52), pela regra de dimensionamento.<br>
-                    Sem bomba de aquecimento: o cliente tem recuperador hidro (dito às 17:05).<br>
-                    Kit de instalação padrão da bomba de calor, 9 artigos.</p>
-                  <p class="ac-n ac-n--aviso">Por confirmar: a temperatura de ida e o tipo de radiador não foram ditos.</p>
-                  <div class="ac-a" id="valAcoes">
-                    <button type="button" class="ac-b ac-b--p" data-val="aprovar">Aprovar e criar no PHC</button>
-                    <button type="button" class="ac-b" data-val="corrigir">Editar</button>
-                    <button type="button" class="ac-b" data-val="info">Perguntar ao comercial</button>
+                <div class="ac ac--vez" id="valAc">
+                  <div class="ac-h"><div><b>@Orçamentação, orçamento para validar: Instalações R. Sousa</b><small>Pedido do Comercial Zona 2, neste grupo · tabela profissional, conta sem bloqueios</small></div></div>
+                  <div class="ac-t val-t"><table><thead><tr><th>Artigo</th><th class="n">Qtd.</th><th class="n">Valor</th></tr></thead><tbody id="valLinhas"></tbody>
+                    <tfoot><tr><td>Total <small>(ilustrativo)</small></td><td></td><td class="n" id="valTot"></td></tr></tfoot></table></div>
+                  <div class="val-add" id="valAdd" hidden>
+                    <label for="valProd" class="sr-only">Acrescentar produto</label>
+                    <select id="valProd"></select>
+                    <button type="button" class="ac-b" id="valAddBt">Acrescentar</button>
                   </div>
-                  <p class="ac-so" id="valSo">Estes botões só respondem a quem valida.</p>
+                  <p class="ac-n ac-n--info"><b>O que assumi e porquê</b><br>
+                    15 kW monofásica: 75 elementos e alimentação monofásica, pela regra de dimensionamento.<br>
+                    Sem bomba de aquecimento: o cliente tem recuperador a água.<br>
+                    Kit de instalação padrão da bomba de calor, 9 artigos.</p>
+                  <p class="ac-quem" id="valQuem">Para a Orçamentação</p>
+                  <div class="ac-a" id="valAcoes">
+                    <button type="button" class="ac-b ac-b--p pulsa" data-val="aprovar">Aprovar</button>
+                    <button type="button" class="ac-b pulsa" data-val="editar">Editar</button>
+                  </div>
+                  <div class="ac-a" id="valAcoesEd" hidden>
+                    <button type="button" class="ac-b ac-b--p" data-val="validar">Validar e criar no PHC</button>
+                    <button type="button" class="ac-b" data-val="cancelar">Cancelar edição</button>
+                  </div>
+                  <div class="ac-res" id="valFeito" hidden></div>
                 </div>
               </div>
             </div>
@@ -1115,27 +359,12 @@
         <div class="phc-grid">
           <table>
             <thead><tr><th>Referência</th><th>Designação</th><th class="n">Quant.</th><th>Unid.</th><th class="n">Venda</th><th class="n">Desc.1</th><th class="n">Valor Venda</th></tr></thead>
-            <tbody id="phcLinhas">
-              <tr><td>BC.FA.15M</td><td>BOMBA CALOR AR-ÁGUA FAIRLAND 15KW MONOBLOCO R290 230V</td><td class="n">1,000</td><td>UN</td><td class="n">4.875,00</td><td class="n">20</td><td class="n">3.900,00</td></tr>
-              <tr><td>DI.100</td><td>DEPÓSITO DE INÉRCIA 100 L</td><td class="n">1,000</td><td>UN</td><td class="n">525,00</td><td class="n">20</td><td class="n">420,00</td></tr>
-              <tr><td>CR.BC</td><td>CRONOTERMÓSTATO PARA BOMBA DE CALOR</td><td class="n">1,000</td><td>UN</td><td class="n">106,25</td><td class="n">20</td><td class="n">85,00</td></tr>
-              <tr><td>AC.200.1S</td><td>ACUMULADOR AQS 200 L INOX KIT ELÉTRICO 1 SERPENTINA</td><td class="n">1,000</td><td>UN</td><td class="n">1.225,00</td><td class="n">20</td><td class="n">980,00</td></tr>
-              <tr class="sec"><td></td><td>KIT DE INSTALAÇÃO DA BOMBA DE CALOR</td><td></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>FM.1</td><td>FILTRO MAGNÉTICO 1"</td><td class="n">1,000</td><td>UN</td><td class="n">62,00</td><td class="n"></td><td class="n">62,00</td></tr>
-              <tr><td>SA.PAR</td><td>SUPORTES ANTIVIBRÁTICOS (PAR)</td><td class="n">1,000</td><td>UN</td><td class="n">29,00</td><td class="n"></td><td class="n">29,00</td></tr>
-              <tr><td>VE.24</td><td>VASO DE EXPANSÃO 24 L</td><td class="n">1,000</td><td>UN</td><td class="n">31,00</td><td class="n"></td><td class="n">31,00</td></tr>
-              <tr><td>GE.AUT</td><td>GRUPO DE ENCHIMENTO AUTOMÁTICO</td><td class="n">1,000</td><td>UN</td><td class="n">27,50</td><td class="n"></td><td class="n">27,50</td></tr>
-              <tr><td>PA.12</td><td>PURGADOR AUTOMÁTICO 1/2"</td><td class="n">2,000</td><td>UN</td><td class="n">6,80</td><td class="n"></td><td class="n">13,60</td></tr>
-              <tr><td>TM.06</td><td>TERMOMANÓMETRO 0 A 6 BAR</td><td class="n">1,000</td><td>UN</td><td class="n">12,40</td><td class="n"></td><td class="n">12,40</td></tr>
-              <tr><td>VR.1</td><td>VÁLVULA DE RETENÇÃO 1"</td><td class="n">2,000</td><td>UN</td><td class="n">13,90</td><td class="n"></td><td class="n">27,80</td></tr>
-              <tr><td>AG.10</td><td>ANTICONGELANTE 10 L</td><td class="n">2,000</td><td>UN</td><td class="n">39,50</td><td class="n"></td><td class="n">79,00</td></tr>
-              <tr><td>BCI.25</td><td>BOMBA CIRCULADORA ELETRÓNICA</td><td class="n">1,000</td><td>UN</td><td class="n">132,00</td><td class="n"></td><td class="n">132,00</td></tr>
-            </tbody>
+            <tbody id="phcLinhas"></tbody>
           </table>
         </div>
         <div class="phc-rod">
           <div class="phc-btns"><span>Totais</span><span>Cliente</span><span>Imprimir</span><span>Anexos</span></div>
-          <div class="tot"><span>Total Venda</span><b>5.799,30</b><span>Valores</span><b>sem IVA</b></div>
+          <div class="tot"><span>Total Venda</span><b id="phcTot">5.799,30</b><span>Valores</span><b>sem IVA</b></div>
         </div>
         <p class="phc-nota">Referências e valores ilustrativos. Na versão real, o documento é escrito no vosso PHC com as vossas referências e preços.</p>
       </div>
@@ -1595,8 +824,36 @@
   </div>
 </section>
 
+<!-- ============ 9b. RECAPITULAÇÃO ============ -->
+<section class="section-alt" id="recap">
+  <div class="container wide">
+    <div class="sec-head">
+      <span class="eyebrow">Em resumo</span>
+      <h2>O que vamos desenvolver</h2>
+      <p class="lead">Tudo o que viram hoje, numa página. Começa por uma auditoria de cerca de 2 semanas às conversas do Teams, aos orçamentos no PHC e às regras da orçamentação.</p>
+    </div>
+    <div class="recap-g">
+      <h3 class="recap-tit"><img src="assets/img/logo-dica.png" alt="Dica Portugal">Orçamentação</h3>
+      <div class="recap-grid">
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">01</span><h3>Assistente nos grupos do Teams</h3><p>Nos grupos ZONA 1 a 4: condições do cliente, campanhas, stock por armazém, datas previstas e estado dos orçamentos.</p></div>
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">02</span><h3>Pré-orçamento técnico</h3><p>Pergunta só o que falta, com botões. Lê plantas e esboços, monta os kits e respeita as exclusões.</p></div>
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">03</span><h3>Validação no próprio chat</h3><p>O orçamentista aprova ou edita. O orçamento nasce no PHC e o comercial recebe o PDF.</p></div>
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">04</span><h3>Proposta do instalador</h3><p>Catálogo Dica, margem e mão de obra, com a marca do instalador, por WhatsApp. Depois, converte em encomenda.</p></div>
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">05</span><h3>Fichas de cliente e permissões</h3><p>Criar e alterar fichas no PHC e níveis de autorização definidos convosco.</p></div>
+      </div>
+      <h3 class="recap-tit"><img src="assets/img/logo-maisclima.png" alt="MaisClima">MaisClima</h3>
+      <div class="recap-grid">
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">06</span><h3>Assistente na loja e nas redes</h3><p>WhatsApp, Instagram e Facebook, com os produtos e as fichas técnicas. Passa à equipa quando é preciso.</p></div>
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">07</span><h3>Comentários nos anúncios</h3><p>Resposta pública em segundos e a conversa continua em privado.</p></div>
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">08</span><h3>Carrinhos abandonados</h3><p>Mensagem no WhatsApp com o produto e o link para acabar a compra.</p></div>
+        <div class="card recap-c" data-entra="sobe"><span class="recap-n">09</span><h3>Vendas depois da compra</h3><p>O complemento certo, com link direto e desconto por 24 horas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 10. CONTA DE VALOR ============ -->
-<section class="section-alt" id="valor">
+<section id="valor">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">A conta</span>

@@ -296,3 +296,28 @@
 
 .ac-pill.off { opacity: 0.45; }
 .ac-res--clique { animation: deck-float-in 0.45s ease both; }
+
+/* demo interativa: vez de quem decide */
+.tm-vez { display: flex; align-items: center; gap: 8px; margin: 0 16px 8px; padding: 8px 12px; border-radius: 8px; background: hsl(244 45% 95%); color: var(--tm-roxo); font-size: 0.78rem; font-weight: 700; animation: tm-entra .25s ease both; }
+.tm-vez svg { width: 15px; height: 15px; flex-shrink: 0; }
+.ac--vez { box-shadow: 0 0 0 2px var(--tm-roxo); }
+.ac-quem { margin: 8px 0 0; font-size: 0.7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--tm-roxo); }
+@keyframes tm-pulsa { 0%, 100% { box-shadow: 0 0 0 0 hsl(244 50% 55% / 0.45); } 50% { box-shadow: 0 0 0 5px hsl(244 50% 55% / 0); } }
+.ac-b.pulsa, .ac-pill.pulsa { animation: tm-pulsa 1.6s ease-in-out infinite; }
+.ac-pill[disabled] { cursor: default; }
+.cr-head-d { display: flex; align-items: flex-start; }
+.tm-recomecar { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 0.78rem; font-weight: 600; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; min-height: 36px; }
+.tm-recomecar:hover { color: var(--text); }
+.tm-recomecar svg { width: 14px; height: 14px; }
+
+/* validação editável */
+.val-t tfoot td { font-weight: 700; border-top: 1px solid var(--tm-linha); padding-top: 7px; }
+.val-t tfoot small { font-weight: 400; color: var(--tm-cinza); }
+.val-q { display: inline-flex; align-items: center; gap: 4px; }
+.val-q button, .val-x { width: 24px; height: 24px; border-radius: 4px; border: 1px solid hsl(0 0% 80%); background: var(--tm-bolha); color: var(--tm-texto); cursor: pointer; font: inherit; font-size: 0.85rem; line-height: 1; padding: 0; }
+.val-q b { min-width: 16px; text-align: center; }
+.val-x { border-radius: 50%; margin-left: 4px; color: var(--tm-cinza); }
+.val-novo td { background: hsl(130 50% 95%); }
+.val-add { display: flex; gap: 6px; margin: 4px 0 8px; }
+.val-add[hidden], .ac-quem[hidden], #valFeito[hidden] { display: none; }
+.val-add select { flex: 1; min-width: 0; font: inherit; font-size: 0.78rem; padding: 6px 8px; border-radius: 4px; border: 1px solid hsl(0 0% 80%); background: var(--tm-bolha); color: var(--tm-texto); min-height: 34px; }

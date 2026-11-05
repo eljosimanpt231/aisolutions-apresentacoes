@@ -48,12 +48,22 @@
   function rich(s) { return esc(s).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/\n/g, "<br>"); }
   window.dicaRich = rich;
 
-  /* ---------- cartão adaptável ---------- */
-  function cartao(c, chave, feitos, auto) {
-    auto = auto || {};
-    var h = '<div class="ac">';
+  /* ---------- cartão adaptável ----------
+     Botões e escolhas com "seguir" são decisões: a demo pára até alguém
+     carregar, e o que vem a seguir depende do botão escolhido. */
+  function temSeguir(c) {
+    if (!c) return false;
+    return (c.acoes || []).some(function (a) { return a.seguir; }) ||
+      (c.escolhas || []).some(function (e) { return e && e.seguir; });
+  }
+  window.dicaTemSeguir = temSeguir;
+  function txtEsc(e) { return typeof e === "string" ? e : e.t; }
+
+  function cartao(c, chave, feitos, pend, cfg) {
+    var f = feitos[chave];
+    var h = '<div class="ac' + (pend ? " ac--vez" : "") + '">';
     h += '<div class="ac-h">' + (c.icone ? '<img src="' + esc(c.icone) + '" alt="">' : "") + "<div><b>" + esc(c.titulo) + "</b>" + (c.sub ? "<small>" + esc(c.sub) + "</small>" : "") + "</div></div>";
-    if (c.factos) { h += '<dl class="ac-f">'; c.factos.forEach(function (f) { h += "<dt>" + esc(f[0]) + "</dt><dd>" + rich(f[1]) + "</dd>"; }); h += "</dl>"; }
+    if (c.factos) { h += '<dl class="ac-f">'; c.factos.forEach(function (x) { h += "<dt>" + esc(x[0]) + "</dt><dd>" + rich(x[1]) + "</dd>"; }); h += "</dl>"; }
     if (c.tabela) {
       var T = c.tabela, num = T.num || [], risc = T.riscar || [];
       h += '<div class="ac-t"><table><thead><tr>';
@@ -62,7 +72,7 @@
       T.linhas.forEach(function (l, i) {
         h += "<tr" + (risc.indexOf(i) > -1 ? ' class="riscado"' : "") + ">";
         l.forEach(function (x, j) {
-          var v = String(x), cel = esc(v);
+          var v = String(x), cel = rich(v);
           if (/^ok:/.test(v)) cel = '<span class="st st--ok">' + esc(v.slice(3)) + "</span>";
           else if (/^prev:/.test(v)) cel = '<span class="st st--prev">' + esc(v.slice(5)) + "</span>";
           h += "<td" + (num.indexOf(j) > -1 ? ' class="n"' : "") + ">" + cel + "</td>";
@@ -73,29 +83,30 @@
     }
     if (c.kit) { h += '<div class="ac-kit"><small>' + esc(c.kitTitulo || "Kit de instalação") + "</small>"; c.kit.forEach(function (k) { h += "<span>" + esc(k) + "</span>"; }); h += "</div>"; }
     (c.notas || []).forEach(function (n) { h += '<p class="ac-n ac-n--' + esc(n.tom || "info") + '">' + rich(n.texto) + "</p>"; });
+    var quem = c.quem || cfg.eu;
+    if (pend && c.quem) h += '<p class="ac-quem">Para ' + esc(c.quem) + "</p>";
     if (c.escolhas) {
       h += '<div class="ac-esc">';
-      var escolhida = auto.escolha != null ? auto.escolha : c.escolhida;
-      c.escolhas.forEach(function (e, j) { h += '<button type="button" class="ac-pill' + (escolhida === j ? " sel" : auto.escolha != null ? " off" : "") + '" data-pill="1">' + esc(e) + "</button>"; });
+      var esco = f && f.tipo === "escolha" ? f.j : null;
+      c.escolhas.forEach(function (e, j) {
+        h += '<button type="button" class="ac-pill' + (esco === j ? " sel" : esco != null ? " off" : "") + (pend ? " pulsa" : "") + '"' + (esco != null ? " disabled" : "") + ' data-pill="' + chave + "|" + j + '">' + esc(txtEsc(e)) + "</button>";
+      });
       h += "</div>";
     }
     if (c.estado) h += '<div class="ac-estado ac-estado--' + esc(c.estado.tom || "info") + '">' + esc(c.estado.t) + "</div>";
     if (c.acoes) {
-      var f = feitos[chave];
-      if (f != null) h += '<div class="ac-res">' + ic("check") + "<span>" + rich(c.acoes[f].r) + "</span></div>";
-      else if (auto.acao != null) h += '<div class="ac-res ac-res--clique">' + ic("check") + "<span>" + esc(auto.quem) + " carregou em <b>" + esc(c.acoes[auto.acao].t) + "</b></span></div>";
+      if (f && f.tipo === "r") h += '<div class="ac-res">' + ic("check") + "<span>" + rich(c.acoes[f.j].r) + "</span></div>";
+      else if (f && f.tipo === "seguir") h += '<div class="ac-res">' + ic("check") + "<span>" + esc(quem) + " carregou em <b>" + esc(c.acoes[f.j].t) + "</b></span></div>";
       else {
         h += '<div class="ac-a">';
-        c.acoes.forEach(function (a, j) { h += '<button type="button" class="ac-b' + (a.p ? " ac-b--p" : "") + '" data-acao="' + chave + "|" + j + '">' + esc(a.t) + "</button>"; });
+        c.acoes.forEach(function (a, j) { h += '<button type="button" class="ac-b' + (a.p ? " ac-b--p" : "") + (pend && a.seguir ? " pulsa" : "") + '" data-acao="' + chave + "|" + j + '">' + esc(a.t) + "</button>"; });
         h += "</div>";
       }
     }
     return h + "</div>";
   }
-  window.dicaCartao = cartao;
 
-  function msgHTML(m, i, nova, cfg, chave, feitos, auto) {
-    if (m.de === "clique") return "";
+  function msgHTML(m, nova, cfg, chave, feitos, pend) {
     var cls = nova ? " tm-nova" : "";
     if (m.de === "sys") return '<div class="tm-sys' + cls + '">' + esc(m.texto) + "</div>";
     var eu = m.de === "com";
@@ -108,8 +119,8 @@
     if (m.texto) corpo += rich(m.texto);
     if (m.img === "vmc") corpo += '<svg class="tm-foto" viewBox="0 0 300 220" role="img" aria-label="Esboço da planta desenhado à mão"><use href="#esbocoVMC"/></svg>';
     if (m.anexo) corpo += '<div class="tm-anexo"><i>PDF</i><div><b>' + esc(m.anexo.nome) + "</b><small>" + esc(m.anexo.tam || "") + "</small></div></div>";
-    if (m.cartao) corpo += cartao(m.cartao, chave, feitos, auto && auto[chave]);
-    var soCartao = m.cartao && !m.texto;
+    if (m.cartao) corpo += cartao(m.cartao, chave, feitos, pend, cfg);
+    var soCartao = m.cartao && !m.texto && !m.anexo;
     h += '<div class="tm-bub"' + (soCartao ? ' style="padding:6px"' : "") + ">" + corpo + "</div>";
     if (m.reacao) h += '<span class="tm-react">' + esc(m.reacao) + "</span>";
     return h + "</div></div>";
@@ -121,38 +132,49 @@
     if (!root || !el) return;
     var cfg; try { cfg = JSON.parse(el.textContent); } catch (e) { return; }
     var scen = cfg.scenarios || [];
-    var st = { idx: 0, prog: 0, manual: false }, timer = null, started = false, feitos = {};
+    var st = { idx: 0, prog: 0, manual: false, trilho: null }, timer = null, started = false, feitos = {};
     var STEP = cfg.stepMs || 1500, END = cfg.endPauseMs || 3200;
+    function copia(x) { return JSON.parse(JSON.stringify(x)); }
+    function abrir(i) { st.idx = i; st.prog = 0; st.trilho = copia(scen[i].chat); feitos = {}; st.preso = false; }
+    abrir(0);
 
-    function seq(s) {
-      var a = [], feito = 0;
-      s.chat.forEach(function (m, k) {
+    /* decisão por responder: o último cartão com "seguir" sem resposta */
+    function pendente() {
+      for (var k = st.trilho.length - 1; k >= 0; k--) {
+        var m = st.trilho[k];
+        if (m.cartao && temSeguir(m.cartao)) return feitos[k] ? -1 : k;
+      }
+      return -1;
+    }
+    function seq() {
+      var s = scen[st.idx], a = [], feito = 0, pk = pendente();
+      st.trilho.forEach(function (m, k) {
         a.push(["chat", k]);
         if (m.passo != null) for (; feito < Math.min(m.passo, s.steps.length); feito++) a.push(["step", feito]);
       });
-      for (; feito < s.steps.length; feito++) a.push(["step", feito]);
+      if (pk < 0) for (; feito < s.steps.length; feito++) a.push(["step", feito]);
       return a;
     }
 
     var LISTA = [
-      { n: "ZONA 1 | Orçamentos", u: "Assistente: pré-orçamento pronto", k: "z1", t: "Z1" },
+      { n: "ZONA 1 | Orçamentos", u: "Assistente: orçamento final enviado", k: "z1", t: "Z1" },
       { n: "ZONA 2 | Orçamentos", u: "", k: "z2", t: "Z2", on: true },
       { n: "ZONA 3 | Orçamentos", u: "Comercial Zona 3: obrigado", k: "z3", t: "Z3" },
-      { n: "ZONA 4 | Orçamentos", u: "Assistente: em validação técnica", k: "z4", t: "Z4" },
+      { n: "ZONA 4 | Orçamentos", u: "Assistente: com o orçamentista", k: "z4", t: "Z4" },
       { n: "Orçamentação Dica", u: "Validado e criado no PHC", k: "zo", t: "OR", r: 1 },
       { n: "Assistente de Orçamentos", u: "Aplicação", img: 1, r: 1 }
     ];
 
     function render() {
-      /* guarda a posição do scroll da conversa: quem subiu para ler não é puxado para baixo */
       var antes = document.getElementById(id + "-msgs"), topo = antes ? antes.scrollTop : 0;
-      var s = scen[st.idx], sq = seq(s), total = sq.length;
+      var s = scen[st.idx], sq = seq(), total = sq.length;
       var rc = -1, rs = -1;
       for (var i = 0; i < Math.min(st.prog, sq.length); i++) { if (sq[i][0] === "chat") rc = sq[i][1]; else rs = sq[i][1]; }
+      var pk = pendente(), espera = pk > -1 && rc >= pk;
       var h = '<div class="cr-tabs">';
       scen.forEach(function (x, i) { h += '<button type="button" class="cr-tab ' + (i === st.idx ? "active" : "") + '" data-i="' + i + '">' + esc(x.letra || String.fromCharCode(65 + i)) + ". " + esc(x.title) + "</button>"; });
       h += "</div>";
-      h += '<div class="cr-shell tm-shell"><div class="cr-head"><div><div class="k">Cenário ' + esc(s.letra || String.fromCharCode(65 + st.idx)) + "</div><h3>" + esc(s.title) + "</h3><p>" + esc(s.subtitle || "") + '</p></div><div class="cr-progress">' + Math.min(st.prog, total) + " / " + total + "</div></div>";
+      h += '<div class="cr-shell tm-shell"><div class="cr-head"><div><div class="k">Cenário ' + esc(s.letra || String.fromCharCode(65 + st.idx)) + "</div><h3>" + esc(s.title) + "</h3><p>" + esc(s.subtitle || "") + '</p></div><div class="cr-head-d"><button type="button" class="tm-recomecar" data-recomecar="1">' + ic("clock") + "Recomeçar</button></div></div>";
       h += '<div class="tm-cols"><div class="tm-win">';
       h += '<div class="tm-top"><span class="tm-dots"><i></i><i></i><i></i></span><span class="tm-logo">T</span><span class="tm-search">Pesquisar</span><span class="tm-me">' + esc(cfg.euIni || "C2") + "</span></div>";
       h += '<div class="tm-body"><nav class="tm-rail" aria-hidden="true">';
@@ -164,13 +186,16 @@
       h += "</aside>";
       h += '<div class="tm-main"><div class="tm-head"><span class="tm-gav"><b>Z2</b></span><b>' + esc(cfg.canal || "ZONA 2 | Orçamentos") + '</b><span class="tm-tabs"><span class="on">Conversa</span><span>Ficheiros</span><span>Fotografias</span></span><span class="tm-reunir">Reunir</span><span class="tm-pess">7</span></div>';
       h += '<div class="tm-msgs" id="' + id + '-msgs">';
-      var auto = {};
-      s.chat.forEach(function (m, i) { if (i <= rc && m.de === "clique") auto[st.idx + "-" + m.alvo] = { acao: m.acao, escolha: m.escolha, quem: m.quem || cfg.eu }; });
-      s.chat.forEach(function (m, i) { if (i > rc) return; h += msgHTML(m, i, i === rc, cfg, st.idx + "-" + i, feitos, auto); });
-      var prox = s.chat[rc + 1];
+      st.trilho.forEach(function (m, k) { if (k > rc) return; h += msgHTML(m, k === rc, cfg, k, feitos, espera && k === pk); });
+      var prox = st.trilho[rc + 1];
       if (prox && prox.de === "bot") h += '<div class="tm-typing"><i></i><i></i><i></i><span>' + esc(cfg.bot) + " está a escrever</span></div>";
-      h += '</div><div class="tm-compose" aria-hidden="true"><span>Escreva uma mensagem</span>' + ic("smile") + ic("clip") + ic("send") + "</div></div></div></div>";
-      // raciocínio
+      else if (prox && prox.de === "orc") h += '<div class="tm-typing"><i></i><i></i><i></i><span>Orçamentação está a escrever</span></div>';
+      h += "</div>";
+      if (espera) {
+        var cp = st.trilho[pk].cartao;
+        h += '<div class="tm-vez">' + ic("arrow") + "<span>" + (cp.quem ? "Agora é o " + esc(cp.quem === "Orçamentação" ? "orçamentista" : cp.quem) : "Agora é o comercial") + ": carregue num botão do cartão</span></div>";
+      }
+      h += '<div class="tm-compose" aria-hidden="true"><span>Escreva uma mensagem</span>' + ic("smile") + ic("clip") + ic("send") + "</div></div></div></div>";
       h += '<div class="cr-reason tm-reason"><div class="cr-reason-head"><span style="color:var(--accent)">' + ic("bot") + '</span><span class="t">Raciocínio do assistente</span></div><ol class="cr-steps">';
       s.steps.forEach(function (p, i) {
         var on = i <= rs;
@@ -182,34 +207,45 @@
       if (mv) {
         mv.scrollTop = st.preso ? topo : mv.scrollHeight;
         mv.addEventListener("scroll", function () {
-          var noFim = mv.scrollHeight - mv.scrollTop - mv.clientHeight < 24;
-          st.preso = !noFim;
-          if (!noFim) st.manual = true;
+          st.preso = mv.scrollHeight - mv.scrollTop - mv.clientHeight >= 24;
         }, { passive: true });
       }
     }
 
-    /* Fora do ecrã, a demo não reconstrói a janela do Teams a cada passo:
-       espera que volte a estar à vista. Poupa trabalho ao scroll. */
     var visivel = true;
     function tick(primeiro) {
       if (timer) clearTimeout(timer);
       if (!visivel || st.preso) { timer = setTimeout(function () { tick(primeiro); }, 500); return; }
-      var len = seq(scen[st.idx]).length;
+      var len = seq().length;
       if (st.prog < len) timer = setTimeout(function () { st.prog++; render(); tick(); }, primeiro ? 350 : STEP);
-      else if (!st.manual) timer = setTimeout(function () { st.idx = (st.idx + 1) % scen.length; st.prog = 0; render(); tick(true); }, END);
+      else if (pendente() < 0 && !st.manual) timer = setTimeout(function () { abrir((st.idx + 1) % scen.length); render(); tick(true); }, END);
+    }
+
+    function seguir(k, lista) {
+      st.trilho = st.trilho.slice(0, k + 1).concat(copia(lista || []));
+      st.manual = true; st.preso = false;
+      render(); tick(true);
     }
 
     root.addEventListener("click", function (e) {
+      if (e.target.closest("[data-recomecar]")) { abrir(st.idx); st.manual = true; render(); tick(true); return; }
       var t = e.target.closest(".cr-tab");
-      if (t) { st.manual = true; st.preso = false; st.idx = +t.getAttribute("data-i"); st.prog = 0; render(); tick(true); return; }
+      if (t) { st.manual = true; abrir(+t.getAttribute("data-i")); render(); tick(true); return; }
       var a = e.target.closest("[data-acao]");
       if (a) {
-        var p = a.getAttribute("data-acao").split("|");
-        feitos[p[0]] = +p[1]; st.manual = true; var pr = st.preso; st.preso = true; render(); st.preso = pr; return;
+        var p = a.getAttribute("data-acao").split("|"), k = +p[0], j = +p[1];
+        var ac = st.trilho[k].cartao.acoes[j];
+        if (ac.seguir) { feitos[k] = { tipo: "seguir", j: j }; seguir(k, ac.seguir); }
+        else { feitos[k] = { tipo: "r", j: j }; st.manual = true; var pr = st.preso; st.preso = true; render(); st.preso = pr; }
+        return;
       }
       var pill = e.target.closest("[data-pill]");
-      if (pill) { pill.parentNode.querySelectorAll(".ac-pill").forEach(function (b) { b.classList.remove("sel"); }); pill.classList.add("sel"); }
+      if (pill) {
+        var q = pill.getAttribute("data-pill").split("|"), k2 = +q[0], j2 = +q[1];
+        var es = st.trilho[k2].cartao.escolhas[j2];
+        feitos[k2] = { tipo: "escolha", j: j2 };
+        seguir(k2, es && es.seguir);
+      }
     });
 
     render();
