@@ -515,8 +515,41 @@
   </div>
 </section>
 
+<!-- ============ 10. CONTA DE VALOR ============ -->
+<section id="valor">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">A conta</span>
+      <h2>Quando pedir um orçamento passa a ser uma mensagem</h2>
+      <p class="lead">Os comerciais deixam de filtrar o que pedem. Os valores por defeito são redondos: ajustem aos vossos números.</p>
+    </div>
+    <div class="valor-grid" style="grid-template-columns:minmax(0,1fr); max-width:760px; margin-inline:auto">
+      <div class="valor-bloco" data-entra="sobe">
+        <h3><img src="assets/img/logo-dica.png" alt="Dica Portugal">Orçamentação</h3>
+        <div class="calc" id="calcOrc"></div>
+        <script type="application/json" id="calcOrc-config">
+{
+ "inputs": [
+  { "id": "pedidos", "label": "Pedidos de orçamento por dia", "min": 5, "max": 80, "default": 20 },
+  { "id": "fica", "label": "% que hoje fica por pedir", "min": 0, "max": 30, "default": 5, "suffix": "%" },
+  { "id": "taxa", "label": "Taxa de adjudicação", "min": 5, "max": 60, "default": 25, "suffix": "%" },
+  { "id": "valor", "label": "Valor médio adjudicado (€)", "min": 300, "max": 8000, "step": 100, "default": 1500 }
+ ],
+ "outputs": [
+  { "label": "Vendas a mais por mês (pedidos × % por pedir × 22 dias × adjudicação × valor)", "expr": "pedidos*fica/100*22*taxa/100*valor/1000", "suffix": " mil €", "decimals": 1, "highlight": true },
+  { "label": "Orçamentos a mais por mês", "expr": "pedidos*fica/100*22", "decimals": 0 },
+  { "label": "Adjudicações a mais por mês", "expr": "pedidos*fica/100*22*taxa/100", "decimals": 1 }
+ ],
+ "note": "Estimativa ilustrativa. Ajustem aos vossos números."
+}
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 7. MAISCLIMA ============ -->
-<section id="maisclima">
+<section class="section-alt" id="maisclima">
   <div class="container wide">
     <div class="sec-head">
       <span class="eyebrow">MaisClima</span>
@@ -726,7 +759,7 @@
 </section>
 
 <!-- ============ 8. CARRINHO ABANDONADO ============ -->
-<section class="section-alt" id="carrinho">
+<section id="carrinho">
   <div class="container wide">
     <div class="sec-head">
       <span class="eyebrow">Carrinho abandonado</span>
@@ -789,7 +822,7 @@
 </section>
 
 <!-- ============ 9. UPSELL PÓS-COMPRA ============ -->
-<section id="upsell">
+<section class="section-alt" id="upsell">
   <div class="container">
     <div class="upsell">
       <div class="up-texto" data-entra="sobe">
@@ -825,7 +858,7 @@
 </section>
 
 <!-- ============ 9b. RECAPITULAÇÃO ============ -->
-<section class="section-alt" id="recap">
+<section id="recap">
   <div class="container wide">
     <div class="sec-head">
       <span class="eyebrow">Em resumo</span>
@@ -852,38 +885,6 @@
   </div>
 </section>
 
-<!-- ============ 10. CONTA DE VALOR ============ -->
-<section id="valor">
-  <div class="container">
-    <div class="sec-head">
-      <span class="eyebrow">A conta</span>
-      <h2>Quando pedir um orçamento passa a ser uma mensagem</h2>
-      <p class="lead">Os comerciais deixam de filtrar o que pedem. Os valores por defeito são redondos: ajustem aos vossos números.</p>
-    </div>
-    <div class="valor-grid" style="grid-template-columns:minmax(0,1fr); max-width:760px; margin-inline:auto">
-      <div class="valor-bloco" data-entra="sobe">
-        <h3><img src="assets/img/logo-dica.png" alt="Dica Portugal">Orçamentação</h3>
-        <div class="calc" id="calcOrc"></div>
-        <script type="application/json" id="calcOrc-config">
-{
- "inputs": [
-  { "id": "pedidos", "label": "Pedidos de orçamento por dia", "min": 5, "max": 80, "default": 20 },
-  { "id": "fica", "label": "% que hoje fica por pedir", "min": 0, "max": 30, "default": 5, "suffix": "%" },
-  { "id": "taxa", "label": "Taxa de adjudicação", "min": 5, "max": 60, "default": 25, "suffix": "%" },
-  { "id": "valor", "label": "Valor médio adjudicado (€)", "min": 300, "max": 8000, "step": 100, "default": 1500 }
- ],
- "outputs": [
-  { "label": "Vendas a mais por mês (pedidos × % por pedir × 22 dias × adjudicação × valor)", "expr": "pedidos*fica/100*22*taxa/100*valor/1000", "suffix": " mil €", "decimals": 1, "highlight": true },
-  { "label": "Orçamentos a mais por mês", "expr": "pedidos*fica/100*22", "decimals": 0 },
-  { "label": "Adjudicações a mais por mês", "expr": "pedidos*fica/100*22*taxa/100", "decimals": 1 }
- ],
- "note": "Estimativa ilustrativa. Ajustem aos vossos números."
-}
-        </script>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ 12. COMO ARRANCAMOS ============ -->
 <section class="section-alt" id="arranque">
