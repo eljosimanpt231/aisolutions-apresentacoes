@@ -1,0 +1,149 @@
+/* ============================================================
+   TOKENS: Dica Portugal (e MaisClima).
+   Marca: o azul dos botões, da barra do topo e da fachada do armazém
+   em Lousada (#104cba). Acento: o verde da chama do logótipo (#a0c040),
+   que marca sempre o que o assistente faz sozinho. A chama tem quatro
+   cores (verde, amarelo, laranja, azul) e é o elemento assinatura.
+   Tipografia: Outfit (títulos, geométrica como a do site),
+   Nunito Sans (corpo, a família do site), JetBrains Mono (referências).
+   Tema claro por defeito, com botão claro/escuro.
+   ============================================================ */
+
+:root {
+  --brand-hsl: 219 84% 40%;
+  --accent-hsl: 82 52% 44%;
+  --brand2-hsl: 30 96% 52%;
+  --brand: hsl(var(--brand-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --on-brand: hsl(0 0% 100%);
+  --marca-texto: hsl(219 84% 36%);
+  --acento-texto: hsl(86 70% 24%);
+  --ok-texto: hsl(150 62% 26%);
+  --brand-solido: hsl(219 84% 38%);
+
+  /* As quatro cores da chama */
+  --chama-verde: hsl(82 52% 50%);
+  --chama-amarelo: hsl(48 100% 50%);
+  --chama-laranja: hsl(28 100% 52%);
+  --chama-azul: hsl(219 84% 44%);
+  --chama: linear-gradient(90deg, var(--chama-verde), var(--chama-amarelo) 34%, var(--chama-laranja) 62%, var(--chama-azul));
+
+  --bg: hsl(216 30% 97.5%);
+  --bg-soft: hsl(216 28% 94.5%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(216 26% 96%);
+  --border: hsl(216 18% 86%);
+
+  --text: hsl(214 34% 11%);
+  --muted: hsl(214 12% 35%);
+
+  --success-hsl: 150 62% 30%; --success: hsl(var(--success-hsl));
+  --danger-hsl: 356 72% 44%;  --danger: hsl(var(--danger-hsl));
+  --warning-hsl: 34 92% 40%;  --warning: hsl(var(--warning-hsl));
+  --aviso-texto: hsl(30 90% 28%);
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.10), transparent 62%);
+  --grad-text: linear-gradient(100deg, hsl(82 60% 58%), hsl(48 100% 58%) 40%, hsl(28 100% 60%) 75%);
+  --grad-cta: linear-gradient(160deg, hsl(216 30% 95%), hsl(var(--brand-hsl) / 0.10));
+
+  --shadow-sm: 0 1px 3px hsl(216 40% 12% / 0.08);
+  --shadow-md: 0 8px 28px hsl(216 40% 12% / 0.10);
+  --shadow-lg: 0 20px 56px hsl(216 40% 12% / 0.16);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.18);
+
+  /* O hero é sempre escuro: a fachada azul do armazém por trás */
+  --noite: hsl(218 44% 8%);
+  --noite-2: hsl(218 36% 12%);
+  --noite-text: hsl(216 30% 96%);
+  --noite-muted: hsl(216 16% 78%);
+  --noite-line: hsl(218 24% 24%);
+
+  /* Microsoft Teams (claro nos dois temas, como a aplicação) */
+  --tm-roxo: hsl(237 47% 57%);
+  --tm-roxo-escuro: hsl(237 42% 46%);
+  --tm-roxo-claro: hsl(234 70% 95%);
+  --tm-rail: hsl(0 0% 92%);
+  --tm-lista: hsl(0 0% 96%);
+  --tm-fundo: hsl(0 0% 98%);
+  --tm-bolha: hsl(0 0% 100%);
+  --tm-linha: hsl(0 0% 88%);
+  --tm-texto: hsl(0 0% 14%);
+  --tm-cinza: hsl(0 0% 38%);
+
+  /* Cegid PHC Evolution */
+  --phc-azul: hsl(226 100% 46%);
+  --phc-azul-2: hsl(213 70% 92%);
+  --phc-janela: hsl(0 0% 96%);
+  --phc-grelha: hsl(0 0% 100%);
+  --phc-linha: hsl(0 0% 80%);
+  --phc-texto: hsl(0 0% 10%);
+  --phc-cinza: hsl(0 0% 36%);
+  --phc-amarelo: hsl(58 100% 62%);
+  --phc-laranja: hsl(28 100% 86%);
+  --phc-ciano: hsl(180 90% 78%);
+
+  /* A proposta do instalador (papel) */
+  --paper: hsl(0 0% 100%);
+  --paper-ink: hsl(214 34% 11%);
+  --paper-muted: hsl(214 10% 38%);
+  --paper-line: hsl(214 14% 88%);
+  --inst: hsl(196 82% 30%);
+  --inst-hsl: 196 82% 30%;
+  --inst-2: hsl(8 72% 42%);
+  --inst-2-hsl: 8 72% 42%;
+
+  /* MaisClima */
+  --mc-azul: hsl(206 100% 25%);
+  --mc-verde: hsl(129 61% 32%);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Outfit', 'Nunito Sans', system-ui, sans-serif;
+  --font-body: 'Nunito Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --container: 1200px;
+  --section-pad: clamp(72px, 10vw, 120px);
+}
+
+:root[data-theme="dark"] {
+  --brand-hsl: 219 90% 62%;
+  --accent-hsl: 82 60% 52%;
+  --brand2-hsl: 30 96% 58%;
+  --marca-texto: hsl(219 95% 76%);
+  --acento-texto: hsl(82 65% 62%);
+  --ok-texto: hsl(150 55% 60%);
+  --aviso-texto: hsl(36 92% 64%);
+  --brand-solido: hsl(219 84% 42%);
+
+  --bg: hsl(218 40% 6%);
+  --bg-soft: hsl(218 32% 8.5%);
+  --surface: hsl(218 26% 11%);
+  --surface-2: hsl(218 22% 14%);
+  --border: hsl(218 18% 22%);
+
+  --text: hsl(216 30% 95%);
+  --muted: hsl(216 12% 71%);
+
+  --success-hsl: 150 55% 50%;
+  --danger-hsl: 356 80% 64%;
+  --warning-hsl: 38 92% 58%;
+
+  --grad-hero: radial-gradient(ellipse at top, hsl(var(--brand-hsl) / 0.18), transparent 62%);
+  --grad-cta: linear-gradient(160deg, hsl(218 30% 9%), hsl(var(--brand-hsl) / 0.2));
+  --shadow-sm: 0 1px 3px hsl(218 50% 2% / 0.5);
+  --shadow-md: 0 10px 32px hsl(218 50% 2% / 0.55), 0 0 0 1px hsl(0 0% 100% / 0.04);
+  --shadow-lg: 0 24px 64px hsl(218 50% 2% / 0.65), 0 0 0 1px hsl(0 0% 100% / 0.05);
+  --shadow-glow: 0 0 40px hsl(var(--brand-hsl) / 0.25);
+}
+
+/* WhatsApp (mockup): cores canónicas do canal */
+:root {
+  --wa-green: hsl(165 49% 32%);
+  --wa-green-strong: hsl(145 63% 42%);
+  --wa-bg: hsl(38 22% 89%);
+  --wa-out: hsl(100 55% 88%);
+  --wa-in: hsl(0 0% 100%);
+  --wa-text: hsl(200 15% 15%);
+}

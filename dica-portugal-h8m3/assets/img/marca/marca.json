@@ -1,0 +1,344 @@
+{
+  "site": "https://www.dicaportugal.pt/",
+  "dominio": "dicaportugal.pt",
+  "titulo": "Dica Portugal - Artigos de Pichelaria, Aquecimento, Climatização, Energias Renováveis.",
+  "descricao": "Líder na comercialização de soluções que promovam o bem-estar dos nossos clientes. Produtos que primam em qualidade, tecnologia e design.",
+  "logotipoTexto": null,
+  "logotipo": {
+    "ficheiro": "logo.png",
+    "origem": "img",
+    "src": "https://www.dicaportugal.pt/wp-content/uploads/2023/04/logo_dicaportugal-1.png",
+    "porque": [
+      "diz logo",
+      "liga à página inicial",
+      "no cabeçalho",
+      "no topo",
+      "à esquerda",
+      "tem o nome"
+    ],
+    "analise": {
+      "largura": 417,
+      "altura": 143,
+      "fundo": "transparente",
+      "fundoRgb": null,
+      "tinta": "escura",
+      "coresTinta": [
+        {
+          "rgb": [
+            64,
+            64,
+            64
+          ],
+          "parte": 53
+        },
+        {
+          "rgb": [
+            128,
+            128,
+            128
+          ],
+          "parte": 10
+        },
+        {
+          "rgb": [
+            160,
+            192,
+            64
+          ],
+          "parte": 4
+        },
+        {
+          "rgb": [
+            64,
+            96,
+            160
+          ],
+          "parte": 2
+        }
+      ]
+    }
+  },
+  "alternativas": [
+    {
+      "origem": "img",
+      "src": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20629%20614'%3E%3C/svg%3E",
+      "pontos": 5,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho"
+      ],
+      "analise": {
+        "largura": 154,
+        "altura": 150,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "vazia",
+        "coresTinta": []
+      }
+    },
+    {
+      "origem": "img",
+      "src": "https://www.dicaportugal.pt/wp-content/uploads/2023/04/dicaportugal-768x594.jpg",
+      "pontos": 4,
+      "motivos": [
+        "diz logo",
+        "no cabeçalho",
+        "no topo",
+        "tem o nome",
+        "grande demais, parece banner"
+      ],
+      "analise": {
+        "largura": 768,
+        "altura": 594,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 14
+          },
+          {
+            "rgb": [
+              96,
+              128,
+              128
+            ],
+            "parte": 10
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              160
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    },
+    {
+      "origem": "ícone",
+      "src": "https://www.dicaportugal.pt/wp-content/uploads/2023/04/cropped-dica-192x192.png",
+      "pontos": 1,
+      "motivos": [
+        "ícone do site: só o símbolo, sem o nome"
+      ],
+      "analise": {
+        "largura": 192,
+        "altura": 192,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "média",
+        "coresTinta": [
+          {
+            "rgb": [
+              160,
+              192,
+              64
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              160
+            ],
+            "parte": 11
+          },
+          {
+            "rgb": [
+              256,
+              224,
+              0
+            ],
+            "parte": 9
+          },
+          {
+            "rgb": [
+              256,
+              192,
+              0
+            ],
+            "parte": 7
+          }
+        ]
+      }
+    },
+    {
+      "origem": "og:image",
+      "src": "https://www.dicaportugal.pt/wp-content/uploads/2023/04/dicaportugal.jpg",
+      "pontos": 0,
+      "motivos": [
+        "imagem de partilha: muitas vezes é uma foto"
+      ],
+      "analise": {
+        "largura": 800,
+        "altura": 619,
+        "fundo": "transparente",
+        "fundoRgb": null,
+        "tinta": "escura",
+        "coresTinta": [
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "parte": 13
+          },
+          {
+            "rgb": [
+              96,
+              128,
+              128
+            ],
+            "parte": 11
+          },
+          {
+            "rgb": [
+              128,
+              128,
+              160
+            ],
+            "parte": 8
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              224
+            ],
+            "parte": 5
+          }
+        ]
+      }
+    }
+  ],
+  "fotografia": null,
+  "paleta": [
+    {
+      "hex": "#1d2c38",
+      "hsl": "207 32% 17%",
+      "peso": 312500,
+      "onde": [
+        "texto"
+      ]
+    },
+    {
+      "hex": "#104cba",
+      "hsl": "219 84% 40%",
+      "peso": 152519,
+      "onde": [
+        "botões",
+        "texto",
+        "logótipo"
+      ]
+    },
+    {
+      "hex": "#a0c040",
+      "hsl": "75 50% 50%",
+      "peso": 4800,
+      "onde": [
+        "logótipo"
+      ]
+    }
+  ],
+  "tokens": {
+    "--brand-hsl": "207 32% 17%",
+    "--accent-hsl": "75 50% 50%",
+    "nota": "acento = segunda cor da marca"
+  },
+  "fundoDoSite": "0 0% 100%",
+  "variaveisDoTema": [],
+  "fontes": {
+    "titulos": "Nunito",
+    "corpo": "Roboto",
+    "google": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.googleapis.com/css?family=Rubik%3A400%2C300%2C500%2C600%2C700%2C800%2C900%7CNunito%3A700&display=swap",
+      "https://fonts.googleapis.com/css?family=Rubik%3A400%2C300%2C500%2C600%2C700%2C800%2C900%7CNunito%3A700&display=swap"
+    ]
+  },
+  "vocabulario": {
+    "menu": [
+      "Sobre nós",
+      "Serviços",
+      "Aquecimento",
+      "Artigos de Pichelaria",
+      "Climatização",
+      "Domótica",
+      "Energias renováveis",
+      "Piscinas",
+      "Marcas",
+      "CAMPANHAS",
+      "Contactos",
+      "Sobre nós",
+      "Serviços",
+      "Aquecimento",
+      "Artigos de Pichelaria",
+      "Climatização",
+      "Domótica",
+      "Energias renováveis",
+      "Piscinas",
+      "Marcas",
+      "CAMPANHAS",
+      "Contactos",
+      "Aquecimento",
+      "Artigos de Pichelaria",
+      "Climatização",
+      "Domótica",
+      "Energias renováveis",
+      "Piscinas",
+      "Aquecimento",
+      "Artigos de Pichelaria",
+      "Climatização",
+      "Domótica",
+      "Energias renováveis",
+      "Piscinas",
+      "Política de Privacidade",
+      "Termos e Condições",
+      "Livro de Reclamações",
+      "Política de Privacidade",
+      "Termos e Condições",
+      "Livro de Reclamações"
+    ],
+    "titulos": [
+      "Dica Portugal",
+      "Líder na comercialização de soluções",
+      "Os nossos principais serviços",
+      "Sobre nós",
+      "Missão",
+      "Visão",
+      "Notícias e informações",
+      "Novidades sobre o nosso setor de atividade",
+      "KRATKI – Distribuição Exclusiva em…",
+      "Dica Portugal estabelece parceria estratégica…",
+      "Novas salamandras a lenha da…",
+      "Marca exclusiva THERMOZEL em Portugal.",
+      "EXPORT HOME 2023",
+      "ExpoBiomasa",
+      "Qualidade – Certificação ISO 9001:2015",
+      "KRATKI – Distribuição Exclusiva em…",
+      "Dica Portugal estabelece parceria estratégica…",
+      "Novas salamandras a lenha da…"
+    ],
+    "tratamento": "indefinido"
+  },
+  "avisos": [
+    "Logótipo escuro e transparente: sobre fundo escuro desaparece. Pastilha clara, ou filtro para branco (filter: brightness(0) invert(1)) se for monocromático."
+  ]
+}
