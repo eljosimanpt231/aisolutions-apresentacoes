@@ -99,11 +99,11 @@
 
   /* Fora da lista do Hugo: preço separado (pedido de 04/11). O1 e O2 recomendados, O3 opcional. Iguais nos dois cenários. */
   const OPC = [
-    { cod: 'O1', nome: 'Atendimento omnicanal', pos: 'propomos', dev: 4000, mes: 100, fase: 2,
-      just: 'Messenger, Instagram, WhatsApp e o widget do site numa caixa única: o agente responde primeiro, recolhe os dados e entrega à pessoa certa de cada área.',
-      ent: 'Caixa única com resposta imediata, também fora de horas, e encaminhamento por linha de negócio.',
-      crit: 'Duas semanas de conversas reais acompanhadas: nenhuma resposta fora das regras aprovadas e todas as conversas entregues na área certa.',
-      dep: ['ind', 'Avança sozinho'] },
+    { cod: 'O1', nome: 'Atendimento omnicanal e assistente da loja online', pos: 'propomos', dev: 4000, mes: 100, fase: 2,
+      just: 'Messenger, Instagram, WhatsApp e o widget do site numa caixa única: o agente responde primeiro, recolhe os dados e entrega à pessoa certa de cada área. Inclui o assistente da loja online.',
+      ent: 'Caixa única com resposta imediata, também fora de horas, e encaminhamento por linha de negócio. Assistente da loja online, ligado ao Shopify: responde a dúvidas sobre os produtos da loja, acompanha encomendas e envios, confirma moradas e, quando uma encomenda fica por pagar, envia o pedido de pagamento MB WAY pelo WhatsApp.',
+      crit: 'Duas semanas de conversas reais acompanhadas: nenhuma resposta fora das regras aprovadas, todas as conversas entregues na área certa, e as respostas sobre produtos, encomendas e envios conferidas com o Shopify.',
+      dep: ['ind', 'Avança sozinho; o assistente da loja lê o Shopify'] },
     { cod: 'O2', nome: 'Triagem da caixa de email', pos: 'propomos', dev: 1500, mes: 40, fase: 2,
       just: 'O agente passa pela caixa partilhada de manhã, marca a prioridade, diz a quem cabe responder e deixa rascunhos. Nunca envia.',
       ent: 'Caixa info@ classificada por área e prioridade, com rascunhos de resposta prontos a rever.',
