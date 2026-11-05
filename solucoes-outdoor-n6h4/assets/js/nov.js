@@ -97,14 +97,14 @@
       dep: { A: ['dep', 'Depende do Shopify e do stock no Sage'], B: ['dep', 'Depende do Shopify e do stock no Odoo'] } }
   ];
 
-  /* Fora da lista do Hugo: vêm como opcionais, com preço separado (pedido de 04/11). Iguais nos dois cenários. */
+  /* Fora da lista do Hugo: preço separado (pedido de 04/11). O1 e O2 recomendados, O3 opcional. Iguais nos dois cenários. */
   const OPC = [
-    { cod: 'O1', nome: 'Atendimento omnicanal', pos: 'opcional', dev: 4000, mes: 100, fase: 2,
+    { cod: 'O1', nome: 'Atendimento omnicanal', pos: 'propomos', dev: 4000, mes: 100, fase: 2,
       just: 'Messenger, Instagram, WhatsApp e o widget do site numa caixa única: o agente responde primeiro, recolhe os dados e entrega à pessoa certa de cada área.',
       ent: 'Caixa única com resposta imediata, também fora de horas, e encaminhamento por linha de negócio.',
       crit: 'Duas semanas de conversas reais acompanhadas: nenhuma resposta fora das regras aprovadas e todas as conversas entregues na área certa.',
       dep: ['ind', 'Avança sozinho'] },
-    { cod: 'O2', nome: 'Triagem da caixa de email', pos: 'opcional', dev: 1500, mes: 40, fase: 2,
+    { cod: 'O2', nome: 'Triagem da caixa de email', pos: 'propomos', dev: 1500, mes: 40, fase: 2,
       just: 'O agente passa pela caixa partilhada de manhã, marca a prioridade, diz a quem cabe responder e deixa rascunhos. Nunca envia.',
       ent: 'Caixa info@ classificada por área e prioridade, com rascunhos de resposta prontos a rever.',
       crit: 'Uma semana de emails reais: classificação certa em pelo menos 90%, confirmada pela equipa.',
@@ -167,7 +167,7 @@
       const nota = (n.A.pos !== n.B.pos || ['P1', 'P3', 'P5'].includes(n.cod)) ? n.B.just : '';
       return linhaAmb(n.cod, n.nome, pill(n.A.pos), pill(n.B.pos), n.A.fase, corpoNec(n, nota));
     }).join('');
-    const opc = OPC.map(o => linhaAmb(o.cod, o.nome, pill('opcional'), pill('opcional'), o.fase, corpoNec(o))).join('');
+    const opc = OPC.map(o => linhaAmb(o.cod, o.nome, pill(o.pos), pill(o.pos), o.fase, corpoNec(o))).join('');
     el.innerHTML = head + grupo('Base') + base + grupo('Produtividade') + nec('p') + grupo('Negócio') + nec('n') + grupo('Fora da vossa lista') + opc;
   }
 
