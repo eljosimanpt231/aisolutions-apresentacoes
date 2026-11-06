@@ -241,3 +241,4 @@ table.rub td span,table.inv td span{opacity:1}
 @media (max-width:860px){.niveis{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.niveis{grid-template-columns:1fr}}
 .cfg-obr{margin:0;padding:10px 18px;font-size:.84rem;color:var(--muted);border-top:1px solid var(--border)}
+.cfg-obr{max-width:none}.cfg p.cfg-obr{max-width:72ch}
