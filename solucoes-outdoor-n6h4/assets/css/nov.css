@@ -231,3 +231,13 @@ table.rub td span,table.inv td span{opacity:1}
   .cfg-tot{grid-template-columns:1fr}
   .cfg-tot b{text-align:left}
 }
+
+/* Níveis das soluções */
+.pos.essencial{background:var(--brand);color:var(--on-brand)}
+.pos.recomendado{background:hsl(var(--success-hsl) / 0.14);color:var(--success)}
+.niveis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.niveis>div{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.niveis p{margin:0;font-size:.86rem;line-height:1.5;color:var(--text)}
+@media (max-width:860px){.niveis{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.niveis{grid-template-columns:1fr}}
+.cfg-obr{margin:0;padding:10px 18px;font-size:.84rem;color:var(--muted);border-top:1px solid var(--border)}

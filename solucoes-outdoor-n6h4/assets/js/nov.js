@@ -133,8 +133,15 @@
 
   const eur = (v) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
   /* Soluções escolhidas: começa na nossa recomendação; a mesma escolha vale para os dois cenários. */
-  const itens = (c) => NEC.map(n => Object.assign({ cod: n.cod, nome: n.nome, g: n.g }, n[c])).concat(OPC.map(o => Object.assign({ g: 'o' }, o)));
-  const recomendadas = () => new Set(itens('A').filter(i => i.pos === 'propomos').map(i => i.cod));
+  /* Níveis: obrigatório (a base, sempre incluída), essencial (recomendamos a 100%), recomendamos, opcional. Iguais nos dois cenários. */
+  const NIVEL = { P1: 'essencial', P3: 'essencial', P6: 'essencial', N1: 'essencial',
+    P2: 'recomendado', P4: 'recomendado', P5: 'recomendado', N3: 'recomendado', N4: 'recomendado', O1: 'recomendado', O2: 'recomendado',
+    N2: 'opcional', O3: 'opcional' };
+  const NIV_TXT = { base: 'Obrigatório', essencial: 'Essencial', recomendado: 'Recomendamos', opcional: 'Opcional' };
+  const NIV_GRP = { essencial: 'Essencial: recomendamos a 100%', recomendado: 'Recomendamos', opcional: 'Opcional' };
+  const itens = (c) => NEC.map(n => Object.assign({ cod: n.cod, nome: n.nome, g: n.g }, n[c])).concat(OPC.map(o => Object.assign({ g: 'o' }, o)))
+    .map(i => Object.assign(i, { nivel: NIVEL[i.cod] }));
+  const recomendadas = () => new Set(itens('A').filter(i => i.nivel !== 'opcional').map(i => i.cod));
   let escolha = recomendadas();
   let atual = 'A';
   const DEP = [
@@ -144,8 +151,7 @@
   ];
 
   /* ---------- Âmbito: os dois cenários lado a lado, sem preços ---------- */
-  const AMB_TXT = { propomos: 'Recomendamos', opcional: 'Opcional', base: 'Base' };
-  const pill = (pos, txt) => `<span class="pos ${pos}">${txt || AMB_TXT[pos]}</span>`;
+  const pill = (niv, txt) => `<span class="pos ${niv}">${txt || NIV_TXT[niv]}</span>`;
   function linhaAmb(cod, nome, a, b, fase, corpo) {
     return `<details class="amb-l"><summary>
         <span class="amb-n"><span class="nec-cod">${cod}</span>${nome}</span>
@@ -157,23 +163,25 @@
   function renderAmb() {
     const el = document.getElementById('ambLista');
     if (!el) return;
-    const head = `<div class="amb-h"><span>Necessidade</span><span>Cenário A</span><span>Cenário B</span><span>Em produção</span></div>`;
+    const head = `<div class="amb-h"><span>Solução</span><span>Cenário A</span><span>Cenário B</span><span>Em produção</span></div>`;
     const grupo = (t) => `<div class="amb-g">${t}</div>`;
     const base =
       linhaAmb('A0', BASE.A.nome, pill('base'), pill('fora', 'Fica no Odoo'), 1, corpoNec(BASE.A, 'O CRM é o do Odoo, do outro fornecedor.')) +
-      linhaAmb('I', 'Ligação ao sistema de gestão', pill('base', 'Sage, Factorial, Shopify'), pill('base', 'Odoo e Shopify'), 1,
-        corpoNec({ ent: 'Cenário A: ligação ao Sage (API ou migração da faturação para Moloni ou InvoiceXpress), ao Factorial e ao Shopify. Cenário B: leituras e escritas dos módulos de IA na API do Odoo.', crit: BASE.B.crit }));
-    const nec = (g) => NEC.filter(n => n.g === g).map(n => {
-      const nota = (n.A.pos !== n.B.pos || ['P1', 'P3', 'P5'].includes(n.cod)) ? n.B.just : '';
-      return linhaAmb(n.cod, n.nome, pill(n.A.pos), pill(n.B.pos), n.A.fase, corpoNec(n, nota));
-    }).join('');
-    const opc = OPC.map(o => linhaAmb(o.cod, o.nome, pill(o.pos), pill(o.pos), o.fase, corpoNec(o))).join('');
-    el.innerHTML = head + grupo('Base') + base + grupo('Produtividade') + nec('p') + grupo('Negócio') + nec('n') + grupo('Fora da vossa lista') + opc;
+      linhaAmb('I', 'Ligação ao sistema de gestão (Sage ou Odoo, e Shopify)', pill('base'), pill('base'), 1,
+        corpoNec({ ent: 'Cenário A: ligação ao Sage (API ou migração da faturação para Moloni ou InvoiceXpress), ao Factorial e ao Shopify. Cenário B: leituras e escritas dos módulos de IA na API do Odoo.', crit: BASE.B.crit })) +
+      linhaAmb('D', 'Diagnóstico, desenho funcional e formação', pill('base'), pill('base'), 0,
+        corpoNec({ ent: 'Mapa dos processos das quatro linhas, desenho funcional de cada solução, critérios de aceitação fechados com amostras vossas, e formação das equipas em cada fase.', crit: 'Desenho funcional aprovado por vocês antes de começar o desenvolvimento.' }));
+    const linha = (i) => {
+      const n = NEC.find(x => x.cod === i.cod) || OPC.find(x => x.cod === i.cod);
+      const nota = ['P1', 'P3', 'P5'].includes(i.cod) ? n.B.just : '';
+      return linhaAmb(i.cod, i.nome, pill(i.nivel), pill(i.nivel), i.fase, corpoNec(n, nota));
+    };
+    const nivel = (k) => grupo(NIV_GRP[k]) + itens('A').filter(i => i.nivel === k).map(linha).join('');
+    el.innerHTML = head + grupo('Obrigatório: a base, sem a qual nada funciona') + base + nivel('essencial') + nivel('recomendado') + nivel('opcional');
   }
 
   /* ---------- Investimento: configurador ----------
      Desenvolvimento, consultoria e formação; a manutenção mensal começa com as soluções concluídas. */
-  const POS_INV = { propomos: 'Recomendamos', opcional: 'Opcional', base: 'Base do cenário' };
   function calc(c) {
     const sel = itens(c).filter(i => escolha.has(i.cod));
     const base = BASE[c];
@@ -194,20 +202,21 @@
       return `<label class="cfg-r${on ? ' on' : ''}" for="${id}">
         <input type="checkbox" id="${id}" data-cod="${i.cod}"${on ? ' checked' : ''}><span class="cfg-sw" aria-hidden="true"></span>
         <span class="cfg-n"><b>${i.cod}</b> ${i.nome}<small>${FASE_TXT[i.fase]}</small></span>
-        <span class="cfg-p"><span class="pos ${i.pos}">${POS_INV[i.pos]}</span></span>
+        <span class="cfg-p"><span class="pos ${i.nivel}">${NIV_TXT[i.nivel]}</span></span>
         <span class="n">${eur(i.dev)}</span><span class="n">${i.mes ? eur(i.mes) : '<span class="muted">n.a.</span>'}</span></label>`;
     };
-    const grupo = (t, g) => `<div class="cfg-g">${t}</div>` + itens(c).filter(i => i.g === g).map(row).join('');
+    const grupo = (k) => `<div class="cfg-g">${NIV_GRP[k]}</div>` + itens(c).filter(i => i.nivel === k).map(row).join('');
     const pct = Math.min(100, Math.round(v.dev4 / APROVADO[4] * 100));
     const passa = v.dev4 - APROVADO[4];
     const avisos = DEP.filter(d => escolha.has(d.para) && !escolha.has(d.de)).map(d => `<li>${d.txt}</li>`).join('');
     const mudou = [...escolha].sort().join() !== [...recomendadas()].sort().join();
     set('invTab', `<div class="cfg">
       <div class="cfg-h"><span>Solução</span><span>A nossa posição</span><span class="n">Desenvolvimento</span><span class="n">Manutenção mensal</span></div>
-      <div class="cfg-g">Base do cenário ${c}</div>
+      <div class="cfg-g">Obrigatório: a base do cenário ${c}, sempre incluída</div>
       <div class="cfg-r base on"><span class="cfg-lock">Base</span><span class="cfg-n"><b>${base.cod}</b> ${base.nome}<small>${FASE_TXT[base.fase]}</small></span>
-        <span class="cfg-p"><span class="pos base">${POS_INV.base}</span></span><span class="n">${base.dev ? eur(base.dev) : '<span class="muted">rubrica 3</span>'}</span><span class="n">${eur(base.mes)}</span></div>
-      ${grupo('Produtividade', 'p')}${grupo('Negócio', 'n')}${grupo('Fora da vossa lista', 'o')}
+        <span class="cfg-p"><span class="pos base">${NIV_TXT.base}</span></span><span class="n">${base.dev ? eur(base.dev) : '<span class="muted">rubrica 3</span>'}</span><span class="n">${eur(base.mes)}</span></div>
+      <p class="cfg-obr">Também obrigatórios: o diagnóstico, a formação e a integração, nas rubricas 2 e 3 (quadro abaixo).</p>
+      ${grupo('essencial')}${grupo('recomendado')}${grupo('opcional')}
       <div class="cfg-f">
         <div class="cfg-tot"><span>Soluções escolhidas, cenário ${c}</span><b>${eur(v.dev4)}</b><b>${eur(v.mes)}/mês</b></div>
         <div class="cfg-bar" role="img" aria-label="Rubrica 4: ${eur(v.dev4)} de 81.000 euros"><span style="width:${pct}%" class="${passa > 0 ? 'over' : ''}"></span></div>
